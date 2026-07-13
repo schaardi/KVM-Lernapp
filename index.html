@@ -78,6 +78,7 @@
   .mode .m-title .tag{font-family:var(--mono);font-size:10px;letter-spacing:.08em;color:#fff;border-radius:4px;padding:2px 7px;text-transform:uppercase;background:var(--ink)}
   .mode.sim .m-title .tag{background:var(--amber)}
   .mode.weak .m-title .tag{background:var(--petrol)}
+  .mode.mixed .m-title .tag{background:var(--petrol-deep)}
   .mode .m-desc{font-size:12.5px;color:var(--muted);margin-top:5px}
 
   /* QUIZ */
@@ -191,7 +192,6 @@
   .qtext{font-size:clamp(17px,2.4vw,21px)}
   @media (min-width:640px){
     .modes{grid-template-columns:1fr 1fr}
-    .mode.sim{grid-column:1 / -1}
   }
 
   /* ===== Werkzeuge: Taschenrechner, Rechenblatt, Formelbuch ===== */
@@ -326,6 +326,10 @@
         <button class="mode" id="btnTraining">
           <span class="m-title"><span class="tag">Training</span><span id="trainScope">Alle Bereiche</span></span>
           <span class="m-desc" id="trainDesc">20 Fragen mit sofortiger Auswertung und Erklärung. Neue Fragen werden bevorzugt.</span>
+        </button>
+        <button class="mode mixed" id="btnMixed">
+          <span class="m-title"><span class="tag">Alle Fächer</span>Alle Themen üben</span>
+          <span class="m-desc" id="mixedDesc">20 gemischte Fragen quer durch alle Fächer und Themenbereiche.</span>
         </button>
         <button class="mode weak" id="btnWeak">
           <span class="m-title"><span class="tag">Fokus</span>Schwächen üben</span>
@@ -610,6 +614,7 @@ function updateModeCards(){
   var scopeN=qForScope(state.fach,state.sub).length;
   $("trainScope").textContent=scopeLabel();
   $("trainDesc").textContent=Math.min(ROUND_LEN,scopeN)+" Fragen aus „"+scopeLabel()+"“ mit sofortiger Auswertung und Erklärung. Neue und zuletzt falsche Fragen werden bevorzugt.";
+  $("mixedDesc").textContent=Math.min(ROUND_LEN,ALL.length)+" gemischte Fragen aus allen 4 Fächern und Themen · unabhängig von der Auswahl oben · neue und zuletzt falsche zuerst.";
   var weakN=countWeak();
   $("weakDesc").textContent=weakN>0?("Gezielt üben: "+Math.min(ROUND_LEN,weakN)+" von "+weakN+" noch nicht gemeisterten Fragen in „"+scopeLabel()+"“."):"Super – in diesem Bereich ist aktuell alles gemeistert. Wähle einen anderen Bereich oder starte ein normales Training.";
   $("btnWeak").disabled=weakN===0;
@@ -633,6 +638,8 @@ function startRound(mode){
   if(mode==='train'){
     var cand=qForScope(state.fach,state.sub);
     state.pool=shuffle(weightedPick(cand,Math.min(ROUND_LEN,cand.length)));
+  }else if(mode==='all'){
+    state.pool=shuffle(weightedPick(ALL,Math.min(ROUND_LEN,ALL.length)));
   }else if(mode==='weak'){
     var cw=qForScope(state.fach,state.sub).filter(function(q){var p=progress[q.id];return !p||p.seen===0||p.last===0||p.box<MASTER_BOX;});
     state.pool=shuffle(weightedPick(cw,Math.min(ROUND_LEN,cw.length)));
@@ -727,7 +734,7 @@ function finishRound(timeUp){
   $("ringPct").textContent=pct+" %";
   var badge=$("resBadge");
   if(state.mode==='sim'){badge.hidden=false;var pass=pct>=50;badge.className="badge "+(pass?"pass":"fail");badge.textContent=pass?"Bestanden (≥ 50 %)":"Nicht bestanden (< 50 %)";$("resTitle").textContent="Prüfungssimulation";}
-  else{badge.hidden=true;$("resTitle").textContent=(state.mode==='weak'?"Schwächen-Training":"Trainingsrunde");}
+  else{badge.hidden=true;$("resTitle").textContent=(state.mode==='weak'?"Schwächen-Training":(state.mode==='all'?"Alle Themen":"Trainingsrunde"));}
   $("resLine").innerHTML="<b>"+right+"</b> von <b>"+total+"</b> richtig"+(timeUp?" · Zeit abgelaufen":"");
 
   var bd=$("breakdown");bd.innerHTML="";
@@ -751,6 +758,7 @@ function show(id){["scrHome","scrQuiz","scrResult"].forEach(function(s){$(s).hid
 
 /* ===== events ===== */
 $("btnTraining").addEventListener("click",function(){startRound('train');});
+$("btnMixed").addEventListener("click",function(){startRound('all');});
 $("btnWeak").addEventListener("click",function(){startRound('weak');});
 $("btnSim").addEventListener("click",function(){startRound('sim');});
 $("btnQuit").addEventListener("click",function(){clearInterval(state.timerId);show("scrHome");});
