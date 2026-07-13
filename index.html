@@ -164,6 +164,27 @@
   .btn-amber:hover{filter:brightness(.94)}
 
   .banner{margin:0 0 14px;background:var(--amber-soft);border:1px solid #edd4a6;border-radius:10px;padding:10px 12px;font-size:12px;color:#6d4a12}
+
+  /* Lernstand-Code (geräteübergreifende Sicherung) */
+  .sync-lead{font-size:12px;color:var(--muted);margin:0 0 12px}
+  .sync-grid{display:grid;gap:12px}
+  .sync-block{border:1px solid var(--line);border-radius:10px;background:#f6fafa;padding:12px 13px}
+  .sync-cap{font-family:var(--mono);font-size:10.5px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--petrol);margin:0 0 9px}
+  .sync-btn{width:100%;border:1px solid var(--line-strong);background:#fff;color:var(--ink);border-radius:9px;font-size:13.5px;font-weight:600;padding:11px 14px;transition:border-color .15s,background .15s}
+  .sync-btn:not(:disabled):hover{border-color:var(--petrol);background:#eef6f6}
+  .sync-btn:disabled{opacity:.6;cursor:default}
+  .sync-btn.primary-mini{background:var(--petrol);border-color:var(--petrol);color:#fff;width:auto;flex:0 0 auto}
+  .sync-btn.primary-mini:not(:disabled):hover{background:var(--petrol-deep)}
+  .code-area{width:100%;border:1px solid var(--line-strong);border-radius:9px;background:#fff;font-family:var(--mono);font-size:12px;color:var(--ink);padding:9px 10px;margin:0 0 9px;resize:vertical;line-height:1.45;word-break:break-all}
+  .code-area:focus{outline:none;border-color:var(--petrol)}
+  .sync-opt{display:flex;align-items:flex-start;gap:8px;font-size:11.5px;color:var(--muted);margin:0 0 10px;cursor:pointer;line-height:1.35}
+  .sync-opt input{margin:1px 0 0;flex:0 0 auto;accent-color:var(--petrol)}
+  .sync-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+  .code-meta{font-size:11px;color:var(--muted);font-family:var(--mono)}
+  .sync-msg{font-size:11.5px;margin:9px 0 0;padding:7px 9px;border-radius:7px;line-height:1.4}
+  .sync-msg.ok{color:var(--ok);background:var(--ok-soft)}
+  .sync-msg.err{color:var(--err);background:var(--err-soft)}
+
   footer{max-width:580px;margin:14px auto 0;font-size:11px;color:var(--muted);text-align:center;padding:0 8px}
   @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
 </style>
@@ -188,6 +209,32 @@
       </div>
       <div class="prog-bar"><div class="fill" id="pFill" style="width:0%"></div></div>
       <p class="prog-note" id="pNote"></p>
+    </div>
+
+    <div class="home-section">
+      <p class="h-label">Lernstand sichern &amp; übertragen</p>
+      <p class="sync-lead">Dein Fortschritt wird automatisch auf diesem Gerät gespeichert. Für ein anderes Gerät oder als Sicherung: erzeuge deinen persönlichen Lernstand-Code, speichere ihn – und gib ihn dort wieder ein, um deinen Lernstand abzurufen.</p>
+      <div class="sync-grid">
+        <div class="sync-block">
+          <p class="sync-cap">Code erstellen</p>
+          <button class="sync-btn" id="btnShowCode">Meinen Lernstand-Code anzeigen</button>
+          <div id="codeOutWrap" hidden style="margin-top:10px">
+            <textarea class="code-area" id="codeOut" readonly rows="3" spellcheck="false" aria-label="Dein Lernstand-Code"></textarea>
+            <div class="sync-row">
+              <button class="sync-btn primary-mini" id="btnCopyCode">Code kopieren</button>
+              <span class="code-meta" id="codeMeta"></span>
+            </div>
+            <p class="sync-msg ok" id="codeCopyMsg" role="status" aria-live="polite" hidden></p>
+          </div>
+        </div>
+        <div class="sync-block">
+          <p class="sync-cap">Code laden</p>
+          <textarea class="code-area" id="codeIn" rows="3" spellcheck="false" placeholder="Lernstand-Code hier einfügen …" aria-label="Lernstand-Code einfügen"></textarea>
+          <label class="sync-opt"><input type="checkbox" id="codeMerge"> Mit vorhandenem Fortschritt zusammenführen (je Frage den weiteren Stand behalten – für zwei Geräte)</label>
+          <button class="sync-btn" id="btnLoadCode">Lernstand laden</button>
+          <p class="sync-msg" id="codeMsg" role="status" aria-live="polite" hidden></p>
+        </div>
+      </div>
     </div>
 
     <div class="home-section">
@@ -297,6 +344,81 @@ function loadProgress(){try{var raw=localStorage.getItem(LS_KEY);return raw?JSON
 function saveProgress(){try{localStorage.setItem(LS_KEY,JSON.stringify(progress));}catch(e){}}
 function pget(id){return progress[id]||{seen:0,correct:0,wrong:0,box:0};}
 function recordResult(id,correct){var p=pget(id);p.seen++;if(correct){p.correct++;p.box=Math.min(MAX_BOX,p.box+1);}else{p.wrong++;p.box=0;}p.last=correct?1:0;progress[id]=p;saveProgress();}
+
+/* ===== portabler Lernstand-Code (geräteübergreifend, ohne Server) ===== */
+var CODE_V=1;
+function _num(x){x=parseInt(x,10);return (isFinite(x)&&x>=0)?x:0;}
+function _clampBox(x){x=parseInt(x,10);if(!isFinite(x))return 0;return Math.max(0,Math.min(MAX_BOX,x));}
+function _b64enc(bytes){var s='';for(var i=0;i<bytes.length;i++)s+=String.fromCharCode(bytes[i]);return btoa(s).replace(/\+/g,'-').replace(/\//g,'_').replace(/=+$/,'');}
+function _b64dec(str){str=str.replace(/-/g,'+').replace(/_/g,'/');while(str.length%4)str+='=';var bin=atob(str);var out=new Uint8Array(bin.length);for(var i=0;i<bin.length;i++)out[i]=bin.charCodeAt(i);return out;}
+// gzip ist überall verfügbar, wo CompressionStream existiert (Chrome 80+, Firefox 113+, Safari 16.4+) – anders als 'deflate-raw'
+function _deflate(bytes){var cs=new CompressionStream('gzip');var w=cs.writable.getWriter();w.write(bytes);w.close();return new Response(cs.readable).arrayBuffer().then(function(b){return new Uint8Array(b);});}
+function _inflate(bytes){
+  var ds=new DecompressionStream('gzip');var w=ds.writable.getWriter();
+  w.write(bytes).catch(function(){});w.close().catch(function(){}); // Writer-Promises abfangen (brechen bei frühem cancel ab)
+  var reader=ds.readable.getReader(),chunks=[],total=0,CAP=2097152; // 2 MB: echte Nutzdaten liegen weit darunter, verhindert Decompression-Bomben
+  function pump(){return reader.read().then(function(r){
+    if(r.done)return;total+=r.value.length;
+    if(total>CAP){reader.cancel().catch(function(){});throw new Error('too-large');}
+    chunks.push(r.value);return pump();});}
+  return pump().then(function(){var out=new Uint8Array(total),off=0;for(var i=0;i<chunks.length;i++){out.set(chunks[i],off);off+=chunks[i].length;}return out;});
+}
+function progressSubset(){var out={};for(var id in progress){if(!progress.hasOwnProperty(id))continue;var p=progress[id];if(p&&(p.seen>0||p.box>0)){out[id]={s:_num(p.seen),c:_num(p.correct),w:_num(p.wrong),b:_clampBox(p.box),l:(p.last?1:0)};}}return out;}
+function exportCode(){
+  var payload=JSON.stringify({v:CODE_V,ts:Date.now(),d:progressSubset()});
+  var bytes=new TextEncoder().encode(payload);
+  var plain=function(){return 'KVMB1.'+_b64enc(bytes);};
+  if(window.CompressionStream){
+    try{return _deflate(bytes).then(function(z){return 'KVMZ1.'+_b64enc(z);},plain);}
+    catch(e){/* Kompression synchron fehlgeschlagen – unkomprimiert ausgeben */}
+  }
+  return Promise.resolve(plain());
+}
+function importCode(code){
+  return new Promise(function(resolve,reject){
+    code=String(code||'').replace(/\s+/g,'');
+    if(code.length>500000){reject(new Error('Der Code ist ungültig oder zu groß.'));return;}
+    var m=/^KVM([ZB])1\.([A-Za-z0-9\-_]+)$/.exec(code);
+    if(!m){reject(new Error('Das sieht nicht nach einem gültigen Lernstand-Code aus.'));return;}
+    var bytes;try{bytes=_b64dec(m[2]);}catch(e){reject(new Error('Der Code ist beschädigt oder unvollständig.'));return;}
+    var parse=function(raw){
+      var obj;try{obj=JSON.parse(new TextDecoder().decode(raw));}catch(e){reject(new Error('Der Code ist beschädigt oder unvollständig.'));return;}
+      if(!obj||typeof obj!=='object'||typeof obj.d!=='object'||obj.d===null){reject(new Error('Der Code enthält keine Lernstand-Daten.'));return;}
+      resolve(obj);
+    };
+    if(m[1]==='Z'){
+      if(!window.DecompressionStream){reject(new Error('Dieser Browser kann komprimierte Codes nicht lesen. Bitte einen aktuellen Browser verwenden.'));return;}
+      _inflate(bytes).then(parse,function(){reject(new Error('Der Code ist beschädigt oder unvollständig.'));});
+    }else{parse(bytes);}
+  });
+}
+function decodeToProgress(obj){
+  var d=obj.d||{},out={};
+  for(var id in d){if(!d.hasOwnProperty(id))continue;
+    if(id==='__proto__'||id==='constructor'||id==='prototype')continue; // Schutz vor Prototype-Pollution
+    var inc=d[id];if(!inc||typeof inc!=='object')continue;
+    var rec={seen:_num(inc.s),correct:_num(inc.c),wrong:_num(inc.w),box:_clampBox(inc.b),last:(inc.l?1:0)};
+    if(rec.seen===0&&rec.box===0)continue;
+    out[id]=rec;
+  }
+  return out;
+}
+// Ersetzen: genau diesen gespeicherten Stand laden (Standard beim „Abrufen“ eines Codes)
+function replaceFromCode(obj){progress=decodeToProgress(obj);saveProgress();return Object.keys(progress).length;}
+// Zusammenführen: bewusste Option, um zwei Geräte zu kombinieren – behält je Frage den weitesten Stand
+function mergeFromCode(obj){
+  var d=decodeToProgress(obj),changed=0;
+  for(var id in d){if(!d.hasOwnProperty(id))continue;
+    var rec=d[id],cur=progress[id];
+    if(!cur){progress[id]=rec;changed++;continue;}
+    var curBox=cur.box||0;
+    var merged={seen:Math.max(cur.seen||0,rec.seen),correct:Math.max(cur.correct||0,rec.correct),wrong:Math.max(cur.wrong||0,rec.wrong),box:Math.max(curBox,rec.box),last:(rec.box>curBox?rec.last:cur.last)};
+    var diff=merged.seen!==(cur.seen||0)||merged.correct!==(cur.correct||0)||merged.wrong!==(cur.wrong||0)||merged.box!==curBox||merged.last!==cur.last;
+    progress[id]=merged;if(diff)changed++;
+  }
+  if(changed>0)saveProgress();
+  return changed;
+}
 
 /* ===== helpers ===== */
 function $(id){return document.getElementById(id);}
@@ -508,6 +630,43 @@ $("btnHome").addEventListener("click",function(){show("scrHome");});
 $("btnRetryWrong").addEventListener("click",function(){startRound('retry');});
 $("btnReset").addEventListener("click",function(){
   if(confirm("Deinen gesamten Lernfortschritt auf diesem Gerät wirklich zurücksetzen?")){progress={};saveProgress();renderProgress();renderFachGrid();renderSubChips();updateModeCards();}
+});
+
+/* ===== Lernstand-Code UI ===== */
+function syncMsg(el,text,kind){if(!el)return;el.textContent=text||"";el.className="sync-msg"+(kind?" "+kind:"");el.hidden=!text;}
+function legacyCopy(el){try{el.focus();el.select();el.setSelectionRange(0,el.value.length);document.execCommand("copy");return true;}catch(e){return false;}}
+$("btnShowCode").addEventListener("click",function(){
+  var btn=$("btnShowCode");btn.disabled=true;btn.textContent="Erzeuge Code …";
+  syncMsg($("codeCopyMsg"),"",null);
+  exportCode().then(function(code){
+    $("codeOut").value=code;$("codeOutWrap").hidden=false;
+    $("codeMeta").textContent="Stand: "+new Date().toLocaleString("de-DE")+" · "+code.length+" Zeichen";
+    btn.textContent="Code aktualisieren";btn.disabled=false;
+    $("codeOut").focus();$("codeOut").select();
+  },function(){btn.textContent="Meinen Lernstand-Code anzeigen";btn.disabled=false;syncMsg($("codeCopyMsg"),"Der Code konnte nicht erstellt werden.","err");$("codeCopyMsg").className="sync-msg err";$("codeCopyMsg").hidden=false;});
+});
+$("btnCopyCode").addEventListener("click",function(){
+  var out=$("codeOut");if(!out.value)return;
+  var done=function(ok){syncMsg($("codeCopyMsg"),ok?"Code kopiert – speichere ihn an einem sicheren Ort.":"Kopieren nicht möglich. Bitte den Code manuell markieren und kopieren.",ok?"ok":"err");};
+  if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(out.value).then(function(){done(true);},function(){done(legacyCopy(out));});}
+  else{done(legacyCopy(out));}
+});
+function hasLocalProgress(){for(var k in progress){if(progress.hasOwnProperty(k))return true;}return false;}
+$("btnLoadCode").addEventListener("click",function(){
+  var val=$("codeIn").value;syncMsg($("codeMsg"),"",null);
+  if(!val||!val.trim()){syncMsg($("codeMsg"),"Bitte füge zuerst deinen Lernstand-Code ein.","err");return;}
+  var btn=$("btnLoadCode");btn.disabled=true;
+  importCode(val).then(function(obj){
+    var merge=$("codeMerge").checked;
+    if(!merge&&hasLocalProgress()){
+      if(!confirm("Aktuellen Lernstand auf diesem Gerät durch den Code ersetzen? Ein evtl. weiter fortgeschrittener lokaler Fortschritt geht dabei verloren.\n\nZum Kombinieren zweier Geräte stattdessen die Option „Zusammenführen“ aktivieren.")){btn.disabled=false;return;}
+    }
+    var n=merge?mergeFromCode(obj):replaceFromCode(obj);
+    renderProgress();renderFachGrid();renderSubChips();updateModeCards();
+    if(merge){syncMsg($("codeMsg"),n>0?("Zusammengeführt – "+n+" Frage"+(n===1?"":"n")+" aktualisiert."):"Code gelesen – dein Lernstand war bereits gleich weit oder weiter.","ok");}
+    else{syncMsg($("codeMsg"),"Lernstand geladen – "+n+" Frage"+(n===1?"":"n")+" wiederhergestellt.","ok");}
+    $("codeIn").value="";btn.disabled=false;
+  },function(err){syncMsg($("codeMsg"),(err&&err.message)||"Der Code konnte nicht gelesen werden.","err");btn.disabled=false;});
 });
 document.addEventListener("keydown",function(ev){
   if($("scrQuiz").hidden)return;var q=state.pool[state.idx];if(!q)return;
