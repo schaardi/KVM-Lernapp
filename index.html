@@ -241,6 +241,14 @@
   .calc-grid .span2{grid-column:span 2}
   .calc-hint{font-size:11px;color:var(--muted);margin:10px 2px 0}
 
+  /* schwebender, ziehbarer Taschenrechner (ohne Hintergrund-Abdunklung) */
+  .floatwin{position:fixed;z-index:70;left:16px;top:72px;width:300px;max-width:calc(100vw - 20px);background:var(--paper);border:1px solid var(--line-strong);border-radius:14px;box-shadow:0 10px 34px rgba(16,42,50,.30);overflow:hidden;user-select:none;-webkit-user-select:none}
+  .fw-head{display:flex;align-items:center;justify-content:space-between;padding:10px 12px;background:linear-gradient(180deg,#fbfdfd,#eef4f5);border-bottom:1px solid var(--line);cursor:move;touch-action:none}
+  .fw-title{font-family:var(--disp);font-weight:700;text-transform:uppercase;font-size:15px;letter-spacing:.02em}
+  .fw-head .x{border:1px solid var(--line-strong);background:#fff;border-radius:8px;width:28px;height:28px;font-size:14px;color:var(--muted);cursor:pointer}
+  .fw-head .x:hover{border-color:var(--err);color:var(--err)}
+  .fw-body{padding:14px}
+
   /* Rechenblatt */
   .pad-tools{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-bottom:10px}
   .pad-swatch{width:26px;height:26px;border-radius:50%;border:2px solid #fff;box-shadow:0 0 0 1px var(--line-strong);cursor:pointer}
@@ -424,15 +432,12 @@
 </div>
 
 <!-- Taschenrechner -->
-<div class="modal" id="mCalc" hidden>
-  <div class="backdrop" data-close></div>
-  <div class="sheet" role="dialog" aria-modal="true" aria-label="Taschenrechner">
-    <div class="sheet-head"><h3>Taschenrechner</h3><button class="x" data-close aria-label="Schließen">✕</button></div>
-    <div class="sheet-body">
-      <div class="calc-disp"><div class="expr" id="calcExpr"></div><div class="res" id="calcRes">0</div></div>
-      <div class="calc-grid" id="calcGrid"></div>
-      <p class="calc-hint">Tipp: Du kannst auch über die Tastatur tippen (Ziffern, + − * / ( ) , Enter = , Entf/Backspace).</p>
-    </div>
+<div class="floatwin" id="mCalc" hidden role="dialog" aria-label="Taschenrechner">
+  <div class="fw-head" id="calcDrag"><span class="fw-title">🧮 Taschenrechner</span><button class="x" data-close aria-label="Schließen">✕</button></div>
+  <div class="fw-body">
+    <div class="calc-disp"><div class="expr" id="calcExpr"></div><div class="res" id="calcRes">0</div></div>
+    <div class="calc-grid" id="calcGrid"></div>
+    <p class="calc-hint">Frei verschiebbar – am Titelbalken ziehen. Der Hintergrund bleibt sichtbar. Tastatur: Ziffern, + − * / ( ) , Enter =, ⌫.</p>
   </div>
 </div>
 
@@ -718,7 +723,7 @@ function parseCalcNum(s){s=(""+s).trim().replace(/[^0-9.,\-]/g,"");if(s.indexOf(
 function fmtCalc(x){var r=Math.round(x*1e6)/1e6;var s=""+r;if(s.indexOf(".")>=0)s=s.replace(/0+$/,"").replace(/\.$/,"");return s.replace(".",",");}
 function renderCalc(q){
   var inp=$("qCalcInput");inp.value="";inp.disabled=false;$("qCalcUnit").textContent=q.unit||"";
-  $("qOpenCalc").onclick=function(){var b=document.getElementById("tbCalc");if(b)b.click();};
+  $("qOpenCalc").onclick=function(){if(window.KVMopenCalc)window.KVMopenCalc();else{var b=document.getElementById("tbCalc");if(b)b.click();}};
   $("qOpenPad").onclick=function(){var b=document.getElementById("tbPad");if(b)b.click();};
   setActions('<div class="split"><button class="btn-no" id="btnCalcGiveup">Lösung zeigen</button><button class="primary" id="btnCalcCheck" disabled>Antwort prüfen</button></div>');
   inp.oninput=function(){$("btnCalcCheck").disabled=inp.value.trim()==="";};
@@ -881,9 +886,22 @@ function open(id){ if(openModal)close(); var m=$(id); if(!m)return; m.hidden=fal
   if(id==="mFormula"){ fbRender(""); var s=$("fbSearch"); if(s){s.value="";setTimeout(function(){s.focus();},50);} }
 }
 function close(){ if(!openModal)return; var m=$(openModal); if(m)m.hidden=true; openModal=null; document.body.style.overflow=""; }
-document.addEventListener("click",function(e){ if(e.target.hasAttribute&&e.target.hasAttribute("data-close")) close(); });
-document.addEventListener("keydown",function(e){ if(e.key==="Escape"&&openModal){ close(); } });
-$("tbCalc").addEventListener("click",function(){open("mCalc");});
+/* Schwebender, ziehbarer Taschenrechner – kein Backdrop, Hintergrund bleibt sichtbar */
+var elCalc=$("mCalc"), calcOpen=false, calcPlaced=false;
+function clampCalc(x,y){ var w=elCalc.offsetWidth,h=elCalc.offsetHeight; x=Math.min(Math.max(6,x),Math.max(6,window.innerWidth-w-6)); y=Math.min(Math.max(6,y),Math.max(6,window.innerHeight-h-6)); elCalc.style.left=x+"px"; elCalc.style.top=y+"px"; }
+function openCalc(){ elCalc.hidden=false; calcOpen=true; if(!calcPlaced){ var w=elCalc.offsetWidth||300; clampCalc(window.innerWidth-w-16,72); calcPlaced=true; } }
+function closeCalc(){ elCalc.hidden=true; calcOpen=false; }
+window.KVMopenCalc=openCalc;
+(function calcDrag(){ var head=$("calcDrag"),drag=false,ox=0,oy=0;
+  head.addEventListener("pointerdown",function(e){ if(e.target.hasAttribute&&e.target.hasAttribute("data-close"))return; drag=true; try{head.setPointerCapture(e.pointerId);}catch(_){} var r=elCalc.getBoundingClientRect(); ox=e.clientX-r.left; oy=e.clientY-r.top; e.preventDefault(); });
+  head.addEventListener("pointermove",function(e){ if(drag)clampCalc(e.clientX-ox,e.clientY-oy); });
+  function stop(){drag=false;}
+  head.addEventListener("pointerup",stop); head.addEventListener("pointercancel",stop);
+})();
+
+document.addEventListener("click",function(e){ if(e.target.hasAttribute&&e.target.hasAttribute("data-close")){ if(e.target.closest&&e.target.closest("#mCalc"))closeCalc(); else close(); } });
+document.addEventListener("keydown",function(e){ if(e.key==="Escape"){ if(openModal)close(); else if(calcOpen)closeCalc(); } });
+$("tbCalc").addEventListener("click",function(){ if(calcOpen)closeCalc(); else openCalc(); });
 $("tbPad").addEventListener("click",function(){open("mPad");});
 $("tbFormula").addEventListener("click",function(){open("mFormula");});
 
@@ -915,7 +933,9 @@ var keys=[
 (function buildCalc(){ var g=$("calcGrid"); keys.forEach(function(k){ var b=document.createElement("button"); b.textContent=k.l; if(k.c)b.className=k.c;
   b.addEventListener("click",function(){ if(k.v!=null)calcInput(k.v); else if(k.a==="neg"){ try{var val=calcEval(expr||"0");expr=""+(-val);calcRender();}catch(e){} } else if(k.a==="sqrt"){ try{var val=calcEval(expr||"0");expr=""+Math.sqrt(val);calcRender();}catch(e){} } else calcAction(k.a); });
   g.appendChild(b); }); })();
-document.addEventListener("keydown",function(e){ if(openModal!=="mCalc")return; var k=e.key;
+document.addEventListener("keydown",function(e){ if(!calcOpen)return;
+  var a=document.activeElement; if(a&&a!==document.body&&!(elCalc.contains(a))&&/^(INPUT|TEXTAREA|SELECT)$/.test(a.tagName))return;
+  var k=e.key;
   if(k>="0"&&k<="9"||"+-*/()%".indexOf(k)>=0){calcInput(k);e.preventDefault();}
   else if(k==="."||k===","){calcInput(".");e.preventDefault();}
   else if(k==="Enter"||k==="="){calcAction("eq");e.preventDefault();}
