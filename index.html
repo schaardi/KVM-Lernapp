@@ -216,6 +216,16 @@
   .toolbtn.tb-calc{background:var(--petrol)}
   .toolbtn.tb-pad{background:var(--amber)}
   .toolbtn.tb-formula{background:var(--ok)}
+  .toolbtn.tb-voice{background:#6D5AE6}
+  .toolbtn.tb-voice.active{background:#4C39C9;box-shadow:0 0 0 3px rgba(109,90,230,.35),var(--shadow)}
+  .voicebar{display:flex;align-items:center;gap:9px;margin:4px 0 12px;padding:9px 13px;border-radius:11px;font-weight:600;font-size:14px;border:1px solid var(--line);background:var(--paper)}
+  .voicebar .vs-dot{width:11px;height:11px;border-radius:50%;flex:0 0 auto;background:currentColor}
+  .voicebar.speaking{color:#4C39C9;background:#EEEBFB;border-color:#d9d2f7}
+  .voicebar.listening{color:var(--petrol);background:var(--petrol-soft);border-color:#bfe0e3}
+  .voicebar.listening .vs-dot{animation:vpulse 1s infinite}
+  .voicebar.heard{color:var(--ok);background:var(--ok-soft);border-color:#bfe3ce}
+  .voicebar.info{color:var(--amber);background:var(--amber-soft);border-color:#f0dcb4}
+  @keyframes vpulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.35;transform:scale(1.6)}}
   .ic-svg{width:18px;height:18px;flex:0 0 auto;display:inline-block;vertical-align:middle}
   .ic-svg.ic-sm{width:15px;height:15px}
   .ic-petrol{color:var(--petrol)}
@@ -388,6 +398,7 @@
     <div class="protocol" id="protocol" aria-hidden="true"></div>
     <div class="qbody">
       <div><span class="qtype mc" id="qType">Auswahlfrage</span><span class="qsub" id="qSubLabel"></span></div>
+      <div class="voicebar" id="voiceStatus" hidden aria-live="polite"><span class="vs-dot"></span><span class="vs-txt"></span></div>
       <p class="qtext" id="qText"></p>
       <div class="opts" id="qOpts"></div>
       <div class="openbox" id="qOpen" hidden>
@@ -444,6 +455,7 @@
   <button class="toolbtn tb-calc" id="tbCalc" title="Taschenrechner"><svg class="ic-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M8 7h8"/><path d="M8 12h.01M12 12h.01M16 12h.01M8 16h.01M12 16h.01M16 16h.01"/></svg><span class="lbl">Rechner</span></button>
   <button class="toolbtn tb-pad" id="tbPad" title="Rechenblatt"><svg class="ic-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4 12.5-12.5z"/></svg><span class="lbl">Blatt</span></button>
   <button class="toolbtn tb-formula" id="tbFormula" title="Formelbuch"><svg class="ic-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/><path d="M9 7h7" stroke-width="1.5"/></svg><span class="lbl">Formeln</span></button>
+  <button class="toolbtn tb-voice" id="tbVoice" title="Sprachbedienung: Frage vorlesen, Antwort per A/B/C/D sprechen" aria-pressed="false"><svg class="ic-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a3 3 0 0 0-3 3v6a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3z"/><path d="M19 10v1a7 7 0 0 1-14 0v-1"/><path d="M12 18v4"/><path d="M8 22h8"/></svg><span class="lbl">Sprache</span></button>
 </div>
 
 <!-- Taschenrechner -->
@@ -736,6 +748,7 @@ function renderQuestion(){
     setActions('<button class="primary" id="btnReveal">Antwort anzeigen</button>');
     $("btnReveal").addEventListener("click",revealOpen);
   }
+  if(window.KVMvoice)window.KVMvoice.onQuestion(q);
 }
 function parseCalcNum(s){s=(""+s).trim().replace(/[^0-9.,\-]/g,"");if(s.indexOf(",")>=0&&s.indexOf(".")>=0){s=s.replace(/\./g,"").replace(",",".");}else if(s.indexOf(",")>=0){s=s.replace(",",".");}var v=parseFloat(s);return isFinite(v)?v:NaN;}
 function fmtCalc(x){var r=Math.round(x*1e6)/1e6;var s=""+r;if(s.indexOf(".")>=0)s=s.replace(/0+$/,"").replace(/\.$/,"");return s.replace(".",",");}
@@ -790,6 +803,7 @@ function finalize(correct,q){
   var last=state.idx===state.pool.length-1;
   setActions('<button class="primary" id="btnNext">'+(last?"Zum Ergebnis →":"Weiter →")+'</button>');
   $("btnNext").addEventListener("click",next);$("btnNext").focus();
+  if(window.KVMvoice)window.KVMvoice.onFeedback(correct,q);
 }
 function next(){if(state.idx===state.pool.length-1){finishRound(false);}else{state.idx++;renderQuestion();}}
 
@@ -821,6 +835,7 @@ function finishRound(timeUp){
 }
 
 function show(id){["scrHome","scrQuiz","scrResult"].forEach(function(s){$(s).hidden=(s!==id);});
+  if(id!=="scrQuiz"&&window.KVMvoice)window.KVMvoice.stop();
   if(id==="scrHome"){renderProgress();renderFachGrid();renderSubChips();updateModeCards();}
   window.scrollTo(0,0);}
 
@@ -1275,6 +1290,205 @@ function makeQR(str){
 }
 
 window.KVMqr=makeQR;
+})();
+</script>
+<script>
+/* ===== Sprachbedienung: Frage vorlesen (TTS) + Antwort per A/B/C/D (Spracherkennung) ===== */
+(function(){
+  "use strict";
+  function $(id){return document.getElementById(id);}
+  var synth = window.speechSynthesis || null;
+  var SR = window.SpeechRecognition || window.webkitSpeechRecognition || null;
+  var btn = $("tbVoice");
+  if(!btn) return;
+  if(!synth || typeof window.SpeechSynthesisUtterance !== "function"){ btn.hidden = true; return; }   /* ohne Sprachausgabe keine Sprachbedienung */
+
+  var LETTERS = ["A","B","C","D","E"];
+  var enabled = false;
+  try{ enabled = localStorage.getItem("kvm_voice") === "1"; }catch(e){}
+  var rec = null, curQ = null, phase = "idle", tries = 0, deVoice = null;
+  var fmtNum = (typeof window.fmtCalc === "function") ? window.fmtCalc : function(x){ return (""+x).replace(".",","); };
+
+  function pickVoice(){
+    try{
+      var vs = synth.getVoices() || [];
+      deVoice = vs.filter(function(v){ return /^de(\b|[-_])/i.test(v.lang); })[0] || null;
+    }catch(e){}
+  }
+  pickVoice();
+  try{ synth.onvoiceschanged = pickVoice; }catch(e){}
+
+  function setStatus(kind, text){
+    var el = $("voiceStatus"); if(!el) return;
+    if(!enabled || !kind){ el.hidden = true; el.className = "voicebar"; return; }
+    el.hidden = false; el.className = "voicebar " + kind;
+    var t = el.querySelector(".vs-txt"); if(t) t.textContent = text || "";
+  }
+  function stripTags(s){ var d = document.createElement("div"); d.innerHTML = s || ""; return (d.textContent || d.innerText || "").replace(/\s+/g," ").trim(); }
+
+  function stopRec(){ if(rec){ try{ rec.onresult=rec.onerror=rec.onend=null; rec.abort(); }catch(e){} rec=null; } }
+  function stopAll(){ try{ synth.cancel(); }catch(e){} stopRec(); phase="idle"; setStatus(null); }
+
+  function speak(text, cb){
+    try{ synth.cancel(); }catch(e){}
+    var u;
+    try{ u = new SpeechSynthesisUtterance(text); }catch(e){ if(cb)cb(); return; }
+    u.lang = "de-DE"; if(deVoice) u.voice = deVoice; u.rate = 1; u.pitch = 1;
+    var done=false; function fin(){ if(done)return; done=true; if(cb)cb(); }
+    u.onend = fin; u.onerror = fin;
+    try{ synth.speak(u); }catch(e){ fin(); }
+  }
+
+  function optionsText(){
+    var opts = $("qOpts"); if(!opts || opts.hidden) return "";
+    var btns = opts.querySelectorAll(".opt"); var out = [];
+    for(var i=0;i<btns.length;i++){ var sp = btns[i].querySelectorAll("span"); var t = sp.length ? sp[sp.length-1].textContent : btns[i].textContent; out.push(LETTERS[i] + ": " + stripTags(t)); }
+    return out.join(". ");
+  }
+
+  function onQuestion(q){
+    stopAll();
+    curQ = q;
+    if(!enabled) return;
+    var text;
+    if(q.t === "mc"){ text = stripTags(q.q) + ". Antwortmöglichkeiten. " + optionsText() + ". Sage A, B, C oder D."; }
+    else if(q.t === "calc"){ text = "Rechenaufgabe. " + stripTags(q.q) + ". Bitte gib dein Ergebnis ein."; }
+    else { text = stripTags(q.q) + ". Überlege deine Antwort."; }
+    phase = "speaking"; setStatus("speaking", "Frage wird vorgelesen …");
+    speak(text, function(){
+      if(!enabled || curQ !== q) return;
+      if(q.t === "mc"){ tries = 0; startListen(); }
+      else { setStatus("info", "Bitte per Tastatur antworten."); phase = "idle"; }
+    });
+  }
+
+  function parseLetter(t){
+    t = (t||"").toLowerCase().trim();
+    var m = t.match(/\b([a-d])\b/); if(m) return m[1].toUpperCase();
+    var first = t.replace(/[^a-zäöü0-9]/g," ").trim().split(/\s+/)[0] || "";
+    var map = { a:"A","ah":"A",anton:"A",
+      b:"B",be:"B",bee:"B","bä":"B",berta:"B",
+      c:"C",ce:"C",zeh:"C","tse":"C","cäsar":"C",caesar:"C",see:"C",sea:"C",
+      d:"D",de:"D",dee:"D",the:"D",dora:"D",
+      "1":"A",eins:"A","2":"B",zwei:"B",zwo:"B","3":"C",drei:"C","4":"D",vier:"D" };
+    if(map[first]) return map[first];
+    var c0 = first.charAt(0); if("abcd".indexOf(c0) >= 0) return c0.toUpperCase();
+    return null;
+  }
+  function parseCommand(t){
+    t = (t||"").toLowerCase();
+    if(/\b(weiter|n(ä|ae)chste|weitergehen|next|los)\b/.test(t)) return "next";
+    if(/\b(wiederhol|nochmal|noch mal)\b/.test(t)) return "repeat";
+    return null;
+  }
+
+  function newRec(){
+    var r; try{ r = new SR(); }catch(e){ return null; }
+    r.lang = "de-DE"; r.interimResults = false; r.maxAlternatives = 6; r.continuous = false;
+    return r;
+  }
+
+  function startListen(){
+    if(!SR){ setStatus("info", "Spracheingabe hier nicht verfügbar – bitte A/B/C/D anklicken."); phase = "idle"; return; }
+    stopRec();
+    rec = newRec(); if(!rec){ setStatus("info", "Spracheingabe nicht verfügbar."); return; }
+    phase = "listening"; setStatus("listening", "Zuhören … sage A, B, C oder D");
+    rec.onresult = function(ev){
+      var letter = null;
+      for(var i=0;i<ev.results.length && !letter;i++){ for(var j=0;j<ev.results[i].length && !letter;j++){ letter = parseLetter(ev.results[i][j].transcript); } }
+      if(letter){ applyLetter(letter); }
+      else { retryListen(); }
+    };
+    rec.onerror = function(ev){
+      if(ev.error === "not-allowed" || ev.error === "service-not-allowed"){ setStatus("info", "Mikrofon nicht erlaubt – bitte A/B/C/D anklicken."); phase = "idle"; }
+      else if(ev.error === "no-speech" || ev.error === "aborted" || ev.error === "network"){ retryListen(); }
+      else { setStatus("info", "Spracheingabe unterbrochen – bitte anklicken."); phase = "idle"; }
+    };
+    try{ rec.start(); }catch(e){}
+  }
+  function retryListen(){
+    if(!enabled || phase !== "listening") return;
+    tries++;
+    if(tries > 4){ setStatus("info", "Nicht verstanden – bitte A/B/C/D anklicken."); phase = "idle"; stopRec(); return; }
+    setStatus("listening", "Nicht verstanden – bitte wiederholen (A/B/C/D)");
+    setTimeout(function(){ if(enabled && phase === "listening") startListen(); }, 250);
+  }
+
+  function applyLetter(letter){
+    var idx = LETTERS.indexOf(letter);
+    var opts = $("qOpts"); var btns = opts ? opts.querySelectorAll(".opt") : [];
+    if(idx < 0 || idx >= btns.length){ tries++; retryListen(); return; }
+    phase = "idle"; stopRec();
+    setStatus("heard", "Verstanden: " + letter);
+    var b = btns[idx];
+    try{ b.click(); }catch(e){}
+    setTimeout(function(){ var c = $("btnCheck"); if(c && !c.disabled) c.click(); }, 350);
+  }
+
+  function onFeedback(correct, q){
+    if(!enabled) return;
+    stopRec(); nextAttempts = 0;
+    var txt = correct ? "Richtig. " : "Leider falsch. ";
+    if(q.t === "calc"){ txt += "Die Lösung ist " + fmtNum(q.ans) + (q.unit ? " " + q.unit : "") + ". "; }
+    if(q.e){ txt += stripTags(q.e) + " "; }
+    txt += "Sage weiter für die nächste Frage.";
+    phase = "speaking"; setStatus("speaking", "Auswertung wird vorgelesen …");
+    speak(txt, function(){ if(enabled) listenNext(); });
+  }
+  var nextAttempts = 0;
+  function listenNext(){
+    if(!SR){ setStatus(null); phase = "idle"; return; }
+    stopRec();
+    rec = newRec(); if(!rec){ setStatus(null); return; }
+    phase = "next";
+    setStatus("listening", "Sage „weiter“ für die nächste Frage");
+    rec.onresult = function(ev){
+      var cmd = null;
+      for(var i=0;i<ev.results.length && !cmd;i++){ for(var j=0;j<ev.results[i].length && !cmd;j++){ cmd = parseCommand(ev.results[i][j].transcript); } }
+      if(cmd === "next"){ phase = "idle"; stopRec(); var nb = $("btnNext"); if(nb) nb.click(); }
+      else againNext();
+    };
+    rec.onerror = function(ev){ if(ev.error === "not-allowed" || ev.error === "service-not-allowed"){ setStatus(null); phase = "idle"; } else againNext(); };
+    try{ rec.start(); }catch(e){}
+  }
+  function againNext(){
+    nextAttempts++;
+    if(!enabled || phase !== "next" || nextAttempts > 3){ setStatus(null); phase = "idle"; stopRec(); return; }
+    setTimeout(function(){ if(enabled && phase === "next") startListenNextOnce(); }, 250);
+  }
+  function startListenNextOnce(){ stopRec(); rec = newRec(); if(!rec) return; rec.onresult = null; listenNextBind(); }
+  function listenNextBind(){
+    rec.onresult = function(ev){
+      var cmd = null;
+      for(var i=0;i<ev.results.length && !cmd;i++){ for(var j=0;j<ev.results[i].length && !cmd;j++){ cmd = parseCommand(ev.results[i][j].transcript); } }
+      if(cmd === "next"){ phase = "idle"; stopRec(); var nb = $("btnNext"); if(nb) nb.click(); }
+      else againNext();
+    };
+    rec.onerror = function(ev){ if(ev.error === "not-allowed" || ev.error === "service-not-allowed"){ setStatus(null); phase = "idle"; } else againNext(); };
+    try{ rec.start(); }catch(e){}
+  }
+
+  function updateBtn(){
+    btn.classList.toggle("active", enabled);
+    btn.setAttribute("aria-pressed", enabled ? "true" : "false");
+    var lbl = btn.querySelector(".lbl"); if(lbl) lbl.textContent = enabled ? "Sprache an" : "Sprache";
+  }
+  btn.addEventListener("click", function(){
+    enabled = !enabled;
+    try{ localStorage.setItem("kvm_voice", enabled ? "1" : "0"); }catch(e){}
+    updateBtn();
+    if(enabled){
+      var sq = $("scrQuiz"), fb = $("qFeedback"), qtext = $("qText") ? $("qText").textContent : "";
+      var mcShown = $("qOpts") && !$("qOpts").hidden && $("qOpts").querySelectorAll(".opt").length > 0;
+      if(sq && !sq.hidden && fb && fb.hidden && qtext){
+        var t = mcShown ? "mc" : (($("qCalc") && !$("qCalc").hidden) ? "calc" : "open");
+        onQuestion({ t: t, q: qtext });
+      } else { speak("Sprachbedienung aktiviert. Fragen werden vorgelesen, antworte mit A, B, C oder D."); setStatus("info", "Sprachbedienung aktiv"); setTimeout(function(){ if(enabled && phase==="idle") setStatus(null); }, 2600); }
+    } else { stopAll(); }
+  });
+  updateBtn();
+
+  window.KVMvoice = { onQuestion: onQuestion, onFeedback: onFeedback, stop: stopAll, isEnabled: function(){ return enabled; } };
 })();
 </script>
 </body>
