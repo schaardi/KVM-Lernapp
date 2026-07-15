@@ -90,6 +90,48 @@ const List<BoxShadow> kSoftShadow = [
   BoxShadow(color: Color(0x0A0C3138), blurRadius: 3, offset: Offset(0, 1)),
 ];
 
+/// Prüfungs-Kategorie (Qualifikation) – oberste Ebene über den Fachthemen.
+class AppCategory {
+  final String id;
+  final String name;      // z. B. 'Kraftverkehrsmeister'
+  final String short;     // z. B. 'KVM'
+  final String subtitle;  // Kurzbeschreibung/Status
+  final bool available;   // Inhalte vorhanden?
+  final Color color;
+  final IconData icon;
+  const AppCategory({
+    required this.id,
+    required this.name,
+    required this.short,
+    required this.subtitle,
+    required this.color,
+    required this.icon,
+    this.available = false,
+  });
+}
+
+/// Verfügbare Kategorien. KVM ist befüllt; weitere folgen (z. B. Industriemeister).
+const List<AppCategory> kCategories = [
+  AppCategory(
+    id: 'kvm',
+    name: 'Kraftverkehrsmeister',
+    short: 'KVM',
+    subtitle: 'IHK-Basisqualifikationen · 2200 Fragen',
+    available: true,
+    color: kPetrol,
+    icon: Icons.local_shipping_outlined,
+  ),
+  AppCategory(
+    id: 'im',
+    name: 'Industriemeister',
+    short: 'IM',
+    subtitle: 'IHK-Basisqualifikationen · bald verfügbar',
+    available: false,
+    color: Color(0xFF3F6FB5),
+    icon: Icons.engineering,
+  ),
+];
+
 /// IHK-Notenschlüssel (100-Punkte-Schema; Prozent = Punkte).
 ({int note, String label}) ihkGrade(int p) {
   if (p >= 92) return (note: 1, label: 'sehr gut');

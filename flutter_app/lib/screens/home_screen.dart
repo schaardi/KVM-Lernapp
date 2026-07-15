@@ -108,6 +108,19 @@ class _HomeScreenState extends State<HomeScreen> {
         child: ListView(
           padding: const EdgeInsets.fromLTRB(16, 12, 16, 96),
           children: [
+            Align(
+              alignment: Alignment.centerLeft,
+              child: TextButton.icon(
+                onPressed: () => Navigator.of(context).maybePop(),
+                style: TextButton.styleFrom(
+                    foregroundColor: kMuted,
+                    padding: const EdgeInsets.symmetric(horizontal: 6),
+                    minimumSize: const Size(0, 36)),
+                icon: const Icon(Icons.chevron_left, size: 20),
+                label: const Text('Kategorien'),
+              ),
+            ),
+            const SizedBox(height: 2),
             _hero(),
             const SizedBox(height: 22),
 
