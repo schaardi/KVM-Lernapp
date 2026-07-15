@@ -3,7 +3,7 @@ import 'constants.dart';
 import 'services/data_service.dart';
 import 'services/progress_service.dart';
 import 'services/voice_service.dart';
-import 'screens/home_screen.dart';
+import 'screens/category_screen.dart';
 
 void main() {
   runApp(const KvmApp());
@@ -101,7 +101,7 @@ class _BootState extends State<_Boot> {
             body: Center(child: Text('Fehler beim Laden:\n${snap.error}')),
           );
         }
-        return const HomeScreen();
+        return const CategoryScreen();
       },
     );
   }
