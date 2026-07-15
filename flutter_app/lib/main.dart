@@ -22,8 +22,30 @@ class KvmApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(
           seedColor: kPetrol,
           primary: kPetrol,
+          surface: kPaper,
         ),
-        scaffoldBackgroundColor: const Color(0xFFEDF1F3),
+        scaffoldBackgroundColor: kBg,
+        splashFactory: InkSparkle.splashFactory,
+        cardTheme: CardThemeData(
+          elevation: 0,
+          color: kPaper,
+          surfaceTintColor: Colors.transparent,
+          margin: const EdgeInsets.only(bottom: 10),
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(kRadius),
+            side: const BorderSide(color: kLine),
+          ),
+        ),
+        chipTheme: ChipThemeData(
+          backgroundColor: kPaper,
+          side: const BorderSide(color: kLine),
+          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(999)),
+          labelStyle: const TextStyle(fontWeight: FontWeight.w600, fontSize: 13, color: kInkSoft),
+        ),
+        textTheme: const TextTheme().apply(bodyColor: kInk, displayColor: kInk),
+        snackBarTheme: const SnackBarThemeData(
+          behavior: SnackBarBehavior.floating,
+        ),
       ),
       home: const _Boot(),
     );
