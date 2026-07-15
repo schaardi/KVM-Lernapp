@@ -1,7 +1,7 @@
 # KVM-Trainer – native App (Flutter) für App Store & Google Play
 
 Ein nativer Port der KVM-Lernapp mit **Flutter** – eine Codebasis, echte native Apps
-für **iOS** und **Android** (keine WebView). Die 2045 Fragen, 10 Fallaufgaben und das
+für **iOS** und **Android** (keine WebView). Die 2200 Fragen, 10 Fallaufgaben und das
 Formelbuch sind als Assets gebündelt (offline).
 
 ## Was drin ist
@@ -27,6 +27,16 @@ flutter run            # auf angeschlossenem Gerät/Emulator
 ```
 Die Ordner `android/` und `ios/` sind bereits erzeugt. Falls du sie neu generieren willst:
 `flutter create --platforms=android,ios --org com.kvmtrainer --project-name kvm_trainer .`
+
+## Automatischer Cloud-Build (ohne lokales SDK)
+Ein Push auf `claude/meitner-app-build-6lnk2z`, `claude/flutter-native-app` oder `main`
+(bzw. manuelles Auslösen des Workflows „App bauen (Android APK)") baut die App in
+GitHub Actions und stellt die installierbare APK bereit:
+- als **Artefakt** am jeweiligen Actions-Lauf (Debug- und Release-APK) und
+- als **Direkt-Download** unter *Releases → `android-latest`* (Release-APK, Debug-signiert).
+
+Zum Installieren die `.apk` aufs Android-Gerät laden und öffnen (Installation aus
+unbekannten Quellen erlauben). Für die Store-Veröffentlichung dienen die folgenden Schritte.
 
 ## Android → Google Play
 ```bash
@@ -69,7 +79,16 @@ lib/
     home_screen.dart          Startseite
     quiz_screen.dart          Frage-Ablauf
     result_screen.dart        Ergebnis + IHK-Note
-assets/data/                  questions.json (2045), cases.json (10), formulas.json
+assets/data/                  questions.json (2200), cases.json (10), formulas.json
+```
+
+## Inhalte / Fragenkatalog
+Die Fragen und Fälle sind **nicht** hier gepflegt, sondern werden aus der Web-App
+(`index.html`, Content-Branch) übernommen. Ablauf, Datenvertrag und Sync-Befehle:
+siehe **[../CONTENT_SYNC.md](../CONTENT_SYNC.md)**. Kurz:
+```bash
+python tools/sync_content.py --check   # aktuell?  (aus dem Repo-Root)
+python tools/sync_content.py           # Katalog aus dem Content-Branch übernehmen
 ```
 
 ## Hinweise
