@@ -1,16 +1,27 @@
-name: Android APK bauen
+name: App bauen (Android APK)
 
-# Baut die Android-App (KVM-Trainer) in der Cloud und stellt die APK zum
-# Download bereit. Kein lokales Android-SDK nötig – die fertige APK lässt
-# sich in einem Android-Emulator starten.
+# Baut die native App (KVM-Trainer) in der Cloud und stellt die fertige,
+# installierbare APK bereit – als Actions-Artefakt UND als direkter Download
+# unter „Releases" (Tag: android-latest). Kein lokales Android-SDK nötig.
 
 on:
   push:
-    branches: [ claude/flutter-native-app ]
+    branches:
+      - claude/meitner-app-build-6lnk2z
+      - claude/flutter-native-app
+      - main
     paths:
       - 'flutter_app/**'
       - '.github/workflows/android-build.yml'
   workflow_dispatch: {}   # erlaubt manuelles Auslösen über die GitHub-Oberfläche
+
+# Für die Release-Veröffentlichung (Direkt-Download der APK) nötig.
+permissions:
+  contents: write
+
+concurrency:
+  group: android-build-${{ github.ref }}
+  cancel-in-progress: true
 
 jobs:
   build-apk:
@@ -40,8 +51,16 @@ jobs:
       - name: Abhängigkeiten holen
         run: flutter pub get
 
+      - name: Inhalt prüfen (Datenvertrag)
+        working-directory: ${{ github.workspace }}
+        run: python3 tools/sync_content.py --validate-assets
+
       - name: Statische Analyse
         run: flutter analyze
+        continue-on-error: true
+
+      - name: Tests
+        run: flutter test
         continue-on-error: true
 
       - name: Debug-APK bauen (zum Testen im Emulator)
@@ -63,3 +82,33 @@ jobs:
           name: kvm-trainer-release-apk
           path: flutter_app/build/app/outputs/flutter-apk/app-release.apk
           if-no-files-found: error
+
+      - name: APK als Release veröffentlichen (Direkt-Download)
+        if: github.event_name == 'push' || github.event_name == 'workflow_dispatch'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          APK=build/app/outputs/flutter-apk/app-release.apk
+          TAG=android-latest
+          # Version aus pubspec.yaml (z. B. 1.0.0+1) ziehen – nur informativ.
+          VER=$(grep -E '^version:' pubspec.yaml | head -n1 | awk '{print $2}')
+          # Rollendes Release aktualisieren: altes Release + Tag entfernen, neu anlegen.
+          gh release delete "$TAG" --yes --cleanup-tag --repo "$GITHUB_REPOSITORY" || true
+          gh release create "$TAG" "$APK#KVM-Trainer-${VER}.apk" \
+            --repo "$GITHUB_REPOSITORY" \
+            --target "$GITHUB_SHA" \
+            --title "KVM-Trainer – Android (neuester Build)" \
+            --notes "Automatisch gebaute, installierbare Android-App (Debug-signiert, Version ${VER}). Auf dem Smartphone herunterladen und installieren (Installation aus unbekannten Quellen erlauben). Commit: ${GITHUB_SHA}" \
+            --prerelease
+
+      - name: Build-Zusammenfassung
+        if: always()
+        run: |
+          {
+            echo "## KVM-Trainer – Android-Build"
+            echo ""
+            echo "- **Debug-APK** und **Release-APK** liegen als Artefakte an diesem Lauf."
+            echo "- Direkt-Download der Release-APK: **Releases → \`android-latest\`**."
+            echo "- Zum Installieren die \`.apk\` aufs Android-Gerät laden und öffnen."
+          } >> "$GITHUB_STEP_SUMMARY"
