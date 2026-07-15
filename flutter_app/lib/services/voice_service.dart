@@ -2,7 +2,7 @@ import 'package:flutter_tts/flutter_tts.dart';
 import 'package:speech_to_text/speech_to_text.dart';
 
 /// Sprachbedienung: Vorlesen (TTS) + Antwort per A/B/C/D (native Spracherkennung).
-/// Anders als im Web funktioniert die Spracherkennung hier auch auf iOS.
+/// Läuft nativ auf Android (anders als im Web).
 class VoiceService {
   static final VoiceService instance = VoiceService._();
   VoiceService._();
