@@ -1,3 +1,9 @@
+# Signaturschlüssel – NIEMALS committen (werden in CI aus GitHub-Secrets erzeugt)
+android/key.properties
+**/*.jks
+**/*.keystore
+upload-keystore.jks
+
 # Miscellaneous
 *.class
 *.log

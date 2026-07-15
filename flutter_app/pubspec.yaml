@@ -1,5 +1,5 @@
 name: kvm_trainer
-description: KVM-Trainer – IHK-Prüfungsvorbereitung Kraftverkehrsmeister (nativ, iOS & Android).
+description: KVM-Trainer – Prüfungsvorbereitung zur IHK-Fortbildung Geprüfte/r Kraftverkehrsmeister/-in.
 publish_to: 'none'
 version: 1.0.0+1
 
