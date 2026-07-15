@@ -84,7 +84,21 @@
   .mode.sim .m-title .tag{background:var(--amber)}
   .mode.weak .m-title .tag{background:var(--petrol)}
   .mode.mixed .m-title .tag{background:var(--petrol-deep)}
+  .mode.due .m-title .tag{background:#6D5AE6}
+  .mode.due{border-color:#c9c1f2;background:linear-gradient(180deg,#f6f4fe,#fff)}
+  .mode.due:hover{border-color:#6D5AE6}
   .mode .m-desc{font-size:12.5px;color:var(--muted);margin-top:5px}
+  .due-badge{font-family:var(--mono);font-size:12px;font-weight:700;color:#fff;background:#6D5AE6;border-radius:11px;padding:1px 9px;min-width:20px;text-align:center}
+  .mode:disabled{opacity:.55;cursor:not-allowed}
+  /* Prüfungsreife-Radar (#6) */
+  .ready-overall{font-family:var(--mono);font-weight:700;letter-spacing:.04em;color:var(--petrol);text-transform:none;font-size:13px}
+  .ready-wrap{display:flex;align-items:center;gap:14px;flex-wrap:wrap;justify-content:center}
+  .ready-chart{flex:0 0 auto}
+  .ready-legend{flex:1 1 220px;min-width:200px;display:flex;flex-direction:column;gap:5px}
+  .rl-row{display:flex;align-items:center;gap:8px;font-size:12.5px}
+  .rl-dot{width:10px;height:10px;border-radius:50%;flex:0 0 auto}
+  .rl-name{flex:1 1 auto;color:var(--ink);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .rl-val{font-family:var(--mono);font-weight:700;color:var(--muted)}
 
   /* QUIZ */
   .quizhead{display:flex;align-items:center;gap:10px;padding:12px 14px;border-bottom:1px solid var(--line);background:#fbfdfd}
@@ -322,6 +336,15 @@
       <p class="prog-note" id="pNote"></p>
     </div>
 
+    <div class="home-section" id="readySection">
+      <p class="h-label">Prüfungsreife <span class="ready-overall" id="readyOverall">0 %</span></p>
+      <div class="ready-wrap">
+        <div class="ready-chart" id="readyChart" aria-hidden="true"></div>
+        <div class="ready-legend" id="readyLegend"></div>
+      </div>
+      <p class="prog-note" id="readyNote"></p>
+    </div>
+
     <div class="home-section">
       <p class="h-label">Lernstand sichern &amp; übertragen</p>
       <p class="sync-lead">Dein Fortschritt wird automatisch auf diesem Gerät gespeichert. Für ein anderes Gerät oder als Sicherung: erzeuge deinen persönlichen Lernstand-Code, speichere ihn – und gib ihn dort wieder ein, um deinen Lernstand abzurufen.</p>
@@ -365,6 +388,10 @@
     <div class="home-section">
       <p class="h-label">Modus</p>
       <div class="modes">
+        <button class="mode due" id="btnDue">
+          <span class="m-title"><span class="tag">Wiederholen</span>Heute fällig <span class="due-badge" id="dueBadge" hidden>0</span></span>
+          <span class="m-desc" id="dueDesc">Verteiltes Lernen: genau die Fragen, die laut Leitner-System heute zur Wiederholung anstehen.</span>
+        </button>
         <button class="mode" id="btnTraining">
           <span class="m-title"><span class="tag">Training</span><span id="trainScope">Alle Bereiche</span></span>
           <span class="m-desc" id="trainDesc">20 Fragen mit sofortiger Auswertung und Erklärung. Neue Fragen werden bevorzugt.</span>
@@ -530,7 +557,14 @@ var progress=loadProgress();
 function loadProgress(){try{var raw=localStorage.getItem(LS_KEY);return raw?JSON.parse(raw):{};}catch(e){return {};}}
 function saveProgress(){try{localStorage.setItem(LS_KEY,JSON.stringify(progress));}catch(e){}}
 function pget(id){return progress[id]||{seen:0,correct:0,wrong:0,box:0};}
-function recordResult(id,correct){var p=pget(id);p.seen++;if(correct){p.correct++;p.box=Math.min(MAX_BOX,p.box+1);}else{p.wrong++;p.box=0;}p.last=correct?1:0;progress[id]=p;saveProgress();}
+/* Spaced Repetition: Wiederholungsintervall (Tage) je Leitner-Box 0..5 */
+var SR_INTERVALS=[1,2,4,9,17,33];
+function todayIdx(){return Math.floor((Date.now()-new Date().getTimezoneOffset()*60000)/86400000);}
+function recordResult(id,correct){var p=pget(id);p.seen++;if(correct){p.correct++;p.box=Math.min(MAX_BOX,p.box+1);}else{p.wrong++;p.box=0;}p.last=correct?1:0;p.due=todayIdx()+SR_INTERVALS[Math.min(p.box,5)];progress[id]=p;saveProgress();}
+/* fällig = schon einmal gesehen und Wiederholungstermin erreicht (Alt-Datensätze ohne due gelten als fällig) */
+function isDue(id){var p=progress[id];if(!p||!p.seen)return false;var d=(p.due==null)?0:p.due;return d<=todayIdx();}
+function dueList(){return ALL.filter(function(q){return isDue(q.id);});}
+function dueCount(){var n=0;for(var i=0;i<ALL.length;i++){if(isDue(ALL[i].id))n++;}return n;}
 
 /* ===== portabler Lernstand-Code (geräteübergreifend, ohne Server) ===== */
 var CODE_V=1;
@@ -631,6 +665,34 @@ function renderProgress(){
     "Hinweis: In dieser Vorschau ist die dauerhafte Speicherung inaktiv. Auf einer echten Webseite oder lokal im Browser geöffnet merkt sich die App deinen Fortschritt.";
 }
 
+/* ===== Prüfungsreife-Radar (#6) ===== */
+var FACH_COLORS={1:"#0C6C78",2:"#D9820A",3:"#2C8A4E",4:"#3f6fb5",5:"#a2497f"};
+function fachReife(f){var qs=qForFach(f);if(!qs.length)return null;var s=0;qs.forEach(function(q){var p=progress[q.id];var box=p?Math.min(p.box,MASTER_BOX):0;s+=box/MASTER_BOX;});return s/qs.length;}
+function overallReife(){var tot=0,acc=0;[1,2,3,4,5].forEach(function(f){var qs=qForFach(f);if(!qs.length)return;tot+=qs.length;acc+=fachReife(f)*qs.length;});return tot?acc/tot:0;}
+function renderReadiness(){
+  var chart=$("readyChart"),legend=$("readyLegend");if(!chart)return;
+  var facts=[1,2,3,4,5].map(function(f){return {f:f,r:fachReife(f),n:qForFach(f).length};});
+  var cx=110,cy=105,R=80,N=5;
+  function pt(i,rad){var a=-Math.PI/2+i*2*Math.PI/N;return [cx+Math.cos(a)*rad, cy+Math.sin(a)*rad];}
+  var svg='<svg viewBox="0 0 220 210" width="100%" style="max-width:250px" role="img" aria-label="Prüfungsreife je Fach">';
+  [0.25,0.5,0.75,1].forEach(function(g){var pts=[];for(var i=0;i<N;i++){var p=pt(i,R*g);pts.push(p[0].toFixed(1)+","+p[1].toFixed(1));}svg+='<polygon points="'+pts.join(" ")+'" fill="none" stroke="var(--line)" stroke-width="1"/>';});
+  for(var i=0;i<N;i++){var p=pt(i,R);svg+='<line x1="'+cx+'" y1="'+cy+'" x2="'+p[0].toFixed(1)+'" y2="'+p[1].toFixed(1)+'" stroke="var(--line)" stroke-width="1"/>';var lp=pt(i,R+14);svg+='<text x="'+lp[0].toFixed(1)+'" y="'+(lp[1]+4).toFixed(1)+'" text-anchor="middle" font-size="13" font-weight="700" fill="'+FACH_COLORS[facts[i].f]+'">'+facts[i].f+'</text>';}
+  var dp=[];for(var i=0;i<N;i++){var rr=(facts[i].r==null?0:facts[i].r);var p=pt(i,R*Math.max(0.015,rr));dp.push(p[0].toFixed(1)+","+p[1].toFixed(1));}
+  svg+='<polygon points="'+dp.join(" ")+'" fill="rgba(12,108,120,.18)" stroke="var(--petrol)" stroke-width="2"/>';
+  for(var i=0;i<N;i++){var rr=(facts[i].r==null?0:facts[i].r);var p=pt(i,R*Math.max(0.015,rr));svg+='<circle cx="'+p[0].toFixed(1)+'" cy="'+p[1].toFixed(1)+'" r="3.2" fill="'+FACH_COLORS[facts[i].f]+'"/>';}
+  svg+='</svg>';
+  chart.innerHTML=svg;
+  legend.innerHTML=facts.map(function(x){var pct=x.r==null?"–":Math.round(x.r*100)+" %";return '<div class="rl-row"><span class="rl-dot" style="background:'+FACH_COLORS[x.f]+'"></span><span class="rl-name">'+x.f+". "+FACH_KURZ[x.f]+'</span><span class="rl-val">'+pct+'</span></div>';}).join("");
+  var ov=Math.round(overallReife()*100);
+  $("readyOverall").textContent=ov+" %";
+  var note;
+  if(ov>=80)note="Sehr gut aufgestellt – nahe an der Prüfungsreife. Halte schwächere Fächer mit „Heute fällig“ warm.";
+  else if(ov>=55)note="Solide Basis. Konzentriere dich auf die Fächer mit der geringsten Reife (kleinste Zacken im Netz).";
+  else if(ov>=25)note="Guter Anfang. Regelmäßiges Wiederholen („Heute fällig“) bringt die Reife am schnellsten nach oben.";
+  else note="Noch am Anfang – jede Runde zählt. Ziel: alle fünf Zacken möglichst weit nach außen.";
+  $("readyNote").textContent="Reife = Anteil gemeisterter Fragen je Fach (gewichtet). "+note;
+}
+
 function renderFachGrid(){
   var counts=fachCounts(); var grid=$("fachGrid"); grid.innerHTML="";
   [1,2,3,4,5].forEach(function(f){
@@ -673,7 +735,21 @@ function updateModeCards(){
   $("weakDesc").textContent=weakN>0?("Gezielt üben: "+Math.min(ROUND_LEN,weakN)+" von "+weakN+" noch nicht gemeisterten Fragen in „"+scopeLabel()+"“."):"Super – in diesem Bereich ist aktuell alles gemeistert. Wähle einen anderen Bereich oder starte ein normales Training.";
   $("btnWeak").disabled=weakN===0;
   var fachN=qForFach(state.fach).length;
-  $("simDesc").textContent=Math.min(SIM_LEN,fachN)+" Fragen aus dem ganzen Fach „"+FACH_KURZ[state.fach]+"“ · 60 Minuten · bestanden ab 50 %.";
+  $("simDesc").textContent=Math.min(SIM_LEN,fachN)+" Fragen aus dem ganzen Fach „"+FACH_KURZ[state.fach]+"“ · 60 Minuten · IHK-Notenschlüssel, bestanden ab 50 %.";
+  updateDueCard();
+  renderReadiness();
+}
+function updateDueCard(){
+  var dN=dueCount();
+  var freshN=0;for(var i=0;i<ALL.length;i++){var p=progress[ALL[i].id];if(!p||!p.seen)freshN++;}
+  var badge=$("dueBadge");if(badge){badge.hidden=dN===0;badge.textContent=dN;}
+  var desc=$("dueDesc");
+  if(desc){
+    if(dN>0)desc.textContent=dN+" Frage"+(dN===1?"":"n")+" stehen heute zur Wiederholung an (Leitner-System). Wird mit neuen Fragen aufgefüllt.";
+    else if(freshN>0)desc.textContent="Aktuell nichts fällig – starte mit neuen Fragen. Beantwortete Fragen kommen je nach Box in 1–33 Tagen zur Wiederholung.";
+    else desc.textContent="Alles wiederholt und nichts fällig. Komm morgen wieder – oder nutze das Schwächen-Training.";
+  }
+  var btn=$("btnDue");if(btn)btn.disabled=(dN+freshN)===0;
 }
 
 /* ===== pick questions with weighting ===== */
@@ -694,6 +770,10 @@ function startRound(mode){
     state.pool=shuffle(weightedPick(cand,Math.min(ROUND_LEN,cand.length)));
   }else if(mode==='all'){
     state.pool=shuffle(weightedPick(ALL,Math.min(ROUND_LEN,ALL.length)));
+  }else if(mode==='due'){
+    var dl=dueList();
+    if(dl.length<ROUND_LEN){var fresh=ALL.filter(function(q){var p=progress[q.id];return !p||!p.seen;});dl=dl.concat(weightedPick(fresh,ROUND_LEN-dl.length));}
+    state.pool=shuffle(weightedPick(dl,Math.min(ROUND_LEN,dl.length)));
   }else if(mode==='weak'){
     var cw=qForScope(state.fach,state.sub).filter(function(q){var p=progress[q.id];return !p||p.seen===0||p.last===0||p.box<MASTER_BOX;});
     state.pool=shuffle(weightedPick(cw,Math.min(ROUND_LEN,cw.length)));
@@ -703,6 +783,7 @@ function startRound(mode){
   }else if(mode==='retry'){
     state.pool=shuffle(state.wrong);
   }
+  if(!state.pool.length){alert("Für diesen Modus gibt es gerade keine passenden Fragen.");return;}
   state.shuffledOpts=state.pool.map(function(q){return q.t==='mc'?shuffle(q.o):null;});
   state.idx=0;state.results=[];state.wrong=[];
   clearInterval(state.timerId);
@@ -807,6 +888,11 @@ function finalize(correct,q){
 }
 function next(){if(state.idx===state.pool.length-1){finishRound(false);}else{state.idx++;renderQuestion();}}
 
+/* IHK-Notenschlüssel (100-Punkte-Schema; Prozent = Punkte) */
+function ihkGrade(pct){var p=Math.round(pct),note,label;
+  if(p>=92){note=1;label="sehr gut";}else if(p>=81){note=2;label="gut";}else if(p>=67){note=3;label="befriedigend";}
+  else if(p>=50){note=4;label="ausreichend";}else if(p>=30){note=5;label="mangelhaft";}else{note=6;label="ungenügend";}
+  return {points:p,note:note,label:label,text:"Note "+note+" ("+label+")"};}
 function finishRound(timeUp){
   clearInterval(state.timerId);
   if(timeUp){for(var i=0;i<state.pool.length;i++){if(state.results[i]===undefined){state.results[i]=false;state.wrong.push(state.pool[i]);recordResult(state.pool[i].id,false);}}}
@@ -815,9 +901,10 @@ function finishRound(timeUp){
   requestAnimationFrame(function(){requestAnimationFrame(function(){fg.style.strokeDashoffset=C*(1-pct/100);});});
   $("ringPct").textContent=pct+" %";
   var badge=$("resBadge");
-  if(state.mode==='sim'){badge.hidden=false;var pass=pct>=50;badge.className="badge "+(pass?"pass":"fail");badge.textContent=pass?"Bestanden (≥ 50 %)":"Nicht bestanden (< 50 %)";$("resTitle").textContent="Prüfungssimulation";}
-  else{badge.hidden=true;$("resTitle").textContent=(state.mode==='weak'?"Schwächen-Training":(state.mode==='all'?"Alle Themen":"Trainingsrunde"));}
-  $("resLine").innerHTML="<b>"+right+"</b> von <b>"+total+"</b> richtig"+(timeUp?" · Zeit abgelaufen":"");
+  if(state.mode==='sim'){badge.hidden=false;var pass=pct>=50;badge.className="badge "+(pass?"pass":"fail");badge.textContent=(pass?"Bestanden":"Nicht bestanden")+" · "+ihkGrade(pct).text;$("resTitle").textContent="Prüfungssimulation";}
+  else{badge.hidden=true;$("resTitle").textContent=(state.mode==='sim'?"Prüfungssimulation":(state.mode==='weak'?"Schwächen-Training":(state.mode==='all'?"Alle Themen":(state.mode==='due'?"Heute fällig":"Trainingsrunde"))));}
+  var gradeLine=state.mode==='sim'?" · "+ihkGrade(pct).points+" von 100 Punkten (IHK-Schlüssel)":"";
+  $("resLine").innerHTML="<b>"+right+"</b> von <b>"+total+"</b> richtig"+(timeUp?" · Zeit abgelaufen":"")+gradeLine;
 
   var bd=$("breakdown");bd.innerHTML="";
   var subs=[];state.pool.forEach(function(q){if(subs.indexOf(q.sub)<0)subs.push(q.sub);});
@@ -840,6 +927,7 @@ function show(id){["scrHome","scrQuiz","scrResult"].forEach(function(s){$(s).hid
   window.scrollTo(0,0);}
 
 /* ===== events ===== */
+$("btnDue").addEventListener("click",function(){startRound('due');});
 $("btnTraining").addEventListener("click",function(){startRound('train');});
 $("btnMixed").addEventListener("click",function(){startRound('all');});
 $("btnWeak").addEventListener("click",function(){startRound('weak');});
