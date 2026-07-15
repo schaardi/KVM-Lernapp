@@ -43,6 +43,19 @@ class KvmApp extends StatelessWidget {
           labelStyle: const TextStyle(fontWeight: FontWeight.w600, fontSize: 13, color: kInkSoft),
         ),
         textTheme: const TextTheme().apply(bodyColor: kInk, displayColor: kInk),
+        filledButtonTheme: FilledButtonThemeData(
+          style: FilledButton.styleFrom(
+            shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(kRadiusSm)),
+            textStyle: const TextStyle(fontWeight: FontWeight.w700, fontSize: 15),
+          ),
+        ),
+        outlinedButtonTheme: OutlinedButtonThemeData(
+          style: OutlinedButton.styleFrom(
+            side: const BorderSide(color: kLine),
+            shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(kRadiusSm)),
+            textStyle: const TextStyle(fontWeight: FontWeight.w700, fontSize: 15),
+          ),
+        ),
         snackBarTheme: const SnackBarThemeData(
           behavior: SnackBarBehavior.floating,
         ),

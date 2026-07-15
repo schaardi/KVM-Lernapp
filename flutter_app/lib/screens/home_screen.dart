@@ -108,27 +108,22 @@ class _HomeScreenState extends State<HomeScreen> {
         child: ListView(
           padding: const EdgeInsets.fromLTRB(16, 12, 16, 96),
           children: [
-            _hero(total, overall),
+            _hero(),
             const SizedBox(height: 22),
 
             // Fortschritt
-            _section('Lernfortschritt', trailing: TextButton(
+            _section('Lernfortschritt', trailing: TextButton.icon(
               onPressed: () async {
-                final ok = await showDialog<bool>(
-                  context: context,
-                  builder: (_) => AlertDialog(
-                    title: const Text('Zurücksetzen?'),
-                    content: const Text(
-                        'Deinen gesamten Lernfortschritt auf diesem Gerät wirklich zurücksetzen?'),
-                    actions: [
-                      TextButton(onPressed: () => Navigator.pop(context, false), child: const Text('Abbrechen')),
-                      TextButton(onPressed: () => Navigator.pop(context, true), child: const Text('Zurücksetzen')),
-                    ],
-                  ),
+                final ok = await _confirmReset();
+                if (!mounted || !ok) return;
+                setState(() => prog.reset());
+                ScaffoldMessenger.of(context).showSnackBar(
+                  const SnackBar(content: Text('Lernfortschritt zurückgesetzt.')),
                 );
-                if (ok == true) setState(() => prog.reset());
               },
-              child: const Text('Zurücksetzen'),
+              style: TextButton.styleFrom(foregroundColor: kMuted),
+              icon: const Icon(Icons.restart_alt, size: 18),
+              label: const Text('Zurücksetzen'),
             )),
             Row(children: [
               _stat(mastered.toString(), 'Gemeistert', kOk),
@@ -211,8 +206,57 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 
+  /// Zweistufige Sicherheitsabfrage – der „Löschen"-Knopf ist erst nach dem
+  /// Bestätigungshaken aktiv, damit nichts versehentlich passiert.
+  Future<bool> _confirmReset() async {
+    var sure = false;
+    final ok = await showDialog<bool>(
+      context: context,
+      builder: (ctx) => StatefulBuilder(
+        builder: (ctx, setLocal) => AlertDialog(
+          title: const Text('Fortschritt zurücksetzen?'),
+          content: Column(mainAxisSize: MainAxisSize.min, crossAxisAlignment: CrossAxisAlignment.start, children: [
+            const Text(
+                'Alle gemeisterten Fragen, Statistiken und Wiederholungstermine auf '
+                'diesem Gerät werden gelöscht. Das lässt sich nicht rückgängig machen.',
+                style: TextStyle(color: kInkSoft, height: 1.4)),
+            const SizedBox(height: 8),
+            InkWell(
+              onTap: () => setLocal(() => sure = !sure),
+              borderRadius: BorderRadius.circular(8),
+              child: Padding(
+                padding: const EdgeInsets.symmetric(vertical: 4),
+                child: Row(children: [
+                  Checkbox(
+                    value: sure,
+                    activeColor: kErr,
+                    onChanged: (v) => setLocal(() => sure = v ?? false),
+                  ),
+                  const Expanded(
+                    child: Text('Ja, Fortschritt endgültig löschen.',
+                        style: TextStyle(fontWeight: FontWeight.w600, color: kInk)),
+                  ),
+                ]),
+              ),
+            ),
+          ]),
+          actions: [
+            TextButton(onPressed: () => Navigator.pop(ctx, false), child: const Text('Abbrechen')),
+            FilledButton(
+              style: FilledButton.styleFrom(
+                  backgroundColor: kErr, disabledBackgroundColor: kErr.withValues(alpha: 0.35)),
+              onPressed: sure ? () => Navigator.pop(ctx, true) : null,
+              child: const Text('Endgültig löschen'),
+            ),
+          ],
+        ),
+      ),
+    );
+    return ok == true;
+  }
+
   // ---- Kopfbereich / Branding ----
-  Widget _hero(int total, int overall) {
+  Widget _hero() {
     return Container(
       padding: const EdgeInsets.fromLTRB(18, 18, 18, 20),
       decoration: BoxDecoration(
@@ -242,9 +286,6 @@ class _HomeScreenState extends State<HomeScreen> {
         const Text('Geprüfte/r Kraftverkehrsmeister/-in',
             style: TextStyle(fontSize: 25, fontWeight: FontWeight.w800,
                 height: 1.12, color: kInk)),
-        const SizedBox(height: 6),
-        Text('$total Prüfungsfragen · 5 Fächer · offline · Fortschritt bleibt gespeichert',
-            style: const TextStyle(color: kMuted, fontSize: 13, height: 1.3)),
       ]),
     );
   }
