@@ -1,0 +1,65 @@
+name: Android APK bauen
+
+# Baut die Android-App (KVM-Trainer) in der Cloud und stellt die APK zum
+# Download bereit. Kein lokales Android-SDK nötig – die fertige APK lässt
+# sich in einem Android-Emulator starten.
+
+on:
+  push:
+    branches: [ claude/flutter-native-app ]
+    paths:
+      - 'flutter_app/**'
+      - '.github/workflows/android-build.yml'
+  workflow_dispatch: {}   # erlaubt manuelles Auslösen über die GitHub-Oberfläche
+
+jobs:
+  build-apk:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: flutter_app
+    steps:
+      - name: Repository auschecken
+        uses: actions/checkout@v4
+
+      - name: Java (JDK 17) einrichten
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+
+      - name: Flutter (stable) einrichten
+        uses: subosito/flutter-action@v2
+        with:
+          channel: stable
+          cache: true
+
+      - name: Flutter-Version
+        run: flutter --version
+
+      - name: Abhängigkeiten holen
+        run: flutter pub get
+
+      - name: Statische Analyse
+        run: flutter analyze
+        continue-on-error: true
+
+      - name: Debug-APK bauen (zum Testen im Emulator)
+        run: flutter build apk --debug
+
+      - name: Release-APK bauen (Debug-signiert, ebenfalls installierbar)
+        run: flutter build apk --release
+
+      - name: Debug-APK hochladen
+        uses: actions/upload-artifact@v4
+        with:
+          name: kvm-trainer-debug-apk
+          path: flutter_app/build/app/outputs/flutter-apk/app-debug.apk
+          if-no-files-found: error
+
+      - name: Release-APK hochladen
+        uses: actions/upload-artifact@v4
+        with:
+          name: kvm-trainer-release-apk
+          path: flutter_app/build/app/outputs/flutter-apk/app-release.apk
+          if-no-files-found: error
