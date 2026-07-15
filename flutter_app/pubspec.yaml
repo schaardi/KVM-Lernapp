@@ -1,0 +1,27 @@
+name: kvm_trainer
+description: KVM-Trainer – IHK-Prüfungsvorbereitung Kraftverkehrsmeister (nativ, iOS & Android).
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.3.0 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  cupertino_icons: ^1.0.6
+  shared_preferences: ^2.2.3
+  flutter_tts: ^4.0.2
+  speech_to_text: ^7.0.0
+
+dev_dependencies:
+  flutter_lints: ^4.0.0
+  flutter_test:
+    sdk: flutter
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/data/questions.json
+    - assets/data/cases.json
+    - assets/data/formulas.json
