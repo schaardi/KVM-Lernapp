@@ -6,7 +6,7 @@
         </intent>
     </queries>
     <application
-        android:label="KVM-Trainer"
+        android:label="Meister-Trainer"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity

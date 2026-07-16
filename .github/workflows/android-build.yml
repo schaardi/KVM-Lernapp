@@ -1,6 +1,6 @@
 name: App bauen (Android APK)
 
-# Baut die native App (KVM-Trainer) in der Cloud und stellt die fertige,
+# Baut die native App (Industriemeister Trainer) in der Cloud und stellt die fertige,
 # installierbare APK bereit – als Actions-Artefakt UND als direkter Download
 # unter „Releases" (Tag: android-latest). Kein lokales Android-SDK nötig.
 
@@ -103,10 +103,10 @@ jobs:
           VER=$(grep -E '^version:' pubspec.yaml | head -n1 | awk '{print $2}')
           # Rollendes Release aktualisieren: altes Release + Tag entfernen, neu anlegen.
           gh release delete "$TAG" --yes --cleanup-tag --repo "$GITHUB_REPOSITORY" || true
-          gh release create "$TAG" "$APK#KVM-Trainer-${VER}.apk" \
+          gh release create "$TAG" "$APK#Industriemeister-Trainer-${VER}.apk" \
             --repo "$GITHUB_REPOSITORY" \
             --target "$GITHUB_SHA" \
-            --title "KVM-Trainer – Android (neuester Build)" \
+            --title "Industriemeister Trainer – Android (neuester Build)" \
             --notes "Automatisch gebaute, installierbare Android-App (Debug-signiert, Version ${VER}). Auf dem Smartphone herunterladen und installieren (Installation aus unbekannten Quellen erlauben). Commit: ${GITHUB_SHA}" \
             --prerelease
 
@@ -114,7 +114,7 @@ jobs:
         if: always()
         run: |
           {
-            echo "## KVM-Trainer – Android-Build"
+            echo "## Industriemeister Trainer – Android-Build"
             echo ""
             echo "- **Debug-APK** und **Release-APK** liegen als Artefakte an diesem Lauf."
             echo "- Direkt-Download der Release-APK: **Releases → \`android-latest\`**."

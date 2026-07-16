@@ -1,4 +1,4 @@
-# KVM-Trainer – native Android-App (Flutter) für Google Play
+# Industriemeister Trainer – native Android-App (Flutter) für Google Play
 
 Ein nativer Port der KVM-Lernapp mit **Flutter** – eine echte native **Android**-App
 (keine WebView). Die 2200 Fragen, 10 Fallaufgaben und das Formelbuch sind als Assets

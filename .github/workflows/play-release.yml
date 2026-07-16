@@ -154,7 +154,7 @@ jobs:
           gh release create "$TAG" \
             --repo "$GITHUB_REPOSITORY" \
             --target "$GITHUB_SHA" \
-            --title "KVM-Trainer $TAG" \
+            --title "Industriemeister Trainer $TAG" \
             --notes-file build/changelog.md \
           || echo "Hinweis: Release-Tag $TAG existiert evtl. schon – übersprungen."
 
