@@ -60,6 +60,10 @@ const int kRoundLen = 20;
 const int kSimLen = 30;
 const int kSimSeconds = 60 * 60;
 
+/// Freemium: nach je so vielen beantworteten Fragen eine Interstitial-Werbung
+/// (entfällt für Premium-/Werbefrei-Nutzer).
+const int kAdEveryQuestions = 10;
+
 // Farbwelt – ruhige, konzentrationsfreundliche Palette (Teal/Petrol als Anker,
 // gedämpfte Neutraltöne, wenig Sättigung außerhalb von Signalfarben).
 const Color kPetrol = Color(0xFF0C6C78);
