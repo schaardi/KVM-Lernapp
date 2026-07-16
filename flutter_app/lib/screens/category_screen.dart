@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import '../constants.dart';
+import '../config.dart';
+import '../widgets/account_sheet.dart';
 import 'home_screen.dart';
 
 /// Auswahl der Prüfungs-Kategorie (Qualifikation) – Einstieg der App.
@@ -62,6 +64,12 @@ class CategoryScreen extends StatelessWidget {
                         style: TextStyle(color: kPetrol, fontWeight: FontWeight.w800,
                             fontSize: 10.5, letterSpacing: 1.4)),
                   ),
+                  if (Config.authEnabled)
+                    IconButton(
+                      tooltip: 'Konto & Synchronisierung',
+                      onPressed: () => showAccountSheet(context),
+                      icon: const Icon(Icons.account_circle_outlined, color: kPetrol),
+                    ),
                 ]),
                 const SizedBox(height: 16),
                 const Text('Wähle deine Prüfung',

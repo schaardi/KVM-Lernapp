@@ -1,11 +1,27 @@
 import 'package:flutter/material.dart';
+import 'package:supabase_flutter/supabase_flutter.dart';
+import 'config.dart';
 import 'constants.dart';
 import 'services/data_service.dart';
 import 'services/progress_service.dart';
 import 'services/voice_service.dart';
+import 'services/auth_service.dart';
+import 'services/sync_service.dart';
 import 'screens/category_screen.dart';
 
-void main() {
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  if (Config.authEnabled) {
+    try {
+      await Supabase.initialize(
+        url: Config.supabaseUrl,
+        anonKey: Config.supabaseAnonKey,
+      );
+      AuthService.instance.ready = true;
+    } catch (_) {
+      AuthService.instance.ready = false; // ohne gültige Config: Offline-App
+    }
+  }
   runApp(const KvmApp());
 }
 
@@ -84,6 +100,13 @@ class _BootState extends State<_Boot> {
     await DataService.instance.load();
     await ProgressService.instance.load();
     await VoiceService.instance.init();
+    // Cloud-Sync anbinden; bei bestehender Sitzung Stand zusammenführen.
+    if (Config.authEnabled && AuthService.instance.ready) {
+      SyncService.instance.attach();
+      if (AuthService.instance.isSignedIn) {
+        await SyncService.instance.pullMergePush();
+      }
+    }
   }
 
   @override
