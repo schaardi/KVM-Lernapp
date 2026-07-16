@@ -37,21 +37,20 @@ class _LoginScreenState extends State<LoginScreen> {
           child: SingleChildScrollView(
             padding: const EdgeInsets.all(28),
             child: Column(mainAxisSize: MainAxisSize.min, children: [
-              // Monogramm
+              // Monogramm / Logo
               Container(
                 width: 76, height: 76,
-                alignment: Alignment.center,
                 decoration: BoxDecoration(
-                  gradient: const LinearGradient(
-                    begin: Alignment.topLeft, end: Alignment.bottomRight,
-                    colors: [kPetrol, kPetrolDeep],
-                  ),
                   borderRadius: BorderRadius.circular(22),
                   boxShadow: const [
-                    BoxShadow(color: Color(0x330C6C78), blurRadius: 18, offset: Offset(0, 8)),
+                    BoxShadow(color: Color(0x330D2B57), blurRadius: 18, offset: Offset(0, 8)),
                   ],
                 ),
-                child: const Icon(Icons.workspace_premium, color: Colors.white, size: 40),
+                child: ClipRRect(
+                  borderRadius: BorderRadius.circular(22),
+                  child: Image.asset('assets/branding/app_logo.png',
+                      width: 76, height: 76, fit: BoxFit.cover),
+                ),
               ),
               const SizedBox(height: 22),
               const Text('KVM-Trainer',
