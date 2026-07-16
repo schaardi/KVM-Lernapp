@@ -67,6 +67,16 @@
   .fach .fcount{font-family:var(--mono);font-size:12px;color:var(--muted);flex:0 0 auto}
   .fach .minibar{height:5px;border-radius:3px;background:#dde5e8;overflow:hidden;margin-top:6px}
   .fach .minibar .mf{height:100%;background:var(--petrol);border-radius:3px}
+  /* Meister-Struktur: Basis (fix) + Fachrichtung (abwählbar) */
+  .h-label .fixtag{font-family:var(--mono);font-size:9px;font-weight:700;letter-spacing:.08em;color:#fff;background:var(--muted);border-radius:4px;padding:2px 6px;text-transform:uppercase}
+  .h-label .opttag{font-family:var(--mono);font-size:9px;font-weight:700;letter-spacing:.08em;color:#fff;background:#a2497f;border-radius:4px;padding:2px 6px;text-transform:uppercase}
+  .fach.fach-off{opacity:.55;background:#f6f7f8}
+  .fach.fach-off .fname,.fach.fach-off .fsub{color:var(--muted)}
+  .fach .fach-toggle{flex:0 0 auto;width:38px;height:22px;border-radius:12px;background:#c7d0d3;position:relative;cursor:pointer;transition:background .15s}
+  .fach .fach-toggle::after{content:"";position:absolute;top:2px;left:2px;width:18px;height:18px;border-radius:50%;background:#fff;box-shadow:0 1px 2px rgba(0,0,0,.25);transition:left .15s}
+  .fach .fach-toggle.on{background:#a2497f}
+  .fach .fach-toggle.on::after{left:18px}
+  .fach .fach-toggle:focus-visible{outline:2px solid var(--petrol);outline-offset:2px}
 
   .chips{display:flex;flex-wrap:wrap;gap:7px}
   .chip{border:1px solid var(--line-strong);background:#fff;border-radius:18px;padding:7px 12px;font-size:12.5px;font-weight:500;color:var(--ink);display:inline-flex;gap:6px;align-items:center;transition:all .15s}
@@ -363,8 +373,8 @@
   <!-- HOME -->
   <div class="card" id="scrHome">
     <div class="mast">
-      <p class="eyebrow">KVM-Trainer · IHK-Prüfungsvorbereitung</p>
-      <h1>Kraftverkehrsmeister<br>Basisqualifikationen</h1>
+      <p class="eyebrow">Meister-Trainer · IHK-Prüfungsvorbereitung</p>
+      <h1>Industriemeister<br>Basisqualifikationen</h1>
       <p class="sub" id="homeSub"></p>
     </div>
 
@@ -419,8 +429,11 @@
     </div>
 
     <div class="home-section">
-      <p class="h-label">Prüfungsfach</p>
-      <div class="fach-grid" id="fachGrid"></div>
+      <p class="h-label">Basisqualifikationen (Industriemeister) <span class="fixtag">fix</span></p>
+      <div class="fach-grid" id="fachGridBase"></div>
+      <p class="h-label" style="margin-top:16px">Fachrichtung <span class="opttag">abwählbar</span></p>
+      <div class="fach-grid" id="fachGridZusatz"></div>
+      <p class="prog-note" id="zusatzNote" style="text-align:left">Die vier Basisqualifikationen gelten für alle IHK-Meister und sind immer aktiv. Eine Fachrichtung (z. B. Kraftverkehr → Kraftverkehrsmeister) kannst du dazuschalten oder abwählen – sie zählt dann bei „Alle Themen", Fortschritt und Prüfungsreife mit.</p>
     </div>
 
     <div class="home-section" id="subSection">
@@ -641,8 +654,8 @@ function todayIdx(){return Math.floor((Date.now()-new Date().getTimezoneOffset()
 function recordResult(id,correct){var p=pget(id);p.seen++;if(correct){p.correct++;p.box=Math.min(MAX_BOX,p.box+1);}else{p.wrong++;p.box=0;}p.last=correct?1:0;p.due=todayIdx()+SR_INTERVALS[Math.min(p.box,5)];progress[id]=p;saveProgress();}
 /* fällig = schon einmal gesehen und Wiederholungstermin erreicht (Alt-Datensätze ohne due gelten als fällig) */
 function isDue(id){var p=progress[id];if(!p||!p.seen)return false;var d=(p.due==null)?0:p.due;return d<=todayIdx();}
-function dueList(){return ALL.filter(function(q){return isDue(q.id);});}
-function dueCount(){var n=0;for(var i=0;i<ALL.length;i++){if(isDue(ALL[i].id))n++;}return n;}
+function dueList(){return ALL.filter(function(q){return isFachActive(q.f)&&isDue(q.id);});}
+function dueCount(){var n=0;for(var i=0;i<ALL.length;i++){if(isFachActive(ALL[i].f)&&isDue(ALL[i].id))n++;}return n;}
 
 /* ===== portabler Lernstand-Code (geräteübergreifend, ohne Server) ===== */
 var CODE_V=1;
@@ -727,15 +740,31 @@ function qForScope(f,sub){return ALL.filter(function(q){return q.f===f && (sub==
 function subsOfFach(f){var s=[];qForFach(f).forEach(function(q){if(s.indexOf(q.sub)<0)s.push(q.sub);});s.sort(function(a,b){return SUB_ORDER.indexOf(a)-SUB_ORDER.indexOf(b);});return s;}
 function fachCounts(){var c={};ALL.forEach(function(q){c[q.f]=(c[q.f]||0)+1;});return c;}
 
+/* ===== Meister-Struktur: Basisqualifikationen (fix) + Fachrichtungen (abwählbar) ===== */
+var BASE_FACHER=[1,2,3,4];        // Industriemeister-Basisqualifikationen – immer aktiv
+var ZUSATZ_FACHER=[5];            // Fachrichtungen (z. B. Kraftverkehr) – an-/abwählbar
+var LS_ZUSATZ='kvm_zusatz_v1';
+var zusatzActive=(function(){try{var r=localStorage.getItem(LS_ZUSATZ);return r?JSON.parse(r):{};}catch(e){return {};}})();
+function saveZusatz(){try{localStorage.setItem(LS_ZUSATZ,JSON.stringify(zusatzActive));}catch(e){}}
+function isFachActive(f){ if(BASE_FACHER.indexOf(f)>=0)return true; return zusatzActive[f]!==false; } // Zusatz standardmäßig an
+function activeFacher(){ return [1,2,3,4,5].filter(function(f){return (fachCountsCache[f]||0)>0 && isFachActive(f);}); }
+function activeQuestions(){ return ALL.filter(function(q){return isFachActive(q.f);}); }
+var fachCountsCache=fachCounts();
+function toggleZusatz(f){
+  zusatzActive[f]=!isFachActive(f); saveZusatz();
+  if(!isFachActive(f)&&state.fach===f){state.fach=1;state.sub='*';}
+  renderProgress();renderFachGrid();renderSubChips();updateModeCards();
+}
+
 /* ===== STATE ===== */
 var ROUND_LEN=20, SIM_LEN=30, SIM_SECONDS=60*60;
 var state={fach:1,sub:'*',mode:null,pool:[],shuffledOpts:[],idx:0,results:[],wrong:[],answered:false,revealed:false,timerId:null,timeLeft:0};
 
 /* ===== HOME rendering ===== */
 function renderProgress(){
-  var counts=fachCounts(); var total=ALL.length;
+  var aq=activeQuestions(); var total=aq.length;
   var mastered=0,seen=0;
-  ALL.forEach(function(q){var p=progress[q.id];if(p&&p.seen>0){seen++;if(p.box>=MASTER_BOX)mastered++;}});
+  aq.forEach(function(q){var p=progress[q.id];if(p&&p.seen>0){seen++;if(p.box>=MASTER_BOX)mastered++;}});
   $("pMastered").textContent=mastered;$("pSeen").textContent=seen;$("pOpen").textContent=total-seen;
   $("pFill").style.width=(total?Math.round(mastered/total*100):0)+"%";
   var storageOn=true;try{localStorage.setItem('__t','1');localStorage.removeItem('__t');}catch(e){storageOn=false;}
@@ -746,11 +775,11 @@ function renderProgress(){
 /* ===== Prüfungsreife-Radar (#6) ===== */
 var FACH_COLORS={1:"#0C6C78",2:"#D9820A",3:"#2C8A4E",4:"#3f6fb5",5:"#a2497f"};
 function fachReife(f){var qs=qForFach(f);if(!qs.length)return null;var s=0;qs.forEach(function(q){var p=progress[q.id];var box=p?Math.min(p.box,MASTER_BOX):0;s+=box/MASTER_BOX;});return s/qs.length;}
-function overallReife(){var tot=0,acc=0;[1,2,3,4,5].forEach(function(f){var qs=qForFach(f);if(!qs.length)return;tot+=qs.length;acc+=fachReife(f)*qs.length;});return tot?acc/tot:0;}
+function overallReife(){var tot=0,acc=0;activeFacher().forEach(function(f){var qs=qForFach(f);if(!qs.length)return;tot+=qs.length;acc+=fachReife(f)*qs.length;});return tot?acc/tot:0;}
 function renderReadiness(){
   var chart=$("readyChart"),legend=$("readyLegend");if(!chart)return;
-  var facts=[1,2,3,4,5].map(function(f){return {f:f,r:fachReife(f),n:qForFach(f).length};});
-  var cx=110,cy=105,R=80,N=5;
+  var facts=activeFacher().map(function(f){return {f:f,r:fachReife(f),n:qForFach(f).length};});
+  var cx=110,cy=105,R=80,N=facts.length;
   function pt(i,rad){var a=-Math.PI/2+i*2*Math.PI/N;return [cx+Math.cos(a)*rad, cy+Math.sin(a)*rad];}
   var svg='<svg viewBox="0 0 220 210" width="100%" style="max-width:250px" role="img" aria-label="Prüfungsreife je Fach">';
   [0.25,0.5,0.75,1].forEach(function(g){var pts=[];for(var i=0;i<N;i++){var p=pt(i,R*g);pts.push(p[0].toFixed(1)+","+p[1].toFixed(1));}svg+='<polygon points="'+pts.join(" ")+'" fill="none" stroke="var(--line)" stroke-width="1"/>';});
@@ -767,23 +796,36 @@ function renderReadiness(){
   if(ov>=80)note="Sehr gut aufgestellt – nahe an der Prüfungsreife. Halte schwächere Fächer mit „Heute fällig“ warm.";
   else if(ov>=55)note="Solide Basis. Konzentriere dich auf die Fächer mit der geringsten Reife (kleinste Zacken im Netz).";
   else if(ov>=25)note="Guter Anfang. Regelmäßiges Wiederholen („Heute fällig“) bringt die Reife am schnellsten nach oben.";
-  else note="Noch am Anfang – jede Runde zählt. Ziel: alle fünf Zacken möglichst weit nach außen.";
+  else note="Noch am Anfang – jede Runde zählt. Ziel: alle Zacken möglichst weit nach außen.";
   $("readyNote").textContent="Reife = Anteil gemeisterter Fragen je Fach (gewichtet). "+note;
 }
 
 function renderFachGrid(){
-  var counts=fachCounts(); var grid=$("fachGrid"); grid.innerHTML="";
-  [1,2,3,4,5].forEach(function(f){
-    var n=counts[f]||0;
-    var b=document.createElement("button"); b.className="fach"+(state.fach===f?" active":"");
+  fachCountsCache=fachCounts();
+  renderFachGroup($("fachGridBase"), BASE_FACHER, false);
+  renderFachGroup($("fachGridZusatz"), ZUSATZ_FACHER, true);
+}
+function renderFachGroup(grid, fachs, isZusatz){
+  if(!grid)return; grid.innerHTML="";
+  fachs.forEach(function(f){
+    var n=fachCountsCache[f]||0;
+    var active=isFachActive(f);
+    var b=document.createElement("button"); b.className="fach"+(state.fach===f?" active":"")+(isZusatz&&!active?" fach-off":"");
     if(n===0)b.disabled=true;
     var mastered=0;qForFach(f).forEach(function(q){var p=progress[q.id];if(p&&p.box>=MASTER_BOX)mastered++;});
     var pct=n?Math.round(mastered/n*100):0;
-    b.innerHTML='<span class="fnum">'+f+'</span><span class="fmeta"><span class="fname">'+FACH[f]+'</span>'+
+    var toggle=isZusatz?'<span class="fach-toggle'+(active?" on":"")+'" role="switch" tabindex="0" aria-checked="'+active+'" aria-label="Fachrichtung '+FACH_KURZ[f]+' an/aus"></span>':'';
+    b.innerHTML='<span class="fnum" style="background:'+FACH_COLORS[f]+';color:#fff">'+f+'</span><span class="fmeta"><span class="fname">'+FACH[f]+'</span>'+
       '<span class="fsub">'+(n?FACH_KURZ[f]+' · '+mastered+'/'+n+' gemeistert':'in Vorbereitung')+'</span>'+
       (n?'<span class="minibar"><span class="mf" style="width:'+pct+'%"></span></span>':'')+
-      '</span><span class="fcount">'+(n?n:'–')+'</span>';
-    if(n>0)b.addEventListener("click",function(){state.fach=f;state.sub='*';renderFachGrid();renderSubChips();updateModeCards();});
+      '</span>'+toggle+'<span class="fcount">'+(n?n:'–')+'</span>';
+    if(isZusatz){var tg=b.querySelector('.fach-toggle');
+      if(tg){tg.addEventListener("click",function(ev){ev.stopPropagation();toggleZusatz(f);});
+        tg.addEventListener("keydown",function(ev){if(ev.key===" "||ev.key==="Enter"){ev.preventDefault();ev.stopPropagation();toggleZusatz(f);}});}}
+    if(n>0)b.addEventListener("click",function(){
+      if(isZusatz&&!isFachActive(f)){toggleZusatz(f);return;}
+      state.fach=f;state.sub='*';renderFachGrid();renderSubChips();updateModeCards();
+    });
     grid.appendChild(b);
   });
 }
@@ -808,7 +850,8 @@ function updateModeCards(){
   var scopeN=qForScope(state.fach,state.sub).length;
   $("trainScope").textContent=scopeLabel();
   $("trainDesc").textContent=Math.min(ROUND_LEN,scopeN)+" Fragen aus „"+scopeLabel()+"“ mit sofortiger Auswertung und Erklärung. Neue und zuletzt falsche Fragen werden bevorzugt.";
-  $("mixedDesc").textContent=Math.min(ROUND_LEN,ALL.length)+" gemischte Fragen aus allen Fächern und Themen · unabhängig von der Auswahl oben · neue und zuletzt falsche zuerst.";
+  var aqN=activeQuestions().length;
+  $("mixedDesc").textContent=Math.min(ROUND_LEN,aqN)+" gemischte Fragen aus allen gewählten Fächern · Basisqualifikationen + aktive Fachrichtung(en) · neue und zuletzt falsche zuerst.";
   var weakN=countWeak();
   $("weakDesc").textContent=weakN>0?("Gezielt üben: "+Math.min(ROUND_LEN,weakN)+" von "+weakN+" noch nicht gemeisterten Fragen in „"+scopeLabel()+"“."):"Super – in diesem Bereich ist aktuell alles gemeistert. Wähle einen anderen Bereich oder starte ein normales Training.";
   $("btnWeak").disabled=weakN===0;
@@ -822,7 +865,7 @@ function updateModeCards(){
 }
 function updateDueCard(){
   var dN=dueCount();
-  var freshN=0;for(var i=0;i<ALL.length;i++){var p=progress[ALL[i].id];if(!p||!p.seen)freshN++;}
+  var freshN=0;for(var i=0;i<ALL.length;i++){if(!isFachActive(ALL[i].f))continue;var p=progress[ALL[i].id];if(!p||!p.seen)freshN++;}
   var badge=$("dueBadge");if(badge){badge.hidden=dN===0;badge.textContent=dN;}
   var desc=$("dueDesc");
   if(desc){
@@ -850,7 +893,8 @@ function startRound(mode){
     var cand=qForScope(state.fach,state.sub);
     state.pool=shuffle(weightedPick(cand,Math.min(ROUND_LEN,cand.length)));
   }else if(mode==='all'){
-    state.pool=shuffle(weightedPick(ALL,Math.min(ROUND_LEN,ALL.length)));
+    var aq=activeQuestions();
+    state.pool=shuffle(weightedPick(aq,Math.min(ROUND_LEN,aq.length)));
   }else if(mode==='due'){
     var dl=dueList();
     if(dl.length<ROUND_LEN){var fresh=ALL.filter(function(q){var p=progress[q.id];return !p||!p.seen;});dl=dl.concat(weightedPick(fresh,ROUND_LEN-dl.length));}
@@ -1095,11 +1139,12 @@ document.addEventListener("keydown",function(ev){
 
 /* ===== init ===== */
 (function init(){
-  var counts=fachCounts(); var done=Object.keys(counts).length; var total=ALL.length;
-  $("homeSub").innerHTML="<b>"+total+" Wissensfragen</b> in "+done+" von 5 Fächern · Fahrschul-Prinzip mit Fortschrittsspeicherung"+(done<5?" · weitere Fächer folgen":"");
+  var total=ALL.length;
+  var zusatzN=ZUSATZ_FACHER.filter(function(f){return (fachCountsCache[f]||0)>0;}).length;
+  $("homeSub").innerHTML="<b>"+total+" Wissensfragen</b> · 4 Basisqualifikationen (fix) + "+zusatzN+" Fachrichtung"+(zusatzN===1?"":"en")+" (wählbar) · Fahrschul-Prinzip mit Fortschrittsspeicherung";
   $("footerNote").innerHTML="Übungsfragen eigenständig formuliert, orientiert am DIHK-Rahmenplan und an Krause/Krause (Kiehl). Rechtsstände und veränderliche Werte (z. B. Beiträge) Stand 2025, ohne Gewähr.";
-  // default to first fach that has questions
-  for(var f=1;f<=5;f++){if((counts[f]||0)>0){state.fach=f;break;}}
+  // Standard-Fach: erste aktive Basisqualifikation
+  state.fach=1;
   show("scrHome");
 })();
 
