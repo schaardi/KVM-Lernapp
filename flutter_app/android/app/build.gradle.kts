@@ -38,6 +38,15 @@ android {
     }
 
     signingConfigs {
+        // Fester Debug-Keystore -> stabiler SHA-1 (nötig, damit Google-Login auf
+        // der Sideload-APK zuverlässig funktioniert). Ein Debug-Keystore ist kein
+        // Geheimnis (Standard-Passwort „android") und darf im Repo liegen.
+        getByName("debug") {
+            storeFile = file("kvm-debug.keystore")
+            storePassword = "android"
+            keyAlias = "androiddebugkey"
+            keyPassword = "android"
+        }
         if (hasReleaseKeystore) {
             create("release") {
                 keyAlias = keystoreProperties["keyAlias"] as String
