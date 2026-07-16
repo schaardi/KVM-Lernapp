@@ -75,15 +75,17 @@ jobs:
         working-directory: flutter_app
         run: flutter pub get
 
-      - name: AdMob-Plugin für Gradle 9 anpassen
+      - name: AdMob-Plugin für Gradle 9 / compileSdk anpassen
         if: steps.guard.outputs.ready == 'true'
         run: |
-          # google_mobile_ads (5.3.1) nutzt in android/build.gradle das in
-          # Gradle 9 entfernte eager `configurations.all`. Im pub-cache patchen.
+          # google_mobile_ads (5.3.1) im pub-cache patchen: (1) in Gradle 9
+          # entferntes eager `configurations.all`; (2) compileSdk 34 -> 36
+          # (Abhängigkeit webview_flutter_android verlangt 36).
           root="${PUB_CACHE:-$HOME/.pub-cache}"
           n=0
           for f in $(find "$root" -path '*google_mobile_ads*/android/build.gradle' 2>/dev/null); do
             sed -i 's/configurations\.all)/configurations)/g' "$f"
+            sed -i -E 's/compileSdkVersion[[:space:]]+34/compileSdkVersion 36/' "$f"
             echo "patched: $f"
             n=$((n+1))
           done
