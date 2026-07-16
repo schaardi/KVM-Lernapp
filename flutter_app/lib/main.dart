@@ -8,6 +8,8 @@ import 'services/selection_service.dart';
 import 'services/voice_service.dart';
 import 'services/auth_service.dart';
 import 'services/sync_service.dart';
+import 'services/premium_service.dart';
+import 'services/ad_service.dart';
 import 'screens/home_screen.dart';
 import 'screens/login_screen.dart';
 
@@ -103,6 +105,9 @@ class _BootState extends State<_Boot> {
     await SelectionService.instance.load();
     await ProgressService.instance.load();
     await VoiceService.instance.init();
+    // Werbefrei-Status zuerst (bestimmt, ob Werbung geladen wird), dann Ads.
+    await PremiumService.instance.init();
+    await AdService.instance.init();
     // Cloud-Sync anbinden; bei bestehender Sitzung Stand zusammenführen.
     if (Config.authEnabled && AuthService.instance.ready) {
       SyncService.instance.attach();

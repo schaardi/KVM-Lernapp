@@ -123,7 +123,9 @@ jobs:
             --build-name=${{ steps.ver.outputs.name }} \
             --dart-define=SUPABASE_URL="${{ secrets.SUPABASE_URL }}" \
             --dart-define=SUPABASE_ANON_KEY="${{ secrets.SUPABASE_ANON_KEY }}" \
-            --dart-define=GOOGLE_WEB_CLIENT_ID="${{ secrets.GOOGLE_WEB_CLIENT_ID }}"
+            --dart-define=GOOGLE_WEB_CLIENT_ID="${{ secrets.GOOGLE_WEB_CLIENT_ID }}" \
+            --dart-define=ADMOB_INTERSTITIAL_ID="${{ secrets.ADMOB_INTERSTITIAL_ID }}" \
+            --dart-define=PREMIUM_PRODUCT_ID="${{ secrets.PREMIUM_PRODUCT_ID }}"
 
       - name: AAB als Artefakt sichern (für die erste manuelle Play-Veröffentlichung)
         if: steps.guard.outputs.ready == 'true'

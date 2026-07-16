@@ -5,6 +5,7 @@ import '../models.dart';
 import '../services/progress_service.dart';
 import '../services/round_builder.dart';
 import '../services/voice_service.dart';
+import '../services/ad_service.dart';
 import 'result_screen.dart';
 
 class QuizScreen extends StatefulWidget {
@@ -79,6 +80,7 @@ class _QuizScreenState extends State<QuizScreen> {
       if (!correct) _wrong.add(_q);
     });
     ProgressService.instance.record(_q.id, correct);
+    AdService.instance.onAnswered();
     if (_voice) _speakFeedback(correct);
   }
 
@@ -114,6 +116,9 @@ class _QuizScreenState extends State<QuizScreen> {
 
   void _next() {
     VoiceService.instance.stop();
+    // An diesem natürlichen Übergang ggf. eine Interstitial-Werbung zeigen
+    // (alle 10 Fragen, entfällt für Werbefrei-Nutzer).
+    AdService.instance.maybeShowInterstitial();
     if (_idx == widget.pool.length - 1) {
       _finish();
     } else {

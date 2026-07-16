@@ -30,4 +30,30 @@ class Config {
       supabaseUrl.isNotEmpty &&
       supabaseAnonKey.isNotEmpty &&
       googleWebClientId.isNotEmpty;
+
+  // ---- Monetarisierung (Freemium: Werbung + Werbefrei-Abo) ----
+
+  static const String _admobInterstitialId =
+      String.fromEnvironment('ADMOB_INTERSTITIAL_ID');
+  static const String _premiumProductId =
+      String.fromEnvironment('PREMIUM_PRODUCT_ID');
+  static const String _monetizationEnabled =
+      String.fromEnvironment('MONETIZATION_ENABLED');
+
+  /// Interstitial-Ad-Unit. Fällt auf Googles offizielle TEST-Unit zurück
+  /// (zeigt Test-Anzeigen, kein echtes Geld) – vor der Veröffentlichung per
+  /// --dart-define/Secret durch die echte Ad-Unit ersetzen.
+  static String get admobInterstitialId => _admobInterstitialId.isNotEmpty
+      ? _admobInterstitialId
+      : 'ca-app-pub-3940256099942544/1033173712';
+
+  /// Produkt-ID des Werbefrei-Abos in der Google Play Console.
+  static String get premiumProductId =>
+      _premiumProductId.isNotEmpty ? _premiumProductId : 'premium_monthly';
+
+  /// Freemium an/aus. Per Default aktiv; mit
+  /// `--dart-define=MONETIZATION_ENABLED=false` komplett abschaltbar
+  /// (keine Werbung, kein Abo-UI – z. B. für eine reine Testversion).
+  static bool get monetizationEnabled =>
+      _monetizationEnabled.toLowerCase() != 'false';
 }

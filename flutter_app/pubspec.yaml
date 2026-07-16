@@ -18,6 +18,11 @@ dependencies:
   # --dart-define gesetzt sind (siehe SUPABASE_SETUP.md). Ohne Config: Offline-App.
   supabase_flutter: ^2.8.0
   google_sign_in: ^6.2.1
+  # Monetarisierung (Freemium): Interstitial-Werbung alle 10 Fragen; das Abo
+  # (5,99 €/Monat) schaltet werbefrei. Aktiv nur, wenn MONETIZATION_ENABLED
+  # nicht auf false steht. Ohne echte AdMob-/Play-IDs laufen Test-Anzeigen.
+  google_mobile_ads: ^5.1.0
+  in_app_purchase: ^3.1.0
 
 dev_dependencies:
   flutter_lints: ^4.0.0
