@@ -3,6 +3,8 @@ android/key.properties
 **/*.jks
 **/*.keystore
 upload-keystore.jks
+# Ausnahme: fester Debug-Keystore (kein Geheimnis) für stabilen SHA-1
+!android/app/kvm-debug.keystore
 
 # Miscellaneous
 *.class
