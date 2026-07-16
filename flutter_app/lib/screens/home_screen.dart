@@ -1,12 +1,15 @@
 import 'package:flutter/material.dart';
 import '../constants.dart';
+import '../config.dart';
 import '../services/data_service.dart';
 import '../services/progress_service.dart';
+import '../services/selection_service.dart';
 import '../services/round_builder.dart';
 import '../widgets/radar_chart.dart';
 import '../widgets/formula_book.dart';
 import '../widgets/calculator.dart';
 import '../widgets/drawing_pad.dart';
+import '../widgets/account_sheet.dart';
 import 'quiz_screen.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -45,6 +48,18 @@ class _HomeScreenState extends State<HomeScreen> {
       builder: (_) => QuizScreen(mode: mode, pool: pool, fach: _fach, sub: _sub),
     ));
     setState(() {}); // Fortschritt aktualisieren nach der Runde
+  }
+
+  /// Fachrichtung dazu-/abschalten. Wird die gerade gewählte Fachrichtung
+  /// abgeschaltet, fällt die Auswahl auf ein Basisfach zurück.
+  void _toggleZusatz(int f) {
+    setState(() {
+      SelectionService.instance.toggle(f);
+      if (!SelectionService.instance.isFachActive(f) && _fach == f) {
+        _fach = 1;
+        _sub = '*';
+      }
+    });
   }
 
   void _openTool(String title, Widget child) {
@@ -93,14 +108,23 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     final data = DataService.instance;
     final prog = ProgressService.instance;
-    final total = data.questions.length;
+    final counts = data.fachCounts();
+    final totalActive = data.activeQuestions().length;
     final mastered = prog.masteredCount();
     final seen = prog.seenCount();
     final dueN = prog.dueCount();
-    final counts = data.fachCounts();
     final subs = data.subsOfFach(_fach);
-    final reifeVals = [1, 2, 3, 4, 5].map((f) => prog.fachReife(f)).toList();
+
+    // Dynamisches Radar: eine Achse je aktivem Fach (4 oder 5).
+    final actFacher = data.activeFacher();
+    final reifeVals = actFacher.map((f) => prog.fachReife(f)).toList();
     final overall = (prog.overallReife() * 100).round();
+
+    // Untertitel-Kennzahlen: feste Basis vs. wählbare Fachrichtungen (mit Fragen).
+    final baseWithQ =
+        SelectionService.baseFacher.where((f) => (counts[f] ?? 0) > 0).length;
+    final zusatzWithQ =
+        SelectionService.zusatzFacher.where((f) => (counts[f] ?? 0) > 0).length;
 
     return Scaffold(
       body: SafeArea(
@@ -108,20 +132,7 @@ class _HomeScreenState extends State<HomeScreen> {
         child: ListView(
           padding: const EdgeInsets.fromLTRB(16, 12, 16, 96),
           children: [
-            Align(
-              alignment: Alignment.centerLeft,
-              child: TextButton.icon(
-                onPressed: () => Navigator.of(context).maybePop(),
-                style: TextButton.styleFrom(
-                    foregroundColor: kMuted,
-                    padding: const EdgeInsets.symmetric(horizontal: 6),
-                    minimumSize: const Size(0, 36)),
-                icon: const Icon(Icons.chevron_left, size: 20),
-                label: const Text('Kategorien'),
-              ),
-            ),
-            const SizedBox(height: 2),
-            _hero(),
+            _hero(totalActive, baseWithQ, zusatzWithQ),
             const SizedBox(height: 22),
 
             // Fortschritt
@@ -141,13 +152,13 @@ class _HomeScreenState extends State<HomeScreen> {
             Row(children: [
               _stat(mastered.toString(), 'Gemeistert', kOk),
               _stat(seen.toString(), 'Gesehen', kPetrol),
-              _stat((total - seen).toString(), 'Offen', kMuted),
+              _stat((totalActive - seen).toString(), 'Offen', kMuted),
             ]),
             const SizedBox(height: 12),
             ClipRRect(
               borderRadius: BorderRadius.circular(999),
               child: LinearProgressIndicator(
-                value: total == 0 ? 0 : mastered / total,
+                value: totalActive == 0 ? 0 : mastered / totalActive,
                 minHeight: 10,
                 backgroundColor: kLine,
                 color: kPetrol,
@@ -155,20 +166,24 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
             const SizedBox(height: 24),
 
-            // Prüfungsreife-Radar
+            // Prüfungsreife-Radar (dynamische Achsenzahl)
             _section('Prüfungsreife', trailing: _pill('$overall %', kPetrol)),
             _softCard(
               child: Column(children: [
-                RadarChart(values: reifeVals),
+                RadarChart(facher: actFacher, values: reifeVals),
+                const SizedBox(height: 6),
+                const Text('Je weiter außen, desto sicherer – Ziel: alle Zacken am Rand.',
+                    textAlign: TextAlign.center,
+                    style: TextStyle(fontSize: 11.5, color: kMuted)),
                 const SizedBox(height: 8),
-                for (var f = 1; f <= 5; f++)
+                for (var i = 0; i < actFacher.length; i++)
                   Padding(
                     padding: const EdgeInsets.symmetric(vertical: 3),
                     child: Row(children: [
-                      Container(width: 10, height: 10, decoration: BoxDecoration(color: kFachColor[f], shape: BoxShape.circle)),
+                      Container(width: 10, height: 10, decoration: BoxDecoration(color: kFachColor[actFacher[i]], shape: BoxShape.circle)),
                       const SizedBox(width: 10),
-                      Expanded(child: Text('$f. ${kFachKurz[f]}', style: const TextStyle(fontSize: 13, color: kInkSoft))),
-                      Text('${(reifeVals[f - 1] * 100).round()} %',
+                      Expanded(child: Text('${actFacher[i]}. ${kFachKurz[actFacher[i]]}', style: const TextStyle(fontSize: 13, color: kInkSoft))),
+                      Text('${(reifeVals[i] * 100).round()} %',
                           style: const TextStyle(fontWeight: FontWeight.w700, color: kMuted, fontSize: 13)),
                     ]),
                   ),
@@ -176,10 +191,24 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
             const SizedBox(height: 24),
 
-            // Fach
-            _section('Prüfungsfach'),
-            for (var f = 1; f <= 5; f++)
+            // Fächer – zwei Gruppen: feste Basis + wählbare Fachrichtung
+            _groupHeader('Basisqualifikationen (Industriemeister)', 'fix', kPetrol),
+            for (final f in SelectionService.baseFacher)
               _fachTile(f, counts[f] ?? 0, prog),
+            const SizedBox(height: 8),
+            _groupHeader('Fachrichtung', 'abwählbar', kFachColor[5]!),
+            for (final f in SelectionService.zusatzFacher)
+              _zusatzTile(f, counts[f] ?? 0, prog),
+            Padding(
+              padding: const EdgeInsets.only(top: 2, left: 2, bottom: 4, right: 2),
+              child: Text(
+                'Die vier Basisqualifikationen gelten für alle IHK-Meister und sind '
+                'immer aktiv. Eine Fachrichtung (z. B. Kraftverkehr → '
+                'Kraftverkehrsmeister) kannst du dazuschalten oder abwählen – sie '
+                'zählt dann bei „Alle Themen", Fortschritt und Prüfungsreife mit.',
+                style: const TextStyle(fontSize: 12, color: kMuted, height: 1.35),
+              ),
+            ),
             const SizedBox(height: 20),
 
             // Themenbereich
@@ -201,7 +230,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 'Bis zu $kRoundLen Fragen aus „${_scopeLabel()}" mit sofortiger Auswertung.',
                 kPetrol, Icons.bolt, () => _start(RoundMode.train)),
             _modeTile('Alle Themen',
-                'Gemischte Fragen quer durch alle fünf Fächer.',
+                'Gemischte Fragen aus allen gewählten Fächern – Basis + aktive Fachrichtung.',
                 kPetrolDeep, Icons.shuffle, () => _start(RoundMode.all)),
             _modeTile('Schwächen gezielt',
                 'Fragen, die du noch nicht sicher beherrschst.',
@@ -269,7 +298,10 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 
   // ---- Kopfbereich / Branding ----
-  Widget _hero() {
+  Widget _hero(int totalActive, int baseWithQ, int zusatzWithQ) {
+    final zusatzText = zusatzWithQ == 1
+        ? '1 Fachrichtung (wählbar)'
+        : '$zusatzWithQ Fachrichtungen (wählbar)';
     return Container(
       padding: const EdgeInsets.fromLTRB(18, 18, 18, 20),
       decoration: BoxDecoration(
@@ -285,20 +317,25 @@ class _HomeScreenState extends State<HomeScreen> {
         Row(children: [
           _monogram(),
           const SizedBox(width: 12),
-          Column(crossAxisAlignment: CrossAxisAlignment.start, children: const [
-            Text('IHK-FORTBILDUNGSPRÜFUNG',
+          const Expanded(
+            child: Text('MEISTER-TRAINER · IHK-PRÜFUNGSVORBEREITUNG',
                 style: TextStyle(color: kPetrol, fontWeight: FontWeight.w800,
-                    fontSize: 10.5, letterSpacing: 1.4)),
-            SizedBox(height: 2),
-            Text('KVM-Trainer',
-                style: TextStyle(fontSize: 22, fontWeight: FontWeight.w800,
-                    color: kInk, height: 1.0)),
-          ]),
+                    fontSize: 10.5, letterSpacing: 1.2, height: 1.3)),
+          ),
+          if (Config.authEnabled)
+            IconButton(
+              tooltip: 'Konto & Synchronisierung',
+              onPressed: () => showAccountSheet(context),
+              icon: const Icon(Icons.account_circle_outlined, color: kPetrol),
+            ),
         ]),
-        const SizedBox(height: 16),
-        const Text('Geprüfte/r Kraftverkehrsmeister/-in',
-            style: TextStyle(fontSize: 25, fontWeight: FontWeight.w800,
-                height: 1.12, color: kInk)),
+        const SizedBox(height: 14),
+        const Text('Industriemeister\nBasisqualifikationen',
+            style: TextStyle(fontSize: 24, fontWeight: FontWeight.w800,
+                height: 1.14, color: kInk)),
+        const SizedBox(height: 8),
+        Text('$totalActive Wissensfragen · $baseWithQ Basisqualifikationen (fix) + $zusatzText',
+            style: const TextStyle(fontSize: 12.5, color: kMuted, height: 1.35)),
       ]),
     );
   }
@@ -317,7 +354,7 @@ class _HomeScreenState extends State<HomeScreen> {
           BoxShadow(color: Color(0x330C6C78), blurRadius: 12, offset: Offset(0, 5)),
         ],
       ),
-      child: const Icon(Icons.local_shipping_outlined, color: Colors.white, size: 26),
+      child: const Icon(Icons.workspace_premium, color: Colors.white, size: 26),
     );
   }
 
@@ -387,6 +424,29 @@ class _HomeScreenState extends State<HomeScreen> {
         ),
       );
 
+  /// Gruppen-Überschrift mit Status-Tag („fix" / „abwählbar").
+  Widget _groupHeader(String title, String tag, Color tagColor) => Padding(
+        padding: const EdgeInsets.only(bottom: 10, left: 2, top: 2),
+        child: Row(children: [
+          Flexible(
+            child: Text(title,
+                style: const TextStyle(
+                    fontSize: 15, fontWeight: FontWeight.w800, color: kInk)),
+          ),
+          const SizedBox(width: 8),
+          Container(
+            padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 2),
+            decoration: BoxDecoration(
+                color: tagColor.withValues(alpha: 0.14),
+                borderRadius: BorderRadius.circular(999)),
+            child: Text(tag,
+                style: TextStyle(
+                    color: tagColor, fontSize: 10.5, fontWeight: FontWeight.w800,
+                    letterSpacing: 0.3)),
+          ),
+        ]),
+      );
+
   Widget _pill(String text, Color color) => Container(
         padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
         decoration: BoxDecoration(
@@ -424,6 +484,7 @@ class _HomeScreenState extends State<HomeScreen> {
         ),
       );
 
+  /// Feste Basis-Kachel: immer aktiv, kein Schalter, antippen wählt sie.
   Widget _fachTile(int f, int n, ProgressService prog) {
     final mastered = prog.fachMastered(f);
     final active = _fach == f;
@@ -446,12 +507,7 @@ class _HomeScreenState extends State<HomeScreen> {
           child: Padding(
             padding: const EdgeInsets.all(13),
             child: Row(children: [
-              Container(
-                width: 38, height: 38,
-                alignment: Alignment.center,
-                decoration: BoxDecoration(color: kFachColor[f], borderRadius: BorderRadius.circular(11)),
-                child: Text('$f', style: const TextStyle(color: Colors.white, fontWeight: FontWeight.w800, fontSize: 16)),
-              ),
+              _fachBadge(f),
               const SizedBox(width: 12),
               Expanded(
                 child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
@@ -470,6 +526,71 @@ class _HomeScreenState extends State<HomeScreen> {
       ),
     );
   }
+
+  /// Fachrichtungs-Kachel mit Schalter. Abgewählt → gedämpft; Antippen der
+  /// Kachel (nicht des Schalters) schaltet sie wieder an.
+  Widget _zusatzTile(int f, int n, ProgressService prog) {
+    final on = SelectionService.instance.isFachActive(f);
+    final active = on && _fach == f;
+    final mastered = prog.fachMastered(f);
+    return Container(
+      margin: const EdgeInsets.only(bottom: 10),
+      decoration: BoxDecoration(
+        color: active ? kPetrolSoft : kPaper,
+        borderRadius: BorderRadius.circular(kRadius),
+        border: Border.all(color: active ? kPetrol.withValues(alpha: 0.5) : kLine),
+        boxShadow: active ? null : kSoftShadow,
+      ),
+      child: Material(
+        color: Colors.transparent,
+        child: InkWell(
+          onTap: n == 0
+              ? null
+              : () {
+                  if (!on) {
+                    _toggleZusatz(f); // gedämpfte Kachel wieder anschalten
+                  } else {
+                    setState(() {
+                      _fach = f;
+                      _sub = '*';
+                    });
+                  }
+                },
+          borderRadius: BorderRadius.circular(kRadius),
+          child: Opacity(
+            opacity: on ? 1 : 0.55,
+            child: Padding(
+              padding: const EdgeInsets.all(13),
+              child: Row(children: [
+                _fachBadge(f),
+                const SizedBox(width: 12),
+                Expanded(
+                  child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+                    Text(kFach[f]!, style: const TextStyle(fontWeight: FontWeight.w700, color: kInk, fontSize: 14.5)),
+                    const SizedBox(height: 1),
+                    Text(n > 0 ? '${kFachKurz[f]} · $mastered/$n gemeistert' : 'in Vorbereitung',
+                        style: const TextStyle(fontSize: 12, color: kMuted)),
+                  ]),
+                ),
+                Switch(
+                  value: on,
+                  activeColor: kFachColor[f],
+                  onChanged: n == 0 ? null : (_) => _toggleZusatz(f),
+                ),
+              ]),
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+
+  Widget _fachBadge(int f) => Container(
+        width: 38, height: 38,
+        alignment: Alignment.center,
+        decoration: BoxDecoration(color: kFachColor[f], borderRadius: BorderRadius.circular(11)),
+        child: Text('$f', style: const TextStyle(color: Colors.white, fontWeight: FontWeight.w800, fontSize: 16)),
+      );
 
   Widget _chip(String label, String value) {
     final n = DataService.instance.forScope(_fach, value).length;
@@ -517,7 +638,9 @@ class _HomeScreenState extends State<HomeScreen> {
               Expanded(
                 child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
                   Row(children: [
-                    Text(title, style: const TextStyle(fontWeight: FontWeight.w700, fontSize: 16, color: kInk)),
+                    Flexible(
+                      child: Text(title, style: const TextStyle(fontWeight: FontWeight.w700, fontSize: 16, color: kInk)),
+                    ),
                     if (badge != null) ...[
                       const SizedBox(width: 8),
                       Container(

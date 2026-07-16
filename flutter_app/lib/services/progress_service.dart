@@ -104,10 +104,10 @@ class ProgressService {
     _save();
   }
 
-  // ---- Kennzahlen ----
+  // ---- Kennzahlen (nur über die aktiven Fächer: Basis + gewählte Fachrichtungen) ----
   int dueCount() {
     var n = 0;
-    for (final q in DataService.instance.questions) {
+    for (final q in DataService.instance.activeQuestions()) {
       if (isDue(q.id)) n++;
     }
     return n;
@@ -115,7 +115,7 @@ class ProgressService {
 
   int freshCount() {
     var n = 0;
-    for (final q in DataService.instance.questions) {
+    for (final q in DataService.instance.activeQuestions()) {
       final p = _map[q.id];
       if (p == null || p.seen == 0) n++;
     }
@@ -124,7 +124,7 @@ class ProgressService {
 
   int masteredCount() {
     var n = 0;
-    for (final q in DataService.instance.questions) {
+    for (final q in DataService.instance.activeQuestions()) {
       final p = _map[q.id];
       if (p != null && p.seen > 0 && p.box >= kMasterBox) n++;
     }
@@ -133,7 +133,7 @@ class ProgressService {
 
   int seenCount() {
     var n = 0;
-    for (final q in DataService.instance.questions) {
+    for (final q in DataService.instance.activeQuestions()) {
       final p = _map[q.id];
       if (p != null && p.seen > 0) n++;
     }
@@ -155,7 +155,7 @@ class ProgressService {
 
   double overallReife() {
     var tot = 0, acc = 0.0;
-    for (final f in [1, 2, 3, 4, 5]) {
+    for (final f in DataService.instance.activeFacher()) {
       final n = DataService.instance.forFach(f).length;
       if (n == 0) continue;
       tot += n;
