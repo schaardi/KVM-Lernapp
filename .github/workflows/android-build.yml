@@ -68,14 +68,18 @@ jobs:
           flutter build apk --debug \
             --dart-define=SUPABASE_URL="${{ secrets.SUPABASE_URL }}" \
             --dart-define=SUPABASE_ANON_KEY="${{ secrets.SUPABASE_ANON_KEY }}" \
-            --dart-define=GOOGLE_WEB_CLIENT_ID="${{ secrets.GOOGLE_WEB_CLIENT_ID }}"
+            --dart-define=GOOGLE_WEB_CLIENT_ID="${{ secrets.GOOGLE_WEB_CLIENT_ID }}" \
+            --dart-define=ADMOB_INTERSTITIAL_ID="${{ secrets.ADMOB_INTERSTITIAL_ID }}" \
+            --dart-define=PREMIUM_PRODUCT_ID="${{ secrets.PREMIUM_PRODUCT_ID }}"
 
       - name: Release-APK bauen (Debug-signiert, ebenfalls installierbar)
         run: |
           flutter build apk --release \
             --dart-define=SUPABASE_URL="${{ secrets.SUPABASE_URL }}" \
             --dart-define=SUPABASE_ANON_KEY="${{ secrets.SUPABASE_ANON_KEY }}" \
-            --dart-define=GOOGLE_WEB_CLIENT_ID="${{ secrets.GOOGLE_WEB_CLIENT_ID }}"
+            --dart-define=GOOGLE_WEB_CLIENT_ID="${{ secrets.GOOGLE_WEB_CLIENT_ID }}" \
+            --dart-define=ADMOB_INTERSTITIAL_ID="${{ secrets.ADMOB_INTERSTITIAL_ID }}" \
+            --dart-define=PREMIUM_PRODUCT_ID="${{ secrets.PREMIUM_PRODUCT_ID }}"
 
       - name: Debug-APK hochladen
         uses: actions/upload-artifact@v4

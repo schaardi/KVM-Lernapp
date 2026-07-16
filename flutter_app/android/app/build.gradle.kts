@@ -31,7 +31,8 @@ android {
         // Eindeutige Application ID. VOR der ersten Play-Veröffentlichung final
         // festlegen – sie lässt sich danach nicht mehr ändern. Siehe RELEASE.md.
         applicationId = "com.kvmtrainer.kvm_trainer"
-        minSdk = flutter.minSdkVersion
+        // google_mobile_ads (AdMob) verlangt mindestens API 23.
+        minSdk = maxOf(23, flutter.minSdkVersion)
         targetSdk = flutter.targetSdkVersion
         versionCode = flutter.versionCode
         versionName = flutter.versionName
