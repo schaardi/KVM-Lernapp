@@ -51,16 +51,19 @@ jobs:
       - name: Abhängigkeiten holen
         run: flutter pub get
 
-      - name: AdMob-Plugin für Gradle 9 anpassen
+      - name: AdMob-Plugin für Gradle 9 / compileSdk anpassen
         run: |
-          # google_mobile_ads (5.3.1) nutzt in android/build.gradle das in
-          # Gradle 9 entfernte eager `configurations.all`. Bis das Plugin
-          # nachzieht, im pub-cache patchen – nur die Iterationsform
-          # (`configurations.all)`), keine `.all { }`-Closures.
+          # google_mobile_ads (5.3.1) im pub-cache patchen, bis das Plugin
+          # nachzieht:
+          #  1) es nutzt das in Gradle 9 entfernte eager `configurations.all`
+          #     (nur die Iterationsform ersetzen, keine `.all { }`-Closures);
+          #  2) es kompiliert gegen compileSdk 34, seine Abhängigkeit
+          #     webview_flutter_android verlangt aber 36 (App ist schon 36).
           root="${PUB_CACHE:-$HOME/.pub-cache}"
           n=0
           for f in $(find "$root" -path '*google_mobile_ads*/android/build.gradle' 2>/dev/null); do
             sed -i 's/configurations\.all)/configurations)/g' "$f"
+            sed -i -E 's/compileSdkVersion[[:space:]]+34/compileSdkVersion 36/' "$f"
             echo "patched: $f"
             n=$((n+1))
           done
