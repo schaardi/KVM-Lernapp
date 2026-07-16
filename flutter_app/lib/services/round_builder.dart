@@ -41,7 +41,8 @@ class RoundBuilder {
         final cand = data.forScope(fach, sub);
         return _shuffle(_weightedPick(cand, min(kRoundLen, cand.length)));
       case RoundMode.all:
-        return _shuffle(_weightedPick(data.questions, min(kRoundLen, data.questions.length)));
+        final act = data.activeQuestions();
+        return _shuffle(_weightedPick(act, min(kRoundLen, act.length)));
       case RoundMode.weak:
         final cw = data.forScope(fach, sub).where((q) {
           final p = prog.get(q.id);
@@ -49,9 +50,10 @@ class RoundBuilder {
         }).toList();
         return _shuffle(_weightedPick(cw, min(kRoundLen, cw.length)));
       case RoundMode.due:
-        var dl = data.questions.where((q) => prog.isDue(q.id)).toList();
+        final act = data.activeQuestions();
+        var dl = act.where((q) => prog.isDue(q.id)).toList();
         if (dl.length < kRoundLen) {
-          final fresh = data.questions.where((q) {
+          final fresh = act.where((q) {
             final p = prog.get(q.id);
             return p == null || p.seen == 0;
           }).toList();

@@ -4,10 +4,11 @@ import 'config.dart';
 import 'constants.dart';
 import 'services/data_service.dart';
 import 'services/progress_service.dart';
+import 'services/selection_service.dart';
 import 'services/voice_service.dart';
 import 'services/auth_service.dart';
 import 'services/sync_service.dart';
-import 'screens/category_screen.dart';
+import 'screens/home_screen.dart';
 import 'screens/login_screen.dart';
 
 Future<void> main() async {
@@ -99,6 +100,7 @@ class _BootState extends State<_Boot> {
 
   Future<void> _load() async {
     await DataService.instance.load();
+    await SelectionService.instance.load();
     await ProgressService.instance.load();
     await VoiceService.instance.init();
     // Cloud-Sync anbinden; bei bestehender Sitzung Stand zusammenführen.
@@ -141,13 +143,13 @@ class AuthGate extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     if (!Config.authEnabled || !AuthService.instance.ready) {
-      return const CategoryScreen();
+      return const HomeScreen();
     }
     return StreamBuilder<AuthState>(
       stream: AuthService.instance.onAuthChange,
       builder: (context, _) {
         return AuthService.instance.isSignedIn
-            ? const CategoryScreen()
+            ? const HomeScreen()
             : const LoginScreen();
       },
     );
