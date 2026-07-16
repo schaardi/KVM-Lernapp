@@ -7,6 +7,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<!-- Cloud-Login/Sync: Supabase-Client (teilt Konto + Fortschritt mit der nativen App) -->
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <style>
   :root{
     --steel:#EDF1F3; --paper:#FFFFFF; --ink:#17272E; --muted:#5C6B72;
@@ -1838,6 +1840,69 @@ window.KVMqr=makeQR;
   $("btnADR").addEventListener("click",openADR);
   mADR.addEventListener("click",function(e){if(e.target.hasAttribute&&e.target.hasAttribute("data-close"))closeADR();});
   document.addEventListener("keydown",function(e){if(e.key==="Escape"&&adrOpen)closeADR();});
+})();
+</script>
+<script>
+/* ===== Cloud-Login + Fortschritt-Sync (Supabase) – teilt Konto & Fortschritt mit der nativen App =====
+   Optional: ohne Anmeldung läuft die Web-App wie bisher lokal weiter. Nutzt dieselbe
+   progress-Tabelle und dasselbe Format (progressSubset/mergeFromCode) wie die App. */
+(function(){
+  var SB_URL='https://iarekdxkutwfidzgvyuy.supabase.co';
+  var SB_ANON='eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImlhcmVrZHhrdXR3Zmlkemd2eXV5Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODQxNjIxMTgsImV4cCI6MjA5OTczODExOH0.GsQtsioi0epiXiqYAoeFZ_C5r4C0XuHJlCuiK4UsjzQ';
+  if(!(window.supabase&&window.supabase.createClient))return; // Bibliothek fehlt -> Web-App läuft offline weiter
+  var sb=window.supabase.createClient(SB_URL,SB_ANON);
+  var user=null, pushTimer=null, syncedFor=null;
+
+  function esc(s){return String(s).replace(/[&<>"']/g,function(m){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m];});}
+  function refreshHome(){try{if(typeof renderProgress==='function')renderProgress();if(typeof renderFachGrid==='function')renderFachGrid();if(typeof renderSubChips==='function')renderSubChips();if(typeof updateModeCards==='function')updateModeCards();}catch(e){}}
+
+  function renderAccount(){
+    var c=document.getElementById('cloudChip'); if(!c)return;
+    if(user){
+      var name=(user.user_metadata&&(user.user_metadata.full_name||user.user_metadata.name))||user.email||'Angemeldet';
+      c.innerHTML='<span aria-hidden="true">☁︎</span> '+esc(String(name).split('@')[0]);
+      c.title='Angemeldet als '+(user.email||name)+' – tippen zum Abmelden';
+    }else{
+      c.innerHTML='<span aria-hidden="true">☁︎</span> Anmelden &amp; sichern';
+      c.title='Mit Google anmelden – Fortschritt geräteübergreifend sichern (gleiches Konto wie in der App)';
+    }
+  }
+
+  async function signIn(){try{await sb.auth.signInWithOAuth({provider:'google',options:{redirectTo:location.href.split('#')[0]}});}catch(e){}}
+  async function signOut(){try{await sb.auth.signOut();}catch(e){}}
+
+  async function pull(){
+    if(!user)return;
+    try{
+      var res=await sb.from('progress').select('data').eq('user_id',user.id).maybeSingle();
+      if(res&&res.data&&res.data.data&&typeof res.data.data==='object'&&typeof mergeFromCode==='function'){
+        mergeFromCode({d:res.data.data}); refreshHome();
+      }
+    }catch(e){}
+  }
+  async function push(){
+    if(!user)return;
+    try{await sb.from('progress').upsert({user_id:user.id,data:(typeof progressSubset==='function'?progressSubset():{}),updated_at:new Date().toISOString()});}catch(e){}
+  }
+  function schedulePush(){if(!user)return;clearTimeout(pushTimer);pushTimer=setTimeout(push,1500);}
+
+  // saveProgress erweitern, ohne die Originalzeile zu ändern -> jede Änderung wird (angemeldet) hochgeladen
+  if(typeof window.saveProgress==='function'){var _origSave=window.saveProgress;window.saveProgress=function(){_origSave.apply(this,arguments);schedulePush();};}
+
+  // Konto-Chip (oben rechts) einsetzen
+  var chip=document.createElement('button');
+  chip.id='cloudChip'; chip.type='button';
+  chip.style.cssText='position:fixed;top:12px;right:12px;z-index:60;display:flex;align-items:center;gap:6px;border:1px solid var(--line-strong,#B7C3C7);background:#fff;color:var(--ink,#17272E);border-radius:999px;padding:7px 12px;font-family:var(--body,system-ui);font-size:12.5px;font-weight:600;box-shadow:var(--shadow,0 2px 8px rgba(16,42,50,.12));max-width:62vw;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;';
+  chip.addEventListener('click',function(){if(user){if(confirm('Abmelden? Dein Fortschritt bleibt auf diesem Gerät gespeichert.'))signOut();}else{signIn();}});
+  document.body.appendChild(chip);
+  renderAccount();
+
+  sb.auth.onAuthStateChange(function(_evt,session){
+    user=session?session.user:null;
+    renderAccount();
+    if(user){ if(syncedFor!==user.id){syncedFor=user.id; pull().then(push);} }
+    else { syncedFor=null; }
+  });
 })();
 </script>
 </body>
