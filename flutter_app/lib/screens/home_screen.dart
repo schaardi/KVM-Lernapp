@@ -4,12 +4,14 @@ import '../config.dart';
 import '../services/data_service.dart';
 import '../services/progress_service.dart';
 import '../services/selection_service.dart';
+import '../services/premium_service.dart';
 import '../services/round_builder.dart';
 import '../widgets/radar_chart.dart';
 import '../widgets/formula_book.dart';
 import '../widgets/calculator.dart';
 import '../widgets/drawing_pad.dart';
 import '../widgets/account_sheet.dart';
+import '../widgets/premium_sheet.dart';
 import 'quiz_screen.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -133,6 +135,7 @@ class _HomeScreenState extends State<HomeScreen> {
           padding: const EdgeInsets.fromLTRB(16, 12, 16, 96),
           children: [
             _hero(totalActive, baseWithQ, zusatzWithQ),
+            if (Config.monetizationEnabled) _premiumBanner(),
             const SizedBox(height: 22),
 
             // Fortschritt
@@ -353,6 +356,62 @@ class _HomeScreenState extends State<HomeScreen> {
         borderRadius: BorderRadius.circular(15),
         child: Image.asset('assets/branding/app_logo.png',
             width: 50, height: 50, fit: BoxFit.cover),
+      ),
+    );
+  }
+
+  /// Werbefrei-Einstieg: unter dem Kopf; wird zur „aktiv"-Zeile, sobald das Abo
+  /// läuft. Reagiert live auf den Kauf.
+  Widget _premiumBanner() {
+    return Padding(
+      padding: const EdgeInsets.only(top: 12),
+      child: ValueListenableBuilder<bool>(
+        valueListenable: PremiumService.instance.isPremium,
+        builder: (context, premium, _) {
+          return Material(
+            color: Colors.transparent,
+            child: InkWell(
+              onTap: () => showPremiumSheet(context),
+              borderRadius: BorderRadius.circular(kRadius),
+              child: Container(
+                padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 12),
+                decoration: BoxDecoration(
+                  color: premium ? kOkSoft : kPetrolSoft,
+                  borderRadius: BorderRadius.circular(kRadius),
+                  border: Border.all(
+                      color: premium
+                          ? kOk.withValues(alpha: 0.4)
+                          : kPetrol.withValues(alpha: 0.25)),
+                ),
+                child: Row(children: [
+                  Icon(premium ? Icons.verified : Icons.block_flipped,
+                      size: 20, color: premium ? kOk : kPetrol),
+                  const SizedBox(width: 11),
+                  Expanded(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(premium ? 'Werbefrei aktiv' : 'Werbefrei lernen',
+                            style: TextStyle(
+                                fontWeight: FontWeight.w800,
+                                fontSize: 14,
+                                color: premium ? kOk : kPetrolDeep)),
+                        const SizedBox(height: 1),
+                        Text(
+                            premium
+                                ? 'Danke für deine Unterstützung – Abo verwalten'
+                                : 'Ohne Werbung für ${PremiumService.instance.priceLabel}/Monat',
+                            style: const TextStyle(fontSize: 12, color: kMuted)),
+                      ],
+                    ),
+                  ),
+                  Icon(Icons.chevron_right,
+                      color: premium ? kOk : kPetrol, size: 20),
+                ]),
+              ),
+            ),
+          );
+        },
       ),
     );
   }
