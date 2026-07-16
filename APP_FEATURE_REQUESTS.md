@@ -13,7 +13,7 @@ weiter über den Sync, **nicht** hier.
 
 ## FR-001 · Startseite umgestellt: Industriemeister (fix) + Fachrichtung (abwählbar)
 
-**Status App-Session:** ⬜ offen
+**Status App-Session:** ✅ erledigt (`claude/meitner-app-build-6lnk2z`)
 **Web umgesetzt:** ✅ `claude/focused-meitner-ilnlqj` (Commit „Startseite umgestellt …")
 **Priorität:** hoch (User-Wunsch: „Mach das es auf der App (android) und Webapp umgesetzt wird")
 
@@ -96,11 +96,27 @@ statt „alle Fragen" verwenden:
   unverändert: `{1:#0C6C78, 2:#D9820A, 3:#2C8A4E, 4:#3f6fb5, 5:#a2497f}`.
 
 ### Akzeptanzkriterien
-- [ ] Beim ersten Start sind alle 5 Fächer aktiv (Kraftverkehr an).
-- [ ] Kraftverkehr abwählen: Radar zeigt 4 Zacken, Fortschritt/„Alle Themen"/
+- [x] Beim ersten Start sind alle 5 Fächer aktiv (Kraftverkehr an).
+- [x] Kraftverkehr abwählen: Radar zeigt 4 Zacken, Fortschritt/„Alle Themen"/
       „Heute fällig" ohne Fach-5-Fragen; Auswahl übersteht App-Neustart.
-- [ ] Basisfächer haben keinen Schalter und sind nie abwählbar.
-- [ ] Wieder anwählen stellt den vorigen Zustand her (5 Zacken etc.).
+- [x] Basisfächer haben keinen Schalter und sind nie abwählbar.
+- [x] Wieder anwählen stellt den vorigen Zustand her (5 Zacken etc.).
+
+### Umsetzung App-Session (Flutter)
+- `services/selection_service.dart` (neu): `baseFacher [1-4]`, `zusatzFacher [5]`,
+  `isFachActive`, `toggle`, Persistenz `shared_preferences['kvm_zusatz_v1']`
+  (fehlender Eintrag = aktiv).
+- `services/data_service.dart`: `activeFacher()` / `activeQuestions()`.
+- `services/progress_service.dart`: Kennzahlen + Reife nur über aktive Fächer.
+- `services/round_builder.dart`: „Alle Themen" & „Heute fällig" über
+  `activeQuestions()`.
+- `widgets/radar_chart.dart`: dynamische Achsenzahl (`facher`-Liste), 4 oder 5
+  Zacken.
+- `screens/home_screen.dart`: Industriemeister-Header, zwei Fach-Gruppen
+  (Basis fix + Fachrichtung mit Schalter, gedämpft wenn aus), dynamische
+  Radar-Legende, generischer „Alle Themen"-Text; Konto-Zugang hierher verschoben.
+- `main.dart`: Einstieg direkt auf `HomeScreen` (Kategorie-Zwischenseite
+  entfernt), `SelectionService.load()` beim Start.
 
 ### Referenz Web-Implementierung (`index.html`, Commit auf Content-Branch)
 - Logik: `BASE_FACHER/ZUSATZ_FACHER/zusatzActive/isFachActive/activeFacher/
