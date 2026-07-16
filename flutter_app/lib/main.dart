@@ -8,6 +8,7 @@ import 'services/voice_service.dart';
 import 'services/auth_service.dart';
 import 'services/sync_service.dart';
 import 'screens/category_screen.dart';
+import 'screens/login_screen.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -124,7 +125,30 @@ class _BootState extends State<_Boot> {
             body: Center(child: Text('Fehler beim Laden:\n${snap.error}')),
           );
         }
-        return const CategoryScreen();
+        return const AuthGate();
+      },
+    );
+  }
+}
+
+/// Anmelde-Schranke: Login ist Pflicht. Ohne Anmeldung -> LoginScreen,
+/// nach Anmeldung -> App. Reagiert live auf An-/Abmeldungen.
+/// Sicherheitsnetz: ist Auth nicht konfiguriert/initialisiert, wird nicht
+/// ausgesperrt (App bliebe nutzbar statt „gebrickt").
+class AuthGate extends StatelessWidget {
+  const AuthGate({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    if (!Config.authEnabled || !AuthService.instance.ready) {
+      return const CategoryScreen();
+    }
+    return StreamBuilder<AuthState>(
+      stream: AuthService.instance.onAuthChange,
+      builder: (context, _) {
+        return AuthService.instance.isSignedIn
+            ? const CategoryScreen()
+            : const LoginScreen();
       },
     );
   }
