@@ -75,6 +75,29 @@ base64 upload-keystore.jks | tr -d '\n'   # macOS
 
 ---
 
+## Store-Eintrag: Name & Auffindbarkeit (Play Console → „Store-Präsenz")
+
+Damit die App bei der Suche nach **„Industriemeister"** schnell gefunden wird,
+steht das Suchwort vorne im Titel. Das kurze Icon-Label (`android:label`) ist
+bewusst knapp gehalten, damit es unter dem Icon nicht abgeschnitten wird.
+
+| Feld | Wert |
+|------|------|
+| **App-Titel** (Play, max. 30 Z.) | `Industriemeister Trainer – IHK` |
+| **Icon-Label** (unter dem Icon) | `Meister-Trainer` (in der App gesetzt) |
+| **Kurzbeschreibung** (max. 80 Z.) | `IHK-Prüfungstrainer für Industriemeister – Basisqualifikationen & KVM` |
+
+**Keywords fürs Beschreibungsfeld** (Google indexiert die Langbeschreibung –
+diese Begriffe natürlich einbauen): Industriemeister, IHK-Prüfung,
+Basisqualifikationen, Meisterprüfung, Kraftverkehrsmeister, KVM, Prüfungsvorbereitung,
+Recht, BWL, Handlungsspezifische Qualifikationen, Lernkarten, Spaced Repetition.
+
+> Titel/Beschreibung werden **manuell in der Play Console** gepflegt (nicht per
+> Workflow). Der Icon-Label-Name kommt aus `AndroidManifest.xml`, der OS-Titel
+> (Task-Switcher) aus `MaterialApp(title:)`.
+
+---
+
 ## Tracks & Rollout
 - `internal` (Standard): sofort, kleiner Testerkreis – ideal fürs schnelle Draufschauen.
 - `alpha`/`beta`: geschlossene/offene Tests.

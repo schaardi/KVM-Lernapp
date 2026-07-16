@@ -343,18 +343,17 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget _monogram() {
     return Container(
       width: 50, height: 50,
-      alignment: Alignment.center,
       decoration: BoxDecoration(
-        gradient: const LinearGradient(
-          begin: Alignment.topLeft, end: Alignment.bottomRight,
-          colors: [kPetrol, kPetrolDeep],
-        ),
         borderRadius: BorderRadius.circular(15),
         boxShadow: const [
-          BoxShadow(color: Color(0x330C6C78), blurRadius: 12, offset: Offset(0, 5)),
+          BoxShadow(color: Color(0x330D2B57), blurRadius: 12, offset: Offset(0, 5)),
         ],
       ),
-      child: const Icon(Icons.workspace_premium, color: Colors.white, size: 26),
+      child: ClipRRect(
+        borderRadius: BorderRadius.circular(15),
+        child: Image.asset('assets/branding/app_logo.png',
+            width: 50, height: 50, fit: BoxFit.cover),
+      ),
     );
   }
 
