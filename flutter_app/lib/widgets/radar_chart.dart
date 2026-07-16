@@ -65,7 +65,7 @@ class _RadarPainter extends CustomPainter {
 
     // Datenpolygon
     final fill = Paint()
-      ..color = kPetrol.withOpacity(0.18)
+      ..color = kPetrol.withValues(alpha: 0.18)
       ..style = PaintingStyle.fill;
     final stroke = Paint()
       ..color = kPetrol

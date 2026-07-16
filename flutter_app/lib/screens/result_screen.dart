@@ -101,8 +101,25 @@ class ResultScreen extends StatelessWidget {
             ),
             const SizedBox(height: 22),
 
-            // Aufschlüsselung
-            for (final sub in subs) _subRow(sub),
+            // Aufschlüsselung nach Themenbereich
+            if (subs.isNotEmpty)
+              Container(
+                padding: const EdgeInsets.fromLTRB(14, 14, 14, 2),
+                decoration: BoxDecoration(
+                  color: kPaper,
+                  borderRadius: BorderRadius.circular(kRadius),
+                  border: Border.all(color: kLine),
+                  boxShadow: kSoftShadow,
+                ),
+                child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+                  const Padding(
+                    padding: EdgeInsets.only(bottom: 12, left: 2),
+                    child: Text('Nach Themenbereich',
+                        style: TextStyle(fontWeight: FontWeight.w800, fontSize: 15, color: kInk)),
+                  ),
+                  for (final sub in subs) _subRow(sub),
+                ]),
+              ),
             const SizedBox(height: 22),
 
             if (uniqueWrong.isNotEmpty)

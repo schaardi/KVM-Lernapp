@@ -12,3 +12,5 @@ GeneratedPluginRegistrant.java
 key.properties
 **/*.keystore
 **/*.jks
+# Ausnahme: fester Debug-Keystore (kein Geheimnis) für stabilen SHA-1
+!app/kvm-debug.keystore

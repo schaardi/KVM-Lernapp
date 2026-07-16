@@ -296,7 +296,8 @@ class _QuizScreenState extends State<QuizScreen> {
       decoration: BoxDecoration(
         color: const Color(0xFFFBF2F8),
         border: Border.all(color: const Color(0xFFE6C9DE)),
-        borderRadius: BorderRadius.circular(11),
+        borderRadius: BorderRadius.circular(kRadius),
+        boxShadow: kSoftShadow,
       ),
       child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
         Row(children: [
@@ -322,7 +323,7 @@ class _QuizScreenState extends State<QuizScreen> {
     };
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 3),
-      decoration: BoxDecoration(color: color.withOpacity(0.12), borderRadius: BorderRadius.circular(6)),
+      decoration: BoxDecoration(color: color.withValues(alpha: 0.12), borderRadius: BorderRadius.circular(8)),
       child: Text(label, style: TextStyle(color: color, fontSize: 12, fontWeight: FontWeight.w700)),
     );
   }
@@ -353,13 +354,13 @@ class _QuizScreenState extends State<QuizScreen> {
         padding: const EdgeInsets.only(bottom: 9),
         child: InkWell(
           onTap: _answered ? null : () => setState(() => _selected = i),
-          borderRadius: BorderRadius.circular(10),
+          borderRadius: BorderRadius.circular(kRadiusSm),
           child: Container(
             padding: const EdgeInsets.all(12),
             decoration: BoxDecoration(
               color: bg,
               border: Border.all(color: border, width: 1.5),
-              borderRadius: BorderRadius.circular(10),
+              borderRadius: BorderRadius.circular(kRadiusSm),
             ),
             child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
               Row(crossAxisAlignment: CrossAxisAlignment.start, children: [
@@ -398,7 +399,7 @@ class _QuizScreenState extends State<QuizScreen> {
           keyboardType: const TextInputType.numberWithOptions(decimal: true, signed: true),
           decoration: InputDecoration(
             hintText: 'Ergebnis …',
-            border: OutlineInputBorder(borderRadius: BorderRadius.circular(10)),
+            border: OutlineInputBorder(borderRadius: BorderRadius.circular(kRadiusSm)),
             isDense: true,
           ),
           onChanged: (_) => setState(() {}),
@@ -418,7 +419,7 @@ class _QuizScreenState extends State<QuizScreen> {
       decoration: BoxDecoration(
         color: _revealed ? kOkSoft : const Color(0xFFF7FAFA),
         border: Border.all(color: kLine),
-        borderRadius: BorderRadius.circular(10),
+        borderRadius: BorderRadius.circular(kRadiusSm),
       ),
       child: _revealed
           ? Text(_q.a ?? _q.e, style: const TextStyle(height: 1.5, color: kInk))
@@ -433,7 +434,7 @@ class _QuizScreenState extends State<QuizScreen> {
       padding: const EdgeInsets.all(14),
       decoration: BoxDecoration(
         color: ok ? kOkSoft : kErrSoft,
-        borderRadius: BorderRadius.circular(10),
+        borderRadius: BorderRadius.circular(kRadiusSm),
       ),
       child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
         Text(ok ? '✓ Richtig' : '✗ Leider falsch',
