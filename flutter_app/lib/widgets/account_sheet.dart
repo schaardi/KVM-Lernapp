@@ -45,7 +45,8 @@ class _AccountSheetState extends State<_AccountSheet> {
   Future<void> _signOut() async {
     setState(() => _busy = true);
     await AuthService.instance.signOut();
-    if (mounted) setState(() => _busy = false);
+    // Sheet schließen -> der AuthGate zeigt wieder den Pflicht-Login.
+    if (mounted) Navigator.of(context).pop();
   }
 
   @override

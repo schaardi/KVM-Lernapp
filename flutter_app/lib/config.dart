@@ -1,34 +1,31 @@
 /// Laufzeit-/Build-Konfiguration.
 ///
-/// Supabase-URL und der öffentliche `anon`-Key sind als Default hinterlegt
-/// (der anon-Key ist bewusst öffentlich – die Daten schützt die RLS-Policy,
-/// nicht das Geheimhalten dieses Keys; er landet ohnehin in jeder APK).
-/// Per --dart-define lassen sich alle Werte überschreiben (z. B. aus
-/// GitHub-Secrets). Der Login-Knopf erscheint erst, wenn zusätzlich die
-/// Google-Web-Client-ID gesetzt ist – siehe SUPABASE_SETUP.md.
+/// Supabase-URL, der öffentliche `anon`-Key und die Google-Web-Client-ID sind
+/// als Default hinterlegt (alle drei sind bewusst öffentlich – die Daten schützt
+/// die RLS-Policy; das Google-Client-**Secret** gehört ausschließlich in die
+/// Supabase-Provider-Konfiguration, niemals hierher).
+///
+/// Per --dart-define lassen sich die Werte überschreiben – ein LEERER
+/// --dart-define fällt jedoch auf den Default zurück (sonst würden leere
+/// GitHub-Secrets in CI die Defaults „ausknipsen").
 class Config {
-  static const String supabaseUrl = String.fromEnvironment(
-    'SUPABASE_URL',
-    defaultValue: 'https://iarekdxkutwfidzgvyuy.supabase.co',
-  );
+  static const String _supabaseUrl = String.fromEnvironment('SUPABASE_URL');
+  static const String _supabaseAnonKey = String.fromEnvironment('SUPABASE_ANON_KEY');
+  static const String _googleWebClientId = String.fromEnvironment('GOOGLE_WEB_CLIENT_ID');
 
-  static const String supabaseAnonKey = String.fromEnvironment(
-    'SUPABASE_ANON_KEY',
-    defaultValue:
-        'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImlhcmVrZHhrdXR3Zmlkemd2eXV5Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODQxNjIxMTgsImV4cCI6MjA5OTczODExOH0.GsQtsioi0epiXiqYAoeFZ_C5r4C0XuHJlCuiK4UsjzQ',
-  );
+  static String get supabaseUrl => _supabaseUrl.isNotEmpty
+      ? _supabaseUrl
+      : 'https://iarekdxkutwfidzgvyuy.supabase.co';
 
-  /// OAuth-Web-Client-ID (Google Cloud) für den nativen Google-Login.
-  /// Öffentlich (Client-IDs sind nicht geheim); das Client-Secret gehört NICHT
-  /// hierher, sondern ausschließlich in die Supabase-Provider-Konfiguration.
-  static const String googleWebClientId = String.fromEnvironment(
-    'GOOGLE_WEB_CLIENT_ID',
-    defaultValue:
-        '342520200103-78s40rb7f7o5olhd1lsrdf2clrvh5dsu.apps.googleusercontent.com',
-  );
+  static String get supabaseAnonKey => _supabaseAnonKey.isNotEmpty
+      ? _supabaseAnonKey
+      : 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImlhcmVrZHhrdXR3Zmlkemd2eXV5Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODQxNjIxMTgsImV4cCI6MjA5OTczODExOH0.GsQtsioi0epiXiqYAoeFZ_C5r4C0XuHJlCuiK4UsjzQ';
 
-  /// Login/Sync erst, wenn Supabase UND der Google-Client konfiguriert sind –
-  /// so erscheint der Knopf nicht, solange Google noch nicht eingerichtet ist.
+  static String get googleWebClientId => _googleWebClientId.isNotEmpty
+      ? _googleWebClientId
+      : '342520200103-78s40rb7f7o5olhd1lsrdf2clrvh5dsu.apps.googleusercontent.com';
+
+  /// Login/Sync sind aktiv, sobald alle drei Werte vorliegen (per Default true).
   static bool get authEnabled =>
       supabaseUrl.isNotEmpty &&
       supabaseAnonKey.isNotEmpty &&
