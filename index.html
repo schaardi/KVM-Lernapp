@@ -391,33 +391,9 @@
     </div>
 
     <div class="home-section">
-      <p class="h-label">Lernstand sichern &amp; übertragen</p>
-      <p class="sync-lead">Dein Fortschritt wird automatisch auf diesem Gerät gespeichert. Für ein anderes Gerät oder als Sicherung: erzeuge deinen persönlichen Lernstand-Code, speichere ihn – und gib ihn dort wieder ein, um deinen Lernstand abzurufen.</p>
-      <div class="sync-grid">
-        <div class="sync-block">
-          <p class="sync-cap">Code erstellen</p>
-          <button class="sync-btn" id="btnShowCode">Meinen Lernstand-Code anzeigen</button>
-          <div id="codeOutWrap" hidden style="margin-top:10px">
-            <textarea class="code-area" id="codeOut" readonly rows="3" spellcheck="false" aria-label="Dein Lernstand-Code"></textarea>
-            <div class="sync-row">
-              <button class="sync-btn primary-mini" id="btnCopyCode">Code kopieren</button>
-              <span class="code-meta" id="codeMeta"></span>
-            </div>
-            <p class="sync-msg ok" id="codeCopyMsg" role="status" aria-live="polite" hidden></p>
-            <div id="qrWrap" hidden style="margin-top:12px;text-align:center">
-              <canvas id="qrCanvas" width="200" height="200" style="width:210px;max-width:100%;height:auto;image-rendering:pixelated;background:#fff;border:1px solid var(--line);border-radius:10px;padding:8px" aria-label="QR-Code deines Lernstands"></canvas>
-              <p class="calc-hint" id="qrHint" style="text-align:center;margin-top:6px">Auf dem anderen Gerät mit der Handy-Kamera scannen – die App öffnet sich und übernimmt deinen Lernstand.</p>
-            </div>
-          </div>
-        </div>
-        <div class="sync-block">
-          <p class="sync-cap">Code laden</p>
-          <textarea class="code-area" id="codeIn" rows="3" spellcheck="false" placeholder="Lernstand-Code hier einfügen …" aria-label="Lernstand-Code einfügen"></textarea>
-          <label class="sync-opt"><input type="checkbox" id="codeMerge"> Mit vorhandenem Fortschritt zusammenführen (je Frage den weiteren Stand behalten – für zwei Geräte)</label>
-          <button class="sync-btn" id="btnLoadCode">Lernstand laden</button>
-          <p class="sync-msg" id="codeMsg" role="status" aria-live="polite" hidden></p>
-        </div>
-      </div>
+      <p class="h-label">Konto &amp; Sicherung</p>
+      <p class="sync-lead" id="cloudHint">Ohne Anmeldung wird dein Fortschritt <b>nur lokal auf diesem Gerät</b> gehalten und nicht dauerhaft gesichert. Melde dich an, um ihn geräteübergreifend zu speichern.</p>
+      <button class="sync-btn" id="btnCloud">Mit Google anmelden &amp; sichern</button>
     </div>
 
     <div class="home-section">
@@ -1037,57 +1013,7 @@ $("btnReset").addEventListener("click",function(){
   if(confirm("Deinen gesamten Lernfortschritt auf diesem Gerät wirklich zurücksetzen?")){progress={};saveProgress();renderProgress();renderFachGrid();renderSubChips();updateModeCards();}
 });
 
-/* ===== Lernstand-Code UI ===== */
-function syncMsg(el,text,kind){if(!el)return;el.textContent=text||"";el.className="sync-msg"+(kind?" "+kind:"");el.hidden=!text;}
-function legacyCopy(el){try{el.focus();el.select();el.setSelectionRange(0,el.value.length);document.execCommand("copy");return true;}catch(e){return false;}}
-function renderQRForCode(code){
-  var wrap=$("qrWrap"),cv=$("qrCanvas"),hint=$("qrHint");
-  if(!wrap)return;
-  var payload=location.href.split("#")[0]+"#kvm="+code;
-  var q=null; if(window.KVMqr){try{q=window.KVMqr(payload);}catch(e){q=null;}}
-  wrap.hidden=false;
-  if(!q){ cv.hidden=true; hint.textContent="Für einen QR-Code ist dein Fortschritt zu umfangreich – bitte den Code kopieren und einfügen."; return; }
-  cv.hidden=false;
-  var n=q.size,quiet=4,dim=n+2*quiet,scale=Math.max(2,Math.floor(320/dim));
-  cv.width=dim*scale;cv.height=dim*scale;
-  var ctx=cv.getContext("2d");ctx.fillStyle="#ffffff";ctx.fillRect(0,0,cv.width,cv.height);ctx.fillStyle="#17272E";
-  for(var r=0;r<n;r++)for(var c=0;c<n;c++){if(q.matrix[r][c])ctx.fillRect((c+quiet)*scale,(r+quiet)*scale,scale,scale);}
-  hint.textContent="Auf dem anderen Gerät mit der Handy-Kamera scannen – die App öffnet sich und übernimmt deinen Lernstand.";
-}
-$("btnShowCode").addEventListener("click",function(){
-  var btn=$("btnShowCode");btn.disabled=true;btn.textContent="Erzeuge Code …";
-  syncMsg($("codeCopyMsg"),"",null);
-  exportCode().then(function(code){
-    $("codeOut").value=code;$("codeOutWrap").hidden=false;
-    $("codeMeta").textContent="Stand: "+new Date().toLocaleString("de-DE")+" · "+code.length+" Zeichen";
-    renderQRForCode(code);
-    btn.textContent="Code aktualisieren";btn.disabled=false;
-    $("codeOut").focus();$("codeOut").select();
-  },function(){btn.textContent="Meinen Lernstand-Code anzeigen";btn.disabled=false;syncMsg($("codeCopyMsg"),"Der Code konnte nicht erstellt werden.","err");$("codeCopyMsg").className="sync-msg err";$("codeCopyMsg").hidden=false;});
-});
-$("btnCopyCode").addEventListener("click",function(){
-  var out=$("codeOut");if(!out.value)return;
-  var done=function(ok){syncMsg($("codeCopyMsg"),ok?"Code kopiert – speichere ihn an einem sicheren Ort.":"Kopieren nicht möglich. Bitte den Code manuell markieren und kopieren.",ok?"ok":"err");};
-  if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(out.value).then(function(){done(true);},function(){done(legacyCopy(out));});}
-  else{done(legacyCopy(out));}
-});
-function hasLocalProgress(){for(var k in progress){if(progress.hasOwnProperty(k))return true;}return false;}
-$("btnLoadCode").addEventListener("click",function(){
-  var val=$("codeIn").value;syncMsg($("codeMsg"),"",null);
-  if(!val||!val.trim()){syncMsg($("codeMsg"),"Bitte füge zuerst deinen Lernstand-Code ein.","err");return;}
-  var btn=$("btnLoadCode");btn.disabled=true;
-  importCode(val).then(function(obj){
-    var merge=$("codeMerge").checked;
-    if(!merge&&hasLocalProgress()){
-      if(!confirm("Aktuellen Lernstand auf diesem Gerät durch den Code ersetzen? Ein evtl. weiter fortgeschrittener lokaler Fortschritt geht dabei verloren.\n\nZum Kombinieren zweier Geräte stattdessen die Option „Zusammenführen“ aktivieren.")){btn.disabled=false;return;}
-    }
-    var n=merge?mergeFromCode(obj):replaceFromCode(obj);
-    renderProgress();renderFachGrid();renderSubChips();updateModeCards();
-    if(merge){syncMsg($("codeMsg"),n>0?("Zusammengeführt – "+n+" Frage"+(n===1?"":"n")+" aktualisiert."):"Code gelesen – dein Lernstand war bereits gleich weit oder weiter.","ok");}
-    else{syncMsg($("codeMsg"),"Lernstand geladen – "+n+" Frage"+(n===1?"":"n")+" wiederhergestellt.","ok");}
-    $("codeIn").value="";btn.disabled=false;
-  },function(err){syncMsg($("codeMsg"),(err&&err.message)||"Der Code konnte nicht gelesen werden.","err");btn.disabled=false;});
-});
+/* (Lernstand-Code-/QR-Übertragung entfernt – Sicherung läuft über Konto-Login) */
 document.addEventListener("keydown",function(ev){
   if($("scrQuiz").hidden)return;var q=state.pool[state.idx];if(!q)return;
   if(state.answered){if(ev.key==="Enter"||ev.key===" "){ev.preventDefault();var n=$("btnNext");if(n)n.click();}return;}
@@ -1105,18 +1031,30 @@ document.addEventListener("keydown",function(ev){
   show("scrHome");
 })();
 
-/* ===== Lernstand aus gescanntem QR-Code / Link (#kvm=…) übernehmen ===== */
-(function checkHashCode(){
-  var m=/[#&]kvm=([^&]+)/.exec(location.hash||"");
-  if(!m)return;
-  var code; try{code=decodeURIComponent(m[1]);}catch(e){code=m[1];}
-  try{history.replaceState(null,"",location.pathname+location.search);}catch(e){location.hash="";}
-  importCode(code).then(function(obj){
-    if(hasLocalProgress()&&!confirm("Ein Lernstand aus einem QR-Code/Link wurde erkannt. Auf diesem Gerät übernehmen? Dein aktueller lokaler Fortschritt wird dabei ersetzt.")) return;
-    var n=replaceFromCode(obj);
-    renderProgress();renderFachGrid();renderSubChips();updateModeCards();
-    try{alert("Lernstand übernommen – "+n+" Frage"+(n===1?"":"n")+" wiederhergestellt.");}catch(e){}
-  },function(){});
+
+/* ===== Cloud-Login + Sync (Supabase) – teilt Konto & Fortschritt mit der nativen App ===== */
+(function cloud(){
+  var SB_URL="https://iarekdxkutwfidzgvyuy.supabase.co";
+  var SB_ANON="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImlhcmVrZHhrdXR3Zmlkemd2eXV5Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODQxNjIxMTgsImV4cCI6MjA5OTczODExOH0.GsQtsioi0epiXiqYAoeFZ_C5r4C0XuHJlCuiK4UsjzQ";
+  function esc(s){return String(s).replace(/[&<>"']/g,function(m){return{"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[m];});}
+  function acc(signedIn,name){var h=$("cloudHint"),b=$("btnCloud");
+    if(h)h.innerHTML=signedIn?("Angemeldet als <b>"+esc(name)+"</b> – dein Fortschritt wird geräteübergreifend gesichert (gleiches Konto wie in der App)."):("Ohne Anmeldung wird dein Fortschritt <b>nur lokal auf diesem Gerät</b> gehalten und nicht dauerhaft gesichert. Melde dich an, um ihn geräteübergreifend zu speichern.");
+    if(b)b.textContent=signedIn?"Abmelden":"Mit Google anmelden & sichern";}
+  if(!(window.supabase&&window.supabase.createClient)){acc(false,"");return;}
+  var sb=window.supabase.createClient(SB_URL,SB_ANON);
+  var user=null,pushT=null,syncedFor=null,pulledOk=false;
+  function nameOf(u){return (u.user_metadata&&(u.user_metadata.full_name||u.user_metadata.name))||u.email||"angemeldet";}
+  function refresh(){try{renderProgress();renderFachGrid();renderSubChips();updateModeCards();}catch(e){}}
+  function payload(){var out={};for(var id in progress){if(!progress.hasOwnProperty(id))continue;var p=progress[id];if(p&&(p.seen>0||p.box>0)){var o={s:p.seen|0,c:p.correct|0,w:p.wrong|0,b:Math.max(0,Math.min(MAX_BOX,p.box|0)),l:(p.last?1:0)};if(p.due!=null)o.d=p.due|0;out[id]=o;}}return out;}
+  function push(){if(!user)return;var data=payload();if(!pulledOk&&!Object.keys(data).length)return;sb.from("progress").upsert({user_id:user.id,data:data,updated_at:new Date().toISOString()}).then(function(){},function(){});}
+  function schedulePush(){if(!user)return;clearTimeout(pushT);pushT=setTimeout(push,1500);}
+  function pull(){if(!user)return Promise.resolve();return sb.from("progress").select("data").eq("user_id",user.id).maybeSingle().then(function(res){pulledOk=true;var d=res&&res.data&&res.data.data;if(d&&typeof d==="object"){mergeFromCode({d:d});for(var id in d){if(d[id]&&d[id].d!=null&&progress[id]&&progress[id].due==null)progress[id].due=d[id].d;}saveProgress();refresh();}},function(){});}
+  var _save=saveProgress; saveProgress=function(){_save.apply(this,arguments);schedulePush();};
+  function signIn(){sb.auth.signInWithOAuth({provider:"google",options:{redirectTo:location.href.split("#")[0]}}).then(function(){},function(){});}
+  function signOut(){sb.auth.signOut().then(function(){},function(){});}
+  var btn=$("btnCloud"); if(btn)btn.addEventListener("click",function(){if(user){if(confirm("Abmelden? Dein Fortschritt bleibt lokal auf diesem Gerät."))signOut();}else signIn();});
+  acc(false,"");
+  sb.auth.onAuthStateChange(function(_e,session){user=session?session.user:null;if(user){acc(true,nameOf(user));if(syncedFor!==user.id){syncedFor=user.id;pull().then(push);}}else{acc(false,"");syncedFor=null;pulledOk=false;}});
 })();
 })();
 </script>
@@ -1840,69 +1778,6 @@ window.KVMqr=makeQR;
   $("btnADR").addEventListener("click",openADR);
   mADR.addEventListener("click",function(e){if(e.target.hasAttribute&&e.target.hasAttribute("data-close"))closeADR();});
   document.addEventListener("keydown",function(e){if(e.key==="Escape"&&adrOpen)closeADR();});
-})();
-</script>
-<script>
-/* ===== Cloud-Login + Fortschritt-Sync (Supabase) – teilt Konto & Fortschritt mit der nativen App =====
-   Optional: ohne Anmeldung läuft die Web-App wie bisher lokal weiter. Nutzt dieselbe
-   progress-Tabelle und dasselbe Format (progressSubset/mergeFromCode) wie die App. */
-(function(){
-  var SB_URL='https://iarekdxkutwfidzgvyuy.supabase.co';
-  var SB_ANON='eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImlhcmVrZHhrdXR3Zmlkemd2eXV5Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODQxNjIxMTgsImV4cCI6MjA5OTczODExOH0.GsQtsioi0epiXiqYAoeFZ_C5r4C0XuHJlCuiK4UsjzQ';
-  if(!(window.supabase&&window.supabase.createClient))return; // Bibliothek fehlt -> Web-App läuft offline weiter
-  var sb=window.supabase.createClient(SB_URL,SB_ANON);
-  var user=null, pushTimer=null, syncedFor=null;
-
-  function esc(s){return String(s).replace(/[&<>"']/g,function(m){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m];});}
-  function refreshHome(){try{if(typeof renderProgress==='function')renderProgress();if(typeof renderFachGrid==='function')renderFachGrid();if(typeof renderSubChips==='function')renderSubChips();if(typeof updateModeCards==='function')updateModeCards();}catch(e){}}
-
-  function renderAccount(){
-    var c=document.getElementById('cloudChip'); if(!c)return;
-    if(user){
-      var name=(user.user_metadata&&(user.user_metadata.full_name||user.user_metadata.name))||user.email||'Angemeldet';
-      c.innerHTML='<span aria-hidden="true">☁︎</span> '+esc(String(name).split('@')[0]);
-      c.title='Angemeldet als '+(user.email||name)+' – tippen zum Abmelden';
-    }else{
-      c.innerHTML='<span aria-hidden="true">☁︎</span> Anmelden &amp; sichern';
-      c.title='Mit Google anmelden – Fortschritt geräteübergreifend sichern (gleiches Konto wie in der App)';
-    }
-  }
-
-  async function signIn(){try{await sb.auth.signInWithOAuth({provider:'google',options:{redirectTo:location.href.split('#')[0]}});}catch(e){}}
-  async function signOut(){try{await sb.auth.signOut();}catch(e){}}
-
-  async function pull(){
-    if(!user)return;
-    try{
-      var res=await sb.from('progress').select('data').eq('user_id',user.id).maybeSingle();
-      if(res&&res.data&&res.data.data&&typeof res.data.data==='object'&&typeof mergeFromCode==='function'){
-        mergeFromCode({d:res.data.data}); refreshHome();
-      }
-    }catch(e){}
-  }
-  async function push(){
-    if(!user)return;
-    try{await sb.from('progress').upsert({user_id:user.id,data:(typeof progressSubset==='function'?progressSubset():{}),updated_at:new Date().toISOString()});}catch(e){}
-  }
-  function schedulePush(){if(!user)return;clearTimeout(pushTimer);pushTimer=setTimeout(push,1500);}
-
-  // saveProgress erweitern, ohne die Originalzeile zu ändern -> jede Änderung wird (angemeldet) hochgeladen
-  if(typeof window.saveProgress==='function'){var _origSave=window.saveProgress;window.saveProgress=function(){_origSave.apply(this,arguments);schedulePush();};}
-
-  // Konto-Chip (oben rechts) einsetzen
-  var chip=document.createElement('button');
-  chip.id='cloudChip'; chip.type='button';
-  chip.style.cssText='position:fixed;top:12px;right:12px;z-index:60;display:flex;align-items:center;gap:6px;border:1px solid var(--line-strong,#B7C3C7);background:#fff;color:var(--ink,#17272E);border-radius:999px;padding:7px 12px;font-family:var(--body,system-ui);font-size:12.5px;font-weight:600;box-shadow:var(--shadow,0 2px 8px rgba(16,42,50,.12));max-width:62vw;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;';
-  chip.addEventListener('click',function(){if(user){if(confirm('Abmelden? Dein Fortschritt bleibt auf diesem Gerät gespeichert.'))signOut();}else{signIn();}});
-  document.body.appendChild(chip);
-  renderAccount();
-
-  sb.auth.onAuthStateChange(function(_evt,session){
-    user=session?session.user:null;
-    renderAccount();
-    if(user){ if(syncedFor!==user.id){syncedFor=user.id; pull().then(push);} }
-    else { syncedFor=null; }
-  });
 })();
 </script>
 </body>

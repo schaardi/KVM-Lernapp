@@ -112,3 +112,15 @@ Bricht der Sync mit Validierungsfehlern ab (z. B. „mc mit 2 richtigen
 Optionen", doppelte `id`), liegt der Fehler **im Content** (`index.html`) und
 sollte dort behoben werden. Der Build prüft die Assets ebenfalls und schlägt
 bei Vertragsverletzungen fehl, bevor eine kaputte APK entsteht.
+
+## Hinweis: index.html enthält jetzt Cloud-Login (an die Content-Session)
+`index.html` hat einen optionalen Google-Login + Cloud-Sync (Supabase), der Konto
+und Fortschritt mit der nativen App teilt. Bitte beachten:
+- Die Sync-Logik liegt als IIFE `(function cloud(){…})()` **innerhalb** des großen
+  App-IIFE (direkt vor dessen `})();`) und nutzt vorhandene Funktionen
+  `progressSubset()`, `mergeFromCode()`, `saveProgress()`, `progress`, `MAX_BOX`,
+  die Render-Kette und `$()`. **Diese nicht umbenennen/entfernen.**
+- Der Supabase-Client kommt per `<script src=…supabase-js@2>` im `<head>`.
+- Die frühere QR-/Lernstand-Code-Übertragung wurde entfernt (Sicherung läuft jetzt
+  über den Konto-Login). Ein Home-Abschnitt „Konto & Sicherung" (`#cloudHint` /
+  `#btnCloud`) ersetzt sie.
