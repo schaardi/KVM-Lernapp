@@ -19,8 +19,13 @@ class Config {
   );
 
   /// OAuth-Web-Client-ID (Google Cloud) für den nativen Google-Login.
-  static const String googleWebClientId =
-      String.fromEnvironment('GOOGLE_WEB_CLIENT_ID');
+  /// Öffentlich (Client-IDs sind nicht geheim); das Client-Secret gehört NICHT
+  /// hierher, sondern ausschließlich in die Supabase-Provider-Konfiguration.
+  static const String googleWebClientId = String.fromEnvironment(
+    'GOOGLE_WEB_CLIENT_ID',
+    defaultValue:
+        '342520200103-78s40rb7f7o5olhd1lsrdf2clrvh5dsu.apps.googleusercontent.com',
+  );
 
   /// Login/Sync erst, wenn Supabase UND der Google-Client konfiguriert sind –
   /// so erscheint der Knopf nicht, solange Google noch nicht eingerichtet ist.
