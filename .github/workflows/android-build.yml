@@ -51,6 +51,21 @@ jobs:
       - name: Abhängigkeiten holen
         run: flutter pub get
 
+      - name: AdMob-Plugin für Gradle 9 anpassen
+        run: |
+          # google_mobile_ads (5.3.1) nutzt in android/build.gradle das in
+          # Gradle 9 entfernte eager `configurations.all`. Bis das Plugin
+          # nachzieht, im pub-cache patchen – nur die Iterationsform
+          # (`configurations.all)`), keine `.all { }`-Closures.
+          root="${PUB_CACHE:-$HOME/.pub-cache}"
+          n=0
+          for f in $(find "$root" -path '*google_mobile_ads*/android/build.gradle' 2>/dev/null); do
+            sed -i 's/configurations\.all)/configurations)/g' "$f"
+            echo "patched: $f"
+            n=$((n+1))
+          done
+          echo "Gepatchte Dateien: $n"
+
       - name: Inhalt prüfen (Datenvertrag)
         working-directory: ${{ github.workspace }}
         run: python3 tools/sync_content.py --validate-assets

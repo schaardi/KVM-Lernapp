@@ -84,6 +84,13 @@ Leere/fehlende Secrets ⇒ die App fällt automatisch auf Test-Unit bzw.
   „Weiter"-Übergang.
 - `lib/widgets/premium_sheet.dart` + Home-Banner – Kauf/Status-UI.
 
+## Gradle-9-Hinweis
+Das Projekt baut mit Gradle 9 / AGP 9. `google_mobile_ads 5.3.1` nutzt in seiner
+`android/build.gradle` noch das in Gradle 9 entfernte `configurations.all`. Bis
+das Plugin nachzieht, patcht ein CI-Schritt („AdMob-Plugin für Gradle 9
+anpassen") diese eine Zeile im pub-cache vor dem Build. Baust du **lokal**, führe
+denselben Ersetzungsschritt einmal aus (siehe Workflow) oder nutze die CI-APK.
+
 ## Bekannte Grenze
 Der Premium-Status wird lokal gecacht und beim Start über Play wiederhergestellt.
 Eine **serverseitige Ablauf-/Kündigungsprüfung** (Google Play Developer API) ist
