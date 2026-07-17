@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 import 'config.dart';
@@ -105,9 +106,6 @@ class _BootState extends State<_Boot> {
     await SelectionService.instance.load();
     await ProgressService.instance.load();
     await VoiceService.instance.init();
-    // Werbefrei-Status zuerst (bestimmt, ob Werbung geladen wird), dann Ads.
-    await PremiumService.instance.init();
-    await AdService.instance.init();
     // Cloud-Sync anbinden; bei bestehender Sitzung Stand zusammenführen.
     if (Config.authEnabled && AuthService.instance.ready) {
       SyncService.instance.attach();
@@ -115,6 +113,20 @@ class _BootState extends State<_Boot> {
         await SyncService.instance.pullMergePush();
       }
     }
+    // Werbe-/Billing-SDK NICHT blockierend initialisieren: ein langsames oder
+    // fehlendes SDK (z. B. ohne Google-Play-Dienste) darf den App-Start niemals
+    // aufhalten. Premium-Status und Werbung aktualisieren sich reaktiv.
+    unawaited(_initMonetization());
+  }
+
+  Future<void> _initMonetization() async {
+    if (!Config.monetizationEnabled) return;
+    try {
+      await PremiumService.instance.init();
+    } catch (_) {}
+    try {
+      await AdService.instance.init();
+    } catch (_) {}
   }
 
   @override

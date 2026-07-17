@@ -34,7 +34,7 @@ class AdService {
     _loading = true;
     InterstitialAd.load(
       adUnitId: Config.admobInterstitialId,
-      request: AdRequest(),
+      request: const AdRequest(),
       adLoadCallback: InterstitialAdLoadCallback(
         onAdLoaded: (ad) {
           _interstitial = ad;
