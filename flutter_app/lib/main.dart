@@ -10,7 +10,6 @@ import 'services/voice_service.dart';
 import 'services/auth_service.dart';
 import 'services/sync_service.dart';
 import 'services/premium_service.dart';
-import 'services/ad_service.dart';
 import 'screens/home_screen.dart';
 import 'screens/login_screen.dart';
 
@@ -121,11 +120,10 @@ class _BootState extends State<_Boot> {
 
   Future<void> _initMonetization() async {
     if (!Config.monetizationEnabled) return;
+    // Nur den Abo-Status vorbereiten (leichtgewichtig, gekapselt). Das Werbe-SDK
+    // initialisiert sich selbst erst spät bei Bedarf – nie beim App-Start.
     try {
       await PremiumService.instance.init();
-    } catch (_) {}
-    try {
-      await AdService.instance.init();
     } catch (_) {}
   }
 
