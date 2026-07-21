@@ -1,5 +1,5 @@
 name: kvm_trainer
-description: KVM-Trainer – IHK-Prüfungsvorbereitung Kraftverkehrsmeister (nativ, iOS & Android).
+description: Industriemeister Trainer – IHK-Prüfungsvorbereitung für die Industriemeister-Basisqualifikationen und die Fachrichtung Kraftverkehr (KVM).
 publish_to: 'none'
 version: 1.0.0+1
 
@@ -13,6 +13,16 @@ dependencies:
   shared_preferences: ^2.2.3
   flutter_tts: ^4.0.2
   speech_to_text: ^7.0.0
+  # Login (Google) + geräteübergreifender Fortschritt. Aktiv nur, wenn zur
+  # Build-Zeit SUPABASE_URL/SUPABASE_ANON_KEY/GOOGLE_WEB_CLIENT_ID per
+  # --dart-define gesetzt sind (siehe SUPABASE_SETUP.md). Ohne Config: Offline-App.
+  supabase_flutter: ^2.8.0
+  google_sign_in: ^6.2.1
+  # Monetarisierung (Freemium): Interstitial-Werbung alle 10 Fragen; das Abo
+  # (5,99 €/Monat) schaltet werbefrei. Aktiv nur, wenn MONETIZATION_ENABLED
+  # nicht auf false steht. Ohne echte AdMob-/Play-IDs laufen Test-Anzeigen.
+  google_mobile_ads: ^5.1.0
+  in_app_purchase: ^3.1.0
 
 dev_dependencies:
   flutter_lints: ^4.0.0
@@ -25,3 +35,4 @@ flutter:
     - assets/data/questions.json
     - assets/data/cases.json
     - assets/data/formulas.json
+    - assets/branding/app_logo.png

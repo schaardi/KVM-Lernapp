@@ -6,7 +6,7 @@
         </intent>
     </queries>
     <application
-        android:label="KVM-Trainer"
+        android:label="Meister-Trainer"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity
@@ -36,6 +36,13 @@
         <meta-data
             android:name="flutterEmbedding"
             android:value="2" />
+        <!-- AdMob-App-ID. Aktuell Googles öffentliche TEST-ID (zeigt Test-Anzeigen,
+             kein echtes Geld). VOR der Play-Veröffentlichung durch die echte
+             AdMob-App-ID ersetzen (Format ca-app-pub-XXXXXXXX~YYYYYYYY). Siehe
+             MONETIZATION.md. -->
+        <meta-data
+            android:name="com.google.android.gms.ads.APPLICATION_ID"
+            android:value="ca-app-pub-3940256099942544~3347511713" />
     </application>
     <!-- Required to query activities that can process text, see:
          https://developer.android.com/training/package-visibility and

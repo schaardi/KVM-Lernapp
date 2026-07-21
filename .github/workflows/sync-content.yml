@@ -1,0 +1,99 @@
+name: Content syncen (Fragenkatalog)
+
+# Holt den Fragenkatalog (window.KVM_QUESTIONS / window.KVM_CASES) aus der
+# Web-App index.html des Content-Branches, schreibt ihn in die App-Assets
+# (flutter_app/assets/data/*.json), committet die Änderung und stößt den
+# APK-Build an. So bleibt die native App automatisch auf dem Stand der Inhalte.
+#
+# Hinweis: `schedule` feuert bei GitHub nur auf dem Default-Branch. Solange
+# dieser Workflow auf dem Feature-Branch liegt, läuft er über „Run workflow"
+# (workflow_dispatch) – auch aus der Content-Session heraus per
+#   gh workflow run "Content syncen (Fragenkatalog)" --ref <app-branch>
+
+on:
+  workflow_dispatch:
+    inputs:
+      content_ref:
+        description: 'Branch/Ref mit der index.html (Content-Quelle)'
+        required: false
+        default: 'claude/focused-meitner-ilnlqj'
+  schedule:
+    - cron: '0 4 * * *'   # täglich 04:00 UTC (nur wirksam auf dem Default-Branch)
+
+permissions:
+  contents: write
+  actions: write
+
+concurrency:
+  group: content-sync-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Repository (App-Branch) auschecken
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Python einrichten
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+
+      - name: Content-Branch holen
+        env:
+          CONTENT_REF: ${{ github.event.inputs.content_ref || 'claude/focused-meitner-ilnlqj' }}
+        run: git fetch origin "$CONTENT_REF"
+
+      - name: Fragenkatalog syncen
+        env:
+          CONTENT_REF: ${{ github.event.inputs.content_ref || 'claude/focused-meitner-ilnlqj' }}
+        run: python tools/sync_content.py --ref "origin/$CONTENT_REF"
+
+      - name: Änderungen prüfen
+        id: diff
+        run: |
+          if git diff --quiet -- flutter_app/assets/data/; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+            echo "Keine Änderung – App ist bereits auf dem Content-Stand."
+          else
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+            git --no-pager diff --stat -- flutter_app/assets/data/
+          fi
+
+      - name: Commit & Push (bei Änderung)
+        if: steps.diff.outputs.changed == 'true'
+        env:
+          CONTENT_REF: ${{ github.event.inputs.content_ref || 'claude/focused-meitner-ilnlqj' }}
+        run: |
+          set -euo pipefail
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add flutter_app/assets/data/questions.json flutter_app/assets/data/cases.json
+          SRC_SHA=$(git rev-parse --short "origin/$CONTENT_REF")
+          git commit -m "Sync: Fragenkatalog aus Content-Branch übernommen (${CONTENT_REF}@${SRC_SHA})"
+          git push origin "HEAD:${GITHUB_REF_NAME}"
+
+      - name: APK-Build anstoßen (bei Änderung)
+        if: steps.diff.outputs.changed == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh workflow run android-build.yml \
+            --repo "$GITHUB_REPOSITORY" \
+            --ref "$GITHUB_REF_NAME" \
+          || echo "Hinweis: Build-Workflow konnte nicht automatisch angestoßen werden – ggf. manuell starten."
+
+      - name: Zusammenfassung
+        if: always()
+        run: |
+          {
+            echo "## Content-Sync"
+            if [ "${{ steps.diff.outputs.changed }}" = "true" ]; then
+              echo "- Fragenkatalog aktualisiert und committet; APK-Build angestoßen."
+            else
+              echo "- Kein Update nötig – App war bereits synchron."
+            fi
+          } >> "$GITHUB_STEP_SUMMARY"

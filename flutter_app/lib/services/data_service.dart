@@ -2,6 +2,7 @@ import 'dart:convert';
 import 'package:flutter/services.dart' show rootBundle;
 import '../models.dart';
 import '../constants.dart';
+import 'selection_service.dart';
 
 /// Lädt die gebündelten Fragen, Fälle und Formeln aus den Assets.
 class DataService {
@@ -51,4 +52,16 @@ class DataService {
     }
     return c;
   }
+
+  /// Aktive Fächer (mit Fragen) in Reihenfolge 1..5 – Basis + gewählte Fachrichtungen.
+  List<int> activeFacher() {
+    final counts = fachCounts();
+    return [1, 2, 3, 4, 5]
+        .where((f) => (counts[f] ?? 0) > 0 && SelectionService.instance.isFachActive(f))
+        .toList();
+  }
+
+  /// Alle Fragen der aktiven Fächer (abgewählte Fachrichtungen fallen weg).
+  List<Question> activeQuestions() =>
+      questions.where((q) => SelectionService.instance.isFachActive(q.f)).toList();
 }

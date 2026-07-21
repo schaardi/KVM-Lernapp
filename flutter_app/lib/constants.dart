@@ -60,20 +60,81 @@ const int kRoundLen = 20;
 const int kSimLen = 30;
 const int kSimSeconds = 60 * 60;
 
-// Farben (Design der Web-App)
+/// Freemium: nach je so vielen beantworteten Fragen eine Interstitial-Werbung
+/// (entfällt für Premium-/Werbefrei-Nutzer).
+const int kAdEveryQuestions = 10;
+
+// Farbwelt – ruhige, konzentrationsfreundliche Palette (Teal/Petrol als Anker,
+// gedämpfte Neutraltöne, wenig Sättigung außerhalb von Signalfarben).
 const Color kPetrol = Color(0xFF0C6C78);
 const Color kPetrolDeep = Color(0xFF084F58);
-const Color kPetrolSoft = Color(0xFFE3F0F1);
-const Color kAmber = Color(0xFFD9820A);
+const Color kPetrolSoft = Color(0xFFE1EEEF);
+const Color kAmber = Color(0xFFC9780C);
 const Color kOk = Color(0xFF2C8A4E);
 const Color kOkSoft = Color(0xFFE4F2E9);
 const Color kErr = Color(0xFFC0472F);
 const Color kErrSoft = Color(0xFFF7E6E1);
-const Color kInk = Color(0xFF17272E);
-const Color kMuted = Color(0xFF5C6B72);
-const Color kLine = Color(0xFFD8E3E5);
+const Color kInk = Color(0xFF14262C);
+const Color kMuted = Color(0xFF5F6E75);
+const Color kLine = Color(0xFFDCE6E7);
 const Color kPaper = Color(0xFFFFFFFF);
-const Color kDue = Color(0xFF6D5AE6);
+const Color kDue = Color(0xFF5E64D6);
+
+// Flächen & Tiefe – ruhiger Hintergrund, weiche Karten statt harter Rahmen.
+const Color kBg = Color(0xFFF2F5F6);
+const Color kBgTint = Color(0xFFE8EFF0); // leichter Teal-Schleier für den Kopfbereich
+const Color kInkSoft = Color(0xFF3A4A50);
+
+const double kRadius = 16;
+const double kRadiusSm = 12;
+
+/// Weiche, dezente Kartenschatten (moderne Tiefe ohne Kontrastlärm).
+const List<BoxShadow> kSoftShadow = [
+  BoxShadow(color: Color(0x0F0C3138), blurRadius: 18, offset: Offset(0, 8)),
+  BoxShadow(color: Color(0x0A0C3138), blurRadius: 3, offset: Offset(0, 1)),
+];
+
+/// Prüfungs-Kategorie (Qualifikation) – oberste Ebene über den Fachthemen.
+class AppCategory {
+  final String id;
+  final String name;      // z. B. 'Kraftverkehrsmeister'
+  final String short;     // z. B. 'KVM'
+  final String subtitle;  // Kurzbeschreibung/Status
+  final bool available;   // Inhalte vorhanden?
+  final Color color;
+  final IconData icon;
+  const AppCategory({
+    required this.id,
+    required this.name,
+    required this.short,
+    required this.subtitle,
+    required this.color,
+    required this.icon,
+    this.available = false,
+  });
+}
+
+/// Verfügbare Kategorien. KVM ist befüllt; weitere folgen (z. B. Industriemeister).
+const List<AppCategory> kCategories = [
+  AppCategory(
+    id: 'kvm',
+    name: 'Kraftverkehrsmeister',
+    short: 'KVM',
+    subtitle: 'IHK-Basisqualifikationen · 2200 Fragen',
+    available: true,
+    color: kPetrol,
+    icon: Icons.local_shipping_outlined,
+  ),
+  AppCategory(
+    id: 'im',
+    name: 'Industriemeister',
+    short: 'IM',
+    subtitle: 'IHK-Basisqualifikationen · bald verfügbar',
+    available: false,
+    color: Color(0xFF3F6FB5),
+    icon: Icons.engineering,
+  ),
+];
 
 /// IHK-Notenschlüssel (100-Punkte-Schema; Prozent = Punkte).
 ({int note, String label}) ihkGrade(int p) {
