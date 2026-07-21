@@ -1,11 +1,32 @@
+import 'dart:async';
 import 'package:flutter/material.dart';
+import 'package:supabase_flutter/supabase_flutter.dart';
+import 'config.dart';
 import 'constants.dart';
 import 'services/data_service.dart';
 import 'services/progress_service.dart';
+import 'services/selection_service.dart';
 import 'services/voice_service.dart';
+import 'services/auth_service.dart';
+import 'services/sync_service.dart';
+import 'services/premium_service.dart';
+import 'services/ad_service.dart';
 import 'screens/home_screen.dart';
+import 'screens/login_screen.dart';
 
-void main() {
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  if (Config.authEnabled) {
+    try {
+      await Supabase.initialize(
+        url: Config.supabaseUrl,
+        anonKey: Config.supabaseAnonKey,
+      );
+      AuthService.instance.ready = true;
+    } catch (_) {
+      AuthService.instance.ready = false; // ohne gültige Config: Offline-App
+    }
+  }
   runApp(const KvmApp());
 }
 
@@ -15,15 +36,50 @@ class KvmApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'KVM-Trainer',
+      title: 'Industriemeister Trainer',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         useMaterial3: true,
         colorScheme: ColorScheme.fromSeed(
           seedColor: kPetrol,
           primary: kPetrol,
+          surface: kPaper,
         ),
-        scaffoldBackgroundColor: const Color(0xFFEDF1F3),
+        scaffoldBackgroundColor: kBg,
+        splashFactory: InkSparkle.splashFactory,
+        cardTheme: CardThemeData(
+          elevation: 0,
+          color: kPaper,
+          surfaceTintColor: Colors.transparent,
+          margin: const EdgeInsets.only(bottom: 10),
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(kRadius),
+            side: const BorderSide(color: kLine),
+          ),
+        ),
+        chipTheme: ChipThemeData(
+          backgroundColor: kPaper,
+          side: const BorderSide(color: kLine),
+          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(999)),
+          labelStyle: const TextStyle(fontWeight: FontWeight.w600, fontSize: 13, color: kInkSoft),
+        ),
+        textTheme: const TextTheme().apply(bodyColor: kInk, displayColor: kInk),
+        filledButtonTheme: FilledButtonThemeData(
+          style: FilledButton.styleFrom(
+            shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(kRadiusSm)),
+            textStyle: const TextStyle(fontWeight: FontWeight.w700, fontSize: 15),
+          ),
+        ),
+        outlinedButtonTheme: OutlinedButtonThemeData(
+          style: OutlinedButton.styleFrom(
+            side: const BorderSide(color: kLine),
+            shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(kRadiusSm)),
+            textStyle: const TextStyle(fontWeight: FontWeight.w700, fontSize: 15),
+          ),
+        ),
+        snackBarTheme: const SnackBarThemeData(
+          behavior: SnackBarBehavior.floating,
+        ),
       ),
       home: const _Boot(),
     );
@@ -47,8 +103,30 @@ class _BootState extends State<_Boot> {
 
   Future<void> _load() async {
     await DataService.instance.load();
+    await SelectionService.instance.load();
     await ProgressService.instance.load();
     await VoiceService.instance.init();
+    // Cloud-Sync anbinden; bei bestehender Sitzung Stand zusammenführen.
+    if (Config.authEnabled && AuthService.instance.ready) {
+      SyncService.instance.attach();
+      if (AuthService.instance.isSignedIn) {
+        await SyncService.instance.pullMergePush();
+      }
+    }
+    // Werbe-/Billing-SDK NICHT blockierend initialisieren: ein langsames oder
+    // fehlendes SDK (z. B. ohne Google-Play-Dienste) darf den App-Start niemals
+    // aufhalten. Premium-Status und Werbung aktualisieren sich reaktiv.
+    unawaited(_initMonetization());
+  }
+
+  Future<void> _initMonetization() async {
+    if (!Config.monetizationEnabled) return;
+    try {
+      await PremiumService.instance.init();
+    } catch (_) {}
+    try {
+      await AdService.instance.init();
+    } catch (_) {}
   }
 
   @override
@@ -66,7 +144,30 @@ class _BootState extends State<_Boot> {
             body: Center(child: Text('Fehler beim Laden:\n${snap.error}')),
           );
         }
-        return const HomeScreen();
+        return const AuthGate();
+      },
+    );
+  }
+}
+
+/// Anmelde-Schranke: Login ist Pflicht. Ohne Anmeldung -> LoginScreen,
+/// nach Anmeldung -> App. Reagiert live auf An-/Abmeldungen.
+/// Sicherheitsnetz: ist Auth nicht konfiguriert/initialisiert, wird nicht
+/// ausgesperrt (App bliebe nutzbar statt „gebrickt").
+class AuthGate extends StatelessWidget {
+  const AuthGate({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    if (!Config.authEnabled || !AuthService.instance.ready) {
+      return const HomeScreen();
+    }
+    return StreamBuilder<AuthState>(
+      stream: AuthService.instance.onAuthChange,
+      builder: (context, _) {
+        return AuthService.instance.isSignedIn
+            ? const HomeScreen()
+            : const LoginScreen();
       },
     );
   }

@@ -13,6 +13,9 @@ class ProgressService {
   final Map<String, Progress> _map = {};
   SharedPreferences? _prefs;
 
+  /// Wird nach jeder Änderung aufgerufen (z. B. Cloud-Push durch SyncService).
+  void Function()? onChanged;
+
   Future<void> load() async {
     _prefs = await SharedPreferences.getInstance();
     final raw = _prefs!.getString(_key);
@@ -30,6 +33,41 @@ class ProgressService {
     final obj = <String, dynamic>{};
     _map.forEach((k, v) => obj[k] = v.toJson());
     await _prefs?.setString(_key, json.encode(obj));
+    onChanged?.call();
+  }
+
+  /// Gesamter Fortschritt als JSON – für den Cloud-Upload.
+  Map<String, dynamic> exportJson() {
+    final o = <String, dynamic>{};
+    _map.forEach((k, v) => o[k] = v.toJson());
+    return o;
+  }
+
+  /// Führt einen fremden (Cloud-)Stand herein: je Frage wird der weiter
+  /// fortgeschrittene Datensatz behalten (höhere Box, dann mehr gesehen/richtig).
+  /// Speichert lokal, wenn sich etwas geändert hat.
+  void mergeRemote(Map<String, dynamic> remote) {
+    var changed = false;
+    remote.forEach((k, v) {
+      if (v is! Map) return;
+      final incoming = Progress.fromJson(Map<String, dynamic>.from(v));
+      final cur = _map[k];
+      if (cur == null || _moreAdvanced(incoming, cur)) {
+        _map[k] = incoming;
+        changed = true;
+      }
+    });
+    if (changed) {
+      final obj = <String, dynamic>{};
+      _map.forEach((k, val) => obj[k] = val.toJson());
+      _prefs?.setString(_key, json.encode(obj)); // ohne onChanged -> keine Push-Schleife
+    }
+  }
+
+  bool _moreAdvanced(Progress a, Progress b) {
+    if (a.box != b.box) return a.box > b.box;
+    if (a.seen != b.seen) return a.seen > b.seen;
+    return a.correct > b.correct;
   }
 
   Progress? get(String id) => _map[id];
@@ -66,10 +104,10 @@ class ProgressService {
     _save();
   }
 
-  // ---- Kennzahlen ----
+  // ---- Kennzahlen (nur über die aktiven Fächer: Basis + gewählte Fachrichtungen) ----
   int dueCount() {
     var n = 0;
-    for (final q in DataService.instance.questions) {
+    for (final q in DataService.instance.activeQuestions()) {
       if (isDue(q.id)) n++;
     }
     return n;
@@ -77,7 +115,7 @@ class ProgressService {
 
   int freshCount() {
     var n = 0;
-    for (final q in DataService.instance.questions) {
+    for (final q in DataService.instance.activeQuestions()) {
       final p = _map[q.id];
       if (p == null || p.seen == 0) n++;
     }
@@ -86,7 +124,7 @@ class ProgressService {
 
   int masteredCount() {
     var n = 0;
-    for (final q in DataService.instance.questions) {
+    for (final q in DataService.instance.activeQuestions()) {
       final p = _map[q.id];
       if (p != null && p.seen > 0 && p.box >= kMasterBox) n++;
     }
@@ -95,7 +133,7 @@ class ProgressService {
 
   int seenCount() {
     var n = 0;
-    for (final q in DataService.instance.questions) {
+    for (final q in DataService.instance.activeQuestions()) {
       final p = _map[q.id];
       if (p != null && p.seen > 0) n++;
     }
@@ -117,7 +155,7 @@ class ProgressService {
 
   double overallReife() {
     var tot = 0, acc = 0.0;
-    for (final f in [1, 2, 3, 4, 5]) {
+    for (final f in DataService.instance.activeFacher()) {
       final n = DataService.instance.forFach(f).length;
       if (n == 0) continue;
       tot += n;
