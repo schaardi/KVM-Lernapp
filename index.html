@@ -367,6 +367,84 @@
   }
 
   @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+
+/* ===== Kostenwesen-Modul ===== */
+.kw-lead{font-size:13px;color:var(--muted);line-height:1.55;margin:0 0 12px}
+.kw-ch{border:1px solid var(--line);border-radius:12px;background:var(--paper);margin-bottom:10px;overflow:hidden}
+.kw-ch>summary{cursor:pointer;list-style:none;padding:13px 15px;display:flex;align-items:center;gap:11px}
+.kw-ch>summary::-webkit-details-marker{display:none}
+.kw-ch-n{flex:0 0 30px;height:30px;border-radius:9px;display:grid;place-items:center;font-weight:800;font-size:13px}
+.kw-ch-t{font-weight:800;font-size:15px;color:var(--ink);line-height:1.25}
+.kw-ch-s{font-size:12px;color:var(--muted);margin-top:2px}
+.kw-ch[open]>summary{border-bottom:1px solid var(--line)}
+.kw-body{padding:4px 15px 14px}
+.kw-sec{padding:14px 0;border-bottom:1px dashed var(--line)}
+.kw-sec:last-child{border-bottom:0}
+.kw-sec h4{margin:0 0 8px;font-size:15.5px;color:var(--ink);font-family:var(--disp);letter-spacing:.2px}
+.kw-sec p{margin:0 0 10px;font-size:13.5px;line-height:1.65;color:var(--ink)}
+.kw-sec ul{margin:0 0 10px;padding-left:18px}
+.kw-sec li{font-size:13px;line-height:1.55;color:var(--ink);margin-bottom:5px}
+.kw-scheme{font-family:var(--mono);font-size:12px;line-height:1.7;background:var(--steel);border:1px solid var(--line);border-radius:9px;padding:11px 13px;white-space:pre;overflow-x:auto;margin:0 0 10px}
+.kw-f{background:var(--petrol-soft);border-radius:9px;padding:10px 12px;margin:0 0 8px}
+.kw-f b{display:block;font-size:11px;letter-spacing:.3px;color:var(--petrol-deep);text-transform:uppercase}
+.kw-f span{display:block;font-size:14px;font-weight:700;color:var(--ink);margin-top:3px}
+.kw-f i{display:block;font-size:12px;color:var(--muted);font-style:normal;margin-top:3px}
+.kw-note{border-left:3px solid var(--ok);background:var(--ok-soft);border-radius:8px;padding:10px 12px;margin:0 0 8px;font-size:13px;line-height:1.55;color:var(--ink)}
+.kw-note.warn{border-left-color:var(--err);background:var(--err-soft)}
+.kw-note b{display:block;margin-bottom:3px;font-size:12px;text-transform:uppercase;letter-spacing:.3px}
+.kw-ex{border:1px solid var(--line);border-radius:9px;padding:12px;background:var(--steel);margin:0 0 8px}
+.kw-ex .kw-ex-t{font-weight:700;font-size:13px;color:var(--ink);margin-bottom:8px}
+.kw-ex ol{margin:0 0 8px;padding-left:18px}
+.kw-ex li{font-size:12.5px;line-height:1.55;color:var(--muted);margin-bottom:4px}
+.kw-ex .kw-ex-r{background:var(--ok-soft);color:var(--ok);font-weight:800;font-size:13px;border-radius:7px;padding:8px 11px}
+/* Rechner */
+.kw-picker{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:14px}
+.kw-pick{border:1px solid var(--line);background:var(--paper);border-radius:999px;padding:7px 13px;font:600 12.5px var(--body);color:var(--muted);cursor:pointer}
+.kw-pick.on{background:var(--petrol);border-color:var(--petrol);color:#fff}
+.kw-card{border:1px solid var(--line);border-radius:12px;background:var(--paper);padding:14px;margin-bottom:12px}
+.kw-card h4{margin:0 0 3px;font-size:15px;color:var(--ink);font-family:var(--disp)}
+.kw-card .kw-sub{font-size:12px;color:var(--muted);margin:0 0 12px}
+.kw-modes{display:flex;gap:5px;background:var(--steel);border:1px solid var(--line);border-radius:10px;padding:4px;margin-bottom:12px}
+.kw-modes button{flex:1;border:0;background:transparent;border-radius:7px;padding:8px 4px;font:700 12.5px var(--body);color:var(--muted);cursor:pointer}
+.kw-modes button.on{background:var(--petrol);color:#fff}
+.kw-row{display:flex;align-items:center;gap:8px;padding:5px 0}
+.kw-row.sub,.kw-row.tot{border-top:1px solid var(--line);margin-top:2px}
+.kw-op{flex:0 0 14px;font-weight:800;color:var(--muted);font-size:14px}
+.kw-row.tot .kw-op,.kw-row.sub .kw-op{color:var(--petrol)}
+.kw-lbl{flex:1;min-width:0;font-size:13px;color:var(--ink);line-height:1.3;overflow-wrap:anywhere}
+.kw-row.sub .kw-lbl,.kw-row.tot .kw-lbl{font-weight:800}
+.kw-lbl small{display:block;font-size:11px;color:var(--muted);margin-top:1px}
+.kw-in,.kw-pct{flex:0 0 auto;border:1px solid var(--line);background:var(--steel);border-radius:7px;padding:7px 8px;font:600 13px var(--body);color:var(--ink);text-align:right;width:104px}
+.kw-pct{width:62px}
+.kw-in:focus,.kw-pct:focus{outline:0;border-color:var(--petrol);background:var(--paper)}
+.kw-val{flex:0 0 auto;min-width:104px;white-space:nowrap;text-align:right;font-size:13.5px;font-weight:700;color:var(--ink)}
+.kw-row.tot .kw-val{font-size:15px;font-weight:800;color:var(--petrol-deep)}
+.kw-tiles{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-top:10px}
+.kw-tile{border:1px solid var(--line);border-radius:10px;padding:10px 12px;background:var(--steel)}
+.kw-tile b{display:block;font-size:11px;color:var(--muted);font-weight:600}
+.kw-tile span{display:block;font-size:17px;font-weight:800;color:var(--petrol);margin-top:2px}
+.kw-tile i{display:block;font-size:11px;color:var(--muted);font-style:normal;margin-top:1px}
+.kw-actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
+.kw-btn{border:1px solid var(--line);background:var(--paper);border-radius:9px;padding:9px 13px;font:700 12.5px var(--body);color:var(--petrol);cursor:pointer}
+.kw-btn.solid{background:var(--petrol);border-color:var(--petrol);color:#fff}
+.kw-steps{margin-top:10px;border:1px solid var(--line);border-radius:10px;background:var(--paper)}
+.kw-steps>summary{cursor:pointer;padding:11px 13px;font-weight:700;font-size:13px;color:var(--ink);list-style:none}
+.kw-steps>summary::-webkit-details-marker{display:none}
+.kw-steps ul{margin:0;padding:0 13px 12px 30px}
+.kw-steps li{font-size:12.5px;line-height:1.55;color:var(--muted);margin-bottom:5px}
+.kw-tbl{overflow-x:auto;margin-bottom:8px}
+.kw-tbl table{border-collapse:collapse;min-width:520px}
+.kw-tbl th{font-size:11.5px;color:var(--petrol-deep);text-align:right;padding:0 0 6px 6px;font-weight:800}
+.kw-tbl th:first-child{text-align:left}
+.kw-tbl td{padding:3px 0 3px 6px}
+.kw-tbl td:first-child{padding-left:0}
+.kw-tbl input.kw-name{border:0;background:transparent;font:600 12.5px var(--body);color:var(--ink);width:140px;padding:6px 0}
+.kw-tbl input.kw-name:focus{outline:0;border-bottom:1px solid var(--petrol)}
+.kw-tbl .kw-sum td{border-top:1px solid var(--line);font-weight:800;color:var(--petrol-deep);font-size:13px;text-align:right;padding-top:7px}
+.kw-tbl .kw-sum td:first-child{text-align:left}
+.kw-del{border:0;background:transparent;color:var(--muted);cursor:pointer;font-size:15px;line-height:1;padding:4px}
+@media(max-width:520px){.kw-tiles{grid-template-columns:1fr}.kw-in{width:84px}.kw-val{min-width:84px}.kw-pct{width:52px}
+.kw-row{gap:6px}.kw-lbl{font-size:12.5px}.kw-modes button{font-size:11.5px}}
 </style>
 </head>
 <body>
@@ -453,6 +531,12 @@
       <p class="h-label">Gefahrgut-Symbole (ADR)</p>
       <p class="sync-lead">Gefahrzettel und orange Warntafel aktiv lernen: Übersicht aller 15 Gefahrgutklassen, Erkennungs-Quiz und Warntafel-Decoder (Gefahr- und UN-Nummer).</p>
       <button class="sync-btn" id="btnADR">Gefahrgut-Symbole öffnen</button>
+    </div>
+
+    <div class="home-section" id="kwSection">
+      <p class="h-label">Betriebliches Kostenwesen</p>
+      <p class="sync-lead">Das komplette Kostenwesen von Grund auf erklärt – Abgrenzung, Kostenarten, BAB, Kalkulation, Deckungsbeitrag und Kennzahlen. Dazu Rechner im Prüfungsschema: Zuschlagskalkulation, Betriebsabrechnungsbogen, Break-Even und mehr.</p>
+      <button class="sync-btn" id="btnKW">Kostenwesen öffnen</button>
     </div>
   </div>
 
@@ -578,6 +662,22 @@
       <div id="adrOverview" class="adr-pane"></div>
       <div id="adrQuiz" class="adr-pane" hidden></div>
       <div id="adrBoard" class="adr-pane" hidden></div>
+    </div>
+  </div>
+</div>
+
+<!-- Betriebliches Kostenwesen -->
+<div class="modal" id="mKW" hidden>
+  <div class="backdrop" data-close></div>
+  <div class="sheet wide" role="dialog" aria-modal="true" aria-label="Betriebliches Kostenwesen">
+    <div class="sheet-head"><h3>Betriebliches Kostenwesen</h3><button class="x" data-close aria-label="Schließen">✕</button></div>
+    <div class="sheet-body">
+      <div class="adr-tabs" id="kwTabs">
+        <button class="adr-tab active" data-ktab="learn">Lernen</button>
+        <button class="adr-tab" data-ktab="calc">Rechnen</button>
+      </div>
+      <div id="kwLearn" class="adr-pane"></div>
+      <div id="kwCalc" class="adr-pane" hidden></div>
     </div>
   </div>
 </div>
@@ -1825,5 +1925,757 @@ window.KVMqr=makeQR;
   document.addEventListener("keydown",function(e){if(e.key==="Escape"&&adrOpen)closeADR();});
 })();
 </script>
+<script>
+/* ===== Betriebliches Kostenwesen: Lernteil + Rechner im Prüfungsschema ===== */
+(function(){"use strict";
+var $=function(id){return document.getElementById(id);};
+
+/* ---------- Zahlen (deutsches Format) ---------- */
+function num(s){
+  if(s==null)return 0;
+  var t=String(s).trim().replace(/[^0-9,.\-]/g,"");
+  if(!t||t==="-")return 0;
+  if(t.indexOf(",")>=0){t=t.replace(/\./g,"").replace(",",".");}
+  else if(t.indexOf(".")>=0){
+    /* Punkte sind Tausendertrenner, wenn alle Gruppen dahinter 3 Ziffern haben
+       ("40.000" = vierzigtausend); sonst Dezimalpunkt ("1.5"). */
+    var pa=t.split("."),th=true;
+    for(var q=1;q<pa.length;q++){if(pa[q].length!==3){th=false;break;}}
+    if(th)t=pa.join("");
+  }
+  var x=parseFloat(t);
+  return isNaN(x)?0:x;
+}
+function fmt(x,d){
+  if(x===undefined||x===null||isNaN(x)||!isFinite(x))return "–";
+  d=(d===undefined)?2:d;
+  var neg=x<0,s=Math.abs(x).toFixed(d),p=s.split("."),i=p[0],o="";
+  for(var k=0;k<i.length;k++){if(k>0&&(i.length-k)%3===0)o+=".";o+=i[k];}
+  return (neg?"−":"")+(p[1]?o+","+p[1]:o);
+}
+function eur(x){var f=fmt(x);return f==="–"?f:f+" €";}
+function pct(x){var f=fmt(x);return f==="–"?f:f+" %";}
+function esc(s){return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");}
+
+/* ================= LERNTEIL ================= */
+var CH=[
+{t:"Grundlagen der Kostenrechnung",s:"Wozu das Ganze · Aufwand vs. Kosten · Kostenbegriffe",c:"#0C6C78",sec:[
+ {t:"Warum es die Kostenrechnung überhaupt gibt",
+  b:"Ein Betrieb führt zwei Rechnungen nebeneinander. Die Finanzbuchhaltung (FiBu) schaut nach außen: Sie ist gesetzlich vorgeschrieben und zeigt dem Finanzamt, der Bank und den Eigentümern, wie erfolgreich das ganze Unternehmen im Geschäftsjahr war.\n\nDie Kosten- und Leistungsrechnung (KLR) schaut nach innen. Sie beantwortet genau die Fragen, die dich als Meister täglich betreffen: Was kostet uns dieses Teil wirklich? Welchen Preis müssen wir mindestens verlangen? Lohnt sich der Zusatzauftrag? Selbst fertigen oder zukaufen?",
+  l:["FiBu: extern, gesetzlich, Geschäftsjahr, rechnet mit Aufwand und Ertrag.",
+     "KLR: intern, freiwillig, kurze Perioden, rechnet mit Kosten und Leistungen.",
+     "Die KLR ist die Grundlage jeder Kalkulation und jeder Preisentscheidung."],
+  m:"Die KLR läuft in drei Stufen: Kostenartenrechnung – WELCHE Kosten sind angefallen? Kostenstellenrechnung – WO sind sie angefallen? Kostenträgerrechnung – WOFÜR sind sie angefallen?"},
+ {t:"Aufwand und Kosten sauber trennen",
+  b:"Das ist das Fundament – und die häufigste Fehlerquelle. Aufwand ist jeder Werteverzehr, den die Buchhaltung erfasst. Kosten sind nur der betriebsbedingte, periodengerechte, bewertete Verzehr für die eigentliche Betriebsleistung.\n\nEine Spende an den Sportverein ist Aufwand – aber keine Kosten. Umgekehrt gibt es Kosten, die in der Buchhaltung gar nicht auftauchen: Der Inhaber eines Einzelunternehmens zahlt sich kein Gehalt, seine Arbeit ist trotzdem etwas wert.",
+  l:["Neutraler Aufwand: betriebsfremd (Spende), außerordentlich (Brandschaden), periodenfremd (Steuernachzahlung Vorjahr).",
+     "Zweckaufwand: betriebsbedingt und gleich hoch → Grundkosten.",
+     "Anderskosten: gleiche Sache, anderer Betrag (kalkulatorische statt bilanzieller Abschreibung).",
+     "Zusatzkosten: in der FiBu nicht vorhanden (kalk. Unternehmerlohn, Eigenkapitalzinsen, Miete)."],
+  f:[["Kostenbegriff","Kosten = Grundkosten + kalkulatorische Kosten",""]],
+  w:"Ordne jeden Geschäftsvorfall zuerst in eine der vier Schubladen ein, bevor du rechnest. „Verkauf eines Firmenwagens über Buchwert“ ist neutraler Ertrag, keine Leistung."},
+ {t:"Die Ergebnistabelle (Abgrenzungsrechnung)",
+  b:"Hier wird die Brücke zwischen FiBu und KLR geschlagen. Was nicht betriebsbedingt ist, wandert in die neutrale Spalte; was betriebsbedingt ist, wandert – gegebenenfalls mit korrigiertem Betrag – in die KLR-Spalte.",
+  sch:["Gesamtergebnis (FiBu)","   = neutrales Ergebnis","   + Betriebsergebnis (KLR)","","neutrales Ergebnis = neutraler Ertrag − neutraler Aufwand","Betriebsergebnis   = Leistungen − Kosten"],
+  ex:{t:"Gesamtergebnis 80.000 €. Enthalten: Spende 5.000 €, Brandschaden 20.000 €, Mieterträge aus nicht betriebsnotwendigem Haus 15.000 €. Kalk. Unternehmerlohn 60.000 €.",
+      st:["Neutraler Aufwand = 5.000 + 20.000 = 25.000 €","Neutraler Ertrag = 15.000 €","Neutrales Ergebnis = 15.000 − 25.000 = −10.000 €","Betriebsergebnis = 80.000 − (−10.000) = 90.000 €","Nach kalk. Unternehmerlohn: 90.000 − 60.000"],
+      r:"Kalkulatorisches Betriebsergebnis = 30.000 €"}},
+ {t:"Die Kostenbegriffe, die du sicher können musst",
+  b:"Kosten werden nach zwei völlig verschiedenen Gesichtspunkten sortiert. Erstens: Kann ich sie einem Produkt direkt zurechnen? Zweitens: Verändern sie sich mit der Ausbringungsmenge? Diese Einteilungen darfst du nie durcheinanderbringen.",
+  l:["Einzelkosten: direkt zurechenbar – Fertigungsmaterial, Fertigungslöhne, Sondereinzelkosten.",
+     "Gemeinkosten: nicht direkt zurechenbar – Meistergehalt, Hallenmiete, Energie.",
+     "Fixe Kosten: bleiben bei Beschäftigungsänderung gleich.",
+     "Variable Kosten: verändern sich mit der Ausbringung.",
+     "Sprungfixe Kosten: bleiben stufenweise konstant (zweite Schicht braucht zweiten Meister)."],
+  f:[["Gesamtkosten","K = Kf + kv · x","Kf = Fixkosten, kv = variable Stückkosten, x = Menge"],
+     ["Stückkosten","k = K ÷ x",""]],
+  m:"Fixkosten sind pro Stück variabel, variable Kosten sind pro Stück fix. Dahinter steckt die Fixkostendegression: Je mehr Stück, desto weniger Fixkosten trägt jedes einzelne."}
+]},
+{t:"Kostenartenrechnung",s:"Welche Kosten? · Material · kalkulatorische Kosten",c:"#D9820A",sec:[
+ {t:"Materialverbrauch ermitteln",
+  b:"Bevor Material bewertet wird, muss die verbrauchte Menge bekannt sein. Drei Verfahren stehen zur Wahl – sie unterscheiden sich in Genauigkeit und Aufwand.",
+  l:["Inventurmethode: Anfangsbestand + Zugänge − Endbestand. Einfach, erfasst Schwund aber nicht getrennt.",
+     "Skontrationsmethode: Summe der Materialentnahmescheine. Genau, zeigt im Vergleich die Fehlmenge.",
+     "Retrograde Methode: Sollverbrauch = Stückliste × produzierte Menge."],
+  f:[["Inventurmethode","Verbrauch = AB + Zugänge − EB",""],
+     ["Fehlmenge","Verbrauch (Inventur) − Verbrauch (Skontration)",""]],
+  ex:{t:"AB 400 Stück, Zugänge 2.600, Endbestand laut Inventur 350. Entnahmescheine: 2.600 Stück.",
+      st:["Inventur: 400 + 2.600 − 350 = 2.650 Stück","Skontration: 2.600 Stück","Differenz: 2.650 − 2.600"],
+      r:"Fehlmenge (Schwund/Bruch) = 50 Stück"}},
+ {t:"Kalkulatorische Abschreibung",
+  b:"Die bilanzielle Abschreibung folgt dem Steuerrecht. Für die interne Rechnung ist das unbrauchbar: Wenn die Maschine in acht Jahren ersetzt werden muss, brauchst du bis dahin den dann gültigen Preis. Deshalb rechnet die KLR mit dem Wiederbeschaffungswert und der tatsächlichen Nutzungsdauer.",
+  f:[["Linear","(Wiederbeschaffungswert − Restwert) ÷ Nutzungsdauer","Der Standardfall."],
+     ["Degressiv","Restbuchwert × Abschreibungssatz %","Fallende Beträge."],
+     ["Leistungsbezogen","(WBW − RW) ÷ Gesamtleistung × Periodenleistung","Nach Maschinenstunden oder km."]],
+  ex:{t:"Wiederbeschaffungswert 120.000 €, Restwert 20.000 €, Nutzungsdauer 10 Jahre.",
+      st:["120.000 − 20.000 = 100.000 € Abschreibungsvolumen","100.000 ÷ 10 Jahre"],r:"10.000 € pro Jahr"},
+  w:"Die kalkulatorische Abschreibung darf über die Nutzungsdauer mehr betragen als der Anschaffungswert – das ist gewollt (Anderskosten)."},
+ {t:"Kalkulatorische Zinsen",
+  b:"Im Betrieb steckt Kapital – in Maschinen, Vorräten, Forderungen. Dieses Geld könnte am Kapitalmarkt Zinsen bringen. Diesen entgangenen Gewinn verrechnet die KLR als Kosten, und zwar auf das gesamte betriebsnotwendige Kapital.",
+  sch:["   Betriebsnotwendiges Vermögen"," − Abzugskapital (zinsfrei überlassen)"," = Betriebsnotwendiges Kapital"," × Kalkulatorischer Zinssatz"," = Kalkulatorische Zinsen"],
+  f:[["Gebundenes Kapital","(Anschaffungswert + Restwert) ÷ 2","Bei abnutzbarem Anlagevermögen."]],
+  w:"Nicht betriebsnotwendige Teile (leerstehendes Grundstück, Wertpapiere) fliegen vorher raus."},
+ {t:"Wagnisse, Unternehmerlohn und Miete",
+  b:"Drei weitere kalkulatorische Kostenarten machen die Rechnung realistischer, als die Buchhaltung es könnte.",
+  l:["Kalkulatorische Wagnisse: Ausschuss, Gewährleistung, Forderungsausfall über einen Durchschnittssatz mehrerer Jahre.",
+     "Das allgemeine Unternehmerwagnis wird NICHT verrechnet – es deckt der Gewinn ab.",
+     "Kalkulatorischer Unternehmerlohn: nur bei Einzelunternehmen und Personengesellschaften.",
+     "Kalkulatorische Miete: für privat überlassene Räume, in ortsüblicher Höhe."],
+  f:[["Wagniszuschlag","Wagnisverluste mehrerer Jahre ÷ Bezugsgröße × 100",""]],
+  ex:{t:"Forderungsausfälle 4 Jahre: 32.000 €, Umsatz derselben Jahre 4.000.000 €. Planumsatz 1.200.000 €.",
+      st:["Wagnissatz = 32.000 ÷ 4.000.000 × 100 = 0,8 %","1.200.000 × 0,8 %"],r:"9.600 € kalkulatorisches Wagnis"}}
+]},
+{t:"Kostenstellenrechnung (BAB)",s:"Wo entstehen die Kosten? · Zuschlagssätze",c:"#2C8A4E",sec:[
+ {t:"Wozu Kostenstellen?",
+  b:"Einzelkosten wandern direkt ins Produkt. Die Hallenmiete lässt sich aber keinem Bauteil zuordnen. Also werden die Gemeinkosten zuerst auf die Orte verteilt, an denen sie entstanden sind, und von dort mit einem Zuschlagssatz ins Produkt gebracht. Das Werkzeug dafür ist der Betriebsabrechnungsbogen.",
+  l:["Hauptkostenstellen: Material, Fertigung, Verwaltung, Vertrieb.",
+     "Hilfskostenstellen: Reparatur, Energie, Fuhrpark – werden umgelegt.",
+     "Zweiter Zweck: Wirtschaftlichkeitskontrolle je Stelle."],
+  m:"Der BAB hat drei Schritte: verteilen, summieren, Zuschlagssätze bilden."},
+ {t:"Verteilungsschlüssel richtig wählen",
+  b:"Ein Schlüssel muss die Kostenverursachung abbilden. Die Frage lautet immer: Wovon hängen diese Kosten ab?",
+  l:["Raumkosten → Quadratmeter","Energiekosten → kWh oder installierte kW","Personalnebenkosten → Lohn- und Gehaltssumme","Abschreibungen → Anlagenwerte je Stelle","Materialgemeinkosten → Zahl der Entnahmescheine"],
+  w:"Ein bequemer Schlüssel ist nicht automatisch ein richtiger. Wenn „verursachungsgerecht“ verlangt wird, ist der Schlüssel gesucht, der die Kostenentstehung erklärt."},
+ {t:"Zuschlagssätze berechnen",
+  b:"Am Ende jeder Spalte steht die Gemeinkostensumme der Stelle. Sie wird zu der Bezugsgröße ins Verhältnis gesetzt, die den besten Zusammenhang zeigt.",
+  f:[["Materialgemeinkosten","MGK-Satz % = MGK ÷ Fertigungsmaterial × 100",""],
+     ["Fertigungsgemeinkosten","FGK-Satz % = FGK ÷ Fertigungslöhne × 100",""],
+     ["Herstellkosten","HK = FM + MGK + FL + FGK + SEK Fertigung",""],
+     ["Verwaltung / Vertrieb","Satz % = GK ÷ Herstellkosten × 100",""]],
+  ex:{t:"MGK 24.000 €, Fertigungsmaterial 160.000 €, FGK 189.000 €, Fertigungslöhne 90.000 €, VwGK 27.720 €, VtGK 18.480 €.",
+      st:["MGK-Satz = 24.000 ÷ 160.000 × 100 = 15 %","FGK-Satz = 189.000 ÷ 90.000 × 100 = 210 %","HK = 160.000 + 24.000 + 90.000 + 189.000 = 463.000 €","VwGK ≈ 5,99 % · VtGK ≈ 3,99 %"],
+      r:"MGK 15 % · FGK 210 % · VwGK ≈ 6 % · VtGK ≈ 4 %"},
+  w:"Fertigungsgemeinkostensätze von 200 % und mehr sind normal – die Maschinen kosten heute mehr als die Menschen, die sie bedienen."},
+ {t:"Innerbetriebliche Leistungsverrechnung",
+  b:"Hilfskostenstellen arbeiten für andere Stellen. Diese Leistungen müssen weiterverrechnet werden, bevor Zuschlagssätze gebildet werden.",
+  l:["Anbauverfahren: gegenseitige Leistungen werden ignoriert – einfachster Fall.",
+     "Stufenleiterverfahren: feste Reihenfolge, jede Stelle gibt nur nach unten ab.",
+     "Gleichungsverfahren: berücksichtigt den Austausch vollständig – am genauesten."]},
+ {t:"Über- und Unterdeckung",
+  b:"Wird mit Normalkosten aus der Vergangenheit kalkuliert, weichen verrechnete und tatsächliche Gemeinkosten voneinander ab. Diese Differenz macht die Wirtschaftlichkeit sichtbar.",
+  f:[["Deckungsdifferenz","verrechnete Gemeinkosten − Ist-Gemeinkosten",""]],
+  m:"Verrechnet > Ist → Überdeckung. Verrechnet < Ist → Unterdeckung."}
+]},
+{t:"Kalkulationsverfahren",s:"Zuschlag · Division · Äquivalenzziffern · Angebot",c:"#3f6fb5",sec:[
+ {t:"Welches Verfahren wann?",
+  b:"Die Kostenträgerrechnung beantwortet: Was kostet das einzelne Stück? Welches Verfahren passt, hängt allein vom Fertigungstyp ab.",
+  l:["Ein Produkt in Masse → Divisionskalkulation.",
+     "Artverwandte Sorten aus einem Prozess → Äquivalenzziffernkalkulation.",
+     "Unterschiedliche Erzeugnisse, Einzel-/Serienfertigung → Zuschlagskalkulation.",
+     "Hoher Maschinenanteil → Maschinenstundensatzrechnung."]},
+ {t:"Divisions- und Äquivalenzziffernkalkulation",
+  b:"Division ist das einfachste Verfahren: Gesamtkosten durch Menge. Weichen Produktions- und Absatzmenge ab, wird zweistufig gerechnet – Verwaltung und Vertrieb fallen nur für verkaufte Stücke an. Bei Sorten macht die Äquivalenzziffer die Produkte vergleichbar: Die Standardsorte bekommt 1,0.",
+  sch:["1. Rechnungseinheiten = Menge × Äquivalenzziffer","2. Summe aller Rechnungseinheiten","3. Kosten je RE = Gesamtkosten ÷ Σ RE","4. Stückkosten je Sorte = Kosten je RE × ÄZ"],
+  f:[["Einstufig","k = Gesamtkosten ÷ Menge",""],
+     ["Zweistufig","k = HK ÷ Produktionsmenge + VwVt ÷ Absatzmenge",""]]},
+ {t:"Differenzierende Zuschlagskalkulation",
+  b:"Das wichtigste Verfahren der Prüfung. Einzelkosten werden direkt angesetzt, Gemeinkosten kommen über die Zuschlagssätze aus dem BAB dazu. Das Schema läuft immer gleich – lerne es auswendig, dann ist jede Aufgabe nur noch Einsetzen.",
+  sch:["   Fertigungsmaterial            (FM)"," + Materialgemeinkosten   % auf FM"," = Materialkosten               (MK)","","   Fertigungslöhne              (FL)"," + Fertigungsgemeinkosten % auf FL"," + Sondereinzelkosten der Fertigung"," = Fertigungskosten             (FK)",""," = Herstellkosten          MK + FK"," + Verwaltungsgemeinkosten % auf HK"," + Vertriebsgemeinkosten   % auf HK"," + Sondereinzelkosten des Vertriebs"," = Selbstkosten                 (SK)"],
+  m:"Materialgemeinkosten auf das Fertigungsmaterial, Fertigungsgemeinkosten auf die Fertigungslöhne, Verwaltung und Vertrieb auf die Herstellkosten.",
+  w:"Sondereinzelkosten des Vertriebs (Verpackung, Fracht, Provision) dürfen niemals in die Herstellkosten – sonst erhöhen sie fälschlich die Basis für die Zuschläge."},
+ {t:"Vom Angebot zum Verkaufspreis",
+  b:"Auf die Selbstkosten kommt der Gewinn – und danach das, was der Kunde wieder abzieht: Skonto und Rabatt. Genau hier liegt die klassische Falle: Beide beziehen sich auf den höheren Wert, nicht auf den, von dem du gerade kommst.",
+  sch:["   Selbstkosten"," + Gewinnzuschlag   % von den Selbstkosten"," = Barverkaufspreis"," + Kundenskonto     % vom Zielverkaufspreis"," = Zielverkaufspreis"," + Kundenrabatt     % vom Listenverkaufspreis"," = Listenverkaufspreis (netto)"," + Umsatzsteuer"," = Bruttoverkaufspreis"],
+  f:[["Vorwärts (im Hundert)","Zielverkaufspreis = Barverkaufspreis ÷ (100 − Skonto%) × 100",""],
+     ["Rückwärts (vom Hundert)","Zielverkaufspreis = Listenpreis × (100 − Rabatt%) ÷ 100",""]],
+  ex:{t:"Barverkaufspreis 970 €, Kundenskonto 3 %. Wie hoch ist der Zielverkaufspreis?",
+      st:["Falsch wäre: 970 + 3 % = 999,10 €","Die 3 % beziehen sich auf den Zielverkaufspreis (100 %)","970 € entsprechen 97 %","970 ÷ 97 × 100"],
+      r:"Zielverkaufspreis = 1.000 € (Probe: 1.000 − 3 % = 970 €)"},
+  w:"Vorwärts wird geteilt, rückwärts multipliziert. Mach immer die Probe – sie kostet zehn Sekunden und rettet die Aufgabe."},
+ {t:"Maschinenstundensatzrechnung",
+  b:"Wo Maschinen den Takt vorgeben, ist der Fertigungslohn eine schlechte Bezugsgröße – eine hochautomatisierte Anlage würde zu wenig Gemeinkosten tragen. Deshalb werden die maschinenabhängigen Kosten separat erfasst und durch die Laufzeit geteilt.",
+  f:[["Maschinenstundensatz","maschinenabhängige Kosten ÷ Maschinenlaufstunden",""]],
+  l:["Maschinenabhängig: kalk. Abschreibung, kalk. Zinsen, Raum, Energie, Instandhaltung, Werkzeuge.",
+     "Der Rest der Fertigungsgemeinkosten läuft weiter über einen Restgemeinkostenzuschlag auf die Löhne."]}
+]},
+{t:"Deckungsbeitrag & Entscheidungen",s:"Teilkosten · Break-Even · Preisuntergrenze · Engpass",c:"#5E64D6",sec:[
+ {t:"Warum Vollkosten in die Irre führen",
+  b:"Die Vollkostenrechnung verteilt alle Fixkosten auf die Produkte, als wären sie durch das einzelne Stück verursacht. Für kurzfristige Entscheidungen ist das gefährlich: Streichst du ein Produkt, weil es laut Vollkostenrechnung Verlust bringt, bleiben die Fixkosten trotzdem – sie verteilen sich nur auf weniger Produkte. Am Ende geht ein Produkt nach dem anderen.",
+  m:"Die Teilkostenrechnung rechnet nur mit den Kosten, die tatsächlich wegfallen, wenn du anders entscheidest."},
+ {t:"Der Deckungsbeitrag",
+  b:"Der Deckungsbeitrag ist der Betrag, der nach Abzug der variablen Kosten übrig bleibt, um die Fixkosten zu decken – alles darüber ist Gewinn. Solange ein Produkt einen positiven Deckungsbeitrag liefert, trägt es zum Ergebnis bei.",
+  f:[["Stückdeckungsbeitrag","db = Preis − variable Stückkosten",""],
+     ["Gesamtdeckungsbeitrag","DB = Umsatz − variable Kosten = db × Menge",""],
+     ["Deckungsbeitragsrate","DB-Rate % = db ÷ Preis × 100",""],
+     ["Betriebsergebnis","Gewinn = Gesamt-DB − Fixkosten",""]],
+  ex:{t:"Preis 50 €, variable Kosten 30 €, Fixkosten 120.000 €, Absatz 8.000 Stück.",
+      st:["db = 50 − 30 = 20 €","DB gesamt = 20 × 8.000 = 160.000 €","Gewinn = 160.000 − 120.000"],
+      r:"Gewinn = 40.000 € · DB-Rate = 40 %"}},
+ {t:"Break-Even-Punkt (Gewinnschwelle)",
+  b:"Der Break-Even-Punkt ist die Menge, bei der die Fixkosten genau gedeckt sind. Jede weitere Einheit bringt ihren vollen Deckungsbeitrag als Gewinn.",
+  f:[["Break-Even-Menge","Fixkosten ÷ Stückdeckungsbeitrag",""],
+     ["Break-Even-Umsatz","Fixkosten ÷ DB-Rate × 100",""],
+     ["Menge für Zielgewinn","(Fixkosten + Zielgewinn) ÷ db",""],
+     ["Sicherheitsstrecke %","(Ist-Menge − BE-Menge) ÷ Ist-Menge × 100","Wie weit der Absatz einbrechen darf."]],
+  ex:{t:"Fixkosten 120.000 €, db 20 €, Absatz 8.000 Stück.",
+      st:["BE-Menge = 120.000 ÷ 20 = 6.000 Stück","Sicherheitsstrecke = (8.000 − 6.000) ÷ 8.000 × 100"],
+      r:"Gewinnschwelle 6.000 Stück · Sicherheitsstrecke 25 %"}},
+ {t:"Preisuntergrenzen",
+  b:"Wie weit darfst du mit dem Preis heruntergehen? Die Antwort hängt vom Zeithorizont ab – diese Unterscheidung ist prüfungsrelevant.",
+  l:["Kurzfristige Preisuntergrenze = variable Stückkosten.",
+     "Langfristige Preisuntergrenze = Selbstkosten (Vollkosten).",
+     "Dazwischen liefert der Auftrag einen Beitrag zur Fixkostendeckung – bei freier Kapazität sinnvoll."],
+  m:"Kurzfristig entscheidet der Deckungsbeitrag, langfristig die Vollkostendeckung."},
+ {t:"Zusatzauftrag, Eigenfertigung und Engpass",
+  b:"Mit dem Deckungsbeitrag löst du die drei klassischen Entscheidungsaufgaben.",
+  l:["Zusatzauftrag: annehmen, wenn der Preis über den variablen Stückkosten liegt und Kapazität frei ist.",
+     "Eigenfertigung oder Fremdbezug: Einkaufspreis gegen die variablen Kosten der Eigenfertigung stellen.",
+     "Engpass: Nicht der höchste Deckungsbeitrag gewinnt, sondern der höchste je Engpasseinheit."],
+  f:[["Relativer Deckungsbeitrag","db ÷ Verbrauch der Engpasseinheit je Stück",""]],
+  ex:{t:"Produkt A: db 30 €, 3 Maschinenstunden. Produkt B: db 24 €, 1,5 Maschinenstunden.",
+      st:["A: 30 ÷ 3 = 10 € je Stunde","B: 24 ÷ 1,5 = 16 € je Stunde"],
+      r:"Produkt B zuerst fertigen – trotz niedrigerem Stück-DB."},
+  w:"Bei Engpassaufgaben wählt fast jeder spontan das Produkt mit dem höchsten Stück-Deckungsbeitrag. Das ist falsch, wenn die Produkte den Engpass unterschiedlich stark beanspruchen."},
+ {t:"Mehrstufige Deckungsbeitragsrechnung",
+  b:"Fixkosten sind nicht alle gleich: manche gehören zu einem Produkt, manche zu einer Gruppe, manche zum Unternehmen. Die stufenweise Rechnung zeigt, auf welcher Ebene das Geld verloren geht.",
+  sch:["   Umsatz"," − variable Kosten"," = Deckungsbeitrag I"," − Erzeugnisfixkosten"," = Deckungsbeitrag II"," − Erzeugnisgruppenfixkosten"," = Deckungsbeitrag III"," − Unternehmensfixkosten"," = Betriebsergebnis"]}
+]},
+{t:"Plankosten & Kennzahlen",s:"Soll-Ist-Vergleich · Abweichungen · Wirtschaftlichkeit",c:"#C0472F",sec:[
+ {t:"Ist, Normal, Plan",
+  b:"Die Istkostenrechnung schaut zurück – gut für die Dokumentation, schlecht für die Steuerung. Die Normalkostenrechnung glättet über Durchschnitte. Die Plankostenrechnung setzt Vorgabewerte und macht echte Kontrolle möglich.",
+  l:["Starre Plankostenrechnung: keine Anpassung an die Beschäftigung.",
+     "Flexible Plankostenrechnung: trennt fix und variabel, passt die Sollkosten an die Ist-Beschäftigung an."]},
+ {t:"Abweichungsanalyse",
+  b:"Die entscheidende Größe ist die Sollkostenlinie: Was hätten die Kosten bei der tatsächlichen Beschäftigung kosten dürfen? Der Vergleich mit den Istkosten zeigt Unwirtschaftlichkeit, der Vergleich mit den verrechneten Plankosten die Auslastung.",
+  f:[["Sollkosten","Kf(Plan) + kv(Plan) × Ist-Beschäftigung",""],
+     ["Verbrauchsabweichung","Istkosten − Sollkosten","Dafür ist die Kostenstelle verantwortlich."],
+     ["Beschäftigungsabweichung","Sollkosten − verrechnete Plankosten","Entsteht durch Leerkosten."]],
+  m:"Verbrauchsabweichung = Wirtschaftlichkeit. Beschäftigungsabweichung = Auslastung."},
+ {t:"Nutz- und Leerkosten",
+  b:"Wird eine Anlage nicht voll genutzt, zerfallen die Fixkosten in zwei Teile: Der genutzte Teil ist wertschöpfend, der ungenutzte verpufft. Das ist das stärkste Argument für hohe Auslastung.",
+  f:[["Nutzkosten","Fixkosten × Beschäftigungsgrad ÷ 100",""],
+     ["Leerkosten","Fixkosten − Nutzkosten",""],
+     ["Beschäftigungsgrad","Ist ÷ Plan × 100",""]],
+  ex:{t:"Fixkosten 200.000 €, Kapazität 10.000 Stunden, genutzt 7.500 Stunden.",
+      st:["Beschäftigungsgrad = 7.500 ÷ 10.000 × 100 = 75 %","Nutzkosten = 200.000 × 75 % = 150.000 €","Leerkosten = 200.000 − 150.000"],
+      r:"50.000 € Leerkosten"}},
+ {t:"Kennzahlen für die Meisterpraxis",
+  b:"Zum Abschluss die Kennzahlen, mit denen du deinen Bereich steuerst und in der Prüfung argumentierst.",
+  f:[["Produktivität","Ausbringungsmenge ÷ Faktoreinsatz","Mengengröße."],
+     ["Wirtschaftlichkeit","Leistung ÷ Kosten","Wertgröße."],
+     ["Umsatzrentabilität","Gewinn ÷ Umsatz × 100",""],
+     ["Return on Investment","Umsatzrentabilität × Kapitalumschlag",""]],
+  m:"Produktivität ist mengenbezogen, Wirtschaftlichkeit wertbezogen, Rentabilität kapitalbezogen."}
+]}];
+
+function learnHTML(){
+  var h='<p class="kw-lead">Sechs aufeinander aufbauende Kapitel – erst die Begriffe, dann die drei Stufen der Kostenrechnung, zuletzt Entscheidungen und Kennzahlen. Ohne Vorwissen lesbar. Tippe ein Kapitel an.</p>';
+  CH.forEach(function(c,i){
+    h+='<details class="kw-ch"><summary><span class="kw-ch-n" style="background:'+c.c+'22;color:'+c.c+'">'+(i+1)+'</span>'+
+       '<span><span class="kw-ch-t">'+esc(c.t)+'</span><span class="kw-ch-s">'+esc(c.s)+'</span></span></summary><div class="kw-body">';
+    c.sec.forEach(function(s){
+      h+='<div class="kw-sec"><h4>'+esc(s.t)+'</h4>';
+      if(s.b)h+='<p>'+esc(s.b).replace(/\n\n/g,'</p><p>')+'</p>';
+      if(s.l){h+='<ul>';s.l.forEach(function(x){h+='<li>'+esc(x)+'</li>';});h+='</ul>';}
+      if(s.sch)h+='<div class="kw-scheme">'+esc(s.sch.join("\n"))+'</div>';
+      if(s.f)s.f.forEach(function(f){
+        h+='<div class="kw-f"><b>'+esc(f[0])+'</b><span>'+esc(f[1])+'</span>'+(f[2]?'<i>'+esc(f[2])+'</i>':'')+'</div>';});
+      if(s.m)h+='<div class="kw-note"><b>Merke</b>'+esc(s.m)+'</div>';
+      if(s.ex){h+='<div class="kw-ex"><div class="kw-ex-t">Beispiel: '+esc(s.ex.t)+'</div><ol>';
+        s.ex.st.forEach(function(x){h+='<li>'+esc(x)+'</li>';});
+        h+='</ol><div class="kw-ex-r">'+esc(s.ex.r)+'</div></div>';}
+      if(s.w)h+='<div class="kw-note warn"><b>Prüfungsfalle</b>'+esc(s.w)+'</div>';
+      h+='</div>';
+    });
+    h+='</div></details>';
+  });
+  return h;
+}
+
+/* ================= RECHNER ================= */
+function rowHTML(r){
+  if(r.sp)return '<div style="height:10px"></div>';
+  var h='<div class="kw-row'+(r.tot?' tot':(r.sub?' sub':''))+'">';
+  h+='<span class="kw-op">'+(r.op||'')+'</span>';
+  h+='<span class="kw-lbl">'+esc(r.l)+(r.note?'<small>'+esc(r.note)+'</small>':'')+'</span>';
+  if(r.pct)h+='<input class="kw-pct" inputmode="decimal" data-i="'+r.pct+'" placeholder="%">';
+  if(r.in)h+='<input class="kw-in" inputmode="decimal" data-i="'+r.in+'" placeholder="0">';
+  else h+='<span class="kw-val" data-r="'+(r.r||'')+'">–</span>';
+  return h+'</div>';
+}
+function mount(def,host){
+  var mode=0;
+  function draw(){
+    var h='';
+    if(def.modes){
+      h+='<div class="kw-modes">';
+      def.modes.forEach(function(m,i){h+='<button data-m="'+i+'"'+(i===mode?' class="on"':'')+'>'+esc(m)+'</button>';});
+      h+='</div>';
+    }
+    h+='<div class="kw-card"><h4>'+esc(def.title)+'</h4><p class="kw-sub">'+esc(def.sub)+'</p>';
+    def.rows(mode).forEach(function(r){h+=rowHTML(r);});
+    h+='<div class="kw-tiles" id="kwTiles"></div>';
+    h+='<div class="kw-actions"><button class="kw-btn solid" data-ex>Beispiel laden</button><button class="kw-btn" data-clr>Leeren</button></div>';
+    h+='</div><details class="kw-steps"><summary>Rechenweg anzeigen</summary><ul id="kwSteps"></ul></details>';
+    host.innerHTML=h;
+    host.querySelectorAll("input[data-i]").forEach(function(i){i.addEventListener("input",calc);});
+    host.querySelectorAll(".kw-modes button").forEach(function(b){
+      b.addEventListener("click",function(){mode=+b.getAttribute("data-m");draw();});});
+    var ex=host.querySelector("[data-ex]"),cl=host.querySelector("[data-clr]");
+    if(ex)ex.addEventListener("click",function(){
+      var d=def.example(mode);
+      host.querySelectorAll("input[data-i]").forEach(function(i){
+        var k=i.getAttribute("data-i");i.value=(d[k]!==undefined)?d[k]:"";});
+      calc();});
+    if(cl)cl.addEventListener("click",function(){
+      host.querySelectorAll("input[data-i]").forEach(function(i){i.value="";});calc();});
+    calc();
+  }
+  function calc(){
+    var g={};
+    host.querySelectorAll("input[data-i]").forEach(function(i){g[i.getAttribute("data-i")]=num(i.value);});
+    var res=def.calc(g,mode)||{};
+    var v=res.v||{},u=res.u||{};
+    host.querySelectorAll("[data-r]").forEach(function(el){
+      var k=el.getAttribute("data-r");
+      if(!k)return;
+      var x=v[k];
+      el.textContent=(x===undefined||x===null||isNaN(x)||!isFinite(x))?"–":(u[k]==="%"?pct(x):(u[k]==="n"?fmt(x,0):eur(x)));
+    });
+    var t=host.querySelector("#kwTiles");
+    if(t){t.innerHTML=(res.tiles||[]).map(function(x){
+      return '<div class="kw-tile"><b>'+esc(x[0])+'</b><span'+(x[3]?' style="color:'+x[3]+'"':'')+'>'+esc(x[1])+'</span>'+(x[2]?'<i>'+esc(x[2])+'</i>':'')+'</div>';}).join("");}
+    var s=host.querySelector("#kwSteps");
+    if(s)s.innerHTML=(res.steps||[]).map(function(x){return '<li>'+esc(x)+'</li>';}).join("");
+  }
+  draw();
+}
+
+/* ---- 1. Zuschlagskalkulation ---- */
+var C_ZUSCHLAG={
+ id:"zuschlag",title:"Zuschlagskalkulation",sub:"Einzelkosten eintragen, Zuschlagssätze in Prozent",
+ modes:["Vorwärts","Rückwärts","Differenz"],
+ rows:function(m){
+  var r=[{l:"Fertigungsmaterial (FM)",in:"fm"},
+   {op:"+",l:"Materialgemeinkosten",pct:"mgk",r:"mgkB"},
+   {op:"=",l:"Materialkosten (MK)",r:"mk",sub:1},
+   {sp:1},
+   {l:"Fertigungslöhne (FL)",in:"fl"},
+   {op:"+",l:"Fertigungsgemeinkosten",pct:"fgk",r:"fgkB"},
+   {op:"+",l:"Sondereinzelkosten Fertigung",in:"sef"},
+   {op:"=",l:"Fertigungskosten (FK)",r:"fk",sub:1},
+   {op:"=",l:"Herstellkosten (HK)",r:"hk",tot:1},
+   {op:"+",l:"Verwaltungsgemeinkosten",note:"auf die Herstellkosten",pct:"vwgk",r:"vwgkB"},
+   {op:"+",l:"Vertriebsgemeinkosten",note:"auf die Herstellkosten",pct:"vtgk",r:"vtgkB"},
+   {op:"+",l:"Sondereinzelkosten Vertrieb",in:"sev"},
+   {op:"=",l:"Selbstkosten (SK)",r:"sk",tot:1},{sp:1}];
+  if(m===0)return r.concat([
+   {op:"+",l:"Gewinnzuschlag",pct:"gew",r:"gewB"},
+   {op:"=",l:"Barverkaufspreis",r:"bvp",sub:1},
+   {op:"+",l:"Kundenskonto",note:"im Hundert",pct:"sko",r:"skoB"},
+   {op:"=",l:"Zielverkaufspreis",r:"zvp",sub:1},
+   {op:"+",l:"Kundenrabatt",note:"im Hundert",pct:"rab",r:"rabB"},
+   {op:"=",l:"Listenverkaufspreis (netto)",r:"lvp",tot:1},
+   {op:"+",l:"Umsatzsteuer",pct:"ust",r:"ustB"},
+   {op:"=",l:"Bruttoverkaufspreis",r:"brutto",tot:1}]);
+  if(m===1)return r.concat([
+   {l:"Listenverkaufspreis (netto)",in:"lvpIn"},
+   {op:"−",l:"Kundenrabatt",note:"vom Hundert",pct:"rab",r:"rabB"},
+   {op:"=",l:"Zielverkaufspreis",r:"zvp",sub:1},
+   {op:"−",l:"Kundenskonto",note:"vom Hundert",pct:"sko",r:"skoB"},
+   {op:"=",l:"Barverkaufspreis",r:"bvp",sub:1},
+   {op:"−",l:"Gewinnzuschlag",note:"im Hundert",pct:"gew",r:"gewB"},
+   {op:"=",l:"Höchstens zulässige Selbstkosten",r:"skMax",tot:1}]);
+  return r.concat([
+   {l:"Listenverkaufspreis (netto)",in:"lvpIn"},
+   {op:"−",l:"Kundenrabatt",pct:"rab",r:"rabB"},
+   {op:"=",l:"Zielverkaufspreis",r:"zvp",sub:1},
+   {op:"−",l:"Kundenskonto",pct:"sko",r:"skoB"},
+   {op:"=",l:"Barverkaufspreis",r:"bvp",sub:1},
+   {op:"−",l:"Selbstkosten (aus dem Schema)",r:"sk2"},
+   {op:"=",l:"Gewinn",r:"gewinn",tot:1}]);
+ },
+ example:function(m){
+  var d={fm:"40.000",mgk:"15",fl:"25.000",fgk:"210",sef:"2.500",vwgk:"6",vtgk:"4",sev:"1.800",gew:"12",sko:"3",rab:"10",ust:"19"};
+  if(m>0)d.lvpIn="250.000";
+  return d;
+ },
+ calc:function(g,m){
+  var mgkB=g.fm*g.mgk/100,mk=g.fm+mgkB;
+  var fgkB=g.fl*g.fgk/100,fk=g.fl+fgkB+g.sef;
+  var hk=mk+fk,vwgkB=hk*g.vwgk/100,vtgkB=hk*g.vtgk/100;
+  var sk=hk+vwgkB+vtgkB+g.sev;
+  var v={mgkB:mgkB,mk:mk,fgkB:fgkB,fk:fk,hk:hk,vwgkB:vwgkB,vtgkB:vtgkB,sk:sk,sk2:sk},t=[],st=[
+   "Materialgemeinkosten = "+eur(g.fm)+" × "+fmt(g.mgk)+" % = "+eur(mgkB),
+   "Materialkosten = FM + MGK = "+eur(mk),
+   "Fertigungsgemeinkosten = "+eur(g.fl)+" × "+fmt(g.fgk)+" % = "+eur(fgkB),
+   "Fertigungskosten = FL + FGK + SEK = "+eur(fk),
+   "Herstellkosten = MK + FK = "+eur(hk),
+   "Selbstkosten = HK + VwGK + VtGK + SEK Vertrieb = "+eur(sk)];
+  if(m===0){
+   var gewB=sk*g.gew/100,bvp=sk+gewB;
+   var zvp=(g.sko>=100)?NaN:bvp/(100-g.sko)*100;
+   var lvp=(g.rab>=100)?NaN:zvp/(100-g.rab)*100;
+   var brutto=lvp*(1+g.ust/100);
+   v.gewB=gewB;v.bvp=bvp;v.skoB=zvp-bvp;v.zvp=zvp;v.rabB=lvp-zvp;v.lvp=lvp;v.ustB=brutto-lvp;v.brutto=brutto;
+   st.push("Barverkaufspreis = Selbstkosten + Gewinn = "+eur(bvp));
+   st.push("Zielverkaufspreis = "+eur(bvp)+" ÷ (100 − "+fmt(g.sko)+") × 100 = "+eur(zvp));
+   st.push("Listenverkaufspreis = "+eur(zvp)+" ÷ (100 − "+fmt(g.rab)+") × 100 = "+eur(lvp));
+   t=[["Listenverkaufspreis netto",eur(lvp),"an den Kunden"],["Bruttopreis",eur(brutto),"inkl. USt"]];
+  }else{
+   var zvp2=g.lvpIn*(100-g.rab)/100,bvp2=zvp2*(100-g.sko)/100;
+   v.rabB=g.lvpIn-zvp2;v.zvp=zvp2;v.skoB=zvp2-bvp2;v.bvp=bvp2;
+   st.push("Zielverkaufspreis = "+eur(g.lvpIn)+" × (100 − "+fmt(g.rab)+") ÷ 100 = "+eur(zvp2));
+   st.push("Barverkaufspreis = "+eur(zvp2)+" × (100 − "+fmt(g.sko)+") ÷ 100 = "+eur(bvp2));
+   if(m===1){
+    var skMax=bvp2/(100+g.gew)*100;
+    v.gewB=bvp2-skMax;v.skMax=skMax;
+    st.push("Maximale Selbstkosten = "+eur(bvp2)+" ÷ (100 + "+fmt(g.gew)+") × 100 = "+eur(skMax));
+    t=[["Deine Selbstkosten",eur(sk),"aus dem Schema"],
+       [sk<=skMax?"Spielraum":"Kostenüberhang",eur(Math.abs(skMax-sk)),sk<=skMax?"Preis ist tragbar":"zu teuer",sk<=skMax?"#2C8A4E":"#C0472F"]];
+   }else{
+    var gew=bvp2-sk,gp=sk===0?NaN:gew/sk*100;
+    v.gewinn=gew;
+    st.push("Gewinn = Barverkaufspreis − Selbstkosten = "+eur(gew));
+    t=[["Gewinn",eur(gew),"",gew>=0?"#2C8A4E":"#C0472F"],
+       ["Gewinnzuschlag",pct(gp),"in % der Selbstkosten",gew>=0?"#2C8A4E":"#C0472F"]];
+   }
+  }
+  return {v:v,tiles:t,steps:st};
+ }
+};
+
+/* ---- 2. Deckungsbeitrag & Break-Even ---- */
+var C_DB={
+ id:"db",title:"Deckungsbeitrag & Break-Even",sub:"Preis und variable Kosten je Stück, Fixkosten der Periode",
+ rows:function(){return [
+  {l:"Verkaufspreis je Stück",in:"p"},
+  {op:"−",l:"Variable Kosten je Stück",in:"kv"},
+  {op:"=",l:"Deckungsbeitrag je Stück",r:"db",tot:1},
+  {sp:1},
+  {l:"Fixkosten der Periode",in:"kf"},
+  {l:"Absatzmenge",in:"x"},
+  {op:"=",l:"Gesamtdeckungsbeitrag",r:"dbg",sub:1},
+  {op:"−",l:"Fixkosten",r:"kf2"},
+  {op:"=",l:"Betriebsergebnis",r:"gewinn",tot:1},
+  {sp:1},
+  {l:"Zielgewinn",in:"ziel"},
+  {l:"Selbstkosten je Stück (Vollkosten)",in:"voll"},
+  {op:"=",l:"Kurzfristige Preisuntergrenze",note:"variable Stückkosten",r:"pug1",sub:1},
+  {op:"=",l:"Langfristige Preisuntergrenze",note:"Vollkosten",r:"pug2",sub:1},
+  {sp:1},
+  {l:"Produkt A · Engpassverbrauch je Stück",in:"eA"},
+  {l:"Produkt B · Preis je Stück",in:"pB"},
+  {l:"Produkt B · variable Kosten",in:"kvB"},
+  {l:"Produkt B · Engpassverbrauch je Stück",in:"eB"},
+  {op:"=",l:"Produkt B · Deckungsbeitrag",r:"dbB",sub:1}];},
+ example:function(){return {p:"50",kv:"30",kf:"120.000",x:"8.000",ziel:"40.000",voll:"45",eA:"3",pB:"60",kvB:"36",eB:"1,5"};},
+ calc:function(g){
+  var db=g.p-g.kv,dbg=db*g.x,gewinn=dbg-g.kf;
+  var rate=g.p===0?NaN:db/g.p*100;
+  var be=db<=0?NaN:g.kf/db,beU=be*g.p;
+  var zm=db<=0?NaN:(g.kf+g.ziel)/db;
+  var sich=(g.x===0||isNaN(be))?NaN:(g.x-be)/g.x*100;
+  var dbB=g.pB-g.kvB;
+  var relA=g.eA===0?NaN:db/g.eA,relB=g.eB===0?NaN:dbB/g.eB;
+  var t=[["DB-Rate",pct(rate),"Anteil am Umsatz"],
+   ["Umsatz",eur(g.p*g.x),""],
+   ["Break-Even-Menge",isNaN(be)?"–":fmt(be,0)+" Stk","Fixkosten ÷ DB","#D9820A"],
+   ["Break-Even-Umsatz",eur(beU),"","#D9820A"],
+   ["Sicherheitsstrecke",pct(sich),"Absatzrückgang verkraftbar",sich>=0?"#2C8A4E":"#C0472F"],
+   ["Menge für Zielgewinn",isNaN(zm)?"–":fmt(zm,0)+" Stk","","#5E64D6"]];
+  if(!isNaN(relA)&&!isNaN(relB))
+   t.push(["Engpass: Vorrang",relA>=relB?"Produkt A":"Produkt B",
+     "A "+fmt(relA)+" € · B "+fmt(relB)+" € je Engpasseinheit","#2C8A4E"]);
+  return {v:{db:db,dbg:dbg,kf2:g.kf,gewinn:gewinn,pug1:g.kv,pug2:g.voll,dbB:dbB},tiles:t,steps:[
+   "Deckungsbeitrag = Preis − variable Stückkosten = "+eur(g.p)+" − "+eur(g.kv)+" = "+eur(db),
+   "Gesamtdeckungsbeitrag = DB × Menge = "+eur(dbg),
+   "Betriebsergebnis = Gesamt-DB − Fixkosten = "+eur(gewinn),
+   "Break-Even-Menge = Fixkosten ÷ DB = "+eur(g.kf)+" ÷ "+eur(db)+" = "+(isNaN(be)?"–":fmt(be,0)+" Stück"),
+   "Sicherheitsstrecke = (Ist − Break-Even) ÷ Ist × 100 = "+pct(sich),
+   "Relativer DB = DB je Stück ÷ Engpassverbrauch je Stück"]};
+ }
+};
+
+/* ---- 3. Kalkulatorische Kosten ---- */
+var C_KALK={
+ id:"kalk",title:"Kalkulatorische Kosten",sub:"Abschreibung, Zinsen, Wagnis und Maschinenstundensatz",
+ modes:["Linear","Degressiv","Leistung"],
+ rows:function(m){
+  var r=[{l:"Wiederbeschaffungswert",in:"wbw"},
+   {op:"−",l:"Restwert am Ende",in:"rw"},
+   {op:"=",l:"Abschreibungsvolumen",r:"vol",sub:1}];
+  if(m===0)r.push({l:"Nutzungsdauer (Jahre)",in:"nd"});
+  if(m===1)r.push({l:"Abschreibungssatz",note:"vom Buchwert",pct:"deg",r:"degInfo"});
+  if(m===2){r.push({l:"Gesamtleistung (z. B. Stunden)",in:"gl"});r.push({l:"Leistung der Periode",in:"pl"});}
+  r.push({op:"=",l:"Abschreibung der Periode",r:"afa",tot:1});
+  return r.concat([{sp:1},
+   {l:"Betriebsnotwendiges Vermögen",in:"verm"},
+   {op:"−",l:"Abzugskapital",note:"zinsfrei überlassen",in:"abz"},
+   {op:"=",l:"Betriebsnotwendiges Kapital",r:"bnk",sub:1},
+   {op:"×",l:"Kalkulatorischer Zinssatz",pct:"zins",r:"zinsInfo"},
+   {op:"=",l:"Kalkulatorische Zinsen",r:"zinsen",tot:1},
+   {sp:1},
+   {l:"Wagnisverluste der Vorjahre",in:"wv"},
+   {l:"Bezugsgröße der Vorjahre",in:"wb"},
+   {op:"=",l:"Wagnissatz",r:"wsatz",sub:1},
+   {l:"Bezugsgröße im Planjahr",in:"wp"},
+   {op:"=",l:"Kalkulatorisches Wagnis",r:"wagnis",tot:1},
+   {sp:1},
+   {l:"Raumkosten der Maschine",in:"mRaum"},
+   {l:"Energiekosten",in:"mEn"},
+   {l:"Instandhaltung",in:"mInst"},
+   {l:"Werkzeugkosten",in:"mWz"},
+   {op:"=",l:"Maschinenkosten pro Jahr",note:"inkl. Abschreibung und Zinsen der Anlage",r:"mKosten",sub:1},
+   {op:"÷",l:"Maschinenlaufstunden pro Jahr",in:"mLauf"},
+   {op:"=",l:"Maschinenstundensatz",r:"mss",tot:1}]);
+ },
+ example:function(){return {wbw:"120.000",rw:"20.000",nd:"10",deg:"20",gl:"40.000",pl:"4.500",
+  verm:"800.000",abz:"150.000",zins:"6",wv:"32.000",wb:"4.000.000",wp:"1.200.000",
+  mRaum:"4.800",mEn:"9.600",mInst:"7.200",mWz:"2.400",mLauf:"1.600"};},
+ calc:function(g,m){
+  var vol=g.wbw-g.rw;
+  var afa=(m===0)?(g.nd===0?NaN:vol/g.nd):(m===1?g.wbw*g.deg/100:(g.gl===0?NaN:vol/g.gl*g.pl));
+  var bnk=g.verm-g.abz,zinsen=bnk*g.zins/100;
+  var wsatz=g.wb===0?NaN:g.wv/g.wb*100;
+  var wagnis=isNaN(wsatz)?NaN:g.wp*wsatz/100;
+  var kapital=(g.wbw+g.rw)/2,mZins=kapital*g.zins/100;
+  var mKosten=(isNaN(afa)?0:afa)+mZins+g.mRaum+g.mEn+g.mInst+g.mWz;
+  var mss=g.mLauf===0?NaN:mKosten/g.mLauf;
+  return {v:{vol:vol,afa:afa,bnk:bnk,zinsen:zinsen,wsatz:wsatz,wagnis:wagnis,mKosten:mKosten,mss:mss},
+   u:{wsatz:"%"},
+   tiles:[["Abschreibung",eur(afa),["linear","degressiv","leistungsbezogen"][m]],
+    ["Kalk. Zinsen",eur(zinsen),"auf das betriebsnotw. Kapital"],
+    ["Kalk. Wagnis",eur(wagnis),isNaN(wsatz)?"":"Satz "+pct(wsatz),"#D9820A"],
+    ["Maschinenstundensatz",isNaN(mss)?"–":fmt(mss)+" €/h","für die Fertigungskalkulation","#2C8A4E"]],
+   steps:["Abschreibungsvolumen = Wiederbeschaffungswert − Restwert = "+eur(vol),
+    "Abschreibung ("+["linear","degressiv","leistungsbezogen"][m]+") = "+eur(afa),
+    "Betriebsnotwendiges Kapital = Vermögen − Abzugskapital = "+eur(bnk),
+    "Kalkulatorische Zinsen = Kapital × Zinssatz = "+eur(zinsen),
+    "Wagnissatz = Verluste ÷ Bezugsgröße × 100 = "+pct(wsatz),
+    "Durchschnittlich gebundenes Kapital der Maschine = (WBW + Restwert) ÷ 2 = "+eur(kapital),
+    "Maschinenstundensatz = "+eur(mKosten)+" ÷ "+fmt(g.mLauf,0)+" h = "+(isNaN(mss)?"–":fmt(mss)+" €/h")]};
+ }
+};
+
+/* ---- 4. Divisions- & Äquivalenzziffernkalkulation ---- */
+var C_DIV={
+ id:"div",title:"Divisions- & Äquivalenzziffern",sub:"Massen- und Sortenfertigung",
+ modes:["Einstufig","Zweistufig","Äquivalenz"],
+ rows:function(m){
+  if(m===0)return [{l:"Gesamtkosten der Periode",in:"gk"},
+   {op:"÷",l:"Produzierte Menge",in:"x"},
+   {op:"=",l:"Selbstkosten je Stück",r:"k",tot:1}];
+  if(m===1)return [{l:"Herstellkosten",in:"hk"},
+   {op:"÷",l:"Produktionsmenge",in:"pm"},
+   {op:"=",l:"Herstellkosten je Stück",r:"hks",sub:1},{sp:1},
+   {l:"Verwaltungs- und Vertriebskosten",in:"vv"},
+   {op:"÷",l:"Absatzmenge",in:"am"},
+   {op:"=",l:"VwVt je verkauftem Stück",r:"vvs",sub:1},
+   {op:"=",l:"Selbstkosten je verkauftem Stück",r:"sk",tot:1}];
+  var r=[{l:"Gesamtkosten",in:"gk"},{sp:1}];
+  for(var i=1;i<=4;i++){
+   r.push({l:"Sorte "+i+" · Menge",in:"m"+i});
+   r.push({l:"Sorte "+i+" · Äquivalenzziffer",in:"a"+i});
+   r.push({op:"=",l:"Sorte "+i+" · Rechnungseinheiten",r:"re"+i,sub:1});
+  }
+  r.push({op:"=",l:"Summe Rechnungseinheiten",r:"reSum",tot:1});
+  r.push({op:"=",l:"Kosten je Rechnungseinheit",r:"kre",tot:1});
+  for(var j=1;j<=4;j++)r.push({l:"Stückkosten Sorte "+j,r:"k"+j});
+  return r;
+ },
+ example:function(m){
+  if(m===0)return {gk:"454.000",x:"20.000"};
+  if(m===1)return {hk:"400.000",pm:"20.000",vv:"54.000",am:"18.000"};
+  return {gk:"231.000",m1:"10.000",a1:"1,0",m2:"8.000",a2:"1,3",m3:"5.000",a3:"0,8",m4:"",a4:""};
+ },
+ calc:function(g,m){
+  if(m===0){var k=g.x===0?NaN:g.gk/g.x;
+   return {v:{k:k},tiles:[["Selbstkosten je Stück",eur(k),""]],
+    steps:["Stückkosten = Gesamtkosten ÷ Menge = "+eur(g.gk)+" ÷ "+fmt(g.x,0)+" = "+eur(k)]};}
+  if(m===1){var hks=g.pm===0?NaN:g.hk/g.pm,vvs=g.am===0?NaN:g.vv/g.am,sk=hks+vvs;
+   return {v:{hks:hks,vvs:vvs,sk:sk},tiles:[["Selbstkosten je verkauftem Stück",eur(sk),""]],
+    steps:["Herstellkosten je Stück = "+eur(hks),"VwVt je verkauftem Stück = "+eur(vvs),
+     "Selbstkosten je Stück = "+eur(sk)]};}
+  var v={},sum=0,i;
+  for(i=1;i<=4;i++){var re=g["m"+i]*g["a"+i];v["re"+i]=re;sum+=re;}
+  var kre=sum===0?NaN:g.gk/sum;
+  v.reSum=sum;v.kre=kre;
+  var u={reSum:"n",re1:"n",re2:"n",re3:"n",re4:"n"};
+  var t=[];
+  for(i=1;i<=4;i++){v["k"+i]=isNaN(kre)?NaN:kre*g["a"+i];
+   if(g["m"+i]>0)t.push(["Sorte "+i,eur(v["k"+i]),"ÄZ "+fmt(g["a"+i])]);}
+  return {v:v,u:u,tiles:t,steps:[
+   "Rechnungseinheiten je Sorte = Menge × Äquivalenzziffer",
+   "Summe aller Rechnungseinheiten = "+fmt(sum,0),
+   "Kosten je Rechnungseinheit = "+eur(g.gk)+" ÷ "+fmt(sum,0)+" = "+eur(kre),
+   "Stückkosten je Sorte = Kosten je RE × Äquivalenzziffer"]};
+ }
+};
+
+/* ---- 5. Handelskalkulation ---- */
+var C_HANDEL={
+ id:"handel",title:"Handelskalkulation",sub:"Vom Listeneinkaufs- zum Listenverkaufspreis",
+ rows:function(){return [
+  {l:"Listeneinkaufspreis",in:"lep"},
+  {op:"−",l:"Liefererrabatt",pct:"lr",r:"lrB"},
+  {op:"=",l:"Zieleinkaufspreis",r:"zep",sub:1},
+  {op:"−",l:"Liefererskonto",pct:"ls",r:"lsB"},
+  {op:"=",l:"Bareinkaufspreis",r:"bep",sub:1},
+  {op:"+",l:"Bezugskosten",note:"Fracht, Verpackung, Versicherung",in:"bk"},
+  {op:"=",l:"Bezugspreis (Einstandspreis)",r:"bp",tot:1},
+  {sp:1},
+  {op:"+",l:"Handlungskosten",note:"Zuschlag auf den Bezugspreis",pct:"hk",r:"hkB"},
+  {op:"=",l:"Selbstkosten",r:"sk",sub:1},
+  {op:"+",l:"Gewinnzuschlag",pct:"gew",r:"gewB"},
+  {op:"=",l:"Barverkaufspreis",r:"bvp",sub:1},
+  {op:"+",l:"Kundenskonto",note:"im Hundert",pct:"ks",r:"ksB"},
+  {op:"=",l:"Zielverkaufspreis",r:"zvp",sub:1},
+  {op:"+",l:"Kundenrabatt",note:"im Hundert",pct:"kr",r:"krB"},
+  {op:"=",l:"Listenverkaufspreis (netto)",r:"lvp",tot:1},
+  {op:"+",l:"Umsatzsteuer",pct:"ust",r:"ustB"},
+  {op:"=",l:"Bruttoverkaufspreis",r:"brutto",tot:1}];},
+ example:function(){return {lep:"1.000",lr:"20",ls:"2",bk:"46",hk:"35",gew:"20",ks:"3",kr:"10",ust:"19"};},
+ calc:function(g){
+  var zep=g.lep*(100-g.lr)/100,bep=zep*(100-g.ls)/100,bp=bep+g.bk;
+  var hkB=bp*g.hk/100,sk=bp+hkB,gewB=sk*g.gew/100,bvp=sk+gewB;
+  var zvp=(g.ks>=100)?NaN:bvp/(100-g.ks)*100;
+  var lvp=(g.kr>=100)?NaN:zvp/(100-g.kr)*100;
+  var brutto=lvp*(1+g.ust/100);
+  var spanne=(isNaN(lvp)||lvp===0)?NaN:(lvp-bp)/lvp*100;
+  var zuschlag=bp===0?NaN:(lvp-bp)/bp*100;
+  return {v:{lrB:g.lep-zep,zep:zep,lsB:zep-bep,bep:bep,bp:bp,hkB:hkB,sk:sk,gewB:gewB,bvp:bvp,
+    ksB:zvp-bvp,zvp:zvp,krB:lvp-zvp,lvp:lvp,ustB:brutto-lvp,brutto:brutto},
+   tiles:[["Handelsspanne",pct(spanne),"bezogen auf den Verkaufspreis","#2C8A4E"],
+    ["Kalkulationszuschlag",pct(zuschlag),"bezogen auf den Bezugspreis","#D9820A"]],
+   steps:["Zieleinkaufspreis = Listenpreis − Rabatt (vom Hundert) = "+eur(zep),
+    "Bareinkaufspreis = "+eur(bep),"Bezugspreis = Bareinkaufspreis + Bezugskosten = "+eur(bp),
+    "Selbstkosten = Bezugspreis + Handlungskosten = "+eur(sk),
+    "Barverkaufspreis = Selbstkosten + Gewinn = "+eur(bvp),
+    "Zielverkaufspreis = "+eur(bvp)+" ÷ (100 − "+fmt(g.ks)+") × 100 = "+eur(zvp),
+    "Listenverkaufspreis = "+eur(zvp)+" ÷ (100 − "+fmt(g.kr)+") × 100 = "+eur(lvp)]};
+ }
+};
+
+/* ---- 6. Betriebsabrechnungsbogen (eigene Tabelle) ---- */
+var BAB_ST=["Material","Fertigung","Verwaltung","Vertrieb"];
+var BAB_ROWS=[["Hilfslöhne","4.000","38.000","2.000","1.500"],
+ ["Gehälter","6.000","24.000","15.000","9.000"],
+ ["Sozialkosten","2.400","20.400","4.200","2.400"],
+ ["Energie","1.200","46.000","900","700"],
+ ["Kalk. Abschreibungen","3.600","41.600","3.200","2.400"],
+ ["Sonstige Gemeinkosten","6.800","19.000","2.420","2.480"]];
+function mountBAB(host){
+  var rows=BAB_ROWS.map(function(r){return [r[0],"","","",""];});
+  function draw(){
+    var h='<div class="kw-card"><h4>Betriebsabrechnungsbogen</h4>'+
+      '<p class="kw-sub">Gemeinkosten auf die Kostenstellen verteilen, dann die Zuschlagssätze bilden</p>'+
+      '<div class="kw-tbl"><table><thead><tr><th>Kostenart</th>';
+    BAB_ST.forEach(function(s){h+='<th>'+s+'</th>';});
+    h+='<th></th></tr></thead><tbody>';
+    rows.forEach(function(r,i){
+      h+='<tr><td><input class="kw-name" data-n="'+i+'" value="'+esc(r[0])+'"></td>';
+      for(var j=1;j<=4;j++)h+='<td><input class="kw-in" style="width:88px" inputmode="decimal" data-c="'+i+'-'+j+'" value="'+esc(r[j])+'"></td>';
+      h+='<td><button class="kw-del" data-del="'+i+'" title="Zeile entfernen">×</button></td></tr>';
+    });
+    h+='<tr class="kw-sum"><td>Summe Gemeinkosten</td>';
+    for(var j=1;j<=4;j++)h+='<td data-s="'+j+'">–</td>';
+    h+='<td></td></tr></tbody></table></div>'+
+      '<button class="kw-btn" data-add>+ Kostenart ergänzen</button>'+
+      '<div style="height:12px"></div>'+
+      rowHTML({l:"Fertigungsmaterial",in:"mek"})+
+      rowHTML({l:"Fertigungslöhne",in:"fl"})+
+      rowHTML({op:"=",l:"Herstellkosten der Erzeugung",r:"hk",tot:1})+
+      '<div class="kw-tiles" id="kwTiles"></div>'+
+      '<div class="kw-actions"><button class="kw-btn solid" data-ex>Beispiel laden</button>'+
+      '<button class="kw-btn" data-clr>Leeren</button></div></div>'+
+      '<details class="kw-steps"><summary>Rechenweg anzeigen</summary><ul id="kwSteps"></ul></details>';
+    host.innerHTML=h;
+    host.querySelectorAll("input[data-c]").forEach(function(i){
+      i.addEventListener("input",function(){
+        var p=i.getAttribute("data-c").split("-");rows[+p[0]][+p[1]]=i.value;calc();});});
+    host.querySelectorAll("input[data-n]").forEach(function(i){
+      i.addEventListener("input",function(){rows[+i.getAttribute("data-n")][0]=i.value;});});
+    host.querySelectorAll("input[data-i]").forEach(function(i){i.addEventListener("input",calc);});
+    host.querySelectorAll("[data-del]").forEach(function(b){
+      b.addEventListener("click",function(){
+        if(rows.length>1){rows.splice(+b.getAttribute("data-del"),1);draw();}});});
+    host.querySelector("[data-add]").addEventListener("click",function(){
+      rows.push(["Weitere Kostenart","","","",""]);draw();});
+    host.querySelector("[data-ex]").addEventListener("click",function(){
+      rows=BAB_ROWS.map(function(r){return r.slice();});
+      draw();
+      var m=host.querySelector('input[data-i="mek"]'),f=host.querySelector('input[data-i="fl"]');
+      if(m)m.value="160.000";if(f)f.value="90.000";calc();});
+    host.querySelector("[data-clr]").addEventListener("click",function(){
+      rows=rows.map(function(r){return [r[0],"","","",""];});draw();});
+    calc();
+  }
+  function calc(){
+    var sums=[0,0,0,0],i,j;
+    for(i=0;i<rows.length;i++)for(j=1;j<=4;j++)sums[j-1]+=num(rows[i][j]);
+    for(j=1;j<=4;j++){var c=host.querySelector('[data-s="'+j+'"]');if(c)c.textContent=fmt(sums[j-1]);}
+    var mekEl=host.querySelector('input[data-i="mek"]'),flEl=host.querySelector('input[data-i="fl"]');
+    var mek=num(mekEl?mekEl.value:0),fl=num(flEl?flEl.value:0);
+    var hk=mek+sums[0]+fl+sums[1];
+    var el=host.querySelector('[data-r="hk"]');if(el)el.textContent=eur(hk);
+    var sMgk=mek===0?NaN:sums[0]/mek*100,sFgk=fl===0?NaN:sums[1]/fl*100;
+    var sVw=hk===0?NaN:sums[2]/hk*100,sVt=hk===0?NaN:sums[3]/hk*100;
+    var t=host.querySelector("#kwTiles");
+    if(t)t.innerHTML=[["Materialgemeinkosten",pct(sMgk),"auf Fertigungsmaterial","#0C6C78"],
+      ["Fertigungsgemeinkosten",pct(sFgk),"auf Fertigungslöhne","#D9820A"],
+      ["Verwaltungsgemeinkosten",pct(sVw),"auf Herstellkosten","#2C8A4E"],
+      ["Vertriebsgemeinkosten",pct(sVt),"auf Herstellkosten","#5E64D6"]].map(function(x){
+        return '<div class="kw-tile"><b>'+x[0]+'</b><span style="color:'+x[3]+'">'+x[1]+'</span><i>'+x[2]+'</i></div>';}).join("");
+    var s=host.querySelector("#kwSteps");
+    if(s)s.innerHTML=["Materialgemeinkostensatz = "+fmt(sums[0])+" ÷ "+fmt(mek)+" × 100 = "+pct(sMgk),
+      "Fertigungsgemeinkostensatz = "+fmt(sums[1])+" ÷ "+fmt(fl)+" × 100 = "+pct(sFgk),
+      "Herstellkosten = Fertigungsmaterial + MGK + Fertigungslöhne + FGK = "+eur(hk),
+      "Verwaltungsgemeinkostensatz = "+fmt(sums[2])+" ÷ "+fmt(hk)+" × 100 = "+pct(sVw),
+      "Vertriebsgemeinkostensatz = "+fmt(sums[3])+" ÷ "+fmt(hk)+" × 100 = "+pct(sVt)]
+      .map(function(x){return '<li>'+esc(x)+'</li>';}).join("");
+  }
+  draw();
+}
+
+/* ---- Rechner-Auswahl ---- */
+var CALCS=[C_ZUSCHLAG,{id:"bab",title:"Betriebsabrechnungsbogen"},C_DB,C_KALK,C_DIV,C_HANDEL];
+var CALC_NAMES=["Zuschlagskalkulation","Betriebsabrechnungsbogen","Deckungsbeitrag & Break-Even",
+ "Kalkulatorische Kosten","Division & Äquivalenz","Handelskalkulation"];
+function renderCalcTab(){
+  var pane=$("kwCalc");
+  var h='<p class="kw-lead">Die Tabellen folgen dem Aufbau, den du in der Prüfung schreibst. Zwischen- und Endsummen rechnen live mit; „Beispiel laden“ füllt einen kompletten Fall.</p><div class="kw-picker">';
+  CALC_NAMES.forEach(function(n,i){h+='<button class="kw-pick'+(i===0?' on':'')+'" data-p="'+i+'">'+esc(n)+'</button>';});
+  h+='</div><div id="kwHost"></div>';
+  pane.innerHTML=h;
+  var host=$("kwHost");
+  function pick(i){
+    pane.querySelectorAll(".kw-pick").forEach(function(b,j){b.classList.toggle("on",i===j);});
+    if(i===1)mountBAB(host);else mount(CALCS[i],host);
+  }
+  pane.querySelectorAll(".kw-pick").forEach(function(b){
+    b.addEventListener("click",function(){pick(+b.getAttribute("data-p"));});});
+  pick(0);
+}
+
+/* ---- Modal / Tabs ---- */
+var built=false;
+function openKW(){
+  var m=$("mKW");if(!m)return;
+  if(!built){$("kwLearn").innerHTML=learnHTML();renderCalcTab();built=true;}
+  m.hidden=false;document.body.style.overflow="hidden";
+}
+function closeKW(){var m=$("mKW");if(!m)return;m.hidden=true;document.body.style.overflow="";}
+function initKW(){
+  var b=$("btnKW");if(b)b.addEventListener("click",openKW);
+  var m=$("mKW");if(!m)return;
+  m.addEventListener("click",function(e){
+    if(e.target.hasAttribute&&e.target.hasAttribute("data-close"))closeKW();});
+  var tabs=$("kwTabs");
+  if(tabs)tabs.addEventListener("click",function(e){
+    var t=e.target.getAttribute&&e.target.getAttribute("data-ktab");
+    if(!t)return;
+    tabs.querySelectorAll(".adr-tab").forEach(function(x){
+      x.classList.toggle("active",x.getAttribute("data-ktab")===t);});
+    $("kwLearn").hidden=(t!=="learn");
+    $("kwCalc").hidden=(t!=="calc");
+  });
+  document.addEventListener("keydown",function(e){
+    if(e.key==="Escape"&&!$("mKW").hidden)closeKW();});
+}
+if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",initKW);else initKW();
+})();
+</script>
+
 </body>
 </html>
