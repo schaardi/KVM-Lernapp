@@ -51,9 +51,10 @@ class Config {
   static String get premiumProductId =>
       _premiumProductId.isNotEmpty ? _premiumProductId : 'premium_monthly';
 
-  /// Freemium an/aus. Per Default aktiv; mit
-  /// `--dart-define=MONETIZATION_ENABLED=false` komplett abschaltbar
-  /// (keine Werbung, kein Abo-UI – z. B. für eine reine Testversion).
+  /// Freemium an/aus. **Aktuell per Default AUS** – als Absicherung, nachdem die
+  /// Werbe-/Billing-Plugins auf dem Gerät zu einem Start-Absturz geführt haben.
+  /// Mit `--dart-define=MONETIZATION_ENABLED=true` wieder einschalten, sobald der
+  /// stabile Start mit Monetarisierung auf dem Gerät bestätigt ist.
   static bool get monetizationEnabled =>
-      _monetizationEnabled.toLowerCase() != 'false';
+      _monetizationEnabled.toLowerCase() == 'true';
 }
