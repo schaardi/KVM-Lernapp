@@ -12,6 +12,7 @@ import '../widgets/calculator.dart';
 import '../widgets/drawing_pad.dart';
 import '../widgets/account_sheet.dart';
 import '../widgets/premium_sheet.dart';
+import 'kw/kw_hub.dart';
 import 'quiz_screen.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -244,6 +245,20 @@ class _HomeScreenState extends State<HomeScreen> {
             _modeTile('Fallaufgaben',
                 'Handlungssituation mit verketteten Teilaufgaben (IHK-Format).',
                 kFachColor[5]!, Icons.account_tree_outlined, () => _start(RoundMode.cases)),
+            const SizedBox(height: 14),
+
+            // Lernmodul
+            _section('Lernmodul'),
+            _modeTile(
+                'Betriebliches Kostenwesen',
+                'Alles erklärt – von den Grundbegriffen bis zur Kalkulation. '
+                    'Mit Rechnern im Prüfungsschema.',
+                kAmber,
+                Icons.school_outlined, () {
+              Navigator.of(context).push(
+                MaterialPageRoute(builder: (_) => const KostenwesenScreen()),
+              );
+            }),
           ],
         ),
       ),
@@ -440,6 +455,11 @@ class _HomeScreenState extends State<HomeScreen> {
                   () => _openTool('Rechenblatt', const DrawingPad())),
               _toolTile(Icons.menu_book_outlined, kOk, 'Formelbuch',
                   () => _openTool('Formelbuch', const FormulaBook())),
+              _toolTile(Icons.school_outlined, kAmber, 'Kostenwesen', () {
+                Navigator.of(context).push(
+                  MaterialPageRoute(builder: (_) => const KostenwesenScreen()),
+                );
+              }),
               const SizedBox(height: 6),
             ]),
           ),

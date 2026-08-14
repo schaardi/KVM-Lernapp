@@ -1,4 +1,5 @@
-<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
     <uses-permission android:name="android.permission.RECORD_AUDIO"/>
     <queries>
         <intent>
@@ -43,6 +44,15 @@
         <meta-data
             android:name="com.google.android.gms.ads.APPLICATION_ID"
             android:value="ca-app-pub-3940256099942544~3347511713" />
+        <!-- AdMob-SDK NICHT automatisch beim Prozessstart initialisieren
+             (der Auto-Provider läuft sonst noch vor Flutter). Wir initialisieren
+             das SDK stattdessen bewusst spät und nicht-blockierend erst, wenn
+             die erste Werbung fällig wird – so kann es den App-Start nicht
+             aufhalten oder zum Absturz bringen. -->
+        <provider
+            android:name="com.google.android.gms.ads.MobileAdsInitProvider"
+            android:authorities="${applicationId}.mobileadsinitprovider"
+            tools:node="remove" />
     </application>
     <!-- Required to query activities that can process text, see:
          https://developer.android.com/training/package-visibility and
