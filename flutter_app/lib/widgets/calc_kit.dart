@@ -9,13 +9,16 @@ double? parseDe(String s) {
   if (t.isEmpty) return null;
   t = t.replaceAll(RegExp(r'[^0-9,.\-]'), '');
   if (t.isEmpty || t == '-') return null;
-  final hasComma = t.contains(',');
-  final dots = '.'.allMatches(t).length;
-  if (hasComma) {
+  if (t.contains(',')) {
     // Komma ist das Dezimaltrennzeichen, Punkte sind Tausenderpunkte.
     t = t.replaceAll('.', '').replaceAll(',', '.');
-  } else if (dots > 1) {
-    t = t.replaceAll('.', ''); // nur Tausenderpunkte
+  } else if (t.contains('.')) {
+    // Punkte sind Tausendertrenner, wenn alle Gruppen dahinter genau drei
+    // Ziffern haben („40.000" = vierzigtausend); sonst ist es ein
+    // Dezimalpunkt („1.5").
+    final parts = t.split('.');
+    final thousands = parts.skip(1).every((p) => p.length == 3);
+    if (thousands) t = parts.join();
   }
   return double.tryParse(t);
 }
