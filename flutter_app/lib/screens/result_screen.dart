@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import '../constants.dart';
 import '../models.dart';
+import '../services/answer_store.dart';
 import '../services/round_builder.dart';
 import 'quiz_screen.dart';
 
@@ -23,17 +24,31 @@ class ResultScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final total = pool.length;
     final right = results.where((r) => r == true).length;
-    final pct = total == 0 ? 0 : (right / total * 100).round();
+    // Punkte-Ergebnis: bei Prüfungen mit Punktangaben zählen die selbst
+    // vergebenen Punkte, nicht die Zahl der Aufgaben.
+    var possible = 0, achieved = 0;
+    for (final q in pool) {
+      final m = q.maxPoints;
+      if (m > 0) {
+        possible += m;
+        achieved += AnswerStore.instance.points(q.id) ?? 0;
+      }
+    }
+    final pointBased = possible > 0;
+    final pct = pointBased
+        ? (achieved / possible * 100).round()
+        : (total == 0 ? 0 : (right / total * 100).round());
     final isSim = mode == RoundMode.sim;
     final grade = ihkGrade(pct);
     final pass = pct >= 50;
+    final showBadge = isSim || pointBased;
 
     final title = switch (mode) {
       RoundMode.sim => 'Prüfungssimulation',
       RoundMode.weak => 'Schwächen-Training',
       RoundMode.all => 'Alle Themen',
       RoundMode.due => 'Heute fällig',
-      RoundMode.cases => 'Fallaufgabe',
+      RoundMode.cases => pointBased ? 'Prüfungsergebnis' : 'Fallaufgabe',
       _ => 'Trainingsrunde',
     };
 
@@ -76,7 +91,7 @@ class ResultScreen extends StatelessWidget {
             ),
             const SizedBox(height: 12),
             Center(child: Text(title, style: const TextStyle(fontSize: 22, fontWeight: FontWeight.w800, color: kInk))),
-            if (isSim)
+            if (showBadge)
               Center(
                 child: Padding(
                   padding: const EdgeInsets.only(top: 8),
@@ -95,7 +110,9 @@ class ResultScreen extends StatelessWidget {
             const SizedBox(height: 10),
             Center(
               child: Text(
-                '$right von $total richtig${timeUp ? " · Zeit abgelaufen" : ""}${isSim ? " · $pct von 100 Punkten (IHK)" : ""}',
+                pointBased
+                    ? '$achieved von $possible Punkten${timeUp ? " · Zeit abgelaufen" : ""} · $right von $total Aufgaben'
+                    : '$right von $total richtig${timeUp ? " · Zeit abgelaufen" : ""}${isSim ? " · $pct von 100 Punkten (IHK)" : ""}',
                 style: const TextStyle(color: kMuted),
               ),
             ),
@@ -157,14 +174,32 @@ class ResultScreen extends StatelessWidget {
     for (var i = 0; i < pool.length; i++) {
       if (pool[i].sub == sub) idxs.add(i);
     }
-    final r = idxs.where((i) => results[i] == true).length;
-    final p = idxs.isEmpty ? 0 : (r / idxs.length * 100).round();
+    var subPos = 0, subAch = 0;
+    var hasPts = false;
+    for (final i in idxs) {
+      final m = pool[i].maxPoints;
+      if (m > 0) {
+        hasPts = true;
+        subPos += m;
+        subAch += AnswerStore.instance.points(pool[i].id) ?? 0;
+      }
+    }
+    final int p;
+    final String numTxt;
+    if (hasPts) {
+      p = subPos == 0 ? 0 : (subAch / subPos * 100).round();
+      numTxt = '$subAch/$subPos P · $p %';
+    } else {
+      final r = idxs.where((i) => results[i] == true).length;
+      p = idxs.isEmpty ? 0 : (r / idxs.length * 100).round();
+      numTxt = '$r/${idxs.length} · $p %';
+    }
     return Padding(
       padding: const EdgeInsets.only(bottom: 12),
       child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
         Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
           Expanded(child: Text(sub, style: const TextStyle(fontWeight: FontWeight.w600, color: kInk))),
-          Text('$r/${idxs.length} · $p %', style: const TextStyle(color: kMuted, fontSize: 13)),
+          Text(numTxt, style: const TextStyle(color: kMuted, fontSize: 13)),
         ]),
         const SizedBox(height: 4),
         ClipRRect(

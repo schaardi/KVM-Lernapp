@@ -562,6 +562,13 @@
 .msg-img img{max-width:100%;height:auto;display:block;border:1px solid var(--line);border-radius:10px;background:#fff}
 .msg-tab{margin-top:10px}
 .msg-actions{align-self:stretch;display:flex;gap:8px;flex-wrap:wrap;margin-top:2px}
+.oa-score{align-self:stretch;margin-top:4px;border:1px solid var(--line);border-radius:14px;background:var(--paper);padding:12px 13px}
+.oas-lbl{font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:9px}
+.oas-btns{display:flex;flex-wrap:wrap;gap:7px}
+.oas-p{min-width:38px;border:1px solid var(--line);background:#fff;border-radius:9px;padding:8px 10px;font:700 14px var(--body);color:var(--ink);cursor:pointer}
+.oas-p:hover{border-color:var(--petrol);background:var(--petrol-soft)}
+.oas-p.sel{background:var(--petrol);border-color:var(--petrol);color:#fff}
+.oas-hint{margin-top:9px;font-size:12px;color:var(--muted)}
 .chat-compose{margin-top:14px;border-top:1px solid var(--line);padding-top:13px}
 .cc-lbl{display:block;font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:7px}
 .cc-input{width:100%;box-sizing:border-box;border:1px solid var(--line);border-radius:12px;background:var(--paper);padding:12px 13px;font:400 14px/1.6 var(--body);color:var(--ink);resize:vertical;min-height:92px}
@@ -1172,6 +1179,16 @@ function oaSet(id,txt){
   try{localStorage.setItem(OA_KEY,JSON.stringify(a));}catch(e){}
 }
 
+/* Selbstbewertung offener Prüfungsaufgaben: erreichte Punkte je Aufgabe. So
+   ergibt sich am Ende der Prüfung ein echtes Punkte-Ergebnis. */
+var OP_KEY='kvm_open_points';
+function opAll(){try{return JSON.parse(localStorage.getItem(OP_KEY)||'{}');}catch(e){return {};}}
+function opGet(id){var a=opAll();return (id in a)?a[id]:null;}
+function opSet(id,p){var a=opAll();if(p==null)delete a[id];else a[id]=p;
+  try{localStorage.setItem(OP_KEY,JSON.stringify(a));}catch(e){}}
+/* Höchstpunktzahl einer Aufgabe aus dem Kopf ("Aufgabe 1 a) · 8 Punkte"). */
+function taskMaxPoints(q){var m=/(\d+)/.exec(splitTask(q.q).pts||"");return m?parseInt(m[1],10):0;}
+
 /* Anlage einer Aufgabe als Text – für Zwischenablage und KI-Export. */
 function tabText(tab){
   if(!tab)return "";
@@ -1291,9 +1308,29 @@ function buildOpenChat(q){
        esc(q.a||q.e||"")+'</div>';
     h+='<div class="msg-actions"><button type="button" class="cc-icon wide" id="oaExport">'+
        'Diese Aufgabe von Claude prüfen lassen</button></div>';
+    var max=taskMaxPoints(q);
+    if(max>0){
+      var cur=opGet(q.id);
+      h+='<div class="oa-score" id="oaScore"><div class="oas-lbl">Wie viele Punkte hättest du bekommen?</div><div class="oas-btns">';
+      for(var p=0;p<=max;p++)h+='<button type="button" class="oas-p'+(cur===p?' sel':'')+'" data-p="'+p+'">'+p+'</button>';
+      h+='</div><div class="oas-hint" id="oasHint">'+(cur!=null?('Bewertet: '+cur+' von '+max+' Punkten'):('Vergib dir 0–'+max+' Punkte – so zählt die Aufgabe am Ende zum Gesamtergebnis.'))+'</div></div>';
+    }
   }
   $("oaChat").innerHTML=h;
-  if(state.revealed)$("oaExport").onclick=function(){oaCopy(oaExportText(q),$("oaExport"));};
+  if(state.revealed){
+    $("oaExport").onclick=function(){oaCopy(oaExportText(q),$("oaExport"));};
+    var sc=$("oaScore");
+    if(sc){var mx=taskMaxPoints(q);
+      sc.querySelectorAll(".oas-p").forEach(function(b){
+        b.onclick=function(){var pt=parseInt(b.dataset.p,10);opSet(q.id,pt);
+          sc.querySelectorAll(".oas-p").forEach(function(x){x.classList.remove("sel");});
+          b.classList.add("sel");
+          $("oasHint").textContent='Bewertet: '+pt+' von '+mx+' Punkten';
+          var nb=$("btnScoreNext");if(nb)nb.disabled=false;
+        };
+      });
+    }
+  }
 }
 function renderTab(tab){var el=$("qTab");if(!tab){el.hidden=true;el.innerHTML="";return;}el.innerHTML=tabHTML(tab);el.hidden=false;}
 function esc(s){return String(s==null?"":s).replace(/[&<>"]/g,function(m){
@@ -1406,9 +1443,30 @@ function revealOpen(){
   state.revealed=true;var q=state.pool[state.idx];
   $("oaCompose").hidden=true;
   buildOpenChat(q);
-  setActions('<div class="split"><button class="btn-no" id="btnNo">Nicht gewusst</button><button class="btn-ok" id="btnYes">Gewusst</button></div>');
-  $("btnYes").addEventListener("click",function(){finalize(true,q);});
-  $("btnNo").addEventListener("click",function(){finalize(false,q);});
+  if(taskMaxPoints(q)>0){renderOpenNextAction(q);}
+  else{
+    setActions('<div class="split"><button class="btn-no" id="btnNo">Nicht gewusst</button><button class="btn-ok" id="btnYes">Gewusst</button></div>');
+    $("btnYes").addEventListener("click",function(){finalize(true,q);});
+    $("btnNo").addEventListener("click",function(){finalize(false,q);});
+  }
+}
+/* Bei Punkte-Aufgaben ersetzt die Selbstbewertung das Gewusst/Nicht-gewusst:
+   erst wenn Punkte vergeben sind, geht es weiter. */
+function renderOpenNextAction(q){
+  var last=state.idx===state.pool.length-1;
+  var scored=opGet(q.id)!=null;
+  setActions('<button class="primary" id="btnScoreNext"'+(scored?'':' disabled')+'>'+
+    (last?'Zum Ergebnis →':'Bewertung übernehmen →')+'</button>');
+  $("btnScoreNext").addEventListener("click",function(){commitOpenScore(q);});
+}
+function commitOpenScore(q){
+  var pts=opGet(q.id);if(pts==null)return;
+  if(!state.answered){
+    var correct=pts*2>=taskMaxPoints(q);
+    state.answered=true;state.results[state.idx]=correct;if(!correct)state.wrong.push(q);
+    recordResult(q.id,correct);
+  }
+  next();
 }
 
 function finalize(correct,q){
@@ -1441,24 +1499,44 @@ function ihkGrade(pct){var p=Math.round(pct),note,label;
 function finishRound(timeUp){
   clearInterval(state.timerId);
   if(timeUp){for(var i=0;i<state.pool.length;i++){if(state.results[i]===undefined){state.results[i]=false;state.wrong.push(state.pool[i]);recordResult(state.pool[i].id,false);}}}
-  var total=state.pool.length;var right=state.results.filter(function(r){return r===true;}).length;var pct=total?Math.round(right/total*100):0;
+  var total=state.pool.length;var right=state.results.filter(function(r){return r===true;}).length;
+  /* Punkte-Ergebnis: bei Prüfungen mit Punktangaben zählen die selbst
+     vergebenen Punkte, nicht die Zahl der Aufgaben. */
+  var possible=0,achieved=0;
+  state.pool.forEach(function(q){var m=taskMaxPoints(q);if(m>0){possible+=m;var g=opGet(q.id);achieved+=(g!=null?g:0);}});
+  var pointBased=possible>0;
+  var pct=pointBased?Math.round(achieved/possible*100):(total?Math.round(right/total*100):0);
   var C=282.7,fg=$("ringFg");fg.style.strokeDashoffset=C;
   requestAnimationFrame(function(){requestAnimationFrame(function(){fg.style.strokeDashoffset=C*(1-pct/100);});});
   $("ringPct").textContent=pct+" %";
   var badge=$("resBadge");
-  if(state.mode==='sim'){badge.hidden=false;var pass=pct>=50;badge.className="badge "+(pass?"pass":"fail");badge.textContent=(pass?"Bestanden":"Nicht bestanden")+" · "+ihkGrade(pct).text;$("resTitle").textContent="Prüfungssimulation";}
-  else{badge.hidden=true;$("resTitle").textContent=(state.mode==='sim'?"Prüfungssimulation":(state.mode==='weak'?"Schwächen-Training":(state.mode==='all'?"Alle Themen":(state.mode==='due'?"Heute fällig":(state.mode==='cases'?"Fallaufgabe":"Trainingsrunde")))));}
-  var gradeLine=state.mode==='sim'?" · "+ihkGrade(pct).points+" von 100 Punkten (IHK-Schlüssel)":"";
-  $("resLine").innerHTML="<b>"+right+"</b> von <b>"+total+"</b> richtig"+(timeUp?" · Zeit abgelaufen":"")+gradeLine;
+  $("resTitle").textContent=(state.mode==='sim')?"Prüfungssimulation"
+    :(state.mode==='weak')?"Schwächen-Training"
+    :(state.mode==='all')?"Alle Themen"
+    :(state.mode==='due')?"Heute fällig"
+    :(state.mode==='cases')?(pointBased?"Prüfungsergebnis":"Fallaufgabe")
+    :"Trainingsrunde";
+  if(state.mode==='sim'||pointBased){badge.hidden=false;var pass=pct>=50;badge.className="badge "+(pass?"pass":"fail");badge.textContent=(pass?"Bestanden":"Nicht bestanden")+" · "+ihkGrade(pct).text;}
+  else badge.hidden=true;
+  if(pointBased){
+    $("resLine").innerHTML="<b>"+achieved+"</b> von <b>"+possible+"</b> Punkten"+(timeUp?" · Zeit abgelaufen":"")+" · "+ihkGrade(pct).text;
+  }else{
+    var gradeLine=state.mode==='sim'?" · "+ihkGrade(pct).points+" von 100 Punkten (IHK-Schlüssel)":"";
+    $("resLine").innerHTML="<b>"+right+"</b> von <b>"+total+"</b> richtig"+(timeUp?" · Zeit abgelaufen":"")+gradeLine;
+  }
 
   var bd=$("breakdown");bd.innerHTML="";
   var subs=[];state.pool.forEach(function(q){if(subs.indexOf(q.sub)<0)subs.push(q.sub);});
   subs.sort(function(a,b){return SUB_ORDER.indexOf(a)-SUB_ORDER.indexOf(b);});
   subs.forEach(function(sub){
     var idxs=[];state.pool.forEach(function(q,i){if(q.sub===sub)idxs.push(i);});
-    var r=idxs.filter(function(i){return state.results[i]===true;}).length;var p=Math.round(r/idxs.length*100);
+    var subPos=0,subAch=0,hasPts=false;
+    idxs.forEach(function(i){var m=taskMaxPoints(state.pool[i]);if(m>0){hasPts=true;subPos+=m;var g=opGet(state.pool[i].id);subAch+=(g!=null?g:0);}});
+    var p,numTxt;
+    if(hasPts){p=subPos?Math.round(subAch/subPos*100):0;numTxt=subAch+'/'+subPos+' P · '+p+' %';}
+    else{var r=idxs.filter(function(i){return state.results[i]===true;}).length;p=Math.round(r/idxs.length*100);numTxt=r+'/'+idxs.length+' · '+p+' %';}
     var row=document.createElement("div");row.className="b-row";
-    row.innerHTML='<div class="b-top"><span class="b-name">'+sub+'</span><span class="b-num">'+r+'/'+idxs.length+' · '+p+' %</span></div><div class="b-bar"><div class="b-fill" style="width:'+p+'%"></div></div>';
+    row.innerHTML='<div class="b-top"><span class="b-name">'+sub+'</span><span class="b-num">'+numTxt+'</span></div><div class="b-bar"><div class="b-fill" style="width:'+p+'%"></div></div>';
     bd.appendChild(row);
   });
   var wu=[];state.wrong.forEach(function(q){if(wu.indexOf(q)<0)wu.push(q);});state.wrong=wu;

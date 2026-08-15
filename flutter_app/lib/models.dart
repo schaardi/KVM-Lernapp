@@ -118,6 +118,12 @@ class Question {
         id: id, f: f, sub: sub, type: type, q: q, o: o, e: e, a: a,
         ans: ans, unit: unit, tab: tab, bild: bild, caseCtx: ctx,
       );
+
+  /// Höchstpunktzahl aus dem Aufgabenkopf ("… · 8 Punkte"); 0 ohne Angabe.
+  int get maxPoints {
+    final m = RegExp(r'(\d+)').firstMatch(TaskParts.of(q).pts);
+    return m == null ? 0 : int.parse(m.group(1)!);
+  }
 }
 
 class CaseContext {
