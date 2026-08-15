@@ -34,6 +34,46 @@ Die erzeugten Fallaufgaben werden anschließend in
 `flutter_app/assets/data/cases.json` sowie in das Array `window.KVM_CASES`
 in `index.html` übernommen.
 
+## Nachkorrekturen (`korrekturen.py`)
+
+Die OCR liest zuverlässig, aber nicht fehlerfrei. `build_cases.py` ruft deshalb
+zum Schluss `korrekturen.anwenden()` auf. Dort steht jede Korrektur einzeln als
+Paar „alt → neu“; greift eine davon nicht mehr, bricht der Lauf ab, statt die
+Korrektur stillschweigend zu verlieren. Korrigiert werden:
+
+- **Trennstriche am Zeilenende** („drei exter-\nnen Dienstleistern“).
+- **Zusammengelaufene Datenlisten**: Was im Original eine Tabelle ist, liest die
+  OCR als einen Absatz. Die Daten der Fahrzeug- und Linienkostenrechnungen
+  stehen jetzt wieder zeilenweise.
+- **Verrutschte Anlagen**: In der Prüfung vom 8. Mai 2025 hing die
+  Nutzwert-Tabelle aus Anlage 2 am Ende von Aufgabe 1 c) – gehört aber zu
+  Aufgabe 1 a), die ohne die Werte nicht lösbar war. Sie liegt jetzt als
+  Tabelle (`tab`) an der Aufgabe und wird in App, Web-App und KI-Export
+  angezeigt.
+- **Zeichenverwechslungen**: `$` statt `§`, `I` statt `l`, `zZ6M` statt `zGM`,
+  `DIN ISO EN 9001` statt `DIN EN ISO 9001`, `DIN 12642` statt `DIN EN 12642`.
+- **Unlesbare Diagramme**: Der Lastverteilungsplan der Prüfung vom
+  11. November 2025 kam als Zeichensalat an. An seiner Stelle steht eine
+  Beschreibung der Achsen und des Kurvenverlaufs, mit der sich die Aufgabe
+  lösen lässt.
+- **Fehler in einer Musterlösung**: Die Kosten je Leistungseinheit der
+  Omnibuslinien waren als „Cent je 1.000 Nutzplatzkilometer“ ausgewiesen;
+  richtig sind 4,33 bzw. 4,44 Cent **je** Nutzplatzkilometer.
+
+## Rechenaufgaben nachrechnen (`rechenpruefung.py`)
+
+```bash
+python3 scripts/pruefungen/rechenpruefung.py index.html
+```
+
+Rechnet jede Rechenaufgabe der drei Prüfungen unabhängig aus den in der
+Aufgabenstellung genannten Daten nach – Fahrzeugkosten, Wirtschaftlichkeit,
+Nutzplatzkilometer, Sicherungskräfte, Ladungsschwerpunkt, Lagerkennzahlen,
+Andlersche Formel, Nutzwertanalyse und Kostenkalkulation – und prüft, ob die
+Ergebnisse so in den Musterlösungen stehen. Exit-Code 1 bei jeder Abweichung.
+Gerechnet wird mit `Decimal` und kaufmännischer Rundung, sonst weicht der Wert
+schon durch die Gleitkommadarstellung um einen Cent ab.
+
 ## Qualitätskontrolle
 
 Der Parser prüft sich an einer harten Invariante: **Jede vollständige Prüfung

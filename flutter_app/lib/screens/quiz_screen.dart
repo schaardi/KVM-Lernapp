@@ -263,7 +263,8 @@ class _QuizScreenState extends State<QuizScreen> {
             Expanded(child: Text(_q.sub, style: const TextStyle(color: kMuted, fontSize: 12))),
           ]),
           const SizedBox(height: 10),
-          Text(_q.q, style: const TextStyle(fontSize: 19, fontWeight: FontWeight.w600, height: 1.3, color: kInk)),
+          ..._taskText(),
+          if (_q.tab != null) _anlage(_q.tab!),
           const SizedBox(height: 16),
           if (_q.type == 'mc') ..._mcOptions(),
           if (_q.type == 'calc') _calcInput(),
@@ -321,6 +322,93 @@ class _QuizScreenState extends State<QuizScreen> {
         ]),
         const SizedBox(height: 6),
         Text(c.context, style: const TextStyle(fontSize: 14, height: 1.5, color: kInk)),
+      ]),
+    );
+  }
+
+  /// Aufgabenkopf, Ausgangslage und Fragestellung getrennt darstellen – sonst
+  /// verschwimmt bei den Original-Prüfungen alles zu einem fetten Textblock.
+  List<Widget> _taskText() {
+    final t = TaskParts.of(_q.q);
+    final frage = Text(t.frage,
+        style: const TextStyle(fontSize: 19, fontWeight: FontWeight.w600, height: 1.3, color: kInk));
+    if (t.nr.isEmpty) return [frage];
+    return [
+      Row(children: [
+        Expanded(
+          child: Text(t.nr,
+              style: const TextStyle(fontSize: 20, fontWeight: FontWeight.w800, color: kInk)),
+        ),
+        Container(
+          padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 3),
+          decoration: BoxDecoration(
+              color: kPetrolSoft, borderRadius: BorderRadius.circular(20)),
+          child: Text(t.pts,
+              style: const TextStyle(fontSize: 11, fontWeight: FontWeight.w700, color: kPetrolDeep)),
+        ),
+      ]),
+      const Divider(height: 18, color: kLine),
+      if (t.sit.isNotEmpty)
+        Container(
+          margin: const EdgeInsets.only(bottom: 12),
+          padding: const EdgeInsets.only(left: 12),
+          decoration: const BoxDecoration(
+              border: Border(left: BorderSide(color: kLine, width: 3))),
+          child: Text(t.sit,
+              style: const TextStyle(fontSize: 14, height: 1.6, color: kMuted)),
+        ),
+      frage,
+    ];
+  }
+
+  /// Anlage (Tabelle) zur Aufgabe – waagerecht scrollbar.
+  Widget _anlage(Anlage a) {
+    TableRow zeile(List<String> zellen, {bool kopf = false}) => TableRow(
+          decoration: kopf ? const BoxDecoration(color: Color(0xFFEEF4F5)) : null,
+          children: [
+            for (var i = 0; i < zellen.length; i++)
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 9, vertical: 6),
+                child: Text(zellen[i],
+                    textAlign: i == 0 ? TextAlign.left : TextAlign.right,
+                    style: TextStyle(
+                        fontSize: kopf ? 11.5 : 13,
+                        fontWeight: (kopf || i == 0) ? FontWeight.w700 : FontWeight.w400,
+                        color: kopf ? kPetrolDeep : kInk)),
+              ),
+          ],
+        );
+    return Container(
+      margin: const EdgeInsets.only(top: 14),
+      padding: const EdgeInsets.all(12),
+      decoration: BoxDecoration(
+        color: const Color(0xFFFBFDFD),
+        border: Border.all(color: kLine),
+        borderRadius: BorderRadius.circular(kRadius),
+      ),
+      child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+        Text(a.titel.toUpperCase(),
+            style: const TextStyle(
+                fontSize: 10.5, fontWeight: FontWeight.w700, letterSpacing: .8, color: kPetrol)),
+        const SizedBox(height: 9),
+        SingleChildScrollView(
+          scrollDirection: Axis.horizontal,
+          child: ConstrainedBox(
+            constraints: const BoxConstraints(minWidth: 420),
+            child: Table(
+              border: TableBorder.all(color: kLine),
+              defaultColumnWidth: const IntrinsicColumnWidth(),
+              children: [
+                if (a.kopf.isNotEmpty) zeile(a.kopf, kopf: true),
+                for (final r in a.zeilen) zeile(r),
+              ],
+            ),
+          ),
+        ),
+        if (a.hinweis.isNotEmpty) ...[
+          const SizedBox(height: 9),
+          Text(a.hinweis, style: const TextStyle(fontSize: 11.5, height: 1.45, color: kMuted)),
+        ],
       ]),
     );
   }

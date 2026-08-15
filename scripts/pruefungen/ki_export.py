@@ -54,6 +54,19 @@ def slug(text):
     return t
 
 
+def tabelle(tab):
+    """Anlage einer Aufgabe als Markdown-Tabelle."""
+    kopf = tab.get('kopf') or []
+    zeilen = ['**%s**\n' % tab.get('titel', 'Anlage'),
+              '| ' + ' | '.join(kopf) + ' |',
+              '|' + '|'.join(['---'] * len(kopf)) + '|']
+    for r in tab.get('zeilen') or []:
+        zeilen.append('| ' + ' | '.join(r) + ' |')
+    if tab.get('hinweis'):
+        zeilen.append('\n%s' % tab['hinweis'])
+    return '\n'.join(zeilen) + '\n'
+
+
 def export_case(case):
     """Eine Fallaufgabe als Markdown-Prüfauftrag."""
     out = [PRUEFAUFTRAG, '## %s\n' % case['title']]
@@ -65,6 +78,8 @@ def export_case(case):
         kopf, _, rest = s['q'].partition('\n\n')
         out.append('### %s\n' % kopf)
         out.append(rest.strip() + '\n')
+        if s.get('tab'):
+            out.append(tabelle(s['tab']))
         out.append('**Musterlösung (zu prüfen):**\n')
         out.append(s['a'] + '\n')
         if s.get('e'):
