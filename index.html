@@ -445,6 +445,25 @@
 .kw-del{border:0;background:transparent;color:var(--muted);cursor:pointer;font-size:15px;line-height:1;padding:4px}
 @media(max-width:520px){.kw-tiles{grid-template-columns:1fr}.kw-in{width:84px}.kw-val{min-width:84px}.kw-pct{width:52px}
 .kw-row{gap:6px}.kw-lbl{font-size:12.5px}.kw-modes button{font-size:11.5px}}
+
+/* ===== Original-IHK-Prüfungen ===== */
+.pr-lead{font-size:13px;color:var(--muted);line-height:1.55;margin:0 0 14px}
+.pr-group{font-family:var(--disp);font-size:13px;letter-spacing:.4px;text-transform:uppercase;
+  color:var(--petrol-deep);font-weight:700;margin:16px 0 8px}
+.pr-group:first-child{margin-top:0}
+.pr-item{border:1px solid var(--line);border-radius:12px;background:var(--paper);padding:13px 14px;margin-bottom:9px}
+.pr-top{display:flex;align-items:baseline;gap:8px;flex-wrap:wrap}
+.pr-date{font-weight:800;font-size:15px;color:var(--ink)}
+.pr-badge{font-size:10.5px;font-weight:800;letter-spacing:.3px;padding:2px 7px;border-radius:5px;
+  background:var(--petrol-soft);color:var(--petrol-deep)}
+.pr-meta{font-size:12px;color:var(--muted);margin-top:4px}
+.pr-actions{display:flex;gap:8px;margin-top:11px;flex-wrap:wrap}
+.pr-btn{border:1px solid var(--line);background:var(--paper);border-radius:9px;padding:9px 14px;
+  font:700 12.5px var(--body);color:var(--petrol);cursor:pointer}
+.pr-btn.solid{background:var(--petrol);border-color:var(--petrol);color:#fff}
+.pr-btn:disabled{opacity:.6;cursor:default}
+.pr-hint{margin-top:14px;border-left:3px solid var(--amber);background:var(--amber-soft);
+  border-radius:8px;padding:11px 13px;font-size:12.5px;line-height:1.5;color:var(--ink)}
 </style>
 </head>
 <body>
@@ -537,6 +556,12 @@
       <p class="h-label">Betriebliches Kostenwesen</p>
       <p class="sync-lead">Das komplette Kostenwesen von Grund auf erklärt – Abgrenzung, Kostenarten, BAB, Kalkulation, Deckungsbeitrag und Kennzahlen. Dazu Rechner im Prüfungsschema: Zuschlagskalkulation, Betriebsabrechnungsbogen, Break-Even und mehr.</p>
       <button class="sync-btn" id="btnKW">Kostenwesen öffnen</button>
+    </div>
+
+    <div class="home-section" id="pruefSection">
+      <p class="h-label">Original-IHK-Prüfungen</p>
+      <p class="sync-lead">Echte Prüfungsaufgaben aus dem Handlungsspezifischen Teil – mit Ausgangssituation, Punktzahlen und Musterlösung zu jeder Teilaufgabe. Gezielt nach Termin und Handlungsbereich auswählbar.</p>
+      <button class="sync-btn" id="btnPruef">Prüfungen öffnen</button>
     </div>
   </div>
 
@@ -663,6 +688,15 @@
       <div id="adrQuiz" class="adr-pane" hidden></div>
       <div id="adrBoard" class="adr-pane" hidden></div>
     </div>
+  </div>
+</div>
+
+<!-- Original-IHK-Prüfungen -->
+<div class="modal" id="mPruef" hidden>
+  <div class="backdrop" data-close></div>
+  <div class="sheet wide" role="dialog" aria-modal="true" aria-label="Original-IHK-Prüfungen">
+    <div class="sheet-head"><h3>Original-IHK-Prüfungen</h3><button class="x" data-close aria-label="Schließen">✕</button></div>
+    <div class="sheet-body"><div id="pruefList"></div></div>
   </div>
 </div>
 
@@ -965,7 +999,7 @@ function weightedPick(candidates,n){
 }
 
 /* ===== ROUND ===== */
-function startRound(mode){
+function startRound(mode,caseId){
   state.mode=mode;
   if(mode==='train'){
     var cand=qForScope(state.fach,state.sub);
@@ -987,7 +1021,9 @@ function startRound(mode){
     state.pool=shuffle(state.wrong);
   }else if(mode==='cases'){
     if(!CASES.length){alert("Es sind noch keine Fallaufgaben verfügbar.");return;}
-    var pick=CASES[Math.floor(Math.random()*CASES.length)];
+    var pick=null;
+    if(caseId){pick=CASES.filter(function(c){return c.id===caseId;})[0];}
+    if(!pick)pick=CASES[Math.floor(Math.random()*CASES.length)];
     state.pool=pick.steps.map(function(st,i){var c={};for(var k in st)c[k]=st[k];c._case={title:pick.title,context:pick.context,i:i+1,total:pick.steps.length};return c;});
   }
   if(!state.pool.length){alert("Für diesen Modus gibt es gerade keine passenden Fragen.");return;}
@@ -1145,6 +1181,9 @@ function show(id){["scrHome","scrQuiz","scrResult"].forEach(function(s){$(s).hid
 /* ===== events ===== */
 $("btnDue").addEventListener("click",function(){startRound('due');});
 $("btnCases").addEventListener("click",function(){startRound('cases');});
+/* Schnittstelle nach außen: startet gezielt eine bestimmte Fallaufgabe
+   (wird von der Prüfungsauswahl genutzt, die außerhalb dieser Kapselung liegt). */
+window.KVM_startCase=function(id){startRound('cases',id);};
 $("btnTraining").addEventListener("click",function(){startRound('train');});
 $("btnMixed").addEventListener("click",function(){startRound('all');});
 $("btnWeak").addEventListener("click",function(){startRound('weak');});
@@ -2674,6 +2713,164 @@ function initKW(){
     if(e.key==="Escape"&&!$("mKW").hidden)closeKW();});
 }
 if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",initKW);else initKW();
+})();
+</script>
+
+<script>
+/* ===== Original-IHK-Prüfungen: gezielte Auswahl + KI-Export ===== */
+(function(){"use strict";
+var $=function(id){return document.getElementById(id);};
+
+var MON={'Januar':1,'Februar':2,'März':3,'April':4,'Mai':5,'Juni':6,'Juli':7,
+         'August':8,'September':9,'Oktober':10,'November':11,'Dezember':12};
+
+/** Prüfungsfälle aus dem Fallaufgaben-Bestand herausfiltern. */
+function pruefungen(){
+  return (window.KVM_CASES||[]).filter(function(c){return /^P-/.test(c.id);});
+}
+/** "IHK-Prüfung <Bereich> – <Datum>" zerlegen. */
+function teile(c){
+  var m=/^IHK-Prüfung (.+?) – (.+)$/.exec(c.title||'');
+  var bereich=m?m[1]:(c.sub||'').replace(/^IHK-Prüfung:\s*/,'');
+  var datum=m?m[2]:'';
+  var d=/(\d{1,2})\.\s*(\S+)\s*(\d{4})/.exec(datum);
+  var sort=d?(+d[3])*10000+(MON[d[2]]||0)*100+(+d[1]):0;
+  var pkt=/(\d+)\s*Punkte insgesamt/.exec(c.context||'');
+  return {bereich:bereich,datum:datum,sort:sort,punkte:pkt?pkt[1]:null};
+}
+function esc(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
+
+/** Volltext einer Prüfung als Prüfauftrag für eine KI. */
+function exportText(c){
+  var t=teile(c);
+  var out=[];
+  out.push('PRÜFAUFTRAG');
+  out.push('');
+  out.push('Du bist erfahrener Prüfer und Dozent für die Fortbildung "Geprüfte/-r '
+          +'Meister/-in für Kraftverkehr (IHK)". Unten steht eine Original-Prüfungsaufgabe '
+          +'der IHK sowie zu jeder Teilaufgabe eine Musterlösung, die NICHT von der IHK '
+          +'stammt, sondern nachträglich erarbeitet wurde.');
+  out.push('');
+  out.push('Prüfe jede Musterlösung und antworte je Teilaufgabe knapp:');
+  out.push('- Bewertung: korrekt / teilweise korrekt / fehlerhaft');
+  out.push('- Fachliche Fehler konkret benennen (falsche Aussage, falsche Rechnung, '
+          +'veraltete Rechtsgrundlage) - oder "keine".');
+  out.push('- Vollständigkeit: Reicht der Umfang für die angegebene Punktzahl? '
+          +'Faustregel: etwa 2 Punkte je verlangtem Element.');
+  out.push('- Ergänzung: Was würde ein Prüfer zusätzlich erwarten?');
+  out.push('');
+  out.push('Achte besonders auf: (1) Rechenaufgaben eigenständig nachrechnen und '
+          +'Abweichungen mit eigenem Rechenweg nennen; (2) Rechtsgrundlagen auf '
+          +'Aktualität prüfen (ArbSchG, ArbZG, StVO, StVZO, BetrVG, DGUV, '
+          +'VO (EG) 561/2006, VO (EU) 165/2014, BKrFQG, GGVSEB/ADR, DIN EN ISO 9001); '
+          +'(3) Behördenbezeichnungen (BALM, früher BAG).');
+  out.push('');
+  out.push('==============================');
+  out.push(c.title);
+  out.push('==============================');
+  out.push('');
+  out.push('AUSGANGSSITUATION');
+  out.push(c.context||'');
+  out.push('');
+  (c.steps||[]).forEach(function(s){
+    var q=(s.q||'').split('\n\n');
+    out.push('------------------------------');
+    out.push(q[0]||'');
+    out.push('');
+    out.push(q.slice(1).join('\n\n'));
+    out.push('');
+    out.push('MUSTERLÖSUNG (zu prüfen):');
+    out.push(s.a||'');
+    if(s.e){out.push('');out.push('Merksatz: '+s.e);}
+    out.push('');
+  });
+  out.push('==============================');
+  out.push('Ende. Nenne abschließend, welche Teilaufgaben überarbeitet werden müssen.');
+  return out.join('\n');
+}
+
+function kopieren(text,btn){
+  function ok(){
+    var alt=btn.textContent;btn.textContent='✓ Kopiert';btn.disabled=true;
+    setTimeout(function(){btn.textContent=alt;btn.disabled=false;},2200);
+  }
+  function fallback(){
+    var ta=document.createElement('textarea');
+    ta.value=text;ta.style.position='fixed';ta.style.left='-9999px';
+    document.body.appendChild(ta);ta.select();
+    try{document.execCommand('copy');ok();}
+    catch(e){window.prompt('Text markieren und kopieren:',text.slice(0,2000));}
+    document.body.removeChild(ta);
+  }
+  if(navigator.clipboard&&navigator.clipboard.writeText){
+    navigator.clipboard.writeText(text).then(ok,fallback);
+  }else fallback();
+}
+
+function render(){
+  var list=$('pruefList');if(!list)return;
+  var alle=pruefungen();
+  if(!alle.length){
+    list.innerHTML='<p class="pr-lead">Es sind noch keine Original-Prüfungen hinterlegt.</p>';
+    return;
+  }
+  var info=alle.map(function(c){var t=teile(c);t.c=c;return t;});
+  info.sort(function(a,b){return b.sort-a.sort;});
+  var gruppen={};
+  info.forEach(function(x){(gruppen[x.bereich]=gruppen[x.bereich]||[]).push(x);});
+
+  var h='<p class="pr-lead">'+alle.length+' Prüfung'+(alle.length===1?'':'en')+' verfügbar. '
+      +'Jede enthält die vollständige Ausgangssituation und alle Teilaufgaben mit ihrer '
+      +'offiziellen Punktzahl. Zu jeder Teilaufgabe kannst du deine Antwort selbst '
+      +'formulieren und dann die Musterlösung aufdecken.</p>';
+  Object.keys(gruppen).sort().forEach(function(b){
+    h+='<div class="pr-group">'+esc(b)+'</div>';
+    gruppen[b].forEach(function(x){
+      h+='<div class="pr-item">'
+        +'<div class="pr-top"><span class="pr-date">'+esc(x.datum)+'</span>'
+        +'<span class="pr-badge">'+(x.punkte?esc(x.punkte)+' Punkte':'Prüfung')+'</span></div>'
+        +'<div class="pr-meta">'+x.c.steps.length+' Teilaufgaben · Bearbeitungszeit 180 Minuten</div>'
+        +'<div class="pr-actions">'
+        +'<button class="pr-btn solid" data-start="'+esc(x.c.id)+'">Prüfung starten</button>'
+        +'<button class="pr-btn" data-copy="'+esc(x.c.id)+'">Für KI-Prüfung kopieren</button>'
+        +'</div></div>';
+    });
+  });
+  h+='<div class="pr-hint"><b>Zu den Musterlösungen:</b> Die Original-Prüfungen der IHK '
+    +'enthalten keine Lösungen. Die hier hinterlegten Musterlösungen wurden fachlich '
+    +'erarbeitet und sind nicht amtlich. Mit „Für KI-Prüfung kopieren“ erhältst du die '
+    +'komplette Prüfung samt Lösungen als Text – füge ihn in eine KI deiner Wahl ein, '
+    +'um sie gegenprüfen zu lassen.</div>';
+  list.innerHTML=h;
+
+  list.querySelectorAll('[data-start]').forEach(function(b){
+    b.addEventListener('click',function(){
+      var id=b.getAttribute('data-start');
+      close();
+      if(typeof window.KVM_startCase==='function')window.KVM_startCase(id);
+    });
+  });
+  list.querySelectorAll('[data-copy]').forEach(function(b){
+    b.addEventListener('click',function(){
+      var id=b.getAttribute('data-copy');
+      var c=pruefungen().filter(function(x){return x.id===id;})[0];
+      if(c)kopieren(exportText(c),b);
+    });
+  });
+}
+
+function open_(){var m=$('mPruef');if(!m)return;render();m.hidden=false;document.body.style.overflow='hidden';}
+function close(){var m=$('mPruef');if(!m)return;m.hidden=true;document.body.style.overflow='';}
+
+function init(){
+  var b=$('btnPruef');if(b)b.addEventListener('click',open_);
+  var m=$('mPruef');if(!m)return;
+  m.addEventListener('click',function(e){
+    if(e.target.hasAttribute&&e.target.hasAttribute('data-close'))close();});
+  document.addEventListener('keydown',function(e){
+    if(e.key==='Escape'&&!$('mPruef').hidden)close();});
+}
+if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init);else init();
 })();
 </script>
 
