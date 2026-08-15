@@ -13,6 +13,7 @@ import '../widgets/drawing_pad.dart';
 import '../widgets/account_sheet.dart';
 import '../widgets/premium_sheet.dart';
 import 'kw/kw_hub.dart';
+import 'pruefungen_screen.dart';
 import 'quiz_screen.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -249,6 +250,16 @@ class _HomeScreenState extends State<HomeScreen> {
 
             // Lernmodul
             _section('Lernmodul'),
+            _modeTile(
+                'Original-IHK-Prüfungen',
+                'Echte Prüfungsaufgaben mit Ausgangssituation, Punktzahlen und '
+                    'Musterlösung – gezielt nach Termin auswählbar.',
+                kPetrol,
+                Icons.assignment_outlined, () {
+              Navigator.of(context).push(
+                MaterialPageRoute(builder: (_) => const PruefungenScreen()),
+              );
+            }),
             _modeTile(
                 'Betriebliches Kostenwesen',
                 'Alles erklärt – von den Grundbegriffen bis zur Kalkulation. '
