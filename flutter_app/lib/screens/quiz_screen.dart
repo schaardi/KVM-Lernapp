@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'dart:convert';
 import 'package:flutter/services.dart';
 import 'package:flutter/material.dart';
 import '../constants.dart';
@@ -9,6 +10,7 @@ import '../services/voice_service.dart';
 import '../services/ad_service.dart';
 import '../services/answer_store.dart';
 import '../widgets/calculator.dart';
+import '../widgets/drawing_pad.dart';
 import 'result_screen.dart';
 
 class QuizScreen extends StatefulWidget {
@@ -602,6 +604,7 @@ class _QuizScreenState extends State<QuizScreen> {
                 Padding(
                     padding: const EdgeInsets.only(top: 10),
                     child: _anlage(_q.tab!)),
+              if (_q.bild != null) _bild(_q.bild!),
             ]),
           ),
         ),
@@ -681,6 +684,29 @@ class _QuizScreenState extends State<QuizScreen> {
     ]);
   }
 
+  /// Bild-Anlage (data-URI) in der Prüfer-Blase – z. B. ein Diagramm.
+  Widget _bild(String uri) {
+    final komma = uri.indexOf(',');
+    if (!uri.startsWith('data:') || komma < 0) return const SizedBox.shrink();
+    try {
+      final bytes = base64Decode(uri.substring(komma + 1));
+      return Padding(
+        padding: const EdgeInsets.only(top: 10),
+        child: ClipRRect(
+          borderRadius: BorderRadius.circular(10),
+          child: Container(
+            decoration: BoxDecoration(
+                border: Border.all(color: kLine),
+                borderRadius: BorderRadius.circular(10)),
+            child: Image.memory(bytes, fit: BoxFit.fitWidth, width: double.infinity),
+          ),
+        ),
+      );
+    } catch (_) {
+      return const SizedBox.shrink();
+    }
+  }
+
   Widget _composer() {
     return Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
       const Divider(height: 1, color: kLine),
@@ -712,30 +738,78 @@ class _QuizScreenState extends State<QuizScreen> {
         ),
       ),
       const SizedBox(height: 10),
-      Row(children: [
-        OutlinedButton.icon(
-          onPressed: _openRechner,
-          style: OutlinedButton.styleFrom(
-              foregroundColor: kPetrol, side: const BorderSide(color: kLine)),
-          icon: const Icon(Icons.calculate_outlined, size: 17),
-          label: const Text('Rechner',
-              style: TextStyle(fontWeight: FontWeight.w700, fontSize: 12.5)),
-        ),
-        const Spacer(),
-        FilledButton.icon(
-          onPressed: () {
-            AnswerStore.instance.set(_q.id, _eigene.text);
-            setState(() => _revealed = true);
-          },
-          style: FilledButton.styleFrom(
-              backgroundColor: kPetrol,
-              padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 12)),
-          icon: const Icon(Icons.send_rounded, size: 16),
-          label: const Text('Senden',
-              style: TextStyle(fontWeight: FontWeight.w700, fontSize: 13)),
-        ),
-      ]),
+      Wrap(
+        spacing: 8,
+        runSpacing: 8,
+        crossAxisAlignment: WrapCrossAlignment.center,
+        alignment: WrapAlignment.spaceBetween,
+        children: [
+          Wrap(spacing: 8, runSpacing: 8, children: [
+            OutlinedButton.icon(
+              onPressed: _openRechner,
+              style: OutlinedButton.styleFrom(
+                  foregroundColor: kPetrol, side: const BorderSide(color: kLine)),
+              icon: const Icon(Icons.calculate_outlined, size: 17),
+              label: const Text('Rechner',
+                  style: TextStyle(fontWeight: FontWeight.w700, fontSize: 12.5)),
+            ),
+            OutlinedButton.icon(
+              onPressed: _openRechenblatt,
+              style: OutlinedButton.styleFrom(
+                  foregroundColor: kPetrol, side: const BorderSide(color: kLine)),
+              icon: const Icon(Icons.edit_outlined, size: 16),
+              label: const Text('Rechenblatt',
+                  style: TextStyle(fontWeight: FontWeight.w700, fontSize: 12.5)),
+            ),
+          ]),
+          FilledButton.icon(
+            onPressed: () {
+              AnswerStore.instance.set(_q.id, _eigene.text);
+              setState(() => _revealed = true);
+            },
+            style: FilledButton.styleFrom(
+                backgroundColor: kPetrol,
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 20, vertical: 12)),
+            icon: const Icon(Icons.send_rounded, size: 16),
+            label: const Text('Senden',
+                style: TextStyle(fontWeight: FontWeight.w700, fontSize: 13)),
+          ),
+        ],
+      ),
     ]);
+  }
+
+  void _openRechenblatt() {
+    showModalBottomSheet(
+      context: context,
+      isScrollControlled: true,
+      backgroundColor: kPaper,
+      shape: const RoundedRectangleBorder(
+          borderRadius: BorderRadius.vertical(top: Radius.circular(20))),
+      builder: (_) => SafeArea(
+        child: Padding(
+          padding:
+              EdgeInsets.only(bottom: MediaQuery.of(context).viewInsets.bottom),
+          child: SizedBox(
+            height: MediaQuery.of(context).size.height * 0.7,
+            child: Column(children: [
+              const Padding(
+                padding: EdgeInsets.fromLTRB(16, 12, 16, 4),
+                child: Row(children: [
+                  Text('Rechenblatt',
+                      style: TextStyle(
+                          fontSize: 16,
+                          fontWeight: FontWeight.w800,
+                          color: kInk)),
+                ]),
+              ),
+              const Expanded(child: DrawingPad()),
+            ]),
+          ),
+        ),
+      ),
+    );
   }
 
   void _openRechner() {
