@@ -23,6 +23,7 @@ Aufruf als Skript (korrigiert die Prüfungen direkt in der Web-App):
     python3 scripts/pruefungen/korrekturen.py index.html
 """
 import json
+import base64, os
 import re
 import sys
 
@@ -178,6 +179,19 @@ TABELLEN = {
 }
 
 # --------------------------------------------------------------------------- #
+# --------------------------------------------------------------------------- #
+# Anlagen als Bild: {Teilaufgaben-ID: Dateiname in anlagen/}
+# Manche Anlagen sind Diagramme (z. B. der Lastverteilungsplan) und lassen sich
+# nicht als Tabelle abbilden. Sie werden als JPEG in der Aufgabe eingebettet
+# (data-URI) und in App und Web-App direkt angezeigt.
+# --------------------------------------------------------------------------- #
+BILDER = {
+    'P-FT-20251111-s3': 'P-FT-20251111-s3.jpg',  # Lastverteilungsplan Sattelauflieger
+}
+_ANLAGEN = os.path.join(os.path.dirname(__file__), 'anlagen')
+
+
+# --------------------------------------------------------------------------- #
 # Korrekturen an den Musterlösungen: {Teilaufgaben-ID: [(alt, neu), ...]}
 # --------------------------------------------------------------------------- #
 LOESUNGEN = {
@@ -223,6 +237,14 @@ def anwenden(cases):
             tab = TABELLEN.get(s['id'])
             if tab:
                 s['tab'] = tab
+                treffer += 1
+            bild = BILDER.get(s['id'])
+            if bild:
+                pfad = os.path.join(_ANLAGEN, bild)
+                assert os.path.exists(pfad), 'Anlage-Bild fehlt: %s' % pfad
+                with open(pfad, 'rb') as f:
+                    daten = base64.b64encode(f.read()).decode('ascii')
+                s['bild'] = 'data:image/jpeg;base64,' + daten
                 treffer += 1
             for alt, neu in LOESUNGEN.get(s['id'], []):
                 assert alt in s.get('a', ''), 'Lösungskorrektur greift nicht in %s' % s['id']

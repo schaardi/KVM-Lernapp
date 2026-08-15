@@ -74,6 +74,7 @@ class Question {
   final double? ans; // Ergebnis (calc)
   final String unit; // Einheit (calc)
   final Anlage? tab; // Anlage (Tabelle) zur Aufgabe
+  final String? bild; // Anlage als Bild (data-URI, z. B. ein Diagramm)
 
   // Kontext für Fallaufgaben (nicht Teil des JSON, zur Laufzeit gesetzt)
   final CaseContext? caseCtx;
@@ -90,6 +91,7 @@ class Question {
     this.ans,
     this.unit = '',
     this.tab,
+    this.bild,
     this.caseCtx,
   });
 
@@ -109,11 +111,12 @@ class Question {
         tab: j['tab'] is Map<String, dynamic>
             ? Anlage.fromJson(j['tab'] as Map<String, dynamic>)
             : null,
+        bild: j['bild']?.toString(),
       );
 
   Question withCase(CaseContext ctx) => Question(
         id: id, f: f, sub: sub, type: type, q: q, o: o, e: e, a: a,
-        ans: ans, unit: unit, tab: tab, caseCtx: ctx,
+        ans: ans, unit: unit, tab: tab, bild: bild, caseCtx: ctx,
       );
 }
 
