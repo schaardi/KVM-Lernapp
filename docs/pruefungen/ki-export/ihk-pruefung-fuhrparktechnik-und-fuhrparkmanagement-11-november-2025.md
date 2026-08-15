@@ -38,7 +38,7 @@ Sie sind bei einem mittelständischen Unternehmen als Fuhrpark- und Werkstattlei
 Im Unternehmen ist ein Qualitätsmanagement nach der aktuellen DIN EN ISO 9001:2015 implementiert. In Kürze steht ein externes Audit an.
 Der Fuhrpark umfasst folgende Fahrzeuge:
 – zehn Überlandbusse
-– zweiReisebusse
+– zwei Reisebusse
 – sieben Sattelkraftfahrzeuge
 – fünf Gliederzüge
 Hinzu kommt eine unternehmenseigene Werkstatt inklusive eines dazugehörigen Lagers für Ersatzteile mit insgesamt sechs Mitarbeitern.
@@ -51,8 +51,7 @@ Original-Prüfungsaufgabe der IHK vom 11. November 2025 · Handlungsbereich Fuhr
 
 ### Aufgabe 1 a) · 6 Punkte
 
-Bei Kontrollen durch das Bundesamt für Logistik und Mobilität (BALM) wurden Arbeitszeitverstöße sowie Ver-
-stöße gegen die lückenlose Mitführungspflicht von Arbeitszeitnachweisen der Fahrer beanstandet. Vor diesem Hintergrund planen Sie in Ihrer Funktion als Fuhrparkleiter eine Unterweisung für Ihre Disponenten und Fahrer im Unternehmen. Diese bereiten Sie inhaltlich und fachlich vor.
+Bei Kontrollen durch das Bundesamt für Logistik und Mobilität (BALM) wurden Arbeitszeitverstöße sowie Verstöße gegen die lückenlose Mitführungspflicht von Arbeitszeitnachweisen der Fahrer beanstandet. Vor diesem Hintergrund planen Sie in Ihrer Funktion als Fuhrparkleiter eine Unterweisung für Ihre Disponenten und Fahrer im Unternehmen. Diese bereiten Sie inhaltlich und fachlich vor.
 
 Erläutern Sie, was unter einem lückenlosen Arbeitszeitnachweis bei digitalen Fahrtenschreibern zu verstehen ist, und geben Sie zwei gesetzliche Vorgaben hierzu an.
 
@@ -71,8 +70,7 @@ Zwei gesetzliche Vorgaben:
 
 ### Aufgabe 1 b) · 9 Punkte
 
-Bei Kontrollen durch das Bundesamt für Logistik und Mobilität (BALM) wurden Arbeitszeitverstöße sowie Ver-
-stöße gegen die lückenlose Mitführungspflicht von Arbeitszeitnachweisen der Fahrer beanstandet. Vor diesem Hintergrund planen Sie in Ihrer Funktion als Fuhrparkleiter eine Unterweisung für Ihre Disponenten und Fahrer im Unternehmen. Diese bereiten Sie inhaltlich und fachlich vor.
+Bei Kontrollen durch das Bundesamt für Logistik und Mobilität (BALM) wurden Arbeitszeitverstöße sowie Verstöße gegen die lückenlose Mitführungspflicht von Arbeitszeitnachweisen der Fahrer beanstandet. Vor diesem Hintergrund planen Sie in Ihrer Funktion als Fuhrparkleiter eine Unterweisung für Ihre Disponenten und Fahrer im Unternehmen. Diese bereiten Sie inhaltlich und fachlich vor.
 
 Erläutern Sie zur Vorbereitung Ihrer Unterweisung jeweils anhand von drei Merkmalen, was unter
 – Lenkzeit,
@@ -102,8 +100,7 @@ Bereitschaftszeit
 
 ### Aufgabe 1 c) · 5 Punkte
 
-Bei Kontrollen durch das Bundesamt für Logistik und Mobilität (BALM) wurden Arbeitszeitverstöße sowie Ver-
-stöße gegen die lückenlose Mitführungspflicht von Arbeitszeitnachweisen der Fahrer beanstandet. Vor diesem Hintergrund planen Sie in Ihrer Funktion als Fuhrparkleiter eine Unterweisung für Ihre Disponenten und Fahrer im Unternehmen. Diese bereiten Sie inhaltlich und fachlich vor.
+Bei Kontrollen durch das Bundesamt für Logistik und Mobilität (BALM) wurden Arbeitszeitverstöße sowie Verstöße gegen die lückenlose Mitführungspflicht von Arbeitszeitnachweisen der Fahrer beanstandet. Vor diesem Hintergrund planen Sie in Ihrer Funktion als Fuhrparkleiter eine Unterweisung für Ihre Disponenten und Fahrer im Unternehmen. Diese bereiten Sie inhaltlich und fachlich vor.
 
 Insbesondere für die Disponenten als eine Zielgruppe Ihrer Unterweisung möchten Sie fachlich auf deren Verpflichtungen eingehen.
 Beschreiben Sie den Inhalt der Kontrollgeräteverordnung VO (EU) Nr. 165/2014 und geben Sie vier Unternehmerpflichten an, die in dieser Verordnung beschrieben werden.
@@ -135,17 +132,13 @@ Der Fahrer ist sich jedoch sicher, dass er alle erforderlichen Sicherungsmaßnah
 Die Geschäftsleitung bittet Sie aus diesem Grund, mit dem betroffenen Fahrer eine schriftliche Stellungnahme für einen Widerspruch vorzubereiten.
 Für die Ausarbeitung der Stellungnahme liegen Ihnen folgende Daten vor:
 – Sattelkraftfahrzeug bestehend aus
-– einer Zweiachs-Sattelzugmaschine mit einer zGM von 18 t, einem Leergewicht von 8 t und einer
-Sattellast von 10t
-– einem Dreiachs-Sattelauflieger (Curtainsider) mit einer zZGM von 36 t, einem Leergewicht von 7 t,
-einer Aufliegelast von 10 t mit einer Länge von 13,60 m
-– Sattelauflieger nach DIN 12642 in Code-L-Ausführung
-– standsichere Ladung in Holzkisten mit mittigem Schwerpunkt verteilt auf 16 Europaletten mit einem
-Gewicht von 1.000 kg/Palette
+– einer Zweiachs-Sattelzugmaschine mit einer zGM von 18 t, einem Leergewicht von 8 t und einer Sattellast von 10 t
+– einem Dreiachs-Sattelauflieger (Curtainsider) mit einer zGM von 36 t, einem Leergewicht von 7 t, einer Aufliegelast von 10 t und einer Länge von 13,60 m
+– Sattelauflieger nach DIN EN 12642 in Code-L-Ausführung
+– standsichere Ladung in Holzkisten mit mittigem Schwerpunkt verteilt auf 16 Europaletten mit einem Gewicht von 1.000 kg/Palette
 – Die Ladung wurde formschlüssig einreihig geladen.
 – Sicherung mit rutschhemmendem Material und jeweils einem Gurtpaar für eine Holzkiste
-– Nachfolgender Lastverteilungsplan liegt Ihnen vom Sattelauflieger vor:
-Ladefläche (m) 2m 4m 6m 8m 10m 12m 25t / \ 20t Fi rau . 10t 5t - Last ()
+– Nachfolgender Lastverteilungsplan liegt Ihnen vom Sattelauflieger vor (Beschreibung der Anlage): Die waagerechte Achse zeigt den Abstand des Ladungsschwerpunkts von der Stirnwand (0 m bis 13,60 m, beschriftet in Schritten von 2 m), die senkrechte Achse die dort jeweils höchstzulässige Last (5 t bis 25 t). Die zulässige Last steigt von der Stirnwand aus an, erreicht zwischen 6 m und 8 m ihr Maximum von rund 25 t und fällt zum Heck hin wieder ab.
 
 Berechnen Sie die erforderlichen Sicherungskräfte, die auf das Fahrzeug und auf die Ladung einwirken, und prüfen Sie begründet, ob die Sicherungsmaßnahmen wie vom Fahrer angegeben ausreichen.
 
@@ -186,17 +179,13 @@ Der Fahrer ist sich jedoch sicher, dass er alle erforderlichen Sicherungsmaßnah
 Die Geschäftsleitung bittet Sie aus diesem Grund, mit dem betroffenen Fahrer eine schriftliche Stellungnahme für einen Widerspruch vorzubereiten.
 Für die Ausarbeitung der Stellungnahme liegen Ihnen folgende Daten vor:
 – Sattelkraftfahrzeug bestehend aus
-– einer Zweiachs-Sattelzugmaschine mit einer zGM von 18 t, einem Leergewicht von 8 t und einer
-Sattellast von 10t
-– einem Dreiachs-Sattelauflieger (Curtainsider) mit einer zZGM von 36 t, einem Leergewicht von 7 t,
-einer Aufliegelast von 10 t mit einer Länge von 13,60 m
-– Sattelauflieger nach DIN 12642 in Code-L-Ausführung
-– standsichere Ladung in Holzkisten mit mittigem Schwerpunkt verteilt auf 16 Europaletten mit einem
-Gewicht von 1.000 kg/Palette
+– einer Zweiachs-Sattelzugmaschine mit einer zGM von 18 t, einem Leergewicht von 8 t und einer Sattellast von 10 t
+– einem Dreiachs-Sattelauflieger (Curtainsider) mit einer zGM von 36 t, einem Leergewicht von 7 t, einer Aufliegelast von 10 t und einer Länge von 13,60 m
+– Sattelauflieger nach DIN EN 12642 in Code-L-Ausführung
+– standsichere Ladung in Holzkisten mit mittigem Schwerpunkt verteilt auf 16 Europaletten mit einem Gewicht von 1.000 kg/Palette
 – Die Ladung wurde formschlüssig einreihig geladen.
 – Sicherung mit rutschhemmendem Material und jeweils einem Gurtpaar für eine Holzkiste
-– Nachfolgender Lastverteilungsplan liegt Ihnen vom Sattelauflieger vor:
-Ladefläche (m) 2m 4m 6m 8m 10m 12m 25t / \ 20t Fi rau . 10t 5t - Last ()
+– Nachfolgender Lastverteilungsplan liegt Ihnen vom Sattelauflieger vor (Beschreibung der Anlage): Die waagerechte Achse zeigt den Abstand des Ladungsschwerpunkts von der Stirnwand (0 m bis 13,60 m, beschriftet in Schritten von 2 m), die senkrechte Achse die dort jeweils höchstzulässige Last (5 t bis 25 t). Die zulässige Last steigt von der Stirnwand aus an, erreicht zwischen 6 m und 8 m ihr Maximum von rund 25 t und fällt zum Heck hin wieder ab.
 
 Berechnen Sie den Gesamtschwerpunkt der Ladung und begründen Sie anhand des Lastverteilungsplans Ihr Ergebnis.
 
@@ -389,7 +378,7 @@ Zwei Nachteile einer internen Stellenbesetzung:
 In den nächsten zwei Jahren werden zahlreiche Mitarbeiter das gesetzliche Renteneintrittsalter erreichen und das Unternehmen verlassen. Vor diesem Hintergrund sollen die dann offenen Stellen der Mitarbeiter mit geeigneten Bewerbern besetzt werden.
 
 Für die Bewerberauswahl soll unter anderem ein Assessment-Center genutzt werden, da man sich dadurch eine genauere Analyse der Bewerber verspricht.
-Erläutern Sie drei Anforderungen an die gesuchten Mitarbeiter, die im Rahmen eines AssessmentCenters (AC) beobachtet werden können.
+Erläutern Sie drei Anforderungen an die gesuchten Mitarbeiter, die im Rahmen eines Assessment-Centers (AC) beobachtet werden können.
 
 **Musterlösung (zu prüfen):**
 

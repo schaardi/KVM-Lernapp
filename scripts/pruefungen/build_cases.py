@@ -5,6 +5,7 @@ import json, re, sys, unicodedata
 
 sys.path.insert(0, __file__.rsplit('/', 1)[0])
 from loesungen import LOESUNGEN
+import korrekturen
 
 BEREICH_KUERZEL = {
     'Organisation und Kommunikation': ('OK', 4),
@@ -93,6 +94,9 @@ def build(exams_path, out_path):
             'context': ctx,
             'steps': steps,
         })
+    # Was die OCR nicht sauber lesen konnte (Trennstriche, zusammengelaufene
+    # Datenlisten, verrutschte Anlagen), wird hier nachkorrigiert.
+    print('  Nachkorrekturen: %d Ersetzungen' % korrekturen.anwenden(cases))
     json.dump(cases, open(out_path, 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
     print('  Fallaufgaben erzeugt: %d' % len(cases))
     for c in cases:

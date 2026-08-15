@@ -410,8 +410,18 @@ Auswertung: Je Kriterium wird der Mittelwert gebildet und über die Jahre sowie 
 Ihr Unternehmen erhält vom zuständigen Aufgabenträger des Landkreises eine Anfrage zur Reaktivierung zweier Omnibuslinien. Als Leiter des Fuhrparks erhalten Sie von der Geschäftsführung den Auftrag, anhand der vorliegenden Daten eine Kostenrechnung durchzuführen.
 Folgende Daten liegen Ihnen vor:
 Linie 910:
-Anzahl Busse: 2 Plätze je 15-m-Bus: 50 Laufleistung je Fahrzeug im Jahr: 67.000 km Anteil Leerkilometer: 3% Linie 920:
-Plätze je 12-m- Bus: 45 durchschnittliche Wagenkilometer je Arbeitsstunde: 18 km/h Bruttoarbeitsstunden je Fahrdienst im Jahr: 2.200 h Urlaub im Jahr: 225 h Fehlzeiten: 10% erforderliches Fahrpersonal: 5,1 Mitarbeiter Anteil Leerkilometer: 4.000 km
+– Anzahl Busse: 2
+– Plätze je 15-m-Bus: 50
+– Laufleistung je Fahrzeug im Jahr: 67.000 km
+– Anteil Leerkilometer: 3 %
+Linie 920:
+– Plätze je 12-m-Bus: 45
+– durchschnittliche Wagenkilometer je Arbeitsstunde: 18 km/h
+– Bruttoarbeitsstunden je Fahrdienst im Jahr: 2.200 h
+– Urlaub im Jahr: 225 h
+– Fehlzeiten: 10 %
+– erforderliches Fahrpersonal: 5,1 Mitarbeiter
+– Anteil Leerkilometer: 4.000 km
 Ihre interne Fahrzeugkostenrechnung weist für den 15-m-Bus Kosten in Höhe von 2,10 €/km sowie für den 12-m-Bus Kosten in Höhe von 1,95 €/km aus.
 Berechnen Sie für die Überlandlinien 910 und 920 jeweils die Nutzplatzkilometer sowie die jeweiligen jährlichen Linienkosten.
 
@@ -431,7 +441,7 @@ Nutzkilometer (abzüglich 4.000 km Leerkilometer): 159.174,50 km
 Nutzplatzkilometer: 159.174,50 km × 45 Plätze = 7.162.852,50 Platz-km
 Jährliche Linienkosten: 163.174,50 km × 1,95 €/km = 318.190,28 €
 
-Zusammenfassung: Linie 910 erbringt 6.499.000 Nutzplatzkilometer bei 281.400,00 € Kosten, Linie 920 erbringt 7.162.852,50 Nutzplatzkilometer bei 318.190,28 € Kosten. Bezogen auf die Leistungseinheit kostet Linie 910 rund 4,33 Cent und Linie 920 rund 4,44 Cent je 1.000 Nutzplatzkilometer – Linie 910 arbeitet damit geringfügig günstiger.
+Zusammenfassung: Linie 910 erbringt 6.499.000 Nutzplatzkilometer bei 281.400,00 € Kosten, Linie 920 erbringt 7.162.852,50 Nutzplatzkilometer bei 318.190,28 € Kosten. Bezogen auf die Leistungseinheit kostet Linie 910 rund 4,33 Cent je Nutzplatzkilometer (281.400,00 € ÷ 6.499.000 Platz-km) und Linie 920 rund 4,44 Cent je Nutzplatzkilometer (318.190,28 € ÷ 7.162.852,50 Platz-km) – Linie 910 arbeitet damit geringfügig günstiger.
 
 > Achtung: Die Linienkosten werden auf ALLE Wagenkilometer gerechnet (auch Leerkilometer), die Nutzplatzkilometer nur auf die Nutzkilometer.
 

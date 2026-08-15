@@ -35,12 +35,13 @@ werden?
 ### Ausgangssituation
 
 Sie sind Fuhrparkleiter eines mittelständischen Logistikunternehmens, das insgesamt 200 Mitarbeiter beschäftigt. Zu Ihrem Team gehören 110 Mitarbeiter sowie drei Abteilungsleiter, die Ihnen disziplinarisch unterstellt sind. Das Unternehmen verfügt über eine eigene Werkstatt und ein eigenes Umschlagslager für Stückgut sowie vorhandene Kühlräume für temperaturgeführte Waren.
-Der Fuhrpark besteht aus folgenden Fahrzeugen: m 20 Transporter, zZ6M 3,5t
-– 4Lkws, zGM 12t
-– 40 Sattelkraftfahrzeuge, zGM 40t
+Der Fuhrpark besteht aus folgenden Fahrzeugen:
+– 20 Transporter, zGM 3,5 t
+– 4 Lkw, zGM 12 t
+– 40 Sattelkraftfahrzeuge, zGM 40 t
 – 16 Gliederzüge, zGM 40 t als Kühlfahrzeuge
 Die Geschäftsleitung plant, die Flotte der Transporter (zGM 3,5 t) vollständig auf emissionsfreien Elektroantrieb umzustellen.
-Das Unternehmen ist nach DIN ISO EN 9001:2015 zertifiziert. Aufgrund eines in Kürze anstehenden Rezertifizierungsaudits arbeiten Sie zurzeit eng mit dem QM-Beauftragten zusammen.
+Das Unternehmen ist nach DIN EN ISO 9001:2015 zertifiziert. Aufgrund eines in Kürze anstehenden Rezertifizierungsaudits arbeiten Sie zurzeit eng mit dem QM-Beauftragten zusammen.
 Trotz regelmäßiger Schulungen zum Thema Ladungssicherung kam es in den vergangenen Monaten bei Kontrollen des Bundesamtes für Logistik und Mobilität (BALM) zu Beanstandungen.
 Derzeit diskutiert die Geschäftsleitung gemeinsam mit den Führungskräften die Themen Mitarbeitergespräche und Konfliktmanagement, da das gegenwärtige schwierige Marktumfeld auch Auswirkungen auf die Führung und die Zusammenarbeit in Ihrem Unternehmen hat.
 
@@ -50,10 +51,26 @@ Original-Prüfungsaufgabe der IHK vom 8. Mai 2025 · Handlungsbereich Organisati
 
 ### Aufgabe 1 a) · 8 Punkte
 
-‚Aufgrund des aktuellen Personalengpasses in der Werkstatt hat die Geschäftsleitung beschlossen, Fahrzeugwartungen und -reparaturen an einen externen Dienstleister zu vergeben. Es liegen Angebote von drei exter-
-nen Dienstleistern/Werkstätten vor. Die Geschäftsleitung beauftragt Sie, eine Nutzwertanalyse zum Vergleich der Leistungsfähigkeit der drei externen Dienstleister/Werkstätten zu erstellen.
+Aufgrund des aktuellen Personalengpasses in der Werkstatt hat die Geschäftsleitung beschlossen, Fahrzeugwartungen und -reparaturen an einen externen Dienstleister zu vergeben. Es liegen Angebote von drei externen Dienstleistern/Werkstätten vor. Die Geschäftsleitung beauftragt Sie, eine Nutzwertanalyse zum Vergleich der Leistungsfähigkeit der drei externen Dienstleister/Werkstätten zu erstellen.
 
-Führen Sie anhand der in der Tabelle in Anlage 2 angegebenen Werte die Auswertung der NutzwertanaIyse durch.
+Führen Sie anhand der in der Tabelle in Anlage 2 angegebenen Werte die Auswertung der Nutzwertanalyse durch.
+
+**Anlage 2 zu Aufgabe 1 a): Nutzwertanalyse der drei externen Dienstleister/Werkstätten**
+
+| Kriterium | Gewichtung (1–10) | Werkstatt A (0–100) | Werkstatt B (0–100) | Werkstatt C (0–100) |
+|---|---|---|---|---|
+| Verrechnungspreis | 8 | 60 | 80 | 70 |
+| Qualität | 9 | 70 | 60 | 60 |
+| Reparaturzeit | 5 | 100 | 40 | 60 |
+| Termintreue | 10 | 90 | 70 | 40 |
+| technischer Support | 5 | 60 | 80 | 70 |
+| kaufmännischer Service | 4 | 50 | 50 | 60 |
+| Entfernung Werkstatt | 10 | 80 | 70 | 80 |
+| Know-how | 7 | 60 | 80 | 70 |
+| erreichte Punkte |  | ? | ? | ? |
+| Rang |  | ? | ? | ? |
+
+Je Kriterium ist der Teilnutzwert aus Gewichtung × Punkten zu bilden; die Summe der Teilnutzwerte ergibt die erreichten Punkte und daraus die Rangfolge.
 
 **Musterlösung (zu prüfen):**
 
@@ -89,8 +106,7 @@ Ergebnis: Werkstatt A erreicht den höchsten Nutzwert und ist damit zu empfehlen
 
 ### Aufgabe 1 b) · 6 Punkte
 
-‚Aufgrund des aktuellen Personalengpasses in der Werkstatt hat die Geschäftsleitung beschlossen, Fahrzeugwartungen und -reparaturen an einen externen Dienstleister zu vergeben. Es liegen Angebote von drei exter-
-nen Dienstleistern/Werkstätten vor. Die Geschäftsleitung beauftragt Sie, eine Nutzwertanalyse zum Vergleich der Leistungsfähigkeit der drei externen Dienstleister/Werkstätten zu erstellen.
+Aufgrund des aktuellen Personalengpasses in der Werkstatt hat die Geschäftsleitung beschlossen, Fahrzeugwartungen und -reparaturen an einen externen Dienstleister zu vergeben. Es liegen Angebote von drei externen Dienstleistern/Werkstätten vor. Die Geschäftsleitung beauftragt Sie, eine Nutzwertanalyse zum Vergleich der Leistungsfähigkeit der drei externen Dienstleister/Werkstätten zu erstellen.
 
 Neben dem Ergebnis Ihrer Nutzwertanalyse aus Teilaufgabe a) sind weitere Kriterien heranzuziehen, um eine abschließende Entscheidung zur Auswahl der externen Dienstleister/Werkstätten zu treffen.
 Beschreiben Sie drei weitere Kriterien, die für eine abschließende Auswahl eines externen Dienstleisters herangezogen werden sollten.
@@ -112,29 +128,10 @@ Sinnvoll sind ergänzend eine Probephase mit wenigen Fahrzeugen und die Vereinba
 
 ### Aufgabe 1 c) · 6 Punkte
 
-‚Aufgrund des aktuellen Personalengpasses in der Werkstatt hat die Geschäftsleitung beschlossen, Fahrzeugwartungen und -reparaturen an einen externen Dienstleister zu vergeben. Es liegen Angebote von drei exter-
-nen Dienstleistern/Werkstätten vor. Die Geschäftsleitung beauftragt Sie, eine Nutzwertanalyse zum Vergleich der Leistungsfähigkeit der drei externen Dienstleister/Werkstätten zu erstellen.
+Aufgrund des aktuellen Personalengpasses in der Werkstatt hat die Geschäftsleitung beschlossen, Fahrzeugwartungen und -reparaturen an einen externen Dienstleister zu vergeben. Es liegen Angebote von drei externen Dienstleistern/Werkstätten vor. Die Geschäftsleitung beauftragt Sie, eine Nutzwertanalyse zum Vergleich der Leistungsfähigkeit der drei externen Dienstleister/Werkstätten zu erstellen.
 
 Ihr Unternehmen hat sich zwischenzeitlich dazu entschieden, neue emissionsfreie Elektrotransporter anzuschaffen. Auch dieser Aspekt muss bei der Auswahl des externen Dienstleisters bzw. der externen Werkstatt berücksichtigt werden.
 Beschreiben Sie drei Voraussetzungen, die eine Werkstatt zu erfüllen hat, damit auch Arbeiten an den Elektrofahrzeugen durchgeführt werden können.
-Anlage 2 zu Aufgabe 1 a)
-Nutzwertanalyse der drei externen Dienstleister/Werkstätten:
-Gewich- Werkstatt A Werkstatt B Werkstatt C
-Kriterien tung Punkte Teilnutz- Punkte Teilnutz- Punkte Teilnutz(1-10) (0-100) werte (0-100) werte (0-100) werte
-Verrechnungs-
-preis 8 60 80 70
-Qualität 9 70 60 60
-Reparaturzeit 5 100 40 60
-Termintreue 10 90 70 40
-technischer
-Support 5 60 80 70
-kaufmännischer
-Service 4 50 so 60
-Entfernung
-Werkstatt 10 80 70 80
-Know-how 7 60 80 70
-erreichte Punkte
-Rang
 
 **Musterlösung (zu prüfen):**
 
@@ -153,8 +150,7 @@ Zusätzlich sollte die Werkstatt über Diagnosegeräte und Herstellerzugang für
 
 ### Aufgabe 2 a) · 9 Punkte
 
-Mit Einführung neuer Antriebssysteme bzw. der geplanten Anschaffung der Elektrotransporter ist unter ande-
-rem eine Anpassung der Gefährdungsbeurteilung für den Fuhrpark erforderlich. Des Weiteren beauftragt Sie
+Mit Einführung neuer Antriebssysteme bzw. der geplanten Anschaffung der Elektrotransporter ist unter anderem eine Anpassung der Gefährdungsbeurteilung für den Fuhrpark erforderlich. Des Weiteren beauftragt Sie
 die Geschäftsleitung damit, die Dokumentation der Fahrerunterweisung ebenfalls entsprechend zu überarbeiten.
 
 Erläutern Sie vor diesem Hintergrund drei Gefährdungsarten, die zusätzlich entstehen können und im Rahmen der Überarbeitung der Gefährdungsbeurteilung aufgenommen werden müssen.
@@ -176,8 +172,7 @@ Ergänzend aufzunehmen sind Gefährdungen an der Ladeinfrastruktur (Stolperstell
 
 ### Aufgabe 2 b) · 6 Punkte
 
-Mit Einführung neuer Antriebssysteme bzw. der geplanten Anschaffung der Elektrotransporter ist unter ande-
-rem eine Anpassung der Gefährdungsbeurteilung für den Fuhrpark erforderlich. Des Weiteren beauftragt Sie
+Mit Einführung neuer Antriebssysteme bzw. der geplanten Anschaffung der Elektrotransporter ist unter anderem eine Anpassung der Gefährdungsbeurteilung für den Fuhrpark erforderlich. Des Weiteren beauftragt Sie
 die Geschäftsleitung damit, die Dokumentation der Fahrerunterweisung ebenfalls entsprechend zu überarbeiten.
 
 Für die Umstellung auf Elektroantrieb müssen die bestehenden Fahrerunterweisungen überarbeitet werden.
@@ -200,12 +195,11 @@ Ergänzend zu beachten sind die Arbeitsstättenverordnung für den Ladeplatz sow
 
 ### Aufgabe 2 c) · 3 Punkte
 
-Mit Einführung neuer Antriebssysteme bzw. der geplanten Anschaffung der Elektrotransporter ist unter ande-
-rem eine Anpassung der Gefährdungsbeurteilung für den Fuhrpark erforderlich. Des Weiteren beauftragt Sie
+Mit Einführung neuer Antriebssysteme bzw. der geplanten Anschaffung der Elektrotransporter ist unter anderem eine Anpassung der Gefährdungsbeurteilung für den Fuhrpark erforderlich. Des Weiteren beauftragt Sie
 die Geschäftsleitung damit, die Dokumentation der Fahrerunterweisung ebenfalls entsprechend zu überarbeiten.
 
 Für die geplante Beschaffung der Elektrotransporter wird auch die dazugehörige Ladeinfrastruktur benötigt. Hierzu sollen betriebseigene E-Ladesäulen errichtet werden.
-Beschreiben Sie auf Grundlage des $ 3 der Betriebssicherheitsverordnung eine Maßnahme, die den sicheren Betrieb einer E-Ladesäule gewährleistet.
+Beschreiben Sie auf Grundlage des § 3 der Betriebssicherheitsverordnung eine Maßnahme, die den sicheren Betrieb einer E-Ladesäule gewährleistet.
 
 **Musterlösung (zu prüfen):**
 
@@ -281,10 +275,21 @@ Drei Nachteile
 
 Neben der Investition in Elektrofahrzeuge soll auch ein weiterer Lkw als Kühlfahrzeug mit 40 t zGM und einer Nutzlast von 24 t angeschafft werden.
 Als Fuhrparkleiter werden Sie gebeten, eine aktuelle Kostenkalkulation für den Lkw vorzubereiten. Nachfolgende Daten stehen Ihnen zur Verfügung:
-Kaufpreis 270.000 € Jahreslaufleistung 96.000 km Nutzungszeit 10 Jahre Kraftstoffverbrauch 35 /100 km Kraftstoffkosten 1,20 €/l jährliche Einsatztage 240 Abschreibung wird zu 40 % den variablen Kosten zugerechnet Kapitalverzinsung 5% Reparaturkosten 3.600 €/Jahr fester Fahrerlohn einschließlich Nebenkosten 57.600 €/Jahr Unternehmerlohn 4.000 €/Jahr Unternehmerrisiko 3.000 €/Jahr Kfz-Steuer 2.800 €/Jahr Kfz-Versicherung 10.200 €/Jahr
-Berechnen Sie jeweils auf zwei Stellen nach dem Komma gerundet
-
-die variablen Kosten in €/km,
+– Kaufpreis: 270.000 €
+– Jahreslaufleistung: 96.000 km
+– Nutzungszeit: 10 Jahre
+– Kraftstoffverbrauch: 35 l/100 km
+– Kraftstoffkosten: 1,20 €/l
+– jährliche Einsatztage: 240
+– Abschreibung wird zu 40 % den variablen Kosten zugerechnet
+– Kapitalverzinsung: 5 %
+– Reparaturkosten: 3.600 €/Jahr
+– fester Fahrerlohn einschließlich Nebenkosten: 57.600 €/Jahr
+– Unternehmerlohn: 4.000 €/Jahr
+– Unternehmerrisiko: 3.000 €/Jahr
+– Kfz-Steuer: 2.800 €/Jahr
+– Kfz-Versicherung: 10.200 €/Jahr
+Berechnen Sie – jeweils auf zwei Stellen nach dem Komma gerundet – die variablen Kosten in €/km.
 
 **Musterlösung (zu prüfen):**
 
@@ -313,10 +318,21 @@ Die variablen Kosten betragen 0,57 €/km.
 
 Neben der Investition in Elektrofahrzeuge soll auch ein weiterer Lkw als Kühlfahrzeug mit 40 t zGM und einer Nutzlast von 24 t angeschafft werden.
 Als Fuhrparkleiter werden Sie gebeten, eine aktuelle Kostenkalkulation für den Lkw vorzubereiten. Nachfolgende Daten stehen Ihnen zur Verfügung:
-Kaufpreis 270.000 € Jahreslaufleistung 96.000 km Nutzungszeit 10 Jahre Kraftstoffverbrauch 35 /100 km Kraftstoffkosten 1,20 €/l jährliche Einsatztage 240 Abschreibung wird zu 40 % den variablen Kosten zugerechnet Kapitalverzinsung 5% Reparaturkosten 3.600 €/Jahr fester Fahrerlohn einschließlich Nebenkosten 57.600 €/Jahr Unternehmerlohn 4.000 €/Jahr Unternehmerrisiko 3.000 €/Jahr Kfz-Steuer 2.800 €/Jahr Kfz-Versicherung 10.200 €/Jahr
-Berechnen Sie jeweils auf zwei Stellen nach dem Komma gerundet
-
-die gesamten fixen Kosten in €/Tag,
+– Kaufpreis: 270.000 €
+– Jahreslaufleistung: 96.000 km
+– Nutzungszeit: 10 Jahre
+– Kraftstoffverbrauch: 35 l/100 km
+– Kraftstoffkosten: 1,20 €/l
+– jährliche Einsatztage: 240
+– Abschreibung wird zu 40 % den variablen Kosten zugerechnet
+– Kapitalverzinsung: 5 %
+– Reparaturkosten: 3.600 €/Jahr
+– fester Fahrerlohn einschließlich Nebenkosten: 57.600 €/Jahr
+– Unternehmerlohn: 4.000 €/Jahr
+– Unternehmerrisiko: 3.000 €/Jahr
+– Kfz-Steuer: 2.800 €/Jahr
+– Kfz-Versicherung: 10.200 €/Jahr
+Berechnen Sie – jeweils auf zwei Stellen nach dem Komma gerundet – die gesamten fixen Kosten in €/Tag.
 
 **Musterlösung (zu prüfen):**
 
@@ -350,10 +366,21 @@ Hinweis zur Zinsbasis: Wird stattdessen der volle Anschaffungswert verzinst (270
 
 Neben der Investition in Elektrofahrzeuge soll auch ein weiterer Lkw als Kühlfahrzeug mit 40 t zGM und einer Nutzlast von 24 t angeschafft werden.
 Als Fuhrparkleiter werden Sie gebeten, eine aktuelle Kostenkalkulation für den Lkw vorzubereiten. Nachfolgende Daten stehen Ihnen zur Verfügung:
-Kaufpreis 270.000 € Jahreslaufleistung 96.000 km Nutzungszeit 10 Jahre Kraftstoffverbrauch 35 /100 km Kraftstoffkosten 1,20 €/l jährliche Einsatztage 240 Abschreibung wird zu 40 % den variablen Kosten zugerechnet Kapitalverzinsung 5% Reparaturkosten 3.600 €/Jahr fester Fahrerlohn einschließlich Nebenkosten 57.600 €/Jahr Unternehmerlohn 4.000 €/Jahr Unternehmerrisiko 3.000 €/Jahr Kfz-Steuer 2.800 €/Jahr Kfz-Versicherung 10.200 €/Jahr
-Berechnen Sie jeweils auf zwei Stellen nach dem Komma gerundet
-
-die Fahrzeugkosten pro 100 kg Fracht für eine Tagestour von 320 km bei 60-prozentiger Auslastung des Lkws.
+– Kaufpreis: 270.000 €
+– Jahreslaufleistung: 96.000 km
+– Nutzungszeit: 10 Jahre
+– Kraftstoffverbrauch: 35 l/100 km
+– Kraftstoffkosten: 1,20 €/l
+– jährliche Einsatztage: 240
+– Abschreibung wird zu 40 % den variablen Kosten zugerechnet
+– Kapitalverzinsung: 5 %
+– Reparaturkosten: 3.600 €/Jahr
+– fester Fahrerlohn einschließlich Nebenkosten: 57.600 €/Jahr
+– Unternehmerlohn: 4.000 €/Jahr
+– Unternehmerrisiko: 3.000 €/Jahr
+– Kfz-Steuer: 2.800 €/Jahr
+– Kfz-Versicherung: 10.200 €/Jahr
+Berechnen Sie – jeweils auf zwei Stellen nach dem Komma gerundet – die Fahrzeugkosten pro 100 kg Fracht für eine Tagestour von 320 km bei 60-prozentiger Auslastung des Lkws.
 
 **Musterlösung (zu prüfen):**
 
@@ -380,7 +407,7 @@ Zur Einordnung: Bei voller Auslastung (24.000 kg = 240 Einheiten) wären es nur 
 
 ### Aufgabe 5 a) · 4 Punkte
 
-In Vorbereitung auf die Übernahme von fünf Auszubildenden nach erfolgreicher Abschlussprüfung unterstützen Sie den Ausbildunggsleiter bei der Erstellung einer Potenzialeinschätzung und einer Potenzialanalyse.
+In Vorbereitung auf die Übernahme von fünf Auszubildenden nach erfolgreicher Abschlussprüfung unterstützen Sie den Ausbildungsleiter bei der Erstellung einer Potenzialeinschätzung und einer Potenzialanalyse.
 
 Erläutern Sie zwei Aspekte, warum unter diesen Voraussetzungen bei den Auszubildenden eine Potenzialanalyse durchgeführt werden sollte.
 
@@ -397,7 +424,7 @@ Zwei Gründe für eine Potenzialanalyse bei den zu übernehmenden Auszubildenden
 
 ### Aufgabe 5 b) · 4 Punkte
 
-In Vorbereitung auf die Übernahme von fünf Auszubildenden nach erfolgreicher Abschlussprüfung unterstützen Sie den Ausbildunggsleiter bei der Erstellung einer Potenzialeinschätzung und einer Potenzialanalyse.
+In Vorbereitung auf die Übernahme von fünf Auszubildenden nach erfolgreicher Abschlussprüfung unterstützen Sie den Ausbildungsleiter bei der Erstellung einer Potenzialeinschätzung und einer Potenzialanalyse.
 
 Erläutern Sie anhand von zwei Merkmalen die Aufgaben einer Potenzialanalyse.
 
@@ -414,7 +441,7 @@ Die Potenzialanalyse hat zwei kennzeichnende Aufgaben:
 
 ### Aufgabe 5 c) · 9 Punkte
 
-In Vorbereitung auf die Übernahme von fünf Auszubildenden nach erfolgreicher Abschlussprüfung unterstützen Sie den Ausbildunggsleiter bei der Erstellung einer Potenzialeinschätzung und einer Potenzialanalyse.
+In Vorbereitung auf die Übernahme von fünf Auszubildenden nach erfolgreicher Abschlussprüfung unterstützen Sie den Ausbildungsleiter bei der Erstellung einer Potenzialeinschätzung und einer Potenzialanalyse.
 
 Erläutern Sie drei Phasen bei der Durchführung der Potenzialeinschätzung.
 
