@@ -103,7 +103,7 @@
   .casectx{border:1px solid #e6c9de;background:linear-gradient(180deg,#fbf2f8,#fff);border-radius:11px;padding:12px 14px;margin-bottom:14px}
   .casectx .cc-head{display:flex;align-items:center;gap:9px;font-family:var(--disp);font-weight:700;text-transform:uppercase;font-size:15px;letter-spacing:.02em;color:var(--ink);margin-bottom:6px}
   .casectx .cc-tag{font-family:var(--mono);font-size:10px;letter-spacing:.08em;color:#fff;background:#a2497f;border-radius:4px;padding:2px 7px}
-  .casectx .cc-ctx{font-size:14px;line-height:1.5;color:var(--ink);margin:0}
+  .casectx .cc-ctx{font-size:14px;line-height:1.5;color:var(--ink);margin:0;white-space:pre-wrap}
   .casectx .cc-step{font-family:var(--mono);font-size:11px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:#a2497f;margin:8px 0 0}
   .mode .m-desc{font-size:12.5px;color:var(--muted);margin-top:5px}
   .due-badge{font-family:var(--mono);font-size:12px;font-weight:700;color:#fff;background:#6D5AE6;border-radius:11px;padding:1px 9px;min-width:20px;text-align:center}
@@ -148,7 +148,7 @@
   .calcq-tool{display:inline-flex;align-items:center;gap:7px;border:1px solid var(--line-strong);background:#f6fafa;color:var(--petrol-deep);border-radius:9px;padding:9px 13px;font-size:13px;font-weight:600}
   .calcq-tool:hover{border-color:var(--petrol);background:#eef6f6}
   .qsub{font-family:var(--mono);font-size:10px;color:var(--muted);margin-left:8px;letter-spacing:.06em}
-  .qtext{font-size:16.5px;font-weight:600;line-height:1.45;margin:10px 0 16px}
+  .qtext{font-size:16.5px;font-weight:600;line-height:1.45;margin:10px 0 16px;white-space:pre-wrap}
 
   .opts{display:grid;gap:9px}
   .opt{display:flex;gap:11px;align-items:flex-start;text-align:left;width:100%;border:1.5px solid var(--line-strong);border-radius:10px;background:#fff;padding:12px 13px;font-size:14.5px;line-height:1.4;color:var(--ink);transition:border-color .12s,background .12s}
@@ -203,7 +203,7 @@
   .openbox{border:1px dashed var(--line-strong);border-radius:10px;padding:14px;background:#fbfdfd;color:var(--muted);font-size:13.5px}
   .openbox.revealed{border-style:solid;border-color:var(--amber);background:var(--amber-soft);color:var(--ink)}
   .openbox .oa-label{font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:#7a4a00;margin:0 0 6px}
-  .openbox .oa-text{font-size:14px;line-height:1.5}
+  .openbox .oa-text{font-size:14px;line-height:1.5;white-space:pre-wrap}
 
   .feedback{margin-top:14px;border-radius:10px;padding:13px 14px;font-size:14px;border:1px solid}
   .feedback.good{background:var(--ok-soft);border-color:#b9dcc5}
@@ -464,6 +464,19 @@
 .pr-btn:disabled{opacity:.6;cursor:default}
 .pr-hint{margin-top:14px;border-left:3px solid var(--amber);background:var(--amber-soft);
   border-radius:8px;padding:11px 13px;font-size:12.5px;line-height:1.5;color:var(--ink)}
+
+/* ===== Offene Aufgabe: eigene Antwort schreiben ===== */
+.oa-input{width:100%;box-sizing:border-box;border:1px solid var(--line);border-radius:10px;
+  background:var(--paper);padding:11px 12px;font:400 14px/1.6 var(--body);color:var(--ink);
+  resize:vertical;min-height:120px}
+.oa-input:focus{outline:0;border-color:var(--petrol);box-shadow:0 0 0 3px var(--petrol-soft)}
+.oa-tools{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-top:9px}
+.oa-tool{border:1px solid var(--line);background:var(--paper);border-radius:8px;padding:8px 12px;
+  font:700 12px var(--body);color:var(--petrol);cursor:pointer}
+.oa-tool:hover{background:var(--petrol-soft)}
+.oa-tool:disabled{opacity:.6;cursor:default}
+.oa-saved{font-size:11.5px;color:var(--muted)}
+.openbox.revealed .oa-input{border-color:var(--line)}
 </style>
 </head>
 <body>
@@ -583,7 +596,13 @@
       <p class="qtext" id="qText"></p>
       <div class="opts" id="qOpts"></div>
       <div class="openbox" id="qOpen" hidden>
-        <p class="oa-label" id="oaLabel">Überlege deine Antwort, dann aufdecken</p>
+        <p class="oa-label" id="oaLabel">Formuliere deine Antwort – wie in der Prüfung</p>
+        <textarea class="oa-input" id="oaInput" rows="7" placeholder="Deine Antwort …"></textarea>
+        <div class="oa-tools">
+          <button type="button" class="oa-tool" id="oaCalc">Rechner</button>
+          <button type="button" class="oa-tool" id="oaExport">Diese Aufgabe für Claude kopieren</button>
+          <span class="oa-saved" id="oaSaved"></span>
+        </div>
         <div class="oa-text" id="oaText" hidden></div>
       </div>
       <div class="calcq" id="qCalc" hidden>
@@ -1040,6 +1059,76 @@ function buildProtocol(){var p=$("protocol");p.innerHTML="";state.pool.forEach(f
 
 function setActions(html){$("qActions").innerHTML=html;}
 
+/* ===== Eigene Antworten zu offenen Aufgaben ===== */
+var OA_KEY='kvm_open_answers';
+function oaAll(){try{return JSON.parse(localStorage.getItem(OA_KEY)||'{}');}catch(e){return {};}}
+function oaGet(id){return oaAll()[id]||'';}
+function oaSet(id,txt){
+  var a=oaAll();
+  if(txt&&txt.trim())a[id]=txt;else delete a[id];
+  try{localStorage.setItem(OA_KEY,JSON.stringify(a));}catch(e){}
+}
+
+/* Eine einzelne Teilaufgabe samt eigener Antwort als Prüfauftrag aufbereiten. */
+function oaExportText(q){
+  var eigene=(oaGet(q.id)||'').trim();
+  var teile=(q.q||'').split('\n\n');
+  var kopf=teile[0]||'';
+  var rest=teile.slice(1).join('\n\n');
+  var punkte=(/·\s*(\d+)\s*Punkt/.exec(kopf)||[])[1];
+  var L=[];
+  L.push('PRÜFAUFTRAG – einzelne Prüfungsaufgabe');
+  L.push('');
+  L.push('Du bist erfahrener Prüfer für die Fortbildung "Geprüfte/-r Meister/-in für '
+        +'Kraftverkehr (IHK)". Unten stehen eine Original-Prüfungsaufgabe, MEINE eigene '
+        +'Antwort und eine Musterlösung, die NICHT von der IHK stammt.');
+  L.push('');
+  L.push('Bewerte bitte MEINE Antwort:');
+  L.push('1. Wie viele der '+(punkte?punkte:'möglichen')+' Punkte würdest du vergeben? Begründe kurz.');
+  L.push('2. Was fehlt meiner Antwort zur vollen Punktzahl? Nenne die fehlenden Elemente konkret.');
+  L.push('3. Welche fachlichen Fehler enthält meine Antwort (falsche Aussage, falsche '
+        +'Rechnung, veraltete Rechtsgrundlage)?');
+  L.push('4. Prüfe zusätzlich die Musterlösung selbst auf Richtigkeit und Aktualität '
+        +'(u. a. ArbSchG, ArbZG, StVO, StVZO, BetrVG, DGUV, VO (EG) 561/2006, '
+        +'VO (EU) 165/2014, BKrFQG, BetrSichV, DIN EN ISO 9001; Behörde heißt heute BALM).');
+  L.push('Bei Rechenaufgaben: rechne eigenständig nach und zeige deinen Rechenweg.');
+  L.push('');
+  L.push('==============================');
+  if(q._case){
+    L.push('PRÜFUNG: '+q._case.title);
+    L.push('');
+    L.push('AUSGANGSSITUATION');
+    L.push(q._case.context||'');
+    L.push('');
+  }
+  L.push('------------------------------');
+  L.push('AUFGABE: '+kopf);
+  L.push('');
+  L.push(rest);
+  L.push('');
+  L.push('------------------------------');
+  L.push('MEINE ANTWORT:');
+  L.push(eigene||'(noch nichts eingetragen)');
+  L.push('');
+  L.push('------------------------------');
+  L.push('MUSTERLÖSUNG (nicht amtlich, bitte ebenfalls prüfen):');
+  L.push(q.a||'(keine hinterlegt)');
+  if(q.e){L.push('');L.push('Merksatz: '+q.e);}
+  L.push('==============================');
+  return L.join('\n');
+}
+
+function oaCopy(text,btn){
+  function ok(){var alt=btn.textContent;btn.textContent='✓ Kopiert';btn.disabled=true;
+    setTimeout(function(){btn.textContent=alt;btn.disabled=false;},2200);}
+  function fb(){var ta=document.createElement('textarea');ta.value=text;
+    ta.style.position='fixed';ta.style.left='-9999px';document.body.appendChild(ta);ta.select();
+    try{document.execCommand('copy');ok();}catch(e){window.prompt('Text kopieren:',text.slice(0,2000));}
+    document.body.removeChild(ta);}
+  if(navigator.clipboard&&navigator.clipboard.writeText)navigator.clipboard.writeText(text).then(ok,fb);
+  else fb();
+}
+
 function renderQuestion(){
   var q=state.pool[state.idx];state.answered=false;state.revealed=false;
   var caseEl=$("qCase");
@@ -1077,7 +1166,16 @@ function renderQuestion(){
   }else{
     opts.hidden=true;open.hidden=false;open.className="openbox";
     $("oaLabel").hidden=false;$("oaText").hidden=true;$("oaText").textContent=q.a;
-    setActions('<button class="primary" id="btnReveal">Antwort anzeigen</button>');
+    var ta=$("oaInput");
+    ta.value=oaGet(q.id);
+    ta.oninput=function(){
+      oaSet(q.id,ta.value);
+      $("oaSaved").textContent=ta.value.trim()?"gespeichert":"";
+    };
+    $("oaSaved").textContent=ta.value.trim()?"gespeichert":"";
+    $("oaCalc").onclick=function(){if(window.KVMopenCalc)window.KVMopenCalc();};
+    $("oaExport").onclick=function(){oaCopy(oaExportText(q),$("oaExport"));};
+    setActions('<button class="primary" id="btnReveal">Musterlösung anzeigen</button>');
     $("btnReveal").addEventListener("click",revealOpen);
   }
   if(window.KVMvoice)window.KVMvoice.onQuestion(q);
