@@ -13,6 +13,55 @@ class Opt {
       );
 }
 
+/// Anlage einer Prüfungsaufgabe – im Original eine Tabelle im Anhang.
+class Anlage {
+  final String titel;
+  final List<String> kopf;
+  final List<List<String>> zeilen;
+  final String hinweis;
+  const Anlage({this.titel = '', this.kopf = const [], this.zeilen = const [], this.hinweis = ''});
+
+  factory Anlage.fromJson(Map<String, dynamic> j) => Anlage(
+        titel: (j['titel'] ?? '').toString(),
+        kopf: (j['kopf'] as List<dynamic>? ?? []).map((e) => e.toString()).toList(),
+        zeilen: (j['zeilen'] as List<dynamic>? ?? [])
+            .map((r) => (r as List<dynamic>).map((e) => e.toString()).toList())
+            .toList(),
+        hinweis: (j['hinweis'] ?? '').toString(),
+      );
+
+  /// Für die Zwischenablage (KI-Export).
+  String asText() {
+    final out = <String>['$titel:'];
+    if (kopf.isNotEmpty) out.add(kopf.join(' | '));
+    for (final r in zeilen) {
+      out.add(r.join(' | '));
+    }
+    if (hinweis.isNotEmpty) out.add(hinweis);
+    return out.join('\n');
+  }
+}
+
+/// Eine Prüfungsaufgabe besteht aus Kopf ("Aufgabe 1 a) · 8 Punkte"), der für
+/// mehrere Teilaufgaben gemeinsamen Ausgangslage und der Fragestellung selbst.
+class TaskParts {
+  final String nr;
+  final String pts;
+  final String sit;
+  final String frage;
+  const TaskParts(this.nr, this.pts, this.sit, this.frage);
+
+  static final _kopf = RegExp(r'^(Aufgabe\s.+?)\s*·\s*(\d+\s*Punkte?)$');
+
+  factory TaskParts.of(String text) {
+    final p = text.split('\n\n');
+    final m = p.isEmpty ? null : _kopf.firstMatch(p.first.trim());
+    if (m == null || p.length < 2) return TaskParts('', '', '', text);
+    return TaskParts(m.group(1)!, m.group(2)!,
+        p.sublist(1, p.length - 1).join('\n\n'), p.last);
+  }
+}
+
 class Question {
   final String id;
   final int f; // Fach 1..5
@@ -24,6 +73,7 @@ class Question {
   final String? a; // Musterantwort (open)
   final double? ans; // Ergebnis (calc)
   final String unit; // Einheit (calc)
+  final Anlage? tab; // Anlage (Tabelle) zur Aufgabe
 
   // Kontext für Fallaufgaben (nicht Teil des JSON, zur Laufzeit gesetzt)
   final CaseContext? caseCtx;
@@ -39,6 +89,7 @@ class Question {
     this.a,
     this.ans,
     this.unit = '',
+    this.tab,
     this.caseCtx,
   });
 
@@ -55,11 +106,14 @@ class Question {
         a: j['a']?.toString(),
         ans: (j['ans'] as num?)?.toDouble(),
         unit: (j['unit'] ?? '').toString(),
+        tab: j['tab'] is Map<String, dynamic>
+            ? Anlage.fromJson(j['tab'] as Map<String, dynamic>)
+            : null,
       );
 
   Question withCase(CaseContext ctx) => Question(
         id: id, f: f, sub: sub, type: type, q: q, o: o, e: e, a: a,
-        ans: ans, unit: unit, caseCtx: ctx,
+        ans: ans, unit: unit, tab: tab, caseCtx: ctx,
       );
 }
 
