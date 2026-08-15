@@ -80,7 +80,13 @@ class AnswerStore {
       ..writeln('------------------------------')
       ..writeln('AUFGABE: $kopf')
       ..writeln()
-      ..writeln(rest)
+      ..writeln(rest);
+    if (q.tab != null) {
+      b
+        ..writeln()
+        ..writeln(q.tab!.asText());
+    }
+    b
       ..writeln()
       ..writeln('------------------------------')
       ..writeln('MEINE ANTWORT:')
