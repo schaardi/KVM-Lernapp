@@ -1,0 +1,316 @@
+# -*- coding: utf-8 -*-
+"""Musterlösungen zu den IHK-Prüfungen.
+
+Schlüssel: "<Handlungsbereich-Kürzel>|<Datum>|<Aufgabe>|<Teilaufgabe>"
+Werte: a = Musterlösung, e = Merksatz/Hinweis (optional)
+
+Die Lösungen sind fachlich erarbeitet und an der jeweiligen Punktzahl
+ausgerichtet (Faustregel: 2 Punkte je verlangtem Element). Sie stammen NICHT
+von der IHK – die Original-PDFs enthalten keine Lösungen.
+"""
+
+LOESUNGEN = {
+
+# ══════════════ Organisation und Kommunikation · 12. November 2025 ══════════
+
+"OK|12. November 2025|1|a": {
+ "a": "Unterweisungen verfolgen im Betrieb drei zentrale Zielsetzungen:\n\n"
+      "1. Sicherheit und Gesundheitsschutz: Die Beschäftigten sollen Gefährdungen "
+      "an ihrem Arbeitsplatz erkennen und sich sicher verhalten. Unfälle, "
+      "Berufskrankheiten und Sachschäden werden dadurch vermieden – etwa beim "
+      "Rangieren, beim Arbeiten in der Werkstatt oder beim Sichern der Ladung.\n\n"
+      "2. Erfüllung der gesetzlichen Pflicht und Rechtssicherheit: Der Arbeitgeber "
+      "ist nach § 12 ArbSchG und § 4 DGUV Vorschrift 1 verpflichtet, vor Aufnahme "
+      "der Tätigkeit und danach mindestens jährlich zu unterweisen. Die "
+      "dokumentierte Unterweisung ist der Nachweis, dass diese Pflicht erfüllt "
+      "wurde; sie schützt das Unternehmen und mich als Führungskraft vor Bußgeldern "
+      "und Haftungsansprüchen.\n\n"
+      "3. Qualität und Wirtschaftlichkeit: Einheitlich unterwiesene Mitarbeiter "
+      "arbeiten nach denselben Standards. Das senkt Fehler, Beanstandungen bei "
+      "Kontrollen und Folgekosten – im vorliegenden Fall unmittelbar bei "
+      "Lastverteilung und Sozialvorschriften – und stützt zugleich die Forderungen "
+      "des Qualitätsmanagements nach DIN EN ISO 9001.",
+ "e": "Merke: Unterweisung ist Pflicht (§ 12 ArbSchG), mindestens jährlich, vor "
+      "Aufnahme der Tätigkeit, bei Änderungen und nach Unfällen – immer schriftlich "
+      "dokumentiert mit Unterschrift."
+},
+"OK|12. November 2025|1|b": {
+ "a": "Vier Maßnahmen zur systematischen Ermittlung des Unterweisungsbedarfs:\n\n"
+      "1. Auswertung der Gefährdungsbeurteilung (§ 5 ArbSchG): Aus jeder ermittelten "
+      "Gefährdung leitet sich unmittelbar ein Unterweisungsinhalt ab. "
+      "Beispiel: Die Beurteilung der Werkstatt zeigt Gefährdungen beim Arbeiten "
+      "unter angehobenen Fahrzeugen – daraus folgt eine Unterweisung zur sicheren "
+      "Bedienung der Hebebühne.\n\n"
+      "2. Auswertung von Unfall-, Schadens- und Beinaheunfallstatistiken: "
+      "Häufungen zeigen, wo Verhalten korrigiert werden muss. "
+      "Beispiel: Mehrere Rangierschäden am Betriebshof führen zu einer Unterweisung "
+      "über Rangieren und Einweisen.\n\n"
+      "3. Auswertung externer Kontroll- und Prüfergebnisse: Beanstandungen von "
+      "Behörden, Berufsgenossenschaft oder aus internen Audits benennen den Bedarf "
+      "konkret. Beispiel: Die BALM-Kontrolle beanstandete die Lastverteilung – "
+      "daraus folgt eine Unterweisung zu Achslasten und Ladungssicherung.\n\n"
+      "4. Soll-Ist-Vergleich über Qualifikationsmatrix und Mitarbeitergespräche: "
+      "Anforderungsprofil und tatsächlicher Kenntnisstand werden gegenübergestellt. "
+      "Beispiel: Das Gespräch zeigt, dass zwei Fahrer die Bedienung des neuen "
+      "digitalen Kontrollgeräts der zweiten Generation nicht sicher beherrschen.\n\n"
+      "Ergänzend liefern Änderungen von Rechtsvorschriften, neue Fahrzeuge oder "
+      "Arbeitsverfahren sowie Begehungen von Fachkraft für Arbeitssicherheit und "
+      "Betriebsarzt (ASA-Sitzungen) laufend weiteren Bedarf.",
+ "e": "Bedarf entsteht immer aus vier Quellen: Gefährdungen, Vorfälle, "
+      "Beanstandungen und Qualifikationslücken."
+},
+"OK|12. November 2025|1|c": {
+ "a": "Für das Fahrpersonal dieses Unternehmens sind vor allem drei Themenbereiche "
+      "zu empfehlen – sie ergeben sich unmittelbar aus den Kontrollbeanstandungen "
+      "und dem Fuhrpark:\n\n"
+      "1. Sozialvorschriften im Straßenverkehr: Lenk- und Ruhezeiten nach "
+      "VO (EG) 561/2006, Arbeitszeit nach ArbZG, korrekte Bedienung des digitalen "
+      "Kontrollgeräts, Nachweispflichten und Mitführpflichten sowie das Verhalten "
+      "bei Kontrollen. Anlass ist die Beanstandung im Bereich der Sozialvorschriften.\n\n"
+      "2. Ladungssicherung und Lastverteilung: Physikalische Grundlagen der "
+      "Massenkräfte, Sicherungsarten, zulässige Achslasten und zulässiges "
+      "Gesamtgewicht, Lastverteilungsplan, Verantwortlichkeiten von Fahrer, Verlader "
+      "und Halter nach § 22 StVO und § 31 StVZO. Anlass sind die festgestellten "
+      "Mängel bei der Lastverteilung.\n\n"
+      "3. Arbeitssicherheit und Verhalten im Fahrbetrieb: Sicheres Ein- und "
+      "Aussteigen, Absichern des Fahrzeugs, persönliche Schutzausrüstung, "
+      "Verhalten bei Unfall und Panne sowie – wegen der Omnibusse – Umgang mit "
+      "Fahrgästen, Barrierefreiheit und Evakuierung.\n\n"
+      "Sinnvoll ergänzen lässt sich dies durch wirtschaftliche und "
+      "vorausschauende Fahrweise, die zugleich Kraftstoff- und Verschleißkosten senkt.",
+ "e": "Themen immer aus dem konkreten Anlass ableiten: Kontrollbeanstandung → "
+      "passender Unterweisungsinhalt."
+},
+
+"OK|12. November 2025|2|a": {
+ "a": "Jährliche Fahrzeugkosten des Sattelkraftfahrzeugs\n\n"
+      "Vorbemerkung: Der Reifensatz (6.000 €) wird aus den Anschaffungskosten "
+      "herausgerechnet, da Reifen als verbrauchsabhängige Kosten laufleistungsbezogen "
+      "erfasst werden. Abschreibungsbasis sind somit 174.000 €.\n\n"
+      "FESTE KOSTEN (zeitabhängig)\n"
+      "Kalkulatorische Abschreibung: (174.000 € − 20.000 €) ÷ 8 Jahre = 19.250,00 €\n"
+      "Kalkulatorische Zinsen: (174.000 € + 20.000 €) ÷ 2 = 97.000 € × 5 % = 4.850,00 €\n"
+      "Steuern und Versicherungen: 6.700,00 €\n"
+      "Personalkosten: 3.500 € × 12 = 42.000 €; × 1,35 (35 % Lohnnebenkosten) "
+      "= 56.700 €; × 1,2 (Personaleinsatzfaktor) = 68.040,00 €\n"
+      "Gemeinkostenumlage: 10.000,00 €\n"
+      "Summe feste Kosten: 108.840,00 €\n\n"
+      "VARIABLE KOSTEN (bei 100.000 km)\n"
+      "Kraftstoff: 30 l/100 km → 30.000 l × 1,30 €/l = 39.000,00 €\n"
+      "Schmierstoffe: 100.000 km ÷ 1.000 × 2,80 € = 280,00 €\n"
+      "Reifen: 6.000 € ÷ 120.000 km = 0,05 €/km × 100.000 km = 5.000,00 €\n"
+      "Reparaturen und Wartung: 15.000,00 €\n"
+      "Summe variable Kosten: 59.280,00 €\n\n"
+      "GESAMTKOSTEN PRO JAHR: 108.840,00 € + 59.280,00 € = 168.120,00 €\n"
+      "Zum Vergleich: 1,68 € je Kilometer bzw. 730,96 € je Einsatztag.",
+ "e": "Aufbau merken: feste Kosten (Abschreibung, Zinsen, Steuern/Versicherung, "
+      "Personal, Gemeinkosten) + variable Kosten (Kraftstoff, Schmierstoffe, Reifen, "
+      "Reparatur) = Gesamtkosten."
+},
+"OK|12. November 2025|2|b": {
+ "a": "Erlöse pro Jahr: 690 €/Einsatztag × 230 Einsatztage = 158.700,00 €\n"
+      "Kosten pro Jahr: 168.120,00 €\n\n"
+      "Wirtschaftlichkeit = Erlöse ÷ Kosten = 158.700 € ÷ 168.120 € = 0,944 "
+      "bzw. 94,4 %\n\n"
+      "Bewertung: Die Wirtschaftlichkeit liegt unter 1 (bzw. unter 100 %). Das "
+      "Fahrzeug erwirtschaftet seine Kosten nicht und fährt einen Verlust von "
+      "168.120 € − 158.700 € = 9.420,00 € pro Jahr ein. Um kostendeckend zu "
+      "arbeiten, müsste der Tageserlös auf mindestens 168.120 € ÷ 230 = 730,96 € "
+      "steigen. Das bestätigt das unterdurchschnittliche Betriebsergebnis der "
+      "Sparte; Handlungsbedarf besteht sowohl auf der Erlös- als auch auf der "
+      "Kostenseite.",
+ "e": "Wirtschaftlichkeit = Leistung ÷ Kosten. Wert über 1 = wirtschaftlich, "
+      "unter 1 = unwirtschaftlich."
+},
+"OK|12. November 2025|2|c": {
+ "a": "Vier Vorschläge zur Verbesserung der Wirtschaftlichkeit:\n\n"
+      "1. Erlöse erhöhen: Frachtraten nachverhandeln beziehungsweise an die "
+      "gestiegenen Kosten anpassen und die Einsatztage besser auslasten "
+      "(Rückladungen akquirieren, Leerkilometer senken).\n\n"
+      "2. Kraftstoffkosten senken: Schulung in vorausschauender Fahrweise, "
+      "Telematik- und Verbrauchsauswertung je Fahrer, Reifendruckkontrolle sowie "
+      "Einkauf über Rahmenverträge und Eigenverbrauchstankstelle.\n\n"
+      "3. Instandhaltungskosten senken: Vorbeugende Wartung in der eigenen "
+      "Werkstatt statt teurer Ausfallreparaturen, Auswertung der Schadenshäufigkeit "
+      "je Fahrzeug und konsequente Aussonderung von Kostentreibern.\n\n"
+      "4. Kapitalbindung und Fixkosten optimieren: Nutzungsdauer und "
+      "Beschaffungsform prüfen (Kauf, Leasing, Miete), günstigere Finanzierung, "
+      "Versicherungen mit angepasster Selbstbeteiligung neu ausschreiben sowie "
+      "den Personaleinsatzfaktor durch bessere Dienst- und Urlaubsplanung senken.",
+ "e": "Immer beide Hebel nennen: Erlöse steigern UND Kosten senken."
+},
+
+"OK|12. November 2025|3|a": {
+ "a": "Vier Fragestellungen für die Zusammensetzung der Projektgruppe:\n\n"
+      "1. Welche Fachkompetenzen werden für das Auditziel benötigt, und sind alle "
+      "betroffenen Bereiche vertreten? – Werkstatt, Disposition, Fahrpersonal, "
+      "Verwaltung und der Qualitätsmanagementbeauftragte müssen ihre Prozesse "
+      "selbst einbringen können.\n\n"
+      "2. Wie groß soll die Gruppe sein, damit sie arbeitsfähig bleibt? – "
+      "Erfahrungsgemäß sind fünf bis acht Mitglieder sinnvoll; größere Gruppen "
+      "verlieren an Verbindlichkeit und Tempo.\n\n"
+      "3. Welche Befugnisse und Rollen hat die Gruppe, und wer übernimmt sie? – "
+      "Zu klären sind Projektleitung, Moderation, Protokoll, Entscheidungs- und "
+      "Budgetkompetenz sowie die Berichtswege zur Geschäftsführung.\n\n"
+      "4. Stehen die vorgesehenen Mitglieder zeitlich tatsächlich zur Verfügung? – "
+      "Erforderlich sind eine verbindliche Freistellung vom Tagesgeschäft und die "
+      "Abstimmung mit der Dienstplanung, damit die Mitarbeit nicht am "
+      "Betriebsalltag scheitert.\n\n"
+      "Ergänzend ist zu fragen, ob die Persönlichkeiten und Teamrollen zueinander "
+      "passen und ob der Betriebsrat nach § 87 BetrVG zu beteiligen ist.",
+ "e": "Vier Leitfragen: Welche Kompetenzen? Wie groß? Welche Rollen und Befugnisse? "
+      "Welche Verfügbarkeit?"
+},
+"OK|12. November 2025|3|b": {
+ "a": "Bei einer geteilten Moderation führen zwei Personen die Sitzung gemeinsam. "
+      "Ein mögliches Vorgehen lässt sich an zwei Aspekten beschreiben:\n\n"
+      "1. Aufteilung nach Rollen: Einer moderiert den Prozess – er führt durch die "
+      "Tagesordnung, erteilt das Wort, achtet auf Zeit und Gesprächsregeln. Der "
+      "andere übernimmt die Visualisierung und Dokumentation – er hält Ergebnisse "
+      "an Flipchart oder Whiteboard fest, protokolliert Beschlüsse und behält "
+      "offene Punkte im Blick. Vorteil: Der moderierende Part kann sich ganz auf "
+      "die Gruppe konzentrieren, während nichts verloren geht.\n\n"
+      "2. Aufteilung nach Themenblöcken: Jeder moderiert den Abschnitt, für den er "
+      "fachlich zuständig ist – der QM-Beauftragte die Normanforderungen der "
+      "DIN EN ISO 9001 und den Ablauf des Audits, ich als Fuhrparkleiter die "
+      "operativen Themen aus Werkstatt und Fahrbetrieb. Vorteil: höhere fachliche "
+      "Glaubwürdigkeit und Akzeptanz; der jeweils nicht moderierende Partner kann "
+      "die Gruppe beobachten und bei Stockungen eingreifen.\n\n"
+      "Voraussetzung ist in beiden Fällen eine klare Absprache vor der Sitzung "
+      "über Rollen, Übergabepunkte und Zeitrahmen, damit die Doppelbesetzung nicht "
+      "zu Verwirrung führt.",
+ "e": "Geteilte Moderation entlastet und schafft eine Beobachterrolle – setzt aber "
+      "klare Absprachen voraus."
+},
+
+"OK|12. November 2025|4|a": {
+ "a": "Mögliche Fragestellung: „Was sollen die Zuhörer nach meiner Präsentation "
+      "wissen, können oder entschieden haben?“\n\n"
+      "Diese Frage zwingt dazu, das Ziel vom Ergebnis her zu denken, und lässt sich "
+      "in die drei üblichen Zielarten aufschlüsseln: informieren (Wissen "
+      "vermitteln), überzeugen beziehungsweise motivieren (Einstellung ändern) und "
+      "eine Entscheidung herbeiführen (Handeln auslösen).",
+ "e": "Präsentationsziel immer vom Adressaten her formulieren: Was soll er danach "
+      "wissen, können, tun?"
+},
+"OK|12. November 2025|4|b": {
+ "a": "Die Verständlichkeit einer Präsentation hängt vor allem von vier Aspekten "
+      "ab (Hamburger Verständlichkeitsmodell):\n\n"
+      "1. Einfachheit der Sprache: kurze, klare Sätze, geläufige Wörter, "
+      "Fachbegriffe und Abkürzungen erklären. Für eine gemischte Zuhörerschaft aus "
+      "Werkstatt, Fahrdienst und Verwaltung ist das entscheidend.\n\n"
+      "2. Gliederung und Ordnung: erkennbarer roter Faden mit Agenda, sinnvoller "
+      "Reihenfolge, sichtbaren Übergängen und einer Zusammenfassung am Schluss. "
+      "Der Zuhörer muss jederzeit wissen, wo er sich befindet.\n\n"
+      "3. Kürze und Prägnanz: Beschränkung auf das Wesentliche, keine Textwüsten "
+      "auf den Folien, Stichworte statt ganzer Sätze, angemessene Zahl von Folien "
+      "für die verfügbare Zeit.\n\n"
+      "4. Anregende Zusätze und Gestaltung: Bilder, Diagramme, Schaubilder und "
+      "Praxisbeispiele aus dem eigenen Betrieb; dazu lesbare Schriftgröße, "
+      "ausreichender Kontrast und ein einheitliches Layout.\n\n"
+      "Über allem steht der Adressatenbezug: Vorwissen, Erwartungen und Interessen "
+      "der Zuhörer bestimmen, wie tief und in welcher Sprache präsentiert wird.",
+ "e": "Vier Säulen der Verständlichkeit: Einfachheit, Gliederung, Kürze, "
+      "anregende Zusätze."
+},
+
+"OK|12. November 2025|5|a": {
+ "a": "Drei Maßnahmen zur Ermittlung des Qualifikationsbedarfs:\n\n"
+      "1. Soll-Ist-Vergleich über Anforderungsprofile und Qualifikationsmatrix: "
+      "Für jede Stelle wird das erforderliche Qualifikationsprofil festgelegt und "
+      "dem tatsächlichen Kenntnisstand gegenübergestellt. Die Lücken sind der "
+      "Qualifikationsbedarf – zugleich wird sichtbar, wo Vertretungen fehlen.\n\n"
+      "2. Strukturierte Mitarbeiter- und Zielvereinbarungsgespräche: Im jährlichen "
+      "Gespräch werden Entwicklungsstand, Stärken, Schwächen und Weiterbildungs"
+      "wünsche besprochen und verbindliche Qualifizierungsziele vereinbart. Das "
+      "erhöht zugleich die Akzeptanz der Maßnahmen.\n\n"
+      "3. Auswertung betrieblicher Kennzahlen und Prüfergebnisse: Interne und "
+      "externe Auditfeststellungen, Reklamationen, Fehler- und Schadensstatistiken "
+      "sowie Kontrollbeanstandungen zeigen objektiv, an welchen Stellen Wissen oder "
+      "Können fehlt und die Qualitätsziele gefährdet sind.\n\n"
+      "Ergänzend liefern Arbeitsplatzbeobachtungen, Mitarbeiterbefragungen sowie "
+      "absehbare Veränderungen – neue Technik, neue Rechtslage, altersbedingte "
+      "Abgänge – weiteren Bedarf.",
+ "e": "Bedarf immer aus drei Richtungen ermitteln: Soll-Ist-Abgleich, Gespräch, "
+      "harte Kennzahlen."
+},
+"OK|12. November 2025|5|b": {
+ "a": "Eine Qualifikationsmatrix (auch Kompetenz- oder Skill-Matrix) ist eine "
+      "Tabelle, die Mitarbeiter und Tätigkeiten beziehungsweise geforderte "
+      "Qualifikationen gegenüberstellt. In den Zeilen stehen die Mitarbeiter, in "
+      "den Spalten die Tätigkeitsbereiche; in den Feldern wird der Beherrschungs"
+      "grad eingetragen. Sie zeigt auf einen Blick, wer was kann, wo "
+      "Qualifikationslücken bestehen, wo Vertretungsrisiken liegen (nur ein "
+      "Mitarbeiter beherrscht eine Tätigkeit) und welche Schulungen zu planen sind. "
+      "Zugleich ist sie ein Nachweis der Kompetenzsteuerung nach DIN EN ISO 9001.\n\n"
+      "Bewertungsstufen: 0 = keine Kenntnisse · 1 = angelernt, arbeitet unter "
+      "Anleitung · 2 = beherrscht die Tätigkeit selbstständig · 3 = beherrscht sie "
+      "sicher und kann andere anleiten\n\n"
+      "Beispielhafte Matrix für die Werkstatt (drei Tätigkeitsbereiche):\n\n"
+      "Mitarbeiter | Bremsenprüfung und HU-Vorbereitung (§ 29 StVZO) | "
+      "Arbeiten an Hochvoltsystemen (E-Busse) | Klimaanlagenwartung (Sachkunde "
+      "F-Gase)\n"
+      "Müller (Werkstattmeister) | 3 | 2 | 2\n"
+      "Schmitz (Kfz-Mechatroniker) | 2 | 1 | 3\n"
+      "Yilmaz (Kfz-Mechatroniker) | 2 | 0 | 0\n"
+      "Auszubildender Weber | 1 | 0 | 0\n\n"
+      "Auswertung: Beim Hochvolt-Bereich beherrscht nur ein Mitarbeiter die "
+      "Tätigkeit selbstständig – hier besteht sowohl Qualifizierungs- als auch "
+      "Vertretungsbedarf, zumal die Umstellung auf alternative Antriebe ansteht.",
+ "e": "Die Matrix macht drei Dinge sichtbar: Lücken, Vertretungsrisiken und "
+      "Schulungsbedarf."
+},
+"OK|12. November 2025|5|c": {
+ "a": "Aufbau des Teilnehmer-Fragebogens (Evaluation einer Weiterbildung nach "
+      "BKrFQG)\n\n"
+      "Kopfteil: Bezeichnung der Maßnahme (z. B. „Kenntnisbereich 1 – "
+      "Wirtschaftliche Fahrweise“), Datum, Dauer, Name des Dozenten, Hinweis auf "
+      "Anonymität und Verwendungszweck.\n\n"
+      "Bewertungsteil mit einheitlicher Skala:\n"
+      "1 = trifft voll zu · 2 = trifft überwiegend zu · 3 = teils/teils · "
+      "4 = trifft eher nicht zu · 5 = trifft nicht zu\n\n"
+      "Vier Auswertungskriterien mit je einer Aussage zum Ankreuzen:\n\n"
+      "1. Fachliche Qualität und Kompetenz des Dozenten – „Der Referent war "
+      "fachlich sicher und konnte Fragen aus der Praxis beantworten.“ (1–5)\n\n"
+      "2. Praxisbezug und Anwendbarkeit – „Die Inhalte kann ich in meinem "
+      "Fahralltag unmittelbar anwenden.“ (1–5)\n\n"
+      "3. Verständlichkeit der Vermittlung und Medieneinsatz – „Die Inhalte wurden "
+      "verständlich dargestellt, die eingesetzten Medien und Unterlagen waren "
+      "hilfreich.“ (1–5)\n\n"
+      "4. Organisation und Rahmenbedingungen – „Räumlichkeiten, Zeitplanung, "
+      "Gruppengröße und Pausen waren angemessen.“ (1–5)\n\n"
+      "Freitextteil: „Was war besonders hilfreich?“, „Was sollte verbessert "
+      "werden?“, „Welche Themen wünschen Sie sich für die nächste Weiterbildung?“\n\n"
+      "Auswertung: Je Kriterium wird der Mittelwert gebildet und über die Jahre "
+      "sowie über Dozenten hinweg verglichen. Werte ab 3,0 lösen eine konkrete "
+      "Maßnahme aus (Gespräch mit dem Dozenten, Anpassung der Inhalte, Wechsel des "
+      "Bildungsträgers). Die Ergebnisse fließen dokumentiert in die "
+      "Managementbewertung des Qualitätsmanagements ein.",
+ "e": "Ein brauchbarer Feedbackbogen braucht: eindeutige Skala, wenige klare "
+      "Kriterien, Freitext und eine feste Konsequenz aus dem Ergebnis."
+},
+
+"OK|12. November 2025|6|a": {
+ "a": "Linie 910\n"
+      "Wagenkilometer gesamt: 2 Busse × 67.000 km = 134.000 km\n"
+      "Nutzkilometer (abzüglich 3 % Leerkilometer): 134.000 km × 0,97 = 129.980 km\n"
+      "Nutzplatzkilometer: 129.980 km × 50 Plätze = 6.499.000 Platz-km\n"
+      "Jährliche Linienkosten: 134.000 km × 2,10 €/km = 281.400,00 €\n\n"
+      "Linie 920\n"
+      "Nettoarbeitsstunden je Fahrer: (2.200 h − 225 h Urlaub) = 1.975 h; "
+      "abzüglich 10 % Fehlzeiten: 1.975 h × 0,9 = 1.777,5 h\n"
+      "Gesamte Fahrdienststunden: 1.777,5 h × 5,1 Mitarbeiter = 9.065,25 h\n"
+      "Wagenkilometer gesamt: 9.065,25 h × 18 km/h = 163.174,50 km\n"
+      "Nutzkilometer (abzüglich 4.000 km Leerkilometer): 159.174,50 km\n"
+      "Nutzplatzkilometer: 159.174,50 km × 45 Plätze = 7.162.852,50 Platz-km\n"
+      "Jährliche Linienkosten: 163.174,50 km × 1,95 €/km = 318.190,28 €\n\n"
+      "Zusammenfassung: Linie 910 erbringt 6.499.000 Nutzplatzkilometer bei "
+      "281.400,00 € Kosten, Linie 920 erbringt 7.162.852,50 Nutzplatzkilometer bei "
+      "318.190,28 € Kosten. Bezogen auf die Leistungseinheit kostet Linie 910 rund "
+      "4,33 Cent und Linie 920 rund 4,44 Cent je 1.000 Nutzplatzkilometer – "
+      "Linie 910 arbeitet damit geringfügig günstiger.",
+ "e": "Achtung: Die Linienkosten werden auf ALLE Wagenkilometer gerechnet "
+      "(auch Leerkilometer), die Nutzplatzkilometer nur auf die Nutzkilometer."
+},
+
+}
