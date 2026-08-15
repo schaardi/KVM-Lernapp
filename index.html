@@ -539,6 +539,38 @@
 .oa-tool:hover{background:var(--petrol-soft)}
 .oa-tool:disabled{opacity:.6;cursor:default}
 .oa-saved{font-size:11.5px;color:var(--ok);font-weight:600}
+
+/* ===== Prüfungs-Chat (offene Aufgaben, App + Web identisch) ===== */
+.openbox.chat-mode{border:0;padding:0;background:transparent;color:inherit}
+.chat{display:flex;flex-direction:column;gap:12px}
+.msg{max-width:92%;border-radius:16px;padding:12px 14px;font-size:14px;line-height:1.6;white-space:pre-wrap;box-shadow:var(--shadow)}
+.msg-role{font-family:var(--mono);font-size:9.5px;letter-spacing:.12em;text-transform:uppercase;font-weight:700;margin-bottom:7px}
+.msg.in{align-self:flex-start;background:var(--paper);border:1px solid var(--line);border-bottom-left-radius:5px;color:var(--ink)}
+.msg.in .msg-role{color:var(--petrol)}
+.msg.out{align-self:flex-end;background:var(--petrol);color:#fff;border-bottom-right-radius:5px}
+.msg.out .msg-role{color:#bfe3e6}
+.msg.sol{background:var(--amber-soft);border:1px solid var(--amber)}
+.msg.sol .msg-role{color:#7a4a00}
+.msg-empty{opacity:.75;font-style:italic}
+.msg-task{display:flex;align-items:baseline;gap:8px;flex-wrap:wrap;margin-bottom:8px}
+.mt-nr{font-family:var(--disp);font-weight:700;text-transform:uppercase;font-size:18px;letter-spacing:.02em;color:var(--ink)}
+.mt-pts{font-family:var(--mono);font-size:10.5px;font-weight:700;color:var(--petrol-deep);background:var(--petrol-soft);border:1px solid #cfe4e5;border-radius:5px;padding:1px 7px}
+.mt-step{font-family:var(--mono);font-size:10px;color:var(--muted)}
+.msg-sit{color:var(--muted);font-size:13px;border-left:2px solid var(--line-strong);padding-left:10px;margin-bottom:9px}
+.msg-q{font-weight:600}
+.msg-tab{margin-top:10px}
+.msg-actions{align-self:stretch;display:flex;gap:8px;flex-wrap:wrap;margin-top:2px}
+.chat-compose{margin-top:14px;border-top:1px solid var(--line);padding-top:13px}
+.cc-lbl{display:block;font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:7px}
+.cc-input{width:100%;box-sizing:border-box;border:1px solid var(--line);border-radius:12px;background:var(--paper);padding:12px 13px;font:400 14px/1.6 var(--body);color:var(--ink);resize:vertical;min-height:92px}
+.cc-input:focus{outline:0;border-color:var(--petrol);box-shadow:0 0 0 3px var(--petrol-soft)}
+.cc-bar{display:flex;align-items:center;gap:10px;margin-top:10px}
+.cc-icon{display:inline-flex;align-items:center;gap:6px;border:1px solid var(--line);background:var(--paper);border-radius:10px;padding:8px 12px;font:700 12px var(--body);color:var(--petrol);cursor:pointer}
+.cc-icon:hover{background:var(--petrol-soft)}
+.cc-icon.wide{width:100%;justify-content:center;padding:11px}
+.cc-saved{font-size:11px;color:var(--muted)}
+.cc-send{margin-left:auto;display:inline-flex;align-items:center;gap:7px;border:0;border-radius:11px;background:var(--petrol);color:#fff;font:700 13.5px var(--body);padding:11px 20px;cursor:pointer}
+.cc-send:hover{background:var(--petrol-deep)}
 </style>
 </head>
 <body>
@@ -653,24 +685,23 @@
     <div class="protocol" id="protocol" aria-hidden="true"></div>
     <div class="qbody">
       <details class="casectx" id="qCase" hidden></details>
-      <div class="qmeta"><span class="qtype mc" id="qType">Auswahlfrage</span><span class="qsub" id="qSubLabel"></span></div>
+      <div class="qmeta" id="qMeta"><span class="qtype mc" id="qType">Auswahlfrage</span><span class="qsub" id="qSubLabel"></span></div>
       <div class="voicebar" id="voiceStatus" hidden aria-live="polite"><span class="vs-dot"></span><span class="vs-txt"></span></div>
       <div class="taskbar" id="qHead" hidden><span class="tb-nr" id="qHeadNr"></span><span class="tb-pts" id="qHeadPts"></span><span class="tb-step" id="qHeadStep"></span></div>
       <p class="qsit" id="qSit" hidden></p>
       <p class="qtext" id="qText"></p>
       <div class="qtab" id="qTab" hidden></div>
       <div class="opts" id="qOpts"></div>
-      <div class="openbox" id="qOpen" hidden>
-        <p class="oa-label" id="oaLabel">Deine Antwort – formuliere sie wie in der Prüfung</p>
-        <textarea class="oa-input" id="oaInput" rows="7" placeholder="Deine Antwort …"></textarea>
-        <div class="oa-tools">
-          <button type="button" class="oa-tool" id="oaCalc">Rechner</button>
-          <button type="button" class="oa-tool" id="oaExport">Diese Aufgabe für Claude kopieren</button>
-          <span class="oa-saved" id="oaSaved"></span>
-        </div>
-        <div class="oa-sol" id="oaSol" hidden>
-          <p class="oa-sol-h">Musterlösung <span>nicht amtlich</span></p>
-          <div class="oa-text" id="oaText"></div>
+      <div class="openbox chat-mode" id="qOpen" hidden>
+        <div class="chat" id="oaChat"></div>
+        <div class="chat-compose" id="oaCompose">
+          <label class="cc-lbl" for="oaInput">Deine Antwort · wie in der Prüfung</label>
+          <textarea class="cc-input" id="oaInput" rows="4" placeholder="Antwort schreiben …"></textarea>
+          <div class="cc-bar">
+            <button type="button" class="cc-icon" id="oaCalc" title="Taschenrechner"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M8 7h8"/><path d="M8 12h.01M12 12h.01M16 12h.01M8 16h.01M12 16h.01M16 16h.01"/></svg>Rechner</button>
+            <span class="cc-saved" id="oaSaved"></span>
+            <button type="button" class="cc-send" id="oaSend">Senden <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2 11 13"/><path d="M22 2 15 22l-4-9-9-4 20-7z"/></svg></button>
+          </div>
         </div>
       </div>
       <div class="calcq" id="qCalc" hidden>
@@ -1221,9 +1252,8 @@ function splitTask(text){
   return {nr:m[1],pts:m[2],sit:p.slice(1,-1).join("\n\n"),frage:p[p.length-1]};
 }
 /* Anlage einer Prüfungsaufgabe (Tabelle) als lesbares Element. */
-function renderTab(tab){
-  var el=$("qTab");
-  if(!tab){el.hidden=true;el.innerHTML="";return;}
+function tabHTML(tab){
+  if(!tab)return "";
   var h='<p class="qtab-t">'+esc(tab.titel||"Anlage")+'</p><div class="qtab-scroll"><table><thead><tr>';
   (tab.kopf||[]).forEach(function(k){h+='<th>'+esc(k)+'</th>';});
   h+='</tr></thead><tbody>';
@@ -1232,8 +1262,36 @@ function renderTab(tab){
   });
   h+='</tbody></table></div>';
   if(tab.hinweis)h+='<p class="qtab-n">'+esc(tab.hinweis)+'</p>';
-  el.innerHTML=h;el.hidden=false;
+  return h;
 }
+/* Baut die offene Prüfungsaufgabe als Chat: Prüfer-Nachricht, ggf. eigene
+   Antwort und Musterlösung als Blasen. */
+function buildOpenChat(q){
+  var T=splitTask(q.q),h='';
+  h+='<div class="msg in"><div class="msg-role">Prüfer</div>';
+  if(T.nr){
+    h+='<div class="msg-task"><span class="mt-nr">'+esc(T.nr)+'</span>';
+    if(T.pts)h+='<span class="mt-pts">'+esc(T.pts)+'</span>';
+    if(q._case)h+='<span class="mt-step">Teil '+q._case.i+'/'+q._case.total+'</span>';
+    h+='</div>';
+  }
+  if(T.sit)h+='<div class="msg-sit">'+esc(T.sit)+'</div>';
+  h+='<div class="msg-q">'+esc(T.frage)+'</div>';
+  if(q.tab)h+='<div class="msg-tab">'+tabHTML(q.tab)+'</div>';
+  h+='</div>';
+  if(state.revealed){
+    var ans=(oaGet(q.id)||"").trim();
+    h+='<div class="msg out"><div class="msg-role">Deine Antwort</div>'+
+       (ans?esc(ans):'<span class="msg-empty">— leer abgegeben —</span>')+'</div>';
+    h+='<div class="msg in sol"><div class="msg-role">Musterlösung · nicht amtlich</div>'+
+       esc(q.a||q.e||"")+'</div>';
+    h+='<div class="msg-actions"><button type="button" class="cc-icon wide" id="oaExport">'+
+       'Diese Aufgabe von Claude prüfen lassen</button></div>';
+  }
+  $("oaChat").innerHTML=h;
+  if(state.revealed)$("oaExport").onclick=function(){oaCopy(oaExportText(q),$("oaExport"));};
+}
+function renderTab(tab){var el=$("qTab");if(!tab){el.hidden=true;el.innerHTML="";return;}el.innerHTML=tabHTML(tab);el.hidden=false;}
 function esc(s){return String(s==null?"":s).replace(/[&<>"]/g,function(m){
   return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[m];});}
 
@@ -1262,6 +1320,7 @@ function renderQuestion(){
   else if(q.t==='calc'){typeEl.textContent="Rechenaufgabe";typeEl.className="qtype calc";}
   else{typeEl.textContent="Offene Frage";typeEl.className="qtype open";}
   $("qSubLabel").textContent=isPruef?"":q.sub;
+  $("qMeta").hidden=false;
   var T=splitTask(q.q);
   $("qHead").hidden=!T.nr;
   if(T.nr){
@@ -1289,19 +1348,20 @@ function renderQuestion(){
   }else if(q.t==='calc'){
     opts.hidden=true;open.hidden=true;calc.hidden=false;renderCalc(q);
   }else{
-    opts.hidden=true;open.hidden=false;open.className="openbox";
-    $("oaSol").hidden=true;$("oaText").textContent=q.a;
-    var ta=$("oaInput");
-    ta.value=oaGet(q.id);
-    ta.oninput=function(){
-      oaSet(q.id,ta.value);
-      $("oaSaved").textContent=ta.value.trim()?"gespeichert":"";
-    };
+    opts.hidden=true;open.hidden=false;open.className="openbox chat-mode";
+    $("qMeta").hidden=true;$("qHead").hidden=true;$("qSit").hidden=true;$("qText").hidden=true;$("qTab").hidden=true;
+    buildOpenChat(q);
+    var ta=$("oaInput");ta.value=oaGet(q.id);
+    ta.oninput=function(){oaSet(q.id,ta.value);$("oaSaved").textContent=ta.value.trim()?"gespeichert":"";};
     $("oaSaved").textContent=ta.value.trim()?"gespeichert":"";
+    $("oaCompose").hidden=state.revealed;
     $("oaCalc").onclick=function(){if(window.KVMopenCalc)window.KVMopenCalc();};
-    $("oaExport").onclick=function(){oaCopy(oaExportText(q),$("oaExport"));};
-    setActions('<button class="primary" id="btnReveal">Musterlösung anzeigen</button>');
-    $("btnReveal").addEventListener("click",revealOpen);
+    $("oaSend").onclick=function(){oaSet(q.id,ta.value);revealOpen();};
+    if(state.revealed){
+      setActions('<div class="split"><button class="btn-no" id="btnNo">Nicht gewusst</button><button class="btn-ok" id="btnYes">Gewusst</button></div>');
+      $("btnYes").addEventListener("click",function(){finalize(true,q);});
+      $("btnNo").addEventListener("click",function(){finalize(false,q);});
+    }else setActions("");
   }
   if(window.KVMvoice)window.KVMvoice.onQuestion(q);
 }
@@ -1339,7 +1399,8 @@ function checkMc(){
 }
 function revealOpen(){
   state.revealed=true;var q=state.pool[state.idx];
-  $("oaSol").hidden=false;
+  $("oaCompose").hidden=true;
+  buildOpenChat(q);
   setActions('<div class="split"><button class="btn-no" id="btnNo">Nicht gewusst</button><button class="btn-ok" id="btnYes">Gewusst</button></div>');
   $("btnYes").addEventListener("click",function(){finalize(true,q);});
   $("btnNo").addEventListener("click",function(){finalize(false,q);});

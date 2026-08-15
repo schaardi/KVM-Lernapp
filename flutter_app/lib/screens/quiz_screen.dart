@@ -257,18 +257,21 @@ class _QuizScreenState extends State<QuizScreen> {
           _progressBar(),
           const SizedBox(height: 14),
           if (_q.caseCtx != null) _caseBanner(),
-          Row(children: [
-            _typeTag(),
-            const SizedBox(width: 8),
-            Expanded(child: Text(_q.sub, style: const TextStyle(color: kMuted, fontSize: 12))),
-          ]),
-          const SizedBox(height: 10),
-          ..._taskText(),
-          if (_q.tab != null) _anlage(_q.tab!),
-          const SizedBox(height: 16),
-          if (_q.type == 'mc') ..._mcOptions(),
-          if (_q.type == 'calc') _calcInput(),
-          if (_q.type == 'open') _openBox(),
+          if (_q.type == 'open')
+            _openChat()
+          else ...[
+            Row(children: [
+              _typeTag(),
+              const SizedBox(width: 8),
+              Expanded(child: Text(_q.sub, style: const TextStyle(color: kMuted, fontSize: 12))),
+            ]),
+            const SizedBox(height: 10),
+            ..._taskText(),
+            if (_q.tab != null) _anlage(_q.tab!),
+            const SizedBox(height: 16),
+            if (_q.type == 'mc') ..._mcOptions(),
+            if (_q.type == 'calc') _calcInput(),
+          ],
           if (_answered) _feedback(),
           const SizedBox(height: 16),
           _actions(last),
@@ -510,98 +513,228 @@ class _QuizScreenState extends State<QuizScreen> {
     ]);
   }
 
-  Widget _openBox() {
-    // Eingabefeld immer mit der gespeicherten Antwort dieser Teilaufgabe füllen.
+  static const _amberSoft = Color(0xFFFBEFD9);
+
+  Widget _msgRole(String label, Color c) => Text(label.toUpperCase(),
+      style: TextStyle(
+          fontSize: 9.5, fontWeight: FontWeight.w800, letterSpacing: 1.1, color: c));
+
+  /// Offene Prüfungsaufgabe als Chat: Prüfer-Nachricht, dann – nach dem Abgeben –
+  /// die eigene Antwort und die Musterlösung als Blasen.
+  Widget _openChat() {
     final gespeichert = AnswerStore.instance.get(_q.id);
     if (_eigene.text != gespeichert) _eigene.text = gespeichert;
+    final t = TaskParts.of(_q.q);
+    final ans = gespeichert.trim();
+    final w = MediaQuery.of(context).size.width;
 
     return Column(crossAxisAlignment: CrossAxisAlignment.stretch, children: [
-      Container(
-        padding: const EdgeInsets.all(14),
-        decoration: BoxDecoration(
-          color: const Color(0xFFF7FAFA),
-          border: Border.all(color: kLine),
-          borderRadius: BorderRadius.circular(kRadiusSm),
-        ),
-        child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-          const Text('FORMULIERE DEINE ANTWORT – WIE IN DER PRÜFUNG',
-              style: TextStyle(
-                  fontSize: 10.5,
-                  fontWeight: FontWeight.w800,
-                  letterSpacing: 0.6,
-                  color: kMuted)),
-          const SizedBox(height: 9),
-          TextField(
-            controller: _eigene,
-            maxLines: null,
-            minLines: 5,
-            keyboardType: TextInputType.multiline,
-            style: const TextStyle(fontSize: 14, height: 1.5, color: kInk),
-            onChanged: (v) => AnswerStore.instance.set(_q.id, v),
-            decoration: InputDecoration(
-              hintText: 'Deine Antwort …',
-              hintStyle: const TextStyle(color: kMuted),
-              filled: true,
-              fillColor: kPaper,
-              contentPadding: const EdgeInsets.all(11),
-              border: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(9),
-                borderSide: const BorderSide(color: kLine),
-              ),
-              enabledBorder: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(9),
-                borderSide: const BorderSide(color: kLine),
-              ),
-              focusedBorder: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(9),
-                borderSide: const BorderSide(color: kPetrol, width: 1.6),
-              ),
+      // Prüfer-Blase (eingehend)
+      Align(
+        alignment: Alignment.centerLeft,
+        child: ConstrainedBox(
+          constraints: BoxConstraints(maxWidth: w * 0.92),
+          child: Container(
+            padding: const EdgeInsets.all(13),
+            decoration: BoxDecoration(
+              color: kPaper,
+              border: Border.all(color: kLine),
+              borderRadius: const BorderRadius.only(
+                  topLeft: Radius.circular(16),
+                  topRight: Radius.circular(16),
+                  bottomRight: Radius.circular(16),
+                  bottomLeft: Radius.circular(5)),
+              boxShadow: kSoftShadow,
             ),
+            child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+              _msgRole('Prüfer', kPetrol),
+              const SizedBox(height: 7),
+              if (t.nr.isNotEmpty)
+                Padding(
+                  padding: const EdgeInsets.only(bottom: 8),
+                  child: Wrap(
+                    spacing: 8,
+                    runSpacing: 4,
+                    crossAxisAlignment: WrapCrossAlignment.center,
+                    children: [
+                      Text(t.nr,
+                          style: const TextStyle(
+                              fontSize: 17,
+                              fontWeight: FontWeight.w800,
+                              color: kInk)),
+                      Container(
+                        padding: const EdgeInsets.symmetric(
+                            horizontal: 8, vertical: 2),
+                        decoration: BoxDecoration(
+                            color: kPetrolSoft,
+                            borderRadius: BorderRadius.circular(5)),
+                        child: Text(t.pts,
+                            style: const TextStyle(
+                                fontSize: 10.5,
+                                fontWeight: FontWeight.w700,
+                                color: kPetrolDeep)),
+                      ),
+                      if (_q.caseCtx != null)
+                        Text('Teil ${_q.caseCtx!.step}/${_q.caseCtx!.total}',
+                            style:
+                                const TextStyle(fontSize: 10, color: kMuted)),
+                    ],
+                  ),
+                ),
+              if (t.sit.isNotEmpty)
+                Container(
+                  margin: const EdgeInsets.only(bottom: 9),
+                  padding: const EdgeInsets.only(left: 10),
+                  decoration: const BoxDecoration(
+                      border: Border(
+                          left: BorderSide(color: Color(0xFFB7C3C7), width: 2))),
+                  child: Text(t.sit,
+                      style: const TextStyle(
+                          fontSize: 13, height: 1.55, color: kMuted)),
+                ),
+              Text(t.frage,
+                  style: const TextStyle(
+                      fontSize: 15,
+                      fontWeight: FontWeight.w600,
+                      height: 1.5,
+                      color: kInk)),
+              if (_q.tab != null)
+                Padding(
+                    padding: const EdgeInsets.only(top: 10),
+                    child: _anlage(_q.tab!)),
+            ]),
           ),
-          const SizedBox(height: 9),
-          Wrap(spacing: 8, runSpacing: 8, children: [
-            OutlinedButton.icon(
-              onPressed: _openRechner,
-              style: OutlinedButton.styleFrom(
-                  foregroundColor: kPetrol, side: const BorderSide(color: kLine)),
-              icon: const Icon(Icons.calculate_outlined, size: 17),
-              label: const Text('Rechner',
-                  style: TextStyle(fontWeight: FontWeight.w700, fontSize: 12.5)),
-            ),
-            OutlinedButton.icon(
-              onPressed: _exportAufgabe,
-              style: OutlinedButton.styleFrom(
-                  foregroundColor: kPetrol, side: const BorderSide(color: kLine)),
-              icon: const Icon(Icons.content_copy, size: 16),
-              label: const Text('Diese Aufgabe für Claude kopieren',
-                  style: TextStyle(fontWeight: FontWeight.w700, fontSize: 12.5)),
-            ),
-          ]),
-        ]),
+        ),
       ),
       if (_revealed) ...[
-        const SizedBox(height: 10),
-        Container(
-          width: double.infinity,
-          padding: const EdgeInsets.all(14),
-          decoration: BoxDecoration(
-            color: kOkSoft,
-            border: Border.all(color: kLine),
-            borderRadius: BorderRadius.circular(kRadiusSm),
+        const SizedBox(height: 12),
+        // Eigene Antwort (ausgehend)
+        Align(
+          alignment: Alignment.centerRight,
+          child: ConstrainedBox(
+            constraints: BoxConstraints(maxWidth: w * 0.92),
+            child: Container(
+              padding: const EdgeInsets.all(13),
+              decoration: const BoxDecoration(
+                color: kPetrol,
+                borderRadius: BorderRadius.only(
+                    topLeft: Radius.circular(16),
+                    topRight: Radius.circular(16),
+                    bottomLeft: Radius.circular(16),
+                    bottomRight: Radius.circular(5)),
+              ),
+              child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+                _msgRole('Deine Antwort', const Color(0xFFBFE3E6)),
+                const SizedBox(height: 6),
+                Text(ans.isEmpty ? '— leer abgegeben —' : ans,
+                    style: TextStyle(
+                        color: Colors.white,
+                        height: 1.5,
+                        fontSize: 14,
+                        fontStyle:
+                            ans.isEmpty ? FontStyle.italic : FontStyle.normal)),
+              ]),
+            ),
           ),
-          child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-            const Text('MUSTERLÖSUNG',
-                style: TextStyle(
-                    fontSize: 10.5,
-                    fontWeight: FontWeight.w800,
-                    letterSpacing: 0.6,
-                    color: kOk)),
-            const SizedBox(height: 7),
-            Text(_q.a ?? _q.e,
-                style: const TextStyle(height: 1.55, color: kInk, fontSize: 14)),
-          ]),
         ),
+        const SizedBox(height: 12),
+        // Musterlösung (eingehend, hervorgehoben)
+        Align(
+          alignment: Alignment.centerLeft,
+          child: ConstrainedBox(
+            constraints: BoxConstraints(maxWidth: w * 0.94),
+            child: Container(
+              padding: const EdgeInsets.all(13),
+              decoration: BoxDecoration(
+                color: _amberSoft,
+                border: Border.all(color: kAmber),
+                borderRadius: BorderRadius.circular(16),
+              ),
+              child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+                _msgRole('Musterlösung · nicht amtlich', const Color(0xFF7A4A00)),
+                const SizedBox(height: 7),
+                Text(_q.a ?? _q.e,
+                    style: const TextStyle(
+                        height: 1.55, color: kInk, fontSize: 14)),
+              ]),
+            ),
+          ),
+        ),
+        const SizedBox(height: 12),
+        SizedBox(
+          width: double.infinity,
+          child: OutlinedButton.icon(
+            onPressed: _exportAufgabe,
+            style: OutlinedButton.styleFrom(
+                foregroundColor: kPetrol,
+                side: const BorderSide(color: kLine),
+                padding: const EdgeInsets.symmetric(vertical: 12)),
+            icon: const Icon(Icons.content_copy, size: 16),
+            label: const Text('Diese Aufgabe von Claude prüfen lassen',
+                style: TextStyle(fontWeight: FontWeight.w700, fontSize: 12.5)),
+          ),
+        ),
+      ] else ...[
+        const SizedBox(height: 14),
+        _composer(),
       ],
+    ]);
+  }
+
+  Widget _composer() {
+    return Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+      const Divider(height: 1, color: kLine),
+      const SizedBox(height: 12),
+      _msgRole('Deine Antwort · wie in der Prüfung', kMuted),
+      const SizedBox(height: 8),
+      TextField(
+        controller: _eigene,
+        maxLines: null,
+        minLines: 4,
+        keyboardType: TextInputType.multiline,
+        style: const TextStyle(fontSize: 14, height: 1.6, color: kInk),
+        onChanged: (v) => AnswerStore.instance.set(_q.id, v),
+        decoration: InputDecoration(
+          hintText: 'Antwort schreiben …',
+          hintStyle: const TextStyle(color: kMuted),
+          filled: true,
+          fillColor: kPaper,
+          contentPadding: const EdgeInsets.all(12),
+          border: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(12),
+              borderSide: const BorderSide(color: kLine)),
+          enabledBorder: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(12),
+              borderSide: const BorderSide(color: kLine)),
+          focusedBorder: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(12),
+              borderSide: const BorderSide(color: kPetrol, width: 1.6)),
+        ),
+      ),
+      const SizedBox(height: 10),
+      Row(children: [
+        OutlinedButton.icon(
+          onPressed: _openRechner,
+          style: OutlinedButton.styleFrom(
+              foregroundColor: kPetrol, side: const BorderSide(color: kLine)),
+          icon: const Icon(Icons.calculate_outlined, size: 17),
+          label: const Text('Rechner',
+              style: TextStyle(fontWeight: FontWeight.w700, fontSize: 12.5)),
+        ),
+        const Spacer(),
+        FilledButton.icon(
+          onPressed: () {
+            AnswerStore.instance.set(_q.id, _eigene.text);
+            setState(() => _revealed = true);
+          },
+          style: FilledButton.styleFrom(
+              backgroundColor: kPetrol,
+              padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 12)),
+          icon: const Icon(Icons.send_rounded, size: 16),
+          label: const Text('Senden',
+              style: TextStyle(fontWeight: FontWeight.w700, fontSize: 13)),
+        ),
+      ]),
     ]);
   }
 
@@ -695,17 +828,8 @@ class _QuizScreenState extends State<QuizScreen> {
         ),
       ]);
     }
-    // open
-    if (!_revealed) {
-      return SizedBox(
-        width: double.infinity,
-        child: FilledButton(
-          style: FilledButton.styleFrom(backgroundColor: kPetrol, padding: const EdgeInsets.symmetric(vertical: 16)),
-          onPressed: () => setState(() => _revealed = true),
-          child: const Text('Antwort anzeigen'),
-        ),
-      );
-    }
+    // open – Senden liegt im Chat-Composer, hier erst nach dem Abgeben Bewertung
+    if (!_revealed) return const SizedBox.shrink();
     return Row(children: [
       Expanded(
         child: OutlinedButton(
