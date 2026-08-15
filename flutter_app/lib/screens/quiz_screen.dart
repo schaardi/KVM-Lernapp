@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'package:flutter/services.dart';
 import 'package:flutter/material.dart';
 import '../constants.dart';
 import '../models.dart';
@@ -6,6 +7,8 @@ import '../services/progress_service.dart';
 import '../services/round_builder.dart';
 import '../services/voice_service.dart';
 import '../services/ad_service.dart';
+import '../services/answer_store.dart';
+import '../widgets/calculator.dart';
 import 'result_screen.dart';
 
 class QuizScreen extends StatefulWidget {
@@ -29,6 +32,7 @@ class _QuizScreenState extends State<QuizScreen> {
   int _idx = 0;
   bool _answered = false;
   bool _revealed = false;
+  final TextEditingController _eigene = TextEditingController();
   int? _selected; // MC-Auswahlindex
   late final List<List<Opt>> _shuffled;
   late final List<bool?> _results;
@@ -66,6 +70,7 @@ class _QuizScreenState extends State<QuizScreen> {
 
   @override
   void dispose() {
+    _eigene.dispose();
     _timer?.cancel();
     _calcCtrl.dispose();
     VoiceService.instance.stop();
@@ -418,18 +423,123 @@ class _QuizScreenState extends State<QuizScreen> {
   }
 
   Widget _openBox() {
-    return Container(
-      width: double.infinity,
-      padding: const EdgeInsets.all(14),
-      decoration: BoxDecoration(
-        color: _revealed ? kOkSoft : const Color(0xFFF7FAFA),
-        border: Border.all(color: kLine),
-        borderRadius: BorderRadius.circular(kRadiusSm),
+    // Eingabefeld immer mit der gespeicherten Antwort dieser Teilaufgabe füllen.
+    final gespeichert = AnswerStore.instance.get(_q.id);
+    if (_eigene.text != gespeichert) _eigene.text = gespeichert;
+
+    return Column(crossAxisAlignment: CrossAxisAlignment.stretch, children: [
+      Container(
+        padding: const EdgeInsets.all(14),
+        decoration: BoxDecoration(
+          color: const Color(0xFFF7FAFA),
+          border: Border.all(color: kLine),
+          borderRadius: BorderRadius.circular(kRadiusSm),
+        ),
+        child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+          const Text('FORMULIERE DEINE ANTWORT – WIE IN DER PRÜFUNG',
+              style: TextStyle(
+                  fontSize: 10.5,
+                  fontWeight: FontWeight.w800,
+                  letterSpacing: 0.6,
+                  color: kMuted)),
+          const SizedBox(height: 9),
+          TextField(
+            controller: _eigene,
+            maxLines: null,
+            minLines: 5,
+            keyboardType: TextInputType.multiline,
+            style: const TextStyle(fontSize: 14, height: 1.5, color: kInk),
+            onChanged: (v) => AnswerStore.instance.set(_q.id, v),
+            decoration: InputDecoration(
+              hintText: 'Deine Antwort …',
+              hintStyle: const TextStyle(color: kMuted),
+              filled: true,
+              fillColor: kPaper,
+              contentPadding: const EdgeInsets.all(11),
+              border: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(9),
+                borderSide: const BorderSide(color: kLine),
+              ),
+              enabledBorder: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(9),
+                borderSide: const BorderSide(color: kLine),
+              ),
+              focusedBorder: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(9),
+                borderSide: const BorderSide(color: kPetrol, width: 1.6),
+              ),
+            ),
+          ),
+          const SizedBox(height: 9),
+          Wrap(spacing: 8, runSpacing: 8, children: [
+            OutlinedButton.icon(
+              onPressed: _openRechner,
+              style: OutlinedButton.styleFrom(
+                  foregroundColor: kPetrol, side: const BorderSide(color: kLine)),
+              icon: const Icon(Icons.calculate_outlined, size: 17),
+              label: const Text('Rechner',
+                  style: TextStyle(fontWeight: FontWeight.w700, fontSize: 12.5)),
+            ),
+            OutlinedButton.icon(
+              onPressed: _exportAufgabe,
+              style: OutlinedButton.styleFrom(
+                  foregroundColor: kPetrol, side: const BorderSide(color: kLine)),
+              icon: const Icon(Icons.content_copy, size: 16),
+              label: const Text('Diese Aufgabe für Claude kopieren',
+                  style: TextStyle(fontWeight: FontWeight.w700, fontSize: 12.5)),
+            ),
+          ]),
+        ]),
       ),
-      child: _revealed
-          ? Text(_q.a ?? _q.e, style: const TextStyle(height: 1.5, color: kInk))
-          : const Text('Überlege deine Antwort, dann aufdecken.', style: TextStyle(color: kMuted)),
+      if (_revealed) ...[
+        const SizedBox(height: 10),
+        Container(
+          width: double.infinity,
+          padding: const EdgeInsets.all(14),
+          decoration: BoxDecoration(
+            color: kOkSoft,
+            border: Border.all(color: kLine),
+            borderRadius: BorderRadius.circular(kRadiusSm),
+          ),
+          child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+            const Text('MUSTERLÖSUNG',
+                style: TextStyle(
+                    fontSize: 10.5,
+                    fontWeight: FontWeight.w800,
+                    letterSpacing: 0.6,
+                    color: kOk)),
+            const SizedBox(height: 7),
+            Text(_q.a ?? _q.e,
+                style: const TextStyle(height: 1.55, color: kInk, fontSize: 14)),
+          ]),
+        ),
+      ],
+    ]);
+  }
+
+  void _openRechner() {
+    showModalBottomSheet(
+      context: context,
+      isScrollControlled: true,
+      backgroundColor: kPaper,
+      shape: const RoundedRectangleBorder(
+          borderRadius: BorderRadius.vertical(top: Radius.circular(20))),
+      builder: (_) => SafeArea(
+        child: Padding(
+          padding: EdgeInsets.only(
+              bottom: MediaQuery.of(context).viewInsets.bottom),
+          child: const SizedBox(height: 460, child: CalculatorSheet()),
+        ),
+      ),
     );
+  }
+
+  Future<void> _exportAufgabe() async {
+    await Clipboard.setData(ClipboardData(text: AnswerStore.exportTask(_q)));
+    if (!mounted) return;
+    ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
+        content: Text('Aufgabe mit deiner Antwort kopiert – jetzt in einen '
+            'Claude-Chat einfügen.')));
   }
 
   Widget _feedback() {

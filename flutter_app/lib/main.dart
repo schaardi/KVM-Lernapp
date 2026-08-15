@@ -7,6 +7,7 @@ import 'services/data_service.dart';
 import 'services/progress_service.dart';
 import 'services/selection_service.dart';
 import 'services/voice_service.dart';
+import 'services/answer_store.dart';
 import 'services/auth_service.dart';
 import 'services/sync_service.dart';
 import 'services/premium_service.dart';
@@ -105,6 +106,7 @@ class _BootState extends State<_Boot> {
     await SelectionService.instance.load();
     await ProgressService.instance.load();
     await VoiceService.instance.init();
+    await AnswerStore.instance.init();
     // Cloud-Sync anbinden; bei bestehender Sitzung Stand zusammenführen.
     if (Config.authEnabled && AuthService.instance.ready) {
       SyncService.instance.attach();
