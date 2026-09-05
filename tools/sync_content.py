@@ -197,6 +197,27 @@ def preserve_local_cases(cases: list, current) -> tuple[list, list]:
     return cases + bewahrt, [c["id"] for c in bewahrt]
 
 
+# Aus den Original-Prüfungen abgeleitete Übungsfragen tragen das Präfix "PX-".
+# Sie entstehen in diesem Repo (scripts/pruefungen/build_exam_questions.py),
+# nicht im Content-Branch, und würden von einem reinen Overwrite-Sync sonst
+# verlorengehen – daher werden sie wie die Prüfungsfälle bewahrt.
+EIGEN_FRAGEN_PRAEFIX = "PX-"
+
+
+def preserve_local_questions(questions: list, current) -> tuple[list, list]:
+    """Hängt lokale Übungsfragen (Präfix ``PX-``) an, die der Content nicht kennt."""
+    if not isinstance(current, list):
+        return questions, []
+    vorhanden = _ids(questions)
+    bewahrt = [
+        x for x in current
+        if isinstance(x, dict)
+        and str(x.get("id", "")).startswith(EIGEN_FRAGEN_PRAEFIX)
+        and x.get("id") not in vorhanden
+    ]
+    return questions + bewahrt, [x["id"] for x in bewahrt]
+
+
 # --------------------------------------------------------------------------- #
 # Schreiben                                                                    #
 # --------------------------------------------------------------------------- #
@@ -277,7 +298,10 @@ def main(argv: list[str] | None = None) -> int:
 
     cases, bewahrt = preserve_local_cases(cases, _current(CASES_OUT))
     if bewahrt:
-        print(f"Bewahrt (nicht im Content, aus App-Assets übernommen): {', '.join(bewahrt)}")
+        print(f"Bewahrt (Fälle, nicht im Content): {', '.join(bewahrt)}")
+    questions, bewahrt_q = preserve_local_questions(questions, _current(QUESTIONS_OUT))
+    if bewahrt_q:
+        print(f"Bewahrt (Übungsfragen aus Prüfungen, {len(bewahrt_q)} Stück, Präfix PX-)")
 
     errors = validate_questions(questions) + validate_cases(cases)
     if errors:
