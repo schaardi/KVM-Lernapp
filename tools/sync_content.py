@@ -170,6 +170,34 @@ def validate_cases(cases: list) -> list[str]:
 
 
 # --------------------------------------------------------------------------- #
+# Eigenständige Inhalte der App bewahren                                       #
+# --------------------------------------------------------------------------- #
+# Die IHK-Prüfungen (Fall-IDs mit Präfix "P-") entstehen nicht im Content-Branch,
+# sondern in diesem Repo aus den Original-PDFs (scripts/pruefungen/). Ein reiner
+# Overwrite-Sync aus dem Content würde sie jedes Mal löschen – genau das ist
+# schon passiert. Sie werden deshalb aus den vorhandenen App-Assets übernommen,
+# sofern der Content sie nicht selbst mitbringt.
+EIGEN_PRAEFIX = "P-"
+
+
+def preserve_local_cases(cases: list, current) -> tuple[list, list]:
+    """Hängt lokale Prüfungsfälle an, die der Content nicht kennt.
+
+    Gibt die ergänzte Liste und die Liste der bewahrten IDs zurück.
+    """
+    if not isinstance(current, list):
+        return cases, []
+    vorhanden = _ids(cases)
+    bewahrt = [
+        c for c in current
+        if isinstance(c, dict)
+        and str(c.get("id", "")).startswith(EIGEN_PRAEFIX)
+        and c.get("id") not in vorhanden
+    ]
+    return cases + bewahrt, [c["id"] for c in bewahrt]
+
+
+# --------------------------------------------------------------------------- #
 # Schreiben                                                                    #
 # --------------------------------------------------------------------------- #
 def dump_compact(data) -> str:
@@ -246,6 +274,10 @@ def main(argv: list[str] | None = None) -> int:
     except ValueError as exc:
         print(f"FEHLER: {exc}", file=sys.stderr)
         return 1
+
+    cases, bewahrt = preserve_local_cases(cases, _current(CASES_OUT))
+    if bewahrt:
+        print(f"Bewahrt (nicht im Content, aus App-Assets übernommen): {', '.join(bewahrt)}")
 
     errors = validate_questions(questions) + validate_cases(cases)
     if errors:
