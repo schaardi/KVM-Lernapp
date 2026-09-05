@@ -654,11 +654,34 @@ class _QuizScreenState extends State<QuizScreen> {
                 borderRadius: BorderRadius.circular(16),
               ),
               child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-                _msgRole('Musterlösung · nicht amtlich', const Color(0xFF7A4A00)),
+                _msgRole(
+                    _q.amtlich
+                        ? 'Amtliche Lösungshinweise · IHK'
+                        : 'Musterlösung · nicht amtlich',
+                    const Color(0xFF7A4A00)),
                 const SizedBox(height: 7),
                 Text(_q.a ?? _q.e,
                     style: const TextStyle(
                         height: 1.55, color: kInk, fontSize: 14)),
+                if (_q.vo != null && _q.vo!.isNotEmpty)
+                  Padding(
+                    padding: const EdgeInsets.only(top: 9),
+                    child: Text('VO-Bezug: ${_q.vo}',
+                        style: const TextStyle(
+                            fontSize: 11.5,
+                            color: Color(0xFF7A4A00),
+                            fontWeight: FontWeight.w600)),
+                  ),
+                if (_q.bewertung.isNotEmpty)
+                  Padding(
+                    padding: const EdgeInsets.only(top: 3),
+                    child: Text(
+                        'Punkteverteilung: ${_q.bewertung.join(' + ')} Punkte',
+                        style: const TextStyle(
+                            fontSize: 11.5,
+                            color: Color(0xFF7A4A00),
+                            fontWeight: FontWeight.w600)),
+                  ),
               ]),
             ),
           ),
