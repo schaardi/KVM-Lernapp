@@ -413,8 +413,17 @@
   /* Formelbuch */
   .fb-search{width:100%;border:1px solid var(--line-strong);border-radius:9px;padding:10px 12px;font-size:14px;font-family:var(--body);margin-bottom:12px}
   .fb-search:focus{outline:none;border-color:var(--petrol)}
-  .fb-group{margin-bottom:16px}
-  .fb-group>h4{margin:0 0 8px;font-family:var(--mono);font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--petrol)}
+  .fb-tools{display:flex;justify-content:flex-end;margin:-4px 0 12px}
+  .fb-toggle{border:1px solid var(--line);background:var(--paper);border-radius:8px;padding:6px 11px;font:600 12px var(--body);color:var(--petrol);cursor:pointer}
+  .fb-toggle:hover{background:var(--petrol-soft)}
+  .fb-group{margin-bottom:9px;border:1px solid var(--line);border-radius:10px;overflow:hidden;background:#fff}
+  .fb-sum{list-style:none;cursor:pointer;display:flex;align-items:center;gap:8px;padding:11px 13px;font-family:var(--mono);font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--petrol);background:linear-gradient(180deg,#fbfdfd,#f2f7f8);position:sticky;top:0;z-index:1}
+  .fb-sum::-webkit-details-marker{display:none}
+  .fb-sum::after{content:"▸";font-size:12px;color:var(--muted);transition:transform .15s}
+  .fb-group[open]>.fb-sum::after{transform:rotate(90deg)}
+  .fb-g-name{flex:1}
+  .fb-count{font-family:var(--mono);font-size:10.5px;color:var(--muted);background:#fff;border:1px solid var(--line);border-radius:10px;padding:1px 8px}
+  .fb-body{padding:11px 12px 4px}
   .fb-item{border:1px solid var(--line);border-radius:10px;padding:10px 12px;margin-bottom:8px;background:#f9fcfc}
   .fb-item .fb-name{font-weight:600;font-size:14px;margin:0 0 5px}
   .fb-item .fb-eq{font-family:var(--mono);font-size:13.5px;color:var(--petrol-deep);background:#fff;border:1px solid var(--line);border-radius:7px;padding:7px 9px;margin:0 0 5px;overflow-x:auto;white-space:nowrap}
@@ -864,6 +873,7 @@
     <div class="sheet-head"><h3>Formelbuch</h3><button class="x" data-close aria-label="Schließen">✕</button></div>
     <div class="sheet-body">
       <input class="fb-search" id="fbSearch" type="search" placeholder="Formel suchen (z. B. Deckungsbeitrag, Bestellmenge, Zins) …" aria-label="Formel suchen">
+      <div class="fb-tools"><button type="button" class="fb-toggle" id="fbToggle">Alle aufklappen</button></div>
       <div id="fbList"></div>
     </div>
   </div>
@@ -1750,19 +1760,31 @@ $("padClear").addEventListener("click",function(){ if(ctx)drawGrid(); });
 
 /* ---- Formelbuch ---- */
 var FORMULAS=[{g:"Prozent- & Zinsrechnung",items:[{n:"Prozentwert",e:"W = G · p ÷ 100",d:"G = Grundwert, p = Prozentsatz"},{n:"Grundwert",e:"G = W · 100 ÷ p"},{n:"Prozentsatz",e:"p = W · 100 ÷ G"},{n:"Jahreszinsen",e:"Z = K · p ÷ 100",d:"K = Kapital"},{n:"Tageszinsen",e:"Z = K · p · t ÷ (100 · 360)",d:"t = Tage (kaufmännisch: Monat 30, Jahr 360)"},{n:"Brutto aus Netto",e:"Brutto = Netto · (1 + p ÷ 100)",d:"p = Umsatzsteuersatz (19 % / 7 %)"},{n:"Netto aus Brutto",e:"Netto = Brutto ÷ (1 + p ÷ 100)"},{n:"Skontobetrag",e:"Skonto = Rechnungsbetrag · p ÷ 100"}]},{g:"Handelskalkulation",items:[{n:"Bezugspreis (Einstandspreis)",e:"Listen-EK − Rabatt − Skonto + Bezugskosten"},{n:"Selbstkostenpreis",e:"Bezugspreis + Handlungskosten"},{n:"Barverkaufspreis",e:"Selbstkosten + Gewinnzuschlag"},{n:"Zielverkaufspreis",e:"Barverkaufspreis + Kundenskonto (+ Provision)"},{n:"Listenverkaufspreis (netto)",e:"Zielverkaufspreis + Kundenrabatt"},{n:"Handelsspanne",e:"(VK − EK) ÷ VK · 100",d:"vom Verkaufspreis"},{n:"Kalkulationszuschlag",e:"(VK − EK) ÷ EK · 100",d:"vom Einkaufspreis"},{n:"Kalkulationsfaktor",e:"VK ÷ EK"},{n:"Vorwärtskalkulation (im Hundert)",e:"Zielpreis = Barpreis ÷ (100 − Skonto%) · 100",d:"Skonto und Rabatt beziehen sich auf den höheren Wert – daher geteilt."},{n:"Rückwärtskalkulation (vom Hundert)",e:"Zielpreis = Listenpreis · (100 − Rabatt%) ÷ 100",d:"Vom Verkaufspreis rückwärts zu den Kosten – multipliziert."}]},{g:"Zuschlagskalkulation & Kostenstellen",items:[{n:"Materialgemeinkostensatz",e:"MGK ÷ Fertigungsmaterial · 100",d:"Aus dem Betriebsabrechnungsbogen (BAB)."},{n:"Fertigungsgemeinkostensatz",e:"FGK ÷ Fertigungslöhne · 100",d:"Sätze über 200 % sind bei hohem Maschinenanteil normal."},{n:"Herstellkosten",e:"FM + MGK + FL + FGK + Sondereinzelkosten Fertigung",d:"Basis für die Verwaltungs- und Vertriebszuschläge."},{n:"Verwaltungs-/Vertriebsgemeinkostensatz",e:"Gemeinkosten ÷ Herstellkosten · 100",d:"VwGK und VtGK beziehen sich auf die Herstellkosten."},{n:"Selbstkosten",e:"Herstellkosten + VwGK + VtGK + Sondereinzelkosten Vertrieb",d:"SEK des Vertriebs erst NACH den Herstellkosten."},{n:"Über-/Unterdeckung",e:"verrechnete Gemeinkosten − Ist-Gemeinkosten",d:"Positiv = Überdeckung, negativ = Unterdeckung."},{n:"Maschinenstundensatz",e:"maschinenabhängige Kosten ÷ Maschinenlaufstunden",d:"Abschreibung, Zinsen, Raum, Energie, Instandhaltung, Werkzeuge."},{n:"Divisionskalkulation",e:"k = Gesamtkosten ÷ Menge",d:"Ein einziges Massenprodukt."},{n:"Äquivalenzziffer – Rechnungseinheiten",e:"RE = Menge · Äquivalenzziffer",d:"Sortenfertigung; Standardsorte = 1,0."},{n:"Äquivalenzziffer – Stückkosten",e:"(Gesamtkosten ÷ Σ RE) · Äquivalenzziffer",d:"Kosten je Rechnungseinheit mal Äquivalenzziffer der Sorte."}]},{g:"Kalkulatorische Kosten",items:[{n:"Kalk. Abschreibung (linear)",e:"(Wiederbeschaffungswert − Restwert) ÷ Nutzungsdauer",d:"Interne Rechnung: Wiederbeschaffungswert, tatsächliche Nutzungsdauer."},{n:"Kalk. Abschreibung (leistungsbezogen)",e:"(WBW − Restwert) ÷ Gesamtleistung · Periodenleistung",d:"Z. B. nach Maschinenstunden oder gefahrenen Kilometern."},{n:"Betriebsnotwendiges Kapital",e:"betriebsnotwendiges Vermögen − Abzugskapital",d:"Abzugskapital = zinsfrei überlassenes Kapital."},{n:"Kalk. Zinsen",e:"betriebsnotwendiges Kapital · Zinssatz ÷ 100",d:"Verzinsung des gebundenen Kapitals."},{n:"Wagnissatz",e:"Wagnisverluste ÷ Bezugsgröße · 100",d:"Durchschnitt mehrerer Jahre."},{n:"Kalk. Wagnis",e:"Bezugsgröße im Planjahr · Wagnissatz ÷ 100",d:"Einzelwagnisse; das allgemeine Unternehmerwagnis wird nicht verrechnet."},{n:"Beschäftigungsgrad",e:"Ist-Beschäftigung ÷ Plan-Beschäftigung · 100",d:"Auslastung der Kapazität."},{n:"Nutzkosten",e:"Fixkosten · Beschäftigungsgrad ÷ 100",d:"Wertschöpfender Teil der Fixkosten."},{n:"Leerkosten",e:"Fixkosten − Nutzkosten",d:"Kosten der nicht genutzten Bereitschaft."}]},{g:"Kosten- & Leistungsrechnung",items:[{n:"Deckungsbeitrag je Stück",e:"db = Preis − variable Stückkosten"},{n:"Deckungsbeitrag gesamt",e:"DB = Umsatz − variable Kosten"},{n:"Gewinn",e:"Gewinn = Umsatz − Gesamtkosten"},{n:"Gesamtkosten",e:"K = Fixkosten + variable Kosten"},{n:"Break-Even-Menge",e:"x = Fixkosten ÷ (Preis − var. Stückkosten)"},{n:"Stückkosten",e:"k = Gesamtkosten ÷ Menge"},{n:"Kostendeckungsgrad",e:"DB ÷ Fixkosten · 100"},{n:"Deckungsbeitragsrate",e:"DB-Rate = db ÷ Preis · 100",d:"Anteil des Deckungsbeitrags am Verkaufspreis."},{n:"Break-Even-Umsatz",e:"U = Fixkosten ÷ DB-Rate · 100",d:"Umsatz an der Gewinnschwelle."},{n:"Menge für Zielgewinn",e:"x = (Fixkosten + Zielgewinn) ÷ db",d:"Absatz, der den gewünschten Gewinn erreicht."},{n:"Sicherheitsstrecke",e:"(Ist-Menge − Break-Even-Menge) ÷ Ist-Menge · 100",d:"Wie weit der Absatz einbrechen darf, bevor Verlust entsteht."},{n:"Preisuntergrenze kurzfristig",e:"= variable Stückkosten",d:"Untergrenze bei freier Kapazität (Zusatzauftrag)."},{n:"Preisuntergrenze langfristig",e:"= Selbstkosten (Vollkosten)",d:"Auf Dauer müssen auch die Fixkosten verdient werden."}]},{g:"Materialwirtschaft & Lager",items:[{n:"Optimale Bestellmenge (Andler)",e:"√(200 · Jahresbedarf · Bestellkosten ÷ (Preis · Lagerkostensatz))"},{n:"Meldebestand",e:"Tagesverbrauch · Lieferzeit + Mindestbestand"},{n:"Ø Lagerbestand",e:"(Anfangsbestand + Endbestand) ÷ 2"},{n:"Lagerumschlagshäufigkeit",e:"Wareneinsatz ÷ Ø Lagerbestand"},{n:"Ø Lagerdauer (Tage)",e:"360 ÷ Lagerumschlagshäufigkeit"},{n:"Lagerzinssatz",e:"Jahreszinssatz · Ø Lagerdauer ÷ 360"},{n:"Bestellkosten je Jahr",e:"Anzahl Bestellungen · Kosten je Bestellung",d:"Anzahl Bestellungen = Jahresbedarf ÷ Bestellmenge."},{n:"Lagerhaltungskosten je Jahr",e:"Ø Lagerbestand · Einstandspreis · Lagerkostensatz ÷ 100",d:"Kapitalbindung und Lagerung; im Optimum gleich den Bestellkosten."}]},{g:"Nutzwertanalyse & Bewertung",items:[{n:"Teilnutzwert",e:"Gewichtung · Punkte",d:"Je Kriterium und Alternative."},{n:"Gesamtnutzwert",e:"Σ Teilnutzwerte je Alternative",d:"Summe über alle Kriterien."},{n:"Rangfolge",e:"höchster Gesamtnutzwert = Rang 1",d:"Die Nutzwertanalyse liefert eine Rangfolge, keine Endentscheidung."}]},{g:"Statistik",items:[{n:"Arithmetisches Mittel",e:"x̄ = Summe der Werte ÷ Anzahl"},{n:"Median",e:"mittlerer Wert der geordneten Reihe"},{n:"Modus",e:"häufigster Wert der Reihe"},{n:"Spannweite",e:"R = Maximum − Minimum"},{n:"Wachstumsrate",e:"(neu − alt) ÷ alt · 100"}]},{g:"Kennzahlen & Rentabilität",items:[{n:"Eigenkapitalrentabilität",e:"Gewinn ÷ Eigenkapital · 100"},{n:"Gesamtkapitalrentabilität",e:"(Gewinn + FK-Zinsen) ÷ Gesamtkapital · 100"},{n:"Umsatzrentabilität",e:"Gewinn ÷ Umsatz · 100"},{n:"Produktivität",e:"Ausbringungsmenge ÷ Faktoreinsatzmenge"},{n:"Wirtschaftlichkeit",e:"Ertrag ÷ Aufwand"},{n:"Cashflow (vereinfacht)",e:"Jahresüberschuss + Abschreibungen + Rückstellungen"},{n:"Liquidität 1. Grades",e:"flüssige Mittel ÷ kurzfr. Verbindlichkeiten · 100"}]},{g:"Personal & Zeit",items:[{n:"Fluktuationsrate",e:"Abgänge ÷ Ø Personalbestand · 100"},{n:"Krankenstand",e:"Kranktage ÷ Sollarbeitstage · 100"},{n:"Produktivität je Kopf",e:"Leistung ÷ Anzahl Mitarbeitende"}]},{g:"Sozialversicherung – Beiträge (Stand 2025)",items:[{n:"Krankenversicherung",e:"14,6 % + kassenindividueller Zusatzbeitrag"},{n:"Rentenversicherung",e:"18,6 %"},{n:"Arbeitslosenversicherung",e:"2,6 %"},{n:"Pflegeversicherung",e:"3,6 % (Kinderlose: + 0,6 Prozentpunkte)"},{n:"Grundsatz der Beitragstragung",e:"paritätisch – Arbeitgeber und Arbeitnehmer je zur Hälfte"}]},{g:"Transport- & Fuhrparkkosten",items:[{n:"Kraftstoffverbrauch",e:"V = verbrauchte Liter ÷ gefahrene km · 100",d:"Ergebnis in l/100 km"},{n:"Kraftstoffkosten je km",e:"(Verbrauch je 100 km ÷ 100) · Preis je Liter"},{n:"Gesamtkosten je km",e:"Gesamtkosten ÷ Fahrleistung"},{n:"Fahrzeugauslastung",e:"tatsächliche Zuladung ÷ zul. Nutzlast · 100",d:"Ergebnis in %"},{n:"Tonnenkilometer",e:"tkm = beförderte Tonnen · gefahrene Kilometer"},{n:"Kosten je Tonnenkilometer",e:"Gesamtkosten ÷ Tonnenkilometer"},{n:"Lkw-Maut",e:"Maut = mautpflichtige km · Mautsatz je km"},{n:"Mautsatz (Zusammensetzung)",e:"Infrastruktur + Luftverschmutzung + Lärm + CO₂",d:"CO₂-Teilsatz seit 1.12.2023; Mautpflicht ab 3,5 t seit 1.7.2024"},{n:"Kalk. Abschreibung (Fahrzeug)",e:"(Anschaffungswert − Restwert) ÷ Nutzungsdauer",d:"Reifen werden oft herausgerechnet und laufleistungsabhängig erfasst."},{n:"Kalk. Zinsen (Fahrzeug)",e:"½ Anschaffungswert · Zinssatz ÷ 100",d:"Verzinsung des durchschnittlich gebundenen Kapitals."},{n:"Fixe Kosten je Einsatztag",e:"fixe Jahreskosten ÷ Einsatztage",d:"Abschreibung, Zinsen, Steuer, Versicherung, Personal, Gemeinkosten."},{n:"Variable Kosten je km",e:"(Kraftstoff + Schmierstoffe + Reifen + Reparatur) je km",d:"Laufleistungsabhängige Kosten."},{n:"Wirtschaftlichkeit",e:"Erlöse ÷ Kosten",d:"Über 1 wirtschaftlich, unter 1 unwirtschaftlich (Verlust)."},{n:"Nutzplatzkilometer",e:"Nutzkilometer · Platzangebot",d:"Leistungseinheit im Personenverkehr (nur Nutz-, nicht Leerkilometer)."},{n:"Linienkosten je Jahr",e:"gefahrene Wagenkilometer · Kosten je km",d:"Auf ALLE Wagenkilometer gerechnet, auch Leerkilometer."}]},{g:"Fahrzeuggewichte & Abmessungen",items:[{n:"Nutzlast",e:"Nutzlast = zul. Gesamtgewicht − Leergewicht"},{n:"Ausnutzung der Nutzlast",e:"Zuladung ÷ Nutzlast · 100",d:"Ergebnis in %"},{n:"Zul. Gesamtgewicht",e:"Sattel-/Lastzug 40 t (kombinierter Verkehr 44 t)"},{n:"Zul. Achslasten",e:"Einzelachse 10 t, angetriebene Achse 11,5 t"},{n:"Höchstabmessungen",e:"Sattelzug 16,5 m / Lastzug 18,75 m; Breite 2,55 m; Höhe 4,00 m"}]},{g:"Ladungssicherung (Physik)",items:[{n:"Gewichtskraft",e:"FG = m · g",d:"g ≈ 9,81 m/s² (überschlägig 10 m/s²)"},{n:"Umrechnung Kraft",e:"1 daN = 10 N ≈ Gewichtskraft von 1 kg"},{n:"Reibungskraft",e:"FR = µ · FG",d:"µ = Reibbeiwert (Antirutschmatte ≈ 0,6)"},{n:"Sicherungskraft nach vorn",e:"FS = (0,8 − µ) · FG",d:"Beschleunigungsbeiwert nach vorn 0,8 g"},{n:"Sicherungskraft seitlich / nach hinten",e:"FS = (0,5 − µ) · FG",d:"Beschleunigungsbeiwert 0,5 g"},{n:"Niederzurren – Anzahl Zurrgurte",e:"n = ((c − µ) · FG) ÷ (2 · µ · STF)",d:"c = Beschleunigungsbeiwert, STF = Vorspannkraft je Gurt"},{n:"Rückhaltekraft Stirnwand (Code L)",e:"0,4 · Nutzlast (höchstens 5.000 daN)",d:"Aufbau nach DIN EN 12642 Code L; Seitenwände 0,3 · Nutzlast."},{n:"Rückhaltekraft Stirnwand (Code XL)",e:"0,5 · Nutzlast",d:"Verstärkter Aufbau Code XL; Seitenwände 0,4 · Nutzlast."},{n:"Vorspannkraft Niederzurren",e:"FV = STF (Angabe auf dem Etikett des Zurrgurts)",d:"STF = Standard Tension Force, die tatsächliche Vorspannung."},{n:"Gesamtschwerpunkt der Ladung",e:"xS = Σ(Masse · Abstand) ÷ Σ Masse",d:"Abstand von der Stirnwand; im Lastverteilungsplan die zul. Last prüfen."}]},{g:"Lenk- & Ruhezeiten (VO (EG) 561/2006)",items:[{n:"Tageslenkzeit",e:"max. 9 h (zweimal je Woche 10 h)"},{n:"Wochenlenkzeit",e:"max. 56 h"},{n:"Doppelwoche",e:"max. 90 h in zwei aufeinanderfolgenden Wochen"},{n:"Fahrtunterbrechung",e:"nach spätestens 4,5 h ≥ 45 min",d:"teilbar in 15 min + 30 min (in dieser Reihenfolge)"},{n:"Tägliche Ruhezeit",e:"11 h regelmäßig, reduziert 9 h (max. dreimal je Woche)"},{n:"Wöchentliche Ruhezeit",e:"45 h regelmäßig, reduziert 24 h"},{n:"Ausgleich reduzierter Ruhezeit",e:"45 h − genommene Ruhezeit",d:"bis Ende der 3. Folgewoche zusammenhängend nachholen"}]}];
-function fbRender(q){ var list=$("fbList"); list.innerHTML=""; q=(q||"").trim().toLowerCase(); var any=false;
+function fbRender(q){ var list=$("fbList"); list.innerHTML=""; q=(q||"").trim().toLowerCase(); var any=false,gi=0;
   FORMULAS.forEach(function(grp){ var matches=grp.items.filter(function(it){ if(!q)return true; return (it.n+" "+it.e+" "+(it.d||"")+" "+grp.g).toLowerCase().indexOf(q)>=0; });
     if(!matches.length)return; any=true;
-    var wrap=document.createElement("div"); wrap.className="fb-group"; var h=document.createElement("h4"); h.textContent=grp.g; wrap.appendChild(h);
+    var d=document.createElement("details"); d.className="fb-group"; d.open=(!!q||gi===0); gi++;
+    var sm=document.createElement("summary"); sm.className="fb-sum";
+    var nm=document.createElement("span"); nm.className="fb-g-name"; nm.textContent=grp.g; sm.appendChild(nm);
+    var cnt=document.createElement("span"); cnt.className="fb-count"; cnt.textContent=matches.length; sm.appendChild(cnt);
+    d.appendChild(sm);
+    var body=document.createElement("div"); body.className="fb-body";
     matches.forEach(function(it){ var card=document.createElement("div"); card.className="fb-item";
-      var nm=document.createElement("p"); nm.className="fb-name"; nm.textContent=it.n; card.appendChild(nm);
+      var nme=document.createElement("p"); nme.className="fb-name"; nme.textContent=it.n; card.appendChild(nme);
       var eq=document.createElement("div"); eq.className="fb-eq"; eq.textContent=it.e; card.appendChild(eq);
       if(it.d){ var nt=document.createElement("p"); nt.className="fb-note"; nt.textContent=it.d; card.appendChild(nt); }
-      wrap.appendChild(card); });
-    list.appendChild(wrap); });
+      body.appendChild(card); });
+    d.appendChild(body); list.appendChild(d); });
   if(!any){ var em=document.createElement("p"); em.className="fb-empty"; em.textContent="Keine Formel gefunden."; list.appendChild(em); }
+  var tb=$("fbToggle"); if(tb)tb.textContent="Alle aufklappen";
 }
 $("fbSearch").addEventListener("input",function(){ fbRender(this.value); });
+$("fbToggle").addEventListener("click",function(){
+  var gs=$("fbList").querySelectorAll("details.fb-group");
+  var anyClosed=[].some.call(gs,function(d){return !d.open;});
+  [].forEach.call(gs,function(d){d.open=anyClosed;});
+  this.textContent=anyClosed?"Alle zuklappen":"Alle aufklappen";
+});
 })();
 </script>
 <script>
@@ -3133,22 +3155,28 @@ function render(){
   }
   var info=alle.map(function(c){var t=teile(c);t.c=c;return t;});
   info.sort(function(a,b){return b.sort-a.sort;});
+  // Nach Prüfungstermin gruppieren (Frühjahr/Herbst JJJJ); je Termin FT und OK.
   var gruppen={};
-  info.forEach(function(x){(gruppen[x.bereich]=gruppen[x.bereich]||[]).push(x);});
+  info.forEach(function(x){
+    var key=x.c.termin||x.bereich;
+    if(!gruppen[key])gruppen[key]={sort:x.sort,items:[]};
+    gruppen[key].items.push(x);
+    if(x.sort>gruppen[key].sort)gruppen[key].sort=x.sort;
+  });
 
   var h='<p class="pr-lead">'+alle.length+' Prüfung'+(alle.length===1?'':'en')+' verfügbar. '
       +'Jede enthält die vollständige Ausgangssituation und alle Teilaufgaben mit ihrer '
       +'offiziellen Punktzahl. Zu jeder Teilaufgabe kannst du deine Antwort selbst '
-      +'formulieren und dann die Musterlösung aufdecken.</p>';
-  Object.keys(gruppen).sort().forEach(function(b){
-    h+='<div class="pr-group">'+esc(b)+'</div>';
-    gruppen[b].forEach(function(x){
+      +'formulieren und dann die amtlichen Lösungshinweise aufdecken.</p>';
+  Object.keys(gruppen).sort(function(a,b){return gruppen[b].sort-gruppen[a].sort;}).forEach(function(key){
+    h+='<div class="pr-group">'+esc(key)+'</div>';
+    gruppen[key].items.forEach(function(x){
       var bearbeitet=x.c.steps.filter(function(s){
         return window.KVM_hasAnswer&&window.KVM_hasAnswer(s.id);}).length;
       h+='<div class="pr-item">'
-        +'<div class="pr-top"><span class="pr-date">'+esc(x.datum)+'</span>'
+        +'<div class="pr-top"><span class="pr-date">'+esc(x.bereich)+'</span>'
         +'<span class="pr-badge">'+(x.punkte?esc(x.punkte)+' Punkte':'Prüfung')+'</span></div>'
-        +'<div class="pr-meta">'+x.c.steps.length+' Teilaufgaben · Bearbeitungszeit 180 Minuten'
+        +'<div class="pr-meta">'+esc(x.datum)+' · '+x.c.steps.length+' Teilaufgaben · 180 Minuten'
         +(bearbeitet?' · <b>'+bearbeitet+' bearbeitet</b>':'')+'</div>'
         +'<div class="pr-actions">'
         +'<button class="pr-btn solid" data-start="'+esc(x.c.id)+'">Prüfung starten</button>'

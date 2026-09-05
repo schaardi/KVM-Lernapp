@@ -152,6 +152,7 @@ class CaseStudy {
   final String sub;
   final String title;
   final String context;
+  final String termin; // z. B. "Frühjahr 2025" (Gruppierung im Picker)
   final List<Question> steps;
   const CaseStudy({
     required this.id,
@@ -159,6 +160,7 @@ class CaseStudy {
     required this.sub,
     required this.title,
     required this.context,
+    this.termin = '',
     required this.steps,
   });
 
@@ -172,6 +174,7 @@ class CaseStudy {
       sub: (j['sub'] ?? '').toString(),
       title: (j['title'] ?? '').toString(),
       context: (j['context'] ?? '').toString(),
+      termin: (j['termin'] ?? '').toString(),
       steps: steps,
     );
   }
