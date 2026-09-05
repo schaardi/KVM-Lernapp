@@ -1,0 +1,884 @@
+=== Seite 1 ===
+                                                         Einsatz nur im Rahmen des Korrekturprozesses gestattet. Weitergabe an unbefugte Dritte untersagt.
+
+
+
+                                                            Prüfungsteilnehmer-Nummer:
+
+
+
+
+                                                           Bundeseinheitliche Fortbildungsprüfung der Industrie- und Handelskammern
+
+                                                           Geprüfter Industriemeister/Geprüfte Industriemeisterin,
+                                                           fachrichtungsübergreifende Basisqualifikationen/
+                                                           grundlegende Qualifikationen
+                                                           Berücksichtigung naturwissenschaftlicher und technischer Gesetzmäßigkeiten
+
+                                                            Datum:                                     5. November 2025
+
+                                                            Bearbeitungszeit:                          90 Minuten
+Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+
+
+
+
+                                                                                                                                                                                                                      Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+                                                            Anzahl Aufgaben:                           7
+
+                                                            Seiten:                                    7
+
+
+                                                           Bevor Sie mit der Prüfung beginnen, prüfen Sie bitte die Prüfungsunterlagen. Wenn
+                                                           die Prüfungsunterlagen nicht vollständig sind, informieren Sie bitte die Aufsicht.
+
+                                                           Bitte lesen Sie die nachfolgenden Bearbeitungshinweise gut durch:
+                                                              Alle erlaubten Hilfsmittel wurden Ihnen mit der Einladung mitgeteilt.
+                                                              Sie erhalten einen Aufgabenteil sowie ein Heft für Ihre Lösungen.
+                                                              Sie können maximal 100 Punkte erreichen.
+                                                              Verwenden Sie je Aufgabe bitte eine neue Lösungsseite.
+                                                              Wenn Sie die Lösung einer Aufgabe auf eine Anlage schreiben sollen, wird Ihnen dies in
+                                                               der Aufgabe mitgeteilt.
+                                                              Stellen Sie Ihre Lösungs- und Rechenvorgänge nachvollziehbar im Lösungsteil dar.
+                                                               Reicht der Platz nicht aus, verwenden Sie bitte das Konzeptpapier. Weisen Sie auf die
+                                                               Fortsetzung hin und kennzeichnen Sie diese.
+                                                              Eine nicht lesbare Prüfungsarbeit wird mit der Note „ungenügend“ (null Punkte)
+                                                               bewertet. Die Konsequenzen entnehmen Sie bitte der Prüfungsordnung.
+                                                              Es gibt Aufgaben, die eine exakte Anzahl an Antworten vorgeben. Es werden nur die
+                                                               ersten Antworten gewertet. Was über die exakte Anzahl hinausgeht, wird gestrichen.
+                                                              Geben Sie alle Ihnen zur Verfügung gestellten Unterlagen am Ende der Prüfung ab.
+                                                              Aufgrund der besseren Lesbarkeit bevorzugen wir in diesen Texten die männliche Form.
+                                                               Mit diesem vereinfachten Ausdruck sind selbstverständlich alle Geschlechter gemeint.
+
+
+
+
+                                                                                   © DIHK – Gesellschaft für berufliche Bildung – Organisation zur Förderung der IHK-Weiterbildung gGmbH – Bonn
+                                                                      Die Vervielfältigung, Verbreitung oder öffentliche Wiedergabe der Publikation ist nicht gestattet (§§ 53, 54 UrhG) und strafbar (§ 106 UrhG).
+                                                                                                                  Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+                                                                                                                                     P 050-05-1125
+
+=== Seite 2 ===
+                                                         Einsatz nur im Rahmen des Korrekturprozesses gestattet. Weitergabe an unbefugte Dritte untersagt.
+
+                                                           GEPRÜFTE/-R INDUSTRIEMEISTER/-IN,
+                                                           FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+                                                           GRUNDLEGENDE QUALIFIKATIONEN
+                                                           Berücksichtigung naturwissenschaftlicher und technischer Gesetzmäßigkeiten
+
+
+
+                                                           Aufgabe 1
+                                                           Die Gewinnung von Metallen aus Erzen erfolgt durch Reduktionsreaktion. In der Reduktions-
+                                                           zone des Hochofens läuft unter anderem folgende Reaktion ab:
+
+                                                           FeO + C o Fe + CO
+
+                                                            a Mögliche Punktzahl: 4
+                                                           Benennen Sie die Ausgangsstoffe und die Reaktionsprodukte.
+
+                                                            b Mögliche Punktzahl: 4
+Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+
+
+
+
+                                                                                                                                                             Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+                                                           Beschreiben Sie mit Nennung der Reaktionspartner, was man in diesem Zusammen-
+                                                           hang unter einer Redoxreaktion versteht.
+
+                                                            c Mögliche Punktzahl: 2
+                                                           Erklären Sie, was man unter einer endothermen Reaktion versteht.
+
+                                                            D Mögliche Punktzahl: 3
+                                                           Die Geschwindigkeit einer chemischen Reaktion kann sehr unterschiedlich sein.
+
+                                                           Geben Sie drei Möglichkeiten an, um die Reaktionsgeschwindigkeit zu beschleunigen.
+
+
+                                                           Aufgabe 2
+                                                           Mögliche Punktzahl: 10
+                                                           In einer Industrieanlage wird Wasser als Kühlmedium eingesetzt. Hierbei haben sich 15 Liter
+                                                           Wasser auf 80 °C erwärmt und sollen nun auf 40 °C abgekühlt werden. Es wird Leitungs-
+                                                           wasser von 15 °C zugemischt, um diese Abkühlung zu erreichen.
+
+                                                           Berechnen Sie, wie viel Liter Leitungswasser mit einer Temperatur von 15 °C für
+                                                           diesen Abkühlvorgang hinzugefügt werden muss.
+
+
+
+
+                                                                                                              Seite 2
+                                                                                                           P 050-05-1125
+
+=== Seite 3 ===
+                                                         Einsatz nur im Rahmen des Korrekturprozesses gestattet. Weitergabe an unbefugte Dritte untersagt.
+
+                                                           GEPRÜFTE/-R INDUSTRIEMEISTER/-IN,
+                                                           FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+                                                           GRUNDLEGENDE QUALIFIKATIONEN
+                                                           Berücksichtigung naturwissenschaftlicher und technischer Gesetzmäßigkeiten
+
+
+
+                                                           Aufgabe 3
+                                                           In einer Produktionsanlage fährt ein selbstfahrendes Transportfahrzeug (mit Schwerpunkt S)
+                                                           mit einer Gesamtmasse von 1.200 kg auf eine um 30° geneigte Rampe und kommt dort zum
+                                                           Stehen (Abbildung 1). Das Fahrzeug wird an den Hinterrädern angetrieben.
+
+
+
+
+                                                                                                         S
+                                                                                                                 >>
+Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+
+
+
+
+                                                                                                                                                             Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+                                                                                                                >
+                                                                                                              ==
+
+
+
+                                                                                                                                        30°
+                                                                               0,3
+
+
+
+
+                                                                                                         8m
+                                                                                                      0,4
+                                                                                  6m
+
+
+
+
+                                                                                         Abbildung 1: Transportfahrzeug auf Rampe
+
+                                                             Wichtig: Die Reibung bleibt unberücksichtigt.
+
+
+                                                            a Mögliche Punktzahl: 4
+                                                           Berechnen Sie den Wert der Beschleunigung, der zum Anfahren überwunden werden
+                                                           muss.
+
+                                                            b Mögliche Punktzahl: 10
+                                                           Aus Sicherheitsgründen müssen zu jeder Zeit alle Räder die Fahrbahn berühren. Daher
+                                                           passt die Steuerung den Wert der Beschleunigung für die Hinterräder an die Fahrsituation
+                                                           an.
+
+                                                           Berechnen Sie den Grenzwert der Beschleunigung beim Anfahren, ab dem die Vorder-
+                                                           räder den Bodenkontakt verlieren würden.
+
+
+
+
+                                                                                                              Seite 3
+                                                                                                           P 050-05-1125
+
+=== Seite 4 ===
+                                                         Einsatz nur im Rahmen des Korrekturprozesses gestattet. Weitergabe an unbefugte Dritte untersagt.
+
+                                                           GEPRÜFTE/-R INDUSTRIEMEISTER/-IN,
+                                                           FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+                                                           GRUNDLEGENDE QUALIFIKATIONEN
+                                                           Berücksichtigung naturwissenschaftlicher und technischer Gesetzmäßigkeiten
+
+                                                            c Mögliche Punktzahl: 4
+                                                           Dasselbe Fahrzeug kommt mit einer neuen Ladung, mit anderen Abmessungen und einer
+                                                           anderen Gesamtmasse, wieder auf die Rampe und muss erneut anfahren.
+
+                                                           Erläutern Sie, welche Auswirkung diese andere Ladung
+
+                                                           ■    auf den Wert der Beschleunigung aus Teilaufgabe a) hat, der zum Anfahren
+                                                                überwunden werden muss,
+
+                                                           ■    auf den Grenzwert der Beschleunigung aus Teilaufgabe b) haben, ab dem die
+                                                                Vorderräder den Bodenkontakt verlieren würden.
+Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+
+
+
+
+                                                                                                                                                             Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+                                                           Aufgabe 4
+                                                           Der regionale Energieversorger hat eine mehrstündige Stromabschaltung auf Grund von
+                                                           Wartungsarbeiten angekündigt. Um die Mindestversorgung für eine kritische Anlage sicher-
+                                                           zustellen, wird der für solche Situationen bereitstehende mobile Stromerzeuger (Notstrom-
+                                                           aggregat) in Betrieb genommen.
+
+                                                           Folgende technische Daten sind bekannt:
+
+                                                           ■    4 kVA – 230 V
+
+                                                           ■    Tankvolumen: 25 Liter Benzin
+
+                                                           ■    Verbrauch: 1,6 Liter pro Stunde
+
+                                                            a Mögliche Punktzahl: 5
+                                                           Berechnen Sie, wie viel Liter Benzin von 8 °C in den mobilen Stromerzeuger eingefüllt
+                                                           werden müssen, um bei Betrieb (20 °C) einen Füllgrad des Tanks von 90 % nicht zu
+                                                           überschreiten.
+
+                                                               Wichtig: Die Ausdehnung des Tanks bleibt unberücksichtigt
+
+
+                                                            b Mögliche Punktzahl: 2
+                                                           Berechnen Sie, für wie viele Stunden und Minuten der mobile Stromerzeuger bei 90 %
+                                                           Tankfüllung die Stromabschaltung überbrücken kann.
+
+                                                            c Mögliche Punktzahl: 10
+                                                           Berechnen Sie den Wirkungsgrad des mobilen Stromerzeugers.
+
+
+                                                                                                              Seite 4
+                                                                                                           P 050-05-1125
+
+=== Seite 5 ===
+                                                         Einsatz nur im Rahmen des Korrekturprozesses gestattet. Weitergabe an unbefugte Dritte untersagt.
+
+                                                           GEPRÜFTE/-R INDUSTRIEMEISTER/-IN,
+                                                           FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+                                                           GRUNDLEGENDE QUALIFIKATIONEN
+                                                           Berücksichtigung naturwissenschaftlicher und technischer Gesetzmäßigkeiten
+
+
+
+                                                           Aufgabe 5
+                                                           Ein Elektromotor besitzt nachfolgend dargestelltes Typenschild.
+Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+
+
+
+
+                                                                                                                                                             Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+                                                                                                Abbildung 2: Motortypenschild
+
+                                                           Bestimmen Sie rechnerisch
+
+                                                            a Mögliche Punktzahl: 3
+                                                           die aufgenommene Leistung des Motors in kW,
+
+                                                            b Mögliche Punktzahl: 3
+                                                           den Wirkungsgrad des Motors in %,
+
+                                                            c Mögliche Punktzahl: 5
+                                                           das Drehmoment an der Motorwelle bei Nenndrehzahl in Nm,
+
+                                                            d Mögliche Punktzahl: 3
+                                                           die elektrische Arbeit in kWh pro Jahr bei einer monatlichen Laufzeit von 150 h.
+
+
+
+
+                                                                                                              Seite 5
+                                                                                                           P 050-05-1125
+
+=== Seite 6 ===
+                                                         Einsatz nur im Rahmen des Korrekturprozesses gestattet. Weitergabe an unbefugte Dritte untersagt.
+
+                                                           GEPRÜFTE/-R INDUSTRIEMEISTER/-IN,
+                                                           FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+                                                           GRUNDLEGENDE QUALIFIKATIONEN
+                                                           Berücksichtigung naturwissenschaftlicher und technischer Gesetzmäßigkeiten
+
+
+
+                                                           Aufgabe 6
+                                                           Mögliche Punktzahl: 16
+                                                           Eine gemischte Schaltung (Abbildung 3) besteht aus vier Widerständen und ist an 450 V
+                                                           angeschlossen.
+Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+
+
+
+
+                                                                                                                                                             Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+                                                                                              Abbildung 3: gemischte Schaltung
+
+                                                           U = 450 V
+
+                                                           R1 = 100 Ω
+
+                                                           R2 = 200 Ω
+
+                                                           R3 = 300 Ω
+
+                                                           R4 = 400 Ω
+
+
+
+                                                           Berechnen Sie
+
+                                                           ■   den Gesamtstrom I,
+
+                                                           ■   die im Widerstand R3 umgesetzte Leistung,
+
+                                                           ■   die im Widerstand R4 umgesetzte Leistung.
+
+
+
+
+                                                                                                              Seite 6
+                                                                                                           P 050-05-1125
+
+=== Seite 7 ===
+                                                         Einsatz nur im Rahmen des Korrekturprozesses gestattet. Weitergabe an unbefugte Dritte untersagt.
+
+                                                           GEPRÜFTE/-R INDUSTRIEMEISTER/-IN,
+                                                           FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+                                                           GRUNDLEGENDE QUALIFIKATIONEN
+                                                           Berücksichtigung naturwissenschaftlicher und technischer Gesetzmäßigkeiten
+
+
+
+                                                           Aufgabe 7
+                                                           Sie sollen einen normalverteilten Montageprozess von Fahrrädern statistisch auswerten. Die
+                                                           untersuchte Losgröße beträgt 1.400 Stück. Die geprüften Teile sind entweder fehlerfrei oder
+                                                           haben genau einen Fehler.
+
+                                                             Nr.                           aufgetretene Fehler                          Anzahl Stück
+
+                                                              1     Vorderrad nicht ordnungsgemäß eingebaut                                  14
+
+                                                              2     Bremsseil nicht angeschlossen                                             6
+Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+
+
+
+
+                                                                                                                                                             Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+                                                              3     Kettenschutz verbogen                                                     7
+
+                                                              4     Kette nicht ordnungsgemäß gespannt                                        3
+
+                                                              5     Lenker schwergängig                                                      15
+
+                                                              6     Lackschäden am Rahmen                                                     5
+
+
+                                                            a Mögliche Punktzahl: 6
+                                                           Berechnen Sie nachvollziehbar die relativen Fehleranteile in % der einzelnen Fehler
+                                                           laut Tabelle.
+
+                                                            b Mögliche Punktzahl: 2
+                                                           Ermitteln Sie rechnerisch nachvollziehbar den relativen Anteil in % aller Fehler.
+
+                                                            c Mögliche Punktzahl: 4
+                                                           Errechnen Sie nachvollziehbar, wie viele fehlerhafte Fahrräder (Stück) bei den
+                                                           gegebenen Werten durchschnittlich in einer Stichprobe von n = 165 zu erwarten sind.
+
+
+
+
+                                                                                                              Seite 7
+                                                                                                           P 050-05-1125
+
+=== Seite 8 ===
+                                                         Einsatz nur im Rahmen des Korrekturprozesses gestattet. Weitergabe an unbefugte Dritte untersagt.
+
+
+
+
+                                                           Bundeseinheitliche Fortbildungsprüfung der Industrie- und Handelskammern
+
+                                                           Geprüfter Industriemeister/Geprüfte Industriemeisterin,
+                                                           fachrichtungsübergreifende Basisqualifikationen/
+                                                           grundlegende Qualifikationen
+                                                           Berücksichtigung naturwissenschaftlicher und technischer Gesetzmäßigkeiten
+
+
+                                                           Lösungshinweise
+Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+
+
+
+
+                                                                                                                                                                                                                           Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+                                                            Datum:                                          5. November 2025
+
+                                                            Bearbeitungszeit:                               90 Minuten
+
+                                                            Anzahl Aufgaben:                                7
+
+
+                                                           Hinweise für den Korrektor:
+                                                           ■    Die folgenden Lösungen sind lediglich Lösungshinweise.
+                                                           ■    Sie sollen nur den Rahmen der zu erwartenden Prüfungsleistung abstecken.
+                                                           ■    Der Korrektor ist durch die hier aufgeführten Lösungshinweise in seinem
+                                                                Bewertungsspielraum nicht eingeengt.
+                                                           ■    Bei Aufgaben, die eine Aufzählung von n-Fakten zur Lösung erfordern, werden nur die
+                                                                ersten n-Fakten gewertet. Alle darüber hinausgehenden Aufzählungen werden
+                                                                gestrichen.
+                                                           ■    Bei Berechnungen sollen Folgefehler berücksichtigt werden und somit nicht zum
+                                                                Punktabzug führen.
+                                                           ■    Der leichteren Lesbarkeit wegen geben wir in den Aufgaben/Texten der männlichen
+                                                                Form den Vorzug. Mit diesem einfacheren sprachlichen Ausdruck sind selbstverständlich
+                                                                immer alle Geschlechter gemeint.
+
+
+
+                                                           Die Aufgaben mit Lösungsvorschlägen können von den Industrie- und Handelskammern oder Dritten nach einer Frist von sechs Monaten
+                                                           direkt bestellt werden bei:
+
+                                                           wbv Media GmbH & Co. KG, Service-Center DIHK,
+
+                                                           Postfach 10 06 33, 33506 Bielefeld
+
+                                                           Tel.: 0521/91101-16, Fax: 0521/91101-19, E-Mail: service@wbv.de
+
+
+
+
+                                                                                        © DIHK – Gesellschaft für berufliche Bildung – Organisation zur Förderung der IHK-Weiterbildung gGmbH – Bonn
+                                                                           Die Vervielfältigung, Verbreitung oder öffentliche Wiedergabe der Publikation ist nicht gestattet (§§ 53, 54 UrhG) und strafbar (§ 106 UrhG).
+                                                                                                                       Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+                                                                                                                                          L 050-05-1125
+
+=== Seite 9 ===
+                                                         Einsatz nur im Rahmen des Korrekturprozesses gestattet. Weitergabe an unbefugte Dritte untersagt.
+
+                                                           GEPRÜFTE/-R INDUSTRIEMEISTER/-IN,
+                                                           FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+                                                           GRUNDLEGENDE QUALIFIKATIONEN
+                                                           Berücksichtigung naturwissenschaftlicher und technischer Gesetzmäßigkeiten
+
+
+
+
+                                                           Lösungshinweise Aufgabe 1
+                                                           [VO: § 5 Absatz 6 Nr. 1]
+
+                                                            a Mögliche Punktzahl: 4
+                                                           ■   FeO      = Eisenoxid
+                                                           ■   C        = Kohlenstoff
+                                                           ■   Fe       = Eisen
+                                                           ■   CO       = Kohlenstoffmonoxid
+Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+
+
+
+
+                                                                                                                                                             Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+                                                            b Mögliche Punktzahl: 4
+                                                           Redoxreaktion bedeutet: es findet sowohl eine Reduktionsreaktion als auch eine
+                                                           Oxidationsreaktion statt. Das heißt mit Hilfe eines Reduktionsmittels – hier Kohlenstoff (C) –
+                                                           wird dem Metalloxid – hier Eisenoxid (FeO) – der Sauerstoff entzogen.
+                                                           Gleichzeitig wird dabei das Reduktionsmittel – hier Kohlenstoff (C) – oxidiert und zu
+                                                           Kohlenstoffmonoxid (CO).
+
+                                                            c Mögliche Punktzahl: 2
+                                                           Chemische Reaktionen unter Energiezufuhr (z. B. Wärme) heißen endotherme Reaktionen
+
+                                                            d Mögliche Punktzahl: 3
+                                                           Z. B.:
+                                                           ■   höhere Reinheit der reagierenden Stoffe
+                                                           ■   Erhöhung des Drucks
+                                                           ■   Erhöhung der Temperatur
+                                                           ■   kleinere Korngröße der reagierenden Stoffe
+                                                           ■   Einsatz von Katalysatoren
+
+
+
+
+                                                                                                              Seite 2
+                                                                                                           L 050-05-1125
+
+=== Seite 10 ===
+                                                         Einsatz nur im Rahmen des Korrekturprozesses gestattet. Weitergabe an unbefugte Dritte untersagt.
+
+                                                           GEPRÜFTE/-R INDUSTRIEMEISTER/-IN,
+                                                           FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+                                                           GRUNDLEGENDE QUALIFIKATIONEN
+                                                           Berücksichtigung naturwissenschaftlicher und technischer Gesetzmäßigkeiten
+
+
+
+                                                           Lösungshinweise Aufgabe 2
+                                                           [VO: § 5 Absatz 6 Nr. 3]
+                                                           Mögliche Punktzahl: 10
+                                                                                 kg
+                                                           Dichte Wasser      1,0     ; Masse Dichte  Volumen; d.h. kg entspricht Liter
+                                                                                  l
+                                                           m1  c1  (41  4M ) m2  c 2  (41  4 2 )
+                                                           m1  (41  4M ) m2  (41  4 2 )
+                                                                        (41  4M )
+                                                           m2 m1 
+                                                                        (41  42 )
+Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+
+
+
+
+                                                                                                                                                             Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+                                                                        40K
+                                                           m2 15kg 
+                                                                        25K
+                                                           m2      24kg  24l
+
+
+                                                           Lösungshinweise Aufgabe 3
+                                                           [VO: § 5 Absatz 6 Nr. 1]
+
+                                                            a Mögliche Punktzahl: 4
+                                                           FH      aH
+                                                                                     FH FG  sin D
+                                                           FG      g
+                                                                    aH
+                                                           sin D
+                                                                     g
+                                                           aH   g  sin D
+                                                                    m
+                                                           aH 9,81      sin30q
+                                                                    s²
+                                                                      m
+                                                           aH   4,905
+                                                                      s²
+
+                                                           Hinweis für den Korrektor: Sollte der Prüfungsteilnehmer die Lösung über die Kräfte
+                                                                                      errechnen, ist dies auch als richtig zu werten.
+
+
+
+
+                                                                                                              Seite 3
+                                                                                                           L 050-05-1125
+
+=== Seite 11 ===
+                                                         Einsatz nur im Rahmen des Korrekturprozesses gestattet. Weitergabe an unbefugte Dritte untersagt.
+
+                                                           GEPRÜFTE/-R INDUSTRIEMEISTER/-IN,
+                                                           FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+                                                           GRUNDLEGENDE QUALIFIKATIONEN
+                                                           Berücksichtigung naturwissenschaftlicher und technischer Gesetzmäßigkeiten
+
+                                                            b Mögliche Punktzahl: 10
+                                                           Ersatzhebel für Gleichgewichtsüberlegung:
+                                                           amax H  0,36m aN  0,48m
+Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+
+
+
+
+                                                                                                                                                             Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+                                                           aN g  cos D
+                                                                     m
+                                                           aN 9,81       cos30q
+                                                                     s²
+                                                                        m
+                                                           aN    8,496
+                                                                        s²
+
+                                                           amax H  h aN  l
+                                                           amax H  h aN  l
+                                                                    aN  l
+                                                           amax H
+                                                                     h
+                                                                           m
+                                                                    8,496      0,48m
+                                                           amax H          s²
+                                                                         0,36m
+                                                                           m
+                                                           amax H   11,328
+                                                                           s²
+
+                                                           a    amax H  aH
+                                                                    m          m
+                                                           a 11,328     4,905
+                                                                    s²         s²
+                                                                   m
+                                                           a 6,423
+                                                                   s²
+
+                                                           Hinweis für den Korrektor: Sollte der Prüfungsteilnehmer die Lösung über die Kräfte
+                                                                                      errechnen, ist dies auch als richtig zu werten.
+
+
+
+
+                                                                                                              Seite 4
+                                                                                                           L 050-05-1125
+
+=== Seite 12 ===
+                                                         Einsatz nur im Rahmen des Korrekturprozesses gestattet. Weitergabe an unbefugte Dritte untersagt.
+
+                                                           GEPRÜFTE/-R INDUSTRIEMEISTER/-IN,
+                                                           FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+                                                           GRUNDLEGENDE QUALIFIKATIONEN
+                                                           Berücksichtigung naturwissenschaftlicher und technischer Gesetzmäßigkeiten
+
+                                                            c Mögliche Punktzahl: 4
+                                                           Da die Beschleunigung eine masselose Größe ist, ist die Masse des Fahrzeugs mit Ladung
+                                                           irrelevant.
+                                                           Ändert sich jedoch durch eine andere Ladung die Lage des Schwerpunkts, ändert sich die
+                                                           maximale Beschleunigung zum Abheben der Vorderräder ebenfalls.
+
+
+                                                           Lösungshinweise Aufgabe 4
+                                                           [VO: § 5 Absatz 6 Nr. 2]
+
+                                                            a Mögliche Punktzahl: 5
+Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+
+
+
+
+                                                                                                                                                             Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+                                                           V V0  (1 D V 'T)
+                                                           Tankvolumen 25l
+                                                           90% 0,9  25l 22,5l
+                                                           V0 22,5l
+                                                                        1
+                                                           D V 0,0011
+                                                                        K
+                                                           '- 20qC  8qC 12qC  'T 12K
+                                                                                1
+                                                           V 22,5l  (1 0,0011 12K)
+                                                                                K
+                                                           V 22,2l
+
+                                                            b Mögliche Punktzahl: 2
+                                                           V       25 l 90 % davon sind 0,9  25 l        22,5 l
+                                                            22,5l
+                                                                     14,0625 h  14h3min 45s
+                                                           1,6l / h
+
+
+
+
+                                                                                                              Seite 5
+                                                                                                           L 050-05-1125
+
+=== Seite 13 ===
+                                                         Einsatz nur im Rahmen des Korrekturprozesses gestattet. Weitergabe an unbefugte Dritte untersagt.
+
+                                                           GEPRÜFTE/-R INDUSTRIEMEISTER/-IN,
+                                                           FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+                                                           GRUNDLEGENDE QUALIFIKATIONEN
+                                                           Berücksichtigung naturwissenschaftlicher und technischer Gesetzmäßigkeiten
+
+                                                            c Mögliche Punktzahl: 10
+                                                               Eab
+                                                           K                Eab   4kVA       4kW  3600 s        14.400kWs kJ
+                                                               Ezu
+                                                           Ezu Q
+                                                           Q Hi  m
+                                                                       kJ
+                                                           Hi 42.000
+                                                                       kg
+
+                                                           m U V
+Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+
+
+
+
+                                                                                                                                                             Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+                                                                 kg
+                                                           U 0,8
+                                                                dm³
+                                                                  kg       l
+                                                           m 0,8      1,6
+                                                                 dm³       h
+                                                                  kg
+                                                           m 1,28
+                                                                  h
+                                                                     kJ      kJ
+                                                           Q 42.000 1,28
+                                                                     kg      h
+                                                                     kJ
+                                                           Q 53.760
+                                                                     h
+                                                             14.400kJ
+                                                           K
+                                                             53.760kJ
+                                                           K 0,27
+
+
+
+
+                                                                                                              Seite 6
+                                                                                                           L 050-05-1125
+
+=== Seite 14 ===
+                                                         Einsatz nur im Rahmen des Korrekturprozesses gestattet. Weitergabe an unbefugte Dritte untersagt.
+
+                                                           GEPRÜFTE/-R INDUSTRIEMEISTER/-IN,
+                                                           FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+                                                           GRUNDLEGENDE QUALIFIKATIONEN
+                                                           Berücksichtigung naturwissenschaftlicher und technischer Gesetzmäßigkeiten
+
+
+
+                                                           Lösungshinweise Aufgabe 5
+                                                           [VO: § 5 Absatz 6 Nr. 3]
+
+                                                            a Mögliche Punktzahl: 3
+                                                           Pzu = U · I · cosφ = 230 V · 17 A · 0,81 = 3.167 W = 3,17 kW
+
+                                                            b Mögliche Punktzahl: 3
+                                                               Pab     2,2kW
+                                                           K                      0,694 69,4%
+                                                               Pzu    3,17kW
+Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+
+
+
+
+                                                                                                                                                             Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+                                                            c Mögliche Punktzahl: 5
+                                                                                1
+                                                                             2.160
+                                                           ω 2·π·n 2· π ·     min 226,19 s 1
+                                                                              s
+                                                                          60
+                                                                             min
+                                                               Pab    2.200 W
+                                                           M                   9,73Nm
+                                                               ω     226,19s1
+
+                                                            d Mögliche Punktzahl: 3
+                                                           W = Pzu · t = 3,17 kW · 150 h · 12 = 5.706 kWh
+
+
+
+
+                                                                                                              Seite 7
+                                                                                                           L 050-05-1125
+
+=== Seite 15 ===
+                                                         Einsatz nur im Rahmen des Korrekturprozesses gestattet. Weitergabe an unbefugte Dritte untersagt.
+
+                                                           GEPRÜFTE/-R INDUSTRIEMEISTER/-IN,
+                                                           FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+                                                           GRUNDLEGENDE QUALIFIKATIONEN
+                                                           Berücksichtigung naturwissenschaftlicher und technischer Gesetzmäßigkeiten
+
+
+
+                                                           Lösungshinweise Aufgabe 6
+                                                           [VO: § 5 Absatz 6 Nr. 1-2]
+                                                           Mögliche Punktzahl: 16
+                                                             U
+                                                           I
+                                                             R
+                                                             450 V
+                                                           I
+                                                             300 :
+                                                           I 1,5 A
+
+                                                           R 24 R 2  R 4
+Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+
+
+
+
+                                                                                                                                                             Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+                                                           R 24 200 : 400 :
+                                                           R 24 600 :
+                                                            1        1   1
+                                                                       
+                                                           R 234     R3 R 24
+                                                            1          1     1
+                                                                          
+                                                           R 234     300 : 600 :
+                                                           R 234 200 :
+                                                           R ges R1  R 234
+                                                           R ges 100 :  200 :
+                                                           R ges 300 :
+
+                                                           U1 I R1
+                                                           U1 1,5 A 100 :
+                                                           U1 150 V
+                                                           U3 U  U1
+                                                           U3 450 V  150 V
+                                                           U3 300 V
+
+
+                                                                U3    300 V
+                                                           I3               1A
+                                                                R3    300 :
+
+
+                                                           P3 U3 I3 300 V 1A 300 W
+
+                                                           I24 Iges  I3 1,5 A  1A 0,5 A
+
+
+                                                           P4 I² R 4 (0,5 A)²  400 : 100 W
+
+
+
+                                                                                                              Seite 8
+                                                                                                           L 050-05-1125
+
+=== Seite 16 ===
+                                                         Einsatz nur im Rahmen des Korrekturprozesses gestattet. Weitergabe an unbefugte Dritte untersagt.
+
+                                                           GEPRÜFTE/-R INDUSTRIEMEISTER/-IN,
+                                                           FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+                                                           GRUNDLEGENDE QUALIFIKATIONEN
+                                                           Berücksichtigung naturwissenschaftlicher und technischer Gesetzmäßigkeiten
+
+
+
+                                                           Lösungshinweise Aufgabe 7
+                                                           [VO: § 5 Absatz 6 Nr. 4]
+
+                                                            a Mögliche Punktzahl: 6
+                                                           Relative Fehleranteile in Prozent:
+
+                                                                                                            Anzahl                               relativer
+                                                               Nr.               Fehler                                         Berechnung
+                                                                                                            Stück                               Anteil in %
+
+                                                                     Vorderrad nicht ordnungs-                                    14
+                                                                1                                              14           p          100 %      1,00
+                                                                     gemäß eingebaut                                            1 400
+Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+
+
+
+
+                                                                                                                                                              Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+                                                                     Bremsseil nicht                                              6
+                                                                2                                              6            p          100 %      0,43
+                                                                     angeschlossen                                              1 400
+
+                                                                                                                                  7
+                                                                3    Kettenschutz verbogen                     7            p          100 %      0,50
+                                                                                                                                1 400
+
+                                                                     Kette nicht ordnungsgemäß                                    3
+                                                                4                                              3            p          100 %      0,21
+                                                                     gespannt                                                   1 400
+
+                                                                                                                                  15
+                                                                5    Lenker schwergängig                       15           p          100 %      1,07
+                                                                                                                                1 400
+
+                                                                                                                                  5
+                                                                6    Lackschäden am Rahmen                     5            p          100 %      0,36
+                                                                                                                                1 400
+
+
+                                                            b Mögliche Punktzahl: 2
+                                                           relativer Anteil aller Fehler in Prozent:
+                                                                g           50 Stück
+                                                           p      ·100 %=             ·100 %=3,57%
+                                                                N         1.400 Stück
+
+                                                            c Mögliche Punktzahl: 4
+                                                           Fehlerhafte Fahrräder bei n = 165 Stück:
+                                                                 p n   3,57%·165 Stück
+                                                           x=         =                 =5,89  gewählt:6Fahrräder
+                                                                100%        100%
+                                                           In einer Stichprobe von 165 Stück sind 6 fehlerhafte Fahrräder zu erwarten.
+
+
+
+
+                                                                                                              Seite 9
+                                                                                                           L 050-05-1125
