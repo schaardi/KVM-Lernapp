@@ -45,16 +45,18 @@ class PruefungenScreen extends StatelessWidget {
 
   /// Vollständiger Prüfauftrag für eine KI – identisch zur Web-Fassung.
   String _exportText(CaseStudy c) {
+    final amtlich = c.steps.any((s) => s.amtlich);
     final b = StringBuffer()
       ..writeln('PRÜFAUFTRAG')
       ..writeln()
       ..writeln('Du bist erfahrener Prüfer und Dozent für die Fortbildung '
           '"Geprüfte/-r Meister/-in für Kraftverkehr (IHK)". Unten steht eine '
-          'Original-Prüfungsaufgabe der IHK sowie zu jeder Teilaufgabe eine '
-          'Musterlösung, die NICHT von der IHK stammt, sondern nachträglich '
-          'erarbeitet wurde.')
+          'Original-Prüfungsaufgabe der IHK sowie zu jeder Teilaufgabe '
+          '${amtlich ? 'der amtliche Lösungshinweis der IHK.' : 'eine Musterlösung, die NICHT von der IHK stammt, sondern nachträglich erarbeitet wurde.'}')
       ..writeln()
-      ..writeln('Prüfe jede Musterlösung und antworte je Teilaufgabe knapp:')
+      ..writeln(amtlich
+          ? 'Prüfe je Teilaufgabe knapp und gib eine Punkteempfehlung:'
+          : 'Prüfe jede Musterlösung und antworte je Teilaufgabe knapp:')
       ..writeln('- Bewertung: korrekt / teilweise korrekt / fehlerhaft')
       ..writeln('- Fachliche Fehler konkret benennen (falsche Aussage, falsche '
           'Rechnung, veraltete Rechtsgrundlage) - oder "keine".')
@@ -83,8 +85,16 @@ class PruefungenScreen extends StatelessWidget {
         ..writeln()
         ..writeln(teile.skip(1).join('\n\n'))
         ..writeln()
-        ..writeln('MUSTERLÖSUNG (zu prüfen):')
+        ..writeln(s.amtlich
+            ? 'AMTLICHER LÖSUNGSHINWEIS (IHK):'
+            : 'MUSTERLÖSUNG (zu prüfen):')
         ..writeln(s.a ?? '');
+      if (s.vo != null && s.vo!.isNotEmpty) {
+        b.writeln('VO-Bezug: ${s.vo}');
+      }
+      if (s.bewertung.isNotEmpty) {
+        b.writeln('Punkteverteilung: ${s.bewertung.join(' + ')} Punkte');
+      }
       if (s.e.isNotEmpty) {
         b
           ..writeln()
@@ -246,11 +256,11 @@ class PruefungenScreen extends StatelessWidget {
         border: const Border(left: BorderSide(color: kAmber, width: 3)),
       ),
       child: const Text(
-        'Zu den Musterlösungen: Die Original-Prüfungen der IHK enthalten keine '
-        'Lösungen. Die hier hinterlegten Musterlösungen wurden fachlich '
-        'erarbeitet und sind nicht amtlich. Mit „Für KI kopieren" erhältst du '
-        'die komplette Prüfung samt Lösungen als Text – füge ihn in eine KI '
-        'deiner Wahl ein, um sie gegenprüfen zu lassen.',
+        'Zu den Lösungen: Hinterlegt sind die amtlichen Lösungshinweise der IHK '
+        'zur jeweiligen Prüfung, samt VO-Bezug und – wo angegeben – der '
+        'Punkteverteilung. Mit „Für KI kopieren" erhältst du die komplette '
+        'Prüfung samt Lösungshinweisen als Text; füge ihn in eine KI deiner '
+        'Wahl ein, um deine eigene Antwort bewerten zu lassen.',
         style: TextStyle(fontSize: 12.5, height: 1.5, color: kInkSoft),
       ),
     );
