@@ -107,3 +107,30 @@ Musterlösung haben – halbfertige Prüfungen landen nicht in der App.
 Prüfauftrag, Ausgangssituation, allen Aufgaben und den Musterlösungen. Die
 Datei lässt sich vollständig in ein KI-Chatfenster kopieren, um die Lösungen
 fachlich gegenprüfen zu lassen. `alle-pruefungen.md` bündelt alle Prüfungen.
+
+## Amtliche Lösungshinweise (Stand 2026)
+
+Seit die vollständige Prüfungssammlung *„… komplett mit Lösungen"* vorliegt,
+kommen die Lösungen nicht mehr aus dem Wörterbuch `loesungen.py`, sondern
+**direkt aus der Quelle** – es sind die **amtlichen Lösungshinweise der IHK**.
+
+```bash
+# OCR-Volltext liegt versioniert unter quellen/ (kein PDF nötig):
+#   quellen/ihk-pruefungen-2021-2026-mit-loesungshinweisen.ocr.txt
+python3 scripts/pruefungen/parse_amtlich.py   # nur Prüfen: Inventar + 100-P-Test
+python3 scripts/pruefungen/build_amtlich.py   # baut & schreibt Web + App
+```
+
+- `parse_amtlich.py` liest den OCR-Volltext mit Seitenmarkern, trennt die zwei
+  Layout-Epochen (2021–22 interleaved, ab 2023 Saison-Booklets) und ordnet jeder
+  Teilaufgabe ihren amtlichen Lösungshinweis samt VO-Bezug und – wo angegeben –
+  der Punkteverteilung zu.
+- `build_amtlich.py` erzeugt daraus die Prüfungsfälle und schreibt sie in
+  `flutter_app/assets/data/cases.json` **und** `window.KVM_CASES` in
+  `index.html` (nur IDs mit Präfix `P-`; alle übrigen Fälle bleiben unberührt).
+  Aufgenommen wird nur, was **genau 100 Punkte** ergibt und zu **jeder**
+  Teilaufgabe eine nicht-leere amtliche Lösung hat.
+
+Nicht vollständig lesbare Termine (OCR-Lücken oder in der Quelle fehlende
+Lösungsseiten) werden automatisch ausgelassen. `korrekturen.py` (Bilder wie der
+Lastverteilungsplan, Tabellen) wird per Schritt-ID weich eingespielt.

@@ -74,8 +74,7 @@ class AnswerStore {
       ..writeln()
       ..writeln('Du bist erfahrener Prüfer für die Fortbildung "Geprüfte/-r '
           'Meister/-in für Kraftverkehr (IHK)". Unten stehen eine '
-          'Original-Prüfungsaufgabe, MEINE eigene Antwort und eine '
-          'Musterlösung, die NICHT von der IHK stammt.')
+          'Original-Prüfungsaufgabe, MEINE eigene Antwort und ${q.amtlich ? 'der AMTLICHE Lösungshinweis der IHK.' : 'eine Musterlösung, die NICHT von der IHK stammt.'}')
       ..writeln()
       ..writeln('Bewerte bitte MEINE Antwort:')
       ..writeln('1. Wie viele der ${punkte ?? 'möglichen'} Punkte würdest du '
@@ -118,8 +117,16 @@ class AnswerStore {
       ..writeln(eigene.isEmpty ? '(noch nichts eingetragen)' : eigene)
       ..writeln()
       ..writeln('------------------------------')
-      ..writeln('MUSTERLÖSUNG (nicht amtlich, bitte ebenfalls prüfen):')
+      ..writeln(q.amtlich
+          ? 'AMTLICHER LÖSUNGSHINWEIS (IHK):'
+          : 'MUSTERLÖSUNG (nicht amtlich, bitte ebenfalls prüfen):')
       ..writeln(q.a ?? '(keine hinterlegt)');
+    if (q.vo != null && q.vo!.isNotEmpty) {
+      b.writeln('VO-Bezug: ${q.vo}');
+    }
+    if (q.bewertung.isNotEmpty) {
+      b.writeln('Punkteverteilung: ${q.bewertung.join(' + ')} Punkte');
+    }
     if (q.e.isNotEmpty) {
       b
         ..writeln()

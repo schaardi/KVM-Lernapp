@@ -139,6 +139,11 @@ class ResultScreen extends StatelessWidget {
               ),
             const SizedBox(height: 22),
 
+            if (pointBased) ...[
+              _taskPoints(),
+              const SizedBox(height: 22),
+            ],
+
             if (uniqueWrong.isNotEmpty)
               SizedBox(
                 width: double.infinity,
@@ -211,6 +216,59 @@ class ResultScreen extends StatelessWidget {
             color: p >= 50 ? kOk : kAmber,
           ),
         ),
+      ]),
+    );
+  }
+
+  /// Punkte je Aufgabe (nur Prüfungen): eigene Bewertung im Überblick.
+  Widget _taskPoints() {
+    final rows = <Widget>[];
+    for (final q in pool) {
+      final max = q.maxPoints;
+      if (max == 0) continue;
+      final got = AnswerStore.instance.points(q.id) ?? 0;
+      final p = max == 0 ? 0 : (got / max * 100).round();
+      final nr = TaskParts.of(q.q).nr;
+      rows.add(Padding(
+        padding: const EdgeInsets.only(bottom: 10),
+        child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+          Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
+            Expanded(
+                child: Text(nr.isEmpty ? 'Aufgabe' : nr,
+                    style: const TextStyle(
+                        fontWeight: FontWeight.w600, color: kInk))),
+            Text('$got/$max P',
+                style: const TextStyle(color: kMuted, fontSize: 13)),
+          ]),
+          const SizedBox(height: 4),
+          ClipRRect(
+            borderRadius: BorderRadius.circular(4),
+            child: LinearProgressIndicator(
+              value: p / 100,
+              minHeight: 6,
+              backgroundColor: kLine,
+              color: p >= 50 ? kOk : kAmber,
+            ),
+          ),
+        ]),
+      ));
+    }
+    return Container(
+      padding: const EdgeInsets.fromLTRB(14, 14, 14, 4),
+      decoration: BoxDecoration(
+        color: kPaper,
+        borderRadius: BorderRadius.circular(kRadius),
+        border: Border.all(color: kLine),
+        boxShadow: kSoftShadow,
+      ),
+      child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+        const Padding(
+          padding: EdgeInsets.only(bottom: 12, left: 2),
+          child: Text('Deine Punkte je Aufgabe',
+              style: TextStyle(
+                  fontWeight: FontWeight.w800, fontSize: 15, color: kInk)),
+        ),
+        ...rows,
       ]),
     );
   }

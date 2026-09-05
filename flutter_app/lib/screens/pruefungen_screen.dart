@@ -43,18 +43,29 @@ class PruefungenScreen extends StatelessWidget {
   String? _punkte(CaseStudy c) =>
       RegExp(r'(\d+)\s*Punkte insgesamt').firstMatch(c.context)?.group(1);
 
+  /// Prüfungstermin (Frühjahr/Herbst JJJJ) für die Gruppierung.
+  String _termin(CaseStudy c) {
+    if (c.termin.isNotEmpty) return c.termin;
+    final m = RegExp(r'(\d{1,2})\.\s*(\S+)\s*(\d{4})').firstMatch(_datum(c));
+    if (m == null) return _bereich(c);
+    final mon = _monate[m.group(2)] ?? 0;
+    return '${mon <= 6 ? 'Frühjahr' : 'Herbst'} ${m.group(3)}';
+  }
+
   /// Vollständiger Prüfauftrag für eine KI – identisch zur Web-Fassung.
   String _exportText(CaseStudy c) {
+    final amtlich = c.steps.any((s) => s.amtlich);
     final b = StringBuffer()
       ..writeln('PRÜFAUFTRAG')
       ..writeln()
       ..writeln('Du bist erfahrener Prüfer und Dozent für die Fortbildung '
           '"Geprüfte/-r Meister/-in für Kraftverkehr (IHK)". Unten steht eine '
-          'Original-Prüfungsaufgabe der IHK sowie zu jeder Teilaufgabe eine '
-          'Musterlösung, die NICHT von der IHK stammt, sondern nachträglich '
-          'erarbeitet wurde.')
+          'Original-Prüfungsaufgabe der IHK sowie zu jeder Teilaufgabe '
+          '${amtlich ? 'der amtliche Lösungshinweis der IHK.' : 'eine Musterlösung, die NICHT von der IHK stammt, sondern nachträglich erarbeitet wurde.'}')
       ..writeln()
-      ..writeln('Prüfe jede Musterlösung und antworte je Teilaufgabe knapp:')
+      ..writeln(amtlich
+          ? 'Prüfe je Teilaufgabe knapp und gib eine Punkteempfehlung:'
+          : 'Prüfe jede Musterlösung und antworte je Teilaufgabe knapp:')
       ..writeln('- Bewertung: korrekt / teilweise korrekt / fehlerhaft')
       ..writeln('- Fachliche Fehler konkret benennen (falsche Aussage, falsche '
           'Rechnung, veraltete Rechtsgrundlage) - oder "keine".')
@@ -83,8 +94,16 @@ class PruefungenScreen extends StatelessWidget {
         ..writeln()
         ..writeln(teile.skip(1).join('\n\n'))
         ..writeln()
-        ..writeln('MUSTERLÖSUNG (zu prüfen):')
+        ..writeln(s.amtlich
+            ? 'AMTLICHER LÖSUNGSHINWEIS (IHK):'
+            : 'MUSTERLÖSUNG (zu prüfen):')
         ..writeln(s.a ?? '');
+      if (s.vo != null && s.vo!.isNotEmpty) {
+        b.writeln('VO-Bezug: ${s.vo}');
+      }
+      if (s.bewertung.isNotEmpty) {
+        b.writeln('Punkteverteilung: ${s.bewertung.join(' + ')} Punkte');
+      }
       if (s.e.isNotEmpty) {
         b
           ..writeln()
@@ -102,11 +121,13 @@ class PruefungenScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final alle = _pruefungen()..sort((a, b) => _sortWert(b) - _sortWert(a));
+    // Nach Prüfungstermin gruppieren (Frühjahr/Herbst JJJJ), je Termin FT + OK.
     final gruppen = <String, List<CaseStudy>>{};
     for (final c in alle) {
-      gruppen.putIfAbsent(_bereich(c), () => []).add(c);
+      gruppen.putIfAbsent(_termin(c), () => []).add(c);
     }
-    final bereiche = gruppen.keys.toList()..sort();
+    // Termine bereits durch die Sortierung von `alle` chronologisch (neueste zuerst).
+    final termine = gruppen.keys.toList();
 
     return Scaffold(
       appBar: AppBar(
@@ -138,21 +159,22 @@ class PruefungenScreen extends StatelessWidget {
                     'Echte Prüfungsaufgaben aus dem Handlungsspezifischen Teil. '
                     'Jede enthält die vollständige Ausgangssituation und alle '
                     'Teilaufgaben mit ihrer offiziellen Punktzahl. Formuliere '
-                    'deine Antwort selbst und decke danach die Musterlösung auf.',
+                    'deine Antwort selbst und decke danach die amtlichen '
+                    'Lösungshinweise auf.',
                     style: TextStyle(fontSize: 13, height: 1.55, color: kMuted),
                   ),
                   const SizedBox(height: 18),
-                  for (final b in bereiche) ...[
+                  for (final t in termine) ...[
                     Padding(
                       padding: const EdgeInsets.only(bottom: 8),
-                      child: Text(b.toUpperCase(),
+                      child: Text(t.toUpperCase(),
                           style: const TextStyle(
                               fontSize: 12,
                               fontWeight: FontWeight.w800,
                               letterSpacing: 0.4,
                               color: kPetrolDeep)),
                     ),
-                    for (final c in gruppen[b]!) _kachel(context, c),
+                    for (final c in gruppen[t]!) _kachel(context, c),
                     const SizedBox(height: 12),
                   ],
                   _hinweis(),
@@ -176,7 +198,7 @@ class PruefungenScreen extends StatelessWidget {
       child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
         Row(crossAxisAlignment: CrossAxisAlignment.center, children: [
           Expanded(
-            child: Text(_datum(c),
+            child: Text(_bereich(c),
                 style: const TextStyle(
                     fontSize: 15.5, fontWeight: FontWeight.w800, color: kInk)),
           ),
@@ -193,7 +215,7 @@ class PruefungenScreen extends StatelessWidget {
             ),
         ]),
         const SizedBox(height: 4),
-        Text('${c.steps.length} Teilaufgaben · Bearbeitungszeit 180 Minuten',
+        Text('${_datum(c)} · ${c.steps.length} Teilaufgaben · 180 Minuten',
             style: const TextStyle(fontSize: 12, color: kMuted)),
         const SizedBox(height: 11),
         Row(children: [
@@ -246,11 +268,11 @@ class PruefungenScreen extends StatelessWidget {
         border: const Border(left: BorderSide(color: kAmber, width: 3)),
       ),
       child: const Text(
-        'Zu den Musterlösungen: Die Original-Prüfungen der IHK enthalten keine '
-        'Lösungen. Die hier hinterlegten Musterlösungen wurden fachlich '
-        'erarbeitet und sind nicht amtlich. Mit „Für KI kopieren" erhältst du '
-        'die komplette Prüfung samt Lösungen als Text – füge ihn in eine KI '
-        'deiner Wahl ein, um sie gegenprüfen zu lassen.',
+        'Zu den Lösungen: Hinterlegt sind die amtlichen Lösungshinweise der IHK '
+        'zur jeweiligen Prüfung, samt VO-Bezug und – wo angegeben – der '
+        'Punkteverteilung. Mit „Für KI kopieren" erhältst du die komplette '
+        'Prüfung samt Lösungshinweisen als Text; füge ihn in eine KI deiner '
+        'Wahl ein, um deine eigene Antwort bewerten zu lassen.',
         style: TextStyle(fontSize: 12.5, height: 1.5, color: kInkSoft),
       ),
     );
