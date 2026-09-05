@@ -1,0 +1,2421 @@
+{
+ "questions": [
+  {
+   "f": 2,
+   "sub": "Kostenrechnung",
+   "t": "calc",
+   "q": "Ein Lkw hat Anschaffungskosten von 43.000 € und einen geschätzten Wiederverkaufserlös am Ende der Nutzungsdauer von 3.500 €. Zusätzlich ist Umlaufvermögen von 7.000 € gebunden, der kalkulatorische Zinssatz beträgt 6 %. Berechnen Sie die kalkulatorischen Zinsen aus dem durchschnittlich gebundenen (betriebsnotwendigen) Kapital.",
+   "ans": 1815,
+   "unit": "€",
+   "e": "Durchschnittlich gebundenes betriebsnotwendiges Kapital = (Anschaffungskosten + Wiederverkaufserlös) : 2 + Umlaufvermögen = (43.000 € + 3.500 €) : 2 + 7.000 € = 23.250 € + 7.000 € = 30.250 €. Kalkulatorische Zinsen = 30.250 € × 6 % = 1.815 €."
+  },
+  {
+   "f": 2,
+   "sub": "Kostenrechnung",
+   "t": "calc",
+   "q": "Für einen Lkw betragen die jährlichen Fixkosten 82.665,00 € und die jährlichen variablen Kosten 24.782,22 €. Die Jahresfahrleistung beträgt 95.000 km. Berechnen Sie die Selbstkosten (Vollkosten) je km.",
+   "ans": 1.13,
+   "unit": "€/km",
+   "e": "Gesamtkosten = 82.665,00 € + 24.782,22 € = 107.447,22 €. Selbstkosten je km = 107.447,22 € / 95.000 km = rund 1,13 €/km."
+  },
+  {
+   "f": 2,
+   "sub": "Kostenrechnung",
+   "t": "mc",
+   "q": "Die kalkulierten Selbstkosten für den Einsatz eines Lkw betragen 1,13 € je km. Ein Kunde bietet einen garantierten Preis von 0,94 € je km. Wie ist das Angebot betriebswirtschaftlich zu bewerten?",
+   "e": "Bei Selbstkosten von 1,13 €/km und einem Preis von 0,94 €/km entsteht je km eine Unterdeckung von 0,19 €. Da die Selbstkosten nicht gedeckt sind, ist das Angebot abzulehnen.",
+   "o": [
+    {
+     "t": "Das Angebot sollte abgelehnt werden, da der Preis die Selbstkosten nicht deckt.",
+     "ok": 1
+    },
+    {
+     "t": "Das Angebot sollte angenommen werden, da je km ein Gewinn von 0,19 € erzielt wird."
+    },
+    {
+     "t": "Das Angebot ist kostendeckend, da der Preis über den variablen Kosten liegt."
+    },
+    {
+     "t": "Das Angebot sollte angenommen werden, da der Preis über den Fixkosten je km liegt."
+    }
+   ]
+  },
+  {
+   "f": 2,
+   "sub": "Fahrzeugtechnik und Wartung",
+   "t": "calc",
+   "q": "Ein batterieelektrischer Lkw hat einen durchschnittlichen Energieverbrauch von 1,1 kWh/km. Berechnen Sie den Energiebedarf für eine Tagesstrecke von 130 km.",
+   "ans": 143,
+   "unit": "kWh",
+   "e": "1,1 kWh/km × 130 km = 143 kWh."
+  },
+  {
+   "f": 5,
+   "sub": "Fahrzeugtechnik und Wartung",
+   "t": "mc",
+   "q": "Neben dem besseren Wirkungsgrad beeinflussen weitere Effekte den Energieverbrauch eines rein elektrisch angetriebenen Lkw. Welcher Effekt kann besonders im Stop-and-go-Betrieb Energie in die Traktionsbatterie zurückspeisen?",
+   "e": "Beim Verzögern und Bremsen wirken die Antriebsmotoren generatorisch und speisen die Traktionsbatterie (Rekuperation); dies lässt sich besonders im häufigen Stop-and-go-Betrieb nutzen.",
+   "o": [
+    {
+     "t": "Rekuperation: Beim Bremsen und Verzögern wirken die Antriebsmotoren generatorisch und speisen die Batterie.",
+     "ok": 1
+    },
+    {
+     "t": "Die Abwärme des Verbrennungsmotors lädt die Batterie nach."
+    },
+    {
+     "t": "Der Luftwiderstand erzeugt beim Bremsen zusätzliche Ladeenergie."
+    },
+    {
+     "t": "Das elektrische Heizen des Fahrerraums speist Energie in die Batterie zurück."
+    }
+   ]
+  },
+  {
+   "f": 3,
+   "sub": "Personalentwicklung",
+   "t": "mc",
+   "q": "Was versteht man im Personalmanagement unter Schlüsselqualifikationen einer Führungskraft?",
+   "o": [
+    {
+     "t": "Fach- und berufsübergreifende Fähigkeiten, die in verschiedenen Situationen anwendbar sind und die Zusammenarbeit erleichtern.",
+     "ok": 1
+    },
+    {
+     "t": "Rein fachliche Kenntnisse, die ausschließlich für eine bestimmte berufliche Tätigkeit gelten."
+    },
+    {
+     "t": "Formale Nachweise wie Zeugnisse und Zertifikate über abgeschlossene Ausbildungen."
+    },
+    {
+     "t": "Gesetzlich vorgeschriebene Qualifikationen, die für die Ausübung eines Berufs zwingend erforderlich sind."
+    }
+   ],
+   "e": "Schlüsselqualifikationen sind fach- und berufsübergreifende Fähigkeiten, die in verschiedenen Lebenssituationen anzuwenden sind und das Zusammenarbeiten bei betrieblichen Aufgaben erleichtern (z. B. Kommunikations- und Kooperationsfähigkeit)."
+  },
+  {
+   "f": 3,
+   "sub": "Konflikte",
+   "t": "mc",
+   "q": "Ein Kritikgespräch mit einem Mitarbeiter soll strukturiert und lösungsorientiert ablaufen. Welche Reihenfolge der vier Phasen ist richtig?",
+   "e": "Ein lösungsorientiertes Kritikgespräch verläuft in vier Phasen: zunächst objektive Beschreibung des Kritikpunkts, dann Lösungsvorschläge sammeln und bewerten, anschließend Entscheidung für eine Lösung und schließlich Planung der Umsetzung.",
+   "o": [
+    {
+     "t": "1. Objektive Beschreibung des Kritikpunkts, 2. Lösungsvorschläge sammeln und bewerten, 3. Entscheidung für eine Lösung, 4. Umsetzung planen.",
+     "ok": 1
+    },
+    {
+     "t": "1. Entscheidung für eine Lösung, 2. Objektive Beschreibung des Kritikpunkts, 3. Umsetzung planen, 4. Lösungsvorschläge sammeln."
+    },
+    {
+     "t": "1. Umsetzung planen, 2. Lösungsvorschläge sammeln, 3. Objektive Beschreibung des Kritikpunkts, 4. Entscheidung treffen."
+    },
+    {
+     "t": "1. Lösungsvorschläge sammeln, 2. Objektive Beschreibung des Kritikpunkts, 3. Umsetzung planen, 4. Entscheidung treffen."
+    }
+   ]
+  },
+  {
+   "f": 1,
+   "sub": "Arbeitsschutz",
+   "t": "mc",
+   "q": "Welches grundsätzliche Ziel verfolgt ein Unternehmen aus Unternehmenssicht mit einer Arbeitssicherheitsunterweisung der Mitarbeiter?",
+   "e": "Ziel einer Unterweisung ist die Verhaltensbeeinflussung, um ein sicherheitsgerechtes und gesundheitsbewusstes Verhalten der Mitarbeiter zu erreichen und sicherzustellen.",
+   "o": [
+    {
+     "t": "Die Verhaltensbeeinflussung zum Erreichen und Sicherstellen eines sicherheitsgerechten und gesundheitsbewussten Verhaltens.",
+     "ok": 1
+    },
+    {
+     "t": "Die Senkung der Lohnkosten durch verkürzte Arbeitszeiten."
+    },
+    {
+     "t": "Die Dokumentation der Arbeitszeiten für die Lohnabrechnung."
+    },
+    {
+     "t": "Die Erhöhung der Fahrzeugauslastung im Fuhrpark."
+    }
+   ]
+  },
+  {
+   "f": 1,
+   "sub": "Arbeitsschutz",
+   "t": "mc",
+   "q": "Welche gesetzliche Vorschrift begründet die Pflicht des Arbeitgebers zur Unterweisung der Beschäftigten im Arbeitsschutz?",
+   "o": [
+    {
+     "t": "§ 12 Arbeitsschutzgesetz (ArbSchG)",
+     "ok": 1
+    },
+    {
+     "t": "§ 433 Bürgerliches Gesetzbuch (BGB)"
+    },
+    {
+     "t": "§ 1 Kündigungsschutzgesetz (KSchG)"
+    },
+    {
+     "t": "§ 7 Straßenverkehrsgesetz (StVG)"
+    }
+   ],
+   "e": "Die allgemeine Unterweisungspflicht des Arbeitgebers ergibt sich aus § 12 Arbeitsschutzgesetz (ArbSchG); ergänzende Regelungen sind z. B. § 14 GefStoffV und § 4 DGUV Vorschrift 1."
+  },
+  {
+   "f": 2,
+   "sub": "Betriebsorganisation",
+   "t": "mc",
+   "q": "Welches Ziel verfolgt ein Unternehmen mit der Einführung eines Qualitätsmanagements?",
+   "o": [
+    {
+     "t": "Erhöhung der Kundenzufriedenheit und Vermeidung von Fehlern in den Prozessen.",
+     "ok": 1
+    },
+    {
+     "t": "Erhöhung des Kraftstoffverbrauchs der Fahrzeugflotte."
+    },
+    {
+     "t": "Verlängerung der Lenkzeiten der Fahrer über die gesetzlichen Grenzen hinaus."
+    },
+    {
+     "t": "Reduzierung der gesetzlichen Dokumentationspflichten des Betriebs."
+    }
+   ],
+   "e": "Mit einem Qualitätsmanagement (z. B. nach DIN EN ISO 9001) werden u. a. eine höhere Kundenzufriedenheit, Fehlervermeidung, erhöhte Prozesstransparenz sowie Image- und Marktchancengewinn angestrebt."
+  },
+  {
+   "f": 1,
+   "sub": "Arbeitsschutz",
+   "t": "mc",
+   "q": "Nach welcher Vorschrift sind Flurförderzeuge (Gabelstapler) im Rahmen der wiederkehrenden Prüfungen zu prüfen?",
+   "o": [
+    {
+     "t": "DGUV-Vorschrift 68",
+     "ok": 1
+    },
+    {
+     "t": "DIN EN ISO 9001"
+    },
+    {
+     "t": "VO (EG) 561/2006"
+    },
+    {
+     "t": "ADR-Abschnitt 1.5.1"
+    }
+   ],
+   "e": "Die Prüfung von Flurförderzeugen erfolgt gemäß DGUV-Vorschrift 68 (Flurförderzeuge); sie sind mindestens jährlich durch eine befähigte Person zu prüfen. Die übrigen Regelwerke betreffen Qualitätsmanagement, Lenk- und Ruhezeiten bzw. Gefahrguttransport."
+  },
+  {
+   "f": 1,
+   "sub": "Arbeitsschutz",
+   "t": "mc",
+   "q": "Wie groß darf das Lenkspiel eines Flurförderzeugs bei der täglichen Sichtprüfung durch den Fahrer maximal sein?",
+   "o": [
+    {
+     "t": "Maximal zwei Finger breit",
+     "ok": 1
+    },
+    {
+     "t": "Maximal eine Handbreit"
+    },
+    {
+     "t": "Maximal fünf Zentimeter"
+    },
+    {
+     "t": "Maximal eine halbe Lenkradumdrehung"
+    }
+   ],
+   "e": "Bei der täglichen Einsatzprüfung eines Flurförderzeugs darf das Lenkspiel maximal zwei Finger breit betragen; ein größeres Lenkspiel weist auf einen Mangel hin."
+  },
+  {
+   "f": 2,
+   "sub": "Kostenrechnung",
+   "t": "calc",
+   "q": "Ein Sattelzug verbraucht 34 Liter Kraftstoff je 100 km. Der kalkulatorische Kraftstoffpreis beträgt 1,15 €/Liter. Berechnen Sie die Kraftstoffkosten je gefahrenem Kilometer (auf drei Kommastellen).",
+   "ans": 0.391,
+   "unit": "€/km",
+   "e": "Kraftstoffkosten je km = 1,15 €/L × 34 L ÷ 100 km = 0,391 €/km."
+  },
+  {
+   "f": 2,
+   "sub": "Kostenrechnung",
+   "t": "calc",
+   "q": "Für einen Transportauftrag betragen die kalkulierten variablen Kosten 678,04 € und die kalkulierten fixen Kosten 763,90 €. Es soll ein Gewinnzuschlag von 8 % berücksichtigt werden. Berechnen Sie den Angebotspreis ohne Mehrwertsteuer (auf drei Kommastellen).",
+   "ans": 1557.295,
+   "unit": "€",
+   "e": "Selbstkosten = 678,04 € + 763,90 € = 1.441,94 €; zuzüglich 8 % Gewinn (115,355 €) ergibt sich ein Angebotspreis von 1.557,295 €."
+  },
+  {
+   "f": 4,
+   "sub": "Fahrzeugtechnik und Wartung",
+   "t": "calc",
+   "q": "Eine Traktionsbatterie hat eine Nennspannung von 400 V und eine Kapazität von 500 Ah. Die bisherige Zelltechnologie hat eine gravimetrische Energiedichte von 90 Wh/kg, die neue Batterie bei gleichem Energieinhalt 200 Wh/kg. Berechnen Sie die Gewichtsveränderung der Batterie in Tonnen.",
+   "ans": 1.22,
+   "unit": "t",
+   "e": "Energieinhalt = 400 V × 500 Ah = 200 kWh. Gewicht alt = 200 kWh ÷ 90 Wh/kg ≈ 2,22 t, neu = 200 kWh ÷ 200 Wh/kg = 1 t; Differenz 1,22 t Gewichtsreduzierung."
+  },
+  {
+   "f": 5,
+   "sub": "Fahrzeugtechnik und Wartung",
+   "t": "mc",
+   "q": "Beim Vergleich einer Lithium-Nickel-Mangan-Cobalt-Oxid (NMC)-Batterie mit einer Lithium-Eisen-Phosphat (LFP)-Batterie: Welche Aussage zum Gefährdungspotenzial trifft zu?",
+   "o": [
+    {
+     "t": "Bei der NMC-Batterie kann es im Unglücksfall zur Entwicklung von Sauerstoff mit Brandfolgen kommen.",
+     "ok": 1
+    },
+    {
+     "t": "Die LFP-Batterie neigt bereits bei niedrigen Temperaturen zur Selbstentzündung."
+    },
+    {
+     "t": "Beide Batterietypen zeigen bis zu hohen Temperaturen keinerlei thermische Effekte."
+    },
+    {
+     "t": "Die NMC-Batterie ist sicherheitstechnisch grundsätzlich höher zu bewerten als die LFP-Batterie."
+    }
+   ],
+   "e": "NMC-Oxide erreichen zwar höhere Energiedichten, können aber im Unglücksfall (thermisches Durchgehen) Sauerstoff freisetzen und dadurch brennen. LFP ist thermisch deutlich stabiler und daher sicherheitstechnisch höher zu bewerten."
+  },
+  {
+   "f": 2,
+   "sub": "Gefahrgut",
+   "t": "mc",
+   "q": "Einer defekten Lithium-Ionen-Batterie ist beim Transport nach ADR welche Gefahrgutklasse zuzuordnen?",
+   "o": [
+    {
+     "t": "Klasse 9 (Verschiedene gefährliche Stoffe und Gegenstände)",
+     "ok": 1
+    },
+    {
+     "t": "Klasse 3 (Entzündbare flüssige Stoffe)"
+    },
+    {
+     "t": "Klasse 6.1 (Giftige Stoffe)"
+    },
+    {
+     "t": "Klasse 8 (Ätzende Stoffe)"
+    }
+   ],
+   "e": "Lithium-Ionen-Batterien (UN 3480/3481, Klassifizierungscode M4) werden nach ADR der Gefahrgutklasse 9 zugeordnet und mit dem Gefahrzettel Nr. 9 gekennzeichnet. Beschädigte oder defekte Batterien werden nach Sondervorschrift 376 zusätzlich mit der Aufschrift 'BESCHÄDIGTE/DEFEKTE LITHIUM-IONEN-BATTERIE' versehen; die Gefahrgutklasse bleibt Klasse 9."
+  },
+  {
+   "f": 2,
+   "sub": "Personalentwicklung",
+   "t": "mc",
+   "q": "Welcher Faktor der Leistungsfähigkeit verringert sich bei Mitarbeitern tendenziell mit zunehmendem Alter?",
+   "o": [
+    {
+     "t": "Die Wahrnehmungsgeschwindigkeit",
+     "ok": 1
+    },
+    {
+     "t": "Die Berufserfahrung"
+    },
+    {
+     "t": "Die Urteilsfähigkeit"
+    },
+    {
+     "t": "Die Sozialkompetenz"
+    }
+   ],
+   "e": "Mit dem Alter verringern sich tendenziell u. a. geistige Wendigkeit, Wahrnehmungsgeschwindigkeit, Kurzzeitgedächtnis und Muskelkraft. Berufserfahrung, Urteilsfähigkeit und Sozialkompetenz wachsen dagegen in der Regel."
+  },
+  {
+   "f": 4,
+   "sub": "Personalplanung",
+   "t": "calc",
+   "q": "Auf einer Buslinie beträgt die Fahrplanzeit 13 Stunden; es werden 7 Omnibusse (entspricht 7 Fahrern) eingesetzt. Die maximale Dienstlänge beträgt 9 Stunden, der Personalfaktor 1,27 Personale/Dienst. Berechnen Sie den Bedarf an Fahrpersonal (auf ganze Personen aufgerundet).",
+   "ans": 13,
+   "unit": "Personen",
+   "e": "13 h × 7 = 91 Fahrerstunden; 91 ÷ 9 h = 10,111; × Personalfaktor 1,27 = 12,84 → aufgerundet 13 Fahrer."
+  },
+  {
+   "f": 3,
+   "sub": "Fuhrparkmanagement",
+   "t": "calc",
+   "q": "In der Hauptverkehrszeit (180 Minuten) müssen je Richtung 270 Fahrgäste befördert werden. Ein 15-m-Bus bietet 68 Sitzplätze; da die Fahrgeschwindigkeit über 60 km/h liegt, sind nur Sitzplätze zu berücksichtigen. Berechnen Sie die mögliche Taktzeit in Minuten (benötigte Fahrten aufgerundet).",
+   "ans": 45,
+   "unit": "Minuten",
+   "e": "Benötigte Fahrten = 270 ÷ 68 = 3,97 → aufgerundet 4 Fahrten; Taktzeit = 180 min ÷ 4 = 45 min. Bei über 60 km/h zählt nur die Sitzplatzkapazität."
+  },
+  {
+   "f": 2,
+   "sub": "Motivation",
+   "t": "mc",
+   "q": "Welche Anforderung muss ein betriebliches Anreizsystem erfüllen, um bei den Mitarbeitenden die notwendige Akzeptanz zu erreichen?",
+   "o": [
+    {
+     "t": "Es muss transparent und gerecht geregelt sein, sodass alle den Zusammenhang zwischen geforderter Leistung und Belohnung nachvollziehen können.",
+     "ok": 1
+    },
+    {
+     "t": "Die Belohnung sollte möglichst mühelos und unabhängig von der erbrachten Leistung zu erhalten sein.",
+     "ok": 0
+    },
+    {
+     "t": "Die Vergabekriterien sollten bewusst intransparent bleiben, um Neid unter den Mitarbeitenden zu vermeiden.",
+     "ok": 0
+    },
+    {
+     "t": "Es sollte gezielt Verhalten fördern, das den mittel- und langfristigen Unternehmenszielen widerspricht.",
+     "ok": 0
+    }
+   ],
+   "e": "Ein Anreizsystem muss transparent und gerecht sein: Alle müssen den Zusammenhang zwischen geforderter Leistung und Belohnung verstehen und sich fair behandelt fühlen. Zugleich darf die Belohnung nicht mühelos zu bekommen sein."
+  },
+  {
+   "f": 3,
+   "sub": "Mitarbeiterbeurteilung",
+   "t": "mc",
+   "q": "Wodurch ist ein offenes (freies) Beurteilungssystem gekennzeichnet?",
+   "o": [
+    {
+     "t": "Es verwendet keine vorformulierten Kriterien und Bewertungsskalen; die Einschätzung wird aktiv frei schriftlich formuliert.",
+     "ok": 1
+    },
+    {
+     "t": "Die Beurteilungskriterien sind fest vorgegeben und werden anhand einer Punkteskala bewertet.",
+     "ok": 0
+    },
+    {
+     "t": "Die Beurteilung erfolgt ausschließlich mündlich und ohne jede Dokumentation.",
+     "ok": 0
+    },
+    {
+     "t": "Es sind nur geschlossene Ja/Nein-Fragen mit fester Punktzahl zulässig.",
+     "ok": 0
+    }
+   ],
+   "e": "Ein offenes Beurteilungssystem verzichtet auf vorformulierte Kriterien und Bewertungsskalen. Der Bewertende muss seine Einschätzung aktiv schriftlich niederlegen und benötigt dafür hohe sprachliche Ausdrucks- und Differenzierungsfähigkeit."
+  },
+  {
+   "f": 2,
+   "sub": "Mitarbeiterbeurteilung",
+   "t": "mc",
+   "q": "Welche Aussage beschreibt ein geschlossenes (gebundenes) Beurteilungssystem zutreffend?",
+   "o": [
+    {
+     "t": "Die Beurteilungskriterien werden konkretisiert und mithilfe einer Bewertungsskalierung bewertet.",
+     "ok": 1
+    },
+    {
+     "t": "Es verzichtet bewusst auf jegliche vorformulierten Kriterien und Bewertungsskalen.",
+     "ok": 0
+    },
+    {
+     "t": "Es verlangt vom Bewertenden vor allem eine hohe sprachliche Differenzierungsfähigkeit für frei formulierte Texte.",
+     "ok": 0
+    },
+    {
+     "t": "Es überlässt dem Beurteilenden die freie Wahl und Gewichtung der Kriterien im Einzelfall.",
+     "ok": 0
+    }
+   ],
+   "e": "Beim geschlossenen (gebundenen) System werden feste Beurteilungskriterien vorgegeben und über eine Bewertungsskala bewertet. Offene Systeme verzichten dagegen auf vorgegebene Kriterien und Skalen und verlangen frei formulierte Texte."
+  },
+  {
+   "f": 2,
+   "sub": "Mitarbeiterbeurteilung",
+   "t": "mc",
+   "q": "Welche Maßnahme ist geeignet, um das Auftreten typischer Beurteilungsfehler (z. B. des Halo-Effekts) zu verhindern?",
+   "o": [
+    {
+     "t": "Festlegung standardisierter Kriterien samt klar definierter Skala, die regelt, unter welchen Voraussetzungen welche Punkte vergeben werden.",
+     "ok": 1
+    },
+    {
+     "t": "Jede Führungskraft beurteilt nach eigenen, frei gewählten Maßstäben.",
+     "ok": 0
+    },
+    {
+     "t": "Verzicht auf einheitliche Beurteilungsgrundsätze zugunsten größerer Flexibilität.",
+     "ok": 0
+    },
+    {
+     "t": "Einmalige statt regelmäßige Schulung der Beurteilenden.",
+     "ok": 0
+    }
+   ],
+   "e": "Beurteilungsfehlern beugt man durch festgelegte Beurteilungsgrundsätze, standardisierte Kriterien mit klar definierter Skala, einen festgelegten Beurteilungsprozess sowie regelmäßige Schulung der Beurteilenden vor."
+  },
+  {
+   "f": 2,
+   "sub": "Betriebsorganisation",
+   "t": "calc",
+   "q": "In der Hauptverkehrszeit müssen 520 Personen befördert werden. Die eingesetzten Omnibusse verfügen über jeweils 65 Sitzplätze. Wie viele Fahrten sind mindestens erforderlich?",
+   "ans": 8,
+   "unit": "Fahrten",
+   "e": "Die Anzahl der erforderlichen Fahrten ergibt sich aus dem Verkehrsaufkommen geteilt durch die Platzkapazität: 520 : 65 = 8 Fahrten."
+  },
+  {
+   "f": 2,
+   "sub": "Kostenrechnung",
+   "t": "calc",
+   "q": "Eine Omnibuslinie weist 124.000 Wagenkilometer pro Jahr auf. Laut interner Fahrzeugkostenrechnung betragen die Kosten 2,10 €/km. Berechnen Sie die Linienkosten pro Jahr.",
+   "ans": 260400,
+   "unit": "€",
+   "e": "Linienkosten = Wagenkilometer × Kosten je Kilometer: 124.000 km × 2,10 €/km = 260.400 € pro Jahr."
+  },
+  {
+   "f": 2,
+   "sub": "Fuhrparkmanagement",
+   "t": "calc",
+   "q": "Eine Omnibuslinie wird mit 124.000 Kilometern pro Jahr betrieben. Der Kraftstoffverbrauch beträgt 46 Liter je 100 Kilometer. Berechnen Sie den jährlichen Kraftstoffverbrauch.",
+   "ans": 57040,
+   "unit": "Liter",
+   "e": "Kraftstoffverbrauch = Fahrstrecke geteilt durch 100 km, multipliziert mit dem Verbrauch: 124.000 km : 100 × 46 l = 57.040 Liter pro Jahr."
+  },
+  {
+   "f": 3,
+   "sub": "Straßenverkehrs- und Zulassungsrecht",
+   "t": "mc",
+   "q": "Welche Vorschrift verlangt, dass die elektrischen Einrichtungen elektrisch angetriebener Kraftfahrzeuge so beschaffen sein müssen, dass bei verkehrsüblichem Betrieb durch elektrische Einwirkung weder Personen verletzt noch Sachen beschädigt werden können?",
+   "o": [
+    {
+     "t": "§ 62 StVZO",
+     "ok": 1
+    },
+    {
+     "t": "§ 1 StVO",
+     "ok": 0
+    },
+    {
+     "t": "Elektromobilitätsgesetz (EmoG)",
+     "ok": 0
+    },
+    {
+     "t": "DGUV-Vorschrift 3",
+     "ok": 0
+    }
+   ],
+   "e": "§ 62 StVZO fordert, dass die elektrischen Einrichtungen elektrisch angetriebener Kraftfahrzeuge so beschaffen sein müssen, dass bei verkehrsüblichem Betrieb durch elektrische Einwirkung weder Personen verletzt noch Sachen beschädigt werden können."
+  },
+  {
+   "f": 1,
+   "sub": "Arbeitsschutz",
+   "t": "mc",
+   "q": "Welche persönliche Schutzausrüstung ist beim Arbeiten an Hochvoltsystemen hybrid- bzw. batteriebetriebener Fahrzeuge vorgesehen, um neue Gefährdungen zu reduzieren?",
+   "o": [
+    {
+     "t": "Isolierhandschuhe und Helm mit Visier",
+     "ok": 1
+    },
+    {
+     "t": "Gehörschutz und Warnweste",
+     "ok": 0
+    },
+    {
+     "t": "Atemschutzmaske und Sicherheitsschuhe mit Stahlkappe",
+     "ok": 0
+    },
+    {
+     "t": "Schnittschutzhandschuhe und Sonnenbrille",
+     "ok": 0
+    }
+   ],
+   "e": "An Hochvoltsystemen bestehen besondere Gefährdungen durch Körperdurchströmung und Störlichtbogen. Zur Reduzierung gehört geeignete Schutzausrüstung wie Isolierhandschuhe und Helm mit Visier."
+  },
+  {
+   "f": 3,
+   "sub": "Fahrzeugtechnik und Wartung",
+   "t": "mc",
+   "q": "Bei welchem Konzept zur Wasserstoffnutzung im Fahrzeug besteht der Nachteil, dass bei längeren Standzeiten trotz guter Tankisolierung Wasserstoff abdampft?",
+   "o": [
+    {
+     "t": "Speicherung von flüssigem Wasserstoff (Kryotank)",
+     "ok": 1
+    },
+    {
+     "t": "Speicherung von gasförmigem Wasserstoff in Druckgasbehältern mit max. 350 bar",
+     "ok": 0
+    },
+    {
+     "t": "Speicherung von Methanol und Umwandlung in Wasserstoff im Fahrzeug",
+     "ok": 0
+    },
+    {
+     "t": "Speicherung von gasförmigem Wasserstoff in Tanks mit porösem Material",
+     "ok": 0
+    }
+   ],
+   "e": "Nur beim Kryotank für flüssigen Wasserstoff (ca. -253 °C) dringt trotz guter Isolierung Wärme ein, wodurch bei längeren Standzeiten Wasserstoff abdampft (Boil-off). Vorteilhaft ist hier das geringere Tankvolumen wegen der höheren Dichte. Druckgasbehälter, Methanol-Reformer und Feststoffspeicher mit porösem Material zeigen den Abdampfeffekt nicht."
+  },
+  {
+   "f": 2,
+   "sub": "Straßenverkehrs- und Zulassungsrecht",
+   "t": "mc",
+   "q": "Nach der Straßenverkehrs-Ordnung (§ 5 StVO) ist das Überholen eines vorausfahrenden Fahrzeugs nur unter welcher Voraussetzung erlaubt?",
+   "o": [
+    {
+     "t": "Nur mit wesentlich höherer Geschwindigkeit als das überholte Fahrzeug",
+     "ok": 1
+    },
+    {
+     "t": "Nur bei gleicher Geschwindigkeit wie das überholte Fahrzeug"
+    },
+    {
+     "t": "Nur mit einer um höchstens 2 km/h höheren Geschwindigkeit"
+    },
+    {
+     "t": "Nur nachts bei geringem Verkehrsaufkommen"
+    }
+   ],
+   "e": "Nach § 5 Abs. 2 Satz 2 StVO muss, wer zum Überholen ausschert, eine wesentlich höhere Geschwindigkeit als das überholte Fahrzeug einhalten. Geringe Geschwindigkeitsunterschiede (sogenannte Elefantenrennen) behindern den nachfolgenden Verkehr erheblich bei nur minimalem Zeitgewinn."
+  },
+  {
+   "f": 2,
+   "sub": "Güterkraftverkehrsrecht",
+   "t": "mc",
+   "q": "Welche der folgenden Anforderungen zählt zu den vier Berufszugangsvoraussetzungen für Unternehmer bzw. Verkehrsleiter im gewerblichen Güterkraftverkehr?",
+   "o": [
+    {
+     "t": "Finanzielle/wirtschaftliche Leistungsfähigkeit",
+     "ok": 1
+    },
+    {
+     "t": "Mindestens fünf Jahre Berufserfahrung als Kraftfahrer"
+    },
+    {
+     "t": "Eine Mindestflottengröße von zehn Fahrzeugen"
+    },
+    {
+     "t": "Eine abgeschlossene Ausbildung zum Kfz-Mechatroniker"
+    }
+   ],
+   "e": "Die vier Berufszugangsvoraussetzungen (VO (EG) 1071/2009 i.V.m. GüKG) sind: tatsächliche und dauerhafte Niederlassung im Inland, persönliche Zuverlässigkeit, finanzielle/wirtschaftliche Leistungsfähigkeit sowie fachliche Eignung."
+  },
+  {
+   "f": 3,
+   "sub": "Güterkraftverkehrsrecht",
+   "t": "mc",
+   "q": "Ab welchem zulässigen Gesamtgewicht (einschließlich Anhänger) sind für die geschäftsmäßige oder entgeltliche Güterbeförderung im nationalen gewerblichen Güterkraftverkehr die Berufszugangsvoraussetzungen zu erfüllen?",
+   "o": [
+    {
+     "t": "Über 3,5 Tonnen",
+     "ok": 1
+    },
+    {
+     "t": "Über 2,5 Tonnen"
+    },
+    {
+     "t": "Über 7,5 Tonnen"
+    },
+    {
+     "t": "Über 12 Tonnen"
+    }
+   ],
+   "e": "Die Berufszugangsvoraussetzungen greifen bei Fahrzeugen, die einschließlich Anhänger ein höheres zulässiges Gesamtgewicht als 3,5 Tonnen haben. Im grenzüberschreitenden Güterkraftverkehr gilt die Grenze bereits ab mehr als 2,5 Tonnen."
+  },
+  {
+   "f": 2,
+   "sub": "Güterkraftverkehrsrecht",
+   "t": "calc",
+   "q": "Ein Unternehmen im gewerblichen Güterkraftverkehr (Fahrzeuge über 3,5 t zGM) muss zum Nachweis der finanziellen Leistungsfähigkeit Eigenkapital und Reserven von mindestens 9.000 € für das erste genutzte Fahrzeug und mindestens 5.000 € für jedes weitere Fahrzeug nachweisen. Wie hoch ist der Mindestnachweis für einen Fuhrpark mit 4 Fahrzeugen?",
+   "ans": 24000,
+   "unit": "€",
+   "e": "9.000 € für das erste Fahrzeug plus 3 × 5.000 € für die drei weiteren Fahrzeuge ergeben insgesamt 24.000 €."
+  },
+  {
+   "f": 2,
+   "sub": "Güterkraftverkehrsrecht",
+   "t": "mc",
+   "q": "Welcher Nachweis ist der Erteilungsbehörde zur Prüfung der persönlichen Zuverlässigkeit im gewerblichen Güterkraftverkehr vorzulegen?",
+   "o": [
+    {
+     "t": "Auszug aus dem Bundeszentralregister (polizeiliches Führungszeugnis)",
+     "ok": 1
+    },
+    {
+     "t": "Kopie des Personalausweises aller eingesetzten Fahrer"
+    },
+    {
+     "t": "Nachweis einer bestandenen ADR-Schulung"
+    },
+    {
+     "t": "Bescheinigung über eine gültige Kfz-Haftpflichtversicherung"
+    }
+   ],
+   "e": "Zur Prüfung der persönlichen Zuverlässigkeit sind ein Auszug aus dem Bundeszentralregister (Führungszeugnis), eine Auskunft aus dem Fahreignungsregister sowie ein Auszug aus dem Gewerbezentralregister vorzulegen."
+  },
+  {
+   "f": 2,
+   "sub": "Güterkraftverkehrsrecht",
+   "t": "mc",
+   "q": "Auf welchen Zeitraum wird die Erlaubnis für den nationalen gewerblichen Güterkraftverkehr durch die nach Landesrecht zuständige Stelle befristet erteilt?",
+   "e": "Die nationale Erlaubnis gilt in der Bundesrepublik Deutschland und wird nach § 3 Abs. 5 GüKG auf höchstens zehn Jahre befristet erteilt. Ebenso wird die Gemeinschaftslizenz (EU-Lizenz) für bis zu zehn Jahre erteilt.",
+   "o": [
+    {
+     "t": "Zehn Jahre",
+     "ok": 1
+    },
+    {
+     "t": "Ein Jahr"
+    },
+    {
+     "t": "Fünf Jahre"
+    },
+    {
+     "t": "Unbefristet"
+    }
+   ]
+  },
+  {
+   "f": 4,
+   "sub": "Grenzüberschreitender Verkehr und Zoll",
+   "t": "mc",
+   "q": "Welche Behörde stellt in Deutschland die CEMT-Genehmigung (multilaterale Kontingentgenehmigung der ITF/CEMT) für den grenzüberschreitenden Güterkraftverkehr aus und wie lange ist die CEMT-Jahresgenehmigung gültig?",
+   "o": [
+    {
+     "t": "Bundesamt für Logistik und Mobilität (BALM, früher BAG) – ein Jahr gültig",
+     "ok": 1
+    },
+    {
+     "t": "Die nach Landesrecht zuständige Stelle – zehn Jahre gültig"
+    },
+    {
+     "t": "Die zuständige IHK – fünf Jahre gültig"
+    },
+    {
+     "t": "Das örtliche Zollamt – unbefristet gültig"
+    }
+   ],
+   "e": "Die CEMT-Genehmigung (multilaterale Kontingentgenehmigung der ITF/CEMT) wird in Deutschland vom Bundesamt (früher Bundesamt für Güterverkehr/BAG, heute Bundesamt für Logistik und Mobilität/BALM) ausgestellt. Die Jahresgenehmigung ist ein Jahr gültig; daneben gibt es Kurzzeitgenehmigungen für 30 Tage."
+  },
+  {
+   "f": 1,
+   "sub": "Arbeitsschutz",
+   "t": "mc",
+   "q": "Welche Zusatzqualifikation ist für Werkstattmitarbeiter erforderlich, die Instandsetzungsarbeiten an Fahrzeugen mit Batteriehochvolttechnik durchführen?",
+   "o": [
+    {
+     "t": "Qualifikation „Elektrofachkraft HV-Systeme 1-3“",
+     "ok": 1
+    },
+    {
+     "t": "ADR-Schulungsbescheinigung für Gefahrgut"
+    },
+    {
+     "t": "Führerschein der Klasse CE"
+    },
+    {
+     "t": "Ausbildung zur Fachkraft für Arbeitssicherheit"
+    }
+   ],
+   "e": "Für Arbeiten an Fahrzeugen mit Hochvolttechnik ist die Zusatzqualifikation „Elektrofachkraft HV-Systeme 1-3“ erforderlich; zusätzlich ist ein Hochvoltarbeitsplatz mit Sicherheits- und Messeinrichtungen einzurichten."
+  },
+  {
+   "f": 2,
+   "sub": "Arbeitsrecht",
+   "t": "mc",
+   "q": "Bei wem muss sich ein Leiharbeitnehmer (Arbeitnehmerüberlassung) im Krankheitsfall krankmelden?",
+   "o": [
+    {
+     "t": "Sowohl beim Personaldienstleister (Verleiher) als auch beim Auftraggeber (Entleiher)",
+     "ok": 1
+    },
+    {
+     "t": "Nur beim Personaldienstleister (Verleiher)"
+    },
+    {
+     "t": "Nur beim Auftraggeber (Entleiher)"
+    },
+    {
+     "t": "Nur bei der zuständigen Krankenkasse"
+    }
+   ],
+   "e": "Der Leiharbeitnehmer hat sich sowohl beim Personaldienstleister (Verleiher) als auch beim Auftraggeber (Entleiher) krankzumelden: Der Verleiher ist der Arbeitgeber (u. a. Entgeltfortzahlung, § 5 EFZG), der Einsatz erfolgt jedoch beim Entleiher, der für die betriebliche Planung informiert werden muss."
+  },
+  {
+   "f": 2,
+   "sub": "Betriebsverfassung",
+   "t": "mc",
+   "q": "Ab welcher Einsatzdauer beim Entleiher hat ein Leiharbeitnehmer ein aktives Wahlrecht bei den Betriebsratswahlen im Entleihbetrieb?",
+   "o": [
+    {
+     "t": "Wenn er länger als drei Monate beim Entleiher tätig ist",
+     "ok": 1
+    },
+    {
+     "t": "Bereits ab dem ersten Einsatztag"
+    },
+    {
+     "t": "Erst nach mehr als zwölf Monaten"
+    },
+    {
+     "t": "Leiharbeitnehmer haben grundsätzlich kein Wahlrecht im Entleihbetrieb"
+    }
+   ],
+   "e": "Ist der Leiharbeitnehmer länger als drei Monate beim Entleiher tätig, hat er ein aktives Wahlrecht bei den Betriebsratswahlen im Entleihbetrieb (§ 7 Satz 2 BetrVG)."
+  },
+  {
+   "f": 3,
+   "sub": "Lenk- und Ruhezeiten",
+   "t": "mc",
+   "q": "Wo dürfen regelmäßige Wochenruhezeiten nach der VO (EG) Nr. 561/2006 nicht verbracht werden?",
+   "o": [
+    {
+     "t": "Im Fahrzeug",
+     "ok": 1
+    },
+    {
+     "t": "In einer vom Arbeitgeber bezahlten, geeigneten Unterkunft"
+    },
+    {
+     "t": "Am Wohnort des Fahrers"
+    },
+    {
+     "t": "Am Unternehmensstandort, dem der Fahrer zugeordnet ist"
+    }
+   ],
+   "e": "Regelmäßige Wochenruhezeiten dürfen nicht im Fahrzeug verbracht werden. Kehrt der Fahrer nicht an seinen Wohnort zurück, muss der Arbeitgeber eine geeignete, geschlechtergerechte Unterkunft mit angemessenen Schlafgelegenheiten und Sanitäreinrichtungen bezahlen."
+  },
+  {
+   "f": 4,
+   "sub": "Lenk- und Ruhezeiten",
+   "t": "mc",
+   "q": "Innerhalb jedes Vierwochenzeitraums muss das Unternehmen die Arbeit so planen, dass der Fahrer zum Wohnort oder Unternehmensstandort zurückkehren kann, um dort eine Wochenruhezeit einzulegen. Handelt es sich dabei um eine Pflicht oder ein Recht des Fahrers?",
+   "o": [
+    {
+     "t": "Ein Rückkehrrecht; der Fahrer darf nicht zur Rückkehr verpflichtet werden",
+     "ok": 1
+    },
+    {
+     "t": "Eine Rückkehrpflicht, deren Einhaltung der Arbeitgeber erzwingen kann"
+    },
+    {
+     "t": "Eine Pflicht, die nur im grenzüberschreitenden Verkehr entfällt"
+    },
+    {
+     "t": "Ein Recht, das ausschließlich der Arbeitgeber geltend machen kann"
+    }
+   ],
+   "e": "Es handelt sich um ein Rückkehrrecht, nicht um eine Rückkehrpflicht (Art. 8 Abs. 8a VO (EG) Nr. 561/2006, Mobilitätspaket). Das Unternehmen muss die Rückkehr organisatorisch ermöglichen; der Fahrer kann jedoch nicht zur Rückkehr gezwungen werden."
+  },
+  {
+   "f": 3,
+   "sub": "Lenk- und Ruhezeiten",
+   "t": "mc",
+   "q": "Wie muss ein Fahrer eines Fahrzeugs mit digitalem Fahrtenschreiber seit dem 2. Februar 2022 einen Grenzübertritt dokumentieren?",
+   "o": [
+    {
+     "t": "Den nächstmöglichen Halteplatz an oder nach der Grenze ansteuern und das Symbol des Einreiselandes eingeben",
+     "ok": 1
+    },
+    {
+     "t": "Den Grenzübertritt erst am Monatsende schriftlich beim Arbeitgeber melden"
+    },
+    {
+     "t": "Die Fahrt beim Grenzübertritt für mindestens 45 Minuten unterbrechen"
+    },
+    {
+     "t": "Keine Eingabe nötig, die Dokumentation erfolgt vollständig automatisch ohne Zutun des Fahrers"
+    }
+   ],
+   "e": "Seit dem 2. Februar 2022 müssen Fahrer jeden Grenzübertritt dokumentieren, indem sie den nächstmöglichen Halteplatz an oder nach der Grenze ansteuern und das Ländersymbol des Landes eingeben, in das sie eingereist sind (Art. 34 VO (EU) 165/2014)."
+  },
+  {
+   "f": 2,
+   "sub": "Güterkraftverkehrsrecht",
+   "t": "mc",
+   "q": "In welcher Form muss die EU-Lizenz (Gemeinschaftslizenz) im gewerblichen Güterkraftverkehr im Fahrzeug mitgeführt werden?",
+   "o": [
+    {
+     "t": "Als Erlaubnisausfertigung oder beglaubigte Abschrift, nicht im Original",
+     "ok": 1
+    },
+    {
+     "t": "Ausschließlich im Original"
+    },
+    {
+     "t": "Als einfache, nicht beglaubigte Fotokopie"
+    },
+    {
+     "t": "Nur digital gespeichert auf der Fahrerkarte"
+    }
+   ],
+   "e": "Mitzuführen ist die Erlaubnisausfertigung oder eine beglaubigte Abschrift der EU-Lizenz, ausdrücklich nicht das Original."
+  },
+  {
+   "f": 2,
+   "sub": "Arbeitsschutz",
+   "t": "mc",
+   "q": "Welche Aussage über die Stellung von Sicherheitsbeauftragten im Betrieb (DGUV Regel 100-001) trifft zu?",
+   "o": [
+    {
+     "t": "Sie üben ihre Aufgabe ehrenamtlich neben ihrer eigentlichen Tätigkeit aus und tragen keine Verantwortung für diese Funktion",
+     "ok": 1
+    },
+    {
+     "t": "Sie üben ihre Aufgabe hauptamtlich aus und tragen die volle Verantwortung für den Arbeitsschutz"
+    },
+    {
+     "t": "Sie ersetzen im Betrieb die Fachkraft für Arbeitssicherheit"
+    },
+    {
+     "t": "Sie dürfen ausschließlich aus dem Kreis der Führungskräfte bestellt werden"
+    }
+   ],
+   "e": "Sicherheitsbeauftragte arbeiten ehrenamtlich neben ihrer eigentlichen Aufgabe und tragen keine Verantwortung für die übertragenen Aufgaben; sie unterstützen die für den Arbeitsschutz verantwortlichen Personen. Führungskräfte sollten daher nicht bestellt werden."
+  },
+  {
+   "f": 1,
+   "sub": "Arbeitsschutz",
+   "t": "mc",
+   "q": "Welche Angabe muss ein Gefahrstoffverzeichnis enthalten?",
+   "o": [
+    {
+     "t": "Die im Betrieb verwendeten Mengenbereiche der Gefahrstoffe",
+     "ok": 1
+    },
+    {
+     "t": "Die Privatanschriften der mit Gefahrstoffen arbeitenden Beschäftigten"
+    },
+    {
+     "t": "Die Einkaufspreise der einzelnen Gefahrstoffe"
+    },
+    {
+     "t": "Die Bankverbindung des Gefahrstoff-Lieferanten"
+    }
+   ],
+   "e": "Das Gefahrstoffverzeichnis muss u. a. Bezeichnung und Einstufung der Gefahrstoffe, die im Betrieb verwendeten Mengenbereiche sowie die Arbeitsbereiche enthalten, in denen Beschäftigte den Gefahrstoffen ausgesetzt sein können."
+  },
+  {
+   "f": 2,
+   "sub": "Kostenrechnung",
+   "t": "calc",
+   "q": "Ein Diesel-Lkw hat eine Jahresfahrleistung von 50.000 km und einen Durchschnittsverbrauch von 27 l/100 km. Der Kraftstoff kostet 1,45 €/l. Wie hoch sind die jährlichen Kraftstoffkosten?",
+   "ans": 19575,
+   "unit": "€",
+   "e": "50.000 km × 27 l/100 km = 13.500 l; 13.500 l × 1,45 €/l = 19.575 €/a."
+  },
+  {
+   "f": 2,
+   "sub": "Kostenrechnung",
+   "t": "calc",
+   "q": "Ein Elektro-Lkw hat eine Jahresfahrleistung von 50.000 km und einen Energieverbrauch von 1,5 kWh/km. Der Strompreis beträgt 0,18 €/kWh. Wie hoch sind die jährlichen Energiekosten?",
+   "ans": 13500,
+   "unit": "€",
+   "e": "50.000 km × 1,5 kWh/km = 75.000 kWh; 75.000 kWh × 0,18 €/kWh = 13.500 €/a."
+  },
+  {
+   "f": 2,
+   "sub": "Führungsstile",
+   "t": "mc",
+   "q": "Worauf beruht das Grundprinzip des situativen Führens nach dem Reifegradansatz?",
+   "o": [
+    {
+     "t": "Die Führungskraft passt ihr Führungsverhalten an den Reifegrad des jeweiligen Mitarbeiters an",
+     "ok": 1
+    },
+    {
+     "t": "Alle Mitarbeiter werden unabhängig von ihrer Reife einheitlich geführt"
+    },
+    {
+     "t": "Die Führungskraft führt stets mit dem ihr eigenen, unveränderlichen Stil"
+    },
+    {
+     "t": "Der Führungsstil richtet sich allein nach dem Lebensalter der Mitarbeiter"
+    }
+   ],
+   "e": "Situatives Führen geht davon aus, dass jeder Mitarbeiter nach seinem Reifegrad geführt werden muss. Die Führungskraft führt nicht unreflektiert im eigenen Stil, sondern passt ihr Verhalten an den Reifegrad des Mitarbeiters an."
+  },
+  {
+   "f": 3,
+   "sub": "Führungsstile",
+   "t": "mc",
+   "q": "Welcher Führungsstil des situativen Führens (Reifegradmodell) ist dadurch gekennzeichnet, dass die Verantwortung zur Entscheidungsfindung und Durchführung an den Mitarbeiter übergeben wird?",
+   "o": [
+    {
+     "t": "Delegieren",
+     "ok": 1
+    },
+    {
+     "t": "Diktieren"
+    },
+    {
+     "t": "Argumentieren"
+    },
+    {
+     "t": "Partizipieren"
+    }
+   ],
+   "e": "Beim höchsten Reifegrad (4) delegiert die Führungskraft, das heißt sie übergibt die Verantwortung zur Entscheidungsfindung und Durchführung an den Mitarbeiter."
+  },
+  {
+   "f": 3,
+   "sub": "Ladungssicherung",
+   "t": "calc",
+   "q": "Eine Ladung mit einer Gewichtskraft von 24.500 daN soll in Fahrtrichtung gesichert werden. Der Beschleunigungsbeiwert in Fahrtrichtung beträgt 0,8, der Reibbeiwert μ = 0,2. Berechnen Sie die benötigte Sicherungskraft in Fahrtrichtung.",
+   "ans": 14700,
+   "unit": "daN",
+   "e": "Trägheitskraft = 24.500 daN × 0,8 = 19.600 daN; Reibkraft = 24.500 daN × 0,2 = 4.900 daN. Benötigte Sicherungskraft = 19.600 daN − 4.900 daN = 14.700 daN."
+  },
+  {
+   "f": 3,
+   "sub": "Ladungssicherung",
+   "t": "mc",
+   "q": "Für einen Transport wurde eine benötigte Sicherungskraft in Fahrtrichtung von 14.700 daN ermittelt. Die Kennzeichnung des Fahrzeugaufbaus (EN 12642-XL) weist für die Stirnwand eine Blockierkraft von 18.000 daN aus. Reicht die Stirnwand aus, um die Ladung in Fahrtrichtung zu halten?",
+   "o": [
+    {
+     "t": "Ja, weil die Blockierkraft (18.000 daN) größer ist als die benötigte Sicherungskraft (14.700 daN).",
+     "ok": 1
+    },
+    {
+     "t": "Nein, weil die Blockierkraft kleiner ist als die benötigte Sicherungskraft."
+    },
+    {
+     "t": "Nein, trotz ausreichender Blockierkraft sind zusätzlich immer Zurrgurte vorgeschrieben."
+    },
+    {
+     "t": "Ja, aber nur zusammen mit rutschhemmendem Material und Zurrgurten."
+    }
+   ],
+   "e": "Die Kennzeichnung des Aufbaus weist für die Stirnwand eine Blockierkraft von 18.000 daN aus. Da dieser Wert größer als die benötigte Sicherungskraft von 14.700 daN ist, kann die Ladung in Fahrtrichtung allein durch die Stirnwand (formschlüssig) gehalten werden; zusätzliche Zurrmittel sind in Fahrtrichtung nicht erforderlich."
+  },
+  {
+   "f": 2,
+   "sub": "Ladungssicherung",
+   "t": "mc",
+   "q": "Welcher der folgenden Punkte ist ein Nachteil des Niederzurrens als Ladungssicherungsmethode?",
+   "o": [
+    {
+     "t": "Es ist eine Nachsicherung während des Transports durch den Fahrer erforderlich, was zeitintensiv ist.",
+     "ok": 1
+    },
+    {
+     "t": "Ein zusätzlicher Kantenschutz für die Zurrgurte ist beim Niederzurren nie notwendig."
+    },
+    {
+     "t": "Der Zurrwinkel hat keinen Einfluss auf die erzielbare Sicherungskraft."
+    },
+    {
+     "t": "Niederzurren ist grundsätzlich die kostengünstigste aller Sicherungsmethoden."
+    }
+   ],
+   "e": "Nachteil des Niederzurrens ist die während des Transports erforderliche Nachsicherung durch den Fahrer, da die Vorspannkraft nachlässt – das ist zeitintensiv. Kantenschutz ist dabei oft nötig, und der Zurrwinkel beeinflusst über sin(α) die wirksame Sicherungskraft."
+  },
+  {
+   "f": 3,
+   "sub": "Lenk- und Ruhezeiten",
+   "t": "mc",
+   "q": "In welchem Intervall müssen die Daten der Fahrerkarte spätestens ausgelesen werden, um die Lenk- und Ruhezeiten gesetzeskonform zu dokumentieren?",
+   "o": [
+    {
+     "t": "spätestens alle 28 Tage",
+     "ok": 1
+    },
+    {
+     "t": "spätestens alle 90 Tage"
+    },
+    {
+     "t": "spätestens alle 7 Tage"
+    },
+    {
+     "t": "spätestens alle 6 Monate"
+    }
+   ],
+   "e": "Nach § 2 Abs. 5 FPersV sind die Fahrerkartendaten spätestens alle 28 Tage auszulesen; der Massenspeicher der Fahrzeugeinheit ist demgegenüber spätestens alle 90 Tage auszulesen."
+  },
+  {
+   "f": 3,
+   "sub": "Lenk- und Ruhezeiten",
+   "t": "mc",
+   "q": "Welche Rechtsvorschrift zählt zu den Gesetzesgrundlagen der Arbeits-, Lenk- und Ruhezeiten im gewerblichen Güterkraftverkehr?",
+   "o": [
+    {
+     "t": "VO (EG) 561/2006",
+     "ok": 1
+    },
+    {
+     "t": "VO (EG) 1072/2009 (Marktzugang zum Güterkraftverkehr)"
+    },
+    {
+     "t": "ADR (Gefahrgutbeförderung auf der Straße)"
+    },
+    {
+     "t": "VO (EG) 1013/2006 (Abfallverbringung)"
+    }
+   ],
+   "e": "Rechtsgrundlagen der Arbeits-, Lenk- und Ruhezeiten sind u.a. das FPersG, die FPersV, die VO (EG) 561/2006, die VO (EU) 165/2014 und das ArbZG."
+  },
+  {
+   "f": 2,
+   "sub": "Kostenrechnung",
+   "t": "calc",
+   "q": "Ein Reisebus hat eine Jahresfahrleistung von 115.000 km, einen Dieselverbrauch von 37 l/100 km und einen Dieselpreis von 1,50 €/l. Berechnen Sie die jährlichen Dieselkraftstoffkosten.",
+   "ans": 63825,
+   "unit": "€",
+   "e": "Dieselkosten = 115.000 km ÷ 100 × 37 l × 1,50 €/l = 63.825 €."
+  },
+  {
+   "f": 2,
+   "sub": "Kostenrechnung",
+   "t": "calc",
+   "q": "Ein Fahrer erhält 2.400 € Bruttolohn pro Monat. Die Lohnnebenkosten betragen 25 %, der Personaleinsatzfaktor 1,3. Berechnen Sie die jährlichen Lohnkosten.",
+   "ans": 46800,
+   "unit": "€",
+   "e": "Lohnkosten = 2.400 € × 12 Monate × 1,25 (25 % Lohnnebenkosten) × 1,3 (Personaleinsatzfaktor) = 46.800 €."
+  },
+  {
+   "f": 2,
+   "sub": "Kostenrechnung",
+   "t": "calc",
+   "q": "Die jährlichen Gesamtkosten eines Fahrzeugs betragen 202.782,27 € bei einer Jahresfahrleistung von 115.000 km. Berechnen Sie die Gesamtkosten je Kilometer (auf drei Nachkommastellen).",
+   "ans": 1.763,
+   "unit": "€/km",
+   "e": "Gesamtkosten je Kilometer = 202.782,27 € ÷ 115.000 km = 1,763 €/km."
+  },
+  {
+   "f": 1,
+   "sub": "Arbeitsschutz",
+   "t": "mc",
+   "q": "Was ist das wesentliche Ziel einer Unterweisung im Arbeits- und Gesundheitsschutz?",
+   "o": [
+    {
+     "t": "Das Verhalten der Mitarbeiter so zu beeinflussen, dass sicherheitsgerechtes und gesundheitsbewusstes Verhalten erreicht und sichergestellt wird.",
+     "ok": 1
+    },
+    {
+     "t": "Die Arbeitsleistung der Mitarbeiter zu messen und leistungsschwache Mitarbeiter zu identifizieren."
+    },
+    {
+     "t": "Die Dokumentationspflicht gegenüber dem Finanzamt zu erfüllen."
+    },
+    {
+     "t": "Die Fahrzeug- und Betriebskosten des Fuhrparks zu senken."
+    }
+   ],
+   "e": "Ziel einer Unterweisung ist es, das Verhalten der Mitarbeiter so zu beeinflussen, dass sicherheitsgerechtes und gesundheitsbewusstes Verhalten erreicht und sichergestellt wird."
+  },
+  {
+   "f": 4,
+   "sub": "Personalplanung",
+   "t": "calc",
+   "q": "In einem Verteilzentrum gilt: 21 Arbeitstage im Monat, 15 Mitarbeiter, 7 Stunden Arbeitszeit pro Tag und Mitarbeiter. Die Urlaubsquote beträgt 8,4 %, die Krankheitsquote 3,6 %. Berechnen Sie den verfügbaren personellen Kapazitätsbestand in Stunden für den Monat.",
+   "ans": 1940.4,
+   "unit": "h",
+   "e": "Anwesenheitsquote = 100 % − 8,4 % Urlaub − 3,6 % Krankheit = 88 %. Verfügbarer Kapazitätsbestand = 21 Tage × 15 Mitarbeiter × 7 h × 0,88 = 1.940,4 h."
+  },
+  {
+   "f": 2,
+   "sub": "Arbeitsrecht",
+   "t": "mc",
+   "q": "Ein Berufskraftfahrer in einem unbefristeten Arbeitsverhältnis wird bei einem Unfall verletzt und ist arbeitsunfähig. Für welchen Zeitraum und auf welcher rechtlichen Grundlage ist der Arbeitgeber zur Entgeltfortzahlung verpflichtet?",
+   "o": [
+    {
+     "t": "Sechs Wochen gemäß § 3 Entgeltfortzahlungsgesetz",
+     "ok": 1
+    },
+    {
+     "t": "Zwölf Wochen gemäß § 45 SGB VII",
+     "ok": 0
+    },
+    {
+     "t": "Vier Wochen gemäß § 616 BGB",
+     "ok": 0
+    },
+    {
+     "t": "Acht Wochen gemäß § 3 Arbeitsschutzgesetz",
+     "ok": 0
+    }
+   ],
+   "e": "Nach § 3 Entgeltfortzahlungsgesetz zahlt der Arbeitgeber das Arbeitsentgelt bei unverschuldeter Arbeitsunfähigkeit für bis zu sechs Wochen fort."
+  },
+  {
+   "f": 2,
+   "sub": "Sozialversicherung",
+   "t": "mc",
+   "q": "Ein Arbeitnehmer bleibt nach einem Arbeitsunfall über die sechswöchige Entgeltfortzahlung hinaus arbeitsunfähig. Welche Leistung erhält er anschließend und von welchem Träger?",
+   "o": [
+    {
+     "t": "Verletztengeld der zuständigen Berufsgenossenschaft (ausgezahlt durch die Krankenkasse) gemäß § 45 SGB VII",
+     "ok": 1
+    },
+    {
+     "t": "Krankengeld der Krankenkasse gemäß § 44 SGB V",
+     "ok": 0
+    },
+    {
+     "t": "Arbeitslosengeld der Bundesagentur für Arbeit",
+     "ok": 0
+    },
+    {
+     "t": "Übergangsgeld der Bundesagentur für Arbeit",
+     "ok": 0
+    }
+   ],
+   "e": "Da es sich um einen Arbeitsunfall handelt, ist die gesetzliche Unfallversicherung (Berufsgenossenschaft) zuständig; sie zahlt Verletztengeld nach § 45 SGB VII, ausgezahlt über die Krankenkasse."
+  },
+  {
+   "f": 1,
+   "sub": "Arbeitsschutz",
+   "t": "mc",
+   "q": "Ab welcher Beschäftigtenzahl muss ein Betrieb nach § 11 Arbeitssicherheitsgesetz (ASiG) einen Arbeitsschutzausschuss (ASA) bilden?",
+   "o": [
+    {
+     "t": "Bei mehr als 20 Beschäftigten",
+     "ok": 1
+    },
+    {
+     "t": "Bereits ab dem ersten Beschäftigten",
+     "ok": 0
+    },
+    {
+     "t": "Bei mehr als 50 Beschäftigten",
+     "ok": 0
+    },
+    {
+     "t": "Bei mehr als 10 Beschäftigten",
+     "ok": 0
+    }
+   ],
+   "e": "Nach § 11 ASiG ist in Betrieben mit mehr als 20 Beschäftigten ein Arbeitsschutzausschuss zu bilden, dem u. a. Arbeitgeber, Betriebsarzt und Fachkraft für Arbeitssicherheit angehören."
+  },
+  {
+   "f": 2,
+   "sub": "Kostenrechnung",
+   "t": "calc",
+   "q": "Der Jahresbeitrag der Güterschadenhaftpflichtversicherung beträgt 850 € und steigt um 10 %. Der Jahresbeitrag der Kfz-Haftpflichtversicherung beträgt 3.500 € und steigt um 4 %. Berechnen Sie die gesamten zusätzlichen Versicherungskosten pro Jahr.",
+   "ans": 225,
+   "unit": "€",
+   "e": "850 € × 10 % = 85 €; 3.500 € × 4 % = 140 €; zusammen 85 € + 140 € = 225 € zusätzliche Kosten pro Jahr."
+  },
+  {
+   "f": 2,
+   "sub": "Controlling",
+   "t": "calc",
+   "q": "Die tatsächlichen Betriebsstunden eines Fuhrparks betragen 96 Stunden pro Woche, die möglichen Betriebsstunden 120 Stunden pro Woche. Berechnen Sie den Auslastungsgrad in Prozent.",
+   "ans": 80,
+   "unit": "%",
+   "e": "Auslastungsgrad = tatsächliche ÷ mögliche Betriebsstunden × 100 = 96 ÷ 120 × 100 = 80 %."
+  },
+  {
+   "f": 3,
+   "sub": "EDV",
+   "t": "mc",
+   "q": "Zwei Betriebsgebäude sind 150 m voneinander entfernt und sollen leitungsgebunden vernetzt werden. Welches Übertragungsmedium ist über diese Distanz wegen der geringeren Dämpfung besser geeignet?",
+   "o": [
+    {
+     "t": "Lichtwellenleiter (Glasfaser)",
+     "ok": 1
+    },
+    {
+     "t": "Kupferkabel (Twisted-Pair)",
+     "ok": 0
+    },
+    {
+     "t": "Koaxialkabel",
+     "ok": 0
+    },
+    {
+     "t": "Analoges Telefonkabel",
+     "ok": 0
+    }
+   ],
+   "e": "Über 150 m ist die Dämpfung von Kupferleitungen erheblich (Twisted-Pair-Ethernet ist praktisch auf rund 100 m begrenzt). Ein Lichtwellenleiter überträgt über diese Strecke verlustärmer, störsicher und in höherer Qualität und ist daher besser geeignet."
+  },
+  {
+   "f": 3,
+   "sub": "EDV",
+   "t": "mc",
+   "q": "Außendienstmitarbeiter sollen von außerhalb sicher auf das interne Firmennetzwerk zugreifen, wobei Datensicherheit, Vertraulichkeit und Authentizität gewährleistet sein müssen. Welche Technik erfüllt diese Anforderungen?",
+   "o": [
+    {
+     "t": "Ein verschlüsselter VPN-Tunnel (Virtual Private Network)",
+     "ok": 1
+    },
+    {
+     "t": "Ein öffentlich zugänglicher FTP-Server",
+     "ok": 0
+    },
+    {
+     "t": "Eine Verbindung über ein offenes öffentliches WLAN",
+     "ok": 0
+    },
+    {
+     "t": "Ein DHCP-Server",
+     "ok": 0
+    }
+   ],
+   "e": "Ein VPN (Virtual Private Network) baut einen verschlüsselten Tunnel zwischen Endgerät und Unternehmens-Gateway auf und sichert so Vertraulichkeit, Integrität (Datensicherheit) und Authentizität der Fernverbindung."
+  },
+  {
+   "f": 3,
+   "sub": "Personalplanung",
+   "t": "mc",
+   "q": "Ein Unternehmen besetzt offene Führungsstellen grundsätzlich zuerst intern. Welcher Nachteil kann sich daraus ergeben?",
+   "o": [
+    {
+     "t": "Es kommen keine neuen Impulse von außen; es droht Betriebsblindheit",
+     "ok": 1
+    },
+    {
+     "t": "Die Einarbeitungszeit ist besonders lang",
+     "ok": 0
+    },
+    {
+     "t": "Die Personalbeschaffungskosten sind besonders hoch",
+     "ok": 0
+    },
+    {
+     "t": "Die Leistungsfähigkeit der Bewerber ist völlig unbekannt",
+     "ok": 0
+    }
+   ],
+   "e": "Bei ausschließlich interner Besetzung fehlen neue Betrachtungsweisen und Impulse von außen, wodurch Betriebsblindheit entstehen kann; zudem können übergangene Mitarbeiter demotiviert werden."
+  },
+  {
+   "f": 5,
+   "sub": "Fuhrparkmanagement",
+   "t": "calc",
+   "q": "Auf einer Buslinie betragen die Fahrzeit von A nach B 24 Minuten, die Wendezeit in B 10 Minuten, die Fahrzeit von B nach A 24 Minuten und die Wendezeit in A 2 Minuten. Berechnen Sie die Umlaufzeit.",
+   "ans": 60,
+   "unit": "Minuten",
+   "e": "Die Umlaufzeit ist die Summe aus Fahr- und Wendezeiten: 24 + 10 + 24 + 2 = 60 Minuten."
+  },
+  {
+   "f": 3,
+   "sub": "Fahrzeugtechnik und Wartung",
+   "t": "calc",
+   "q": "Ein Hybridbus soll auf einem Streckenabschnitt von 30 km rein elektrisch fahren. Der Energieverbrauch beträgt 2,1 kWh/km. Aus Alterungs- und Sicherheitsgründen sollen 30 % der Nennkapazität dauerhaft als Reserve unbenutzt bleiben. Berechnen Sie die notwendige Batterie-Nennkapazität.",
+   "ans": 90,
+   "unit": "kWh",
+   "e": "Energiebedarf = 30 km × 2,1 kWh/km = 63 kWh; dieser Wert entspricht 70 % der Nennkapazität, also 63 ÷ 0,7 = 90 kWh."
+  },
+  {
+   "f": 4,
+   "sub": "Temperaturgeführte Transporte (ATP)",
+   "t": "mc",
+   "q": "Wozu verpflichtet die EG-Verordnung 852/2004 einen Lebensmittelunternehmer, der temperaturgeführte Lebensmitteltransporte durchführt?",
+   "o": [
+    {
+     "t": "Zur Erstellung und Dokumentation eines Konzepts nach HACCP-Grundlagen",
+     "ok": 1
+    },
+    {
+     "t": "Zum Abschluss einer gesonderten Transportversicherung für verderbliche Güter",
+     "ok": 0
+    },
+    {
+     "t": "Zur jährlichen Schulung aller Fahrer im ADR-Gefahrgutrecht",
+     "ok": 0
+    },
+    {
+     "t": "Zur Ausrüstung jedes Fahrzeugs mit einem digitalen Fahrtenschreiber",
+     "ok": 0
+    }
+   ],
+   "e": "Die VO (EG) Nr. 852/2004 verpflichtet jeden Lebensmittelunternehmer, ein auf den HACCP-Grundsätzen beruhendes Konzept zu erstellen, umzusetzen und zu dokumentieren (Art. 5). Eine Transportversicherung, ADR-Gefahrgutschulungen oder ein Fahrtenschreiber werden durch diese Verordnung nicht gefordert."
+  },
+  {
+   "f": 2,
+   "sub": "Ladungssicherung",
+   "t": "calc",
+   "q": "Eine Ladung von 4.000 kg wird beim Bremsen mit einer Verzögerung von 0,6 g nach vorne beschleunigt (g = 10,0 m/s²; 1 daN = 10 N). Berechnen Sie die auf die Ladung nach vorne einwirkende Massenkraft.",
+   "ans": 2400,
+   "unit": "daN",
+   "e": "Die Gewichtskraft beträgt 4.000 kg × 10,0 m/s² = 4.000 daN. Bei einer Verzögerung von 0,6 g wirkt das 0,6-fache des Gewichts nach vorne: 4.000 daN × 0,6 = 2.400 daN."
+  },
+  {
+   "f": 4,
+   "sub": "Ladungssicherung",
+   "t": "mc",
+   "q": "Beim Niederzurren einer Ladung wurde eine erforderliche Mindestvorspannkraft je Zurrmittel von rund 2.364 daN ermittelt. Der Fahrer verwendete Zurrgurte mit einer Vorspannkraft von STF = 1.000 daN je Gurt. Wie ist die Ladungssicherung zu beurteilen?",
+   "o": [
+    {
+     "t": "Nicht ausreichend, da die vorhandene Vorspannkraft die erforderliche Mindestvorspannkraft deutlich unterschreitet",
+     "ok": 1
+    },
+    {
+     "t": "Ausreichend, da eine STF von 1.000 daN grundsätzlich immer genügt",
+     "ok": 0
+    },
+    {
+     "t": "Ausreichend, sobald mindestens zwei Zurrgurte eingesetzt werden",
+     "ok": 0
+    },
+    {
+     "t": "Nicht beurteilbar, weil der Reibbeiwert nicht bekannt ist",
+     "ok": 0
+    }
+   ],
+   "e": "Die eingesetzten Zurrgurte mit STF = 1.000 daN erreichen die erforderliche Mindestvorspannkraft von rund 2.364 daN je Zurrmittel nicht; die Ladung ist damit nicht ausreichend gesichert."
+  },
+  {
+   "f": 2,
+   "sub": "Betriebsorganisation",
+   "t": "mc",
+   "q": "Was versteht man unter einer Verfahrensanweisung (Standard Operating Procedure, SOP) im Sinne der DIN EN ISO 9001:2015?",
+   "o": [
+    {
+     "t": "Eine strukturierte Prozessbeschreibung, die festlegt, wie ein bestimmter Ablauf im Unternehmen durchgeführt werden soll",
+     "ok": 1
+    },
+    {
+     "t": "Eine gesetzlich vorgeschriebene Betriebsanweisung ausschließlich für den Umgang mit Gefahrstoffen",
+     "ok": 0
+    },
+    {
+     "t": "Ein Vertrag zwischen Unternehmen und Zertifizierungsstelle über den Umfang des Audits",
+     "ok": 0
+    },
+    {
+     "t": "Eine einmalige Arbeitsanweisung, die nur für ein einzelnes Projekt gilt",
+     "ok": 0
+    }
+   ],
+   "e": "Eine Verfahrensanweisung (SOP) ist eine strukturierte Prozessbeschreibung, die festlegt, wie ein Prozess durchzuführen ist, um Fehler zu vermeiden und Nachvollziehbarkeit sicherzustellen. Die DIN EN ISO 9001:2015 macht dazu keine starren Vorgaben, verlangt aber die Dokumentation qualitätsrelevanter Sachverhalte."
+  },
+  {
+   "f": 3,
+   "sub": "Straßenverkehrs- und Zulassungsrecht",
+   "t": "mc",
+   "q": "Bis zu welchem zulässigen Gesamtgewicht dürfen emissionsfreie Elektrotransporter aufgrund der Sonderregelung für alternative Antriebe mit dem Führerschein der Klasse B gefahren werden?",
+   "o": [
+    {
+     "t": "Bis 4,25 t",
+     "ok": 1
+    },
+    {
+     "t": "Bis 3,5 t",
+     "ok": 0
+    },
+    {
+     "t": "Bis 5,0 t",
+     "ok": 0
+    },
+    {
+     "t": "Bis 7,5 t",
+     "ok": 0
+    }
+   ],
+   "e": "Für Elektrotransporter gilt eine Sonderregelung: Sie dürfen bis zu einem Gewicht von 4,25 t mit dem B-Führerschein gefahren werden; dabei gilt eine zweijährige Besitzregelung des B-Führerscheins, und es darf kein Anhänger mitgeführt werden."
+  },
+  {
+   "f": 2,
+   "sub": "Kostenrechnung",
+   "t": "calc",
+   "q": "Ein Elektrotransporter verbraucht 40 kWh je 100 km. Der Strompreis beträgt 0,30 € je kWh. Berechnen Sie die jährlichen Stromkosten bei einer Jahresfahrleistung von 30.000 km.",
+   "ans": 3600,
+   "unit": "€",
+   "e": "40 kWh × 0,30 €/kWh = 12 € je 100 km; bei 30.000 km ergibt das 12 € × 300 = 3.600 € pro Jahr."
+  },
+  {
+   "f": 2,
+   "sub": "Konflikte",
+   "t": "mc",
+   "q": "Welche Vorgehensweise zur Deeskalation von Konflikten liegt vor, wenn beide Konfliktbeteiligten gemeinsam mit einem neutralen Dritten eine Lösung erarbeiten und eine gemeinsame Vereinbarung treffen?",
+   "o": [
+    {
+     "t": "Moderiertes Konfliktgespräch",
+     "ok": 1
+    },
+    {
+     "t": "Einzelgespräch zur Klärung",
+     "ok": 0
+    },
+    {
+     "t": "Schriftliche Abmahnung",
+     "ok": 0
+    },
+    {
+     "t": "Anonyme Mitarbeiterbefragung",
+     "ok": 0
+    }
+   ],
+   "e": "Beim moderierten Konfliktgespräch erarbeiten beide Konfliktbeteiligten gemeinsam mit einem neutralen Moderator eine Lösung und treffen eine gemeinsame Vereinbarung über den Weg zur Lösung."
+  },
+  {
+   "f": 3,
+   "sub": "Mitarbeiterbeurteilung",
+   "t": "mc",
+   "q": "Wodurch zeichnet sich ein offenes (freies) Mitarbeiterbeurteilungssystem aus?",
+   "o": [
+    {
+     "t": "Es werden keine vorformulierten Kriterien und Bewertungsskalierungen verwendet; die Einschätzung wird frei schriftlich niedergelegt",
+     "ok": 1
+    },
+    {
+     "t": "Die Beurteilungskriterien sind konkret vorgegeben und werden über eine feste Skala bewertet",
+     "ok": 0
+    },
+    {
+     "t": "Es dürfen ausschließlich geschlossene Ja/Nein-Fragen verwendet werden",
+     "ok": 0
+    },
+    {
+     "t": "Die Beurteilung erfolgt automatisiert allein anhand von Leistungskennzahlen",
+     "ok": 0
+    }
+   ],
+   "e": "Ein offenes/freies Beurteilungssystem verwendet keine vorformulierten Kriterien und Bewertungsskalierungen; der Bewertende legt seine Einschätzung aktiv schriftlich nieder und benötigt dafür ein hohes Maß an sprachlicher Ausdrucks- und Differenzierungsfähigkeit."
+  },
+  {
+   "f": 3,
+   "sub": "Kostenrechnung",
+   "t": "calc",
+   "q": "Für einen Lkw gelten folgende Daten: Kaufpreis 270.000 €, Nutzungszeit 10 Jahre. Die Abschreibung wird zu 60 % den fixen Kosten zugerechnet. Kapitalverzinsung 5 % (bezogen auf das durchschnittlich gebundene Kapital, d. h. den halben Kaufpreis). Fester Fahrerlohn einschließlich Nebenkosten 57.600 €/Jahr, Unternehmerlohn 4.000 €/Jahr, Kfz-Steuer 2.800 €/Jahr, Kfz-Versicherung 10.200 €/Jahr, jährliche Einsatztage 240. Berechnen Sie die gesamten fixen Kosten in €/Tag (auf zwei Nachkommastellen).",
+   "ans": 406.46,
+   "unit": "€/Tag",
+   "e": "Fixkosten = anteilige Abschreibung (270.000 € ÷ 10 × 60 % = 16.200 €) + Verzinsung (135.000 € × 5 % = 6.750 €) + Fahrerlohn 57.600 € + Unternehmerlohn 4.000 € + Kfz-Steuer 2.800 € + Versicherung 10.200 € = 97.550 €; geteilt durch 240 Einsatztage ergibt 406,46 €/Tag."
+  },
+  {
+   "f": 2,
+   "sub": "Kostenrechnung",
+   "t": "calc",
+   "q": "Ein Lkw verursacht variable Kosten von 0,60 €/km und fixe Kosten von 406,46 €/Tag. Für eine Tagestour von 320 km wird der Lkw (Nutzlast 24 t) zu 60 % ausgelastet. Berechnen Sie die Fahrzeugkosten pro 100 kg Fracht (auf zwei Nachkommastellen).",
+   "ans": 4.16,
+   "unit": "€/100 kg",
+   "e": "Tageskosten = variable Kosten (0,60 €/km × 320 km = 192 €) + Fixkosten 406,46 € = 598,46 €. Bei 60 % Auslastung von 24 t werden 14,4 t = 144 × 100 kg befördert: 598,46 € ÷ 144 = 4,16 €/100 kg."
+  },
+  {
+   "f": 2,
+   "sub": "Fahrzeugtechnik und Wartung",
+   "t": "mc",
+   "q": "Für welchen Spannungsbereich müssen die Elektrikerhandschuhe (persönliche Schutzausrüstung) ausgelegt sein, wenn in einer Werkstatt an Hochvoltsystemen von Elektrofahrzeugen gearbeitet wird?",
+   "o": [
+    {
+     "t": "bis 1.000 Volt",
+     "ok": 1
+    },
+    {
+     "t": "bis 230 Volt",
+     "ok": 0
+    },
+    {
+     "t": "bis 400 Volt",
+     "ok": 0
+    },
+    {
+     "t": "bis 5.000 Volt",
+     "ok": 0
+    }
+   ],
+   "e": "Für Arbeiten im Hochvoltbereich benötigen die Betriebe als persönliche Schutzausrüstung Elektrikerhandschuhe für den Spannungsbereich bis 1.000 Volt."
+  },
+  {
+   "f": 1,
+   "sub": "Arbeitsschutz",
+   "t": "mc",
+   "q": "Welche Gefährdungsart beschreibt bei Elektrofahrzeugen die Gefahr von Lichtbogenbildung und Körperdurchströmung?",
+   "o": [
+    {
+     "t": "Elektrische Gefährdung",
+     "ok": 1
+    },
+    {
+     "t": "Chemische Gefährdung",
+     "ok": 0
+    },
+    {
+     "t": "Mechanische Gefährdung",
+     "ok": 0
+    },
+    {
+     "t": "Thermische Gefährdung",
+     "ok": 0
+    }
+   ],
+   "e": "Die elektrische Gefährdung umfasst bei Elektrofahrzeugen insbesondere die Gefahr von Lichtbogenbildung und Körperdurchströmung und ist in die Gefährdungsbeurteilung aufzunehmen."
+  },
+  {
+   "f": 2,
+   "sub": "Arbeitsschutz",
+   "t": "mc",
+   "q": "Welche DGUV Vorschrift trägt den Titel 'Grundsätze der Prävention' und regelt in § 4 die Unterweisung der Versicherten?",
+   "e": "Die DGUV Vorschrift 1 ('Grundsätze der Prävention') regelt in § 4 die Unterweisung der Versicherten und ist bei der Erstellung von Fahrerunterweisungen zu beachten.",
+   "o": [
+    {
+     "t": "DGUV Vorschrift 1",
+     "ok": 1
+    },
+    {
+     "t": "DGUV Vorschrift 3",
+     "ok": 0
+    },
+    {
+     "t": "DGUV Vorschrift 70",
+     "ok": 0
+    },
+    {
+     "t": "DGUV Vorschrift 2",
+     "ok": 0
+    }
+   ]
+  },
+  {
+   "f": 2,
+   "sub": "Arbeitsschutz",
+   "t": "mc",
+   "q": "Was fordert § 3 der Betriebssicherheitsverordnung (BetrSichV) für Arbeitsmittel wie betriebseigene E-Ladesäulen?",
+   "o": [
+    {
+     "t": "Eine Gefährdungsbeurteilung zur Ermittlung von Art, Umfang und Fristen erforderlicher Prüfungen",
+     "ok": 1
+    },
+    {
+     "t": "Eine jährliche Hauptuntersuchung durch eine amtlich anerkannte Überwachungsorganisation",
+     "ok": 0
+    },
+    {
+     "t": "Eine CE-Kennzeichnung durch den Betreiber der Anlage",
+     "ok": 0
+    },
+    {
+     "t": "Eine Betriebsgenehmigung durch die BALM",
+     "ok": 0
+    }
+   ],
+   "e": "Nach § 3 BetrSichV ist für Arbeitsmittel eine Gefährdungsbeurteilung durchzuführen, um Art, Umfang und Fristen der erforderlichen Prüfungen zu ermitteln."
+  },
+  {
+   "f": 4,
+   "sub": "Personalentwicklung",
+   "t": "mc",
+   "q": "In welcher Phase der Potenzialeinschätzung werden geeignete Methoden und Verfahren wie psychologische Tests, Assessment-Center oder das Mitarbeitergespräch ausgewählt?",
+   "o": [
+    {
+     "t": "Durchführung",
+     "ok": 1
+    },
+    {
+     "t": "Vorbereitung",
+     "ok": 0
+    },
+    {
+     "t": "Nachbereitung",
+     "ok": 0
+    },
+    {
+     "t": "Zielvereinbarung",
+     "ok": 0
+    }
+   ],
+   "e": "In der Durchführungsphase der Potenzialeinschätzung werden geeignete Methoden und Verfahren ausgewählt, z. B. psychologische Tests, Assessment-Center oder das Mitarbeitergespräch."
+  },
+  {
+   "f": 2,
+   "sub": "Fahrzeugtechnik und Wartung",
+   "t": "mc",
+   "q": "Als was muss eine Kfz-Werkstatt zertifiziert sein, um Wartungs- und Reparaturarbeiten an Elektro- und Hybridfahrzeugen durchführen zu dürfen?",
+   "o": [
+    {
+     "t": "Fachbetrieb für Hybrid- und Elektrofahrzeuge",
+     "ok": 1
+    },
+    {
+     "t": "Fachbetrieb nach Wasserhaushaltsgesetz",
+     "ok": 0
+    },
+    {
+     "t": "Amtlich anerkannte Prüfstelle für den Kraftfahrzeugverkehr",
+     "ok": 0
+    },
+    {
+     "t": "Zertifizierter Gefahrgutbetrieb nach GGVSEB",
+     "ok": 0
+    }
+   ],
+   "e": "Für Arbeiten an Hochvolt-Systemen muss die Werkstatt die baulichen Voraussetzungen erfüllen und als 'Fachbetrieb für Hybrid- und Elektrofahrzeuge' zertifiziert sein."
+  },
+  {
+   "f": 3,
+   "sub": "Fahrzeugtechnik und Wartung",
+   "t": "mc",
+   "q": "Welche Qualifikation müssen Mitarbeiter besitzen, die in einer Werkstatt an den Hochvoltsystemen von Elektrofahrzeugen arbeiten?",
+   "o": [
+    {
+     "t": "Fachkundiger für Arbeiten an HV-eigensicheren Systemen",
+     "ok": 1
+    },
+    {
+     "t": "Gefahrgutbeauftragter nach GbV",
+     "ok": 0
+    },
+    {
+     "t": "Sicherheitsbeauftragter nach § 22 SGB VII",
+     "ok": 0
+    },
+    {
+     "t": "Ladungssicherungsbeauftragter",
+     "ok": 0
+    }
+   ],
+   "e": "Die Arbeiten an den Hochvoltsystemen dürfen nur entsprechend qualifizierte Mitarbeiter durchführen, nämlich Fachkundige für Arbeiten an HV-eigensicheren Systemen."
+  },
+  {
+   "f": 2,
+   "sub": "Lenk- und Ruhezeiten",
+   "t": "mc",
+   "q": "Was versteht man bei aufzeichnungspflichtigen Fahrzeugen mit digitalem Fahrtenschreiber unter einem lückenlosen Arbeitszeitnachweis?",
+   "o": [
+    {
+     "t": "Ein personenbezogener Nachweis aller Tätigkeiten und Nicht-Tätigkeiten rund um die Uhr",
+     "ok": 1
+    },
+    {
+     "t": "Ein Nachweis, der ausschließlich die reinen Lenkzeiten während der Fahrt erfasst",
+     "ok": 0
+    },
+    {
+     "t": "Ein Nachweis, der nur die wöchentliche Ruhezeit dokumentieren muss",
+     "ok": 0
+    },
+    {
+     "t": "Ein Nachweis, der lediglich bei grenzüberschreitenden Fahrten zu führen ist",
+     "ok": 0
+    }
+   ],
+   "e": "Ein lückenloser Arbeitszeitnachweis ist ein personenbezogener Nachweis aller Tätigkeiten und Nicht-Tätigkeiten rund um die Uhr, also aller Lenk-, Arbeits-, Pausen-, Ruhe- und Bereitschaftszeiten."
+  },
+  {
+   "f": 2,
+   "sub": "Lenk- und Ruhezeiten",
+   "t": "mc",
+   "q": "Welche Pflicht trifft den Unternehmer nach der Kontrollgeräteverordnung VO (EU) Nr. 165/2014?",
+   "o": [
+    {
+     "t": "Regelmäßige Überprüfung der ordnungsgemäßen Verwendung des Fahrtenschreibers",
+     "ok": 1
+    },
+    {
+     "t": "Monatliche Neukalibrierung sämtlicher Fahrerkarten durch den Unternehmer selbst",
+     "ok": 0
+    },
+    {
+     "t": "Aushändigung der Fahrerkarte erst nach einer bestandenen jährlichen Fahrprüfung",
+     "ok": 0
+    },
+    {
+     "t": "Vollständiger Verzicht auf jede Dokumentation zum Schutz der Fahrerdaten",
+     "ok": 0
+    }
+   ],
+   "e": "Der Unternehmer muss die ordnungsgemäße Verwendung des Fahrtenschreibers regelmäßig überprüfen, bei festgestellten Verstößen unterweisen und beides schriftlich dokumentieren."
+  },
+  {
+   "f": 2,
+   "sub": "Ladungssicherung",
+   "t": "calc",
+   "q": "Eine standsichere Ladung mit einer Gesamtmasse von 16.000 kg soll auf einem Lkw gesichert werden. Wie groß ist die erforderliche Sicherungskraft nach vorn, wenn hierfür 80 % der Gewichtskraft anzusetzen sind?",
+   "ans": 12800,
+   "unit": "daN",
+   "e": "Nach vorn sind 80 % der Gewichtskraft zu sichern: 80 % von 16.000 kg ergeben 12.800 daN."
+  },
+  {
+   "f": 2,
+   "sub": "Ladungssicherung",
+   "t": "calc",
+   "q": "Eine Ladung mit einer Gesamtmasse von 16.000 kg steht auf rutschhemmendem Material mit einem Reibbeiwert von µ = 0,6. Welche Sicherungskraft wird allein durch die Reibung dieses rutschhemmenden Materials aufgenommen?",
+   "ans": 9600,
+   "unit": "daN",
+   "e": "Reibungskraft = Gewichtskraft x Reibbeiwert. Die Masse von 16.000 kg entspricht vereinfacht 16.000 daN Gewichtskraft: 16.000 daN x 0,6 = 9.600 daN."
+  },
+  {
+   "f": 2,
+   "sub": "Arbeitsmethodik",
+   "t": "mc",
+   "q": "Wofür stehen die vier Buchstaben des PDCA-Zyklus im kontinuierlichen Verbesserungsprozess (KVP)?",
+   "o": [
+    {
+     "t": "Plan, Do, Check, Act",
+     "ok": 1
+    },
+    {
+     "t": "Plan, Deliver, Control, Adjust",
+     "ok": 0
+    },
+    {
+     "t": "Prepare, Do, Correct, Approve",
+     "ok": 0
+    },
+    {
+     "t": "Predict, Deploy, Check, Analyze",
+     "ok": 0
+    }
+   ],
+   "e": "Der PDCA-Zyklus beschreibt einen Kreislauf zur Verbesserung; die Buchstaben stehen für Plan, Do, Check und Act."
+  },
+  {
+   "f": 3,
+   "sub": "Arbeitsmethodik",
+   "t": "mc",
+   "q": "Welche Aufgabe gehört im PDCA-Zyklus zur Phase 'Plan'?",
+   "o": [
+    {
+     "t": "Problem und Ist-Zustand beschreiben, Ursachen analysieren und den Zielzustand mit Messgrößen festlegen",
+     "ok": 1
+    },
+    {
+     "t": "Die festgelegten Maßnahmen zur Zielerreichung umsetzen",
+     "ok": 0
+    },
+    {
+     "t": "Die gesammelten Ergebnisse reflektieren und Maßnahmen bei Bedarf nachjustieren",
+     "ok": 0
+    },
+    {
+     "t": "Aus den Erfahrungen Standards für das künftige Vorgehen ableiten",
+     "ok": 0
+    }
+   ],
+   "e": "In der Plan-Phase werden Problem und Ist-Zustand beschrieben, Ursachen analysiert sowie Zielzustand und Messgrößen festgelegt; die übrigen Optionen beschreiben die Phasen Do, Check und Act."
+  },
+  {
+   "f": 2,
+   "sub": "Materialwirtschaft",
+   "t": "calc",
+   "q": "Der Lagerbestand an Leuchtmitteln betrug zu Jahresbeginn 820 Stück und zum Jahresende 580 Stück. Im ersten Halbjahr wurden monatlich 710 Stück bestellt, von Juli bis Oktober monatlich 625 Stück, im November und Dezember erfolgte keine Bestellung. Wie hoch ist der Jahresverbrauch?",
+   "ans": 7000,
+   "unit": "Stück",
+   "e": "Jahresverbrauch = Anfangsbestand + Zugänge − Endbestand: 820 + 6×710 + 4×625 − 580 = 820 + 4.260 + 2.500 − 580 = 7.000 Stück."
+  },
+  {
+   "f": 2,
+   "sub": "Materialwirtschaft",
+   "t": "calc",
+   "q": "Für Leuchtmittel betragen der Jahresverbrauch 7.000 Stück, die fixen Bestellkosten 120 €/Bestellung, der Einstandspreis 12 €/Stück und der Lagerhaltungskostensatz 14 %. Wie hoch ist die optimale Bestellmenge nach der Andler-Formel?",
+   "ans": 1000,
+   "unit": "Stück",
+   "e": "Optimale Bestellmenge = √(2 × 120 € × 7.000 / (12 € × 0,14)) = √1.000.000 = 1.000 Stück."
+  },
+  {
+   "f": 2,
+   "sub": "Personalplanung",
+   "t": "mc",
+   "q": "Offene Stellen sollen zunächst intern ausgeschrieben werden. Welcher der folgenden Punkte ist ein Nachteil einer internen Stellenbesetzung?",
+   "o": [
+    {
+     "t": "Es besteht die Gefahr der Betriebsblindheit, weil neue Betrachtungsweisen und Impulse ausbleiben",
+     "ok": 1
+    },
+    {
+     "t": "Der neue Mitarbeiter kennt weder das Unternehmen noch seine Abläufe",
+     "ok": 0
+    },
+    {
+     "t": "Die Einarbeitungszeit des ausgewählten Mitarbeiters ist besonders lang",
+     "ok": 0
+    },
+    {
+     "t": "Die Personalbeschaffungskosten fallen besonders hoch aus",
+     "ok": 0
+    }
+   ],
+   "e": "Bei interner Besetzung droht Betriebsblindheit durch fehlende neue Impulse; zudem können nicht berücksichtigte Mitarbeiter demotiviert werden. Kurze Einarbeitung und Betriebskenntnis sind dagegen Vorteile."
+  },
+  {
+   "f": 2,
+   "sub": "Mitarbeiterbeurteilung",
+   "t": "mc",
+   "q": "Zur Bewerberauswahl wird ein Assessment-Center (AC) eingesetzt. Welche Anforderung an die Bewerber lässt sich in einem AC typischerweise beobachten?",
+   "o": [
+    {
+     "t": "Kommunikationsfähigkeit und Gesprächsführung",
+     "ok": 1
+    },
+    {
+     "t": "Die Höhe des bisher bezogenen Bruttojahresgehalts",
+     "ok": 0
+    },
+    {
+     "t": "Die Anzahl der bisherigen Jahre der Betriebszugehörigkeit",
+     "ok": 0
+    },
+    {
+     "t": "Der persönliche Steuerfreibetrag des Bewerbers",
+     "ok": 0
+    }
+   ],
+   "e": "Im AC beobachtbar sind u.a. Kommunikationsfähigkeit und Gesprächsführung, das Verständnis von Gesamtzusammenhängen sowie Zeitmanagement und Prioritätensetzung. Gehalt, Betriebszugehörigkeit und Steuerfreibetrag sind reine Aktendaten und keine im AC beobachtbaren Kompetenzen."
+  },
+  {
+   "f": 1,
+   "sub": "Arbeitsschutz",
+   "t": "mc",
+   "q": "Welche Zielsetzung verfolgen regelmäßige Unterweisungen der Mitarbeiter in einem Verkehrsunternehmen in erster Linie?",
+   "o": [
+    {
+     "t": "Sicherstellen, dass alle Mitarbeiter die notwendigen Kenntnisse und Fähigkeiten für die sichere Durchführung ihrer Aufgaben besitzen.",
+     "ok": 1
+    },
+    {
+     "t": "Die gesetzlich vorgeschriebene Hauptuntersuchung der Fahrzeuge ersetzen.",
+     "ok": 0
+    },
+    {
+     "t": "Die Höhe der Kfz-Steuer für den Fuhrpark berechnen.",
+     "ok": 0
+    },
+    {
+     "t": "Die Vergütung der eingesetzten Leiharbeitnehmer festlegen.",
+     "ok": 0
+    }
+   ],
+   "e": "Unterweisungen dienen dazu, den sicheren Umgang mit Fahrzeugen und Arbeitsmitteln zu gewährleisten, gesetzliche Vorgaben einzuhalten und Risiken zu minimieren."
+  },
+  {
+   "f": 1,
+   "sub": "Arbeitsschutz",
+   "t": "mc",
+   "q": "Mit welcher betrieblichen Maßnahme lässt sich der Unterweisungsbedarf in einem Unternehmen systematisch ermitteln?",
+   "o": [
+    {
+     "t": "Durch regelmäßige Gefährdungsbeurteilungen der Arbeitsprozesse.",
+     "ok": 1
+    },
+    {
+     "t": "Durch Erhöhung der Dieselbevorratung im Lager.",
+     "ok": 0
+    },
+    {
+     "t": "Durch Verkürzung der gesetzlichen Ruhezeiten des Fahrpersonals.",
+     "ok": 0
+    },
+    {
+     "t": "Durch Anschaffung zusätzlicher Reifensätze.",
+     "ok": 0
+    }
+   ],
+   "e": "Durch regelmäßige Gefährdungsbeurteilungen (§ 5 ArbSchG) werden Risiken in den Arbeitsprozessen identifiziert; daraus wird der konkrete Unterweisungsbedarf (§ 12 ArbSchG) abgeleitet."
+  },
+  {
+   "f": 2,
+   "sub": "Kostenrechnung",
+   "t": "calc",
+   "q": "Ein Sattelkraftfahrzeug hat Anschaffungskosten inklusive Reifen von 180.000 €. Der enthaltene Reifensatz (6.000 €) wird gesondert als Reifenkosten abgerechnet. Der Restwert beträgt 20.000 €, die Nutzungsdauer 8 Jahre. Wie hoch ist die jährliche lineare Abschreibung?",
+   "ans": 19250,
+   "unit": "€",
+   "e": "Lineare Abschreibung = (Anschaffungskosten abzüglich gesondert abgerechneter Reifen und Restwert) geteilt durch die Nutzungsdauer: (180.000 − 6.000 − 20.000) / 8 = 19.250 €."
+  },
+  {
+   "f": 2,
+   "sub": "Kostenrechnung",
+   "t": "calc",
+   "q": "Ein Lkw legt jährlich 100.000 km zurück und verbraucht 30 Liter Diesel je 100 km. Der Nettopreis für Diesel beträgt 1,30 €/Liter. Wie hoch sind die jährlichen Kraftstoffkosten?",
+   "ans": 39000,
+   "unit": "€",
+   "e": "100.000 km × 30 l/100 km = 30.000 l; 30.000 l × 1,30 €/l = 39.000 €."
+  },
+  {
+   "f": 3,
+   "sub": "Kostenrechnung",
+   "t": "calc",
+   "q": "Ein Fahrer erhält einen Monatslohn von 3.500 €. Darauf entfallen Lohnnebenkosten von 35 %. Zusätzlich wird ein Personaleinsatzfaktor von 1,2 angesetzt. Wie hoch sind die jährlichen Lohnkosten (12 Monate)?",
+   "ans": 68040,
+   "unit": "€",
+   "e": "3.500 € × 12 Monate × 1,35 (35 % Lohnnebenkosten) × 1,2 (Personaleinsatzfaktor) = 68.040 €."
+  },
+  {
+   "f": 2,
+   "sub": "Kostenrechnung",
+   "t": "calc",
+   "q": "Ein Fahrzeug erwirtschaftet jährliche Fahrzeugerlöse von 158.700 € bei jährlichen Gesamtkosten von 168.270 €. Wie hoch ist der jährliche Verlust des Fahrzeugs?",
+   "ans": 9570,
+   "unit": "€",
+   "e": "Gesamtkosten 168.270 € abzüglich Fahrzeugerlöse 158.700 € ergeben einen Verlust von 9.570 €; das Fahrzeug arbeitet somit nicht kostendeckend."
+  },
+  {
+   "f": 2,
+   "sub": "Kostenrechnung",
+   "t": "calc",
+   "q": "Für einen Fahrdienst stehen brutto 2.200 Arbeitsstunden pro Jahr zur Verfügung. Davon entfallen 225 Stunden auf Urlaub; zusätzlich betragen die Fehlzeiten 10 % der Bruttoarbeitsstunden. Wie viele Nettoarbeitsstunden verbleiben pro Jahr?",
+   "ans": 1755,
+   "unit": "h",
+   "e": "Fehlzeiten = 10 % von 2.200 h = 220 h. Nettoarbeitsstunden = 2.200 h − 225 h (Urlaub) − 220 h (Fehlzeiten) = 1.755 h."
+  },
+  {
+   "f": 2,
+   "sub": "Projektmanagement",
+   "t": "mc",
+   "q": "Welche Fragestellung sollte bei der zielführenden Zusammensetzung einer Projektgruppe beachtet werden?",
+   "o": [
+    {
+     "t": "Sind in der Projektgruppe die fachlichen Kenntnisse vorhanden, um das Projektziel zu erreichen?",
+     "ok": 1
+    },
+    {
+     "t": "Welche Farbe sollen die Präsentationsfolien der Gruppe haben?",
+     "ok": 0
+    },
+    {
+     "t": "Wie hoch ist der aktuelle Dieselpreis?",
+     "ok": 0
+    },
+    {
+     "t": "Welches Fahrzeug im Fuhrpark hat die höchste Laufleistung?",
+     "ok": 0
+    }
+   ],
+   "e": "Für den Projekterfolg müssen die erforderlichen fachlichen Kenntnisse und Fachbereiche mit entsprechenden Befugnissen in der Gruppe vertreten sein."
+  },
+  {
+   "f": 2,
+   "sub": "Präsentation",
+   "t": "mc",
+   "q": "Welches Merkmal trägt zur Verständlichkeit einer Präsentation für die Adressaten bei?",
+   "o": [
+    {
+     "t": "Kürze und Prägnanz - Beschränkung auf das Wesentliche ohne unnötige Details.",
+     "ok": 1
+    },
+    {
+     "t": "Möglichst viele Fachbegriffe ohne Erklärung verwenden.",
+     "ok": 0
+    },
+    {
+     "t": "Lange, verschachtelte Sätze bevorzugen.",
+     "ok": 0
+    },
+    {
+     "t": "Auf eine erkennbare Gliederung verzichten.",
+     "ok": 0
+    }
+   ],
+   "e": "Die Verständlichkeit hängt unter anderem von Kürze und Prägnanz ab: Die Präsentation sollte sich auf das Wesentliche beschränken und ohne unnötige Details auskommen."
+  },
+  {
+   "f": 2,
+   "sub": "Personalentwicklung",
+   "t": "mc",
+   "q": "Was versteht man unter einer Qualifikationsmatrix?",
+   "o": [
+    {
+     "t": "Ein Instrument, das in einer Tabelle die Qualifikationsanforderungen der Arbeitsaufgaben und die vorhandenen Qualifikationen der Mitarbeiter gegenüberstellt.",
+     "ok": 1
+    },
+    {
+     "t": "Eine Liste, die die monatlichen Lohnkosten aller Mitarbeiter aufführt.",
+     "ok": 0
+    },
+    {
+     "t": "Ein Plan zur Dokumentation der Lenk- und Ruhezeiten der Fahrer.",
+     "ok": 0
+    },
+    {
+     "t": "Eine Übersicht der Wartungsintervalle aller Fahrzeuge.",
+     "ok": 0
+    }
+   ],
+   "e": "Die Qualifikationsmatrix stellt in Tabellenform die Qualifikationsanforderungen der Arbeitsaufgaben den vorhandenen Qualifikationen der Mitarbeiter gegenüber und macht so Qualifizierungsbedarf sichtbar."
+  },
+  {
+   "f": 4,
+   "sub": "Fahrzeugtechnik und Wartung",
+   "t": "calc",
+   "q": "Ein beladener Lkw bremst mit einer Bremsverzögerung von 6,0 m/s². Die Polizei stellt einen Bremsweg von 44 m fest; unmittelbar vor dem Aufprall stand der Tacho noch bei einer Restgeschwindigkeit von 10 km/h. Berechnen Sie die Anfangsgeschwindigkeit v0 in km/h nach der Formel v0 = √(2·a·s + v²).",
+   "ans": 83.32,
+   "unit": "km/h",
+   "e": "Einsetzen: v0 = √(2·6,0 m/s²·44 m + (10/3,6 m/s)²) = √(528 + 7,716) = 23,145 m/s. Umrechnung ·3,6 ergibt 83,32 km/h."
+  },
+  {
+   "f": 3,
+   "sub": "Fahrzeugtechnik und Wartung",
+   "t": "calc",
+   "q": "Ein Lkw mit einer tatsächlichen Masse von 17 t prallt mit einer Restgeschwindigkeit von 10 km/h auf ein Fahrzeug auf. Berechnen Sie die dabei freigesetzte kinetische Energie in kNm nach der Formel E = ½·m·v².",
+   "ans": 65.586,
+   "unit": "kNm",
+   "e": "10 km/h ÷ 3,6 = 2,778 m/s. E = ½·m·v² = ½·17.000 kg·(2,778 m/s)² = ½·17.000·7,716 = 65.586 Nm = 65,586 kNm."
+  },
+  {
+   "f": 2,
+   "sub": "Fahrzeugtechnik und Wartung",
+   "t": "mc",
+   "q": "Wozu dienen aktive Sicherheitssysteme in Nutzfahrzeugen?",
+   "o": [
+    {
+     "t": "Sie dienen der Vorbeugung von Unfällen und greifen bei Fehlern des Fahrers ein.",
+     "ok": 1
+    },
+    {
+     "t": "Sie beschränken ausschließlich die Folgen eines Unfalls und schützen die Insassen.",
+     "ok": 0
+    },
+    {
+     "t": "Sie dokumentieren Verstöße gegen die Sozialvorschriften für spätere Kontrollen.",
+     "ok": 0
+    },
+    {
+     "t": "Sie steuern die Abgasnachbehandlung zur Einhaltung der Emissionsgrenzwerte.",
+     "ok": 0
+    }
+   ],
+   "e": "Aktive Sicherheitssysteme sollen Unfälle vermeiden und bei ungünstigen Fahrbedingungen bzw. Fehlern des Fahrers eingreifen. Das Beschränken der Unfallfolgen ist Aufgabe passiver Systeme."
+  },
+  {
+   "f": 2,
+   "sub": "Fahrzeugtechnik und Wartung",
+   "t": "mc",
+   "q": "Welches der folgenden Systeme ist ein passives Sicherheitssystem in einem Nutzfahrzeug?",
+   "o": [
+    {
+     "t": "Airbag",
+     "ok": 1
+    },
+    {
+     "t": "ABS (Antiblockiersystem)",
+     "ok": 0
+    },
+    {
+     "t": "ESP (Elektronisches Stabilitätsprogramm)",
+     "ok": 0
+    },
+    {
+     "t": "Spurhalteassistent",
+     "ok": 0
+    }
+   ],
+   "e": "Passive Sicherheitssysteme sollen die Unfallfolgen und Verletzungen der Insassen mindern; dazu zählen z. B. Airbags, Sicherheitsgurte, Gurtstraffer und Kopfstützen. ABS, ESP und Spurhalteassistent sind aktive Systeme, die Unfälle vermeiden helfen."
+  },
+  {
+   "f": 2,
+   "sub": "Fahrzeugtechnik und Wartung",
+   "t": "mc",
+   "q": "Aus welchen Sensorkomponenten besteht ein Notbremsassistent im Lkw typischerweise?",
+   "o": [
+    {
+     "t": "Ein Radarsensor in der Fahrzeugfront und ein Kamerasystem in der Frontscheibe.",
+     "ok": 1
+    },
+    {
+     "t": "Zwei Ultraschallsensoren im Heck des Fahrzeugs.",
+     "ok": 0
+    },
+    {
+     "t": "Ein GPS-Empfaenger und ein Reifendrucksensor.",
+     "ok": 0
+    },
+    {
+     "t": "Ausschliesslich ein Lenkwinkelsensor am Lenkgetriebe.",
+     "ok": 0
+    }
+   ],
+   "e": "Der Notbremsassistent kombiniert die Daten eines Radarsensors in der Front mit denen eines Kamerasystems in der Frontscheibe, um Gefahrensituationen fruehzeitig zu erkennen."
+  },
+  {
+   "f": 3,
+   "sub": "Gefahrgut",
+   "t": "mc",
+   "q": "Wie lange muss ein Gefahrgutbeauftragter seine schriftlichen Aufzeichnungen über die Überwachungstätigkeit mindestens aufbewahren?",
+   "o": [
+    {
+     "t": "Mindestens fünf Jahre nach deren Erstellung.",
+     "ok": 1
+    },
+    {
+     "t": "Mindestens ein Jahr nach deren Erstellung.",
+     "ok": 0
+    },
+    {
+     "t": "Mindestens drei Jahre nach deren Erstellung.",
+     "ok": 0
+    },
+    {
+     "t": "Mindestens zehn Jahre nach deren Erstellung.",
+     "ok": 0
+    }
+   ],
+   "e": "Die Aufzeichnungen über die Überwachungstätigkeit sind mindestens fünf Jahre nach ihrer Erstellung aufzubewahren und der zuständigen Behörde auf Verlangen vorzulegen."
+  },
+  {
+   "f": 2,
+   "sub": "Gefahrgut",
+   "t": "mc",
+   "q": "Wie ist eine kennzeichnungspflichtige Beförderungseinheit im Straßengüterverkehr gemäß ADR äußerlich zu kennzeichnen?",
+   "o": [
+    {
+     "t": "Mit einer rechteckigen, orangefarbenen Tafel vorne und hinten an der Beförderungseinheit.",
+     "ok": 1
+    },
+    {
+     "t": "Mit einem grünen Warndreieck an der Fahrzeugseite.",
+     "ok": 0
+    },
+    {
+     "t": "Mit einer blauen runden Plakette am Heck.",
+     "ok": 0
+    },
+    {
+     "t": "Mit einer roten Rundumkennleuchte auf dem Dach.",
+     "ok": 0
+    }
+   ],
+   "e": "Kennzeichnungspflichtige Beförderungseinheiten sind gemäß ADR (5.3.2) vorne und hinten mit einer rechteckigen, orangefarbenen Tafel zu kennzeichnen."
+  },
+  {
+   "f": 4,
+   "sub": "Gefahrgut",
+   "t": "mc",
+   "q": "Welches Mindestgesamtfassungsvermögen an tragbaren Feuerlöschgeräten muss eine kennzeichnungspflichtige Beförderungseinheit (Lkw über 7,5 t zGM) gemäß ADR mitführen?",
+   "o": [
+    {
+     "t": "12 kg, davon mindestens ein Gerät mit einem Fassungsvermögen von 6 kg.",
+     "ok": 1
+    },
+    {
+     "t": "6 kg, davon mindestens ein Gerät mit 2 kg.",
+     "ok": 0
+    },
+    {
+     "t": "2 kg als ein einzelnes Gerät.",
+     "ok": 0
+    },
+    {
+     "t": "24 kg, davon mindestens zwei Geräte mit je 6 kg.",
+     "ok": 0
+    }
+   ],
+   "e": "Nach ADR 8.1.4.1.1 sind bei Beförderungseinheiten über 7,5 t zGM tragbare Feuerlöschgeräte mit einem Mindestgesamtfassungsvermögen von 12 kg mitzuführen, davon mindestens ein Gerät mit 6 kg."
+  },
+  {
+   "f": 3,
+   "sub": "Führungsstile",
+   "t": "mc",
+   "q": "Was beschreiben Führungsstile im Unterschied zu Führungstechniken?",
+   "o": [
+    {
+     "t": "Das dauerhafte Verhalten eines Vorgesetzten gegenüber Mitarbeitenden, z. B. bei Kontrolle, Entscheidungsfindung und Kommunikation.",
+     "ok": 1
+    },
+    {
+     "t": "Methodische Instrumente, die aufgabenbezogen und zielorientiert die praktische Umsetzung im Handlungsfeld regeln.",
+     "ok": 0
+    },
+    {
+     "t": "Gesetzliche Vorgaben zur Gestaltung von Arbeitszeit und Pausen.",
+     "ok": 0
+    },
+    {
+     "t": "Tarifvertragliche Regelungen zur Höhe der Entlohnung.",
+     "ok": 0
+    }
+   ],
+   "e": "Führungsstile kennzeichnen das dauerhafte Verhalten des Vorgesetzten (Kontrolle, Verantwortung, Entscheidungsfindung, Motivation, Kommunikation). Führungstechniken sind dagegen methodische, zielorientierte Instrumente."
+  },
+  {
+   "f": 4,
+   "sub": "Konflikte",
+   "t": "mc",
+   "q": "Welches Anzeichen deutet typischerweise auf einen mutmaßlichen Konflikt zwischen Mitarbeitenden hin?",
+   "o": [
+    {
+     "t": "Nachlassende Arbeitsleistung, obwohl der Beschäftigte leistungsfähig ist.",
+     "ok": 1
+    },
+    {
+     "t": "Sachliche und offene Kommunikation zwischen den Mitarbeitenden.",
+     "ok": 0
+    },
+    {
+     "t": "Gleichbleibend hohe Arbeitsleistung im Team.",
+     "ok": 0
+    },
+    {
+     "t": "Gemeinsame Pausengestaltung des gesamten Teams.",
+     "ok": 0
+    }
+   ],
+   "e": "Ein Konfliktsignal ist u. a. eine nachlassende Arbeitsleistung trotz Leistungsfähigkeit, ebenso gestörte Kommunikation (Drohungen oder Schweigen) und vermehrte Gruppenbildung."
+  },
+  {
+   "f": 1,
+   "sub": "Arbeitsschutz",
+   "t": "mc",
+   "q": "Was ist die zentrale Aufgabe des Arbeitsschutzausschusses (ASA) in einem Betrieb?",
+   "o": [
+    {
+     "t": "Er berät über Anliegen des Arbeits- und Gesundheitsschutzes sowie der Unfallverhütung.",
+     "ok": 1
+    },
+    {
+     "t": "Er erstellt eigenständig die Lohn- und Gehaltsabrechnung der Beschäftigten.",
+     "ok": 0
+    },
+    {
+     "t": "Er entscheidet allein über Kündigungen bei sicherheitswidrigem Verhalten.",
+     "ok": 0
+    },
+    {
+     "t": "Er vertritt das Unternehmen bei Straßenkontrollen der BALM.",
+     "ok": 0
+    }
+   ],
+   "e": "Der Arbeitsschutzausschuss hat nach § 11 ASiG die Aufgabe, über Anliegen des Arbeits- und Gesundheitsschutzes sowie der Unfallverhütung zu beraten, z. B. über Betriebsbegehungen, Unfallstatistik und Schulungsmaßnahmen."
+  },
+  {
+   "f": 2,
+   "sub": "Lenk- und Ruhezeiten",
+   "t": "mc",
+   "q": "Wie lang darf die tägliche Lenkzeit nach Art. 6 der VO (EG) 561/2006 höchstens sein und in welchem Umfang darf sie verlängert werden?",
+   "o": [
+    {
+     "t": "Grundsätzlich 9 Stunden; höchstens zweimal pro Woche Verlängerung auf 10 Stunden.",
+     "ok": 1
+    },
+    {
+     "t": "Grundsätzlich 8 Stunden; beliebig oft Verlängerung auf 10 Stunden.",
+     "ok": 0
+    },
+    {
+     "t": "Grundsätzlich 10 Stunden; höchstens dreimal pro Woche Verlängerung auf 11 Stunden.",
+     "ok": 0
+    },
+    {
+     "t": "Grundsätzlich 9 Stunden; täglich Verlängerung auf 11 Stunden zulässig.",
+     "ok": 0
+    }
+   ],
+   "e": "Nach Art. 6 der VO (EG) 561/2006 beträgt die tägliche Lenkzeit neun Stunden; sie darf höchstens zweimal pro Woche auf zehn Stunden verlängert werden."
+  },
+  {
+   "f": 2,
+   "sub": "Lenk- und Ruhezeiten",
+   "t": "mc",
+   "q": "Nach welcher Lenkdauer muss ein Fahrer nach Art. 7 der VO (EG) 561/2006 eine Fahrtunterbrechung einlegen und wie lang muss diese mindestens sein?",
+   "o": [
+    {
+     "t": "Nach spätestens 4,5 Stunden Lenkdauer eine Unterbrechung von 45 Minuten (aufteilbar in 15 + 30 Minuten).",
+     "ok": 1
+    },
+    {
+     "t": "Nach spätestens 6 Stunden Lenkdauer eine Unterbrechung von 30 Minuten.",
+     "ok": 0
+    },
+    {
+     "t": "Nach spätestens 4,5 Stunden Lenkdauer eine Unterbrechung von 60 Minuten.",
+     "ok": 0
+    },
+    {
+     "t": "Nach spätestens 5,5 Stunden Lenkdauer eine Unterbrechung von 45 Minuten (nicht aufteilbar).",
+     "ok": 0
+    }
+   ],
+   "e": "Nach Art. 7 der VO (EG) 561/2006 ist nach viereinhalb Stunden Lenkdauer eine Fahrtunterbrechung von 45 Minuten einzulegen; diese kann in 15 und anschließend 30 Minuten aufgeteilt werden."
+  },
+  {
+   "f": 2,
+   "sub": "Lenk- und Ruhezeiten",
+   "t": "mc",
+   "q": "Wie lang muss die regelmäßige wöchentliche Ruhezeit nach Art. 8 der VO (EG) 561/2006 mindestens sein und auf welchen Wert darf sie verkürzt werden?",
+   "o": [
+    {
+     "t": "Mindestens 45 Stunden; verkürzbar auf mindestens 24 Stunden zwischen zwei regelmäßigen Wochenruhezeiten.",
+     "ok": 1
+    },
+    {
+     "t": "Mindestens 36 Stunden; verkürzbar auf mindestens 24 Stunden.",
+     "ok": 0
+    },
+    {
+     "t": "Mindestens 45 Stunden; eine Verkürzung ist nicht zulässig.",
+     "ok": 0
+    },
+    {
+     "t": "Mindestens 24 Stunden; verkürzbar auf mindestens 11 Stunden.",
+     "ok": 0
+    }
+   ],
+   "e": "Nach Art. 8 der VO (EG) 561/2006 beträgt die regelmäßige wöchentliche Ruhezeit mindestens 45 Stunden. Sie darf als reduzierte wöchentliche Ruhezeit auf mindestens 24 Stunden verkürzt werden (Art. 8 Abs. 6)."
+  },
+  {
+   "f": 2,
+   "sub": "Gefahrgut",
+   "t": "mc",
+   "q": "An wen richtet sich im Gefahrguttransport die Unterweisung zum allgemeinen Sicherheitsbewusstsein und welches Ziel verfolgt sie?",
+   "o": [
+    {
+     "t": "An alle Personen, die mit Gefahrgut in Berührung kommen (z. B. Büro-, Lagerpersonal, Fahrer); Ziel ist ein grundlegendes Verständnis der Gefahrgutvorschriften.",
+     "ok": 1
+    },
+    {
+     "t": "Nur an den Gefahrgutbeauftragten; Ziel ist die jährliche Prüfungsvorbereitung.",
+     "ok": 0
+    },
+    {
+     "t": "Nur an Fahrer mit ADR-Schein; Ziel ist ausschließlich das Beladen von Tankfahrzeugen.",
+     "ok": 0
+    },
+    {
+     "t": "Nur an die Geschäftsleitung; Ziel ist die Auswahl passender Versicherungen.",
+     "ok": 0
+    }
+   ],
+   "e": "Die Unterweisung zum allgemeinen Sicherheitsbewusstsein (ADR 1.3) richtet sich an alle Personen, die mit Gefahrgut in Berührung kommen, und soll ein grundlegendes Verständnis der Gefahrgutvorschriften vermitteln."
+  },
+  {
+   "f": 2,
+   "sub": "Kostenrechnung",
+   "t": "calc",
+   "q": "Ein Diesel-Lkw hat eine Jahresfahrleistung von 70.000 km, einen durchschnittlichen Verbrauch von 27 l/100 km und Kraftstoffkosten von 1,65 €/l. Berechnen Sie die jährlichen Kraftstoffkosten.",
+   "ans": 31185,
+   "unit": "€",
+   "e": "70.000 km × 27 l/100 km = 18.900 l; 18.900 l × 1,65 €/l = 31.185 €/a."
+  },
+  {
+   "f": 2,
+   "sub": "Kostenrechnung",
+   "t": "calc",
+   "q": "Ein Elektro-Lkw hat eine Jahresfahrleistung von 70.000 km, einen durchschnittlichen Energieverbrauch von 1,5 kWh/km und Energiekosten von 0,24 €/kWh. Berechnen Sie die jährlichen Energiekosten.",
+   "ans": 25200,
+   "unit": "€/a",
+   "e": "70.000 km × 1,5 kWh/km = 105.000 kWh; 105.000 kWh × 0,24 €/kWh = 25.200 €/a."
+  },
+  {
+   "f": 2,
+   "sub": "Kostenrechnung",
+   "t": "calc",
+   "q": "Ein Diesel-Lkw hat einen Kaufpreis von 120.000 € und eine Nutzungszeit von 8 Jahren. Berechnen Sie die jährliche lineare Abschreibung (ohne Restwert).",
+   "ans": 15000,
+   "unit": "€/Jahr",
+   "e": "Lineare Abschreibung = Anschaffungskosten ÷ Nutzungsdauer = 120.000 € ÷ 8 Jahre = 15.000 €/Jahr."
+  },
+  {
+   "f": 2,
+   "sub": "Betriebsorganisation",
+   "t": "mc",
+   "q": "Was besagt die Pareto-Analyse (80/20-Regel) als Werkzeug des Qualitätsmanagements?",
+   "o": [
+    {
+     "t": "Etwa 80 % der Fehler entstehen durch etwa 20 % der Ursachen; die Hauptursachen werden priorisiert beseitigt.",
+     "ok": 1
+    },
+    {
+     "t": "80 % der Mitarbeitenden verursachen 20 % der Personalkosten.",
+     "ok": 0
+    },
+    {
+     "t": "20 % der Kunden bringen stets genau 20 % des Umsatzes.",
+     "ok": 0
+    },
+    {
+     "t": "Jeder Prozess muss zu 80 % automatisiert und zu 20 % manuell ablaufen.",
+     "ok": 0
+    }
+   ],
+   "e": "Die Pareto-Analyse dient der Priorisierung von Problemen: 80 % der Fehler entstehen durch 20 % der Ursachen, sodass die Hauptprobleme gezielt beseitigt werden können."
+  },
+  {
+   "f": 2,
+   "sub": "Personalentwicklung",
+   "t": "mc",
+   "q": "Welche Informationsquellen eignen sich als Basis für die Erstellung von Anforderungs- und Fähigkeitsprofilen von Mitarbeitenden?",
+   "o": [
+    {
+     "t": "Ergebnisse aus Leistungsbeurteilungen, fachliche Abschlüsse (Zeugnisse) aus der Personalakte und Mitarbeitergespräche.",
+     "ok": 1
+    },
+    {
+     "t": "Ausschließlich Alter und Wohnort der Mitarbeitenden.",
+     "ok": 0
+    },
+    {
+     "t": "Nur die Anzahl der geleisteten Überstunden im letzten Monat.",
+     "ok": 0
+    },
+    {
+     "t": "Ausschließlich anonyme Kundenbewertungen aus dem Internet.",
+     "ok": 0
+    }
+   ],
+   "e": "Als Informationsquellen dienen z. B. die Ergebnisse aus Leistungsbeurteilungen, die fachlichen Abschlüsse (Zeugnisse) aus der Personalakte sowie Mitarbeitergespräche."
+  }
+ ]
+}

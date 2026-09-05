@@ -1,0 +1,887 @@
+=== Seite 1 ===
+                                                             Einsatz nur im Rahmen des Korrekturprozesses gestattet. Weitergabe an unbefugte Dritte untersagt.
+
+
+
+                                                                Prüfungsteilnehmer-Nummer:
+
+
+
+
+                                                               Bundeseinheitliche Fortbildungsprüfung der Industrie- und Handelskammern
+
+                                                               Geprüfter Industriemeister/Geprüfte Industriemeisterin,
+                                                               fachrichtungsübergreifende Basisqualifikationen/
+                                                               grundlegende Qualifikationen
+                                                               Betriebswirtschaftliches Handeln
+
+                                                                Datum:                                     6. November 2025
+
+                                                                Bearbeitungszeit:                          90 Minuten
+    Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+
+
+
+
+                                                                                                                                                                                                                          Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+                                                                Anzahl Aufgaben:                           7
+
+                                                                Anzahl Anlagen:                            1
+
+7                                                               Seiten:                                    7
+
+
+
+                                                               Bevor Sie mit der Prüfung beginnen, prüfen Sie bitte die Prüfungsunterlagen. Wenn
+                                                               die Prüfungsunterlagen nicht vollständig sind, informieren Sie bitte die Aufsicht.
+
+                                                               Bitte lesen Sie die nachfolgenden Bearbeitungshinweise gut durch:
+                                                               ◼   Alle erlaubten Hilfsmittel wurden Ihnen mit der Einladung mitgeteilt.
+                                                               ◼   Sie erhalten einen Aufgabenteil sowie ein Heft für Ihre Lösungen.
+                                                               ◼   Sie können maximal 100 Punkte erreichen.
+                                                               ◼   Verwenden Sie je Aufgabe bitte eine neue Lösungsseite.
+                                                               ◼   Wenn Sie die Lösung einer Aufgabe auf eine Anlage schreiben sollen, wird Ihnen dies in
+                                                                   der Aufgabe mitgeteilt.
+                                                               ◼   Stellen Sie Ihre Lösungs- und Rechenvorgänge nachvollziehbar im Lösungsteil dar.
+                                                                   Reicht der Platz nicht aus, verwenden Sie bitte das Konzeptpapier. Weisen Sie auf die
+                                                                   Fortsetzung hin und kennzeichnen Sie diese.
+                                                               ◼   Eine nicht lesbare Prüfungsarbeit wird mit der Note „ungenügend“ (null Punkte)
+                                                                   bewertet. Die Konsequenzen entnehmen Sie bitte der Prüfungsordnung.
+                                                               ◼   Es gibt Aufgaben, die eine exakte Anzahl an Antworten vorgeben. Es werden nur die
+                                                                   ersten Antworten gewertet. Was über die exakte Anzahl hinausgeht, wird gestrichen.
+                                                               ◼   Geben Sie alle Ihnen zur Verfügung gestellten Unterlagen am Ende der Prüfung ab.
+                                                               ◼   Aufgrund der besseren Lesbarkeit bevorzugen wir in diesen Texten die männliche Form.
+                                                                   Mit diesem vereinfachten Ausdruck sind selbstverständlich alle Geschlechter gemeint.
+
+                                                                                       © DIHK – Gesellschaft für berufliche Bildung – Organisation zur Förderung der IHK-Weiterbildung gGmbH – Bonn
+                                                                          Die Vervielfältigung, Verbreitung oder öffentliche Wiedergabe der Publikation ist nicht gestattet (§§ 53, 54 UrhG) und strafbar (§ 106 UrhG).
+                                                                                                                      Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+                                                                                                                                         P 050-02-1125
+
+=== Seite 2 ===
+                                                         Einsatz nur im Rahmen des Korrekturprozesses gestattet. Weitergabe an unbefugte Dritte untersagt.
+
+                                                           GEPRÜFTE/-R INDUSTRIEMEISTER/-IN,
+                                                           FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+                                                           GRUNDLEGENDE QUALIFIKATIONEN
+                                                           Betriebswirtschaftliches Handeln
+
+
+
+                                                           Aufgabe 1
+                                                           Mögliche Punktzahl: 12
+                                                           In den letzten Jahren sind die Kosten der Industrie GmbH deutlich stärker gestiegen als die
+                                                           Umsätze. Insbesondere haben hohe Energiepreise und hohe Tariflohnabschlüsse die
+                                                           Gewinnmargen in einigen Produktbereichen schrumpfen lassen.
+
+                                                           Die Geschäftsführung prüft in diesem Zusammenhang eine Verlagerung der Produktions-
+                                                           stätten nach Südostasien.
+Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+
+
+
+
+                                                                                                                                                             Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+                                                           Beschreiben Sie vier Problembereiche, die sich aus einer Verlagerung der Produktion
+                                                           nach Südostasien für die Industrie GmbH ergeben könnten.
+
+
+                                                           Aufgabe 2
+                                                           Für die Beschaffung eines Kunststoffgranulats mit gleichmäßigem Verbrauch wird in der
+                                                           Industrie GmbH das Bestellpunktverfahren eingesetzt.
+
+                                                           Folgende Daten liegen Ihnen zur aktuellen Beschaffungssituation vor:
+
+                                                           ■   Jahresbedarf (360 Tage)             90 Tonnen
+
+                                                           ■   Preis pro Tonne                     4.500 €
+
+                                                           ■   Bestellkosten                       180 € je Bestellung
+
+                                                           ■   Lagerhaltungskostensatz             20 % p. a.
+
+                                                           ■   Sicherheitsbestand                  2 Tonnen
+
+                                                           ■   Beschaffungszeit                    12 Tage
+
+                                                           ■   Bestellmenge                        10 Tonnen/Bestellung
+
+                                                            a Mögliche Punktzahl: 2
+                                                           Ermitteln Sie den durchschnittlichen Lagerbestand.
+
+                                                            b Mögliche Punktzahl: 3
+                                                           Bestimmen Sie den Lagerbestand, der eine neue Bestellung auslöst.
+
+                                                            c Mögliche Punktzahl: 3
+                                                           Ermitteln Sie die optimale Bestellmenge.
+
+
+                                                                                                        Seite 2
+                                                                                                     P 050-02-1125
+
+=== Seite 3 ===
+                                                         Einsatz nur im Rahmen des Korrekturprozesses gestattet. Weitergabe an unbefugte Dritte untersagt.
+
+                                                           GEPRÜFTE/-R INDUSTRIEMEISTER/-IN,
+                                                           FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+                                                           GRUNDLEGENDE QUALIFIKATIONEN
+                                                           Betriebswirtschaftliches Handeln
+
+                                                            d Mögliche Punktzahl: 9
+                                                           Berechnen Sie das Kosteneinsparpotenzial bei Anwendung der optimalen Bestell-
+                                                           menge im Vergleich zur bisherigen Bestellmenge von 10 Tonnen/Bestellung.
+
+
+                                                           Aufgabe 3
+                                                           Zur Bewältigung des steigenden Arbeitsaufkommens in der Fertigungsplanung der Industrie
+                                                           GmbH soll eine zusätzliche Stelle installiert werden. Dazu muss eine entsprechende Stellen-
+                                                           beschreibung angefertigt werden.
+Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+
+
+
+
+                                                                                                                                                             Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+                                                            a Mögliche Punktzahl: 5
+                                                           Führen Sie fünf Inhalte einer Stellenbeschreibung an.
+
+                                                            b Mögliche Punktzahl: 6
+                                                           Beschreiben Sie aus Unternehmenssicht zwei Aufgaben, die eine Stellenbeschreibung
+                                                           erfüllen soll.
+
+                                                            c Mögliche Punktzahl: 2
+                                                           Erläutern Sie den Begriff Instanz.
+
+
+
+
+                                                                                                        Seite 3
+                                                                                                     P 050-02-1125
+
+=== Seite 4 ===
+                                                         Einsatz nur im Rahmen des Korrekturprozesses gestattet. Weitergabe an unbefugte Dritte untersagt.
+
+                                                           GEPRÜFTE/-R INDUSTRIEMEISTER/-IN,
+                                                           FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+                                                           GRUNDLEGENDE QUALIFIKATIONEN
+                                                           Betriebswirtschaftliches Handeln
+
+
+
+                                                           Aufgabe 4
+                                                           Der tarifliche Akkordgrundlohn pro Stunde für einen Facharbeiter beträgt 30,00 €.
+                                                           Der Akkordzuschlag beläuft sich auf 10 % und die Vorgabezeit wird mit 5 Minuten pro Stück
+                                                           angesetzt.
+
+                                                            a Mögliche Punktzahl: 3
+                                                           Ermitteln Sie den im Akkord erzielten Stundenlohn, wenn vom Facharbeiter 13 Stück
+                                                           pro Stunde gefertigt werden.
+Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+
+
+
+
+                                                                                                                                                             Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+                                                            b Mögliche Punktzahl: 3
+                                                           Stellen Sie die Lohnkosten pro Stück in Abhängigkeit vom Leistungsgrad
+                                                           (100 % – 125 %) grafisch dar.
+
+                                                            c Mögliche Punktzahl: 3
+                                                           Stellen Sie drei Voraussetzungen dar, die erfüllt sein müssen, um einen Mitarbeiter
+                                                           im Akkord zu entlohnen.
+
+                                                            d Mögliche Punktzahl: 6
+                                                           Der Betriebsrat der Industrie GmbH fordert eine Erfolgsbeteiligung für die Mitarbeiter.
+
+                                                           Erläutern Sie zwei Gründe für die Gewährung von Erfolgsbeteiligungen.
+
+
+
+
+                                                                                                         Seite 4
+                                                                                                      P 050-02-1125
+
+=== Seite 5 ===
+                                                         Einsatz nur im Rahmen des Korrekturprozesses gestattet. Weitergabe an unbefugte Dritte untersagt.
+
+                                                           GEPRÜFTE/-R INDUSTRIEMEISTER/-IN,
+                                                           FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+                                                           GRUNDLEGENDE QUALIFIKATIONEN
+                                                           Betriebswirtschaftliches Handeln
+
+
+
+                                                           Aufgabe 5
+                                                           Mögliche Punktzahl: 10
+                                                           In der Industrie GmbH fallen unterschiedlichste Geschäftsfälle an.
+
+                                                           Ordnen Sie die Geschäftsfälle in Anlage 1 den Begriffen: neutraler Aufwand, Zweck-
+                                                           aufwand und kalkulatorische Kosten zu.
+
+                                                           Tragen Sie dazu die entsprechenden Eurobeträge in die jeweilige Spalte ein.
+
+                                                           ■   Zahlung von Fertigungslöhnen
+Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+
+
+
+
+                                                                                                                                                             Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+                                                           ■   Entgangene Zinserträge
+
+                                                           ■   Verbrauch von Rohstoffen in der Produktion
+
+                                                           ■   Zahlung von Überstundenlöhnen für Inventuraufschreibungen
+
+                                                           ■   Spende für „Brot für die Welt“
+
+                                                           ■   Zahlung von Beiträgen an die Berufsgenossenschaft
+
+                                                           ■   Gebühren für die Verbringung von Produktionsabfällen auf eine Deponie
+
+                                                           ■   Gewerbesteuernachzahlung für 2024
+
+                                                           ■   Totalschaden eines betrieblich genutzten LKWs
+
+                                                           ■   Einbau eines geringwertigen Ersatzteils in eine Produktionsmaschine
+
+
+
+
+                                                                                                        Seite 5
+                                                                                                     P 050-02-1125
+
+=== Seite 6 ===
+                                                         Einsatz nur im Rahmen des Korrekturprozesses gestattet. Weitergabe an unbefugte Dritte untersagt.
+
+                                                           GEPRÜFTE/-R INDUSTRIEMEISTER/-IN,
+                                                           FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+                                                           GRUNDLEGENDE QUALIFIKATIONEN
+                                                           Betriebswirtschaftliches Handeln
+
+
+
+                                                           Aufgabe 6
+                                                           Die Industrie GmbH produziert in Gütersloh ein spezielles E-Bike, das stark nachgefragt
+                                                           wird.
+
+                                                           Bei Vollauslastung können 1.060 Stück pro Quartal produziert werden.
+
+                                                           Aus den vergangenen Quartalen liegen Ihnen folgende Informationen vor:
+
+                                                                                 Quartal                          1             2              3
+
+                                                            Produktions- und Absatzmenge                          680          940            820
+Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+
+
+
+
+                                                                                                                                                             Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+                                                            Gesamtkosten                                   3.940.200 €    4.778.700 €     4.391.700 €
+
+                                                           Die Fixkosten und die variablen Stückkosten sind in den genannten Quartalen konstant
+                                                           geblieben. Der Verkaufspreis beträgt im gesamten Zeitraum 5.625 € pro E-Bike.
+
+                                                            a Mögliche Punktzahl: 12
+                                                           Berechnen Sie den Break-even-Beschäftigungsgrad und den Break-Even-Umsatz.
+
+                                                            b Mögliche Punktzahl: 3
+                                                           Ermitteln Sie das Betriebsergebnis für das erste Quartal.
+
+                                                            c Mögliche Punktzahl: 3
+                                                           Ermitteln Sie die Deckungsbeitrags-Umsatz-Quote (DBU-Quote) und interpretieren Sie
+                                                           den Wert.
+
+
+
+
+                                                                                                        Seite 6
+                                                                                                     P 050-02-1125
+
+=== Seite 7 ===
+                                                         Einsatz nur im Rahmen des Korrekturprozesses gestattet. Weitergabe an unbefugte Dritte untersagt.
+
+                                                           GEPRÜFTE/-R INDUSTRIEMEISTER/-IN,
+                                                           FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+                                                           GRUNDLEGENDE QUALIFIKATIONEN
+                                                           Betriebswirtschaftliches Handeln
+
+
+
+                                                           Aufgabe 7
+                                                           Mögliche Punktzahl: 15
+                                                           Die Industrie GmbH kalkuliert die Fertigprodukte mit 25 % Materialgemeinkosten, 210 %
+                                                           Fertigungsgemeinkosten sowie 15 % Verwaltungs- und 5 % Vertriebsgemeinkosten.
+
+                                                           Für einen Kundenauftrag wurden folgende Daten ermittelt:
+
+                                                           ■   Fertigungslöhne                       3.900,00 €
+
+                                                           ■   Sondereinzelkosten der Fertigung        510,00 €
+Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+
+
+
+
+                                                                                                                                                             Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+                                                           ■   Sondereinzelkosten Vertrieb             455,00 €
+
+                                                           ■   Listenverkaufspreis                  21.340,00 €
+
+                                                           Es wird mit einem Gewinnzuschlagsatz von 10 % kalkuliert. Skonto und Rabatt werden nicht
+                                                           gewährt.
+
+                                                           Berechnen Sie die kalkulierten Materialeinzelkosten.
+
+
+
+
+                                                                                                        Seite 7
+                                                                                                     P 050-02-1125
+
+=== Seite 8 ===
+                                                                                            Einsatz nur im Rahmen des Korrekturprozesses gestattet. Weitergabe an unbefugte Dritte untersagt.
+
+
+GEPRÜFTE/-R INDUSTRIEMEISTER/-IN,
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+GRUNDLEGENDE QUALIFIKATIONEN
+Betriebswirtschaftliches Handeln
+
+
+
+Prüfungsteilnehmer-Nummer:
+
+
+Anlage 1 zu Aufgabe 5
+
+                                                                                                                          Betrag                  neutraler Aufwand                   Zweckaufwand                                                       kalkulatorische
+
+                                   Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+
+
+
+
+                                                                                                                                                                                                Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+                  Geschäftsfälle
+                                                                                                                           in €                          in €                             in €                                                             Kosten in €
+Zahlung von Fertigungslöhnen                                                                                              30.000
+entgangene Zinserträge                                                                                                      8.000
+Verbrauch von Rohstoffen bei der Produktion                                                                               50.000
+Zahlung von Mehrarbeitsstunden                                                                                              4.500
+Spende für „Brot für die Welt“                                                                                                500
+Zahlung von Beiträgen an die
+                                                                                                                              800
+Berufsgenossenschaft
+Gebühren für die Entsorgung von
+                                                                                                                            1.200
+Produktionsabfällen
+Gewerbesteuernachzahlung für 2024                                                                                           5.000
+Totalschaden eines betrieblich genutzten
+                                                                                                                          16.000
+LKW
+Einbau eines geringwertigen Ersatzteils in
+                                                                                                                            1.500
+eine Produktionsmaschine
+
+
+
+                                                                                                                                       Seite 1 von 1
+                                                                                                                                       P 050-02-1125
+
+=== Seite 9 ===
+                                                         Einsatz nur im Rahmen des Korrekturprozesses gestattet. Weitergabe an unbefugte Dritte untersagt.
+
+
+
+
+                                                           Bundeseinheitliche Fortbildungsprüfung der Industrie- und Handelskammern
+
+                                                           Geprüfter Industriemeister/Geprüfte Industriemeisterin,
+                                                           fachrichtungsübergreifende Basisqualifikationen/
+                                                           grundlegende Qualifikationen
+                                                           Betriebswirtschaftliches Handeln
+
+
+                                                           Lösungshinweise
+Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+
+
+
+
+                                                                                                                                                                                                                           Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+                                                            Datum:                                          6. November 2025
+
+                                                            Bearbeitungszeit:                               90 Minuten
+
+                                                            Anzahl Aufgaben:                                7
+
+
+                                                           Hinweise für den Korrektor:
+                                                           ■    Die folgenden Lösungen sind lediglich Lösungshinweise.
+                                                           ■    Sie sollen nur den Rahmen der zu erwartenden Prüfungsleistung abstecken.
+                                                           ■    Der Korrektor ist durch die hier aufgeführten Lösungshinweise in seinem
+                                                                Bewertungsspielraum nicht eingeengt.
+                                                           ■    Bei Aufgaben, die eine Aufzählung von n-Fakten zur Lösung erfordern, werden nur die
+                                                                ersten n-Fakten gewertet. Alle darüber hinausgehenden Aufzählungen werden
+                                                                gestrichen.
+                                                           ■    Bei Berechnungen sollen Folgefehler berücksichtigt werden und somit nicht zum
+                                                                Punktabzug führen.
+                                                           ■    Der leichteren Lesbarkeit wegen geben wir in den Aufgaben/Texten der männlichen
+                                                                Form den Vorzug. Mit diesem einfacheren sprachlichen Ausdruck sind selbstverständlich
+                                                                immer alle Geschlechter gemeint.
+
+
+
+                                                           Die Aufgaben mit Lösungsvorschlägen können von den Industrie- und Handelskammern oder Dritten nach einer Frist von sechs Monaten
+                                                           direkt bestellt werden bei:
+
+                                                           wbv Media GmbH & Co. KG, Service-Center DIHK,
+
+                                                           Postfach 10 06 33, 33506 Bielefeld
+
+                                                           Tel.: 0521/91101-16, Fax: 0521/91101-19, E-Mail: service@wbv.de
+
+
+
+
+                                                                                        © DIHK – Gesellschaft für berufliche Bildung – Organisation zur Förderung der IHK-Weiterbildung gGmbH – Bonn
+                                                                           Die Vervielfältigung, Verbreitung oder öffentliche Wiedergabe der Publikation ist nicht gestattet (§§ 53, 54 UrhG) und strafbar (§ 106 UrhG).
+                                                                                                                       Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+                                                                                                                                          L 050-02-1125
+
+=== Seite 10 ===
+                                                         Einsatz nur im Rahmen des Korrekturprozesses gestattet. Weitergabe an unbefugte Dritte untersagt.
+
+                                                           GEPRÜFTE/-R INDUSTRIEMEISTER/-IN,
+                                                           FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+                                                           GRUNDLEGENDE QUALIFIKATIONEN
+                                                           Betriebswirtschaftliches Handeln
+
+
+
+
+                                                           Lösungshinweise Aufgabe 1
+                                                           [VO: § 4 Absatz 3 Nr. 1]
+                                                           Mögliche Punktzahl: 12
+                                                           Z. B.:
+                                                           ■   Eine Verlagerung der Produktion ist mit hohen Investitionen verbunden. Zusätzlich fallen
+                                                               erhebliche Kosten für Abfindungen der gekündigten Mitarbeiter im Inland an.
+                                                           ■   Das Unternehmensimage im Inland könnte durch eine solche Entscheidung negativ
+                                                               beeinflusst werden.
+Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+
+
+
+
+                                                                                                                                                             Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+                                                           ■   Unterschiedliche gesellschaftliche und kulturelle Werte müssen auf Kompatibilität mit
+                                                               den Unternehmenszielen und Unternehmensleitlinien überprüft werden.
+                                                           ■   Umfangreiche Schulungen der neuen Mitarbeiter sind erforderlich, um die bisherige
+                                                               Qualität auch am neuen Produktionsstandort zu garantieren. Neben sprachlichen
+                                                               Barrieren müssen auch kulturelle Unterschiede berücksichtigt werden.
+                                                           ■   Eine Verlagerung der Produktion ins Ausland ist eine Entscheidung mit großer Tragweite
+                                                               und kann auch unter finanziellen Gesichtspunkten ohne Weiteres nicht so einfach
+                                                               revidiert werden.
+                                                           ■   Lange Transportwege können die Materialversorgung der Produktion und den Vertrieb in
+                                                               zeitlicher Hinsicht erschweren.
+
+
+                                                           Lösungshinweise Aufgabe 2
+                                                           [VO: § 4 Absatz 3 Nr. 2]
+
+                                                            a Mögliche Punktzahl: 2
+                                                                                                       Bestellmenge
+                                                           Ø Lagerbestand = Sicherheitsbestand +
+                                                                                                             2
+
+                                                                                       10 t
+                                                                              =2t+          =7t
+                                                                                        2
+
+                                                            b Mögliche Punktzahl: 3
+                                                           Meldebestand = Wiederbeschaffungszeit · Tagesverbrauch + Sicherheitsbestand
+
+                                                                                                90 t
+                                                                            = 12 Tage ·                +2t=5t
+                                                                                              360 Tage
+
+
+
+
+                                                                                                          Seite 2
+                                                                                                        L 050-02-1125
+
+=== Seite 11 ===
+                                                         Einsatz nur im Rahmen des Korrekturprozesses gestattet. Weitergabe an unbefugte Dritte untersagt.
+
+                                                           GEPRÜFTE/-R INDUSTRIEMEISTER/-IN,
+                                                           FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+                                                           GRUNDLEGENDE QUALIFIKATIONEN
+                                                           Betriebswirtschaftliches Handeln
+
+                                                            c Mögliche Punktzahl: 3
+                                                                     2 · kB · X ges
+                                                           xopt =
+                                                                        EP · i L
+
+                                                                      2  180 € · 90 t
+                                                           xopt =
+                                                                     4.500 € / t · 0,2
+
+                                                           xopt = 6 t
+
+                                                            d Mögliche Punktzahl: 9
+Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+
+
+
+
+                                                                                                                                                             Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+                                                           Bestellmenge 10 Tonnen:
+                                                            KB = 9 Bestellungen/Jahr · 180 €/Bestellung = 1.620 €/Jahr
+
+                                                                  10 t       
+                                                            KL =       + 2 t  · 0,2 · 4.500 €/t = 6.300 €
+                                                                  2          
+
+                                                           Kges = 7.920 €
+
+                                                           Optimale Bestellmenge 6 Tonnen:
+                                                            KB = 15 Bestellungen/Jahr · 180 €/Bestellung = 2.700 €/Jahr
+
+                                                                 6 t       
+                                                            KL =     + 2 t  · 0,2 · 4.500 €/t = 4.500 €
+                                                                  2        
+
+                                                           Kges = 7.200 €
+
+                                                           Durch Wahl der optimalen Bestellmenge können 720 € eingespart werden.
+
+
+
+
+                                                                                                              Seite 3
+                                                                                                        L 050-02-1125
+
+=== Seite 12 ===
+                                                         Einsatz nur im Rahmen des Korrekturprozesses gestattet. Weitergabe an unbefugte Dritte untersagt.
+
+                                                           GEPRÜFTE/-R INDUSTRIEMEISTER/-IN,
+                                                           FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+                                                           GRUNDLEGENDE QUALIFIKATIONEN
+                                                           Betriebswirtschaftliches Handeln
+
+
+
+                                                           Lösungshinweise Aufgabe 3
+                                                           [VO: § 4 Absatz 3 Nr. 3]
+
+                                                            a Mögliche Punktzahl: 5
+                                                           Z. B.:
+                                                           ■   Anforderungen, Qualifikation
+                                                           ■   Stellenbezeichnung
+                                                           ■   Einordnung der Stelle in die betriebliche Organisation
+                                                           ■   Unterstellung und Überstellung
+Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+
+
+
+
+                                                                                                                                                             Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+                                                           ■   Stellvertretungsregelungen (Überstellungen, Unterstellungen)
+                                                           ■   Zielsetzung der Stelle
+                                                           ■   Aufgabenbeschreibung
+                                                           ■   Kompetenzen
+                                                           ■   Befugnisse
+
+                                                            b Mögliche Punktzahl: 6
+                                                           Z. B.:
+                                                           ■   Durch eine klare Abgrenzung der Aufgaben sollen Kompetenzstreitigkeiten vermieden
+                                                               werden.
+                                                           ■   Die Stellenbeschreibung ist die Basis für die Stellenbewertung und damit gleichzeitig
+                                                               Entlohnungsgrundlage.
+                                                           ■   Die Stellenbeschreibung ist auch die Grundlage für Stellenausschreibungen und damit
+                                                               eine wichtige Hilfe für die Personalbeschaffung.
+                                                           ■   Durch eine detaillierte Beschreibung der mit der Stelle verbundenen Aufgaben wird eine
+                                                               vernünftige Einarbeitung oft erst möglich.
+
+                                                            c Mögliche Punktzahl: 2
+                                                           Eine Instanz ist eine Leitungsstelle. Die Instanz ist gegenüber untergeordneten Stellen
+                                                           weisungsbefugt und besitzt Entscheidungsbefugnisse.
+
+
+
+
+                                                                                                        Seite 4
+                                                                                                      L 050-02-1125
+
+=== Seite 13 ===
+                                                         Einsatz nur im Rahmen des Korrekturprozesses gestattet. Weitergabe an unbefugte Dritte untersagt.
+
+                                                           GEPRÜFTE/-R INDUSTRIEMEISTER/-IN,
+                                                           FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+                                                           GRUNDLEGENDE QUALIFIKATIONEN
+                                                           Betriebswirtschaftliches Handeln
+
+
+
+                                                           Lösungshinweise Aufgabe 4
+                                                           [VO: § 4 Absatz 3 Nr. 4]
+
+                                                            a Mögliche Punktzahl: 3
+                                                                                                 10 
+                                                           Akkordrichtsatz = 30 €/h +  30 €/h ·        = 33,00 €/h
+                                                                                                100 
+
+                                                                          Akkordrichtsatz    33,00 €/h
+                                                           Stückgeld =                    =            = 2,75 €/Stück
+                                                                          Normalleistung    12 Stück/h
+Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+
+
+
+
+                                                                                                                                                             Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+                                                           Bruttostundenlohn (Akkordlohn) = 2,75 €/Stück · 13 Stück/h = 35,75 €/h
+
+                                                            b Mögliche Punktzahl: 3
+
+
+
+
+                                                            c Mögliche Punktzahl: 3
+                                                           Z. B.:
+                                                           ■   Mitarbeiter muss hinreichend eingearbeitet sein
+                                                           ■   die Vorgabezeit muss nachvollziehbar sein
+                                                           ■   es müssen vom Facharbeiter beeinflussbare Zeiten vorliegen
+                                                           ■   der Materialfluss muss gesichert sein
+                                                           ■   Leistung muss messbar sein
+
+
+
+
+                                                                                                         Seite 5
+                                                                                                       L 050-02-1125
+
+=== Seite 14 ===
+                                                         Einsatz nur im Rahmen des Korrekturprozesses gestattet. Weitergabe an unbefugte Dritte untersagt.
+
+                                                           GEPRÜFTE/-R INDUSTRIEMEISTER/-IN,
+                                                           FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+                                                           GRUNDLEGENDE QUALIFIKATIONEN
+                                                           Betriebswirtschaftliches Handeln
+
+                                                            d Mögliche Punktzahl: 6
+                                                           Gründe für die Gewährung von Erfolgsbeteiligungen sind z. B.:
+                                                           ■    Steigerung der Motivation für die Mitarbeiter:
+                                                                Die Mitarbeiter erhalten einen Anreiz, sich engagiert einzusetzen, weil sich dies positiv
+                                                                auf den Unternehmenserfolg auswirkt und damit auf die Höhe ihrer Erfolgsbeteiligung.
+                                                           ■    Mitarbeiterbindung:
+                                                                Eine höhere Leistungsanstrengung zieht die Möglichkeit einer finanziellen Belohnung
+                                                                nach sich. Der Mitarbeiter identifiziert sich mit dem Unternehmen, an dessen Erfolg er
+                                                                beteiligt ist, und fühlt sich diesem verbunden.
+                                                           ■    Die Gewährung einer Erfolgsbeteiligung gleicht den Interessenausgleich zwischen
+Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+
+
+
+
+                                                                                                                                                             Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+                                                                Mitarbeitern und Arbeitgeber aus. Der Mitarbeiter möchte für seine geleistete Arbeit eine
+                                                                angemessene Entlohnung, der Arbeitgeber möchte möglichst geringe Personalkosten
+                                                                und hohe Gewinne erreichen. Über die Erfolgsbeteiligung wird beiden Interessen
+                                                                Rechnung getragen.
+                                                           ■    Imagesteigerung:
+                                                                Die Erfolgsbeteiligung stellt eine aktuelle, zeitgemäße Entlohnungsform dar, was das
+                                                                Image der Industrie GmbH fördert.
+
+
+                                                           Lösungshinweise Aufgabe 5
+                                                           [VO: § 4 Absatz 3 Nr. 5]
+                                                           Mögliche Punktzahl: 10
+                                                           Siehe Anlage 1 zur Lösung Aufgabe 5
+
+
+                                                           Lösungshinweise Aufgabe 6
+                                                           [VO: § 4 Absatz 3 Nr. 5]
+
+                                                            a Mögliche Punktzahl: 12
+                                                                  ΔK   4.778.700 € - 3.940.200 €
+                                                           kv =      =                           = 3.225 €/Stück
+                                                                  Δx     940 Stück - 680 Stück
+                                                           Kf = K - kv · x
+
+                                                               = 4.778.700 €/Quartal - 3.225 €/Stück · 940 Stück/Quartal
+
+                                                               = 1.747.200 €/Quartal
+                                                                     Kf          1.747.200 €/Quartal
+                                                           XBEP =          =                               = 728 Stück/Quartal
+                                                                    p - kv   5.625 €/Stück - 3.225 €/Stück
+
+
+
+
+                                                                                                          Seite 6
+                                                                                                       L 050-02-1125
+
+=== Seite 15 ===
+                                                         Einsatz nur im Rahmen des Korrekturprozesses gestattet. Weitergabe an unbefugte Dritte untersagt.
+
+                                                           GEPRÜFTE/-R INDUSTRIEMEISTER/-IN,
+                                                           FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+                                                           GRUNDLEGENDE QUALIFIKATIONEN
+                                                           Betriebswirtschaftliches Handeln
+
+
+
+                                                                      728 Stück
+                                                           BGBEP =               · 100 = 68,68 %
+                                                                     1.060 Stück
+                                                           UBEP = p · x
+
+                                                                = 5.625 €/Stück · 728 Stück = 4.095.000 €
+
+                                                            b Mögliche Punktzahl: 3
+                                                           BE = U - K
+
+                                                              =p·x-K
+Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+
+
+
+
+                                                                                                                                                             Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+                                                              = 5.625 €/Stück · 680 Stück/Quartal - 3.940.200 €/Quartal
+
+                                                              = -115.200 €/Quartal
+
+                                                            c Mögliche Punktzahl: 3
+                                                           db = p - kv
+
+                                                              = 5.625 € - 3.225 € = 2.400 €
+                                                                            db   2.400 €
+                                                           DBU-Quote =         =         = 0,427
+                                                                            p    5.625 €
+                                                           Die DBU-Quote gibt an, wieviel Prozent der Deckungsbeitrag (Stückdeckungsbeitrag) vom
+                                                           Umsatz (Preis) beträgt.
+
+
+
+
+                                                                                                        Seite 7
+                                                                                                     L 050-02-1125
+
+=== Seite 16 ===
+                                                         Einsatz nur im Rahmen des Korrekturprozesses gestattet. Weitergabe an unbefugte Dritte untersagt.
+
+                                                           GEPRÜFTE/-R INDUSTRIEMEISTER/-IN,
+                                                           FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+                                                           GRUNDLEGENDE QUALIFIKATIONEN
+                                                           Betriebswirtschaftliches Handeln
+
+
+
+                                                           Lösungshinweise Aufgabe 7
+                                                           [VO: § 4 Absatz 3 Nr. 5]
+                                                           Mögliche Punktzahl: 15
+
+                                                                                                                      3.187,50 €
+                                                                MEK                            2.550,00 € MEK =                  = 2.550 €
+                                                                                                                         1,25
+
+                                                            +   MGK (25 %)                      637,50 €
+
+                                                                                                            MK = HK - FK
+Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+
+
+
+
+                                                                                                                                                             Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+                                                            =   MK                             3.187,50 €      = 15.787,50 - 12.600
+
+                                                                                                               = 3.187,50 €
+
+                                                                FEK                            3.900,00 €
+
+                                                            +   FGK (210 %)                    8.190,00 €
+
+                                                            +   SEF                             510,00 €
+
+                                                            =   FK                            12.600,00 €
+
+                                                                                                                   19.400,00 € - 455,00 €
+                                                                                                            HK =
+                                                                                                                            1,2
+                                                                HK                            15.787,50 €
+                                                                                                               = 15.787,50 €
+
+                                                            +   VwGK (15 %)                    2.368,13 €
+
+                                                            +   VtGK (5 %)                      789,37 €
+
+                                                            +   SEV                             455,00 €
+
+                                                            =   SK                            19.400,00 €
+
+                                                            +   Gewinn (10 %                   1.940,00 €
+
+                                                            =   LVP                           21.340,00 €
+
+
+
+
+                                                                                                        Seite 8
+                                                                                                      L 050-02-1125
+
+=== Seite 17 ===
+                                                                                            Einsatz nur im Rahmen des Korrekturprozesses gestattet. Weitergabe an unbefugte Dritte untersagt.
+
+
+GEPRÜFTE/-R INDUSTRIEMEISTER/-IN,
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+GRUNDLEGENDE QUALIFIKATIONEN
+Betriebswirtschaftliches Handeln
+
+
+
+Prüfungsteilnehmer-Nummer:
+
+
+Lösungshinweis zu Aufgabe 5
+
+                                                                                                                          Betrag                  neutraler Aufwand                   Zweckaufwand                                                             kalkulatorische
+
+                                   Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+
+
+
+
+                                                                                                                                                                                                Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+                  Geschäftsfälle
+                                                                                                                           in €                          in €                             in €                                                                   Kosten in €
+Zahlung von Fertigungslöhnen                                                                                              30.000                                                                30.000
+entgangene Zinserträge                                                                                                      8.000                                                                                                                                   8.000
+Verbrauch von Rohstoffen bei der Produktion                                                                               50.000                                                                50.000
+Zahlung von Mehrarbeitsstunden                                                                                              4.500                                                                             4.500
+Spende für „Brot für die Welt“                                                                                                500                               500
+Zahlung von Beiträgen an die
+                                                                                                                              800                                                                                                                        800
+Berufsgenossenschaft
+Gebühren für die Entsorgung von
+                                                                                                                            1.200                                                                             1.200
+Produktionsabfällen
+Gewerbesteuernachzahlung für 2024                                                                                           5.000                            5.000
+Totalschaden eines betrieblich genutzten
+                                                                                                                          16.000                           16.000
+LKW
+Einbau eines geringwertigen Ersatzteils in
+                                                                                                                            1.500                                                                             1.500
+eine Produktionsmaschine
+
+
+
+                                                                                                                                       Seite 1 von 1
+                                                                                                                                       P 050-02-1125
