@@ -269,13 +269,14 @@
   .btn-no:hover{background:#f2ddd5}
 
   /* RESULT */
-  .res-hero{display:flex;align-items:center;gap:18px;padding:22px 18px;border-bottom:1px solid var(--line);background:linear-gradient(180deg,#fbfdfd,#f3f7f8)}
+  .res-hero{display:flex;align-items:center;gap:18px;padding:22px 18px;border-bottom:1px solid var(--line);background:linear-gradient(180deg,#fbfdfd,#f3f7f8);flex-wrap:wrap}
+  .res-txt{min-width:0;flex:1 1 180px}
   .ring{width:104px;height:104px;flex:0 0 auto}
   .ring svg{transform:rotate(-90deg)}
   .ring .bg{fill:none;stroke:#dde5e8;stroke-width:10}
   .ring .fg{fill:none;stroke:var(--petrol);stroke-width:10;stroke-linecap:round;transition:stroke-dashoffset .8s ease}
   .ring .pct{font-family:var(--disp);font-weight:700;font-size:26px;fill:var(--ink);transform:rotate(90deg);transform-origin:center}
-  .res-txt h2{font-family:var(--disp);text-transform:uppercase;font-weight:700;font-size:24px;margin:0 0 4px}
+  .res-txt h2{font-family:var(--disp);text-transform:uppercase;font-weight:700;font-size:clamp(19px,5.4vw,24px);margin:0 0 4px;overflow-wrap:break-word;hyphens:auto}
   .badge{display:inline-block;font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;font-weight:600;border-radius:14px;padding:4px 12px;margin-bottom:7px}
   .badge.pass{background:var(--ok-soft);color:var(--ok);border:1px solid #b9dcc5}
   .badge.fail{background:var(--err-soft);color:var(--err);border:1px solid #e8beb2}
@@ -286,6 +287,11 @@
   .b-top .b-name{font-weight:600} .b-top .b-num{font-family:var(--mono);color:var(--muted)}
   .b-bar{height:8px;border-radius:4px;background:#e2e9eb;overflow:hidden}
   .b-fill{height:100%;border-radius:4px;background:var(--petrol)}
+  .tasklist{padding:2px 18px 16px}
+  .tl-head{font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin:6px 0 10px}
+  .tl-row{margin-bottom:9px}
+  .tl-top{display:flex;justify-content:space-between;font-size:12.5px;margin-bottom:3px}
+  .tl-nr{font-weight:600;color:var(--ink)} .tl-pt{font-family:var(--mono);color:var(--muted)}
   .res-actions{padding:16px 18px;display:grid;gap:10px}
   .btn-amber{border:0;border-radius:10px;background:var(--amber);color:#fff;font-size:15px;font-weight:600;padding:13px 16px}
   .btn-amber:hover{filter:brightness(.94)}
@@ -313,7 +319,7 @@
 
   footer{max-width:820px;margin:14px auto 0;font-size:11.5px;color:var(--muted);text-align:center;padding:0 8px}
   /* larger layout use of the wider container */
-  .mast h1{font-size:clamp(24px,6.8vw,44px);overflow-wrap:break-word}
+  .mast h1{font-size:clamp(24px,6.8vw,44px);overflow-wrap:break-word;hyphens:manual}
   .qtext{font-size:clamp(17px,2.4vw,21px)}
   @media (min-width:640px){
     .modes{grid-template-columns:1fr 1fr}
@@ -353,7 +359,9 @@
   /* Ab Tablet-Breite hält ein Seitensteg die Karte aus dem Weg der Leiste. */
   @media (min-width:561px){body{padding-left:64px;padding-right:64px}}
   @media (max-width:560px){
-    .toolbar{right:10px;bottom:10px;left:10px;flex-direction:row;justify-content:center}
+    /* Platz für die fixe Werkzeugleiste am unteren Rand freihalten. */
+    body{padding-bottom:calc(72px + env(safe-area-inset-bottom))}
+    .toolbar{right:10px;bottom:10px;left:10px;flex-direction:row;justify-content:center;padding-bottom:env(safe-area-inset-bottom)}
     .toolbtn{flex:1 1 0;justify-content:center;padding:11px 8px;border-radius:24px}
     .toolbtn .ic-svg{width:21px;height:21px}
   }
@@ -593,7 +601,7 @@
   <div class="card" id="scrHome">
     <div class="mast">
       <p class="eyebrow">Meister-Trainer · IHK-Prüfungsvorbereitung</p>
-      <h1>Industriemeister<br>Basisqualifikationen</h1>
+      <h1>Meister für<br>Kraftverkehr</h1>
       <p class="sub" id="homeSub"></p>
     </div>
 
@@ -753,6 +761,7 @@
       </div>
     </div>
     <div class="breakdown" id="breakdown"></div>
+    <div class="tasklist" id="taskList"></div>
     <div class="res-actions">
       <button class="btn-amber" id="btnRetryWrong" hidden>Nur Fehler wiederholen (<span id="wrongCount">0</span>)</button>
       <button class="primary" id="btnAgain">Neue Runde starten</button>
@@ -1528,7 +1537,7 @@ function finishRound(timeUp){
     :(state.mode==='weak')?"Schwächen-Training"
     :(state.mode==='all')?"Alle Themen"
     :(state.mode==='due')?"Heute fällig"
-    :(state.mode==='cases')?(pointBased?"Prüfungsergebnis":"Fallaufgabe")
+    :(state.mode==='cases')?(pointBased?"Ergebnis":"Fallaufgabe")
     :"Trainingsrunde";
   if(state.mode==='sim'||pointBased){badge.hidden=false;var pass=pct>=50;badge.className="badge "+(pass?"pass":"fail");badge.textContent=(pass?"Bestanden":"Nicht bestanden")+" · "+ihkGrade(pct).text;}
   else badge.hidden=true;
@@ -1553,6 +1562,22 @@ function finishRound(timeUp){
     row.innerHTML='<div class="b-top"><span class="b-name">'+sub+'</span><span class="b-num">'+numTxt+'</span></div><div class="b-bar"><div class="b-fill" style="width:'+p+'%"></div></div>';
     bd.appendChild(row);
   });
+  var tl=$("taskList");
+  if(tl){
+    tl.innerHTML="";
+    if(pointBased){
+      var th=document.createElement("div");th.className="tl-head";th.textContent="Deine Punkte je Aufgabe";tl.appendChild(th);
+      state.pool.forEach(function(q){
+        var mx=taskMaxPoints(q);if(!mx)return;
+        var g=opGet(q.id);var got=(g!=null?g:0);var T=splitTask(q.q);
+        var pc=mx?Math.round(got/mx*100):0;
+        var r=document.createElement("div");r.className="tl-row";
+        r.innerHTML='<div class="tl-top"><span class="tl-nr">'+esc(T.nr||"Aufgabe")+'</span><span class="tl-pt">'+got+'/'+mx+' P</span></div>'
+          +'<div class="b-bar"><div class="b-fill" style="width:'+pc+'%;background:'+(pc>=50?'var(--ok)':'var(--amber)')+'"></div></div>';
+        tl.appendChild(r);
+      });
+    }
+  }
   var wu=[];state.wrong.forEach(function(q){if(wu.indexOf(q)<0)wu.push(q);});state.wrong=wu;
   $("btnRetryWrong").hidden=state.wrong.length===0;$("wrongCount").textContent=state.wrong.length;
   show("scrResult");
