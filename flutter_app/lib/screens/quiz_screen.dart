@@ -677,11 +677,70 @@ class _QuizScreenState extends State<QuizScreen> {
                 style: TextStyle(fontWeight: FontWeight.w700, fontSize: 12.5)),
           ),
         ),
+        if (_q.maxPoints > 0) ...[
+          const SizedBox(height: 14),
+          _scoreSelector(),
+        ],
       ] else ...[
         const SizedBox(height: 14),
         _composer(),
       ],
     ]);
+  }
+
+  /// Selbstbewertung: erreichte Punkte antippen, damit am Ende der Prüfung ein
+  /// echtes Punkte-Ergebnis herauskommt.
+  Widget _scoreSelector() {
+    final max = _q.maxPoints;
+    final cur = AnswerStore.instance.points(_q.id);
+    return Container(
+      width: double.infinity,
+      padding: const EdgeInsets.all(13),
+      decoration: BoxDecoration(
+        color: kPaper,
+        border: Border.all(color: kLine),
+        borderRadius: BorderRadius.circular(14),
+      ),
+      child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+        const Text('Wie viele Punkte hättest du bekommen?',
+            style: TextStyle(
+                fontSize: 12.5, fontWeight: FontWeight.w700, color: kInk)),
+        const SizedBox(height: 11),
+        Wrap(spacing: 7, runSpacing: 7, children: [
+          for (var p = 0; p <= max; p++) _scoreChip(p, cur == p),
+        ]),
+        const SizedBox(height: 9),
+        Text(
+          cur != null
+              ? 'Bewertet: $cur von $max Punkten'
+              : 'Vergib dir 0–$max Punkte – so zählt die Aufgabe am Ende '
+                  'zum Gesamtergebnis.',
+          style: const TextStyle(fontSize: 12, color: kMuted, height: 1.4),
+        ),
+      ]),
+    );
+  }
+
+  Widget _scoreChip(int p, bool sel) {
+    return InkWell(
+      onTap: () => setState(() => AnswerStore.instance.setPoints(_q.id, p)),
+      borderRadius: BorderRadius.circular(9),
+      child: Container(
+        constraints: const BoxConstraints(minWidth: 40),
+        alignment: Alignment.center,
+        padding: const EdgeInsets.symmetric(horizontal: 11, vertical: 9),
+        decoration: BoxDecoration(
+          color: sel ? kPetrol : Colors.white,
+          border: Border.all(color: sel ? kPetrol : kLine),
+          borderRadius: BorderRadius.circular(9),
+        ),
+        child: Text('$p',
+            style: TextStyle(
+                fontWeight: FontWeight.w700,
+                fontSize: 14,
+                color: sel ? Colors.white : kInk)),
+      ),
+    );
   }
 
   /// Bild-Anlage (data-URI) in der Prüfer-Blase – z. B. ein Diagramm.
@@ -904,6 +963,20 @@ class _QuizScreenState extends State<QuizScreen> {
     }
     // open – Senden liegt im Chat-Composer, hier erst nach dem Abgeben Bewertung
     if (!_revealed) return const SizedBox.shrink();
+    // Prüfungsaufgaben mit Punkteangabe: Selbstbewertung statt Gewusst/Nicht.
+    if (_q.maxPoints > 0) {
+      final scored = AnswerStore.instance.points(_q.id) != null;
+      return SizedBox(
+        width: double.infinity,
+        child: FilledButton(
+          style: FilledButton.styleFrom(
+              backgroundColor: kPetrol,
+              padding: const EdgeInsets.symmetric(vertical: 16)),
+          onPressed: scored ? _commitOpenScore : null,
+          child: Text(last ? 'Zum Ergebnis →' : 'Bewertung übernehmen →'),
+        ),
+      );
+    }
     return Row(children: [
       Expanded(
         child: OutlinedButton(
@@ -921,5 +994,23 @@ class _QuizScreenState extends State<QuizScreen> {
         ),
       ),
     ]);
+  }
+
+  /// Übernimmt die selbst vergebenen Punkte als Ergebnis der Aufgabe und geht
+  /// weiter. Ab der Hälfte der Punkte gilt die Aufgabe als „gekonnt“.
+  void _commitOpenScore() {
+    final pts = AnswerStore.instance.points(_q.id);
+    if (pts == null) return;
+    if (!_answered) {
+      final correct = pts * 2 >= _q.maxPoints;
+      setState(() {
+        _answered = true;
+        _results[_idx] = correct;
+        if (!correct) _wrong.add(_q);
+      });
+      ProgressService.instance.record(_q.id, correct);
+      AdService.instance.onAnswered();
+    }
+    _next();
   }
 }

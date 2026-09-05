@@ -9,18 +9,30 @@ class AnswerStore {
   static final AnswerStore instance = AnswerStore._();
 
   static const _key = 'kvm_open_answers';
+  static const _pkey = 'kvm_open_points';
   SharedPreferences? _prefs;
   Map<String, String> _answers = {};
+  Map<String, int> _points = {};
 
   Future<void> init() async {
     _prefs = await SharedPreferences.getInstance();
     final raw = _prefs?.getString(_key);
-    if (raw == null || raw.isEmpty) return;
-    try {
-      final decoded = json.decode(raw) as Map<String, dynamic>;
-      _answers = decoded.map((k, v) => MapEntry(k, v.toString()));
-    } catch (_) {
-      _answers = {};
+    if (raw != null && raw.isNotEmpty) {
+      try {
+        final decoded = json.decode(raw) as Map<String, dynamic>;
+        _answers = decoded.map((k, v) => MapEntry(k, v.toString()));
+      } catch (_) {
+        _answers = {};
+      }
+    }
+    final praw = _prefs?.getString(_pkey);
+    if (praw != null && praw.isNotEmpty) {
+      try {
+        final decoded = json.decode(praw) as Map<String, dynamic>;
+        _points = decoded.map((k, v) => MapEntry(k, (v as num).toInt()));
+      } catch (_) {
+        _points = {};
+      }
     }
   }
 
@@ -33,6 +45,19 @@ class AnswerStore {
       _answers[id] = text;
     }
     _prefs?.setString(_key, json.encode(_answers));
+  }
+
+  /// Selbst vergebene Punkte einer offenen Prüfungsaufgabe (null = noch nicht
+  /// bewertet), damit am Ende ein echtes Punkte-Ergebnis herauskommt.
+  int? points(String id) => _points[id];
+
+  void setPoints(String id, int? p) {
+    if (p == null) {
+      _points.remove(id);
+    } else {
+      _points[id] = p;
+    }
+    _prefs?.setString(_pkey, json.encode(_points));
   }
 
   /// Eine einzelne Teilaufgabe samt eigener Antwort als Prüfauftrag – wortgleich
