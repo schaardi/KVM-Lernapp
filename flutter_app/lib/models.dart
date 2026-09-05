@@ -75,6 +75,9 @@ class Question {
   final String unit; // Einheit (calc)
   final Anlage? tab; // Anlage (Tabelle) zur Aufgabe
   final String? bild; // Anlage als Bild (data-URI, z. B. ein Diagramm)
+  final String? vo; // VO-Bezug der amtlichen Lösung (z. B. "§ 5 Absatz 6 Nr. 1")
+  final List<int> bewertung; // amtliche Punkteverteilung je Teilelement
+  final bool amtlich; // Lösung ist amtlicher IHK-Lösungshinweis
 
   // Kontext für Fallaufgaben (nicht Teil des JSON, zur Laufzeit gesetzt)
   final CaseContext? caseCtx;
@@ -92,6 +95,9 @@ class Question {
     this.unit = '',
     this.tab,
     this.bild,
+    this.vo,
+    this.bewertung = const [],
+    this.amtlich = false,
     this.caseCtx,
   });
 
@@ -112,11 +118,17 @@ class Question {
             ? Anlage.fromJson(j['tab'] as Map<String, dynamic>)
             : null,
         bild: j['bild']?.toString(),
+        vo: j['vo']?.toString(),
+        bewertung: (j['bewertung'] as List<dynamic>? ?? [])
+            .map((e) => (e as num).toInt())
+            .toList(),
+        amtlich: j['amtlich'] == 1 || j['amtlich'] == true,
       );
 
   Question withCase(CaseContext ctx) => Question(
         id: id, f: f, sub: sub, type: type, q: q, o: o, e: e, a: a,
-        ans: ans, unit: unit, tab: tab, bild: bild, caseCtx: ctx,
+        ans: ans, unit: unit, tab: tab, bild: bild, vo: vo,
+        bewertung: bewertung, amtlich: amtlich, caseCtx: ctx,
       );
 
   /// Höchstpunktzahl aus dem Aufgabenkopf ("… · 8 Punkte"); 0 ohne Angabe.
