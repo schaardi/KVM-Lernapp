@@ -1830,6 +1830,9 @@ function fxParse(toks,vals){ var i=0;
     throw new Error("unbekannte Variable "+name); }
   var v=expr(); if(peek()!=null)throw new Error("überzähliges Zeichen"); return v; }
 function fxEval(f,vals){ return fxParse(fxTok(f),vals); }
+/* Rechenkern nach außen: die Tests rechnen jede Formel hier und vergleichen
+   mit der Referenz in scripts/formeln/rechner.py und der Dart-Fassung. */
+window.KVM_formel={eval:fxEval,schema:function(s,e,p){return ksSolve(s,e,p);},num:numDE,fmt:fmtDE,gruppen:function(){return FORMULAS;}};
 /* Rechenweg: Ausdruck mit eingesetzten Zahlen, deutsch gesetzt */
 function fmtKurz(x){ if(x==null||!isFinite(x))return "–";
   var s=x.toLocaleString("de-DE",{minimumFractionDigits:0,maximumFractionDigits:4});
