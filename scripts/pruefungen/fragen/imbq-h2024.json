@@ -1,0 +1,1839 @@
+{
+ "quelle": "IHK-Prüfungen Basisqualifikationen Herbst 2024 (Rechtsbewusstes Handeln, Betriebswirtschaftliches Handeln, Methoden der Information/Kommunikation/Planung, Zusammenarbeit im Betrieb, Naturwissenschaftliche und technische Gesetzmäßigkeiten)",
+ "questions": [
+  {
+   "f": 1,
+   "sub": "Arbeitsrecht",
+   "t": "mc",
+   "q": "Ein Prokurist schließt mit einer Bewerberin nur mündlich einen Arbeitsvertrag ab. Ist der Vertrag wirksam?",
+   "o": [
+    {
+     "t": "Ja – der Arbeitsvertrag nach § 611a BGB ist an keine Form gebunden und kann auch mündlich oder konkludent geschlossen werden",
+     "ok": 1
+    },
+    {
+     "t": "Nein – Arbeitsverträge bedürfen nach dem BGB zwingend der Schriftform"
+    },
+    {
+     "t": "Nein – wirksam wird er erst mit der Aushändigung des Nachweises der Arbeitsbedingungen"
+    },
+    {
+     "t": "Ja, aber nur wenn der Betriebsrat der Einstellung zugestimmt hat"
+    }
+   ],
+   "e": "Das BGB schreibt für den Arbeitsvertrag (§ 611a BGB) keine Form vor. Er kann schriftlich, in Textform, mündlich oder durch schlüssiges Verhalten geschlossen werden. Getrennt davon muss der Arbeitgeber die wesentlichen Vertragsbedingungen schriftlich nachweisen."
+  },
+  {
+   "f": 1,
+   "sub": "Arbeitsrecht",
+   "t": "mc",
+   "q": "Welche Formanforderung gilt für den Berufsausbildungsvertrag?",
+   "o": [
+    {
+     "t": "Er kommt nach § 10 BBiG formfrei zustande, ist aber nach § 11 BBiG unverzüglich schriftlich niederzulegen",
+     "ok": 1
+    },
+    {
+     "t": "Er ist nach § 10 BBiG nur schriftlich wirksam"
+    },
+    {
+     "t": "Er bedarf der notariellen Beurkundung"
+    },
+    {
+     "t": "Er ist formfrei und muss auch nicht dokumentiert werden"
+    }
+   ],
+   "e": "Der Ausbildungsvertrag selbst ist formfrei (§ 10 BBiG). Der wesentliche Inhalt ist jedoch unverzüglich nach Abschluss und vor Beginn der Ausbildung schriftlich niederzulegen (§ 11 BBiG) – Voraussetzung für die Eintragung im Verzeichnis der Berufsausbildungsverhältnisse."
+  },
+  {
+   "f": 1,
+   "sub": "Arbeitsrecht",
+   "t": "mc",
+   "q": "Ein zweckbefristeter Arbeitsvertrag wird nur mündlich vereinbart. Wie ist das zu beurteilen?",
+   "o": [
+    {
+     "t": "Die Befristung ist unwirksam, weil sie nach § 14 Abs. 4 TzBfG der Schriftform bedarf – der Vertrag gilt dann als unbefristet",
+     "ok": 1
+    },
+    {
+     "t": "Der gesamte Vertrag ist unwirksam"
+    },
+    {
+     "t": "Die Befristung ist wirksam, weil auch der Arbeitsvertrag formfrei ist"
+    },
+    {
+     "t": "Die Befristung wird wirksam, sobald der Betriebsrat zustimmt"
+    }
+   ],
+   "e": "§ 14 Abs. 4 TzBfG verlangt für die Befristungsabrede die Schriftform. Fehlt sie, ist nur die Befristung unwirksam; das Arbeitsverhältnis besteht dann unbefristet fort. Der Arbeitsvertrag als solcher könnte dagegen mündlich geschlossen werden."
+  },
+  {
+   "f": 1,
+   "sub": "Arbeitsrecht",
+   "t": "mc",
+   "q": "Ein Produktionsmitarbeiter ohne Vertretungsmacht schließt für das Unternehmen einen Arbeitsvertrag; der Bewerberin ist der fehlende Vertretungsmacht bekannt. Wie ist die Rechtslage?",
+   "o": [
+    {
+     "t": "Der Vertrag ist bis zur Genehmigung durch einen Vertretungsberechtigten schwebend unwirksam",
+     "ok": 1
+    },
+    {
+     "t": "Der Vertrag ist sofort und endgültig wirksam"
+    },
+    {
+     "t": "Der Vertrag ist von Anfang an nichtig und kann nicht geheilt werden"
+    },
+    {
+     "t": "Der Mitarbeiter wird persönlich Arbeitgeber der Bewerberin"
+    }
+   ],
+   "e": "Ohne Vertretungsmacht handelt der Mitarbeiter als Vertreter ohne Vertretungsmacht. Der Vertrag ist schwebend unwirksam und wird erst mit Genehmigung durch die Geschäftsführung oder einen Prokuristen wirksam."
+  },
+  {
+   "f": 1,
+   "sub": "Arbeitsrecht",
+   "t": "mc",
+   "q": "Welche Angabe muss der Arbeitgeber bei einem mündlich geschlossenen Arbeitsvertrag NICHT gesondert schriftlich nachweisen?",
+   "o": [
+    {
+     "t": "Die Höhe des Betriebsergebnisses des Vorjahres",
+     "ok": 1
+    },
+    {
+     "t": "Zeitpunkt des Beginns des Arbeitsverhältnisses und Arbeitsort"
+    },
+    {
+     "t": "Vereinbarte Arbeitszeit und Dauer des jährlichen Erholungsurlaubs"
+    },
+    {
+     "t": "Fristen für die Kündigung und die Frist zur Erhebung einer Kündigungsschutzklage"
+    }
+   ],
+   "e": "Nachzuweisen sind die wesentlichen Vertragsbedingungen: Beginn, Arbeitsort, Tätigkeitsbeschreibung, Arbeitszeit, Urlaub, Probezeit, bei Befristung das Enddatum sowie Kündigungsformerfordernis, Kündigungsfristen und die Klagefrist. Unternehmenskennzahlen gehören nicht dazu."
+  },
+  {
+   "f": 1,
+   "sub": "Arbeitsrecht",
+   "t": "mc",
+   "q": "Wann gilt eine schriftliche Kündigung nach § 130 BGB als zugegangen?",
+   "o": [
+    {
+     "t": "Sobald sie so in den Machtbereich des Empfängers gelangt ist, dass dieser unter normalen Umständen von ihr Kenntnis nehmen kann",
+     "ok": 1
+    },
+    {
+     "t": "Erst wenn der Empfänger den Erhalt schriftlich bestätigt hat"
+    },
+    {
+     "t": "Mit dem Tag der Absendung durch den Arbeitgeber"
+    },
+    {
+     "t": "Erst wenn der Empfänger den Brief tatsächlich gelesen hat"
+    }
+   ],
+   "e": "Zugang bedeutet: Die Willenserklärung ist in den Machtbereich des Empfängers gelangt (z. B. Einwurf in den Briefkasten zur üblichen Zeit) und die Kenntnisnahme ist nach der Verkehrsanschauung zu erwarten. Auf die tatsächliche Kenntnis kommt es nicht an."
+  },
+  {
+   "f": 1,
+   "sub": "Arbeitsrecht",
+   "t": "mc",
+   "q": "Welcher Weg macht den Zugang einer Kündigung am sichersten beweisbar?",
+   "o": [
+    {
+     "t": "Zustellung durch einen Boten oder den Gerichtsvollzieher",
+     "ok": 1
+    },
+    {
+     "t": "Versand als einfacher Brief mit Einwurf am Freitagnachmittag"
+    },
+    {
+     "t": "Übermittlung per E-Mail mit Lesebestätigung"
+    },
+    {
+     "t": "Aushang der Kündigung am schwarzen Brett des Betriebs"
+    }
+   ],
+   "e": "Beweissicher sind die persönliche Übergabe, die Zustellung durch einen Boten oder Kurier und die Zustellung durch den Gerichtsvollzieher. Eine E-Mail scheidet ohnehin aus, weil die Kündigung nach § 623 BGB der Schriftform bedarf."
+  },
+  {
+   "f": 1,
+   "sub": "Arbeitsrecht",
+   "t": "mc",
+   "q": "Innerhalb welcher Frist muss eine außerordentliche Kündigung erklärt werden?",
+   "o": [
+    {
+     "t": "Innerhalb von zwei Wochen ab Kenntnis des Kündigungsberechtigten von den maßgebenden Tatsachen, § 626 Abs. 2 BGB",
+     "ok": 1
+    },
+    {
+     "t": "Innerhalb von drei Wochen ab dem Vorfall"
+    },
+    {
+     "t": "Innerhalb eines Monats zum Monatsende"
+    },
+    {
+     "t": "Es gibt keine Frist, solange der wichtige Grund fortbesteht"
+    }
+   ],
+   "e": "§ 626 Abs. 2 BGB: Die außerordentliche Kündigung kann nur innerhalb von zwei Wochen erklärt werden. Die Frist beginnt, sobald der Kündigungsberechtigte die für die Kündigung maßgebenden Tatsachen kennt – nicht schon mit dem Vorfall selbst."
+  },
+  {
+   "f": 1,
+   "sub": "Arbeitsrecht",
+   "t": "mc",
+   "q": "Ein Arbeitnehmer entwendet Werkzeuge mit einem Restwert von etwa 50 €. Kann fristlos gekündigt werden?",
+   "o": [
+    {
+     "t": "Ja – ein Diebstahl zulasten des Arbeitgebers ist ein wichtiger Grund; auch geringer Wert schließt die Kündigung nicht aus, entscheidend ist die Interessenabwägung im Einzelfall",
+     "ok": 1
+    },
+    {
+     "t": "Nein – bei Schäden unter 100 € ist eine fristlose Kündigung ausnahmslos unzulässig"
+    },
+    {
+     "t": "Ja – der Wert der Sache ist rechtlich völlig ohne Bedeutung"
+    },
+    {
+     "t": "Nein – vor einer Kündigung ist stets eine Abmahnung zwingend erforderlich"
+    }
+   ],
+   "e": "Auch der Diebstahl geringwertiger Sachen zerstört das Vertrauensverhältnis und kann ein wichtiger Grund nach § 626 BGB sein. Das BAG verlangt aber eine Abwägung im Einzelfall: sehr geringer Schaden, langes beanstandungsfreies Arbeitsverhältnis und ein einmaliger Ausrutscher können dagegen sprechen."
+  },
+  {
+   "f": 1,
+   "sub": "Arbeitsrecht",
+   "t": "mc",
+   "q": "In welcher Form ist ein Tarifvertrag abzuschließen?",
+   "o": [
+    {
+     "t": "Schriftlich, § 1 Abs. 2 TVG",
+     "ok": 1
+    },
+    {
+     "t": "Formfrei, wie der Arbeitsvertrag"
+    },
+    {
+     "t": "In Textform, also auch per E-Mail"
+    },
+    {
+     "t": "Notariell beurkundet"
+    }
+   ],
+   "e": "§ 1 Abs. 2 TVG schreibt für Tarifverträge die Schriftform vor. Das dient der Rechtsklarheit, weil der Tarifvertrag unmittelbar und zwingend für die tarifgebundenen Arbeitsverhältnisse gilt."
+  },
+  {
+   "f": 1,
+   "sub": "Arbeitsrecht",
+   "t": "mc",
+   "q": "Welche Voraussetzung muss ein rechtmäßiger Streik erfüllen?",
+   "o": [
+    {
+     "t": "Er muss von einer Gewerkschaft getragen werden, ein tariflich regelbares Ziel verfolgen, verhältnismäßig und letztes Mittel sein",
+     "ok": 1
+    },
+    {
+     "t": "Er muss von der Mehrheit der Belegschaft in geheimer Wahl beschlossen werden, unabhängig von einer Gewerkschaft"
+    },
+    {
+     "t": "Er muss vier Wochen vorher beim Arbeitsgericht angemeldet werden"
+    },
+    {
+     "t": "Er darf nur während der Laufzeit eines geltenden Tarifvertrags stattfinden"
+    }
+   ],
+   "e": "Rechtmäßig ist ein Streik, wenn er gewerkschaftlich getragen ist, ein tarifvertraglich regelbares und zulässiges Ziel verfolgt, nicht gegen Grundregeln des Arbeitsrechts verstößt, verhältnismäßig ist, als letztes Mittel eingesetzt wird und die Friedenspflicht abgelaufen ist."
+  },
+  {
+   "f": 1,
+   "sub": "Arbeitsrecht",
+   "t": "mc",
+   "q": "Was bedeutet die tarifliche Friedenspflicht?",
+   "o": [
+    {
+     "t": "Während der Laufzeit eines ungekündigten Tarifvertrags müssen die Tarifparteien Arbeitskampfmaßnahmen unterlassen und auf ihre Mitglieder einwirken",
+     "ok": 1
+    },
+    {
+     "t": "Der Arbeitgeber darf während der Tarifverhandlungen niemanden kündigen"
+    },
+    {
+     "t": "Streiks sind nur außerhalb der Arbeitszeit zulässig"
+    },
+    {
+     "t": "Der Betriebsrat darf während eines Streiks nicht tagen"
+    }
+   ],
+   "e": "Die Friedenspflicht ist die Kehrseite der Tarifbindung: Solange ein Tarifvertrag ungekündigt gilt, sind Streik und Aussperrung über die geregelten Gegenstände unzulässig. Die Tarifparteien müssen zudem auf ihre Mitglieder einwirken, den Arbeitsfrieden zu wahren."
+  },
+  {
+   "f": 1,
+   "sub": "Arbeitsrecht",
+   "t": "mc",
+   "q": "Muss ein Arbeitgeber den für ihn geltenden Tarifvertrag im Betrieb bekannt machen?",
+   "o": [
+    {
+     "t": "Ja – nach § 8 TVG sind die anwendbaren Tarifverträge im Betrieb an geeigneter Stelle auszulegen oder auszuhängen",
+     "ok": 1
+    },
+    {
+     "t": "Nein – die Beschäftigten können ihn bei der Gewerkschaft erfragen"
+    },
+    {
+     "t": "Nur auf ausdrückliches Verlangen des Betriebsrats"
+    },
+    {
+     "t": "Nur gegenüber den gewerkschaftlich organisierten Beschäftigten"
+    }
+   ],
+   "e": "§ 8 TVG verpflichtet den Arbeitgeber, die im Betrieb anwendbaren Tarifverträge auszulegen oder auszuhängen. Alle Beschäftigten sollen ihre Rechte kennen können – unabhängig von einer Gewerkschaftsmitgliedschaft."
+  },
+  {
+   "f": 1,
+   "sub": "Betriebsverfassung",
+   "t": "mc",
+   "q": "Mit wem schließt der Betriebsrat eine Betriebsvereinbarung, und welche Form gilt?",
+   "o": [
+    {
+     "t": "Mit dem Arbeitgeber; sie ist nach § 77 Abs. 2 BetrVG schriftlich niederzulegen und von beiden Seiten zu unterzeichnen",
+     "ok": 1
+    },
+    {
+     "t": "Mit der Gewerkschaft; sie ist formfrei"
+    },
+    {
+     "t": "Mit dem Arbeitgeberverband; sie bedarf der Schriftform"
+    },
+    {
+     "t": "Mit der Belegschaftsversammlung; ein Beschluss genügt"
+    }
+   ],
+   "e": "Betriebsvereinbarungen werden von Betriebsrat und Arbeitgeber gemeinsam beschlossen. § 77 Abs. 2 BetrVG verlangt Schriftform und die Unterschrift beider Seiten; der Arbeitgeber hat sie im Betrieb auszulegen."
+  },
+  {
+   "f": 1,
+   "sub": "Arbeitsrecht",
+   "t": "mc",
+   "q": "Was ist eine Öffnungsklausel im Tarifvertrag?",
+   "o": [
+    {
+     "t": "Eine Regelung nach § 4 Abs. 3 TVG, die es erlaubt, von zwingenden Tarifbestimmungen auf betrieblicher Ebene abzuweichen",
+     "ok": 1
+    },
+    {
+     "t": "Die Möglichkeit, den Tarifvertrag jederzeit fristlos zu kündigen"
+    },
+    {
+     "t": "Die Regelung, ab wann nicht tarifgebundene Betriebe dem Tarifvertrag beitreten dürfen"
+    },
+    {
+     "t": "Die Erlaubnis für den Betriebsrat, eigene Tarifverträge abzuschließen"
+    }
+   ],
+   "e": "Tarifbestimmungen gelten unmittelbar und zwingend. Eine Öffnungsklausel lässt Abweichungen ausdrücklich zu – etwa durch Betriebsvereinbarung – und schafft so betriebliche Spielräume, ohne den Tarifvertrag insgesamt aufzugeben."
+  },
+  {
+   "f": 1,
+   "sub": "Betriebsverfassung",
+   "t": "mc",
+   "q": "Bei welcher Maßnahme hat der Betriebsrat KEIN Mitbestimmungsrecht?",
+   "o": [
+    {
+     "t": "Bei der Ausschüttung bereits versteuerter Gewinne an die Gesellschafter",
+     "ok": 1
+    },
+    {
+     "t": "Bei der Einrichtung eines Betriebskindergartens"
+    },
+    {
+     "t": "Bei Regeln zur Benutzung eines Radios am Arbeitsplatz"
+    },
+    {
+     "t": "Bei der Umstellung von Stempelkarten auf ein elektronisches Zeiterfassungssystem"
+    }
+   ],
+   "e": "Die Gewinnverwendung ist eine reine unternehmerische Entscheidung. Mitbestimmt sind dagegen Sozialeinrichtungen (§ 87 Abs. 1 Nr. 8 BetrVG), die Ordnung im Betrieb (Nr. 1) und technische Einrichtungen, die zur Verhaltens- oder Leistungskontrolle geeignet sind (Nr. 6)."
+  },
+  {
+   "f": 1,
+   "sub": "Betriebsverfassung",
+   "t": "mc",
+   "q": "Auf welche Vorschrift stützt sich die Mitbestimmung bei der Einführung eines elektronischen Zeiterfassungssystems?",
+   "o": [
+    {
+     "t": "§ 87 Abs. 1 Nr. 6 BetrVG – technische Einrichtungen, die zur Überwachung von Verhalten oder Leistung geeignet sind",
+     "ok": 1
+    },
+    {
+     "t": "§ 87 Abs. 1 Nr. 1 BetrVG – Ordnung des Betriebs"
+    },
+    {
+     "t": "§ 87 Abs. 1 Nr. 8 BetrVG – Sozialeinrichtungen"
+    },
+    {
+     "t": "§ 99 BetrVG – personelle Einzelmaßnahmen"
+    }
+   ],
+   "e": "Es genügt, dass die Einrichtung objektiv zur Überwachung geeignet ist; eine Überwachungsabsicht ist nicht nötig. Deshalb greift § 87 Abs. 1 Nr. 6 BetrVG bei nahezu allen Systemen, die Mitarbeiterdaten erfassen."
+  },
+  {
+   "f": 1,
+   "sub": "Sozialversicherung",
+   "t": "mc",
+   "q": "Ein Arbeitnehmer schließt ohne wichtigen Grund einen Aufhebungsvertrag. Welche Folge hat das für das Arbeitslosengeld?",
+   "o": [
+    {
+     "t": "Es tritt eine Sperrzeit nach § 159 SGB III ein, weil er an seiner Arbeitslosigkeit mitgewirkt hat",
+     "ok": 1
+    },
+    {
+     "t": "Keine Folge – der Anspruch beginnt sofort"
+    },
+    {
+     "t": "Der Anspruch entfällt vollständig"
+    },
+    {
+     "t": "Die Sperrzeit tritt nur ein, wenn eine Abfindung gezahlt wurde"
+    }
+   ],
+   "e": "Wer sein Arbeitsverhältnis selbst löst, ohne dafür einen wichtigen Grund zu haben, hat seine Arbeitslosigkeit mit zu verantworten. § 159 SGB III sieht dafür eine Sperrzeit vor – in der Regel zwölf Wochen."
+  },
+  {
+   "f": 1,
+   "sub": "Sozialversicherung",
+   "t": "mc",
+   "q": "Ein 52-jähriger Arbeitnehmer war über 30 Monate versicherungspflichtig beschäftigt. Wie lange besteht Anspruch auf Arbeitslosengeld?",
+   "o": [
+    {
+     "t": "15 Monate, § 147 SGB III",
+     "ok": 1
+    },
+    {
+     "t": "12 Monate"
+    },
+    {
+     "t": "18 Monate"
+    },
+    {
+     "t": "24 Monate"
+    }
+   ],
+   "e": "§ 147 SGB III staffelt die Anspruchsdauer nach Versicherungszeit und Lebensalter. Nach mindestens 30 Monaten Versicherungspflicht und vollendetem 50. Lebensjahr beträgt sie 15 Monate; ab 55 sind es 18, ab 58 bis zu 24 Monate."
+  },
+  {
+   "f": 1,
+   "sub": "Arbeitsrecht",
+   "t": "mc",
+   "q": "Der Berufsschulunterricht beginnt vor 9 Uhr. Darf der Betrieb Auszubildende davor beschäftigen?",
+   "o": [
+    {
+     "t": "Nein – vor einem vor 9 Uhr beginnenden Unterricht dürfen Auszubildende nicht beschäftigt werden, § 15 BBiG bzw. § 9 JArbSchG",
+     "ok": 1
+    },
+    {
+     "t": "Ja, wenn die Arbeit spätestens eine Stunde vor Unterrichtsbeginn endet"
+    },
+    {
+     "t": "Ja, sofern der Ausbildende dringenden betrieblichen Bedarf nachweist"
+    },
+    {
+     "t": "Ja, wenn die Zeit als Überstunde vergütet wird"
+    }
+   ],
+   "e": "Der Betrieb muss für den Berufsschulunterricht freistellen. Vor einem vor 9 Uhr beginnenden Unterricht ist eine Beschäftigung ausgeschlossen – auch bei dringenden Arbeiten."
+  },
+  {
+   "f": 1,
+   "sub": "Arbeitsrecht",
+   "t": "mc",
+   "q": "Wie wird ein Berufsschultag mit sechs Unterrichtsstunden auf die Ausbildungszeit angerechnet?",
+   "o": [
+    {
+     "t": "Ein solcher Tag je Woche zählt als voller Arbeitstag; ein weiterer Berufsschultag wird mit der tatsächlichen Unterrichtszeit einschließlich Pausen angerechnet",
+     "ok": 1
+    },
+    {
+     "t": "Beide Berufsschultage zählen jeweils als voller Arbeitstag"
+    },
+    {
+     "t": "Beide Tage werden nur mit der reinen Unterrichtszeit angerechnet"
+    },
+    {
+     "t": "Berufsschulzeit wird gar nicht auf die Ausbildungszeit angerechnet"
+    }
+   ],
+   "e": "Ein Berufsschultag mit mehr als fünf Unterrichtsstunden zu je mindestens 45 Minuten wird einmal in der Woche mit der durchschnittlichen täglichen Arbeitszeit angerechnet (§ 15 Abs. 1 Nr. 2 BBiG, § 9 Abs. 1 Nr. 2 JArbSchG). An diesem Tag darf danach nicht mehr beschäftigt werden."
+  },
+  {
+   "f": 1,
+   "sub": "Arbeitsrecht",
+   "t": "mc",
+   "q": "Was ist bei der ordentlichen Kündigung eines schwerbehinderten Menschen zusätzlich zu beachten?",
+   "o": [
+    {
+     "t": "Der Arbeitgeber muss vorher die Zustimmung des Integrationsamtes einholen, § 168 SGB IX",
+     "ok": 1
+    },
+    {
+     "t": "Die Kündigung muss der Agentur für Arbeit angezeigt werden"
+    },
+    {
+     "t": "Die Kündigungsfrist verdoppelt sich"
+    },
+    {
+     "t": "Die Schwerbehindertenvertretung muss der Kündigung zustimmen"
+    }
+   ],
+   "e": "§ 168 SGB IX macht die Kündigung schwerbehinderter Menschen von der vorherigen Zustimmung des Integrationsamtes abhängig. Ohne diese Zustimmung ist die Kündigung unwirksam. Die Schwerbehindertenvertretung ist zu beteiligen, entscheidet aber nicht."
+  },
+  {
+   "f": 1,
+   "sub": "Umweltrecht",
+   "t": "mc",
+   "q": "In welcher Reihenfolge sieht die Abfallhierarchie des § 6 KrWG den Umgang mit Abfall vor?",
+   "o": [
+    {
+     "t": "Vermeidung – Vorbereitung zur Wiederverwendung – Recycling – sonstige Verwertung – Beseitigung",
+     "ok": 1
+    },
+    {
+     "t": "Beseitigung – Recycling – Vermeidung – Wiederverwendung – Verwertung"
+    },
+    {
+     "t": "Recycling – Vermeidung – Beseitigung – Wiederverwendung – Verwertung"
+    },
+    {
+     "t": "Vermeidung – Recycling – Beseitigung – Wiederverwendung – energetische Verwertung"
+    }
+   ],
+   "e": "§ 6 KrWG ordnet die fünf Stufen in dieser Rangfolge. Vorrang hat immer die Vermeidung; die Beseitigung steht am Ende. Die sonstige Verwertung umfasst insbesondere die energetische Verwertung und die Verfüllung."
+  },
+  {
+   "f": 1,
+   "sub": "Umweltrecht",
+   "t": "mc",
+   "q": "Kann ein Verstoß gegen Umweltvorschriften strafrechtlich verfolgt werden?",
+   "o": [
+    {
+     "t": "Ja – die §§ 324 ff. StGB enthalten zahlreiche Straftatbestände gegen die Umwelt",
+     "ok": 1
+    },
+    {
+     "t": "Nein – Umweltverstöße sind ausschließlich Ordnungswidrigkeiten"
+    },
+    {
+     "t": "Nur wenn ein Mensch zu Schaden gekommen ist"
+    },
+    {
+     "t": "Nur bei vorsätzlichem Handeln der Geschäftsführung"
+    }
+   ],
+   "e": "Der 29. Abschnitt des StGB (§§ 324 ff.) stellt Straftaten gegen die Umwelt unter Strafe – etwa Gewässerverunreinigung, Bodenverunreinigung, Luftverunreinigung und den unerlaubten Umgang mit Abfällen. Auch fahrlässiges Handeln ist vielfach strafbar."
+  },
+  {
+   "f": 1,
+   "sub": "Produkthaftung/Datenschutz",
+   "t": "mc",
+   "q": "Was fällt nach Art. 4 Nr. 2 DSGVO unter den Begriff „Verarbeitung“ personenbezogener Daten?",
+   "o": [
+    {
+     "t": "Jeder Vorgang im Zusammenhang mit den Daten – erheben, erfassen, speichern, ordnen, anpassen, verändern, auslesen, übermitteln, löschen",
+     "ok": 1
+    },
+    {
+     "t": "Nur die automatisierte Auswertung durch Software"
+    },
+    {
+     "t": "Nur die Weitergabe von Daten an Dritte"
+    },
+    {
+     "t": "Nur die dauerhafte Speicherung in einer Datenbank"
+    }
+   ],
+   "e": "Der Begriff ist bewusst weit gefasst: Praktisch jeder Umgang mit personenbezogenen Daten ist eine Verarbeitung und braucht eine Rechtsgrundlage nach Art. 6 DSGVO – auch das bloße Erheben oder Löschen."
+  },
+  {
+   "f": 1,
+   "sub": "Produkthaftung/Datenschutz",
+   "t": "mc",
+   "q": "Welche Maßnahme ist eine geeignete technisch-organisatorische Maßnahme zum Schutz personenbezogener Daten?",
+   "o": [
+    {
+     "t": "Zutritts-, Zugangs- und Zugriffskontrolle sowie das Trennungsgebot",
+     "ok": 1
+    },
+    {
+     "t": "Die Bestellung eines externen Wirtschaftsprüfers"
+    },
+    {
+     "t": "Die Aufbewahrung aller Daten in einem einzigen zentralen Verzeichnis ohne Rechteverwaltung"
+    },
+    {
+     "t": "Die Veröffentlichung des Verarbeitungsverzeichnisses im Intranet"
+    }
+   ],
+   "e": "Zu den technisch-organisatorischen Maßnahmen zählen Zutrittskontrolle (Gebäude), Zugangskontrolle (Systeme), Zugriffskontrolle (Berechtigungen), Weitergabe- und Eingabekontrolle sowie das Trennungsgebot – Daten unterschiedlicher Zwecke sind getrennt zu verarbeiten."
+  },
+  {
+   "f": 2,
+   "sub": "Rechtsformen",
+   "t": "mc",
+   "q": "Was kennzeichnet ein Joint Venture?",
+   "o": [
+    {
+     "t": "Zwei oder mehr Unternehmen gründen ein Gemeinschaftsunternehmen und tragen Führungsverantwortung und finanzielles Risiko gemeinsam, bleiben selbst aber rechtlich und wirtschaftlich unabhängig",
+     "ok": 1
+    },
+    {
+     "t": "Ein Unternehmen übernimmt die Mehrheit der Anteile eines anderen und gliedert es ein"
+    },
+    {
+     "t": "Mehrere Unternehmen stimmen Preise und Absatzgebiete ab, ohne eine gemeinsame Gesellschaft zu gründen"
+    },
+    {
+     "t": "Ein Unternehmen vergibt Lizenzen an einen ausländischen Partner und zieht sich aus dem Markt zurück"
+    }
+   ],
+   "e": "Beim Joint Venture bündeln rechtlich selbstständige Partner Kapital, Know-how und Risiko in einem gemeinsamen Tochterunternehmen. Es ist damit eine Kooperation – anders als die Fusion, bei der die Selbstständigkeit endet."
+  },
+  {
+   "f": 2,
+   "sub": "Rechtsformen",
+   "t": "mc",
+   "q": "Welcher Punkt ist ein typischer Vorteil eines Joint Ventures beim Markteintritt im Ausland?",
+   "o": [
+    {
+     "t": "Marktzugangsbeschränkungen lassen sich überwinden, Kapital und Risiko werden geteilt und die Netzwerke beider Partner nutzbar",
+     "ok": 1
+    },
+    {
+     "t": "Die Erfolge müssen nicht geteilt werden"
+    },
+    {
+     "t": "Die wirtschaftliche Selbstständigkeit wird gestärkt"
+    },
+    {
+     "t": "Währungs- und Kulturrisiken entfallen"
+    }
+   ],
+   "e": "Vorteile sind mehr verfügbares Kapital und bessere Kreditwürdigkeit, geteilte Kosten und Risiken, der oft nur so mögliche Marktzugang sowie gemeinsam nutzbares Know-how und Kontakte. Geteilte Erfolge, Abhängigkeit vom Partner und zusätzliche Kultur- und Währungsrisiken sind die Kehrseite."
+  },
+  {
+   "f": 2,
+   "sub": "Betriebsorganisation",
+   "t": "mc",
+   "q": "Was versteht man in der Produktionsplanung unter Kapazität?",
+   "o": [
+    {
+     "t": "Das technische Leistungspotenzial einer Periode, bestimmt durch den Bestand an Produktionsfaktoren (Material, Betriebsmittel, Arbeitskräfte)",
+     "ok": 1
+    },
+    {
+     "t": "Die tatsächlich abgesetzte Menge einer Periode"
+    },
+    {
+     "t": "Die Summe der Fixkosten je Periode"
+    },
+    {
+     "t": "Der Lagerbestand an Fertigerzeugnissen"
+    }
+   ],
+   "e": "Kapazität ist das Leistungsvermögen, nicht die tatsächliche Leistung. Wie stark es genutzt wird, beschreibt der Beschäftigungsgrad (Ist-Beschäftigung : Plan-Beschäftigung × 100)."
+  },
+  {
+   "f": 2,
+   "sub": "Betriebsorganisation",
+   "t": "mc",
+   "q": "Wodurch unterscheidet sich die quantitative von der qualitativen Kapazität?",
+   "o": [
+    {
+     "t": "Die quantitative Kapazität gibt die Anzahl herstellbarer Leistungseinheiten an, die qualitative Art und Güte der erbrachten Leistung",
+     "ok": 1
+    },
+    {
+     "t": "Die quantitative Kapazität bezieht sich auf Maschinen, die qualitative nur auf Menschen"
+    },
+    {
+     "t": "Die quantitative Kapazität gilt kurzfristig, die qualitative langfristig"
+    },
+    {
+     "t": "Die quantitative Kapazität wird in Euro gemessen, die qualitative in Stunden"
+    }
+   ],
+   "e": "Quantitative Kapazitätsmerkmale sind Zeiten, Mengen oder Werte je Betriebsmittel oder Mensch. Die qualitative Kapazität beschreibt, welche Art und Güte von Leistung überhaupt erbracht werden kann – etwa erreichbare Toleranzen oder Qualifikationen."
+  },
+  {
+   "f": 2,
+   "sub": "Betriebsorganisation",
+   "t": "mc",
+   "q": "Welche Maßnahme ist eine kurzfristige – und nicht mittelfristige – Kapazitätsanpassung nach oben?",
+   "o": [
+    {
+     "t": "Mehrarbeit, Zusatzschichten, Fremdvergabe und der Einsatz von Leiharbeitnehmern",
+     "ok": 1
+    },
+    {
+     "t": "Einstellung zusätzlicher Stammkräfte"
+    },
+    {
+     "t": "Kauf neuer Produktionsanlagen"
+    },
+    {
+     "t": "Bau einer zweiten Fertigungshalle"
+    }
+   ],
+   "e": "Kurzfristig wirken Mehrarbeit, Zusatzschichten, Fremdvergabe und Leiharbeit. Mittelfristig sind Personaleinstellungen, der Kauf von Anlagen und eine geringere Fertigungstiefe; langfristig sind es Investitionen in Standorte."
+  },
+  {
+   "f": 2,
+   "sub": "Materialwirtschaft",
+   "t": "calc",
+   "q": "Der Tagesverbrauch eines Granulats beträgt 3 t, die Reichweite des Sicherheitsbestandes 5 Tage. Berechnen Sie den Sicherheitsbestand.",
+   "ans": 15,
+   "unit": "t",
+   "e": "Sicherheitsbestand = Ø Verbrauch pro Tag × Sicherheitszeit in Tagen = 3 t/Tag × 5 Tage = 15 t. Er federt Verbrauchsschwankungen und Lieferverzögerungen ab."
+  },
+  {
+   "f": 2,
+   "sub": "Materialwirtschaft",
+   "t": "calc",
+   "q": "Tagesverbrauch 3 t, Lieferzeit 5 Tage, Sicherheitsbestand 15 t. Berechnen Sie den Meldebestand.",
+   "ans": 30,
+   "unit": "t",
+   "e": "Meldebestand = Verbrauch je Zeiteinheit × Wiederbeschaffungszeit + Sicherheitsbestand = 3 t/Tag × 5 Tage + 15 t = 15 t + 15 t = 30 t. Bei diesem Bestand wird die nächste Bestellung ausgelöst."
+  },
+  {
+   "f": 2,
+   "sub": "Materialwirtschaft",
+   "t": "calc",
+   "q": "Die maximale Lagerkapazität beträgt 45 t, der Sicherheitsbestand 15 t. Das Lager wird stets bis zur Maximalkapazität aufgefüllt und der Sicherheitsbestand nie unterschritten. Welche Bestellmenge ergibt sich?",
+   "ans": 30,
+   "unit": "t",
+   "e": "Bestellmenge = maximale Lagerkapazität − Sicherheitsbestand = 45 t − 15 t = 30 t. Mehr passt nicht ins Lager, weniger würde den Sicherheitsbestand angreifen."
+  },
+  {
+   "f": 2,
+   "sub": "Materialwirtschaft",
+   "t": "calc",
+   "q": "Bei 280 Fertigungstagen im Jahr und einem Tagesverbrauch von 3 t wird jeweils eine Bestellmenge von 30 t geordert. Wie viele Bestellungen sind je Jahr nötig?",
+   "ans": 28,
+   "unit": "Bestellungen",
+   "e": "Jahresverbrauch = 280 Tage × 3 t/Tag = 840 t. Bestellhäufigkeit = Jahresbedarf : Bestellmenge = 840 t/Jahr : 30 t/Bestellung = 28 Bestellungen je Jahr."
+  },
+  {
+   "f": 2,
+   "sub": "Materialwirtschaft",
+   "t": "calc",
+   "q": "Der verfügbare Lagerbestand beträgt 30 t (45 t Kapazität abzüglich 15 t Sicherheitsbestand), der Tagesverbrauch 3 t. Berechnen Sie die durchschnittliche Lagerreichweite.",
+   "ans": 10,
+   "unit": "Tage",
+   "e": "Ø Lagerreichweite = verfügbarer Lagerbestand : Verbrauch pro Tag = 30 t : 3 t/Tag = 10 Tage. Der Sicherheitsbestand bleibt dabei bewusst unberücksichtigt, weil er nur für Störungen gedacht ist."
+  },
+  {
+   "f": 2,
+   "sub": "Materialwirtschaft",
+   "t": "mc",
+   "q": "Welcher Kritikpunkt spricht gegen die Anwendung der Andler-Formel in der Praxis?",
+   "o": [
+    {
+     "t": "Sie unterstellt konstanten Verbrauch und konstante Einstandspreise und berücksichtigt weder Mindestbestellmengen noch Rabatte",
+     "ok": 1
+    },
+    {
+     "t": "Sie berücksichtigt die Bestellkosten doppelt"
+    },
+    {
+     "t": "Sie ist nur bei schwankendem Jahresbedarf anwendbar"
+    },
+    {
+     "t": "Sie setzt voraus, dass keine Lagerkosten anfallen"
+    }
+   ],
+   "e": "Die Andler-Formel arbeitet mit stark vereinfachenden Annahmen: gleichmäßiger Lagerabgang, konstante Preise, im Voraus bekannter Jahresbedarf und über das Jahr konstante bestellfixe Kosten. Mindestbestellmengen, Mindermengenzuschläge und Mengenrabatte kennt sie nicht."
+  },
+  {
+   "f": 4,
+   "sub": "Entgelt und Arbeitszeit",
+   "t": "calc",
+   "q": "Die Soll-Menge (Normalleistung) beträgt 15 Stück je Stunde. Berechnen Sie die Vorgabezeit je Stück.",
+   "ans": 4,
+   "unit": "min/Stück",
+   "e": "Vorgabezeit = 60 min/h : Normalleistung = 60 min/h : 15 Stück/h = 4 min/Stück."
+  },
+  {
+   "f": 4,
+   "sub": "Entgelt und Arbeitszeit",
+   "t": "calc",
+   "q": "Prämienlohn: Grundlohn 19,50 €/h bei Normalleistung 15 Stück/h, maximaler Prämienlohn 23,40 €/h beim maximalen Zeitgrad von 120 %. Die Prämie steigt proportional zur Mehrleistung. Welchen Stundenlohn erhält ein Werker, der 17 Stück je Stunde montiert?",
+   "ans": 22.1,
+   "unit": "€/h",
+   "e": "Maximale Mehrleistung = 15 Stück/h × 1,2 − 15 Stück/h = 3 Stück/h. Prämie je Mehrstück = (23,40 €/h − 19,50 €/h) : 3 Stück/h = 1,30 €/Stück. Bei 2 Stück Mehrleistung: 19,50 €/h + 1,30 €/Stück × 2 Stück/h = 22,10 €/h."
+  },
+  {
+   "f": 4,
+   "sub": "Entgelt und Arbeitszeit",
+   "t": "mc",
+   "q": "Welcher Nachteil ist mit dem Prämienlohn verbunden?",
+   "o": [
+    {
+     "t": "Hoher administrativer Aufwand für die Prämienberechnung und schwankendes Monatseinkommen",
+     "ok": 1
+    },
+    {
+     "t": "Die Leistung der Mitarbeiter sinkt regelmäßig"
+    },
+    {
+     "t": "Der Betriebsrat hat kein Mitbestimmungsrecht mehr"
+    },
+    {
+     "t": "Der tarifliche Grundlohn entfällt"
+    }
+   ],
+   "e": "Der Prämienlohn motiviert und steigert die Produktivität, verursacht aber Verwaltungsaufwand, kann Unzufriedenheit erzeugen, wenn Ziele nicht erreicht werden, fördert Konkurrenzdenken und Stress und macht das Monatseinkommen schwankend."
+  },
+  {
+   "f": 2,
+   "sub": "Kostenrechnung",
+   "t": "calc",
+   "q": "Für einen Auftrag über 25.000 Stück fallen Vorrichtungskosten von 5.250,00 € an. Berechnen Sie die Sondereinzelkosten der Fertigung je Stück.",
+   "ans": 0.21,
+   "unit": "€/Stück",
+   "e": "Sondereinzelkosten der Fertigung je Stück = 5.250,00 € : 25.000 Stück = 0,21 €/Stück. Sondereinzelkosten fallen für den Auftrag als Ganzes an und werden direkt auf die Auftragsmenge verteilt – sie tragen keine Gemeinkostenzuschläge."
+  },
+  {
+   "f": 2,
+   "sub": "Kostenrechnung",
+   "t": "calc",
+   "q": "Fertigungsmaterial 6,20 €/Stück, Materialgemeinkostenzuschlag 15 %. Berechnen Sie die Materialkosten je Stück.",
+   "ans": 7.13,
+   "unit": "€/Stück",
+   "e": "Materialgemeinkosten = 6,20 € × 15 % = 0,93 €. Materialkosten = 6,20 € + 0,93 € = 7,13 € je Stück."
+  },
+  {
+   "f": 2,
+   "sub": "Kostenrechnung",
+   "t": "calc",
+   "q": "Fertigungslöhne 3,20 €/Stück, Restfertigungsgemeinkosten 180 %, Maschinenkosten 4,70 €/Stück, Sondereinzelkosten der Fertigung 0,21 €/Stück. Berechnen Sie die Fertigungskosten je Stück.",
+   "ans": 13.87,
+   "unit": "€/Stück",
+   "e": "Restfertigungsgemeinkosten = 3,20 € × 180 % = 5,76 €. Fertigungskosten = 3,20 € + 5,76 € + 4,70 € + 0,21 € = 13,87 €. Die Maschinenkosten werden hier gesondert erfasst, deshalb heißen die übrigen Gemeinkosten „Restfertigungsgemeinkosten“."
+  },
+  {
+   "f": 2,
+   "sub": "Kostenrechnung",
+   "t": "calc",
+   "q": "Materialkosten 7,13 €/Stück, Fertigungskosten 13,87 €/Stück, Verwaltungsgemeinkosten 8 %, Vertriebsgemeinkosten 7 %. Berechnen Sie die Selbstkosten je Stück.",
+   "ans": 24.15,
+   "unit": "€/Stück",
+   "e": "Herstellkosten = 7,13 € + 13,87 € = 21,00 €. VwGK = 21,00 € × 8 % = 1,68 €; VtGK = 21,00 € × 7 % = 1,47 €. Selbstkosten = 21,00 € + 1,68 € + 1,47 € = 24,15 €."
+  },
+  {
+   "f": 2,
+   "sub": "Kostenrechnung",
+   "t": "calc",
+   "q": "Selbstkosten 24,15 €/Stück, Gewinnzuschlag 20 %, Vertreterprovision 10 %, Kundenrabatt 20 % (beide im Hundert). Berechnen Sie den Listenverkaufspreis.",
+   "ans": 40.25,
+   "unit": "€/Stück",
+   "e": "Gewinn = 24,15 € × 20 % = 4,83 € → Barverkaufspreis 28,98 €. Provision „im Hundert“: Zielverkaufspreis = 28,98 € : 0,90 = 32,20 € (Provision 3,22 €). Rabatt „im Hundert“: Listenverkaufspreis = 32,20 € : 0,80 = 40,25 € (Rabatt 8,05 €)."
+  },
+  {
+   "f": 2,
+   "sub": "Kostenrechnung",
+   "t": "calc",
+   "q": "Ein Kunde zahlt 34,90 €/Stück ohne Rabatt; die Vertreterprovision beträgt 10 % des Verkaufspreises, die Selbstkosten 24,15 €/Stück. Berechnen Sie den Gewinn je Stück.",
+   "ans": 7.26,
+   "unit": "€/Stück",
+   "e": "Provision = 34,90 € × 10 % = 3,49 €. Barverkaufspreis = 34,90 € − 3,49 € = 31,41 €. Gewinn = 31,41 € − 24,15 € = 7,26 € je Stück."
+  },
+  {
+   "f": 2,
+   "sub": "Kostenrechnung",
+   "t": "calc",
+   "q": "Der Gewinn beträgt 7,26 €/Stück, die Selbstkosten 24,15 €/Stück. Berechnen Sie den prozentualen Gewinnzuschlag (zwei Nachkommastellen).",
+   "ans": 30.06,
+   "unit": "%",
+   "e": "Gewinn [%] = Gewinn : Selbstkosten × 100 = 7,26 € : 24,15 € × 100 = 30,06 %. Bezugsgröße des Gewinnzuschlags sind immer die Selbstkosten, nicht der Verkaufspreis."
+  },
+  {
+   "f": 2,
+   "sub": "Kostenrechnung",
+   "t": "mc",
+   "q": "Die Fixkosten betragen konstant 420.000 €. Bei 1.000 Stück entfallen davon 420 € auf das Stück, bei 4.000 Stück nur 105 €. Wie heißt dieser Effekt?",
+   "o": [
+    {
+     "t": "Fixkostendegression – die Fixkosten je Stück sinken mit steigender Ausbringungsmenge",
+     "ok": 1
+    },
+    {
+     "t": "Fixkostenprogression – die Fixkosten steigen überproportional"
+    },
+    {
+     "t": "Kostenremanenz – die Kosten folgen dem Beschäftigungsrückgang verzögert"
+    },
+    {
+     "t": "Grenzkostenverlauf – jede weitere Einheit kostet weniger als die vorige"
+    }
+   ],
+   "e": "Die Fixkosten bleiben in der Summe gleich und verteilen sich auf mehr Stücke. Deshalb sinken die Stückkosten insgesamt – im Beispiel von 620 € auf 305 €, obwohl die variablen Stückkosten konstant 200 € betragen."
+  },
+  {
+   "f": 2,
+   "sub": "Kostenrechnung",
+   "t": "calc",
+   "q": "Gesamtkostenfunktion K(x) = 246.500 € + 18,00 €/Stück · x, Umsatzfunktion U(x) = 32,50 €/Stück · x. Berechnen Sie die Break-even-Menge je Monat.",
+   "ans": 17000,
+   "unit": "Stück",
+   "e": "Stückdeckungsbeitrag = 32,50 €/Stück − 18,00 €/Stück = 14,50 €/Stück. Break-even-Menge = Kf : db = 246.500 € : 14,50 €/Stück = 17.000 Stück je Monat."
+  },
+  {
+   "f": 2,
+   "sub": "Kostenrechnung",
+   "t": "calc",
+   "q": "Die Break-even-Menge beträgt 17.000 Stück/Monat bei einem Preis von 32,50 €/Stück. Berechnen Sie den Break-even-Umsatz.",
+   "ans": 552500,
+   "unit": "€",
+   "e": "Break-even-Umsatz = Preis × Break-even-Menge = 32,50 €/Stück × 17.000 Stück = 552.500 € je Monat. Bei diesem Umsatz sind alle Kosten gedeckt, der Gewinn ist null."
+  },
+  {
+   "f": 2,
+   "sub": "Kostenrechnung",
+   "t": "calc",
+   "q": "Break-even-Menge 17.000 Stück/Monat, Kapazitätsgrenze 20.000 Stück/Monat. Berechnen Sie den Break-even-Beschäftigungsgrad.",
+   "ans": 85,
+   "unit": "%",
+   "e": "Break-even-Beschäftigungsgrad = Break-even-Menge : Kapazität × 100 = 17.000 Stück : 20.000 Stück × 100 = 85 %. Erst oberhalb von 85 % Auslastung entsteht Gewinn – ein knapper Sicherheitsabstand."
+  },
+  {
+   "f": 2,
+   "sub": "Kostenrechnung",
+   "t": "calc",
+   "q": "Durch Automatisierung sinken die variablen Stückkosten von 18,00 € um 10 %, die Fixkosten steigen um 17.560 € auf 264.060 €. Der Preis bleibt 32,50 €/Stück. Berechnen Sie die neue Break-even-Menge.",
+   "ans": 16200,
+   "unit": "Stück",
+   "e": "Neue variable Stückkosten = 18,00 € × 0,9 = 16,20 €. Break-even-Menge = (246.500 € + 17.560 €) : (32,50 € − 16,20 €) = 264.060 € : 16,30 €/Stück = 16.200 Stück. Da die Menge von 17.000 auf 16.200 Stück sinkt, ist die Maßnahme positiv zu beurteilen."
+  },
+  {
+   "f": 2,
+   "sub": "Kostenrechnung",
+   "t": "calc",
+   "q": "Der Break-even-Beschäftigungsgrad soll bei einer Kapazität von 20.000 Stück/Monat auf 75 % sinken. Die Fixkosten betragen 247.500 €, der Preis unverändert 32,50 €/Stück. Welche variablen Stückkosten sind dafür nötig?",
+   "ans": 16,
+   "unit": "€/Stück",
+   "e": "Ziel-Break-even-Menge = 20.000 Stück × 75 % = 15.000 Stück. Erforderlicher Stückdeckungsbeitrag = 247.500 € : 15.000 Stück = 16,50 €/Stück. Variable Stückkosten = 32,50 € − 16,50 € = 16,00 €/Stück – sie müssen also um 2,00 €/Stück sinken."
+  },
+  {
+   "f": 3,
+   "sub": "EDV",
+   "t": "mc",
+   "q": "Wodurch unterscheiden sich Stammdaten von Bewegungsdaten?",
+   "o": [
+    {
+     "t": "Stammdaten sind dauerhaft gespeicherte Grundinformationen, die selten geändert werden; Bewegungsdaten sind laufend neu erfasste Vorgangsdaten, die sich auf Stammdaten beziehen",
+     "ok": 1
+    },
+    {
+     "t": "Stammdaten werden nur im ERP-System geführt, Bewegungsdaten nur in Tabellenkalkulationen"
+    },
+    {
+     "t": "Stammdaten sind personenbezogen, Bewegungsdaten sind anonym"
+    },
+    {
+     "t": "Stammdaten ändern sich täglich, Bewegungsdaten bleiben unverändert"
+    }
+   ],
+   "e": "Stammdaten (Artikel, Personal, Betriebsmittel, Lagerplätze) sind über längere Zeit gültig. Bewegungsdaten (Einlagerungen, Entnahmen, Buchungen) entstehen laufend und verweisen meist mehrfach auf denselben Stammdatensatz."
+  },
+  {
+   "f": 3,
+   "sub": "EDV",
+   "t": "mc",
+   "q": "Welche Angabe ist im Lager ein typischer Bewegungsdatensatz?",
+   "o": [
+    {
+     "t": "Eine Entnahme mit Datum, Artikel, Menge und Kunde",
+     "ok": 1
+    },
+    {
+     "t": "Die Artikelnummer mit Bezeichnung und Preis"
+    },
+    {
+     "t": "Die Regalposition mit Abmessungen und zulässiger Traglast"
+    },
+    {
+     "t": "Die Personal-ID mit Name und Berechtigungen"
+    }
+   ],
+   "e": "Ein- und Auslagerungen, gemessene Umgebungsbedingungen und der Betriebsmitteleinsatz sind Bewegungsdaten. Artikel-, Regal-, Personal- und Betriebsmitteldaten sind Stammdaten."
+  },
+  {
+   "f": 3,
+   "sub": "EDV",
+   "t": "mc",
+   "q": "Nur befugte Beschäftigte sollen je nach Aufgabengebiet auf Daten zugreifen können. Welche Maßnahme setzt das um?",
+   "o": [
+    {
+     "t": "Systematische Autorisierung mit Einteilung der Nutzer nach Gruppen und Rollen",
+     "ok": 1
+    },
+    {
+     "t": "Ein gemeinsames Sammelkonto für die ganze Abteilung"
+    },
+    {
+     "t": "Ablage aller Daten in einem für alle lesbaren Netzlaufwerk"
+    },
+    {
+     "t": "Deaktivierung der Protokollierung, damit keine Nutzungsdaten anfallen"
+    }
+   ],
+   "e": "Rollen- und gruppenbasierte Berechtigungen sind die organisatorische Grundlage. Technisch ergänzen sie Firewalls, Virenschutz, regelmäßige Updates sowie Zutrittskontrolle und Videoüberwachung; ein ISMS bündelt das Ganze."
+  },
+  {
+   "f": 3,
+   "sub": "Arbeitsmethodik",
+   "t": "mc",
+   "q": "Welches Element eines Flussdiagramms bildet eine Ja-/Nein-Entscheidung ab?",
+   "o": [
+    {
+     "t": "Die Raute (Verzweigung) mit zwei beschrifteten Ausgängen",
+     "ok": 1
+    },
+    {
+     "t": "Das Rechteck (Operation)"
+    },
+    {
+     "t": "Das abgerundete Rechteck (Start oder Ende)"
+    },
+    {
+     "t": "Der Pfeil (Ablauflinie)"
+    }
+   ],
+   "e": "Im Flussdiagramm steht das abgerundete Rechteck für Start und Ende, das Rechteck für eine Tätigkeit, die Raute für eine Entscheidung mit den Ausgängen „ja“ und „nein“, der Pfeil für die Ablaufrichtung."
+  },
+  {
+   "f": 3,
+   "sub": "Arbeitsmethodik",
+   "t": "mc",
+   "q": "Welcher Vorteil spricht für den Einsatz von Flussdiagrammen?",
+   "o": [
+    {
+     "t": "Sie geben schnell Überblick, machen Abläufe transparent, ermöglichen den Soll-Ist-Abgleich und decken beim Erstellen Optimierungsmöglichkeiten auf",
+     "ok": 1
+    },
+    {
+     "t": "Sie ersetzen die Arbeitsanweisung rechtlich"
+    },
+    {
+     "t": "Sie machen eine Gefährdungsbeurteilung entbehrlich"
+    },
+    {
+     "t": "Sie berechnen automatisch die Durchlaufzeit eines Prozesses"
+    }
+   ],
+   "e": "Flussdiagramme standardisieren Prozesse und machen Reihenfolge und Vollständigkeit prüfbar. Eingesetzt werden sie für Arbeitsprozesse, Informationsflüsse, Qualitäts- und Arbeitssicherheitskontrollen sowie zur Programmierung von Abläufen."
+  },
+  {
+   "f": 3,
+   "sub": "Präsentation",
+   "t": "mc",
+   "q": "Mobilgeräte dürfen aus betrieblichen Gründen nicht generell verboten werden. Wie lassen sich Störungen einer Präsentation dennoch vermindern?",
+   "o": [
+    {
+     "t": "Vor Beginn um Lautlos-Schaltung bitten, Pausen ankündigen und einhalten und die Teilnehmer aktiv einbinden",
+     "ok": 1
+    },
+    {
+     "t": "Die Geräte zu Beginn einsammeln und erst am Ende zurückgeben"
+    },
+    {
+     "t": "Den Mobilfunkempfang im Raum technisch stören"
+    },
+    {
+     "t": "Die Präsentation ohne Pause durchziehen, damit keine Zeit zum Nachschauen bleibt"
+    }
+   ],
+   "e": "Wirksam sind Vereinbarungen statt Verbote: lautlos stellen, feste Pausen für die dienstliche Nutzung und aktive Beteiligung, die gar keine Gelegenheit zum Abschweifen lässt. Das Stören von Mobilfunk ist rechtlich unzulässig."
+  },
+  {
+   "f": 3,
+   "sub": "Präsentation",
+   "t": "mc",
+   "q": "Womit lässt sich die Aufmerksamkeit der Teilnehmer während einer Präsentation erhöhen?",
+   "o": [
+    {
+     "t": "Kernpunkte zu Beginn ankündigen, im Verlauf erläutern und am Ende wiederholen, dazu ein abwechslungsreicher Medienmix",
+     "ok": 1
+    },
+    {
+     "t": "Möglichst viele Textfolien mit vollständigen Sätzen"
+    },
+    {
+     "t": "Den Vortrag ohne Zwischenfragen durchhalten"
+    },
+    {
+     "t": "Die schwierigsten Inhalte ans Ende legen, wenn die Konzentration nachlässt"
+    }
+   ],
+   "e": "Bewährt sind die Dreierregel (ankündigen – erläutern – zusammenfassen), ein wechselnder Medieneinsatz, Zusammenfassungen durch Teilnehmer und die Ankündigung eines kurzen Tests. Textlastige Folien wirken dagegen ermüdend."
+  },
+  {
+   "f": 3,
+   "sub": "Statistik",
+   "t": "calc",
+   "q": "Die Personalgesamtkosten steigen von 1.200.000 € auf 1.440.000 €. Berechnen Sie die prozentuale Veränderung.",
+   "ans": 20,
+   "unit": "%",
+   "e": "ΔK [%] = (Kkommend − Klaufend) : Klaufend × 100 % = (1.440.000 € − 1.200.000 €) : 1.200.000 € × 100 % = 240.000 € : 1.200.000 € × 100 % = 20,0 %."
+  },
+  {
+   "f": 3,
+   "sub": "Statistik",
+   "t": "calc",
+   "q": "Die Kosten der Betriebsmittel sinken von 8.400.000 € auf 7.140.000 €. Berechnen Sie die prozentuale Veränderung (Rückgang mit negativem Vorzeichen).",
+   "ans": -15,
+   "unit": "%",
+   "e": "ΔK [%] = (7.140.000 € − 8.400.000 €) : 8.400.000 € × 100 % = −1.260.000 € : 8.400.000 € × 100 % = −15,0 %. Das negative Vorzeichen kennzeichnet den Rückgang."
+  },
+  {
+   "f": 3,
+   "sub": "Statistik",
+   "t": "calc",
+   "q": "Die Energiekosten steigen von 500.000 € auf 700.000 €. Um wie viel Prozent verändern sie sich?",
+   "ans": 40,
+   "unit": "%",
+   "e": "ΔK [%] = (700.000 € − 500.000 €) : 500.000 € × 100 % = 200.000 € : 500.000 € × 100 % = 40,0 %. Bezugsgröße ist immer der alte Wert."
+  },
+  {
+   "f": 3,
+   "sub": "Statistik",
+   "t": "mc",
+   "q": "Welche Diagrammart eignet sich zur Darstellung von Kostenanteilen an einem Ganzen?",
+   "o": [
+    {
+     "t": "Kreis-, Kreisring-, Halbkreis- oder Streifendiagramm",
+     "ok": 1
+    },
+    {
+     "t": "Liniendiagramm"
+    },
+    {
+     "t": "Streudiagramm"
+    },
+    {
+     "t": "Netzdiagramm"
+    }
+   ],
+   "e": "Anteile am Ganzen zeigen Kreis-, Kreisring-, Halbkreis- und Streifendiagramme; Säulen- und Balkendiagramme eignen sich für den Vergleich absoluter Werte. Liniendiagramme zeigen Verläufe über die Zeit."
+  },
+  {
+   "f": 3,
+   "sub": "Projektmanagement",
+   "t": "mc",
+   "q": "Welche Funktion sollte eine Projektmanagementsoftware bieten?",
+   "o": [
+    {
+     "t": "Netzplantechnik mit Terminen, kritischen Vorgängen und Pufferzeiten sowie Darstellung im Gantt-Diagramm",
+     "ok": 1
+    },
+    {
+     "t": "Automatische Genehmigung von Investitionsanträgen"
+    },
+    {
+     "t": "Führung der Finanzbuchhaltung nach HGB"
+    },
+    {
+     "t": "Erstellung der Gefährdungsbeurteilung für alle Arbeitsplätze"
+    }
+   ],
+   "e": "Kernfunktionen sind Netzplantechnik (kritischer Pfad, Puffer), Balkenplan und Vorgangslisten, Kostenplanung mit Zwischen- und Endsummen, Ressourcenverwaltung samt Erkennung von Ressourcenkonflikten sowie ein laufender Soll-Ist-Vergleich."
+  },
+  {
+   "f": 3,
+   "sub": "Projektmanagement",
+   "t": "mc",
+   "q": "Was zeigt der kritische Pfad im Netzplan?",
+   "o": [
+    {
+     "t": "Die Folge von Vorgängen ohne Pufferzeit – jede Verzögerung dort verschiebt den Projektendtermin",
+     "ok": 1
+    },
+    {
+     "t": "Die teuersten Vorgänge des Projekts"
+    },
+    {
+     "t": "Die Vorgänge mit dem höchsten Risiko eines Qualitätsmangels"
+    },
+    {
+     "t": "Den Weg mit den wenigsten Vorgängen"
+    }
+   ],
+   "e": "Vorgänge auf dem kritischen Pfad haben einen Gesamtpuffer von null. Sie bestimmen die Projektdauer, weshalb Termin- und Ressourcensteuerung genau dort ansetzen müssen."
+  },
+  {
+   "f": 3,
+   "sub": "Projektmanagement",
+   "t": "mc",
+   "q": "Personelle Ausfälle durch Fehlzeiten gefährden den Projekttermin. Welche vorbeugende Gegenmaßnahme ist geeignet?",
+   "o": [
+    {
+     "t": "Vertretungen vorausplanen, andere Beschäftigte einarbeiten oder Leiharbeitskräfte einplanen",
+     "ok": 1
+    },
+    {
+     "t": "Den Endtermin unverändert lassen und Überstunden anordnen, sobald der Ausfall eintritt"
+    },
+    {
+     "t": "Auf eine Ressourcenplanung ganz verzichten"
+    },
+    {
+     "t": "Den kritischen Pfad nachträglich neu definieren"
+    }
+   ],
+   "e": "Typische Projektrisiken und ihre Vorbeugung: Personalausfall → Vertretungsregelung; Fehleinschätzungen bei der Planung → Vier-Augen-Prinzip und Zeitreserven; nachträgliche Änderungswünsche → vollständiges Lastenheft und frühe Einbindung aller Beteiligten; höhere Gewalt → vorbereitete Alternativszenarien."
+  },
+  {
+   "f": 3,
+   "sub": "Projektmanagement",
+   "t": "mc",
+   "q": "Wie beugt man Änderungsanforderungen vor, die während der Realisierungsphase auftreten?",
+   "o": [
+    {
+     "t": "Ein vollständiges Lastenheft aufstellen und alle Interessengruppen rechtzeitig einbeziehen",
+     "ok": 1
+    },
+    {
+     "t": "Änderungen während der Realisierung grundsätzlich ablehnen"
+    },
+    {
+     "t": "Die Projektdokumentation erst nach Projektabschluss beginnen"
+    },
+    {
+     "t": "Den Auftraggeber erst zur Abnahme wieder einbeziehen"
+    }
+   ],
+   "e": "Änderungen sind meist Folge unklarer Anforderungen. Ein vollständiges Lastenheft, ein bewusst noch zu präzisierender Auftrag und die frühe Beteiligung aller Interessengruppen verhindern teure Nacharbeit."
+  },
+  {
+   "f": 3,
+   "sub": "Kommunikation",
+   "t": "mc",
+   "q": "Wie lassen sich die Inhalte einer Sicherheitsunterweisung über das Jahr hinweg festigen?",
+   "o": [
+    {
+     "t": "Situationsbezogene Einzel- und Gruppengespräche, schriftliche Tests, Online-Lernbausteine, FAQ im Intranet und Übungsvideos kombinieren",
+     "ok": 1
+    },
+    {
+     "t": "Die Unterweisung einmal jährlich möglichst umfassend durchführen und danach nicht mehr darauf zurückkommen"
+    },
+    {
+     "t": "Die Unterweisungsunterlagen nach der Veranstaltung einsammeln"
+    },
+    {
+     "t": "Ausschließlich die Unterschriftenliste archivieren"
+    }
+   ],
+   "e": "Eine einmalige Unterweisung verblasst. Wirksam ist der Medienmix über das Jahr: Gespräche im Anlassfall, Auswertung von Vorfällen, Tests mit zeitlichem Abstand, Lernbausteine und FAQ im Intranet, Videos praktischer Übungen und Feedbackbögen zur Verbesserung."
+  },
+  {
+   "f": 3,
+   "sub": "Kommunikation",
+   "t": "mc",
+   "q": "Wozu dient ein Feedbackbogen nach einer Unterweisung?",
+   "o": [
+    {
+     "t": "Die Führungskraft erfährt, wie die Unterweisung angekommen ist, und kann daraus Verbesserungen für künftige Unterweisungen ableiten",
+     "ok": 1
+    },
+    {
+     "t": "Er ersetzt die gesetzlich vorgeschriebene Teilnahmedokumentation"
+    },
+    {
+     "t": "Er dient als Leistungsbeurteilung der Teilnehmer"
+    },
+    {
+     "t": "Er ist die Grundlage für die Gefährdungsbeurteilung"
+    }
+   ],
+   "e": "Der Feedbackbogen ist ein Instrument der Selbstevaluation: Er zeigt, was verständlich war und was nicht. Die Teilnahmedokumentation nach § 12 ArbSchG bleibt davon unberührt."
+  },
+  {
+   "f": 4,
+   "sub": "Personalentwicklung",
+   "t": "mc",
+   "q": "Welche Kernkompetenz beschreibt die Fähigkeit, im Team kooperativ und konstruktiv zu kommunizieren?",
+   "o": [
+    {
+     "t": "Sozialkompetenz",
+     "ok": 1
+    },
+    {
+     "t": "Fachkompetenz"
+    },
+    {
+     "t": "Methodenkompetenz"
+    },
+    {
+     "t": "Persönlichkeitskompetenz"
+    }
+   ],
+   "e": "Fachkompetenz löst berufstypische Fachprobleme, Methodenkompetenz wählt geeignete Vorgehens- und Lehrmethoden, Persönlichkeitskompetenz meint zuverlässiges, verantwortungsbewusstes Handeln, Führungskompetenz Planung, Organisation, Überwachung und Kontrolle."
+  },
+  {
+   "f": 4,
+   "sub": "Personalentwicklung",
+   "t": "mc",
+   "q": "Ein Meister wählt für die Vermittlung eines Lerninhalts bewusst zwischen Vortrag, Vier-Stufen-Methode und Lehrgespräch. Welche Kompetenz zeigt er damit?",
+   "o": [
+    {
+     "t": "Methodenkompetenz",
+     "ok": 1
+    },
+    {
+     "t": "Fachkompetenz"
+    },
+    {
+     "t": "Sozialkompetenz"
+    },
+    {
+     "t": "Führungskompetenz"
+    }
+   ],
+   "e": "Methodenkompetenz ist die Fähigkeit, für eine Aufgabe das passende Vorgehen auszuwählen und anzuwenden – gegenüber anderen wie gegenüber sich selbst. Das Fachwissen zum Inhalt selbst ist Fachkompetenz."
+  },
+  {
+   "f": 4,
+   "sub": "Motivation",
+   "t": "mc",
+   "q": "Das Leistungsergebnis eines Mitarbeiters wird von drei Größen bestimmt. Welche sind das?",
+   "o": [
+    {
+     "t": "Leistungsfähigkeit, Leistungsbereitschaft und Leistungsmöglichkeit",
+     "ok": 1
+    },
+    {
+     "t": "Betriebszugehörigkeit, Entgelt und Urlaubsanspruch"
+    },
+    {
+     "t": "Fachkompetenz, Alter und Schichtmodell"
+    },
+    {
+     "t": "Arbeitszeit, Pausenregelung und Entlohnungsform"
+    }
+   ],
+   "e": "Leistungsfähigkeit ist das Können (Qualifikation, Belastbarkeit), Leistungsbereitschaft das Wollen (Motivation, Anreize), Leistungsmöglichkeit das Dürfen (Handlungsspielraum, übertragene Befugnisse). Fehlt eine der drei, bleibt das Ergebnis hinter dem Möglichen zurück."
+  },
+  {
+   "f": 4,
+   "sub": "Motivation",
+   "t": "mc",
+   "q": "Wie beeinflusst eine Führungskraft gezielt die Leistungsmöglichkeit ihrer Mitarbeiter?",
+   "o": [
+    {
+     "t": "Indem sie Handlungsspielraum erhält und Entscheidungs-, Anordnungs-, Kontroll-, Beratungs- und Informationsbefugnisse überträgt",
+     "ok": 1
+    },
+    {
+     "t": "Indem sie Qualifizierungsmaßnahmen anbietet"
+    },
+    {
+     "t": "Indem sie finanzielle Anreize setzt"
+    },
+    {
+     "t": "Indem sie die Belastbarkeit im Training erhöht"
+    }
+   ],
+   "e": "Auf die Leistungsmöglichkeit wirkt man über das „Dürfen“: Befugnisse und Handlungsspielraum. Qualifizierung und Training zielen auf die Leistungsfähigkeit, Anreize auf die Leistungsbereitschaft."
+  },
+  {
+   "f": 4,
+   "sub": "Gruppen",
+   "t": "mc",
+   "q": "Was kennzeichnet eine teilautonome Arbeitsgruppe?",
+   "o": [
+    {
+     "t": "Rahmenbedingungen wie Aufgabe, Zeit und Budget werden von außen vorgegeben; innerhalb dieses Rahmens organisiert die Gruppe Aufgabenverteilung, Arbeits- und Pausenzeiten selbst",
+     "ok": 1
+    },
+    {
+     "t": "Die Gruppe entscheidet vollständig frei, auch über Aufträge und Budget"
+    },
+    {
+     "t": "Ein Vorgesetzter trifft alle Entscheidungen, die Gruppe führt sie aus"
+    },
+    {
+     "t": "Die Gruppe besteht nur für die Dauer einer Schicht"
+    }
+   ],
+   "e": "„Teilautonom“ heißt: Ergebnis und Rahmen kommen von außen, der Weg dorthin von innen. Die Gruppe trifft ihre Entscheidungen zur Selbstorganisation ohne Zutun eines Vorgesetzten – das erhöht Motivation und Verantwortungsübernahme."
+  },
+  {
+   "f": 4,
+   "sub": "Gruppen",
+   "t": "mc",
+   "q": "In welcher Reihenfolge durchläuft eine neu zusammengestellte Arbeitsgruppe ihre Entwicklungsphasen?",
+   "o": [
+    {
+     "t": "Forming – Storming – Norming – Performing – Adjourning",
+     "ok": 1
+    },
+    {
+     "t": "Storming – Forming – Performing – Norming – Adjourning"
+    },
+    {
+     "t": "Forming – Norming – Storming – Adjourning – Performing"
+    },
+    {
+     "t": "Norming – Forming – Storming – Performing – Adjourning"
+    }
+   ],
+   "e": "Orientierungsphase (Forming): Kennenlernen und Abtasten. Konfliktphase (Storming): Rollen und Funktionen werden ausgehandelt. Vertrautheitsphase (Norming): Rollen sind verteilt, konstruktive Arbeit beginnt. Differenzierungsphase (Performing): stabile Leistung. Auflösungsphase (Adjourning): Der Auftrag ist erledigt."
+  },
+  {
+   "f": 4,
+   "sub": "Gruppen",
+   "t": "mc",
+   "q": "In welcher Gruppenphase werden Rollen und Funktionen ausgehandelt – oft verbunden mit Konflikten?",
+   "o": [
+    {
+     "t": "Konfliktphase (Storming)",
+     "ok": 1
+    },
+    {
+     "t": "Orientierungsphase (Forming)"
+    },
+    {
+     "t": "Vertrautheitsphase (Norming)"
+    },
+    {
+     "t": "Differenzierungsphase (Performing)"
+    }
+   ],
+   "e": "Das Storming ist die kritische Phase: Wer übernimmt welche Rolle, wer hat welchen Einfluss? Wird sie nicht durchlaufen, bleibt die Gruppe in ungeklärten Zuständigkeiten stecken und erreicht die Leistungsphase nicht."
+  },
+  {
+   "f": 4,
+   "sub": "Gruppen",
+   "t": "mc",
+   "q": "Ein neues Mitglied kommt in eine bereits stabile Arbeitsgruppe. Welche Reaktion ist typisch?",
+   "o": [
+    {
+     "t": "Misstrauen oder Ablehnung, neu aufflammender Konkurrenzkampf und ein Entwicklungsprozess, der teilweise von vorn beginnt",
+     "ok": 1
+    },
+    {
+     "t": "Die Gruppe überspringt dauerhaft die Konfliktphase"
+    },
+    {
+     "t": "Die bestehenden Gruppennormen verschwinden sofort"
+    },
+    {
+     "t": "Die Leistung der Gruppe steigt unmittelbar an"
+    }
+   ],
+   "e": "Der Zugang eines neuen Mitglieds stört das eingespielte Gefüge: Die Gruppe reagiert zunächst misstrauisch oder ablehnend, das neue Mitglied bringt möglicherweise eigene Normen ein, und die Gruppe durchläuft Teile ihres Entwicklungsprozesses erneut."
+  },
+  {
+   "f": 4,
+   "sub": "Personalplanung",
+   "t": "mc",
+   "q": "Welche Vorbereitung gehört zur Arbeitsorganisation, bevor ein Arbeitsauftrag an die Mitarbeiter übergeben wird?",
+   "o": [
+    {
+     "t": "Qualitativen und quantitativen Personalbedarf ermitteln, Urlaubs- und Vertretungsregeln berücksichtigen, Arbeitseinteilung vornehmen und Befugnisse festlegen",
+     "ok": 1
+    },
+    {
+     "t": "Die Jahresabschlussbuchungen der Kostenstelle vornehmen"
+    },
+    {
+     "t": "Die Betriebsvereinbarung zur Arbeitszeit neu verhandeln"
+    },
+    {
+     "t": "Erst nach der Auftragsübergabe die Qualifikationen prüfen"
+    }
+   ],
+   "e": "Ziel ist: die richtige Anzahl Mitarbeiter, zur richtigen Zeit, für die nötige Dauer, am richtigen Ort, mit den passenden Qualifikationen und den erforderlichen Befugnissen. Dazu gehören Personalbedarfsermittlung, Vertretungsregelung, Auftragskoordination, Arbeitsanweisungen, Qualifikationsmatrix und Gefährdungsbeurteilung."
+  },
+  {
+   "f": 4,
+   "sub": "Personalentwicklung",
+   "t": "mc",
+   "q": "Warum ist die Einführung eines neuen Mitarbeiters eine besonders verantwortungsvolle Aufgabe?",
+   "o": [
+    {
+     "t": "Die Entscheidung, im Unternehmen zu bleiben, fällt meist in den ersten Tagen und Wochen – und die Gewinnung qualifizierter Mitarbeiter ist teuer und zeitaufwendig",
+     "ok": 1
+    },
+    {
+     "t": "Weil die Probezeit gesetzlich immer sechs Monate beträgt"
+    },
+    {
+     "t": "Weil der Betriebsrat der Einführung zustimmen muss"
+    },
+    {
+     "t": "Weil der neue Mitarbeiter sonst keinen Anspruch auf Entgelt hat"
+    }
+   ],
+   "e": "Die ersten Eindrücke prägen die Einstellung zur Tätigkeit und zum Betrieb nachhaltig. Eine gute Einführung nimmt Ängste, beschleunigt die Identifikation mit dem Unternehmen und schützt die erhebliche Investition in Anwerbung und Auswahl."
+  },
+  {
+   "f": 4,
+   "sub": "Personalentwicklung",
+   "t": "mc",
+   "q": "In welcher Reihenfolge läuft die Eingliederung eines neuen Mitarbeiters sinnvoll ab?",
+   "o": [
+    {
+     "t": "Vorbereitung (Arbeitsplatz, Pate, Kollegen informieren) – Begrüßung – Bekanntmachen – Einführung in die Betriebsordnung – Einführung in die Arbeitsaufgaben – periodische Fortschrittskontrolle",
+     "ok": 1
+    },
+    {
+     "t": "Begrüßung – Einführung in die Arbeitsaufgaben – Vorbereitung des Arbeitsplatzes – Bekanntmachen – Abschlussgespräch"
+    },
+    {
+     "t": "Bekanntmachen – Betriebsordnung – Begrüßung – Vorbereitung – Arbeitsaufgaben"
+    },
+    {
+     "t": "Einführung in die Arbeitsaufgaben – Begrüßung – Vorbereitung – Fortschrittskontrolle"
+    }
+   ],
+   "e": "Erst die Vorbereitung (Arbeitsplatz einrichten, Paten auswählen, Team informieren), dann das persönliche Begrüßungsgespräch mit Rundgang, das Vorstellen von Vorgesetzten, Pate und Kollegen, die Betriebs- und Arbeitsordnung, die schrittweise Einführung in die Aufgaben – und regelmäßige Fortschrittskontrolle."
+  },
+  {
+   "f": 4,
+   "sub": "Konflikte",
+   "t": "mc",
+   "q": "Welche Folge kann Mobbing für die betroffene Person haben?",
+   "o": [
+    {
+     "t": "Beschädigtes Selbstvertrauen, nachlassende Arbeitsleistung, Rückzug und Isolation bis hin zur inneren Kündigung",
+     "ok": 1
+    },
+    {
+     "t": "Eine automatische Versetzung in eine andere Abteilung"
+    },
+    {
+     "t": "Ein gesetzlicher Anspruch auf eine Abfindung"
+    },
+    {
+     "t": "Der Verlust des Kündigungsschutzes"
+    }
+   ],
+   "e": "Mobbing wirkt auf die Person (Selbstwert, Gesundheit, Aggressivität, Rückzug) und auf den Betrieb (Betriebsfrieden, Leistung, Fehlzeiten, Fluktuation). Der Übergang von Lästereien zu Mobbing ist fließend und wird oft erst spät erkannt."
+  },
+  {
+   "f": 4,
+   "sub": "Konflikte",
+   "t": "mc",
+   "q": "Welche Maßnahme ist geeignet, Mobbing im eigenen Bereich zu unterbinden?",
+   "o": [
+    {
+     "t": "Alle Mitarbeiter sensibilisieren, über die Folgen aufklären, Sticheleien nicht dulden und bei Bedarf abmahnen",
+     "ok": 1
+    },
+    {
+     "t": "Abwarten, ob sich der Konflikt von selbst löst"
+    },
+    {
+     "t": "Das Opfer in eine andere Abteilung versetzen"
+    },
+    {
+     "t": "Den Vorfall vertraulich behandeln und nicht ansprechen"
+    }
+   ],
+   "e": "Wirksam ist frühes, sichtbares Eingreifen: Sensibilisierung und Aufklärung, klare Ansage, dass auch „Spielereien“ nicht geduldet werden, und konsequente Sanktionen bis zur Abmahnung und im Extremfall zur Kündigung. Das Opfer zu versetzen belohnt die Täter."
+  },
+  {
+   "f": 5,
+   "sub": "Naturwissenschaftliche und technische Grundlagen",
+   "t": "mc",
+   "q": "Woran erkennt man in den Formeln NaOH und H₂SO₄ die jeweilige Stoffgruppe?",
+   "o": [
+    {
+     "t": "An der OH-Gruppe die Base (Natronlauge), am abspaltbaren Wasserstoffatom die Säure (Schwefelsäure)",
+     "ok": 1
+    },
+    {
+     "t": "An der Anzahl der Sauerstoffatome"
+    },
+    {
+     "t": "Am Metallatom – Metalle kennzeichnen immer Säuren"
+    },
+    {
+     "t": "An der Molekülmasse"
+    }
+   ],
+   "e": "Basen (Laugen) enthalten die Hydroxidgruppe OH⁻, Säuren geben in wässriger Lösung H⁺-Ionen ab. Deshalb ist NaOH eine Base und H₂SO₄ eine Säure."
+  },
+  {
+   "f": 5,
+   "sub": "Naturwissenschaftliche und technische Grundlagen",
+   "t": "mc",
+   "q": "Wie lässt sich eine Säure nachweisen?",
+   "o": [
+    {
+     "t": "Lackmuspapier färbt sich rot; ein pH-Messgerät zeigt einen Wert kleiner 7",
+     "ok": 1
+    },
+    {
+     "t": "Lackmuspapier färbt sich blau; der pH-Wert liegt über 7"
+    },
+    {
+     "t": "Die Lösung leitet keinen elektrischen Strom"
+    },
+    {
+     "t": "Die Lösung erstarrt bei Raumtemperatur"
+    }
+   ],
+   "e": "Lackmus schlägt im Sauren nach Rot und im Basischen nach Blau um. Der pH-Wert liegt bei Säuren unter 7, bei Basen über 7; reines Wasser ist mit pH 7 neutral."
+  },
+  {
+   "f": 5,
+   "sub": "Naturwissenschaftliche und technische Grundlagen",
+   "t": "mc",
+   "q": "Wie lautet die Reaktionsgleichung für die Herstellung von Natronlauge aus Natrium und Wasser?",
+   "o": [
+    {
+     "t": "2 Na + 2 H₂O → 2 NaOH + H₂",
+     "ok": 1
+    },
+    {
+     "t": "Na + H₂O → NaOH + O₂"
+    },
+    {
+     "t": "2 Na + H₂O → Na₂O + H₂"
+    },
+    {
+     "t": "Na + 2 H₂O → NaOH₂ + H₂"
+    }
+   ],
+   "e": "Das Alkalimetall Natrium reagiert heftig mit Wasser zu Natriumhydroxid und Wasserstoff. Die Gleichung muss auf beiden Seiten gleich viele Atome je Element tragen – daher die Koeffizienten 2, 2, 2, 1."
+  },
+  {
+   "f": 5,
+   "sub": "Naturwissenschaftliche und technische Grundlagen",
+   "t": "calc",
+   "q": "1,5 Liter Wasser (Dichte 1 kg/dm³) werden von 15 °C auf 95 °C erhitzt. Berechnen Sie die benötigte Wärmemenge (c = 4,18 kJ/(kg·K)).",
+   "ans": 501.6,
+   "unit": "kJ",
+   "e": "Masse m = V × ρ = 1,5 dm³ × 1 kg/dm³ = 1,5 kg. Temperaturdifferenz ΔT = 95 °C − 15 °C = 80 K. Q = m × c × ΔT = 1,5 kg × 4,18 kJ/(kg·K) × 80 K = 501,6 kJ."
+  },
+  {
+   "f": 5,
+   "sub": "Naturwissenschaftliche und technische Grundlagen",
+   "t": "calc",
+   "q": "Für das Erwärmen von Wasser werden 501,6 kJ benötigt; der Gesamtwirkungsgrad der Kochplatte beträgt 70 %. Wie viel Energie muss zugeführt werden?",
+   "ans": 716.57,
+   "unit": "kJ",
+   "e": "Ezu = Qnutz : η = 501,6 kJ : 0,7 = 716,57 kJ. Die Differenz von rund 215 kJ geht als Verlustwärme an Topf, Platte und Umgebung verloren."
+  },
+  {
+   "f": 5,
+   "sub": "Naturwissenschaftliche und technische Grundlagen",
+   "t": "calc",
+   "q": "Eine Kochplatte mit 1,9 kW muss 716.570 J zuführen. Wie lange dauert der Vorgang? (Ergebnis in Sekunden, zwei Nachkommastellen)",
+   "ans": 377.14,
+   "unit": "s",
+   "e": "t = Ezu : Pzu = 716.570 Ws : 1.900 W = 377,14 s. Das sind 6 Minuten und 17 Sekunden (1 J = 1 Ws)."
+  },
+  {
+   "f": 5,
+   "sub": "Naturwissenschaftliche und technische Grundlagen",
+   "t": "calc",
+   "q": "Ein Stützbock trägt eine Masse von 20 t auf drei symmetrisch angeordneten Füßen. Welche Kraft wirkt auf einen Fuß in senkrechter Richtung? (g = 9,81 m/s²)",
+   "ans": 65400,
+   "unit": "N",
+   "e": "Gewichtskraft FG = m × g = 20.000 kg × 9,81 m/s² = 196.200 N. Bei symmetrischer Anordnung trägt jeder Fuß ein Drittel: 196.200 N : 3 = 65.400 N."
+  },
+  {
+   "f": 5,
+   "sub": "Naturwissenschaftliche und technische Grundlagen",
+   "t": "calc",
+   "q": "Ein Rohrfuß steht um 30° gegen die Senkrechte geneigt und trägt eine senkrechte Last von 65.400 N. Welche Kraft wirkt in Richtung der Rohrachse? (zwei Nachkommastellen)",
+   "ans": 75517.42,
+   "unit": "N",
+   "e": "Die senkrechte Last ist die Komponente der Rohrkraft: FG/3 = FR × cos 30°. Also FR = 65.400 N : cos 30° = 65.400 N : 0,866 = 75.517,42 N. Die Schrägstellung erhöht die Belastung im Rohr."
+  },
+  {
+   "f": 5,
+   "sub": "Naturwissenschaftliche und technische Grundlagen",
+   "t": "calc",
+   "q": "Berechnen Sie die Querschnittsfläche eines Stahlrohrs 60 mm × 5 mm (Außendurchmesser 60 mm, Wandstärke 5 mm). (zwei Nachkommastellen)",
+   "ans": 863.94,
+   "unit": "mm²",
+   "e": "Innendurchmesser d = 60 mm − 2 × 5 mm = 50 mm. AR = (D² − d²) × π : 4 = (3.600 mm² − 2.500 mm²) × π : 4 = 1.100 mm² × 0,7854 = 863,94 mm²."
+  },
+  {
+   "f": 5,
+   "sub": "Naturwissenschaftliche und technische Grundlagen",
+   "t": "calc",
+   "q": "Eine Druckkraft von 75.517,42 N wirkt auf eine Querschnittsfläche von 863,94 mm². Berechnen Sie die Druckspannung. (zwei Nachkommastellen)",
+   "ans": 87.41,
+   "unit": "N/mm²",
+   "e": "σd = F : A = 75.517,42 N : 863,94 mm² = 87,41 N/mm². Die Spannung ist die auf die Fläche bezogene Kraft – sie entscheidet über die Tragfähigkeit, nicht die Kraft allein."
+  },
+  {
+   "f": 5,
+   "sub": "Naturwissenschaftliche und technische Grundlagen",
+   "t": "calc",
+   "q": "Die zulässige Druckspannung beträgt 300 N/mm², die vorhandene 87,41 N/mm². Berechnen Sie die Sicherheitszahl. (zwei Nachkommastellen)",
+   "ans": 3.43,
+   "unit": "",
+   "e": "ν = σd zul : σd = 300 N/mm² : 87,41 N/mm² = 3,43. Bei einer geforderten Sicherheit von 4 ist die Vorgabe damit nicht erfüllt – das Bauteil müsste stärker dimensioniert werden."
+  },
+  {
+   "f": 5,
+   "sub": "Naturwissenschaftliche und technische Grundlagen",
+   "t": "calc",
+   "q": "Eine Drohne fliegt mit 10 m/s nach Süden, der Wind weht mit 8 m/s aus 45° (Südost). Berechnen Sie die resultierende Geschwindigkeit. (zwei Nachkommastellen)",
+   "ans": 7.13,
+   "unit": "m/s",
+   "e": "Die Windkomponenten sind vx = vy = 8 m/s : √2 = 5,66 m/s. In Nord-Süd-Richtung bleiben 10 m/s − 5,66 m/s = 4,34 m/s. vres = √(5,66² + 4,34²) m/s = √50,87 m/s = 7,13 m/s."
+  },
+  {
+   "f": 5,
+   "sub": "Naturwissenschaftliche und technische Grundlagen",
+   "t": "calc",
+   "q": "Die resultierende Geschwindigkeit einer Drohne beträgt 7,13 m/s; die Querkomponente des Windes ist 5,66 m/s, die verbleibende Längskomponente 4,34 m/s. Um welchen Winkel wird die Drohne von der Nord-Süd-Achse abgelenkt? (eine Nachkommastelle)",
+   "ans": 52.5,
+   "unit": "°",
+   "e": "tan α = Querkomponente : Längskomponente = 5,66 m/s : 4,34 m/s = 1,304 → α = tan⁻¹(1,304) = 52,5°. Über den Sinussatz führt der gleiche Weg: sin α = vWind : vres × sin 45°."
+  },
+  {
+   "f": 5,
+   "sub": "Naturwissenschaftliche und technische Grundlagen",
+   "t": "calc",
+   "q": "Ein NTC-Widerstand hat bei 10 °C den Wert 60.000 Ω und bei 40 °C den Wert 200 Ω. Wie groß ist der Betrag der Widerstandsänderung?",
+   "ans": 59800,
+   "unit": "Ω",
+   "e": "ΔR = 60.000 Ω − 200 Ω = 59.800 Ω. Beim NTC (Negative Temperature Coefficient) sinkt der Widerstand mit steigender Temperatur – daher die große Änderung über nur 30 K."
+  },
+  {
+   "f": 5,
+   "sub": "Naturwissenschaftliche und technische Grundlagen",
+   "t": "calc",
+   "q": "Ein Spannungsteiler liegt an 24 V: R1 = 1.000 Ω in Reihe mit dem NTC R2 = 200 Ω. Die Ausgangsspannung wird über R2 abgegriffen. Berechnen Sie UAUS.",
+   "ans": 4,
+   "unit": "V",
+   "e": "UAUS = UEIN × R2 : (R1 + R2) = 24 V × 200 Ω : 1.200 Ω = 4 V. Alternativ über den Strom: I = 24 V : 1.200 Ω = 0,02 A; UAUS = 200 Ω × 0,02 A = 4 V."
+  },
+  {
+   "f": 5,
+   "sub": "Naturwissenschaftliche und technische Grundlagen",
+   "t": "mc",
+   "q": "Wie wirkt sich eine steigende Öltemperatur auf die Ausgangsspannung eines Spannungsteilers aus, dessen unterer Widerstand ein NTC ist?",
+   "o": [
+    {
+     "t": "UAUS sinkt, weil der Widerstand des NTC kleiner wird und dadurch mehr Spannung an R1 abfällt",
+     "ok": 1
+    },
+    {
+     "t": "UAUS steigt, weil der Widerstand des NTC größer wird"
+    },
+    {
+     "t": "UAUS bleibt gleich, weil die Eingangsspannung konstant ist"
+    },
+    {
+     "t": "UAUS sinkt, weil die Eingangsspannung mit der Temperatur abnimmt"
+    }
+   ],
+   "e": "Der NTC verliert mit steigender Temperatur an Widerstand. Im Spannungsteiler verschiebt sich die Spannung dorthin, wo der größere Widerstand liegt – also zunehmend an R1. Genau das macht die Schaltung zum Temperaturfühler."
+  },
+  {
+   "f": 5,
+   "sub": "Naturwissenschaftliche und technische Grundlagen",
+   "t": "mc",
+   "q": "Eine Heizung mit zwei Heizwiderständen R1 und R2 wird an 230 V betrieben. Welche Leistungsstufen sind schaltbar?",
+   "o": [
+    {
+     "t": "Nur R1, nur R2, R1 und R2 in Reihe, R1 und R2 parallel",
+     "ok": 1
+    },
+    {
+     "t": "Nur R1 und nur R2 – Kombinationen sind nicht möglich"
+    },
+    {
+     "t": "Nur die Reihen- und die Parallelschaltung"
+    },
+    {
+     "t": "Nur die Parallelschaltung, weil die Reihenschaltung die Spannung überschreitet"
+    }
+   ],
+   "e": "Mit zwei Widerständen ergeben sich vier Stufen. Die Parallelschaltung liefert die höchste Leistung (kleinster Gesamtwiderstand), die Reihenschaltung die niedrigste (größter Gesamtwiderstand)."
+  },
+  {
+   "f": 5,
+   "sub": "Naturwissenschaftliche und technische Grundlagen",
+   "t": "calc",
+   "q": "Ein Heizwiderstand R1 = 70 Ω liegt allein an 230 V. Berechnen Sie die Leistung.",
+   "ans": 756,
+   "unit": "W",
+   "e": "I = U : R = 230 V : 70 Ω = 3,29 A. P = U × I = 230 V × 3,29 A = 756 W. Ebenso über P = U² : R = 52.900 V² : 70 Ω = 756 W."
+  },
+  {
+   "f": 5,
+   "sub": "Naturwissenschaftliche und technische Grundlagen",
+   "t": "calc",
+   "q": "Zwei Heizwiderstände R1 = 70 Ω und R2 = 115 Ω liegen in Reihe an 230 V. Berechnen Sie die Gesamtleistung; rechnen Sie mit dem auf zwei Nachkommastellen gerundeten Strom.",
+   "ans": 285,
+   "unit": "W",
+   "e": "Rges = 70 Ω + 115 Ω = 185 Ω. I = 230 V : 185 Ω = 1,24 A. P = U × I = 230 V × 1,24 A = 285 W – die niedrigste der vier Leistungsstufen. (Ohne Zwischenrundung ergäben sich 286 W.)"
+  },
+  {
+   "f": 5,
+   "sub": "Naturwissenschaftliche und technische Grundlagen",
+   "t": "calc",
+   "q": "Zwei Heizwiderstände R1 = 70 Ω und R2 = 115 Ω liegen parallel an 230 V. Berechnen Sie den Gesamtwiderstand. (eine Nachkommastelle)",
+   "ans": 43.5,
+   "unit": "Ω",
+   "e": "Rges = R1 × R2 : (R1 + R2) = 70 Ω × 115 Ω : 185 Ω = 8.050 Ω² : 185 Ω = 43,5 Ω. Der Gesamtwiderstand einer Parallelschaltung ist stets kleiner als der kleinste Einzelwiderstand."
+  },
+  {
+   "f": 5,
+   "sub": "Naturwissenschaftliche und technische Grundlagen",
+   "t": "calc",
+   "q": "Eine Heizung läuft 2,5 Stunden mit dem Widerstand R1 (Leistung 756 W). Die Kilowattstunde kostet 0,40 €. Berechnen Sie die Energiekosten. (zwei Nachkommastellen)",
+   "ans": 0.76,
+   "unit": "€",
+   "e": "W = P × t = 756 W × 2,5 h = 1.890 Wh ≈ 1,89 kWh. K = W × k = 1,89 kWh × 0,40 €/kWh = 0,76 €."
+  },
+  {
+   "f": 3,
+   "sub": "Statistik",
+   "t": "calc",
+   "q": "Eine normalverteilte Abfüllmenge hat den Mittelwert 10,14 ml und die Standardabweichung 0,22 ml. Berechnen Sie die untere Grenze des Bereichs, in dem 95,45 % der Werte liegen. (zwei Nachkommastellen)",
+   "ans": 9.7,
+   "unit": "ml",
+   "e": "Das Schwankungsintervall für 95,45 % ist x̄ ± 2s. Untere Grenze = 10,14 ml − 2 × 0,22 ml = 10,14 ml − 0,44 ml = 9,70 ml; die obere Grenze liegt bei 10,58 ml."
+  },
+  {
+   "f": 3,
+   "sub": "Statistik",
+   "t": "mc",
+   "q": "Welcher Anteil der Werte einer Normalverteilung liegt im Bereich x̄ ± 1s?",
+   "o": [
+    {
+     "t": "68,27 %",
+     "ok": 1
+    },
+    {
+     "t": "95,45 %"
+    },
+    {
+     "t": "99,73 %"
+    },
+    {
+     "t": "50,00 %"
+    }
+   ],
+   "e": "Die Faustregeln der Normalverteilung: ±1s umfasst 68,27 %, ±2s umfasst 95,45 % und ±3s umfasst 99,73 % aller Werte. Darauf beruhen die Eingriffs- und Warngrenzen in der Qualitätsregelkarte."
+  },
+  {
+   "f": 3,
+   "sub": "Statistik",
+   "t": "calc",
+   "q": "Bei einer Tagesproduktion von 180.000 Ampullen liegen 2 % unterhalb und 5 % oberhalb der Sollvorgabe. Wie viele Ampullen entsprechen nicht der Vorgabe?",
+   "ans": 12600,
+   "unit": "Ampullen",
+   "e": "Gesamtausschuss = 2 % + 5 % = 7 %. Anzahl = 180.000 × 7 % : 100 % = 12.600 Ampullen. Beide Überschreitungen zählen zusammen, weil jede Abweichung von der Sollvorgabe Ausschuss ist."
+  }
+ ]
+}

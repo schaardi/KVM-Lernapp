@@ -2,9 +2,11 @@
 """Baut aus den IHK-Basisqualifikations-Prüfungen (parse_imbq.py) startbare
 Prüfungsfälle und spielt sie in Web und App ein.
 
-Die vier Prüfungen bekommen IDs mit dem Präfix ``P-`` (wie die Kraftverkehr-
-Prüfungen) und erscheinen damit im Prüfungs-Picker, gruppiert nach Termin.
-Alle übrigen Fälle bleiben unangetastet.
+Gebaut werden alle Jahrgänge aus ``parse_imbq.JAHRGAENGE``. Die Prüfungen
+bekommen IDs mit dem Präfix ``P-`` (wie die Kraftverkehr-Prüfungen) und
+erscheinen damit im Prüfungs-Picker, gruppiert nach Termin. Da die ID das
+Prüfungsdatum trägt, unterscheiden sich die Jahrgänge von selbst. Alle übrigen
+Fälle bleiben unangetastet.
 
     python3 scripts/pruefungen/build_imbq.py
 """
@@ -64,7 +66,9 @@ def baue(exams):
     return cases
 
 def main():
-    exams = P.parse_alle()
+    exams = []
+    for jahrgang in sorted(P.JAHRGAENGE):
+        exams += P.parse_alle(jahrgang=jahrgang)
     fehler = [f'{e["kuerzel"]}: {P.pruefe(e)}' for e in exams if P.pruefe(e)]
     assert not fehler, fehler
     neu = baue(exams)

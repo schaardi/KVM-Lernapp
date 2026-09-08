@@ -2,9 +2,12 @@
 """Zerlegt die IHK-Basisqualifikations-Prüfungen (Industriemeister) in
 Aufgaben samt amtlichen Lösungshinweisen.
 
-Quelle: ``quellen/imbq-h2025/*.txt`` – Textlayer der PDFs (``pdftotext -layout``)
-mit Seitenmarkern. Aufbau je Datei: Deckblatt, Aufgabenteil, dann ab einer
-Zeile, die nur ``Lösungshinweise`` enthält, der Lösungsteil.
+Quelle: ``quellen/imbq-<jahrgang>/*.txt`` – Textlayer der PDFs
+(``pdftotext -layout``) mit Seitenmarkern. Aufbau je Datei: Deckblatt,
+Aufgabenteil, dann ab einer Zeile, die nur ``Lösungshinweise`` enthält, der
+Lösungsteil. Beide Jahrgänge (Herbst 2024 und Herbst 2025) folgen demselben
+Aufbau; ``JAHRGAENGE`` hält die Unterschiede (Verzeichnis, Prüfungshefte,
+Korrekturdatei).
 
 Anders als bei den Kraftverkehr-Prüfungen ist der Buchstabe vor
 ``Mögliche Punktzahl`` optional (Aufgaben ohne Teilaufgaben) und kommt auch
@@ -13,15 +16,27 @@ groß vor (``D Mögliche Punktzahl: 3``).
 import json, os, re, sys
 
 HERE = os.path.dirname(os.path.abspath(__file__))
-QUELLEN = os.path.join(HERE, 'quellen', 'imbq-h2025')
 
 # Datei -> (Kürzel, Bezeichnung der Basisqualifikation, App-Fach)
-PRUEFUNGEN = [
-    ('01-recht.txt',          'RE', 'Rechtsbewusstes Handeln', 1),
-    ('02-bwl.txt',            'BW', 'Betriebswirtschaftliches Handeln', 2),
-    ('04-zusammenarbeit.txt', 'ZI', 'Zusammenarbeit im Betrieb', 4),
-    ('05-ntg.txt',            'NT', 'Naturwissenschaftliche und technische Gesetzmäßigkeiten', 5),
-]
+RECHT  = ('01-recht.txt',          'RE', 'Rechtsbewusstes Handeln', 1)
+BWL    = ('02-bwl.txt',            'BW', 'Betriebswirtschaftliches Handeln', 2)
+METHOD = ('03-methoden.txt',       'MI', 'Methoden der Information, Kommunikation und Planung', 3)
+ZUSAMM = ('04-zusammenarbeit.txt', 'ZI', 'Zusammenarbeit im Betrieb', 4)
+NTG    = ('05-ntg.txt',            'NT',
+          'Naturwissenschaftliche und technische Gesetzmäßigkeiten', 5)
+
+# Prüfungstermine: Verzeichnis, Hefte und die zugehörige Korrekturdatei.
+JAHRGAENGE = {
+    'h2024': {'dir': 'imbq-h2024', 'korrekturen': 'korrekturen_imbq_h2024',
+              'pruefungen': [RECHT, BWL, METHOD, ZUSAMM, NTG]},
+    'h2025': {'dir': 'imbq-h2025', 'korrekturen': 'korrekturen_imbq',
+              'pruefungen': [RECHT, BWL, ZUSAMM, NTG]},
+}
+STANDARD = 'h2025'
+
+
+def quellen(jahrgang):
+    return os.path.join(HERE, 'quellen', JAHRGAENGE[jahrgang]['dir'])
 
 PAGE    = re.compile(r'^=== Seite (\d+) ===\s*$')
 DATUM   = re.compile(r'Datum:\s*(\d{1,2}\.\s*\w+\s*\d{4})')
@@ -34,9 +49,10 @@ VO      = re.compile(r'^\[?\s*VO:\s*(.+?)\s*\]?$')
 # Anlagen stehen physisch hinter der letzten Aufgabe, gehören aber zu einer
 # früheren – ihr Block darf nicht in den Text der letzten Aufgabe rutschen.
 ANLAGE  = re.compile(r'^Anlage\s+\d+\s+zu\s+Aufgabe\s+\d+', re.I)
-# Gleiches auf der Lösungsseite: 'Lösungshinweis zu Aufgabe N' (Einzahl) ist
-# die Anlagen-Lösung und steht hinter der letzten Aufgabe.
-ANLAGE_L = re.compile(r'^L[öo]sungshinweis\s+zu\s+Aufgabe\s+\d+', re.I)
+# Gleiches auf der Lösungsseite: 'Lösungshinweis(e) zu Aufgabe N' ist die
+# Anlagen-Lösung und steht hinter der letzten Aufgabe. Einzahl (H2025) wie
+# Mehrzahl (H2024) kommen vor.
+ANLAGE_L = re.compile(r'^L[öo]sungshinweise?\s+zu\s+Aufgabe\s+\d+', re.I)
 
 MON = {'januar':1,'februar':2,'märz':3,'april':4,'mai':5,'juni':6,'juli':7,
        'august':8,'september':9,'oktober':10,'november':11,'dezember':12}
@@ -57,11 +73,27 @@ JUNK = re.compile(
     r'|M[öo]gliche Punktzahl:\s*'
     r'|\d{1,3})$', re.I)
 
+# Word setzt Formeln in der Symbol-Schrift; pdftotext liefert deren Zeichen im
+# Privatbereich U+F0xx. Die Codes sind die der Adobe-Symbol-Kodierung.
+SYMBOL = {
+    '\uf0de': '→',
+    '\uf0d7': '·',  '\uf0b0': '°',  '\uf0b1': '±',  '\uf0c6': 'Ø',
+    '\uf061': 'α',  '\uf070': 'π',  '\uf06e': 'ν',  '\uf044': 'Δ',
+    # Die sechs Teilstücke großer Klammern tragen keine Bedeutung.
+    '\uf0e6': '', '\uf0e7': '', '\uf0e8': '',
+    '\uf0f6': '', '\uf0f7': '', '\uf0f8': '',
+}
+
 def clean(line):
     l = re.sub(r'\s{2,}', ' ', line).strip()
     l = re.sub(r'^■\s*', '– ', l)
-    l = l.replace('', '→').replace(' o ', ' → ')  # OCR-Pfeil in Reaktionsgleichungen
-    return l
+    for k, v in SYMBOL.items():
+        if k in l:
+            l = l.replace(k, v)
+    l = l.replace(' o ', ' → ')   # OCR-Pfeil in Reaktionsgleichungen
+    # Was danach noch aus dem Privatbereich übrig ist, trägt keine Information.
+    l = re.sub(r'[\ue000-\uf8ff]', '', l)
+    return re.sub(r'\s{2,}', ' ', l).strip()
 
 def load(path, bezeichnung):
     """Zeilen laden, Deko/Wasserzeichen entfernen."""
@@ -132,8 +164,8 @@ def aufgaben(block, loesung):
         res[nr] = {'nr': nr, 'intro': '\n'.join(intro), 'teile': teile, 'vo': vo}
     return res
 
-def parse_datei(fn, kuerzel, bezeichnung, fach):
-    lines = load(os.path.join(QUELLEN, fn), bezeichnung)
+def parse_datei(fn, kuerzel, bezeichnung, fach, jahrgang=STANDARD):
+    lines = load(os.path.join(quellen(jahrgang), fn), bezeichnung)
     kopf = ' '.join(lines[:20])
     m = DATUM.search(kopf)
     datum = m.group(1) if m else None
@@ -147,14 +179,16 @@ def parse_datei(fn, kuerzel, bezeichnung, fach):
     A = aufgaben(frage_teil, False)
     L = aufgaben(loes_teil, True)
     return {'kuerzel': kuerzel, 'bezeichnung': bezeichnung, 'fach': fach,
-            'datum': datum, 'kontext': kontext, 'aufgaben': A, 'loesungen': L}
+            'jahrgang': jahrgang, 'datum': datum, 'kontext': kontext,
+            'aufgaben': A, 'loesungen': L}
 
-def parse_alle(mit_korrekturen=True):
-    exams = [parse_datei(fn, k, b, f) for fn, k, b, f in PRUEFUNGEN]
+def parse_alle(mit_korrekturen=True, jahrgang=STANDARD):
+    cfg = JAHRGAENGE[jahrgang]
+    exams = [parse_datei(fn, k, b, f, jahrgang) for fn, k, b, f in cfg['pruefungen']]
     if mit_korrekturen:
-        import korrekturen_imbq
-        n = korrekturen_imbq.anwenden(exams)
-        globals()['_KORREKTUREN'] = n
+        modul = __import__(cfg['korrekturen'])
+        n = modul.anwenden(exams)
+        globals()['_KORREKTUREN'] = globals().get('_KORREKTUREN', 0) + n
     return exams
 
 def pruefe(ex):
@@ -180,8 +214,12 @@ def pruefe(ex):
     return fehler
 
 if __name__ == '__main__':
-    alle = parse_alle()
-    print('  Nachkorrekturen eingespielt: %d' % globals().get('_KORREKTUREN', 0))
+    jg = [a for a in sys.argv[1:] if a in JAHRGAENGE] or sorted(JAHRGAENGE)
+    alle = []
+    for j in jg:
+        alle += parse_alle(jahrgang=j)
+    print('  Jahrgänge: %s · Nachkorrekturen eingespielt: %d'
+          % (', '.join(jg), globals().get('_KORREKTUREN', 0)))
     ok = True
     print(f"{'Prüfung':<52} {'Datum':<18} {'Aufg':>4} {'Teile':>5} {'Pkt':>4}  Status")
     for ex in alle:
@@ -194,7 +232,8 @@ if __name__ == '__main__':
               + ('✓ vollständig' if not f else '; '.join(f[:4])))
     vo = sum(1 for ex in alle for a in ex['loesungen'].values() if a['vo'])
     print(f"\nAufgaben mit VO-Bezug: {vo}")
-    if len(sys.argv) > 1:
-        json.dump(alle, open(sys.argv[1], 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
-        print('geschrieben:', sys.argv[1])
+    ziel = [a for a in sys.argv[1:] if a not in JAHRGAENGE]
+    if ziel:
+        json.dump(alle, open(ziel[0], 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
+        print('geschrieben:', ziel[0])
     raise SystemExit(0 if ok else 1)
