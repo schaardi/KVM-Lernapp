@@ -1,8 +1,10 @@
 # -*- coding: utf-8 -*-
 """Fügt die aus den Prüfungen extrahierten Übungsfragen in den Fragenpool ein.
 
-Eingabe: eine JSON-Datei mit {"questions": [ ... ]} (Ausgabe des Workflows
-extract-exam-questions, adversarial geprüft). Diese Fragen bekommen das Präfix
+Eingabe: ALLE Fragensätze unter ``scripts/pruefungen/fragen/*.json``, je eine
+Datei mit {"questions": [ ... ]} (geprüfte Ausgabe der Frage-Autoren). Die
+Sätze werden in fester Reihenfolge (REIHENFOLGE) verarbeitet, damit die
+vergebenen IDs stabil bleiben – an der ID hängt der Lernfortschritt. Diese Fragen bekommen das Präfix
 ``PX-`` und werden in ``window.KVM_QUESTIONS`` (index.html, Web) und in
 ``flutter_app/assets/data/questions.json`` (App) eingespielt. Vorhandene
 PX-Fragen werden zuvor entfernt (idempotenter Rebuild). Alle übrigen Fragen
@@ -16,12 +18,15 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.abspath(os.path.join(HERE, '..', '..'))
 
 FACHLETTER = {1: 'R', 2: 'B', 3: 'M', 4: 'Z', 5: 'K'}
+# Reihenfolge der Quellensätze: bereits veröffentlichte zuerst, damit deren
+# IDs sich beim Hinzufügen neuer Sätze nicht verschieben.
+REIHENFOLGE = ['kraftverkehr-2021-2026.json', 'imbq-h2025.json']
 TAX = {
  1: ["Arbeitsrecht","Betriebsverfassung","Sozialversicherung","Umweltrecht","Arbeitsschutz","Vertrags- und Handelsrecht","Produkthaftung/Datenschutz"],
  2: ["Kostenrechnung","Rechnungswesen","Materialwirtschaft","Betriebsorganisation","Volkswirtschaft","Rechtsformen","Finanzierung","Controlling","Marketing"],
  3: ["Statistik","Projektmanagement","EDV","Kreativitätstechniken","Kommunikation","Präsentation","Arbeitsmethodik"],
  4: ["Führungsstile","Personalentwicklung","Führungsmethoden","Gruppen","Motivation","Konflikte","Berufsausbildung","Entgelt und Arbeitszeit","Personalplanung","Mitarbeiterbeurteilung"],
- 5: ["Lenk- und Ruhezeiten","Ladungssicherung","Fuhrparkmanagement","Gefahrgut","Fahrzeugtechnik und Wartung","Güterkraftverkehrsrecht","Maut und Wegekosten","Grenzüberschreitender Verkehr und Zoll","Temperaturgeführte Transporte (ATP)","Straßenverkehrs- und Zulassungsrecht","Berufskraftfahrerqualifikation","Kombinierter Verkehr","Container- und Seehafenverkehr","Tiertransporte","Abfall- und Entsorgungstransport","Ladungsträger und Verpackung","Schwer- und Großraumtransport","Versicherungen im Güterkraftverkehr","Umweltzonen und Emissionsvorschriften","Digitalisierung und Telematik"],
+ 5: ["Lenk- und Ruhezeiten","Ladungssicherung","Fuhrparkmanagement","Gefahrgut","Fahrzeugtechnik und Wartung","Güterkraftverkehrsrecht","Maut und Wegekosten","Grenzüberschreitender Verkehr und Zoll","Temperaturgeführte Transporte (ATP)","Straßenverkehrs- und Zulassungsrecht","Berufskraftfahrerqualifikation","Kombinierter Verkehr","Container- und Seehafenverkehr","Tiertransporte","Abfall- und Entsorgungstransport","Ladungsträger und Verpackung","Schwer- und Großraumtransport","Versicherungen im Güterkraftverkehr","Umweltzonen und Emissionsvorschriften","Digitalisierung und Telematik","Naturwissenschaftliche und technische Grundlagen"],
 }
 SUB2FACH = {s: f for f, subs in TAX.items() for s in subs}
 
@@ -79,10 +84,25 @@ def load_pool_web():
 
 def dump_compact(x): return json.dumps(x, ensure_ascii=False, separators=(',', ':'))
 
+def lade_saetze():
+    """Alle Fragensätze in stabiler Reihenfolge laden."""
+    d = os.path.join(HERE, 'fragen')
+    vorhanden = sorted(f for f in os.listdir(d) if f.endswith('.json'))
+    geordnet = [f for f in REIHENFOLGE if f in vorhanden]
+    geordnet += [f for f in vorhanden if f not in REIHENFOLGE]
+    roh, herkunft = [], []
+    for f in geordnet:
+        g = json.load(open(os.path.join(d, f), encoding='utf-8'))
+        qs = g['questions'] if isinstance(g, dict) else g
+        roh.extend(qs)
+        herkunft.append((f, len(qs)))
+    return roh, herkunft
+
+
 def main():
-    src = sys.argv[1]
-    gen = json.load(open(src, encoding='utf-8'))
-    roh = gen['questions'] if isinstance(gen, dict) else gen
+    roh, herkunft = lade_saetze()
+    for f, n in herkunft:
+        print('  Quelle %-30s %3d Fragen' % (f, n))
 
     html, i0, i1, webQ = load_pool_web()
     # bestehende Nicht-PX-Fragen als Dublettenbasis
