@@ -4,6 +4,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter/material.dart';
 import '../constants.dart';
 import '../models.dart';
+import '../services/data_service.dart';
 import '../services/progress_service.dart';
 import '../services/round_builder.dart';
 import '../services/voice_service.dart';
@@ -604,7 +605,7 @@ class _QuizScreenState extends State<QuizScreen> {
                 Padding(
                     padding: const EdgeInsets.only(top: 10),
                     child: _anlage(_q.tab!)),
-              if (_q.bild != null) _bild(_q.bild!),
+              _bild(_q.bild),
             ]),
           ),
         ),
@@ -663,6 +664,7 @@ class _QuizScreenState extends State<QuizScreen> {
                 Text(_q.a ?? _q.e,
                     style: const TextStyle(
                         height: 1.55, color: kInk, fontSize: 14)),
+                _bild(_q.bildL, fallbackTitel: 'Lösungsskizze der IHK'),
                 if (_q.vo != null && _q.vo!.isNotEmpty)
                   Padding(
                     padding: const EdgeInsets.only(top: 9),
@@ -766,23 +768,39 @@ class _QuizScreenState extends State<QuizScreen> {
     );
   }
 
-  /// Bild-Anlage (data-URI) in der Prüfer-Blase – z. B. ein Diagramm.
-  Widget _bild(String uri) {
-    final komma = uri.indexOf(',');
-    if (!uri.startsWith('data:') || komma < 0) return const SizedBox.shrink();
+  /// Bildanlage in der Prüfer- oder Lösungsblase – z. B. ein Diagramm.
+  ///
+  /// [ref] ist der Schlüssel in anlagen.json; ältere Einträge tragen die
+  /// Data-URI direkt. [fallbackTitel] greift, wenn keine Bildunterschrift
+  /// hinterlegt ist.
+  Widget _bild(String? ref, {String fallbackTitel = 'Anlage zur Aufgabe'}) {
+    final a = DataService.instance.anlage(ref);
+    if (a == null) return const SizedBox.shrink();
+    final komma = a.uri.indexOf(',');
+    if (!a.uri.startsWith('data:') || komma < 0) return const SizedBox.shrink();
     try {
-      final bytes = base64Decode(uri.substring(komma + 1));
+      final bytes = base64Decode(a.uri.substring(komma + 1));
+      final titel = a.titel.isNotEmpty ? a.titel : fallbackTitel;
       return Padding(
         padding: const EdgeInsets.only(top: 10),
-        child: ClipRRect(
-          borderRadius: BorderRadius.circular(10),
-          child: Container(
-            decoration: BoxDecoration(
-                border: Border.all(color: kLine),
-                borderRadius: BorderRadius.circular(10)),
-            child: Image.memory(bytes, fit: BoxFit.fitWidth, width: double.infinity),
+        child: Column(crossAxisAlignment: CrossAxisAlignment.stretch, children: [
+          ClipRRect(
+            borderRadius: BorderRadius.circular(10),
+            child: Container(
+              decoration: BoxDecoration(
+                  color: kPaper,
+                  border: Border.all(color: kLine),
+                  borderRadius: BorderRadius.circular(10)),
+              child: Image.memory(bytes,
+                  fit: BoxFit.fitWidth, width: double.infinity),
+            ),
           ),
-        ),
+          const SizedBox(height: 5),
+          Text(titel,
+              textAlign: TextAlign.center,
+              style: const TextStyle(
+                  fontSize: 11.5, height: 1.4, color: kMuted)),
+        ]),
       );
     } catch (_) {
       return const SizedBox.shrink();

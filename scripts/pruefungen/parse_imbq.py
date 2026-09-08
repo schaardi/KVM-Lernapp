@@ -70,6 +70,7 @@ JUNK = re.compile(
     r'|[LP] \d{3}-\d{2}-\d{4}'
     r'|Pr[üu]fungsteilnehmer-Nummer.*'
     r'|Ber[üu]cksichtigung naturwissenschaftlicher und technischer Gesetzm[äa][ßs]igkeiten'
+    r'|Anwendung von Methoden der Information, ?Kommunikation und Planung'
     r'|M[öo]gliche Punktzahl:\s*'
     r'|\d{1,3})$', re.I)
 

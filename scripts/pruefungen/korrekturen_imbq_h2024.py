@@ -5,11 +5,14 @@ Wie beim Jahrgang H2025 setzen die PDFs Formeln als Word-Formelobjekte.
 ``pdftotext`` zerlegt sie in Zeichenfolgen, in denen Brüche verlorengehen und
 Zähler und Nenner hintereinander stehen ("Bestellhäufigkeit = Bestellmenge
 840 t/Jahr = = 28 Bestellungen/Jahr 30 t/Bestellung"). Diese Stellen sind hier
-aus den Originalseiten übertragen. Zwei Lösungen sind reine Zeichnungen und
-werden in Worten beschrieben:
+aus den Originalseiten übertragen. Vier Lösungen sind reine Zeichnungen und
+werden in Worten beschrieben; die Originalskizze hängt zusätzlich als Bild an
+der Teilaufgabe (siehe ``anlagen_imbq.py``):
 
 * ``NT 4 a`` – Kräfteparallelogramm der Drohnen- und Windgeschwindigkeit.
 * ``NT 6 c`` – Schaltbild der Parallelschaltung mit Spannungs- und Strompfeil.
+* ``MI 2 a`` – Flussdiagramm der Schichtübernahme.
+* ``MI 4 b`` – Balkendiagramm der prozentualen Kostenveränderungen.
 
 Schlüssel: (Kürzel, Aufgabennummer, Teil-Label).
 """
@@ -73,6 +76,38 @@ LOESUNG = {
  "kvSoll = p − db = 32,50 €/Stück − 16,50 €/Stück = 16 €/Stück\n"
  "Die variablen Stückkosten müssen um 2 €/Stück von 18 €/Stück auf 16 €/Stück "
  "gesenkt werden.",
+
+# --------------------------------------------------------------- MIKP H2024
+('MI', 2, 'a'):
+ "Flussdiagramm (Zeichnung) mit folgendem Ablauf:\n"
+ "Beginn → „Anstehende Aufträge übernehmen“ → „Information über Betriebsmittel "
+ "entgegennehmen“ → Verzweigung „Alle Betriebsmittel in Ordnung?“\n"
+ "– ja: → „Auftragsbearbeitung beginnen“ → Ende\n"
+ "– nein: → „Umfang der Störungen der Betriebsmittel prüfen“ → Verzweigung "
+ "„Mit eigenen Mitteln zu beheben?“\n"
+ "   – ja: → „Störungen der Betriebsmittel mit eigenen Kräften beheben“ → "
+ "„Auftragsbearbeitung beginnen“ → Ende\n"
+ "   – nein: → „Störungen der Betriebsmittel durch Instandhaltung beheben "
+ "lassen“ → „Auftragsbearbeitung beginnen“ → Ende\n"
+ "Start und Ende als abgerundete Rechtecke, Tätigkeiten als Rechtecke, "
+ "Entscheidungen als Rauten mit beschrifteten Ausgängen.",
+
+('MI', 4, 'a'):
+ "ΔK (in %) = (K kommendes Jahr − K laufendes Jahr) ÷ K laufendes Jahr · 100 %\n"
+ "– Personalgesamtkosten: 20,0 %\n"
+ "– Kosten der Betriebsmittel: −15,0 %\n"
+ "– Reisekosten: −20,0 %\n"
+ "– Energiekosten: 40,0 %",
+
+('MI', 4, 'b'):
+ "Balkendiagramm „prozentuale Veränderungen der Kosten im kommenden Jahr“ "
+ "(Zeichnung): waagerechte Balken je Kostenart, Skala von −30 % bis +50 % mit "
+ "einer Nulllinie in der Mitte.\n"
+ "– Personalgesamtkosten: +20 %\n"
+ "– Kosten der Betriebsmittel: −15 %\n"
+ "– Reisekosten: −20 %\n"
+ "– Energiekosten: +40 %\n"
+ "Zuwächse zeigen nach rechts, Rückgänge nach links.",
 
 # ---------------------------------------------------------------- NTG H2024
 ('NT', 2, 'a'):
