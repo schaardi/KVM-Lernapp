@@ -45,6 +45,7 @@ const List<String> kSubOrder = [
   'Versicherungen im Güterkraftverkehr', 'Abfall- und Entsorgungstransport',
   'Container- und Seehafenverkehr', 'Umweltzonen und Emissionsvorschriften',
   'Ladungsträger und Verpackung', 'Digitalisierung und Telematik',
+  'Naturwissenschaftliche und technische Grundlagen',
 ];
 
 int subOrderIndex(String sub) {

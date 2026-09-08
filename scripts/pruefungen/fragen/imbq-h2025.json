@@ -1,0 +1,1644 @@
+{
+ "quelle": "IHK-Prüfungen Basisqualifikationen Herbst 2025 (Rechtsbewusstes Handeln, Betriebswirtschaftliches Handeln, Zusammenarbeit im Betrieb, Naturwissenschaftliche und technische Gesetzmäßigkeiten)",
+ "questions": [
+  {
+   "f": 1,
+   "sub": "Arbeitsrecht",
+   "t": "mc",
+   "q": "Ein Betrieb hat kurzfristigen Personalbedarf, dessen Dauer noch nicht sicher absehbar ist. Leiharbeitnehmer sollen nicht eingesetzt werden. Welche Vertragsgestaltung ist hier sachgerecht?",
+   "o": [
+    {
+     "t": "Ein befristetes Arbeitsverhältnis – entweder kalendarisch befristet ohne Sachgrund oder zweckbefristet mit Sachgrund",
+     "ok": 1
+    },
+    {
+     "t": "Nur ein unbefristetes Arbeitsverhältnis, weil Befristungen im Arbeitsrecht unzulässig sind"
+    },
+    {
+     "t": "Ein Werkvertrag, weil dieser jederzeit ohne Frist beendet werden kann"
+    },
+    {
+     "t": "Ein Minijob, weil nur dieser ohne Kündigungsfrist endet"
+    }
+   ],
+   "e": "Bei nicht dauerhaftem Personalbedarf bietet sich die Befristung an. Das TzBfG unterscheidet die kalendarische Befristung (sachgrundlos, bis zu zwei Jahre) und die Zweckbefristung mit Sachgrund."
+  },
+  {
+   "f": 1,
+   "sub": "Arbeitsrecht",
+   "t": "mc",
+   "q": "Nach welchem Maßstab ist eine Frage des Arbeitgebers im Vorstellungsgespräch zulässig?",
+   "o": [
+    {
+     "t": "Wenn der Arbeitgeber ein objektiv berechtigtes Interesse an der Antwort hat und die Frage konkreten Bezug zum Arbeitsplatz und zur Tätigkeit hat",
+     "ok": 1
+    },
+    {
+     "t": "Wenn der Bewerber die Frage freiwillig beantwortet"
+    },
+    {
+     "t": "Wenn die Frage schriftlich im Bewerbungsbogen gestellt wird"
+    },
+    {
+     "t": "Wenn der Betriebsrat der Frage vorher zugestimmt hat"
+    }
+   ],
+   "e": "Zulässig ist eine Frage nur bei objektiv berechtigtem Interesse des Arbeitgebers, wenn die Antwort für die auszuübende Tätigkeit von Bedeutung ist und ein konkreter Bezug zum Arbeitsplatz besteht."
+  },
+  {
+   "f": 1,
+   "sub": "Arbeitsrecht",
+   "t": "mc",
+   "q": "Welche dieser Fragen im Vorstellungsgespräch ist unzulässig?",
+   "o": [
+    {
+     "t": "Die Frage nach der Mitgliedschaft in einer Gewerkschaft",
+     "ok": 1
+    },
+    {
+     "t": "Die Frage nach der Berufserfahrung des Bewerbers"
+    },
+    {
+     "t": "Die Frage nach dem bisherigen beruflichen Werdegang"
+    },
+    {
+     "t": "Die Frage nach einer für die Tätigkeit erforderlichen Fahrerlaubnis"
+    }
+   ],
+   "e": "Die Frage nach der Gewerkschaftszugehörigkeit ist unzulässig – auch nicht zur Feststellung einer Tarifbindung; zulässig wäre sie nur in Tendenzbetrieben. Berufserfahrung und Werdegang haben dagegen konkreten Tätigkeitsbezug."
+  },
+  {
+   "f": 1,
+   "sub": "Arbeitsrecht",
+   "t": "mc",
+   "q": "Ein Bewerber wird im Vorstellungsgespräch gefragt, ob er in naher Zukunft heiraten werde. Welche Möglichkeit hat er?",
+   "o": [
+    {
+     "t": "Er hat das Recht zur sanktionslosen Lüge; die bewusst falsche Antwort darf keine negativen Folgen haben",
+     "ok": 1
+    },
+    {
+     "t": "Er muss wahrheitsgemäß antworten, kann die Antwort aber später widerrufen"
+    },
+    {
+     "t": "Er darf schweigen, muss das Schweigen aber schriftlich begründen"
+    },
+    {
+     "t": "Er muss antworten, kann aber nachträglich Schadenersatz verlangen"
+    }
+   ],
+   "e": "Bei einer unzulässigen Frage besteht das Recht zur sanktionslosen Lüge. Der Arbeitgeber kann den Arbeitsvertrag deshalb insbesondere nicht wegen arglistiger Täuschung nach § 123 BGB anfechten."
+  },
+  {
+   "f": 1,
+   "sub": "Arbeitsrecht",
+   "t": "mc",
+   "q": "Ein unbefristeter Arbeitsvertrag regelt nur Vertragspartner, Stellenbeschreibung, Arbeitsort, Lohn und Urlaubsanspruch. Wie lang ist die Probezeit?",
+   "o": [
+    {
+     "t": "Es gibt keine Probezeit, denn sie muss nach § 622 Abs. 3 BGB ausdrücklich vereinbart werden",
+     "ok": 1
+    },
+    {
+     "t": "Sechs Monate, weil dies die gesetzliche Regelprobezeit ist"
+    },
+    {
+     "t": "Drei Monate, weil ohne Vereinbarung die Hälfte der Höchstdauer gilt"
+    },
+    {
+     "t": "Vier Wochen, entsprechend der Wartezeit nach dem EFZG"
+    }
+   ],
+   "e": "Eine Probezeit entsteht nicht automatisch. Sie muss nach § 622 Abs. 3 BGB vereinbart werden (höchstens sechs Monate). Fehlt jede – mündliche wie schriftliche – Vereinbarung, gilt der Vertrag ohne Probezeit."
+  },
+  {
+   "f": 1,
+   "sub": "Arbeitsrecht",
+   "t": "mc",
+   "q": "Ein Arbeitnehmer verunglückt bei einem Arbeitsunfall, nachdem er erst drei Wochen im Betrieb beschäftigt ist. Wer zahlt in der ersten Ausfallwoche?",
+   "o": [
+    {
+     "t": "Die Berufsgenossenschaft zahlt Verletztengeld, weil die Wartezeit von vier Wochen nach § 3 Abs. 3 EFZG noch nicht erfüllt ist",
+     "ok": 1
+    },
+    {
+     "t": "Der Arbeitgeber, weil die Entgeltfortzahlung ab dem ersten Tag der Beschäftigung gilt"
+    },
+    {
+     "t": "Die Krankenkasse zahlt Krankengeld, weil ein Arbeitsunfall wie eine Krankheit behandelt wird"
+    },
+    {
+     "t": "Niemand, der Arbeitnehmer erhält in der Wartezeit keine Leistung"
+    }
+   ],
+   "e": "Der Anspruch auf Entgeltfortzahlung entsteht nach § 3 Abs. 3 EFZG erst nach vierwöchiger ununterbrochener Beschäftigung. Bis dahin zahlt bei einem Arbeitsunfall die Berufsgenossenschaft Verletztengeld (§ 45 Abs. 1 Nr. 1 SGB VII); danach übernimmt der Arbeitgeber nach § 3 Abs. 1 EFZG."
+  },
+  {
+   "f": 1,
+   "sub": "Sozialversicherung",
+   "t": "mc",
+   "q": "Welcher Träger der Sozialversicherung leistet bei einem Arbeitsunfall Verletztengeld?",
+   "o": [
+    {
+     "t": "Die Berufsgenossenschaft als Träger der gesetzlichen Unfallversicherung, § 45 SGB VII",
+     "ok": 1
+    },
+    {
+     "t": "Die gesetzliche Krankenkasse als Träger der Krankenversicherung"
+    },
+    {
+     "t": "Die Deutsche Rentenversicherung"
+    },
+    {
+     "t": "Die Bundesagentur für Arbeit"
+    }
+   ],
+   "e": "Arbeitsunfälle und Berufskrankheiten fallen in die Zuständigkeit der gesetzlichen Unfallversicherung. Träger sind die Berufsgenossenschaften; sie zahlen Verletztengeld nach § 45 SGB VII."
+  },
+  {
+   "f": 1,
+   "sub": "Arbeitsrecht",
+   "t": "mc",
+   "q": "Ein Arbeitnehmer fällt neun Monate nach einem Arbeitsunfall wegen derselben Verletzung erneut drei Wochen aus. Wie ist die Entgeltfortzahlung zu beurteilen?",
+   "o": [
+    {
+     "t": "Der Arbeitgeber zahlt erneut Entgeltfortzahlung, weil der Arbeitnehmer vor der erneuten Arbeitsunfähigkeit mehr als sechs Monate nicht arbeitsunfähig war, § 3 Abs. 1 Satz 2 Nr. 1 EFZG",
+     "ok": 1
+    },
+    {
+     "t": "Es besteht kein Anspruch, weil es sich um eine Fortsetzungserkrankung handelt"
+    },
+    {
+     "t": "Es besteht kein Anspruch, weil der Sechs-Wochen-Zeitraum bereits ausgeschöpft ist"
+    },
+    {
+     "t": "Die Krankenkasse zahlt Krankengeld, weil der Arbeitgeber je Verletzung nur einmal leistet"
+    }
+   ],
+   "e": "Bei einer Fortsetzungserkrankung lebt der Anspruch auf Entgeltfortzahlung neu auf, wenn der Arbeitnehmer vor der erneuten Arbeitsunfähigkeit mindestens sechs Monate nicht wegen derselben Krankheit arbeitsunfähig war (§ 3 Abs. 1 Satz 2 Nr. 1 EFZG)."
+  },
+  {
+   "f": 1,
+   "sub": "Arbeitsrecht",
+   "t": "mc",
+   "q": "Welche Voraussetzung nennt § 626 Abs. 1 BGB für eine außerordentliche (fristlose) Kündigung?",
+   "o": [
+    {
+     "t": "Ein wichtiger Grund, der dem Arbeitgeber die Fortsetzung des Arbeitsverhältnisses bis zum Ablauf der ordentlichen Kündigungsfrist unzumutbar macht",
+     "ok": 1
+    },
+    {
+     "t": "Eine vorherige Zustimmung der zuständigen Berufsgenossenschaft"
+    },
+    {
+     "t": "Ein Betriebsübergang oder eine Betriebsstilllegung"
+    },
+    {
+     "t": "Der Ablauf einer sechsmonatigen Wartezeit"
+    }
+   ],
+   "e": "Die außerordentliche Kündigung setzt einen wichtigen Grund (objektiv), die Unzumutbarkeit der Fortsetzung nach Interessenabwägung im Einzelfall (subjektiv) und regelmäßig ein schuldhaftes, vorwerfbares Verhalten des Arbeitnehmers voraus."
+  },
+  {
+   "f": 1,
+   "sub": "Arbeitsrecht",
+   "t": "mc",
+   "q": "Ein Arbeitnehmer ist nach einem unverschuldeten Betriebsunfall längere Zeit arbeitsunfähig. Der Arbeitgeber will fristlos kündigen. Wie ist das zu beurteilen?",
+   "o": [
+    {
+     "t": "Unzulässig – eine Arbeitsunfähigkeit ist keine Vertragsverletzung, es fehlt an einem wichtigen Grund und an vorwerfbarem Verhalten",
+     "ok": 1
+    },
+    {
+     "t": "Zulässig, weil wiederholte Ausfälle den Betriebsablauf stören"
+    },
+    {
+     "t": "Zulässig, wenn der Betrieb weniger als zehn Arbeitnehmer beschäftigt"
+    },
+    {
+     "t": "Zulässig, sofern der Arbeitgeber vorher abgemahnt hat"
+    }
+   ],
+   "e": "Krankheit ist kein schuldhaftes Fehlverhalten. Gerade beim Betriebsunfall hat der Arbeitnehmer die Arbeitsunfähigkeit nicht verursacht; die Fortsetzung bis zum Ablauf der ordentlichen Kündigungsfrist ist dem Arbeitgeber zumutbar."
+  },
+  {
+   "f": 1,
+   "sub": "Arbeitsrecht",
+   "t": "calc",
+   "q": "Ermitteln Sie die Arbeitnehmerzahl nach § 23 KSchG: Im Betrieb arbeiten 6 Arbeitnehmer in Vollzeit, 6 Arbeitnehmer in Teilzeit mit je 20 Wochenstunden und 2 Auszubildende.",
+   "ans": 9,
+   "unit": "Arbeitnehmer",
+   "e": "Vollzeitkräfte zählen mit 1,0: 6 × 1,0 = 6. Teilzeitkräfte bis 20 Wochenstunden zählen mit 0,5: 6 × 0,5 = 3. Auszubildende werden nach § 23 KSchG nicht mitgezählt. Summe: 6 + 3 = 9 Arbeitnehmer – damit nicht mehr als 10, das KSchG findet keine Anwendung."
+  },
+  {
+   "f": 1,
+   "sub": "Arbeitsrecht",
+   "t": "mc",
+   "q": "Welche persönliche Voraussetzung muss ein Arbeitnehmer erfüllen, damit das Kündigungsschutzgesetz für ihn gilt (§ 1 Abs. 1 KSchG)?",
+   "o": [
+    {
+     "t": "Er muss ohne Unterbrechung länger als sechs Monate im Betrieb beschäftigt sein",
+     "ok": 1
+    },
+    {
+     "t": "Er muss die Probezeit von drei Monaten überstanden haben"
+    },
+    {
+     "t": "Er muss Mitglied des Betriebsrats oder Ersatzmitglied sein"
+    },
+    {
+     "t": "Er muss unbefristet und in Vollzeit beschäftigt sein"
+    }
+   ],
+   "e": "Der allgemeine Kündigungsschutz greift erst, wenn das Arbeitsverhältnis in demselben Betrieb oder Unternehmen ohne Unterbrechung länger als sechs Monate bestanden hat (§ 1 Abs. 1 KSchG). Hinzu kommt die betriebliche Größenvoraussetzung des § 23 KSchG."
+  },
+  {
+   "f": 1,
+   "sub": "Arbeitsrecht",
+   "t": "mc",
+   "q": "Mit welchem Faktor zählt eine Teilzeitkraft mit 20 Wochenstunden bei der Ermittlung der Betriebsgröße nach § 23 KSchG?",
+   "o": [
+    {
+     "t": "Mit 0,5",
+     "ok": 1
+    },
+    {
+     "t": "Mit 0,75"
+    },
+    {
+     "t": "Mit 1,0"
+    },
+    {
+     "t": "Sie zählt gar nicht mit"
+    }
+   ],
+   "e": "§ 23 Abs. 1 KSchG: Teilzeitbeschäftigte mit nicht mehr als 20 Wochenstunden zählen mit 0,5, mit nicht mehr als 30 Wochenstunden mit 0,75; darüber mit 1,0. Auszubildende bleiben unberücksichtigt."
+  },
+  {
+   "f": 1,
+   "sub": "Arbeitsrecht",
+   "t": "mc",
+   "q": "Kann ein kalendermäßig befristetes Arbeitsverhältnis ordentlich gekündigt werden?",
+   "o": [
+    {
+     "t": "Nur wenn dies im Arbeitsvertrag oder in einem anwendbaren Tarifvertrag ausdrücklich vereinbart ist, § 15 Abs. 4 TzBfG",
+     "ok": 1
+    },
+    {
+     "t": "Ja, jederzeit unter Einhaltung der gesetzlichen Kündigungsfrist"
+    },
+    {
+     "t": "Ja, aber nur innerhalb der ersten sechs Monate"
+    },
+    {
+     "t": "Nein, eine Beendigung vor Fristablauf ist ausnahmslos ausgeschlossen"
+    }
+   ],
+   "e": "Befristete Arbeitsverhältnisse enden mit Zeitablauf. Eine ordentliche Kündigung ist nach § 15 Abs. 4 TzBfG nur möglich, wenn sie einzelvertraglich oder tarifvertraglich vereinbart wurde; sonst ist sie unwirksam."
+  },
+  {
+   "f": 1,
+   "sub": "Arbeitsrecht",
+   "t": "mc",
+   "q": "Innerhalb welcher Frist muss die Kündigungsschutzklage beim Arbeitsgericht eingereicht werden?",
+   "o": [
+    {
+     "t": "Innerhalb von drei Wochen nach Zugang der schriftlichen Kündigung, § 4 KSchG",
+     "ok": 1
+    },
+    {
+     "t": "Innerhalb von zwei Wochen nach Zugang der Kündigung"
+    },
+    {
+     "t": "Innerhalb von einem Monat nach Ende des Arbeitsverhältnisses"
+    },
+    {
+     "t": "Innerhalb von drei Monaten nach Zugang der Kündigung"
+    }
+   ],
+   "e": "§ 4 KSchG: Die Klage ist binnen drei Wochen nach Zugang der schriftlichen Kündigung zu erheben. Sachlich zuständig ist das Arbeitsgericht (§ 2 Abs. 1 Nr. 3b ArbGG), örtlich das Gericht am Sitz des Betriebs."
+  },
+  {
+   "f": 1,
+   "sub": "Arbeitsrecht",
+   "t": "mc",
+   "q": "Was ist die Folge, wenn die Frist zur Erhebung der Kündigungsschutzklage versäumt wird?",
+   "o": [
+    {
+     "t": "Die Kündigung gilt nach § 7 KSchG von Anfang an als rechtswirksam",
+     "ok": 1
+    },
+    {
+     "t": "Die Kündigung wird schwebend unwirksam, bis der Betriebsrat entscheidet"
+    },
+    {
+     "t": "Die Klage kann noch bis zu sechs Monate später erhoben werden"
+    },
+    {
+     "t": "Es entsteht automatisch ein Anspruch auf eine Abfindung"
+    }
+   ],
+   "e": "§ 7 KSchG: Wird die Unwirksamkeit einer Kündigung nicht rechtzeitig geltend gemacht, gilt die Kündigung als von Anfang an rechtswirksam – auch dann, wenn sie inhaltlich fehlerhaft war."
+  },
+  {
+   "f": 1,
+   "sub": "Betriebsverfassung",
+   "t": "mc",
+   "q": "Ab welcher Betriebsgröße ist der Betriebsrat nach § 99 BetrVG bei jeder Einstellung zu unterrichten und um Zustimmung zu ersuchen?",
+   "o": [
+    {
+     "t": "In Unternehmen mit in der Regel mehr als 20 wahlberechtigten Arbeitnehmern",
+     "ok": 1
+    },
+    {
+     "t": "In allen Betrieben, in denen ein Betriebsrat besteht"
+    },
+    {
+     "t": "In Unternehmen mit mehr als 10 Arbeitnehmern"
+    },
+    {
+     "t": "Erst in Unternehmen mit mehr als 100 Arbeitnehmern"
+    }
+   ],
+   "e": "Das Mitbestimmungsrecht bei personellen Einzelmaßnahmen nach § 99 BetrVG greift erst in Unternehmen mit in der Regel mehr als 20 wahlberechtigten Arbeitnehmern. Darunter entfällt die Zustimmungspflicht bei Einstellungen."
+  },
+  {
+   "f": 1,
+   "sub": "Betriebsverfassung",
+   "t": "mc",
+   "q": "Ein Betrieb mit 12 Arbeitnehmern und Betriebsrat spricht eine ordentliche Kündigung aus, ohne den Betriebsrat zu hören. Wie wirkt sich das aus?",
+   "o": [
+    {
+     "t": "Die Kündigung ist unwirksam – der Betriebsrat ist nach § 102 BetrVG vor jeder Kündigung anzuhören",
+     "ok": 1
+    },
+    {
+     "t": "Die Kündigung bleibt wirksam, die Anhörung kann nachgeholt werden"
+    },
+    {
+     "t": "Die Anhörung entfällt, weil der Betrieb weniger als 20 Arbeitnehmer hat"
+    },
+    {
+     "t": "Die Kündigung ist wirksam, der Betriebsrat kann nur Schadenersatz verlangen"
+    }
+   ],
+   "e": "§ 102 BetrVG gilt unabhängig von der Betriebsgröße, sobald ein Betriebsrat besteht. Eine ohne Anhörung ausgesprochene Kündigung ist unwirksam; anders als bei § 99 BetrVG gibt es hier keine 20-Arbeitnehmer-Schwelle."
+  },
+  {
+   "f": 1,
+   "sub": "Betriebsverfassung",
+   "t": "mc",
+   "q": "Ab welcher Zahl von Arbeitnehmern ist nach § 38 BetrVG mindestens ein Betriebsratsmitglied von der beruflichen Tätigkeit freizustellen?",
+   "o": [
+    {
+     "t": "Ab 200 Arbeitnehmern",
+     "ok": 1
+    },
+    {
+     "t": "Ab 50 Arbeitnehmern"
+    },
+    {
+     "t": "Ab 100 Arbeitnehmern"
+    },
+    {
+     "t": "Ab 500 Arbeitnehmern"
+    }
+   ],
+   "e": "§ 38 BetrVG staffelt die Freistellungen nach Betriebsgröße; die erste vollständige Freistellung entsteht ab 200 Arbeitnehmern. In kleineren Betrieben besteht nur Anspruch auf Arbeitsbefreiung für die konkrete Betriebsratsarbeit (§ 37 BetrVG)."
+  },
+  {
+   "f": 1,
+   "sub": "Betriebsverfassung",
+   "t": "mc",
+   "q": "Darf der Geschäftsführer einer GmbH für den Betriebsrat kandidieren?",
+   "o": [
+    {
+     "t": "Nein – er ist nach § 5 Abs. 2 BetrVG kein Arbeitnehmer und damit weder wahlberechtigt (§ 7) noch wählbar (§ 8)",
+     "ok": 1
+    },
+    {
+     "t": "Ja, sofern er selbst Anteile an der GmbH hält"
+    },
+    {
+     "t": "Ja, wenn die Belegschaft seiner Kandidatur mehrheitlich zustimmt"
+    },
+    {
+     "t": "Ja, aber nur als Ersatzmitglied ohne Stimmrecht"
+    }
+   ],
+   "e": "Gesetzliche Vertreter juristischer Personen gelten nach § 5 Abs. 2 BetrVG nicht als Arbeitnehmer im Sinne des BetrVG. Wahlrecht (§ 7) und Wählbarkeit (§ 8) setzen die Arbeitnehmereigenschaft voraus."
+  },
+  {
+   "f": 1,
+   "sub": "Betriebsverfassung",
+   "t": "mc",
+   "q": "In welchem Zeitraum finden die regelmäßigen Betriebsratswahlen statt (§ 13 Abs. 1 BetrVG)?",
+   "o": [
+    {
+     "t": "Alle vier Jahre zwischen dem 1. März und dem 31. Mai",
+     "ok": 1
+    },
+    {
+     "t": "Alle vier Jahre zwischen dem 1. September und dem 30. November"
+    },
+    {
+     "t": "Alle zwei Jahre zwischen dem 1. März und dem 31. Mai"
+    },
+    {
+     "t": "Alle fünf Jahre jeweils im Januar"
+    }
+   ],
+   "e": "§ 13 Abs. 1 BetrVG legt die regelmäßigen Betriebsratswahlen auf den Zeitraum 1. März bis 31. Mai fest; die Amtszeit beträgt vier Jahre (§ 21 BetrVG)."
+  },
+  {
+   "f": 1,
+   "sub": "Betriebsverfassung",
+   "t": "mc",
+   "q": "Ein außerplanmäßig gewählter Betriebsrat tritt sein Amt am 5. Dezember 2025 an. Wann finden die nächsten regelmäßigen Betriebsratswahlen statt?",
+   "o": [
+    {
+     "t": "Zwischen dem 1. März und dem 31. Mai 2030, weil der Betriebsrat im regulären Wahlzeitraum 2026 noch kein Jahr im Amt ist (§ 13 Abs. 3 BetrVG)",
+     "ok": 1
+    },
+    {
+     "t": "Zwischen dem 1. März und dem 31. Mai 2026, weil der reguläre Turnus unverändert gilt"
+    },
+    {
+     "t": "Im Dezember 2029, genau vier Jahre nach Amtsantritt"
+    },
+    {
+     "t": "Zwischen dem 1. März und dem 31. Mai 2028"
+    }
+   ],
+   "e": "Nach § 13 Abs. 3 BetrVG entfällt die regelmäßige Wahl, wenn der amtierende Betriebsrat zu Beginn des Wahlzeitraums noch nicht ein Jahr im Amt ist. Die Wahl verschiebt sich dann auf den übernächsten regelmäßigen Wahlzeitraum – hier 2030."
+  },
+  {
+   "f": 1,
+   "sub": "Umweltrecht",
+   "t": "mc",
+   "q": "Wie viele Wassergefährdungsklassen kennt § 62 WHG und wie sind sie bezeichnet?",
+   "o": [
+    {
+     "t": "Drei: WGK 1 „schwach wassergefährdend“, WGK 2 „deutlich wassergefährdend“, WGK 3 „stark wassergefährdend“",
+     "ok": 1
+    },
+    {
+     "t": "Zwei: WGK 1 „wassergefährdend“ und WGK 2 „stark wassergefährdend“"
+    },
+    {
+     "t": "Vier: WGK 0 bis WGK 3"
+    },
+    {
+     "t": "Fünf, entsprechend den Gefahrgutklassen des ADR"
+    }
+   ],
+   "e": "Das Wasserhaushaltsgesetz teilt wassergefährdende Stoffe in drei Klassen ein: WGK 1 schwach, WGK 2 deutlich und WGK 3 stark wassergefährdend. Daran knüpfen die Anforderungen an Anlagen zum Umgang mit diesen Stoffen an."
+  },
+  {
+   "f": 1,
+   "sub": "Umweltrecht",
+   "t": "mc",
+   "q": "Ein Unternehmen leitet wassergefährdende Stoffe in einen Fluss ein und muss für die Beseitigung des Schadens aufkommen. Welches Prinzip des Umweltschutzes ist damit umgesetzt?",
+   "o": [
+    {
+     "t": "Das Verursacherprinzip",
+     "ok": 1
+    },
+    {
+     "t": "Das Gemeinlastprinzip"
+    },
+    {
+     "t": "Das Kooperationsprinzip"
+    },
+    {
+     "t": "Das Vorsorgeprinzip"
+    }
+   ],
+   "e": "Nach dem Verursacherprinzip trägt derjenige die Kosten der Beseitigung, der den Umweltschaden verursacht hat. Das Gemeinlastprinzip greift erst, wenn kein Verursacher zu ermitteln ist oder die Kosten dessen Leistungsfähigkeit übersteigen."
+  },
+  {
+   "f": 1,
+   "sub": "Umweltrecht",
+   "t": "mc",
+   "q": "Welches Prinzip des Umweltschutzes zielt darauf ab, dass Umweltschäden durch vorbeugende Maßnahmen gar nicht erst entstehen?",
+   "o": [
+    {
+     "t": "Das Vorsorgeprinzip",
+     "ok": 1
+    },
+    {
+     "t": "Das Verursacherprinzip"
+    },
+    {
+     "t": "Das Gemeinlastprinzip"
+    },
+    {
+     "t": "Das Kooperationsprinzip"
+    }
+   ],
+   "e": "Die vier Prinzipien des Umweltschutzes sind Vorsorge-, Verursacher-, Gemeinlast- und Kooperationsprinzip. Das Vorsorgeprinzip verlangt vorbeugende Maßnahmen, damit Schäden erst gar nicht entstehen."
+  },
+  {
+   "f": 1,
+   "sub": "Produkthaftung/Datenschutz",
+   "t": "mc",
+   "q": "Ein Unternehmen möchte ein Foto seiner Mitarbeiter mit Namensnennung in einem Fachmagazin veröffentlichen. Unter welcher Voraussetzung ist das zulässig?",
+   "o": [
+    {
+     "t": "Wenn alle abgebildeten Personen zuvor ihre Einwilligung erklärt haben, Art. 6 Abs. 1 lit. a DSGVO",
+     "ok": 1
+    },
+    {
+     "t": "Wenn der Betriebsrat der Veröffentlichung zugestimmt hat"
+    },
+    {
+     "t": "Wenn die Veröffentlichung dem Ansehen der Mitarbeiter nicht schadet"
+    },
+    {
+     "t": "Wenn das Foto während der Arbeitszeit auf dem Betriebsgelände entstanden ist"
+    }
+   ],
+   "e": "Die Veröffentlichung von Personenfotos und Namen ist eine Verarbeitung personenbezogener Daten. Sie braucht eine Rechtsgrundlage – hier die Einwilligung aller Abgebildeten nach Art. 6 Abs. 1 lit. a DSGVO."
+  },
+  {
+   "f": 1,
+   "sub": "Produkthaftung/Datenschutz",
+   "t": "mc",
+   "q": "Was sind „personenbezogene Daten“ nach Art. 4 Nr. 1 DSGVO?",
+   "o": [
+    {
+     "t": "Alle Informationen, die sich auf eine identifizierte oder identifizierbare natürliche Person beziehen",
+     "ok": 1
+    },
+    {
+     "t": "Nur Angaben, die eine Person unmittelbar mit Namen benennen"
+    },
+    {
+     "t": "Alle Daten, die ein Unternehmen über Kunden und Lieferanten speichert"
+    },
+    {
+     "t": "Nur besonders sensible Daten wie Gesundheits- oder Religionsangaben"
+    }
+   ],
+   "e": "Art. 4 Nr. 1 DSGVO fasst den Begriff weit: erfasst ist jede Information über eine bestimmte oder bestimmbare natürliche Person. Typische Arbeitgeberdaten sind Name, Anschrift, Kontoverbindung und Sozialversicherungsnummer."
+  },
+  {
+   "f": 2,
+   "sub": "Betriebsorganisation",
+   "t": "mc",
+   "q": "Ein Industrieunternehmen erwägt, seine Produktion nach Südostasien zu verlagern. Welcher Punkt ist dabei ein typischer Problembereich?",
+   "o": [
+    {
+     "t": "Hohe Anfangsinvestitionen und Abfindungen im Inland bei zugleich schwer revidierbarer Entscheidung",
+     "ok": 1
+    },
+    {
+     "t": "Die Bestellkosten je Bestellung steigen zwangsläufig um den Lagerhaltungskostensatz"
+    },
+    {
+     "t": "Der Betriebsrat kann die Verlagerung nach § 99 BetrVG endgültig untersagen"
+    },
+    {
+     "t": "Die Fixkosten werden zu variablen Kosten und sinken damit automatisch"
+    }
+   ],
+   "e": "Typische Problemfelder einer Produktionsverlagerung: hohe Investitionen und Abfindungskosten, Imageschaden im Inland, kulturelle und sprachliche Unterschiede, Schulungsaufwand zur Qualitätssicherung, lange Transportwege und die schwere Revidierbarkeit der Entscheidung."
+  },
+  {
+   "f": 2,
+   "sub": "Materialwirtschaft",
+   "t": "calc",
+   "q": "Ein Betrieb arbeitet mit dem Bestellpunktverfahren. Der Sicherheitsbestand beträgt 2 Tonnen, die Bestellmenge 10 Tonnen je Bestellung. Berechnen Sie den durchschnittlichen Lagerbestand.",
+   "ans": 7,
+   "unit": "t",
+   "e": "Ø Lagerbestand = Sicherheitsbestand + Bestellmenge : 2 = 2 t + 10 t : 2 = 2 t + 5 t = 7 t."
+  },
+  {
+   "f": 2,
+   "sub": "Materialwirtschaft",
+   "t": "calc",
+   "q": "Der Jahresbedarf beträgt 90 Tonnen bei 360 Lagertagen und gleichmäßigem Verbrauch. Die Beschaffungszeit beträgt 12 Tage, der Sicherheitsbestand 2 Tonnen. Berechnen Sie den Meldebestand.",
+   "ans": 5,
+   "unit": "t",
+   "e": "Tagesverbrauch = 90 t : 360 Tage = 0,25 t/Tag. Meldebestand = Wiederbeschaffungszeit × Tagesverbrauch + Sicherheitsbestand = 12 Tage × 0,25 t/Tag + 2 t = 3 t + 2 t = 5 t."
+  },
+  {
+   "f": 2,
+   "sub": "Materialwirtschaft",
+   "t": "calc",
+   "q": "Berechnen Sie die optimale Bestellmenge nach Andler: Jahresbedarf 90 Tonnen, Bestellkosten 180 € je Bestellung, Einstandspreis 4.500 €/t, Lagerhaltungskostensatz 20 % p. a.",
+   "ans": 6,
+   "unit": "t",
+   "e": "x_opt = √(2 × Bestellkosten × Jahresbedarf : (Einstandspreis × Lagerhaltungskostensatz)) = √(2 × 180 € × 90 t : (4.500 €/t × 0,2)) = √(32.400 : 900) = √36 = 6 t."
+  },
+  {
+   "f": 2,
+   "sub": "Materialwirtschaft",
+   "t": "calc",
+   "q": "Jahresbedarf 90 t, Bestellkosten 180 €/Bestellung, Einstandspreis 4.500 €/t, Lagerhaltungskostensatz 20 %, Sicherheitsbestand 2 t. Wie hoch ist das jährliche Einsparpotenzial, wenn statt 10 t je Bestellung die optimale Bestellmenge von 6 t bestellt wird?",
+   "ans": 720,
+   "unit": "€",
+   "e": "Bei 10 t: 9 Bestellungen × 180 € = 1.620 € Bestellkosten; Lagerkosten = (10 t : 2 + 2 t) × 0,2 × 4.500 €/t = 6.300 €; zusammen 7.920 €. Bei 6 t: 15 Bestellungen × 180 € = 2.700 €; Lagerkosten = (6 t : 2 + 2 t) × 0,2 × 4.500 €/t = 4.500 €; zusammen 7.200 €. Einsparung = 7.920 € − 7.200 € = 720 €."
+  },
+  {
+   "f": 2,
+   "sub": "Materialwirtschaft",
+   "t": "mc",
+   "q": "Wie wird der Meldebestand (Bestellpunkt) bei gleichmäßigem Verbrauch ermittelt?",
+   "o": [
+    {
+     "t": "Tagesverbrauch × Wiederbeschaffungszeit + Sicherheitsbestand",
+     "ok": 1
+    },
+    {
+     "t": "Bestellmenge : 2 + Sicherheitsbestand"
+    },
+    {
+     "t": "Jahresbedarf : Bestellmenge × Bestellkosten"
+    },
+    {
+     "t": "Höchstbestand − durchschnittlicher Lagerbestand"
+    }
+   ],
+   "e": "Der Meldebestand deckt den Verbrauch während der Wiederbeschaffungszeit ab und hält zusätzlich den Sicherheitsbestand vor. „Bestellmenge : 2 + Sicherheitsbestand“ ist dagegen die Formel für den durchschnittlichen Lagerbestand."
+  },
+  {
+   "f": 2,
+   "sub": "Materialwirtschaft",
+   "t": "mc",
+   "q": "Welchen Zielkonflikt löst die optimale Bestellmenge nach der Andler-Formel auf?",
+   "o": [
+    {
+     "t": "Mit der Bestellmenge sinken die jährlichen Bestellkosten, während die Lagerhaltungskosten steigen – gesucht ist das Minimum der Summe",
+     "ok": 1
+    },
+    {
+     "t": "Mit der Bestellmenge sinken sowohl Bestell- als auch Lagerhaltungskosten"
+    },
+    {
+     "t": "Mit der Bestellmenge steigen Bestellkosten und Einstandspreis gleichermaßen"
+    },
+    {
+     "t": "Sie minimiert ausschließlich den Sicherheitsbestand"
+    }
+   ],
+   "e": "Große Bestellmengen bedeuten wenige Bestellvorgänge (niedrige Bestellkosten), aber hohe Lagerbestände (hohe Lagerhaltungskosten). Die Andler-Formel bestimmt die Menge, bei der die Summe beider Kostenarten minimal wird."
+  },
+  {
+   "f": 2,
+   "sub": "Betriebsorganisation",
+   "t": "mc",
+   "q": "Was versteht man in der Aufbauorganisation unter einer Instanz?",
+   "o": [
+    {
+     "t": "Eine Leitungsstelle, die gegenüber untergeordneten Stellen weisungsbefugt ist und Entscheidungsbefugnisse besitzt",
+     "ok": 1
+    },
+    {
+     "t": "Eine Stelle ohne Weisungsbefugnis, die eine Instanz nur beratend unterstützt"
+    },
+    {
+     "t": "Die Zusammenfassung mehrerer Stellen zu einer Abteilung"
+    },
+    {
+     "t": "Die kleinste organisatorische Einheit, der Aufgaben zugeordnet werden"
+    }
+   ],
+   "e": "Die Instanz ist eine Leitungsstelle mit Weisungs- und Entscheidungsbefugnis. Eine beratende Stelle ohne Weisungsrecht ist die Stabsstelle; die kleinste Einheit ist die Stelle, die Zusammenfassung mehrerer Stellen die Abteilung."
+  },
+  {
+   "f": 2,
+   "sub": "Betriebsorganisation",
+   "t": "mc",
+   "q": "Welche Angabe gehört typischerweise NICHT in eine Stellenbeschreibung?",
+   "o": [
+    {
+     "t": "Das persönliche Gehalt des aktuellen Stelleninhabers",
+     "ok": 1
+    },
+    {
+     "t": "Stellenbezeichnung und Einordnung in die betriebliche Organisation"
+    },
+    {
+     "t": "Über- und Unterstellung sowie Stellvertretungsregelung"
+    },
+    {
+     "t": "Zielsetzung der Stelle, Aufgaben, Kompetenzen und Befugnisse"
+    }
+   ],
+   "e": "Die Stellenbeschreibung ist personenunabhängig: Sie beschreibt die Stelle, nicht den Inhaber. Typische Inhalte sind Stellenbezeichnung, organisatorische Einordnung, Über-/Unterstellung, Vertretung, Ziel, Aufgaben, Kompetenzen, Befugnisse und Anforderungen."
+  },
+  {
+   "f": 2,
+   "sub": "Betriebsorganisation",
+   "t": "mc",
+   "q": "Welche Aufgabe erfüllt eine Stellenbeschreibung aus Unternehmenssicht?",
+   "o": [
+    {
+     "t": "Sie grenzt Aufgaben klar ab, vermeidet Kompetenzstreitigkeiten und dient als Basis für Stellenbewertung, Ausschreibung und Einarbeitung",
+     "ok": 1
+    },
+    {
+     "t": "Sie ersetzt den Arbeitsvertrag und begründet das Arbeitsverhältnis"
+    },
+    {
+     "t": "Sie legt die tarifliche Kündigungsfrist des Stelleninhabers fest"
+    },
+    {
+     "t": "Sie dokumentiert die persönliche Leistungsbeurteilung des Mitarbeiters"
+    }
+   ],
+   "e": "Die Stellenbeschreibung schafft klare Zuständigkeiten und ist Grundlage für Stellenbewertung und Entlohnung, für Stellenausschreibungen in der Personalbeschaffung sowie für eine strukturierte Einarbeitung."
+  },
+  {
+   "f": 4,
+   "sub": "Entgelt und Arbeitszeit",
+   "t": "calc",
+   "q": "Der tarifliche Akkordgrundlohn beträgt 30,00 €/h, der Akkordzuschlag 10 %, die Vorgabezeit 5 Minuten je Stück. Berechnen Sie das Stückgeld (Geldfaktor).",
+   "ans": 2.75,
+   "unit": "€/Stück",
+   "e": "Akkordrichtsatz = 30,00 €/h + 10 % = 33,00 €/h. Normalleistung = 60 min/h : 5 min/Stück = 12 Stück/h. Stückgeld = 33,00 €/h : 12 Stück/h = 2,75 €/Stück."
+  },
+  {
+   "f": 4,
+   "sub": "Entgelt und Arbeitszeit",
+   "t": "calc",
+   "q": "Akkordgrundlohn 30,00 €/h, Akkordzuschlag 10 %, Vorgabezeit 5 Minuten je Stück. Welchen Bruttostundenlohn erzielt ein Facharbeiter, der 13 Stück je Stunde fertigt?",
+   "ans": 35.75,
+   "unit": "€/h",
+   "e": "Akkordrichtsatz = 33,00 €/h; Normalleistung = 60 : 5 = 12 Stück/h; Stückgeld = 33,00 : 12 = 2,75 €/Stück. Akkordlohn = 2,75 €/Stück × 13 Stück/h = 35,75 €/h."
+  },
+  {
+   "f": 4,
+   "sub": "Entgelt und Arbeitszeit",
+   "t": "mc",
+   "q": "Wie verhalten sich die Lohnkosten je Stück im Geldakkord, wenn der Leistungsgrad von 100 % auf 125 % steigt?",
+   "o": [
+    {
+     "t": "Sie bleiben konstant, weil je Stück ein fester Geldbetrag gezahlt wird",
+     "ok": 1
+    },
+    {
+     "t": "Sie steigen proportional zum Leistungsgrad"
+    },
+    {
+     "t": "Sie sinken, weil sich die Fixkosten auf mehr Stücke verteilen"
+    },
+    {
+     "t": "Sie steigen sprunghaft, sobald der Leistungsgrad 100 % überschreitet"
+    }
+   ],
+   "e": "Im Akkordlohn wird die Leistung und nicht die Zeit bezahlt: Das Stückgeld ist fix, deshalb sind die Lohnstückkosten unabhängig vom Leistungsgrad konstant – grafisch eine waagerechte Gerade. Der Stundenlohn des Mitarbeiters steigt dagegen mit dem Leistungsgrad."
+  },
+  {
+   "f": 4,
+   "sub": "Entgelt und Arbeitszeit",
+   "t": "mc",
+   "q": "Welche Voraussetzung muss erfüllt sein, damit ein Mitarbeiter im Akkord entlohnt werden darf?",
+   "o": [
+    {
+     "t": "Die Arbeit muss messbar, regelmäßig wiederkehrend und vom Mitarbeiter beeinflussbar sein, mit gesichertem Materialfluss und nachvollziehbarer Vorgabezeit",
+     "ok": 1
+    },
+    {
+     "t": "Der Mitarbeiter muss über eine abgeschlossene Meisterprüfung verfügen"
+    },
+    {
+     "t": "Die Tätigkeit muss überwiegend planende und dispositive Anteile enthalten"
+    },
+    {
+     "t": "Der Mitarbeiter darf sich noch in der Einarbeitungsphase befinden"
+    }
+   ],
+   "e": "Akkordfähig sind Arbeiten, deren Ablauf sich wiederholt, deren Menge messbar ist und deren Zeit der Mitarbeiter beeinflussen kann. Zusätzlich müssen die Einarbeitung abgeschlossen, die Vorgabezeit nachvollziehbar und der Materialfluss gesichert sein."
+  },
+  {
+   "f": 4,
+   "sub": "Entgelt und Arbeitszeit",
+   "t": "mc",
+   "q": "Welcher Grund spricht aus Unternehmenssicht für die Gewährung einer Erfolgsbeteiligung?",
+   "o": [
+    {
+     "t": "Sie erhöht Motivation und Identifikation und bindet Mitarbeiter an das Unternehmen",
+     "ok": 1
+    },
+    {
+     "t": "Sie ersetzt den tariflichen Grundlohn und senkt damit die Personalkosten dauerhaft"
+    },
+    {
+     "t": "Sie ist gesetzlich vorgeschrieben, sobald ein Betriebsrat besteht"
+    },
+    {
+     "t": "Sie macht eine Beteiligung des Betriebsrats an Entgeltfragen entbehrlich"
+    }
+   ],
+   "e": "Erfolgsbeteiligungen setzen einen Leistungsanreiz, stärken die Identifikation mit dem Unternehmen und binden Mitarbeiter. Zugleich gleichen sie die Interessen von Arbeitnehmern (angemessene Entlohnung) und Arbeitgeber (erfolgsabhängige Kosten) aus und verbessern das Arbeitgeberimage."
+  },
+  {
+   "f": 2,
+   "sub": "Kostenrechnung",
+   "t": "mc",
+   "q": "Wie ist eine Spende an eine gemeinnützige Organisation in der Abgrenzungsrechnung einzuordnen?",
+   "o": [
+    {
+     "t": "Als neutraler Aufwand, weil sie nicht dem Betriebszweck dient",
+     "ok": 1
+    },
+    {
+     "t": "Als Zweckaufwand, weil sie das Betriebsergebnis mindert"
+    },
+    {
+     "t": "Als kalkulatorische Kosten, weil ihr keine Auszahlung gegenübersteht"
+    },
+    {
+     "t": "Als Grundkosten, weil sie regelmäßig anfällt"
+    }
+   ],
+   "e": "Neutraler Aufwand ist betriebsfremd, periodenfremd oder außerordentlich. Spenden sind betriebsfremd, die Gewerbesteuernachzahlung für ein Vorjahr ist periodenfremd, der Totalschaden eines Lkw außerordentlich – alle drei sind neutraler Aufwand."
+  },
+  {
+   "f": 2,
+   "sub": "Kostenrechnung",
+   "t": "calc",
+   "q": "Ordnen Sie zu und summieren Sie den Zweckaufwand: Fertigungslöhne 30.000 €, entgangene Zinserträge 8.000 €, Rohstoffverbrauch in der Produktion 50.000 €, Mehrarbeitsstunden 4.500 €, Spende 500 €, Beiträge an die Berufsgenossenschaft 800 €, Entsorgungsgebühren für Produktionsabfälle 1.200 €, Gewerbesteuernachzahlung für das Vorjahr 5.000 €, Totalschaden eines betrieblichen Lkw 16.000 €, Einbau eines geringwertigen Ersatzteils 1.500 €.",
+   "ans": 88000,
+   "unit": "€",
+   "e": "Zweckaufwand (betriebsbedingt, periodenrichtig, ordentlich): 30.000 € + 50.000 € + 4.500 € + 800 € + 1.200 € + 1.500 € = 88.000 €. Neutraler Aufwand sind Spende (500 €), Gewerbesteuernachzahlung (5.000 €) und Lkw-Totalschaden (16.000 €); die entgangenen Zinserträge (8.000 €) sind kalkulatorische Kosten."
+  },
+  {
+   "f": 2,
+   "sub": "Kostenrechnung",
+   "t": "mc",
+   "q": "Entgangene Zinserträge auf das im Unternehmen gebundene Eigenkapital werden in der Kostenrechnung erfasst als …",
+   "o": [
+    {
+     "t": "kalkulatorische Kosten (Zusatzkosten), denen kein Aufwand gegenübersteht",
+     "ok": 1
+    },
+    {
+     "t": "Zweckaufwand, weil das Kapital dem Betriebszweck dient"
+    },
+    {
+     "t": "neutraler Aufwand, weil sie betriebsfremd sind"
+    },
+    {
+     "t": "Anderskosten, weil ihnen ein Aufwand in anderer Höhe gegenübersteht"
+    }
+   ],
+   "e": "Kalkulatorische Zinsen auf das Eigenkapital sind Zusatzkosten: In der Finanzbuchhaltung entsteht kein Aufwand, in der Kostenrechnung werden sie dennoch als Opportunitätskosten angesetzt. Anderskosten (z. B. kalkulatorische Abschreibungen) stehen dagegen einem Aufwand in abweichender Höhe gegenüber."
+  },
+  {
+   "f": 2,
+   "sub": "Kostenrechnung",
+   "t": "calc",
+   "q": "Ermitteln Sie die variablen Stückkosten mit der Differenzenmethode: Bei 680 Stück betragen die Gesamtkosten 3.940.200 €, bei 940 Stück 4.778.700 €. Fixkosten und variable Stückkosten sind konstant.",
+   "ans": 3225,
+   "unit": "€/Stück",
+   "e": "kv = ΔK : Δx = (4.778.700 € − 3.940.200 €) : (940 Stück − 680 Stück) = 838.500 € : 260 Stück = 3.225 €/Stück."
+  },
+  {
+   "f": 2,
+   "sub": "Kostenrechnung",
+   "t": "calc",
+   "q": "Die variablen Stückkosten betragen 3.225 €/Stück. Bei einer Menge von 940 Stück je Quartal entstehen Gesamtkosten von 4.778.700 €. Berechnen Sie die Fixkosten je Quartal.",
+   "ans": 1747200,
+   "unit": "€",
+   "e": "Kf = K − kv × x = 4.778.700 € − 3.225 €/Stück × 940 Stück = 4.778.700 € − 3.031.500 € = 1.747.200 € je Quartal."
+  },
+  {
+   "f": 2,
+   "sub": "Kostenrechnung",
+   "t": "calc",
+   "q": "Fixkosten 1.747.200 € je Quartal, variable Stückkosten 3.225 €/Stück, Verkaufspreis 5.625 €/Stück. Berechnen Sie die Break-even-Menge je Quartal.",
+   "ans": 728,
+   "unit": "Stück",
+   "e": "Stückdeckungsbeitrag db = 5.625 €/Stück − 3.225 €/Stück = 2.400 €/Stück. Break-even-Menge = Kf : db = 1.747.200 € : 2.400 €/Stück = 728 Stück je Quartal."
+  },
+  {
+   "f": 2,
+   "sub": "Kostenrechnung",
+   "t": "calc",
+   "q": "Die Break-even-Menge beträgt 728 Stück je Quartal, die Kapazität bei Vollauslastung 1.060 Stück je Quartal. Berechnen Sie den Break-even-Beschäftigungsgrad.",
+   "ans": 68.68,
+   "unit": "%",
+   "e": "Beschäftigungsgrad = Ist-Menge : Kapazität × 100 = 728 Stück : 1.060 Stück × 100 = 68,68 %. Erst oberhalb dieser Auslastung erwirtschaftet der Betrieb Gewinn."
+  },
+  {
+   "f": 2,
+   "sub": "Kostenrechnung",
+   "t": "calc",
+   "q": "Berechnen Sie den Break-even-Umsatz je Quartal: Break-even-Menge 728 Stück, Verkaufspreis 5.625 € je Stück.",
+   "ans": 4095000,
+   "unit": "€",
+   "e": "Break-even-Umsatz = Preis × Break-even-Menge = 5.625 €/Stück × 728 Stück = 4.095.000 € je Quartal. Bei diesem Umsatz sind alle fixen und variablen Kosten gedeckt, das Betriebsergebnis ist null."
+  },
+  {
+   "f": 2,
+   "sub": "Kostenrechnung",
+   "t": "calc",
+   "q": "Im ersten Quartal wurden 680 Stück zu je 5.625 € abgesetzt; die Gesamtkosten betrugen 3.940.200 €. Berechnen Sie das Betriebsergebnis.",
+   "ans": -115200,
+   "unit": "€",
+   "e": "Umsatz = 5.625 €/Stück × 680 Stück = 3.825.000 €. Betriebsergebnis = Umsatz − Gesamtkosten = 3.825.000 € − 3.940.200 € = −115.200 €. Die Menge liegt unter der Break-even-Menge von 728 Stück, deshalb entsteht ein Verlust."
+  },
+  {
+   "f": 2,
+   "sub": "Kostenrechnung",
+   "t": "mc",
+   "q": "Was sagt die Deckungsbeitrags-Umsatz-Quote (DBU-Quote) aus?",
+   "o": [
+    {
+     "t": "Welchen prozentualen Anteil der Deckungsbeitrag am Umsatz bzw. der Stückdeckungsbeitrag am Preis hat",
+     "ok": 1
+    },
+    {
+     "t": "Welchen Anteil die Fixkosten am Gesamtumsatz haben"
+    },
+    {
+     "t": "Um wie viel Prozent der Umsatz sinken darf, bevor Verluste entstehen"
+    },
+    {
+     "t": "Wie hoch der Gewinnzuschlag in der Zuschlagskalkulation sein muss"
+    }
+   ],
+   "e": "DBU-Quote = Stückdeckungsbeitrag : Preis. Bei db = 2.400 € und p = 5.625 € ergibt sich 0,427 – rund 42,7 % des Umsatzes stehen zur Deckung der Fixkosten und zur Gewinnerzielung zur Verfügung."
+  },
+  {
+   "f": 2,
+   "sub": "Kostenrechnung",
+   "t": "calc",
+   "q": "Zuschlagskalkulation: Fertigungslöhne 3.900,00 €, Fertigungsgemeinkosten 210 %, Sondereinzelkosten der Fertigung 510,00 €, Materialgemeinkosten 25 %, Verwaltungsgemeinkosten 15 %, Vertriebsgemeinkosten 5 %, Sondereinzelkosten des Vertriebs 455,00 €, Gewinnzuschlag 10 %, Listenverkaufspreis 21.340,00 € (ohne Rabatt und Skonto). Berechnen Sie die kalkulierten Materialeinzelkosten.",
+   "ans": 2550,
+   "unit": "€",
+   "e": "Rückwärts: Selbstkosten = 21.340 € : 1,10 = 19.400 €. Abzüglich SEV 455 € = 18.945 €; Herstellkosten = 18.945 € : 1,20 (15 % VwGK + 5 % VtGK) = 15.787,50 €. Fertigungskosten = 3.900 € + 210 % (8.190 €) + 510 € = 12.600 €. Materialkosten = 15.787,50 € − 12.600 € = 3.187,50 €. Materialeinzelkosten = 3.187,50 € : 1,25 = 2.550 €."
+  },
+  {
+   "f": 4,
+   "sub": "Personalentwicklung",
+   "t": "mc",
+   "q": "Welche Veränderung ist bei älteren Mitarbeitern unter dem Gesichtspunkt „gesundheitliche Aspekte“ zu berücksichtigen?",
+   "o": [
+    {
+     "t": "Reaktionsvermögen, Kurzzeitgedächtnis, Muskelkraft und Leistungsfähigkeit der Sinnesorgane lassen nach, die Krankheitsanfälligkeit steigt",
+     "ok": 1
+    },
+    {
+     "t": "Erfahrungswissen und Zuverlässigkeit nehmen mit dem Alter regelmäßig ab"
+    },
+    {
+     "t": "Die Bereitschaft zur Weitergabe von Wissen an Jüngere sinkt zwangsläufig"
+    },
+    {
+     "t": "Die Fehlzeiten sinken, weil ältere Mitarbeiter belastbarer sind"
+    }
+   ],
+   "e": "Zu den gesundheitlichen Aspekten zählen nachlassendes Reaktionsvermögen bei komplexen Aufgaben, geringeres Kurzzeitgedächtnis und Lernvermögen, abnehmende Muskelkraft und Sinnesleistung sowie sinkende Widerstandsfähigkeit bei wechselnder Belastung."
+  },
+  {
+   "f": 4,
+   "sub": "Personalentwicklung",
+   "t": "mc",
+   "q": "Welche Herausforderung ergibt sich beim Einsatz älterer Mitarbeiter im Zusammenhang mit dem technologischen Fortschritt?",
+   "o": [
+    {
+     "t": "Umstellungsfähigkeit und Informationsverarbeitungsgeschwindigkeit nehmen ab, Vorbehalte gegenüber Neuerungen und veraltetes Wissen können zunehmen",
+     "ok": 1
+    },
+    {
+     "t": "Ältere Mitarbeiter dürfen aus Arbeitsschutzgründen keine EDV-Systeme bedienen"
+    },
+    {
+     "t": "Weiterbildungsmaßnahmen sind für Mitarbeiter über 50 Jahre gesetzlich ausgeschlossen"
+    },
+    {
+     "t": "Der technologische Fortschritt betrifft ausschließlich jüngere Mitarbeiter"
+    }
+   ],
+   "e": "Mit zunehmendem Alter können geistige Wendigkeit und Umstellungsfähigkeit nachlassen, Vorbehalte gegenüber neuen Medien steigen und Wissen veralten, wenn Weiterbildung fehlt. Gegenmittel sind angepasste, praxisnahe Qualifizierung und altersgerechte Einführung neuer Technik."
+  },
+  {
+   "f": 4,
+   "sub": "Gruppen",
+   "t": "mc",
+   "q": "Welche positive Auswirkung hat der Einsatz älterer Mitarbeiter auf ein Team?",
+   "o": [
+    {
+     "t": "Erfahrung und bewährte Arbeitsstrategien wirken stabilisierend und werden als Wissen an jüngere Kollegen weitergegeben",
+     "ok": 1
+    },
+    {
+     "t": "Generationsunterschiede bei Normen und Werten verschwinden"
+    },
+    {
+     "t": "Jüngere Mitarbeiter müssen keine belastenden Tätigkeiten mehr übernehmen"
+    },
+    {
+     "t": "Unterschiedliche Arbeitsstile im Team gleichen sich automatisch an"
+    }
+   ],
+   "e": "Ältere Mitarbeiter bringen Erfahrung, Netzwerk und Zuverlässigkeit ein, geben Unternehmenskultur weiter und wirken als Vorbild. Herausfordernd bleiben dagegen unterschiedliche Arbeitsstile, Generationsunterschiede und die Verteilung belastender Tätigkeiten."
+  },
+  {
+   "f": 4,
+   "sub": "Führungsstile",
+   "t": "mc",
+   "q": "In welcher Situation ist der kooperative Führungsstil besonders angebracht?",
+   "o": [
+    {
+     "t": "Bei komplexen Problemstellungen, weil so verschiedene Lösungsansätze und Perspektiven zusammenkommen",
+     "ok": 1
+    },
+    {
+     "t": "Bei einem Brandalarm, weil schnelle Entscheidungen ohne Rückfragen nötig sind"
+    },
+    {
+     "t": "Bei der Durchsetzung zwingender Arbeitsschutzvorschriften, über die nicht verhandelt wird"
+    },
+    {
+     "t": "Bei stark repetitiven Tätigkeiten mit fest vorgegebenem Arbeitsablauf"
+    }
+   ],
+   "e": "Kooperatives Führen lohnt sich, wo Ideen, Kreativität und unterschiedliche Perspektiven gebraucht werden: komplexe Probleme, Innovation, Teamarbeit, Veränderungsprozesse, Konfliktklärung und bereichsübergreifende Projekte. In Not- und Gefahrensituationen ist dagegen eine klare Anweisung erforderlich."
+  },
+  {
+   "f": 4,
+   "sub": "Führungsstile",
+   "t": "mc",
+   "q": "Warum fördert kooperatives Führen die Weiterentwicklung der Mitarbeiter?",
+   "o": [
+    {
+     "t": "Weil Mitarbeiter an Entscheidungen beteiligt werden, dadurch Vertrauen und Engagement wachsen und sie Verantwortung übernehmen",
+     "ok": 1
+    },
+    {
+     "t": "Weil die Führungskraft die Entscheidung allein trifft und so Sicherheit gibt"
+    },
+    {
+     "t": "Weil dadurch Zielvereinbarungen entbehrlich werden"
+    },
+    {
+     "t": "Weil die Mitarbeiter dann ohne Rückmeldung des Vorgesetzten arbeiten"
+    }
+   ],
+   "e": "Beim kooperativen Führungsstil wirken Mitarbeiter an Entscheidungen mit. Das stärkt Vertrauen, Engagement und Eigenverantwortung, fördert die Zusammenarbeit im Team und macht Veränderungen durch transparente Kommunikation nachvollziehbar."
+  },
+  {
+   "f": 4,
+   "sub": "Führungsmethoden",
+   "t": "mc",
+   "q": "Im Betrieb häufen sich Qualitätsmängel, die auf mangelndes Qualitätsbewusstsein zurückgehen. Welche Maßnahme ist geeignet, das Qualitätsbewusstsein positiv zu beeinflussen?",
+   "o": [
+    {
+     "t": "Qualitätszirkel unter Mitarbeiterbeteiligung einführen und regelmäßige Kurzschulungen durchführen",
+     "ok": 1
+    },
+    {
+     "t": "Die Ausgangskontrolle ersatzlos streichen, um Eigenverantwortung zu erzwingen"
+    },
+    {
+     "t": "Die Vorgabezeiten kürzen, damit schneller gearbeitet wird"
+    },
+    {
+     "t": "Mängel ohne Rückmeldung an die Mitarbeiter durch die Nacharbeit beseitigen lassen"
+    }
+   ],
+   "e": "Wirksam sind Beteiligung und Information: regelmäßige Besprechungen zum Qualitätsmanagement, Kurzschulungen, Qualitätszirkel, Zielvereinbarungen, verstärkte Arbeitskontrollen und die Einführung der Selbstprüfung."
+  },
+  {
+   "f": 4,
+   "sub": "Gruppen",
+   "t": "mc",
+   "q": "Wodurch unterscheidet sich eine informelle von einer formellen Gruppe im Betrieb?",
+   "o": [
+    {
+     "t": "Sie entsteht spontan und freiwillig aus gleichen Interessen und verfolgt eigene Ziele und Normen",
+     "ok": 1
+    },
+    {
+     "t": "Sie wird von der Betriebsleitung geplant und mit Verhaltensnormen ausgestattet"
+    },
+    {
+     "t": "Sie besteht nur für die Dauer eines befristeten Projekts"
+    },
+    {
+     "t": "Ihre Ergebnisse und ihre Effizienz stehen im Vordergrund"
+    }
+   ],
+   "e": "Formelle Gruppen (Projekt-, Arbeits-, Montagegruppen) werden bewusst zur Erreichung betrieblicher Ziele gebildet, mit vorgegebenen Normen und Ergebnisorientierung. Informelle Gruppen finden sich freiwillig zusammen, bestehen neben oder innerhalb formeller Gruppen und entwickeln eigene Ziele und Normen."
+  },
+  {
+   "f": 4,
+   "sub": "Gruppen",
+   "t": "mc",
+   "q": "Welche negative Auswirkung können informelle Gruppen auf die Arbeitssituation haben?",
+   "o": [
+    {
+     "t": "Sie können sich von der offiziellen Zielsetzung distanzieren, einzelne Mitarbeiter isolieren und Druck ausüben",
+     "ok": 1
+    },
+    {
+     "t": "Sie verlangsamen zwangsläufig die Kommunikation im Betrieb"
+    },
+    {
+     "t": "Sie machen die Bildung formeller Arbeitsgruppen unmöglich"
+    },
+    {
+     "t": "Sie führen dazu, dass Verhaltensnormen von der Betriebsleitung vorgegeben werden"
+    }
+   ],
+   "e": "Informelle Gruppen wirken positiv durch schnelle, unbürokratische Kommunikation, Verhaltenssicherheit und Motivation. Negativ können sie von den Unternehmenszielen abweichen, Kollegen ausgrenzen und Gruppendruck erzeugen."
+  },
+  {
+   "f": 4,
+   "sub": "Mitarbeiterbeurteilung",
+   "t": "mc",
+   "q": "Welches Ziel verfolgt das Unternehmen mit einer Mitarbeiterbeurteilung?",
+   "o": [
+    {
+     "t": "Einen Soll-Ist-Vergleich zu ziehen, Leistungsdefizite zu erkennen und daraus Personalentwicklungs- und Fördermaßnahmen abzuleiten",
+     "ok": 1
+    },
+    {
+     "t": "Die Grundlage für eine verhaltensbedingte Kündigung zu schaffen"
+    },
+    {
+     "t": "Die tarifliche Eingruppierung durch eine individuelle Bewertung zu ersetzen"
+    },
+    {
+     "t": "Die Beteiligung des Betriebsrats bei personellen Maßnahmen zu vermeiden"
+    }
+   ],
+   "e": "Für das Unternehmen liefert die Beurteilung den Soll-Ist-Vergleich, macht Leistungen vergleichbar und begründet Entgelt-, Laufbahn- und Prämienentscheidungen. Für den Mitarbeiter bringt sie Feedback, Klarheit über Stärken und Schwächen sowie Entwicklungsperspektiven."
+  },
+  {
+   "f": 4,
+   "sub": "Mitarbeiterbeurteilung",
+   "t": "mc",
+   "q": "Welches Merkmal zählt bei der Mitarbeiterbeurteilung zu den verhaltensbezogenen Merkmalen (Softskills)?",
+   "o": [
+    {
+     "t": "Teamfähigkeit und Kommunikationsfähigkeit",
+     "ok": 1
+    },
+    {
+     "t": "Arbeitsquantität"
+    },
+    {
+     "t": "Arbeitsqualität"
+    },
+    {
+     "t": "Arbeitssorgfalt"
+    }
+   ],
+   "e": "Leistungsmerkmale (Hardfacts) sind Arbeitsquantität, Arbeitsqualität, Arbeitssorgfalt und Arbeitseinsatz. Verhaltensbezogene Merkmale (Softskills) sind z. B. Zusammenarbeit mit Kollegen und Vorgesetzten, Teamfähigkeit, Durchsetzungs-, Kommunikations- und Überzeugungsfähigkeit sowie das Beachten von Vorschriften."
+  },
+  {
+   "f": 4,
+   "sub": "Mitarbeiterbeurteilung",
+   "t": "mc",
+   "q": "In welcher Reihenfolge wird ein Beurteilungsgespräch sinnvoll strukturiert?",
+   "o": [
+    {
+     "t": "Eröffnung – positive Gesichtspunkte – negative Beurteilungskriterien – gemeinsame Maßnahmen – Zielvereinbarung – positiver Abschluss",
+     "ok": 1
+    },
+    {
+     "t": "Eröffnung – Kritikpunkte – Zielvereinbarung – Lob – Abschluss"
+    },
+    {
+     "t": "Zielvereinbarung – Eröffnung – Erörterung der Kritikpunkte – Abschluss"
+    },
+    {
+     "t": "Eröffnung – Zielvereinbarung – positive und negative Punkte gemeinsam – Abschluss"
+    }
+   ],
+   "e": "Nach der Eröffnung mit angenehmer Atmosphäre werden erst die positiven, dann die negativen Punkte konkret erörtert. Danach werden gemeinsam Maßnahmen erarbeitet, Zielvereinbarungen samt Folgetermin getroffen und das Gespräch positiv beendet."
+  },
+  {
+   "f": 4,
+   "sub": "Mitarbeiterbeurteilung",
+   "t": "mc",
+   "q": "Welcher Grundsatz gilt für die Erörterung von Kritikpunkten im Beurteilungsgespräch?",
+   "o": [
+    {
+     "t": "Den Sachverhalt beurteilen, nicht die Person – Bewertungen konkret belegen und den Mitarbeiter zu Wort kommen lassen",
+     "ok": 1
+    },
+    {
+     "t": "Möglichst viele Einzelkritikpunkte auflisten, um die Bewertung abzusichern"
+    },
+    {
+     "t": "Kritik nur schriftlich mitteilen, um Diskussionen zu vermeiden"
+    },
+    {
+     "t": "Kritik am Ende des Gesprächs zusammenfassen, ohne sie zu begründen"
+    }
+   ],
+   "e": "Kritik muss sachbezogen, konkret belegt und zukunftsorientiert sein. Der Mitarbeiter wird durch offene Fragen eingebunden und bewertet die Fakten mit; nur die wesentlichen Aspekte werden angesprochen."
+  },
+  {
+   "f": 4,
+   "sub": "Personalplanung",
+   "t": "mc",
+   "q": "Was versteht man in der Personalwirtschaft unter Fluktuation?",
+   "o": [
+    {
+     "t": "Die Veränderung des Personalbestands innerhalb einer Periode – im engeren Sinne das freiwillige Ausscheiden von Mitarbeitern",
+     "ok": 1
+    },
+    {
+     "t": "Die Zahl der krankheitsbedingten Fehltage im Kalenderjahr"
+    },
+    {
+     "t": "Den Anteil der Teilzeitkräfte an der Gesamtbelegschaft"
+    },
+    {
+     "t": "Die vorübergehende Versetzung von Mitarbeitern zwischen Abteilungen"
+    }
+   ],
+   "e": "Fluktuation erfasst alle Formen von Personalabgängen und -zugängen in einer Periode; im engeren betrieblichen Sinn ist das freiwillige Ausscheiden gemeint. Eine hohe Fluktuation verursacht Kosten für Wiederbesetzung, Einarbeitung und Wissensverlust."
+  },
+  {
+   "f": 4,
+   "sub": "Personalplanung",
+   "t": "mc",
+   "q": "Welcher Grund für Fluktuation ist ein betrieblicher – und nicht ein persönlicher – Grund?",
+   "o": [
+    {
+     "t": "Fehlende Aufstiegschancen und Unzufriedenheit mit dem Vorgesetzten",
+     "ok": 1
+    },
+    {
+     "t": "Umzug an einen anderen Wohnort"
+    },
+    {
+     "t": "Veränderte Familienverhältnisse"
+    },
+    {
+     "t": "Wechsel in die Selbstständigkeit"
+    }
+   ],
+   "e": "Betriebliche Gründe liegen im Einflussbereich des Unternehmens: fehlende Perspektiven, ungerechte Entlohnung, Über- oder Unterforderung, schlechtes Betriebsklima oder Arbeitsumgebung. Persönliche Gründe wie Krankheit, Umzug, Familie oder Berufswechsel kann der Betrieb kaum beeinflussen."
+  },
+  {
+   "f": 4,
+   "sub": "Konflikte",
+   "t": "mc",
+   "q": "Ein Meister lehnt einen Urlaubsantrag aus betrieblichen Gründen ab; der Mitarbeiter geht zum Seniorchef, der den Urlaub genehmigt. Wie sollte der Meister reagieren?",
+   "o": [
+    {
+     "t": "Zeitnah ein sachliches Gespräch mit dem Seniorchef führen und Zuständigkeiten, Befugnisse und künftige Verfahrenswege klar und dokumentiert festlegen",
+     "ok": 1
+    },
+    {
+     "t": "Die Entscheidung des Seniorchefs vor der Belegschaft widerrufen"
+    },
+    {
+     "t": "Den Vorgang übergehen, damit kein Konflikt entsteht"
+    },
+    {
+     "t": "Dem Mitarbeiter künftig grundsätzlich jeden Urlaubsantrag ablehnen"
+    }
+   ],
+   "e": "Ein solches Kompetenzgerangel belastet das Betriebsklima und verwirrt die Belegschaft. Die Lösung liegt in einem zeitnahen, sachlichen Gespräch und einer klaren, dokumentierten Abgrenzung von Aufgaben und Befugnissen samt Verfahrensregel für künftige Überschneidungen."
+  },
+  {
+   "f": 4,
+   "sub": "Konflikte",
+   "t": "mc",
+   "q": "Wie sollte die Führungskraft in derselben Situation gegenüber dem Mitarbeiter vorgehen, der die Entscheidung übergangen hat?",
+   "o": [
+    {
+     "t": "Ein zeitnahes klärendes Gespräch ohne Vorwürfe führen, die Gründe für das Verhalten erfragen und klare Grenzen setzen",
+     "ok": 1
+    },
+    {
+     "t": "Den Mitarbeiter unmittelbar abmahnen, ohne das Gespräch zu suchen"
+    },
+    {
+     "t": "Den Vorgang im Team öffentlich ansprechen, um ein Exempel zu statuieren"
+    },
+    {
+     "t": "Künftig alle Entscheidungen dem Seniorchef überlassen"
+    }
+   ],
+   "e": "Das Verhalten deutet auf fehlendes Vertrauen oder mangelnde Anerkennung der Führungsrolle hin. Ein sachliches, nicht vorwurfsvolles Gespräch räumt Missverständnisse aus, zeigt Offenheit für Feedback und setzt zugleich klare Grenzen für den künftigen Dienstweg."
+  },
+  {
+   "f": 4,
+   "sub": "Berufsausbildung",
+   "t": "mc",
+   "q": "Ein Auszubildender führt übertragene Aufgaben wiederholt nicht korrekt aus und der Meister greift nicht ein. Welche Folge ist für die Führungskraft zu erwarten?",
+   "o": [
+    {
+     "t": "Autoritätsverlust – die Führungskompetenz wird von Vorgesetzten und anderen Auszubildenden angezweifelt",
+     "ok": 1
+    },
+    {
+     "t": "Der Ausbildungsbetrieb verliert automatisch die Ausbildungsberechtigung"
+    },
+    {
+     "t": "Die Ausbildungszeit des Auszubildenden verlängert sich von Gesetzes wegen"
+    },
+    {
+     "t": "Die Verantwortung geht auf die Berufsschule über"
+    }
+   ],
+   "e": "Bleibt das Fehlverhalten folgenlos, fühlt sich der Auszubildende bestätigt, andere Auszubildende empfinden Ungerechtigkeit und ahmen das Verhalten nach, und die Führungskraft verliert Autorität und Handlungsfähigkeit."
+  },
+  {
+   "f": 4,
+   "sub": "Berufsausbildung",
+   "t": "mc",
+   "q": "Welche Maßnahme ist geeignet, um eine Verhaltensänderung bei einem Auszubildenden zu erreichen, der seine Aufgaben nicht korrekt ausführt?",
+   "o": [
+    {
+     "t": "Im Gespräch die Ursachen ermitteln, Ziele und Erwartungen mit Frist festlegen, Unterstützung anbieten und das Ergebnis dokumentieren",
+     "ok": 1
+    },
+    {
+     "t": "Sofort das Ausbildungsverhältnis fristlos kündigen"
+    },
+    {
+     "t": "Die Aufgaben dauerhaft auf andere Auszubildende verlagern"
+    },
+    {
+     "t": "Auf eine Rückmeldung verzichten, damit der Auszubildende selbst darauf kommt"
+    }
+   ],
+   "e": "Der Weg führt über Gespräch und Ursachenklärung (Über- oder Unterforderung, Motivation), klare Ziele mit Terminen, ausbildungsbegleitende Hilfen oder einen Paten, Erfolgserlebnisse und Dokumentation. Erst wenn das nicht wirkt, folgen Ermahnung und Abmahnung."
+  },
+  {
+   "f": 5,
+   "sub": "Naturwissenschaftliche und technische Grundlagen",
+   "t": "mc",
+   "q": "In der Reduktionszone des Hochofens läuft die Reaktion FeO + C → Fe + CO ab. Wie heißen die beteiligten Stoffe?",
+   "o": [
+    {
+     "t": "Ausgangsstoffe: Eisenoxid und Kohlenstoff – Reaktionsprodukte: Eisen und Kohlenstoffmonoxid",
+     "ok": 1
+    },
+    {
+     "t": "Ausgangsstoffe: Eisen und Kohlenstoffdioxid – Reaktionsprodukte: Eisenoxid und Kohlenstoff"
+    },
+    {
+     "t": "Ausgangsstoffe: Eisencarbid und Sauerstoff – Reaktionsprodukte: Eisen und Kohlenstoffdioxid"
+    },
+    {
+     "t": "Ausgangsstoffe: Eisenoxid und Kohlenstoffmonoxid – Reaktionsprodukte: Eisen und Kohlenstoff"
+    }
+   ],
+   "e": "FeO ist Eisenoxid, C ist Kohlenstoff; sie stehen links als Ausgangsstoffe (Edukte). Rechts stehen die Produkte Fe (Eisen) und CO (Kohlenstoffmonoxid)."
+  },
+  {
+   "f": 5,
+   "sub": "Naturwissenschaftliche und technische Grundlagen",
+   "t": "mc",
+   "q": "Was versteht man bei der Reaktion FeO + C → Fe + CO unter einer Redoxreaktion?",
+   "o": [
+    {
+     "t": "Reduktion und Oxidation laufen gleichzeitig ab: Der Kohlenstoff entzieht dem Eisenoxid den Sauerstoff und wird dabei selbst zu Kohlenstoffmonoxid oxidiert",
+     "ok": 1
+    },
+    {
+     "t": "Ein Stoff wird ausschließlich reduziert, ohne dass ein anderer Stoff verändert wird"
+    },
+    {
+     "t": "Zwei Stoffe verbinden sich, ohne dass Sauerstoff übertragen wird"
+    },
+    {
+     "t": "Ein Stoff zerfällt allein durch Wärmezufuhr in seine Bestandteile"
+    }
+   ],
+   "e": "Reduktion (Sauerstoffentzug) und Oxidation (Sauerstoffaufnahme) treten immer gemeinsam auf. Hier ist Kohlenstoff das Reduktionsmittel: Er reduziert FeO zu Fe und wird selbst zu CO oxidiert."
+  },
+  {
+   "f": 5,
+   "sub": "Naturwissenschaftliche und technische Grundlagen",
+   "t": "mc",
+   "q": "Was kennzeichnet eine endotherme Reaktion?",
+   "o": [
+    {
+     "t": "Sie läuft nur unter Energiezufuhr – z. B. Wärme – ab",
+     "ok": 1
+    },
+    {
+     "t": "Sie gibt Energie in Form von Wärme an die Umgebung ab"
+    },
+    {
+     "t": "Sie läuft ohne jede Energieänderung ab"
+    },
+    {
+     "t": "Sie läuft nur in Gegenwart eines Katalysators ab"
+    }
+   ],
+   "e": "Endotherme Reaktionen nehmen Energie aus der Umgebung auf; die Umgebung kühlt ab. Exotherme Reaktionen geben dagegen Energie ab, etwa als Wärme oder Licht."
+  },
+  {
+   "f": 5,
+   "sub": "Naturwissenschaftliche und technische Grundlagen",
+   "t": "mc",
+   "q": "Welche Maßnahme beschleunigt eine chemische Reaktion NICHT?",
+   "o": [
+    {
+     "t": "Vergrößerung der Korngröße der reagierenden Stoffe",
+     "ok": 1
+    },
+    {
+     "t": "Erhöhung der Temperatur"
+    },
+    {
+     "t": "Erhöhung des Drucks bei gasförmigen Reaktionspartnern"
+    },
+    {
+     "t": "Einsatz eines Katalysators"
+    }
+   ],
+   "e": "Kleinere Korngrößen vergrößern die Oberfläche und beschleunigen die Reaktion – größere Körner verlangsamen sie also. Beschleunigend wirken außerdem höhere Temperatur, höherer Druck, höhere Reinheit der Stoffe und Katalysatoren."
+  },
+  {
+   "f": 5,
+   "sub": "Naturwissenschaftliche und technische Grundlagen",
+   "t": "calc",
+   "q": "15 Liter Kühlwasser haben sich auf 80 °C erwärmt und sollen durch Zumischen von Leitungswasser mit 15 °C auf 40 °C abgekühlt werden. Wie viel Liter Leitungswasser sind zuzumischen? (Dichte Wasser 1,0 kg/l)",
+   "ans": 24,
+   "unit": "l",
+   "e": "Mischungsregel: m1 × (ϑ1 − ϑM) = m2 × (ϑM − ϑ2). m2 = 15 kg × (80 °C − 40 °C) : (40 °C − 15 °C) = 15 kg × 40 K : 25 K = 24 kg. Bei einer Dichte von 1,0 kg/l entspricht das 24 Litern."
+  },
+  {
+   "f": 5,
+   "sub": "Naturwissenschaftliche und technische Grundlagen",
+   "t": "calc",
+   "q": "Ein Transportfahrzeug steht auf einer um 30° geneigten Rampe. Die Reibung bleibt unberücksichtigt. Berechnen Sie die Beschleunigung, die zum Anfahren überwunden werden muss (g = 9,81 m/s²).",
+   "ans": 4.905,
+   "unit": "m/s²",
+   "e": "Die Hangabtriebskraft ist FH = FG × sin α. Wegen FH : FG = aH : g folgt aH = g × sin α = 9,81 m/s² × sin 30° = 9,81 m/s² × 0,5 = 4,905 m/s². Die Masse kürzt sich heraus – die Beschleunigung ist massenunabhängig."
+  },
+  {
+   "f": 5,
+   "sub": "Naturwissenschaftliche und technische Grundlagen",
+   "t": "calc",
+   "q": "Berechnen Sie die Normalbeschleunigung (senkrecht zur Fahrbahn) auf einer um 30° geneigten Rampe (g = 9,81 m/s²).",
+   "ans": 8.496,
+   "unit": "m/s²",
+   "e": "Die Normalkomponente ergibt sich aus aN = g × cos α = 9,81 m/s² × cos 30° = 9,81 m/s² × 0,866 = 8,496 m/s². Sie drückt das Fahrzeug auf die Fahrbahn; die Hangkomponente g × sin α zieht es hangabwärts."
+  },
+  {
+   "f": 5,
+   "sub": "Naturwissenschaftliche und technische Grundlagen",
+   "t": "calc",
+   "q": "Ein hinterradgetriebenes Fahrzeug steht auf einer 30°-Rampe. Der Schwerpunkt liegt 0,36 m über der Fahrbahn, sein Abstand zur Hinterachse beträgt 0,48 m. Berechnen Sie den Grenzwert der Beschleunigung, ab dem die Vorderräder abheben (g = 9,81 m/s²).",
+   "ans": 11.328,
+   "unit": "m/s²",
+   "e": "Momentengleichgewicht um die Hinterachse: a_maxH × h = aN × l mit aN = g × cos 30° = 8,496 m/s². a_maxH = 8,496 m/s² × 0,48 m : 0,36 m = 11,328 m/s². Erst oberhalb dieses Wertes kippt das Fahrzeug um die Hinterachse und die Vorderräder verlieren den Bodenkontakt."
+  },
+  {
+   "f": 5,
+   "sub": "Naturwissenschaftliche und technische Grundlagen",
+   "t": "calc",
+   "q": "Zum Anfahren auf einer 30°-Rampe sind 4,905 m/s² zu überwinden; die Vorderräder heben ab 11,328 m/s² ab. Welche Beschleunigungsreserve steht der Steuerung zur Verfügung?",
+   "ans": 6.423,
+   "unit": "m/s²",
+   "e": "Die nutzbare Reserve ist die Differenz zwischen Abhebegrenze und Hangabtriebsbeschleunigung: 11,328 m/s² − 4,905 m/s² = 6,423 m/s². Nur in diesem Bereich fährt das Fahrzeug an, ohne dass die Vorderräder den Bodenkontakt verlieren."
+  },
+  {
+   "f": 5,
+   "sub": "Naturwissenschaftliche und technische Grundlagen",
+   "t": "mc",
+   "q": "Dasselbe Fahrzeug fährt mit einer schwereren Ladung und veränderten Abmessungen erneut die Rampe an. Wie wirkt sich das aus?",
+   "o": [
+    {
+     "t": "Die zum Anfahren nötige Beschleunigung bleibt gleich, weil sie massenunabhängig ist; die Abhebegrenze ändert sich, wenn sich die Schwerpunktlage verschiebt",
+     "ok": 1
+    },
+    {
+     "t": "Beide Werte steigen proportional zur Gesamtmasse"
+    },
+    {
+     "t": "Beide Werte bleiben unverändert, weil nur der Neigungswinkel maßgeblich ist"
+    },
+    {
+     "t": "Die Anfahrbeschleunigung steigt, die Abhebegrenze bleibt konstant"
+    }
+   ],
+   "e": "aH = g × sin α enthält keine Masse – die Anfahrbeschleunigung ist von der Beladung unabhängig. Die Abhebegrenze folgt dagegen aus dem Verhältnis von Schwerpunkthöhe zu Achsabstand und ändert sich, sobald die Ladung den Schwerpunkt verlagert."
+  },
+  {
+   "f": 5,
+   "sub": "Naturwissenschaftliche und technische Grundlagen",
+   "t": "calc",
+   "q": "Ein Tank fasst 25 Liter Benzin und darf im Betrieb bei 20 °C höchstens zu 90 % gefüllt sein. Wie viel Liter Benzin von 8 °C dürfen eingefüllt werden? (Volumenausdehnungskoeffizient Benzin 0,0011 1/K; die Ausdehnung des Tanks bleibt unberücksichtigt)",
+   "ans": 22.2,
+   "unit": "l",
+   "e": "Zulässiges Volumen bei 20 °C: 0,9 × 25 l = 22,5 l. Temperaturdifferenz ΔT = 20 °C − 8 °C = 12 K. V = 22,5 l × (1 − 0,0011 1/K × 12 K) = 22,5 l × 0,9868 = 22,2 l. Beim Erwärmen dehnt sich diese Menge genau auf 22,5 l aus."
+  },
+  {
+   "f": 5,
+   "sub": "Naturwissenschaftliche und technische Grundlagen",
+   "t": "calc",
+   "q": "Ein Notstromaggregat verbraucht 1,6 Liter Kraftstoff je Stunde. Der Tank fasst 25 Liter und ist zu 90 % gefüllt. Wie lange kann das Aggregat den Stromausfall überbrücken? (Ergebnis in Stunden, zwei Nachkommastellen)",
+   "ans": 14.06,
+   "unit": "h",
+   "e": "Nutzbare Kraftstoffmenge = 0,9 × 25 l = 22,5 l. Laufzeit = 22,5 l : 1,6 l/h = 14,0625 h ≈ 14,06 h, also 14 Stunden, 3 Minuten und 45 Sekunden."
+  },
+  {
+   "f": 5,
+   "sub": "Naturwissenschaftliche und technische Grundlagen",
+   "t": "calc",
+   "q": "Ein mobiler Stromerzeuger gibt 4 kVA ab und verbraucht 1,6 l Benzin je Stunde (Dichte 0,8 kg/dm³, Heizwert 42.000 kJ/kg). Berechnen Sie den Wirkungsgrad in Prozent (auf ganze Prozent gerundet).",
+   "ans": 27,
+   "unit": "%",
+   "e": "Abgegebene Energie je Stunde: 4 kW × 3.600 s = 14.400 kJ. Kraftstoffmasse: 0,8 kg/dm³ × 1,6 l/h = 1,28 kg/h; zugeführte Energie: 42.000 kJ/kg × 1,28 kg = 53.760 kJ. η = 14.400 kJ : 53.760 kJ = 0,2679 ≈ 0,27, also rund 27 %."
+  },
+  {
+   "f": 5,
+   "sub": "Naturwissenschaftliche und technische Grundlagen",
+   "t": "calc",
+   "q": "Ein Elektromotor nimmt bei 230 V einen Strom von 17 A auf, der Leistungsfaktor cos φ beträgt 0,81. Berechnen Sie die aufgenommene Leistung in kW.",
+   "ans": 3.17,
+   "unit": "kW",
+   "e": "Pzu = U × I × cos φ = 230 V × 17 A × 0,81 = 3.167 W ≈ 3,17 kW. Der Leistungsfaktor gibt an, welcher Anteil der Scheinleistung als Wirkleistung genutzt wird."
+  },
+  {
+   "f": 5,
+   "sub": "Naturwissenschaftliche und technische Grundlagen",
+   "t": "calc",
+   "q": "Ein Elektromotor nimmt 3,17 kW auf und gibt laut Typenschild 2,2 kW an der Welle ab. Berechnen Sie den Wirkungsgrad in Prozent.",
+   "ans": 69.4,
+   "unit": "%",
+   "e": "η = Pab : Pzu = 2,2 kW : 3,17 kW = 0,694 = 69,4 %. Die Differenz von rund 0,97 kW geht als Verlustleistung – vor allem Wärme durch Wicklungs-, Eisen- und Reibungsverluste – verloren."
+  },
+  {
+   "f": 5,
+   "sub": "Naturwissenschaftliche und technische Grundlagen",
+   "t": "calc",
+   "q": "Ein Elektromotor gibt 2,2 kW ab und läuft mit einer Nenndrehzahl von 2.160 min⁻¹. Berechnen Sie das Drehmoment an der Motorwelle.",
+   "ans": 9.73,
+   "unit": "Nm",
+   "e": "Winkelgeschwindigkeit ω = 2 × π × n = 2 × π × 2.160 : 60 s = 226,19 1/s. Drehmoment M = Pab : ω = 2.200 W : 226,19 1/s = 9,73 Nm."
+  },
+  {
+   "f": 5,
+   "sub": "Naturwissenschaftliche und technische Grundlagen",
+   "t": "calc",
+   "q": "Ein Elektromotor nimmt 3,17 kW auf und läuft monatlich 150 Stunden. Berechnen Sie die elektrische Arbeit in kWh pro Jahr.",
+   "ans": 5706,
+   "unit": "kWh",
+   "e": "Jahreslaufzeit = 150 h/Monat × 12 Monate = 1.800 h. W = Pzu × t = 3,17 kW × 1.800 h = 5.706 kWh."
+  },
+  {
+   "f": 5,
+   "sub": "Naturwissenschaftliche und technische Grundlagen",
+   "t": "calc",
+   "q": "Eine gemischte Schaltung liegt an 450 V: R1 = 100 Ω in Reihe zur Parallelschaltung aus R3 = 300 Ω und der Reihenschaltung R2 = 200 Ω + R4 = 400 Ω. Berechnen Sie den Gesamtstrom.",
+   "ans": 1.5,
+   "unit": "A",
+   "e": "R24 = 200 Ω + 400 Ω = 600 Ω. Parallel zu R3: 1/R234 = 1/300 Ω + 1/600 Ω → R234 = 200 Ω. Rges = R1 + R234 = 100 Ω + 200 Ω = 300 Ω. I = U : Rges = 450 V : 300 Ω = 1,5 A."
+  },
+  {
+   "f": 5,
+   "sub": "Naturwissenschaftliche und technische Grundlagen",
+   "t": "calc",
+   "q": "In derselben Schaltung (U = 450 V, R1 = 100 Ω in Reihe zur Parallelschaltung aus R3 = 300 Ω und R2 + R4 = 600 Ω, Gesamtstrom 1,5 A) – welche Leistung wird in R3 umgesetzt?",
+   "ans": 300,
+   "unit": "W",
+   "e": "U1 = I × R1 = 1,5 A × 100 Ω = 150 V. An der Parallelschaltung liegen U3 = 450 V − 150 V = 300 V. I3 = 300 V : 300 Ω = 1 A. P3 = U3 × I3 = 300 V × 1 A = 300 W."
+  },
+  {
+   "f": 5,
+   "sub": "Naturwissenschaftliche und technische Grundlagen",
+   "t": "calc",
+   "q": "In derselben Schaltung fließt ein Gesamtstrom von 1,5 A, davon 1 A durch R3. Welche Leistung wird in R4 = 400 Ω umgesetzt?",
+   "ans": 100,
+   "unit": "W",
+   "e": "Der Zweig R2 + R4 führt I24 = 1,5 A − 1 A = 0,5 A. P4 = I² × R4 = (0,5 A)² × 400 Ω = 0,25 A² × 400 Ω = 100 W."
+  },
+  {
+   "f": 3,
+   "sub": "Statistik",
+   "t": "calc",
+   "q": "Aus einem Los von 1.400 montierten Fahrrädern sind 15 Stück wegen eines schwergängigen Lenkers zu beanstanden. Berechnen Sie den relativen Fehleranteil in Prozent (zwei Nachkommastellen).",
+   "ans": 1.07,
+   "unit": "%",
+   "e": "Relativer Fehleranteil p = fehlerhafte Stück : Losgröße × 100 % = 15 Stück : 1.400 Stück × 100 % = 1,07 %."
+  },
+  {
+   "f": 3,
+   "sub": "Statistik",
+   "t": "calc",
+   "q": "In einem Los von 1.400 Fahrrädern treten insgesamt 50 Fehler auf (jedes fehlerhafte Rad hat genau einen Fehler). Berechnen Sie den relativen Anteil aller Fehler in Prozent (zwei Nachkommastellen).",
+   "ans": 3.57,
+   "unit": "%",
+   "e": "p = g : N × 100 % = 50 Stück : 1.400 Stück × 100 % = 3,57 %. Rund 96,4 % der Fahrräder sind demnach fehlerfrei."
+  },
+  {
+   "f": 3,
+   "sub": "Statistik",
+   "t": "calc",
+   "q": "Der Fehleranteil eines Montageprozesses beträgt 3,57 %. Wie viele fehlerhafte Fahrräder sind in einer Stichprobe von n = 165 Stück durchschnittlich zu erwarten? (auf ganze Stück gerundet)",
+   "ans": 6,
+   "unit": "Stück",
+   "e": "x = p × n : 100 % = 3,57 % × 165 Stück : 100 % = 5,89 Stück. Gerundet sind rund 6 fehlerhafte Fahrräder je Stichprobe zu erwarten."
+  }
+ ]
+}
