@@ -187,23 +187,98 @@ class CaseStudy {
   }
 }
 
+/// Eingabefeld einer rechenbaren Formel.
+class FormulaVar {
+  final String k; // Kürzel im Ausdruck
+  final String n; // Beschriftung
+  final String u; // Einheit
+  final double? d; // Vorbelegung
+  const FormulaVar(this.k, this.n, this.u, this.d);
+  factory FormulaVar.fromJson(Map<String, dynamic> j) => FormulaVar(
+        (j['k'] ?? '').toString(),
+        (j['n'] ?? '').toString(),
+        (j['u'] ?? '').toString(),
+        j['d'] is num ? (j['d'] as num).toDouble() : null,
+      );
+}
+
 class FormulaItem {
   final String name;
   final String eq;
   final String? note;
-  const FormulaItem(this.name, this.eq, this.note);
-  factory FormulaItem.fromJson(Map<String, dynamic> j) =>
-      FormulaItem((j['n'] ?? '').toString(), (j['e'] ?? '').toString(), j['d']?.toString());
+
+  /// Rechenweg – nur gesetzt, wenn sich die Formel ausrechnen lässt.
+  final List<FormulaVar> vars;
+  final String? expr;
+  final String resultName;
+  final String resultUnit;
+  final int dec;
+
+  const FormulaItem(this.name, this.eq, this.note,
+      {this.vars = const [],
+      this.expr,
+      this.resultName = '',
+      this.resultUnit = '',
+      this.dec = 2});
+
+  bool get computable => expr != null && vars.isNotEmpty;
+
+  /// Für die Suche: alles, was der Nutzer eintippen könnte.
+  String get haystack =>
+      '$name $eq ${note ?? ''} $resultName ${vars.map((v) => v.n).join(' ')}';
+
+  factory FormulaItem.fromJson(Map<String, dynamic> j) {
+    final r = j['r'] as Map<String, dynamic>?;
+    return FormulaItem(
+      (j['n'] ?? '').toString(),
+      (j['e'] ?? '').toString(),
+      j['d']?.toString(),
+      vars: (j['v'] as List<dynamic>? ?? [])
+          .map((e) => FormulaVar.fromJson(e as Map<String, dynamic>))
+          .toList(),
+      expr: j['f']?.toString(),
+      resultName: (r?['n'] ?? '').toString(),
+      resultUnit: (r?['u'] ?? '').toString(),
+      dec: (j['dec'] as num?)?.toInt() ?? 2,
+    );
+  }
+}
+
+/// Kalkulationsschema zum Ausfüllen (Zuschlags-/Handelskalkulation).
+class CalcSchema {
+  final String id;
+  final String name;
+  final String note;
+
+  /// Zeilen bleiben als Rohdaten – der Löser in formula_calc.dart liest sie.
+  final List<Map<String, dynamic>> rows;
+  const CalcSchema(this.id, this.name, this.note, this.rows);
+
+  String get haystack =>
+      '$name $note ${rows.map((r) => r['n']).join(' ')}';
+
+  factory CalcSchema.fromJson(Map<String, dynamic> j) => CalcSchema(
+        (j['id'] ?? '').toString(),
+        (j['n'] ?? '').toString(),
+        (j['d'] ?? '').toString(),
+        (j['rows'] as List<dynamic>? ?? [])
+            .map((e) => (e as Map<String, dynamic>))
+            .toList(),
+      );
 }
 
 class FormulaGroup {
   final String group;
   final List<FormulaItem> items;
-  const FormulaGroup(this.group, this.items);
+  final List<CalcSchema> schemas;
+  const FormulaGroup(this.group, this.items, {this.schemas = const []});
   factory FormulaGroup.fromJson(Map<String, dynamic> j) => FormulaGroup(
         (j['g'] ?? '').toString(),
         (j['items'] as List<dynamic>? ?? [])
             .map((e) => FormulaItem.fromJson(e as Map<String, dynamic>))
+            .toList(),
+        schemas: (j['s'] as List<dynamic>? ?? [])
+            .map((e) => CalcSchema.fromJson(e as Map<String, dynamic>))
             .toList(),
       );
 }
