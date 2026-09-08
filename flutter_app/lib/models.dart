@@ -74,7 +74,8 @@ class Question {
   final double? ans; // Ergebnis (calc)
   final String unit; // Einheit (calc)
   final Anlage? tab; // Anlage (Tabelle) zur Aufgabe
-  final String? bild; // Anlage als Bild (data-URI, z. B. ein Diagramm)
+  final String? bild; // Bildanlage zur Aufgabe: Schlüssel in anlagen.json oder Data-URI
+  final String? bildL; // Bildanlage zur Lösung (z. B. eine Lösungsskizze)
   final String? vo; // VO-Bezug der amtlichen Lösung (z. B. "§ 5 Absatz 6 Nr. 1")
   final List<int> bewertung; // amtliche Punkteverteilung je Teilelement
   final bool amtlich; // Lösung ist amtlicher IHK-Lösungshinweis
@@ -95,6 +96,7 @@ class Question {
     this.unit = '',
     this.tab,
     this.bild,
+    this.bildL,
     this.vo,
     this.bewertung = const [],
     this.amtlich = false,
@@ -118,6 +120,7 @@ class Question {
             ? Anlage.fromJson(j['tab'] as Map<String, dynamic>)
             : null,
         bild: j['bild']?.toString(),
+        bildL: j['bildL']?.toString(),
         vo: j['vo']?.toString(),
         bewertung: (j['bewertung'] as List<dynamic>? ?? [])
             .map((e) => (e as num).toInt())
@@ -127,7 +130,7 @@ class Question {
 
   Question withCase(CaseContext ctx) => Question(
         id: id, f: f, sub: sub, type: type, q: q, o: o, e: e, a: a,
-        ans: ans, unit: unit, tab: tab, bild: bild, vo: vo,
+        ans: ans, unit: unit, tab: tab, bild: bild, bildL: bildL, vo: vo,
         bewertung: bewertung, amtlich: amtlich, caseCtx: ctx,
       );
 
@@ -280,6 +283,18 @@ class FormulaGroup {
         schemas: (j['s'] as List<dynamic>? ?? [])
             .map((e) => CalcSchema.fromJson(e as Map<String, dynamic>))
             .toList(),
+      );
+}
+
+/// Bildanlage aus assets/data/anlagen.json – einmal abgelegt, von den
+/// Teilaufgaben über den Schlüssel referenziert.
+class Anlagenbild {
+  final String uri; // Data-URI
+  final String titel; // Bildunterschrift, ggf. leer
+  const Anlagenbild(this.uri, this.titel);
+  factory Anlagenbild.fromJson(Map<String, dynamic> j) => Anlagenbild(
+        (j['u'] ?? '').toString(),
+        (j['t'] ?? '').toString(),
       );
 }
 

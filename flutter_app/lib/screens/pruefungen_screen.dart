@@ -98,6 +98,14 @@ class PruefungenScreen extends StatelessWidget {
             ? 'AMTLICHER LÖSUNGSHINWEIS (IHK):'
             : 'MUSTERLÖSUNG (zu prüfen):')
         ..writeln(s.a ?? '');
+      if (s.tab != null) {
+        b.writeln(s.tab!.asText());
+      }
+      final anlage = DataService.instance.anlage(s.bild);
+      if (anlage != null) {
+        b.writeln('[Zur Aufgabe gehört eine Abbildung: '
+            '${anlage.titel.isNotEmpty ? anlage.titel : 'Anlage zur Aufgabe'}]');
+      }
       if (s.vo != null && s.vo!.isNotEmpty) {
         b.writeln('VO-Bezug: ${s.vo}');
       }
