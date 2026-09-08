@@ -358,7 +358,6 @@ class _FormulaBookState extends State<FormulaBook> {
     final t = r['t'] as String;
     final istSumme = t == 'sum';
     final istUnbekannt = out?.unbekannt == k;
-    final eigen = (_ctl['ks|${s.id}|$k|v']?.text.trim().isNotEmpty) ?? false;
     final berechnet = out == null ? null : out.werte[k];
 
     return Container(
@@ -396,7 +395,10 @@ class _FormulaBookState extends State<FormulaBook> {
         NumField(
           controller: _c('ks|${s.id}|$k|v'),
           onChanged: () => setState(() {}),
+          // Solange das Feld leer ist, steht im Hinweis der errechnete Betrag –
+          // in Petrol, damit er sich von einer bloßen Vorbelegung abhebt.
           hint: berechnet == null ? '' : fmtNum(berechnet),
+          hintColor: kPetrolDeep,
           width: 104,
         ),
       ]),

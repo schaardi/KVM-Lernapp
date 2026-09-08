@@ -100,6 +100,10 @@ class NumField extends StatelessWidget {
   final TextEditingController controller;
   final String? suffix;
   final String? hint;
+
+  /// Farbe des Hinweistextes. Steht im Hinweis ein errechneter Wert (und nicht
+  /// nur eine Vorbelegung), macht ihn eine kräftigere Farbe lesbar.
+  final Color? hintColor;
   final double width;
   final VoidCallback onChanged;
   const NumField({
@@ -108,6 +112,7 @@ class NumField extends StatelessWidget {
     required this.onChanged,
     this.suffix,
     this.hint,
+    this.hintColor,
     this.width = 108,
   });
 
@@ -125,7 +130,8 @@ class NumField extends StatelessWidget {
         decoration: InputDecoration(
           isDense: true,
           hintText: hint ?? '0',
-          hintStyle: const TextStyle(color: kMuted, fontWeight: FontWeight.w400),
+          hintStyle: TextStyle(
+              color: hintColor ?? kMuted, fontWeight: FontWeight.w400),
           suffixText: suffix,
           suffixStyle: const TextStyle(fontSize: 12, color: kMuted),
           contentPadding: const EdgeInsets.symmetric(horizontal: 8, vertical: 8),
