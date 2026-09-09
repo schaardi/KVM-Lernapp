@@ -1,6 +1,7 @@
 import 'dart:convert';
 import 'package:shared_preferences/shared_preferences.dart';
 import '../models.dart';
+import 'data_service.dart';
 
 /// Speichert die selbst formulierten Antworten zu offenen Aufgaben, damit sie
 /// beim Blättern und nach einem Neustart erhalten bleiben.
@@ -109,6 +110,13 @@ class AnswerStore {
       b
         ..writeln()
         ..writeln(q.tab!.asText());
+    }
+    // Die Abbildung selbst lässt sich nicht als Text mitgeben – aber der
+    // Hinweis darauf verhindert, dass die KI sie stillschweigend übergeht.
+    final anlage = DataService.instance.anlage(q.bild);
+    if (anlage != null) {
+      b.writeln('[Zur Aufgabe gehört eine Abbildung: '
+          '${anlage.titel.isNotEmpty ? anlage.titel : 'Anlage zur Aufgabe'}]');
     }
     b
       ..writeln()
