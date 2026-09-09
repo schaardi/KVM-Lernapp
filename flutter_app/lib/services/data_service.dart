@@ -12,6 +12,9 @@ class DataService {
   List<Question> questions = [];
   List<CaseStudy> cases = [];
   List<FormulaGroup> formulas = [];
+
+  /// Bildanlagen der Prüfungen, einmal zentral abgelegt (Schlüssel -> Bild).
+  Map<String, Anlagenbild> anlagen = {};
   bool _loaded = false;
 
   Future<void> load() async {
@@ -19,6 +22,7 @@ class DataService {
     final qRaw = await rootBundle.loadString('assets/data/questions.json');
     final cRaw = await rootBundle.loadString('assets/data/cases.json');
     final fRaw = await rootBundle.loadString('assets/data/formulas.json');
+    final aRaw = await rootBundle.loadString('assets/data/anlagen.json');
     questions = (json.decode(qRaw) as List)
         .map((e) => Question.fromJson(e as Map<String, dynamic>))
         .toList();
@@ -28,7 +32,16 @@ class DataService {
     formulas = (json.decode(fRaw) as List)
         .map((e) => FormulaGroup.fromJson(e as Map<String, dynamic>))
         .toList();
+    anlagen = (json.decode(aRaw) as Map<String, dynamic>).map(
+        (k, v) => MapEntry(k, Anlagenbild.fromJson(v as Map<String, dynamic>)));
     _loaded = true;
+  }
+
+  /// Bildanlage auflösen: Schlüssel aus anlagen.json oder direkte Data-URI.
+  Anlagenbild? anlage(String? ref) {
+    if (ref == null || ref.isEmpty) return null;
+    if (ref.startsWith('data:')) return Anlagenbild(ref, '');
+    return anlagen[ref];
   }
 
   List<Question> forFach(int f) => questions.where((q) => q.f == f).toList();

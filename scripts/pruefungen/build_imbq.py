@@ -2,9 +2,11 @@
 """Baut aus den IHK-Basisqualifikations-Prüfungen (parse_imbq.py) startbare
 Prüfungsfälle und spielt sie in Web und App ein.
 
-Die vier Prüfungen bekommen IDs mit dem Präfix ``P-`` (wie die Kraftverkehr-
-Prüfungen) und erscheinen damit im Prüfungs-Picker, gruppiert nach Termin.
-Alle übrigen Fälle bleiben unangetastet.
+Gebaut werden alle Jahrgänge aus ``parse_imbq.JAHRGAENGE``. Die Prüfungen
+bekommen IDs mit dem Präfix ``P-`` (wie die Kraftverkehr-Prüfungen) und
+erscheinen damit im Prüfungs-Picker, gruppiert nach Termin. Da die ID das
+Prüfungsdatum trägt, unterscheiden sich die Jahrgänge von selbst. Alle übrigen
+Fälle bleiben unangetastet.
 
     python3 scripts/pruefungen/build_imbq.py
 """
@@ -14,6 +16,7 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.abspath(os.path.join(HERE, '..', '..'))
 sys.path.insert(0, HERE)
 import parse_imbq as P
+import anlagen_imbq as AN
 import build_amtlich as BA   # _find_array, dump_compact
 
 MON = {'januar':1,'februar':2,'märz':3,'april':4,'mai':5,'juni':6,'juli':7,
@@ -47,6 +50,7 @@ def baue(exams):
                         'a': sol['loesung'].strip(), 'amtlich': True}
                 if vo:
                     step['vo'] = vo
+                AN.anwenden(step, ex['kuerzel'], ex['jahrgang'], nr, t['label'])
                 steps.append(step)
         ctx = ex['kontext'].strip()
         if not ctx:
@@ -64,9 +68,14 @@ def baue(exams):
     return cases
 
 def main():
-    exams = P.parse_alle()
+    exams = []
+    for jahrgang in sorted(P.JAHRGAENGE):
+        exams += P.parse_alle(jahrgang=jahrgang)
     fehler = [f'{e["kuerzel"]}: {P.pruefe(e)}' for e in exams if P.pruefe(e)]
     assert not fehler, fehler
+    import os as _os
+    AN.pruefe({_os.path.splitext(f)[0]
+               for f in _os.listdir(_os.path.join(HERE, 'anlagen'))})
     neu = baue(exams)
     neu_ids = {c['id'] for c in neu}
     for c in neu:
@@ -91,7 +100,11 @@ def main():
     open(wp, 'w', encoding='utf-8').write(
         html[:i0] + BA.dump_compact(webrest + neu) + html[i1:])
 
-    print('  BQ-Prüfungen gebaut: %d' % len(neu))
+    mb = sum(1 for c in neu for s in c['steps'] if s.get('bild'))
+    ml = sum(1 for c in neu for s in c['steps'] if s.get('bildL'))
+    mt = sum(1 for c in neu for s in c['steps'] if s.get('tab'))
+    print('  BQ-Prüfungen gebaut: %d  ·  Anlagen: %d Bilder zur Aufgabe, '
+          '%d zur Lösung, %d Tabellen' % (len(neu), mb, ml, mt))
     for c in neu:
         print('    %-16s %2d Schritte  %-12s Fach %d  %s'
               % (c['id'], len(c['steps']), c['termin'], c['f'], c['sub'][14:44]))

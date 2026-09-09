@@ -1,0 +1,659 @@
+=== Seite 1 ===
+                                                         Einsatz nur im Rahmen des Korrekturprozesses gestattet. Weitergabe an unbefugte Dritte untersagt.
+
+
+
+                                                            Prüfungsteilnehmer-Nummer:
+
+
+
+
+                                                           Bundeseinheitliche Fortbildungsprüfung der Industrie- und Handelskammern
+
+                                                           Geprüfter Industriemeister/Geprüfte Industriemeisterin,
+                                                           fachrichtungsübergreifende Basisqualifikationen/
+                                                           grundlegende Qualifikationen
+                                                           Anwendung von Methoden der Information, Kommunikation und Planung
+
+                                                            Datum:                                     6. November 2024
+
+                                                            Bearbeitungszeit:                          90 Minuten
+Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+
+
+
+
+                                                                                                                                                                                                                      Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+                                                            Anzahl Aufgaben:                           6
+
+                                                            Seiten:                                    5
+
+
+                                                           Bevor Sie mit der Prüfung beginnen, prüfen Sie bitte die Prüfungsunterlagen. Wenn
+                                                           die Prüfungsunterlagen nicht vollständig sind, informieren Sie bitte die Aufsicht.
+
+                                                           Bitte lesen Sie die nachfolgenden Bearbeitungshinweise gut durch:
+                                                           ◼   Alle erlaubten Hilfsmittel wurden Ihnen mit der Einladung mitgeteilt.
+                                                           ◼   Sie erhalten einen Aufgabenteil sowie ein Heft für Ihre Lösungen.
+                                                           ◼   Sie können maximal 100 Punkte erreichen.
+                                                           ◼   Verwenden Sie je Aufgabe bitte eine neue Lösungsseite.
+                                                           ◼   Wenn Sie die Lösung einer Aufgabe auf eine Anlage schreiben sollen, wird Ihnen dies in
+                                                               der Aufgabe mitgeteilt.
+                                                           ◼   Stellen Sie Ihre Lösungs- und Rechenvorgänge nachvollziehbar im Lösungsteil dar.
+                                                               Reicht der Platz nicht aus, verwenden Sie bitte das Konzeptpapier. Weisen Sie auf die
+                                                               Fortsetzung hin und kennzeichnen Sie diese.
+                                                           ◼   Eine nicht lesbare Prüfungsarbeit wird mit der Note „ungenügend“ (null Punkte)
+                                                               bewertet. Die Konsequenzen entnehmen Sie bitte der Prüfungsordnung.
+                                                           ◼   Es gibt Aufgaben, die eine exakte Anzahl an Antworten vorgeben. Es werden nur die
+                                                               ersten Antworten gewertet. Was über die exakte Anzahl hinausgeht, wird gestrichen.
+                                                           ◼   Geben Sie alle Ihnen zur Verfügung gestellten Unterlagen am Ende der Prüfung ab.
+                                                           ◼   Aufgrund der besseren Lesbarkeit bevorzugen wir in diesen Texten die männliche Form.
+                                                               Mit diesem vereinfachten Ausdruck sind selbstverständlich alle Geschlechter gemeint.
+
+
+
+
+                                                                                   © DIHK – Gesellschaft für berufliche Bildung – Organisation zur Förderung der IHK-Weiterbildung gGmbH – Bonn
+                                                                      Die Vervielfältigung, Verbreitung oder öffentliche Wiedergabe der Publikation ist nicht gestattet (§§ 53, 54 UrhG) und strafbar (§ 106 UrhG).
+                                                                                                                  Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+                                                                                                                                     P 050-03-1124
+=== Seite 2 ===
+                                                         Einsatz nur im Rahmen des Korrekturprozesses gestattet. Weitergabe an unbefugte Dritte untersagt.
+
+                                                           GEPRÜFTE/-R INDUSTRIEMEISTER/-IN,
+                                                           FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+                                                           GRUNDLEGENDE QUALIFIKATIONEN
+                                                           Anwendung von Methoden der Information, Kommunikation und Planung
+
+
+
+                                                           Aufgabe 1
+                                                           In Ihrem Unternehmen werden im Lager permanent Daten erfasst. Die Daten werden in
+                                                           einer Datenbank gespeichert und im ERP-System als Datengrundlage verwendet.
+
+                                                            a Mögliche Punktzahl: 6
+                                                           Erläutern Sie im Zusammenhang mit dieser Datenerfassung die Begriffe Stammdaten
+                                                           und Bewegungsdaten.
+
+                                                            b Mögliche Punktzahl: 4
+Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+
+
+
+
+                                                                                                                                                             Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+                                                           Beschreiben Sie je einen Anwendungsfall für die Verwendung von
+
+                                                           ■   Stammdaten
+
+                                                           ■   Bewegungsdaten
+
+                                                           in einem Lager.
+
+                                                            c Mögliche Punktzahl: 4
+                                                           Nennen Sie neben der Datenbankanwendung im Lager zwei weitere Anwendungsfälle
+                                                           von Datenbanken.
+
+                                                            d Mögliche Punktzahl: 6
+                                                           Nur befugte Mitarbeiter dürfen je nach Aufgabengebiet auf Daten zugreifen.
+
+                                                           Nennen Sie drei Maßnahmen zum Erfüllen dieser Anforderung.
+
+
+                                                           Aufgabe 2
+                                                           Bei der Übernahme einer Schicht werden die Aufträge und Betriebsmittel übergeben.
+                                                           Der Vorgang wird wie folgt beschrieben:
+
+                                                           Zuerst werden die anstehenden Aufträge übernommen. Dann werden die Informationen
+                                                           über die Betriebsmittel entgegengenommen. Wenn alle Betriebsmittel in Ordnung sind,
+                                                           kann mit der Auftragsbearbeitung begonnen werden. Wenn nicht alle Betriebsmittel in
+                                                           Ordnung sind, wird der Umfang der Störungen geprüft.
+
+
+
+
+                                                                                                            Seite 2
+                                                                                                         P 050-03-1124
+=== Seite 3 ===
+                                                         Einsatz nur im Rahmen des Korrekturprozesses gestattet. Weitergabe an unbefugte Dritte untersagt.
+
+                                                           GEPRÜFTE/-R INDUSTRIEMEISTER/-IN,
+                                                           FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+                                                           GRUNDLEGENDE QUALIFIKATIONEN
+                                                           Anwendung von Methoden der Information, Kommunikation und Planung
+
+
+
+                                                           Wenn die Störungen mit eigenen Mitteln zu beheben sind, werden sie sofort selbst behoben.
+                                                           Dann wird mit der Auftragsbearbeitung begonnen. Wenn die Störungen nicht mit eigenen
+                                                           Mitteln zu beheben sind, werden die Störungen durch die Instandhaltung behoben.
+                                                           Dann wird mit der Auftragsbearbeitung begonnen.
+
+                                                            a Mögliche Punktzahl: 10
+                                                           Erstellen Sie zu dem beschriebenen Vorgang ein Flussdiagramm.
+
+                                                            b Mögliche Punktzahl: 4
+Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+
+
+
+
+                                                                                                                                                             Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+                                                           Nennen Sie vier weitere Anwendungsgebiete von Flussdiagrammen.
+
+                                                            c Mögliche Punktzahl: 6
+                                                           Beschreiben Sie drei Vorteile von Flussdiagrammen.
+
+
+                                                           Aufgabe 3
+                                                           Zu Ihren Aufgaben als Führungskraft gehören Präsentationen zu wichtigen betrieblichen
+                                                           Themen. Durch die unerwünschte Nutzung von Mobilgeräten der Teilnehmer kann es dabei
+                                                           zu Störungen und Ablenkungen kommen. Ein generelles Verbot von Mobilgeräten ist nicht
+                                                           möglich, weil sie aus betrieblichen Gründen genutzt werden müssen.
+
+                                                            a Mögliche Punktzahl: 4
+                                                           Beschreiben Sie zwei Methoden oder Maßnahmen, mit denen Sie Störungen durch die
+                                                           Anwendung von Mobilgeräten vermeiden können.
+
+                                                            b Mögliche Punktzahl: 6
+                                                           Beschreiben Sie drei Methoden oder Maßnahmen, mit denen Sie die Aufmerksamkeit
+                                                           der Teilnehmer erhöhen können.
+
+
+
+
+                                                                                                            Seite 3
+                                                                                                         P 050-03-1124
+=== Seite 4 ===
+                                                         Einsatz nur im Rahmen des Korrekturprozesses gestattet. Weitergabe an unbefugte Dritte untersagt.
+
+                                                           GEPRÜFTE/-R INDUSTRIEMEISTER/-IN,
+                                                           FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+                                                           GRUNDLEGENDE QUALIFIKATIONEN
+                                                           Anwendung von Methoden der Information, Kommunikation und Planung
+
+
+
+                                                           Aufgabe 4
+                                                           Für Ihren Meisterbereich werden die Ausgaben für das kommende Jahr geplant.
+                                                           Sie möchten Ihren Mitarbeitern erklären, um wie viel Prozent sich die Kosten geändert
+                                                           haben.
+
+                                                                                                                      Kosten in Euro
+                                                            Kostenarten
+                                                                                                    laufendes Jahr                kommendes Jahr
+
+                                                            Personalgesamtkosten                       1.200.000                       1.440.000
+Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+
+
+
+
+                                                                                                                                                             Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+                                                            Kosten der Betriebsmittel                  8.400.000                       7.140.000
+
+                                                            Reisekosten                                  100.000                         80.000
+
+                                                            Energiekosten                                500.000                        700.000
+
+                                                            a Mögliche Punktzahl: 4
+                                                           Berechnen Sie nachvollziehbar die prozentualen Steigerungen oder Reduzierungen
+                                                           der vier Kostenarten für das kommende Jahr bezogen auf die Kosten im laufenden
+                                                           Jahr.
+
+                                                             Wichtig: Wenn Sie mehrere gleichartige Werte berechnen, muss die Formel nur
+                                                                      einmal dargestellt werden. Die restlichen Werte können tabelliert werden.
+
+                                                            b Mögliche Punktzahl: 7
+                                                           Stellen Sie die die prozentualen Veränderungen der vier Kostenarten in einem
+                                                           Diagramm dar.
+
+                                                            c Mögliche Punktzahl: 4
+                                                           Nennen Sie vier Diagrammarten zur Darstellung von Kostenanteilen.
+
+
+
+
+                                                                                                            Seite 4
+                                                                                                         P 050-03-1124
+=== Seite 5 ===
+                                                         Einsatz nur im Rahmen des Korrekturprozesses gestattet. Weitergabe an unbefugte Dritte untersagt.
+
+                                                           GEPRÜFTE/-R INDUSTRIEMEISTER/-IN,
+                                                           FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+                                                           GRUNDLEGENDE QUALIFIKATIONEN
+                                                           Anwendung von Methoden der Information, Kommunikation und Planung
+
+
+
+                                                           Aufgabe 5
+                                                           Sie leiten das Projekt zur Beschaffung einer neuen Bearbeitungsmaschine. Die Planung,
+                                                           Realisierung und Dokumentation des Projektes soll mit einer Projektmanagementsoftware
+                                                           unterstützt werden.
+
+                                                            a Mögliche Punktzahl: 8
+                                                           Beschreiben Sie vier Aufgaben des Projektmanagements, die mit Funktionen der
+                                                           Software unterstützt werden können.
+Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+
+
+
+
+                                                                                                                                                             Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+                                                            b Mögliche Punktzahl: 12
+                                                           Während der Realisierung eines Projekts treten oft unvorhersehbare Probleme auf, die
+                                                           zu Planänderungen führen.
+
+                                                           Erläutern Sie drei Probleme und geben Sie jeweils eine vorbeugende Gegen-
+                                                           maßnahme an.
+
+
+                                                           Aufgabe 6
+                                                           Mögliche Punktzahl: 15
+                                                           Als Führungskraft führen Sie zu Jahresbeginn eine umfassende Sicherheitsunterweisung
+                                                           durch. Alle Beschäftigten Ihres Bereichs sollen den vermittelten Inhalt festigen und
+                                                           während des gesamten Jahres berücksichtigen.
+
+                                                           Erläutern Sie an fünf Praxisbeispielen den Einsatz von fünf unterschiedlichen
+                                                           Informations- und Kommunikationsmitteln zur Festigung der Unterweisungsinhalte.
+
+
+
+
+                                                                                                            Seite 5
+                                                                                                         P 050-03-1124
+=== Seite 6 ===
+                                                         Einsatz nur im Rahmen des Korrekturprozesses gestattet. Weitergabe an unbefugte Dritte untersagt.
+
+
+
+
+                                                           Bundeseinheitliche Fortbildungsprüfung der Industrie- und Handelskammern
+
+                                                           Geprüfter Industriemeister/Geprüfte Industriemeisterin,
+                                                           fachrichtungsübergreifende Basisqualifikationen/
+                                                           grundlegende Qualifikationen
+                                                           Anwendung von Methoden der Information, Kommunikation und Planung
+
+
+                                                           Lösungshinweise
+Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+
+
+
+
+                                                                                                                                                                                                                           Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+                                                            Datum:                                          6. November 2024
+
+                                                            Bearbeitungszeit:                               90 Minuten
+
+                                                            Anzahl Aufgaben:                                6
+
+
+                                                           Hinweise für den Korrektor:
+                                                           ■    Die folgenden Lösungen sind lediglich Lösungshinweise.
+                                                           ■    Sie sollen nur den Rahmen der zu erwartenden Prüfungsleistung abstecken.
+                                                           ■    Der Korrektor ist durch die hier aufgeführten Lösungshinweise in seinem
+                                                                Bewertungsspielraum nicht eingeengt.
+                                                           ■    Bei Aufgaben, die eine Aufzählung von n-Fakten zur Lösung erfordern, werden nur die
+                                                                ersten n-Fakten gewertet. Alle darüber hinausgehenden Aufzählungen werden
+                                                                gestrichen.
+                                                           ■    Bei Berechnungen sollen Folgefehler berücksichtigt werden und somit nicht zum
+                                                                Punktabzug führen.
+                                                           ■    Der leichteren Lesbarkeit wegen geben wir in den Aufgaben/Texten der männlichen
+                                                                Form den Vorzug. Mit diesem einfacheren sprachlichen Ausdruck sind selbstverständlich
+                                                                immer alle Geschlechter gemeint.
+
+
+
+                                                           Die Aufgaben mit Lösungsvorschlägen können von den Industrie- und Handelskammern oder Dritten nach einer Frist von sechs Monaten
+                                                           direkt bestellt werden bei:
+
+                                                           wbv Media GmbH & Co. KG, Service-Center DIHK,
+
+                                                           Postfach 10 06 33, 33506 Bielefeld
+
+                                                           Tel.: 0521/91101-16, Fax: 0521/91101-19, E-Mail: service@wbv.de
+
+
+
+
+                                                                                        © DIHK – Gesellschaft für berufliche Bildung – Organisation zur Förderung der IHK-Weiterbildung gGmbH – Bonn
+                                                                           Die Vervielfältigung, Verbreitung oder öffentliche Wiedergabe der Publikation ist nicht gestattet (§§ 53, 54 UrhG) und strafbar (§ 106 UrhG).
+                                                                                                                       Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+                                                                                                                                          L 050-03-1124
+=== Seite 7 ===
+                                                         Einsatz nur im Rahmen des Korrekturprozesses gestattet. Weitergabe an unbefugte Dritte untersagt.
+
+                                                           GEPRÜFTE/-R INDUSTRIEMEISTER/-IN,
+                                                           FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+                                                           GRUNDLEGENDE QUALIFIKATIONEN
+                                                           Anwendung von Methoden der Information, Kommunikation und Planung
+
+
+
+                                                           Lösungshinweise Aufgabe 1
+                                                           [VO: § 4 Absatz 4 Nr. 1]
+
+                                                            a Mögliche Punktzahl: 6
+                                                           ■   Stammdaten
+                                                               enthalten grundsätzliche und dauerhaft gespeicherte Informationen über Beschäftigte,
+                                                               Betriebsmittel, Material usw. Sie werden nach ihrer Erfassung über einen längeren
+                                                               Zeitraum eingesetzt und relativ selten geändert.
+                                                           ■   Bewegungsdaten
+Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+
+
+
+
+                                                                                                                                                             Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+                                                               sind über längere Zeiträume immer wieder neu erfasste Daten mit operativen
+                                                               Informationen. Meist beziehen sich viele nacheinander erfasste Bewegungsdaten
+                                                               auf dieselben Stammdaten. Bewegungsdaten werden nach ihrer Erfassung über
+                                                               einen vorgegebenen Zeitraum für Auswertungen vorgehalten.
+
+                                                            b Mögliche Punktzahl: 4
+                                                           Beschrieben werden sollen Anwendungsfälle mit:
+                                                           ■   Stammdaten
+                                                               ■   Regalstammdaten – z. B. Regalposition, Abmessungen, zulässige Masse
+                                                               ■   Artikelstammdaten – z. B. Artikelnummer, Artikelpreis
+                                                               ■   Personalstammdaten – z. B. Personal-ID, Name, Berechtigungen
+                                                               ■   Betriebsmittel – z. B. Betriebsmittel-ID, Funktion, Leistung
+                                                           ■   Bewegungsdaten
+                                                               ■   Einlagerungen – z. B. Datum, Artikel, Menge, Lieferant
+                                                               ■   Entnahmen – z. B. Datum, Artikel, Menge, Kunde
+                                                               ■   Umgebungsbedingungen – z. B. Zeitpunkt, Temperatur, Luftfeuchte
+                                                               ■   Einsatz von Betriebsmitteln – z. B. Zeitpunkt, Dauer, Kostenstelle
+
+                                                            c Mögliche Punktzahl: 4
+                                                           Beschrieben werden können z. B. Anwendungen von
+                                                           ■   Lieferantendatenbanken
+                                                           ■   Kundendatenbanken
+                                                           ■   Personaldatenbanken
+                                                           ■   Anlagendatenbanken
+                                                           ■   Wissensdatenbanken usw.
+
+
+
+
+                                                                                                            Seite 2
+                                                                                                         L 050-03-1124
+=== Seite 8 ===
+                                                         Einsatz nur im Rahmen des Korrekturprozesses gestattet. Weitergabe an unbefugte Dritte untersagt.
+
+                                                           GEPRÜFTE/-R INDUSTRIEMEISTER/-IN,
+                                                           FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+                                                           GRUNDLEGENDE QUALIFIKATIONEN
+                                                           Anwendung von Methoden der Information, Kommunikation und Planung
+
+                                                            d Mögliche Punktzahl: 6
+                                                           Es können organisatorische oder technische Maßnahmen beschrieben werden, wie
+                                                           ■   systematische Autorisierung
+                                                           ■   Einteilung der Nutzer nach Gruppen und Rollen
+                                                           ■   Qualifizierung/Schulung
+                                                           ■   Informationssicherheitsmanagementsystem (ISMS)
+                                                           ■   Firewalls zur Netzwerksicherheit
+                                                           ■   Anti-Virus-Software
+                                                           ■   Updates der System- und Anwendungssoftware
+Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+
+
+
+
+                                                                                                                                                             Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+                                                           ■   Zutrittskontrolle, Alarmanlage, Videoüberwachung usw.
+
+
+
+
+                                                                                                            Seite 3
+                                                                                                         L 050-03-1124
+=== Seite 9 ===
+                                                         Einsatz nur im Rahmen des Korrekturprozesses gestattet. Weitergabe an unbefugte Dritte untersagt.
+
+                                                           GEPRÜFTE/-R INDUSTRIEMEISTER/-IN,
+                                                           FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+                                                           GRUNDLEGENDE QUALIFIKATIONEN
+                                                           Anwendung von Methoden der Information, Kommunikation und Planung
+
+
+
+                                                           Lösungshinweise Aufgabe 2
+                                                           [VO: § 4 Absatz 4 Nr. 2]
+
+                                                            a Mögliche Punktzahl: 10
+Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+
+
+
+
+                                                                                                                                                             Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+
+
+
+
+                                                                                                            Seite 4
+                                                                                                         L 050-03-1124
+=== Seite 10 ===
+                                                         Einsatz nur im Rahmen des Korrekturprozesses gestattet. Weitergabe an unbefugte Dritte untersagt.
+
+                                                           GEPRÜFTE/-R INDUSTRIEMEISTER/-IN,
+                                                           FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+                                                           GRUNDLEGENDE QUALIFIKATIONEN
+                                                           Anwendung von Methoden der Information, Kommunikation und Planung
+
+                                                            b Mögliche Punktzahl: 4
+                                                           Anwendungsgebiete sind z. B.:
+                                                           ■   Beschreibung von Arbeitsprozessen
+                                                           ■   Beschreibung des Informationsflusses
+                                                           ■   Qualitätskontrollen
+                                                           ■   Arbeitssicherheitskontrollen
+                                                           ■   Programmierung von Abläufen
+
+                                                            c Mögliche Punktzahl: 6
+Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+
+
+
+
+                                                                                                                                                             Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+                                                           Vorteile sind z. B.:
+                                                           ■   Flussdiagramme ermöglichen eine schnelle Übersicht über Abläufe
+                                                           ■   Flussdiagramme ermöglichen den Soll-Ist-Abgleich bei der Umsetzung von Abläufen
+                                                               (Vollständigkeit, richtige Reihenfolge)
+                                                           ■   Der Einsatz von Flussdiagrammen erhöht die Transparenz von Abläufen.
+                                                           ■   Flussdiagramme dienen der Standardisierung von Prozessen
+                                                           ■   Beim Erstellen der Flussdiagramme können sich Optimierungsmöglichkeiten ergeben.
+
+
+                                                           Lösungshinweise Aufgabe 3
+                                                           [VO: § 4 Absatz 4 Nr. 3]
+
+                                                            a Mögliche Punktzahl: 4
+                                                           ■   Ich fordere die Teilnehmer vor Beginn der Präsentation auf, die mobilen Geräte lautlos
+                                                               zu stellen, damit die anderen Teilnehmer nicht gestört werden.
+                                                           ■   Ich beteilige alle Teilnehmer aktiv an der Präsentation, damit sie keine Gelegenheit
+                                                               haben, die Geräte nebenbei zu verwenden.
+                                                           ■   Ich kündige schon vor der Präsentation Pausen an und halte sie während der
+                                                               Präsentation ein, damit die Teilnehmer in dieser Zeit ihre Geräte nutzen können.
+
+                                                            b Mögliche Punktzahl: 6
+                                                           ■   Ich kündige einen kurzen schriftlichen Test an, um die Aufmerksamkeit der Teilnehmer
+                                                               voll auf die Präsentation zu konzentrieren.
+                                                           ■   Ich lasse nach wichtigen Präsentationsabschnitten einen Teilnehmer den Inhalt
+                                                               zusammenfassen.
+                                                           ■   Ich wähle einen interessanten Medienmix, um die Präsentation abwechslungsreich zu
+                                                               gestalten und damit die Aufmerksamkeit zu erhöhen.
+                                                           ■   Ich kündige wichtige Kernpunkte zu Beginn an, erläutere sie im Verlauf der Präsentation
+                                                               und wiederhole sie am Ende.
+
+
+
+                                                                                                            Seite 5
+                                                                                                         L 050-03-1124
+=== Seite 11 ===
+                                                         Einsatz nur im Rahmen des Korrekturprozesses gestattet. Weitergabe an unbefugte Dritte untersagt.
+
+                                                           GEPRÜFTE/-R INDUSTRIEMEISTER/-IN,
+                                                           FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+                                                           GRUNDLEGENDE QUALIFIKATIONEN
+                                                           Anwendung von Methoden der Information, Kommunikation und Planung
+
+
+
+                                                           Lösungshinweise Aufgabe 4
+                                                           [VO: § 4 Absatz 4 Nr. 4]
+
+                                                            a Mögliche Punktzahl: 4
+
+                                                                                  Kostenarten                                     Veränderungen um %
+
+                                                            Personalgesamtkosten                                                           20,0 %
+
+                                                            Kosten der Betriebsmittel                                                     -15,0 %
+Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+
+
+
+
+                                                                                                                                                                        Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+                                                            Reisekosten                                                                   -20,0 %
+
+                                                            Energiekosten                                                                  40,0 %
+
+                                                                           Kkommendes Jahr − Klaufendes Jahr
+                                                           ΔK (in %) =                                       · 100 %
+                                                                                  Klaufendes Jahr
+
+                                                            b Mögliche Punktzahl: 7
+
+                                                                                      prozentuale Veränderungen der Kosten
+                                                                                              im kommenden Jahr
+
+
+                                                                                                                                                        Energiekosten
+
+
+
+                                                             Reisekosten
+
+
+
+                                                                     Kosten der
+                                                                    Betriebsmittel
+
+
+
+                                                                                                                                      Personalgesamtkosten
+
+
+                                                             -30%          -20%         -10%          0%           10%          20%         30%       40%       50%
+
+
+
+
+                                                                                                                   Seite 6
+                                                                                                                L 050-03-1124
+=== Seite 12 ===
+                                                         Einsatz nur im Rahmen des Korrekturprozesses gestattet. Weitergabe an unbefugte Dritte untersagt.
+
+                                                           GEPRÜFTE/-R INDUSTRIEMEISTER/-IN,
+                                                           FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+                                                           GRUNDLEGENDE QUALIFIKATIONEN
+                                                           Anwendung von Methoden der Information, Kommunikation und Planung
+
+                                                            c Mögliche Punktzahl: 4
+                                                           ■   Kreisdiagramm oder Kreisringdiagramm
+                                                           ■   Halbkreisdiagramm
+                                                           ■   Streifendiagramm (absolute Anteile oder bezogen auf 100 %)
+                                                           ■   Säulendiagramm
+                                                           ■   Balkendiagramm
+
+
+                                                           Lösungshinweise Aufgabe 5
+                                                           [VO: § 4 Absatz 4 Nr. 5]
+Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+
+
+
+
+                                                                                                                                                             Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+                                                            a Mögliche Punktzahl: 8
+                                                           ■   Die Software muss die Netzplantechnik unterstützen: Sie soll u. a. Termine, kritische
+                                                               Vorgänge und die Pufferzeiten ausweisen.
+                                                           ■   Die Software soll die Zeitplanung der Vorgänge in einem Gantt-Diagramm (Balkenplan)
+                                                               bzw. Vorgangslisten darstellen.
+                                                           ■   Die Software soll die Kostenplanung der Vorgänge tabellarisch als anteilige Kosten und
+                                                               zusammengefasst als Zwischensumme und Endsumme ausgeben.
+                                                           ■   Die Ressourcen (personell, technisch, materiell) müssen mit ihren spezifischen Kosten
+                                                               verwaltet und den Vorgängen zugeordnet werden.
+                                                           ■   Ressourcenkonflikte (parallele Zuordnung von Ressourcen zu mehreren Aufgaben)
+                                                               müssen erkannt und angezeigt werden.
+                                                           ■   Während der Realisierungsphase muss ein permanenter Soll-Ist-Vergleich zwischen
+                                                               Planung und Realisierung möglich sein (Termine, Kosten).
+
+                                                            b Mögliche Punktzahl: 12
+                                                           ■   Es kann zum Ausfall von personellen Ressourcen aufgrund von Fehlzeiten kommen:
+                                                               vorbeugende Planung der Umsetzung anderer Beschäftigter oder Beschäftigung von
+                                                               Leiharbeitskräften.
+                                                           ■   Durch Fehleinschätzungen bei der Planung kann es zu Terminverzögerungen kommen:
+                                                               Planen im Vier-Augen-Prinzip (Gegenkontrolle), vorbeugendes Einplanen von zeitlichen
+                                                               Reserven.
+                                                           ■   Es kann in der Realisierungsphase zu Änderungsanforderungen kommen:
+                                                               vorbeugendes Aufstellen eines vollständigen Lastenhefts oder eines bewusst noch
+                                                               zu präzisierenden Auftrags. Wichtig ist die rechtzeitige Einbeziehung aller Interessen-
+                                                               gruppen.
+                                                           ■   Höhere Gewalt (Wetter, Lieferkettenprobleme) kann das Projekt unterbrechen:
+                                                               Es gibt vorbereitete Alternativszenarien, mit denen das Projekt nach Unterbrechungen
+                                                               weitergeführt werden kann.
+
+
+                                                                                                            Seite 7
+                                                                                                         L 050-03-1124
+=== Seite 13 ===
+                                                         Einsatz nur im Rahmen des Korrekturprozesses gestattet. Weitergabe an unbefugte Dritte untersagt.
+
+                                                           GEPRÜFTE/-R INDUSTRIEMEISTER/-IN,
+                                                           FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+                                                           GRUNDLEGENDE QUALIFIKATIONEN
+                                                           Anwendung von Methoden der Information, Kommunikation und Planung
+
+
+
+                                                           Lösungshinweise Aufgabe 6
+                                                           [VO: § 4 Absatz 4 Nr. 6]
+                                                           Mögliche Punktzahl: 15
+                                                           ■   Einzelgespräche: z. B.:
+                                                               Der Meister kann die Beschäftigten im Jahresverlauf situationsbezogen zu Arbeits-
+                                                               sicherheitsfragen ansprechen und dabei Kenntnisse aus der Unterweisung abfragen.
+                                                           ■   Gruppengespräche: z. B.:
+                                                               Gefahrensituationen oder andere aktuelle Ereignisse werden mit den Beschäftigten
+                                                               ausgewertet, dabei wird fachlich ein Bezug zum Unterweisungsthema hergestellt.
+Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+
+
+
+
+                                                                                                                                                             Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+                                                           ■   Schriftliche Testaufgaben:
+                                                               Die Beschäftigten beantworten mit einem gewissen zeitlichen Abstand zur Unter-
+                                                               weisung Fragen in einem Test. Das Ergebnis wird vom Meister bewertet und mit den
+                                                               Beschäftigten ausgewertet.
+                                                           ■   Online-Lernbausteine:
+                                                               Sie werden im Intranet hinterlegt, damit der Stoff wiederholt werden kann und ggf. ein
+                                                               Multiple-Choice-Test abgelegt wird. Die Auswertung der Tests erfolgt meist automatisch.
+                                                           ■   FAQ zur Arbeitssicherheitsanweisungen:
+                                                               Frage-Antwort-Listen werden schriftlich festgehalten und im Intranet bereitgestellt und
+                                                               während des Jahres beim Auftreten neuer Fragen ergänzt.
+                                                           ■   Video mit Arbeitssicherheitsübungen:
+                                                               gefilmte praktische Übungen oder technische Vorführungen können die theoretische
+                                                               Vermittlung ergänzen.
+                                                           ■   Feedbackbogen:
+                                                               Die Beschäftigten können die Unterweisung bewerten, damit der Meister daraus
+                                                               Rückschlüsse ziehen und seine Unterweisungen verbessern kann.
+
+
+
+
+                                                                                                            Seite 8
+                                                                                                         L 050-03-1124
