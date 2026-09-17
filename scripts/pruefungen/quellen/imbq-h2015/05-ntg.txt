@@ -1,0 +1,586 @@
+=== Seite 1 ===
+Bundeseinheitliche
+Weiterbildungsprüfung
+
+der Industrie- und Handelskammern
+
+Prüfungsteilnehmer-Nummer
+
+Geprüfte/-r Industriemeister/-in,
+fachrichtungsübergreifende
+Basisqualifikationen/
+grundlegende Qualifikationen
+
+m Basisqualifikation Berücksichtigung
+naturwissenschaftlicher und
+technischer Gesetzmäßigkeiten
+
+m Prüfungstag 6. November 2015
+m Bearbeitungszeit 90 Minuten
+
+m Anzahl der Aufgaben L.
+
+Bitte prüfen Sie vor Beginn der Prüfung die Vollständigkeit des Aufgabensatzes. Sollte
+der Aufgabensatz nicht vollständig sein, informieren Sie bitte die Aufsicht.
+
+| P 050-05-1115-2 |
+
+
+=== Seite 2 ===
+Bearbeitungshinweise:
+
+Bitte lesen Sie die nachfolgenden Bearbeitungshinweise sorgfältig durch:
+
+Die zur Prüfung zugelassenen Hilfsmittel wurden Ihnen separat mit der Einladung mitgeteilt.
+
+m Sie erhalten einen Aufgaben- und einen Lösungsteil.
+
+= Tragen Sie auf dem Deckblatt Ihre Prüfungsteilnehmer-Nummer ein.
+
+= Die maximale Gesamtpunktzahl der Lösungen beträgt 100 Punkte.
+
+u Die Lösungsgänge bzw. Rechenvorgänge sind klar und nachvollziehbar im Lösungsteil dar-
+zustellen. Sollte der Platz nicht ausreichen, benutzen Sie bitte das Konzeptpapier, verweisen
+Sie auf die Fortsetzung und kennzeichnen Sie diese. Wir weisen darauf hin, dass eine vom
+Prüfungsausschuss nicht lesbare Prüfungsarbeit mit der Note „ungenügend" (null Punkte) be-
+wertet wird mit den Rechtsfolgen, die sich aus der Prüfungsordnung ergeben.
+
+= Verwenden Sie für jede Aufgabe ein neues Lösungsblatt bzw. eine neue Lösungsseite.
+
+= Falls die Lösung auf einem beigefügten Anlageblatt erfolgen soll, wird in der Aufgabenstellung
+darauf hingewiesen.
+
+u Für Ihre Notizen benutzen Sie bitte ausschließlich das Konzeptpapier.
+
+m Das Konzeptpapier ist mit dem Aufgaben- und dem Lösungsteil abzugeben.
+
+m Bei Aufgaben, die eine Aufzählung von n-Fakten zur Lösung erfordern, werden nur die ersten
+
+n-Fakten gewertet. Alle darüber hinausgehenden Aufzählungen werden gestrichen.
+
+Wir wünschen Ihnen bei der Bearbeitung viel Erfolg.
+
+Der leichteren Lesbarkeit wegen geben wir in den Aufgaben/Texten der männlichen Form
+den Vorzug. Mit diesem einfacheren sprachlichen Ausdruck sind selbstverständlich immer
+Männer und Frauen gemeint.
+
+Die Vervielfältigung, Verbreitung oder öffentliche Wiedergabe der Publikationen [der Prü-
+fungssätze] ist nicht gestattet (88 53, 54 UrhG) und strafbar (8 106 UrhG). Im Fall der Zuwi-
+derhandlung wird Strafantrag gestellt.
+
+=== Seite 3 ===
+GEPRÜFTEI-R INDUSTRIEMEISTER/-IN,
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+
+GRUNDLEGENDE QUALIFIKATIONEN
+Berücksichtigung naturw. und techn. Gesetzmäßigkeiten
+
+Aufgabe it
+
+Nachfolgend ist eine Reaktionsgleichung dargestellt:
+540272:90,
+
+a) Geben Sie die Namen der Ausgangssioffe und das Reaktionsprodukt an. (3 Punkte)
+b) Ordnen Sie den unter a) genannten Stoffen die Begriffe „Atom“ und „Molekül" zu. (3 Punkte)
+c) Geben Sie die Bezeichnung der dargestellten Reaktion an und erläutern Sie den Begriff (4 Punkte)
+„Oxidationsmittel”.
+Lösungshinweise Aufgabe 1 (10 Punkte)
+(VO: 84 Abs. 6Nr. 1-3)
+a) = Ss Schwefel
+8,5205 Sauerstoff
+= SO, Schwefeldioxid (3 Punkte)
+a Re, Atom
+=. :O, Molekül
+= SO, Molekül (3 Punkte)
+c) Oxidation
+Oxidationsmittel sind sauerstoffreiche Verbindungen, die den Sauerstoff bei einer
+Reaktion leicht abgeben. (4 Punkte)
+Aufgabe 2
+Ein elektrisches Heizgerät ist für den Anschluss an 230 V/50 Hz vorgesehen. Die Messung
+des Widerstandes der Heizwicklung ergab einen Wert von 29,4. 0.
+a) Berechnen Sie die Heizleistung des Gerätes. (4 Punkte)
+b) Das Heizgerät wird über eine Verlängerung angeschlossen; dadurch sinkt die Span-
+nung am Heizgerät um 5 %.
+Berechnen Sie die Werte für Strom und Leistung unter diesen Bedingungen. (6 Punkte)
+c) Erläutern Sie, warum die Spannung am Heizgerät durch den Anschluss über die Ver- (2 Punkte)
+längerungsleitung kleiner wird.
+Lösungshinweise Aufgabe 2 (12 Punkte)
+(VO: 8 4 Abs. 6 Nr. 1-3)
+2
+a
+pe
+R
+(230 V}
+2940
+P=1800W
+er (4 Punkte)
+
+© DIHK - Gesellschaft für berufliche Bildung - Organisation zur Förderung der IHK-Weiterbildung mbH — Bonn
+Die Vervielfältigung, Verbreitung oder öffentliche Wiedergabe der Publikation {der Prüfungssätze und Lösungshinweise]
+ist nicht gestaltet (88 53, 54 UrhG) und strafbar ($ 106 UrhG). Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+
+| P 050-05-1115-2 | Seite 45
+
+
+=== Seite 4 ===
+' GEPRÜFTEI-R INDUSTRIEMEISTER/-IN,
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+
+GRUNDLEGENDE QUALIFIKATIONEN
+Berücksichtigung naturw. und techn. Gesetzmäßigkeiten
+
+b) Strom: Leistung:
+U = 0,95:230 V 5 (BE
+U = 218,5 V ER:
+1-4 p_ 2185v}
+R 29,40
+(2185 V P = 1624 W
+2940
+|= 7,43 A
+Bere (6 Punkte)
+
+c) Die Verlängerungsleitung hat einen Widerstand. Dadurch entsteht ein Spannungsfall,
+der die Spannung am Heizgerät verringert. (2 Punkte)
+
+Aufgabe
+
+In der Mitte einer 30 m breiten Straße ist eine Lampe an einem Stahlseil aufgehängt. Bei
+25 °C beträgt der Durchhang 0,66 m.
+
+E
+
+(de)
+
+D.
+
+oO
+
+RATE LEGE ODE LOTEIETZETELOTEETLETEET I
+30m
+
+a) Berechnen Sie die Seillänge, die bei 25 °C verlegt werden muss. (8 Punkte)
+b) Berechnen Sie die Seillänge, die sich bei einer Abkühlung-auf -25 °C einstellt. (6 Punkte)
+c) Aus Festigkeitsgründen darf der Durchhang bei -25 °C nicht kleiner als 0,35 m werden.
+
+Überprüfen Sie rechnerisch, ob diese Bedingung eingehalten wird. (4 Punkte)
+Lösungshinweise Aufgabe 3 (18 Punkte)
+(VO: 84 Abs. 6 Nr. 1-3)
+
+a) L 15m
+5° (0,86m}? + (15m)?
+E
+L=2-,/(0,66m}? + (15m? 8
+L=30,029m el
+(8 Punkte)
+Seite 46 | P 050-05-1115-2 | © DIHK - Gesellschaft für berufliche Bildung - Organisation zur Förderung der IHK-Weiterbildung mbH - Bonn
+
+Die Vervielfältigung, Verbreitung oder öffentliche Wiedergabe der Publikation [der Prüfungssälze und Lösungshinweise]
+ist nicht gestaltet (88 53, 54 UrhG) und strafbar (8 106 UrhG). Im Fall der Zuwiderhandiung wird Strafantrag gestellt.
+
+=== Seite 5 ===
+GEPRÜFTEI/-R INDUSTRIEMEISTERI-IN,
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+
+GRUNDLEGENDE QUALIFIKATIONEN
+Berücksichtigung naturw. und techn. Gesetzmäßigkeiten
+
+b)
+L=Loli-0, -48)
+L = 30,029 mt -0,000012 = -50 )
+L = 30,011 m
+Fee (6 Punkte)
+c) 15
+d= /(15,.0055m}? - 15m}? "
+d=0,406m
+Oo
+m 1
+Der Durchhang von 0,35 m wird nicht En 508
+unterschritten. (4 Punkte)
+Aufgabe H
+Der Kolben eines doppelt wirkenden hydraulischen Arbeitszylinders mit einseitiger Kolben-
+stange wird durch einen Volumenstrom von 12 Liter pro Minute aus- und eingefahren. Der
+Kolbendurchmesser beträgt 8 cm, der Kolbenstangendurchmesser beträgt 4 cm.
+% Mr
+1 fr
+/ Q Q
+a) Berechnen Sie die Ausfahrgeschwindigkeit (v,) der Kolbenstange in dm/min. (7 Punkte)
+b) Berechnen Sie die Einfahrgeschwindigkeit (v,) der Kolbenstange in cemis. (5 Punkte)
+c) Geben Sie an, in welchem Verhältnis die Ausgangsgeschwindigkeit zur Einfahrge- (3 Punkte)
+schwindigkeit steht.
+Lösungshinweise Aufgabe 4 (15 Punkte)
+(VO: 84 Abs. 6 Nr. 1-3)
+a Q = A +V . 2
+) Bar Pi d
+Er Q 4
+ee
+A; Be r: (0,8 dm)?
+12dm? , 4
+ne 292 2
+min -0,503 dm? A; = 0,503 dm
+2336-7
+min
+IEEEER (7 Punkte)
+© DIHK - :Geselischaft für berufliche Bildung — Organisalion zur Förderung der IHK-Weiterbildung mbH - = Bonn | P 050-05-1115-2 | Seite 47
+Die Vervielfältigung, Verbreitung oder öffentliche Wiedergabe der Publikation [der P\ fungssätze und Lö wi
+
+ist nicht gestattet (88 53, 54 UrhG) und strafbar ($ 106 UrhG). Im Fall der Zuwiderhandlung wird a gestellt.
+
+
+=== Seite 6 ===
+GEPRÜFTE/-R INDUSTRIEMEISTERI/-IN,
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+
+GRUNDLEGENDE QUALIFIKATIONEN
+Berücksichtigung naturw. und techn. Gesetzmäßigkeiten
+
+b) Q=A,:v, A aD? -@)
+
+Q 4
+V5 A, A, 2 x:(082 - 0,42 )dm?
+4
+12. dm?
+Ve ee Bee en S >
+? min -0,377 dm? A, = 0,377 dm
+v, =3183. IR
+min
+(5 Punkte)
+c)
+Y1_3,98cmis _
+vo. Sache
+(3 Punkte)
+
+Aufgabe 5
+
+Mithilfe eines elektrischen Werkstattkranes wird der Motor eines Autos ausgebaut. Der Kran
+hebt dabei die Masse von 125 kg innerhalb von 0,3 min auf eine Höhe von 5,5 m an.
+
+Berechnen Sie die Stromaufnahme des Drehstrommotors (400 V/50 Hz/cosp = 0,89), wenn (15 Punkte)
+die mechanischen und elektrischen Verluste zusammen 12 % betragen.
+
+Lösungshinweise Aufgabe 5 (15 Punkte)
+(VO: 84 Abs. 6 Nr. 1-3)
+
+P- Fe -s Fa=m:g
+| Fe =125kg- 9,81
+Ss
+Bo 1226,25N.5,5m Fa = 1226,25N
+18s
+P, = 375W
+(5 Punkte)
+n= Pan
+Pzu
+P
+Pu = ab
+n
+375 W
+= 2088
+P,u = 426,14W =P,, (4 Punkte)
+Seite 48 | P 050-05-1115-2 | © DIHK - Gesellschaft für berufliche Bildung — Organisation zur Förderung der IHK-Weiterbildung mbH - Bonn
+
+Die Vervielfältigung, Verbreitung oder öffentliche Wiedergabe der Publikation [der Prüfungssätze und Lösungshinweise]
+ist nicht gestattet {88 53, 54 UrhG) und strafbar {$ 106 UrhG). Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+
+=== Seite 7 ===
+GEPRÜFTEI/-R INDUSTRIEMEISTER/-IN,
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+
+GRUNDLEGENDE QUALIFIKATIONEN
+Berücksichtigung naturw. und techn. Gesetzmäßigkeiten
+
+P,, = 3 -U-I-cosgp
+P
+
+el
+3 -U-cos {0)
+426,14 W
+3 :400V -0,89
+
+I=0,69A
+sn (6 Punkte)
+
+Aufgabe 6
+
+Ein Gegenstand mit der Masse 35 t wird mit einem Wagen der Masse 12 t auf einer schiefen
+Ebene mit der Steigung 15 % nach oben gezogen.
+
+Berechnen Sie die notwendige Anzahl n der Drähte des Stahlseiles (R, = 580 N/mm’), wenn (20 Punkte)
+der Drahtdurchmesser 1,5 mm beträgt und eine Sicherheitszahl von 2,7 zu berücksichtigen
+ist (Reibung vernachlässigt).
+
+Lösungshinweise Aufgabe 6 (20 Punkte)
+(VO: 84 Abs. 6 Nr. 1-3)
+
+FR=F, Steigung 15 % > tana = 0,15 > a, = 8,5°
+F,=Fes:sina Fa=m-g
+
+F, = 461,07 kN - sin 8,5° Fa =47000kg- 9812
+S
+
+F, = 68,15KN
+F& = 461,07 kN
+(5 Punkte)
+R
+Oz,zul 7 =
+_  580N
+zz” mm227.
+N
+97zu = 21,8 ——
+mm (5 Punkte)
+© DIHK - Gesellschaft für berufliche Bildung — Organisation zur Förderung der IHK-Weiterbildung mbH — Bonn IP 050-05-1115-2 | Seite 49
+
+Die Vervielfältigung, Verbreitung oder öffentliche Wiedergabe der Publikation [der Prüfungssätze und Lösungshinweise]
+ist nicht gestattet (88 53, 54 UrhG) und strafbar (8 106 UrhG). Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+
+
+=== Seite 8 ===
+GEPRÜFTEI-R INDUSTRIEMEISTERIIN,
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+
+GRUNDLEGENDE QUALIFIKATIONEN
+Berücksichtigung naturw. und techn. Gesetzmäßigkeiten ne
+
+ _ 68150N- mm?
+ei) 2 2 2148N
+
+Sgeil = 317,3 mm?
+
+(5 Punkte)
+
+n=_Sseil s ä n-d?
+Spraht DEN
+
+317,3mm?
+VD
+17 mm
+n=179,26 Spraht = 477mm?
+n=180
+
+Aufgabe
+
+Aus einem normalverteilten Fertigungsprozess wurde eine Stichprobe entnommen. An den
+Bauteilen wurde für die Oberflächenbearbeitung die maximale Rautiefe R,_,, ermittelt
+
+n: (15 mm)?
+Spraht = ee
+
+(5 Punkte)
+
+Stichprobe
+Nummer
+
+Rmax in pm 37..40.98..80 741 386.:38.139.32 :38::35:.38
+
+1 2 3.4 5 6 7 8 9 310° 2.11: #12
+
+Ermitteln Sie aus diesen Stichprobenergebnissen:
+
+a) den arithmetischen Mittelwert X (2 Punkte)
+b) die Standardabweichung s. (2 Punkte)
+c) die Prozessstreuung x, „, bis X. bei 99,73 % aller gefertigten Teile. (3 Punkte)
+
+d) Tragen Sie aufgrund des Mittelwertes X und der Standardabweichung s die Gerade der (3 Punkte)
+Summenhäufigkeit in das Wahrscheinlichkeitsnetz (Anlage 1) ein.
+
+Lösungshinweise Aufgabe 7 (10 Punkte)
+(VO: 8 4 Abs. 6 Nr. 4)
+2) x arfsım
+
+Zen (2 Punkte)
+
+bo 3.0.2005 um
+
+(2 Punkte)
+
+Seite 50 | P 050-05-1115-2 | @ DIHK - Gesellschaft für berufliche Bildung — Organisation zur Förderung der IHK-Weiterbildung mbH — Bonn
+Die Vervielfältigung, Verbreitung oder öffentliche Wiedergabe der Publikation [der Prüfungssätze und Lösungshinweise]
+ist nicht gestattet (88 53, 54 UrhG) und strafbar ($ 106 UrhG), im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+
+=== Seite 9 ===
+GEPRÜFTEI-R INDUSTRIEMEISTER/-IN,
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+
+GRUNDLEGENDE QUALIFIKATIONEN .
+Berücksichtigung naturw. und techn. Gesetzmäßigkeiten
+
+Ka ax 3-S
+Xmax = 3:775um + 3- 0,2005 um
+Xnax = 4377 um
+X min = x = 3 :5
+Xmin = 3,775 1m -3: 0,2005 um
+X min = 3173 um
+De (3 Punkte)
+d) siehe Anlage zu Lösung 7 d) (3 Punkte)
+(
+© DIHK - Gesellschaft für berufliche Bildung - Organisation zur Förderung der IHK-Weiterbildung mbH — Bonn | P 050-05-1115-2 | Seite 51
+
+Die Vervielfältigung, Verbreitung oder öffentliche Wiedergabe der Publikation [der Prüfungssätze und Lösungshinweise]
+ist nicht gestattet (88 53, 54 UrhG) und strafbar (8 106 UrhG). Im Fall der Zuwidorhandlung wird Strafantrag gestellt.
+
+
+=== Seite 10 ===
+GEPRÜFTEI/-R INDUSTRIEMEISTER/-IN,
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+
+GRUNDLEGENDE QUALIFIKATIONEN
+Berücksichtigung naturw. und techn, Gesetzmäßigkeiten
+
+Anlage 1 zu Aufgabe 7 d)
+
+& » Summe der relativen Häufigkeiten F n% —— ö &
+0,135 2,28 15,87 xl 84,13 97,72 DET oo
+BIREET Nee Ns 888883 8, guug 38 88 855
+|
+|
+|
+|
+
+|
+|
+!
+|
+|
+|
+|
+
+| |
+| j
+| |
+t
+| |
+|
+T T
+| |
+| |
+| |
+l |
+| |
+| |
+| |
+| |
+| |
+| |
+| |
+| |
+| |
+l |
+1 j
+| |
+| j
+l |
+t
+| |
+| |
+} |
+| |
+| J
+
+|
+'
+|
+|
+|
+|
+|
+|
+|
+|
+|
+|
+|
+|
+I
+|
+|
+|
+T
+|
+|
+l
+
+vırr ler er iıv or iselgelzeigelgelreleelzelielx
+
+|
+|
+|
+|
+|
+|
+|
+|
+|
+|
+|
+|
+|
+|
+j
+|
+t
+|
+|
+r
+|
+l
+
+a
+O1
+de} de] & N
+3 88 EIHEE 3 IBSBE N aNmun 99258
+rn -— (1W-F)in% Sa
+© DIHK -- Gesellschaft für berufliche Bildung - Organisation zur Förderung der IHK-Weiterbildung mbH - Born. Die Vervielfältigung, Verbreitung oder öffentliche Wiedergabe der Publikation [der Prüfungssätze und | P 050-05-1115-2 | Seite 52
+
+Lösungshinweise] ist nicht gestattet (88 53, 54 UrhG) und strafbar ($ 106 UrhG). Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+
+=== Seite 11 ===
+uaysaß Beyugjens pam Bunjpueysepjmnz Jap jes wı (Dun 90, $) Jeqens pun (Dun #6 ‘EG 88) Jsye1saß yyaıu Isı [astemuiysßunsg
+
+pun azjessBunjnYd Jap] voreyiand Jap sqedlepaım ayaıuayo sepo Bunssauay "Bundnjeyeluay ald 'uyog - HaW Bunpjiquayey-YHI Jap Bunuzpıg ınz uonestueßlg — Bunpiig ayaıymuag In} yeyasjesed - YHIO © | 2-SLLL-S0-0S0 d | £g 91195
+n %u(Y-00) —— nuana
+BSZIIIE amwmr? RBEBERSE 3358 Ei
+
+| | | TrIs|ısw.
+| | | | | | =
+L | 1
+IT are To FTIR To T u IT zu; —ei@ ker ie SF Bey = SEX
+IN | | | | | - |
+I T T T
+| N | | | |
+tz ! ! 3
+| | |
+| Fk | | | | =
+T T T | | <r
+| | N |
+| | | | 4
+| | N | | |
+| | | | | | 2
+| | | | | | |
+| | | N | | | @
+| | | |
+| | | is | | | In
+| | l | | | m
+| | | NS | | 1
+| | | | I m
+| | | N | | n
+T | T j \_| | j 52)
+| | | | N \ S
+j I I T | 1 oJ
+| | | HRS | =
+j j j T ' I ' os
+| | > |
+| | | | | KB 3|,.
+| | | | | El LVE= SEX
+| | | | =, |
+TE | | ak 7
+os BEE TER BBT BER! Aromu SET
+. 216 er’r8 1x 18'SL AG serod
+F S -— Yu Yueypyßing- uengepu ep auuung a 2
+
+} Bunso nz L sßejuw
+
+ET En “uUU9S] pun wunjeu Bundnysısyonlag
+N N3NOLLVMISITVYND SQNF3DFIANNYD
+
+IN3NOLLVYMIAITYNOSISYI JANFAIUIUIJANSONNLHIIUHOVS
+NWEERESEWEI-HESITEN B-WEIERT-T-ED)
+
+

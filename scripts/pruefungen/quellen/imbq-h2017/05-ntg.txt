@@ -1,0 +1,448 @@
+=== Seite 1 ===
+Bundeseinheitliche Weiterbildungsprüfung
+
+der Industrie- und Handelskammern
+
+Prüfungsteilnehmer-Nummer
+
+Geprüfte/-r Industriemeister/-in,
+fachrichtungsübergreifende
+Basisqualifikationen/
+grundlegende Qualifikationen
+
+Basisqualifikation Berücksichtigung naturwissenschaftlicher und
+technischer Gesetzmäßigkeiten
+
+Prüfungstag 6. November 2017
+Bearbeitungszeit 90 Minuten
+Anzahl der Aufgaben 7
+
+Bitte prüfen Sıe vor Begınn der Prufung dıe Vollstandıgkeit des Aufgabensatzes Sollte der Aufgabensatz nıcht vollstandig sein,
+informieren Sıe bitte dıe Aufsicht
+
+Bearbeitungshinweise:
+
+Bitte lesen Sie die nachfolgenden Bearbeitungshinweise sorgfältig durch:
+
+m Die zur Prufung zugelassenen Hilfsmittel wurden Ihnen separat mit dei a Verwenden Sıe fur jede Aufgabe eın neues Losungsblalt bzw eine naue
+Einladung mitgeteelt Losungsserte
+= Sie erhalten eınen Aufgaben- und einen Losungsteil m Falls die Losung auf eınam beigefugten Anlagablatt aıfolgen soll, wird ın
+=  Furdıe Bearbeitung der Aufgaben benntigte Anlagen liegen am Ende des der Aufgabenstellung darauf hingewiesen
+Aufgabensatz zum Heraustrennen beı m Fur Ihre Notizen benutzen Sıe bitte ausschließlich las Konzeptpapıer
+u Tragen Ste auf dem Deckblatt Ihre Prufungsteilnehmer-Nummer em m Das Konzeptpapıer ıst mıt dem Aufgaben- und dem Losungsteil
+
+abzugeben
+
+m Bei Aufgaben, die eine Aufzahlung von n-Faklen zur Losung erfordern
+werden nur dıe ersten n-Fakten gewertei Alle daruber hınausgehenden
+Aufzahlungen werden gestrichen
+
+a Die maxımale Gesamtpunktzahl der Losungen betragt 160 Punkte
+
+m Die Losungsgange bzw Recherworgange sınd klar und nachvollziehbar
+ım Losungsteil darzustellen Sollte der Platz nıcht ausreichen benutzen
+Sıe bitte das Konzeptpapter, verweisen Sıe auf die Foitsetzung und
+kennzeichnen Sıe diese Wir weısen darauf hın, dass sıne vorn
+Prufungsausschuss nıcht lesbare Prufungsarbert mıt dar Note
+„ungenugend” {null Punkte) bewertet wırd mit den Rechtsfolgen die sich
+aus der Prufungsordnung ergeben
+
+Der leichteren Lesbarkeit wegen geben wır ın den Aufgaben/Texten der männlıchen Form den Vorzug Mit diesem einfacheren
+sprachlichen Ausdruck sınd selbstverstandlich immer Manner und Frauen gemeint
+
+Dis Vemnelfaltigung, Verbreitung oder offentliche Wiedergabe der Publikation [der Prufungssatze] ıst rıcht gestattet (88 53, 54 UrhG)
+und strafbar ($ 106 UrhG) Im Fall der Zuwnderhandlung wird Strafantrag gestellt
+
+P 050-05-1117-9
+
+=== Seite 2 ===
+GEPRÜFTEI-R INDUSTRIEMEISTER/-IN
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN
+GRUNDLEGENDE QUALIFIKATIONEN
+
+Naäturwissenschaftliche und technische Gesetzmäßigkeiten
+
+Aufgabe 1
+
+In Ihrem Unternehmen werden gefährliche Stoffe, wıe z. B. Sauren oder Basen eıngesstzt.
+
+a) Erklaren Sıe an eınem Beispiel, wıe eıne Base entsteht, und nennen Sıe zweı (4 Punkte)
+Merkmale von Basen
+b) Beschreiben Sıe ın diesem Zusammenhang, was unter einer chemischen Neutralisa- {4 Punkte)
+tion zu verstehen ıst
+c) Geben Sıe jeweils ein Beispiel für den technischen Einsatz von Sauren und Basen arı. (2 Punkte)
+Lösungshinweise Aufgabe 1 (10 Punkte)
+[VO: 8 4 Absatz 6 Nr. 1]
+a) Basen können durch Reaktıon von Metalloxıd mit Wasser entstehen (4 Punkte)
+Merkmale, z.B
+= Basen sınd ätzend
+"= Basen haben eınen pH-Wert großer 7
+"» In Wasser gelöst sınd Basen „seifig"
+b) Bei der Reaktion von Sauren und Basen können sıch beide Stoffarten in ihrer atzen-
+den Wirkung aufheben. Es entsteht Wasser mit dem pH-Wert 7 {neutral} und eın Salz (4 Punkte)
+c} technische Anwendung von Sauren, z.B,
+Herstellung von Lacken
+: Elektrolyt ın Batterien (Schwefelsaure)
+= Reinigung von Metallen {1 Punkt)
+technische Anwendung von Basen/Laugen, z B
+Herstellung von festen Seifen
+= Herstellung von Kalkmörtel
+= als Atzmittel {1 Punkt)
+Aufgabe 2
+Auf dem Typenschild eınes Wasserkochers stehen die Werte 230 V/1 600 W
+Wasserkocher verlieren beim Erhitzungsvorgang ca. 15 % der eingesetzten elektrischen
+Energie
+Ermitteln Sıe die benötigte Zeit ın Minuten und Sekunden, um 1,5 | Wasser mit einer Aus- (12 Punkte)
+gangstemperatur von 20°C zum Sieden zu bringen
+Seite 40 | © DIHK — Gesellschaft für berufliche Bildung — Organisation zur Förderung der IHK-Weiterbildung mbH — Bonn
+
+Die Vervielfältigung, Verbreitung oder öffentliche Wiedergabe der Pubilikatiarı [der Prüfungssätze und Lösungshinweise]
+ist nicht gestattet (58 53, 54 UrhG) und strafbar (& 108 UrhG). Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+
+=== Seite 3 ===
+GEPRÜFTEI-R INDUSTRIEMEISTER/-IN
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN
+GRUNDLEGENDE QUALIFIKATIONEN
+
+Naturwissenschaftliche und technische Gesetzmäßigkeiten
+
+Lösungshinweise Aufgabe 2 (12 Punkte)
+[VO: 8 4 Absatz 6 Nr. 2]
+N Eu Os (4 Punkte)
+
+N Pu t=c mÄäÄAT
+
+k= c:m AT
+N Pau (4 Punkte)
+kJ
+4,18 —--- 15kg-80K
+ka "9
+0,85 - 1,6 kW
+t=369 s
+t=6mmn9s (4 Punkte)
+Aufgabe 3
+
+Sıe entnehmen dem Typenschild eınes Gluhofens fur den Laboreinsatz folgende Daten:
+a Spannung’ U = 230 V-
+» maximale Heizleistung Pax = 2 760 W
+
+Die drei Heizspiralen aus Konstantandraht, die den Ofen heizen, haben dıe gleichen Wi-
+derstandswerte
+
+| Rı=R>=R;
+
+Der Ofen verfügt über zweı Heizstufen.
+Die maxımale Leistung von 2 760 W wird ın der Heizstufe Il erreicht
+
+a) Inder Heizstufe Il werden dıe Heizspiralen wıe abgebildet betrieben
+
+|
+_—ı{i,
+” il
+R,
+[4
+>
+|
+oO 2
+x R, I, I
+u
+>
+Ra
+
+’ NE
+»-
+
+Berechnen Sıe alle Stromstärken und den Eıinzel-Widerstandswert der drei Heizspira- (8 Punkte)
+ien
+
+b) Inder Heızstufe | werden die Heizspiralen ın Reihenschaltung betrieben
+
+© DIHK - Gesellschaft für berufliche Bildung — Organisation zur Förderung der IHK-Weiterbildung mbH — Bonn | Seite dt
+Die Vervielfältigung, Verbreitung oder äffentliche Wiedergabe der Publikation [der Prüfungssätze und Lösungshinweise]
+ist nicht gestattet (88 53, 54 UrhG} und strafbar ($ 106 UrhG). Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+
+=== Seite 4 ===
+GEPRÜFTEI-R INDUSTRIEMEISTER/-IN
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN
+
+GRUNDLEGENDE QUALIFIKATIONEN
+Naturwissenschaftliche und technische Gesetzmäßigkeiten
+
+= HH HD
+
+R, R, \ Rz
+U=230 V-
+Berechnen Sıe den Strom I. und die Heizleistung, dıe jetzt erbracht wird (6 Punkte)
+
+Hinweis für den Prüfungsteilnehmer: Wenn Sıe den Aufgabenteil a} nıcht gelöst
+haben, rechnen Sıe mit Rı =R =R;=300
+weiter
+
+c) Eın defekter Heizwiderstand muss ersetzt werden. Es steht eın Konstantandraht mıt
+dem Durchmesser d = 0,25 mm zur Verfugung
+
+Berechnen Sıe die erforderliche Länge des Drahtes (6 Punkte)
+Lösungshinweise Aufgabe 3 (20 Punkte)
+[VO: 8 4 Absatz 6 Nr. 2]
+
+a) ,= Fmax „2760 V A, oa
+U 230 V (2 Punkte)
+
+| RA 2R
+1.023 _ 22, m. =R + RAR, =2R,
+
+4=2 lz
+
+eh +h =2 In +lg =3 lz
+
+=— = ——=4A
+303 (2 Punkte)
+h=2h=2:4A=8A (2 Punkte)
+R, = Rz Rz u I uU 28,75 Q
+h 8A (2 Punkte)
+b) R, =3 R=3 28750=86250
+U 230V.A
+= — = 2 287 A
+RA, 8625 V
+P=U 1=230V 2,67 A= 614,1 W (6 Punkte)
+an
+3 r=f
+A
+2
+\- RLA_ 28750 (025 mm) AM 995m
+p 4:0490- mm“ (6 Punkte)
+Seite 42 | © DIHK — Gesellschaft für berufliche Bildung — Organisation zur Förderung der IHK-Weiterbildung mbH — Bonn
+
+Die Vervielfältigung, Verbreitung oder öffentliche Wiedergabe der Publikation [der Prüfungssätze und Lösungshinweise]
+ist nicht gestattet ($8 53, 54 UrhG) und strafbar (& 106 UrhG). Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+
+=== Seite 5 ===
+GEPRÜFTEI-R INDUSTRIEMEISTER/-IN
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN
+
+|
+GRUNDLEGENDE QUALIFIKATIONEN
+Naturwissenschaftliche und technische Gesetzmäßigkeiten
+
+Aufgabe 4
+
+Fur die Entwicklung (Dimensionierung) eines Lkws mit einem maximalen Gesamtgewicht
+von 40 t beträgt dıe Leistungsvorgabe 15 kWit
+
+Auf einer Teststrecke soll der Lkw eine Steigung von 15 % befahren
+Zu berücksichtigen ist eine Fahrwiderstandszahl (ı = 0,05
+
+Der Luftwiderstand ıst zu vernachlässigen
+
+a) Berechnen Sıe dıe Zugkraft, die der Lkw an der Steigung aufbringen muss (12 Punkte)
+b) Berechnen Sıe dıe maximale Geschwindigkeit, mit der der Lkw dıe Steigung befahren (6 Punkte)
+kann
+
+Hinweis für den Prüfungsteilnehmer: Wenn Sıe den Aufgabenteil a} nıcht gelöst ha-
+ben, rechnen Sıe mit 78 kN für die Zugkraft weı-
+
+ter
+Lösungshinweise Aufgabe 4 (18 Punkte)
+[VO: $ 4 Absatz 6 Nr. 3]
+a) P=Fz v NR: Steigung 15 % — tan a = 0,15 — Steigungswinkel a = 8.53°
+F.=Futfr (4 Punkte)
+
+Fu=Fs sına
+F4= 40 000 kg - 9,81 m/s? - sın 8,53°
+Fu = 58 203,61 N {4 Punkte)
+
+FR=Fn Hu
+FrR=Fes’ c05a° H
+Fr = 40 000 kg - 9,81 m/s? cos 8,53° - 0,05
+
+Fr = 19 402,97 N
+
+F,=Fu + Fr = 77 606,58 N (4 Punkte)
+b) P=15 W 40 t= 600 kWV = 600000 W = 600 000 wur
+i s (2 Punkte)
+600 000 Ban
+
+_P s m
+
+v-—-——$_-773-
+
+Fz 77606,58 N s
+v= 27,8 km/h (4 Punkte)
+
+® DIHK — Gesellschaft für berufliche Bildung — Organisation zur Förderung der IHK-Weiterbildung mbH - Bonn | Seite 43
+
+Dig Vervielfältigung, Verbreitung oder öffentliche Wiedergabe der Publikation [der Prüfungssätze und Lösungshinweise]
+ist nicht gestattet (88 53, 54 UrhG) und strafbar ($ 106 UrhG). Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+
+=== Seite 6 ===
+GEPRÜFTEI-R INDUSTRIEMEISTER/-IN
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN
+
+GRUNDLEGENDE QUALIFIKATIONEN
+Naturwissenschaftliche und technische Gesetzmäßigkeiten
+
+Aufgabe 5
+
+Eine Leuchte soll an der abgebildeten Aufhängung befestigt werden.
+
+i
+
+Atfeereriarn,
+ws
+>
+
+De Du)
+
+Die Stange hat eıne Masse von ms =A kg
+Die zulassıge Kraft ım Zugseil wurde mit Fz = 263,15 N bestimmt
+
+Die Masse des Zugseils ıst zu vernachlässigen.
+
+Berechnen Sıe dıe zulässige Masse m, der Leuchte (12 Punkte)
+
+Lösungshinweise Aufgabe 5 (12 Punkte)
+[VO: 8 4 Absatz 6 Nr. 3]
+
+Winkel des Zugseils zur Waagerechten. tana = =) = (0,5,>2 a = 26,57’
+m,
+
+{3 Punkte)
+vertikale Komponente der Zugseilkraft F,=sına -Fz
+= sin 26,57° - 263,15 N
+= 117,7 N (5 Punkte)
+F, Mo
+zulässige Masse der Leuchte. m = I =
+_ 1M7,TN Axkg
+m 2
+9,81 —
+s?
+=9,99kg= 10 kg {4 Punkte)
+Seite 44 | © DIHK — Gesellschaft für berufliche Bildung — Organisation zur Förderung der IHK-Weiterbildung mbH — Bann
+
+Die Vervielfältigung, Verbreitung oder öffentliche Wiedergabe der Publikation [der Prüfungssätze und Lösungshinweise]
+ist nicht gestattet ($$ 53, 54 UrhG) und strafbar ($ 106 UrhG). Im Fall der Zuwiderhandlung wird Strafantrag gestellt,
+
+=== Seite 7 ===
+GEPRÜFTEI-R INDUSTRIEMEISTER/-IN
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN
+
+GRUNDLEGENDE QUALIFIKATIONEN
+Naturwissenschaftliche und technische Gesetzmäßigkeiten
+
+Aufgabe 6
+
+Der Kolben eines doppelt wirkenden hydraulischen Arbeitszylinders mit einseitiger Kolben-
+stange wird durch einen Volumenstrom von 10 Liter pro Minute aus- und eingefahren.
+Der Kolbendurchmesser beträgt 6 cm, der Kolbenstangendurchmesser betragt 3 cm
+
+% Y
+
+Al ”
+
+ı) r
+Q Q
+
+a} Berechnen Sıe dıe Ausfahrgeschwindigkeit ({vı) der Kolbenstange ın cm/mın
+b) Berechnen Sıe dıe Einfahrgeschwindigkeit (v.) der Kolbenstange ın cm/mın
+
+c) Geben Sıe an, in welchem Verhältnis die Ausfahrgeschwindigkeit zur Einfahrge-
+schwindigkeit steht
+
+Lösungshinweise Aufgabe 6
+[VO: $ 4 Absatz 6 Nr. 1]
+
+a) = A v
+Q
+v= Ar
+_ _10.000 cm? „-ıf
+min - 28,26 cm? 4
+2
+v,= 353,73 cm/min As — . =
+= 3,54 m/
+vi m/mın A, =28,27 cm?
+b) Q=A: % r -(D? -d?)
+Ba a
+a \
+v2= 4, A: 6 = 3 )em?
+4
+10000 cm? nie
+
+min - 212 cm?
+
+v = 471,7 cm/mın
+v = 4,72 m/min
+
+M_ _ 3S54mimin =0,75 = 11,33
+
+c
+) Va 4,71 m/mın
+
+© DIHK - Gesellschaft für berufliche Bildung — Organisalion zur Förderung der IHK-Weiterbildung mbH — Bonn
+Die Vervielfältigung, Verbreitung oder öffentliche Wiedergabe der Publikation [der Prüfungssätze und Lösungshinweise]
+ist nicht gestattet (55 53, 54 UrhG) und strafbar ($ 106 UrhG), Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+
+(7 Punkte)
+(7 Punkte)
+(4 Punkte}
+
+(18 Punkte)
+
+(7 Punkte)
+
+(7 Punkte)
+
+{4 Punkte)
+
+| Seite 45
+
+=== Seite 8 ===
+GEPRÜFTEI-R INDUSTRIEMEISTER/-IN
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN
+
+GRUNDLEGENDE QUALIFIKATIONEN
+
+Naturwissenschaftliche und technische Gesetzmäßigkeiten
+
+Aufgabe 7
+
+In Ihrem Unternehmen werden Rohre fur Leitungen beschichtet.
+Eine Beschichtung soll ın der Dicke von 35 um # 7 um ausgeführt werden
+
+Folgende Schichtdicken wurden beı eıner Stichprobe gemessen’
+
+Dicke in um Anzahl relative Häufigkeit kumulierte relative Häufigkeit
+32 1 2% 2%
+33 4 8% 10%
+34 8 16 % 26 %
+35 12 24% 50 %
+36 11 22% 72%
+37 9 18% 90%
+38 4 8% 98 %
+39 1 2% 100 %
+
+sie haben die Aufgabe, dıe Qualität des Fertigungsprozesses zu beurteilen.
+
+a) Stellen Sıe die relative Häufigkeit der Stichprobe grafisch dar. {6 Punkte)
+b) Berechnen Sie den arithmetischen Mittelwert der Stichprobe (4 Punkte)
+Lösungshinweise Aufgabe 7 (10 Punkte)
+[VO: 8 4 Absatz 6 Nr. 4]
+a) (6 Punkte)
+m Relstive Häufigkeit der Schichtdicken
+Em au
+5
+E ar
+15%
+Dr
+a mHEhROm m: 3%
+Schichteicke ba um
+Hınweis für den Korrektor Auch andere plausible Diagramme sollen gewertet werden
+b) x= A x,
+n ' (4 Punkte)
+x (32:.1+33-4+34:8+35-12 +36: 11+37-9+38-4+39-1) um
+50
+X = 35,53 um
+Seite 46 | © DIHK — Gesellschaft für berufliche Bildung -— Organisation zur Förderung der IHK-Weiterbildung mbH -— Bonn
+
+Die Vervielfältigung, Verbreitung oder öffentliche Wiedergabe der Publikation [der Prüfungssätze und Lösungshinweise]
+ist nicht gestattet (88 53, 54 UrhG) und strafbar ($ 106 UrhG). Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+

@@ -1,0 +1,572 @@
+=== Seite 1 ===
+Bundeseinheitliche Fortbildungsprüfung der Industrie- und Handelskammern
+Geprüfter Industriemeister / Geprüfte Industriemeisterin
+Fachrichtungsübergreifende Basisqualifikationen/Grundlegende
+Qualifikationen
+Berücksichtigung naturwissenschaftlicher und technischer Gesetzmäßigkeiten
+
+
+Lösungshinweise
+Datum:                                          4. Mai 2022
+
+Bearbeitungszeit:                               90 Minuten
+
+Anzahl Aufgaben:                                7
+
+
+Hinweise für den Korrektor:
+■   Die folgenden Lösungen sind lediglich Lösungshinweise.
+■   Sie sollen nur den Rahmen der zu erwartenden Prüfungsleistung abstecken.
+■   Der Korrektor ist durch die hier aufgeführten Lösungshinweise in seinem
+    Bewertungsspielraum nicht eingeengt.
+■   Bei Aufgaben, die eine Aufzählung von n-Fakten zur Lösung erfordern, werden nur die
+    ersten n-Fakten gewertet. Alle darüber hinausgehenden Aufzählungen werden
+    gestrichen.
+■   Bei Berechnungen sollen Folgefehler berücksichtigt werden und somit nicht zum
+    Punktabzug führen.
+■   Der leichteren Lesbarkeit wegen geben wir in den Aufgaben/Texten der männlichen
+    Form den Vorzug. Mit diesem einfacheren sprachlichen Ausdruck sind selbstverständlich
+    immer alle Geschlechter gemeint.
+
+
+
+Die Aufgaben mit Lösungsvorschlägen können von den Industrie- und Handelskammern oder Dritten nach einer Frist von sechs Monaten
+direkt bestellt werden bei:
+wbv Media GmbH & Co. KG, Service-Center DIHK,
+Postfach 10 06 33, 33506 Bielefeld
+Tel.: 0521/91101-16, Fax: 0521/91101-19, E-Mail: service@wbv.de
+
+
+
+
+                            © DIHK – Gesellschaft für berufliche Bildung – Organisation zur Förderung der IHK-Weiterbildung gGmbH – Bonn
+               Die Vervielfältigung, Verbreitung oder öffentliche Wiedergabe der Publikation ist nicht gestattet (§§ 53, 54 UrhG) und strafbar (§ 106 UrhG).
+                                                           Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+                                                                             L 050-05-0522-5
+
+=== Seite 2 ===
+GEPRÜFTE/-R INDUSTRIEMEISTER/-IN,
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+GRUNDLEGENDE QUALIFIKATIONEN
+Berücksichtigung naturwissenschaftlicher und technischer Gesetzmäßigkeiten
+
+
+Aufgabe 1
+Wasser ist in der Natur und in der Technik das meistverwendete Lösungsmittel.
+
+ a Mögliche Punktzahl: 3
+Erläutern Sie den Begriff Lösungsmittel.
+
+ b Mögliche Punktzahl: 2
+Reines Wasser gibt es in der Natur nicht. Wasser ist immer mit gelösten Stoffen versetzt.
+
+Nennen Sie zwei Mineralstoffe, die im Leitungswasser enthalten sind.
+
+ c Mögliche Punktzahl: 8
+Im Zusammenhang mit Korrosionsvorgängen ist Wasser als sauerstoffhaltige Verbindung
+ein Risikofaktor für metallische Bauteile.
+
+Erläutern Sie zwei konstruktive Maßnahmen und zwei Maßnahmen bei Lagerung und
+Wartung zum Korrosionsschutz.
+
+
+Lösungshinweise Aufgabe 1
+[VO: § 4 Absatz 6 Nr. 1]
+
+ a Mögliche Punktzahl: 3
+Unter einem Lösungsmittel versteht man einen Stoff, der andere Stoffe lösen oder
+verdünnen kann, ohne dass es dabei zwischen gelöstem und lösendem Stoff zu einer
+chemischen Reaktion kommt. Lösen ist ein physikalischer Vorgang.
+
+ b Mögliche Punktzahl: 2
+Z. B.:
+Mineralstoffe:
+■ Chloride, Sulfide, Sulfate, Phosphate
+■   Natrium, Kalium, Kalzium, Magnesium
+
+ c Mögliche Punktzahl: 8
+Z. B.:
+■   Konstruktive Maßnahmen, z. B.:
+    ■    Werkstoffauswahl, Einsatz von nichtrostenden Werkstoffen wie Edelstahl oder
+         Kunststoff
+         ■ Gestaltung der Konstruktionen mit Schrägen, damit das Wasser ablaufen kann
+         ■ Vermeidung von Spalten und Absätzen, wo sich Feuchtigkeit ansammeln oder
+            reinlaufen kann.
+
+                                                   Seite 2
+                                               L 050-05-0522-5
+
+=== Seite 3 ===
+GEPRÜFTE/-R INDUSTRIEMEISTER/-IN,
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+GRUNDLEGENDE QUALIFIKATIONEN
+Berücksichtigung naturwissenschaftlicher und technischer Gesetzmäßigkeiten
+
+
+
+■   Lagerung und Wartung, z. B.:
+    ■     Einölen
+    ■     Trocken lagern
+    ■     Oberflächenbeschichtungen wie Verzinken, Lackieren, Kunststoffbeschichten
+    ■     Auswechseln der Opferanoden
+
+
+Aufgabe 2
+Mögliche Punktzahl: 14
+Für die korrekte Funktion der Bremsanlage (Abbildung 1) ist ein Druck von pK1 = 1 MPa
+aufzubringen.
+
+Berechnen Sie die hierfür benötigte Pedalkraft F (siehe Abbildung 1, Maße in mm).
+
+
+
+
+                                         Abbildung 1: Bremspedalsystem
+
+
+Lösungshinweise Aufgabe 2
+[VO: § 4 Absatz 6 Nr. 1, 3]
+Mögliche Punktzahl: 14
+
+
+F = konstant → pK 1  A1 = pK 2  A2
+                                                       2
+             A         4    dK2 1          d 
+pK 2 = pK 1  1 = p1                = pK 1   1 
+             A2        4    dK 2
+                                2
+                                               d2 
+
+                                                              Seite 3
+                                                           L 050-05-0522-5
+
+=== Seite 4 ===
+GEPRÜFTE/-R INDUSTRIEMEISTER/-IN,
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+GRUNDLEGENDE QUALIFIKATIONEN
+Berücksichtigung naturwissenschaftlicher und technischer Gesetzmäßigkeiten
+                               2
+                12 mm                                     5 N           N
+pK 2 = 1 MPa          = 0,111 MPa = 1,11 bar = 1,11  10     2
+                                                                  = 11,1
+                36 mm                                       m          cm 2
+
+
+         FK 2
+pK 2 =
+         A3
+FK 2 = pK 2  A3
+                      N 
+                           ( 0,024 m )
+                                         2
+pK 2 = 1,11  105      2
+                      m 4
+            N 
+pK 2 = 11,1       (2,4 cm )2
+           cm 2 4
+FK 2 = 50, 21 N
+
+
+Hebelgesetz :
+FK 2  l1 = F  l 2
+FK 2  40 mm = F  200 mm
+      50,21 N  40 mm
+F=
+          200 mm
+F = 10,04 N
+
+
+
+
+                                                   Seite 4
+                                               L 050-05-0522-5
+
+=== Seite 5 ===
+GEPRÜFTE/-R INDUSTRIEMEISTER/-IN,
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+GRUNDLEGENDE QUALIFIKATIONEN
+Berücksichtigung naturwissenschaftlicher und technischer Gesetzmäßigkeiten
+
+Aufgabe 3
+Mögliche Punktzahl: 12
+Zur Verbesserung der Luftqualität in Fertigungshallen werden neu entwickelte Filtersysteme
+eingebaut. Die Luftversorgung Ihrer Werkstatt hat am Ansaugschacht an der Decke einen
+quadratischen Querschnitt mit einer Kantenlänge von 1,2 m. Dort wird die Luft mit einer
+Strömungsgeschwindigkeit von 18 km/h angesaugt.
+
+Nach Durchlaufen des Filtersystems zur Dekontaminierung wird die gereinigte Luft am Ende
+der Werkshalle wieder zugeführt. Dies erfolgt durch eine rechteckige Öffnung mit einer Höhe
+von 1,2 m und einer Strömungsgeschwindigkeit von 2,0 m/s.
+
+
+
+
+                                       Abbildung 2: Filtersystem
+
+Berechnen Sie die Breite b des Luftkanalquerschnitts beim Wiedereinströmen der Luft
+in die Werkshalle.
+
+Lösungshinweise Aufgabe 3
+[VO: § 4 Absatz 6 Nr. 3]
+Mögliche Punktzahl: 12
+A1  v1 = A2  v 2
+                     km                       m
+(1,2 m  1,2 m )  18    = (1,2 m  b )  2,0
+                      h                       s
+                           km
+     (1,2 m  1,2 m )  18
+b=                          h
+                m        km  s
+   1,2 m  2,0  3,6
+                 s        mh
+b = 3,0 m
+
+
+
+                                                     Seite 5
+                                                  L 050-05-0522-5
+
+=== Seite 6 ===
+GEPRÜFTE/-R INDUSTRIEMEISTER/-IN,
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+GRUNDLEGENDE QUALIFIKATIONEN
+Berücksichtigung naturwissenschaftlicher und technischer Gesetzmäßigkeiten
+
+Aufgabe 4
+Im letzten Jahr wurde im Logistikzentrum eine starke Zunahme eingehender
+Paketsendungen festgestellt. Um das stetig steigende Paketaufkommen bewältigen zu
+können, sind höhere Transportgeschwindigkeiten bei der Abfertigung der Pakete
+erforderlich.
+
+Im Logistikzentrum wird auf einem Förderband ein Paket mit 15 kg mit konstanter
+Geschwindigkeit befördert. Es durchläuft eine Kurve. Der Abstand des Paketschwerpunktes
+zum Mittelpunkt der Kurve beträgt 4 m. Die Haftreibungszahl zwischen Paket und
+Förderband beträgt 0 = 0,6.
+
+
+
+
+                                        Abbildung 3: Förderband
+
+ a Mögliche Punktzahl: 10
+Ermitteln Sie die Geschwindigkeit, bei der das Paket beginnt aus der Kurve
+herauszuschleudern. Geben Sie das Ergebnis in m/s und km/h an.
+
+ b Mögliche Punktzahl: 3
+Begründen Sie, welche Veränderung eine Verdoppelung des Paketgewichts auf die
+errechnete Transportgeschwindigkeit der Pakete hat.
+
+
+
+
+                                                   Seite 6
+                                               L 050-05-0522-5
+
+=== Seite 7 ===
+GEPRÜFTE/-R INDUSTRIEMEISTER/-IN,
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+GRUNDLEGENDE QUALIFIKATIONEN
+Berücksichtigung naturwissenschaftlicher und technischer Gesetzmäßigkeiten
+
+
+
+Lösungshinweise Aufgabe 4
+[VO: § 4 Absatz 6 Nr. 3]
+
+ a Mögliche Punktzahl: 10
+Fz = FR
+m v2
+      = 0  m  g
+ r
+v=    0  g  r
+              m
+v = 0,6  9,81 2  4 m
+              s
+                   m²
+v=        23,544
+                   s²
+           m         km
+v = 4,85     = 17,47
+           s          h
+
+ b Mögliche Punktzahl: 3
+Es ergeben sich keinerlei Veränderungen, da die Masse nicht in das Ergebnis eingeht. Siehe
+dazu auch Lösungsweg im Aufgabenteil a).
+
+
+Aufgabe 5
+Ein Pneumatikzylinder mit einem Kolbenhub (=Arbeitsweg des Kolbens) von 800 mm wird in
+einer Sortieranlage zum Verschieben von Paketen auf einem Förderband eingesetzt. Je
+Minute werden vom Zylinder 20 Pakete bewegt. Um die Pakete nicht zu beschädigen,
+beschleunigt die Bewegung des Kolbens mit 1,6 m/s² auf die maximale Geschwindigkeit von
+0,8 m/s. Der Wert der Verzögerung beträgt das Doppelte der Beschleunigung.
+Nach dem vollständigen Ausfahren fährt der Kolben in einer Zeit von 0,8 s wieder ein.
+
+ a Mögliche Punktzahl: 7
+Skizzieren Sie den Vorgang für eine Ausfahrbewegung des Kolbens in einem
+v-t-Diagramm.
+
+ b Mögliche Punktzahl:11
+Berechnen Sie den Weg, den der Kolben beim Ausfahren mit maximaler Geschwindig-
+keit zurücklegt.
+
+
+
+
+                                                   Seite 7
+                                               L 050-05-0522-5
+
+=== Seite 8 ===
+GEPRÜFTE/-R INDUSTRIEMEISTER/-IN,
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+GRUNDLEGENDE QUALIFIKATIONEN
+Berücksichtigung naturwissenschaftlicher und technischer Gesetzmäßigkeiten
+
+Lösungshinweise Aufgabe 5
+[VO: § 4 Absatz 6 Nr. 2]
+
+  a      Mögliche Punktzahl: 7
+
+
+
+
+Hinweis für den Korrektor: Es soll in der Darstellung deutlich ersichtlich sein, dass die
+                           Verzögerung den doppelten Wert der Beschleunigung hat und
+                           dass die Zeit der konstanten Bewegung die längste Dauer hat.
+ b Mögliche Punktzahl: 11
+1 min ≙ 60 s
+t = 20 ∙ (tHub + tRück)
+60 s = 20 ∙ (tHub + 0,8 s)
+3 s = tHub + 0,8 s
+tHub = 2,2 s
+       v                          v
+tB =                      tV =
+       aB                        aV
+       0,8  m  s²            0,8  m  s²
+tB =                      tV =
+        1,6  m  s             3,2  m  s
+tB =0,5 s                 t V =0,25 s
+
+    1                            1
+s= v t                     s=    vt
+    2                            2
+     1    m                       1     m
+sB =  0,8  0,5 s           sV =  0,8  0,25 s
+     2    s                       2     s
+sB = 0,2m                    sV = 0,1 m
+
+sges = sB + sV + svmax ⇛ svmax = sges - sB - sV
+
+sVmax= 0,8 m - 0,2 m - 0,1 m
+
+sVmax= 0,5 m
+
+
+
+                                                   Seite 8
+                                               L 050-05-0522-5
+
+=== Seite 9 ===
+GEPRÜFTE/-R INDUSTRIEMEISTER/-IN,
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+GRUNDLEGENDE QUALIFIKATIONEN
+Berücksichtigung naturwissenschaftlicher und technischer Gesetzmäßigkeiten
+
+Aufgabe 6
+Das Zubringersystem der Förderbänder zum Transport der Pakete im Logistikzentrum wird
+mittels eines Antriebes (elektrischer Verbraucher) gewährleistet.
+
+Auf dem Typenschild des Antriebes stehen unter anderem die Angaben:
+U = 230 V und I = 11 A. Der Antrieb wird über eine Anschlussleitung mit der Leitungslänge
+L = 25 m an einer Bemessungsspannung von 230 V angeschlossen. Die verwendete
+Kupferleitung hat einen Leiterquerschnitt von A = 2,5 mm².
+
+ a Mögliche Punktzahl: 4
+Berechnen Sie den Widerstand und die aufgenommene Leistung des Antriebes laut
+Typenschild.
+
+ b Mögliche Punktzahl: 8
+Berechnen Sie den Leiterwiderstand, den Spannungsfall und die Klemmenspannung.
+
+ c Mögliche Punktzahl: 2
+Überprüfen Sie, ob der von Ihnen berechnete Spannungsfall innerhalb der Toleranz
+von 3 % der Bemessungsspannung liegt.
+
+ d Mögliche Punktzahl: 4
+Berechnen Sie die tatsächlich aufgenommene Leistung des Antriebes.
+
+
+Lösungshinweise Aufgabe 6
+[VO: § 4 Absatz 6 Nr. 3]
+
+ a Mögliche Punktzahl: 4
+       U
+    R=
+       I
+       230 V
+    R=       = 20,91Ω
+        11 A
+
+
+    P =U  I
+    P = 230V  11A
+    P = 2.530 W
+
+
+
+
+                                                   Seite 9
+                                               L 050-05-0522-5
+
+=== Seite 10 ===
+GEPRÜFTE/-R INDUSTRIEMEISTER/-IN,
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+GRUNDLEGENDE QUALIFIKATIONEN
+Berücksichtigung naturwissenschaftlicher und technischer Gesetzmäßigkeiten
+
+
+
+ b Mögliche Punktzahl: 8
+          2 L
+RL =
+        A
+     0,0179   mm 2  2  25 m
+RL =
+            m  2,5 mm 2
+RL = 0,358 
+
+
+Rges = RL + RA
+
+Rges = 0,358  + 20,91 
+Rges = 21,27 
+
+
+       U
+I=
+      Rges
+
+       230 V
+I =
+      21,27 
+I  10,81 A
+UV = RL  I
+     = 0,358 Ω  10,81 A
+      3,87V
+UK = U − UV
+UK = 230 V − 3,87 V
+UK = 226,13 V
+
+
+Hinweis für den Korrektor: Der Spannungsfall in der Anschlussleitung ist zu
+berücksichtigen.
+
+ c Mögliche Punktzahl: 2
+zulässiger Spannungsfall:
+             U  3% 230V  3
+Uzul =            =         = 6,90 V
+             100 %    100
+U = Uv = 3,87V  6,90 V
+Der tatsächliche Spannungsfall liegt in der Toleranz.
+
+
+
+
+                                                   Seite 10
+                                               L 050-05-0522-5
+
+=== Seite 11 ===
+GEPRÜFTE/-R INDUSTRIEMEISTER/-IN,
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+GRUNDLEGENDE QUALIFIKATIONEN
+Berücksichtigung naturwissenschaftlicher und technischer Gesetzmäßigkeiten
+
+ d Mögliche Punktzahl: 4
+    (UK )2
+P=
+     R
+   (226,13 V )2
+P=
+     20, 91 
+P = 2.445 W
+P  2,45kW
+
+
+Aufgabe 7
+In Ihrem Unternehmen wurde Home-Office als neue Form der Arbeitsorganisation
+eingeführt.
+
+Für den jährlichen Managementbericht soll eine statistische Auswertung zur Anzahl der
+Home-Office Arbeitstage Ihrer Mitarbeiter durchgeführt werden.
+
+Die Geschäftsleitung beauftragt Sie mit der Aufbereitung der Daten, die Ihnen als Urliste mit
+der Anzahl der Home-Office Arbeitstage der Mitarbeiter für das zurückliegende Kalenderjahr
+vorliegt.
+
+ 30               60                 20               40                 30     10
+
+ 20               40                 50               30                 50     20
+
+ 20               30                 40               40                 30     50
+
+ 50               40                 50               30                 40     60
+
+ 40               30                 10               20                 50     40
+
+ 20               40                 30               30                 40     30
+
+Werten Sie dieses Ergebnis statistisch aus.
+
+ a Mögliche Punktzahl: 4
+Berechnen Sie dazu den arithmetischen Mittelwert.
+
+ b Mögliche Punktzahl: 6
+Ermitteln Sie die Home-Office Quote in %, wenn die jährliche Arbeitszeit mit
+200 Arbeitstagen angesetzt wird.
+
+ c Mögliche Punktzahl: 2
+
+                                                   Seite 11
+                                               L 050-05-0522-5
+
+=== Seite 12 ===
+GEPRÜFTE/-R INDUSTRIEMEISTER/-IN,
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+GRUNDLEGENDE QUALIFIKATIONEN
+Berücksichtigung naturwissenschaftlicher und technischer Gesetzmäßigkeiten
+
+Berechnen Sie die Spannweite.
+
+
+Lösungshinweise Aufgabe 7
+[VO: § 4 Absatz 6 Nr. 4]
+
+ a Mögliche Punktzahl: 4
+
+
+ Home-Office Tage                  10          20           30           40         50   60
+ Mitarbeiter 2020
+
+ Häufigkeit                        2           6            10           10         6    2
+
+                  2  10 + 6  20 + 10  30 + 10  40 + 6  50 + 2  60
+Mittelwert: X =                                                         = 35 Tage
+                                2 + 6 + 10 + 10 + 6 + 2
+
+ b Mögliche Punktzahl: 6
+                           Home − Office Tage
+Home-Office Quote =                               100 %
+                          jährliche Arbeitstage
+                          1.260 Tage
+Home-Office Quote =                     100% = 17,5%
+                         36  200 Tage
+
+ c Mögliche Punktzahl: 2
+Spannweite : R = xmax − xmin = 60 Tage – 10 Tage = 50 Tage
+
+
+
+
+                                                    Seite 12
+                                                L 050-05-0522-5
+

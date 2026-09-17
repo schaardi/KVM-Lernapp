@@ -1,0 +1,649 @@
+=== Seite 1 ===
+Bundeseinheitliche Fortbildungsprüfung der Industrie- und Handelskammern
+
+Geprüfte/-r Industriemeister/-in,
+fachrichtungsübergreifende Basisqualifikationen/
+grundlegende Qualifikationen
+Berücksichtigung naturwissenschaftlicher und technischer
+Gesetzmäßigkeiten
+
+
+Lösungshinweise
+Datum:                                          7. Mai 2019
+
+Bearbeitungszeit:                               90 Minuten
+
+Anzahl Aufgaben:                                7
+
+
+Hinweise für den Korrektor:
+■   Die folgenden Lösungen sind lediglich Lösungshinweise.
+■   Sie sollen nur den Rahmen der zu erwartenden Prüfungsleistung abstecken.
+■   Der Korrektor ist durch die hier aufgeführten Lösungshinweise in seinem
+    Bewertungsspielraum nicht eingeengt.
+■   Bei Aufgaben, die eine Aufzählung von n-Fakten zur Lösung erfordern, werden nur die
+    ersten n-Fakten gewertet. Alle darüber hinausgehenden Aufzählungen werden
+    gestrichen.
+■   Bei Berechnungen sollen Folgefehler berücksichtigt werden und somit nicht zum
+    Punktabzug führen.
+■   Der leichteren Lesbarkeit wegen geben wir in den Aufgaben/Texten der männlichen
+    Form den Vorzug. Mit diesem einfacheren sprachlichen Ausdruck sind selbstverständlich
+    immer alle Geschlechter gemeint.
+
+Die Aufgaben mit Lösungsvorschlägen können von den Industrie- und Handelskammern oder Dritten nach einer Frist von sechs Monaten
+direkt bestellt werden bei:
+wbv Media GmbH & Co. KG, Service-Center DIHK,
+Postfach 10 06 33, 33506 Bielefeld
+Tel.: 0521/91101-16, Fax: 0521/91101-19, E-Mail: service@wbv.de
+
+
+                               © DIHK – Gesellschaft für berufliche Bildung – Organisation zur Förderung der IHK-Weiterbildung mbH – Bonn
+               Die Vervielfältigung, Verbreitung oder öffentliche Wiedergabe der Publikation ist nicht gestattet (§§ 53, 54 UrhG) und strafbar (§ 106 UrhG).
+                                                           Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+                                                                              L 050-05-0519-5
+
+=== Seite 2 ===
+Geprüfte/-r Industriemeister/-in,
+fachrichtungsübergreifende Basisqualifikationen/
+grundlegende Qualifikationen
+Berücksichtigung naturwissenschaftlicher und technischer Gesetzmäßigkeiten
+
+
+
+Aufgabe 1
+In betrieblichen Flurförderzeugen werden häufig Blei-Akkus (Batterien) eingesetzt, die mit
+verdünnter Schwefelsäure gefüllt sind.
+
+    a Mögliche Punktzahl: 4
+Sie stellen einen zu niedrigen Flüssigkeitsstand im Blei-Akku fest. Geben Sie an,
+welche Flüssigkeit Sie nachfüllen müssen und erklären Sie eine Auswirkung auf die
+Flüssigkeit im Blei-Akku.
+
+    b Mögliche Punktzahl: 2
+Geben Sie zwei Verfahren an, mit denen die Batterieflüssigkeit überprüft werden kann.
+
+    c Mögliche Punktzahl: 4
+Geben Sie zwei Gefahren für Mensch oder Umwelt an, die beim Umgang mit
+Batteriesäure bestehen. Nennen Sie außerdem zwei Schutzmaßnahmen.
+
+
+Lösungshinweise Aufgabe 1
+[VO: § 4 Absatz 6 Nr. 1]
+
+    a Mögliche Punktzahl: 4
+Der Füllstand wird mit destilliertem Wasser aufgefüllt.
+Die Säurekonzentration wird verringert, damit steigt der pH-Wert.
+  b Mögliche Punktzahl: 2
+Z. B.:
+■    Lackmus-Papierfärbung
+■    pH-Messgerät
+
+
+
+
+                                                 Seite 2
+                                             L 050-05-0519-5
+
+=== Seite 3 ===
+Geprüfte/-r Industriemeister/-in,
+fachrichtungsübergreifende Basisqualifikationen/
+grundlegende Qualifikationen
+Berücksichtigung naturwissenschaftlicher und technischer Gesetzmäßigkeiten
+
+
+
+    c Mögliche Punktzahl: 4
+■    Gefahren, z. B.:
+     ■   Bei Kontakt mit der Haut kommt es je nach Konzentration der Säure zu
+         Verätzungen.
+     ■   Augen sind besonders gefährdet.
+     ■   Flora und Fauna sind gefährdet, wenn Säuren in die Umwelt gelangen.
+     ■   Spritzgefährdung beim Nachfüllen
+     ■   Zugabereihenfolge beachten
+■    Schutzmaßnahmen, z. B.:
+     ■   Tragen von Handschuhen und Schutzbrillen
+     ■   Aufbewahren in vorgeschriebenen Behältern
+     ■   ordnungsgemäße Entsorgung als Sonderabfall
+     ■   Zugabereihenfolge einhalten, z. B. nach dem Merkspruch: „Erst das Wasser, dann
+         die Säure, sonst geschieht das Ungeheure.“
+     ■   arbeiten unter Belüftung, Abzug, Frischluft
+
+Aufgabe 2
+In der Typenbezeichnung eines Vierzylinder-Verbrennungsmotors ist ein Hubraum von
+zwei Litern angegeben. Der Kolbendurchmesser beträgt 80 mm.
+
+    a Mögliche Punktzahl: 4
+Berechnen Sie den Kolbenhub.
+
+    b Mögliche Punktzahl: 10
+Berechnen Sie den maximalen Druck im Verbrennungsraum (vor der Zündung) bei
+einem Verdichtungsverhältnis von 1:17 und einer Temperatur des verdichteten Gases
+von 900 °C. Die Ansaugtemperatur beträgt 20 °C.
+
+
+
+
+                                                 Seite 3
+                                             L 050-05-0519-5
+
+=== Seite 4 ===
+Geprüfte/-r Industriemeister/-in,
+fachrichtungsübergreifende Basisqualifikationen/
+grundlegende Qualifikationen
+Berücksichtigung naturwissenschaftlicher und technischer Gesetzmäßigkeiten
+
+
+
+Lösungshinweise Aufgabe 2
+[VO: § 4 Absatz 6 Nr. 1 und 2]
+
+  a Mögliche Punktzahl: 4
+geg :
+d  80 mm  0,8 dm
+V  2 L, bei 4 Zylindern
+ges: h
+Lösung:
+
+V
+   L
+4
+2L
+      0,5 L  500 cm ³, pro Zylinder
+ 4
+       
+Vzyl   d ²  h
+       4
+     4  Vzyl
+h
+       d²
+      4  0,5 dm ³
+h
+       0,8² dm ²
+h  0,995 dm  9,95 cm
+  b Mögliche Punktzahl: 10
+geg :
+t1  20C  T1       293,15 K                 p1  1 bar
+t 2  900C  T2  1.173,15 K
+1: 17 Verdichtung
+      500 cm ³
+V2             29,4 cm ³
+         17
+     500 cm ³
+V1             500 cm ³
+         1
+ges : p2
+Lösung :
+p V    p1  V1 p2  V2
+              
+ T        T1      T2
+
+       p1 V1  T2
+p2 
+        V2  T1
+
+
+                                                 Seite 4
+                                             L 050-05-0519-5
+
+=== Seite 5 ===
+Geprüfte/-r Industriemeister/-in,
+fachrichtungsübergreifende Basisqualifikationen/
+grundlegende Qualifikationen
+Berücksichtigung naturwissenschaftlicher und technischer Gesetzmäßigkeiten
+
+       1 bar  500 cm ³  1.173,15 K
+p2 
+           29,4 cm ³  293,15 K
+       586.575 bar
+p2 
+        8.618,61
+p2  68,06 bar
+
+Aufgabe 3
+Ein Brauchwassertank in einer Wärmerückgewinnungsanlage ist mit 1.500 Litern Wasser
+gefüllt. Durch den Tank verläuft ein Rohr. Die durch das Rohr fließende Flüssigkeit erwärmt
+das Brauchwasser im Tank von 20 °C auf 95 °C.
+
+
+
+
+  a Mögliche Punktzahl: 10
+Berechnen Sie, um wie viel mm der Wasserstand im Tank durch die Erwärmung steigt.
+
+  Hinweis für den Prüfungsteilnehmer:
+  Die Ausdehnung des Brauchwassertanks und des Rohres wird hierbei nicht
+  berücksichtigt.
+
+
+
+
+                                                 Seite 5
+                                             L 050-05-0519-5
+
+=== Seite 6 ===
+Geprüfte/-r Industriemeister/-in,
+fachrichtungsübergreifende Basisqualifikationen/
+grundlegende Qualifikationen
+Berücksichtigung naturwissenschaftlicher und technischer Gesetzmäßigkeiten
+
+
+
+  b Mögliche Punktzahl: 10
+Berechnen Sie, wie viel m³ Erdgas erforderlich sind, um die gleiche Menge Wasser
+durch eine konventionelle Heizanlage zu erwärmen. Der Energieverlust beträgt 40 %.
+
+
+Lösungshinweise Aufgabe 3
+[VO: § 4 Absatz 6 Nr. 1 und 2]
+
+  a Mögliche Punktzahl: 10
+V1  V0  V  T
+              D2  d 2
+V2                  h
+                 4
+V1  V2
+
+                      D2  d 2
+V0  V  T                 h
+                         4
+       V0  V  T
+h 
+           D2  d 2
+       
+               4
+                           1
+       1.500 dm 3  0,00021   75 K
+h                       K
+           (10 dm )2  (3 dm )2
+        
+                    4
+h  0,33 dm  33 mm
+  b Mögliche Punktzahl: 10
+Q1  mWasser  c  T
+Q2  VErdgas  Hi
+Q1    Q2
+mWasser  c  T    VErdgas  Hi
+            m  c  T
+VErdgas 
+               Hi
+                           kJ
+            1.500 kg  4,18       75 K
+                          kg  K
+VErdgas 
+                              kJ
+                0,6  35.000 3
+                             m
+VErdgas  22,4 m ³
+
+
+
+
+                                                 Seite 6
+                                             L 050-05-0519-5
+
+=== Seite 7 ===
+Geprüfte/-r Industriemeister/-in,
+fachrichtungsübergreifende Basisqualifikationen/
+grundlegende Qualifikationen
+Berücksichtigung naturwissenschaftlicher und technischer Gesetzmäßigkeiten
+
+
+Aufgabe 4
+In einem Produktionsbetrieb werden Kartonagen in 12er-Verpackungseinheiten (VE)
+gebündelt. Über einen Schwerkraft-Rollenförderer werden die VE zum Palettieren gefördert
+(siehe Abbildung).
+
+Die Geschwindigkeit an der Aufgabestelle A beträgt vA = 2,5 m/s.
+
+Am Ende E soll die Geschwindigkeit vE = vA betragen. Die Kartons werden also nicht
+beschleunigt.
+
+Der Rollreibungswert beträgt:       µ = 0,035
+
+Masse einer Kartonage:              m = 1,06 kg
+
+                                             sinα
+Es gilt:                            tanα =
+                                             cosα
+
+
+
+
+  a Mögliche Punktzahl: 10
+Berechnen Sie die Höhe HA an der Aufgabestelle.
+
+  b Mögliche Punktzahl: 4
+Am Rollenbahnende E werden die Verpackungseinheiten (VE) an einem Anschlag auf
+v = 0 m/s abgebremst.
+
+Berechnen Sie die Abbremsenergie.
+
+
+
+
+                                                 Seite 7
+                                             L 050-05-0519-5
+
+=== Seite 8 ===
+Geprüfte/-r Industriemeister/-in,
+fachrichtungsübergreifende Basisqualifikationen/
+grundlegende Qualifikationen
+Berücksichtigung naturwissenschaftlicher und technischer Gesetzmäßigkeiten
+
+
+
+Lösungshinweise Aufgabe 4
+[VO: § 4 Absatz 6 Nr. 3]
+
+  a Mögliche Punktzahl: 10
+FH  FR
+FH  m  g  sin 
+FR  FN  
+    FG  cos   
+    m  g  cos   
+m  g  sin   m  g    cos    I :m
+g  sin   g    cos            I:g
+    sin     cos 
+                sin 
+                     tan 
+               cos 
+             tan   0,035    2,004
+H A  HE  x
+H A  HE  L  tan 
+H A  0,85 m  15 m  0,035
+H A  0,85 m  0,525 m
+H A  1,375 m
+  b Mögliche Punktzahl: 4
+         1
+EBrems     m v ²
+         2
+         1                    m
+EBrems   12  1,06 kg  (2,5 )²
+         2                    s
+         12,72 kg          m²
+EBrems              6,25
+             2             s²
+                         m²
+EBrems  6,36 kg  6,25
+                          s²
+EBrems  39,75 N  m  39,75 J
+
+
+
+
+                                                 Seite 8
+                                             L 050-05-0519-5
+
+=== Seite 9 ===
+Geprüfte/-r Industriemeister/-in,
+fachrichtungsübergreifende Basisqualifikationen/
+grundlegende Qualifikationen
+Berücksichtigung naturwissenschaftlicher und technischer Gesetzmäßigkeiten
+
+
+Aufgabe 5
+An einem 24-V-Solarmodul sind zwei 12-V-Verbraucher in Reihenschaltung angeschlossen.
+Bei einer Überprüfung stellen Sie fest, dass am Verbraucher 1 nur 10 V anliegen. Als Strom
+ermitteln Sie 0,5 A.
+
+  a Mögliche Punktzahl: 4
+Berechnen Sie, welche Leistung die beiden Verbraucher jeweils aufnehmen.
+
+  b Mögliche Punktzahl: 8
+Berechnen Sie die Leistung jedes Verbrauchers bei Bemessungsspannung.
+
+  c Mögliche Punktzahl: 4
+Bei beiden Verbrauchern soll zukünftig die gleiche Spannung anliegen.
+
+Skizzieren Sie die dafür erforderliche Schaltung.
+
+
+Lösungshinweise Aufgabe 5
+[VO: § 4 Absatz 6 Nr. 1]
+
+  a Mögliche Punktzahl: 4
+Verbraucher 1:          P = U · I = 10 V · 0,5 A = 5 W
+Verbraucher 2:  P = U · I = 14 V · 0,5 A = 7 W
+  b Mögliche Punktzahl: 8
+
+
+                 Verbraucher 1:                                       Verbraucher 2:
+      U 10 V                                               U 14 V
+ R           20                                   R           28 
+      I 0,5 A                                              I 0,5 A
+    U 2 (12 V )²                                         U 2 (12 V )²
+ P              7,2 W                              P              5,1W
+    R    20                                             R    28 
+
+
+
+
+                                                 Seite 9
+                                             L 050-05-0519-5
+
+=== Seite 10 ===
+Geprüfte/-r Industriemeister/-in,
+fachrichtungsübergreifende Basisqualifikationen/
+grundlegende Qualifikationen
+Berücksichtigung naturwissenschaftlicher und technischer Gesetzmäßigkeiten
+
+
+
+  c Mögliche Punktzahl: 4
+
+
+
+
+Hinweis für den Korrektor:
+Zum Verbraucher 2 ist ein Widerstand parallel einzubauen, weil der Gesamtwiderstand
+kleiner ist als der kleinste Teilwiderstand.
+
+
+
+
+                                                Seite 10
+                                             L 050-05-0519-5
+
+=== Seite 11 ===
+Geprüfte/-r Industriemeister/-in,
+fachrichtungsübergreifende Basisqualifikationen/
+grundlegende Qualifikationen
+Berücksichtigung naturwissenschaftlicher und technischer Gesetzmäßigkeiten
+
+
+Aufgabe 6
+Eine Kreiselpumpe fördert aus einem Solebecken 10 Sekunden lang eine Salzlösung.
+
+■    Die Förderhöhe beträgt 5,45 m.
+
+■    Der Pumpenantrieb erfolgt über einen Drehstrommotor, der an 400 V Drehstrom
+     angeschlossen ist.
+
+■    Die Stromaufnahme des Drehstrommotors beträgt 13 A.
+
+■    Die Dichte der Salzlösung beträgt 1,15 kg/dm³.
+
+
+
+
+      U = 400 V L1             M
+       I = 13 A L2             3~
+                L3
+
+Motorverluste = 16 %
+Wirkleistungsfaktor cos   0,86            ηPumpe = 0,77
+
+
+
+
+                                                       h = 5,45 m
+
+
+
+
+                                                                   Solebecken
+
+
+Berechnen Sie rechnerisch nachvollziehbar:
+
+    a Mögliche Punktzahl: 8
+die von der Kreiselpumpe abgegebene Leistung und
+
+    b Mögliche Punktzahl: 6
+das Fördervolumen der Anlage.
+
+
+
+
+                                                Seite 11
+                                             L 050-05-0519-5
+
+=== Seite 12 ===
+Geprüfte/-r Industriemeister/-in,
+fachrichtungsübergreifende Basisqualifikationen/
+grundlegende Qualifikationen
+Berücksichtigung naturwissenschaftlicher und technischer Gesetzmäßigkeiten
+
+
+
+Lösungshinweise Aufgabe 6
+[VO: § 4 Absatz 6 Nr. 1]
+
+  a Mögliche Punktzahl: 8
+Pauf / M  3 U  I  cos 
+Pauf / M  3  400 V  13 A  0,86
+Pauf / M  7.745,73 W   7.746 W                                           (4 Punkte)
+ges  M  P
+ges  0,84  0,77 = 0,6468 (  0, 65)
+Pab /P  Pauf / M  ges
+Pab / P  7.746 W  0,65  5.034,9 W (  5.035 W )                           (4 Punkte)
+
+
+  b Mögliche Punktzahl: 6
+
+    W
+P=
+     t
+P t W
+P t  mg h
+       P t
+  m
+       gh
+       5.035 W  10 s
+  m
+            m
+       9,81  5,45 m
+            s²
+
+          50.350 Ws
+   m                 941,75 kg
+                 m2
+         53,4645
+                  s²
+
+   m
+   
+   V
+   m 941,75 kg
+V             818,9 dm ³
+    1,15 kg
+          dm ³
+
+
+
+
+                                                Seite 12
+                                             L 050-05-0519-5
+
+=== Seite 13 ===
+Geprüfte/-r Industriemeister/-in,
+fachrichtungsübergreifende Basisqualifikationen/
+grundlegende Qualifikationen
+Berücksichtigung naturwissenschaftlicher und technischer Gesetzmäßigkeiten
+
+
+Aufgabe 7
+In einem Unternehmen werden Rohre mit dem Außendurchmesser 8 mm und einer
+Wandstärke 1,4 mm hergestellt.
+
+Zur Qualitätsüberwachung werden Stichproben durchgeführt.
+
+Die letzten 20 Messungen aus einer normal verteilten Produktion ergaben folgende
+Außendurchmesser in mm:
+
+   8,1       7,9        8,1        8,0        7,8       8,2        8,0       8,1   7,9   8,0
+
+   8,0       7,8        8,2        7,9        7,9       8,0        8,0       8,1   7,9   8,2
+
+Sie haben die Aufgabe, die Qualität des Fertigungsprozesses zu beurteilen.
+
+Bestimmen Sie hierzu nachvollziehbar folgende statistische Größen:
+
+  a Mögliche Punktzahl: 2
+Modalwert
+
+  b Mögliche Punktzahl: 2
+Zentralwert (Median)
+
+  c Mögliche Punktzahl: 4
+arithmetischer Mittelwert
+
+  d Mögliche Punktzahl: 4
+Standardabweichung
+
+ Hinweis für den Prüfungsteilnehmer:
+ Geben Sie die Ergebnisse zu c) und d) mit drei Nachkommastellen an.
+
+
+
+
+                                                Seite 13
+                                             L 050-05-0519-5
+
+=== Seite 14 ===
+Geprüfte/-r Industriemeister/-in,
+fachrichtungsübergreifende Basisqualifikationen/
+grundlegende Qualifikationen
+Berücksichtigung naturwissenschaftlicher und technischer Gesetzmäßigkeiten
+
+
+
+Lösungshinweise Aufgabe 7
+[VO: § 4 Absatz 6 Nr. 4]
+
+  a Mögliche Punktzahl: 2
+
+
+                     Messwert:                                           Häufigkeit
+ 7,8                                                  2
+ 7,9                                                  5
+ 8,0                                                  6
+ 8,1                                                  4
+ 8,2                                                  3
+
+
+Modalwert D = 8,0 mm
+ b Mögliche Punktzahl: 2
+Median x̃ = 8,00 mm
+7,8… 8,0…8,2
+  c Mögliche Punktzahl: 4
+arithmetischer Mittelwert x̄:
+       1
+x̄ =
+       n
+          xi
+x̄ = 8,005 mm
+   d Mögliche Punktzahl: 4
+Standardabweichung s:
+         1
+s=
+        n-1
+             ( xi - x )²
+s = 0,123 mm
+
+
+
+
+                                                Seite 14
+                                             L 050-05-0519-5
+

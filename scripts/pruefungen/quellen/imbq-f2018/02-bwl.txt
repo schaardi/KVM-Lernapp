@@ -1,0 +1,427 @@
+=== Seite 1 ===
+Bundeseinheitliche Weiterbildungsprüfung
+der Industrie- und Handelskammern
+
+
+Lösungshinweise
+Geprüfte/-r Industriemeister/-in
+fachrichtungsübergreifende
+Basisqualifikationen/
+grundlegende Qualifikationen
+Basisqualifikation                                      Betriebswirtschaftliches Handeln
+Prüfungstag                                             4. Mai 2018
+
+
+
+Hinweise für den Korrektor:
+■    Die folgenden Lösungen sind lediglich Lösungshinweise.
+■    Sie sollen nur den Rahmen der zu erwartenden Prüfungsleistung abstecken.
+■    Der Korrektor ist durch die hier aufgeführten Lösungshinweise in seinem Bewertungsspielraum nicht
+     eingeengt.
+■    Bei Aufgaben, die eine Aufzählung von n-Fakten zur Lösung erfordern, werden nur die ersten n-Fakten
+     gewertet. Alle darüber hinausgehenden Aufzählungen werden gestrichen.
+■    Bei Berechnungen sollen Folgefehler berücksichtigt werden und somit nicht zum Punktabzug führen.
+■    Der leichteren Lesbarkeit wegen geben wir in den Aufgaben/Texten der männlichen Form den Vorzug. Mit
+     diesem einfacheren sprachlichen Ausdruck sind selbstverständlich immer Männer und Frauen gemeint.
+
+
+
+
+Die Aufgaben mit Lösungsvorschlägen können von den Industrie- und Handelskammern oder Dritten nach einer Frist von sechs
+Monaten direkt bestellt werden bei:
+W. Bertelsmann Verlag GmbH & Co. KG, Service-Center DIHK,
+Postfach 10 06 33, 33506 Bielefeld
+Tel.: 0521/91101-16, Fax: 0521/91101-19, E-Mail: service@wbv.de
+                                                                                                      | L 050-02-0518-3 |
+
+=== Seite 2 ===
+GEPRÜFTE/-R INDUSTRIEMEISTER/-IN
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+GRUNDLEGENDE QUALIFIKATIONEN
+Betriebswirtschaftliches Handeln
+
+Aufgabe 1
+Unternehmen werden nach unterschiedlichen Rechtsformen unterschieden.
+a)   Geben Sie drei Kriterien an, anhand derer die verschiedenen Rechtsformen von                                                    (3 Punkte)
+     Unternehmungen zu unterscheiden sind.
+b)   Beschreiben Sie jeweils die Ausgestaltung                               der      Kriterien         bei       einer              (6 Punkte)
+     Kommanditgesellschaft und einer Aktiengesellschaft.
+c)   Nennen Sie die Organe einer GmbH mit 1800 Mitarbeitern.                                                                         (3 Punkte)
+
+
+Lösungshinweise Aufgabe 1                                                                                                         (12 Punkte)
+[VO: § 4 Absatz 3 Nr. 1]
+
+z. B.:
+a)   ■      Geschäftsführungsbefugnis
+     ■      Außenvertretungsrecht
+     ■      Stimmrecht bei der Gesellschafterversammlung
+     ■      Gewinnverteilung
+     ■      Haftungsumfang
+     ■      Mindestgründungskapital                                                                                                  (3 Punkte)
+b)   KG und AG, z. B.:
+     ■   Geschäftsführungsbefugnis, Außenvertretungsrecht:
+         KG: Komplementär
+         AG: Vorstand
+     ■ Stimmrecht bei der Gesellschafterversammlung
+         KG: nach Köpfen
+         AG: nach Aktienanteil am Grundkapital
+     ■ Haftung
+         KG: Komplementäre: Vollhaftung, Kommanditisten: Teilhaftung
+         AG: Haftung beschränkt auf Gesellschaftsvermögen
+     ■   Mindestgründungskapital
+         KG: keine gesetzliche Vorschrift
+         AG: 50.000 €                                                                                                                (6 Punkte)
+c)   ■ Geschäftsführer
+     ■ Aufsichtsrat
+     ■ Gesellschafterversammlung                                                                                                    (3 Punkte)
+
+
+
+
+Seite 2 | L 050-02-0518-3 |     © DIHK – Gesellschaft für berufliche Bildung – Organisation zur Förderung der IHK-Weiterbildung mbH – Bonn
+                                Die Vervielfältigung, Verbreitung oder öffentliche Wiedergabe der Publikation [der Prüfungssätze und Lösungshinweise]
+                                ist nicht gestattet (§§ 53, 54 UrhG) und strafbar (§ 106 UrhG). Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+
+=== Seite 3 ===
+GEPRÜFTE/-R INDUSTRIEMEISTER/-IN
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+GRUNDLEGENDE QUALIFIKATIONEN
+Betriebswirtschaftliches Handeln
+
+Aufgabe 2
+Die Beschaffungsprozesse der Industrie AG sollen unter Kostengesichtspunkten analysiert
+werden. Exemplarisch soll das Kosteneinsparpotenzial anhand eines Kaufteils aufgezeigt
+werden. Es wird ein kontinuierlicher Bedarf angenommen.
+
+Folgende Daten liegen Ihnen zur Entscheidungsfindung vor:
+
+■      Jahresbedarf                                              80000 Stück
+■      Einstandspreis                                            12 €/Stück
+■      Bestellkosten je Bestellvorgang                           180 €
+■      Lagerhaltungskostensatz                                   15 %
+a)     Berechnen Sie die optimale Bestellmenge.                                                                                     (5 Punkte)
+b)     Berechnen Sie die Lagerumschlagshäufigkeit.                                                                                  (3 Punkte)
+c)     Ermitteln Sie die durchschnittliche Lagerdauer in Tagen.                                                                     (2 Punkte)
+d)     Bestimmen Sie rechnerisch das Kosteneinsparpotenzial, wenn im Unternehmen                                                   (10 Punkte)
+       bisher mit einer Bestellmenge von 1500 Stück disponiert wurde.
+
+
+Lösungshinweise Aufgabe 2                                                                                                         (20 Punkte)
+[VO: § 4 Absatz 3 Nr. 2]
+                    2  k B  x ges
+a)     x opt 
+                       EP  i L
+
+                   2  180,00 €  80000 Stück
+       xopt                                   4000 Stück
+                       12,00 €/Stück  0,15                                                                                         (5 Punkte)
+
+                                                   Verbrauch pro Jahr
+b)     Lagerumschlagshäufigkeit =
+                                                    ø Lagerbestand
+
+                                                   80 000 Stück
+       Lagerumschlagshäufigkeit =                                40
+                                                   2 000 Stück                                                                      (3 Punkte)
+
+                                                     360 Tage
+c)     ø Lagerdauer in Tagen =
+                                              Lagerumschlagshäufigkeit
+
+                                              360 Tage
+       ø Lagerdauer in Tagen =                          9 Tage
+                                                 40                                                                                 (2 Punkte)
+d)     Gesamtkosten Kges = Bestellkosten KB + Lagerhaltungskosten KL
+Bestellmenge                          x = 1 500 Stück
+    KL =                              750 Stück ∙ 0,15 ∙ 12 €/Stück = 1.350 €/Jahr
+    KB =                              54 Bestellungen/Jahr ∙ 180 €/Bestellung = 9.720 €/Jahr
+    Kges =                            11.070 €/Jahr
+optimale Bestellmenge xopt = 4 000 Stück
+     KL =                2 000 Stück ∙ 0,15 ∙ 12 €/Stück = 3.600,00 €/Jahr
+     KB =                20 Bestellungen/Jahr ∙ 180 €/Bestellung = 3.600 €/Jahr
+     Kges =              7.200 €/Jahr
+     Kostenersparnis bei Wahl der optimalen Bestellmenge ∆ Kges = 3.870 €/Jahr                                                     (10 Punkte)
+© DIHK – Gesellschaft für berufliche Bildung – Organisation zur Förderung der IHK-Weiterbildung mbH – Bonn               Seite 3 | L 050-02-0518-3 |
+Die Vervielfältigung, Verbreitung oder öffentliche Wiedergabe der Publikation [der Prüfungssätze und Lösungshinweise]
+ist nicht gestattet (§§ 53, 54 UrhG) und strafbar (§ 106 UrhG). Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+
+=== Seite 4 ===
+GEPRÜFTE/-R INDUSTRIEMEISTER/-IN
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+GRUNDLEGENDE QUALIFIKATIONEN
+Betriebswirtschaftliches Handeln
+
+Aufgabe 3
+Der Vertrieb in der Maschinenbau GmbH ist bisher funktionsorientiert aufgebaut.
+a)   Nennen Sie drei funktionsorientierte Abteilungen des Vertriebs der Maschinenbau                                                  (3 Punkte)
+     GmbH.
+b)   Die Geschäftsführung möchte den bisher funktionsorientiert aufgebauten Vertrieb auf                                              (6 Punkte)
+     einen spartenorganisierten Vertrieb umstellen. Zeigen Sie drei mögliche Gründe auf,
+     die die Geschäftsführung zu dieser Entscheidung bewogen haben könnten.
+c)   Beschreiben Sie drei Maßnahmen, die aufgrund dieser Umstrukturierung erforderlich                                                (6 Punkte)
+     sind.
+
+
+Lösungshinweise Aufgabe 3                                                                                                          (15 Punkte)
+[VO: § 4 Absatz 3 Nr. 2]
+
+a)   Z. B.:
+     ■     Werbung
+     ■     Kundenservice
+     ■     Fertigwarenlager und Versand
+     ■     Verkauf/Rechnungsstellung
+     ■     Beschwerdemanagement                                                                                                        (3 Punkte)
+
+
+b)   Z. B.:
+    ■    Steigerung der Wettbewerbsfähigkeit
+     ■     mehr Nähe zum Kunden/Absatzmarkt, um auf deren Wünsche besser eingehen
+           zu können.
+     ■     besserer Kundenservice durch Spezialisierung
+     ■     bessere Marktbearbeitung durch Spezialisierung                                                                             (6 Punkte)
+c)   Z. B.:
+     ■     Qualifizierung von geeignetem Personal
+      ■    Marktanalyse der Absatzmärkte
+      ■    Erstellung einer differenzierten Zeit-/Ablaufplanung
+     ■     Klärung der Zuständigkeiten für die einzelnen Aufgaben
+     ■     Gründung einer Projektgruppe, die die Reorganisation begleiten
+     ■     Budgetierung                                                                                                               (6 Punkte)
+
+
+
+
+Seite 4 | L 050-02-0518-3 |      © DIHK – Gesellschaft für berufliche Bildung – Organisation zur Förderung der IHK-Weiterbildung mbH – Bonn
+                                 Die Vervielfältigung, Verbreitung oder öffentliche Wiedergabe der Publikation [der Prüfungssätze und Lösungshinweise]
+                                 ist nicht gestattet (§§ 53, 54 UrhG) und strafbar (§ 106 UrhG). Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+
+=== Seite 5 ===
+GEPRÜFTE/-R INDUSTRIEMEISTER/-IN
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+GRUNDLEGENDE QUALIFIKATIONEN
+Betriebswirtschaftliches Handeln
+
+Aufgabe 4
+Ein Facharbeiter verdient aktuell 23,40 € pro Stunde im Geldakkord. Er bearbeitet dabei
+statt der vorgegebenen Menge von 10 Stück pro Stunde eine effektive Menge von
+13 Stück pro Stunde. Der Akkordrichtsatz beträgt 112,5 % des garantierten
+Akkordgrundlohnes.
+a)     Ermitteln Sie rechnerisch:                                                                                                   (9 Punkte)
+
+      ■ das Stückgeld,
+       ■      den Akkordgrundlohn pro Stunde,
+       ■      den Stundenverdienst des Mitarbeiters, wenn er nur acht Stück pro Stunde
+              bearbeitet.
+b)     Die Geschäftsführung erhöht in Absprache mit dem Betriebsrat den Akkordzuschlag                                              (6 Punkte)
+       auf 13,75 %.
+       Berechnen Sie das Stückgeld und den Stundenverdienst des Facharbeiters, wenn
+       dieser wie bisher 13 Stück pro Stunde bearbeitet.
+
+
+Lösungshinweise Aufgabe 4                                                                                                         (15 Punkte)
+[VO: § 4 Absatz 3 Nr. 4]
+                             Bruttolohn
+a)■ Stückgeld =
+                          Leistungsmenge
+
+                           23,40 € / h
+       Stückgeld =                      1,80 € / Stück
+                          13 Stück / h                                                                                              (2 Punkte)
+■      Akkordgrundlohn
+
+       Akkordrichtsatz = Stückgeld · Normalleistung = 1,80 € / Stück · 10 Stück / h = 18,00 €/h                                      (4 Punkte)
+
+       Akkordgrundlohn pro Stunde = Akkordrichtsatz  Akkordzuschlag
+
+                                                                              18,00 € / h
+       Akkordgrundlohn pro Stunde =  18,00 € / h                                         12,5%  16 € / h
+                                                                               112,5%
+
+■      Stundenverdienst bei acht Stück:
+       Stundenverdienst (Bruttolohn) = Leistungsmenge · Stückgeld
+                                     = 8 Stück / h · 1,80 € / Stück = 14,40 € / h
+       Da der Verdienst unterhalb des garantierten Akkordgrundlohnes liegt, ist diese
+       Rechnung irrelevant. Der Facharbeiter erhält in diesem Fall 16,00 € pro Stunde.                                               (3 Punkte)
+
+b)
+Akkordrichtsatz = Akkordgrundlohn + Akkordzuschlag
+                = 16,00 € / h + 16,00 € / h · 0,1375 = 18,20 € / h
+
+                       Akkordrichtsatz   18,20 € / h
+Stückgeld =                            =               1,82 € / Stück
+                       Normalleistung    10 Stück / h
+
+Akkordlohn (Stundenverdienst) = Stückgeld · Leistungsmenge
+                             = 1,82 € / Stück · 13 Stück / h = 23,66 € / h                                                          (6 Punkte)
+
+© DIHK – Gesellschaft für berufliche Bildung – Organisation zur Förderung der IHK-Weiterbildung mbH – Bonn               Seite 5 | L 050-02-0518-3 |
+Die Vervielfältigung, Verbreitung oder öffentliche Wiedergabe der Publikation [der Prüfungssätze und Lösungshinweise]
+ist nicht gestattet (§§ 53, 54 UrhG) und strafbar (§ 106 UrhG). Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+
+=== Seite 6 ===
+GEPRÜFTE/-R INDUSTRIEMEISTER/-IN
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+GRUNDLEGENDE QUALIFIKATIONEN
+Betriebswirtschaftliches Handeln
+
+Aufgabe 5
+
+Erstellen Sie aus den folgenden Angaben einer GmbH eine vereinfachte Bilanz und                                                        (12 Punkte)
+ermitteln Sie das Eigenkapital.
+
+Hypothekenschuld                                                   160.000 €
+Fuhrpark                                                             40.000 €
+Lagerhalle                                                           70.000 €
+Kasse                                                                  2.500 €
+Darlehensschuld                                                    151.000 €
+Betriebs- und Geschäftsausstattung                                   62.600 €
+Rohstoffe                                                          160.000 €
+Verwaltungsgebäude                                                 204.000 €
+Forderungen aus Lieferungen und Leistungen                           22.000 €
+Bankguthaben                                                         20.400 €
+Verbindlichkeiten aus Lieferungen und Leistungen                     42.500 €
+
+
+Lösungshinweise Aufgabe 5                                                                                                            (12 Punkte)
+[VO: § 4 Absatz 3 Nr. 5]
+
+     Aktiva                                                 Passiva
+
+ A. Anlagevermögen                                         A. Eigenkapital                        228.000€
+       Sachanlagen
+                                                           B. Fremdkapital
+       Gebäude                274.000€
+                                                                Hypothekenschuld 160.000 €
+       BGA                     62.600 €                         Darlehensschulden 151.000 €
+       Fuhrpark                40.000 €                           Verbl. aus LL                      42.500 €
+
+
+ B. Umlaufvermögen
+ Vorräte
+       Rohstoffe              160.000 €
+  Forderungen
+       Forderungen             22.000 €
+       aus LL
+ flüssige Mittel
+
+       Kassenbestand           2.500 €
+
+       Bankguthaben            20.400 €
+
+                                         581.500 €                                                          581.500 €
+
+
+Seite 6 | L 050-02-0518-3 |        © DIHK – Gesellschaft für berufliche Bildung – Organisation zur Förderung der IHK-Weiterbildung mbH – Bonn
+                                   Die Vervielfältigung, Verbreitung oder öffentliche Wiedergabe der Publikation [der Prüfungssätze und Lösungshinweise]
+                                   ist nicht gestattet (§§ 53, 54 UrhG) und strafbar (§ 106 UrhG). Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+
+=== Seite 7 ===
+GEPRÜFTE/-R INDUSTRIEMEISTER/-IN
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+GRUNDLEGENDE QUALIFIKATIONEN
+Betriebswirtschaftliches Handeln
+
+Aufgabe 6
+Für die Erstellung einer Kostenträgerrechnung gibt es verschiedene Kalkulationsverfahren.
+Maßgebend für das jeweils zu verwendende Kalkulationsverfahren ist das im Betrieb
+durchgeführte Fertigungsverfahren.
+a)     Nennen und beschreiben Sie drei mögliche Fertigungsverfahren und führen Sie dazu                                                   (6 Punkte)
+       je ein Beispiel an.
+b)     Ordnen Sie den aufgeführten                              Fertigungsverfahren               jeweils       das      passende         (6 Punkte)
+       Kalkulationsverfahren zu.
+
+
+
+Lösungshinweise Aufgabe 6                                                                                                               (12 Punkte)
+[VO: § 4 Absatz 3 Nr. 5]
+a)     ■      Massenfertigung:   Der     gleiche    Rohstoff   wird   in   immer       gleichen
+              Produktionsverfahren kontinuierlich zu einem Produkt verarbeitet, z. B. Strom im
+              Kraftwerk oder Roheisen im Hochofen.
+       ■      Sortenfertigung: Ein Standardprodukt wird gefertigt und gleichzeitig höher- oder
+              geringerwertige Produktsorten, was durch verschiedene Verarbeitungszeiten
+              oder verschiedene Produktzusätze erreicht wird, z. B. verschiedene
+              Walzstahldicken durch verschiedene Walzzeiten oder in der Bierbrauerei, wo
+              durch einen zusätzlichen Arbeitsvorgang alkoholfreies Bier erzeugt wird.                                                    (6 Punkte)
+       ■      Einzelfertigung: Fertigung auf Kundenwunsch, wie z. B. Sonderanlagenbau
+       ■      Serienfertigung: Es wird eine bestimmte Menge eines Produktes hergestellt
+              z. B. Messgeräte
+b)     ■      Massenfertigung: Divisionskalkulation
+       ■      Sortenfertigung: Äquivalenzziffernkalkulation
+       ■      Einzel- und Serienfertigung: erweiterte, differenzierende Zuschlagskalkulation                                              (6 Punkte)
+
+
+
+
+© DIHK – Gesellschaft für berufliche Bildung – Organisation zur Förderung der IHK-Weiterbildung mbH – Bonn                     Seite 7 | L 050-02-0518-3 |
+Die Vervielfältigung, Verbreitung oder öffentliche Wiedergabe der Publikation [der Prüfungssätze und Lösungshinweise]
+ist nicht gestattet (§§ 53, 54 UrhG) und strafbar (§ 106 UrhG). Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+
+=== Seite 8 ===
+GEPRÜFTE/-R INDUSTRIEMEISTER/-IN
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+GRUNDLEGENDE QUALIFIKATIONEN
+Betriebswirtschaftliches Handeln
+
+Aufgabe 7
+In einer Abteilung der Industrie AG werden elektrische Garagentorantriebe produziert. Aus
+dieser Produktion liegen folgende Daten vor:
+
+variable Kosten:                       115 €/Stück, davon 88 €/Stück Fertigungsmaterial
+Preis:                                 175 €/Stück
+fixe Kosten:                           375.000 €/Monat
+a)   Berechnen Sie die Break-Even-Menge.                                                                                                                   (3 Punkte)
+b)   Stellen Sie in Anlage 1 folgende Daten grafisch dar:                                                                                                  (7 Punkte)
+     ■    die Gesamtkostenfunktion
+     ■    die Break-Even-Menge
+     ■    die Umsatzfunktion
+     ■    den Break-Even-Umsatz
+     ■    den Break-Even-Punkt.
+c)   Aufgrund von Einkaufsverhandlungen konnten die Materialkosten um 15 % gesenkt                                                                         (4 Punkte)
+     werden.
+     Berechnen Sie die aktuelle Break-Even-Menge.
+
+
+Lösungshinweise Aufgabe 7                                                                                                                               (14 Punkte)
+[VO: § 4 Absatz 3 Nr. 5]
+                                  Kf          375.000,00 € / Monat
+a)    X BEP                                                                6.250 Stück / Monat
+                                p  k v 175,00 € / Stück  115,00 € / Stück                                                                                (3 Punkte)
+b)
+                                2.000.000
+                                1.800.000                                                                 U
+
+                                1.600.000
+                                                                                                            K
+                                1.400.000
+                                                                             BEP
+                                1.200.000
+                                 U BEP
+                                1.000.000
+         Kosten/Erlöse in Eur
+
+
+
+
+                                 800.000
+                                 600.000
+                                 400.000
+                                 200.000
+                                                                            x BEP
+                                       0
+                                            0      2.000      4.000        6.000        8.000        10.000       12.000
+
+                                            Menge (Stück)
+                                                                                                                                                           (7 Punkte)
+
+c)    kv neu  kv alt  FM  0,15  115,00 € / Stück  88,00 € / Stück  0,15  101,80 € / Stück                                                           (4 Punkte)
+
+                                        Kf           375.000,00 € / Monat
+      X BEP neu                                                                   5.123 Stück / Monat
+                                    p  kv neu 175,00 € / Stück  101,80 € / Stück
+
+
+
+Seite 8 | L 050-02-0518-3 |                           © DIHK – Gesellschaft für berufliche Bildung – Organisation zur Förderung der IHK-Weiterbildung mbH – Bonn
+                                                      Die Vervielfältigung, Verbreitung oder öffentliche Wiedergabe der Publikation [der Prüfungssätze und Lösungshinweise]
+                                                      ist nicht gestattet (§§ 53, 54 UrhG) und strafbar (§ 106 UrhG). Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+

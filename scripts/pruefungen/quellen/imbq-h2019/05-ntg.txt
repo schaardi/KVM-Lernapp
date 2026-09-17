@@ -1,0 +1,542 @@
+=== Seite 1 ===
+Bundeseinheitliche Fortbildungsprüfung der Industrie- und Handelskammern
+
+Geprüfte/-r Industriemeister/-in,
+fachrichtungsübergreifende Basisqualifikationen/
+grundlegende Qualifikationen
+Berücksichtigung naturwissenschaftlicher und technischer Gesetzmäßigkeiten
+
+
+Lösungshinweise
+Datum:                                         4. November 2019
+
+Bearbeitungszeit:                              90 Minuten
+
+Anzahl Aufgaben:                               7
+
+
+Hinweise für den Korrektor:
+■     Die folgenden Lösungen sind lediglich Lösungshinweise.
+■     Sie sollen nur den Rahmen der zu erwartenden Prüfungsleistung abstecken.
+■     Der Korrektor ist durch die hier aufgeführten Lösungshinweise in seinem Bewertungs-
+      spielraum nicht eingeengt.
+■     Bei Aufgaben, die eine Aufzählung von n-Fakten zur Lösung erfordern, werden nur die
+      ersten n-Fakten gewertet. Alle darüber hinausgehenden Aufzählungen werden
+      gestrichen.
+■     Bei Berechnungen sollen Folgefehler berücksichtigt werden und somit nicht zum Punkt-
+      abzug führen.
+■     Der leichteren Lesbarkeit wegen geben wir in den Aufgaben/Texten der männlichen
+      Form den Vorzug. Mit diesem einfacheren sprachlichen Ausdruck sind selbstverständlich
+      immer alle Geschlechter gemeint.
+Die Aufgaben mit Lösungsvorschlägen können von den Industrie- und Handelskammern oder Dritten nach einer Frist von sechs Monaten
+direkt bestellt werden bei:
+wbv Media GmbH & Co. KG, Service-Center DIHK,
+Postfach 10 06 33, 33506 Bielefeld
+Tel.: 0521/91101-16, Fax: 0521/91101-19, E-Mail: service@wbv.de
+
+
+
+
+                              © DIHK – Gesellschaft für berufliche Bildung – Organisation zur Förderung der IHK-Weiterbildung mbH – Bonn
+              Die Vervielfältigung, Verbreitung oder öffentliche Wiedergabe der Publikation ist nicht gestattet (§§ 53, 54 UrhG) und strafbar (§ 106 UrhG).
+                                                          Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+                                                                             L 050-05-0519-5
+
+=== Seite 2 ===
+Geprüfte/-r Industriemeister/-in,
+fachrichtungsübergreifende Basisqualifikationen/
+grundlegende Qualifikationen
+Berücksichtigung naturwissenschaftlicher und technischer Gesetzmäßigkeiten
+
+
+Aufgabe 1
+Die Luftverunreinigung stellt zunehmend einen Teilaspekt der Umweltverschmutzung dar.
+
+ a Mögliche Punktzahl: 2
+Nennen Sie die zwei Hauptbestandteile der Luft.
+
+ b Mögliche Punktzahl: 6
+Geben Sie drei Beispiele aus Ihrem Umfeld an, bei denen Stickstoffoxide entstehen.
+
+ c Mögliche Punktzahl: 4
+Nennen Sie vier Maßnahmen aus Ihrem Unternehmen, die zur Verringerung des
+belastenden Stickstoffoxid-Ausstoßes beitragen können.
+
+
+Lösungshinweise Aufgabe 1
+[VO: § 4 Absatz 6 Nr. 1]
+
+ a Mögliche Punktzahl: 2
+■   Stickstoff (N2)
+■   Sauerstoff (O2)
+
+ b Mögliche Punktzahl: 6
+Entstehung von Stickstoffoxiden (NO), Beispiele:
+■   Verbrennungsvorgänge in Anlagen und Motoren
+■   Einsatz fossiler Brennstoffe (Heizungen)
+■   industrielle Landwirtschaft
+■   Kleinverbraucher
+
+ c Mögliche Punktzahl: 4
+Z. B.:
+■   alternative Energiequellen zur Wärmegewinnung anwenden
+■   elektrisch betriebene Autos nutzen
+■   Optimierung der Einsatzfahrpläne von Fahrzeugen und ggf. der Verkehrsträger
+■   Wärmedämmung an Gebäuden
+■   Wärmepumpen einsetzen
+■   nachhaltige Werkstoffe einsetzen und recyceln
+
+
+
+
+                                                Seite 2
+                                            L 050-05-1119-5
+
+=== Seite 3 ===
+Geprüfte/-r Industriemeister/-in,
+fachrichtungsübergreifende Basisqualifikationen/
+grundlegende Qualifikationen
+Berücksichtigung naturwissenschaftlicher und technischer Gesetzmäßigkeiten
+
+
+Aufgabe 2
+Ein 6 m langes ungleichschenkliges Winkelprofil (Abbildung) hat folgende Abmessungen:
+60 mm x 40 mm x 5 mm. Es besitzt eine Querschnittsfläche S = 4,79 cm²,
+eine Materialdichte von ρ = 2,70 kg/dm³ und wird mit einer Zugkraft von 36.000 N belastet.
+
+
+
+
+                              Abbildung: Querschnittsfläche des Winkelprofils
+
+ a Mögliche Punktzahl: 4
+Berechnen Sie die Masse des Winkelprofils.
+
+ b Mögliche Punktzahl: 5
+Berechnen Sie die auftretende Zugspannung im Winkelprofil.
+
+ c Mögliche Punktzahl: 9
+In den längeren Schenkel des Winkelprofils wird ein Durchgangsloch mit dem Durchmesser
+von 17 mm gebohrt.
+Berechnen Sie die auftretende Zugspannung im Winkelprofil bei gleichbleibender
+Zugkraft.
+
+
+
+
+                                                Seite 3
+                                            L 050-05-1119-5
+
+=== Seite 4 ===
+Geprüfte/-r Industriemeister/-in,
+fachrichtungsübergreifende Basisqualifikationen/
+grundlegende Qualifikationen
+Berücksichtigung naturwissenschaftlicher und technischer Gesetzmäßigkeiten
+
+
+Lösungshinweise Aufgabe 2
+[VO: § 4 Absatz 6 Nr. 2 und 3]
+
+ a Mögliche Punktzahl: 4
+        m V  
+        V Sl
+        m Sl 
+                                          g
+        m  4,79 cm ²  600 cm  2,70
+                                         cm ³
+        m  7.759,80 g
+        m  7,76 kg
+
+ b Mögliche Punktzahl: 5
+              F
+        z 
+              S
+              36.000 N
+        z 
+              479 mm ²
+                     N
+         z  75,16
+                    mm ²
+ c Mögliche Punktzahl: 9
+                     36.000 N
+        z 
+               479 mm ²  17 mm  5 mm
+                       N
+         z  91,37
+                      mm ²
+
+
+
+
+                                                Seite 4
+                                            L 050-05-1119-5
+
+=== Seite 5 ===
+Geprüfte/-r Industriemeister/-in,
+fachrichtungsübergreifende Basisqualifikationen/
+grundlegende Qualifikationen
+Berücksichtigung naturwissenschaftlicher und technischer Gesetzmäßigkeiten
+
+
+Aufgabe 3
+Mögliche Punktzahl: 15
+Der Dieselmotor eines Schiffes hat eine Nennleistung von 300 kW.
+Während eines 15-minütigen Probebetriebs bei Nennlast benötigt der Motor insgesamt
+22 Liter Dieselkraftstoff.
+
+Ermitteln Sie den Wirkungsgrad des Motors.
+
+
+Lösungshinweise Aufgabe 3
+[VO: § 4 Absatz 6 Nr. 2 und 3]
+Mögliche Punktzahl: 15
+     Pab
+
+     Pzu
+           Pab  300 kW
+                   Q
+           Pzu                 t  15 min  900 s
+                   t
+                                                 kJ
+           Q  m  Hi           Hi  42.000
+                                                 kg
+                               V  22 l
+                                                  kg
+                                Diesel  0,83
+                                                 dm ³
+           m   V
+                     kg
+              0,83       22 dm ³
+                    dm ³
+           m  18,26 kg
+                                   kJ
+           Q  18,26 kg  42.000
+                                   kg
+           Q  766.920 kJ
+                 766.920 kJ
+           Pzu 
+                   900 s
+           Pzu  852,13 kW
+     Pab
+
+     Pzu
+      300 kW
+
+    852,13 kW
+  0,35
+
+
+                                                  Seite 5
+                                            L 050-05-1119-5
+
+=== Seite 6 ===
+Geprüfte/-r Industriemeister/-in,
+fachrichtungsübergreifende Basisqualifikationen/
+grundlegende Qualifikationen
+Berücksichtigung naturwissenschaftlicher und technischer Gesetzmäßigkeiten
+
+
+
+Aufgabe 4
+Quadrocopter (Drohnen) sollen für Testzwecke in der Paketzustellung eingesetzt werden.
+Eine Drohne wird mit einer Geschwindigkeit von v = 12 m/s genau in Richtung Süden
+gestartet.
+
+Zugleich weht ein Wind aus südöstlicher Richtung (45°) mit einer Geschwindigkeit
+von 10 m/s.
+
+              Flugrichtung                                                   Windrichtung
+
+
+
+
+ a Mögliche Punktzahl: 3
+Bestimmen Sie zeichnerisch (maßstäblich) die resultierende Geschwindigkeit der
+Drohne.
+
+ b Mögliche Punktzahl: 8
+Berechnen Sie die resultierende Geschwindigkeit der Drohne.
+
+ c Mögliche Punktzahl: 8
+Berechnen Sie den Winkel, um den diese Drohne ausgelenkt wird, bezogen auf die
+Nord-Süd-Achse.
+
+
+
+
+                                                Seite 6
+                                            L 050-05-1119-5
+
+=== Seite 7 ===
+Geprüfte/-r Industriemeister/-in,
+fachrichtungsübergreifende Basisqualifikationen/
+grundlegende Qualifikationen
+Berücksichtigung naturwissenschaftlicher und technischer Gesetzmäßigkeiten
+
+
+
+Lösungshinweise Aufgabe 4
+[VO: § 4 Absatz 6 Nr. 2 und 3]
+
+ a Mögliche Punktzahl: 3
+
+
+
+
+                                             vres = 8,62 m/s            α = 55,12°
+ b Mögliche Punktzahl: 8
+v ² res  (vWind )²  (v Drohne )²  2  vWind  v Drohne  cos 45
+             m 2      m            m       m
+v ² res  (12  )  (10 )2  2  (12 )  (10 )  cos 45
+             s        s            s       s
+             m
+v res  8,62
+             s
+
+Alternativer Lösungshinweis:
+v 2 res  v x2, Wind  (v y ,Drohne  v y , Wind )2
+                m 2            m
+v 2 res  ( 7, 071 )  ( 4, 929 )2
+                s              s
+                m              m
+v res  ( 7, 071 )2  ( 4, 929 )2
+                 s              s
+                m2
+v res  74, 294 2
+                s
+              m
+v res  8, 62
+              s
+
+
+
+
+                                                          Seite 7
+                                                      L 050-05-1119-5
+
+=== Seite 8 ===
+Geprüfte/-r Industriemeister/-in,
+fachrichtungsübergreifende Basisqualifikationen/
+grundlegende Qualifikationen
+Berücksichtigung naturwissenschaftlicher und technischer Gesetzmäßigkeiten
+
+
+
+ c Mögliche Punktzahl: 8
+  v res         vWind
+            
+sin 45         sin 
+                vWind
+   sin               sin 45
+                v res
+                  m
+                   10
+   sin          s  sin 45
+                   m
+              8,62
+                   s
+            55,12
+Alternativer Lösungshinweis:
+                  v x , Wind
+tan  
+        (v y , Drohne  v y , Wind )
+                m
+           7,071
+tan           s  1,4346
+                m
+        4,929
+                 s
+      a tan (1,4346)  55,12
+
+
+
+
+                                                Seite 8
+                                            L 050-05-1119-5
+
+=== Seite 9 ===
+Geprüfte/-r Industriemeister/-in,
+fachrichtungsübergreifende Basisqualifikationen/
+grundlegende Qualifikationen
+Berücksichtigung naturwissenschaftlicher und technischer Gesetzmäßigkeiten
+
+
+Aufgabe 5
+Eine Seilwinde wird mit einem Drehstrommotor über ein Getriebe angetrieben.
+
+Auf dem Typenschild des Drehstrommotors stehen folgende Bemessungsgrößen:
+
+     U = 400 V
+
+     I = 9,2 A
+
+     cosφ = 0,85
+
+     n = 1.440 min-1
+
+Der Wirkungsgrad des Motors beträgt   0, 83 .
+Mit der Seilwinde soll eine Masse von 0,5 Tonnen gleichförmig mit 0,5 m/s senkrecht nach
+oben gehoben werden. Das Seil wird auf einer Trommel mit Ø 330 mm einlagig aufgerollt.
+Getriebe und Seilwinde haben zusammen einen Wirkungsrad von 60 %.
+
+
+
+
+                                            Abbildung: Seilwinde
+
+Hinweis für den Prüfungsteilnehmer: Der Seildurchmesser ist zu vernachlässigen.
+
+    a Mögliche Punktzahl: 6
+Berechnen Sie die erforderliche Antriebsleistung am Eingang des Getriebes für die
+Seilwinde.
+
+    b Mögliche Punktzahl: 6
+Ermitteln Sie rechnerisch, ob die Leistung des Drehstrommotors für den Antrieb
+ausreicht.
+
+
+
+                                                Seite 9
+                                            L 050-05-1119-5
+
+=== Seite 10 ===
+Geprüfte/-r Industriemeister/-in,
+fachrichtungsübergreifende Basisqualifikationen/
+grundlegende Qualifikationen
+Berücksichtigung naturwissenschaftlicher und technischer Gesetzmäßigkeiten
+
+
+
+Lösungshinweise Aufgabe 5
+[VO: § 4 Absatz 6 Nr. 2 und 3]
+
+ a Mögliche Punktzahl: 6
+                            m
+F  m  g  500 kg  9,81 2  4.905 N
+                            s
+                                    m
+                      4.905 N  0,5
+               F v                 s  4.087,5 W
+Pzu Getriebe       
+                           0,6
+
+
+ b Mögliche Punktzahl: 6
+Abgegebene Leistung des Drehstrommotors an der Welle:
+PabMotor  U  I  3  cos   
+PabMotor  400 V  9, 2 A  3  0,85  0,83  4.496,8 W
+
+Die Motorleistung reicht aus.
+
+
+
+Aufgabe 6
+Mögliche Punktzahl: 12
+Zur alternativen Gewinnung elektrischer Energie werden z. B. Solarenergieanlagen,
+Windenergieanlagen und Wasserkraftanlagen eingesetzt.
+
+Geben Sie für diese Energieanlagen drei gemeinsame Vorteile sowie
+jeweils drei spezifische Nachteile an. Verwenden Sie dazu Anlage 1.
+
+
+
+
+                                               Seite 10
+                                            L 050-05-1119-5
+
+=== Seite 11 ===
+Geprüfte/-r Industriemeister/-in,
+fachrichtungsübergreifende Basisqualifikationen/
+grundlegende Qualifikationen
+Berücksichtigung naturwissenschaftlicher und technischer Gesetzmäßigkeiten
+
+
+
+Lösungshinweise Aufgabe 6
+[VO: § 4 Absatz 6 Nr. 2 und 3]
+
+ Mögliche Punktzahl: 12
+
+ Energieanlagen          gemeinsame Vorteile, z. B.:               spezifische Nachteile, z. B.:
+ Solarenergie-          ■    kostenlose Energiequellen         ■    hohe Investitionskosten
+ anlagen                ■    dezentrale, autarke               ■    Sonneneinstrahlung nötig
+                             Energiegewinnung                  ■    geringer Wirkungsgrad
+                        ■    emissionsarme                     ■    Veränderung der
+                             Energiegewinnung
+                                                                    Kulturlandschaft
+                        ■    Reduzierung der CO2–
+ Windenergie-                                                  ■    Stromtransport ggf. über lange
+                             Konzentration
+                                                                    Leitungswege
+ anlagen
+                                                               ■    Überprägung der
+                                                                    gewachsenen Kultur-
+                                                                    landschaft
+                                                               ■    Unstetigkeit des Windes
+                                                               ■    Störung der Flora und Fauna,
+                                                                    des Tourismus
+                                                               ■    Recycling
+ Wasserkraft-                                                  ■    wartungsintensiv
+ anlagen                                                       ■    hohe Investitionskosten
+                                                               ■    Veränderung der Landschaft
+                                                               ■    Störungen des
+                                                                    Wasserhaushaltes
+
+
+
+
+                                               Seite 11
+                                            L 050-05-1119-5
+
+=== Seite 12 ===
+Geprüfte/-r Industriemeister/-in,
+fachrichtungsübergreifende Basisqualifikationen/
+grundlegende Qualifikationen
+Berücksichtigung naturwissenschaftlicher und technischer Gesetzmäßigkeiten
+
+
+Aufgabe 7
+Bei der Herstellung eines Niederhalters durch Zug-Druck-Umformen wird ein Längenmaß
+anhand von Stichproben überwacht.
+
+Die Auswertung der letzten Stichprobe in der Produktion ergab
+den kleinsten Messwert 101,22 mm und den größten Messwert 103,84 mm.
+
+Der Mittelwert dieser Stichprobe betrug x = 102,75 mm, die Standardabweichung wurde mit
+s = 0,076 mm ermittelt.
+
+ a Mögliche Punktzahl: 5
+Begründen Sie, warum der Medianwert (Zentralwert) der Grundgesamtheit in dieser
+Aufgabenstellung nicht ermittelt werden kann.
+
+ b Mögliche Punktzahl: 2
+Berechnen Sie die Spannweite der Stichprobe.
+
+ c Mögliche Punktzahl: 5
+Bestimmen Sie die Grenzen xu und xo, die 68,26 % dieser Stichprobe einschließen.
+
+
+
+Lösungshinweise Aufgabe 7
+[VO: § 4 Absatz 6 Nr. 4]
+
+ a Mögliche Punktzahl: 5
+Median (Zentralwert) der Grundgesamtheit = ausgezählter Mittelwert, d. h., es liegen gleich
+viele Werte darüber und darunter. Erforderlich sind dazu die Werte der Urliste; da diese
+Urliste nicht vorliegt, ist der Medianwert nicht ermittelbar.
+
+ b Mögliche Punktzahl: 2
+R = xmax – xmin = 103,84 mm – 101,22 mm = 2,62 mm
+
+ c Mögliche Punktzahl: 5
+
+68,26 % entspricht genau x ± s .
+x0  x  s  102,75 mm  1  0,076 mm  102,826 mm
+xu  x  s  102,75 mm  1  0,076 mm  102,674 mm
+
+
+
+
+                                               Seite 12
+                                            L 050-05-1119-5
+

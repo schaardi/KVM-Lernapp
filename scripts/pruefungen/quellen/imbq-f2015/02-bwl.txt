@@ -1,0 +1,675 @@
+=== Seite 1 ===
+Bundeseinheitliche
+Weiterbildungsprüfung
+
+der Industrie- und Handelskammern
+
+Prüfungsteilnehmer-Nummer
+
+Geprüfte/-r Industriemeister]/-in,
+fachrichtungsübergreifende
+Basisqualifikationen/
+grundlegende Qualifikationen
+
+m Basisqualifikation Betriebswirtschaftliches Handeln
+m Prüfungstag 30. April 2015
+
+m Bearbeitungszeit 90 Minuten
+
+m Anzahl der Aufgaben 7
+
+Bitte prüfen Sie vor Beginn der Prüfung die Vollständigkeit des Aufgabensatzes. Sollte der
+Aufgabensatz nicht vollständig sein, informieren Sie bitte die Aufsicht.
+
+L 050-02-0415-2
+
+=== Seite 2 ===
+Bearbeitungshinweise
+
+Bitte lesen Sie die nachfolgenden Bearbeitungshinweise sorgfältig durch:
+
+Die zur Prüfung zugelassenen Hilfsmittel wurden Ihnen separat mit der Einladung mitgeteilt.
+Sie erhalten einen Aufgaben- und einen Lösungsteil.
+Tragen Sie auf dem Deckblatt Ihre Prüfungsteilnehmer-Nummer ein.
+Die maximale Gesamtpunktzahl der Lösungen beträgt 100 Punkte.
+Die Lösungsgänge bzw. Rechenvorgänge sind klar und nachvollziehbar im Lösungsteil darzu-
+stellen. Sollte der Platz nicht ausreichen, benutzen Sie bitte das Konzeptpapier, verweisen Sie
+auf die Fortsetzung und kennzeichnen Sie diese. Wir weisen darauf hin, dass eine vom Prüfungs-
+ausschuss nicht lesbare Prüfungsarbeit mit der Note „ungenügend“ (null Punkte) bewertet wird
+mit den Rechtsfolgen, die sich aus der Prüfungsordnung ergeben.
+Verwenden Sie für jede Aufgabe ein neues Lösungsblatt bzw. eine neue Lösungsseite.
+Falls die Lösung auf einem beigefügten Anlageblatt erfolgen soll, wird in der Aufgabenstellung
+darauf hingewiesen.
+= Für Ihre Notizen benutzen Sie bitte ausschließlich das Konzeptpapier.
+
+Das Konzeptpapier ist mit dem Aufgaben- und dem Lösungsteil abzugeben.
+u Bei Aufgaben, die eine Aufzählung von n-Fakten zur Lösung erfordern, werden nur die ersten
+n-Fakten gewertet. Alle darüber hinausgehenden Aufzählungen werden gestrichen.
+
+Wir wünschen Ihnen bei der Bearbeitung viel Erfolg.
+
+Der leichteren Lesbarkeit wegen geben wir in den Aufgaben/Texten der männlichen Form den
+Vorzug. Mit diesem einfacheren sprachlichen Ausdruck sind selbstverständlich immer Männer und
+Frauen gemeint.
+
+Die Vervielfältigung, Verbreitung oder öffentliche Wiedergabe der Publikation [der Prüfungssätze]
+ist nicht gestattet (8853, 54 UrhG) und strafbar (8 106 UrhG). Im Fall der Zuwiderhandlung wird
+Strafantrag gestellt.
+
+=== Seite 3 ===
+GEPRÜFTE/-R INDUSTRIEMEISTER/-IN, FACH-
+RICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+
+GRUNDLEGENDE QUALIFIKATIONEN
+Betriebswirtschaftliches Handeln
+
+Aufgabe BE
+
+Die GmbH ist eine heute weit verbreitete Unternehmensform.
+
+a) Beschreiben Sie die GmbH anhand der Kriterien (6 Punkte)
+m Mindestgründungskapital,
+m Geschäftsführungsbefugnis,
+= Haftung der GmbH,
+m Haftung der Gesellschafter.
+
+b) Seit 2008 gibt es im GmbH-Gesetz die Möglichkeit, eine erleichterte Variante der
+GmbH zu gründen, die UG (haftungsbeschränkt).
+
+Erläutern Sie zwei Unterschiede zur GmbH. (4 Punkte)
+
+c) Die GmbH kann außerdem ein Bestandteil einer GmbH & Co. KG sein.
+
+Erläutern Sie den Aufbau dieser Rechtsform. (4 Punkte)
+
+Lösungshinweise Aufgabe 1 (14 Punkte)
+(RVO 8 4 Absatz 3 Nr. 1)
+
+a) m Mindestgründungskapital:
+
+25.000 € (1 Punkt)
+m Geschäftsführungsbefugnis:
+
+Der Geschäftsführer hat Geschäftsführungsbefugnis. (1 Punkt)
+= Haftung der GmbH:
+
+Die Gesellschaft haftet mit ihrem Firmenvermögen. (2 Punkte)
+m Haftung der Gesellschafter:
+
+Die Gesellschafter haften mit ihren Einlagen. (2 Punkte)
+
+b) z.B:
+
+m Mindestgründungskapital: 1 € pro Gesellschafter
+
+= Pflicht zum Ansparen von 25 % des jährlich anfallenden Gewinnes, bis 25.000 €
+erreicht sind
+
+m dann Wahlrecht zwischen UG (haftungsbeschränkt) und GmbH (4 Punkte)
+c) Es handelt sich um eine KG, bei der die GmbH Komplementär ist, d. h., es gibt keine
+Haftung mit Privatvermögen. (4 Punkte)
+© DIHK - Gesellschaft für berufliche Bildung — Organisation zur Förderung der IHK-Weiterbildung mbH - Bonn | L050-02-0415-2 | Seite 17
+
+Die Vervielfältigung, Verbreitung oder öffentliche Wiedergabe der Publikation [der Prüfungssätze und Lösungshinweise]
+ist nicht gestattet (8853, 54 UrhG) und strafbar (8 106 UrhG). Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+
+=== Seite 4 ===
+GEPRÜFTEI-R INDUSTRIEMEISTER/-IN, FACH-
+RICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+
+GRUNDLEGENDE QUALIFIKATIONEN
+Betriebswirtschaftliches Handeln
+
+Aufgabe 2]
+
+Die Aufbauorganisation kennt verschiedene Organisationsmodelle, unter anderem die
+Matrixorganisation.
+
+a) Beschreiben Sie das Modell der Matrixorganisation mithilfe von zwei Aspekten. (4 Punkte)
+b) Stellen Sie eine Matrixorganisation anhand eines betrieblichen Beispieles grafisch dar. (7 Punkte)
+Ihr Organigramm muss vier funktionale Abteilungen und zwei Querschnittseinheiten
+beinhalten.
+c) Zeigen Sie drei Nachteile dieses Organisationsmodells auf. (6 Punkte)
+Seite 18 |L 050-02-0415-2 | © DIHK - Gesellschaft für berufliche Bildung - Organisation zur Förderung der IHK-Weiterbildung mbH — Bonn
+
+Die Vervielfältigung, Verbreitung oder öffentliche Wiedergabe der Publikation [der Prüfungssätze und Lösungshinweise]
+ist nicht gestattet (8853, 54 UrhG) und strafbar (8 106 UrhG). Im Fall der Zuwiderhandlung wird Strafantrag gestellt
+
+=== Seite 5 ===
+GEPRÜFTEI/-R INDUSTRIEMEISTER/-IN, FACH-
+RICHTUNGSUBERGREIFENDE BASISQUALIFIKATIONEN/
+
+GRUNDLEGENDE QUALIFIKATIONEN
+Betriebswirtschaftliches Handeln
+
+Lösungshinweise Aufgabe 2 (17 Punkte)
+(RVO $ 4 Absatz 3 Nr. 2)
+
+a) m z.B:
+m zweidimensionales Organisationssystem - horizontale und vertikale Gliederung
+
+sm Teamarbeit, gemeinsame Entscheidungen der Querschnittseinheiten und der Funk-
+tionseinheiten
+
+= Entlastung der Geschäftsleitung, z. B. durch Teamarbeit, Spezialisten (4 Punkte)
+b)
+Unternehmensleitung
+|
+| | |
+Einkauf Verwaltung Vertrieb Produktion
+I 1] Personal
+IT
+(Geschäftsleitung 1 Punkt,
+vier funktionelle Abteilungen 1 Punkt,
+zwei Querschnittseinheiten 1 Punkt,
+richtige Darstellung der Verbindungen 4 Punkte,
+insgesamt max. 7 Punkte)
+Hinweis für den Korrektor: Das Organigramm muss ein vollständig funktions-
+fähiges Unternehmen darstellen, nicht nur einen
+Unternehmensausschnitt.
+CHEZ. BD:
+= mehr Führungskräfte nötig
+m höhere Personalkosten
+m hohes Konfliktpotenzial
+m Durch horizontale und vertikale Bereiche ist ein hohes Maß an Information und
+Kooperation erforderlich.
+= Entscheidungen dauern länger (Diskussion in den Teams).
+= Mitarbeiter haben mehrere Vorgesetzte.
+= widersprüchliche Weisungen der Vorgesetzten (6 Punkte)
+© DIHK - Gesellschaft für berufliche Bildung — Organisation zur Förderung der IHK-Weiterbildung mbH - Bonn | L050-02-0415-2 | Seite 19
+
+Die Vervielfältigung, Verbreitung oderöffentliche Wiedergabe der Publikation [der Prüfungssätze und Lösungshinweise]
+ist nicht gestattet ($853, 54 UrhG) und strafbar (8106 UrhG). Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+
+=== Seite 6 ===
+GEPRÜFTEI/-R INDUSTRIEMEISTER/-IN, FACH-
+RICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+
+GRUNDLEGENDE QUALIFIKATIONEN
+Betriebswirtschaftliches Handeln
+
+Aufgabe =
+
+Als Meister der Instandhaltung werden Sie mit der Personalplanung für die Umrüstung
+der Fertigungsanlage beauftragt. Zur Verfügung stehen acht Facharbeiter. Der Umbau der
+Anlage soll in zehn Arbeitstagen abgeschlossen sein.
+
+a) Überprüfen Sie, ob mit dem zur Verfügung stehenden Personal die Umrüstung der (5 Punkte)
+Anlage termingerecht durchgeführt werden kann.
+
+Berücksichtigen Sie bei der Ermittlung des Kapazitätsbedarfes den Störzeitfaktor von
+1,03 und folgende Daten:
+
+= Auftragsbestand 600 Montagestunden
+
+m tägliche Arbeitszeit 8 Stunden
+= Urlaub 10 %
+sw Krankheitsquote 3%
+
+b) Es steht Ihnen kein zusätzliches Personal zur Verfügung.
+
+Ermitteln Sie bei einem Zusatzbedarf von 69,5 Stunden die Mehrarbeit in Stunden pro (5 Punkte)
+Mitarbeiter und Tag.
+
+c) Beschreiben Sie den grundsätzlichen Einfluss eines Zeitgrades von über 100 % auf (2 Punkte)
+den Personalbedarf.
+
+Lösungshinweise Aufgabe 3 (12 Punkte)
+(RVO $ 4 Absatz 3 Nr. 2)
+
+a) Personalbedarf
+600 h -1,03
+
+8 h/MA/Tag : 10 Tage/Auftrag : 0,87
+
+Der Personalbedarf beträgt neun Mitarbeiter, das zur Verfügung stehende Personal von
+acht Facharbeitern reicht also nicht aus, um den Auftrag termingerecht auszuführen. (5 Punkte)
+
+= 8,88 MA/Auftrag
+
+69,5 h/Auftrag
+b) Mehrarbeitsstunden pro Mitarbeiter und Tag = 8 hMA/Tag - 10 Tage/Auftrag : 0,87
+
+= 1 Std./Mitarbeiter und Tag (5 Punkte)
+c) Der Personalbedarf sinkt, da der Kapazitätsbestand um den Zeitgrad steigt. (2 Punkte)
+Seite 20 | L 050-02-0415-2 | © DIHK - Gesellschaft für berufliche Bildung — Organisation zur Förderung der IHK-Weiterbildung mbH - Bonn
+
+Die Vervielfältigung, Verbreitung oderöffentliche Wiedergabe der Publikation [der Prüfungssätze und Lösungshinweise]
+ist nicht gestattet (8853, 54 UrhG) und strafbar ($106 UrhG). Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+
+=== Seite 7 ===
+GEPRÜFTE/-R INDUSTRIEMEISTER/-IN, FACH-
+RICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+
+GRUNDLEGENDE QUALIFIKATIONEN
+Betriebswirtschaftliches Handeln
+
+Aufgabe 4
+
+Wenn Unternehmen auch in Zukunft erfolgreich sein wollen, müssen sie mit Veränderungen
+rechnen, die zu einem Wandel in der Organisation führen können.
+
+a) Nennen Sie drei Gründe für Unternehmen, ihre Organisationsform zu verändern, und (6 Punkte)
+belegen Sie dies durch je ein Beispiel.
+
+b) Der Organisationszyklus soll sicherstellen, dass während der Planungsphase immer
+die optimale Problemlösung gefunden wird.
+
+Nennen Sie die Phasen des Organisationszyklus. (5 Punkte)
+c) Beschreiben Sie zwei alternative Ansätze der Organisationsentwicklung. (4 Punkte)
+Lösungshinweise Aufgabe 4 (15 Punkte)
+
+(RVO $ 4 Absatz 3 Nr. 3)
+
+a) m personenbezogene Gründe, z. B.:
+Wechsel in der Geschäftsführung/im Vorstand
+
+sm interne Gründe, z. B.:
+Übernahme eines zweiten Unternehmens
+m externe Gründe, z. B.:
+Wertewandel in der Gesellschaft, z. B. Fair Trade
+
+(je Grund 1 Punkt, max. 3 Punkte,
+je Beispiel 1 Punkt, max. 3 Punkte,
+
+insgesamt max. 6 Punkte)
+b) Der Organisationszyklus gliedert sich in:
+m Situationsanalyse
+m ÖOrganisationsanalyse
+= Zielformulierung
+m Lösungssuche
+m Bewertung (5 Punkte)
+
+Hinweis für den Korrektor: Auch Management-Regelkreis und PDCA sind zu
+werten.
+
+ec) ZB:
+m Top-down-Ansatz:
+Veränderungen beginnen an der Spitze und setzen sich dann bis zur untersten
+Ebene durch.
+
+m Bottom-up-Ansatz:
+Veränderungen beginnen an der Basis und setzen sich schrittweise bis zur obersten
+
+Ebene fort. (4 Punkte)
+Hinweis für den Korrektor: Auch andere Vorgehensweisen sind entsprechend zu
+bewerten.
+© DIHK - Gesellschaft für berufliche Bildung — Organisation zur Förderung der IHK-Weiterbildung mbH - Bonn | L050-02-0415-2 | Seite 21
+
+Die Vervielfältigung, Verbreitung oderöffentliche Wiedergabe der Publikation [der Prüfungssätze und Lösungshinweise]
+ist nicht gestattet ($853, 54 UrhG) und strafbar (8 106 UrhG). Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+
+=== Seite 8 ===
+GEPRÜFTEI!-R INDUSTRIEMEISTER/-IN, FACH-
+RICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+
+GRUNDLEGENDE QUALIFIKATIONEN
+
+Betriebswirtschaftliches Handeln
+
+Aufgabe 3
+
+Für die Maschinenbau GmbH liegt für den Monat April der Betriebsabrechnungsbogen in
+Anlage 1 vor. Die Verteilung der primären Gemeinkosten wurde bereits durchgeführt.
+
+Im April wurden von den Hilfskostenstellen die folgenden Leistungen erbracht:
+
+Fuhrpark Arbeits- Instandhaltung
+vorbereitung
+Fuhrpark - - -
+Material 900 km - -
+Arbeitsvorbereitung 300 km - -
+Instandhaltung 200 km 10 % -
+Fertigung A 400 km 40 % 420 Std.
+Fertigung B 500 km 50 % 480 Std.
+Verwaltung und Vertrieb 3700 km - -
+
+Zusätzlich liegen für den Monat April noch folgende Informationen vor:
+
+= Fertigungsmaterial 240.000 €
+= Fertigungslöhne A 48.000 €
+m Fertigungslöhne B 72.000 €
+a) Führen Sie die innerbetriebliche Leistungsverrechnung in Anlage 1 durch und ermitteln (15 Punkte)
+
+Sie die Istgemeinkosten (auf zwei Nachkommastellen genau).
+b) Ermitteln Sie in der Anlage 1 die Istgemeinkostenzuschlagssätze (auf zwei Nach- (5 Punkte)
+
+kommastellen genau).
+
+Lösungshinweise Aufgabe 5 (20 Punkte)
+(RVO $ 4 Absatz 3 Nr. 5)
+
+a) siehe Anlage 1 zu Lösung 5 (15 Punkte)
+b) siehe Anlage 1 zu Lösung 5 (5 Punkte)
+Seite 22 | L 050-02-0415-2 | © DIHK - Gesellschaft für berufliche Bildung — Organisation zur Förderung der IHK-Weiterbildung mbH — Bonn
+
+Die Vervielfältigung, Verbreitung oderöffentliche Wiedergabe der Publikation [der Prüfungssätze und Lösungshinweise]
+ist nicht gestattet (8853, 54 UrhG) und strafbar ($106 UrhG). Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+
+=== Seite 9 ===
+GEPRÜFTEI-R INDUSTRIEMEISTER/-IN, FACH-
+RICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+
+GRUNDLEGENDE QUALIFIKATIONEN
+Betriebswirtschaftliches Handeln
+
+Aufgabe 6
+
+In einer Betriebsstätte werden vier Produkte produziert. Die Produktion ist ausgelastet und
+hat keine freien Kapazitäten. Die Angaben zur Deckungsbeitragsrechnung sind in Anlage 2
+
+dargestellt.
+
+a) Ergänzen Sie die Tabelle in Anlage 2. Ermitteln und beurteilen Sie das Betriebsergebnis. (7 Punkte)
+b) Berechnen Sie das Betriebsergebnis unter der Vorgabe, dass Produkt D eingestellt (3 Punkte)
+wird.
+
+Lösungshinweise Aufgabe 6 (10 Punkte)
+
+(RVO 8 4 Absatz 3 Nr. 5)
+
+A ProduktA Produkt B ProduktC ProduktD Summe
+P (€/Stück) 18,30 10,40 15,20 7,50
+k, (€/Stück) 11,98 6,30 8,59 8,43
+db (€/Stück) 6,32 4,10 6,61 -0,93
+X (Stück) 7.200 14.300 9.400 23.800
+DB (€) 45.504,00 58.630,00 62.134,00 —22.134 144.134,00
+K: (©) 150.000,00
+Betriebsergebnis (€) -5.866,00
+
+Beurteilung: Produkt D erwirtschaftet einen negativen Deckungsbeitrag und führt damit
+
+zu einem Verlust. (7 Punkte)
+
+b) DByes = DB, + DBp + DB.
+= 45.504 € + 58.630 € + 62.134 €
+= 166.268 €
+
+BE neu = DBges 7 K;
+= 166.268 € - 150.000 €
+= 16.268 € (3 Punkte)
+
+© DIHK - Gesellschaft für berufliche Bildung - Organisation zur Förderung der IHK-Weiterbildung mbH - Bonn | L 050-02-0415-2 | Seite 23
+Die Vervielfältigung, Verbreitung oder öffentliche Wiedergabe der Publikation [der Prüfungssätze und Lösungshinweise]
+ist nicht gestattet (853, 54 UrhG) und strafbar ($ 106 UrhG). Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+
+=== Seite 10 ===
+GEPRÜFTEI/-R INDUSTRIEMEISTER/-IN, FACH-
+RICHTUNGSÜBERGREIFENDE BASISQUALIEIRATIONEN!
+
+GRUNDLEGENDE QUALIFIKATIONEN
+Betriebswirtschaftliches Handeln
+
+Aufgabe
+
+Ein Walzwerk stellt Spezialbleche unterschiedlicher Stärke her.
+
+Stärke (mm) Menge (t)
+0,4 1 500
+0,6 1000
+0,8 1 800
+1,0 2 100
+
+Die Gesamtfertigungskosten im Oktober betragen 3.670.000 €. Da Bleche mit geringerer
+Stärke öfter gewalzt werden müssen, steigen die Fertigungskosten tendenziell mit abneh-
+mender Blechstärke.
+
+Die nachfolgende Tabelle gibt den Zusammenhang von Blechstärke und Kostenerfahrungs-
+werten bezogen auf die Blechstärke von 1 mm an:
+
+Zunahme der
+Stärke (mm) Fertigungskosten in
+Prozent pro Tonne
+
+0,4 40 %
+
+0,6 25%
+
+0,8 5%
+Berechnen Sie die Fertigungskosten für jede Blechsorte pro Tonne sowie insgesamt. (12 Punkte)
+Lösungshinweise Aufgabe 7 (12 Punkte)
+
+(RVO 8 4 Absatz 3 Nr. 5)
+
+Blechsorte Menge Äquivalenz- Rechen- Fertigungskosten Fertigungskosten
+
+ziffer einheit gesamt in Euro in Euro jet
+0Amm 1500t 1,40 2 100 1.050.000,00 700,00
+06mm 1000t 129 1 250 625.000,00 625,00
+08mm 1800t 1,05 1 890 945.000,00 525,00
+1,0mm 2100t 1,00 2 100 1.050.000,00 500,00
+
+7 340 3.670.000,00
+(1 Punkt) (2 Punkte) (4 Punkte) (4 Punkte)
+Fertigungskosten je Recheneinheit = SAN ERR = 500 €/Recheneinheit (1 Punkt)
+
+7 340 Recheneinheit
+
+Seite 24 | L 050-02-0415-2 | © DIHK - Gesellschaft für berufliche Bildung — Organisation zur Förderung der IHK-Weiterbildung mbH - Bonn
+Die Vervielfältigung, Verbreitung oderöffentliche Wiedergabe der Publikation [der Prüfungssätze und Lösungshinweise]
+ist nicht gestattet (8853, 54 UrhG) und strafbar (8106 UrhG). Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+
+=== Seite 11 ===
+3 00'027 221
+
+gallylaA
+pun Bunyjemusä
+
+300 06r LEL
+
+&g Bunßysy
+
+300008811
+
+vy Bunßıyus4
+
+USISOYUIEWSH
+
+3000208 300 080’P1 300 0P2'87 300 0078 sJewnd
+
+Bunys4sgquoa
+Sunyeypuezsuj -SNOALY jelıoyeww Yıedıyn
+
+G aqeßyny nz | aßbejuy
+
+1BWWNN-JSWySU]lS}SBUNyNnAd
+
+uJSPUEH saysıyeysspumsgenag
+
+N3NOLLVYIAITVND JANF93TANNYS/NINOLLVMISIIVNOSISVA
+JAN3I13YIYIINSONNALHIIIHIVS ‘NI-/YILSIINFIULSNANI 4/314N4439
+
+| P 050-02-0415-2 | Seite 25
+
+Weiterbildung mbH - Bonn
+
+© DIHK - Gesellschaft für berufliche Bildung — Organisation zur Förderung der IHK-
+
+sungshinweise]
+
+ist nicht gestattet ($$ 53, 54 UrhG) und strafbar (8 106 UrhG). Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+
+Die Vervielfältigung, Verbreitung oder öffentliche Wiedergabe der Publikation [der Prüfungssätze undLö
+
+=== Seite 12 ===
+GEPRÜFTEI!-R INDUSTRIEMEISTER/-IN, FACH-
+RICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+
+GRUNDLEGENDE QUALIFIKATIONEN
+Betriebswirtschaftliches Handeln
+
+Prüfungsteilnehmer-Nummer:
+
+Anlage 2 zu Aufgabe 6
+Produkt A Produkt B Produkt C Produkt D Summe
+P (€/Stück) 18,30 10,40 15,20 7,50
+kv (€/Stück) 11,98 6,30 8,59 8,43
+db (€/Stück)
+X (Stück) 7.200 14.300 9.400 23.800
+DB (€)
+Kf (€) 150.000,00
+
+Betriebsergebnis (€)
+
+Seite 26 | P 050-02-0415-2 | © DIHK - Gesellschaft für berufliche Bildung — Organisation zur Förderung der IHK-Weiterbildung mbH - Bonn
+Die Vervielfältigung, Verbreitung oder öffentliche Wiedergabe der Publikation [der Prüfungssätze undLösungshinweise]
+ist nicht gestattet (88 53, 54 UrhG) und strafbar ($ 106 UrhG). Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+
+=== Seite 13 ===
+(eptund $)
+
+(epundg #)
+
+(epjund 2)
+
+(epundg eg)
+
+(epiund 9)
+
+% SC
+
+(x 3 00°00r’ 082
+
+300009 z8L
+
+30008,
+
+30002r 211
+
+qeııyay pun
+Bunyemiaa
+
+% 982
+
+3 00000 22
+
+3 00 002 691
+
+3 00092162
+
+3000527
+
+3 00'002
+
+3 0006r LEL
+
+a Bunßnıo4
+
+%SrE
+
+3 00°000’8r
+
+3 00'002 151
+
+3 00°070'92
+
+3000089
+
+300099
+
+300008811
+
+v Bunßy19J
+
+en
+
+3000971
+3 00 082
+
+30002079
+
+Bunyey
+-puejsuj
+
+391, =
+
+(Mund |)
+
+3 00'007 0€2 =
+
+002 LrZ + 002661 + 000062 =
+
+Y4+ UI + MN =
+
+YH (x
+
+u/3 29 = U 006/3 008°59 = Bunyjeypuejsuj jassnıyoseßejun
+
+00/3 005’PL
+
+= Bunyslsquonsyaguy [essniyosoßejwn
+
+wx/3 07°) = WM 0009/3 0078 = Yediyn jessnıyossßejwn
+
+SEBen
+
+30002
+
+300080 rI
+
+Bunys4oguoA
+"-SNOgIYy
+
+% £8'02
+
+3 00 00002
+
+300000058
+
+3000971
+
+30007287
+
+jeusjeyi
+
+Se
+
+3 000078
+
+Yıedıyny
+
+:(q nz sıemul}
+
+:(e nz sıemul}
+
+zyessBejyosnzjs|
+
+sısegsßnzag
+
+us}soyulswaßls] Z
+
+Bunyeypugysuj eßejwn
+
+Bunyslsguorsyegquyaßejwn
+
+Yledıyn- oßejwun
+
+USISOyUl8WSH SuJewıuld
+
+G Bunso7 nz | aßejuy
+
+AOWWNN-I9WYSUNLSJSBUNnyNAd
+
+UISPUEH SEysıjyeyosyimsganmog
+
+N3SNOILVAIAITVND JSANF93TANNY9/NINOLLVMIAIIVNOSISVA
+JAN3413Y9UIANSONNALHIIUHIVS ‘NI-/UILSIINFINLSNANI 4/314N4439
+
+(q
+
+(e
+
+| L 050-02-0415-2 | Seite 27
+
+Organisation zur Förderung der IHK-Weiterbildung mbH - Bonn
+iedergabe der Publikation [der Prüfungssätze und Lösungshinweise]
+
+© DIHK - Gesellschaft für berufliche Bildung —
+Die Vervielfältigung, Verbreitung oder öffentliche W
+
+rag gestellt.
+
+) und strafbar ($ 106 UrhG). Im Fall der Zuwiderhandlung wird Strafantı
+
+ist nicht gestattet (88 53, 54 UrhG
+

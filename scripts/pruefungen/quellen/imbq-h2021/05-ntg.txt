@@ -1,0 +1,686 @@
+=== Seite 1 ===
+Bundeseinheitliche Fortbildungsprüfung der Industrie- und Handelskammern
+Geprüfter Industriemeister / Geprüfte Industriemeisterin
+fachrichtungsübergreifende Basisqualifikationen/grundlegende
+Qualifikationen
+Berücksichtigung naturwissenschaftlicher und technischer Gesetzmäßigkeiten
+
+
+Lösungshinweise
+Datum:                                          3. November 2021
+
+Bearbeitungszeit:                               90 Minuten
+
+Anzahl Aufgaben:                                7
+
+
+Hinweise für den Korrektor:
+■   Die folgenden Lösungen sind lediglich Lösungshinweise.
+■   Sie sollen nur den Rahmen der zu erwartenden Prüfungsleistung abstecken.
+■   Der Korrektor ist durch die hier aufgeführten Lösungshinweise in seinem
+    Bewertungsspielraum nicht eingeengt.
+■   Bei Aufgaben, die eine Aufzählung von n-Fakten zur Lösung erfordern, werden nur die
+    ersten n-Fakten gewertet. Alle darüber hinausgehenden Aufzählungen werden
+    gestrichen.
+■   Bei Berechnungen sollen Folgefehler berücksichtigt werden und somit nicht zum
+    Punktabzug führen.
+■   Der leichteren Lesbarkeit wegen geben wir in den Aufgaben/Texten der männlichen
+    Form den Vorzug. Mit diesem einfacheren sprachlichen Ausdruck sind selbstverständlich
+    immer alle Geschlechter gemeint.
+
+
+
+Die Aufgaben mit Lösungsvorschlägen können von den Industrie- und Handelskammern oder Dritten nach einer Frist von sechs Monaten
+direkt bestellt werden bei:
+wbv Media GmbH & Co. KG, Service-Center DIHK,
+Postfach 10 06 33, 33506 Bielefeld
+Tel.: 0521/91101-16, Fax: 0521/91101-19, E-Mail:
+
+
+
+
+                            © DIHK – Gesellschaft für berufliche Bildung – Organisation zur Förderung der IHK-Weiterbildung gGmbH – Bonn
+               Die Vervielfältigung, Verbreitung oder öffentliche Wiedergabe der Publikation ist nicht gestattet (§§ 53, 54 UrhG) und strafbar (§ 106 UrhG).
+                                                           Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+                                                                             L 050-05-1121-7
+
+=== Seite 2 ===
+GEPRÜFTE/-R INDUSTRIEMEISTER/-IN,
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+GRUNDLEGENDE QUALIFIKATIONEN
+Berücksichtigung naturwissenschaftlicher und technischer Gesetzmäßigkeiten
+
+
+
+Aufgabe 1
+Umweltverschmutzung stellt eine Gefahr für das Ökosystem und den Menschen dar. Eine
+Auswirkung von Umweltverschmutzung ist die Entstehung von Saurem Regen.
+
+ a Mögliche Punktzahl: 4
+Beim Verbrennen schwefelhaltiger fossiler Brennstoffe reagiert Sauerstoff z. B. mit Schwefel
+und wird zu Schwefeldioxid.
+
+Erklären Sie, wie dadurch Saurer Regen entsteht, und beurteilen Sie, wie sich dabei
+der pH-Wert verändert.
+
+ b Mögliche Punktzahl: 2
+Bei der Verbrennung von Kraftstoffen in Verbrennungsmotoren entstehen Stickstoffoxide.
+
+Vervollständigen Sie die nachfolgende Wortgleichung:
+
+Stickstoffoxid + Wasser =
+
+ c Mögliche Punktzahl: 6
+Beschreiben Sie drei Auswirkungen des Sauren Regens auf Werkstoffe.
+
+Lösungshinweise Aufgabe 1
+[VO: § 4 Absatz 6 Nr. 1]
+
+ a Mögliche Punktzahl: 4
+Beispiele:
+■   Schwefeldioxidgase lösen sich im Wasser, das sich in der Atmosphäre befindet.
+    Dadurch entsteht eine schweflige Säure (H2SO3).
+■   Saurer Regen hat einen niedrigeren pH-Wert als der „normale" Regen
+    ( pH  Wert  5,5) .
+
+
+ b Mögliche Punktzahl: 2
+Stickstoffoxid + Wasser = Salpetersäure
+
+
+
+
+                                                   Seite 2
+                                               L 050-05-1121-7
+
+=== Seite 3 ===
+GEPRÜFTE/-R INDUSTRIEMEISTER/-IN,
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+GRUNDLEGENDE QUALIFIKATIONEN
+Berücksichtigung naturwissenschaftlicher und technischer Gesetzmäßigkeiten
+
+ c Mögliche Punktzahl: 6
+Auswirkungen des Sauren Regens auf Werkstoffe, z. B.:
+■   Der Saure Regen greift Eisenwerkstoffe an und fördert hierdurch die Rostbildung und
+    somit die Korrosion.
+■   Das trifft auch auf andere metallische Werkstoffe zu, welche eine geringe
+    Korrosionsbeständigkeit besitzen.
+■   Baustoffe wie z. B. Sand oder Kalkstein werden aufgrund ihrer chemischen
+    Zusammensetzung vom Sauren Regen angegriffen; die in den mineralischen Stoffen
+    enthaltenen Metalloxide werden „ausgewaschen“, wodurch Schwermetallionen ins
+    Grundwasser gelangen können.
+■   Bei Kunststoffen, z. B. Folien für Gewächshäuser, Abdeckungen oder Fensterprofilen,
+    wird der Alterungsprozess durch den Sauren Regen beschleunigt; Kunststoffe besitzen
+    je nach Art eine sehr unterschiedliche chemische Beständigkeit gegen Umwelteinflüsse.
+
+
+
+
+                                                   Seite 3
+                                               L 050-05-1121-7
+
+=== Seite 4 ===
+GEPRÜFTE/-R INDUSTRIEMEISTER/-IN,
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+GRUNDLEGENDE QUALIFIKATIONEN
+Berücksichtigung naturwissenschaftlicher und technischer Gesetzmäßigkeiten
+
+Aufgabe 2
+In einem Formwerkzeug werden pro Viertelstunde 50 Formteile aus Kunststoff (Polystyrol)
+hergestellt. Ein Formteil wiegt 70 g. Die Kunststoffschmelze wird mit einer Temperatur von
+230 °C in das Formwerkzeug eingespritzt. In der Form wird sie auf 65 °C abgekühlt.
+                                                                                          kJ
+Die spezifische Wärmekapazität des Kunststoffmaterials (Polystyrol) beträgt c  1,3             .
+                                                                                         kg  K
+
+ a Mögliche Punktzahl: 6
+Berechnen Sie die Wärmemenge, die in einer Stunde aus der Form abgeführt werden
+muss.
+
+ b Mögliche Punktzahl: 10
+Das Formwerkzeug wird mit Wasser gekühlt und die gesamte Wärmemenge wird vom
+Wasser abgeführt.
+
+                                                                  l
+Berechnen Sie den erforderlichen Volumenstrom in                     bei einer Einlauftemperatur
+                                                                 min
+von 21 °C und einer Auslauftemperatur von 25 °C.
+
+Hinweis für den Prüfungsteilnehmer: Falls Teilaufgabe a) nicht bearbeitet wurde,
+rechnen Sie mit einer Wärmemenge von 2.000 kJ weiter.
+
+Lösungshinweise Aufgabe 2
+[VO: § 4 Absatz 6 Nr. 3]
+
+ a Mögliche Punktzahl: 6
+Ein Teil :
+Q  m  c  T
+    0,07 kg  1,3 kJ  165 K
+Q
+              kg  K
+Q  15,015 kJ
+
+
+200 Teile pro Stunde :
+Qges  n  Q
+Qges  200  15,015 kJ
+Qges  3.003 kJ
+
+
+                                                   Seite 4
+                                               L 050-05-1121-7
+
+=== Seite 5 ===
+GEPRÜFTE/-R INDUSTRIEMEISTER/-IN,
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+GRUNDLEGENDE QUALIFIKATIONEN
+Berücksichtigung naturwissenschaftlicher und technischer Gesetzmäßigkeiten
+
+
+
+
+ b Mögliche Punktzahl: 10
+
+   Qh  QW
+   Qw  cw  mw  T
+            Qw
+   mw 
+          cw  T
+               kJ
+   Qw  3.003
+                h
+   .         Qw
+   V
+      cw  w (TA  TE )
+                            kJ
+    .               3.003
+   V                        h
+             kJ           l
+        4,18         1  (25  21) K
+            kg  K       kg
+    .        kg        l
+   V  179,6       1
+              h       kg
+                l
+    .   179,6
+   V           h
+            min
+         60
+             h
+      .
+              l
+   V  2,99
+             min
+
+Aufgabe 3
+In einem Warmwasserspeicher sind drei gleiche Heizelemente eingebaut. Ein Heizelement
+hat einen Widerstand von 60 Ω und ist für einen Strom von maximal 4 A ausgelegt.
+Der Warmwasserspeicher soll an 3-Phasen-Wechselspannung (Drehstrom) angeschlossen
+werden. (Wirkungsgrad und Wirkleistungsfaktor betragen jeweils 1).
+
+
+
+  Leiterspannung                                                 R1 = R2 = R3 = 60 Ω
+   400 V/50 Hz
+
+
+                      Abbildung 1: Wechselspannung
+
+
+
+
+                                                   Seite 5
+                                               L 050-05-1121-7
+
+=== Seite 6 ===
+GEPRÜFTE/-R INDUSTRIEMEISTER/-IN,
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+GRUNDLEGENDE QUALIFIKATIONEN
+Berücksichtigung naturwissenschaftlicher und technischer Gesetzmäßigkeiten
+
+ a Mögliche Punktzahl: 6
+Weisen Sie rechnerisch nach, in welcher Schaltungsart die Heizelemente des
+Warmwasserspeichers geschaltet werden müssen.
+
+ b Mögliche Punktzahl: 4
+Berechnen Sie die maximale Leistungsaufnahmen des Warmwasserspeichers pro
+Strang und insgesamt.
+
+ c Mögliche Punktzahl: 4
+Zum Test wird der Warmwasserspeicher mit 80 l Wasser befüllt und für eine Stunde
+eingeschaltet.
+
+Berechnen Sie, um wieviel sich die Ausgangstemperatur des Wassers erhöht.
+
+Hinweis für den Prüfungsteilnehmer: Verluste werden nicht berücksichtigt.
+
+Lösungshinweise Aufgabe 3
+[VO: § 4 Absatz 6 Nr. 3]
+
+ a Mögliche Punktzahl: 6
+
+U  Imax  R
+U  4 A  60 
+U  240 V
+Die Spannung an einem Widerstand darf maximal 240 V betragen. Deshalb müssen die
+Widerstände in Sternschaltung verschaltet werden.
+An den Widerständen bemisst sich eine Spannung von:
+         U
+UStr 
+          3
+         400 V
+UStr 
+          3
+UStr  230,94 V
+
+
+
+
+                                                   Seite 6
+                                               L 050-05-1121-7
+
+=== Seite 7 ===
+GEPRÜFTE/-R INDUSTRIEMEISTER/-IN,
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+GRUNDLEGENDE QUALIFIKATIONEN
+Berücksichtigung naturwissenschaftlicher und technischer Gesetzmäßigkeiten
+
+ b Mögliche Punktzahl: 4
+       UStr
+IStr 
+        R
+       230,94 V
+IStr 
+         60 
+IStr  3,85 A
+
+
+PStr  UStr  IStr
+PStr  230,94 V  3,85 A
+PStr  889,12 W
+
+
+Pges  U  IStr  3
+Pges  400 V  3,85 A  3
+Pges  2.667,36 W
+
+ c Mögliche Punktzahl: 4
+
+W  Q  Pges  t
+W  2.667,28 W  3.600 s
+W  9.602,208 kJ
+
+      Q
+T 
+     m c
+          9.602,208 kJ
+T 
+              kg        kJ
+     80 l  1     4,18    K
+               l        kg
+T  28,72 K
+Hinweis für den Korrektor: Abweichende Werte durch Rundungsfehler sind zulässig.
+
+
+
+
+                                                   Seite 7
+                                               L 050-05-1121-7
+
+=== Seite 8 ===
+GEPRÜFTE/-R INDUSTRIEMEISTER/-IN,
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+GRUNDLEGENDE QUALIFIKATIONEN
+Berücksichtigung naturwissenschaftlicher und technischer Gesetzmäßigkeiten
+
+
+
+Aufgabe 4
+In Abfüllanlagen von Getränkeflaschen werden Gliederkettenförderbänder eingesetzt.
+Bei einem Flaschenstau in der Förderanlage werden die Flaschen gestoppt, während die
+Gliederkette unter den Flaschen durchgezogen wird.
+
+Zur Verringerung der Reibung wird die Gliederkette geschmiert (z. B. mit Schmierseife).
+
+
+
+                         Stopper
+                                                              Gliederkette
+                 Zugkraft FZ
+
+
+
+                                       Abbildung 2: Förderanlage
+
+
+Technische Daten der Förderanlage:
+
+■   Staulänge:                           L = 4,9 m
+■   Masse einer leeren Flasche:          mFl = 365 g
+■   Durchmesser der Flasche:             d = 70 mm
+■   Reibwert:                             = 0,05
+
+
+ a Mögliche Punktzahl: 3
+Berechnen Sie die Anzahl z der im Stau befindlichen Flaschen, die aufgestaute Masse
+und die Normalkraft FN.
+
+ b Mögliche Punktzahl: 2
+Die Zugkraft FZ setzt sich zusammen aus der Reibkraft FR, verursacht durch den Stau, und
+der Kettenzugkraft FK.
+
+Berechnen Sie die zu überwindende Reibkraft FR.
+
+ c Mögliche Punktzahl: 6
+Berechnen Sie die erforderliche Leistung für den Gliederkettenförderer, wenn
+FZ = 150 N bei einer Kettengeschwindigkeit von 10 m/s beträgt.
+
+
+
+
+                                                    Seite 8
+                                               L 050-05-1121-7
+
+=== Seite 9 ===
+GEPRÜFTE/-R INDUSTRIEMEISTER/-IN,
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+GRUNDLEGENDE QUALIFIKATIONEN
+Berücksichtigung naturwissenschaftlicher und technischer Gesetzmäßigkeiten
+
+
+
+Lösungshinweise Aufgabe 4
+[VO: § 5 Absatz 3 Nr. 2]
+
+ a Mögliche Punktzahl: 3
+   L 4.900 mm
+z                  70 Flaschen
+   d      70 mm
+m  z  mFl  70 Flaschen  0,365 kg  25,55 kg
+FN  m  g
+                       m
+FN  25,55 kg  9,81
+                       s²
+FN  250,65 N
+
+ b Mögliche Punktzahl: 2
+FR  FN  μ
+FR  250,65 N  0,05
+FR  12,53 N
+
+ c Mögliche Punktzahl: 6
+Pan  FZ  v
+                   m
+Pan  150 N  10
+                   s
+            Nm
+Pan  1.500
+             s
+Pan  1.500 W
+
+
+
+
+                                                   Seite 9
+                                               L 050-05-1121-7
+
+=== Seite 10 ===
+GEPRÜFTE/-R INDUSTRIEMEISTER/-IN,
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+GRUNDLEGENDE QUALIFIKATIONEN
+Berücksichtigung naturwissenschaftlicher und technischer Gesetzmäßigkeiten
+
+Aufgabe 5
+Eine Zugstange (Re = 590 N/mm2) wird mit 280 kN belastet. Die zulässige Zugspannung
+beträgt 1/3 Re.
+
+
+
+
+                                  Abbildung 3: Zugstangenquerschnitt
+
+ a Mögliche Punktzahl: 8
+Berechnen Sie den erforderlichen Querschnitt des Zugstangenquerschnittes.
+
+ b Mögliche Punktzahl:10
+Berechnen Sie das Mindestmaß b des skizzierten Zugstangenquerschnittes.
+
+Lösungshinweise Aufgabe 5
+[VO: § 4 Absatz 6 Nr. 3]
+
+ a Mögliche Punktzahl: 8
+
+        1
+ zul     Re
+        3
+        1         N
+ zul   590
+        3        mm 2
+                   N
+ zul  196,667
+                  mm 2
+               N
+ zul  197
+             mm 2
+       F
+S 
+       zul
+      280.000 N  mm 2
+S
+           197 N
+S  1.421,32 mm 2
+S  1.421 mm 2
+
+
+                                                   Seite 10
+                                               L 050-05-1121-7
+
+=== Seite 11 ===
+GEPRÜFTE/-R INDUSTRIEMEISTER/-IN,
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+GRUNDLEGENDE QUALIFIKATIONEN
+Berücksichtigung naturwissenschaftlicher und technischer Gesetzmäßigkeiten
+
+
+ b Mögliche Punktzahl: 10
+               
+S  b2  b2 
+               4
+             
+S  b2  1  
+             4
+S  b 2  1,785
+        S
+b
+      1,785
+      1.421 mm 2
+b 
+         1,785
+b  28,21mm
+b  28 mm
+
+
+
+Aufgabe 6
+Ein Lastenaufzug ist über ein Getriebe (Gesamtwirkungsgrad Lastenaufzug und Getriebe
+ = 0,8) mit einem 400 V-Drehstrommotor verbunden.
+
+
+
+
+                                       Abbildung 4: Lastenaufzug
+
+Der Elektromotor für den Lastenaufzug soll getauscht werden. Leider kann auf dem
+Typenschild des Elektromotors nur noch die Drehzahl von 1.400 min1 erkannt werden. Über
+den Lastenaufzug sind folgende Daten bekannt:
+
+
+
+                                                   Seite 11
+                                               L 050-05-1121-7
+
+=== Seite 12 ===
+GEPRÜFTE/-R INDUSTRIEMEISTER/-IN,
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+GRUNDLEGENDE QUALIFIKATIONEN
+Berücksichtigung naturwissenschaftlicher und technischer Gesetzmäßigkeiten
+
+Höhendifferenz:                                   8m
+
+Zeit zur Überwindung der Höhendifferenz: 0,5 min
+
+maximal zu befördernde Masse:                     1.000 kg
+
+Hinweis für den Prüfungsteilnehmer: Die Masse des Aufzugsgeschirrs bleibt
+                                             unberücksichtigt.
+
+Im Lager Ihrer Firma steht ein von den Abmessungen und Anschlüssen passender Motor mit
+folgendem Typenschild:
+
+
+
+
+                                       Abbildung 5: Typenschild
+ a Mögliche Punktzahl: 10
+Ermitteln Sie rechnerisch, ob der im Lager vorhandene Elektromotor von den
+Leistungsdaten her verwendet werden kann.
+
+ b Mögliche Punktzahl: 6
+Ermitteln Sie den Wirkungsgrad des Motors laut Angaben des Typenschilds.
+
+
+
+
+                                                   Seite 12
+                                               L 050-05-1121-7
+
+=== Seite 13 ===
+GEPRÜFTE/-R INDUSTRIEMEISTER/-IN,
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+GRUNDLEGENDE QUALIFIKATIONEN
+Berücksichtigung naturwissenschaftlicher und technischer Gesetzmäßigkeiten
+
+Lösungshinweise Aufgabe 6
+[VO: § 4 Absatz 6 Nr. 3]
+
+ a Mögliche Punktzahl: 10
+
+                     mg h
+Pzu, Getriebe         t
+                   Aufzug , Getriebe
+
+
+                                            m
+                  1.000 kg  9,81               8m
+                                            s²
+                                  30 s
+Pzu, Getriebe 
+                                  0,8
+Pzu, Getriebe  3.270 W
+
+
+ Pab, Motor  Pzu, Getriebe
+
+Der Motor aus dem Lager mit einer abgebenden Leistung von 3.500 W kann verwendet
+werden.
+
+ b Mögliche Punktzahl: 6
+                        Pab
+         Motor 
+                        Pzu
+                                  Pab
+         Motor 
+                          3  U  I  cos 
+                                3.500 W
+         Motor 
+                    3  400 V  6,5 A  0,9
+         Motor  0,86
+
+
+
+
+Aufgabe 7
+Aus einem normalverteilten Fertigungsprozess wurden Stichproben entnommen. An den
+Bauteilen wurde für die Oberflächenbearbeitung die maximale Rauhtiefe Rmax ermittelt.
+
+
+ Stichprobennummer                      1      2      3     4      5     6     7     8     9     10    11    12
+
+        Rmax in µm                      3,7   4,0     3,8   3,9    4,1   3,6   3,8   3,9   3,4   3,8   3,5   3,8
+
+
+                                                                  Seite 13
+                                                             L 050-05-1121-7
+
+=== Seite 14 ===
+GEPRÜFTE/-R INDUSTRIEMEISTER/-IN,
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+GRUNDLEGENDE QUALIFIKATIONEN
+Berücksichtigung naturwissenschaftlicher und technischer Gesetzmäßigkeiten
+
+
+
+Ermitteln Sie aus diesen Stichprobenergebnissen
+
+ a Mögliche Punktzahl: 2
+den arithmetischen Mittelwert,
+
+ b Mögliche Punktzahl: 6
+die Standardabweichung und die Grenzwerte der Streuung bei 99,73 % aller
+gefertigten Teile.
+
+ c Mögliche Punktzahl: 5
+Tragen Sie aufgrund des Mittelwertes und der Standardabweichung die Gerade der
+Summenhäufigkeit in das Wahrscheinlichkeitsnetz (Anlage 1) ein.
+
+Lösungshinweise Aufgabe 7
+[VO: § 4 Absatz 6 Nr. 3]
+
+ a Mögliche Punktzahl: 2
+    1
+x
+    n
+       xi
+x  3,775  m
+
+ b Mögliche Punktzahl: 6
+        1
+s 
+      n 1
+             ( xi  x )2
+
+s  0,2006  m
+
+xmax  x  3  s
+xmax  3,775  m  3  0,2006  m
+xmax  4,377  m
+
+xmin  x  3  s
+xmin  3,775  m  3  0,2006  m
+xmin  3,173  m
+
+
+Hinweis für den Korrektor:
+Beide Lösungswege (mit und ohne Taschenrechnerfunktion) sind als korrekt zu bewerten.
+
+
+
+                                                   Seite 14
+                                               L 050-05-1121-7
+
+=== Seite 15 ===
+GEPRÜFTE/-R INDUSTRIEMEISTER/-IN,
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+GRUNDLEGENDE QUALIFIKATIONEN
+Berücksichtigung naturwissenschaftlicher und technischer Gesetzmäßigkeiten
+
+
+
+c Mögliche Punktzahl: 5
+
+
+
+
+                                                   Seite 15
+                                               L 050-05-1121-7
+

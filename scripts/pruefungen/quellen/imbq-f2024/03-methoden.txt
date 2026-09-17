@@ -1,0 +1,804 @@
+=== Seite 1 ===
+                                                         Einsatz nur im Rahmen des Korrekturprozesses gestattet. Weitergabe an unbefugte Dritte untersagt.
+
+
+
+                                                            Prüfungsteilnehmer-Nummer:
+
+
+
+
+                                                           Bundeseinheitliche Fortbildungsprüfung der Industrie- und Handelskammern
+
+                                                           Geprüfter Industriemeister/Geprüfte Industriemeisterin,
+                                                           fachrichtungsübergreifende Basisqualifikationen/
+                                                           grundlegende Qualifikationen
+                                                           Anwendung von Methoden der Information, Kommunikation und Planung
+
+                                                            Datum:                                     2. Mai 2024
+
+                                                            Bearbeitungszeit:                          90 Minuten
+Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+
+
+
+
+                                                                                                                                                                                                                      Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+                                                            Anzahl Aufgaben:                           6
+
+                                                            Seiten:                                    5
+
+
+                                                           Bevor Sie mit der Prüfung beginnen, prüfen Sie bitte die Prüfungsunterlagen. Wenn
+                                                           die Prüfungsunterlagen nicht vollständig sind, informieren Sie bitte die Aufsicht.
+
+                                                           Bitte lesen Sie die nachfolgenden Bearbeitungshinweise gut durch:
+                                                           ◼   Alle erlaubten Hilfsmittel wurden Ihnen mit der Einladung mitgeteilt.
+                                                           ◼   Sie erhalten einen Aufgabenteil sowie ein Heft für Ihre Lösungen.
+                                                           ◼   Sie können maximal 100 Punkte erreichen.
+                                                           ◼   Verwenden Sie je Aufgabe bitte eine neue Lösungsseite.
+                                                           ◼   Wenn Sie die Lösung einer Aufgabe auf eine Anlage schreiben sollen, wird Ihnen dies in
+                                                               der Aufgabe mitgeteilt.
+                                                           ◼   Stellen Sie Ihre Lösungs- und Rechenvorgänge nachvollziehbar im Lösungsteil dar.
+                                                               Reicht der Platz nicht aus, verwenden Sie bitte das Konzeptpapier. Weisen Sie auf die
+                                                               Fortsetzung hin und kennzeichnen Sie diese.
+                                                           ◼   Eine nicht lesbare Prüfungsarbeit wird mit der Note „ungenügend“ (null Punkte)
+                                                               bewertet. Die Konsequenzen entnehmen Sie bitte der Prüfungsordnung.
+                                                           ◼   Es gibt Aufgaben, die eine exakte Anzahl an Antworten vorgeben. Es werden nur die
+                                                               ersten Antworten gewertet. Was über die exakte Anzahl hinausgeht, wird gestrichen.
+                                                           ◼   Geben Sie alle Ihnen zur Verfügung gestellten Unterlagen am Ende der Prüfung ab.
+                                                           ◼   Aufgrund der besseren Lesbarkeit bevorzugen wir in diesen Texten die männliche Form.
+                                                               Mit diesem vereinfachten Ausdruck sind selbstverständlich alle Geschlechter gemeint.
+
+
+
+
+                                                                                   © DIHK – Gesellschaft für berufliche Bildung – Organisation zur Förderung der IHK-Weiterbildung gGmbH – Bonn
+                                                                      Die Vervielfältigung, Verbreitung oder öffentliche Wiedergabe der Publikation ist nicht gestattet (§§ 53, 54 UrhG) und strafbar (§ 106 UrhG).
+                                                                                                                  Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+                                                                                                                                     P 050-03-0524
+
+=== Seite 2 ===
+                                                         Einsatz nur im Rahmen des Korrekturprozesses gestattet. Weitergabe an unbefugte Dritte untersagt.
+
+                                                           GEPRÜFTE/-R INDUSTRIEMEISTER/-IN,
+                                                           FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+                                                           GRUNDLEGENDE QUALIFIKATIONEN
+                                                           Anwendung von Methoden der Information, Kommunikation und Planung
+
+
+
+                                                           Aufgabe 1
+                                                           In Ihrem Unternehmen ist es zu einem gravierenden Ausfall des IT-Systems gekommen.
+                                                           Infolge dieses Ausfalls wird ein neues IT-Sicherheitskonzept erstellt.
+
+                                                            a Mögliche Punktzahl: 6
+                                                           Beschreiben Sie die folgenden drei Hauptziele der Datensicherheit:
+
+                                                           ■   Verfügbarkeit
+
+                                                           ■   Integrität
+Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+
+
+
+
+                                                                                                                                                             Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+                                                           ■   Vertraulichkeit.
+
+                                                            b Mögliche Punktzahl: 6
+                                                           Beschreiben Sie drei unternehmensinterne Ursachen für einen Ausfall des
+                                                           IT-Systems.
+
+                                                            c Mögliche Punktzahl: 8
+                                                           Die IT-Administration eines Unternehmens ist technisch und organisatorisch für die
+                                                           Datensicherheit verantwortlich.
+
+                                                           Beschreiben Sie vier IT-sicherheitsrelevante Aufgaben der IT-Administration.
+
+
+                                                           Aufgabe 2
+                                                           Für die Planung eines unternehmensweiten IT-Projekts soll eine geeignete Vorgehensweise
+                                                           gefunden werden. Es werden die Vorgehensweisen
+
+                                                           ■   Top-down-Verfahren (ausgehend von der obersten Führungsebene nach unten) und
+
+                                                           ■   Bottom-up- Verfahren (ausgehend von den operativen Bereichen nach oben)
+
+                                                           diskutiert.
+
+                                                            a Mögliche Punktzahl: 8
+                                                           Beschreiben Sie jeweils zwei Vorteile und zwei Nachteile dieser beiden Methoden.
+
+
+
+
+                                                                                                            Seite 2
+                                                                                                         P 050-03-0524
+
+=== Seite 3 ===
+                                                         Einsatz nur im Rahmen des Korrekturprozesses gestattet. Weitergabe an unbefugte Dritte untersagt.
+
+                                                           GEPRÜFTE/-R INDUSTRIEMEISTER/-IN,
+                                                           FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+                                                           GRUNDLEGENDE QUALIFIKATIONEN
+                                                           Anwendung von Methoden der Information, Kommunikation und Planung
+
+
+
+                                                            b Mögliche Punktzahl: 6
+                                                           Die Vorteile der beiden Methoden sollen in einem Gesamtkonzept miteinander verbunden
+                                                           werden.
+
+                                                           Beschreiben Sie drei mögliche Ergebnisse, die sich aus diesem Gesamtkonzept
+                                                           ergeben.
+
+                                                            c Mögliche Punktzahl: 6
+Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+
+
+
+
+                                                                                                                                                             Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+                                                           Schlagen Sie für die Zielsetzung des Projekts zwei Methoden der Ideenfindung vor
+                                                           und begründen Sie Ihre Vorschläge.
+
+
+                                                           Aufgabe 3
+                                                           Mögliche Punktzahl: 10
+                                                           Sie sind als Meister für eine Montageabteilung verantwortlich. Im Drei-Schicht-Betrieb
+                                                           werden Sie jeweils von einem Schichtleiter und dessen Stellvertreter unterstützt.
+
+                                                           Sie planen eine Sicherheitsunterweisung in Form einer Präsentation für Ihren Meister-
+                                                           bereich und müssen sich dabei auf folgende Situation einstellen:
+
+                                                           In den drei Schichten arbeiten insgesamt ca. 100 Beschäftigte. Davon sind 50 % Fach-
+                                                           arbeiter, die im eigenen Unternehmen ausgebildet wurden. Weitere 20 % der Mitarbeiter
+                                                           sind ungelernte Arbeitskräfte und 30 % sind Beschäftigte eines externen Dienstleisters.
+                                                           Ein Drittel aller Beschäftigten verfügt über keine guten Deutschkenntnisse.
+
+                                                           Beschreiben Sie fünf Maßnahmen bei Ihrer Vorbereitung auf die Präsentation.
+                                                           Die Maßnahmen sollen auf die oben beschriebene Situation abgestimmt sein.
+
+
+
+
+                                                                                                            Seite 3
+                                                                                                         P 050-03-0524
+
+=== Seite 4 ===
+                                                         Einsatz nur im Rahmen des Korrekturprozesses gestattet. Weitergabe an unbefugte Dritte untersagt.
+
+                                                           GEPRÜFTE/-R INDUSTRIEMEISTER/-IN,
+                                                           FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+                                                           GRUNDLEGENDE QUALIFIKATIONEN
+                                                           Anwendung von Methoden der Information, Kommunikation und Planung
+
+
+
+                                                           Aufgabe 4
+                                                           In einer Kundenbefragung konnten die Befragten die Kundenfreundlichkeit mit Punkten
+                                                           bewerten. Es wurden folgende Ergebnisse erfasst:
+
+                                                                               Punkte                                      absolute Häufigkeit
+
+                                                                                   1                                               10
+
+                                                                                   2                                               18
+Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+
+
+
+
+                                                                                                                                                             Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+                                                                                   3                                               40
+
+                                                                                   4                                               60
+
+                                                                                   5                                               50
+
+                                                                                   6                                               22
+
+
+
+
+                                                            a Mögliche Punktzahl: 4
+                                                           Beschreiben Sie zwei Diagrammarten, die zur Auswertung dieses Ergebnisses
+                                                           geeignet sind. Geben Sie dabei jeweils das Ziel Ihrer Darstellung an.
+
+                                                            b Mögliche Punktzahl: 8
+                                                           Berechnen Sie die kumulierten prozentualen Häufigkeiten. Stellen Sie die kumulierten
+                                                           prozentualen Häufigkeiten in einem Diagramm dar.
+
+                                                            c Mögliche Punktzahl: 3
+                                                           Erläutern Sie eine Aussage, die Sie aus einer Tabelle oder einem Diagramm mit
+                                                           kumulierten prozentualen Häufigkeiten ableiten können.
+
+
+
+
+                                                                                                            Seite 4
+                                                                                                         P 050-03-0524
+
+=== Seite 5 ===
+                                                         Einsatz nur im Rahmen des Korrekturprozesses gestattet. Weitergabe an unbefugte Dritte untersagt.
+
+                                                           GEPRÜFTE/-R INDUSTRIEMEISTER/-IN,
+                                                           FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+                                                           GRUNDLEGENDE QUALIFIKATIONEN
+                                                           Anwendung von Methoden der Information, Kommunikation und Planung
+
+
+
+                                                           Aufgabe 5
+                                                           In Ihrem Unternehmen wird ein internes Projekt zur Beschaffung einer neuen Maschine
+                                                           geplant. Sie sind als Meister in die Vorbereitungsgruppe des Projekts eingebunden.
+                                                           Am Beginn des Projekts stehen die Definitionsphase und die Planungsphase.
+
+                                                            a Mögliche Punktzahl: 4
+                                                           Beschreiben Sie zwei Aufgaben der Vorbereitungsgruppe während der Definitions-
+                                                           phase des Projekts.
+Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+
+
+
+
+                                                                                                                                                             Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+                                                            b Mögliche Punktzahl: 4
+                                                           Beschreiben Sie zwei Aufgaben der Geschäftsleitung nach der abgeschlossenen
+                                                           Definitionsphase des Projekts.
+
+                                                            c Mögliche Punktzahl: 8
+                                                           Beschreiben Sie vier Planungsschritte aus der Planungsphase des Projekts.
+
+                                                            d Mögliche Punktzahl: 4
+                                                           Begründen Sie den Einsatz eines Lastenhefts in diesem Projekt.
+
+
+                                                           Aufgabe 6
+                                                           In einer Mitarbeiterbefragung wurde deutliche Kritik an der Kommunikation zwischen
+                                                           Führungskräften und Mitarbeitern geäußert. Deshalb sollen die Führungskräfte Ihres
+                                                           Unternehmens mit ihren Mitarbeitern jährlich zwei persönliche Gespräche führen.
+
+                                                            a Mögliche Punktzahl: 5
+                                                           Nennen Sie fünf Schritte der Vorbereitung eines Mitarbeitergesprächs.
+
+                                                            b Mögliche Punktzahl: 10
+                                                           Beschreiben Sie fünf Fehler, die Sie als Vorgesetzter in einem Mitarbeitergespräch
+                                                           vermeiden müssen.
+
+
+
+
+                                                                                                            Seite 5
+                                                                                                         P 050-03-0524
+
+=== Seite 6 ===
+                                                         Einsatz nur im Rahmen des Korrekturprozesses gestattet. Weitergabe an unbefugte Dritte untersagt.
+
+
+
+
+                                                           Bundeseinheitliche Fortbildungsprüfung der Industrie- und Handelskammern
+
+                                                           Geprüfter Industriemeister/Geprüfte Industriemeisterin,
+                                                           fachrichtungsübergreifende Basisqualifikationen/
+                                                           grundlegende Qualifikationen
+                                                           Anwendung von Methoden der Information, Kommunikation und Planung
+
+
+                                                           Lösungshinweise
+Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+
+
+
+
+                                                                                                                                                                                                                           Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+                                                            Datum:                                          2. Mai 2024
+
+                                                            Bearbeitungszeit:                               90 Minuten
+
+                                                            Anzahl Aufgaben:                                6
+
+
+                                                           Hinweise für den Korrektor:
+                                                           ■    Die folgenden Lösungen sind lediglich Lösungshinweise.
+                                                           ■    Sie sollen nur den Rahmen der zu erwartenden Prüfungsleistung abstecken.
+                                                           ■    Der Korrektor ist durch die hier aufgeführten Lösungshinweise in seinem
+                                                                Bewertungsspielraum nicht eingeengt.
+                                                           ■    Bei Aufgaben, die eine Aufzählung von n-Fakten zur Lösung erfordern, werden nur die
+                                                                ersten n-Fakten gewertet. Alle darüber hinausgehenden Aufzählungen werden
+                                                                gestrichen.
+                                                           ■    Bei Berechnungen sollen Folgefehler berücksichtigt werden und somit nicht zum
+                                                                Punktabzug führen.
+                                                           ■    Der leichteren Lesbarkeit wegen geben wir in den Aufgaben/Texten der männlichen
+                                                                Form den Vorzug. Mit diesem einfacheren sprachlichen Ausdruck sind selbstverständlich
+                                                                immer alle Geschlechter gemeint.
+
+
+
+                                                           Die Aufgaben mit Lösungsvorschlägen können von den Industrie- und Handelskammern oder Dritten nach einer Frist von sechs Monaten
+                                                           direkt bestellt werden bei:
+
+                                                           wbv Media GmbH & Co. KG, Service-Center DIHK,
+
+                                                           Postfach 10 06 33, 33506 Bielefeld
+
+                                                           Tel.: 0521/91101-16, Fax: 0521/91101-19, E-Mail: service@wbv.de
+
+
+
+
+                                                                                        © DIHK – Gesellschaft für berufliche Bildung – Organisation zur Förderung der IHK-Weiterbildung gGmbH – Bonn
+                                                                           Die Vervielfältigung, Verbreitung oder öffentliche Wiedergabe der Publikation ist nicht gestattet (§§ 53, 54 UrhG) und strafbar (§ 106 UrhG).
+                                                                                                                       Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+                                                                                                                                          L 050-03-0524
+
+=== Seite 7 ===
+                                                         Einsatz nur im Rahmen des Korrekturprozesses gestattet. Weitergabe an unbefugte Dritte untersagt.
+
+                                                           GEPRÜFTE/-R INDUSTRIEMEISTER/-IN,
+                                                           FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+                                                           GRUNDLEGENDE QUALIFIKATIONEN
+                                                           Anwendung von Methoden der Information, Kommunikation und
+                                                           Planung
+
+                                                           Lösungshinweise Aufgabe 1
+                                                           [VO: § 4 Absatz 4 Nr. 1]
+
+                                                            a Mögliche Punktzahl: 6
+                                                           Hauptziele der Datensicherheit, z. B.:
+                                                           ■   Verfügbarkeit:
+                                                               Die Leistungen des IT-System und die Daten sind jederzeit in vollem Umfang und
+                                                               ohne Ausfälle abrufbar.
+                                                           ■   Integrität:
+Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+
+
+
+
+                                                                                                                                                             Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+                                                               Die Daten sind unverfälscht verfügbar. Das IT-System liefert zuverlässig die
+                                                               gewünschten richtigen Ergebnisse.
+                                                           ■   Vertraulichkeit:
+                                                               Die Daten sind nur für autorisierte Personen verfügbar. Unbefugte haben keinen Zugriff.
+
+                                                            b Mögliche Punktzahl: 6
+                                                           Unternehmensinterne Ursachen für einen Ausfall eines IT-Systems:
+                                                           Beschrieben werden können z. B.:
+                                                           ■   fehlende Organisationsanweisungen bzw. Richtlinien erschweren sicherheitsgerechtes
+                                                               Verhalten
+                                                           ■   fehlende Ressourcen für IT-Sicherheit führen zu Sicherheitslücken
+                                                           ■   Es fehlt an fachgerechtem Support bzw. einer Hotline in Sachen IT-Sicherheit.
+                                                           ■   wichtige Updates der System- und Anwendungssoftware werden vernachlässigt
+                                                           ■   Die Mitarbeiter beherrschen die Grundlagen der IT-Sicherheit nicht im ausreichenden
+                                                               Maße (fehlende Schulungen oder Unterweisungen).
+
+
+
+
+                                                                                                        Seite 2
+                                                                                                     L 050-03-0524
+
+=== Seite 8 ===
+                                                         Einsatz nur im Rahmen des Korrekturprozesses gestattet. Weitergabe an unbefugte Dritte untersagt.
+
+                                                           GEPRÜFTE/-R INDUSTRIEMEISTER/-IN,
+                                                           FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+                                                           GRUNDLEGENDE QUALIFIKATIONEN
+                                                           Anwendung von Methoden der Information, Kommunikation und
+                                                           Planung
+                                                            c Mögliche Punktzahl: 8
+                                                           Die IT-Administration muss z. B.:
+                                                           ■   an einer Leitlinie und an Richtlinien zur IT-Sicherheit mitwirken bzw. die Unternehmens-
+                                                               leitung dabei beraten
+                                                           ■   die IT-Infrastruktur des Unternehmens sicherheitsgerecht konzipieren und für die
+                                                               Umsetzung des Sicherheitskonzepts sorgen
+                                                           ■   Ein Konzept für die Zugriffsrechte im IT-System erstellen und die Zugriffsrechte gemäß
+                                                               den Autorisierungen verwalten.
+                                                           ■   die Risiken für die IT-Systeme des Unternehmens analysieren und mögliche Schwach-
+                                                               stellen rechtzeitig identifizieren
+Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+
+
+
+
+                                                                                                                                                             Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+                                                           ■   sicherheitsrelevante Hinweise bzw. Fehlermeldungen der Beschäftigten bearbeiten und
+                                                               ggf. Probleme beheben
+                                                           ■   für die Aktualisierung der Hard- und Software sorgen, damit keine veralteten System-
+                                                               komponenten zu Sicherheitsproblemen führen
+
+
+                                                           Lösungshinweise Aufgabe 2
+                                                           [VO: § 4 Absatz 4 Nr. 2]
+
+                                                            a Mögliche Punktzahl: 8
+                                                           ■   Top-down-Planung:
+                                                               ■   Vorteile:
+                                                                   ■   Alle Teilpläne sind auf übereinstimmende Ziele ausgerichtet und damit
+                                                                       aufeinander abgestimmt.
+                                                                   ■   Es gibt keine Konkurrenz zwischen den einzelnen Teilplanungen.
+                                                                   ■   Pläne können aus Sicht der Unternehmensleitung einfach durchgesetzt werden.
+                                                               ■   Nachteile:
+                                                                   ■   Vorgegebene Planungen der Unternehmensführung können in der Praxis nicht
+                                                                       immer so umgesetzt werden.
+                                                                   ■   Motivation der Mitarbeiter ist nicht sehr hoch, die „von oben vorgegebenen“
+                                                                       Planungen zu erfüllen.
+                                                                   ■   Die Kompetenzen und Erfahrungen der Beschäftigten werden in die Planung
+                                                                       nicht optimal einbezogen.
+
+
+
+
+                                                                                                        Seite 3
+                                                                                                     L 050-03-0524
+
+=== Seite 9 ===
+                                                         Einsatz nur im Rahmen des Korrekturprozesses gestattet. Weitergabe an unbefugte Dritte untersagt.
+
+                                                           GEPRÜFTE/-R INDUSTRIEMEISTER/-IN,
+                                                           FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+                                                           GRUNDLEGENDE QUALIFIKATIONEN
+                                                           Anwendung von Methoden der Information, Kommunikation und
+                                                           Planung
+                                                           ■   Bottom-Up-Planung:
+                                                               ■   Vorteile:
+                                                                   ■   Aufgrund der dezentralen Vorgehensweise ist die Planung stärker an der
+                                                                       Praxis orientiert.
+                                                                   ■   Weil die direkt verantwortlichen Mitarbeiter am Planungsprozess beteiligt
+                                                                       sind, kann auch von einer hohen Motivation zur Umsetzung der Planung
+                                                                       ausgegangen werden.
+                                                                   ■   Alle Informationen zu den Plänen sind an der ausführenden Ebene sofort
+                                                                       verfügbar.
+                                                               ■   Nachteile:
+Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+
+
+
+
+                                                                                                                                                             Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+                                                                   ■   Es ist ein hoher Zeitaufwand für die Verdichtung der Planungen von den
+                                                                       unteren Ebenen bis zur höchsten Führungsebene erforderlich.
+                                                                   ■   Es besteht ein hoher Koordinierungsaufwand zwischen verschiedenen
+                                                                       Unternehmensteilen.
+                                                                   ■   Die Ausrichtung der Teilplanungen auf das Gesamtziel könnte nicht genügend
+                                                                       berücksichtigt werden.
+
+                                                            b Mögliche Punktzahl: 6
+                                                           Mit dem Gegenstromverfahren sollen die Vorteile aus Bottom-up-Planung und Top-down-
+                                                           Planung genutzt werden:
+                                                           ■   Übergeordnete Ziele und Strategien werden von der Unternehmensleitung vorgegeben.
+                                                           ■   Die operativen Bereiche konkretisieren die Ziele für die jeweiligen Unternehmens-
+                                                               bereiche. Sie prüfen die Umsetzbarkeit und erarbeiten die dafür notwendigen
+                                                               Maßnahmen und Ressourcen.
+                                                           ■   Verbesserungsvorschläge oder Hinweise auf mögliche Probleme werden an die
+                                                               nächsthöhere Ebene zurückgegeben.
+                                                           ■   Die Planungen gehen von Ebene zu Ebene bis zur Unternehmensleitung zurück.
+                                                               Sie trifft am Ende mit allen vorliegenden Informationen die Entscheidungen.
+                                                           ■   Das kann sich mehrfach wiederholen. Es entsteht im Idealfall ein detailliert
+                                                               ausgearbeiteter, realistisch umsetzbarer Plan.
+
+                                                            c Mögliche Punktzahl: 6
+                                                           ■   Brainstorming:
+                                                               Weil diese Methode viele Mitarbeiter motiviert, wenn möglichst viele unkonventionelle
+                                                               Ideen gesammelt werden sollen, um das Projektziel so gut wie möglich zu beschreiben.
+                                                           ■   Mindmapping:
+                                                               Weil diese Methode Ideen in einer strukturierten Form erfasst und die Ideen somit gut
+                                                               in die Zielsetzung/Planung übernommen werden können.
+
+
+
+
+                                                                                                         Seite 4
+                                                                                                      L 050-03-0524
+
+=== Seite 10 ===
+                                                         Einsatz nur im Rahmen des Korrekturprozesses gestattet. Weitergabe an unbefugte Dritte untersagt.
+
+                                                           GEPRÜFTE/-R INDUSTRIEMEISTER/-IN,
+                                                           FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+                                                           GRUNDLEGENDE QUALIFIKATIONEN
+                                                           Anwendung von Methoden der Information, Kommunikation und
+                                                           Planung
+                                                           ■   6-3-5-Methode:
+                                                               Mehrere Mitarbeiter können gleichzeitig konzentriert an Ideen arbeiten und nach dem
+                                                               Weitergeben der Bögen auf die Ideen der anderen Mitarbeiter eingehen.
+
+
+                                                           Hinweis für den Korrektor: Auch andere Methoden der Ideenfindung sollen mit
+                                                                                      entsprechender Begründung berücksichtigt werden.
+
+
+                                                           Lösungshinweise Aufgabe 3
+                                                           [VO: § 4 Absatz 4 Nr. 3]
+Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+
+
+
+
+                                                                                                                                                             Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+                                                           Mögliche Punktzahl: 10
+                                                           Maßnahmen zur Vorbereitung auf die Präsentation:
+                                                           ■   Vor der Präsentation wird eine Adressatenanalyse durchgeführt. Dabei werden die
+                                                               Mitarbeiter nach ihrer Qualifikation und ihren Sprachkenntnissen in überschaubare
+                                                               Gruppen eingeteilt.
+                                                           ■   Vor der Präsentation wird in einer Runde mit den Schichtleitungen besprochen, wie
+                                                               die notwendigen Kenntnisse am besten zu vermitteln sind. Die Schichtleitungen kennen
+                                                               ihre Beschäftigten am besten.
+                                                           ■   Es wird mit dem Dienstleister eine Vorgehensweise vereinbart, wie dessen Beschäftigte
+                                                               verlässlich auf denselben Kenntnisstand gebracht werden.
+                                                           ■   Die Unterweisungsunterlagen werden in die entsprechenden Sprachen übersetzt, damit
+                                                               alle Beschäftigten über verständliche Sicherheitshinweise verfügen.
+                                                           ■   Die Unterweisungsunterlagen werden mit anschaulichen Visualisierungen versehen,
+                                                               um die Verständlichkeit zu verbessern.
+                                                           ■   Weiterhin können Videosequenzen für alle Beschäftigten eine bessere Anschaulichkeit
+                                                               gewährleisten.
+                                                           ■   Es wird ein Test vorbereitet, um die Kenntnisse aller unterwiesenen Beschäftigten zu
+                                                               prüfen und nachzuweisen.
+
+
+                                                           Hinweis für den Korrektor: Auch andere situationsbezogene Maßnahmen sollen gewertet
+                                                                                      werden.
+
+
+
+
+                                                                                                        Seite 5
+                                                                                                     L 050-03-0524
+
+=== Seite 11 ===
+                                                         Einsatz nur im Rahmen des Korrekturprozesses gestattet. Weitergabe an unbefugte Dritte untersagt.
+
+                                                           GEPRÜFTE/-R INDUSTRIEMEISTER/-IN,
+                                                           FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+                                                           GRUNDLEGENDE QUALIFIKATIONEN
+                                                           Anwendung von Methoden der Information, Kommunikation und
+                                                           Planung
+
+                                                           Lösungshinweise Aufgabe 4
+                                                           [VO: § 4 Absatz 4 Nr. 4]
+
+                                                            a Mögliche Punktzahl: 4
+                                                           Z. B.:
+                                                           ■    ein Kreisdiagramm zur Visualisierung der Anteile der erzielten Punkte
+                                                           ■    ein Säulendiagramm bzw. Balkendiagramm zum Vergleich der erzielten Punkte
+                                                           ■    ein Histogramm zur Darstellung der Verteilung der erzielten Punkte
+Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+
+
+
+
+                                                                                                                                                             Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+                                                            b Mögliche Punktzahl: 8
+
+                                                                                                                              kumulierte prozentuale
+                                                               Punkte     absolute Häufigkeit      prozentuale Häufigkeit
+                                                                                                                                   Häufigkeit
+
+                                                                    1              10                         5%                         5%
+
+                                                                    2              18                         9%                        14 %
+
+                                                                    3              40                        20 %                       34 %
+
+                                                                    4              60                        30 %                       64 %
+
+                                                                    5              50                        25 %                       89 %
+
+                                                                    6              22                        11 %                       100 %
+
+
+
+
+                                                                                                        Seite 6
+                                                                                                     L 050-03-0524
+
+=== Seite 12 ===
+                                                         Einsatz nur im Rahmen des Korrekturprozesses gestattet. Weitergabe an unbefugte Dritte untersagt.
+
+                                                           GEPRÜFTE/-R INDUSTRIEMEISTER/-IN,
+                                                           FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+                                                           GRUNDLEGENDE QUALIFIKATIONEN
+                                                           Anwendung von Methoden der Information, Kommunikation und
+                                                           Planung
+
+                                                                                                             Punktevergabe: kumulierte prozentuale Anteile   100%
+                                                                                                100 %
+                                                                                                                                                       89%
+                                                                                                90 %
+
+                                                                                                80 %
+                                                               kumulierte prozentuale Anteile
+
+
+
+
+                                                                                                70 %                                             64%
+
+                                                                                                60 %
+
+                                                                                                50 %
+Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+
+
+
+
+                                                                                                                                                                    Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+                                                                                                40 %                            34%
+
+                                                                                                30 %
+
+                                                                                                20 %                 14%
+
+                                                                                                10 %    5%
+
+                                                                                                 0%
+                                                                                                        1             2          3                4     5     6
+                                                                                                                                        Punkte
+
+
+                                                            c Mögliche Punktzahl: 3
+                                                           Ableitungen:
+                                                           Aus der Tabelle oder dem Diagramm mit den kumulierten prozentualen Anteilen kann
+                                                           abgelesen werden, welcher Anteil der Befragten z. B. bis max. zwei oder bis max. vier
+                                                           Punkte gegeben hat. Indirekt kann auch abgelesen werden, welcher Anteil der Befragten
+                                                           z. B. die beiden besten Punktwerte vergeben hat. Mögliche Aussagen sind also z. B., dass
+                                                           ■                        34 % der Befragten einen Punkt bis drei Punkte vergeben haben,
+                                                           ■                        36 % der Befragten fünf oder sechs Punkte vergeben haben.
+
+
+
+
+                                                                                                                                     Seite 7
+                                                                                                                                L 050-03-0524
+
+=== Seite 13 ===
+                                                         Einsatz nur im Rahmen des Korrekturprozesses gestattet. Weitergabe an unbefugte Dritte untersagt.
+
+                                                           GEPRÜFTE/-R INDUSTRIEMEISTER/-IN,
+                                                           FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+                                                           GRUNDLEGENDE QUALIFIKATIONEN
+                                                           Anwendung von Methoden der Information, Kommunikation und
+                                                           Planung
+
+                                                           Lösungshinweise Aufgabe 5
+                                                           [VO: § 4 Absatz 4 Nr. 5]
+
+                                                            a Mögliche Punktzahl: 4
+                                                           zwei Aufgaben der Vorbereitungsgruppe während der Definitionsphase des Projekts.
+
+                                                           Z. B.:
+                                                           ■   Die spezifischen technischen Anforderungen an die Maschine (Ausbringung, Abmaße,
+                                                               maximale Leistungsaufnahme usw.) müssen ermittelt werden, damit ein entsprechendes
+                                                               Lastenheft erstellt werden kann.
+Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+
+
+
+
+                                                                                                                                                             Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+                                                           ■   Die Interessen der betroffenen Abteilungen müssen ermittelt und miteinander
+                                                               abgeglichen werden.
+                                                           ■   Es muss ein Projektantrag erstellt werden, aus dem u. a. die Ziele, der Nutzen und die
+                                                               Kosten des Projekts hervorgehen.
+
+                                                            b Mögliche Punktzahl: 4
+                                                           zwei Aufgaben der Geschäftsleitung nach der abgeschlossenen Definitionsphase des
+                                                           Projekts. z. B.:
+                                                           ■   Die Geschäftsleitung muss über den Projektantrag entscheiden.
+                                                           ■   Die Geschäftsleitung stellt personelle, finanzielle und technische Ressourcen für das
+                                                               Projekt bereit.
+                                                           ■   Die Geschäftsleitung beauftragt eine Projektleitung mit der Planung und Realisierung
+                                                               des Projekts.
+                                                           ■   Die Geschäftsleitung lädt zu einem Kick-off-Meeting ein, um alle an dem Projekt
+                                                               Beteiligten in das Projekt einzuweisen und zu motivieren.
+
+                                                            c Mögliche Punktzahl: 8
+                                                           Beschrieben werden können z. B. folgende Planungsschritte:
+                                                           ■   Strukturplanung (Aufteilung des Projekts in Hauptvorgänge und letztlich einzelne
+                                                               Vorgänge)
+                                                           ■   Ablaufplanung (Festlegung der Abhängigkeiten zwischen den Vorgängen und Ableitung
+                                                               eines Ablaufs)
+                                                           ■   Terminplanung (Berechnung der Termine mithilfe eines Netzplans)
+                                                           ■   Ressourcenplanung (Zuordnung der personellen, technischen und materiellen
+                                                               Ressourcen)
+                                                           ■   Informationsplanung (Festlegung eines Informationsplans, aus dem die Informations-
+                                                               beziehungen im Projekt hervorgehen)
+
+
+
+
+                                                                                                        Seite 8
+                                                                                                     L 050-03-0524
+
+=== Seite 14 ===
+                                                         Einsatz nur im Rahmen des Korrekturprozesses gestattet. Weitergabe an unbefugte Dritte untersagt.
+
+                                                           GEPRÜFTE/-R INDUSTRIEMEISTER/-IN,
+                                                           FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+                                                           GRUNDLEGENDE QUALIFIKATIONEN
+                                                           Anwendung von Methoden der Information, Kommunikation und
+                                                           Planung
+                                                            d Mögliche Punktzahl: 4
+                                                           Die Begründung des Einsatzes eines Lastenheftes kann z. B. enthalten:
+                                                           ■   Das Lastenheft dient zur möglichst vollständigen Beschreibung der Anforderungen
+                                                               an die Maschine.
+                                                           ■   Das Lastenheft dient als Grundlage zum Einholen möglichst gut vergleichbarer
+                                                               Angebote zur Lieferung der Maschine.
+                                                           ■   Jeder potenzielle Auftragnehmer kann entscheiden, ob er die Maschine unter diesen
+                                                               Bedingungen herstellen kann.
+                                                           ■   Das Lastenheft wird zum Bestandteil der Vertragsunterlagen und dient auch zur
+                                                               Prüfung der Vollständigkeit bei der Abnahme.
+Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+
+
+
+
+                                                                                                                                                             Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+                                                           Lösungshinweise Aufgabe 6
+                                                           [VO: § 4 Absatz 4 Nr. 6]
+
+                                                            a Mögliche Punktzahl: 5
+                                                           Folgende Schritte zur Vorbereitung eines Mitarbeitergesprächs können z. B. genannt
+                                                           werden:
+                                                           ■   Termin und Ort müssen festgelegt werden
+                                                           ■   es muss genügend Zeit für das Gespräch reserviert sein
+                                                           ■   ein Besprechungsraum muss reserviert und vorbereitet werden
+                                                           ■   Die Mitarbeitenden müssen rechtzeitig eingeladen werden (Termin, Ort, Thema)
+                                                           ■   die erforderlichen Unterlagen müssen vorbereitet werden
+                                                           ■   es müssen technische Hilfsmittel zur Visualisierung und Dokumentation vorbereitet
+                                                               werden
+
+                                                            b Mögliche Punktzahl: 10
+                                                           Es können z. B. folgende Fehler, die ein Vorgesetzter in einem Mitarbeitergespräch
+                                                           vermeiden sollte, beschrieben werden:
+                                                           ■   Sich zu wenig Zeit nehmen:
+                                                               Wenn der Vorgesetzte gehetzt oder gestresst wirkt, kann sich kein partnerschaftlicher,
+                                                               wertschätzender Dialog entwickeln.
+                                                           ■   Sich nicht oder nur unvollständig vorbereiten:
+                                                               Vom Vorgesetzten dargestellte Fakten müssen stimmen und vollständig sein.
+                                                           ■   Monologe halten:
+                                                               Um Einstellung zur Arbeit, Motivation und Entwicklung des Mitarbeitenden zu kennen
+                                                               muss der Vorgesetzte zuhören.
+
+
+
+
+                                                                                                        Seite 9
+                                                                                                      L 050-03-0524
+
+=== Seite 15 ===
+                                                         Einsatz nur im Rahmen des Korrekturprozesses gestattet. Weitergabe an unbefugte Dritte untersagt.
+
+                                                           GEPRÜFTE/-R INDUSTRIEMEISTER/-IN,
+                                                           FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+                                                           GRUNDLEGENDE QUALIFIKATIONEN
+                                                           Anwendung von Methoden der Information, Kommunikation und
+                                                           Planung
+                                                           ■   Kritik verallgemeinern:
+                                                               Kritik an Mitarbeitern muss so konkret wie möglich vorgetragen werden. Pauschale Kritik
+                                                               erzeugt oft Resignation und Rückzug oder Gegenwehr.
+                                                           ■   Vereinbarungen aus den Gesprächen nicht einhalten:
+                                                               Was in den Gesprächen besprochen wurde, soll zur Verbesserung des Ist-Zustands
+                                                               beitragen. Vereinbarungen müssen von beiden Gesprächsteilnehmern eingehalten
+                                                               werden.
+                                                           ■   Fehlende Vorbereitung auf Einwände:
+                                                               Auf mögliche Einwände der Beschäftigten und Wendungen im Gespräch soll der
+                                                               Vorgesetzte vorbereitet sein.
+Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+
+
+
+
+                                                                                                                                                             Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+                                                           ■   Störungen zulassen:
+                                                               Ein wichtiges Gespräch sollte innerhalb eines ausreichend langen Zeitfensters
+                                                               störungsfrei und in einer ruhigen Atmosphäre stattfinden.
+
+
+
+
+                                                                                                       Seite 10
+                                                                                                     L 050-03-0524
+

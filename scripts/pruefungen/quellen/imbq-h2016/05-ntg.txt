@@ -1,0 +1,421 @@
+=== Seite 1 ===
+Bundeseinheitliche
+Weiterbildungsprüfung
+
+der Industrie- und Handelskammern
+
+Prüfungsteilnehmer-Nummer
+
+Geprüfte/-r Industriemeister|/-in,
+fachrichtungsübergreifende
+Basisqualifikationen/
+grundlegende Qualifikationen
+
+m Basisqualifikation Berücksichtigung
+naturwissenschaftlicher und
+technischer Gesetzmäßigkeiten
+
+m Prüfungstag 3. November 2016
+m Bearbeitungszeit 90 Minuten
+
+m Anzahl der Aufgaben 7
+
+Bitte prüfen Sie vor Beginn der Prüfung die Vollständigkeit des Aufgabensatzes. Sollte
+der Aufgabensatz nicht vollständig sein, informieren Sie bitte die Aufsicht.
+
+| P 050-05-1116-0 |
+
+=== Seite 2 ===
+Bearbeitungshinweise:
+
+Bitte lesen Sie die nachfolgenden Bearbeitungshinweise sorgfältig durch:
+
+m Die zur Prüfung zugelassenen Hilfsmittel wurden Ihnen separat mit der Einladung mitgeteilt.
+
+m Sie erhalten einen Aufgaben- und einen Lösungsteil.
+
+m Tragen Sie auf dem Deckblatt Ihre Prüfungsteilnehmer-Nummer ein.
+
+m Die maximale Gesamtpunktzahl der Lösungen beträgt 100 Punkte.
+
+m Die Lösungsgänge bzw. Rechenvorgänge sind klar und nachvollziehbar im Lösungsteil dar-
+zustellen. Sollte der Platz nicht ausreichen, benutzen Sie bitte das Konzeptpapier, verweisen
+Sie auf die Fortsetzung und kennzeichnen Sie diese. Wir weisen darauf hin, dass eine vom
+Prüfungsausschuss nicht lesbare Prüfungsarbeit mit der Note „ungenügend“ (null Punkte) be-
+wertet wird mit den Rechtsfolgen, die sich aus der Prüfungsordnung ergeben.
+
+m Verwenden Sie für jede Aufgabe ein neues Lösungsblatt bzw. eine neue Lösungsseite.
+
+m Falls die Lösung auf einem beigefügten Anlageblatt erfolgen soll, wird in der Aufgabenstellung
+darauf hingewiesen.
+
+m Für Ihre Notizen benutzen Sie bitte ausschließlich das Konzeptpapier.
+
+m Das Konzepitpapier ist mit dem Aufgaben- und dem Lösungsteil abzugeben.
+
+m BeiAufgaben, die eine Aufzählung von n-Fakten zur Lösung erfordern, werden nur die ersten
+
+n-Fakten gewertet. Alle darüber hinausgehenden Aufzählungen werden gestrichen.
+
+Wir wünschen Ihnen bei der Bearbeitung viel Erfolg.
+
+Der leichteren Lesbarkeit wegen geben wir in den Aufgaben/Texten der männlichen Form
+den Vorzug. Mit diesem einfacheren sprachlichen Ausdruck sind selbstverständlich immer
+Männer und Frauen gemeint.
+
+Die Vervielfältigung, Verbreitung oder öffentliche Wiedergabe der Publikationen [der Prü-
+fungssätze] ist nicht gestattet (88 53, 54 UrhG) und strafbar (8 106 UrhG). Im Fall der Zuwi-
+derhandlung wird Strafantrag gestellt.
+
+=== Seite 3 ===
+GEPRÜFTE/-R INDUSTRIEMEISTERI/-IN,
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+
+GRUNDLEGENDE QUALIFIKATIONEN
+Naturwissenschaftliche und technische Gesetzmäßigkeiten
+
+Aufgabe 1
+
+Bei der Neutralisation von Abwässern, wie sie nach der Reinigung von Produktionsanlagen
+(z. B. in Brauereien) anfallen, spielt die Einhaltung des pH-Werts eine große Rolle.
+
+a) Geben Sie an, worüber der pH-Wert eine Aussage macht.
+
+b) Nachfolgend ist eine Reaktionsgleichung dargestellt, die eine Neutralisation beschreibt.
+H,SO, + 2Na0H — Na,SO, + 2H,O
+Nennen Sie die Edukte (Ausgangsstoffe) der Reaktionsgleichung.
+
+c) Schreiben Sie in Worten eine allgemeingültige Reaktionsgleichung des Vorgangs der
+Neutralisation.
+
+d) Zeigen Sie anhand des Säure-Base-Indikators Methylorange, dass sich dieser zum
+Nachweis einer neutralen Lösung nicht eignet.
+
+Lösungshinweise Aufgabe 1
+[VO: 8 4 Absatz 6 Nr. 1, 2 und 3]
+
+a) Der pH-Wert gibt an, wie stark sauer oder basisch eine Lösung ist.
+b) Schwefelsäure + Natronlauge
+c) Säure + Lauge — Salz + Wasser
+
+d) Der Umschlagbereich des Indikators Methylorange (rot <> gelb) liegt etwa bei dem
+pH-Wert 3. Bei einem pH-Wert oberhalb 3 ist die Farbe des Indikators gelb. Demzu-
+folge ist der Nachweis einer neutralen Lösung mit dem pH-Wert 7 nicht möglich.
+
+Aufgabe 3
+
+Eine gemischte Schaltung besteht aus vier Widerständen und ist an 200 V angeschlossen.
+
+Berechnen Sie den Gesamtstrom und die Leistung im Widerstand R,.
+
+U =200 V o—e I i =
+R,=280 0 R, R,
+R,=600 U
+R, = 300 Q Rz | R |]
+R,=140Q
+o
+© DIHK - Gesellschaft für berufliche Bildung — Organisation zur Förderung der IHK-Weiterbildung mbH — Bonn | P 050-05-1116-0 | Seite 43
+
+Die Vervielfältigung, Verbreitung oder öffentliche Wiedergabe der Publikation [der Prüfungssätze und Lösungshinweise]
+ist nicht gestattet (88 53, 54 UrhG) und strafbar ($ 106 UrhG). Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+
+(3 Punkte)
+
+(2 Punkte)
+(3 Punkte)
+
+(4 Punkte)
+
+(12 Punkte)
+
+(3 Punkte)
+(2 Punkte)
+(3 Punkte)
+(4 Punkte)
+
+(16 Punkte)
+
+=== Seite 4 ===
+GEPRÜFTE/-R INDUSTRIEMEISTERI/-IN,
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+
+GRUNDLEGENDE QUALIFIKATIONEN
+Naturwissenschaftliche und technische Gesetzmäßigkeiten
+
+Lösungshinweise Aufgabe 2 (16 Punkte)
+[VO: 8 4 Absatz 6 Nr. 1, 2 und 3]
+
+|= u = N
+R A002
+
+Raa =Rz +Ry 1=05 A
+Rz4 = 200 Q Yan
+
+WE,
+Rasa Ra Rau
+
+1 _ 1 R 1
+Rz 3000 2000
+Razı =120 0
+R=Rı+Ray
+R=4000
+
+(8 Punkte)
+U, =I-R,
+U, =0,5 A-2800
+U} = 140 V
+U; =U-U,
+U, = 200 V-140 V
+U, = 60 V
+p.
+R
+P, u (U;)
+Rz
+P = (60 v)
+300
+P; =12 W
+en (8 Punkte)
+Seite 44 | P 050-05-1116-0 | © DIHK - Gesellschaft für berufliche Bildung - Organisation zur Förderung der IHK-Weiterbildung mbH - Bonn
+
+Die Vervielfältigung, Verbreitung oder öffentliche Wiedergabe der Publikation [der Prüfungssätze und Lösungshinweise]
+ist nicht gestattet ($$ 53, 54 UrhG) und strafbar ($ 106 UrhG). Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+
+=== Seite 5 ===
+GEPRÜFTE/-R INDUSTRIEMEISTER/-IN,
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+
+GRUNDLEGENDE QUALIFIKATIONEN
+Naturwissenschaftliche und technische Gesetzmäßigkeiten
+
+Aufgabe
+
+Ein Pkw fährt mit 40 km/h auf einer Straße und nähert sich einer Ampel. 40 m vor der Ampel
+springt diese von Grün auf Gelb (Gelbphase drei Sekunden). Nach einer Reaktionszeit von
+0,7 s beschleunigt der Fahrer den Pkw eine Sekunde lang gleichmäßig auf 50 km/h, in der
+Hoffnung, die in drei Sekunden von Gelb auf Rot schaltende Ampel noch in der Gelbphase
+zu passieren.
+
+a) Vervollständigen Sie das v-t-Dia- v (5 Punkte)
+gramm nach diesem Muster auf Ihrem (kmh),
+Lösungsblatt.
+5—
+w-
+D—
+50
+10-1
+
+T T T T l T T
+05 1 15 2.0 25 3,0 35:1 (s)
+
+b) Weisen Sie durch Rechnung nach, ob der Pkw die Ampel noch in der Gelbphase oder (15 Punkte)
+der Rotphase passiert.
+
+Lösungshinweise Aufgabe 3 (20 Punkte)
+[VO: 8 4 Absatz 6 Nr. 1, 2 und 3]
+
+a)
+
+V
+(km)
+60 en
+
+05 1 1,5 2,0 2,5 3,0 35 t(s)
+0,7 1,7 (5 Punkte)
+
+© DIHK - Gesellschaft für berufliche Bildung — Organisation zur Förderung der IHK-Weiterbildung mbH — Bonn | P 050-05-1116-0 | Seite 45
+Die Vervielfältigung, Verbreitung oder öffentliche Wiedergabe der Publikation [der Prüfungssätze und Lösungshinweise]
+ist nicht gestattet (88 53, 54 UrhG) und strafbar ($ 106 UrhG). Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+
+=== Seite 6 ===
+GEPRÜFTEI/-R INDUSTRIEMEISTER/-IN,
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+
+GRUNDLEGENDE QUALIFIKATIONEN
+Naturwissenschaftliche und technische Gesetzmäßigkeiten
+
+(3 Punkte)
+
+(3 Punkte)
+
+Sy =V3.t3
+Sz = ERBE Ss
+36 s
+S; = 18,06 m
+(3 Punkte)
+
+S=S+8S3 +Sz
+s = 38,34 m
+
+(3 Punkte)
+
+Der Pkw legt in den drei Sekunden 38,34 m zurück. Damit befindet er sich beim
+Umschalten der Ampel auf Rot noch 1,66 m vor der Ampel und passiert diese erst in
+der Rotphase.
+
+Aufgabe 4
+
+In der Mitte der Ladefläche eines Lastkraftwagens wurde eine Holzkiste mit der Masse
+180 kg abgesetzt und nicht gegen Verschieben gesichert.
+
+Der Lkw fährt durch eine Kurve mit einem Radius von 140 m. Bei der Kurvenfahrt besteht
+die Gefahr, dass die Kiste nach außen verschoben wird.
+
+Die Haftreibungszahl zwischen Ladefläche und Holzkiste beträgt 0,20.
+
+(3 Punkte)
+
+Berechnen Sie, bei welcher Geschwindigkeit die Kiste zu rutschen beginnt. (12 Punkte)
+
+Seite 46 | P 050-05-1116-0 | © DIHK — Gesellschaft für berufliche Bildung — Organisation zur Förderung der IHK-Weiterbildung mbH - Bonn
+Die Vervielfältigung, Verbreitung oder öffentliche Wiedergabe der Publikation [der Prüfungssätze und Lösungshinweise]
+ist nicht gestattet (88 53, 54 UrhG) und strafbar ($ 106 UrhG). Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+
+=== Seite 7 ===
+GEPRÜFTE/-R INDUSTRIEMEISTERI/-IN,
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+
+GRUNDLEGENDE QUALIFIKATIONEN
+Naturwissenschaftliche und technische Gesetzmäßigkeiten
+
+Lösungshinweise Aufgabe 4 (12 Punkte)
+[VO: 8 4 Absatz 6 Nr. 1,2 und 3]
+
+F,=FR
+
+FrR=Fnn=m-g-u
+
+Fr =180 kg: 9817020
+
+Fr = 353,16 N
+2
+m-v
+F =
+R r
+di For
+m
+_ |353,16 N -140 m
+180 kg
+
+en ul
+Ss h
+
+Aufgabe 5
+
+Ein Benzintank aus Stahl mit einem Volumen von 60 | bei 20 °C wird mit 59,5 | Benzin gefüllt.
+Durch Sonneneinstrahlung kommt es zur Erhöhung der Temperatur.
+
+Berechnen Sie, bei welcher Temperatur der Tank überläuft. (12 Punkte)
+
+Lösungshinweise Aufgabe 5 (12 Punkte)
+[VO: 8 4 Absatz 6 Nr. 1, 2 und 3]
+
+V,=%
+Vor (1+3-a, -A9) = Von (1+0, 49)
+Vor + Vor 3a, AI = Von + Von “Ay AI
+Vor 3-0, AI Vog Ay AI = Von — Vor
+AS (Vor "3-0, — Vog &y)= Von — Vor
+
+Von = Vor
+(Vor 3:0, - Von Ay)
+
+59,51-601
+
+601-3:0,000012---59,51:0,0011-
+°C °C
+
+AY =
+
+A$ =
+
+Ag =7,9°C
+9 = 27,9°C
+
+© DIHK - Gesellschaft für berufliche Bildung — Organisation zur Förderung der IHK-Weiterbildung mbH — Bonn | P 050-05-1116-0 | Seite 47
+Die Vervielfältigung, Verbreitung oder öffentliche Wiedergabe der Publikation [der Prüfungssätze und Lösungshinweise]
+ist nicht gestattet (8$ 53, 54 UrhG) und strafbar ($ 106 UrhG). Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+
+=== Seite 8 ===
+GEPRÜFTE/-R INDUSTRIEMEISTERI/-IN,
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+
+GRUNDLEGENDE QUALIFIKATIONEN
+Naturwissenschaftliche und technische Gesetzmäßigkeiten
+
+Aufgabe 6
+
+Ein älterer Diesel-Motor verbraucht in einer Minute 985 g Kraftstoff und gibt dabei eine Leis-
+tung von 220 kW ab.
+
+Berechnen Sie den Wirkungsgrad des Motors. (12 Punkte)
+
+Lösungshinweise Aufgabe 6 (12 Punkte)
+[VO: 8 4 Absatz 6 Nr. 1, 2 und 3]
+
+P,,:t= 220 000 W:60 s
+P,,:t= 13 200 000 Ws
+
+Q=m-H
+Q=0,985 kg-42 000.
+kg
+Q=41370 kJ
+_ 13.200 000 Ws
+41370 000 J
+n=0,32
+n=32 %
+
+Aufgabe
+
+Für die Produktion von Wuchtgewichten mit der Masse 20 g für Fahrzeugfelgen ist in den
+Lieferbedingungen 20 g + 3 g vorgegeben; dieser ist von mindestens 99,73 % der produ-
+zierten Teile einzuhalten. Die Stichprobenergebnisse waren bei der Prozessüberwachung
+normalverteilt und zeigten folgende Werte.
+
+Lfd. Stich-
+probe
+
+Masseing 215 191 186 20,9 22,3 19,7 20,1 189 19,4 22,0
+
+1 2 3 4 5 6 7 8 9 10
+
+Lfd. Stich-
+probe
+
+Masseing 17,8 186 195 20,7 21,3 22,0 189 199 21,7 19,0
+
+11 12 13 14 15 16 17 18 19 20
+
+a) Berechnen Sie den Prozessmittelwert und die Standardabweichung. (6 Punkte)
+b) Berechnen Sie die Prozessstreuung von 99,73 % der gefertigten Teile. (4 Punkte)
+
+c) Vergleichen Sie die Prozessstreuung von b) mit der Forderung der Lieferbedingungen
+und beschreiben Sie die evtl. notwendigen Veränderungen der Prozesslage bzw. der
+Standardabweichung, um den Kundenforderungen gerecht zu werden. (6 Punkte)
+
+Seite 48 | P 050-05-1116-0 | © DIHK - Gesellschaft für berufliche Bildung — Organisation zur Förderung der IHK-Weiterbildung mbH - Bonn
+Die Vervielfältigung, Verbreitung oder öffentliche Wiedergabe der Publikation [der Prüfungssätze und Lösungshinweise]
+ist nicht gestattet (8$ 53, 54 UrhG) und strafbar ($ 106 UrhG). Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+
+=== Seite 9 ===
+GEPRÜFTEI/-R INDUSTRIEMEISTER/-IN,
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+
+GRUNDLEGENDE QUALIFIKATIONEN
+Naturwissenschaftliche und technische Gesetzmäßigkeiten
+
+Lösungshinweise Aufgabe 7 (16 Punkte)
+[VO: 8 4 Absatz 6 Nr. 4]
+
+a) x = 20,095 gund s=1,356 g
+
+I (6 Punkte)
+b) X +3s = 24,163 gund x-3s = 16,027 g
+ST ——— (4 Punkte)
+c) Die Prozessmittellage liegt sehr nahe bei der Toleranzmitte von 20 g, damit keine Ver-
+anlassung. Ausschließlich durch die Prozessstreuung werden die Toleranzen über-
+schritten. Der 6s-Bereich beträgt 8,1 q und ist somit größer als die Toleranz von 6 g.
+Daraus ergibt sich eine notwendige Reduzierung der Standardabweichung vons<1g. (6 Punkte)
+© DIHK - Gesellschaft für berufliche Bildung - Organisation zur Förderung der IHK-Weiterbildung mbH — Bonn | P 050-05-1116-0 | Seite 49
+
+Die Vervielfältigung, Verbreitung oder öffentliche Wiedergabe der Publikation [der Prüfungssätze und Lösungshinweise]
+ist nicht gestattet ($$ 53, 54 UrhG) und strafbar ($ 106 UrhG). Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+

@@ -1,0 +1,483 @@
+=== Seite 1 ===
+Bundeseinheitliche
+Weiterbildungsprüfung
+
+der Industrie- und Handelskammern
+
+Prüfungsteilnehmer-Nummer
+
+Geprüfte/-r Industriemeister/-in,
+fachrichtungsübergreifende
+Basisqualifikationen/
+grundlegende Qualifikationen
+
+m Basisqualifikation Betriebswirtschaftliches Handeln
+s Prüfungstag 6. November 2015
+m Bearbeitungszeit 90 Minuten
+
+m Anzahl der Aufgaben 7
+
+Bitte prüfen Sie vor Beginn der Prüfung die Vollständigkeit des Aufgabensatzes. Sollte
+der Aufgabensatz nicht vollständig sein, informieren Sie bitte die Aufsicht.
+
+| P 050-02-1115-9 |
+
+
+=== Seite 2 ===
+Bearbeitungshinweise:
+
+Bitte lesen Sie die nachfolgenden Bearbeitungshinweise sorgfältig durch:
+
+Die zur Prüfung zugelassenen Hilfsmittel wurden Ihnen separat mit der Einladung mitgeteilt.
+Sie erhalten einen Aufgaben- und einen Lösungsteil.
+
+Tragen Sie auf dem Deckblatt Ihre Prüfungsteilnehmer-Nummer ein.
+
+Die maximale Gesamtpunktzahl der Lösungen beträgt 100 Punkte.
+
+Die Lösungsgänge bzw. Rechenvorgänge sind klar und nachvollziehbar im Lösungsteil dar-
+zustellen. Sollte der Platz nicht ausreichen, benutzen Sie bitte das Konzeptpapier, verweisen
+Sie auf die Fortsetzung und kennzeichnen Sie diese. Wir weisen darauf hin, dass eine vom
+Prüfungsausschuss nicht lesbare Prüfungsarbeit mit der Note „ungenügend“ (null Punkte) be-
+wertet wird mit den Rechtsfolgen, die sich aus der Prüfungsordnung ergeben.
+
+Verwenden Sie für jede Aufgabe ein neues Lösungsblatt bzw. eine neue Lösungsseite.
+
+Falls die Lösung auf einem beigefügten Anlageblatt erfolgen soll, wird in der Aufgabenstellung
+darauf hingewiesen.
+
+Für Ihre Notizen benutzen Sie bitte ausschließlich das Konzeptpapier.
+Das Konzeptpapier ist mit dem Aufgaben- und dem Lösungsteil abzugeben.
+
+Bei Aufgaben, die eine Aufzählung von n-Fakten zur Lösung erfordern, werden nur die ersten
+n-Fakten gewertet. Alle darüber hinausgehenden Aufzählungen werden gestrichen.
+
+Wir wünschen Ihnen bei der Bearbeitung viel Erfolg.
+
+Der leichteren Lesbarkeit wegen geben wir in den Aufgaben/Texten der männlichen Form
+den Vorzug. Mit diesem einfacheren sprachlichen Ausdruck sind selbstverständlich immer
+Männer und Frauen gemeint.
+
+Die Vervielfältigung, Verbreitung oder öffentliche Wiedergabe der Publikationen [der Prü-
+fungssätze] ist nicht gestattet (RVO: $RVO: 8 53, 54 UrhG) und strafbar (RVO: $ 106 UrhG).
+Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+
+=== Seite 3 ===
+GEPRÜFTE/-R INDUSTRIEMEISTER/-IN,
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+
+GRUNDLEGENDE QUALIFIKATIONEN
+Betriebswirtschaftliches Handeln
+
+Aufgabe ji)
+
+In Ihrem Unternehmen wird über eine Änderung der bestehenden Rechtsform nachgedacht.
+
+a) Nennen Sie je zwei Formen von (4 Punkte)
+= _ Personengesellschaften und
+=  Kapitalgesellschaften.
+
+b) Unterscheiden Sie die von Ihnen zu a) genannten Unternehmensformen anhand der (8 Punkte)
+Kriterien
+
+=  Geschäftsführungsbefugnis und
+
+( » Haftung der Gesellschafter.
+
+Lösungshinweise Aufgabe 1 (12 Punkte)
+(VO: 84 Abs. 3Nr. 1)
+
+a) = _ Personengesellschaften, z. B.:
+
+= OHG
+= KG
+= _ Kapitalgesellschaften, z. B.:
+= GmbH
+a AG (4 Punkte)
+
+b) = _ Geschäftsführungsbefugnis:
+= OHG - jeder Gesellschafter
+= KG - Komplementär
+a GmbH - Geschäftsführer
+AL =  AG- Vorstand
+=» _ Haftung der Gesellschafter:
+= OHG--Alle Gesellschafter sind Vollhafter.
+
+a KG - Komplementäre sind Vollhafter, Kommanditisten sind Teilhafter mit
+Kapitaleinlage.
+
+=» GmbH - Teilhaftung mit Geschäftsanteil
+= AG -’Teilhaftung mit Kapitaleinsatz (8 Punkte)
+
+© DIHK — Gesellschaft für berufliche Bildung — Organisation zur Förderung der IHK-Weiterbildung mbH — Bonn |'P 050-02-1115-9 | Seite 17
+Die Vervielfältigung, Verbreitung oder öffentliche Wiedergabe der Publikation [der Prüfungssätze und Lösungshinweise]
+ist nicht gestattet (88 53, 54 UrhG) und strafbar ($ 106 UrhG). Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+
+
+=== Seite 4 ===
+GEPRÜFTEI/-R INDUSTRIEMEISTER/-IN,
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+
+GRUNDLEGENDE QUALIFIKATIONEN
+Betriebswirtschaftliches Handeln
+
+Aufgabe 2
+
+In der Organisationslehre wird zwischen Aufbauorganisation und Ablauforganisation unter-
+schieden.
+
+a) Beschreiben Sie die Vorgehensweise bei (8 Punkte)
+a der Gestaltung der Aufbauorganisation und
+= der Ablauforganisation.
+
+b) Beschreiben Sie je zwei organisatorische Hilfsmittel (8 Punkte)
+= der Aufbauorganisation und
+
+= der Ablauforganisation.
+
+Lösungshinweise Aufgabe 2 (16 Punkte)
+(VO: 8 4 Abs. 3 Nr. 2)
+
+a) =  Aufbauorganisation:
+
+Die betriebliche Gesamtaufgabe wird in Teilaufgaben zerlegt (Aufgabenanalyse),
+anschließend werden ähnliche Teilaufgaben gebündelt und dem Aufgabenbereich
+einer Person zugeordnet (Aufgabensynthese). Im Anschluss an die Stellenbildung
+werden die Stellen zu größeren organisatorischen Einheiten (Gruppen, Abteilun-
+gen usw.) zusammengefasst. (4 Punkte)
+
+«  Ablauforganisation:
+
+Die Ablauforganisation zerlegt die Arbeitsprozesse und ordnet zeitliche und örtli-
+che sowie inhaltliche Aspekte zu sinnvollen Arbeitsvorgängen. Es wird also festge-
+legt, was wo wie und wann zu tun ist. (4 Punkte)
+
+b) = Hilfsmittel der Aufbauorganisation, z. B.:
+= Organigramm
+« Stellenplan
+=  Stellenbeschreibung
+
+a Hilfsmittel der Ablauforganisation, z. B.:
+
+= Balkendiagramm
+= Netzplan
+= Projektsirukturplan
+«=  Flussdiagramm (8 Punkte)
+
+Hinweis für den Korrektor: Sinnvolle Beschreibungen des Prüfungsteilnehmers
+sind zu bewerten.
+
+Seite 18 | P 050-02-1115-9 | © DIHK - Gesellschaft für berufliche Bildung - Organisation zur Förderung der IHK-Weilerbildung mbH — Bonn
+Die Vervieffältigung, Verbreitung oder öffentiche Wiedergabe der Publikation [der Prüfungssätze und Lösungshinweise]
+ist nicht gestattet (58 53, 54 UrhG} und strafbar ($ 306 UrhG). Im Fall der Zuwiderhandlung wird Sirafantrag gestellt.
+
+=== Seite 5 ===
+GEPRÜFTEI/-R INDUSTRIEMEISTER/-IN,
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+
+GRUNDLEGENDE QUALIFIKATIONEN
+Betriebswirtschaftliches Handeln
+
+Aufgabe
+
+Bei den Bestellverfahren unterscheidet man z. B. zwischen auftragsbezogener Beschaffung
+und Just-in-time-Beschaffung.
+
+a) Beschreiben Sie die Funktionsweisen von (8 Punkte)
+a _ auftragsbezogener Beschaffung und
+= _ Just-in-time-Beschaffung.
+
+b) Nennen Sie je zwei Vor- und zwei Nachteile der Just-in-time-Beschaffung. (4 Punkte)
+
+Lösungshinweise Aufgabe 3 (12 Punkte)
+( (VO: 8 4 Abs. 3 Nr. 2)
+
+a) = Die auftragsbezogene Beschaffung wird auch als Einzelbeschaffung im Bedarfs-
+fall bezeichnet. Der Einkauf besiellt die Ware beim Lieferanten spontan nach Auf-
+treten des Bedarfes, wie z. B. nach dem Eingang einer Kundenbestellung. (4 Punkte)
+
+a Bei der Just-in-time-Beschaffung wird das Material entsprechend dem geplanten
+Produktionsprogramm rechtzeitig beim Zulieferer bestellt, der das Material erst
+beim tatsächlichen Bedarf direkt in die Fertigung des Abnehmers liefert (ferti-
+gungssynchrone Beschaffung). (4 Punkte)
+
+b) = Vorteile, z. B.:
+
+= _ niedrige Lagerkosten aufgrund geringer Bestände (Sicherheitsbestände)
+
+s» geringer Lagerflächenbedarf
+
+"= Gute Konditionen können aufgrund großer Bestellmengen beim Lieferanten
+durchgesetzt werden, meist durch Abschluss von Rahmenverträgen. (2 Punkte)
+
+» Nachteile, z. B.:
+
+= Gefahr des Produktionsstillstandes bei Ausbleiben bzw. Verzögerungen von
+Lieferungen
+
+= relativ lange vertragliche Bindung an Lieferanten
+= hohe Abhängigkeit von Zulieferern
+
+= starke Belastung der Umwelt und Infrastruktur (2 Punkte)
+
+© DIHK — Gesellschaft für berufliche Bildung — Organisation zur Förderung der IHK-Weiterbildung mbH — Bonn | P 050-02-1115-9 | Seite 19
+Die Vervielfältigung, Verbreitung oder öffentliche Wiedergabe der Publikation [der Prüfungssätze und Lösungshinweise]
+ist nicht gestattet (88 53, 54 UrhG) und strafbar ($ 106 UrhG). Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+
+
+=== Seite 6 ===
+GEPRÜFTE/-R INDUSTRIEMEISTER!-IN,
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+
+GRUNDLEGENDE QUALIFIKATIONEN
+Betriebswirtschaftliches Handeln
+
+Aufgabe 4
+
+Für die Erstellung von 1500 Teilen wird eine Vorgabezeit von 1 800 Minuten festgelegt. Das
+Grundenigelt beträgt 18,00 €/Stunde, der Akkordzuschlag 10 %. Ein Mitarbeiter benötigt für
+den Auftrag 25 Stunden.
+
+Berechnen Sie
+
+a) den durch den Mitarbeiter erreichten Zeitgrad. (2 Punkte)
+b) den tatsächlichen Stundenlohn des Facharbeiters. (4 Punkte)
+c) die Lohnkosten für den Auftrag. (2 Punkte)
+d) die Lohnkosten pro Stück. (4 Punkte)
+e) Geben Sie an, welcher Stundenlohn zu zahlen ist, wenn bei einem Facharbeiter kurz- (3 Punkte)
+
+fristig ein Zeitgrad von 95 % festgestellt wird.
+
+Lösungshinweise Aufgabe 4 (15 Punkte)
+(VO: 8 4 Abs. 3 Nr. 3)
+
+Yorgabezeit . 99 - 30 Stunden 100 = 120%
+
+a) Zeitgrad in Prozent = ————
+Istauftragszeit 25 Stunden (2 Punkte)
+
+b) Akkordrichtsatz pro Stunde = Akkordgrundiohn + Akkordzuschlag
+
+= 18 €/Stunde + 10 %
+
+= 19,80 €/Stunde (2 Punkte)
+
+Akkordiohn pro Stunde = Akkordrichtsatz/Std. : Zeitgradfaktor
+
+= 19,80 €/Stunde - 1,2
+
+= 23,76 €/Stunde (2 Punkte)
+c) Bruttolohn = Akkordlohn/Stunde : Istzeit
+
+= 23,76 €/Stunde - 25 Stunden
+
+=594 € {2 Punkte)
+
+_ Akkordrichtsatz / Stunde - Vorgabezeit
+Auftragsmenge
+
+d) Lohnkosten/Stück
+
+_ 19,80 € / Stunde - 30 Stunden / Auftrag
+1.500 Teile / Auftrag
+
+= 0,396 €/Stück
+
+Seite 20 | P 050-02-1115-9 | © DIHK - Gesellschaft für berufliche Bildung — Organisation zur Förderung der IHK-Weiterbildung mbH - Bonn
+Die Vervielfältigung, Verbreitung oder öffentliche Wiedergabe der Publikation [der Prüfungssätze und Lösungshinweise]
+ist nicht gestattet ($5 53, 54 UrhG) und strafbar ($ 106 UrhG). Im Fall der Zuwiderhandlung wird Sirafantrag gestellt.
+
+=== Seite 7 ===
+GEPRÜFTEI/-R INDUSTRIEMEISTER/-IN,
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+
+GRUNDLEGENDE QUALIFIKATIONEN
+Betriebswirtschaftliches Handeln
+
+oder
+Lohnkosten/Stück = Akkordlohn / Stunde : Istzeit
+Auftragsmenge
+_. 23,76 € / Stunde - 25 Stunden / Auftrag
+1.500 Teile / Auftrag
+= 0,396 €/Stück |
+oder |
+Lohnkosten/Stück = Bmtelohn — |
+Auftragsmenge |
+( |
+_ 594 € |
+1.500 Teile
+= 0,396 €/Stück (4 Punkte)
+e) Bei einem Zeitgrad unter 100 % bekommt der Facharbeiter lediglich den Akkordgrund-
+lohn von 18 €/Stunde. (3 Punkte)
+Aufgabe 5|
+a) Ermitteln Sie die Istgemeinkostenzuschlagsätze, wenn Ihnen folgende Istgemeinkos- (10 Punkte)
+ten aus der Betriebsabrechnung des vergangenen Monats vorliegen:
+=» _ Kostenstelle Material 125.000 €
+=  Kostenstelle Fertigung 795.000 €
+=»  Kostenstelle Verwaltung 85.000 €
+t =»  Kostenstelle Vertrieb 80.000 €
+Weiterhin liegen Ihnen folgende Einzelkosten aus der Betriebsabrechnung vor:
+=  Fertigungseinzelkosten (Fertigungslöhne) 550.000 € |
+=  Materialeinzelkosten (Fertigungsmaterial) 750.000 € |
+b) Kalkulieren Sie für einen Auftrag mit folgenden Normalgemeinkostenzuschlagsätzen (10 Punkte)
+
+den Listenverkaufspreis (netto).
+
+= _ Materialgemeinkostenzuschlagssatz 15 %
+=  Fertigungsgemeinkostenzuschlagssatz 150 %
+=  Verwaltungsgemeinkostenzuschlagssatz 5%
+= _ Vertriebsgemeinkostenzuschlagssatz 4%
+
+Gehen Sie von 16.000 € Fertigungseinzelkosten und 24.000 € Materialeinzelkosten
+aus.
+
+Weiterhin soll mit einem Gewinnzuschlagsatz von 10 % kalkuliert werden.
+
+Da es sich um einen langjährigen Stammkunden handelt, werden ihm 5 % Rabatt ein-
+geräumt.
+
+© DIHK — Gesellschaft für berufliche Bildung — Organisation zur Förderung der IHK-Weiterbildung mbH — Bonn | P 050-02-1115-9 | Seite 21
+Die Vervielfältigung, Verbreitung oder öffentliche Wiedergabe der Publikation [der Prüfungssätze und Lösungshinweise]
+ist nicht gestattet (88 53, 54 UrhG) und strafbar ($ 106 UrhG). Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+
+=== Seite 8 ===
+GEPRÜFTE/-R INDUSTRIEMEISTER/-IN,
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+
+GRUNDLEGENDE QUALIFIKATIONEN
+Betriebswirtschaftliches Handeln
+
+Lösungshinweise Aufgabe 5 (20 Punkte)
+(VO: 84 Abs. 3 Nr. 5)
+
+_ 125.000 € - 100
+
+a) Materialgemeinkostenzuschlagsatz 750. 000€ = 16,67 % (2 Punkte)
+Fertigungsgemeinkostenzuschlagsatz = a = 144,55 % (2 Punkte)
+Herstellkosten des Umsatzes
+= 750.000 € + 125.000 € + 550.000 € + 795.000 € = 2.220.000 € (2 Punkte)
+Verwaltungsgemeinkostenzuschlagssatz = an > =383 % (2 Punkte)
+Vertriebsgemeinkostenzuschlagssatz = we = = 3,60 % (2 Punkte)
+
+b) Materialeinzelkosten 24.000,00 €
++ Materialgemeinkosten (15 %) 3.600,00 € (1 Punkt)
++ Fertigungslohnkosten 16.000,00 €
++_Fertigungsgemeinkosten (150 %) 24.000,00 € (1 Punkt)
+
+Herstellkosten 67.600,00 € (1 Punkt)
++ Verwaltungsgemeinkosten (5 %) 3.380,00 € (1 Punkt)
++_Vertriebsgemeinkosten (4 %) 2.704,00 € (1 Punkt)
+Selbstkosten 73.684,00 € (1 Punkt)
++_Gewinn (10 %) 7.368,40 € (1 Punkt)
+Barverkaufspreis 81.052,40 € (95 %) (1 Punkt)
++_Rabatt (5 %) 4.265,92 € (5 %) (1 Punkt)
+Angebotspreis 85.318,32 € (100 %) (1 Punkt)
+Seite 22 | P 050-02-1115-9 | © DIHK — Geselischaft für berufliche Bildung - Organisation zur Förderung der IHK-Weiterbildung mbH - Bonn
+
+Die Vervielfältigung, Verbreitung oder öffentliche Wiedergabe der Publikation [der Prüfungssätze und Lösungshinweise]
+ist nicht gestattet {55 53, 54 UrhG) und strafbar ($ 106 UrhG). im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+
+=== Seite 9 ===
+GEPRÜFTE/-R INDUSTRIEMEISTER/-IN,
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+
+GRUNDLEGENDE QUALIFIKATIONEN
+Betriebswirtschaftliches Handeln
+
+Aufgabe 6
+
+Ihnen stehen aus dem Controlling für die Monate August und September folgende Daten
+
+zur Verfügung:
+Monat August September
+Produktions- und Absatzmenge 5400 Stück 6 750 Stück
+Beschäftigungsgrad in % 72 90
+Gesamtkosten 504.000 € 585.000 €
+Betriebsergebnis 18.000 € 22.500 €
+a) Ermitteln Sie (9 Punkte)
+» die variablen Stückkosten und
+» die Fixkosten pro Monat.
+b) Berechnen Sie die Break-even-Menge und den Beschäftigungsgrad an der Gewinn- (10 Punkte)
+
+schwelle.
+
+Lösungshinweise Aufgabe 6
+(VO: 8 4 Abs. 3 Nr. 5)
+
+(19 Punkte)
+
+a AK
+ER
+2 ET N
+(4 Punkte)
+TER X
+= 504.000 €/Monat - 60 €/Stück : 5 400 Stück/Monat = 180.000 €/Monat
+(5 Punkte)
+b
+U
+pP = —
+x
+= Be — = 90 €/Stück
+“os (5 Punkte)
+ee
+BEP" n_g,
+„_180.000 €/Monat __ 999 Stück/Monat
+90 €/Stück — 60 €/Stück (3 Punkte)
+
+BGgrr = er .100 %
+
+max
+
+; _. 5400 Stück/Monat
+MIE-X max: ” 72%
+
+.100 % = 7500 Stück/Monat
+
+© DIHK - Gesellschaft für berufliche Bildung — Organisation zur Förderung der IHK-Weiterbilidung mbH — Bonn
+Die Vervielfältigung, Verbreitung oder öffentliche Wiedergabe der Publikation [der Prüfungssätze und Lösungshinweise]
+ist nicht gestattet (88 53, 54 UrhG) und strafbar ($ 105 UrhG). Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+
+| P 050-02-1115-9 | Seite 23
+
+=== Seite 10 ===
+GEPRÜFTEI/-R INDUSTRIEMEISTERI/-IN,
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+
+GRUNDLEGENDE QUALIFIKATIONEN
+Betriebswirtschaftliches Handeln
+
+Es gilt: BGgpp = 000 StückMonat 00% = 80%
+7500 Stück/Monat (2 Punkte)
+
+Aufgabe
+
+Im Rechnungswesen werden neutraler Aufwand und Zweckaufwand voneinander unter-
+schieden.
+
+a) Führen Sie jeweils ein Beispiel an für (4 Punkte)
+1. neutralen Aufwand und
+2. Zweckaufwand.
+
+b) Geben Sie zwei kalkulatorische Kostenarten an. (2 Punkte)
+
+Lösungshinweise Aufgabe 7 (6 Punkte)
+(VO: 8 4 Abs. 3 Nr. 5)
+
+a) 1. Neutraler Aufwand, z. B.:
+=» Spende an gemeinnützige Einrichtung
+=  Steuernachzahlung für vergangene Periode (2 Punkte)
+2. Zweckaufwand, z. B.:
+= Gehälter
+=» Löhne
+=  Materialverbrauch (2 Punkte)
+b) Z.B.:
+=» _ kalkulatorische Abschreibungen
+="  kalkulatorische Zinsen
+=  kalkulatorische Wagnisse
+»  kalkulatorische Miete
+» _ kalkulatorischer Unternehmerlohn (2 Punkte)
+
+Seite 24 | P 050-02-1115-9 | © DIHK — Gesellschaft für berufliche Bildung — Organisation zur Förderung der IHK-Weiterbildung mbH — Bonn
+Die Vervielfältigung, Verbreitung oder öffentliche Wiedergabe der Publikation [der Prüfungssätze und Lösungshinweise]
+ist nicht gestattet (88 53, 54 UrhG) und strafbar ($ 106 UrhG). Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+

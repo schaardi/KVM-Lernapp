@@ -15,7 +15,9 @@ import os
 import subprocess
 import sys
 
-from PIL import Image
+# Pillow wird erst beim Zuschneiden gebraucht. Der Import steht deshalb in den
+# Funktionen: so lässt sich FIGUREN (die Bildunterschriften) auch dort lesen,
+# wo Pillow fehlt – build_anlagen.py braucht nur die Titel.
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 ZIEL = os.path.join(HERE, 'anlagen')
@@ -75,6 +77,7 @@ def rendern(pdf, seite, dpi, ziel_prefix):
 
 def stapeln(bilder, abstand=18):
     """Ausschnitte untereinander setzen, zentriert, auf weißem Grund."""
+    from PIL import Image
     if len(bilder) == 1:
         return bilder[0]
     breite = max(b.width for b in bilder)
@@ -90,6 +93,7 @@ def stapeln(bilder, abstand=18):
 def speichern(img, basis):
     """Als JPEG und als Palette-PNG sichern, die kleinere Fassung behalten.
     Strichzeichnungen sind als PNG oft deutlich kleiner und schärfer."""
+    from PIL import Image
     jpg, png = basis + '.jpg', basis + '.png'
     img.convert('RGB').save(jpg, 'JPEG', quality=QUALITAET, optimize=True)
     img.convert('RGB').quantize(colors=32, method=Image.MEDIANCUT).save(
@@ -114,6 +118,7 @@ def trimmen(img, rand=8):
 
 
 def baue(pdf_dir, schluessel=None):
+    from PIL import Image
     os.makedirs(ZIEL, exist_ok=True)
     tmp = os.path.join(ZIEL, '_tmp')
     faktor = RENDER_DPI / 100.0

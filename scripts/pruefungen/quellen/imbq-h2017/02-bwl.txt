@@ -1,0 +1,540 @@
+=== Seite 1 ===
+Bundeseinheitliche Weiterbildungsprüfung
+der Industrie- und Handelskammern
+
+Prüfungsteilnehmer-Nummer
+
+Geprüfte/-r Industriemeister/-in,
+fachrichtungsübergreifende
+Basisqualifikationen/
+grundlegende Qualifikationen
+
+Basisqualifikation Betriebswirtschaftliches Handeln
+Prüfungstag 7. November 2017
+Bearbeitungszeit 90 Minuten
+
+Anzahl der Aufgaben 7
+
+Bitte prüfen Sıe vor Beginn der Prufung dıe Vollständigkeit des Aufgabensatzes Sollte der Aufgabensatz nıcht vollstandig seın,
+informieren Ste bitte dıe Aufsicht
+
+Bearbeitungshinweise:
+
+Bitte lesen Sie die nachfolgenden Bearbeitungshinweise sorgfältig durch:
+
+= Die zur Prüfung zugelassenen Hilfsmittel wurden Ihnen = Verwenden Sıe fur jede Aufgabe eın neues Losungsblaft
+
+separat mit der Einladung mitgeteilt bzw eine neue Losungsseite
+Sıe erhalten eınen Aufgaben- und einen Lösungsteil wm Falls die Losung auf einem beigefugten Anlageblatt
+Fur die Bearbeitung der Aufgaben benofigte Anlagen liegen erfolgen sol. wird ın der Aufgabenstellung darauf
+am Ende des Aufgabensatzes zum Heraustrennen beı hingemesen
+
+= Tragen Sıe auf dem Deckblatt Ihre Prufungsteiinehmer- m Fur Ihre Notrzen benutzen Sıe bitte ausschließlich das
+Nummer eın Konzeptpapier
+
+u Die maximale Gesamtpunktzahi der Lösungen betragt " Das Konzeptpapier ıst mıt dem Aufgaben- und dem
+100 Punkte Losungsteil abzugeben
+
+« Beı Aufgaben, die eine Aufzahlung von n-Fakten zur
+Losung erfordern, werden nur die ersten n-Fakten gewertet
+Alle darüber hinausgehenden Aufzahlungen werden
+gestrichen
+
+m Die Lösungsgange bzw Rechenvorgange sınd klar und
+nachvollziehbar ım Lösungsteil darzustellen Sollte der
+Platz nicht ausreichen, benutzen Sıe bitte das
+Konzeptpapier, verweisen Sıe auf die Fortsetzung und
+kennzeichnen Sie diese Wir weısen darauf hin, dass eine
+vom Prufungsaussehuss nıcht esbare Prufurigsarbeit mit
+der Note „ungenugend” (null Punkte) bewertet wırd mit den
+Rechtsfolgen, dıe sich aus der Prüfungsordnung ergeben
+
+Der leichteren Lesbarkeit wegen geben wır ın den Aufgaben/Texten der männlichen Form den Vorzug Mit diesem einfacheren
+sprachlichen Ausdruck sınd selbstverstandlich ımmer Manner und Frauen gemeint
+
+Die Vernelfältigung, Verbreitung oder offentliche Wiedergabe der Pubitkation [der Prufungssaätze] ıst nıcht gestattet (88 53. 54 Urh65)
+und strafbar (& 106 UrhG) Im Fall der Zumderhandlung wırd Strafantrag gestellt
+
+P 050-02-1117-5 |
+
+=== Seite 2 ===
+GEPRÜFTEI-R INDUSTRIEMEISTER/-IN
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+
+GRUNDLEGENDE QUALIFIKATIONEN
+Betrietßswirtschaftliches Handeln
+
+Aufgabe 1
+Die GmbH ıst eine weıt verbreitete Unternehmensform.
+a) Stellen Sıe die GmbH anhand folgender Kriterien dar {5 Punkte)
+
+m Mindestgrundurgskapital
+
+m Geschäftsführungsbefugnis
+
+a Außenvertretungsrecht
+
+m Haftung der Gesellschaft
+
+ms Haftung der Gesellschafter
+b) Seit 2008 gibt es im GmbH-Gesetz die Möglichkeit, eıne erleichterte Variante der
+
+GmbH zu gründen, die UG (haftungsbeschränkt)
+
+Beschreiben Sıe zwei Unterschiede dieser Rechtsform ım Vergleich zur GmbH {4 Punkte)
+c) Die GmbH existiert außerdem in der Rechtsform der GmbH & Co KG
+
+Beschreiben Sıe die Haftung der GmbH & Co. KG. (4 Punkte)
+Lösungshinweise Aufgabe 1 (13 Punkte)
+[VO: 8 4 Absatz 3 Nr. 1]
+a) = Mindestgrundungskapital 25.000 €
+
+m Geschäftsfuhrungsbefugnis. Geschäftsführer
+
+= AÄußenvertretungsrecht: Geschäftsführer
+
+m Haftung der Gesellschaft: Gesellschaftsvermögen
+
+= Haftung der Gesellschafter beschrankt auf Kapıtaleinlage (5 Punkte)
+b} Mindestgrundungskapıtal' 1 € pro Gesellschafter, Pflicht zum Ansparen von 25 % des
+
+jährchen Gewinnes, bis 25.000€ erreicht sınd, dann Wahlrecht zwischen
+
+UG t{haftungsbeschränkt) und GmbH {4 Punkte)
+c) Die GmbH ist vollhaftender Gesellschafter (Komplementär): hier liegt also eıne KG
+
+ohne Vollhaftung vor. Die Kommanditısten haften mit ihrer Kapıtaleinlage (Teilhafter) (4 Punkte)
+
+Seite 14 | © DIHK — Gesellschaft für berufliche Bildung — Organisation zur Förderung der IHK-Weiterbildung mbH - Bonn
+
+Die Vervielfältigung, Verbreitung oder öffentliche Wiedergabe der Publikation [der Prüfungssätze und Lösungshinweise]
+ist nicht gestattet (8$ 53, 54 UrhG) und strafbar (8 106 UrhG). Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+
+=== Seite 3 ===
+GEPRÜFTEI-R INDUSTRIEMEISTER/-IN
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+
+GRUNDLEGENDE QUALIFIKATIONEN
+Betriebswirtschaftliches Handeln
+
+Aufgabe 2
+
+Sie werden mit der Personalplanung für eine Montagelinie der Industrie GmbH beauftragt
+Zurzeit werden 44 Mitarbeiter beschäftigt
+
+a) Berechnen Sie den voraussichtlichen Personalbedarf für das nachste Quartal, wenn (6 Punkte)
+
+Ihnen folgende Plandaten vorliegen
+
+a Kapazitätsbedarf 18 000 Fertigungsstunden
+a Störzeitfaktor 1,05
+m tägliche Arbeitszeit 8 Stunden
+m Anzahl der Arbeitstage 50
+sw Urlaub 12%
+= Krankheitsquote 5%
+
+b) Die Geschäftsleitung lehnt Neueinstellungen ab, da man von eıner kurzfristigen Pro-
+duktionsspitze ausgeht
+
+Berechnen Sie den zusätzlichen Kapazitätsbedarf und das erforderliche Mehrstun- (8 Punkte)
+denvolumen pro Mitarbeiter fur das kommende Quartal
+
+Lösungshinweise Aufgabe 2 (14 Punkte)
+[VO: 8 4 Absatz 3 Nr. 2]
+
+18000 Std - 105
+8 Std/Tag: 60 Tage/MA 0,82
+
+Der Personalbedarf beträgt 48 Mitarbeiter (6 Punkte)
+
+b) Kapazitatsbedarf: 18.000 Std./Quartal © 1,05 = 18 900 Std./Quartal
+Kapazitätsbestand. 44 MA : 8 Std./Tag : 60 Tage/Quartal - 0,82
+
+a) Personalbedarf: = 48,02 Mitarbeiter
+
+= 17 318,4 Std./Quartal
+Zusatzbedarf: 1581.6 Std./Quartal
+Mehrarbeitsstunden/Mitarbeiter und Quartal’
+= EiSSirSSt ER 43,84 Std. /MA und Quartal
+44 MA 0,82 (8 Punkte)
+DIHK - Gesellschaft für berufliche Bildung — Organisation zur Förderung der IHK-Weiterbildung mbH - Bonn | Seite 15
+
+Die Vervielfältigung, Verbreitung oder öffentliche Wiedergabe der Publikation [der Prüfungssätze und Lösungshinweise]
+ist nicht gestatlet ($$ 53, 54 UrhG) und strafbar ($ 106 Um6G). Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+
+=== Seite 4 ===
+GEPRÜFTE/-R INDUSTRIEMEISTER/-IN
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+
+GRUNDLEGENDE QUALIFIKATIONEN
+Betriebswirtschaftliches Handeln
+
+Aufgabe 3
+
+In Ihrem Unternehmen war bisher die Aufbauorganisation in Form eines Liniensystems
+geregelt Nun wırd überlegt, welches der möglichen Organısationssysteme den zukünftigen
+Anforderungen am besten gerecht wird.
+
+a) Beschreiben Sıe zwei wesentliche Merkmale folgender Systeme (6 Punkte)
+m  Liniensystem
+sm  Stabliniensystem
+m Matrıxsystem
+
+b) Führen Sıe für jedes System jeweils einen Vor- und einen Nachteil an (6 Punkte)
+
+Lösungshinweise Aufgabe 3 {12 Punkte)
+[VO: $ 4 Absatz 3 Nr. 2]
+
+a) m Liniensystem:
+Streng hierarchisch aufgebaut, Informationen bzw. Anweisungen können nur un-
+ter Einhaltung des Instanzenweges weitergegeben werden
+
+u Stabliniensystem
+Den Instanzen des Liniensystems werden ım oberen Bereich z. B. Spezialisten
+(Experten) zur Seite gestellt, die ausschließlich beratende und entscheidungs-
+vorbereitende Aufgaben haben, aber keine Weisungsbefugnisse.
+
+m Matrixsystem.
+Zweiliniensystem, z.B. ein Strang produktorientiert. der andere funktionsorien-
+tiert, ın dem je nach Aufgabenstellung der eine oder der andere Strang eine Auf-
+gabe einbringt, auf deren Lösung sich beide Seiten einigen müssen {6 Punkte)
+
+b) w Liniensystem: Vorteile, z. B.: klare Struktur, eindeutige Weisungsbefugnisse
+Nachteile, z. B.: unflexibel, starr
+m Stabliniensystem' Vorteil, z. B.. klare, fachlich qualifizierte Anweisungen
+Nachteile, z. B.: unflexibel, kostenintensiv
+
+u Matrixsystem Vorteile, z.B. sehr flexibel und situationsbezogen, mehr
+Marktnähe durch Spezialisierung (Produktmanagement)
+Nachteile, z. B.: hohes Konfliktpotenzial, kostenintensiv (6 Punkte)
+Seite 16 | © DIHK — Gesellschaft für berufliche Bildung — Organisation zur Förderung der IHK-Weiterbildung mbH — Bonn
+
+Die Vervielfältigung, Verbreitung oder öffentliche Wiedergabe der Publikation [der Prüfungssätze und Lösungshinweise]
+ist nicht gestattet (55 53, 54 UrhG) und strafbar ($ 106 UrhG). Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+
+=== Seite 5 ===
+GEPRÜFTEI-R INDUSTRIEMEISTER/-IN
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+
+GRUNDLEGENDE QUALIFIKATIONEN
+Betriebswirtschaftliches Handeln
+
+Aufgabe 4
+
+Bei den Bestellverfahren unterscheidet man u. a. zwischen auftragsbezogener Beschaf-
+fung und Just-in-time-Beschaffung
+
+a) Beschreiben Sie die Funktionsweise von auftragsbezogener Beschaffung und Just-in-
+time-Beschaffung
+
+b) Führen Sie jeweils zwei Vor- und Nachteile der Just-in-time-Beschaffung an
+
+Lösungshinweise Aufgabe 4
+[VO: $ 4 Absatz 3 Nr. 2]
+
+a) Die auftragsbezogene Beschaffung wırd auch als Einzelbseschaffung im Bedarfsfall
+bezeichnet. Der Einkauf bestellt die Ware beim Lieferanten nach Auftreten des Bedar-
+fes, wıe z. B. nach dem Eingang einer Kundenbestellung
+
+Bei der Just-in-time-Beschaffung wırd die Bestellung vor dem geplanten Bedarf aus-
+gelöst. Die Anlieferung des Materials erfolgt allerdings zu dem Zeitpunkt, zu dem es ın
+der Produktion benötigt wırd (fertigungssynchrone Beschaffung)
+
+b) Vorteile, z B
+s niedrige Lagerkosten aufgrund geringer Bestande (Sıcherheitsbestande)
+m geringer Lagerflachenbedarf
+
+= Beim Lieferanten können aufgrund großer Bestellmengen gute Konditionen
+durchgesetzt werden, meist durch Abschluss von Rahmenverträgen
+
+Nachteile, z. B
+m Gefahr des Produktionsstillstandes bei Ausbleiben bzw Verzögerungen von Lie-
+ferungen
+
+= relativ lange vertragliche Bindung an Lieferanten
+m geringe Flexibilität bei Änderungen des Produktionsvolumens
+
+& DIHK - Gesellschaft für berufliche Bildung — Organisation zur Förderung der IHK-Weiterbildung mbH — Bann
+Die Vervielfältigung, Verbreitung oder öffentliche Wiedergabe der Publikation [der Prüfungssätze und Lösungshinweise]
+ist nicht gestattet (85 53, 54 UrhG) und strafbar (&$ 106 UrhG). Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+
+(4 Punkte)
+
+(4 Punkte)
+
+(8 Punkte)
+
+(2 Punkte)
+
+(2 Punkte)
+
+(2 Punkte)
+
+(2 Punkte)
+
+| Seite 17
+
+=== Seite 6 ===
+GEPRÜFTEI-R INDUSTRIEMEISTER/-IN
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+
+GRUNDLEGENDE QUALIFIKATIONEN
+Batriebswirtschaftliches Handeln
+
+Aufgabe 5
+
+Sıe sind ın der Arbeitsvorbereitung der Maschinenbau GmbH beschäftigt. In der Montage
+sind von einem Montagewerker 120 Teile zu montieren. Dafür benötigt er zehn Stunden
+
+Gehen Sie von folgendem Sachverhalt aus:
+
+Vorgabezeiten. Rüstzeit. 30 Minuten/Auftrag
+Zeit je Einheit 5,75 Minuten
+
+Akkordgrundlohn: 15,50 &/Stunde
+
+Akkordzuschlag 10 %
+
+Berechnen Sıe
+
+a) dıe Auftragszeit ın Stunden, (4 Punkte)
+b) die Fertigungslohnkosten für den Auftrag, (3 Punkte)
+c) den Zeıtgrad dıeses Mitarbeiters, (3 Punkte)
+d} den tatsächlichen Akkordlohn pro Stunde {3 Punkte)
+Lösungshinweise Aufgabe 5 (13 Punkte)
+
+[VO: 8 4 Absatz 3 Nr. 4]
+a) Auftragszeit
+
+Tst+tx th
+
+T = 30 mın + 120 Stuck 5,75 min/Stück = 720 mın = 12 Stunden (4 Punkte)
+b) Fertigungslohnkosten für den Auftrag = 12 Std. - 15,50 &/Std. : 1,1 = 204,60 € (3 Punkte)
+
+Vorgabezeit 12 Stunden
+c) Zeitgrad ın % = ————— = ———— 100 = 120 %
+) 3 j Istauftragszeit 10 Stunden i (3 Punkte)
+d) Akkordlohn/Stunde = 20480 € _ 30 46 eista
+10 Sid.
+
+oder:
+Akkordlohn/Stunde = Akkordrichtsatz : Zeitgradfaktor
+= 15,50 &/Std. 1,1 1,2
+= 20,46 &/Std. {3 Punkte)
+
+Seite 18 | © DIHK - Gesellschaft für berufliche Bildung — Organisation zur Förderung der IHK-WYeiterbildung mbH — Bonn
+Die Vervielfältigung, Verbreitung oder öffentliche Wiedergabe der Publikation [der Prüfungssätze und Lösungshinweise}
+ist nicht gestattet ($8 53, 54 UrhG} und strafbar (& 106 UrhG). Im Fall der Zuwiderhandlurig wird Strafantrag gestellt.
+
+=== Seite 7 ===
+GEPRÜFTEI-R INDUSTRIEMEISTER/-IN
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+
+GRUNDLEGENDE QUALIFIKATIONEN
+Betriehswirtschaftliches Handeln
+
+Aufgabe 6
+
+Für ein Produkt der Maschinenbau GmbH liegen folgende Daten vor:
+
+m Materaleinzelkosten 56,50 €&/Stuck
+=  Fertigungslohnkosten Zerspanung 3,80 &/Stück
+m Maschinenkosten Zerspanung 7,60 €/Stuck
+=  Fertigungsiohnkosten Montage 9,50 €/Stück
+
+Für die Fertigung wird ein Spezialwerkzeug mit einem Einstandspreis von 5 872 € benötigt
+Die Standzeit des Werkzeuges betragt 800 Einheiten
+
+In diesem Betrieb wird mit folgenden Daten kalkuliert‘
+
+m Materialgemeinkostenzuschlagssatz 16 %
+m  Restfertigungsgemeinkostenzuschlagssatz Zerspanung 140 %
+m _Fertigungsgemeinkostenzuschlagssatz Montage 220%
+m  Verwaltungsgemeinkostenzuschlagssatz 9%
+m  Vertriebsgemeinkostenzuschlagssatz 6%
+m Gewinnzuschlagssatz 20%
+m Skonto 2%
+=  Vertreterprovision 18%
+m Rabatt 25%
+a) Ermitteln Sıe den Listenverkaufspreis pro Stuck (15 Punkte)
+
+b) Als Einstiegsangebot für einen Neukunden hat sich die Geschäftsleitung auf einen
+einmaligen Kundenrabatt ın Höhe von 30 % eingelassen. Die ubrigen Konditionen
+bleiben unveränderi.
+
+Ermitteln Sıe nachvollziehbar den prozentualen Gewinn für diesen Auftrag (5 Punkte)
+
+© DIHK — Gesellschaft für berufliche Bildung — Organisation zur Förderung der IHK-Weilerbildung mbH — Bonn | Seite 19
+Die Vervielfältigung, Verbreitung oder öffentliche Wiedergabe der Publikation [der Prüfungssätze und Lösungshinweise]
+ist nicht gestattet (88 53, 54 UrhG) und strafbar {$ 106 UrhG). Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+
+=== Seite 8 ===
+GEPRÜFTEI-R INDUSTRIEMEISTER/-IN
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+GRUNDLEGENDE QUALIFIKATIONEN
+
+Betriebswirtschaftliches Handeln
+
+Lösungshinweise Aufgabe 6 (20 Punkte)
+[VO: 8 4 Absatz 3 Nr. 5]
+a) MEK 56,50 €
+MGK 16% 9,04€ (1 Punkt)
+MK 63,34 € (1 Punkt)
+FLKzer 3,80€
+RFCGkK,., 140% 532€
+MAK;z., 7,60€ (1 Punkt)
+FLKmon 9,50 €
+FöKyn 220% 20,90€ {1 Punkt)
+SEK 7,34 € {1 Punkt)
+FK 54,46 €
+HK 120,00 € (1 Punkt)
+VwGK 9% 10,80 € (1 Punkt)
+VIGK 6% 7,20 € (1 Punkt)
+SK 138.00 € (1 Punkt)
+G 20% 27,60 €
+BVP 165,60 € (1 Punkt)
+Sk 2% 414€ {1 Punkt)
+Vp 18% 37,26 € (1 Punkt)
+ZVP 207.00 € (1 Punkt)
+R 25% 69,0. (1 Punkt)
+LVP 276,00 € (1 Punkt)
+b) SK 138,00 €
+G 16,56 € (1 Punkt)
+BVP 154,56 € {1 Punkt)
+Sk 2% 3,86 €
+Vp 18% 34,78€
+ZVP _193,20 € (1 Punkt)
+R 30% 8280€E
+LVP 276,00 €
+prozentualer Gewinn = (16,56 €. 138,00 €) 100 = 12 % (2 Punkte)
+Seite 20 | © DIHK — Gesellschaft für berufliche Bildung — Organisation zur Förderung der IHK-Weiterbildung mbH — Bonn
+
+Die Vervielfältigung, Verbreitung oder öffentliche Wiedergabe der Publikation [der Prüfungssätze und Lösungshinweise]
+ist richt gestattet (98 53, 654 UrhG) und strafbar ($ 106 UrhG). Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+
+=== Seite 9 ===
+EPRÜFTEI-R INDUSTRIEMEISTERI-IN
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+
+GRUNDLEGENDE QUALIFIKATIONEN
+Betriebswirtschaftliches Handeln
+
+Aufgabe 7
+
+Aus dem Controlling der Industrie GmbH stehen Ihnen fur die Monate September und
+Oktober folgende Daten zur Verfügung:
+
+Monat September Oktober
+Produktions- und Absatzmenge 13500 Stuck 10800 Stück
+Beschäftigungsgrad 90% 72%
+Gesamtkosten 1.755.000 € 1.512.000 €
+Betriebsergebnis +57 .500 € -54.000 €
+
+a) Ermitteln Sie rechnerisch nachvollziehbar die varıablen Stuckkosten und dıe Fixkos-
+ten pro Monat
+
+b) Berechnen Sıe die Break-even-Menge und den Beschäftigungsgrad an der Gewinn-
+schwelle.
+
+Hinweis für den Prüfungsteilnehmer: Falls Sıe a) nicht lösen konnten, nehmen
+Sıe beı b) und c) folgende Werte als
+Grundlage
+
+= variable Stuckkosten: 85 €/Stuck und
+m Fixkosten pro Monat 500.000 €
+
+c) Ermitteln Sıe rechnerisch den Stuckgewinn an der Kapazitätsgrenze
+
+Lösungshinweise Aufgabe 7
+[VO: $ 4 Absatz 3 Nr. 5]
+
+_ AK _ 243.000 €
+
+k = = = 90 €/Stuck
+a) kı Ax 270oStück — eistuc
+K =K- k, 'Xx
+= 1.512.000 €/Monat — 90 €/Stück - 10 800 Stück/Monat
+= 540.000 €/Monat
+
+b)_ p „U _ 1,822.500€ _ (95 eistück
+
+x 13500 Stück
+
+Kı 540.000 €/Monat
+= = = 12 000 Stuck/Monat
+a D-k, 135 €/Stück -90 €/Stück na
+BGar = 8400
+Xmax
+nit = 10800 Stück/Monat _ |90.% = 15.000 Stück/Monat
+72%
+
+. 12000 Stück/Monat
+
+it: BGer = -100 = 80 %
+gut: BSaep © 5000 Stück/Monat °
+
+© DIHK — Gesellschaft für berufliche Bildung — Organisation zur Förderung der IHK-Weiterbildung mbH — Bonn
+Die Vervielfältigung, Verbreitung oder öffentliche Wiedergabe der Publikation [der Prüfungssätze und Lösungshinweise]
+ist nicht gestattet (85 53, 54 UrhG) und strafbar {8 106 UrhG). Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+
+{8 Punkte)
+
+{B Punkte)
+
+{4 Punkte)
+
+(20 Punkte)
+
+{4 Punkte)
+
+(4 Punkte)
+
+{3 Punkte)
+
+(3 Punkte)
+
+(2 Punkte)
+
+Seite 21
+
+=== Seite 10 ===
+GEPRÜFTEI-R INDUSTRIEMEISTER/-IN
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+
+GRUNDLEGENDE QUALIFIKATIONEN
+Betriebswirtschaftliches Handeln
+
+c) Stuckkosten.
+
+k= K ku Zube
+x 15000 Stück
+
+Stückgewinn = p - k = 135 €&/Stück — 126 €/Stück = 9 €/Stück
+
++ 90 €/Stuck = 126 €/Stück
+
+Alternativlösung 7 b)
+500 000 €/Monat
+
+135 €/Stück_85 €/Stuck 000 Stuck/Monat
+
+XÄBEP =
+
+10000 Stück/Monat
+Beer = 100 = 66,67 %
+BEP 15000 Stück/Monat ö
+
+Altematıvlösung 7 c)
+
+Stückkosten: k= 0 000€ , 95 €/stück = 118,33 €/Stuck
+
+15000 Stück
+
+Stuckgewinn = 135,00 €/Stück — 118,33 €/Stück = 16,67 €/Stück
+
+(4 Punkte)
+
+Seite 22 | © DIHK — Gesellschaft iur berutliiche Bildung — Organisafion zur Förderung der IHK-Weiterbildung mbH — Bonn
+Die Vervielfältigung, Verbreitung oder öffentliche Wiedergabe der Publikation [der Prüfungssätze und Lösungshinweise]
+ist nicht gestattet (88 53, 54 UrhG} und strafbar (5 106 UrhG). Im Fall der Zuwiderhandlung wird Strafantrag gestellt,
+

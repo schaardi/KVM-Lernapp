@@ -1,0 +1,494 @@
+=== Seite 1 ===
+Bundeseinheitliche
+Weiterbildungsprüfung
+
+der Industrie- und Handelskammern
+
+Prüfungsteilnehmer-Nummer
+
+Geprüfte/-r Industriemeister]/-in,
+fachrichtungsübergreifende
+Basisqualifikationen/
+grundlegende Qualifikationen
+
+m Basisqualifikation Anwendung von Methoden der
+Information, Kommunikation und
+Planung
+
+m Prüfungstag 3. November 2016
+
+m Bearbeitungszeit 90 Minuten
+
+m Anzahl der Aufgaben 6
+
+Bitte prüfen Sie vor Beginn der Prüfung die Vollständigkeit des Aufgabensatzes. Sollte
+der Aufgabensatz nicht vollständig sein, informieren Sie bitte die Aufsicht.
+
+| P 050-03-1116-1 |
+
+=== Seite 2 ===
+Bearbeitungshinweise:
+
+Bitte lesen Sie die nachfolgenden Bearbeitungshinweise sorgfältig durch:
+
+= Die zur Prüfung zugelassenen Hilfsmittel wurden Ihnen separat mit der Einladung mitgeteilt.
+
+m Sie erhalten einen Aufgaben- und einen Lösunggsteil.
+
+m Tragen Sie auf dem Deckblatt Ihre Prüfungsteilnehmer-Nummer ein.
+
+m Die maximale Gesamtpunktzahl der Lösungen beträgt 100 Punkte.
+
+m Die Lösungsgänge bzw. Rechenvorgänge sind klar und nachvollziehbar im Lösungsteil dar-
+zustellen. Sollte der Platz nicht ausreichen, benutzen Sie bitte das Konzeptpapier, verweisen
+Sie auf die Fortsetzung und kennzeichnen Sie diese. Wir weisen darauf hin, dass eine vom
+Prüfungsausschuss nicht lesbare Prüfungsarbeit mit der Note „ungenügend“ (null Punkte) be-
+wertet wird mit den Rechtsfolgen, die sich aus der Prüfungsordnung ergeben.
+
+m Verwenden Sie für jede Aufgabe ein neues Lösungsblatt bzw. eine neue Lösungsseite.
+
+m Falls die Lösung auf einem beigefügten Anlageblatt erfolgen soll, wird in der Aufgabenstellung
+darauf hingewiesen.
+
+m Für Ihre Notizen benutzen Sie bitte ausschließlich das Konzeptpapier.
+
+m Das Konzeptpapier ist mit dem Aufgaben- und dem Lösungsteil abzugeben.
+
+m BeiAufgaben, die eine Aufzählung von n-Fakten zur Lösung erfordern, werden nur die ersten
+
+n-Fakten gewertet. Alle darüber hinausgehenden Aufzählungen werden gestrichen.
+
+Wir wünschen Ihnen bei der Bearbeitung viel Erfolg.
+
+Der leichteren Lesbarkeit wegen geben wir in den Aufgaben/Texten der männlichen Form
+den Vorzug. Mit diesem einfacheren sprachlichen Ausdruck sind selbstverständlich immer
+Männer und Frauen gemeint.
+
+Die Vervielfältigung, Verbreitung oder öffentliche Wiedergabe der Publikationen [der Prü-
+fungssätze] ist nicht gestattet (88 53, 54 UrhG) und strafbar ($ 106 UrhG). Im Fall der Zuwi-
+derhandlung wird Strafantrag gestellt.
+
+=== Seite 3 ===
+GEPRÜFTEI/-R INDUSTRIEMEISTER/-IN,
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+
+GRUNDLEGENDE QUALIFIKATIONEN
+AnwendungvonMethodenderlInformation, KommunikationundPlanung
+
+Aufgabe 1
+
+Sie wurden vor Kurzem intern in eine andere Abteilung versetzt. Dort ist Ihnen eine Stelle als
+Industriemeister in Aussicht gestellt worden.
+
+Sie werden von Ihrem neuen Vorgesetzten mit der inhaltlichen Vorbereitung und Durch-
+führung einer Präsentation im Rahmen der jährlichen Arbeitssicherheits-Unterweisungen
+beauftragt.
+
+Beschreiben Sie fünf Gesichtspunkte, die Sie in der Vorbereitungsphase beachten, um eine (10 Punkte)
+erfolgreiche Präsentation durchführen zu können.
+
+Lösungshinweise Aufgabe 1 (10 Punkte)
+[VO: 8 4 Absatz 4 Nr. 3]
+
+= _ Derangehende Meister kann bei erfahrenen Kollegen und Vorgesetzten Informationen
+über spezielle Sicherheitsvorschriften einholen.
+
+= Erkann in Quellen der Berufsgenossenschaft oder aus Fachzeitschriften der Branche
+weitere Informationen zur Arbeitssicherheit beschaffen.
+
+a  Erschreibt wichtige Stichpunkte und Anhaltspunkte auf Karteikarten, ordnet sie chrono-
+logisch, und hat somit einen roten Faden.
+
+= Er bereitet die Präsentationsmedien vor, testet sie auf Tauglichkeit und übt den Ablauf
+der Präsentation.
+
+= Ersollte den gesamten Ablauf der Unterweisung mit dem Vorgesetzten absprechen.
+
+= Sinnvoll ist bei der Vorbereitung auch eine Absprache mit dem jeweiligen Sicherheits-
+beauftragten / Ingenieur für Arbeitssicherheit.
+
+Aufgabe 2
+
+Im kommenden Jahr sollen die Produktionsanlagen und die IT-Systeme Ihres Unterneh-
+mens enger mit den Lieferanten und Kunden vernetzt werden. Im Rahmen eines Pilotpro-
+jektes wird diese neue Vernetzung in Ihrem Meisterbereich getestet.
+
+a) Beschreiben Sie zwei Vorteile einer engeren Vernetzung innerhalb der Lieferkette. (4 Punkte)
+b) Die erforderliche Netzwerktechnik wird in einem gesicherten Raum eingebaut.
+
+Beschreiben Sie drei organisatorische Maßnahmen zur Gewährleistung der Datensi- (6 Punkte)
+cherheit in diesem Raum.
+
+c) Beschreiben Sie fünf inhaltliche Anforderungen, die im Lastenheft für die Realisierung (10 Punkte)
+der Vernetzung enthalten sein können.
+
+Lösungshinweise Aufgabe 2 (20 Punkte)
+[VO: 8 4 Absatz A Nr. 1]
+
+a) Z.B.:
+= höhere Flexibilität der Produktion
+= höhere Transparenz der Prozesse
+= kürzere Reaktionszeiten auf Wünsche der Kunden (4 Punkte)
+
+© DIHK - Gesellschaft für berufliche Bildung — Organisation zur Förderung der IHK-Weiterbildung mbH — Bonn | P 050-03-1116-1 | Seite 25
+Die Vervielfältigung, Verbreitung oder öffentliche Wiedergabe der Publikation [der Prüfungssätze und Lösungshinweise]
+ist nicht gestattet ($$ 53, 54 UrhG) und strafbar ($ 106 UrhG). Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+
+=== Seite 4 ===
+GEPRÜFTEI/-R INDUSTRIEMEISTER/-IN,
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+
+GRUNDLEGENDE QUALIFIKATIONEN
+
+AnwendungvonMethodenderInformation, KommunikationundPlanung
+
+Aufstellung einer Sicherheitsrichtlinie
+
+Sicherheitszertifizierung/Sicherheitsaudit
+
+Zutritt nur für wenige befugte Mitarbeiter
+
+Überwachung der Mitarbeiter von Fremdfirmen, die in dem Raum Support leisten
+Vier-Augen-Prinzip bei Betreten des Raumes
+
+Protokollierung aller Vorgänge
+
+Datensicherheit gegen Industriespionage und Sabotage
+
+in Zukunft zu übertragende Datenmengen (Abschätzung)
+
+Art und Anzahl der Clients, die für die Zugriffe genutzt werden
+Schnittstellen zu anderen IT-Systemen innerhalb des Unternehmens
+Schnittstellen zu den IT-Systemen von Kunden und Lieferanten
+
+Zeitrahmen und Meilensteine des Vorhabens
+
+Hinweis für den Korrektor zu den Aufgabenteilen a) bis c):
+
+Die Punkte sind zu beschreiben.
+
+Aufgabe 3
+
+Die neue IT-Technik erfordert eine Fortbildung der Mitarbeiter Ihres Meisterbereiches. Mit
+dieser Fortbildung soll ein IT-Systemhaus als Dienstleister beauftragt werden.
+
+a) Stellen Sie fünf logisch aufeinanderfolgende Phasen der Organisation dieser Fortbil-
+dung dar.
+
+b) Beschreiben Sie fünf Anforderungen, die Ihr Unternehmen als Auftraggeber an die
+Schulung und an den Dienstleister stellt.
+
+Lösungshinweise Aufgabe 3
+[VO: 8 4 Absatz 4 Nr. 6]
+
+a) Z.B.
+
+1:
+
+2
+3.
+4.
+5
+
+Analyse des Istzustandes: Welche IT-Kenntnisse und Qualifikationen haben die
+Mitarbeiter?
+
+Sollzustand: Aufstellen der Anforderungen in einem Lastenheft
+Auswahl eines Auftragnehmers
+Durchführung der Schulung
+
+Feedback, Nachbetreuung der Teilnehmer
+
+Hinweis für den Korrektor: Andere in sich schlüssige Abläufe können ebenfalls
+
+Seite 26 | P 050-03-1116-1 |
+
+gewertet werden.
+
+(6 Punkte)
+
+(10 Punkte)
+
+(5 Punkte)
+
+(10 Punkte)
+
+(15 Punkte)
+
+(5 Punkte)
+
+© DIHK - Gesellschaft für berufliche Bildung — Organisation zur Förderung der IHK-Weiterbildung mbH — Bonn
+
+Die Vervielfältigung, Verbreitung oder öffentliche Wiedergabe der Publikation [der Prüfungssätze und Lösungshinweise]
+ist nicht gestattet (88 53, 54 UrhG) und strafbar ($ 106 UrhG). Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+
+=== Seite 5 ===
+GEPRÜFTE/-R INDUSTRIEMEISTER/-IN,
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+
+GRUNDLEGENDE QUALIFIKATIONEN
+AnwendungvonMethodenderlInformation, KommunikationundPlanung
+
+b) = Qualifikation des Anbieters: Lehrmethoden, Material, Qualitätssicherung
+
+=  zeitnahe Verfügbarkeit der Schulung am gewünschten Ort und unter den
+gewünschten technischen Voraussetzungen
+
+=  zielgruppenorientierte Vermittlung: Die Schulung soll sich an der Qualifikation und
+am Wissensstand orientieren.
+
+= Dokumentation der vermittelten Lehrinhalte und der erreichten Leistungen, ggf.
+mit Teilnahmebestätigung und Zertifikat
+
+=  verständliches und anschauliches Lehrmaterial mit Bezug auf die IT-Netze des
+
+Auftraggebers (10 Punkte)
+Hinweis für den Korrektor: Die oben genannten Anforderungen sind zu beschrei-
+ben.
+© DIHK - Gesellschaft für berufliche Bildung — Organisation zur Förderung der IHK-Weiterbildung mbH — Bonn | P 050-03-1116-1 | Seite 27
+
+Die Vervielfältigung, Verbreitung oder öffentliche Wiedergabe der Publikation [der Prüfungssätze und Lösungshinweise]
+ist nicht gestattet (88 53, 54 UrhG) und strafbar ($ 106 UrhG). Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+
+=== Seite 6 ===
+GEPRÜFTE/-R INDUSTRIEMEISTER/-IN,
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+
+GRUNDLEGENDE QUALIFIKATIONEN
+AnwendungvonMethodenderlInformation, KommunikationundPlanung
+
+Aufgabe 4
+
+In Ihrem Unternehmen soll ein E-Fahrzeug zum Ausliefern von Aufträgen im näheren
+Umkreis beschafft werden. Die Vorauswahl soll mithilfe der Nutzwertanalyse erfolgen.
+
+Die Geschäftsleitung hat fünf Kriterien festgelegt und gewichtet:
+
+Kriterium Gewichtung
+Ladevolumen 15 %
+Nutzlast 30 %
+Batterieladekonzept 10%
+Anschaffungskosten 25 %
+Maximale Kilometerleistung pro Ladevorgang 20 %
+
+Die Fahrzeuge sollen nach den folgenden Punktetabellen bewertet werden:
+
+Maximale Reichweite >100 km >60 bis 100 km >40 bis 60 km
+pro Ladevorgang 10 Punkte 8 Punkte 6 Punkte
+> 20.000 € und > 30.000 € und
+<20.
+Anschaffungskosten z20,n00 € < 30.000 € < 40.000 €
+10 Punkte 8 Punkte 6 Punkte
+Ladevolumen 2 Kubikmeter 1.75 Kubikmeter 1.5 Kubikmeter
+10 Punkte 8 Punkte 6 Punkte
+> <
+Nutzlast 150 kg >100 kgund< 150kg >50kgund< 100 kg
+10 Punkte 8 Punkte 6 Punkte
+s induktiv Wechselbatterie Ladegerät
+a 10 Punkte 8 Punkte 6 Punkte
+
+Auf dem Markt werden folgende Fahrzeuge angeboten:
+
+Lieferant A bietet ein Fahrzeug mit maximaler Reichweite von 120 km und einer Nutzlast
+von 120 kg an. Das Ladevolumen beträgt 1,75 Kubikmeter. Die Batterie wird mit einem
+Ladegerät geladen. Das Fahrzeug kostet 25.000 €.
+
+Lieferant B bietet ein Fahrzeug zum Preis von 18.000 € an. Die Reichweite beträgt 70 km.
+Die Nutzlast des Fahrzeugs beträgt 80 kg. Das Ladevolumen beträgt 1,5 Kubikmeter. Die
+Stromversorgung erfolgt durch eine Wechselbatterie.
+
+Lieferant C bietet ein Fahrzeug an, dessen Nutzlast 110 kg beträgt. Die Reichweite beträgt
+60 km. Das Ladevolumen beträgt 2 Kubikmeter. Das Fahrzeug wird induktiv geladen. Der
+Preis beträgt 35.000 €.
+
+a) Führen Sie mit den oben stehenden Angaben die Nutzwertanalyse durch und entschei- (16 Punkte)
+den Sie sich für einen Lieferanten. Verwenden Sie Anlage 1.
+
+b) Begründen Sie, warum die Nutzwertanalyse zur Auswahl eines Fahrzeugs aus mehre- (4 Punkte)
+ren Alternativen eingesetzt wird.
+
+Seite 28 | P 050-03-1116-1 | © DIHK — Gesellschaft für berufliche Bildung — Organisation zur Förderung der IHK-Weiterbildung mbH — Bonn
+Die Vervielfältigung, Verbreitung oder öffentliche Wiedergabe der Publikation [der Prüfungssätze und Lösungshinweise]
+ist nicht gestattet (88 53, 54 UrhG) und strafbar ($ 106 UrhG). Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+
+=== Seite 7 ===
+GEPRÜFTEI/-R INDUSTRIEMEISTER/-IN,
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+
+GRUNDLEGENDE QUALIFIKATIONEN
+AnwendungvonMethodenderlInformation, KommunikationundPlanung
+
+Lösungshinweise Aufgabe 4 (20 Punkte)
+[VO: 8 4 Absatz 4 Nr. 2]
+
+a) Anhand der Summen der gewichteten Werte fällt die Entscheidung für Fahrzeug A. (16 Punkte)
+
+Hinweis für den Korrektor: Je richtig berechnetem Fahrzeug 5 Punkte,
+Entscheidung 1 Punkt.
+
+Kriterien Gewichtung Fahrzeug A Fahrzeug B Fahrzeug C
+
+absolut gewichtet absolut gewichtet absolut gewichtet
+
+Reichweite pro Lade- 20% 10 2,0 8 1,6 6 1,2
+vorgang
+
+Anschaffungskosten 25% 8 2,0 10 2,5 6 1,5
+Ladevolumen 15% 8 1,2 6 0,9 10 1,5
+Nutzlast 30% 8 2,4 6 1,8 8 2,4
+Batterie-Ladekonzept 10% 6 0,6 8 0,8 10 1,0
+Summe 100% 82 7,6 7,6
+
+b) Die Nutzwertanalyse wird bei der Auswahl aus mehreren Alternativen bevorzugt einge-
+setzt, weil sie am Gesamtnutzen der Objekte orientiert ist. Die Nutzwertanalyse ist ein
+systematisches und transparentes Verfahren. Sie führt zu einer objektiven Entschei-
+dung, sofern die korrekten Daten zur Verfügung stehen. (4 Punkte)
+
+Aufgabe 5
+
+Gegeben ist die folgende Strukturstückliste für das Erzeugnis E:
+
+Ifd. Nummer Ebene Anzahl
+1 2 3
+
+1 B2 2
+
+2 T1 2
+
+3 B1 1
+
+4 T2 2
+
+5 T3 3
+
+6 T4 1
+
+7 T8 4
+
+8 B3 2
+
+9 T2 3
+
+10 B6 2
+
+11 T1 4
+
+12 T5 3
+
+13 T6 2
+a) Erstellen Sie aus der Strukturstückliste die grafische Erzeugnisstruktur. (9 Punkte)
+b) Erstellen Sie die dazugehörige Mengenstückliste des Erzeugnisses E. (6 Punkte)
+
+© DIHK - Gesellschaft für berufliche Bildung — Organisation zur Förderung der IHK-Weiterbildung mbH - Bonn | P 050-03-1116-1 | Seite 29
+
+Die Vervielfältigung, Verbreitung oder öffentliche Wiedergabe der Publikation [der Prüfungssätze und Lösungshinweise]
+ist nicht gestattet (88 53, 54 UrhG) und strafbar ($ 106 UrhG). Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+
+=== Seite 8 ===
+GEPRÜFTEI/-R INDUSTRIEMEISTER/-IN,
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+
+GRUNDLEGENDE QUALIFIKATIONEN
+AnwendungvonMethodenderlInformation, KommunikationundPlanung
+
+Lösungshinweise Aufgabe 5 (15 Punkte)
+[VO: 8 4 Absatz 4 Nr. 4]
+a)
+Erzeugnis E
+2xB2 4xT5 2xB3
+2xT1 1x B1 3xT2 2xB6
+2xT2 3xT3 1xT4 4x T1 3xT5 2xT6
+(9 Punkte)
+b) Position Bezeichnung Anzahl
+1 af 20
+2 T2 10
+3 T3 6
+4 T4 2
+5 T5 16
+E 16 B (6 Punkte)
+Aufgabe 2
+In Ihrem Unternehmen sind Sie Mitglied der Projektleitung, die für die Entwicklung neuer
+Prototypen zuständig ist. Sie sind mitverantwortlich für die komplette Durchführung des Pro-
+jektes.
+a) Vor dem Projektstart wird eine Risikoanalyse durchgeführt.
+Nennen Sie vier Bestandteile der Risikoanalyse. (4 Punkte)
+b) Projekte werden in die vier Hauptphasen
+=  Definitionsphase,
+= Planungsphase,
+= Realisierungsphase und
+= Abschlussphase
+unterteilt.
+Beschreiben Sie zu den vier Hauptphasen je zwei Tätigkeiten der Projektleitung. (16 Punkte)
+Seite 30 | P 050-03-1116-1 | © DIHK - Gesellschaft für berufliche Bildung — Organisation zur Förderung der IHK-Weiterbildung mbH - Bonn
+Die Vervielfältigung, Verbreitung oder öffentliche Wiedergabe der Publikation [der Prüfungssätze und Lösungshinweise]
+
+ist nicht gestattet (88 53, 54 UrhG) und strafbar ($ 106 UrhG). Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+
+=== Seite 9 ===
+GEPRÜFTE/-R INDUSTRIEMEISTER/-IN,
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+
+GRUNDLEGENDE QUALIFIKATIONEN
+AnwendungvonMethodenderInformation, KommunikationundPlanung
+
+Lösungshinweise Aufgabe 6 (20 Punkte)
+[VO: & 4 Absatz 4 Nr. 5]
+
+a); zZ. B&
+= Beurteilung des finanziellen Risikos
+= Beurteilung des Funktionsrisikos
+= Beurteilung des Terminrisikos
+= Beurteilung des personellen Risikos
+= Beurteilung des juristischen Risikos
+" Beurteilung des Risikos des Imageverlustes (4 Punkte)
+b) =  Definitionsphase, z. B.:
+= Mitwirken an den Projektzielen (Termin, Kosten usw.)
+= Mitarbeiter auswählen
+= _ Analyse der Interessengruppen (Stakeholder)
+a Planungsphase, z. B.:
+= Strukturplanung
+= Terminplanung
+= Ressourcenplanung
+=  Kostenplanung
+= Realisierungsphase, z. B.:
+= _ Starten und Beenden von Vorgängen
+= Soll-Ist-Vergleich
+= _ Kontrolle der Meilensteine
+= Probleme erkennen und lösen
+=  Abschlussphase, z. B.:
+= Dokumentation (Projektabschlussbericht)
+= Erfahrungswerte sichern
+= Feedback
+= Überleitung der Mitarbeiter in ihre ursprünglichen Abteilungen (16 Punkte)
+
+Hinweis für den Korrektor: Die oben genannten Phasen sind zu beschreiben.
+
+© DIHK - Gesellschaft für berufliche Bildung — Organisation zur Förderung der IHK-Weiterbildung mbH — Bonn | P 050-03-1116-1 | Seite 31
+Die Vervielfältigung, Verbreitung oder öffentliche Wiedergabe der Publikation [der Prüfungssätze und Lösungshinweise]
+ist nicht gestattet ($$ 53, 54 UrhG) und strafbar ($ 106 UrhG). Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+
+=== Seite 10 ===
+GEPRÜFTEI/-R INDUSTRIEMEISTER/-IN,
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+
+GRUNDLEGENDE QUALIFIKATIONEN
+Anwendung von Methoden der Information, Kommunikation und Planung
+
+Anlage 1 zu Aufgabe 4
+
+Kriterien Gewichtung Fahrzeug A Fahrzeug B Fahrzeug C
+
+absolut gewichtet absolut gewichtet absolut gewichtet
+
+Reichweite pro Ladevorgang
+Anschaffungskosten
+Ladevolumen
+
+Nutzlast
+Batterie-Ladekonzept
+
+Summe
+
+© DIHK - Gesellschaft für berufliche Bildung — Organisation zur Förderung der IHK-Weiterbildung mbH - Bonn. Die Vervielfältigung, Verbreitung oder öffentliche Wiedergabe der Publikation [der Prüfungssätze und | P 050-03-1116-1 | Seite 32
+Lösungshinweise] ist nicht gestattet (88 53, 54 UrhG) und strafbar ($ 106 UrhG). Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+

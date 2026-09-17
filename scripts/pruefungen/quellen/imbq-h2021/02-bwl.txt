@@ -1,0 +1,669 @@
+=== Seite 1 ===
+              Stand: 1. September 2021
+
+
+
+
+Bundeseinheitliche Fortbildungsprüfung der Industrie- und Handelskammern
+Geprüfter Industriemeister / Geprüfte Industriemeisterin
+fachrichtungsübergreifende Basisqualifikationen/grundlegende
+Qualifikationen
+Betriebswirtschaftliches Handeln
+
+
+Lösungshinweise
+Datum:                                          4. November 2021
+
+Bearbeitungszeit:                               90 Minuten
+
+Anzahl Aufgaben:                                7
+
+
+Hinweise für den Korrektor:
+■   Die folgenden Lösungen sind lediglich Lösungshinweise.
+■   Sie sollen nur den Rahmen der zu erwartenden Prüfungsleistung abstecken.
+■   Der Korrektor ist durch die hier aufgeführten Lösungshinweise in seinem
+    Bewertungsspielraum nicht eingeengt.
+■   Bei Aufgaben, die eine Aufzählung von n-Fakten zur Lösung erfordern, werden nur die
+    ersten n-Fakten gewertet. Alle darüber hinausgehenden Aufzählungen werden
+    gestrichen.
+■   Bei Berechnungen sollen Folgefehler berücksichtigt werden und somit nicht zum
+    Punktabzug führen.
+■   Der leichteren Lesbarkeit wegen geben wir in den Aufgaben/Texten der männlichen
+    Form den Vorzug. Mit diesem einfacheren sprachlichen Ausdruck sind selbstverständlich
+    immer alle Geschlechter gemeint.
+
+
+
+Die Aufgaben mit Lösungsvorschlägen können von den Industrie- und Handelskammern oder Dritten nach einer Frist von sechs Monaten
+direkt bestellt werden bei:
+wbv Media GmbH & Co. KG, Service-Center DIHK,
+Postfach 10 06 33, 33506 Bielefeld
+Tel.: 0521/91101-16, Fax: 0521/91101-19, E-Mail: service@wbv.de
+
+
+
+
+                            © DIHK – Gesellschaft für berufliche Bildung – Organisation zur Förderung der IHK-Weiterbildung gGmbH – Bonn
+               Die Vervielfältigung, Verbreitung oder öffentliche Wiedergabe der Publikation ist nicht gestattet (§§ 53, 54 UrhG) und strafbar (§ 106 UrhG).
+                                                           Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+                                                                             L 050-02-1121-3
+
+=== Seite 2 ===
+GEPRÜFTE/-R INDUSTRIEMEISTER/-IN,
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+GRUNDLEGENDE QUALIFIKATIONEN
+Betriebswirtschaftliches Handeln
+
+
+Aufgabe 1
+Sie sind angehender Industriemeister in der Industrie GmbH.
+
+Die Aufträge sind aufgrund einer Pandemie stark rückläufig. In Ihrem Team wird deshalb
+darüber gesprochen, ob sich die Industrie GmbH evtl. mit anderen Unternehmen zusammen-
+schließen sollte.
+
+ a Mögliche Punktzahl: 6
+Unterscheiden Sie in diesem Zusammenhang ein Kartell von einem Konzern.
+
+ b Mögliche Punktzahl: 5
+Geben Sie fünf Gründe an, warum sich Unternehmen zusammenschließen.
+
+
+
+
+                                           Seite 2
+                                        L 050-02-1121-3
+
+=== Seite 3 ===
+GEPRÜFTE/-R INDUSTRIEMEISTER/-IN,
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+GRUNDLEGENDE QUALIFIKATIONEN
+Betriebswirtschaftliches Handeln
+
+
+Lösungshinweise Aufgabe 1
+[VO: § 4 Absatz 3 Nr. 1]
+
+ a Mögliche Punktzahl: 6
+Z. B.:
+■   Kartell:
+    Unternehmenszusammenschluss, bei dem die jeweiligen Unternehmen ihre rechtliche
+    Selbstständigkeit behalten und ihre wirtschaftliche Selbstständigkeit nur im Rahmen der
+    Zusammenarbeit einschränken
+■   Konzern:
+    Die beteiligten Unternehmen geben ihre wirtschaftliche Selbstständigkeit weitgehend
+    durch eine einheitliche Leitung auf. Ihre rechtliche Selbstständigkeit bleibt grundsätzlich
+    erhalten.
+
+ b Mögliche Punktzahl: 5
+Z. B.:
+■   Nutzung von Kostenvorteilen
+■   Ausnutzung von Synergieeffekten
+■   Risikostreuung durch weitere Produkte und höhere Kapitalkraft
+■   höhere Wettbewerbsfähigkeit
+■   Erweiterung des Know-hows
+■   erweiterte Absatzbasis
+■   ggf. höhere Flexibilität im Ressourceneinsatz
+
+
+
+
+                                              Seite 3
+                                           L 050-02-1121-3
+
+=== Seite 4 ===
+GEPRÜFTE/-R INDUSTRIEMEISTER/-IN,
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+GRUNDLEGENDE QUALIFIKATIONEN
+Betriebswirtschaftliches Handeln
+
+
+Aufgabe 2
+Die Industrie GmbH erhält einen Großauftrag aus Südostasien, der bis Ende des Quartals
+an den Kunden ausgeliefert werden muss. Der Fertigungsleiter beauftragt Sie mit der Perso-
+nalplanung. Aktuell sind in Ihrer Abteilung 44 Mitarbeiter beschäftigt. Aus den anderen Ferti-
+gungsbereichen können bei Engpässen weitere fünf Facharbeiter eingesetzt werden.
+
+Folgende Daten liegen zur Entscheidungsfindung vor:
+
+■   Kapazitätsbedarf für vorhandene Aufträge         8.400 Mitarbeiterstunden
+
+■   Kapazitätsbedarf Großauftrag                     4.350 Mitarbeiterstunden
+
+■   Restarbeitstage im Quartal                       38
+
+■   tägliche Arbeitszeit                             8 Stunden
+
+■   Störzeiten                                       3%
+
+■   Urlaub                                           12,5 %
+
+■   Krankheit                                        7,5 %
+
+ a Mögliche Punktzahl: 5
+Berechnen Sie den erforderlichen Personalbedarf.
+
+ b Mögliche Punktzahl: 6
+Ermitteln Sie rechnerisch die Kapazitätsüberdeckung bzw. Kapazitätsunterdeckung in
+Stunden und den Beschäftigungsgrad.
+
+
+
+
+                                              Seite 4
+                                          L 050-02-1121-3
+
+=== Seite 5 ===
+GEPRÜFTE/-R INDUSTRIEMEISTER/-IN,
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+GRUNDLEGENDE QUALIFIKATIONEN
+Betriebswirtschaftliches Handeln
+
+
+Lösungshinweise Aufgabe 2
+[VO: § 4 Absatz 3 Nr. 2]
+
+ a Mögliche Punktzahl: 5
+                        12.750 h · 1,03
+Personalbedarf =                               54 MA
+                        h
+                   8          · 38 Tage · 0,8
+                     Tag · MA
+Der Personalbedarf beträgt 54 Mitarbeiter.
+
+ b Mögliche Punktzahl: 6
+realer Kapazitätsbedarf = 12.750 h · 1,03 = 13.132,5 h
+– realer Kapazitätsbestand = 49 MA · 8 h/MA/Tag · 38 Tage · 0,8 = 11.916,8 h
+= Zusatzbedarf (Kapazitätsunterdeckung) = 1.215,7 h
+                       13.132,5 h
+Beschäftigungsgrad =               100  110,20 %
+                       11.916,8 h
+
+
+
+
+                                             Seite 5
+                                         L 050-02-1121-3
+
+=== Seite 6 ===
+GEPRÜFTE/-R INDUSTRIEMEISTER/-IN,
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+GRUNDLEGENDE QUALIFIKATIONEN
+Betriebswirtschaftliches Handeln
+
+
+Aufgabe 3
+Die Arbeitsvorbereitung der Industrie GmbH ermittelt für einen Druckauftrag eine Normal-
+leistung von 20.000 Blatt pro Stunde. Für den Druck von 1.200.000 Blatt wurden vom Fach-
+arbeiter 50 Stunden benötigt. Der Akkordrichtsatz beträgt 18,50 €/Stunde.
+
+ a Mögliche Punktzahl: 4
+Ermitteln Sie den Zeitgrad des Facharbeiters.
+
+ b Mögliche Punktzahl: 2
+Berechnen Sie den vom Facharbeiter erzielten Akkordstundenlohn.
+
+ c Mögliche Punktzahl: 4
+Ermitteln Sie die Lohnkosten für den Auftrag sowie die Lohnkosten für 1.000 Blatt.
+
+ d Mögliche Punktzahl: 8
+Bisher erfolgt die Entlohnung in der Industrie GmbH ohne eine Erfolgsbeteiligung der Mitar-
+beiter. Der Betriebsrat fordert für das nächste Geschäftsjahr die Einführung einer entspre-
+chenden Erfolgsbeteiligung.
+
+Führen Sie vier Argumente an, die für die Einführung einer Erfolgsbeteiligung
+sprechen.
+
+
+
+
+                                             Seite 6
+                                          L 050-02-1121-3
+
+=== Seite 7 ===
+GEPRÜFTE/-R INDUSTRIEMEISTER/-IN,
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+GRUNDLEGENDE QUALIFIKATIONEN
+Betriebswirtschaftliches Handeln
+
+
+Lösungshinweise Aufgabe 3
+[VO: § 4 Absatz 3 Nr. 4]
+
+ a Mögliche Punktzahl: 4
+                   1.200.000 Blatt
+Vorgabezeit    =                   = 60 h
+                    20.000 Blatt/h
+                    Vorgabezeit
+Zeitgrad       =                   · 100
+                   Istauftragszeit
+                   60 h
+Zeitgrad       =        · 100 = 120 %
+                   50 h
+
+ b Mögliche Punktzahl: 2
+Akkordstundenlohn = Akkordrichtsatz ∙ Zeitgradfaktor
+                    = 18,50 €/h · 1,2 = 22,20 €/h
+
+ c Mögliche Punktzahl: 4
+Lohnkosten Auftrag = 60 h · 18,50 €/h = 1.110 €
+bzw.
+Lohnkosten Auftrag = 50 h · 22,20 €/h = 1.110 €
+                               1.110 €
+Lohnkosten/1.000 Blatt =                   · 1.000 Blatt = 0,925 €
+                           1.200.000 Blatt
+
+ d Mögliche Punktzahl: 8
+Z. B.:
+■   Die Mitarbeiter sind motivierter (Anreiz zum Engagement). Der Einsatz der Mitarbeiter
+    zur Steigerung des Unternehmenserfolgs wirkt sich unmittelbar auch auf ihre Entlohnung
+    aus.
+■   Das Image des Unternehmens steigt durch das Angebot zeitgemäßer Entlohnung.
+■   Mitarbeiterbindung: Der Mitarbeiter kann seine Entlohnung durch Leistung beeinflussen
+    und bleibt im Unternehmen.
+■   Motivation zur Verbesserung aller Prozesse und Produkte, weil sich dadurch das Unter-
+    nehmensergebnis verbessert und folglich die eigene Entlohnung
+■   Sicherung des eigenen Arbeitsplatzes durch Qualität, Umsatz, Aufträge
+■   Interessenausgleich zwischen Arbeitgeber und Arbeitnehmer (gerechte Entlohnung für
+    den Arbeitnehmer, hohe Gewinne für den Arbeitgeber)
+
+
+
+
+                                               Seite 7
+                                            L 050-02-1121-3
+
+=== Seite 8 ===
+GEPRÜFTE/-R INDUSTRIEMEISTER/-IN,
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+GRUNDLEGENDE QUALIFIKATIONEN
+Betriebswirtschaftliches Handeln
+
+
+Aufgabe 4
+Der Lagerbestand an Gartenfräsen betrug zu Beginn des Geschäftsjahres 410 Stück, am
+Ende des Geschäftsjahres waren noch 290 Stück auf Lager.
+
+Im ersten Halbjahr wurden monatlich jeweils 355 Stück über den Lieferanten geordert, von
+Juli bis Oktober jeweils 313 Stück. Im November und Dezember erfolgte keine Bestellung.
+
+Der Sicherheitsbestand wurde mit 150 Stück festgelegt.
+
+ a Mögliche Punktzahl: 8
+Ermitteln Sie rechnerisch nachvollziehbar die durchschnittliche Lagerdauer in Tagen.
+
+ b Mögliche Punktzahl: 4
+Beschreiben Sie zwei Auswirkungen einer Erhöhung der Lagerumschlagshäufigkeit.
+
+ c Mögliche Punktzahl: 4
+Unterbreiten Sie dem Lagerleiter zwei Vorschläge, die zu einer Erhöhung der Lager-
+umschlagshäufigkeit führen.
+
+
+Lösungshinweise Aufgabe 4
+[VO: § 4 Absatz 3 Nr. 2]
+
+ a Mögliche Punktzahl: 8
+                                        Anfangsbestand + Endbestand
+durchschnittlicher Lagerbestand     =
+                                                     2
+                                        410 Stück + 290 Stück
+                                    =                         = 350 Stück
+                                                  2
+
+
+Jahresverbrauch                     = Anfangsbestand + Zugänge – Endbestand
+                                    = 410 Stück + 6 · 355 Stück + 4 · 313 Stück – 290 Stück
+                                    = 3.502 Stück
+                           360   Lagerbestand
+ Lagerdauer in Tagen 
+                            Verbrauch pro Jahr
+                        360  350 Stück/Jahr
+                       
+                          3.502 Stück/Jahr
+                       35,98  36 Tage
+
+
+                                              Seite 8
+                                          L 050-02-1121-3
+
+=== Seite 9 ===
+GEPRÜFTE/-R INDUSTRIEMEISTER/-IN,
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+GRUNDLEGENDE QUALIFIKATIONEN
+Betriebswirtschaftliches Handeln
+
+
+ b Mögliche Punktzahl: 4
+Auswirkungen einer Erhöhung der Lagerumschlagshäufigkeit sind z. B.:
+Eine erhöhte Umschlagshäufigkeit bewirkt eine Verkürzung der Lagerdauer. Dies führt zu
+einer Senkung der Kapitalbindungskosten und damit auch zu geringeren Lagerkosten.
+
+ c Mögliche Punktzahl: 4
+Vorschläge, die zu einer Erhöhung der Lagerumschlagshäufigkeit führen, sind z. B.:
+■   Verkürzung von Lieferzeiten
+■   Reduzierung des Sicherheitsbestands in der Nachsaison (Wintermonate)
+■   attraktivere Kundenangebote (z. B. Frühjahrsaktionen für Gartenfräsen)
+
+
+
+
+                                            Seite 9
+                                         L 050-02-1121-3
+
+=== Seite 10 ===
+GEPRÜFTE/-R INDUSTRIEMEISTER/-IN,
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+GRUNDLEGENDE QUALIFIKATIONEN
+Betriebswirtschaftliches Handeln
+
+
+Aufgabe 5
+Die Industrie GmbH führt zu Beginn des kommenden Jahres die Deckungsbeitragsrechnung
+ein. Die Deckungsbeitragsrechnung soll der Geschäftsführung zusätzliche Informationen
+liefern.
+
+    a Mögliche Punktzahl: 9
+Erklären Sie folgende drei Situationen hinsichtlich der Auswirkung auf das Betriebs-
+ergebnis:
+
+■     Null < Gesamtdeckungsbeitrag < Fixkosten
+
+■     Gesamtdeckungsbeitrag > Fixkosten
+
+■     Gesamtdeckungsbeitrag < Null.
+
+
+
+    b Mögliche Punktzahl: 2
+Am Break-even-Punkt wurde ein Gesamtdeckungsbeitrag von 250.000 € pro Monat
+festgestellt. Die variablen Gesamtkosten betragen 850.000 € pro Monat.
+
+Ermitteln Sie den Break-even-Umsatz.
+
+
+
+
+                                           Seite 10
+                                        L 050-02-1121-3
+
+=== Seite 11 ===
+GEPRÜFTE/-R INDUSTRIEMEISTER/-IN,
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+GRUNDLEGENDE QUALIFIKATIONEN
+Betriebswirtschaftliches Handeln
+
+
+Lösungshinweise Aufgabe 5
+[VO: § 4 Absatz 3 Nr. 5]
+
+ a Mögliche Punktzahl: 9
+■   Null < Gesamtdeckungsbeitrag < Fixkosten Z. B.:
+Der Stückdeckungsbeitrag ist positiv, d. h., die variablen Stückkosten sind gedeckt.
+Der Gesamtdeckungsbeitrag reicht aber nicht aus, um die Fixkosten zu decken, was ein
+negatives Betriebsergebnis (Verlust) zur Folge hat.
+Mit jedem weiteren verkauften Stück reduziert sich der Verlust in Höhe des Stückdeckungs-
+beitrags, bis Kostendeckung (Break-even-Punkt) erreicht ist.
+
+
+Gesamtdeckungsbeitrag > Fixkosten
+
+Z. B.:
+Der Gesamtdeckungsbeitrag übersteigt die Fixkosten; es wird ein positives Betriebsergebnis
+(Gewinn) erzielt.
+
+
+Gesamtdeckungsbeitrag < Null
+
+Z. B.:
+Ein negativer Gesamtdeckungsbeitrag bedeutet einen negativen Stückdeckungsbeitrag,
+d. h., der Verkaufspreis pro Stück kann nicht einmal die variablen Stückkosten decken.
+Mit jedem weiteren verkauften Stück erhöht sich der Verlust.
+
+ b Mögliche Punktzahl: 2
+Im Break-even-Punkt entspricht der Umsatz den Gesamtkosten. Dabei sind die Fixkosten
+exakt so hoch wie der Gesamtdeckungsbeitrag.
+UBEP = K = Kf + Kv = 250.000 €/Monat + 850.000 €/Monat = 1.100.000 €/Monat
+
+
+
+
+                                             Seite 11
+                                          L 050-02-1121-3
+
+=== Seite 12 ===
+GEPRÜFTE/-R INDUSTRIEMEISTER/-IN,
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+GRUNDLEGENDE QUALIFIKATIONEN
+Betriebswirtschaftliches Handeln
+
+
+Aufgabe 6
+Mögliche Punktzahl: 16
+In der Industrie GmbH werden kundenspezifische Transformatoren produziert. Es liegen
+folgende Daten vor:
+
+■   Fertigungsmaterial                                       950 €/Stück
+
+■   Fertigungslohn Wicklerei                                   85 €/Stück
+
+■   Maschinenkosten Wicklerei                                105 €/Stück
+
+■   Fertigungslohnkosten Prüffeld                              45 €/Stück
+
+Für das Prüfen werden Hilfsmittel mit einem Einstandspreis von 1.140 € benötigt. Der
+Auftrag umfasst 15 Transformatoren.
+
+Die Industrie GmbH kalkuliert mit folgenden Daten:
+
+■   Materialgemeinkostenzuschlagssatz                                8%
+
+■   Restfertigungsgemeinkostenzuschlagssatz Wicklerei              140 %
+
+■   Fertigungsgemeinkostenzuschlagssatz Prüffeld                   320 %
+
+■   Verwaltungsgemeinkostenzuschlagssatz                             9%
+
+■   Vertriebsgemeinkostenzuschlagssatz                               6%
+
+■   Gewinnzuschlagssatz                                             25 %
+
+■   Skonto                                                           2%
+
+■   Vertreterprovision                                              18 %
+
+■   Rabatt                                                           8%
+
+Ermitteln Sie den Listenverkaufspreis pro Stück.
+
+
+
+
+                                            Seite 12
+                                         L 050-02-1121-3
+
+=== Seite 13 ===
+GEPRÜFTE/-R INDUSTRIEMEISTER/-IN,
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+GRUNDLEGENDE QUALIFIKATIONEN
+Betriebswirtschaftliches Handeln
+
+
+Lösungshinweise Aufgabe 6
+[VO: § 4 Absatz 3 Nr. 5]
+Mögliche Punktzahl: 16
+FM                  950,00
+
+MGK           8%      76,00                                                                   1 P.
+
+MK                            1.026,00                                                        1 P.
+
+FLW                   85,00
+
+RFGKW      140 %    119,00                                                                    1 P.
+
+MaKW                105,00
+
+FLP                   45,00
+
+FGKP       320 %    144,00                                                                    1 P.
+
+SEF                   76,00                                                                   1 P.
+
+FK                             574,00                                                         1 P.
+
+HK                                       1.600,00                                             1 P.
+
+VwGK          9%                          144,00                                              1 P.
+
+VtGK          6%                           96,00                                              1 P.
+
+SK                                                  1.840,00                                  1 P.
+
+G            25 %                                    460,00
+
+BVP                                                            2.300,00                       1 P.
+
+Skonto        2%                                                 57,50                        1 P.
+
+V-Prov.      18 %                                               517,50                        1 P.
+
+ZVP                                                                       2.875,00            1 P.
+
+Rabatt        8%                                                           250,00             1 P.
+
+LVP                                                                                  3.125,00 1 P.
+
+
+
+
+                                              Seite 13
+                                           L 050-02-1121-3
+
+=== Seite 14 ===
+GEPRÜFTE/-R INDUSTRIEMEISTER/-IN,
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+GRUNDLEGENDE QUALIFIKATIONEN
+Betriebswirtschaftliches Handeln
+Legende:
+■   FM             Fertigungsmaterial
+■   MGK            Materialgemeinkosten
+■   MK             Materialkosten
+■   FLW            Fertigungslöhne Wicklerei
+■   RFGKW          Restfertigungsgemeinkosten Wicklerei
+■   MaKW           Maschinenkosten Wicklerei
+■   FLP            Fertigungslöhne Prüffeld
+■   FGKP           Fertigungsgemeinkosten Prüffeld
+■   SEF            Sondereinzelkosten der Fertigung
+■   FK             Fertigungskosten
+■   HK             Herstellkosten
+■   VwGK           Verwaltungsgemeinkosten
+■   VtGK           Vertriebsgemeinkosten
+■   SK             Selbstkosten
+■   G              Gewinn
+■   BVP            Barverkaufspreis
+■   Skonto
+■   V-Prov.        Vertreterprovision
+■   ZVP            Zielverkaufspreis
+■   Rabatt
+■   LVP            Listenverkaufspreis
+
+
+
+
+                                            Seite 14
+                                         L 050-02-1121-3
+
+=== Seite 15 ===
+GEPRÜFTE/-R INDUSTRIEMEISTER/-IN,
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+GRUNDLEGENDE QUALIFIKATIONEN
+Betriebswirtschaftliches Handeln
+
+
+Aufgabe 7
+Auf einem Bearbeitungszentrum der Industrie GmbH können monatlich maximal 2.000 Bau-
+teile produziert werden. Die Fixkosten belaufen sich auf 14.400 € pro Monat, die variablen
+Stückkosten betragen 15 €.
+
+ a Mögliche Punktzahl: 4
+Berechnen Sie die Gesamtkosten und Stückkosten bei einer monatlichen
+Ausbringung von 2.000 Bauteilen.
+
+ b Mögliche Punktzahl: 4
+Durch Erschließung neuer Absatzmärkte könnte die Produktion auf 3.200 Bauteile erhöht
+werden. Dazu müsste ein zweites identisches Bearbeitungszentrum angeschafft werden.
+
+Berechnen Sie die resultierenden Gesamt- und Stückkosten.
+
+ c Mögliche Punktzahl: 6
+Begründen Sie rechnerisch anhand des Betriebsergebnisses (BE), ob die
+Kapazitätserweiterung betriebswirtschaftlich sinnvoll ist, wenn für ein Bauteil ein
+Preis von 26 € erzielt werden kann.
+
+ d Mögliche Punktzahl: 3
+Ermitteln Sie rechnerisch die Break-even-Menge für das neue Bearbeitungszentrum.
+
+
+
+
+                                            Seite 15
+                                         L 050-02-1121-3
+
+=== Seite 16 ===
+GEPRÜFTE/-R INDUSTRIEMEISTER/-IN,
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+GRUNDLEGENDE QUALIFIKATIONEN
+Betriebswirtschaftliches Handeln
+
+
+Lösungshinweise Aufgabe 7
+[VO: § 4 Absatz 3 Nr. 5]
+
+    a Mögliche Punktzahl: 4
+K = Kf + kv · x
+K        = 14.400 € + 15 €/Stück · 2.000 Stück = 44.400 €
+         K
+k
+         x
+               44.400 €
+k        =               = 22,20 €/Stück
+             2.000 Stück
+
+    b Mögliche Punktzahl: 4
+K  2  K f  kv  x
+K        = 2 · 14.400 € + 15 €/Stück · 3.200 = 76.800 €
+         K
+k
+         x
+               76.800 €
+k        =               = 24,00 €/Stück
+             3.200 Stück
+
+
+    c Mögliche Punktzahl: 6
+
+                           Ausgangssituation                        Kapazitätserweiterung
+
+    U=p·x          26 €/Stück · 2.000 Stück= 52.000 €        26 €/Stück · 3.200 Stück= 83.200 €
+    –K                                      44.400 €                                  76.800 €
+
+    =     BE                               + 7.600 €                                 + 6.400 €
+
+Die Kapazitätserweiterung ist nicht sinnvoll, da sich das Betriebsergebnis um 1.200 €
+verringern würde.
+
+    d Mögliche Punktzahl: 3
+                    Kf
+xBEP          =
+                  p – kv
+                      14.400 €/Monat
+              =                           = 1.309,09 Stück
+                  26 €/Stück – 15 €/Stück
+d. h., die Anschaffung eines zweiten Bearbeitungszentrums ist erst dann sinnvoll, wenn
+mindestens 1.310 Bauteile zusätzlich abgesetzt werden.
+
+                                                  Seite 16
+                                               L 050-02-1121-3
+

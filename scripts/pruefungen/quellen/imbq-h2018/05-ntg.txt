@@ -1,0 +1,393 @@
+=== Seite 1 ===
+Bundeseinheitliche Fortbildungsprüfung
+der Industrie- und Handelskammern
+
+
+Lösungshinweise
+Geprüfte/-r Industriemeister/-in,
+fachrichtungsübergreifende
+Basisqualifikationen/
+grundlegende Qualifikationen
+Basisqualifikation                                      Berücksichtigung naturwissenschaftlicher und
+                                                        technischer Gesetzmäßigkeiten
+Prüfungstag                                             5. November 2018
+
+
+
+Hinweise für den Korrektor:
+■    Die folgenden Lösungen sind lediglich Lösungshinweise.
+■    Sie sollen nur den Rahmen der zu erwartenden Prüfungsleistung abstecken.
+■    Der Korrektor ist durch die hier aufgeführten Lösungshinweise in seinem Bewertungsspielraum nicht
+     eingeengt.
+■    Bei Aufgaben, die eine Aufzählung von n-Fakten zur Lösung erfordern, werden nur die ersten n-Fakten
+     gewertet. Alle darüber hinausgehenden Aufzählungen werden gestrichen.
+■    Bei Berechnungen sollen Folgefehler berücksichtigt werden und somit nicht zum Punktabzug führen.
+■    Der leichteren Lesbarkeit wegen geben wir in den Aufgaben/Texten der männlichen Form den Vorzug.
+     Mit diesem einfacheren sprachlichen Ausdruck sind selbstverständlich immer Männer und Frauen
+     gemeint.
+
+
+
+
+Die Aufgaben mit Lösungsvorschlägen können von den Industrie- und Handelskammern oder Dritten nach einer Frist von sechs
+Monaten direkt bestellt werden bei:
+wbv Media GmbH & Co. KG, Service-Center DIHK,
+Postfach 10 06 33, 33506 Bielefeld
+Tel.: 0521/91101-16, Fax: 0521/91101-19, E-Mail: service@wbv.de
+
+                                                                                                        | L 050-05-1118-7 |
+
+=== Seite 2 ===
+ GEPRÜFTE/-R INDUSTRIEMEISTER/-IN,
+ FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+ GRUNDLEGENDE QUALIFIKATIONEN
+ NATURWISSENSCHAFTLICHE UND TECHNISCHE GESETZMÄßIGKEITEN
+
+ Aufgabe 1
+Korrosion beeinträchtigt z. B. die Funktionsfähigkeit, die Lebensdauer sowie das Aussehen
+industrieller Erzeugnisse. Zur Vermeidung von chemischer Korrosion sind Schutzmaßnahmen
+zu ergreifen.
+a) Beschreiben Sie, was unter chemischer Korrosion zu verstehen ist.                                                                (3 Punkte)
+b) Nennen Sie drei Maßnahmen, die die Korrosion während der Lagerung, der Fertigung und                                             (3 Punkte)
+   des Versandes vermeiden bzw. verringern soll.
+c)   Auf einer Blechabdeckung soll eine Beschichtung als Schutzlackierung aufgebracht                                               (4 Punkte)
+     werden. Geben Sie an, in welcher Reihenfolge die Arbeitsvorgänge zur Beschichtung
+     durchgeführt werden müssen.
+
+
+ Lösungshinweise Aufgabe 1                                                                                                       (10 Punkte)
+[VO: § 4 Absatz 6 Nr. 1]
+a) Bei der chemischen Korrosion findet eine Einwirkung von Sauerstoff, Salzen, Gasen oder
+   Säuren auf die Metalloberfläche statt, wobei chemische Verbindungen entstehen, z. B.
+   ein Metalloxid (z. B. Eisenoxid = „Rost“).                                                                                       (3 Punkte)
+b) Z. B.:
+    Lacküberzug
+    Ölen mit Korrosionsschutzöl
+    Wachsschutzschicht bei Werkzeugen
+    Einwickeln in „Ölpapier“                                                                                                       (3 Punkte)
+c)   Z. B.:
+      Oberfläche reinigen und entfetten
+      Haftgrund auftragen
+      Lackgrundschicht
+      Lackdeckschicht aufbringen                                                                                                   (4 Punkte)
+
+
+
+
+ Seite 2 | L 050-05-1118-7 |   © DIHK – Gesellschaft für berufliche Bildung – Organisation zur Förderung der IHK-Weiterbildung mbH – Bonn
+                               Die Vervielfältigung, Verbreitung oder öffentliche Wiedergabe der Publikation ist nicht gestattet (§§ 53, 54 UrhG) und
+                               strafbar (§ 106 UrhG). Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+
+=== Seite 3 ===
+ GEPRÜFTE/-R INDUSTRIEMEISTER/-IN,
+ FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+ GRUNDLEGENDE QUALIFIKATIONEN
+ NATURWISSENSCHAFTLICHE UND TECHNISCHE GESETZMÄßIGKEITEN
+
+
+ Aufgabe 2
+Die Betätigung der hydraulischen Bremsanlage eines Fahrzeuges erfordert einen Überdruck
+von pK1 = 1 MPa (siehe Skizze, Maße in mm).
+
+
+
+
+a)    Ermitteln Sie den Druck pK2.                                                                                                    (6 Punkte)
+b)    Berechnen Sie die Kraft FK2, die auf die Pedalkolbenstange K2 wirkt.                                                            (4 Punkte)
+c)    Berechnen Sie die hierfür vom Fahrer aufzuwendende Pedalkraft F (in N).                                                         (4 Punkte)
+
+
+Lösungshinweise Aufgabe 2                                                                                                           (14 Punkte)
+[VO: § 4 Absatz 6 Nr. 1 und 3]
+a)    Kraftübersetzung (F = konst.):
+                F1  F2
+      pK 1  AK 1  pK 2  AK 2
+                                                                    2
+                    A             4    d12          d 
+       pK 2  pK 1  K 1  pK 1               pK 1   1 
+                    AK 2          4    d22
+                                                        d2 
+                                           2
+                       12 mm                                     5 N           N
+       pK 2  1 MPa           0,111 MPa  1,11 bar  1,11  10     2
+                                                                          11,1
+                       36 mm                                       m          cm2                                                   (6 Punkte)
+b)    Druckübersetzung (p = konst.): pK 1  pK 2
+               FK 2
+      pK 2 
+               A3
+                                       N 
+                                            0,024 m 
+                                                         2
+      FK 2  pk 2  A3  1,11  105
+                                       m2 4
+                      N 
+      FK 2  11,1         (2,4 cm )2
+                      m2 4
+       FK 2  50,21 N                                                                                                                 (4 Punkte)
+c)    Hebelgesetz:
+      FK 2  l1  F  l 2
+
+       FK 2  40 mm  F  200 mm
+
+               50,21 N  40 mm
+       F                       10,04 N
+                   200 mm                                                                                                             (4 Punkte)
+
+
+
+ © DIHK – Gesellschaft für berufliche Bildung – Organisation zur Förderung der IHK-Weiterbildung mbH – Bonn               Seite 3 | L 050-05-1118-7 |
+ Die Vervielfältigung, Verbreitung oder öffentliche Wiedergabe der Publikation ist nicht gestattet (§§ 53, 54 UrhG) und
+ strafbar (§ 106 UrhG). Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+
+=== Seite 4 ===
+ GEPRÜFTE/-R INDUSTRIEMEISTER/-IN,
+ FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+ GRUNDLEGENDE QUALIFIKATIONEN
+ NATURWISSENSCHAFTLICHE UND TECHNISCHE GESETZMÄßIGKEITEN
+
+ Aufgabe 3
+Zur Kühlschmierstoffversorgung von Bearbeitungszentren in ihrem Unternehmen werden vier
+Behälter mit jeweils einer Höhe von 1,70 m und einem Durchmesser von 1,0 m verwendet.
+Der maximale Füllstand der Behälter ist auf 1,60 m begrenzt.
+Bestimmen Sie rechnerisch die maximale Befüllzeit (in Stunden und Minuten) für den Fall,
+dass in den Behältern eine minimale Füllstandshöhe von 10 cm vorhanden ist.
+Der Volumenstrom beträgt beim Befüllen 18 Liter/min.                                                                                    (14 Punkte)
+
+
+Lösungshinweise Aufgabe 3                                                                                                              (14 Punkte)
+[VO: § 4 Absatz 6 Nr. 3]
+       
+A1          d2
+       4
+       
+A1     (1 m )2
+     4
+A1  0,7854 m 2                                                                                                                           (2 Punkte)
+V1  A  h
+V1  0,7854 m 2  1,5 m
+V1  1,178 m3
+V1  4  V4
+V4  1,178 m3  4  4,712 m3  4 712 Liter                                                                                                (4 Punkte)
+        .
+                    Liter         Liter
+Q  V  18                 1080
+                   Minute        Stunde                                                                                                   (4 Punkte)
+     V4
+t
+     Q
+       4 712 Liter  Stunde
+t                           4,36 Stunden  4 Stunden 22 Minuten
+           1080 Liter                                                                                                                     (4 Punkte)
+
+
+
+
+ Seite 4 | L 050-05-1118-7 |         © DIHK – Gesellschaft für berufliche Bildung – Organisation zur Förderung der IHK-Weiterbildung mbH – Bonn
+                                     Die Vervielfältigung, Verbreitung oder öffentliche Wiedergabe der Publikation ist nicht gestattet (§§ 53, 54 UrhG) und
+                                     strafbar (§ 106 UrhG). Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+
+=== Seite 5 ===
+GEPRÜFTE/-R INDUSTRIEMEISTER/-IN,
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+GRUNDLEGENDE QUALIFIKATIONEN
+NATURWISSENSCHAFTLICHE UND TECHNISCHE GESETZMÄßIGKEITEN
+
+
+Aufgabe 4
+Ein Pkw fährt mit konstanter Geschwindigkeit auf regennasser Asphaltfahrbahn in eine Kurve.
+Der Abstand des Fahrzeugschwerpunktes zum Mittelpunkt der Kurve beträgt 40 m.
+Ermitteln Sie die Geschwindigkeit in km/h, bei der das Fahrzeug aus der Kurve heraus                                               (16 Punkte)
+geschleudert wird.
+
+
+Lösungshinweise Aufgabe 4                                                                                                          (16 Punkte)
+[VO: § 4 Absatz 6 Nr. 2 und 3]
+            Fz  FR
+
+      m v 2
+               m g
+       r                                                                                                                             (8 Punkte)
+
+            v        g r
+
+                          m
+            v  0,6  9,81 2  40 m
+                          s
+                             m         km
+            v  15,34           55,22
+                             s          h                                                                                            (8 Punkte)
+
+
+
+
+© DIHK – Gesellschaft für berufliche Bildung – Organisation zur Förderung der IHK-Weiterbildung mbH – Bonn               Seite 5 | L 050-05-1118-7 |
+Die Vervielfältigung, Verbreitung oder öffentliche Wiedergabe der Publikation ist nicht gestattet (§§ 53, 54 UrhG) und
+strafbar (§ 106 UrhG). Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+
+=== Seite 6 ===
+ GEPRÜFTE/-R INDUSTRIEMEISTER/-IN,
+ FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+ GRUNDLEGENDE QUALIFIKATIONEN
+ NATURWISSENSCHAFTLICHE UND TECHNISCHE GESETZMÄßIGKEITEN
+
+ Aufgabe 5
+Die in der Abbildung dargestellten Formteile werden durch Stanzen hergestellt.
+
+
+
+
+a) Berechnen Sie die Scherfläche S in mm².                                                                                               (8 Punkte)
+b) Berechnen Sie die benötigte Schneidkraft F für den Fall, dass die maximale                                                            (4 Punkte)
+                           2
+   Scherfestigkeit 210 N/mm beträgt.
+
+
+Lösungshinweise Aufgabe 5                                                                                                             (12 Punkte)
+[VO: § 4 Absatz 6 Nr. 2 und 3]
+     S U  t
+a)
+     t  2 mm
+                                                              2   15 mm 110
+     U  2 15 mm  (15 mm )2  (20 mm )2  5 mm 
+                                                                      360
+     U  88,80 mm
+
+
+     S U  t
+     S  88,80 mm  2 mm
+     S  177,60 mm2                                                                                                                      (8 Punkte)
+                         N
+b)    aB max  210
+                        mm 2
+     F  S   aB max
+                                N
+     F  177,60 mm 2  210           37 296 N
+                               mm 2
+     F  37,296 kN                                                                                                                       (4 Punkte)
+
+
+
+
+ Seite 6 | L 050-05-1118-7 |        © DIHK – Gesellschaft für berufliche Bildung – Organisation zur Förderung der IHK-Weiterbildung mbH – Bonn
+                                    Die Vervielfältigung, Verbreitung oder öffentliche Wiedergabe der Publikation ist nicht gestattet (§§ 53, 54 UrhG) und
+                                    strafbar (§ 106 UrhG). Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+
+=== Seite 7 ===
+ GEPRÜFTE/-R INDUSTRIEMEISTER/-IN,
+ FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+ GRUNDLEGENDE QUALIFIKATIONEN
+ NATURWISSENSCHAFTLICHE UND TECHNISCHE GESETZMÄßIGKEITEN
+
+
+ Aufgabe 6
+Ein elektrisch betriebenes Aggregat wird mit U = 230 V und I = 11 A betrieben.
+Das Aggregat wird über eine Anschlussleitung mit der Länge L = 25 m angeschlossen. Die
+verwendete Kupferleitung hat einen Leiterquerschnitt von A = 2,5 mm².
+a)    Berechnen Sie den Widerstand und die Bemessungsleistung des Aggregates.                                                         (4 Punkte)
+b)    Berechnen Sie den Leitungswiderstand, den Spannungsfall und die Klemmenspannung.                                                (9 Punkte)
+c)    Überprüfen Sie, ob der von Ihnen berechnete Spannungsfall innerhalb der Toleranz von                                            (4 Punkte)
+      3 % der Bemessungsspannung liegt.
+d)    Berechnen Sie die tatsächliche Leistung des Aggregates.                                                                         (3 Punkte)
+
+
+Lösungshinweise Aufgabe 6                                                                                                           (20 Punkte)
+[VO: § 4 Absatz 6 Nr. 1]
+a)        U
+       R
+          I
+          230 V
+       R        20,91Ω
+           11 A                                                                                                                       (2 Punkte)
+       P U  I
+       P  230V  11A  2530 W                                                                                                        (2 Punkte)
+b)               2 L        0,0179   mm2  2  25 m
+       RL                                               0,358 
+                   A                  m  2,5 mm2
+
+       UV  RL  I
+                        V
+       UV  0,358          11 A  3,94 V
+                        A
+       UK  U  UV
+       UK  230V  3,94V  226,06 V                                                                                                   (9 Punkte)
+c)   zulässiger Spannungsfall:
+
+                U  3%
+       U zul 
+                100 %
+                230V  3 %
+       U zul              6,9 V
+                  100 %
+
+       U  Uv  3,94V  6,9 V
+      Der tatsächliche Spannungsfall liegt in der Toleranz.                                                                           (4 Punkte)
+d)        UK 2
+       P
+           R
+          226,062  V 2
+       P                2 443,96 W
+                   V
+            20, 91
+                   A                                                                                                                  (3 Punkte)
+
+
+ © DIHK – Gesellschaft für berufliche Bildung – Organisation zur Förderung der IHK-Weiterbildung mbH – Bonn               Seite 7 | L 050-05-1118-7 |
+ Die Vervielfältigung, Verbreitung oder öffentliche Wiedergabe der Publikation ist nicht gestattet (§§ 53, 54 UrhG) und
+ strafbar (§ 106 UrhG). Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+
+=== Seite 8 ===
+ GEPRÜFTE/-R INDUSTRIEMEISTER/-IN,
+ FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+ GRUNDLEGENDE QUALIFIKATIONEN
+ NATURWISSENSCHAFTLICHE UND TECHNISCHE GESETZMÄßIGKEITEN
+ Aufgabe 7
+Bei der monatlichen Auswertung der Qualitätsziele in Ihrem Unternehmen soll die Entwicklung
+der Krankentage der Mitarbeiter betrachtet werden.
+Ihre Geschäftsleitung beauftragt Sie daher, diese Daten statistisch aufzubereiten.
+Die Geschäftsleitung hat Ihnen die Krankheitstage der                                          36 Mitarbeiter           für     das
+Kalenderjahr 2017 in nachfolgender Urliste zur Verfügung gestellt.
+                                         3          6           2            4           3           1
+                                         2          4           5            3           5           2
+                                         2          3           4            4           3           5
+                                         5          4           5            3           4           6
+                                         4          3           1            2           5           4
+                                         2          4           3            3           4           3
+     Werten Sie dieses Ergebnis statistisch aus.
+a)   Erstellen Sie eine Häufigkeitsverteilung der Krankentage in Tabellenform und berechnen                                                  (6 Punkte)
+     Sie den arithmetischen Mittelwert.
+b)   Ermitteln Sie den Krankenstand aller Mitarbeiter in Prozent, wenn die Sollarbeitszeit                                                   (6 Punkte)
+     200 Arbeitstage beträgt.
+c)   Berechnen Sie die Spannweite.                                                                                                           (2 Punkte)
+
+
+                                                                                                                                          (14 Punkte)
+Lösungshinweise Aufgabe 7
+[VO: § 4 Absatz 6 Nr. 4]
+a)    Krankheitstage der Mitarbeiter 2017 1 2 3                           4 5 6
+
+                       Häufigkeit                          2 6 10 10 6 2
+                                                                                                                                             (2 Punkte)
+
+
+
+                       2  1Tag+6  2 Tage+10  3 Tage+10  4 Tage + 6  5 Tage+2  6 Tage
+     Mittelwert:                                                                          3,5
+                                              2  6  10  10  6  2                                                                        (4 Punkte)
+b)                                    Summe der Fehltage
+     Krankenstand in %                                         Anzahl MA  %
+                                   Summe der Sollarbeitszeiten
+                                   126
+                                       36  100 %  1,75 %
+                                   200                                                                                                       (6 Punkte)
+c)   Spannweite:
+                 R  xmax  xmin
+                 R  6 Tage  1Tag  5 Tage                                                                                                  (2 Punkte)
+
+
+
+
+ Seite 8 | L 050-05-1118-7 |            © DIHK – Gesellschaft für berufliche Bildung – Organisation zur Förderung der IHK-Weiterbildung mbH – Bonn
+                                        Die Vervielfältigung, Verbreitung oder öffentliche Wiedergabe der Publikation ist nicht gestattet (§§ 53, 54 UrhG) und
+                                        strafbar (§ 106 UrhG). Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+

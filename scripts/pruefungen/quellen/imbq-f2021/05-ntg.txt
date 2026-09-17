@@ -1,0 +1,656 @@
+=== Seite 1 ===
+Bundeseinheitliche Fortbildungsprüfung der Industrie- und Handelskammern
+
+Geprüfte/-r Industriemeister/-in,
+fachrichtungsübergreifende Basisqualifikationen/
+grundlegende Qualifikationen
+Berücksichtigung naturwissenschaftlicher und technischer
+Gesetzmäßigkeiten
+
+
+Lösungshinweise
+Datum:                                          5. Mai 2021
+
+Bearbeitungszeit:                               90 Minuten
+
+Anzahl Aufgaben:                                7
+
+
+Hinweise für den Korrektor:
+■   Die folgenden Lösungen sind lediglich Lösungshinweise.
+■   Sie sollen nur den Rahmen der zu erwartenden Prüfungsleistung abstecken.
+■   Der Korrektor ist durch die hier aufgeführten Lösungshinweise in seinem
+    Bewertungsspielraum nicht eingeengt.
+■   Bei Aufgaben, die eine Aufzählung von n-Fakten zur Lösung erfordern, werden nur die
+    ersten n-Fakten gewertet. Alle darüber hinausgehenden Aufzählungen werden
+    gestrichen.
+■   Bei Berechnungen sollen Folgefehler berücksichtigt werden und somit nicht zum
+    Punktabzug führen.
+■   Der leichteren Lesbarkeit wegen geben wir in den Aufgaben/Texten der männlichen
+    Form den Vorzug. Mit diesem einfacheren sprachlichen Ausdruck sind selbstverständlich
+    immer alle Geschlechter gemeint.
+
+Die Aufgaben mit Lösungsvorschlägen können von den Industrie- und Handelskammern oder Dritten nach einer Frist von sechs Monaten
+direkt bestellt werden bei:
+wbv Media GmbH & Co. KG, Service-Center DIHK,
+Postfach 10 06 33, 33506 Bielefeld
+Tel.: 0521/91101-16, Fax: 0521/91101-19, E-Mail: service@wbv.de
+
+
+
+                               © DIHK – Gesellschaft für berufliche Bildung – Organisation zur Förderung der IHK-Weiterbildung mbH – Bonn
+               Die Vervielfältigung, Verbreitung oder öffentliche Wiedergabe der Publikation ist nicht gestattet (§§ 53, 54 UrhG) und strafbar (§ 106 UrhG).
+                                                           Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+                                                                              L 050-05-0521-7
+
+=== Seite 2 ===
+GEPRÜFTE/-R INDUSTRIEMEISTER/-IN,
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+GRUNDLEGENDE QUALIFIKATIONEN
+Berücksichtigung naturwissenschaftlicher und technischer Gesetzmäßigkeiten
+
+
+Aufgabe 1
+Die Berücksichtigung des Korrosionsschutzes für Ihre Produkte ist in Ihrem Unternehmen
+ein wesentlicher Bestandteil.
+
+ a Mögliche Punktzahl: 2
+Geben Sie zwei Möglichkeiten an, wie bereits bei der Entwicklung bzw. Konstruktion
+von Produkten eine spätere Korrosion vermieden werden kann.
+
+ b Mögliche Punktzahl: 4
+Beschreiben Sie zwei Maßnahmen, wie während der Fertigung, der Lagerung oder
+beim Transport von Bauteilen Korrosion vermieden werden kann.
+
+ c Mögliche Punktzahl: 4
+Erklären Sie den Vorgang einer galvanischen Korrosion (Kontaktkorrosion) an einem
+selbst gewählten Beispiel.
+
+
+
+Lösungshinweise Aufgabe 1
+[VO: § 5 Absatz 1 Nr. 1]
+
+ a Mögliche Punktzahl: 2
+Möglichkeiten, wie bei der Entwicklung bzw. Konstruktion von Produkten Korrosion ver-
+mieden werden kann, sind z. B.:
+■   Auswahl bzw. Kombination geeigneter Werkstoffe
+■   Vermeiden von Spalten
+■   Vermeiden von Fugen
+■   Vermeiden von direktem Kontakt verschiedener Metalle (Kontaktelemente)
+
+ b Mögliche Punktzahl: 4
+Maßnahmen, wie während der Fertigung, der Lagerung oder beim Transport von Bauteilen
+Korrosion vermieden werden kann, sind z. B.:
+■   Trennung von Eisen und Nichteisenmetallen während der Fertigung
+■   konstante Temperaturen
+■   niedrige Luftfeuchtigkeit
+■   Vermeidung von Schwitzwasser
+■   Kontaktvermeidung mit aggressiven Medien (Salz, Schweiß)
+■   Wahl einer geeigneten Verpackung
+
+                                                   Seite 2
+                                               L 050-05-0521-7
+
+=== Seite 3 ===
+GEPRÜFTE/-R INDUSTRIEMEISTER/-IN,
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+GRUNDLEGENDE QUALIFIKATIONEN
+Berücksichtigung naturwissenschaftlicher und technischer Gesetzmäßigkeiten
+
+
+
+ c Mögliche Punktzahl: 4
+Vorgang einer galvanischen Korrosion (Kontaktkorrosion), z. B.:
+■   Eine Kühlplatte, bestehend aus einem unedleren Metall, z. B. Aluminium oder Eisen,
+    wird zur Anode.
+■   Der Kupferwärmetauscher, bestehend aus dem edleren Metall, wird zur Kathode.
+■   Die Kühlflüssigkeit ist der Elektrolyt.
+■   Es fließt Strom von der Anode zur Kathode. Die Anode (Kühlpatte) löst sich mit der Zeit
+    im Wasser auf oder korrodiert und bildet Ionen. (Diese Ionen werden an das Wasser
+    abgegeben, wo sie in Lösung bleiben oder mit anderen Ionen im Elektrolyt reagieren.)
+
+
+Aufgabe 2
+Temperatureinflüsse sind bei allen Konstruktionen zu berücksichtigen, um deren Funktion zu
+gewährleisten und Schäden zu vermeiden.
+
+Am Ende einer 25 m langen Eisenbahnschiene aus Stahl befindet sich eine Stoßfuge. Diese
+verengt sich bei einer Erwärmung von 5 °C auf 20 °C um 30 % ihres Ausgangswertes.
+
+ a Mögliche Punktzahl: 6
+Ermitteln Sie den anfänglichen Abstand zwischen den Schienen.
+
+ b Mögliche Punktzahl: 6
+Berechnen Sie die Temperatur, bei der sich die Schienen berühren.
+
+
+
+Lösungshinweise Aufgabe 2
+[VO: § 4 Absatz 6 Nr. 2 und 3]
+
+ a Mögliche Punktzahl: 6
+0,3  I  I0    
+          I    
+     I  0
+              0,3
+                                1
+            25 m  0,000012        15 C
+     I                       C
+                         0,3
+     I  0,015 m
+
+
+
+
+                                                   Seite 3
+                                               L 050-05-0521-7
+
+=== Seite 4 ===
+GEPRÜFTE/-R INDUSTRIEMEISTER/-IN,
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+GRUNDLEGENDE QUALIFIKATIONEN
+Berücksichtigung naturwissenschaftlicher und technischer Gesetzmäßigkeiten
+
+
+
+ b Mögliche Punktzahl: 6
+
+ l  l 0 ·  ·                                 oder alternative Berechnung über
+                          I                      Dreisatz:
+                
+                        I0  
+                             0,015 m                 30 % 15 C
+                                                         
+                                           1        100 %   
+                        25 m  0,000012
+                                          C
+               50C                               50 C
+                50 C  5 C                       50 C  5 C
+                55 C                              55 C
+
+
+Aufgabe 3
+Ein Pkw fährt mit 40 km/h auf einer Straße und nähert sich einer Ampel.
+40 m vor der Ampel springt diese von Grün auf Gelb (Gelbphase drei Sekunden).
+Nach einer Reaktionszeit von 0,7 s beschleunigt der Fahrer den Pkw eine Sekunde lang
+gleichmäßig auf 50 km/h. Der Fahrer hofft, die in drei Sekunden von Gelb auf Rot schaltende
+Ampel noch in der Gelbphase zu passieren.
+
+ a Mögliche Punktzahl: 3
+Vervollständigen Sie das v-t Diagramm nach diesem Muster auf Ihrem Lösungsblatt.
+
+
+
+
+ b Mögliche Punktzahl: 15
+Berechnen Sie nachvollziehbar, ob der Pkw die Ampel noch in der Gelbphase oder in
+der Rotphase passiert und begründen Sie Ihr Ergebnis.
+
+
+                                                   Seite 4
+                                               L 050-05-0521-7
+
+=== Seite 5 ===
+GEPRÜFTE/-R INDUSTRIEMEISTER/-IN,
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+GRUNDLEGENDE QUALIFIKATIONEN
+Berücksichtigung naturwissenschaftlicher und technischer Gesetzmäßigkeiten
+
+
+
+Lösungshinweise Aufgabe 3
+[VO: § 4 Absatz 6 Nr. 2 und 3]
+
+ a Mögliche Punktzahl: 3
+
+
+
+
+ b Mögliche Punktzahl: 15
+s1  v 1  t1
+     40 m
+s1         0,7s                 (3 Punkte)
+     3,6 s
+s1  7,78 m
+
+      1
+ s2     v 0  v t   t
+      2
+      1  40  50  m
+ s2                    1 s    (3 Punkte)
+      2  3,6  s
+ s2  12,5 m
+ s3  v 3  t 3
+      50 m
+ s3         1,3 s                 (3 Punkte)
+      3,6 s
+ s3  18,06 m
+ s  s1  s 2  s3
+                                   (3 Punkte)
+ s  38 ,34 m
+
+
+
+
+Der Pkw legt in den drei Sekunden 38,34 m zurück. Damit befindet er sich beim Umschalten
+der Ampel auf Rot noch 1,66 m vor der Ampel und passiert diese erst in der Rotphase.
+(3 Punkte)
+
+
+                                                    Seite 5
+                                                 L 050-05-0521-7
+
+=== Seite 6 ===
+GEPRÜFTE/-R INDUSTRIEMEISTER/-IN,
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+GRUNDLEGENDE QUALIFIKATIONEN
+Berücksichtigung naturwissenschaftlicher und technischer Gesetzmäßigkeiten
+
+     1
+ s3    ax 3  (t3 )2
+     2
+     1             m
+      0,071 2  (14 s )2
+     2            s
+    7m
+ sges  s1  s2  s3
+         (4  8  7) m
+         19 m
+
+
+
+Aufgabe 4
+Auf einer Transportstrecke bewegt sich ein Rollcontainer mit einer Geschwindigkeit von
+1 m/s und einem Gesamtgewicht von m = 50 kg über eine Rampe nach unten. Die Rampe
+hat ein Gefälle von 5 %. Aufgrund eines Hindernisses wird automatisch eine Notbremsung
+für den Rollcontainer eingeleitet. Die individuelle Bremskraft eines Containers beträgt 80 N.
+
+
+
+
+ a Mögliche Punktzahl: 8
+Errechnen Sie die Anhaltekraft, mit welcher der Container zum Stehen kommt, wenn
+für die Rollreibungskraft ein Wert von 10 N angenommen wird.
+Weitere Einflüsse bleiben unberücksichtigt.
+
+ b Mögliche Punktzahl: 10
+Ermitteln Sie den Bremsweg in m.
+
+
+
+
+                                                   Seite 6
+                                               L 050-05-0521-7
+
+=== Seite 7 ===
+GEPRÜFTE/-R INDUSTRIEMEISTER/-IN,
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+GRUNDLEGENDE QUALIFIKATIONEN
+Berücksichtigung naturwissenschaftlicher und technischer Gesetzmäßigkeiten
+
+
+
+Lösungshinweise Aufgabe 4
+[VO: § 4 Absatz 6 Nr. 2 und 3]
+
+ a Mögliche Punktzahl: 8
+                5%
+  tan1 (          )
+               100 %
+  2,86
+FAnhaltekraft  FBremskraft  FRollreibung  FH
+FAnhaltekraft  FBremskraft  FRollreibung  m  g  sin
+                                                  m
+FAnhaltekraft  80 N  10 N  50 kg  9,81            sin 2,86
+                                                  s2
+FAnhaltekraft  65,5 N
+
+ b Mögliche Punktzahl: 10
+WAnhaltekraft  Wkin
+                      1
+FAnhaltekraft  s       m v2
+                      2
+   1
+      m v2
+s 2
+   FAnhaltekraft
+    1             m
+       50 kg  (1 )2
+s 2              s
+         65,5 N
+s  0,38 m
+
+
+
+
+                                                            Seite 7
+                                                       L 050-05-0521-7
+
+=== Seite 8 ===
+GEPRÜFTE/-R INDUSTRIEMEISTER/-IN,
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+GRUNDLEGENDE QUALIFIKATIONEN
+Berücksichtigung naturwissenschaftlicher und technischer Gesetzmäßigkeiten
+
+
+
+Aufgabe 5
+Im Scheinwerfer eines Kraftfahrzeugs ist ein 55 W H7-Leuchtmittel (Lampe) eingebaut. Im
+Normalbetrieb liegen 12 V am Glühfaden der Lampe an.
+
+ a Mögliche Punktzahl: 4
+Ermitteln Sie den Widerstand dieser Lampe.
+
+ b Mögliche Punktzahl: 4
+Infolge von Korrosion entsteht in der Fassung ein Übergangswiderstand von 0,5 Ω. Dadurch
+verringert sich die an der Lampe gemessene Spannung auf 10 V.
+
+Ermitteln Sie die Leistung der Lampe bei der reduzierten Spannung von 10 V.
+
+ c Mögliche Punktzahl: 4
+Erläutern Sie, warum sich der Widerstand der Lampe an einer Spannung von 10 V
+verändert.
+
+
+
+Lösungshinweise Aufgabe 5
+[VO: § 4 Absatz 6 Nr. 2 und 3]
+
+ a Mögliche Punktzahl: 4
+  P 55 W
+I          4,58 A
+  U 12 V
+   U    12 V
+R            2,62 
+   I   4,58 A
+
+ b Mögliche Punktzahl: 4
+     U  UL
+I
+     RFassung
+   12 V  10 V
+I
+      0,5 
+I 4A
+
+
+P  UL  I
+P  10 V  4 A
+P  40 W
+
+
+                                                   Seite 8
+                                               L 050-05-0521-7
+
+=== Seite 9 ===
+GEPRÜFTE/-R INDUSTRIEMEISTER/-IN,
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+GRUNDLEGENDE QUALIFIKATIONEN
+Berücksichtigung naturwissenschaftlicher und technischer Gesetzmäßigkeiten
+
+
+
+ c Mögliche Punktzahl: 4
+Der Strom in der Lampe wird reduziert; damit verringert sich die Heizleistung; dadurch wird
+die Temperatur des Glühfadens verringert und der Widerstand wird kleiner.
+
+
+Aufgabe 6
+In einem Fahrzeug mit 12 V Bordnetz ist der Fahrersitz mit einer Sitzheizung ausgestattet.
+Es sind drei Heizwiderstände R1, R2 und R3 eingebaut. Die Heizwiderstände können über
+einen Stufenschalter geschaltet werden.
+
+ R1 = 2 Ω
+ R2 = 2 Ω
+ R3 = 4 Ω
+
+
+
+
+                                      Abbildung: Heizwiderstände
+
+ a Mögliche Punktzahl: 4
+Berechnen Sie den Strom in der Schalterstellung 1.
+
+ b Mögliche Punktzahl: 4
+Berechnen Sie die Spannung an R2 in der Schalterstellung 2.
+
+ c Mögliche Punktzahl: 6
+Berechnen Sie den Gesamtstrom in der Schalterstellung 3.
+
+
+
+
+                                                   Seite 9
+                                               L 050-05-0521-7
+
+=== Seite 10 ===
+GEPRÜFTE/-R INDUSTRIEMEISTER/-IN,
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+GRUNDLEGENDE QUALIFIKATIONEN
+Berücksichtigung naturwissenschaftlicher und technischer Gesetzmäßigkeiten
+
+ d Mögliche Punktzahl: 2
+Berechnen Sie die maximale Gesamtleistung (Schalterstellung 3), die eingeschaltet
+werden kann.
+
+
+
+
+                                                   Seite 10
+                                               L 050-05-0521-7
+
+=== Seite 11 ===
+GEPRÜFTE/-R INDUSTRIEMEISTER/-IN,
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+GRUNDLEGENDE QUALIFIKATIONEN
+Berücksichtigung naturwissenschaftlicher und technischer Gesetzmäßigkeiten
+
+
+
+Lösungshinweise Aufgabe 6
+[VO: § 4 Absatz 6 Nr. 2 und 3]
+
+ a Mögliche Punktzahl: 4
+RGesamt 1  R1  R2  R3
+RGesamt 1  2   2   4 
+RGesamt 1  8 
+
+
+                U
+IStufe1 
+             RGesamt 1
+          12 V
+IStufe1 
+           8
+IStufe1  1,5 A
+
+ b Mögliche Punktzahl: 4
+RGesamt 2  R2  R3
+RGesamt 2  2   4 
+RGesamt 2  6 
+
+
+                U
+IStufe 2 
+             RGesamt 2
+           12 V
+IStufe 2 
+           6
+IStufe 2  2 A
+
+
+
+U R 2  IStufe 2  R2
+UR 2  2 A  2 
+UR 2  4 V
+
+
+
+
+                                                   Seite 11
+                                               L 050-05-0521-7
+
+=== Seite 12 ===
+GEPRÜFTE/-R INDUSTRIEMEISTER/-IN,
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+GRUNDLEGENDE QUALIFIKATIONEN
+Berücksichtigung naturwissenschaftlicher und technischer Gesetzmäßigkeiten
+
+
+
+ c Mögliche Punktzahl: 6
+R1,2  R1  R2
+R1,2  2   2 
+R1,2  4 
+
+                R1,2  R3
+RGesamt 3 
+                R1,2  R3
+             44
+RGesamt 3 
+            44
+RGesamt 3  2 
+
+                U
+IStufe 3 
+             RGesamt 3
+           12 V
+IStufe 3 
+            2
+IStufe 3  6 A
+
+ d Mögliche Punktzahl: 2
+Maximale Leistung in Schalterstellung 3:
+P U I
+P  12 V  6 A
+P  72 W
+
+
+
+
+                                                   Seite 12
+                                               L 050-05-0521-7
+
+=== Seite 13 ===
+GEPRÜFTE/-R INDUSTRIEMEISTER/-IN,
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+GRUNDLEGENDE QUALIFIKATIONEN
+Berücksichtigung naturwissenschaftlicher und technischer Gesetzmäßigkeiten
+
+
+
+Aufgabe 7
+Bei der Herstellung von Rotorblättern wird insbesondere Wert auf die Maßgenauigkeit der
+Bohrungen zur Kühlung der Blätter gelegt. Prüfmerkmal ist dabei die Größe der
+Nennmaßabweichungen der Bohrungen.
+
+Bei der Planung des zukünftigen Herstellungsprozesses soll daher in einer Vorserie mittels
+einer statistischen Auswertung untersucht werden, ob dieser Prozess beherrscht wird.
+
+Die nachfolgend aufgeführte Urliste zeigt die gemessenen Werte der Vorserie.
+
+                               Nennmaßabweichungen [m]
+
+                  3           6            2            4          3         1
+
+                  2           4            5            3          5         2
+
+                  2           3            4            4          3         5
+
+                  5           4            5            3          4         6
+
+                  4           3            1            2          5         4
+
+                  2           4            3            3          4         3
+
+
+ a Mögliche Punktzahl: 6
+Ermitteln Sie anhand der Urliste die absoluten und relativen Häufigkeiten.
+
+ b Mögliche Punktzahl: 4
+Ermitteln Sie durch Eintrag in das Wahrscheinlichkeitsnetz (Anlage 1), ob eine
+Normalverteilung der Nennmaßabweichungen vorliegt. Begründen Sie Ihre Aussage.
+
+ c Mögliche Punktzahl: 4
+Ermitteln Sie grafisch den arithmetischen Mittelwert und die Standardabweichung der
+Messreihe.
+
+
+
+
+                                                   Seite 13
+                                               L 050-05-0521-7
+
+=== Seite 14 ===
+GEPRÜFTE/-R INDUSTRIEMEISTER/-IN,
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+GRUNDLEGENDE QUALIFIKATIONEN
+Berücksichtigung naturwissenschaftlicher und technischer Gesetzmäßigkeiten
+
+
+
+Lösungshinweise Aufgabe 7
+[VO: § 4 Absatz 6 Nr. 4]
+
+ a Mögliche Punktzahl: 6
+
+            Nennmaß-              Anzahl absolut        Summe absolut Summe rel. %
+            abweichung [µm]
+
+                      1                     2                     2            5,6
+
+                      2                     6                     8           22,2
+
+                      3                    10                   18            50,0
+
+                      4                    10                   28            77,8
+
+                      5                     6                   34            94,4
+
+                      6                     2                   36           100,0
+
+ b Mögliche Punktzahl: 4
+Siehe Lösungshinweis zu Aufgabe 7b.
+Begründung: Eine Gerade im Wahrscheinlichkeitsnetz lässt auf die Normalverteilung
+schließen.
+
+ c Mögliche Punktzahl: 4
+aus der Zeichnung abgelesen: s = 1,25 μm und x = 3,5 μm
+
+
+
+
+                                                   Seite 14
+                                                L 050-05-0521-7
+
+=== Seite 15 ===
+GEPRÜFTE/-R INDUSTRIEMEISTER/-IN,
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+GRUNDLEGENDE QUALIFIKATIONEN
+Berücksichtigung naturwissenschaftlicher und technischer Gesetzmäßigkeiten
+
+
+
+
+Lösungshinweis zur Aufgabe 7 b, c)
+
+
+
+
+                                                               s = 1,25
+
+
+
+
+                           0,5        1,5        2,5        3,5           4,5   5,5   6,5
+
+                                                               x  3,5
+
+
+
+
+                                             Seite 1 von 1
+                                             L 050-05-0521-7
+

@@ -50,6 +50,30 @@ VALID_TYPES = {"mc", "calc", "open"}
 # --------------------------------------------------------------------------- #
 # Extraktion                                                                   #
 # --------------------------------------------------------------------------- #
+def _aufgabenblatt(case: dict) -> dict:
+    """Fall in das Aufgabenblatt-Format bringen (idempotent)."""
+    sys.path.insert(0, str(REPO_ROOT / "scripts" / "pruefungen"))
+    try:
+        import aufgaben_modell  # noqa: PLC0415 – nur hier gebraucht
+    except ImportError:
+        return case
+    return aufgaben_modell.zerlegen(case)
+
+
+def _aus_datendatei(name: str) -> list | None:
+    """Datensatz aus ``data/<name>.js`` lesen, falls vorhanden."""
+    sys.path.insert(0, str(REPO_ROOT / "tools"))
+    try:
+        import webdaten  # noqa: PLC0415 – nur im Fallback gebraucht
+    except ImportError:
+        return None
+    pfad = Path(webdaten.pfad(name))
+    if not pfad.exists():
+        return None
+    daten = webdaten.aus_text(pfad.read_text(encoding="utf-8"), name)
+    return daten if isinstance(daten, list) else None
+
+
 def _extract_global(html: str, name: str) -> list:
     """Zieht ``window.<name> = [ ... ];`` als JSON aus dem HTML.
 
@@ -62,9 +86,16 @@ def _extract_global(html: str, name: str) -> list:
     )
     m = pattern.search(html)
     if not m:
+        # Diese App lädt ihre Inhalte aus data/*.js statt aus index.html. Steht
+        # der Global nicht im HTML, wird die Datei daneben gelesen – so bleibt
+        # `--source index.html` auch für den eigenen Branch benutzbar.
+        daten = _aus_datendatei(name)
+        if daten is not None:
+            return daten
         raise ValueError(
             f"window.{name} nicht in der Quelle gefunden. "
-            f"Erwartet: `window.{name} = [...];` in einem eigenen <script>-Block."
+            f"Erwartet: `window.{name} = [...];` in einem eigenen <script>-Block "
+            f"oder die Datei data/*.js daneben."
         )
     raw = m.group(1)
     try:
@@ -166,6 +197,47 @@ def validate_cases(cases: list) -> list[str]:
             errors.append(f"Fall {loc}: keine Schritte 'steps'")
         else:
             errors.extend(f"Fall {loc} / {e}" for e in validate_questions(steps))
+            errors.extend(f"Fall {loc}: {e}" for e in _validate_aufgaben(c, steps))
+    return errors
+
+
+def _validate_aufgaben(case: dict, steps: list) -> list[str]:
+    """Aufgabenblatt-Format: Teile zeigen auf eine Aufgabe, Punkte gehen auf."""
+    errors: list[str] = []
+    aufgaben = case.get("aufgaben")
+    if not isinstance(aufgaben, list) or not aufgaben:
+        return [f"keine Aufgaben 'aufgaben' (Aufgabenblatt-Format fehlt)"]
+    nach_nr: dict[int, dict] = {}
+    for a in aufgaben:
+        nr = a.get("nr")
+        if not isinstance(nr, int):
+            errors.append("Aufgabe ohne ganzzahlige 'nr'")
+            continue
+        if nr in nach_nr:
+            errors.append(f"Aufgabe {nr} doppelt")
+        nach_nr[nr] = a
+    summen: dict[int, int] = {}
+    for s in steps:
+        sid = s.get("id", "?")
+        nr, teil, pts = s.get("nr"), s.get("teil"), s.get("pts")
+        if not isinstance(nr, int) or nr not in nach_nr:
+            errors.append(f"{sid}: verweist auf keine Aufgabe ('nr')")
+            continue
+        if not isinstance(teil, str) or not teil:
+            errors.append(f"{sid}: fehlendes Teil-Label 'teil'")
+        if not isinstance(pts, int) or pts < 0:
+            errors.append(f"{sid}: 'pts' fehlt oder ist negativ")
+            continue
+        summen[nr] = summen.get(nr, 0) + pts
+        labels = {t.get("teil") for t in steps if t.get("nr") == nr}
+        for b in s.get("braucht", []):
+            if b not in labels:
+                errors.append(f"{sid}: 'braucht' verweist auf {b}), das es in Aufgabe {nr} nicht gibt")
+    for nr, a in nach_nr.items():
+        if a.get("pts") != summen.get(nr, 0):
+            errors.append(f"Aufgabe {nr}: Punkte {a.get('pts')} != Summe der Teile {summen.get(nr, 0)}")
+    if str(case.get("id", "")).startswith("P-") and sum(summen.values()) != 100:
+        errors.append(f"Prüfung hat {sum(summen.values())} statt 100 Punkte")
     return errors
 
 
@@ -296,6 +368,10 @@ def main(argv: list[str] | None = None) -> int:
         print(f"FEHLER: {exc}", file=sys.stderr)
         return 1
 
+    # Der Content-Branch liefert die Fälle noch im alten Format (Aufgabenkopf
+    # und Ausgangslage im Fragetext). Hier werden sie in das Aufgabenblatt-
+    # Format überführt, sonst schreibt der nächtliche Sync den Umbau zurück.
+    cases = [_aufgabenblatt(c) for c in cases]
     cases, bewahrt = preserve_local_cases(cases, _current(CASES_OUT))
     if bewahrt:
         print(f"Bewahrt (Fälle, nicht im Content): {', '.join(bewahrt)}")

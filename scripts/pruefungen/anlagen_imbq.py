@@ -12,6 +12,22 @@ Schlüssel: (Kürzel, Jahrgang, Aufgabennummer, Teil-Label).
 
 # ---------------------------------------------------------- Bild zur Aufgabe
 BILDER = {
+    # Naturwissenschaft und Technik, Frühjahr 2023
+    ('NT', 'f2023', 2, '*'): 'ntf23-kettenspanner',
+    ('NT', 'f2023', 5, '*'): 'ntf23-ntc',
+
+    # Naturwissenschaft und Technik, Herbst 2023
+    ('NT', 'h2023', 3, '*'): 'nth23-winkelprofil',
+    ('NT', 'h2023', 4, '*'): 'nth23-schaltbild',
+    ('NT', 'h2023', 6, '*'): 'nth23-kiste',
+    ('NT', 'h2023', 7, '*'): 'nth23-wnetz',
+
+    # Naturwissenschaft und Technik, Frühjahr 2024
+    ('NT', 'f2024', 2, '*'): 'ntf24-ebene',
+    ('NT', 'f2024', 3, '*'): 'ntf24-stapler',
+    ('NT', 'f2024', 4, '*'): 'ntf24-aufhaengung',
+    ('NT', 'f2024', 5, '*'): 'ntf24-schaltplan',
+
     # Naturwissenschaft und Technik, Herbst 2024
     ('NT', 'h2024', 3, 'a'): 'nt24-stuetzbock',
     ('NT', 'h2024', 3, 'b'): 'nt24-stuetzbock',
@@ -90,18 +106,24 @@ TABELLEN = {
 
 
 def anwenden(schritt, kuerzel, jahrgang, nr, label):
-    """Anlagen an einen gebauten Schritt hängen. Gibt die Trefferzahl zurück."""
-    k = (kuerzel, jahrgang, nr, label)
+    """Anlagen an einen gebauten Schritt hängen. Gibt die Trefferzahl zurück.
+
+    Das Label ``'*'`` gilt für **alle** Teile einer Aufgabe – so steht eine
+    Abbildung, auf die sich mehrere Teilaufgaben beziehen, nur einmal in der
+    Tabelle. Beim Umbau auf das Aufgabenblatt wandert sie dann von selbst an
+    die Aufgabe (siehe ``aufgaben_modell.zerlegen``).
+    """
     n = 0
-    if k in BILDER:
-        schritt['bild'] = BILDER[k]
-        n += 1
-    if k in BILDER_L:
-        schritt['bildL'] = BILDER_L[k]
-        n += 1
-    if k in TABELLEN:
-        schritt['tab'] = TABELLEN[k]
-        n += 1
+    for k in ((kuerzel, jahrgang, nr, '*'), (kuerzel, jahrgang, nr, label)):
+        if k in BILDER:
+            schritt['bild'] = BILDER[k]
+            n += 1
+        if k in BILDER_L:
+            schritt['bildL'] = BILDER_L[k]
+            n += 1
+        if k in TABELLEN:
+            schritt['tab'] = TABELLEN[k]
+            n += 1
     return n
 
 

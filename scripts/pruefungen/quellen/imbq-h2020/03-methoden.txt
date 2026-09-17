@@ -1,0 +1,489 @@
+=== Seite 1 ===
+Bundeseinheitliche Fortbildungsprüfung der Industrie- und Handelskammern
+
+Geprüfte/-r Industriemeister/-in,
+fachrichtungsübergreifende Basisqualifikationen/
+grundlegende Qualifikationen
+Anwendung von Methoden der Information, Kommunikation und Planung
+
+
+Lösungshinweise
+Datum:                                          2. November 2020
+
+Bearbeitungszeit:                               90 Minuten
+
+Anzahl Aufgaben:                                6
+
+
+Hinweise für den Korrektor:
+■   Die folgenden Lösungen sind lediglich Lösungshinweise.
+■   Sie sollen nur den Rahmen der zu erwartenden Prüfungsleistung abstecken.
+■   Der Korrektor ist durch die hier aufgeführten Lösungshinweise in seinem
+    Bewertungsspielraum nicht eingeengt.
+■   Bei Aufgaben, die eine Aufzählung von n-Fakten zur Lösung erfordern, werden nur die
+    ersten n-Fakten gewertet. Alle darüber hinausgehenden Aufzählungen werden
+    gestrichen.
+■   Bei Berechnungen sollen Folgefehler berücksichtigt werden und somit nicht zum
+    Punktabzug führen.
+■   Der leichteren Lesbarkeit wegen geben wir in den Aufgaben/Texten der männlichen
+    Form den Vorzug. Mit diesem einfacheren sprachlichen Ausdruck sind selbstverständlich
+    immer alle Geschlechter gemeint.
+
+
+
+Die Aufgaben mit Lösungsvorschlägen können von den Industrie- und Handelskammern oder Dritten nach einer Frist von sechs Monaten
+direkt bestellt werden bei:
+wbv Media GmbH & Co. KG, Service-Center DIHK,
+Postfach 10 06 33, 33506 Bielefeld
+Tel.: 0521/91101-16, Fax: 0521/91101-19, E-Mail: service@wbv.de
+
+
+
+
+                               © DIHK – Gesellschaft für berufliche Bildung – Organisation zur Förderung der IHK-Weiterbildung mbH – Bonn
+               Die Vervielfältigung, Verbreitung oder öffentliche Wiedergabe der Publikation ist nicht gestattet (§§ 53, 54 UrhG) und strafbar (§ 106 UrhG).
+                                                           Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+                                                                              L 050-03-1120-0
+
+=== Seite 2 ===
+GEPRÜFTE/-R INDUSTRIEMEISTER/-IN,
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+GRUNDLEGENDE QUALIFIKATIONEN
+Anwendung von Methoden der Information, Kommunikation und Planung
+
+
+Aufgabe 1
+In Ihrem Unternehmen werden Sondermaschinen hergestellt. Für jede Maschine werden
+Stücklisten erstellt. Diese Stücklisten werden in mehreren betrieblichen Prozessen
+eingesetzt. Sie werden mit unterschiedlicher Anwendungssoftware erstellt und verarbeitet.
+
+ a Mögliche Punktzahl: 4
+Nennen Sie vier innerbetriebliche Abteilungsbereiche, in denen Stücklisten eingesetzt
+werden.
+
+ b Mögliche Punktzahl: 6
+Erläutern Sie zwei Einsatzbeispiele für Stücklisten und nennen Sie jeweils eine
+dazugehörige Anwendungssoftware.
+
+ c Mögliche Punktzahl: 4
+Zur Beschaffung einer Anwendungssoftware soll ein Lastenheft erstellt werden.
+Benennen Sie vier Punkte des Lastenhefts.
+
+ d Mögliche Punktzahl: 6
+Begründen Sie, warum Auftraggeber und Auftragnehmer ein Lastenheft und ein
+Pflichtenheft erstellen.
+
+
+
+Lösungshinweise Aufgabe 1
+[VO: § 4 Absatz 4 Nr. 1]
+
+ a Mögliche Punktzahl: 4
+Innerbetriebliche Abteilungsbereiche in denen Stücklisten eingesetzt werden z. B.:
+■   Konstruktion
+■   Materialbestellung
+■   Fertigungsplanung
+■   Montage
+■   Kalkulation
+■   Rechnungswesen
+
+
+
+
+                                                 Seite 2
+                                             L 050-03-1120-0
+
+=== Seite 3 ===
+GEPRÜFTE/-R INDUSTRIEMEISTER/-IN,
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+GRUNDLEGENDE QUALIFIKATIONEN
+Anwendung von Methoden der Information, Kommunikation und Planung
+
+
+ b Mögliche Punktzahl: 6
+■   In der Konstruktion wird eine neue Maschine konstruiert. Dazu wird ein CAD-Programm
+    eingesetzt. Die Stücklisten der Baugruppen werden in dem CAD-Programm automatisch
+    generiert.
+■   Um dem Kunden ein Angebot machen zu können, wird mit der Tabellenkalkulation aus
+    den Mengenstücklisten ein Preis für die Einzelteile kalkuliert.
+■   Zur Beschaffung von Einzelteilen wird die ERP-Software eingesetzt. Dabei werden die
+    Mengenstücklisten aus der Konstruktion weiterverwendet.
+■   Bei der Montage einer Maschine werden Struktur- und Baukastenstücklisten eingesetzt.
+    Diese können dem Monteur mit einer PDF-Software angezeigt werden.
+
+ c Mögliche Punktzahl: 4
+Z. B.
+■   Funktionsumfang der Anwendungssoftware
+■   Ergonomie/Bedienbarkeit der Anwendungssoftware
+■   Terminrahmen für die Lieferung und Anpassung
+■   Zertifizierung des Programms (oder des Herstellers)
+■   Sicherheitsanforderungen (Vertraulichkeit)
+
+ d Mögliche Punktzahl: 6
+■   Das Erstellen des Lastenhefts und des Pflichtenhefts zwingt Auftraggeber und
+    Auftragnehmer zu Vorüberlegungen und Analysen, die zur Erhöhung der Qualität der
+    Leistung beitragen.
+■   Lastenhefte und Pflichtenhefte sind für Auftraggeber und Auftragnehmer eine wichtige
+    Vertragsgrundlage und dienen der Rechtssicherheit.
+■   Lastenhefte und Pflichtenhefte beschreiben den Umfang der geforderten Leistung, damit
+    auf der einen Seite keine Funktionen fehlen und auf der anderen Seite keine
+    unerwartete Mehrleistung gefordert wird.
+
+
+
+
+                                                 Seite 3
+                                             L 050-03-1120-0
+
+=== Seite 4 ===
+GEPRÜFTE/-R INDUSTRIEMEISTER/-IN,
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+GRUNDLEGENDE QUALIFIKATIONEN
+Anwendung von Methoden der Information, Kommunikation und Planung
+
+
+Aufgabe 2
+Für eine neue Maschine soll ein Flüssigkeitsbehälter beschafft werden. Die bevorstehende
+Nutzwertanalyse soll mithilfe des paarweisen Vergleichs die Gewichtungsfaktoren ermitteln.
+Mit Ihren Meisterkollegen haben Sie sich auf folgende fünf Kriterien geeinigt:
+■   Preis
+■   Volumen
+■   Service
+■   Reinigungsaufwand
+■   laufende Kosten
+
+Zwei Kriterien A und B werden folgendermaßen verglichen:
+■   Wenn A wichtiger ist als B, erhält A zwei Punkte und B null Punkte.
+■   Wenn A und B gleich wichtig sind, erhalten beide jeweils einen Punkt.
+■   Der Preis ist weniger wichtig als das Volumen, der Service und die laufenden Kosten.
+    Der Preis ist wichtiger als der Reinigungsaufwand.
+■   Das Volumen ist wichtiger als der Service und die laufenden Kosten, aber genauso
+    wichtig wie der Reinigungsaufwand.
+■   Der Reinigungsaufwand ist weniger wichtig als der Service und genauso wichtig wie die
+    laufenden Kosten.
+■   Der Service ist wichtiger als die laufenden Kosten.
+
+ a Mögliche Punktzahl: 16
+Erstellen Sie in der Anlage 1 den paarweisen Vergleich und ermitteln Sie für die fünf
+Kriterien die Gewichtungen in Prozent.
+
+ b Mögliche Punktzahl: 5
+Beschreiben Sie den gesamten Ablauf der Nutzwertanalyse zur Beschaffung der
+Behälter in fünf Schritten.
+
+
+
+
+                                                 Seite 4
+                                             L 050-03-1120-0
+
+=== Seite 5 ===
+GEPRÜFTE/-R INDUSTRIEMEISTER/-IN,
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+GRUNDLEGENDE QUALIFIKATIONEN
+Anwendung von Methoden der Information, Kommunikation und Planung
+
+
+Lösungshinweise Aufgabe 2
+[VO: § 4 Absatz 4 Nr. 2]
+
+ a Mögliche Punktzahl: 16
+Siehe Lösungshinweis zur Aufgabe 2
+
+ b Mögliche Punktzahl: 5
+Beschrieben werden sollen folgende Phasen:
+■   Ermitteln und Gewichten der Kriterien
+■   Auswählen der möglichen Behälter
+■   Bewerten der Behälter nach Punkten oder Schulnoten
+■   Multiplizieren der Bewertungen mit den Gewichtungsfaktoren
+■   Entscheidung für die Variante mit dem größten Nutzen
+
+
+Hinweis für den Korrektor:        Auch andere plausible Darstellungen des Ablaufs der
+                                  Nutzwertanalyse in fünf Phasen sind als richtig zu bewerten.
+
+
+
+
+                                                 Seite 5
+                                             L 050-03-1120-0
+
+=== Seite 6 ===
+GEPRÜFTE/-R INDUSTRIEMEISTER/-IN,
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+GRUNDLEGENDE QUALIFIKATIONEN
+Anwendung von Methoden der Information, Kommunikation und Planung
+
+
+Aufgabe 3
+Mögliche Punktzahl: 10
+Als angehender Industriemeister nehmen Sie an einer Fortbildungsveranstaltung mit dem
+Thema „Erfolgreiches Präsentieren“ teil. Sie erhalten den Auftrag, die Präsentationen der
+anderen Fortbildungsteilnehmer zu beurteilen. Dabei wird besonderer Wert auf das sichere
+Auftreten gelegt.
+Erläutern Sie fünf Kriterien zur Beurteilung des Auftretens der Präsentierenden.
+
+
+Lösungshinweise Aufgabe 3
+[VO: § 4 Absatz 4 Nr. 3]
+Mögliche Punktzahl: 10
+Folgende Kriterien können erläutert werden:
+■   deutliche Aussprache
+■   angemessenes Äußeres
+■   Mimik
+■   Gestik
+■   Rhetorik
+■   Körperhaltung
+
+
+
+
+                                                 Seite 6
+                                             L 050-03-1120-0
+
+=== Seite 7 ===
+GEPRÜFTE/-R INDUSTRIEMEISTER/-IN,
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+GRUNDLEGENDE QUALIFIKATIONEN
+Anwendung von Methoden der Information, Kommunikation und Planung
+
+
+Aufgabe 4
+ a Mögliche Punktzahl: 12
+Ergänzen Sie in der Anlage 2 ab dem Jahr 2013
+
+■    die prozentuale Steigerung in Bezug auf das jeweilige Vorjahr und
+
+■    die indexierte prozentuale Steigerung (mit Jahr 2012 = 100 %).
+
+ b Mögliche Punktzahl: 6
+Stellen Sie eine der beiden tabellarisch ermittelten Kostenentwicklungen (Spalte C
+oder Spalte D) in einem Diagramm dar.
+
+
+
+Lösungshinweise Aufgabe 4
+[VO: § 4 Absatz 4 Nr. 4]
+
+ a Mögliche Punktzahl: 12
+
+ A                        C                        D
+                          prozentuale              prozentuale
+                          Steigerung in Bezug      Steigerung in Bezug
+ Jahr
+                          auf das jeweilige        auf das Jahr 2012
+                          Vorjahr
+ 2012
+
+ 2013                     5,56%                    105,56%
+
+ 2014                     9,32%                    115,40%
+
+ 2015                     5,90%                    122,21%
+
+ 2016                     2,79%                    125,61%
+
+ 2017                     2,71%                    129,02%
+
+ 2018                     2,64%                    132,43%
+
+
+
+
+                                                 Seite 7
+                                             L 050-03-1120-0
+
+=== Seite 8 ===
+GEPRÜFTE/-R INDUSTRIEMEISTER/-IN,
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+GRUNDLEGENDE QUALIFIKATIONEN
+Anwendung von Methoden der Information, Kommunikation und Planung
+
+
+ b Mögliche Punktzahl: 6
+
+                         10%
+prozentuale Steigerung
+
+
+
+
+                                      Kostenentwicklung zum Vorjahr je Arbeitsstunde
+                         9%
+
+                         8%
+
+                         7%
+
+                         6%
+
+                         5%
+
+                         4%
+
+                         3%
+
+                         2%
+
+                         1%
+
+                         0%
+                               2013       2014       2015           2016   2017        2018
+                                                         Kalenderjahr
+
+
+
+
+                                                         Seite 8
+                                                      L 050-03-1120-0
+
+=== Seite 9 ===
+GEPRÜFTE/-R INDUSTRIEMEISTER/-IN,
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+GRUNDLEGENDE QUALIFIKATIONEN
+Anwendung von Methoden der Information, Kommunikation und Planung
+
+
+Aufgabe 5
+Sie haben ein innerbetriebliches Projekt erfolgreich abgeschlossen. Nun soll die Abnahme
+durch den Auftraggeber erfolgen.
+
+ a Mögliche Punktzahl: 10
+Erläutern Sie fünf wesentliche Bestandteile der Abschlusspräsentation.
+
+ b Mögliche Punktzahl: 6
+Beschreiben Sie neben der Abschlusspräsentation drei weitere Aufgaben der
+Projektleitung in der Abschlussphase des Projekts.
+
+
+
+Lösungshinweise Aufgabe 5
+[VO: § 4 Absatz 4 Nr. 5]
+
+ a Mögliche Punktzahl: 10
+Z. B.:
+■   Darstellung der Projektanforderungen und der Projektziele
+■   Was wurde im Projekt erreicht: Aufzeigen von Nutzen und Erfolgen.
+■   Soll-Ist-Vergleich für Termin- und Kostenplanung
+■   Ausblick (Wie geht es für die Mitarbeiter des Projektteams weiter?)
+■   Würdigung der Mitarbeiter, die das Projekt maßgeblich vorangebracht haben.
+
+
+ b Mögliche Punktzahl: 6
+Z. B.:
+■   Es werden alle Abnahmeprotokolle der einzelnen Meilensteine/Teilleistungen des
+    Projekts dokumentiert.
+■   Die technischen Ressourcen des Projekts müssen ordnungsgemäß aufgelöst werden.
+■   Eventuell nachlaufende Tätigkeiten (Restaktivitäten) müssen geplant werden.
+■   Es werden die Erfahrungen aus dem Projekt und die Verbesserungspotentiale
+    dokumentiert.
+
+
+
+
+                                                 Seite 9
+                                             L 050-03-1120-0
+
+=== Seite 10 ===
+GEPRÜFTE/-R INDUSTRIEMEISTER/-IN,
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+GRUNDLEGENDE QUALIFIKATIONEN
+Anwendung von Methoden der Information, Kommunikation und Planung
+
+
+Aufgabe 6
+Die Einführung eines neuen IT-Systems zur Betriebsdatenerfassung erfordert umfangreiche
+Einweisungen aller Mitarbeiter. Die Geschäftsleitung hat entschieden, dass die Einweisung
+von Multiplikatoren durchgeführt wird. Die Multiplikatoren werden zu Beginn ihres Einsatzes
+von externen Fachleuten geschult und geben ihr Wissen dann an die anderen Kollegen
+weiter.
+
+ a Mögliche Punktzahl: 3
+Nennen Sie drei organisatorische Maßnahmen im Vorfeld des Multiplikatoren-
+einsatzes.
+
+ b Mögliche Punktzahl: 9
+Teilen Sie die Tätigkeiten der Multiplikatoren in drei Phasen ein und erläutern Sie
+diese Phasen.
+
+ c Mögliche Punktzahl: 3
+Nennen Sie drei Kommunikationsmittel, die von den Multiplikatoren bei ihrer Tätigkeit
+eingesetzt werden können.
+
+
+
+
+                                                Seite 10
+                                             L 050-03-1120-0
+
+=== Seite 11 ===
+GEPRÜFTE/-R INDUSTRIEMEISTER/-IN,
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+GRUNDLEGENDE QUALIFIKATIONEN
+Anwendung von Methoden der Information, Kommunikation und Planung
+
+
+Lösungshinweise Aufgabe 6
+[VO: § 4 Absatz 4 Nr. 6]
+
+ a Mögliche Punktzahl: 3
+Z. B.:
+■   Ermitteln des Bedarfs an Einweisungen
+■   Auswahl der Mitarbeiter, die Multiplikatoren werden sollen
+■   Auswahl geeigneter Fachleute zur Schulung der Multiplikatoren
+■   Planung der Schulungen (Räume, Termine, Technik)
+■   Planung der Verfügbarkeit der Mitarbeiter und Multiplikatoren
+
+ b Mögliche Punktzahl: 9
+Z. B.:
+■   Schulung der Multiplikatoren: Wissensaufnahme, Auswahl didaktischer Methoden,
+    Aufbereitung des Wissens für die Mitarbeiter, Erstellen des Schulungsmaterials.
+■   Schulung der Mitarbeiter: Einweisen der Mitarbeiter in Gruppen oder direkt am Rechner,
+    Beantworten von Fragen der Mitarbeiter
+■   Abschluss: Durchführung von Tests, Feedback, Dokumentation der gesamten
+    Maßnahme, Sichern der Informationen zum späteren Nachschlagen
+
+ c Mögliche Punktzahl: 3
+Z. B.:
+■   Videoanleitungen
+■   Präsentationsfolien
+■   Übungsmaterial im Intranet
+■   gedrucktes Übungsmaterial (Handout)
+
+
+
+
+                                                Seite 11
+                                             L 050-03-1120-0
+
+=== Seite 12 ===
+Geprüfte/-r Industriemeister/-in,
+fachrichtungsübergreifende Basisqualifikationen/
+grundlegende Qualifikationen
+Anwendung von Methoden der Information, Kommunikation und Planung
+
+
+Lösungshinweis zu Aufgabe 2
+
+                                                             Reinigungs-        laufende
+                   Preis        Volumen         Service                                    Punkte   Gewichtungsfaktoren in %
+                                                              aufwand            Kosten
+
+Preis                               0               0               2              0         2                10
+
+Volumen              2                              2               1              2         7                35
+
+Service              2              0                               2              2         6                30
+
+Reinigungs-          0              1               0                              1         2                10
+aufwand
+
+laufende             2              0               0               1                        3                15
+Kosten
+
+
+
+
+                                                              Seite 1 von 1
+                                                              L 050-03-1120-0
+

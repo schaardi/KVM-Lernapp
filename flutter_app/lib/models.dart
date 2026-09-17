@@ -44,6 +44,10 @@ class Anlage {
 
 /// Eine Prüfungsaufgabe besteht aus Kopf ("Aufgabe 1 a) · 8 Punkte"), der für
 /// mehrere Teilaufgaben gemeinsamen Ausgangslage und der Fragestellung selbst.
+///
+/// Prüfungen liefern die drei Teile getrennt (`nr`, `teil`, `pts` am Schritt,
+/// die Ausgangslage an der Aufgabe). Fremde Inhalte tragen den Kopf weiter im
+/// Fragetext – [TaskParts.ausText] zerlegt ihn wie bisher.
 class TaskParts {
   final String nr;
   final String pts;
@@ -53,13 +57,59 @@ class TaskParts {
 
   static final _kopf = RegExp(r'^(Aufgabe\s.+?)\s*·\s*(\d+\s*Punkte?)$');
 
-  factory TaskParts.of(String text) {
+  factory TaskParts.of(Question q) {
+    if (q.nr > 0) {
+      // Fallaufgaben ohne IHK-Bezug sind nur der Form halber in eine Aufgabe 1
+      // gruppiert – sie tragen keine Punkte und bekommen auch keinen Kopf.
+      final hatKopf = q.pts > 0;
+      return TaskParts(
+        hatKopf ? 'Aufgabe ${q.nr} ${q.teil})' : '',
+        hatKopf ? '${q.pts} ${q.pts == 1 ? 'Punkt' : 'Punkte'}' : '',
+        q.aufgabe?.sit ?? '',
+        q.q,
+      );
+    }
+    return TaskParts.ausText(q.q);
+  }
+
+  factory TaskParts.ausText(String text) {
     final p = text.split('\n\n');
     final m = p.isEmpty ? null : _kopf.firstMatch(p.first.trim());
     if (m == null || p.length < 2) return TaskParts('', '', '', text);
     return TaskParts(m.group(1)!, m.group(2)!,
         p.sublist(1, p.length - 1).join('\n\n'), p.last);
   }
+
+  /// Der zusammengesetzte Aufgabentext, wie er im Original auf dem Blatt steht.
+  /// Die Exporte geben ihn unverändert weiter.
+  String get volltext {
+    final teile = <String>[];
+    if (nr.isNotEmpty && pts.isNotEmpty) teile.add('$nr · $pts');
+    if (sit.isNotEmpty) teile.add(sit);
+    teile.add(frage);
+    return teile.join('\n\n');
+  }
+}
+
+/// Eine Aufgabe des Prüfungsblatts: Ausgangslage, Anlagen und Punkte, die für
+/// alle ihre Teilaufgaben a–x gelten.
+class Aufgabe {
+  final int nr;
+  final int pts; // Summe der Punkte aller Teile
+  final String sit; // Ausgangslage – steht einmal, nicht je Teil
+  final Anlage? tab;
+  final String? bild;
+  const Aufgabe({required this.nr, this.pts = 0, this.sit = '', this.tab, this.bild});
+
+  factory Aufgabe.fromJson(Map<String, dynamic> j) => Aufgabe(
+        nr: (j['nr'] as num?)?.toInt() ?? 0,
+        pts: (j['pts'] as num?)?.toInt() ?? 0,
+        sit: (j['sit'] ?? '').toString(),
+        tab: j['tab'] is Map<String, dynamic>
+            ? Anlage.fromJson(j['tab'] as Map<String, dynamic>)
+            : null,
+        bild: j['bild']?.toString(),
+      );
 }
 
 class Question {
@@ -80,8 +130,15 @@ class Question {
   final List<int> bewertung; // amtliche Punkteverteilung je Teilelement
   final bool amtlich; // Lösung ist amtlicher IHK-Lösungshinweis
 
+  // Aufgabenblatt: zu welcher Aufgabe dieser Teil gehört.
+  final int nr; // Nummer der Aufgabe (0 = keine Zuordnung)
+  final String teil; // Buchstabe der Teilaufgabe, z. B. "c"
+  final int pts; // Punkte dieser Teilaufgabe (0 = ohne Punktangabe)
+  final List<String> braucht; // Teile, auf deren Ergebnis diese Aufgabe aufbaut
+
   // Kontext für Fallaufgaben (nicht Teil des JSON, zur Laufzeit gesetzt)
   final CaseContext? caseCtx;
+  final Aufgabe? aufgabe; // Ausgangslage und Anlagen der Aufgabe
 
   const Question({
     required this.id,
@@ -100,7 +157,12 @@ class Question {
     this.vo,
     this.bewertung = const [],
     this.amtlich = false,
+    this.nr = 0,
+    this.teil = '',
+    this.pts = 0,
+    this.braucht = const [],
     this.caseCtx,
+    this.aufgabe,
   });
 
   factory Question.fromJson(Map<String, dynamic> j) => Question(
@@ -126,19 +188,33 @@ class Question {
             .map((e) => (e as num).toInt())
             .toList(),
         amtlich: j['amtlich'] == 1 || j['amtlich'] == true,
+        nr: (j['nr'] as num?)?.toInt() ?? 0,
+        teil: (j['teil'] ?? '').toString(),
+        pts: (j['pts'] as num?)?.toInt() ?? 0,
+        braucht: (j['braucht'] as List<dynamic>? ?? [])
+            .map((e) => e.toString())
+            .toList(),
       );
 
-  Question withCase(CaseContext ctx) => Question(
+  Question withCase(CaseContext ctx, [Aufgabe? auf]) => Question(
         id: id, f: f, sub: sub, type: type, q: q, o: o, e: e, a: a,
         ans: ans, unit: unit, tab: tab, bild: bild, bildL: bildL, vo: vo,
-        bewertung: bewertung, amtlich: amtlich, caseCtx: ctx,
+        bewertung: bewertung, amtlich: amtlich, nr: nr, teil: teil, pts: pts,
+        braucht: braucht, caseCtx: ctx, aufgabe: auf,
       );
 
-  /// Höchstpunktzahl aus dem Aufgabenkopf ("… · 8 Punkte"); 0 ohne Angabe.
+  /// Höchstpunktzahl dieser Teilaufgabe; 0 ohne Angabe.
   int get maxPoints {
-    final m = RegExp(r'(\d+)').firstMatch(TaskParts.of(q).pts);
+    if (pts > 0) return pts;
+    final m = RegExp(r'(\d+)').firstMatch(TaskParts.of(this).pts);
     return m == null ? 0 : int.parse(m.group(1)!);
   }
+
+  /// Abbildung dieser Teilaufgabe – oder die der ganzen Aufgabe.
+  String? get bildEffektiv => bild ?? aufgabe?.bild;
+
+  /// Tabellenanlage dieser Teilaufgabe – oder die der ganzen Aufgabe.
+  Anlage? get tabEffektiv => tab ?? aufgabe?.tab;
 }
 
 class CaseContext {
@@ -156,7 +232,10 @@ class CaseStudy {
   final String title;
   final String context;
   final String termin; // z. B. "Frühjahr 2025" (Gruppierung im Picker)
-  final List<Question> steps;
+  /// Hinweis über der Prüfung, z. B. "Prüfung von 2016 – Rechtsstand beachten".
+  final String hinweis;
+  final List<Aufgabe> aufgaben; // Aufgabenblatt: Aufgabe 1..n mit Ausgangslage
+  final List<Question> steps; // die Teilaufgaben a–x aller Aufgaben
   const CaseStudy({
     required this.id,
     required this.f,
@@ -164,6 +243,8 @@ class CaseStudy {
     required this.title,
     required this.context,
     this.termin = '',
+    this.hinweis = '',
+    this.aufgaben = const [],
     required this.steps,
   });
 
@@ -178,15 +259,28 @@ class CaseStudy {
       title: (j['title'] ?? '').toString(),
       context: (j['context'] ?? '').toString(),
       termin: (j['termin'] ?? '').toString(),
+      hinweis: (j['hinweis'] ?? '').toString(),
+      aufgaben: (j['aufgaben'] as List<dynamic>? ?? [])
+          .map((e) => Aufgabe.fromJson(e as Map<String, dynamic>))
+          .toList(),
       steps: steps,
     );
   }
 
-  /// Schritte als eigenständige Fragen mit Kontext-Banner.
+  /// Schritte als eigenständige Fragen mit Kontext-Banner und ihrer Aufgabe.
   List<Question> asPool() {
     return List.generate(steps.length, (i) {
-      return steps[i].withCase(CaseContext(title, context, i + 1, steps.length));
+      return steps[i].withCase(
+          CaseContext(title, context, i + 1, steps.length), aufgabeVon(steps[i].nr));
     });
+  }
+
+  /// Die Aufgabe, zu der eine Teilaufgabe gehört.
+  Aufgabe? aufgabeVon(int nr) {
+    for (final a in aufgaben) {
+      if (a.nr == nr) return a;
+    }
+    return null;
   }
 }
 
@@ -289,13 +383,29 @@ class FormulaGroup {
 /// Bildanlage aus assets/data/anlagen.json – einmal abgelegt, von den
 /// Teilaufgaben über den Schlüssel referenziert.
 class Anlagenbild {
-  final String uri; // Data-URI
+  /// Dateiname im Bündel, z. B. `nt25-rampe.jpg` (leer bei einer Data-URI).
+  final String datei;
   final String titel; // Bildunterschrift, ggf. leer
-  const Anlagenbild(this.uri, this.titel);
+  final int breite; // Originalmaße in Pixeln – 0, wenn unbekannt
+  final int hoehe;
+  final String uri; // nur noch für Alt-Einträge mit eingebetteter Data-URI
+  const Anlagenbild(this.datei, this.titel,
+      {this.breite = 0, this.hoehe = 0, this.uri = ''});
+
   factory Anlagenbild.fromJson(Map<String, dynamic> j) => Anlagenbild(
-        (j['u'] ?? '').toString(),
+        (j['f'] ?? '').toString(),
         (j['t'] ?? '').toString(),
+        breite: (j['w'] as num?)?.toInt() ?? 0,
+        hoehe: (j['h'] as num?)?.toInt() ?? 0,
+        uri: (j['u'] ?? '').toString(),
       );
+
+  /// Pfad im Asset-Bündel der App.
+  String get asset => 'assets/anlagen/$datei';
+
+  /// Seitenverhältnis für den Platzhalter beim Laden.
+  double? get verhaeltnis =>
+      (breite > 0 && hoehe > 0) ? breite / hoehe : null;
 }
 
 /// Fortschritt je Frage (Leitner-Box + Spaced Repetition).

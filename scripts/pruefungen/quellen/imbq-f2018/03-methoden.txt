@@ -1,0 +1,289 @@
+=== Seite 1 ===
+Bundeseinheitliche
+Weiterbildungsprüfung
+der Industrie- und Handelskammern
+
+
+Lösungshinweise
+Geprüfte/-r Industriemeister/-in
+fachrichtungsübergreifende Basisqualifikationen/
+grundlegende Qualifikationen
+Basisqualifikation                                      Anwendung von Methoden der Information,
+                                                        Kommunikation und Planung
+Prüfungstag                                             3. Mai 2018
+
+
+
+Hinweise für den Korrektor:
+■    Die folgenden Lösungen sind lediglich Lösungshinweise.
+■    Sie sollen nur den Rahmen der zu erwartenden Prüfungsleistung abstecken.
+■    Der Korrektor ist durch die hier aufgeführten Lösungshinweise in seinem Bewertungsspielraum nicht
+     eingeengt.
+■    Bei Aufgaben, die eine Aufzählung von n-Fakten zur Lösung erfordern, werden nur die ersten n-Fakten
+     gewertet. Alle darüber hinausgehenden Aufzählungen werden gestrichen.
+■    Bei Berechnungen sollen Folgefehler berücksichtigt werden und somit nicht zum Punktabzug führen.
+■    Der leichteren Lesbarkeit wegen geben wir in den Aufgaben/Texten der männlichen Form den Vorzug.
+     Mit diesem einfacheren sprachlichen Ausdruck sind selbstverständlich immer Männer und Frauen
+     gemeint.
+
+
+
+
+Die Aufgaben mit Lösungsvorschlägen können von den Industrie- und Handelskammern oder Dritten nach einer Frist von sechs
+Monaten direkt bestellt werden bei:
+W. Bertelsmann Verlag GmbH & Co. KG, Service-Center DIHK,
+Postfach 10 06 33, 33506 Bielefeld
+Tel.: 0521/91101-16, Fax: 0521/91101-19, E-Mail: service@wbv.de
+
+                                                                                                         | L 050-03-0518-8 |
+
+=== Seite 2 ===
+ GEPRÜFTE/-R INDUSTRIEMEISTER/-IN
+ FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+ GRUNDLEGENDE QUALIFIKATIONEN
+ Anwendung von Methoden der Information, Kommunikation und Planung
+ Aufgabe 1
+In Ihrem Unternehmen soll ein Energiemanagementsystem eingeführt werden. Im Vorfeld
+dieser Einführung werden Daten zur Energienutzung erfasst.
+a)   Beschreiben Sie vier Methoden der manuellen oder automatischen Datenerfassung, die                                             (8 Punkte)
+     dabei eingesetzt werden.
+b)   Begründen Sie anhand von drei Vorteilen, warum die Speicherung der erfassten Daten in                                          (6 Punkte)
+     einer Datenbank sinnvoll ist.
+c)   Beschreiben Sie drei Möglichkeiten der Auswertung oder Darstellung der gespeicherten                                           (6 Punkte)
+     Daten.
+
+
+Lösungshinweise Aufgabe 1                                                                                                        (20 Punkte)
+[VO: § 4 Absatz 4 Nr. 1]
+a)   Beschreibung der Datenerfassung z. B. mittels:
+     ■ Sensoren (automatisch)
+     ■ Direkterfassung mit mobilen Geräten
+     ■ Direkterfassung am stationären Rechner
+     ■ Einsatz von Messgeräten (manuell)
+     ■ Protokollierung der Anwesenheit
+     ■ automatische Protokollierung von Prozessen                                                                                   (8 Punkte)
+b)   Vorteile sind z. B.:
+     ■ höheres Niveau der Datensicherheit durch Zentralisierung der Daten
+     ■ datenneutraler Zugriff aus beliebigen Anwendungen heraus
+     ■ höhere Transparenz der Daten
+     ■ vielfältige Möglichkeiten der Darstellung und Auswertung                                                                     (6 Punkte)
+c)   Auswertungsmöglichkeiten sind z. B.:
+     ■ Abfragen in Tabellenform
+     ■ Datenbankberichte
+     ■ Grafiken/Diagramme
+     ■ Animationen zeitlicher Verläufe
+     ■ Ermittlung statistischer Kennwerte                                                                                           (6 Punkte)
+
+
+
+
+ Seite 2 | L 050-03-0518-8 |   © DIHK – Gesellschaft für berufliche Bildung – Organisation zur Förderung der IHK-Weiterbildung mbH – Bonn
+                               Die Vervielfältigung, Verbreitung oder öffentliche Wiedergabe der Publikation [der Prüfungssätze und Lösungshinweise]
+                               ist nicht gestattet (§§ 53, 54 UrhG) und strafbar (§ 106 UrhG). Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+
+=== Seite 3 ===
+ GEPRÜFTE/-R INDUSTRIEMEISTER/-IN
+ FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+ GRUNDLEGENDE QUALIFIKATIONEN
+ Anwendung von Methoden der Information, Kommunikation und Planung
+ Aufgabe 2
+In Ihrem Unternehmen werden Methoden der Ideenfindung eingesetzt. Die Ergebnisse der
+Ideenfindung fließen in die strategische und operative Planung ein. Die bekannteste Methode
+der Ideenfindung ist das Brainstorming.
+a)    Nennen Sie neben dem Brainstorming vier weitere Methoden der Ideenfindung.                                                           (4 Punkte)
+b)    Beschreiben Sie drei Kriterien zur Auswahl einer geeigneten Methode zur Ideenfindung.                                                (6 Punkte)
+c)    Beschreiben Sie den Ablauf eines Brainstormings in fünf Schritten.                                                                 (10 Punkte)
+
+
+Lösungshinweise Aufgabe 2                                                                                                                (20 Punkte)
+[VO: § 4 Absatz 4 Nr. 2]
+a)    Z. B.:
+      ■ Brainwriting
+      ■ 6-3-5-Methode
+      ■ Mindmapping
+      ■ Analogiebildung
+      ■ Perspektivwechsel                                                                                                                  (4 Punkte)
+b)    Z. B.:
+      ■ Anzahl der Beteiligten
+      ■ Komplexität des Themas
+      ■ Zeitaufwand für die Durchführung
+      ■ Zeitaufwand für die Auswertung und Dokumentation                                                                                   (6 Punkte)
+c)    Es können folgende Schritte eines Brainstormings beschrieben werden:
+      1. Organisatorische Vorbereitung: Auswahl und Einrichtung des Raums, Vorbereiten
+          der Technik und des Moderationsmaterials, Einladung.
+      2. Eröffnung: Der Moderator erläutert den Teilnehmern die Regeln des Brainstormings.
+      3. Vor dem Beginn der eigentlichen Ideenfindung wird in einem kurzen Referat das
+          Thema erläutert.
+      4. Die Teilnehmer äußern Ideen. Die Ideen werden von den anderen Teilnehmern nicht
+          kommentiert. Die Ideen werden protokolliert.
+      5. Die protokollierten Ideen werden nach der Veranstaltung geordnet, bewertet und
+          zusammengefasst.                                                                                                               (10 Punkte)
+      Hinweis für den Korrektor:                        Es soll ein Brainstorming in fünf nachvollziehbaren
+                                                        Schritten beschrieben werden. Die Schritte können
+                                                        individuell gegliedert werden.
+
+
+
+
+ © DIHK – Gesellschaft für berufliche Bildung – Organisation zur Förderung der IHK-Weiterbildung mbH – Bonn               Seite 3 | Stand: 30. April 2018 |
+ Die Vervielfältigung, Verbreitung oder öffentliche Wiedergabe der Publikation [der Prüfungssätze und Lösungshinweise]
+ ist nicht gestattet (§§ 53, 54 UrhG) und strafbar (§ 106 UrhG). Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+
+=== Seite 4 ===
+ GEPRÜFTE/-R INDUSTRIEMEISTER/-IN
+ FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+ GRUNDLEGENDE QUALIFIKATIONEN
+ Anwendung von Methoden der Information, Kommunikation und Planung
+ Aufgabe 3
+Als Industriemeister müssen Sie bei jeder Präsentation auf die Aufmerksamkeit Ihrer
+Mitarbeiter achten. Während einer Präsentation des neuen Produktionsverfahrens stellen Sie
+fest, dass sich zwei Mitarbeiter leise unterhalten.
+Sie wollen auf diese Störung während der Präsentation reagieren. Beschreiben Sie fünf                                              (10 Punkte)
+Reaktionsmöglichkeiten.
+
+
+Lösungshinweise Aufgabe 3                                                                                                         (10 Punkte)
+[VO: § 4 Absatz 4 Nr. 3]
+Der Meister als Vortragender ignoriert das Gespräch zunächst, weil es den Ablauf noch nicht
+stört, nimmt aber Blickkontakt mit den beiden Mitarbeitern auf.
+Der Meister kann eine Sprechpause einlegen und demonstrativ zu den beiden Mitarbeitern
+hinschauen.
+Der Meister kann eine Bemerkung zur Aufmerksamkeit in seinen Vortrag einstreuen und somit
+die beiden Mitarbeiter darauf aufmerksam machen, dass sie dem Vortrag folgen sollen.
+Der Meister kann die beiden Mitarbeiter auch direkt ansprechen und sie fragen, ob es etwa
+eine Unklarheit oder eine Zwischenfrage gibt.
+Wenn das Gespräch nach einer dieser Reaktionen immer noch nicht aufhört, kann der Meister
+die beiden Mitarbeiter des Raumes verweisen.
+Der Meister kann die Präsentation unterbrechen und mit den beiden Mitarbeitern die Situation
+unter sechs Augen klären.
+
+
+ Aufgabe 4
+In Ihrem Meisterbereich werden Werkstoffprüfungen durchgeführt. Für die wöchentliche
+Arbeitsberatung werden Sie gebeten, die in der Tabelle angegebenen Werte grafisch
+darzustellen.
+                   Temperatur                                    Druckfestigkeit in N/mm²
+                         100                                                      800
+                         150                                                      600
+                         200                                                      520
+                         250                                                      440
+                         300                                                      320
+                         350                                                      280
+                         400                                                      190
+                         450                                                      140
+                         500                                                      100
+a)   Stellen Sie die Daten in einem Diagramm dar und zeichnen Sie eine Ausgleichsgerade                                              (8 Punkte)
+     ein.
+b)   Beschreiben Sie die Korrelation zwischen der Temperatur und dem Druck.                                                          (4 Punkte)
+c)   Nennen Sie drei Anwendungsmöglichkeiten von Diagrammen bei der Auswertung der                                                   (3 Punkte)
+     Nutzung und Wartung von Maschinen.
+
+ Seite 4 | L 050-03-0518-8 |    © DIHK – Gesellschaft für berufliche Bildung – Organisation zur Förderung der IHK-Weiterbildung mbH – Bonn
+                                Die Vervielfältigung, Verbreitung oder öffentliche Wiedergabe der Publikation [der Prüfungssätze und Lösungshinweise]
+                                ist nicht gestattet (§§ 53, 54 UrhG) und strafbar (§ 106 UrhG). Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+
+=== Seite 5 ===
+ GEPRÜFTE/-R INDUSTRIEMEISTER/-IN
+ FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+ GRUNDLEGENDE QUALIFIKATIONEN
+ Anwendung von Methoden der Information, Kommunikation und Planung
+Lösungshinweise Aufgabe 4                                                                                                                (15 Punkte)
+[VO: § 4 Absatz 4 Nr. 4]
+a)
+
+
+
+
+                                                                                                                                           (8 Punkte)
+b)    Je höher die Temperatur ist, desto niedriger ist die Druckfestigkeit.
+      Die Messpunkte sind relativ nah an der Geraden.
+      Der Zufall kann als Einfluss auf den Zusammenhang zwischen beiden Größen
+      weitgehend ausgeschlossen werden.                                                                                                    (4 Punkte)
+c)    Darstellung des Zusammenhangs zwischen z. B.:
+      ■ Wartungszyklen und Verschleiß
+      ■ Anzahl der Inspektionen und Anzahl der Ausfälle
+      ■ Auslastung und Wartungskosten
+      ■ Drehzahl der Maschine und Verschleiß                                                                                               (3 Punkte)
+
+
+ Aufgabe 5
+In Kürze werden Sie das Projekt „Einführung des Energiemanagements“ für Ihre Abteilung
+eigenverantwortlich leiten. Damit das Projekt erfolgreich zum Abschluss geführt werden kann,
+müssen Sie umfangreiche Kompetenzen besitzen.
+a)    Benennen Sie fünf Kompetenzen, die zum eigenverantwortlichen Leiten eines Projektes                                                  (5 Punkte)
+      notwendig sind.
+b)    Erläutern Sie, warum Sie diese fünf Kompetenzen benötigen, um ein Projekt                                                          (15 Punkte)
+      eigenverantwortlich zu leiten.
+
+
+Lösungshinweise Aufgabe 5                                                                                                                (20 Punkte)
+[VO: § 4 Absatz 4 Nr. 5]
+a)    ■      Fachkompetenz
+      ■      Führungskompetenz
+      ■      Kommunikationskompetenz
+      ■      soziale Kompetenz
+      ■      Organisationskompetenz
+      ■      Planungskompetenz                                                                                                             (5 Punkte)
+
+ © DIHK – Gesellschaft für berufliche Bildung – Organisation zur Förderung der IHK-Weiterbildung mbH – Bonn               Seite 5 | Stand: 30. April 2018 |
+ Die Vervielfältigung, Verbreitung oder öffentliche Wiedergabe der Publikation [der Prüfungssätze und Lösungshinweise]
+ ist nicht gestattet (§§ 53, 54 UrhG) und strafbar (§ 106 UrhG). Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+
+=== Seite 6 ===
+GEPRÜFTE/-R INDUSTRIEMEISTER/-IN
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+GRUNDLEGENDE QUALIFIKATIONEN
+Anwendung von Methoden der Information, Kommunikation und Planung
+b)   Begründungen der o. g. Kompetenzen, wie z. B.:
+     Fachkompetenz:
+     Die Projektleitung muss intern und extern mit Fachleuten kommunizieren (Abstimmung,
+     Weisungen, Informationsaustausch).
+     Führungskompetenz:
+     Die Projektleitung muss das Projektteam leiten, Aufgaben verteilen, Arbeitsgänge
+     beginnen und abschließen, Kontrolle ausüben usw.
+     Kommunikationskompetenz:
+     Die Projektleitung muss während der gesamten Projektdauer mündlich (Präsentationen,
+     kick-off-Veranstaltung)   und      schriftlich  (Zwischenberichte,  Abschlussbericht)
+     kommunizieren: Ziele, Ergebnisse usw.
+     Soziale Kompetenz:
+     Die Projektleitung muss Konflikte im Projektteam erkennen, analysieren und lösen. Sie
+     muss die Mitarbeiter einbeziehen und ihre Leistungen wertschätzen.
+     Organisationskompetenz:
+     Die Projektleitung organisiert Teamberatungen, koordiniert externe und interne
+     Ressourcen, improvisiert im Fall von Störungen.
+     Planungskompetenz:
+     Die Projektleitung muss zum vorausschauenden Denken in der Lage sein, um Abläufe,
+     Termine, Ressourcen und Meilensteine des Projektes planen zu können.                                                          (15 Punkte)
+
+
+Aufgabe 6
+Die Geschäftsleitung Ihres Unternehmens setzt sich regelmäßig neue strategische Ziele.
+Diese Ziele müssen innerhalb und außerhalb des Unternehmens kommuniziert werden.
+a)   Zeigen Sie anhand von drei Gründen, warum die Geschäftsleitung Wert auf eine gute                                               (3 Punkte)
+     Kommunikation der Unternehmensziele legt.
+b)   Erläutern Sie vier mündliche oder schriftliche Möglichkeiten der Kommunikation von                                            (12 Punkte)
+     Unternehmenszielen.
+
+
+Lösungshinweise Aufgabe 6                                                                                                         (15 Punkte)
+[VO: § 4 Absatz 4 Nr. 6]
+a)   Z. B.:
+     ■ Beteiligung (Partizipation) der Mitarbeiter an der Zielerreichung
+     ■ Ableiten von Abteilungszielen aus den Unternehmenszielen
+     ■ Transparenz der Ziele
+     ■ Motivation der Beteiligten
+     ■ Öffentlichkeitsarbeit für das Unternehmen                                                                                     (3 Punkte)
+b)   Erläutert werden können folgende Möglichkeiten:
+     ■ Einsatz gedruckter Kommunikationsmittel wie Betriebszeitung oder Hausmitteilung
+     ■ Einsatz eines innerbetrieblichen sozialen Netzwerks oder Forums
+     ■ Einsatz des Intranets (nach innen) oder der Website des Unternehmens (nach
+         außen)
+     ■ Einberufen einer Betriebsversammlung mit Präsentationen und Vorträgen
+     ■ Erläutern der Ziele in kleinen Gruppen, etwa in Meisterbereichen
+     ■ Veröffentlichung einer Pressemitteilung oder Einladung zu einer Pressekonferenz                                             (12 Punkte)
+
+
+Seite 6 | L 050-03-0518-8 |     © DIHK – Gesellschaft für berufliche Bildung – Organisation zur Förderung der IHK-Weiterbildung mbH – Bonn
+                                Die Vervielfältigung, Verbreitung oder öffentliche Wiedergabe der Publikation [der Prüfungssätze und Lösungshinweise]
+                                ist nicht gestattet (§§ 53, 54 UrhG) und strafbar (§ 106 UrhG). Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+

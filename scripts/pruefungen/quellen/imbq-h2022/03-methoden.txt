@@ -1,0 +1,503 @@
+=== Seite 1 ===
+Bundeseinheitliche Fortbildungsprüfung der Industrie- und Handelskammern
+Geprüfter Industriemeister / Geprüfte Industriemeisterin
+fachrichtungsübergreifende Basisqualifikationen /
+grundlegende Qualifikationen
+Anwendung von Methoden der Information, Kommunikation und Planung
+
+
+Lösungshinweise
+Datum:                                          3. November 2022
+
+Bearbeitungszeit:                               90 Minuten
+
+Anzahl Aufgaben:                                6
+
+
+Hinweise für den Korrektor:
+■   Die folgenden Lösungen sind lediglich Lösungshinweise.
+■   Sie sollen nur den Rahmen der zu erwartenden Prüfungsleistung abstecken.
+■   Der Korrektor ist durch die hier aufgeführten Lösungshinweise in seinem
+    Bewertungsspielraum nicht eingeengt.
+■   Bei Aufgaben, die eine Aufzählung von n-Fakten zur Lösung erfordern, werden nur die
+    ersten n-Fakten gewertet. Alle darüber hinausgehenden Aufzählungen werden
+    gestrichen.
+■   Bei Berechnungen sollen Folgefehler berücksichtigt werden und somit nicht zum
+    Punktabzug führen.
+■   Der leichteren Lesbarkeit wegen geben wir in den Aufgaben/Texten der männlichen
+    Form den Vorzug. Mit diesem einfacheren sprachlichen Ausdruck sind selbstverständlich
+    immer alle Geschlechter gemeint.
+
+
+
+Die Aufgaben mit Lösungsvorschlägen können von den Industrie- und Handelskammern oder Dritten nach einer Frist von sechs Monaten
+direkt bestellt werden bei:
+wbv Media GmbH & Co. KG, Service-Center DIHK,
+Postfach 10 06 33, 33506 Bielefeld
+Tel.: 0521/91101-16, Fax: 0521/91101-19, E-Mail: service@wbv.de
+
+
+
+
+                            © DIHK – Gesellschaft für berufliche Bildung – Organisation zur Förderung der IHK-Weiterbildung gGmbH – Bonn
+               Die Vervielfältigung, Verbreitung oder öffentliche Wiedergabe der Publikation ist nicht gestattet (§§ 53, 54 UrhG) und strafbar (§ 106 UrhG).
+                                                           Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+                                                                             L 050-03-1122-6
+
+=== Seite 2 ===
+GEPRÜFTE/-R INDUSTRIEMEISTER/-IN,
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+GRUNDLEGENDE QUALIFIKATIONEN
+Anwendung von Methoden der Information, Kommunikation und Planung
+
+
+
+Aufgabe 1
+In Ihrem Industrieunternehmen werden an allen Maschinen und Anlagen permanent Daten
+erfasst. Erfassung, Speicherung, Übertragung und Verarbeitung der Daten werden durch
+technische und organisatorische Maßnahmen abgesichert.
+
+ a Mögliche Punktzahl: 6
+Beschreiben Sie drei Gründe für die permanente automatische Datenerfassung und
+Datenauswertung an Maschinen und Anlagen.
+
+ b Mögliche Punktzahl: 4
+Beschreiben Sie zwei praxisbezogene Beispiele für die manuelle Datenerfassung und
+nennen Sie die dabei eingesetzten Geräte.
+
+ c Mögliche Punktzahl: 6
+Beschreiben Sie drei organisatorische Maßnahmen, mit denen die sachlich richtige
+manuelle Erfassung der Daten abgesichert wird.
+
+ d Mögliche Punktzahl: 4
+Beschreiben Sie zwei technische Maßnahmen, mit denen die Verfügbarkeit der Daten
+gesichert wird.
+
+
+Lösungshinweise Aufgabe 1
+[VO: § 4 Absatz 4 Nr. 1]
+
+ a Mögliche Punktzahl: 6
+■   Die Unternehmen wollen mittels Erfassung und Überwachung Qualitätsprobleme
+    frühzeitig erkennen und beheben.
+■   Es soll ein Austausch von Daten zwischen den Herstellern der Maschinen und den
+    Unternehmen stattfinden.
+■   Die Instandhaltung der Maschinen und Anlagen soll optimiert werden, damit die
+    Verfügbarkeit besser wird.
+■   Der Zugriff der Führungskräfte und Mitarbeiter auf aktuelle Informationen und
+    Kennzahlen soll gewährleistet werden.
+
+
+
+
+                                                 Seite 2
+                                             L 050-03-1122-6
+
+=== Seite 3 ===
+GEPRÜFTE/-R INDUSTRIEMEISTER/-IN,
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+GRUNDLEGENDE QUALIFIKATIONEN
+Anwendung von Methoden der Information, Kommunikation und Planung
+
+
+b Mögliche Punktzahl: 4
+■   In der Produktion erfasst der Qualitätsbeauftragte aktuelle Daten der Maschinen mithilfe
+    eines Tablet-PCs.
+■   Im Wareneingangsbereich scannt ein Logistiker Barcodes oder QR-Codes der
+    eingehenden Waren mit einem Handscanner, Tablet oder Smartphone.
+■   Ein Mitarbeiter in der Arbeitsvorbereitung gibt handschriftliche Notizen aus der
+    Produktion an einem stationären PC ein.
+■   Ein Mitarbeiter in der Produktion protokolliert Fertigungsschritte an einem Terminal.
+■   Die Daten der Zeiterfassung (Kommen, Gehen, Pause) aller Beschäftigten werden an
+    einem Zeiterfassungsterminal mittels Transponder registriert.
+
+c Mögliche Punktzahl: 6
+■   Das Unternehmen schließt für die IT-Systeme einen Wartungsvertrag für Support und
+    Hotline ab.
+■   Das Unternehmen stellt Arbeitsanweisungen bzw. Richtlinien für die korrekte Erfassung
+    und Speicherung der Daten bereit.
+■   Die Mitarbeiter werden in der Erfassung geschult und getestet und unterlaufen eine
+    Einarbeitungszeit.
+■   Die Mitarbeiter werden ausdrücklich aufgefordert, ihr Feedback und ihre
+    Verbesserungsvorschläge einzubringen. Dafür wird eine Plattform im Intranet
+    bereitgestellt.
+■   Die korrekte Erfassung der Daten wird stichprobenartig geprüft und es werden
+    außerdem Plausibilitätskontrollen eingerichtet.
+
+d Mögliche Punktzahl: 4
+■   Die wichtigsten IT-Systeme werden redundant ausgelegt (sie sind also doppelt oder
+    mehrfach vorhanden).
+■   Die Datensicherung (Backup) erfolgt in mehreren Stufen und das schnelle
+    Wiederherstellen der Daten ist technisch gesichert.
+■   Die Netzwerksicherheit wird mit Firewalls und verschlüsselten Verbindungen
+    gewährleistet.
+
+
+
+
+                                                 Seite 3
+                                             L 050-03-1122-6
+
+=== Seite 4 ===
+GEPRÜFTE/-R INDUSTRIEMEISTER/-IN,
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+GRUNDLEGENDE QUALIFIKATIONEN
+Anwendung von Methoden der Information, Kommunikation und Planung
+
+
+
+Aufgabe 2
+Ihr Unternehmen hat mehrere Standorte in Deutschland. Viele Beschäftigte arbeiten
+zeitweise im Homeoffice. Deshalb werden viele Besprechungen mit einem
+Videokonferenzsystem durchgeführt. Diese Online-Besprechungen dauern viel länger als
+geplant und einige Beschäftigte fühlen sich trotzdem nicht ausreichend informiert.
+
+Die Ursachen für dieses Problem sollen systematisch analysiert werden. Sie stellen dafür ein
+Ursache-Wirkungs-Diagramm (7-M-Methode) auf.
+
+ a Mögliche Punktzahl: 4
+Begründen Sie die Anwendung des Ursache-Wirkungs-Diagramms mit zwei
+Argumenten.
+
+ b Mögliche Punktzahl: 10
+Nennen Sie für das Ursache-Wirkungs-Diagramm je zwei Ursachen aus den
+Kategorien
+
+■   Mensch/Mitarbeiter,
+
+■   Management,
+
+■   Methode,
+
+■   Milieu,
+
+■   Maschine/Technik.
+
+ c Mögliche Punktzahl: 6
+Die Beschäftigten Ihres Meisterbereichs sollen an der Problemlösung beteiligt werden.
+
+Beschreiben Sie drei Methoden der Ideenfindung, die dabei eingesetzt werden
+können.
+
+
+Lösungshinweise Aufgabe 2
+[VO: § 4 Absatz 4 Nr. 2]
+
+ a Mögliche Punktzahl: 4
+■   Vollständigkeit der Ursachenforschung
+■   Vermeiden voreiliger Schuldzuweisungen
+■   Einbeziehen des Sachverstands und der Erfahrungen der Beteiligten
+
+                                                 Seite 4
+                                             L 050-03-1122-6
+
+=== Seite 5 ===
+GEPRÜFTE/-R INDUSTRIEMEISTER/-IN,
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+GRUNDLEGENDE QUALIFIKATIONEN
+Anwendung von Methoden der Information, Kommunikation und Planung
+
+ b Mögliche Punktzahl: 10
+■   Mensch: fehlende Erfahrung, fehlende Kenntnisse, Mangel an Motivation
+■   Management: fehlende Agenda, fehlende Strukturierung, schlechtes Zeitmanagement
+    der Führungskräfte
+■   Methode: Führung der Besprechung nicht eindeutig und klar, zu viele beteiligte
+    Teilnehmer an der Besprechung
+■   Milieu: instabile Infrastruktur, unzureichend ausgestattete Arbeitsplätze im Homeoffice,
+    Ablenkung von außen
+■  Maschine/Technik: Endgeräte nicht aufeinander abgestimmt, unterschiedliche Versionen
+   der Software, inkompatible Software
+ c Mögliche Punktzahl: 6
+■   Die Mitarbeiter führen ein gemeinsames Brainstorming durch.
+■   Die Mitarbeiter erstellen schriftliche Vorschläge in Form eines Brainwriting.
+■   Die Mitarbeiter erstellen online oder in Präsenz gemeinsam eine Mindmap.
+■   Die Mitarbeiter und das Management wenden die Methode des Perspektivwechsels an.
+■   Das Management richtet einen thematischen Bereich im betrieblichen Vorschlagswesen
+    ein.
+
+
+Aufgabe 3
+Mögliche Punktzahl: 10
+Im Rahmen der Einführung von Homeoffice-Arbeitsplätzen und Videokonferenzsystemen
+planen Sie eine Präsentation zur Einweisung in die neue Technik. Dabei führen Sie eine
+Zielgruppenanalyse durch.
+
+Nennen Sie fünf Kriterien, die Sie bei Ihrer Zielgruppenanalyse berücksichtigen, und
+beschreiben Sie je eine Auswirkung auf die geplante Präsentation.
+
+
+Lösungshinweise Aufgabe 3
+[VO: § 4 Absatz 4 Nr. 3]
+Mögliche Punktzahl: 10
+■   Zusammensetzung der Gruppe:
+    Es werden nur genau die Beschäftigten ausgewählt und eingeladen, die aktuell oder
+    absehbar im Homeoffice arbeiten sollen.
+■   Analyse der Erfahrung mit Homeoffice:
+    Erfahrene Mitarbeiter kennen die Gegebenheiten, sodass weniger Details angesprochen
+    werden müssen; unerfahrene Mitarbeiter müssen eine ausführlichere Einweisung
+    erhalten.
+
+                                                 Seite 5
+                                             L 050-03-1122-6
+
+=== Seite 6 ===
+GEPRÜFTE/-R INDUSTRIEMEISTER/-IN,
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+GRUNDLEGENDE QUALIFIKATIONEN
+Anwendung von Methoden der Information, Kommunikation und Planung
+
+■   Vorkenntnisse in der Anwendung von Videokonferenzsystemen:
+    Mitarbeiter mit guten Vorkenntnissen kennen die entsprechenden Begriffe und
+    Funktionen; Mitarbeiter mit bisher wenigen Berührungspunkten mit Videokonferenzen
+    brauchen eine Erklärung.
+■   Vorkenntnisse in IT-Sicherheit und Datenschutz:
+    Aus dem IT-Sicherheitsbewusstsein der Mitarbeiter und ihren Kenntnissen im
+    Datenschutz wird abgeleitet, wie stark auf diese Punkte eingegangen werden muss.
+■   Einstellung der Beschäftigten zum Homeoffice und zum mobilen Arbeiten:
+    Sind aus dem Teilnehmerkreis interessierte Fragen, Einwände oder Widerstand
+    während der Präsentation zu erwarten?
+■   Gruppengröße:
+    Je größer die Gruppe, desto länger wird die Diskussionsrunde und desto mehr Zeit ist
+    dafür einzuplanen. Eventuell ist die Kapazität des Videokonferenzsystems anzupassen.
+
+Aufgabe 4
+Die beiden Lieferanten A und B beliefern Sie mit Einzelteilen. Der Lieferant B wird wegen
+einer gestiegenen Zahl an fehlerhaften Teilen kritisiert.
+ Monat               Lieferant A                               Lieferant B
+         gelieferte Teile davon fehlerhaft         gelieferte Teile   davon fehlerhaft
+
+
+    1           2.000               60                  2.000               50
+    2           1.800               50                  2.300               55
+    3           1.600               42                  2.600               60
+    4           1.400               32                  2.800               62
+    5           1.200               28                  3.000               64
+    6           1.000               24                  3.200               66
+
+ a Mögliche Punktzahl: 6
+Vergleichen Sie die Fehlerquoten der beiden Lieferanten für die Monate 1 bis 6
+tabellarisch.
+
+ b Mögliche Punktzahl: 7
+Erstellen Sie ein Diagramm zum Vergleich der beiden Fehlerquoten.
+
+ c Mögliche Punktzahl: 2
+Entscheiden Sie, ob der Lieferant B zu Recht kritisiert wird, und begründen Sie Ihre
+Entscheidung.
+
+
+
+                                                 Seite 6
+                                             L 050-03-1122-6
+
+=== Seite 7 ===
+GEPRÜFTE/-R INDUSTRIEMEISTER/-IN,
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+GRUNDLEGENDE QUALIFIKATIONEN
+Anwendung von Methoden der Information, Kommunikation und Planung
+
+
+
+Lösungshinweise Aufgabe 4
+[VO: § 4 Absatz 4 Nr. 4]
+
+  a Mögliche Punktzahl: 6
+
+                                      Fehlerquoten
+
+              Monat        Lieferant A               Lieferant B
+
+               1            3,00 %                      2,50 %
+
+               2            2,78 %                      2,39 %
+
+               3            2,63 %                      2,31 %
+
+               4            2,29 %                      2,21 %
+
+               5            2,33 %                      2,13 %
+
+               6            2,40 %                      2,06 %
+
+
+  b Mögliche Punktzahl: 7
+
+
+                           Vergleich der Fehlerquoten
+              3,50 %
+
+              3,00 %
+Fehlerquote
+
+
+
+
+              2,50 %
+
+              2,00 %
+
+              1,50 %
+
+              1,00 %
+
+              0,50 %
+
+              0,00 %
+                       1         2             3      4          5      6
+                                 Lieferant A       Lieferant B          Monat
+
+
+
+  c Mögliche Punktzahl: 2
+Die Fehlerquote des Lieferanten B hat sich in dem betrachteten Zeitraum verbessert und die
+Kritik ist demzufolge nicht berechtigt. Die Gesamtzahl seiner gelieferten Teile stieg stärker
+als die Zahl der fehlerhaften Teile. Die Fehlerquote des Lieferanten B lag außerdem
+während des gesamten Zeitraums immer unter der Fehlerquote des Lieferanten A.
+
+
+                                                          Seite 7
+                                                      L 050-03-1122-6
+
+=== Seite 8 ===
+GEPRÜFTE/-R INDUSTRIEMEISTER/-IN,
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+GRUNDLEGENDE QUALIFIKATIONEN
+Anwendung von Methoden der Information, Kommunikation und Planung
+
+
+
+Aufgabe 5
+Als Projektleitung können Sie Teilaufgaben des Projekts an selbstständig arbeitende Teams
+delegieren. Eine Delegation an selbstständig arbeitende Teams kann Vorteile und Nachteile
+haben.
+
+ a Mögliche Punktzahl: 6
+Beschreiben Sie drei Vorteile der Übertragung von Projektaufgaben an selbstständige
+Teams.
+
+ b Mögliche Punktzahl: 6
+Nennen Sie zwei Risiken der Übertragung von Projektaufgaben an selbstständige
+Teams. Beschreiben Sie jeweils eine Gegenmaßnahme zu den von Ihnen genannten
+Risiken.
+
+ c Mögliche Punktzahl: 8
+Beschreiben Sie vier Gesichtspunkte, die Sie bei der Auswahl der Mitarbeiter für ein
+Projektteam beachten müssen.
+
+
+Lösungshinweise Aufgabe 5
+[VO: § 4 Absatz 4 Nr. 5]
+
+ a Mögliche Punktzahl: 6
+■   Es erfolgt eine Selbstorganisation in den Teams und damit eine Verringerung des
+    organisatorischen Aufwands der Projektleitung.
+■   Es kann aufgrund größerer Entscheidungsspielräume und gestärkter Motivation eine
+    höhere Motivation der Beteiligten entstehen.
+■   Die Selbstständigkeit des Arbeitens wird gefördert; somit sind weniger Eingriffe der
+    Projektleitung in die Arbeitsprozesse notwendig.
+■   In der Gruppe werden Methoden und Erfahrungen weitergegeben bzw. ausgetauscht.
+    Somit verbessert sich die Leistung der einzelnen Teammitglieder.
+
+
+
+
+                                                 Seite 8
+                                             L 050-03-1122-6
+
+=== Seite 9 ===
+GEPRÜFTE/-R INDUSTRIEMEISTER/-IN,
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+GRUNDLEGENDE QUALIFIKATIONEN
+Anwendung von Methoden der Information, Kommunikation und Planung
+
+
+b Mögliche Punktzahl: 6
+
+Risiken                     Gegenmaßnahmen
+
+Konflikte in der Gruppe bereits bei der Zusammenstellung der Teams auf das
+                        Konfliktrisiko achten
+                            im Projektverlauf auf Konfliktsignale achten und Maßnahmen
+                            zum entsprechenden Konfliktmanagement ergreifen
+Mangelnde                   Die Mitarbeiter werden in der Teamarbeit und Selbstorganisation
+Selbstorganisation          geschult.
+                            Die Projektleitung informiert sich regelmäßig über den Stand der
+                            Arbeit und das Arbeitsklima im Team und erkennt somit Defizite.
+Mangelnde                   Die Ziele des Projekts werden vorher für alle Beteiligten
+Zielorientierung des        transparent und verständlich erläutert.
+Teams                       Soll und Ist werden im Projektverlauf regelmäßig verglichen und
+                            Abweichungen festgestellt sowie ggf. Korrekturen am Ziel
+                            vorgenommen.
+Mangelnde                   Projektleitungen werden in den Methoden der Teamarbeit
+Führungskompetenz           geschult.
+der Projektleitung          Projektleitungen müssen während der Projektlaufzeit ihre
+                            eigenen Methoden kritisch überprüfen (reflektieren).
+
+c Mögliche Punktzahl: 8
+■   Fachlicher Gesichtspunkt: Die Fachkompetenz der Mitarbeiter muss für das Projekt groß
+    genug sein und sich im Team ergänzen.
+■   Methodischer Gesichtspunkt: Die Mitarbeiter müssen die Methoden der Teamarbeit
+    beherrschen.
+■   Reifegrad und Motivation: Die Teammitglieder bringen die notwendige Selbstständigkeit
+    und Eigenverantwortung in das Team ein.
+■   Leistung und Leistungsunterschiede: Die Mitarbeiter dürfen mit den Aufgaben weder
+    unterfordert noch überfordert sein.
+■   Soziale Kompetenz und Teamfähigkeit: Die Mitarbeiter sind in der Lage, sich in ein
+    Team einzuordnen und zielgerichtet zu arbeiten.
+
+
+
+
+                                                 Seite 9
+                                             L 050-03-1122-6
+
+=== Seite 10 ===
+GEPRÜFTE/-R INDUSTRIEMEISTER/-IN,
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+GRUNDLEGENDE QUALIFIKATIONEN
+Anwendung von Methoden der Information, Kommunikation und Planung
+
+
+
+Aufgabe 6
+An den Informationsfluss in Ihrem Unternehmen werden hohe Anforderungen gestellt: Die
+Informationen sollen die richtigen Mitarbeiter im gewünschten Umfang und zur richtigen Zeit
+erreichen.
+
+ a Mögliche Punktzahl: 12
+Erläutern Sie vier organisatorische Maßnahmen, mit denen der Informationsfluss
+optimal gestaltet wird.
+
+ b Mögliche Punktzahl: 3
+Nennen Sie drei IT-Lösungen, die im Unternehmen zur internen Weitergabe von
+Informationen dienen.
+
+
+Lösungshinweise Aufgabe 6
+[VO: § 4 Absatz 4 Nr. 6]
+
+ a Mögliche Punktzahl: 12
+■   Auswahl der richtigen Informationen, die für die Adressaten bzw. Nutzer/Rollen gemäß
+    ihren Aufgaben notwendig sind
+■   Auswahl der angemessenen Kommunikationsformen, Kommunikationsmittel und
+    technischen Geräte für die Kommunikation
+■   Auswahl und Angebot von Feedback-Möglichkeiten bzw. Beteiligungsmöglichkeiten für
+    die Beschäftigten
+■   Absichern des Informationsflusses mittels Betriebsanweisungen, Organigrammen,
+    Ablaufdiagrammen usw.
+■   Absichern der Kenntnisnahme von Informationen mittels Verteilern und Dokumentation
+    des Empfangs der Informationen z. B. mit digitalen Unterschriften
+
+ b Mögliche Punktzahl: 3
+■   betriebsinterne E-Mail-Verteiler
+■   betriebsintern genutzte Messenger-Dienste
+■   betriebliche soziale Netzwerke
+■   audiovisuelle Beiträge von Führungskräften und Beschäftigten (im Intranet)
+■   interne Dashboards für den Überblick über aktuelle Daten
+
+
+
+
+                                                Seite 10
+                                             L 050-03-1122-6
+

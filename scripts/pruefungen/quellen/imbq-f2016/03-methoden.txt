@@ -1,0 +1,501 @@
+=== Seite 1 ===
+Bundeseinheitliche
+Weiterbildungsprüfung
+
+der Industrie- und Handelskammern
+
+Prüfungsteilnehmer-Nummer
+
+Geprüfte/-r Industriemeister/-in,
+fachrichtungsübergreifende
+Basisqualifikationen/
+grundlegende Qualifikationen
+
+m Basisqualifikation Anwendung von Methoden der
+Information, Kommunikation und
+Planung
+
+m Prüfungstag 3. Mai 2016
+
+m Bearbeitungszeit 90 Minuten
+
+m Anzahl der Aufgaben 6
+
+Bitte prüfen Sie vor Beginn der Prüfung die Vollständigkeit des Aufgabensatzes. Sollte
+der Aufgabensatz nicht vollständig sein, informieren Sie bitte die Aufsicht.
+
+| P 050-03-0516-1 |
+
+=== Seite 2 ===
+Bearbeitungshinweise:
+
+Bitte lesen Sie die nachfolgenden Bearbeitungshinweise sorgfältig durch:
+
+m Die zur Prüfung zugelassenen Hilfsmittel wurden Ihnen separat mit der Einladung mitgeteilt.
+
+= Sie erhalten einen Aufgaben- und einen Lösunggsteil.
+
+m Tragen Sie auf dem Deckblatt Ihre Prüfungsteilnehmer-Nummer ein.
+
+m Die maximale Gesamtpunktzahl der Lösungen beträgt 100 Punkte.
+
+m Die Lösungsgänge bzw. Rechenvorgänge sind klar und nachvollziehbar im Lösungsteil dar-
+zustellen. Sollte der Platz nicht ausreichen, benutzen Sie bitte das Konzeptpapier, verweisen
+Sie auf die Fortsetzung und kennzeichnen Sie diese. Wir weisen darauf hin, dass eine vom
+Prüfungsausschuss nicht lesbare Prüfungsarbeit mit der Note „ungenügend” (null Punkte) be-
+wertet wird mit den Rechtsfolgen, die sich aus der Prüfungsordnung ergeben.
+
+m Verwenden Sie für jede Aufgabe ein neues Lösungsblatt bzw. eine neue Lösungsseite.
+
+m Falls die Lösung auf einem beigefügten Anlageblatt erfolgen soll, wird in der Aufgabenstellung
+darauf hingewiesen.
+
+m Für Ihre Notizen benutzen Sie bitte ausschließlich das Konzeptpapier.
+
+m Das Konzeptpapier ist mit dem Aufgaben- und dem Lösungsteil abzugeben.
+
+m Bei Aufgaben, die eine Aufzählung von n-Fakten zur Lösung erfordern, werden nur die ersten
+
+n-Fakten gewertet. Alle darüber hinausgehenden Aufzählungen werden gestrichen.
+
+Wir wünschen Ihnen bei der Bearbeitung viel Erfolg.
+
+Der leichteren Lesbarkeit wegen geben wir in den Aufgaben/Texten der männlichen Form
+den Vorzug. Mit diesem einfacheren sprachlichen Ausdruck sind selbstverständlich immer
+Männer und Frauen gemeint.
+
+Die Vervielfältigung, Verbreitung oder öffentliche Wiedergabe der Publikationen [der Prü-
+fungssätze] ist nicht gestattet ($8 53, 54 UrhG) und strafbar ($ 106 UrhG). Im Fall der Zuwi-
+derhandlung wird Strafantrag gestellt.
+
+=== Seite 3 ===
+GEPRÜFTEI/-R INDUSTRIEMEISTER/-IN,
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+
+GRUNDLEGENDE QUALIFIKATIONEN
+AnwendungvonMethodenderInformation, KommunikationundPlanung
+
+Aufgabe 1
+
+Sie sind technischer Betriebsleiter eines kleinen mittelständischen Unternehmens mit ca.
+50 Beschäftigten. Um weiterhin konkurrenzfähig zu bleiben, ist die Einführung eines Pro-
+duktionsplanungs- und Steuerungssystems unumgänglich. Gleichzeitig müssen die gesam-
+ten IT-Systeme auf den neuesten Stand gebracht werden. Die Rechtslage erfordert hohe
+Anstrengungen zur Gewährleistung der Datensicherheit.
+
+a) Beschreiben Sie drei Maßnahmen, die in einem Konzept zur Datensicherheit enthalten (6 Punkte)
+sein müssen.
+
+b) Sie benötigen ebenfalls ein Konzept zur Datensicherung.
+
+Beschreiben Sie zwei technische Lösungen zur Datensicherung. (4 Punkte)
+c) Die Benutzeroberfläche des neuen Systems muss ergonomischen Anforderungen
+
+genügen.
+
+Beschreiben Sie fünf Anforderungen an diese ergonomische Benutzeroberfläche. (10 Punkte)
+
+Lösungshinweise Aufgabe 1
+[VO: 8 4 Absatz 4 Nr. 1]
+
+a) Hinweis für den Korrektor: Erwartet werden Beschreibungen zu drei Maßnahmen,
+wie z. B.:
+
+=  Zutrittskontrolle
+=  Zugriffskontrolle
+= _ Berechtigungskonzept (6 Punkte)
+
+b) Hinweis für den Korrektor: Erwartet werden Beschreibungen zu zwei technischen
+Lösungen, wie z. B.:
+
+"» Datensicherung auf Magnet- oder magneto-opti-
+schen Bändern nach dem Generationenprinzip
+
+"= Datensicherung auf externen Festplattenlaufwer-
+ken
+
+=» Datensicherung in ein externes Rechenzentrum
+(Cloud) (4 Punkte)
+
+c) Hinweis für den Korrektor: Erwartet werden Beschreibungen zu fünf Anforderun-
+gen, wie z. B.:
+
+" Verständlichkeit:
+
+Alle Bedienelemente müssen selbsterklärend und
+mit einer Hilfefunktion versehen sein.
+
+=  Eindeutigkeit:
+
+Jede Eingabe muss für die Benutzer eindeutig
+beschrieben sein. Das gilt auch für jede System-
+rückmeldung.
+
+= Vermeidung von Redundanz:
+
+Identische Informationen müssen stets nur einmal
+eingegeben werden, nutzlose Eingaben werden
+
+vermieden.
+© DIHK - Gesellschaft für berufliche Bildung - Organisation zur Förderung der IHK-Weiterbildung mbH - Bonn | P 050-03-0516-1 | Seite 27
+Die Vervielfältigung, Verbreitung oder öffentliche Wiedergabe der Publikation [der Prüfungssätze und Lösungshinweise]
+
+ist nicht gestattet ($$ 53, 54 UrhG) und strafbar ($ 106 UrhG). Im Fall der Zuwiderhandiung wird Strafantrag gestellt
+
+=== Seite 4 ===
+GEPRÜFTEI-R INDUSTRIEMEISTERI/-IN,
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+
+GRUNDLEGENDE QUALIFIKATIONEN
+AnwendungvonMethodenderlInformation, KommunikationundPlanung
+
+= Barrierefreiheit:
+
+Auch Personen mit Handicaps müssen das System
+bedienen können.
+
+2) Fehlertoleranz:
+
+Fehlerhafte Eingaben führen nicht zu einem Sys-
+temversagen. (10 Punkte)
+
+Aufgabe 2
+
+In Ihrem Meisterbereich sollen neue Drucker angeschafft werden. Bevor Sie mithilfe der
+Nutzwertanalyse zu einer Entscheidung kommen, wollen Sie mithilfe des paarweisen Ver-
+gleiches die Gewichtungsfaktoren ermitteln.
+
+Mit Ihren Meisterkollegen haben Sie sich auf folgende Vergleichsmerkmale geeinigt:
+= Preis
+
+= Handhabung
+
+"= Lebensdauer
+
+= Kundendienst
+
+= laufende Kosten
+
+Des Weiteren haben Sie sich auf den jeweiligen Grad der Wichtigkeit folgendermaßen geei-
+
+nigt:
+
+= _ Der Preis ist weniger wichtig als die Handhabung, der Kundendienst und die laufenden
+Kosten, jedoch wichtiger als die Lebensdauer.
+
+"= _ Die Handhabung ist wichtiger als der Kundendienst und die laufenden Kosten, aber
+genauso wichtig wie die Lebensdauer.
+
+" Die Lebensdauer ist weniger wichtig als der Kundendienst und genauso wichtig wie die
+laufenden Kosten.
+
+= Der Kundendienst ist wichtiger als die laufenden Kosten.
+
+Zwei Kriterien A und B werden folgendermaßen verglichen: Wenn A wichtiger ist als B, erhält
+A zwei Punkte und B null Punkte. Wenn A und B gleich wichtig sind, erhalten beide jeweils
+einen Punkt.
+
+Erstellen Sie mithilfe der Tabelle in Anlage 1 den paarweisen Vergleich und ermitteln Sie für (16 Punkte)
+die jeweiligen Merkmale die Gewichtungen in Prozent.
+
+Lösungshinweise Aufgabe 2 (16 Punkte)
+[VO: 8 4 Absatz 4 Nr. 2]
+
+siehe Anlage 1 zu Lösung 2
+
+Seite 28 | P 050-03-0516-1 | © DIHK — Gesellschaft für berufliche Bildung - Organisation zur Förderung der IHK-Weiterbildung mbH — Bonn
+Die Vervielfältigung, Verbreitung oder öffentliche Wiedergabe der Publikation [der Prüfungssätze und Lösungshinweise]
+ist nicht gestattet (88 53. 54 UrhG) und strafbar ($ 106 UrhG). Im Fall der Zuwiderhandlung wird Strafantrag gestellt
+
+=== Seite 5 ===
+GEPRÜFTEI/-R INDUSTRIEMEISTER/-IN,
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+
+GRUNDLEGENDE QUALIFIKATIONEN
+AnwendungvonMethodenderlInformation,KommunikationundPlanung
+
+Aufgabe 3
+
+Sie sind Industriemeister in der Abteilung Fertigung in einem Industrieunternehmen. Sie
+erhalten den Auftrag, die Unterweisungen für die Mitarbeiter bezüglich der Arbeitssicherheit
+zu planen. Für diese Unterweisungen bereiten Sie eine Präsentation vor.
+
+Beschreiben Sie fünf organisatorische Gesichtspunkte, die Sie bei der Vorbereitung dieser (10 Punkte)
+Präsentation berücksichtigen.
+
+Lösungshinweise Aufgabe 3 (10 Punkte)
+[VO: 8 4 Absatz 4 Nr. 3]
+
+= Absprache mit den Meistern der anderen Schichten
+
+= Ort und Zeitpunkt der Unterweisungen planen
+
+= Einladungen an die Mitarbeiter
+
+= _ Schulungsunterlagen erstellen
+
+= geeigneten Raum mit entsprechender Ausstattung reservieren
+
+= notwendige technische Geräte bereitstellen, Funktion überprüfen
+
+Aufgabe 4
+
+In der nachfolgenden Tabelle sind einige Kennzahlen eines Projektes über den Zeitraum
+vom 1. April bis zum 1. Oktober dargestellt:
+
+01.04. 01.05. 01.06. 01.07. 01.08. 01.09. 01.10.
+
+Gopiante 80.000€ 80.000€ 80.000€ 80.000€ 80.000€ 80.000€ 80.000 €
+Gesamtkosten
+Geplanter
+Kostenverlauf 6.000 € 10.000€ 14.000€ 18.000€ 23.000€ 28.000€ 33.000 €
+(kumuliert)
+Tatsächlicher
+Kostenverlauf 5.000€ 7.000€ 11.500€ 17.000€ 28.000€ 32.000€ 36.000 €
+(kumuliert)
+Meachalzie 75.000€ 74.000€ 70.000€ 66.000€ 59.000€ 56.000€ 52.000 €
+Restkosten " " " j " " j
+a) Stellen Sie die Entwicklung der Kosten über den gesamten Zeitraum in einem Dia- (14 Punkte)
+gramm dar.
+b) Beschreiben Sie drei Schlussfolgerungen, die Sie aus dem Verlauf der Kosten ziehen. (6 Punkte)
+© DIHK - Gesellschaft für berufliche Bildung — Organisation zur Förderung der IHK-Weiterbildung mbH - Bonn | P 050-03-0516-1 | Seite 29
+Die Vervielfältigung, Verbreitung oder öffentliche Wiedergabe der Publikation [der Prüfungssätze und Lösungshinweise]
+
+ist nicht gestattet ($$ 53, 54 UrhG) und strafbar ($ 106 UrhG). Im Fall der Zuwiderhandlung wird Strafantrag gestellt
+
+=== Seite 6 ===
+GEPRÜFTEI/-R INDUSTRIEMEISTERI/-IN,
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+
+GRUNDLEGENDE QUALIFIKATIONEN
+AnwendungvonMethodenderInformation, KommunikationundPlanung
+
+Lösungshinweise Aufgabe 4 (20 Punkte)
+[VO: 8 4 Absatz 4 Nr. 4]
+
+a)
+Entwicklung der Projektkosten
+—+— geplante Gesamtkosten --@-- geplanter Kostenverlauf
+—4— tatsächlicher Kostenverlauf -#-: geschätzte Restkosten
+c 90.000,00
+In
+PAR =: K JoJo Kı[ 0 Seen ne [1 u we Ze ee _
+* A------ A .
+€70.000,00 oe
+— l
+€60.000,00 Imun
+j A-__
+nn A un
+€50.000,00 ' Te
+€40.000,00
+€30.000,00
+€20.000,00
+€10.000,00
+€ -
+01. Apr 01. Mai 01. Jun 01. Jul 01. Aug 01. Sep 01. Okt
+Datum (14 Punkte)
+b) = In der Zeit vom 1. April bis zum 1. Juli wird zunächst weniger ausgegeben als
+geplant.
+® Dann steigen die laufenden Kosten jedoch außerplanmäßig an und liegen ab dem
+Stichtag 1. August kontinuierlich über den geplanten Kosten.
+L) Berücksichtigt man den Verlauf der geschätzten Restkosten, so ist zu erkennen,
+dass das Projekt die geplanten Gesamtkosten überschreiten wird. (6 Punkte)
+Seite 30 | P 050-03-0516-1 | © DIHK - Gesellschaft für berufliche Bildung — Organisation zur Förderung der IHK-Weiterbildung mbH — Bonn
+
+Die Vervielfältigung, Verbreitung oder öffentliche Wiedergabe der Publikation [der Prüfungssätze und Lösungshinweise]
+ist nicht gestattet ($$ 53, 54 UrhG) und strafbar ($ 106 UrhG). Im Fall der Zuwiderhandlung wird Strafantrag gestellt
+
+=== Seite 7 ===
+GEPRÜFTEI/-R INDUSTRIEMEISTER/-IN,
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+
+GRUNDLEGENDE QUALIFIKATIONEN
+AnwendungvonMethodenderlInformation,Kommunikationund Planung
+
+Aufgabe 5
+
+Ihre Abteilung ist für die Durchführung eines Projektes verantwortlich. Die Ablaufplanung ist
+in dem nachfolgenden Balkenplan dargestellt. Das Projekt beginnt am Montag, dem 6. März,
+und endet am Freitag, dem 7. April. Im Balkenplan sind die arbeitsfreien Wochenenden grau
+markiert.
+
+.| Aufgabe |Dauer Mrz 2017 Apr 2017
+6 | 718] 9 Jrofr4]72]73]74]75]76]77J78[79]20]27]22]23]24]25]26]27]28]29]30]37| 77213] #]5]617T8
+Aufgabe 1 | ST
+Aufgabe 2 |" 2T
+Aufgabe 3. | '3T
+
+EEE — —
+Aufgabe 4 | 77
+Zu
+Aufgabe 6 | AT
+Aufgabe 7 AT: o_
+Aufgabe 8 | ST:
+Aufgabe 9 | AT nn
+Aufgabe 10] AT
+Aufgabe 11]. 10T. a —
+
+WEIS
+a) Ermitteln Sie in dem vorliegenden Balkenplan den kritischen Pfad. (6 Punkte)
+b) Nennen Sie zwei Vorgänge mit Pufferzeiten und ermitteln Sie diese Pufferzeiten. (6 Punkte)
+c) Erläutern Sie anhand des dargestellten Balkenplanes einen Ressourcenkonflikt. (3 Punkte)
+
+d) Der Abschluss von Aufgabe 11 verzögert sich um fünf Tage.
+
+Erläutern Sie die Folgen für das Projekt. (3 Punkte)
+
+Lösungshinweise Aufgabe 5 (18 Punkte)
+[VO: 8 4 Absatz 4 Nr. 5]
+
+a) 1223-24-58 -9 (6 Punkte)
+b) Aufgabe 7 hat einen Puffer von zehn Arbeitstagen.
+Aufgabe 11 hat einen Puffer von drei Arbeitstagen. (6 Punkte)
+
+c) Hinweis für den Korrektor: Erwartet wird eine Erläuterung zu einem Ressourcen-
+konflikt, wie z. B.:
+Am 15. März verlaufen die Aufgaben 3 und 6 parallel zu
+Aufgabe 11 und am 16. März verlaufen die Aufgaben 3
+und 7 parallel zu Aufgabe 11.
+Für diesen Zeitraum muss sichergestellt sein, dass Mit-
+arbeiter und Arbeitsmittel in hinreichender Menge und
+Qualität verfügbar sind. (3 Punkte)
+
+d) Hinweis für den Korrektor: Erwartet wird eine Erläuterung zu einer Verzögerung
+von Aufgabe 11 um fünf Tage, wie z. B.:
+Aufgabe 11 hat eine Pufferzeit von drei Tagen.
+Bei einer Verzögerung des Abschlusses von Aufgabe 11
+um fünf Tage würde diese Pufferzeit zunächst vollstän-
+dig aufgebraucht. Darüber hinaus würden sich die nach-
+folgenden Aufgaben um jeweils zwei Tage verschieben.
+
+Der Projektabschluss würde sich damit um zwei Tage
+verzögern. (3 Punkte)
+© DIHK - Gesellschaft für berufliche Bildung — Organisation zur Förderung der IHK-Weiterbildung mbH - Bonn | P 050-03-0516-1 | Seite 31
+
+Die Vervielfältigung, Verbreitung oder öffentliche Wiedergabe der Publikation [der Prüfungssätze und Lösungshinweise]
+ist nicht gestattet (8$ 53, 54 UrhG) und strafbar ($ 106 UrhG). Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+
+=== Seite 8 ===
+GEPRÜFTEI/-R INDUSTRIEMEISTER/-IN,
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+
+GRUNDLEGENDE QUALIFIKATIONEN
+AnwendungvonMethodenderInformation,KommunikationundPlanung
+
+Aufgabe |
+
+Sie sind Leiter eines innerbetrieblichen Projektes zur Reduzierung der Arbeitsunfälle. Die
+Geschäftsleitung erwartet von Ihnen alle vier Wochen einen schriftlichen Bericht zum Fort-
+schritt des Projektes.
+
+a) Der Bericht an die Geschäftsleitung ist von größter Wichtigkeit und erfordert eine gründ-
+liche Vorbereitung.
+
+Beschreiben Sie drei Schritte Ihrer inhaltlichen Vorbereitung. (6 Punkte)
+b) Beschreiben Sie fünf Inhalte dieses Berichtes. (10 Punkte)
+Lösungshinweise Aufgabe 6 (16 Punkte)
+
+[VO: $ 4 Absatz 4 Nr. 6]
+
+a) Hinweis für den Korrektor: Erwartet werden Beschreibungen zu drei Schritten, wie
+Zz. B::
+
+L) Beschaffen der Informationen
+
+= Prüfen der Richtigkeit und Vollständigkeit der Infor-
+mationen
+
+" Aufbereiten und Verdichten der Informationen
+(Tabellen, Grafiken usw.) (6 Punkte)
+
+b) Hinweis für den Korrektor: Erwartet werden Beschreibungen zu fünf Inhalten, wie
+z.B.:
+
+= Zeitraum:
+Es sollte klar erkennbar sein, über welchen Zeit-
+raum sich die Darstellungen im Bericht erstrecken.
+
+= _ Budget/Ressourcen:
+Für die Geschäftsleitung ist es wichtig, zu wissen,
+wie viel finanzielle Mittel und sonstige Ressourcen
+im Berichtszeitraum verwendet wurden.
+
+= Leistung:
+Die Geschäftsleitung möchte wissen, ob die für den
+Berichtszeitraum gesteckten Ziele erreicht wurden.
+Der Fortschritt der Arbeiten muss dargestellt wer-
+den.
+
+D) Risiken:
+Risiken, die innerhalb des Berichtszeitraumes ein-
+getreten sind oder identifiziert wurden, müssen im
+Bericht dargestellt werden. Risiken kosten Geld
+und ziehen Verzögerungen nach sich.
+
+"= _ Änderungen:
+Es muss dargestellt werden, ob Änderungswün-
+sche bzgl. der Projektplanung gestellt wurden und
+welche Auswirkungen diese ggf. auf den weiteren
+Verlauf haben.
+
+= Entscheidungen:
+Die Geschäftsleitung muss in einem Bericht auf die
+zu treffenden Entscheidungen (Abnahmen, Freiga-
+
+ben usw.) hingewiesen werden. (10 Punkte)
+Seite 32 | P 050-03-0516-1 | © DIHK Gesellschaft für berufliche Bildung — Organisation zur Förderung der IHK-Weiterbildung mbH Bonn
+Die Vervielfältigung, Verbreitung oder öffentliche Wiedergabe der Publikation [der Prüfungssätze und Lösungshinweise]
+
+ist nicht gestattet (88 53, 54 UrhG) und strafbar (8 106 UrhG). Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+
+=== Seite 9 ===
+uaseß Benuejens palm Bunjpueylapımnz Jap Ile wu (Dyın 901 $) Jegjens pun (oyın pg ‘es 8$) Joneısaß yyoıu }sı [asıemuiysBunso]
+pun ezyessBunynig Jap] uoneyigng sep sgeBrapaim ayoınuayo Jepo Bunisuguan "Bundiyeyeinigy aid uuog — Hau Bunpigienam-YHI Jap BunyapıoJ nz uogesiueßso — Bunpiig ayaıynJag In} Yeyosjlaseg - YHIO © | L-91,50-£0-050 d | ££ ayıas
+
+awiuns
+
+U9}SOy apuayne]
+
+}susipuspuny
+
+Janepsusga]
+
+ßungeypue}
+
+SIOld
+
+Ju9Z01d ul
+Bunyysımag
+
+awwng U9}SOy Spusyne] Isusipuspuny Janepsusga 6ungeypueH SIOld
+
+2 aqeßyny nz | abejuy
+
+Bunuejq pun uoeylunwwoy ‘uoNeunojuj Jap uspoyjoyy uon Bunpusmuy
+N3NOILVMISIIVND JANF9ITIANNY9 -
+
+IN3NOLLVMIAIIVNOSISVA JANI3II3UIYIANSONNLHIIUHIV
+“NI-/II3LSIIWFIALSNANI Y-/314N4439
+
+
+=== Seite 10 ===
+GEPRÜFTEI/-R INDUSTRIEMEISTERJ/-IN,
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+
+GRUNDLEGENDE QUALIFIKATIONEN
+Anwendung von Methoden der Information, Kommunikation und Planung
+
+Anlage 1 zu Lösung 2
+
+Preis Handhabung Lebensdauer Kundendienst laufende Kosten Summe ung
+Preis DE] ) 2 0 0 2 10
+Handhabung 2 Er ] 1 2 2 7 35
+Lebensdauer 0 1 a 0 1 2 10
+Kundendienst 2 0 2 a 2 6 30
+laufende Kosten 2 0 1 0 Beer 3 15
+Summe 20 100
+
+© DIHK — ‚Gesellschaft für berufliche Bildung - Organisation zur Förderung der IHK- -Welterölldung mbH - Bonn. Die Vervielfältigung, Verbreitung oder öffentliche Wiedergabe der Publikation [der Prüfungssätze und |P 050-03-0516-1 | Seite 34
+
+Kieern raslum\ oa nina [0 AND IL I AN An Tennidach an dlenn sel Obenfantenn nantalls
+

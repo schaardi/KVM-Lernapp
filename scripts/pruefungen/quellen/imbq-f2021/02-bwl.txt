@@ -1,0 +1,625 @@
+=== Seite 1 ===
+Bundeseinheitliche Fortbildungsprüfung der Industrie- und Handelskammern
+
+Geprüfte/-r Industriemeister/-in,
+fachrichtungsübergreifende Basisqualifikationen/
+grundlegende Qualifikationen
+Betriebswirtschaftliches Handeln
+
+
+Lösungshinweise
+Datum:                                          6. Mai 2021
+
+Bearbeitungszeit:                               90 Minuten
+
+Anzahl Aufgaben:                                7
+
+
+Hinweise für den Korrektor:
+■   Die folgenden Lösungen sind lediglich Lösungshinweise.
+■   Sie sollen nur den Rahmen der zu erwartenden Prüfungsleistung abstecken.
+■   Der Korrektor ist durch die hier aufgeführten Lösungshinweise in seinem
+    Bewertungsspielraum nicht eingeengt.
+■   Bei Aufgaben, die eine Aufzählung von n-Fakten zur Lösung erfordern, werden nur die
+    ersten n-Fakten gewertet. Alle darüber hinausgehenden Aufzählungen werden
+    gestrichen.
+■   Bei Berechnungen sollen Folgefehler berücksichtigt werden und somit nicht zum
+    Punktabzug führen.
+■   Der leichteren Lesbarkeit wegen geben wir in den Aufgaben/Texten der männlichen
+    Form den Vorzug. Mit diesem einfacheren sprachlichen Ausdruck sind selbstverständlich
+    immer alle Geschlechter gemeint.
+Die Aufgaben mit Lösungsvorschlägen können von den Industrie- und Handelskammern oder Dritten nach einer Frist von sechs Monaten
+direkt bestellt werden bei:
+wbv Media GmbH & Co. KG, Service-Center DIHK,
+Postfach 10 06 33, 33506 Bielefeld
+Tel.: 0521/91101-16, Fax: 0521/91101-19, E-Mail: service@wbv.de
+
+
+
+
+                               © DIHK – Gesellschaft für berufliche Bildung – Organisation zur Förderung der IHK-Weiterbildung mbH – Bonn
+               Die Vervielfältigung, Verbreitung oder öffentliche Wiedergabe der Publikation ist nicht gestattet (§§ 53, 54 UrhG) und strafbar (§ 106 UrhG).
+                                                           Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+                                                                              L 050-02-0521-3
+
+=== Seite 2 ===
+GEPRÜFTE/-R INDUSTRIEMEISTER/-IN,
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+GRUNDLEGENDE QUALIFIKATIONEN
+Betriebswirtschaftliches Handeln
+
+
+Aufgabe 1
+In der Industrie GmbH wird in der Geschäftsführung über die Umwandlung der bestehenden
+Rechtsform in eine GmbH & Co. KG diskutiert.
+
+ a Mögliche Punktzahl: 4
+Beschreiben Sie die Struktur einer GmbH & Co. KG.
+
+ b Mögliche Punktzahl: 4
+Geben Sie eine Begründung für die Wahl einer solchen Gesellschaftsform an und
+beschreiben Sie einen wesentlichen Vorteil dieser Rechtsform.
+
+ c Mögliche Punktzahl: 3
+Beschreiben Sie, wie in einer GmbH & Co. KG die Geschäftsführung geregelt ist.
+
+
+
+Lösungshinweise Aufgabe 1
+[VO: § 4 Absatz 3 Nr. 1]
+
+ a Mögliche Punktzahl: 4
+Z. B.:
+Bei der GmbH & Co. KG handelt es sich um eine Mischform aus zwei unterschiedlichen
+Rechtsformen. Es wird eine Personengesellschaft (Kommanditgesellschaft) mit einer
+Kapitalgesellschaft (GmbH) kombiniert. Im Ergebnis entsteht daraus eine Personengesell-
+schaft. Komplementär ist die GmbH, die Kommanditisten sind natürliche Personen.
+
+ b Mögliche Punktzahl: 4
+Z. B.:
+Der große Vorteil der GmbH & Co. KG liegt in der Haftungsbeschränkung der
+Gesellschafter. Als Kommanditisten (Teilhafter) beschränkt sich ihre Haftung auf die
+Kommanditeinlage. Komplementär (Vollhafter) ist die GmbH. Als Kapitalgesellschaft ist ihre
+Haftung auf das Geschäftsvermögen beschränkt.
+
+ c Mögliche Punktzahl: 3
+Z. B.:
+Grundsätzlich führt die GmbH als Komplementär die Geschäfte und vertritt die GmbH & Co.
+KG nach außen. Da es sich bei der GmbH allerdings nicht um eine natürliche Person
+handelt, müssen auch deren Gesellschafter nicht zwangsläufig die Geschäftsführung über-
+nehmen. Möglich ist auch der Einsatz von Fremdgeschäftsführern.
+
+
+
+                                            Seite 2
+                                         L 050-02-0521-3
+
+=== Seite 3 ===
+GEPRÜFTE/-R INDUSTRIEMEISTER/-IN,
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+GRUNDLEGENDE QUALIFIKATIONEN
+Betriebswirtschaftliches Handeln
+
+
+Aufgabe 2
+In der Industrie GmbH soll die Wirtschaftlichkeit der Organisation überprüft werden.
+
+Es werden sowohl die Aufbauorganisation als auch die Ablauforganisation untersucht. Als
+zuständiger Industriemeister in der Fertigung werden Sie mit in die
+Wirtschaftlichkeitsanalyse einbezogen.
+
+ a Mögliche Punktzahl: 6
+Erklären Sie den Unterschied zwischen Aufbau- und Ablauforganisation mithilfe von
+zwei Aspekten.
+
+ b Mögliche Punktzahl: 4
+Schlagen Sie Ihrem Vorgesetzten jeweils zwei Dokumentationsformen für die Aufbau-
+und die Ablauforganisation vor, um den aktuellen Stand der Organisation
+aufzuzeigen.
+
+ c Mögliche Punktzahl: 8
+Beschreiben Sie jeweils zwei Informationen, die aus den unter b) genannten
+Dokumenten entnommen werden können.
+
+
+
+Lösungshinweise Aufgabe 2
+[VO: § 4 Absatz 3 Nr. 2]
+
+ a Mögliche Punktzahl: 6
+Z. B.:
+■   Die Aufbauorganisation befasst sich mit der Struktur und der Hierarchie im Unterneh-
+    men, während sich die Ablauforganisation mit den Prozessen befasst und betrachtet,
+    wie die Aufgaben erledigt werden müssen.
+■   In der Aufbauorganisation werden Abteilungen und Stellen gebildet und diesen Aufga-
+    ben zugeordnet (Gebildestrukturierung).
+■   In der Ablauforganisation hingegen wird die Arbeitsabwicklung sowie das räumliche und
+    zeitliche Zusammenwirken von Menschen, Betriebsmitteln und Arbeitsgegenstand
+    geregelt (Prozessstrukturierung).
+
+
+
+
+                                             Seite 3
+                                          L 050-02-0521-3
+
+=== Seite 4 ===
+GEPRÜFTE/-R INDUSTRIEMEISTER/-IN,
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+GRUNDLEGENDE QUALIFIKATIONEN
+Betriebswirtschaftliches Handeln
+
+
+ b Mögliche Punktzahl: 4
+■   Aufbauorganisation, z. B.:
+    Organigramm, Stellenplan, Stellenbeschreibung
+■   Ablauforganisation, z. B.:
+    Arbeitsanweisung, Softwarehandbuch, Ablaufdiagramme
+
+ c Mögliche Punktzahl: 8
+Z. B.:
+■   Aufbauorganisation:
+    ■    Organigramm:
+         Das Organigramm zeigt die Hierarchie mit den Abteilungen sowie die jeweiligen
+         Stellen (Instanzen, Stabsstellen, ausführende Stellen).
+    ■    Stellenplan:
+         Der Stellenplan gibt Auskunft über die zur Verfügung stehenden Stellen.
+    ■    Stellenbeschreibung:
+         Die Stellenbeschreibung gibt Informationen über die Aufgaben und Anforderungen
+         einer Stelle und deren Einordnung in die Aufbauorganisation.
+■   Ablauforganisation:
+    ■    Arbeitsanweisung:
+         Die Arbeitsanweisung gibt Informationen über die Reihenfolge der Arbeitsschritte in
+         einem Arbeitsprozess.
+         Ablaufdiagramm (zeigt Prozesse auf).
+    ■    Softwarehandbuch:
+         Das Softwarehandbuch gibt Informationen darüber, wie die Software anzuwenden
+         ist.
+
+
+
+
+                                              Seite 4
+                                          L 050-02-0521-3
+
+=== Seite 5 ===
+GEPRÜFTE/-R INDUSTRIEMEISTER/-IN,
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+GRUNDLEGENDE QUALIFIKATIONEN
+Betriebswirtschaftliches Handeln
+
+
+Aufgabe 3
+Der Lagerbestand eines Kaufteils betrug zu Beginn des Geschäftsjahres 520 Stück, am En-
+de des Geschäftsjahres waren noch 280 Stück auf Lager. Im ersten Halbjahr wurden monat-
+lich jeweils 410 Stück über den Lieferanten geordert, im zweiten Halbjahr jeweils 350 Stück.
+
+Der Sicherheitsbestand des Kaufteils wurde mit 100 Stück festgelegt.
+
+ a Mögliche Punktzahl: 6
+Ermitteln Sie die Lagerumschlagshäufigkeit.
+
+ b Mögliche Punktzahl: 1
+Berechnen Sie die durchschnittliche Lagerdauer in Tagen.
+
+ c Mögliche Punktzahl: 3
+Beschreiben Sie die Auswirkung einer höheren Lagerumschlagshäufigkeit.
+
+ d Mögliche Punktzahl: 2
+Geben Sie zwei Maßnahmen an, die zu einer Erhöhung der Umschlagshäufigkeit
+führen.
+
+
+
+
+                                             Seite 5
+                                         L 050-02-0521-3
+
+=== Seite 6 ===
+GEPRÜFTE/-R INDUSTRIEMEISTER/-IN,
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+GRUNDLEGENDE QUALIFIKATIONEN
+Betriebswirtschaftliches Handeln
+
+
+Lösungshinweise Aufgabe 3
+[VO: § 4 Absatz 3 Nr. 2]
+
+ a Mögliche Punktzahl: 6
+                 Anfangsbestand + Endbestand
+ Lagerbestand 
+                               2
+                 520 Stück + 280 Stück
+ Lagerbestand 
+                           2
+ Lagerbestand  400 Stück
+
+                                                                              (2 Punkte)
+Jahresverbrauch = Anfangsbestand + Zugänge – Endbestand
+Jahresverbrauch = 520 Stück + (6  410 Stück)  (6  350 Stück) – 280 Stück
+Jahresverbrauch = 4.800 Stück                                                 (3 Punkte)
+
+
+
+                           Verbrauch pro Jahr
+Lagerumschlagshäufigkeit 
+                              Lagerbestand
+                           4.800 Stück
+Lagerumschlagshäufigkeit 
+                            400 Stück
+Lagerumschlagshäufigkeit  12
+
+
+                                                                               (1 Punkt)
+
+ b Mögliche Punktzahl: 1
+                                 360
+ Lagerdauer in Tagen 
+                           Verbrauch pro Jahr
+                        360 Tage
+ Lagerdauer in Tagen 
+                           12
+ Lagerdauer in Tagen = 30 Tage
+
+
+
+ c Mögliche Punktzahl: 3
+Z. B.:
+Eine erhöhte Umschlagshäufigkeit bewirkt eine Verkürzung der Lagerdauer. Dadurch kommt
+es zu einer Senkung der Kapitalbindungskosten und damit auch zu geringeren Lagerkosten.
+
+
+
+
+                                            Seite 6
+                                         L 050-02-0521-3
+
+=== Seite 7 ===
+GEPRÜFTE/-R INDUSTRIEMEISTER/-IN,
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+GRUNDLEGENDE QUALIFIKATIONEN
+Betriebswirtschaftliches Handeln
+
+
+ d Mögliche Punktzahl: 2
+Z. B.:
+■   Verkürzung von Lieferzeiten
+■   Reduzierung des Sicherheitsbestandes
+■   Verkleinerung des Lagers
+
+
+Aufgabe 4
+In der Industrie GmbH sollen die Entgeltformen untersucht werden. Die Mitarbeiter arbeiten
+bisher im Zeitlohn. Nun soll in der Produktion die Akkordentlohnung eingeführt werden.
+
+Sie erhalten den Auftrag, beispielhaft eine Kalkulationsgrundlage für einen Produktionsmit-
+arbeiter zu erstellen. Der tarifliche Grundlohn beträgt 20 €/Std. Es soll ein Akkordzuschlag
+von 10 % gewährt werden. Die Normalleistung wird mit 15 Stück pro Stunde festgelegt.
+
+ a Mögliche Punktzahl: 6
+Ermitteln Sie rechnerisch nachvollziehbar den Stundenverdienst des Mitarbeiters,
+wenn dieser folgende Stückzahlen pro Stunde herstellt:
+
+■   15 Stück pro Stunde
+
+■   17 Stück pro Stunde
+
+■   13 Stück pro Stunde
+
+ b Mögliche Punktzahl: 3
+Berechnen Sie nachvollziehbar den Zeitgrad, um einen Akkordlohn von 28 €/Std. zu
+erreichen.
+
+ c Mögliche Punktzahl: 6
+Bei einer Informationsversammlung sollen die Mitarbeiter der Produktion über die Einführung
+der Akkordentlohnung informiert werden.
+
+Beschreiben Sie drei Voraussetzungen für die Einführung der Akkordentlohnung.
+
+
+
+
+                                              Seite 7
+                                          L 050-02-0521-3
+
+=== Seite 8 ===
+GEPRÜFTE/-R INDUSTRIEMEISTER/-IN,
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+GRUNDLEGENDE QUALIFIKATIONEN
+Betriebswirtschaftliches Handeln
+
+
+Lösungshinweise Aufgabe 4
+[VO: § 4 Absatz 3 Nr. 4]
+
+ a Mögliche Punktzahl: 6
+Akkordrichtsatz (ARS) = 20 €/Std. · 1,1 = 22 €/Std.
+■   15 Stück pro Stunde:
+    Bei Normalleistung wird der ARS gezahlt, also 22 €/Std.
+■   17 Stück pro Stunde:
+                      17 Stück/Std.
+    Leistungsgrad =                 · 100 = 113,33 %
+                      15 Stück/Std.
+    Akkordlohn = 22 €/Std. · 1,1333 = 24,93 €/Std.
+■   13 Stück pro Stunde:
+    Der mathematische Grundlohn liegt unter dem tariflichen, daher wird der tarifliche
+    Grundlohn bezahlt. Bei einer kurzfristigen Unterschreitung der Normalleistung (z. B.
+    wegen technischer Störung, Materialfehler) wird der Akkordrichtsatz weiter bezahlt, d. h.
+    22 €/Stunde.
+    Hinweis für den Korrektor: Beide Lösungen sind zu akzeptieren.
+
+ b Mögliche Punktzahl: 3
+Akkordlohn      = Akkordrichtsatz (ARS) · Zeitgradfaktor (ZGF)
+                   Akkordlohn   28 €/Std.
+Zeitgradfaktor =              =           = 1,2727
+                      ARS       22 €/Std.
+Zeitgrad        = Zeitgradfaktor · 100 = 1,2727 · 100 = 127,27 %
+
+ c Mögliche Punktzahl: 6
+Voraussetzungen für die Einführung von Akkordentlohnung sind z. B.:
+■   Die Leistung des Mitarbeiters muss messbar sein.
+■   Die Tätigkeiten müssen wiederkehrend sein.
+■   Die Tätigkeiten müssen ausreichend oft wiederkehrend sein.
+■   Der Mitarbeiter muss hinreichend geübt und erfahren sein.
+■   Der Materialfluss muss gesichert sein.
+■   Die Vorgabezeit muss vom Mitarbeiter beeinflussbar sein.
+■   Die Vorgabezeit muss nachvollziehbar sein.
+■   Der Betriebsrat muss der Einführung der Akkordentlohnung zustimmen.
+
+
+
+
+                                             Seite 8
+                                          L 050-02-0521-3
+
+=== Seite 9 ===
+GEPRÜFTE/-R INDUSTRIEMEISTER/-IN,
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+GRUNDLEGENDE QUALIFIKATIONEN
+Betriebswirtschaftliches Handeln
+
+
+Aufgabe 5
+Aus der Betriebsabrechnung der Industrie GmbH liegen Ihnen folgende Daten für den
+abgelaufenen Monat vor:
+
+■   Umsatzerlöse                                         816.750 €
+
+■   Fertigungsmaterial                                   120.000 €
+
+■   Fertigungslöhne                                      120.000 €
+
+■   Materialgemeinkosten                                  36.000 €
+
+■   Fertigungsgemeinkosten                               324.000 €
+
+■   Sondereinzelkosten der Fertigung                       5.000 €
+
+■   Verwaltungs- und Vertriebsgemeinkosten               121.000 €
+
+ a Mögliche Punktzahl: 7
+Berechnen Sie aus den Vorgaben die Gemeinkostenzuschlagssätze.
+
+ b Mögliche Punktzahl: 5
+Berechnen Sie aus den Vorgaben den Gewinnzuschlagssatz.
+
+
+
+
+                                          Seite 9
+                                       L 050-02-0521-3
+
+=== Seite 10 ===
+GEPRÜFTE/-R INDUSTRIEMEISTER/-IN,
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+GRUNDLEGENDE QUALIFIKATIONEN
+Betriebswirtschaftliches Handeln
+
+
+Lösungshinweise Aufgabe 5
+[VO: § 4 Absatz 3 Nr. 5]
+
+ a Mögliche Punktzahl: 7
+                                  Materialgemeinkosten
+Materialgemeinkostenzuschlag                             100
+                                    Fertigungsmaterial
+                                    36.000 €
+                                              100  30 %
+                                   120.000 €
+                                     Fertigungsgemeinkosten
+Fertigungsgemeinkostenzuschlag                                 100
+                                          Fertigungslöhne
+                                     324.000 €
+                                                 100  270 %
+                                     120.000 €
+Herstellkosten = 120.000 € + 36.000 € + 120.000 € + 324.000 € + 5.000 € = 605.000 €
+                                                  Verwaltungs- und Vertriebsgemeinkosten
+Verwaltungs- und Vertriebsgemeinkostenzuschlag                                           100
+                                                       Herstellkosten des Umsatzes
+                                                121.000 €
+                                                          100  20 %
+                                                605.000 €
+
+ b Mögliche Punktzahl: 5
+Selbstkosten               = 605.000 € + 121.000 €                             = 726.000 €
+Gewinn                     = Umsatz – Selbstkosten = 816.750 € – 726.000 € =       90.750 €
+                                90.750 €
+Gewinnzuschlagssatz        =             ∙ 100                                 =     12,5 %
+                               726.000 €
+
+
+
+
+                                             Seite 10
+                                          L 050-02-0521-3
+
+=== Seite 11 ===
+GEPRÜFTE/-R INDUSTRIEMEISTER/-IN,
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+GRUNDLEGENDE QUALIFIKATIONEN
+Betriebswirtschaftliches Handeln
+
+
+Aufgabe 6
+Mögliche Punktzahl: 17
+Im Kundenauftrag soll ein spezielles Frästeil gefertigt werden. Sie werden mit der Kalkulation
+beauftragt.
+
+Dazu liegen Ihnen folgende unsortierte Daten aus der Fertigungsplanung vor:
+
+ Fertigungsmaterial                                                               200 €
+
+ Kundenskonto                                                                       2%
+
+ Bearbeitungszeit der Abteilung A                                            4 Stunden
+ Fertigungslohnkostensatz der Abteilung A                                      25 €/Std.
+
+ Bearbeitungszeit der Abteilung B                                            6 Stunden
+ Fertigungslohnkostensatz der Abteilung B                                      30 €/Std.
+
+ Materialgemeinkostenzuschlagssatz                                                10 %
+
+ Kundenrabatt                                                                     20 %
+
+ Fertigungsgemeinkostenzuschlagssatz B                                           200 %
+
+ Fertigungsgemeinkostenzuschlagssatz A                                           120 %
+
+ Gewinnzuschlagssatz                                                              20 %
+
+ Verwaltungs- und Vertriebsgemeinkostenzuschlagssatz                              10 %
+
+Ermitteln Sie rechnerisch nachvollziehbar den Listenverkaufspreis.
+
+
+
+
+                                             Seite 11
+                                          L 050-02-0521-3
+
+=== Seite 12 ===
+GEPRÜFTE/-R INDUSTRIEMEISTER/-IN,
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+GRUNDLEGENDE QUALIFIKATIONEN
+Betriebswirtschaftliches Handeln
+
+
+Lösungshinweise Aufgabe 6
+[VO: § 4 Absatz 3 Nr. 5]
+Mögliche Punktzahl: 17
+  Fertigungsmaterial                                          200,00 €
++ Materialgemeinkosten               10 %                      20,00 €    (1 Punkt)
+= Materialkosten                                              220,00 €    (1 Punkt)
+  Fertigungslöhne A                  4 Std. je 25 €/Stunde    100,00 €    (1 Punkt)
++ Fertigungsgemeinkosten A           120 %                    120,00 €    (1 Punkt)
+= Fertigungskosten A                                          220,00 €    (1 Punkt)
+  Fertigungslöhne B                  6 Std. je 30 €/Stunde    180,00 €    (1 Punkt)
++ Fertigungsgemeinkosten B           200 %                    360,00 €    (1 Punkt)
+= Fertigungskosten B                                          540,00 €    (1 Punkt)
+  Herstellkosten                                              980,00 €    (1 Punkt)
++ Verw.- und Vertriebsgemeinkosten   10 %                      98,00 €    (1 Punkt)
+= Selbstkosten                                               1.078,00 €   (1 Punkt)
++ Gewinn                             20 %                     215,60 €    (1 Punkt)
+= Barverkaufspreis                                           1.293,60 €   (1 Punkt)
++ Kundenskonto                       2%                        26,40 €    (1 Punkt)
+= Zielverkaufspreis                                          1.320,00 €   (1 Punkt)
++ Kundenrabatt                       20 %                     330,00 €    (1 Punkt)
+= Listenverkaufspreis                                        1.650,00 €   (1 Punkt)
+
+
+
+
+                                        Seite 12
+                                     L 050-02-0521-3
+
+=== Seite 13 ===
+GEPRÜFTE/-R INDUSTRIEMEISTER/-IN,
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+GRUNDLEGENDE QUALIFIKATIONEN
+Betriebswirtschaftliches Handeln
+
+
+Aufgabe 7
+Die Industrie GmbH produziert in einem Zweigwerk Oberfräsen für anspruchsvolle Heim-
+werker. Maximal können 1.300 Oberfräsen pro Monat produziert werden.
+
+Eine Oberfräse kann für 228 € beim Fachhandel abgesetzt werden.
+
+Im August lagen die Gesamtkosten des Werkes bei einer Auslastung von 75 % bei
+235.425 €. Im September stieg die Auslastung auf 80 %, die entsprechenden Gesamtkosten
+betrugen 242.120 €.
+
+ a Mögliche Punktzahl: 7
+Berechnen Sie nachvollziehbar die Fixkosten pro Monat und die variablen Stück-
+kosten.
+
+ b Mögliche Punktzahl: 4
+Führen Sie eine Break-even-Analyse durch und ermitteln Sie
+
+■   die Break-even-Menge und
+
+■   den Break-even-Beschäftigungsgrad.
+
+ c Mögliche Punktzahl: 4
+Ermitteln Sie den Gesamtdeckungsbeitrag und das Betriebsergebnis pro Monat bei
+einer Kapazitätsauslastung von 90 %. Die gesamte Produktionsmenge kann am Markt
+abgesetzt werden.
+
+
+
+
+                                          Seite 13
+                                       L 050-02-0521-3
+
+=== Seite 14 ===
+GEPRÜFTE/-R INDUSTRIEMEISTER/-IN,
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+GRUNDLEGENDE QUALIFIKATIONEN
+Betriebswirtschaftliches Handeln
+
+
+Lösungshinweise Aufgabe 7
+[VO: § 4 Absatz 3 Nr. 5]
+
+ a Mögliche Punktzahl: 7
+BG = 75 % → x = 975 Stück → K = 235.425 €
+BG = 80 % → x = 1.040 Stück → K = 242.120 €
+       ΔK    6.695 €
+kv =      =          = 103 €/Stück
+       Δx   65 Stück
+                                                                               (4 Punkte)
+Kf = K – kv · x
+     = 235.425 €/Monat – (103 €/Stück · 975 Stück/Monat) = 135.000 €/Monat
+                                                                               (3 Punkte)
+     bzw.
+     = 242.120 €/Monat – (103 €/Stück ∙ 1.040 Stück/Monat) = 135.000 €/Monat
+
+ b Mögliche Punktzahl: 4
+■    Break-even-Menge:
+                   Kf
+     xBEP    =
+                 p – kv
+                      135.000 €/Monat
+             =                             = 1.080 Stück/Monat
+                 228 €/Stück – 103 €/Stück
+                                                                               (2 Punkte)
+■    Break-even-Beschäftigungsgrad:
+                                                   xBEP
+     Break-even-Beschäftigungsgrad in % BGBEP           100
+                                                   xmax
+               1.080 Stück/Monat
+     BGBEP                       100  83,08 %
+               1.300 Stück/Monat
+                                                                               (2 Punkte)
+
+ c Mögliche Punktzahl: 4
+    DB = db ∙ x = 125 €/Stück · 1.170 Stück/Monat =                            146.250 €
+– Kf =                                                                         135.000 €
+= BE =                                                                          11.250 €
+
+
+
+
+                                             Seite 14
+                                          L 050-02-0521-3
+

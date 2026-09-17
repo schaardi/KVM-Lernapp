@@ -1,0 +1,587 @@
+=== Seite 1 ===
+Bundeseinheitliche
+Weiterbildungsprüfung
+
+der Industrie- und Handelskammern
+
+Prüfungsteilnehmer-Nummer
+
+Geprüfte/-r Industriemeister/-in,
+fachrichtungsübergreifende
+Basisqualifikationen/
+grundlegende Qualifikationen
+
+m Basisqualifikation Berücksichtigung naturwissenschaftlicher
+und technischer Gesetzmäßigkeiten
+
+m Prüfungstag 12. November 2014
+m Bearbeitungszeit 90 Minuten
+m Anzahl der Aufgaben 7
+
+Bitte prüfen Sie vor Beginn der Prüfung die Vollständigkeit des Aufgabensatzes. Sollte der
+Aufgabensatz nicht vollständig sein, informieren Sie bitte die Aufsicht.
+
+L 050-05-1114-4
+
+=== Seite 2 ===
+Bearbeitungshinweise
+
+Bitte lesen Sie die nachfolgenden Bearbeitungshinweise sorgfältig durch:
+
+Die zur Prüfung zugelassenen Hilfsmittel wurden Ihnen separat mit der Einladung mitgeteilt.
+Sie erhalten einen Aufgaben- und einen Lösungsteil.
+
+Tragen Sie auf dem Deckblatt Ihre Prüfungsteilnehmer-Nummer ein.
+
+Die maximale Gesamtpunktzahl der Lösungen beträgt 100 Punkte.
+
+Die Lösungsgänge bzw. Rechenvorgänge sind klar und nachvollziehbar im Lösungsteil darzu-
+stellen. Sollte der Platz nicht ausreichen, benutzen Sie bitte das Konzeptpapier, verweisen Sie
+auf die Fortsetzung und kennzeichnen Sie diese. Wir weisen darauf hin, dass eine vom Prüfungs-
+ausschuss nicht lesbare Prüfungsarbeit mit der Note „ungenügend“ (null Punkte) bewertet wird
+mit den Rechtsfolgen, die sich aus der Prüfungsordnung ergeben.
+
+m Verwenden Sie für jede Aufgabe ein neues Lösungsblatt bzw. eine neue Lösungsseite.
+
+Falls die Lösung auf einem beigefügten Anlageblatt erfolgen soll, wird in der Aufgabenstellung
+darauf hingewiesen.
+
+Für Ihre Notizen benutzen Sie bitte ausschließlich das Konzeptpapier.
+
+Das Konzeptpapier ist mit dem Aufgaben- und dem Lösungsteil abzugeben.
+
+Bei Aufgaben, die eine Aufzählung von n-Fakten zur Lösung erfordern, werden nur die ersten
+n-Fakten gewertet. Alle darüber hinausgehenden Aufzählungen werden gestrichen.
+
+Wir wünschen Ihnen bei der Bearbeitung viel Erfolg.
+
+Der leichteren Lesbarkeit wegen geben wir in den Aufgaben/Texten der männlichen Form den
+Vorzug. Mit diesem einfacheren sprachlichen Ausdruck sind selbstverständlich immer Männer und
+Frauen gemeint.
+
+Die Vervielfältigung, Verbreitung oder öffentliche Wiedergabe der Publikation [der Prüfungssätze]
+ist nicht gestattet (8853, 54 UrhG) und strafbar ($ 106 UrhG). Im Fall der Zuwiderhandlung wird
+Strafantrag gestellt.
+
+=== Seite 3 ===
+GEPRÜFTEI/-R INDUSTRIEMEISTER/-IN, FACH-
+RICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+
+GRUNDLEGENDE QUALIFIKATIONEN
+
+Berücksichtigung naturwissenschaftlicher und technischer Gesetzmäßigkeiten
+
+Aufgabe 1
+
+Bei vielen industriellen Prozessen entstehen saure und basische Abwässer. Diese müssen
+vor dem Einleiten in die Gewässer neutralisiert werden.
+
+a) Erläutern Sie den chemischen Begriff Neutralisation. (2 Punkte)
+
+b) Nachfolgend ist eine Neutralisationsreaktion dargestellt:
+2HNO3 + Ca(OH)> — 2H3,0 + Ca(NO;)»
+
+Beschreiben Sie die chemischen Formeln durch allgemeine Begriffe bzw. formulieren (4 Punkte)
+Sie eine allgemeine Neutralisationsreaktion.
+
+c) Mithilfe eines pH-Messgerätes bzw. eines Säure-Base-Indikators lässt sich überprüfen,
+ob die Neutralisation erreicht wurde.
+
+1. Geben Sie den Wert an, den das Messgerät bei neutraler Lösung anzeigt. (1 Punkt)
+
+2. Beschreiben Sie, woran Sie beim Einsatz eines Säure-Base-Indikators eine neu- (3 Punkte)
+trale Lösung erkennen können.
+
+Lösungshinweise Aufgabe 1 (10 Punkte)
+(RP: 5.1.2)
+a) Unter dem chemischen Begriff Neutralisation versteht man, dass bei der Reaktion von
+Säure und Lauge diese sich in ihrer Wirkung gegenseitig aufheben. (2 Punkte)
+b) Säure + Lauge — Wasser + Salz (4 Punkte)
+c) 1. Zeigt das pH-Messgerät den Wert pH 7 an, ist die Neutralisation erreicht. (1 Punkt)
+2EZEB:
+m Lackmus:
+
+Zeigt die Färbung der Lösung die Farbe Violett, ist die Neutralisation erreicht.
+
+m Phenolphthalein:
+Wird der basischen Lösung nur so viel saure Lösung zugesetzt, bis der Indikator
+gerade entfärbt wird, ist die Neutralisation erreicht. (3 Punkte)
+
+© DIHK - Gesellschaft für berufliche Bildung — Organisation zur Förderung der IHK-Weiterbildung mbH — Bonn | L 050-05-1114-4 | Seite 49
+Die Vervielfältigung, Verbreitung oder öffentliche Wiedergabe der Publikation [der Prüfungssätze und Lösungshinweise]
+ist nicht gestattet (3853, 54 UrhG) und strafbar ($ 106 UrhG). Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+
+=== Seite 4 ===
+GEPRÜFTEI/-R INDUSTRIEMEISTER/-IN, FACH-
+RICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+
+GRUNDLEGENDE QUALIFIKATIONEN
+
+Berücksichtigung naturwissenschaftlicher und technischer Gesetzmäßigkeiten
+
+Aufgabe 2]
+
+Zwei Widerstände R; und R; sind in Reihe geschaltet und an einer konstanten Span-
+nungsquelle von 12 V angeschlossen. Der Widerstand R,; ist ein temperaturabhängiger
+Widerstand mit einem Kennwert von 10 kQ. Die Kennlinie des Widerstandes R; finden
+Sie in der Formelsammlung. Der Widerstand R; ist ein Festwiderstand mit einem Wider-
+standswert von 1 KO.
+
+a) Bestimmen Sie den Widerstandswert von R; bei 130 °C. (3 Punkte)
+
+b) Berechnen Sie die Spannung U, am Widerstand R; für den Fall, dass der Widerstand (6 Punkte)
+R; einer Temperatur von 130 °C ausgesetzt ist.
+
+c) Erläutern Sie, wie sich die Spannung U; verändert, wenn die Temperatur am Wider- (3 Punkte)
+
+stand geringer wird.
+
+Lösungshinweise Aufgabe 2 (12 Punkte)
+RE23.53,9.1,9)
+
+a) Bei 130 °C hat der Widerstand R; einen Wert von 200 Q (3 Punkte)
+b) R — R, + Rz
+R=200 2 +1000 2=1200 0
+es
+R
+AS ER 0,01 A
+12002
+U, = | $ Ra
+U, =0,01A-1000 02
+U, =10V (6 Punkte)
+
+c) Wird die Temperatur kleiner, wird der Widerstand des R, größer.
+
+Damit wird der Gesamtwiderstand größer, der Strom kleiner und die Spannung U; kleiner. (3 Punkte)
+
+Seite 50 | L 050-05-1114-4 | © DIHK - Gesellschaft für berufliche Bildung — Organisation zur Förderung der IHK-Weiterbildung mbH — Bonn
+Die Vervielfältigung, Verbreitung oder öffentliche Wiedergabe der Publikation [der Prüfungssätze und Lösungshinweise]
+ist nicht gestattet (8853, 54 UrhG) und strafbar ($ 106 UrhG). Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+
+=== Seite 5 ===
+GEPRÜFTEI/-R INDUSTRIEMEISTER/-IN, FACH-
+RICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+
+GRUNDLEGENDE QUALIFIKATIONEN
+
+Berücksichtigung naturwissenschaftlicher und technischer Gesetzmäßigkeiten
+
+Aufgabe ni
+
+Ein Pkw fährt mit gleichbleibender Geschwindigkeit auf der Autobahn eine Strecke von
+100 km und verbraucht dabei 8 Liter Diesel. Der mittlere Kraftaufwand zur Überwindung
+der Bodenreibung, des Luftwiderstandes und von Steigungen beträgt 600. N.
+
+Ermitteln Sie den Gesamtwirkungsgrad des Pkws während der Fahrt. (18 Punkte)
+Lösungshinweise Aufgabe 3 (18 Punkte)
+
+(RP: 5.2.1)
+
+Wa=rF-s
+Qu=pV-H
+
+Wan
+
+600N-100km
+kJ
+
+083-9. .8dm? 42000
+dm kg
+
+n = 0,215=215%
+
+Aufgabe 4
+
+Zwei übereinanderliegende Flugzeugbauteile werden durch mehrere Niete mit einem
+Durchmesser von 3 mm miteinander verbunden. Die Bauteile sollen eine Last von 11 kN
+
+übertragen.
+
+0
+
+Berechnen Sie die erforderliche Anzahl der Niete für den Fall, dass aus Sicherheitsgründen (15 Punkte)
+die Scherspannung von 120 N/mm? nicht überschritten werden soll.
+
+© DIHK - Gesellschaft für berufliche Bildung — Organisation zur Förderung der IHK-Weiterbildung mbH - Bonn | L 050-05-1114-4 | Seite 51
+Die Vervielfältigung, Verbreitung oder öffentliche Wiedergabe der Publikation [der Prüfungssätze und Lösungshinweise]
+ist nicht gestattet (8853, 54 UrhG) und strafbar ($ 106 UrhG). Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+
+=== Seite 6 ===
+GEPRÜFTEI/-R INDUSTRIEMEISTER/-IN, FACH-
+RICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+
+GRUNDLEGENDE QUALIFIKATIONEN
+
+Berücksichtigung naturwissenschaftlicher und technischer Gesetzmäßigkeiten
+
+Lösungshinweise Aufgabe 4
+BP:5.3.1)
+
+d:.n-n
+4
+
+Ta = Ss= ‚n = Anzahl der Niete
+
+oa|m
+
+Ca
+
+11000N-4:mm?
+3? mm? :n-120N
+
+n = 12,97=>gewählt = 13 Niete
+
+Aufgabe 5
+
+In einem Hochregallager wird ein 20 kg schweres Teil in 50 Sekunden auf eine Höhe
+h = 15 m gehoben.
+
+a) Berechnen Sie die Lageenergie des Teiles auf der Höhe h in Joule.
+b) Berechnen Sie die erbrachte mechanische Leistung.
+
+c) Berechnen Sie, mit welcher Geschwindigkeit das Teil auf dem Boden auftrifft, wenn es
+aus der Höhe h des Hochregals fällt.
+
+(15 Punkte)
+
+(5 Punkte)
+(5 Punkte)
+(5 Punkte)
+
+Seite 52 | L 050-05-1114-4 | © DIHK - Gesellschaft für berufliche Bildung — Organisation zur Förderung der IHK-Weiterbildung mbH - Bonn
+Die Vervielfältigung, Verbreitung oder öffentliche Wiedergabe der Publikation [der Prüfungssätze und Lösungshinweise]
+ist nicht gestattet (8853, 54 UrhG) und strafbar (8106 UrhG). Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+
+=== Seite 7 ===
+GEPRÜFTEI-R INDUSTRIEMEISTER/-IN, FACH-
+RICHTUNGSUBERGREIFENDE BASISQUALIFIKATIONEN/
+
+GRUNDLEGENDE QUALIFIKATIONEN
+
+Berücksichtigung naturwissenschaftlicher und technischer Gesetzmäßigkeiten
+
+Lösungshinweise Aufgabe 5 (15 Punkte)
+(RP-3.21,9.232)
+
+a) Ept =Fars=m-g-s
+=20 kg. 9,81 15m
+S
+=2943,) (5 Punkte)
+
+= 58,86 W (5 Punkte)
+
+=47, (5 Punkte)
+
+Aufgabe | 6
+
+Eine Kugel mit der Masse 120 g trifft mit einer Geschwindigkeit v = 1,2 m/s auf eine Druckfeder.
+
+Berechnen Sie den Bremsweg der Kugel für den Fall, dass die Federrate R = 1600 N/m (15 Punkte)
+beträgt.
+
+Hinweis für den Prüfungsteilnehmer: Die Reibungseinflüsse bleiben unberücksichtigt.
+
+© DIHK - Gesellschaft für berufliche Bildung — Organisation zur Förderung der IHK-Weiterbildung mbH - Bonn | L 050-05-1114-4 | Seite 53
+Die Vervielfältigung, Verbreitung oder öffentliche Wiedergabe der Publikation [der Prüfungssätze und Lösungshinweise]
+ist nicht gestattet (8853, 54 UrhG) und strafbar (8 106 UrhG). Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+
+=== Seite 8 ===
+GEPRÜFTEI/-R INDUSTRIEMEISTER/-IN, FACH-
+RICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+
+GRUNDLEGENDE QUALIFIKATIONEN
+
+Berücksichtigung naturwissenschaftlicher und technischer Gesetzmäßigkeiten
+
+Lösungshinweise Aufgabe 6 (15 Punkte)
+(RP:521)
+ern = Erfeder
+mv? 5 R-s?
+2 2
+2
+& ar M-V
+R
+m
+Ss = V-.I—
+R
+S ah 12 m 0,12 2
+S 11600
+m
+s = 0,0104 m
+
+Aufgabe
+
+Die Füllmenge einer bestimmten Farbstoffampulle ist mit 10 (+0,5/-0,3) ml angegeben.
+
+Es ist bekannt, dass die Füllmengenergebnisse normalverteilt vorliegen. Eine umfassende
+Prozessfähigkeitsuntersuchung ergab:
+
+m 2% der Ampullen hatten eine zu geringe Füllmenge.
+
+m 5% der Ampullen hatten eine zu große Füllmenge.
+
+a) Kennzeichnen Sie im Wahrscheinlichkeitsnetz den unteren (UGW) und den oberen (3 Punkte)
+(OGW) Grenzwert und zeichnen Sie in Anlage 1 die Wahrscheinlichkeitsgerade ein.
+
+b) Bestimmen Sie aus dieser Darstellung die Prozesslage X. (3 Punkte)
+c) Bestimmen Sie aus dieser Darstellung die Maschinenstreuung X # 3 s. (3 Punkte)
+d) Berechnen Sie aus den oben angegebenen Bedingungen die Anzahl der Ausschuss- (3 Punkte)
+
+ampullen (a,) bei einer Tagesproduktion von N = 15 000 Teilen.
+
+e) Bestimmen Sie den Gesamtausschussanteil (P,es) bei gleicher Streubreite (6 s) für den (3 Punkte)
+Fall, dass die Prozesslage auf Toleranzmitte eingestellt ist.
+
+Seite 54 | L 050-05-1114-4 | © DIHK - Gesellschaft für berufliche Bildung — Organisation zur Förderung der IHK-Weiterbildung mbH - Bonn
+Die Vervielfältigung, Verbreitung oder öffentliche Wiedergabe der Publikation [der Prüfungssätze und Lösungshinweise]
+ist nicht gestattet (8853, 54 UrhG) und strafbar (8 106 UrhG). Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+
+=== Seite 9 ===
+GEPRÜFTEI/-R INDUSTRIEMEISTER/-IN, FACH-
+RICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+
+GRUNDLEGENDE QUALIFIKATIONEN
+
+Berücksichtigung naturwissenschaftlicher und technischer Gesetzmäßigkeiten
+
+Lösungshinweise Aufgabe 7 (15 Punkte)
+(RP: 5.4.2)
+a) siehe Lösungshinweis zu Aufgabe 7 a)
+(3 Punkte)
+b) xX»=10,14 ml
+(3 Punkte)
+c) Ss» (10,14 - 9,92) ml x 0,22 ml
+von x-3s=9,48 ml bis x+3s=10,8 ml
+(3 Punkte)
+d) Anzahl der Ausschussanteile:
+p-N
+aı = ——
+100
+ae 7% 15 000
+si 100 %
+a, = 1050
+Fr (3 Punkte)
+e = 223-0
+I Poes 5 E (3 Punkte)
+© DIHK - Gesellschaft für berufliche Bildung — Organisation zur Förderung der IHK-Weiterbildung mbH - Bonn | L 050-05-1114-4 | Seite 55
+
+Die Vervielfältigung, Verbreitung oder öffentliche Wiedergabe der Publikation [der Prüfungssätze und Lösungshinweise]
+ist nicht gestattet ($853, 54 UrhG) und strafbar (8 106 UrhG). Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+
+=== Seite 10 ===
+GEPRÜFTEI/-R INDUSTRIEMEISTER/-IN, FACH-
+RICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+
+GRUNDLEGENDE QUALIFIKATIONEN
+
+Berücksichtigung naturwissenschaftlicher und technischer Gesetzmäßigkeiten
+
+Prüfungsteilnehmer-Nummer:
+
+Anlage 1 zu Aufgabe 7 a), b), c)
+
+99,95 0,05
+99,93 0,07
++35 8 BIT
+© 99,8 0,2
+99,7 0,3
+99,5 0,5
+= ’
+®
+4135 8 m TI none 2
+© 97 i
+93 7
+90 10
+(52)
+x -1_1_1_12_1--2-_---L_-1-1_-1_1-_-1-_2-
+RS 80 20
+S
+bis 70 30
+5 =
+8 60 “0.2
+IE
+= 0 608
+= =
+® 30 ir
+> 20 80
+ea _L_L_1_1_1-1--2------1.-1--1-1-1--
+ın
+g =
+[09] 10 90
+7 93
+2 &R
+& 3 97
+20, pt-4- to 1 Jo obobobotototg
+67 8.3
+0,5 99,5
+0,3 99,7
+9 02 99,8
+38 = 07 FF FH ZH HH HB HH 0999
+8:08
+Füllmenge in mI——
+
+x
+Rn]
+>
+
+95|986| 9,7 | 9,8 | 9,9 | 10,0] 10,1 | 10,2| 10,3 | 10,4 | 10,5| 10,6 | 10,7 | 10,8
+
+Seite 56 | P 050-05-1114-4 | © DIHK - Gesellschaft für berufliche Bildung — Organisation zur Förderung der IHK-Weiterbildung mbH — Bonn
+Die Vervielfältigung, Verbreitung oder öffentliche Wiedergabe der Publikation [derPrüfungssätze und Lösungshinweise]
+ist nicht gestattet (88 53, 54 UrhG) und strafbar ($ 106 UrhG). Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+
+=== Seite 11 ===
+GEPRÜFTE/-R INDUSTRIEMEISTER/-IN, FACH-
+RICHTUNGSUBERGREIFENDE BASISQUALIFIKATIONEN/
+
+GRUNDLEGENDE QUALIFIKATIONEN
+
+Berücksichtigung naturwissenschaftlicher und technischer Gesetzmäßigkeiten
+
+Prüfungsteilnehmer-Nummer:
+
+Anlage 2
+
+Werte der Winkelfunktionen
+
+Grad sin cos tan cot Grad sin cos tan cot
+0° 0,00000 | 1,00000 | 0,00000 (6) 45° 0,70711 | 0,70711 | 1,00000 | 1,00000
+19 0,01745 | 0,99985 | 0,01746 |57,28996| 46° 0,71934 | 0,69466 | 1,03553 | 0,96569
+= 0,03490 | 0,99939 | 0,03492 |28,63625 47° 0,73135 | 0,68200 | 1,07237 | 0,93252
+a 0,05234 | 0,99863 | 0,05241 |19,08114| 48° 0,74314 | 0,66913 | 1,11061 | 0,90040
+4° 0,06976 | 0,99756 | 0,06993 |14,30067| 49° 0,75471 | 0,65606 | 1,15037 | 0,86929
+5° 0,08716 | 0,99619 | 0,08749 |11,43005| 50° 0,76604 | 0,64279 | 1,19175 | 0,83910
+6° 0,10453 | 0,99452 | 0,10510 | 9,51436 545 0,77715 | 0,62932 | 1,23490 | 0,80978
+TA 0,12187 | 0,99255 | 0,12278 | 8,14435 525 0,78801 | 0,61566 | 1,27994 | 0,78129
+8° 0,13917 | 0,99027 | 0,14054 | 7,11537 535 0,79864 | 0,60182 | 1,32704 | 0,75355
+9° 0,15643 | 0,98769 | 0,15838 | 6,31375 54° 0,80902 | 0,58779 | 1,37638 | 0,72654
+105 0,17365 | 0,98481 | 0,17633 | 5,67128 552 0,81915 | 0,57358 | 1,42815 | 0,70021
+
+11.° 0,19081 | 0,98163 | 0,19438 | 5,14455 565 0,82904 | 0,55919 | 1,48256 | 0,67451
+12° 0,20791 | 0,97815 | 0,21256 | 4,70463 Ey 0,83867 | 0,54464 | 1,53986 | 0,64941
+137 0,22495 | 0,97437 | 0,23087 | 4,33148 58° 0,84805 | 0,52992 | 1,60033 | 0,62487
+14° 0,24192 | 0,97030 | 0,24933 | 4,01078 59° 0,85717 | 0,51504 | 1,66428 | 0,60086
+155 0,25882 | 0,96593 | 0,26795 | 3,73205 60° 0,86603 | 0,50000 | 1,73205 | 0,57735
+16° 0,27564 | 0,96126 | 0,28675 | 3,48741 61° 0,87462 | 0,48481 | 1,80405 | 0,55431
+
+ATan 0,29237 | 0,95630 | 0,30573 | 3,27085 62° 0,88295 | 0,46947 | 1,88073 | 0,53171
+
+18° 0,30902 | 0,95106 | 0,32492 | 3,07768 IE 0,89101 | 0,45399 | 1,96261 | 0,50953
+
+19° 0,32557 | 0,94552 | 0,34433 | 2,90421 64° 0,89879 | 0,43837 | 2,05030 | 0,48773
+
+20° 0,34202 | 0,93969 | 0,36397 | 2,74748 08= 0,90631 | 0,42262 | 2,14451 | 0,46631
+
+25 0,35837 | 0,93358 | 0,38386 | 2,60509 66 ° 0,91355 | 0,40674 | 2,24604 | 0,44523
+
+2 0,37461 | 0,92718 | 0,40403 | 2,47509 Ge 0,92050 | 0,39073 | 2,35585 | 0,42447
+
+23° 0,39073 | 0,92050 | 0,42447 | 2,35585 68° 0,92718 | 0,37461 | 2,47509 | 0,40403
+
+24° 0,40674 | 0,91355 | 0,44523 | 2,24604 69° 0,93358 | 0,35837 | 2,60509 | 0,38386
+
+252 0,42262 | 0,90631 | 0,46631 | 2,14451 202 0,93969 | 0,34202 | 2,74748 | 0,36397
+
+26° 0,43837 | 0,89879 | 0,48773 | 2,05030 71,; 0,94552 | 0,32557 | 2,90421 | 0,34433
+
+Pr 0,45399 | 0,89101 | 0,50953 | 1,96261 22 0,95106 | 0,30902 | 3,07768 | 0,32492
+
+28° 0,46947 | 0,88295 | 0,53171 | 1,88073 132 0,95630 | 0,29237 | 3,27085 | 0,30573
+
+29° 0,48481 | 0,87462 | 0,55431 | 1,80405 74° 0,96126 | 0,27564 | 3,48741 | 0,28675
+
+302 0,50000 | 0,86603 | 0,57735 | 1,73205 752 0,96593 | 0,25882 | 3,73205 | 0,26795
+
+31° 0,51504 | 0,85717 | 0,60086 | 1,66428 76° 0,97030 | 0,24192 | 4,01078 | 0,24933
+
+322 0,52992 | 0,84805 | 0,62487 | 1,60033 Vai 0,97437 | 0,22495 | 4,33148 | 0,23087
+
+35 0,54464 | 0,83867 | 0,64941 | 1,53986 78° 0,97815 | 0,20791 | 4,70463 | 0,21256
+
+34° 0,55919 | 0,82904 | 0,67451 | 1,48256 295 0,98163 | 0,19081 | 5,14455 | 0,19438
+
+352 0,57358 | 0,81915 | 0,70021 | 1,42815 80° 0,98481 | 0,17365 | 5,67128 | 0,17633
+
+352 0,58779 | 0,80902 | 0,72654 | 1,37638 BIz 0,98769 | 0,15643 | 6,31375 | 0,15838
+
+EyRZ 0,60182 | 0,79864 | 0,75355 | 1,32704 82° 0,99027 | 0,13917 | 7,11537 | 0,14054
+
+38° 0,61566 | 0,78801 | 0,78129 | 1,27994 335 0,99255 | 0,12187 | 8,14435 | 0,12278
+
+39° 0,62932 | 0,77715 | 0,80978 | 1,23490 84° 0,99452 | 0,10453 | 9,51436 | 0,10510
+
+40° 0,64279 | 0,76604 | 0,83910 | 1,19175 Bo 0,99619 | 0,08716 |11,43005| 0,08749
+
+41° 0,65606 | 0,75471 | 0,86929 | 1,15037 86° 0,99756 | 0,06976 |14,30067| 0,06993
+
+42° 0,66913 | 0,74314 | 0,90040 | 1,11061 8372 0,99863 | 0,05234 |19,08114| 0,05241
+
+43° 0,68200 | 0,73135 | 0,93252 | 1,07237 88° 0,99939 | 0,03490 |28,63625| 0,03492
+
+44° 0,69466 | 0,71934 | 0,96569 | 1,03553 89° 0,99985 | 0,01745 |57,28996| 0,01746
+
+45° 0,70711 | 0,70711 | 1,00000 | 1,00000 90° 1,00000 | 0,00000 © 0,00000
+
+© DIHK - Gesellschaft für berufliche Bildung — Organisation zur Förderung der IHK-Weiterbildung mbH — Bonn | P 050-05-1114-4 | Seite 57
+Die Vervielfältigung, Verbreitung oderöffentliche Wiedergabe der Publikation [der Prüfungssätze und Lösungshinweise]
+ist nicht gestattet ($8 53, 54 UrhG) und strafbar ($ 106 UrhG). Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+
+=== Seite 12 ===
+GEPRÜFTEI/-R INDUSTRIEMEISTER/-IN, FACH-
+RICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+
+GRUNDLEGENDE QUALIFIKATIONEN
+
+Berücksichtigung naturwissenschaftlicher und technischer Gesetzmäßigkeiten
+
+Prüfungsteilnehmer-Nummer:
+
+Anlage 1 zu Lösung 7 a)
+
+29.95 205
+22,93 007
+18 ML {= 9
+5 99,8 A 2
+29,7 a 03
+.. Lösinset/V |.
+293,5 77 D5
+28° 4 97
+N X];
+a nn _——.————— m:
+a g7 Fi 3
+[en - 4
+25 7A 5
+[e wi ‚10
+= I I I TI TI -T T]IT 4 #-1-1-7 I.
+>E 80 7 / 20)
+" 70 7 3
+3 60 Zi 40Z
+ss ı9 7 so
+ze % 7 08
+2 4 fi
+2 30 / 7 70
++ 20 / 80
+5 _|_ PA PP DE BEN BE
+eg hi u
+7 10 14 ax
+P Äf =
+5 Pd 95
+2 IL 96
+a3 97
+"23 2 P= 7 = + = 4-4 == e=b--teceoceh gg
+4 299
+97 Fr 39,3
+05 7 = 995
+347 99,7
+»7015 ee 29,3
+SZ WW OT
+Füllmenge in m
+x | 94|95| 985 o7| oe] 08 |10o] 10,1 vo. 3] 10.105 19,6 7] 108,3
+a =
+Gi Br
+= =
+Seite 58 | L 050-05-1114-4 | © DIHK - Gesellschaft für berufliche Bildung — Organisation zur Förderung der IHK-Weiterbildung mbH — Bonn
+
+Die Vervielfältigung, Verbreitung oder öffentliche Wiedergabe der Publikation [der Prüfungssätze und Lösungshinweise]
+ist nicht gestattet (88 53, 54 UrhG) und strafbar ($ 106 UrhG). Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+

@@ -1,0 +1,589 @@
+=== Seite 1 ===
+Bundeseinheitliche Fortbildungsprüfung der Industrie- und Handelskammern
+
+Geprüfte/-r Industriemeister/-in
+Fachrichtungsübergreifende Basisqualifikationen/
+Grundlegende Qualifikationen
+Anwendung von Methoden der Information, Kommunikation und Planung
+
+
+Lösungshinweise
+Datum:                                          5. Mai 2020
+
+Bearbeitungszeit:                               90 Minuten
+
+Anzahl Aufgaben:                                6
+
+
+Hinweise für den Korrektor:
+■   Die folgenden Lösungen sind lediglich Lösungshinweise.
+■   Sie sollen nur den Rahmen der zu erwartenden Prüfungsleistung abstecken.
+■   Der Korrektor ist durch die hier aufgeführten Lösungshinweise in seinem
+    Bewertungsspielraum nicht eingeengt.
+■   Bei Aufgaben, die eine Aufzählung von n-Fakten zur Lösung erfordern, werden nur die
+    ersten n-Fakten gewertet. Alle darüber hinausgehenden Aufzählungen werden
+    gestrichen.
+■   Bei Berechnungen sollen Folgefehler berücksichtigt werden und somit nicht zum
+    Punktabzug führen.
+■   Der leichteren Lesbarkeit wegen geben wir in den Aufgaben/Texten der männlichen
+    Form den Vorzug. Mit diesem einfacheren sprachlichen Ausdruck sind selbstverständlich
+    immer alle Geschlechter gemeint.
+
+
+Die Aufgaben mit Lösungsvorschlägen können von den Industrie- und Handelskammern oder Dritten nach einer Frist von sechs Monaten
+direkt bestellt werden bei:
+wbv Media GmbH & Co. KG, Service-Center DIHK,
+Postfach 10 06 33, 33506 Bielefeld
+Tel.: 0521/91101-16, Fax: 0521/91101-19, E-Mail: service@wbv.de
+
+
+
+                               © DIHK – Gesellschaft für berufliche Bildung – Organisation zur Förderung der IHK-Weiterbildung mbH – Bonn
+               Die Vervielfältigung, Verbreitung oder öffentliche Wiedergabe der Publikation ist nicht gestattet (§§ 53, 54 UrhG) und strafbar (§ 106 UrhG).
+                                                           Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+                                                                              L 050-03-0520-0
+
+=== Seite 2 ===
+GEPRÜFTE/-R INDUSTRIEMEISTER/-IN
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+GRUNDLEGENDE QUALIFIKATIONEN
+Anwendung von Methoden der Information, Kommunikation und Planung
+
+
+
+Aufgabe 1
+In Ihrem Unternehmen wird eine Umwelt- und Energiebilanz aufgestellt. Dafür werden in
+allen Abteilungen Daten erfasst und ausgewertet.
+
+ a Mögliche Punktzahl: 6
+Beschreiben Sie drei technische oder organisatorische Maßnahmen, die vor dem
+Beginn der Datenerfassung notwendig sind.
+
+ b Mögliche Punktzahl: 6
+Die erfassten Daten aus Ihrem Meisterbereich liegen Ihnen als Tabellen vor.
+
+Beschreiben Sie drei Möglichkeiten der Datenaufbereitung mithilfe eines Tabellen-
+kalkulationsprogramms.
+
+ c Mögliche Punktzahl: 4
+Beim manuellen Erfassen von Daten werden bereits erkennbare Fehleingaben automatisch
+abgewiesen (Test auf Plausibilität).
+
+Beschreiben Sie anhand von zwei Beispielen, wie eine Software die Daten prüfen
+kann.
+
+ d Mögliche Punktzahl: 4
+Für die Speicherung und spätere Auswertung der Daten soll eine Datenbank beschafft wer-
+den. Die IT-Abteilung erstellt dafür gemeinsam mit dem Umweltbeauftragten ein Lastenheft.
+
+Benennen Sie vier technische Angaben aus diesem Lastenheft.
+
+
+
+
+                                                 Seite 2
+                                             L 050-03-0520-0
+
+=== Seite 3 ===
+GEPRÜFTE/-R INDUSTRIEMEISTER/-IN
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+GRUNDLEGENDE QUALIFIKATIONEN
+Anwendung von Methoden der Information, Kommunikation und Planung
+
+
+
+Lösungshinweise Aufgabe 1
+[VO: § 4 Absatz 4 Nr. 1]
+
+ a Mögliche Punktzahl: 6
+Beschrieben werden können z. B.:
+■   Verantwortlichkeit: organisatorisch und technisch
+■   Beschaffung der Hardware und Software
+■   Einrichtung/Installation der Datenerfassungsgeräte
+■   Gewährleistung der Datensicherheit
+■   Verfügbarkeit einer Datensicherung (Backup)
+■   Zugangskontrolle
+■   Zugriffsrechte und Zugriffskontrolle
+■   Protokollierung der Erfassung und Zugriffe
+
+ b Mögliche Punktzahl: 6
+Beschrieben werden können z. B.:
+■   Filterung und Sortierung
+■   statistische Auswertung
+■   Kennzahlenermittlung
+■   Diagrammerstellung
+■   Auswertung in Kreuztabellen
+
+ c Mögliche Punktzahl: 4
+Beispiele für die Gewährleistung der Plausibilität:
+■   Es wird eine Auswahl gültiger Eingaben (Auswahlfeld) festgelegt.
+■   Es werden Vorgaben von minimalen und maximalen Werten hinterlegt, die nicht unter-
+    bzw. überschritten werden dürfen.
+■   Datumsangaben werden auf kalendarische Gültigkeit überprüft.
+■   Die Länge von Formularfeldern wird auf einen sinnvollen Wert begrenzt.
+■   Aus den Daten wird eine Prüfsumme gebildet und mit einer Vorgabe verglichen.
+
+
+
+
+                                                 Seite 3
+                                             L 050-03-0520-0
+
+=== Seite 4 ===
+GEPRÜFTE/-R INDUSTRIEMEISTER/-IN
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+GRUNDLEGENDE QUALIFIKATIONEN
+Anwendung von Methoden der Information, Kommunikation und Planung
+
+
+
+ d Mögliche Punktzahl: 4
+Z. B.:
+Die technischen Anforderungen an die Datenbank ergeben sich aus dem Umfang der
+Datenerfassung. Im Lastenheft angegeben werden z. B.:
+■   Anzahl der gleichzeitig auf die Datenbank zugreifenden Nutzer
+■   Umfang der zu erfassenden Daten
+■   Art und Verknüpfung der zu erfassenden Daten
+■   gewünschte Schnittstellen zu anderen Programmen
+■   vorgegebene Formeln oder Algorithmen zur Auswertung
+■   Anforderungen an die Kontrolle des Zugangs und der Zugriffe
+
+
+
+
+                                                 Seite 4
+                                             L 050-03-0520-0
+
+=== Seite 5 ===
+GEPRÜFTE/-R INDUSTRIEMEISTER/-IN
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+GRUNDLEGENDE QUALIFIKATIONEN
+Anwendung von Methoden der Information, Kommunikation und Planung
+
+
+
+Aufgabe 2
+Ihr Projektteam legt Ihnen als Projektleiter den folgenden tabellarischen Projektablaufplan
+vor.
+
+          Nr.                   Vorgang               Dauer in Tagen        Vorgänger
+
+           1                        A                          1                Start
+
+           2                        B                          2                Start
+
+           3                        C                          2                 A
+
+           4                        D                          3                B, C
+
+           5                        E                          4                 C
+
+           6                         F                         3                 D
+
+           7                        G                          2                 E
+
+           8                        H                          4                 G
+
+           9                         I                         3                 G
+
+Zusätzlich erhalten Sie in Anlage 1 einen bereits begonnenen Netzplan.
+
+ a Mögliche Punktzahl: 10
+Tragen Sie in den Netzplan in Anlage 1 alle fehlenden Angaben ein und kennzeichnen
+Sie den kritischen Pfad.
+
+ b Mögliche Punktzahl: 6
+Das Projekt muss genau am 25.09.2020 beendet sein.
+
+Ermitteln Sie den spätesten Starttermin und stellen Sie alle Vorgänge im Balkenplan
+in Anlage 1 dar. Es gilt die 5-Tage-Woche.
+
+Hinweis für den Prüfungsteilnehmer: Falls Sie 2 a) nicht lösen konnten, beginnen Sie den
+                                           Balkenplan mit dem 01.09.2020.
+
+
+
+
+                                                 Seite 5
+                                             L 050-03-0520-0
+
+=== Seite 6 ===
+GEPRÜFTE/-R INDUSTRIEMEISTER/-IN
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+GRUNDLEGENDE QUALIFIKATIONEN
+Anwendung von Methoden der Information, Kommunikation und Planung
+
+
+
+ c Mögliche Punktzahl: 4
+Kurz vor Beginn des Projekts stellt sich heraus, dass der Vorgang F zwei Tage länger
+dauern wird.
+
+Erläutern Sie die Auswirkungen dieser Verlängerung auf den geplanten Vorgang F
+und auf den Projektendtermin.
+
+
+Lösungshinweise Aufgabe 2
+[VO: § 4 Absatz 4 Nr. 2]
+
+ a Mögliche Punktzahl: 10
+siehe Lösungshinweise zu Aufgabe 2 a) und b)
+
+ b Mögliche Punktzahl: 6
+siehe Lösungshinweise zu Aufgabe 2 a) und b)
+Der Projektstart muss am 09.09.2020 sein.
+Hinweis für den Korrektor: Die Vorgänge B, D, F und I können innerhalb der Pufferzeit
+                           voneinander abweichen.
+
+ c Mögliche Punktzahl: 4
+Die Verlängerung des Vorgangs F wird durch die Pufferzeit abgedeckt. Sie hat keinen Ein-
+fluss auf den Endtermin. Es wird kein Nachfolger von Vorgang F verzögert. Erst bei mehr als
+vier Tagen Verzögerung käme es zu einer Verschiebung des Endtermins.
+
+
+
+
+                                                 Seite 6
+                                             L 050-03-0520-0
+
+=== Seite 7 ===
+GEPRÜFTE/-R INDUSTRIEMEISTER/-IN
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+GRUNDLEGENDE QUALIFIKATIONEN
+Anwendung von Methoden der Information, Kommunikation und Planung
+
+
+
+Aufgabe 3
+Zu Ihren Aufgaben als Geprüfter Industriemeister gehört das Präsentieren von Zielen und
+Geschäftsergebnissen des Unternehmens.
+
+ a Mögliche Punktzahl: 6
+Im Rahmen der Vorbereitung einer Präsentation führen Sie eine Zielgruppenanalyse durch.
+
+Begründen Sie mit drei Argumenten, warum eine Zielgruppenanalyse notwendig ist.
+
+ b Mögliche Punktzahl: 4
+Nach dem Ende der Präsentation möchten Sie mittels Fragebogen ein Feedback der Teil-
+nehmer einholen.
+
+Führen Sie vier Fragen auf, die Sie den Teilnehmern stellen werden.
+
+
+
+Lösungshinweise Aufgabe 3
+[VO: § 4 Absatz 4 Nr. 3]
+
+ a Mögliche Punktzahl: 6
+Die Zielgruppenanalyse ist z. B. notwendig, weil Inhalt und Ablauf der Präsentationen
+■   an die Qualifikation der Zielgruppe angepasst sein sollen;
+■   an die Motivation und Erwartungen der Zielgruppe angepasst sein sollen;
+■   unliebsame Überraschungen für den Vortragenden vermeiden helfen;
+■   das Lernmaterial zielgruppengerecht aufbereiten sollen.
+■   Ist die Zielgruppe eher homogen oder heterogen zusammengesetzt?
+
+ b Mögliche Punktzahl: 4
+Fragen, z. B.:
+■   Hatten Sie genügend Zeit zur Verfügung, um sich mit dem Thema zu befassen?
+■   Wie verständlich war der Inhalt der Präsentation?
+■   Wie schätzen Sie den fachlichen Wert der Präsentation ein?
+■   Konnten Sie in der Fragerunde alle Fragen klären?
+
+
+
+
+                                                 Seite 7
+                                             L 050-03-0520-0
+
+=== Seite 8 ===
+GEPRÜFTE/-R INDUSTRIEMEISTER/-IN
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+GRUNDLEGENDE QUALIFIKATIONEN
+Anwendung von Methoden der Information, Kommunikation und Planung
+
+
+
+Aufgabe 4
+Ihre Produkte werden aus selbst gefertigten und fremdgefertigten Teilen zusammengesetzt.
+In den folgenden beiden Tabellen ist die Anzahl der selbst gefertigten und fremdgefertigten
+Teile dargestellt.
+
+                                 Anzahl selbst gefertigter Teile
+
+                     Jahr                     2015         2016     2017    2018     2019
+
+                     Teile                    4.224        4.205    4.201   4.164    4.179
+
+
+
+                                 Anzahl fremdgefertigter Teile
+
+                     Jahr                     2015         2016     2017    2018     2019
+
+                     Teile                    1.071        1.292    1.531   1.697    1.718
+
+
+
+                                      Gesamtzahl der Teile
+
+                     Jahr                     2015         2016     2017    2018     2019
+
+                     Plan                     5.295        5.497    5.732   5.861    5.897
+
+
+
+ a Mögliche Punktzahl: 5
+Stellen Sie den Anteil der fremdgefertigten Teile in Prozent tabellarisch dar.
+
+ b Mögliche Punktzahl: 7
+Stellen Sie die Entwicklung des Anteils der fremdgefertigten Teile in einem Diagramm
+dar.
+
+ c Mögliche Punktzahl: 3
+Nennen Sie drei weitere Verhältniszahlen, die sich aus den gegebenen Werten ablei-
+ten lassen.
+
+
+
+
+                                                 Seite 8
+                                             L 050-03-0520-0
+
+=== Seite 9 ===
+GEPRÜFTE/-R INDUSTRIEMEISTER/-IN
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+GRUNDLEGENDE QUALIFIKATIONEN
+Anwendung von Methoden der Information, Kommunikation und Planung
+
+
+
+Lösungshinweise Aufgabe 4
+[VO: § 4 Absatz 4 Nr. 4]
+
+ a Mögliche Punktzahl: 5
+
+                                                                  Anteil fremdgefertigter Teile
+
+                                                     Jahr                    2015          2016    2017      2018          2019
+
+               Anteil fremdgefertigter Teile in %                           20,23 %    23,50 %    26,71 %   28,95 %   29,13 %
+
+
+
+ b Mögliche Punktzahl: 7
+
+                                                                   Anteil fremdgefertigter Teile
+                                         35%
+    Anteil der fremdgefertigten Teile
+
+
+
+
+                                         30%
+
+                                         25%
+
+                                         20%
+
+                                         15%
+
+                                         10%
+
+                                         5%
+
+                                         0%
+                                                   2015            2016             2017           2018             2019
+                                                                                    Jahr
+
+
+
+ c Mögliche Punktzahl: 3
+Mögliche Verhältniszahlen:
+■                                       Anteil der selbst gefertigten Teile an der Gesamtsumme
+■                                       Verhältnis der insgesamt eingesetzten Teile gegenüber dem Vorjahr
+■                                       Verhältnisse der selbst- und fremdgefertigten Teile gegenüber dem Vorjahr
+■                                       indizierte Darstellung mit Zahlen aus dem Jahr 2015 = 100 %
+
+
+
+
+                                                                                Seite 9
+                                                                            L 050-03-0520-0
+
+=== Seite 10 ===
+GEPRÜFTE/-R INDUSTRIEMEISTER/-IN
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+GRUNDLEGENDE QUALIFIKATIONEN
+Anwendung von Methoden der Information, Kommunikation und Planung
+
+
+
+Aufgabe 5
+Sie sind mit der Projektleitung eines innerbetrieblichen Projekts beauftragt. In der
+Realisierungsphase kommt es zu Verzögerungen.
+
+ a Mögliche Punktzahl: 4
+Nennen Sie vier Ursachen für Verzögerungen während der Realisierungsphase.
+
+ b Mögliche Punktzahl: 16
+Beschreiben Sie vier Maßnahmen der Projektleitung, um die Auswirkungen der Verzö-
+gerungen auf den Projektendtermin zu minimieren. Geben Sie jeweils zwei
+Auswirkungen dieser Maßnahmen an.
+
+
+
+Lösungshinweise Aufgabe 5
+[VO: § 4 Absatz 4 Nr. 5]
+
+ a Mögliche Punktzahl: 4
+Ursachen, z. B.:
+■   Ausfall von Mitarbeitern
+■   Ausfall von technischen Ressourcen
+■   verspätete Materiallieferungen
+■   Verzögerung von Fremdleistungen
+■   Fehleinschätzungen bei der Planung der Dauer der Vorgänge
+■   Fehler bei der Ablaufplanung (Abhängigkeiten)
+
+ b Mögliche Punktzahl: 16
+Z. B.:
+1. Maßnahme: Zuerst kann der Projektleiter mit den Vorgesetzten anderer Abteilungen
+   klären, ob sie kurzfristig bei der Realisierung des Projekts helfen können.
+    Auswirkungen:
+    ■    Fachkundige eigene Mitarbeiter unterstützen kurzfristig das Projekt.
+    ■    In anderen Abteilungen fehlen die Mitarbeiter.
+
+
+
+
+                                                Seite 10
+                                             L 050-03-0520-0
+
+=== Seite 11 ===
+GEPRÜFTE/-R INDUSTRIEMEISTER/-IN
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+GRUNDLEGENDE QUALIFIKATIONEN
+Anwendung von Methoden der Information, Kommunikation und Planung
+
+
+2. Maßnahme: Arbeitnehmerüberlassung: Von einem Zeitarbeitsunternehmen werden
+   Mitarbeiter befristet angefordert.
+   Auswirkungen:
+   ■    Auftragserteilung und Auswahl dauern länger.
+   ■    Kosten steigen.
+   ■    Mitarbeiter müssen eingearbeitet werden.
+   ■    keine negativen Auswirkungen auf andere Abteilungen
+3. Maßnahme: Es wird bezahlte Wochenendarbeit oder an den regulären Arbeitstagen
+   Mehrarbeit angeordnet.
+   Auswirkungen:
+   ■    Eingearbeitete Mitarbeiter stehen länger zur Verfügung, Aufgaben werden terminlich
+        geschafft.
+   ■    Die Belastung der Mitarbeiter nimmt zu.
+   ■    Die Kosten steigen aufgrund der bezahlten Mehrarbeit.
+   4. Maßnahme: Es erfolgt eine Fremdvergabe von Teilen des Projekts.
+   Auswirkungen:
+   ■    Entlastung der Mitarbeiter und der technischen Ressourcen
+   ■    Aufwand für Vergabe, Koordination und Kontrolle
+   ■    Gefahr des Abflusses von Informationen und Know-how
+
+
+
+
+                                                Seite 11
+                                             L 050-03-0520-0
+
+=== Seite 12 ===
+GEPRÜFTE/-R INDUSTRIEMEISTER/-IN
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+GRUNDLEGENDE QUALIFIKATIONEN
+Anwendung von Methoden der Information, Kommunikation und Planung
+
+
+
+Aufgabe 6
+Sie geben als Multiplikator Ihr Fachwissen über eine neue Technologie an andere Mitar-
+beiter des Unternehmens weiter. Der erste Vortrag von insgesamt sechs wöchentlichen
+Vorträgen soll zwei Stunden dauern.
+
+Sie planen in den Ablauf des Vortrags drei Austauschphasen zu je fünf bis zehn Minuten ein.
+Darin sollen sich die Teilnehmer in Kleingruppen über die zuletzt vermittelten Inhalte aus-
+tauschen. Danach können die Teilnehmer Ihnen Fragen stellen.
+
+ a Mögliche Punktzahl: 6
+Beschreiben Sie drei Vorteile dieser Austauschphasen für die Teilnehmer.
+
+ b Mögliche Punktzahl: 6
+Beschreiben Sie drei Vorteile dieser Austauschphasen für Sie als Vortragenden.
+
+ c Mögliche Punktzahl: 3
+Benennen Sie drei Risiken, die Sie mit dieser Planung Ihres Vortrags eingehen.
+
+
+
+Lösungshinweise Aufgabe 6
+[VO: § 4 Absatz 4 Nr. 6]
+
+ a Mögliche Punktzahl: 6
+Vorteile, z. B.:
+■   Die Teilnehmer können unter sich klären, ob es noch offene Fragen gibt und diese
+    Fragen zum Teil schon beantworten.
+■   Die Teilnehmer stehen nicht zwei Stunden unter permanentem Druck; sie haben Pausen
+    zum Verarbeiten.
+■   Die Teilnehmer können die vermittelten Informationen mit eigenen Erfahrungen
+    ergänzen. Das hat einen zusätzlichen Lerneffekt.
+■   Der Ablauf des Vortrags hat für die Teilnehmer eine bessere Struktur und es sind
+    Zwischenziele erkennbar.
+■   Die Teilnehmer können besser reflektieren und vertiefen.
+
+
+
+
+                                                Seite 12
+                                             L 050-03-0520-0
+
+=== Seite 13 ===
+GEPRÜFTE/-R INDUSTRIEMEISTER/-IN
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+GRUNDLEGENDE QUALIFIKATIONEN
+Anwendung von Methoden der Information, Kommunikation und Planung
+
+
+
+ b Mögliche Punktzahl: 6
+Vorteile, z. B.:
+■   Die Fragen der Teilnehmer werden in eine Phase verlagert, in der sie den Ablauf nicht
+    stören. Es sind keine oder weniger Zwischenfragen zu erwarten.
+■   Der Vortragende kann in den kurzen Pausen regenerieren und steht ebenfalls nicht zwei
+    Stunden unter Dauerdruck.
+■   Der Vortragende lernt seine Zielgruppe besser kennen und kann sie für die nächsten
+    Vorträge besser einschätzen.
+■   Der Vortragende kann selbst dazulernen: Die Teilnehmer bringen aus der Praxis eigene
+    Erfahrungen mit.
+
+ c Mögliche Punktzahl: 3
+■   Zeitrisiko: Die geplante Zeit wird überzogen oder der Inhalt wird nicht geschafft.
+■   Inhaltliches Risiko: Es werden Fragen gestellt, auf die der Vortragende nicht vorbereitet
+    ist.
+■   Fragen werden von den Teilnehmern gegenseitig scheinbar beantwortet und dann nicht
+    mehr gestellt → es bleiben Defizite.
+
+
+
+
+                                                Seite 13
+                                             L 050-03-0520-0
+
+=== Seite 14 ===
+GEPRÜFTE/-R INDUSTRIEMEISTER/-IN
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+GRUNDLEGENDE QUALIFIKATIONEN
+Anwendung von Methoden der Information, Kommunikation und Planung
+
+
+Lösungshinweise zu Aufgabe 2 a) und b)
+
+
+
+
+                                                         Seite 1 von 1
+                                                         L 050-03-0520-0
+

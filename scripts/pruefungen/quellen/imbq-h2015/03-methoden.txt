@@ -1,0 +1,409 @@
+=== Seite 1 ===
+Bundeseinheitliche
+Weiterbildungsprüfung
+
+der Industrie- und Handelskammern
+
+Prüfungsteilnehmer-Nummer
+
+Geprüfte/-r Industriemeister/-in,
+fachrichtungsübergreifende
+Basisqualifikationen/
+grundlegende Qualifikationen
+
+m Basisqualifikation Anwendung von Methoden der
+Information, Kommunikation und
+Planung
+
+m Prüfungstag 5. November 2015
+
+m Bearbeitungszeit 90 Minuten
+
+m Anzahl der Aufgaben 6
+
+Bitte prüfen Sie vor Beginn der Prüfung die Vollständigkeit des Aufgabensatzes. Sollte
+der Aufgabensatz nicht vollständig sein, informieren Sie bitte die Aufsicht.
+
+| P 050-03-1115-3 |
+
+
+=== Seite 2 ===
+Bearbeitungshinweise:
+
+Bitte lesen Sie die nachfolgenden Bearbeitungshinweise sorgfältig durch:
+
+u Die zur Prüfung zugelassenen Hilfsmittel wurden Ihnen separat mit der Einladung mitgeteilt.
+
+a Sie erhalten einen Aufgaben- und einen Lösungsteil.
+
+= Tragen Sie auf dem Deckblatt Ihre Prüfungsteilnehmer-Nummer ein.
+
+= Die maximale Gesamtpunktzahl der Lösungen beträgt 100 Punkte.
+
+m Die Lösungsgänge bzw. Rechenvorgänge sind klar und nachvollziehbar im Lösungsteil dar-
+zustellen. Sollte der Platz nicht ausreichen, benutzen Sie bitte das Konzeptpapier, verweisen
+Sie auf die Fortsetzung und kennzeichnen Sie diese. Wir weisen darauf hin, dass eine vom
+Prüfungsausschuss nicht lesbare Prüfungsarbeit mit der Note „ungenügend“ (null Punkte) be-
+wertet wird mit den Rechtsfolgen, die sich aus der Prüfungsordnung ergeben.
+
+= Verwenden Sie für jede Aufgabe ein neues Lösungsblatt bzw. eine neue Lösungsseite.
+
+= Falls die Lösung auf einem beigefügten Anlageblatt erfolgen soll, wird in der Aufgabenstellung
+darauf hingewiesen.
+
+= Fürlhre Notizen benutzen Sie bitte ausschließlich das Konzeptpapier.
+
+m Das Konzeptpapier ist mit dem Aufgaben- und dem Lösungsteil abzugeben.
+
+m BeiAufgaben, die eine Aufzählung von n-Fakten zur Lösung erfordern, werden nur die ersten
+
+n-Fakten gewertet. Alle darüber hinausgehenden Aufzählungen werden gestrichen.
+
+Wir wünschen Ihnen bei der Bearbeitung viel Erfoig.
+
+Der leichteren Lesbarkeit wegen geben wir in den Aufgaben/Texten der männlichen Form
+den Vorzug. Mit diesem einfacheren sprachlichen Ausdruck sind selbstverständlich immer
+Männer und Frauen gemeint.
+
+Die Vervielfältigung, Verbreitung oder öffentliche Wiedergabe der Publikationen [der Prü-
+fungssätze] ist nicht gestattet (88 53, 54 UrhG) und strafbar ($ 106 UrhG). Im Fall der Zuwi-
+derhandlung wird Strafantrag gestellt.
+
+=== Seite 3 ===
+GEPRÜFTEI-R INDUSTRIEMEISTER/-IN,
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+
+GRUNDLEGENDE QUALIFIKATIONEN
+AnwendungvonMethodenderlnformation,KommunikationundPlanung
+
+Aufgabe 1
+
+Ihr Unternehmen hat für die Hard- und Software einen Wartungsvertrag mit einem System-
+haus abgeschlossen.
+
+a) Beschreiben Sie drei Kriterien, die für ein Unternehmen bei der Auswahl des Vertrags- (6 Punkte)
+partners für einen Wartungsvertrag wichtig sind.
+
+b) Schildern Sie vier Pflichten, die ein Systemhaus im Rahmen eines Wartungsvertrages (8 Punkte)
+übernehmen kann.
+
+c) Die Betriebssysteme werden von den Herstellern häufig aktualisiert.
+
+Beschreiben Sie drei Risiken, die aufgrund des Verzichtes auf die regelmäßige Aktua- (6 Punkte)
+lisierung der Systemsoftware entstehen können.
+
+Lösungshinweise Aufgabe 1 (20 Punkte)
+(VO: 84 Abs. A Nr. 1)
+
+a) Es können z. B. folgende Kriterien für die Auswahl des Vertragspartners beschrieben
+werden:
+
+= _ schnelle Verfügbarkeit/kurze Reaktionszeit bei der Behebung von Problemen
+= _ Zuverlässigkeit (nachgewiesen durch Zertifikate und Referenzen)
+
+= Fachkompetenz (z. B. anhand der Autorisierung durch die Soft- und Hardwarean-
+bieter) (6 Punkte)
+
+b) Das Systemhaus
+
+= _ betreibt eine Hotline, damit Fragen der Mitarbeiter beantwortet werden und Fehler
+gemeldet werden können;
+
+hilft den Mitarbeitern per Fernwartung direkt bei der Lösung von Problemen;
+
+installiert neue Hardware, tauscht Geräte aus und sorgt für passende Treibersoft-
+ware;
+
+schult die Mitarbeiter im Umgang mit neuer oder aktualisierter Software;
+
+passt die Standardsoftware an die Anforderungen des Unternehmens an. (8 Punkte)
+c) Beim Verzicht auf die Aktualisierung der Betriebssysteme besteht z. B. die Gefahr, dass
+
+"= aufgrund der nicht behobenen Schwächen Sicherheitsprobleme auftreten;
+
+= Fehler und Schwächen des alten Systems nicht behoben werden;
+
+= Verbesserungen der Leistung oder Erweiterungen des Funktionsumfanges nicht
+wirksam werden;
+
+"= aktuelle Anwendersoftware nicht mehr auf den neuesten Stand gebracht werden
+
+kann. (6 Punkte)
+Hinweis für den Korrektor: In allen drei Teilaufgaben können auch andere Antworten
+berücksichtigt werden.
+© DIHK — Gesellschaft für berufliche Bildung - Organisation zur Förderung der IHK-Weiterbiidung mbH — Bonn IP 050-03-1115-3 | Seite 27
+
+Die Vervielfältigung, Verbreitung oder öffentliche Wiedergabe der Publikation [der Prüfungssätze und Lösungshinweise]
+ist nicht gestattet (88 53, 54 UrhG) und strafbar ($ 106 UrhG). Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+
+=== Seite 4 ===
+GEPRÜFTE/-R INDUSTRIEMEISTERI-IN,
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+
+GRUNDLEGENDE QUALIFIKATIONEN
+AnwendungvonMethodenderInformation, KommunikationundPlanung
+
+Aufgabe 2
+
+Die Abteilung Einkauf Ihres Unternehmens hat für acht eingekaufte Materialien Mengen und
+Preise erfasst. Mit den Daten soll eine ABC-Analyse durchgeführt werden.
+
+Produkt Menge gesamter Einkaufswert
+A 4500 290.000 €
+B 7000 80.000 €
+C 11000 20.000 €
+D 5500 10.000 €
+E 9000 40.000 €
+F 8000 60.000 €
+G 4000 260.000 €
+H 1000 240.000 €
+a) Führen Sie die vereinfachte ABC-Analyse (gemäß den Wertanteilen) zu Ende. (14 Punkte)
+b) Beschreiben Sie drei Schlussfolgerungen aus der ABC-Analyse der eingekauften Mate- (6 Punkte)
+rialien.
+Lösungshinweise Aufgabe 2 (20 Punkte)
+
+(VO: 8 4 Abs. 4 Nr. 2)
+
+a) Produkt Wertanteile Klasse
+einzeln kumuliert
+A 29% 29% A
+G 26% 55% A
+H 24% 79% A
+B 8% 87% B
+RB 6% 93% B
+E 4% 97% C
+G 2% 99% G
+D 1% 100 % C
+
+(14 Punkte)
+b) Die A-Produkte repräsentieren einen Wertanteil und somit Kostenanteil von etwa 80 %.
+
+Um Kosten zu sparen, sind folgende Schlussfolgerungen möglich:
+
+= _ Einsparungen dieser Materialien
+
+= Rabatte aushandeln
+
+«  Ersatzprodukte einsetzen
+
+=»  beischwankenden Preisen: Material günstig kaufen und einlagern
+
+Bevor Kostensenkungen bei den B- und C-Produkten angestrebt werden, müssen erst
+alle Möglichkeiten zur Kostensenkung der A-Produkte ausgereizt sein. (6 Punkte)
+
+Seite 28 | P 050-03-1115-3 | © DIHK — Gesellschaft für berufliche Bildung — Organisation zur Förderung der IHK-Weiterbiidung mbH - Bonn
+Die Vervielfältigung, Verbreitung oder öffentliche Wiedsrgabe der Publikation [der Prüfungssätze und Lösungshinweise]
+ist nicht gestattet (88 53. 54 UrhG) und strafbar (8 106 UrhG). Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+
+=== Seite 5 ===
+GEPRÜFTE/-R INDUSTRIEMEISTER!/-IN,
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+
+GRUNDLEGENDE QUALIFIKATIONEN
+AnwendungvonMethodenderinformation, KommunikationundPlanung
+
+Aufgabe H
+
+Sie bereiten eine Präsentation zur Einweisung mehrerer Mitarbeiter Ihres Meisterbereiches
+in neue Arbeitsaufgaben vor.
+
+Beschreiben Sie fünf auf die Mitarbeiter bezogene Kriterien, die Sie bei der Präsentation (10 Punkte)
+berücksichtigen.
+Lösungshinweise Aufgabe 3 (10 Punkte)
+
+(VO: 8 4 Abs. 4 Nr. 3)
+
+Beschrieben werden können z. B.:
+
+= Qualifikation der Mitarbeiter
+
+= Reifegrad der Mitarbeiter
+
+"= _ Motivation der Mitarbeiter
+
+= fachliche Anforderungen der neuen Arbeitsaufgaben
+»  Sicherheitshinweise für die neuen Arbeitsaufgaben
+
+u Vorkommnisse aus der Vergangenheit beim Übernehmen neuer Aufgaben
+
+Aufgabe 4
+
+Bei der Qualitätskontrolle eines Produktes wurden 80 Messungen durchgeführt.
+
+Dabei wurden folgende Füllmengen gemessen:
+
+Nummer Füllmenge in Gramm
+von bis Anzahl
+1 65 66 2
+2 66 67 4
+3 67 68 8
+4 68 69 16
+5 69 70 22
+6 70 71 14
+7 71 12 8
+8 72 73 4
+9 13 74 2
+Ermitteln Sie die relativen Häufigkeiten der gemessenen Füllmengen und stellen Sie diese (15 Punkte)
+
+in einem Diagramm dar.
+
+© DIHK -— Gesellschaft für berufliche Bildung — Organisation zur Förderung der IHK-Weiterbildung mbH — Bonn | P 050-03-1115-3 | Seite 29
+Die Vervielfältigung, Verbreitung oder öffentliche Wiedergabe der Publikation [der Prüfungssätze und Lösungshinweise]
+ist nicht gestattet ($$ 53, 54 UrhG) und strafbar ($ 106 UrhG). Im Fall der Zuwiderhandiung wird Strafantrag gestellt.
+
+
+=== Seite 6 ===
+GEPRÜFTEI/-R INDUSTRIEMEISTER/-IN,
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+
+GRUNDLEGENDE QUALIFIKATIONEN
+AnwendungvonMethodenderlInformation, KommunikationundPlanung
+
+Lösungshinweise Aufgabe 4 (15 Punkte)
+(VO: 84 Abs. 4 Nr. 4)
+
+Relative Häufigkeiten:
+
+Nummer Füllmenge in Gramm
+von bis Anzahl relative Häufigkeiten
+1 65 66 2 2,5%
+2 66 67 4 5,0%
+3 67 68 8 10,0 %
+4 68 69 16 20,0 %
+5 69 70 22 27,5%
+6 70 71 14 17,5%
+7 71 72 8 10,0%
+8 72 73 4 5,0%
+9 73 74 2 2,5%
+
+Relative Häufigkeiten der Füllmengen
+
+30,0%
+
+25,0% |
+
+20,0%
+
+relative Häufigkkeit
+
+15,0%
+
+10,0%
+
+50%
+
+20% R - ee fi . ‚or hun ei . vum vr |
+
+65,5 66,5 67,5 685 695 70,5 718 25 75
+Klassenmitten fin Gramm)
+
+Hinweis für den Korrektor: Statt der Klassenmitten können auf der horizontalen Achse
+auch die Klassengrenzen dargestellt werden.
+
+Seite 30 | P 050-03-1115-3 | © DIHK — Geselischaft für berufliche Bildung — Organisation zur Förderung der IHK-Weiterbildung mbH — Bonn
+Die Vervielfältigung, Verbreitung oder öffentliche Wiedergabe der Publikation [der Prüfungssätze und Lösungshinweise]
+ist nicht gestattet ($$ 53, 54 UrhG) und strafbar ($ 106 UrhG). Im Feli der Zuwiderhandlung wird Strafantrag gestellt.
+
+=== Seite 7 ===
+|
+
+GEPRÜFTE/-R INDUSTRIEMEISTER/-IN,
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+
+GRUNDLEGENDE QUALIFIKATIONEN
+AnwendungvonMethodenderinformation, KommunikationundPlanung
+
+Aufgabe 5
+
+Im Rahmen eines Forschungs- und Entwicklungsprojektes werden Prototypen hergestellt.
+Das Projektteam ist sehr stark ausgelastet.
+
+Deshalb wird darüber diskutiert, einen externen Auftragnehmer mit der Fertigung einzelner
+Teile der Prototypen zu beauftragen.
+
+a) Beschreiben Sie drei Vorteile der Auslagerung. (6 Punkte)
+b) Beschreiben Sie drei Nachteile der Auslagerung. (6 Punkte)
+c) Die geplante Auslagerung soll ausgeschrieben werden. Dafür wird ein Lastenheft
+
+erstellt.
+
+Stellen Sie vier Punkte dar, die in diesem Lastenheft enthalten sein können. (8 Punkte)
+Lösungshinweise Aufgabe 5 (20 Punkte)
+(VO: 8 4 Abs. 4 Nr. 5)
+
+a) = Entlastung des Projektteams (oder: Vermeidung einer Überlastung)
+= Die Auslagerung kommt dem Ziel des Projektes zugute: Es können mehr Prototy-
+pen erstellt und getestet werden.
+«= Aufgrund der Spezialisierung des Auftragnehmers sind Kostenersparnisse mög-
+lich. (6 Punkte)
+b) = Erhöhung des Koordinationsaufwandes (Erstellen des Lastenheftes, Absprachen
+mit dem Auftragnehmer usw.)
+» Es besteht ein Qualitätsrisiko.
+= Es kann aufgrund des Einarbeitungsaufwandes zu Verzögerungen im Projektab-
+lauf kommen.
+
+= Es besteht die Gefahr, dass das Unternehmen Know-how aus der Hand gibt. (6 Punkte)
+C):1Zu.B:
+
+= _ Entwicklungsziele
+
+=» technische Spezifikation der Prototypen
+
+=»  Entwicklungstermine/Zeitrahmen
+
+= geforderte Zertifizierungen/Referenzen der potenziellen Auftragnehmer (8 Punkte)
+Aufgabe 6
+Im Intranet Ihres Unternehmens wurde eine Plattform zum Einreichen und Austauschen von
+Verbesserungsvorschlägen eingeführt. Ein Jahr nach der Einführung will die Geschäftslei-
+tung den Erfolg dieser Maßnahme bewerten.
+
+a) Erläutern Sie drei Formen der Auswertung, die die Geschäftsleitung dabei einsetzen (9 Punkte)
+kann.
+b) Nennen Sie neben dem Austausch von Verbesserungsvorschlägen sechs weitere (6 Punkte)
+
+Anwendungsfälle des Intranets.
+
+© DIHK - Gesellschaft für berufliche Bildung — Organisation zur Förderung der IHK-Weiterbildung mbH -— Bonn | P 050-03-1115-3 | Seite 31
+
+Die Vervielfältigung, Verbreitung oder öffentliche Wiedergabe der Publikation [der Prüfungssätze und Lösungshinweise]
+ist nicht gestattet (88 53, 54 UrhG) und strafbar (8 106 UrhG). Im Fall der Zuwiderhandiung wird Strafantrag gestellt.
+
+
+=== Seite 8 ===
+GEPRÜFTE/-R INDUSTRIEMEISTERJ/-IN,
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+
+GRUNDLEGENDE QUALIFIKATIONEN
+AnwendungvonMethodenderlnformation, KommunikationundPlanung
+
+Lösungshinweise Aufgabe 6 (15 Punkte)
+(VO: 8 4 Abs. 4 Nr. 6)
+
+a) = Die Geschäftsleitung kann eine schriftliche Befragung der Mitarbeiter mithilfe eines
+Formulars durchführen.
+
+= Die Geschäftsleitung kann sich von den Führungskräften der Abteilungen Bericht
+erstatten lassen.
+
+= Die Geschäftsleitung kann eine Betriebsversammlung oder mehrere Abteilungs-
+versammlungen durchführen lassen, um das Feedback der Mitarbeiter einzuho-
+len.
+
+= Die Geschäftsleitung kann die Zugriffe auf die Plattform auswerten lassen (Anzahl
+der Vorschläge, Anzahl der Kommentare usw.). (9 Punkte)
+
+b) Es können z. B. folgende Anwendungen genannt werden:
+= Informationen des Betriebsrates
+= Informationen der Geschäftsleitung zur Situation des Unternehmens
+
+= _ Frage- und Antwortlisten (frequentiy asked questions) zu Fach- und Personalthe-
+men
+
+» Planungen: Personaleinsatz, Urlaub
+"= Informationen der Personalabteilung über Fortbildungsmaßnahmen
+= interne Stellenausschreibungen (6 Punkte)
+
+Seite 32 | P 050-03-1115-3 | © DIHK — Gesellschaft für berufliche Bildung — Organisation zur Förderung cer IHK-Weiterbildung mbH — Bonn
+Die Vervielfälligung, Verbreitung oder öffent'iche Wiedergabe der Publikation [der Prüfungssätze und Lösungshinweise]
+ist nicht gestattet (88 53, 54 UrhG) und strafbar (8 106 UrhG). Im Fall der Zuwiderhandiung wird Strafantrag gestellt.
+

@@ -1,0 +1,504 @@
+=== Seite 1 ===
+Bundeseinheitliche Fortbildungsprüfung der Industrie- und Handelskammern
+Geprüfter Industriemeister / Geprüfte Industriemeisterin
+fachrichtungsübergreifende Basisqualifikationen/grundlegende
+Qualifikationen
+Anwendung von Methoden der Information, Kommunikation und Planung
+
+
+Lösungshinweise
+Datum:                                          3. November 2021
+
+Bearbeitungszeit:                               90 Minuten
+
+Anzahl Aufgaben:                                6
+
+
+Hinweise für den Korrektor:
+■   Die folgenden Lösungen sind lediglich Lösungshinweise.
+■   Sie sollen nur den Rahmen der zu erwartenden Prüfungsleistung abstecken.
+■   Der Korrektor ist durch die hier aufgeführten Lösungshinweise in seinem
+    Bewertungsspielraum nicht eingeengt.
+■   Bei Aufgaben, die eine Aufzählung von n-Fakten zur Lösung erfordern, werden nur die
+    ersten n-Fakten gewertet. Alle darüber hinausgehenden Aufzählungen werden
+    gestrichen.
+■   Bei Berechnungen sollen Folgefehler berücksichtigt werden und somit nicht zum
+    Punktabzug führen.
+■   Der leichteren Lesbarkeit wegen geben wir in den Aufgaben/Texten der männlichen
+    Form den Vorzug. Mit diesem einfacheren sprachlichen Ausdruck sind selbstverständlich
+    immer alle Geschlechter gemeint.
+
+
+
+Die Aufgaben mit Lösungsvorschlägen können von den Industrie- und Handelskammern oder Dritten nach einer Frist von sechs Monaten
+direkt bestellt werden bei:
+wbv Media GmbH & Co. KG, Service-Center DIHK,
+Postfach 10 06 33, 33506 Bielefeld
+Tel.: 0521/91101-16, Fax: 0521/91101-19, E-Mail: service@wbv.de
+
+
+
+
+                            © DIHK – Gesellschaft für berufliche Bildung – Organisation zur Förderung der IHK-Weiterbildung gGmbH – Bonn
+               Die Vervielfältigung, Verbreitung oder öffentliche Wiedergabe der Publikation ist nicht gestattet (§§ 53, 54 UrhG) und strafbar (§ 106 UrhG).
+                                                           Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+                                                                             L 050-03-1121-8
+
+=== Seite 2 ===
+GEPRÜFTE/-R INDUSTRIEMEISTER/-IN,
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+GRUNDLEGENDE QUALIFIKATIONEN
+Anwendung von Methoden der Information, Kommunikation und Planung
+
+
+
+Aufgabe 1
+In Ihrem Unternehmen werden große Datenmengen aus der Produktion und Instandhaltung
+erfasst. Zu Ihren Aufgaben als Industriemeister gehört die Auswertung der Daten.
+
+ a Mögliche Punktzahl: 4
+Nennen Sie vier Methoden der automatischen Datenerfassung.
+
+ b Mögliche Punktzahl: 4
+Geben Sie vier Gründe an, warum die Daten zentralisiert gespeichert werden.
+
+ c Mögliche Punktzahl: 6
+In Ihrem Unternehmen werden alle Instandhaltungsmaßnahmen in einer Datenbank erfasst.
+
+Beschreiben Sie drei mögliche Ergebnisse der Auswertung der Instandhaltungsdaten.
+
+ d Mögliche Punktzahl: 6
+Bei Ihren Auswertungen von Produktions- bzw. Instandhaltungsdaten verwenden Sie
+Korrelationsdiagramme.
+
+Beschreiben Sie das Erstellen und Auswerten eines Korrelationsdiagramms aus zwei
+vorhandenen Datenreihen.
+
+
+Lösungshinweise Aufgabe 1
+[VO: § 4 Absatz 4 Nr. 1]
+
+ a Mögliche Punktzahl: 4
+Methoden der automatischen Datenerfassung sind z. B.:
+   Scannen von Barcodes oder QR-Codes
+   Zählen mit Lichtschranke
+   smarte Zähler für den Stromverbrauch
+   Erfassen von Daten mit Sensoren
+   Erfassen der gespeicherten Daten auf Transpondern/RFID
+
+
+
+
+                                                 Seite 2
+                                             L 050-03-1121-8
+
+=== Seite 3 ===
+GEPRÜFTE/-R INDUSTRIEMEISTER/-IN,
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+GRUNDLEGENDE QUALIFIKATIONEN
+Anwendung von Methoden der Information, Kommunikation und Planung
+
+
+
+ b Mögliche Punktzahl: 4
+Daten werden aus folgenden Gründen zentralisiert gespeichert, z. B.:
+   gleicher Stand für alle Beteiligten (Aktualität)
+   gleichzeitige Zugriffsmöglichkeiten für unterschiedliche Abteilungen
+   Zuweisung von Zugriffsrechten an die Mitarbeiter je nach Aufgabe
+   leichtere Kontrolle und Protokollierung von Zugriffen
+   Gewährleistung der Vertraulichkeit der Daten
+   Gewährleistung einer zentralen Datensicherung (Backup)
+
+ c Mögliche Punktzahl: 6
+Anwendungsfälle können z. B. sein:
+   Ermittlung der Stillstandszeiten aufgrund der Instandhaltung
+   Ermittlung der tatsächlichen Verfügbarkeit der Maschinen
+   Ermittlung der Personalkosten von Instandhaltungsmaßnahmen
+   Ermittlung der Materialkosten von Instandhaltungsmaßnahmen
+
+ d Mögliche Punktzahl: 6
+Für das Erstellen eines Korrelationsdiagramms sind folgende Schritte notwendig:
+   Festlegen eines Titels
+   Festlegen eines Maßstabs und einer Einteilung für beide Achsen
+   Zeichnen, Beschriften und Einteilen der Achsen
+   Einzeichnen der Punkte
+   Einzeichnen einer Gerade oder Kurve zur Darstellung des Zusammenhangs
+   Auswerten der Stärke des Zusammenhangs (stark/schwach)
+   Auswerten der Art des Zusammenhangs (positiv/negativ)
+
+
+
+
+                                                 Seite 3
+                                             L 050-03-1121-8
+
+=== Seite 4 ===
+GEPRÜFTE/-R INDUSTRIEMEISTER/-IN,
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+GRUNDLEGENDE QUALIFIKATIONEN
+Anwendung von Methoden der Information, Kommunikation und Planung
+
+
+
+Aufgabe 2
+In Ihrem Unternehmen wird die ABC-Analyse zur Optimierung des Einkaufs von Hilfsstoffen
+eingesetzt. Sie erhalten eine Aufstellung der Kosten von Hilfsstoffen, die in Ihrem
+Meisterbereich verbraucht wurden:
+
+                Artikelname      Kosten der verbrauchten Hilfsstoffe
+                       A                                                 810 €
+                       B                                               9.450 €
+                       C                                                 890 €
+                       D                                               1.000 €
+                       E                                                 650 €
+                       F                                               9.850 €
+                       I                                               5.100 €
+                       J                                              12.450 €
+                       K                                               1.100 €
+                       L                                                 700 €
+
+
+ a Mögliche Punktzahl: 15
+Führen Sie mit den Daten eine vereinfachte ABC-Analyse durch. Teilen Sie die
+Hilfsstoffe in die Klassen A, B und C ein.
+
+ b Mögliche Punktzahl: 5
+Nennen Sie fünf praktische Maßnahmen zur Optimierung der Kosten, die Sie aus der
+ABC-Analyse der verbrauchten Hilfsstoffe ableiten können.
+
+
+
+
+                                                 Seite 4
+                                             L 050-03-1121-8
+
+=== Seite 5 ===
+GEPRÜFTE/-R INDUSTRIEMEISTER/-IN,
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+GRUNDLEGENDE QUALIFIKATIONEN
+Anwendung von Methoden der Information, Kommunikation und Planung
+
+
+
+Lösungshinweise Aufgabe 2
+[VO: § 4 Absatz 4 Nr. 2]
+
+ a Mögliche Punktzahl: 15
+
+ Artikelname            prozentualer Wertanteil       kumulierter prozentualer        Klasse
+                                                      Wertanteil
+ J                                          29,6 %                           29,6 %            A
+ F                                          23,5 %                           53,1 %            A
+ B                                          22,5 %                           75,6 %            A
+ I                                          12,1 %                           87,7 %            B
+ K                                           2,6 %                           90,3 %            B
+ D                                           2,4 %                           92,7 %            B
+ C                                           2,1 %                           94,8 %            B
+ A                                           1,9 %                           96,7 %            C
+ L                                           1,7 %                           98,4 %            C
+ E                                           1,5 %                          100,0 %            C
+
+Hinweis für den Korrektor: Rundungsdifferenzen beim Kumulieren werden am Ende
+ausgeglichen.
+ b Mögliche Punktzahl: 5
+Es können folgende Maßnahmen zur Optimierung der Kosten der Hilfsstoffe genannt
+werden, z. B.:
+    Rabattverhandlungen zuerst für die A-Produkte
+    Suche nach günstigeren Anbietern zuerst für die A-Produkte
+    Suche nach günstigeren (gleichwertigen) Ersatzstoffen für die A-Produkte
+    Mengeneinsparungen zuerst beim Verbrauch der A-Produkte
+    Optimierung der Bestellmengen
+    Optimierung der Bevorratung im Lager
+    bessere Kontrolle des Verbrauchs durch die Führungskräfte
+
+
+
+
+                                                 Seite 5
+                                             L 050-03-1121-8
+
+=== Seite 6 ===
+GEPRÜFTE/-R INDUSTRIEMEISTER/-IN,
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+GRUNDLEGENDE QUALIFIKATIONEN
+Anwendung von Methoden der Information, Kommunikation und Planung
+
+
+
+Aufgabe 3
+Mögliche Punktzahl: 10
+In Ihrem Unternehmen sollen die Führungskräfte in Zukunft Präsentationen mithilfe eines
+Videokonferenzsystems durchführen. Die Beteiligten werden der Präsentation am PC oder
+an mobilen Geräten folgen.
+Beschreiben Sie fünf Voraussetzungen für eine erfolgreiche Online-Präsentation.
+
+
+
+Lösungshinweise Aufgabe 3
+[VO: § 4 Absatz 4 Nr. 3]
+Mögliche Punktzahl: 10
+Beschrieben werden können z. B. folgende Voraussetzungen:
+■   Alle Führungskräfte werden vorher in die Bedienung der Technik eingewiesen und
+    lernen die Möglichkeiten kennen.
+■   Alle Mitarbeiter werden in die Nutzung des Videokonferenzsystems eingewiesen und
+    erhalten ggf. vom Unternehmen ein entsprechendes Gerät.
+■   Es werden Regeln aufgestellt, mit denen die Störung der Präsentation etwa durch
+    Hintergrundgeräusche und Ablenkung vermieden werden soll.
+■   Alle Beteiligten müssen über ein zuverlässiges Netzwerk mit gutem Datendurchsatz
+    angebunden sein.
+■   Die Mitarbeiter erhalten die Möglichkeit, auf eine vorher geregelte Art und Weise Fragen
+    zu stellen, damit die Präsentation nicht unnötig unterbrochen wird.
+■   Die Präsentation wird für das Nachholen der Teilnahme aufgezeichnet, falls jemand zum
+    Termin verhindert sein sollte.
+■   Die Präsentation muss so abgesichert sein, dass die Vertraulichkeit der betrieblichen
+    Daten gewährleistet bleibt.
+
+
+
+
+                                                 Seite 6
+                                             L 050-03-1121-8
+
+=== Seite 7 ===
+GEPRÜFTE/-R INDUSTRIEMEISTER/-IN,
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+GRUNDLEGENDE QUALIFIKATIONEN
+Anwendung von Methoden der Information, Kommunikation und Planung
+
+
+
+Aufgabe 4
+In Ihrem Unternehmen werden die Lieferanten regelmäßig systematisch bewertet. Für das
+vergangene Quartal haben Sie folgende Auswertung der Artikel erhalten:
+
+ Lieferungen im 3. Quartal            Lieferant A      Lieferant B        Lieferant C   Summen
+
+ Lieferungen gesamt                             262                 310          238       810
+
+ Lieferung erfolgte                             240                 250          200       690
+ vertragsgemäß.
+
+ Lieferung entspricht nicht der                  22                  60            38      120
+ Vertragsanforderung.
+
+ anteilig davon Mehrlieferung                     6                  18             6       30
+
+ anteilig davon Minderlieferung                   8                  16            14       38
+
+ anteilig davon falscher Artikel                  8                  26            18       52
+
+
+ a Mögliche Punktzahl: 8
+Stellen Sie den prozentualen Anteil der Mehrlieferungen, der Minderlieferungen und
+der Lieferungen falscher Artikel an den nicht vertragsgemäßen Lieferungen
+übersichtlich tabellarisch dar:
+
+■   für jeden Lieferanten,
+
+■   für alle drei Lieferanten insgesamt.
+
+ b Mögliche Punktzahl: 7
+Vergleichen Sie in einem Diagramm für alle drei Lieferanten den prozentualen Anteil
+der vertragsgemäßen Lieferungen an der Gesamtzahl ihrer Lieferungen.
+
+
+
+
+                                                 Seite 7
+                                             L 050-03-1121-8
+
+=== Seite 8 ===
+GEPRÜFTE/-R INDUSTRIEMEISTER/-IN,
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+GRUNDLEGENDE QUALIFIKATIONEN
+Anwendung von Methoden der Information, Kommunikation und Planung
+
+
+
+Lösungshinweise Aufgabe 4
+[VO: § 4 Absatz 4 Nr. 4]
+
+ a Mögliche Punktzahl: 8
+
+ Nicht vertragsgemäße                   Lieferant A Lieferant B Lieferant C Insgesamt
+ Lieferungen im 3. Quartal
+ anteilig davon Mehrlieferung              27,27 %         30,00 %     15,79 %      25,00 %
+ anteilig davon Minderlieferung            36,36 %         26,67 %     36,84 %      31,67 %
+ anteilig davon falscher Artikel           36,36 %         43,33 %     47,37 %      43,33 %
+ Summe                                   100,00 %       100,00 %      100,00 %     100,00 %
+
+ b Mögliche Punktzahl: 7
+Dem Diagramm liegen folgende Anteile der vertragsgemäßen Lieferungen zugrunde:
+                                                 Lieferant A    Lieferant B   Lieferant C
+ vertragsgemäße Lieferungen (Anteil in %)            91,6 %         80,6 %        84,0 %
+
+
+
+
+Hinweis für den Korrektor: Es sollen alle sachgerechten Diagramme gewertet werden, die
+                           den Anteil der vertragsgemäßen Lieferungen gut vergleichbar
+                           machen.
+
+
+                                                 Seite 8
+                                             L 050-03-1121-8
+
+=== Seite 9 ===
+GEPRÜFTE/-R INDUSTRIEMEISTER/-IN,
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+GRUNDLEGENDE QUALIFIKATIONEN
+Anwendung von Methoden der Information, Kommunikation und Planung
+
+
+
+Aufgabe 5
+In Ihrem Unternehmen sollen im Rahmen eines einjährigen Projekts bei laufender
+Produktion neue Maschinen und Anlagen eingeführt werden. Das Projekt wird als sehr
+anspruchsvoll eingeschätzt. Bei der Zielsetzung, Planung und Realisierung von Projekten
+sind immer interne und externe Interessengruppen zu berücksichtigen.
+
+ a Mögliche Punktzahl: 12
+Beschreiben Sie im Zusammenhang mit diesem Projekt drei Interessengruppen und
+gehen Sie dabei auf die jeweiligen Interessen ein.
+
+ b Mögliche Punktzahl: 8
+Vor jedem Projektstart führt Ihr Team eine Risikoanalyse durch.
+
+Beschreiben Sie vier Punkte, die Sie bei der Risikoanalyse erörtern.
+
+
+
+Lösungshinweise Aufgabe 5
+[VO: § 4 Absatz 4 Nr. 5]
+
+ a Mögliche Punktzahl: 12
+Die Anteilseigner (Eigentümer) und das Management des Unternehmens haben ein
+Interesse an der pünktlichen und sachgerechten Umsetzung des Projekts, damit die
+Produktion mit den neuen Maschinen und Anlagen beginnen kann.
+
+Der Betriebsrat hat als Arbeitnehmervertretung ein Interesse daran, die Mitarbeiter vor
+Überlastung im Rahmen des Projekts zu schützen und ggf. Anreize für einen erfolgreichen
+Projektablauf auszuhandeln.
+
+Die Projektleitung hat ein Interesse daran, das Projekt erfolgreich zu planen, zu führen und
+abzuschließen und dabei die Teilziele Sachziel, Terminziel und Kostenziel so gut wie
+möglich zu erfüllen.
+
+Die Lieferanten und Kunden des Unternehmens haben jeweils ein Interesse daran, dass
+trotz des anspruchsvollen Vorhabens die Produktion reibungsfrei weiterläuft und die Termine
+(Belieferung, Auslieferung) eingehalten werden.
+
+
+
+
+                                                 Seite 9
+                                             L 050-03-1121-8
+
+=== Seite 10 ===
+GEPRÜFTE/-R INDUSTRIEMEISTER/-IN,
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+GRUNDLEGENDE QUALIFIKATIONEN
+Anwendung von Methoden der Information, Kommunikation und Planung
+
+
+
+ b Mögliche Punktzahl: 8
+Beschrieben werden können z. B.:
+■   Funktionsrisiko
+■   Kostenrisiko
+■   Terminrisiko
+■   Personalausfallrisiko
+■   Risiko des Imageverlustes
+■   Risiko der Nichteinhaltung von Lieferterminen
+
+
+
+
+                                                Seite 10
+                                             L 050-03-1121-8
+
+=== Seite 11 ===
+GEPRÜFTE/-R INDUSTRIEMEISTER/-IN,
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+GRUNDLEGENDE QUALIFIKATIONEN
+Anwendung von Methoden der Information, Kommunikation und Planung
+
+
+
+Aufgabe 6
+Ihr Meisterbereich soll eine neue Bearbeitungsmaschine erhalten. Damit ist eine Fortbildung
+der Mitarbeiter verbunden. Mit dieser Fortbildung soll ein externes Trainingszentrum
+beauftragt werden, mit dem Ihr Unternehmen bereits seit langer Zeit zusammenarbeitet.
+
+ a Mögliche Punktzahl: 8
+Beschreiben Sie vier Phasen der organisatorischen und inhaltlichen Vorbereitung
+dieser Fortbildung.
+
+ b Mögliche Punktzahl: 4
+Beschreiben Sie anhand von zwei Beispielen den Einsatz von schriftlicher
+Kommunikation bei der Vorbereitung der Schulung.
+
+ c Mögliche Punktzahl: 3
+Nennen Sie drei Anforderungen, die Ihr Unternehmen als Auftraggeber an den
+Schulungsanbieter stellt.
+
+
+
+Lösungshinweise Aufgabe 6
+[VO: § 4 Absatz 4 Nr. 6]
+
+ a Mögliche Punktzahl: 8
+Die Phasen der Vorbereitung können z. B. wie folgt beschrieben werden:
+1. Zielsetzung: Welche Kenntnisse sollen die Mitarbeiter in der Fortbildung erhalten und bis
+   wann müssen sie präsent sein?
+2. Analyse des Ist-zustands: Welche Kenntnisse haben die Mitarbeiter bereits? Welche
+   Qualifikationen sind vorhanden?
+3. Erstellen eines Anforderungsprofils und einer Aufgabenstellung für das externe
+   Trainingszentrum
+4. Vertragliche Vereinbarung des Leistungsumfangs, der Teilnehmerzahl und des
+   konkreten Termins mit dem Trainingszentrum
+Hinweise für den Korrektor: Andere in sich schlüssige Phasen können ebenfalls gewertet
+                            werden. Die Anbieterauswahl (etwa durch Ausschreibung)
+                            gehört laut Aufgabenstellung nicht dazu.
+
+
+
+
+                                                Seite 11
+                                             L 050-03-1121-8
+
+=== Seite 12 ===
+GEPRÜFTE/-R INDUSTRIEMEISTER/-IN,
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+GRUNDLEGENDE QUALIFIKATIONEN
+Anwendung von Methoden der Information, Kommunikation und Planung
+
+
+
+ b Mögliche Punktzahl: 4
+Beschrieben werden können z. B. folgende Beispiele:
+■   Es wird ein Besprechungsprotokoll der Zielsetzung bzw. der Anforderungsanalyse
+    angefertigt.
+■   Es wird eine Checkliste aufgestellt, mit der die Vollständigkeit aller Anforderungen und
+    Vereinbarungen abgeprüft wird.
+■   Es wird ein Lastenheft mit allen Anforderungen an die Fortbildung erstellt und an den
+    Auftragnehmer übergeben.
+■   Es wird ein Formular verwendet, um die Kenntnisse und Wünsche der Mitarbeiter
+    abzufragen.
+Hinweis für den Korrektor: Es ist nicht nur das Kommunikationsmittel, sondern auch
+                           dessen praktische Anwendung im Kontext der Aufgabe gefragt.
+
+ c Mögliche Punktzahl: 3
+Anforderungen an den Anbieter der Fortbildung sind z. B.:
+■   geeignete Vermittlungsmethoden in der Schulung
+■   Dokumentation und Qualitätssicherung der Schulung
+■   verständliches und anschauliches Lehrmaterial mit Bezug auf die neue Maschine
+■   Zertifizierung des Anbieters (Qualitätsmanagement)
+■   Flexibilität in Bezug auf Zusatzinhalte, Organisation und Termingestaltung
+
+
+
+
+                                                Seite 12
+                                             L 050-03-1121-8
+

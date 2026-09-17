@@ -1,0 +1,587 @@
+=== Seite 1 ===
+Bundeseinheitliche Fortbildungsprüfung der Industrie- und Handelskammern
+
+Geprüfte/-r Industriemeister/-in,
+fachrichtungsübergreifende Basisqualifikationen/
+grundlegende Qualifikationen
+Anwendung von Methoden der Information, Kommunikation und Planung
+
+
+Lösungshinweise
+Datum:                                          5. Mai 2021
+
+Bearbeitungszeit:                               90 Minuten
+
+Anzahl Aufgaben:                                6
+
+
+Hinweise für den Korrektor:
+■   Die folgenden Lösungen sind lediglich Lösungshinweise.
+■   Sie sollen nur den Rahmen der zu erwartenden Prüfungsleistung abstecken.
+■   Der Korrektor ist durch die hier aufgeführten Lösungshinweise in seinem
+    Bewertungsspielraum nicht eingeengt.
+■   Bei Aufgaben, die eine Aufzählung von n-Fakten zur Lösung erfordern, werden nur die
+    ersten n-Fakten gewertet. Alle darüber hinausgehenden Aufzählungen werden
+    gestrichen.
+■   Bei Berechnungen sollen Folgefehler berücksichtigt werden und somit nicht zum
+    Punktabzug führen.
+■   Der leichteren Lesbarkeit wegen geben wir in den Aufgaben/Texten der männlichen
+    Form den Vorzug. Mit diesem einfacheren sprachlichen Ausdruck sind selbstverständlich
+    immer alle Geschlechter gemeint.
+
+
+
+Die Aufgaben mit Lösungsvorschlägen können von den Industrie- und Handelskammern oder Dritten nach einer Frist von sechs Monaten
+direkt bestellt werden bei:
+wbv Media GmbH & Co. KG, Service-Center DIHK,
+Postfach 10 06 33, 33506 Bielefeld
+Tel.: 0521/91101-16, Fax: 0521/91101-19, E-Mail: service@wbv.de
+
+
+
+
+                               © DIHK – Gesellschaft für berufliche Bildung – Organisation zur Förderung der IHK-Weiterbildung mbH – Bonn
+               Die Vervielfältigung, Verbreitung oder öffentliche Wiedergabe der Publikation ist nicht gestattet (§§ 53, 54 UrhG) und strafbar (§ 106 UrhG).
+                                                           Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+                                                                              L 050-03-0521-8
+
+=== Seite 2 ===
+GEPRÜFTE/-R INDUSTRIEMEISTER/-IN,
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+GRUNDLEGENDE QUALIFIKATIONEN
+Anwendung von Methoden der Information, Kommunikation und Planung
+
+
+Aufgabe 1
+In Ihrem Unternehmen sind bereits viele Produktionsprozesse digitalisiert. Zwei technische
+Lösungen wurden dazu eingeführt:
+
+■   Die meisten Maschinen in Ihrem Unternehmen sind mit den Herstellern der Maschinen
+    vernetzt.
+
+■   Die Daten aller Maschinen werden automatisch erfasst und in Echtzeit ausgewertet.
+
+ a Mögliche Punktzahl: 6
+Beschreiben Sie drei Vorteile der Vernetzung Ihrer Maschinen mit den Maschinen-
+herstellern.
+
+ b Mögliche Punktzahl: 6
+Beschreiben Sie drei Vorteile der automatischen Erfassung und Auswertung von
+Maschinendaten.
+
+ c Mögliche Punktzahl: 4
+Nennen Sie vier Maßnahmen der technischen Datensicherheit bei der Erfassung und
+Übertragung der Maschinendaten.
+
+ d Mögliche Punktzahl: 4
+Nennen Sie vier Anforderungen an einen externen Dienstleister, der den Support für
+die IT-Systeme gewährleistet.
+
+
+
+
+                                                 Seite 2
+                                             L 050-03-0521-8
+
+=== Seite 3 ===
+GEPRÜFTE/-R INDUSTRIEMEISTER/-IN,
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+GRUNDLEGENDE QUALIFIKATIONEN
+Anwendung von Methoden der Information, Kommunikation und Planung
+
+
+
+Lösungshinweise Aufgabe 1
+[VO: § 4 Absatz 4 Nr. 1]
+
+ a Mögliche Punktzahl: 6
+Folgende Vorteile können beschrieben werden:
+■   Der Hersteller kann per Fernwartung Probleme analysieren und Maßnahmen vorschla-
+    gen oder selbst einleiten.
+■   Der Hersteller kann die Mitarbeiter vor Ort bei den Tätigkeiten in der Instandhaltung
+    unterstützen.
+■   Der Hersteller kann die Software der Maschinen bzw. Maschinensteuerungen von fern
+    aktualisieren.
+■   Der Hersteller kann auf der Grundlage der erfassten Daten die Leistung und Qualität
+    seiner Maschinen verbessern.
+
+ b Mögliche Punktzahl: 6
+■   Die Datenerfassung ermöglicht eine frühzeitige Erkennung von Problemen an den
+    Maschinen.
+■   Auslastung und Verfügbarkeit der Maschinen können anhand der erfassten Daten rasch
+    ausgewertet werden.
+■   Überlastungen einzelner Maschinen können frühzeitig erkannt und Gegenmaßnahmen
+    können eingeleitet werden.
+■   Die Ergebnisse der Datenauswertung können in die laufenden Planungen einfließen und
+    Korrekturen (z. B. bei Durchlaufzeiten) ermöglichen.
+■   Es werden Vergleiche zwischen gleichartigen Maschinen möglich, die z. B. an unter-
+    schiedlichen Standorten eingesetzt sind.
+
+ c Mögliche Punktzahl: 4
+■   VPN zwischen dem eigenen Unternehmen und dem Maschinenhersteller
+    (Verschlüsselung der Datenübertragung)
+■   Aktualisierung der System- und Anwendersoftware auf den jeweils neuen sicheren
+    Stand der Technik
+■   Sicherheitssoftware zur Erkennung und Abwehr von Viren, Trojanern und anderer
+    Schadsoftware
+■   lokale Netzwerksicherheit (Einrichten von Firewalls, Netzwerk in Sicherheitszonen
+    einteilen)
+■   regelmäßiges Erstellen eines Daten-Backups in kurzen zeitlichen Abständen
+■   Protokollierung aller Zugriffe von beiden Seiten (eigenes Unternehmen und Maschinen-
+    bauunternehmen)
+
+
+
+                                                 Seite 3
+                                             L 050-03-0521-8
+
+=== Seite 4 ===
+GEPRÜFTE/-R INDUSTRIEMEISTER/-IN,
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+GRUNDLEGENDE QUALIFIKATIONEN
+Anwendung von Methoden der Information, Kommunikation und Planung
+
+
+
+ d Mögliche Punktzahl: 4
+■   kurze zugesicherte Reaktionszeit in Problemfällen
+■   Erreichbarkeit und Bereitschaftsdienst entsprechend der Anforderungen des
+    Unternehmens
+■   Zuverlässigkeit (nachgewiesen durch Zertifikate oder Referenzen)
+■   Fachkompetenz (nachgewiesen durch Zertifikate oder Referenzen)
+■   kurzer Anfahrtsweg, damit schnellere Verfügbarkeit und Umweltfreundlichkeit
+
+
+Aufgabe 2
+Als Geprüfter Industriemeister müssen Sie hohen Anforderungen gerecht werden. Deshalb
+planen Sie Ihre Arbeitszeit sorgfältig und delegieren geeignete Aufgaben an Mitarbeiter.
+
+ a Mögliche Punktzahl: 4
+Die Tätigkeit einer Führungskraft besteht aus vielen einzelnen Arbeitsaufgaben. Diese sollen
+nach Dringlichkeit und Wichtigkeit eingeordnet werden.
+
+Stellen Sie diese Einordnung grafisch dar.
+
+ b Mögliche Punktzahl: 4
+Sie werden mit der Erstellung einer individuellen Mitarbeiterbeurteilung beauftragt, die in
+spätestens drei Wochen bei der Personalabteilung vorliegen soll.
+
+Ordnen Sie diese Aufgabe nach ihrer Wichtigkeit und Dringlichkeit ein und erläutern
+Sie Ihre Schlussfolgerungen.
+
+ c Mögliche Punktzahl: 6
+Beschreiben Sie neben der Einteilung der Aufgaben drei weitere praktische
+Maßnahmen zur Optimierung der Arbeitszeit.
+
+ d Mögliche Punktzahl: 6
+Nennen Sie sechs Voraussetzungen für das Delegieren von Aufgaben an Mitarbeiter
+Ihres Meisterbereichs.
+
+
+
+
+                                                 Seite 4
+                                             L 050-03-0521-8
+
+=== Seite 5 ===
+GEPRÜFTE/-R INDUSTRIEMEISTER/-IN,
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+GRUNDLEGENDE QUALIFIKATIONEN
+Anwendung von Methoden der Information, Kommunikation und Planung
+
+
+
+Lösungshinweise Aufgabe 2
+[VO: § 4 Absatz 4 Nr. 2]
+
+ a Mögliche Punktzahl: 4
+
+
+
+
+ b Mögliche Punktzahl: 4
+Die Aufgabe ist aus Sicht des Meisters wichtig, aber nicht dringlich. Der Meister muss sich
+für die Bearbeitung der Aufgabe einen Termin setzen und störungsfreie Arbeitszeit für die
+Bearbeitung reservieren. Der Meister muss die Aufgabe selbst erfüllen und darf sie nicht
+delegieren.
+
+ c Mögliche Punktzahl: 6
+Beschrieben werden können z. B.:
+■   Führen und Auswerten eines Arbeitszeitprotokolls
+■   Planen der kommenden Arbeitswoche am letzten Tag der Vorwoche
+■   nicht die gesamte Arbeitszeit fest verplanen, sondern Pufferzeiten frei lassen
+■   störungsfreie Arbeitszeiten für wichtige Aufgaben reservieren
+■   Zeiten für die Mitarbeiterkommunikation einplanen
+
+
+
+
+                                                 Seite 5
+                                             L 050-03-0521-8
+
+=== Seite 6 ===
+GEPRÜFTE/-R INDUSTRIEMEISTER/-IN,
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+GRUNDLEGENDE QUALIFIKATIONEN
+Anwendung von Methoden der Information, Kommunikation und Planung
+
+
+
+ d Mögliche Punktzahl: 6
+■   Die Aufgaben müssen terminiert werden.
+■   Die Aufgaben müssen eindeutig abgegrenzt sein.
+■   Das erwartete Ergebnis der Aufgabe muss klar definiert sein.
+■   Der Mitarbeiter muss qualifiziert sein.
+■   Der Mitarbeiter muss zur Ausführung der Aufgabe berechtigt sein.
+■   Der Mitarbeiter muss motiviert sein, die Aufgabe zu erfüllen.
+■   Der Meister muss zur Delegierung der Aufgabe berechtigt sein.
+■   Der Meister muss den Mitarbeiter selbstständig an der Aufgabe arbeiten lassen.
+■   Der Meister muss die Erfüllung der Aufgabe kontrollieren können.
+
+
+Aufgabe 3
+Zu Ihren Aufgaben im Unternehmen gehört das Vorbereiten und Durchführen wichtiger
+Präsentationen. Während einer Präsentation soll die Körpersprache die Ausführungen des
+Präsentierenden unterstützen.
+
+ a Mögliche Punktzahl: 6
+Beschreiben Sie anhand von drei Beispielen, wie Sie Ihre Körpersprache gezielt für
+Ihre Präsentation einsetzen können.
+
+ b Mögliche Punktzahl: 4
+Nennen Sie zwei unangemessene Verhaltensweisen eines Präsentierenden und be-
+gründen Sie, warum Sie diese Verhaltensweisen beim Präsentieren vermeiden sollten.
+
+
+
+
+                                                 Seite 6
+                                              L 050-03-0521-8
+
+=== Seite 7 ===
+GEPRÜFTE/-R INDUSTRIEMEISTER/-IN,
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+GRUNDLEGENDE QUALIFIKATIONEN
+Anwendung von Methoden der Information, Kommunikation und Planung
+
+
+
+Lösungshinweise Aufgabe 3
+[VO: § 4 Absatz 4 Nr. 3]
+
+ a Mögliche Punktzahl: 6
+Z. B.:
+■   Beim Präsentieren wird Blickkontakt zu den Teilnehmern der Präsentation gehalten.
+    Präsentierende reden nicht über die Zuhörer hinweg.
+■   Eine offene Körperhaltung lässt auch auf Offenheit und Interesse des Präsentierenden
+    schließen.
+■   Die Gestik des Präsentierenden unterstreicht wichtige Inhalte des Gesagten und kann
+    für Aufmerksamkeit sorgen.
+■   Der Präsentierende kann die Position im Raum wechseln, um die Aufmerksamkeit der
+    Teilnehmer aufrechtzuerhalten.
+■   Authentische Präsentation = Körpersprache passt zu dem Gesagten.
+
+ b Mögliche Punktzahl: 4
+Z. B.:
+■   Zu viele oder stark übertriebene Bewegungen können die Teilnehmer vom Inhalt ablen-
+    ken.
+■   Ein planloses Herumlaufen des Präsentierenden wird durch die Teilnehmer als Hektik
+    wahrgenommen.
+■   Das Hantieren mit Gegenständen (die nicht zur Präsentation gehören) deutet auf
+    Nervosität hin.
+■   Eine geschlossene, defensive Körperhaltung kann von den Teilnehmern als Schwäche
+    wahrgenommen werden.
+
+
+
+
+                                                 Seite 7
+                                             L 050-03-0521-8
+
+=== Seite 8 ===
+GEPRÜFTE/-R INDUSTRIEMEISTER/-IN,
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+GRUNDLEGENDE QUALIFIKATIONEN
+Anwendung von Methoden der Information, Kommunikation und Planung
+
+
+
+Aufgabe 4
+In Ihrer Produktionslinie wird wöchentlich das Teil T1 in unterschiedlichen Stückzahlen
+hergestellt. Die Geschäftsleitung hat Ihnen für die ersten sechs Kalenderwochen zwei
+messbare Ziele gesetzt:
+
+1. Der Anteil der Teile ohne Nacharbeit soll größer als 90 % sein.
+
+2. Die durchschnittliche Arbeitszeit je Teil soll 2 Stunden nicht überschreiten.
+
+Aus der Betriebsdatenerfassung haben Sie folgende Zahlen erhalten:
+
+                                Gesamte
+                                                                             Teile ohne
+   Kalenderwoche          Arbeitszeit für alle       Produzierte Teile
+                                                                             Nacharbeit
+                            Teile in Stunden
+
+           1                     2.800                     1.000                   900
+
+           2                     2.500                     1.200               1.000
+
+           3                     2.600                     1.100               1.000
+
+           4                     2.500                     1.400               1.200
+
+           5                     3.000                     1.600               1.600
+
+           6                     3.000                     1.500               1.400
+
+
+
+ a Mögliche Punktzahl: 3
+Berechnen Sie für jede Kalenderwoche den Anteil der Teile ohne Nacharbeit.
+
+ b Mögliche Punktzahl: 4
+Ermitteln Sie anhand der gegebenen Zahlen rechnerisch nachvollziehbar, ob die bei-
+den Vorgaben für den Gesamtzeitraum der ersten sechs Kalenderwochen erfüllt
+wurden.
+
+ c Mögliche Punktzahl: 8
+Stellen Sie den prozentualen Anteil der Teile ohne Nacharbeit in einem Diagramm dar
+und tragen Sie dort auch die Zielgröße von 90 % ein.
+
+
+                                                 Seite 8
+                                             L 050-03-0521-8
+
+=== Seite 9 ===
+GEPRÜFTE/-R INDUSTRIEMEISTER/-IN,
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+GRUNDLEGENDE QUALIFIKATIONEN
+Anwendung von Methoden der Information, Kommunikation und Planung
+
+
+
+Lösungshinweise Aufgabe 4
+[VO: § 4 Absatz 4 Nr. 4]
+
+ a Mögliche Punktzahl: 3
+
+               Kalenderwoche                               Anteil der Teile ohne Nacharbeit
+
+                        1                                               90,0 %
+
+                        2                                               83,3 %
+
+                        3                                               90,9 %
+
+                        4                                               85,7 %
+
+                        5                                              100,0 %
+
+                        6                                               93,3 %
+
+
+
+ b Mögliche Punktzahl: 4
+                                           Summe der Teile ohne Nacharbeit
+Anteil der Teile ohne Nacharbeit       =                                   · 100
+                                            Summe der produzierten Teile
+                                           7.100 Teile
+                                       =               · 100
+                                           7.800 Teile
+                                       = 91,03 %
+
+
+                                           Summe der Arbeitszeiten
+durchschnittliche Arbeitszeit          =
+                                              Anzahl der Teile
+                                            16.400 h
+                                       =
+                                           7.800 Teile
+                                       = 2,1 h/Teil
+Das erste Ziel wurde erreicht. Das zweite Ziel wurde nicht erreicht.
+
+
+
+
+                                                 Seite 9
+                                              L 050-03-0521-8
+
+=== Seite 10 ===
+GEPRÜFTE/-R INDUSTRIEMEISTER/-IN,
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+GRUNDLEGENDE QUALIFIKATIONEN
+Anwendung von Methoden der Information, Kommunikation und Planung
+
+
+
+c Mögliche Punktzahl: 8
+
+
+
+
+                                                Seite 10
+                                             L 050-03-0521-8
+
+=== Seite 11 ===
+GEPRÜFTE/-R INDUSTRIEMEISTER/-IN,
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+GRUNDLEGENDE QUALIFIKATIONEN
+Anwendung von Methoden der Information, Kommunikation und Planung
+
+
+
+Aufgabe 5
+Im Rahmen eines Digitalisierungsprojekts soll die Vernetzung der Maschinen verbessert
+werden. Als Industriemeister wurden Sie mit der Leitung dieses Projekts beauftragt. Ein
+externes Unternehmen ist als Auftragnehmer mit der technischen Umsetzung beauftragt.
+
+Zu Beginn des Projekts haben Sie mit Ihrem Projektteam ein Lastenheft erstellt. Der Auftrag-
+nehmer hat Ihnen soeben das Pflichtenheft vorgelegt.
+
+ a Mögliche Punktzahl: 6
+Beschreiben Sie drei inhaltliche Punkte aus dem Lastenheft.
+
+ b Mögliche Punktzahl: 6
+Beschreiben Sie drei inhaltliche Punkte aus dem Pflichtenheft.
+
+ c Mögliche Punktzahl: 4
+Beschreiben Sie anhand von zwei Beispielen, wie Sie das Lastenheft und das Pflich-
+tenheft bei der Planung und Realisierung des Projekts berücksichtigen.
+
+ d Mögliche Punktzahl: 4
+Begründen Sie, warum ein Lastenheft und ein Pflichtenheft notwendig sind.
+
+
+
+
+                                                Seite 11
+                                             L 050-03-0521-8
+
+=== Seite 12 ===
+GEPRÜFTE/-R INDUSTRIEMEISTER/-IN,
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+GRUNDLEGENDE QUALIFIKATIONEN
+Anwendung von Methoden der Information, Kommunikation und Planung
+
+
+
+Lösungshinweise Aufgabe 5
+[VO: § 4 Absatz 4 Nr. 5]
+
+ a Mögliche Punktzahl: 6
+Das Lastenheft enthält z. B.:
+■   gewünschter Soll-Zustand: beschreibt die Zielsetzungen des Gesamtprojekts
+■   aktueller Ist-Zustand: beschreibt, worauf das zukünftige Projekt aufgebaut werden soll
+■   Zeitrahmen der Planung und Realisierung, ggf. mit Meilensteinen für Teilziele
+■   wichtige Anforderungen an den Auftragnehmer, wie z. B. Zertifizierungen oder Referen-
+    zen
+
+ b Mögliche Punktzahl: 6
+Im Pflichtenheft wird z. B. beschrieben:
+■   mit welchen technischen Mitteln der Auftragnehmer die Inhalte des Lastenheftes umset-
+    zen will
+■   in welchem zeitlichen Rahmen der Auftragnehmer seine Aufgaben in dem Projekt
+    erfüllen kann
+■   welche Bedingungen für Änderungsanforderungen im Projektverlauf erfüllt sein müssen
+■   welche Voraussetzungen der Auftraggeber noch schaffen muss, damit das Projekt
+    erfolgreich sein kann
+
+ c Mögliche Punktzahl: 4
+Die Projektleitung wird z. B.
+■   einen Abgleich durchführen, ob der Auftragnehmer alle Vorgaben des Lastenheftes
+    eingehalten hat, und ggf. Korrekturen anfordern.
+■   die Einsätze des Auftragnehmers und die Meilensteine als Vorgänge in die Ablauf- und
+    Terminplanung übernehmen.
+■   die Meilensteine bei der Realisierung des Projekts als Grundlage für Teilabnahmen
+    verwenden.
+
+ d Mögliche Punktzahl: 4
+Die Begründung kann anhand folgender Argumente erfolgen:
+■   Lasten- und Pflichtenheft bringen Auftraggeber und Auftragnehmer eine höhere Rechts-
+    sicherheit.
+■   Lasten- und Pflichtenheft bilden die inhaltliche Grundlage der späteren Projektreali-
+    sierung.
+■   Lasten- und Pflichtenheft sollten auch die Grundlage für die spätere Abnahme des
+    Projekts bilden.
+
+
+                                                Seite 12
+                                             L 050-03-0521-8
+
+=== Seite 13 ===
+GEPRÜFTE/-R INDUSTRIEMEISTER/-IN,
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+GRUNDLEGENDE QUALIFIKATIONEN
+Anwendung von Methoden der Information, Kommunikation und Planung
+
+
+
+Aufgabe 6
+Die Geschäftsleitung will neue Methoden zur Verbesserung der Qualität erarbeiten lassen. In
+einer Auftaktveranstaltung (Kick-off-Meeting) werden die Mitarbeiter über die Ziele der Ge-
+schäftsleitung und die Methoden der Ideenfindung informiert. Die Veranstaltung wird von
+einem externen Moderator geleitet.
+
+ a Mögliche Punktzahl: 8
+Beschreiben Sie vier Tagesordnungspunkte der Auftaktveranstaltung.
+
+ b Mögliche Punktzahl: 3
+Nennen Sie drei Aufgaben des Moderators im Ideenfindungsprozess.
+
+ c Mögliche Punktzahl: 4
+Erläutern Sie die Kommunikation für je eine mündliche und eine schriftliche Methode
+der Ideenfindung.
+
+
+
+
+                                                Seite 13
+                                             L 050-03-0521-8
+
+=== Seite 14 ===
+GEPRÜFTE/-R INDUSTRIEMEISTER/-IN,
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+GRUNDLEGENDE QUALIFIKATIONEN
+Anwendung von Methoden der Information, Kommunikation und Planung
+
+
+
+Lösungshinweise Aufgabe 6
+[VO: § 4 Absatz 4 Nr. 6]
+
+ a Mögliche Punktzahl: 8
+Tagesordnungspunkte sind z. B.:
+■   Der Moderator begrüßt die Beteiligten und erläutert die Methodik der Ideenfindung.
+■   Die Geschäftsleitung erläutert die Ziele des Verbesserungsprozesses.
+■   Die Mitarbeiter werden über den aktuellen Stand der Qualität informiert.
+■   Die Mitarbeiter werden zur Mitarbeit beim Erreichen der Ziele motiviert.
+■   Die Mitarbeiter können Fragen stellen und erhalten Antworten.
+
+ b Mögliche Punktzahl: 3
+Es können folgende Aufgaben des Moderators genannt werden:
+■   Beraten der Geschäftsleitung zu Methoden der Ideenfindung
+■   Erläutern der Kommunikationsregeln im Rahmen der Ideenfindung
+■   Erläutern der anzuwendenden Methoden der Ideenfindung
+■   Planen der Veranstaltung und Aufrufen der geplanten Tagesordnungspunkte
+■   Sammeln von Fragen, Einwänden und anderen Arten des Feedbacks
+■   Schlichten von Konflikten während der Veranstaltung
+■   Mitwirken bei der Auswertung der Veranstaltung
+
+ c Mögliche Punktzahl: 4
+Die Kommunikation bei typischen Methoden der Ideenfindung soll erläutert werden, z. B.:
+■   Im Rahmen eines Brainstormings werden nach einem Impulsreferat Ideen mündlich
+    vorgetragen und protokolliert, ohne dass sie dabei bewertet oder beurteilt werden.
+    Später werden die Ideen ausgewertet und zusammengefasst.
+■   Im Rahmen eines Brainwritings erfassen die Mitarbeiter nach einem Impulsreferat ihre
+    Ideen schriftlich. Später werden die Ideen ausgewertet und zusammengefasst.
+■   Bei der 6-3-5-Methode werden Ideen in einer Runde mit wenigen Personen schriftlich
+    erfasst und nach dem Weitergeben durch die jeweils nächste Person schrittweise
+    verfeinert.
+
+
+
+
+                                                Seite 14
+                                             L 050-03-0521-8
+

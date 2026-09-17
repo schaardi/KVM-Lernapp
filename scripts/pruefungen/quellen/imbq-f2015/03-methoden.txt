@@ -1,0 +1,561 @@
+=== Seite 1 ===
+Bundeseinheitliche
+Weiterbildungsprüfung
+
+der Industrie- und Handelskammern
+
+Prüfungsteilnehmer-Nummer
+
+Geprüfte/-r Industriemeister]-in,
+fachrichtungsübergreifende
+Basisqualifikationen/
+grundlegende Qualifikationen
+
+m Basisqualifikation Anwendung von Methoden der Information,
+Kommunikation und Planung
+
+m Prüfungstag 29. April 2015
+m Bearbeitungszeit 90 Minuten
+m Anzahl der Aufgaben 6
+
+Bitte prüfen Sie vor Beginn der Prüfung die Vollständigkeit des Aufgabensatzes. Sollte der
+Aufgabensatz nicht vollständig sein, informieren Sie bitte die Aufsicht.
+
+L 050-03-0415-7
+
+=== Seite 2 ===
+Bearbeitungshinweise
+
+Bitte lesen Sie die nachfolgenden Bearbeitungshinweise sorgfältig durch:
+
+Die zur Prüfung zugelassenen Hilfsmittel wurden Ihnen separat mit der Einladung mitgeteilt.
+Sie erhalten einen Aufgaben- und einen Lösungsteil.
+
+Tragen Sie auf dem Deckblatt Ihre Prüfungsteilnehmer-Nummer ein.
+
+Die maximale Gesamtpunktzahl der Lösungen beträgt 100 Punkte.
+
+Die Lösungsgänge bzw. Rechenvorgänge sind klar und nachvollziehbar im Lösungsteil darzu-
+stellen. Sollte der Platz nicht ausreichen, benutzen Sie bitte das Konzeptpapier, verweisen Sie
+auf die Fortsetzung und kennzeichnen Sie diese. Wir weisen darauf hin, dass eine vom Prüfungs-
+ausschuss nicht lesbare Prüfungsarbeit mit der Note „ungenügend“ (null Punkte) bewertet wird
+mit den Rechtsfolgen, die sich aus der Prüfungsordnung ergeben.
+
+m Verwenden Sie für jede Aufgabe ein neues Lösungsblatt bzw. eine neue Lösungsseite.
+
+Falls die Lösung auf einem beigefügten Anlageblatt erfolgen soll, wird in der Aufgabenstellung
+darauf hingewiesen.
+
+Für Ihre Notizen benutzen Sie bitte ausschließlich das Konzeptpapier.
+
+Das Konzeptpapier ist mit dem Aufgaben- und dem Lösungsteil abzugeben.
+
+Bei Aufgaben, die eine Aufzählung von n-Fakten zur Lösung erfordern, werden nur die ersten
+n-Fakten gewertet. Alle darüber hinausgehenden Aufzählungen werden gestrichen.
+
+Wir wünschen Ihnen bei der Bearbeitung viel Erfolg.
+
+Der leichteren Lesbarkeit wegen geben wir in den Aufgaben/Texten der männlichen Form den
+Vorzug. Mit diesem einfacheren sprachlichen Ausdruck sind selbstverständlich immer Männer und
+Frauen gemeint.
+
+Die Vervielfältigung, Verbreitung oder öffentliche Wiedergabe der Publikation [der Prüfungssätze]
+ist nicht gestattet (8853, 54 UrhG) und strafbar (8 106 UrhG). Im Fall der Zuwiderhandlung wird
+Strafantrag gestellt.
+
+=== Seite 3 ===
+GEPRÜFTEI-R INDUSTRIEMEISTERI/-IN, FACH-
+RICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+
+GRUNDLEGENDE QUALIFIKATIONEN
+
+Anwendung von Methoden der Information, Kommunikation und Planung
+
+Aufgabe il
+
+In Ihrem Unternehmen wird im Zweischichtbetrieb gearbeitet. Nach den Schichtwechseln
+kommt es immer wieder zu Problemen und Störungen in den Arbeitsabläufen. Als Ursache
+wurden Mängel der Kommunikation im Zuge der Schichtübergabe ermittelt.
+
+a) Beschreiben Sie drei Sachverhalte, die bei einer Schichtübergabe kommuniziert werden (6 Punkte)
+müssen.
+
+b) Nennen Sie drei mögliche Folgen einer fehlerhaften Kommunikation bei der Schicht- (3 Punkte)
+übergabe.
+
+c) Beschreiben Sie drei Möglichkeiten, die Sie als Meister haben, um diese Mängel abzu- (6 Punkte)
+stellen.
+
+Lösungshinweise Aufgabe 1 (15 Punkte)
+
+(RVO 8 4 Absatz 4 Nr. 6)
+
+a) zB.
+m außergewöhnliche Vorfälle wie Unfälle, Beinahe-Unfälle, Maschinenausfälle usw.
+m Änderungen der Arbeitsabläufe oder Produktionsverfahren
+
+= Qualitätsprobleme (z. B. mit dem Material, mit den Werkzeugen oder den Maschinen) (6 Punkte)
+
+b) Eine fehlerhafte Kommunikation kann z. B. zu
+= Unfällen,
+m Produktionsausfällen,
+m Nacharbeit aufgrund von Qualitätsmängeln
+führen. (3 Punkte)
+
+e)92.B:
+
+m Einführung einer strukturierten Übergabe mit Übergabeprotokoll, Schichtbuch oder
+Checkliste
+
+m Einführung einer überlappenden Anwesenheit der Verantwortlichen der Frühschicht
+und Spätschicht
+
+= Auditierung der Übergabe, um konkrete Fehler zu erkennen und abzustellen (6 Punkte)
+
+© DIHK — Gesellschaft für berufliche Bildung - Organisation zur Förderung der IHK-Weiterbildung mbH - Bonn | L 050-03-0415-7 | Seite 31
+Die Vervielfältigung, Verbreitung oder öffentliche Wiedergabe der Publikation [der Prüfungssätze und Lösungshinweise]
+ist nicht gestattet (8853, 54 UrhG) und strafbar (8106 UrhG). Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+
+=== Seite 4 ===
+GEPRÜFTEI/-R INDUSTRIEMEISTER/-IN, FACH-
+RICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+
+GRUNDLEGENDE QUALIFIKATIONEN
+
+Anwendung von Methoden der Information, Kommunikation und Planung
+
+Aufgabe 2
+
+In Ihrem Unternehmen wird ein neues IT-System zur Betriebsdatenerfassung eingeführt.
+Das Projekt muss innerhalb von vier Monaten abgeschlossen sein. Ihr Stellvertreter hat
+Ihnen folgende Tabelle zur Abschätzung des Arbeitszeitaufwandes vorbereitet:
+
+Vorgänge Dauer
+Ist-Analyse 40
+Soll-Analyse 30
+Anpassung der Software 60
+Installation der Hard- und Software 50
+Tests 20
+Einweisung der Mitarbeiter 20
+Dokumentation 20
+Summe Tätigkeiten bis hier 240
+geteilt durch 4 Monate 60
+geteilt durch 20 Arbeitstage pro Monat 3
+
+Ergebnis: Es werden rechnerisch drei Personen benötigt.
+
+a) Erläutern Sie anhand der vorliegenden Angaben vier Schwachstellen dieser Über- (12 Punkte)
+schlagsrechnung.
+
+b) Beschreiben Sie vier Schritte Ihrer weiteren Planung des Projektes. (8 Punkte)
+
+Seite 32 | L 050-03-0415-7 | © DIHK - Gesellschaft für berufliche Bildung — Organisation zur Förderung der IHK-Weiterbildung mbH - Bonn
+Die Vervielfältigung, Verbreitung oder öffentliche Wiedergabe der Publikation [der Prüfungssätze und Lösungshinweise]
+ist nicht gestattet (8853, 54 UrhG) und strafbar ($ 106 UrhG). Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+
+=== Seite 5 ===
+GEPRÜFTEI/-R INDUSTRIEMEISTER/-IN, FACH-
+RICHTUNGSUBERGREIFENDE BASISQUALIFIKATIONEN/
+
+GRUNDLEGENDE QUALIFIKATIONEN
+
+Anwendung von Methoden der Information, Kommunikation und Planung
+
+Lösungshinweise Aufgabe 2 (20 Punkte)
+(RVO 8 4 Absatz 4 Nr. 5)
+
+a) m Erwartet werden Erläuterungen z. B. zu folgenden Schwachstellen:
+
+= Die Tätigkeiten sind qualitativ unterschiedlich. Die Qualifikation der Mitarbeiter ist
+nicht berücksichtigt.
+
+= Es wird unterstellt, dass keine Fehlzeiten auftreten und dass die Mitarbeiter über
+die gesamte Projektlaufzeit zur Verfügung stehen.
+
+= Eswird nicht berücksichtigt, dass Vorgänge voneinander abhängig sind oder parallel
+ablaufen können.
+
+= Es werden keine organisatorisch bedingten Wartezeiten zwischen den Vorgängen
+
+berücksichtigt. (12 Punkte)
+b) ZB
+= Ablaufplanung: Die Vorgänge werden miteinander verknüpft (Vorgänger, Nach-
+folger)
+
+= Terminplanung: In einem Netzplan werden die frühesten bzw. spätesten Anfangs-
+und Endzeitpunkte berechnet.
+
+= Ressourcenplanung: Die Mitarbeiter werden den einzelnen Vorgängen zugewiesen.
+
+= Kostenplanung: Auf der Grundlage der Ressourcenplanung werden die Kosten für
+die Arbeitsleistungen ermittelt. (8 Punkte)
+
+© DIHK - Gesellschaft für berufliche Bildung — Organisation zur Förderung der IHK-Weiterbildung mbH - Bonn | L050-03-0415-7 | Seite 33
+Die Vervielfältigung, Verbreitung oder öffentliche Wiedergabe der Publikation [der Prüfungssätze und Lösungshinweise]
+ist nicht gestattet (8853, 54 UrhG) und strafbar (8 106 UrhG). Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+
+=== Seite 6 ===
+GEPRÜFTEI!-R INDUSTRIEMEISTER/-IN, FACH-
+RICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+
+GRUNDLEGENDE QUALIFIKATIONEN
+
+Anwendung von Methoden der Information, Kommunikation und Planung
+
+Aufgabe 3
+
+Die Produktion einer Pilotanlage weist eine Fehlerquote von 24 % auf. Für die Fehler
+wurden folgende Ursachen ermittelt:
+
+Anteil an der
+
+EeHlorutSenRe Gesamtproduktion
+mangelnde Dokumentation 8%
+mangelhafte Maßhaltigkeit 7%
+mangelhafte Beschaffenheit 5%
+der Oberfläche
+Korrosion 4%
+Gesamtfehlerquote 24 %
+
+Die Fehlerkosten betragen insgesamt 50.000 €.
+
+a) Ordnen Sie den einzelnen Fehlerursachen ihre Anteile an der Gesamtzahl der Fehler (8 Punkte)
+und an den Fehlerkosten in einer Tabelle zu. Verwenden Sie hierzu die Anlage 1.
+
+b) Stellen Sie die Verteilung der Fehlerkosten tabellarisch auf die vier Fehlerursachen in (7 Punkte)
+einem Diagramm dar.
+
+Seite 34 | L 050-03-0415-7 | © DIHK - Gesellschaft für berufliche Bildung - Organisation zur Förderung der IHK-Weiterbildung mbH — Bonn
+Die Vervielfältigung, Verbreitung oder öffentliche Wiedergabe der Publikation [der Prüfungssätze und Lösungshinweise]
+ist nicht gestattet ($853, 54 UrhG) und strafbar (8106 UrhG). Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+
+=== Seite 7 ===
+GEPRÜFTEI/-R INDUSTRIEMEISTER/-IN, FACH-
+RICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+
+GRUNDLEGENDE QUALIFIKATIONEN
+
+Anwendung von Methoden der Information, Kommunikation und Planung
+
+Lösungshinweise Aufgabe 3
+(RVO 8 4 Absatz 4 Nr. 4)
+
+a) Die Fehlerkosten werden wie folgt aufgeschlüsselt:
+
+Anteil an der Anteil an der
+
+(15 Punkte)
+
+Anteil an den
+
+Fehlerursache Gesamt- Gesamtzahl Fakterkakten
+produktion der Fehler
+mangelnde Dokumentation 8% 33,3% 16.666,67 €
+mangelhafte Maßhaltigkeit 7% 29,2% 14.583,33 €
+mangelhafte Beschaffenheit 5% 20,8 % 10.416,67 €
+der Oberfläche
+Korrosion 4% 16,7% 8.333,33 €
+gesamt 24 % 100,0 % 50.000,00 € (8 Punkte)
+b) Anteile an den Fehlerkosten
+Korrosion
+16,7%
+mangelnde
+Dokumentation
+33,3%
+mangelhafte (1
+Beschaffenheitder
+Oberfläche
+20,8%
+mangelhafte
+Maßhaltigkeit
+29,2% (7 Punkte)
+
+Hinweis für den Korrektor: Auch andere Diagramme zur anschaulichen Darstel-
+
+lung von Anteilen können gewertet werden.
+
+© DIHK - Gesellschaft für berufliche Bildung — Organisation zur Förderung der IHK-Weiterbildung mbH - Bonn
+Die Vervielfältigung, Verbreitung oder öffentliche Wiedergabe der Publikation [der Prüfungssätze und Lösungshinweise]
+ist nicht gestattet (8853, 54 UrhG) und strafbar ($ 106 UrhG). Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+
+| L050-03-0415-7 | Seite 35
+
+=== Seite 8 ===
+GEPRÜFTEI/-R INDUSTRIEMEISTER/-IN, FACH-
+RICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+
+GRUNDLEGENDE QUALIFIKATIONEN
+
+Anwendung von Methoden der Information, Kommunikation und Planung
+
+Aufgabe 4
+
+Sie sind als Meister in der Produktion verantwortlich für zwei Arbeitsgruppen. Die Gruppe 1
+besteht aus fünf Arbeitsvorbereitern, die überwiegend im Büro tätig sind. Die Gruppe 2
+besteht aus 30 Mitarbeitern unterschiedlicher Nationalitäten, die in der Schweißerei arbeiten.
+
+Sie müssen für alle Mitarbeiter arbeitsplatzbezogene Sicherheitsunterweisungen durch-
+führen. Sie wählen hierfür die Form der Präsentation.
+
+a) Beschreiben Sie zwei Ziele, die Sie mit dieser Präsentation erreichen möchten. (4 Punkte)
+
+b) Stellen Sie drei inhaltlichen Vorbereitungen auf die Sicherheitsunterweisung unter (6 Punkte)
+Berücksichtigung der beiden Zielgruppen dar.
+
+Lösungshinweise Aufgabe 4 (10 Punkte)
+(RVO 8 4 Absatz 4 Nr. 3)
+
+a) Mögliche Ziele sind z. B.:
+
+m Sensibilisierung der Mitarbeiter:
+
+Die Mitarbeiter sollen hinsichtlich der Gefährdungen in ihrer Arbeitsumgebung
+sensibilisiert werden. Arbeitsunfällen soll auf diese Weise vorgebeugt werden.
+
+= Erfüllung der Forderungen des Gesetzgebers:
+
+Die jährliche Durchführung der arbeitsplatzbezogenen Sicherheitsunterweisung ist
+vom Gesetzgeber vorgeschrieben. (4 Punkte)
+
+D)72.B.
+
+m Informationen sammeln unter Berücksichtigung von:
+= Tätigkeiten, Qualifikationen und Sprachen der Mitarbeiter
+= Gefährdungsbeurteilungen der beiden Arbeitsumgebungen
+
+sw Informationen für die Präsentation aufbereiten:
+m Grafiken und Tabellen erstellen
+m passende Videoeinspielungen beschaffen
+
+u Zeitbedarf festlegen/ermitteln:
+= Die Dauer der Sicherheitsunterweisungen muss ermittelt werden.
+
+m Der Zeitraum für Fragen und Diskussion muss festgelegt werden. (6 Punkte)
+
+Seite 36 | L 050-03-0415-7 | © DIHK - Gesellschaft für berufliche Bildung — Organisation zur Förderung der IHK-Weiterbildung mbH — Bonn
+Die Vervielfältigung, Verbreitung oder öffentliche Wiedergabe der Publikation [der Prüfungssätze und Lösungshinweise]
+ist nicht gestattet (8853, 54 UrhG) und strafbar (8 106 UrhG). Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+
+=== Seite 9 ===
+GEPRÜFTEI/-R INDUSTRIEMEISTER/-IN, FACH-
+RICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+
+GRUNDLEGENDE QUALIFIKATIONEN
+
+Anwendung von Methoden der Information, Kommunikation und Planung
+
+Aufgabe 5
+
+Der Qualitätszirkel beschließt, das Qualitätsmanagementhandbuch künftig im Intranet
+verfügbar zu machen.
+
+a) Beschreiben Sie vier Vorteile dieser Lösung. (8 Punkte)
+b) Beschreiben Sie drei Risiken, die aus dieser Lösung entstehen können. (6 Punkte)
+c) Beschreiben Sie drei weitere betriebliche Nutzungsmöglichkeiten des Intranets. (6 Punkte)
+Lösungshinweise Aufgabe 5 (20 Punkte)
+
+(RVO 8 4 Absatz 4 Nr. 1)
+
+a) 2.D.
+= Alle Mitarbeiter haben gleichzeitig Zugriff auf die Qualitätsmanagementinformationen
+und denselben Informationsstand.
+
+s Aktualisierungen am Handbuch sind sofort unternehmensweit für alle verfügbar.
+
+m Formulare/Vordrucke des Qualitätsmanagements werden zentral vorgehalten und
+sind immer aktuell; vereinfachter Änderungsdienst.
+
+= Da nur tatsächlich benötigte Formulare und Vordrucke ausgedruckt werden, kann
+Papier gespart werden.
+
+m Einsparung von Lagerplatz für Ordner, Formulare, Vordrucke
+
+= Zeit, die zur Aktualisierung der im Werk verteilten Handbücher benötigt wird, kann
+gespart werden. (8 Punkte)
+
+Hinweis für den Korrektor: Es werden Beschreibungen zu den genannten
+Vorteilen erwartet.
+
+b) BE
+= Einige Mitarbeiter könnten sich Qualitätsmanagementinformationen, Formulare
+oder Vordrucke ausdrucken oder lokal speichern und somit Aktualisierungen nicht
+mehr wahrnehmen.
+
+= Mitarbeiter mit geringer IT-Affinität scheuen den Umgang mit dem Intranet.
+
+s Füralle Mitarbeiter (auch in der Produktion) muss der Zugang zum Intranet gewähr-
+leistet sein. (6 Punkte)
+
+Hinweis für den Korrektor: Es werden Beschreibungen zu den genannten Risiken
+
+erwartet.
+e) ZB:
+m betriebliches Vorschlagswesen
+= Informationen zur Arbeitssicherheit
+= interne Stellenausschreibungen
+m Informationen des Betriebsrates für die Belegschaft (6 Punkte)
+Hinweis für den Korrektor: Es werden Beschreibungen zu den genannten
+Anwendungen erwartet.
+© DIHK - Gesellschaft für berufliche Bildung - Organisation zur Förderung der IHK-Weiterbildung mbH - Bonn | L050-03-0415-7 | Seite 37
+
+Die Vervielfältigung, Verbreitung oder öffentliche Wiedergabe der Publikation [der Prüfungssätze und Lösungshinweise]
+ist nicht gestattet (8853, 54 UrhG) und strafbar ($ 106 UrhG). Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+
+=== Seite 10 ===
+GEPRÜFTEI/-R INDUSTRIEMEISTER/-IN, FACH-
+RICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+
+GRUNDLEGENDE QUALIFIKATIONEN
+
+Anwendung von Methoden der Information, Kommunikation und Planung
+
+Aufgabe | s|
+
+In Ihrem Unternehmen wurde folgende Verteilung der Umsätze auf die produzierten Erzeug-
+nisgruppen erfasst:
+
+Erzeugnisgruppe Jahresumsatz
+24.360 €
+74.810 €
+56.400 €
+
+240.310 €
+18.160 €
+
+540.200 €
+
+160.200 €
+84.240 €
+
+gesamt 1.198.680 €
+
+el oe
+
+a) Um Ansätze für Ergebnisverbesserungen zu erkennen, müssen die Erzeugnisse
+klassifiziert werden.
+
+Führen Sie eine ABC-Analyse durch. (12 Punkte)
+
+b) Beschreiben Sie zwei Schlussfolgerungen aus dem Ergebnis. (4 Punkte)
+
+c) Nennen Sie vier weitere Anwendungsbereiche der ABC-Analyse. (4 Punkte)
+Seite 38 | L 050-03-0415-7 | © DIHK - Gesellschaft für berufliche Bildung — Organisation zur Förderung der IHK-Weiterbildung mbH — Bonn
+
+Die Vervielfältigung, Verbreitung oderöffentliche Wiedergabe der Publikation [der Prüfungssätze und Lösungshinweise]
+ist nicht gestattet (8853, 54 UrhG) und strafbar ($106 UrhG). Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+
+=== Seite 11 ===
+GEPRÜFTE/-R INDUSTRIEMEISTER/-IN, FACH-
+RICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+
+GRUNDLEGENDE QUALIFIKATIONEN
+
+Anwendung von Methoden der Information, Kommunikation und Planung
+
+Lösungshinweise Aufgabe 6 (20 Punkte)
+(RVO 8 4 Absatz 4 Nr. 2)
+
+. i Jahres- Anteil am 3
+Rang BEARUIISE aan Jahresumsatz BED Klasse
+gruppe Euro nBsyarı Umsatzanteile
+1 F 540.200 45,07 45,07 A
+2 D 240.310 20,05 65,11 A
+2 G 160.200 13,36 78,48 A
+4 H 84.240 7,03 85,51 B
+5 B 74.810 6,24 91,75 B
+6 C 56.400 4,71 96,45 C
+7 A 24.360 2,03 98,49 C
+8 E 18.160 1,51 100,00 C
+1.198.680 (12 Punkte)
+DITZIBE
+m Marktpotenzial für die Produkte der Erzeugnisgruppen F, D, G analysieren
+= umsatzfördernde und kundenbindende Maßnahmen für die Produkte der Erzeug-
+nisgruppen F, D, G
+m Produkte der Erzeugnisgruppen C, A, E eventuell durch andere Unternehmen
+zuliefern lassen (4 Punkte)
+Cr Zu Bi
+= Ermittlung der Verbrauchsmaterialien mit den höchsten Kosten im Einkauf
+= Ermittlung von Ladenhütern im Lagerbestand
+= Ermittlung der Premiumkunden mit den höchsten Umsätzen
+= Identifikation der Fehler mit den höchsten Kosten und des Verbesserungspotenzials (4 Punkte)
+© DIHK - Gesellschaft für berufliche Bildung — Organisation zur Förderung der IHK-Weiterbildung mbH - Bonn | L 050-03-0415-7 | Seite 39
+
+Die Vervielfältigung, Verbreitung oder öffentliche Wiedergabe der Publikation [der Prüfungssätze und Lösungshinweise]
+ist nicht gestattet (8853, 54 UrhG) und strafbar (8 106 UrhG). Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+
+=== Seite 12 ===
+Seite 40 | P 050-03-0415-7 |
+
+aysesınıa]y9J
+13WWNN-IJSWyeUNlSISBUnynId
+
+(e & ageßyny nz | aßbejuy
+
+uonNynpoJdjwesag J9p ue JIaJUYy
+
+>
+=
+z
+®
+=)
+Q
+=
+=
+a
+<
+o°
+>
+Ss
+®
+—
+>?
+oO
+Q.
+®
+=)
+Q
+®
+=
+ai
+=
+[e)]
+Yu |
+=
+)
+=
+[e}
+e)
+ES
+[e)
+3
+=
+{=
+=
+X
+)
+=
+°
+=,
+c:
+5
+'®.
+u
+eb)
+=,
+c
+=,
+(le)
+
+N3NOLLVMISIIVND JANI9FTANNYO/NINOLLVYIHITVNOSISVA
+
+JAN3413U9UIANSSNNLHIIUHIVS 'NI-/U3LSIINFIULSNANI U/314N4439
+
+EICH
+Jap |yezJwesag) Jap ue JloJuy
+
+U9JSOYASIY9 I USp ue [I9JUuY
+
+© DIHK - Gesellschaft für berufliche Bildung — Organisation zur Förderung der IHK-Weiterbildung mbH — Bonn
+Die Vervielfältigung, Verbreitung oder öffentliche Wiedergabe der Publikation [der Prüfungssätze undLösungshinweise]
+ist nicht gestattet (88 53, 54 UrhG) und strafbar ($ 106 UrhG). Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+

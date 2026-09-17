@@ -1,0 +1,655 @@
+=== Seite 1 ===
+Bundeseinheitliche Fortbildungsprüfung der Industrie- und Handelskammern
+
+Geprüfte/-r Industriemeister/-in,
+fachrichtungsübergreifende Basisqualifikationen/
+grundlegende Qualifikationen
+Berücksichtigung naturwissenschaftlicher und technischer
+Gesetzmäßigkeiten
+
+
+Lösungshinweise
+Datum:                                          2. November 2020
+
+Bearbeitungszeit:                               90 Minuten
+
+Anzahl Aufgaben:                                7
+
+
+Hinweise für den Korrektor:
+■   Die folgenden Lösungen sind lediglich Lösungshinweise.
+■   Sie sollen nur den Rahmen der zu erwartenden Prüfungsleistung abstecken.
+■   Der Korrektor ist durch die hier aufgeführten Lösungshinweise in seinem
+    Bewertungsspielraum nicht eingeengt.
+■   Bei Aufgaben, die eine Aufzählung von n-Fakten zur Lösung erfordern, werden nur die
+    ersten n-Fakten gewertet. Alle darüber hinausgehenden Aufzählungen werden
+    gestrichen.
+■   Bei Berechnungen sollen Folgefehler berücksichtigt werden und somit nicht zum
+    Punktabzug führen.
+■   Der leichteren Lesbarkeit wegen geben wir in den Aufgaben/Texten der männlichen
+    Form den Vorzug. Mit diesem einfacheren sprachlichen Ausdruck sind selbstverständlich
+    immer alle Geschlechter gemeint.
+Die Aufgaben mit Lösungsvorschlägen können von den Industrie- und Handelskammern oder Dritten nach einer Frist von sechs Monaten
+direkt bestellt werden bei:
+wbv Media GmbH & Co. KG, Service-Center DIHK,
+Postfach 10 06 33, 33506 Bielefeld
+Tel.: 0521/91101-16, Fax: 0521/91101-19, E-Mail: service@wbv.de
+
+
+
+                               © DIHK – Gesellschaft für berufliche Bildung – Organisation zur Förderung der IHK-Weiterbildung mbH – Bonn
+               Die Vervielfältigung, Verbreitung oder öffentliche Wiedergabe der Publikation ist nicht gestattet (§§ 53, 54 UrhG) und strafbar (§ 106 UrhG).
+                                                           Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+                                                                              L 050-05-1120-9
+
+=== Seite 2 ===
+GEPRÜFTE/-R INDUSTRIEMEISTER/-IN,
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+GRUNDLEGENDE QUALIFIKATIONEN
+Berücksichtigung naturwissenschaftlicher und technischer Gesetzmäßigkeiten
+
+
+Aufgabe 1
+Metalle werden zum Schutz vor Korrosion häufig mit Schutzschichten überzogen.
+
+Werden diese Schutzschichten verletzt, setzt die Korrosion ein, wie z. B. in den Abbildungen
+1 und 2 dargestellt.
+
+
+
+
+ a Mögliche Punktzahl: 5
+Benennen Sie die in den Abbildungen 1 und 2 dargestellte Art der Korrosion und
+beschreiben Sie die dabei ablaufenden Prozesse.
+
+ b Mögliche Punktzahl: 3
+Nennen Sie drei Voraussetzungen für diese Art der Korrosion.
+
+ c Mögliche Punktzahl: 4
+Bei der in Abbildungen 1 und 2 dargestellten Korrosion lösen sich die Metalle auf.
+Geben Sie jeweils an, welches Metall sich auflöst und begründen Sie Ihre Aussage.
+
+
+
+
+                                                   Seite 2
+                                               L 050-05-1120-9
+
+=== Seite 3 ===
+GEPRÜFTE/-R INDUSTRIEMEISTER/-IN,
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+GRUNDLEGENDE QUALIFIKATIONEN
+Berücksichtigung naturwissenschaftlicher und technischer Gesetzmäßigkeiten
+
+
+
+Lösungshinweise Aufgabe 1
+[VO: § 4 Absatz 6 Nr. 1]
+
+ a Mögliche Punktzahl: 5
+Elektrochemische Korrosion:
+Ist die von der Oberfläche ausgehende Zerstörung eines metallischen Werkstoffs aufgrund
+von Redoxreaktionen des Metalls mit seiner Umgebung. Als Korrosion bezeichnet man die
+von der Umgebung ausgehende Zerstörung der Oberfläche des Metalls, in dem Fall Fe
+durch elektrochemische Reaktionen.
+
+ b Mögliche Punktzahl: 3
+Drei Voraussetzungen:
+1. zwei Metalle
+2. unterschiedliche Eigenspannung
+3. Elektrolyt
+
+
+Elektrochemische Korrosion tritt dann ein, wenn zwei verschiedene Metalle mit unterschied-
+licher Eigenspannung elektrisch leitend miteinander verbunden sind und ein Elektrolyt
+hinzutritt.
+
+ c Mögliche Punktzahl: 4
+Es löst sich das Metall auf (geht in Lösung), das in der Spannungsreihe ein geringeres
+Normpotenzial hat (unedleres Metall).
+
+
+In Abbildung 1 ist Zink das unedlere Metall. Es geht in Lösung und schützt das edlere Metall
+– hier das Eisen.
+In Abbildung 2 ist Zinn das edlere Metall. Hier geht das unedlere Eisen in Lösung, es kommt
+daher zu einer Unterrostung.
+
+
+
+
+                                                   Seite 3
+                                               L 050-05-1120-9
+
+=== Seite 4 ===
+GEPRÜFTE/-R INDUSTRIEMEISTER/-IN,
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+GRUNDLEGENDE QUALIFIKATIONEN
+Berücksichtigung naturwissenschaftlicher und technischer Gesetzmäßigkeiten
+
+
+
+Aufgabe 2
+Mögliche Punktzahl: 16
+Auf einem Testgelände wird eine Zugmaschine auf eine Rampe gefahren und dort abgestellt.
+Die Bremsen werden aktiviert. Die Gummireifen stehen auf trockenem Asphalt.
+
+Anschließend wird der Neigungswinkel der Rampe über eine Hydraulikanlage stetig
+vergrößert. Es besteht die Gefahr, dass die Zugmaschine die Rampe entweder
+herunterrutscht oder nach hinten überkippt.
+
+
+
+
+                                        Abb. 3: Zugmaschine
+
+Berechnen Sie, ob die Zugmaschine die Rampe herunterrutscht oder überkippt.
+Bewerten Sie Ihre Ergebnisse.
+
+  Hinweis für den Prüfungsteilnehmer: Der Schwerpunkt S ist als fix anzunehmen.
+
+
+
+
+                                                   Seite 4
+                                               L 050-05-1120-9
+
+=== Seite 5 ===
+GEPRÜFTE/-R INDUSTRIEMEISTER/-IN,
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+GRUNDLEGENDE QUALIFIKATIONEN
+Berücksichtigung naturwissenschaftlicher und technischer Gesetzmäßigkeiten
+
+
+
+Lösungshinweise Aufgabe 2
+[VO: § 4 Absatz 6 Nr. 2–3]
+Mögliche Punktzahl: 16
+kippen:
+MP  0
+ M P  FN  l1  FH  l 2
+ M P  FG  cos   l1  FG  sin   l 2   / : FG
+sin   l1  cos   l 2
+l1   sin 
+           tan 
+l 2 cos 
+           0,9 m
+tan                          50,2
+          0,75 m
+
+
+
+
+nach hinten rutschen:
+FH  FR
+
+FG  sin α  FN  μ
+FG  sin α  FG  cos α  μ
+sin α
+       tan α  μ  1,1
+cos α
+ α  47,7
+Begründung: Die Zugmaschine rutscht bei einem Neigungswinkel von 47,7°, somit wird der
+errechnete Kippwinkel von 50,2 °nicht erreicht.
+
+
+
+
+                                                      Seite 5
+                                               L 050-05-1120-9
+
+=== Seite 6 ===
+GEPRÜFTE/-R INDUSTRIEMEISTER/-IN,
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+GRUNDLEGENDE QUALIFIKATIONEN
+Berücksichtigung naturwissenschaftlicher und technischer Gesetzmäßigkeiten
+
+
+
+Aufgabe 3
+Aus einem rechteckigen Blechzuschnitt (100  h) soll eine sechseckige Platte
+ausgeschnitten werden.
+
+
+
+
+                                           Abb. 4: Halbzeug
+
+ a Mögliche Punktzahl: 6
+Berechnen Sie die Länge h des Halbzeugs und die notwendige Scherkraft F in kN,
+wenn die Scherfestigkeit für das Material τab = 150 N/mm² beträgt. Die
+Schneidoperation soll in einem Arbeitsgang erfolgen.
+
+ b Mögliche Punktzahl: 6
+Berechnen Sie den prozentualen Anteil des Verschnitts.
+
+
+
+
+                                                   Seite 6
+                                               L 050-05-1120-9
+
+=== Seite 7 ===
+GEPRÜFTE/-R INDUSTRIEMEISTER/-IN,
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+GRUNDLEGENDE QUALIFIKATIONEN
+Berücksichtigung naturwissenschaftlicher und technischer Gesetzmäßigkeiten
+
+
+
+Lösungshinweise Aufgabe 3
+[VO: § 4 Absatz 6 Nr. 2–3]
+
+ a Mögliche Punktzahl: 6
+               180° 
+l = 100 ⋅ sin        = 100 mm ⋅ sin30° = 50 mm
+               6 
+       1
+h        l
+  =    2
+2   tan 30°
+      25 mm
+  =           = 43,3 mm
+      tan 30°
+h = 86,6 mm
+
+
+oder:
+
+
+h=      100² - l²
+ = 86,6 mm
+
+
+Es müssen gemäß der Skizze nur vier Seiten des Sechsecks ausgeschnitten werden.
+        F
+τab =
+        S
+Fs = τab ⋅ S
+Fs = τab · 4 · l · t
+              N
+Fs = 150         · 4 · 50 mm · 2 mm
+             mm²
+Fs = 60.000 N = 60 kN
+
+
+
+
+                                                   Seite 7
+                                               L 050-05-1120-9
+
+=== Seite 8 ===
+GEPRÜFTE/-R INDUSTRIEMEISTER/-IN,
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+GRUNDLEGENDE QUALIFIKATIONEN
+Berücksichtigung naturwissenschaftlicher und technischer Gesetzmäßigkeiten
+
+
+
+ b Mögliche Punktzahl: 6
+              h·l·6
+ASechseck =
+                4
+              86,6 mm · 50 mm · 6
+ASechseck =
+                       4
+ASechseck = 6.495 mm²
+AHalbzeug = h · 100 mm
+AHalbzeug = 86,6 mm · 100 mm = 8.660 mm²
+               (8.660 - 6.495)mm²
+Verschnitt =                      · 100 % = 25 %
+                   8.660 mm²
+
+
+Aufgabe 4
+Wasserspeicherkraftwerke werden in der Regel zur Deckung von Bedarfsspitzen an
+elektrischer Energie genutzt.
+
+Aus einem höher gelegenen Wasserbecken eines Wasserspeicherkraftwerkes läuft Wasser
+über eine tiefer gelegene Turbine, welche einen elektrischen Generator antreibt.
+
+Folgende Daten sind gegeben:
+
+                                             m³
+■   Volumenstrom:                       60
+                                             s
+
+■   Fallhöhe:                            125 m
+
+■   Wirkungsgrad Turbine:                  83 %
+
+Hinweis für Prüfungsteilnehmer:           Die Rohrreibungsverluste und weitere Einflüsse
+                                          bleiben unberücksichtigt.
+
+ a Mögliche Punktzahl: 8
+Berechnen Sie die Fließgeschwindigkeit, mit der das Wasser in die Turbine einläuft.
+
+ b Mögliche Punktzahl: 8
+Berechnen Sie die zugeführte und abgegebene Leistung der Turbine.
+
+
+
+
+                                                   Seite 8
+                                               L 050-05-1120-9
+
+=== Seite 9 ===
+GEPRÜFTE/-R INDUSTRIEMEISTER/-IN,
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+GRUNDLEGENDE QUALIFIKATIONEN
+Berücksichtigung naturwissenschaftlicher und technischer Gesetzmäßigkeiten
+
+
+
+Lösungshinweise Aufgabe 4
+[VO: § 4 Absatz 6 Nr. 2–3]
+
+ a Mögliche Punktzahl: 8
+     Epot = Ekin
+              1
+m·g·h=          · m · v²
+              2
+v² = 2 · g · h
+v    2g h
+                   m
+v  2 · 9,81          · 125 m
+                   s²
+             m
+v  49,52
+             s
+
+ b Mögliche Punktzahl: 8
+         m³
+Q = 60
+         s
+                 dm³
+Q = 60.000
+                  s
+        h
+Pzu  FG ·
+        t
+      m·g·h
+Pzu 
+        t
+      V·ρ·g·h
+Pzu 
+          t
+                   kg        m
+      60.000 dm³ · 1  · 9,81    · 125 m
+Pzu              dm³        s²
+                    1s
+Pzu  73.575.000 W
+Pzu  73,58 MW
+
+
+
+
+                                                   Seite 9
+                                               L 050-05-1120-9
+
+=== Seite 10 ===
+GEPRÜFTE/-R INDUSTRIEMEISTER/-IN,
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+GRUNDLEGENDE QUALIFIKATIONEN
+Berücksichtigung naturwissenschaftlicher und technischer Gesetzmäßigkeiten
+
+     Pab
+
+     Pzu
+Pab  · Pzu
+Pab  0,83 · 73.575.000 W
+Pab  61.067.250 W
+Pab  61,07 MW
+
+
+
+
+                                                   Seite 10
+                                               L 050-05-1120-9
+
+=== Seite 11 ===
+GEPRÜFTE/-R INDUSTRIEMEISTER/-IN,
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+GRUNDLEGENDE QUALIFIKATIONEN
+Berücksichtigung naturwissenschaftlicher und technischer Gesetzmäßigkeiten
+
+
+
+Aufgabe 5
+Mögliche Punktzahl: 12
+In einer Teilereinigungsanlage werden 2.500 Liter Wasser von 18 °C auf 90 °C aufgeheizt.
+
+Als Energielieferant kommt Heizöl zum Einsatz.
+
+Der allgemeine Wärmeverlust ist mit 30 % zu berücksichtigen.
+
+Berechnen Sie die zum Aufheizen benötigte Menge Heizöl in Liter.
+
+
+
+
+                                                   Seite 11
+                                               L 050-05-1120-9
+
+=== Seite 12 ===
+GEPRÜFTE/-R INDUSTRIEMEISTER/-IN,
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+GRUNDLEGENDE QUALIFIKATIONEN
+Berücksichtigung naturwissenschaftlicher und technischer Gesetzmäßigkeiten
+
+
+
+Lösungshinweise Aufgabe 5
+[VO: § 4 Absatz 6 Nr. 2–3]
+Mögliche Punktzahl: 12
+                           kJ               kg
+Stoffwerte: Hi  43.000       und   0,83
+                           kg              dm ³
+Q  m  c  T
+                       kJ
+Q  2.500 kg  4,18           72 K
+                      kg  K
+Q  752.400 kJ                            (3 Punkte)
+Q  Hi  m
+     Q
+m
+     Hi
+    752.400 kJ
+m
+            kJ
+    43.000
+            kg
+m  17,5 kg                              (3 Punkte)
+     mab
+
+     mzu
+      mab
+mzu 
+       
+      17,5 kg
+mzu 
+         0,7
+mzu  25 kg                               (3 Punkte)
+     m
+V
+     
+      25 kg
+V
+          kg
+    0,83
+         dm³
+V  30,12 l                              (3 Punkte)
+
+
+
+
+                                                   Seite 12
+                                               L 050-05-1120-9
+
+=== Seite 13 ===
+GEPRÜFTE/-R INDUSTRIEMEISTER/-IN,
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+GRUNDLEGENDE QUALIFIKATIONEN
+Berücksichtigung naturwissenschaftlicher und technischer Gesetzmäßigkeiten
+
+
+
+Aufgabe 6
+Eine Heizplatte zur Ölerwärmung mit vier gleichen Heizwiderständen R1, R2, R3 und R4 wird
+an einer Spannung von 24 V betrieben. Jeder Heizwiderstand hat eine
+Bemessungsspannung von 12 V und einen Widerstand von 12 Ω. Jeweils zwei
+Heizwiderstände sind in Reihe geschaltet.
+
+ a Mögliche Punktzahl: 4
+Skizzieren Sie die Schaltung der Heizplatte mit den vier Heizwiderständen und
+kennzeichnen Sie diese.
+
+ b Mögliche Punktzahl: 4
+Berechnen Sie den Gesamtwiderstand der Heizplatte.
+
+ c Mögliche Punktzahl: 4
+Berechnen Sie die Leistungsaufnahme der Heizplatte.
+
+ d Mögliche Punktzahl: 6
+Erläutern Sie das Verhalten der Schaltung bei Ausfall (Unterbrechung) eines Heiz-
+widerstandes und berechnen Sie die verbleibende Gesamtleistung.
+
+
+
+Lösungshinweise Aufgabe 6
+[VO: § 4 Absatz 6 Nr. 2–3]
+
+ a Mögliche Punktzahl: 4
+Z. B.:
+
+
+
+
+                                                   Seite 13
+                                               L 050-05-1120-9
+
+=== Seite 14 ===
+GEPRÜFTE/-R INDUSTRIEMEISTER/-IN,
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+GRUNDLEGENDE QUALIFIKATIONEN
+Berücksichtigung naturwissenschaftlicher und technischer Gesetzmäßigkeiten
+
+
+
+ b Mögliche Punktzahl: 4
+Gesamtwiderstand der Heizplatte:
+R1+2 = R1 + R2 = 12 Ω + 12 Ω = 24 Ω
+R3+4 = R3 + R4 = 12 Ω + 12 Ω = 24 Ω
+
+
+         R1+2 · R3+4   24 Ω · 24 Ω
+RGes =               =             = 12 Ω
+         R1+2 + R3+4   24 Ω + 24 Ω
+
+ c Mögliche Punktzahl: 4
+Leistungsaufnahme der Heizplatte:
+   U
+I
+   R
+   24 V
+I      2A
+   12 Ω
+P U I
+P  24 V  2 A  48 W
+
+ d Mögliche Punktzahl: 6
+Bei Ausfall eines Heizwiderstandes wird immer der Strom in einer der beiden Reihenschal-
+tungen unterbrochen. Es sind dann nur noch zwei Heizwiderstände in Betrieb.
+Verbleibende Gesamtleistung:
+         P
+PFehler 
+          2
+          48 W
+PFehler 
+            2
+PFehler  24 W
+
+
+
+
+                                                   Seite 14
+                                               L 050-05-1120-9
+
+=== Seite 15 ===
+GEPRÜFTE/-R INDUSTRIEMEISTER/-IN,
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+GRUNDLEGENDE QUALIFIKATIONEN
+Berücksichtigung naturwissenschaftlicher und technischer Gesetzmäßigkeiten
+
+
+
+Aufgabe 7
+Die Bewertungsübersicht einer internen Schulungsmaßnahme mit anschließender
+Erfolgskontrolle ergab einen arithmetischen Mittelwert von 3,0. Bei der Übermittlung der
+Daten ist ein Fehler unterlaufen, deshalb ist die Anzahl bei der Note 4 leer.
+
+                       Note                              1        2          3   4   5     6
+
+              Anzahl Teilnehmer                          3        6          8       2     1
+
+
+
+ a Mögliche Punktzahl: 6
+Berechnen Sie die Anzahl der Testteilnehmer mit der Note 4.
+
+ b Mögliche Punktzahl: 4
+Berechnen Sie nachvollziehbar die Standardabweichung der Testergebnisse.
+
+ c Mögliche Punktzahl: 4
+Bestimmen Sie für diese Schulungsmaßnahme die exakte Lage der Wendepunkte der
+Normalverteilungsfunktion (Gaußkurve).
+
+
+
+
+                                                   Seite 15
+                                               L 050-05-1120-9
+
+=== Seite 16 ===
+GEPRÜFTE/-R INDUSTRIEMEISTER/-IN,
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+GRUNDLEGENDE QUALIFIKATIONEN
+Berücksichtigung naturwissenschaftlicher und technischer Gesetzmäßigkeiten
+
+
+
+Lösungshinweise Aufgabe 7
+[VO: § 4 Absatz 6 Nr. 4]
+
+ a Mögliche Punktzahl: 6
+Testteilnehmer mit der Note 4:
+        3 1 6  2  8  3  x  4  2  5  1 6
+3,0 =
+                3  6  8  x  2 1
+           55  x  4
+         
+            20  x
+3,0  (20  x)  55  x  4
+60  3 x  55  4 x
+5  3x4x
+x 5
+
+ b Mögliche Punktzahl: 4
+Standardabweichung s:
+       (1 - 3,0)² · 3 + (2 - 3,0)² · 6 + (3 - 3,0)² · 8 + (4 - 3,0)² · 5 + (5 - 3,0)² · 2 + (6 - 3,0)² · 1
+s=
+                                                     25 - 1
+       40
+s=
+       24
+s = 1,29
+
+ c Mögliche Punktzahl: 4
+WP1 = x̄ + s = 3,0 + 1,29 = 4,29
+WP2 = x̄ - s = 3,0 - 1,29 = 1,71
+
+
+
+
+                                                        Seite 16
+                                                     L 050-05-1120-9
+

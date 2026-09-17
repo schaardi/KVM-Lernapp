@@ -1,0 +1,765 @@
+=== Seite 1 ===
+Bundeseinheitliche
+Weiterbildungsprüfung
+
+der Industrie- und Handelskammern
+
+Prüfungsteilnehmer-Nummer
+
+Geprüfte/-r Industriemeister)-in,
+fachrichtungsübergreifende
+Basisqualifikationen/
+grundlegende Qualifikationen
+
+m Basisqualifikation Anwendung von Methoden der Information,
+Kommunikation und Planung
+
+m Prüfungstag 12. November 2014
+m Bearbeitungszeit 90 Minuten
+m Anzahl der Aufgaben 6
+
+Bitte prüfen Sie vor Beginn der Prüfung die Vollständigkeit des Aufgabensatzes. Sollte der
+Aufgabensatz nicht vollständig sein, informieren Sie bitte die Aufsicht.
+
+L 050-03-1114-5
+
+=== Seite 2 ===
+Bearbeitungshinweise
+
+Bitte lesen Sie die nachfolgenden Bearbeitungshinweise sorgfältig durch:
+
+Die zur Prüfung zugelassenen Hilfsmittel wurden Ihnen separat mit der Einladung mitgeteilt.
+Sie erhalten einen Aufgaben- und einen Lösunggsteil.
+
+Tragen Sie auf dem Deckblatt Ihre Prüfungsteilnehmer-Nummer ein.
+
+Die maximale Gesamtpunktzahl der Lösungen beträgt 100 Punkte.
+
+Die Lösungsgänge bzw. Rechenvorgänge sind klar und nachvollziehbar im Lösungsteil darzu-
+stellen. Sollte der Platz nicht ausreichen, benutzen Sie bitte das Konzeptpapier, verweisen Sie
+auf die Fortsetzung und kennzeichnen Sie diese. Wir weisen darauf hin, dass eine vom Prüfungs-
+ausschuss nicht lesbare Prüfungsarbeit mit der Note „ungenügend“ (null Punkte) bewertet wird
+mit den Rechtsfolgen, die sich aus der Prüfungsordnung ergeben.
+
+m Verwenden Sie für jede Aufgabe ein neues Lösungsblatt bzw. eine neue Lösungsseite.
+
+m Falls die Lösung auf einem beigefügten Anlageblatt erfolgen soll, wird in der Aufgabenstellung
+darauf hingewiesen.
+
+Für Ihre Notizen benutzen Sie bitte ausschließlich das Konzeptpapier.
+
+Das Konzeptpapier ist mit dem Aufgaben- und dem Lösungsteil abzugeben.
+
+Bei Aufgaben, die eine Aufzählung von n-Fakten zur Lösung erfordern, werden nur die ersten
+n-Fakten gewertet. Alle darüber hinausgehenden Aufzählungen werden gestrichen.
+
+Wir wünschen Ihnen bei der Bearbeitung viel Erfolg.
+
+Der leichteren Lesbarkeit wegen geben wir in den Aufgaben/Texten der männlichen Form den
+Vorzug. Mit diesem einfacheren sprachlichen Ausdruck sind selbstverständlich immer Männer und
+Frauen gemeint.
+
+Die Vervielfältigung, Verbreitung oder öffentliche Wiedergabe der Publikation [der Prüfungssätze]
+ist nicht gestattet (8853, 54 UrhG) und strafbar (8106 UrhG). Im Fall der Zuwiderhandlung wird
+Strafantrag gestellt.
+
+=== Seite 3 ===
+GEPRÜFTEI/-R INDUSTRIEMEISTER/-IN, FACH-
+RICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+
+GRUNDLEGENDE QUALIFIKATIONEN
+
+Anwendung von Methoden der Information, Kommunikation und Planung
+
+Ausgangssituation zu allen Aufgaben:
+
+> Sie arbeiten als Industriemeister in einem Unternehmen der Kunststoffindustrie. In einigen Meisterbereichen
+ist es in letzter Zeit zu Problemen mit der temperaturgerechten Lagerung von Hilfsstoffen gekommen.
+
+> Die Geschäftsleitung hat entschieden, dass diese Hilfsstoffe künftig in klimatisierten Lagerboxen aufbewahrt
+werden sollen. Die Beschaffung der Lagerboxen wird zwischen der Geschäftsleitung und den Meister-
+bereichen abgestimmt.
+
+Aufgabe 2
+
+An der ersten Beratung über die Beschaffung der Lagerboxen nehmen der Betriebsleiter,
+die Schichtführer, der Betriebsingenieur und die Meister der anderen Meisterbereiche teil.
+Sie bereiten für diese Beratung eine Präsentation vor.
+
+a) Beschreiben Sie fünf inhaltliche Punkte, die Ihre Präsentation im Hauptteil enthält. (10 Punkte)
+
+b) Zur Dokumentation der Besprechung verfassen Sie ein Protokoll. Nennen Sie fünf (5 Punkte)
+Punkte, die in dem Protokoll enthalten sind.
+
+Lösungshinweise Aufgabe 1 (15 Punkte)
+(RP?3:3.9, 3.0.2)
+
+a) Es können z. B. folgende Punkte beschrieben werden:
+
+m Analyse des Istzustandes
+
+= Beschreibung des Sollzustandes
+
+= Erläuterung von Pro und Kontra
+
+= Erläuterung der Zusammenhänge
+
+Bewertung durchführen
+
+= Auswahl vorschlagen
+
+= Entscheidung einholen (10 Punkte)
+
+b) Es können z. B. folgende Protokollpunkte genannt werden:
+
+Gegenstand (Thema) der Beratung
+Datum und Uhrzeit
+Anwesenheitsliste der Teilnehmer
+
+Aufgaben
+Protokollverteiler
+
+1
+[:}
+EB
+= Entscheidungen
+|
+u
+m Unterschriften (5 Punkte)
+
+© DIHK - Gesellschaft für berufliche Bildung — Organisation zur Förderung der IHK-Weiterbildung mbH — Bonn | L 050-03-1114-5 | Seite 29
+Die Vervielfältigung, Verbreitung oder öffentliche Wiedergabe der Publikation [der Prüfungssätze und Lösungshinweise]
+ist nicht gestattet (8853, 54 UrhG) und strafbar ($ 106 UrhG). Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+
+=== Seite 4 ===
+GEPRÜFTEJ/-R INDUSTRIEMEISTER/-IN, FACH-
+RICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+
+GRUNDLEGENDE QUALIFIKATIONEN
+
+Anwendung von Methoden der Information, Kommunikation und Planung
+
+Aufgabe Ka
+
+Die Lagerung der Hilfsstoffe darf nur in bestimmten Temperaturbereichen erfolgen. Die
+notwendigen Angaben zu den minimalen und maximalen Lagertemperaturen finden Sie in
+der unten stehenden Tabelle.
+
+Stellen Sie die Minimal- und Maximaltemperaturen für die neun Hilfsstoffe in einem Min-
+Max-Diagramm dar.
+
+(15 Punkte)
+
+Hilfsstoff Minimaltemperatur Maximaltemperatur Lagerbox-Typ
+A 2,6 10°C T1
+B 26 16 °C 11
+c 10°C 17°C T1
+D 1056 18°C 12
+E 10°C 15°C T2
+Fr SS 24 °C 12
+G 20°C 25.20 15
+H 252C 50 °C T3
+| 23,6 42°C T3
+Seite 30 | L 050-03-1114-5 | © DIHK - Gesellschaft für berufliche Bildung — Organisation zur Förderung der IHK-Weiterbildung mbH — Bonn
+
+Die Vervielfältigung, Verbreitung oder öffentliche Wiedergabe der Publikation [der Prüfungssätze und Lösungshinweise]
+ist nicht gestattet (8853, 54 UrhG) und strafbar (8106 UrhG). Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+
+=== Seite 5 ===
+GEPRÜFTEI/-R INDUSTRIEMEISTER/-IN, FACH-
+RICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+
+GRUNDLEGENDE QUALIFIKATIONEN
+
+Anwendung von Methoden der Information, Kommunikation und Planung
+
+Lösungshinweise Aufgabe 2 (15 Punkte)
+(RP: 3.4.2, 3.4.3)
+
+Minimale und maximale Lagertemperaturen der Hilfsstoffe
+
+“2 60
+A
+I
+2
+[vJ
+u 50 em
+£
+(+)
+>
+40
+30 SEHE
+® Minimaltemperatur
+„ 7 v v # Maximaltemperatur
+©
+
+u.
+
+,tiir:
+
+Hilfsstoffe
+
+Hinweis für den Korrektor: Die Temperaturen können auch in einem anderen sach-
+
+gerechten Diagramm dargestellt werden.
+Aufgabe [31
+
+In den Lagerboxen werden mithilfe von Sensoren die Parameter Temperatur und Luftfeuch-
+tigkeit erfasst.
+
+a) Die Messdaten werden im Netzwerk des Unternehmens auf einen Server übertragen.
+Nennen Sie fünf Aufgaben der IT-Abteilung bei der Wartung des Netzwerkes. (5 Punkte)
+
+b) Zur Auswertung der Messwerte soll eine Individualsoftware eingesetzt werden. Der
+Leistungsumfang dieser Software wird in einem Lastenheft festgelegt.
+Beschreiben Sie fünf Anforderungen, die in diesem Lastenheft enthalten sein müssen. (10 Punkte)
+
+c) Die Programmierung der Individualsoftware übernimmt ein externer Auftragnehmer.
+Dieser erstellt für die Entwicklung und Einführung der Software ein Pflichtenheft.
+Nennen Sie fünf Angaben, die in diesem Pflichtenheft enthalten sind. (5 Punkte)
+
+© DIHK - Gesellschaft für berufliche Bildung — Organisation zur Förderung der IHK-Weiterbildung mbH - Bonn | L 050-03-1114-5 | Seite 31
+Die Vervielfältigung, Verbreitung oder öffentliche Wiedergabe der Publikation [der Prüfungssätze und Lösungshinweise]
+ist nicht gestattet (8853, 54 UrhG) und strafbar ($ 106 UrhG). Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+
+=== Seite 6 ===
+GEPRÜFTEI/-R INDUSTRIEMEISTER/-IN, FACH-
+RICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+
+GRUNDLEGENDE QUALIFIKATIONEN
+
+Anwendung von Methoden der Information, Kommunikation und Planung
+
+Lösungshinweise Aufgabe 3 (20 Punkte)
+(RPASIN)
+
+ad) z.B:
+m Erfassung der Leistungsdaten des Netzwerkes (Monitoring)
+Datensicherung auf dem Server (Backup)
+Installation und Aktualisierung einer Firewall
+Installation von Updates
+Austausch defekter Geräte (5 Punkte)
+
+b) In dem Lastenheft für die Individualsoftware können aus Sicht des Auftraggebers z. B.
+folgende Forderungen enthalten sein:
+ergonomische Gestaltung der Benutzeroberfläche
+Kompatibilität zum Betriebssystem
+Kompatibilität zu vorhandener Hardware
+Schnittstellen für den Import und Export von Daten
+Formate für die Speicherung der Daten
+Algorithmen zur Auswertung der Daten (10 Punkte)
+
+c) In dem Pflichtenheft können z. B. folgende Angaben enthalten sein:
+
+Endtermin
+
+Meilensteine (mit Teilabnahmen)
+
+Ansprechpartner auf der Seite des Auftragnehmers
+
+softwaretechnische Angaben zur Realisierung des Programms
+
+USW. (5 Punkte)
+
+Aufgabe I
+
+Im Verlauf der Planungen für das Projekt zur Einführung der klimatisierten Lagerboxen wird
+ein Netzplan erstellt.
+
+a) Berechnen Sie den Netzplan in Anlage 1 und kennzeichnen Sie den kritischen Pfad. (12 Punkte)
+
+b) Zeichnen Sie alle Vorgänge in einen Balkenplan ein. Verwenden Sie hierfür die Anlage 2. (8 Punkte)
+
+Lösungshinweise Aufgabe 4 (20 Punkte)
+
+(RP: : 3.2.4)
+
+a) siehe Lösungshinweis zu Aufgabe 4 a) (12 Punkte)
+
+b) siehe Lösungshinweis zu Aufgabe 4 b) (8 Punkte)
+Seite 32 | L 050-03-1114-5 | © DIHK - Gesellschaft für berufliche Bildung — Organisation zur Förderung der IHK-Weiterbildung mbH — Bonn
+
+Die Vervielfältigung, Verbreitung oder öffentliche Wiedergabe der Publikation [der Prüfungssätze und Lösungshinweise]
+ist nicht gestattet (8853, 54 UrhG) und strafbar (8 106 UrhG). Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+
+=== Seite 7 ===
+GEPRÜFTEI/-R INDUSTRIEMEISTER/-IN, FACH-
+RICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+
+GRUNDLEGENDE QUALIFIKATIONEN
+
+Anwendung von Methoden der Information, Kommunikation und Planung
+
+Aufgabe 5
+
+Für das Projekt zur Installation und Inbetriebnahme der klimatisierten Lagerboxen wird ein
+Projektauftrag erstellt.
+
+a) Nennen Sie die drei Hauptziele jedes Projektes, die das magische Dreieck des Projekt- (3 Punkte)
+managements bilden.
+
+b) Ordnen Sie den drei Hauptzielen jeweils drei Angaben zu, die im Projektauftrag dieses (9 Punkte)
+Projektes enthalten sein können.
+
+c) Beschreiben Sie vier Aufgaben, die die Projektleitung im Rahmen der Projektsteuerung (8 Punkte)
+
+erfüllen muss.
+
+Lösungshinweise Aufgabe 5 (20 Punkte)
+(RP: 3.5.2)
+
+a) Die drei Hauptziele jedes Projektes, die das magische Dreieck des Projektmanage-
+ments bilden, sind:
+
+m Sachziel
+= Terminziel
+= Kostenziel (3 Punkte)
+
+b) m zum Sachziel, z. B.:
+
+technische Daten der Lagerboxen
+
+= dQualitätsansprüche an die Montage der Lagerboxen
+
+m Schnittstellen
+
+m benötigte Medien (3 Punkte)
+
+= zum Terminziel, z. B.:
+
+m Starttermin
+
+s= Endtermin
+
+m Meilensteine
+
+m Vorgangsdauern, Pufferzeiten usw. (3 Punkte)
+
+= zum Kostenziel, z. B.:
+
+m Gesamtkosten
+
+Kosten für bestimmte Projektabschnitte
+
+Arbeitskosten
+
+Ressourcenkosten (3 Punkte)
+
+Es können z. B. folgende Aufgaben beschrieben werden:
+
+ständiger Soll-Ist-Vergleich bezogen auf Sach-, Kosten- und Terminziel
+
+Abweichungen vom Plan feststellen und beheben
+
+Änderungswünsche prüfen, ob diese in das laufende Projekt noch übernommen
+
+werden können
+
+= falls Verzögerungen auftreten: Entscheidung treffen, ob Umplanungen nötig sind
+
+und gegebenenfalls Umplanungen vornehmen (8 Punkte)
+
+© DIHK - Gesellschaft für berufliche Bildung — Organisation zur Förderung der IHK-Weiterbildung mbH — Bonn | L 050-03-1114-5 | Seite 33
+Die Vervielfältigung, Verbreitung oder öffentliche Wiedergabe der Publikation [der Prüfungssätze und Lösungshinweise]
+ist nicht gestattet (8853, 54 UrhG) und strafbar (8 106 UrhG). Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+
+=== Seite 8 ===
+GEPRÜFTEI-R INDUSTRIEMEISTER/-IN, FACH-
+RICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+
+GRUNDLEGENDE QUALIFIKATIONEN
+
+Anwendung von Methoden der Information, Kommunikation und Planung
+
+Aufgabe | s|
+
+Das Projekt wurde mit der Inbetriebnahme der Lagerboxen erfolgreich beendet. Die Mitarbeiter
+aller drei Schichten sollen in der sachgerechten Lagerung der Hilfsstoffe unterwiesen werden.
+
+Beschreiben Sie fünf Anforderungen an diese Unterweisungen. (10 Punkte)
+Lösungshinweise Aufgabe 6 (10 Punkte)
+(RP: 3.5)
+a) Z.B.:
+
+= alle drei Schichten zeitnah unterweisen, damit der Wissensstand gleich ist
+
+= sachliche Richtigkeit und Eindeutigkeit der Informationen gewährleisten
+
+m Verständlichkeit der Unterweisung: adressatengerechte Sprache
+
+= zielgruppengerechte Visualisierung der technischen Zusammenhänge
+
+m Erfolgskontrolle
+
+m Dokumentation der Unterweisung
+
+Seite 34 | L 050-03-1114-5 | © DIHK - Gesellschaft für berufliche Bildung — Organisation zur Förderung der IHK-Weiterbildung mbH — Bonn
+Die Vervielfältigung, Verbreitung oder öffentliche Wiedergabe der Publikation [der Prüfungssätze und Lösungshinweise]
+ist nicht gestattet (8853, 54 UrhG) und strafbar (8106 UrhG). Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+
+=== Seite 9 ===
+[Ziel ]
+
+[de] in)
+> u
+
+IM
+
+D
+
+zZ
+
+m)
+
+4
+
+Dr
+
+2 i ö
+
+Tre
+
+nz
+
+een
+
+ob 2
+
+zZ S
+
+=.
+
+Fu 0
+
+Lance
+
+I
+
+X>25
+
+2. Gr
+
+qu <
+
+c
+
+LL = > de) co N
+
+a E
+
+zu e
+
+=u 2
+
+Eı © m) Lu
+
+un 5 is
+
+EF> 5 —
+
+VE ©
+
+uw =
+
+=0 2 bi
+
+WS = ©
+
+ri © e
+
+ze =
+
+30% ee 2
+
+SE > 5 je2) m
+
+2S5 z <
+
+Te ss 5
+
+As EN
+
+Wux 2 77 < ee)
+
+ul ER >) E a“
+
+LL e 3 ®
+
+30 3 7
+
+en = u 08
+
+naZ 2 — =
+
+wui<t 2 3 cz ©
+
+om < & < Do
+
+© DIHK - Gesellschaft für berufliche Bildung — Organisation zur Förderung der IHK-Weiterbildung mbH - Bonn
+Die Vervielfältigung, Verbreitung oder öffentliche Wiedergabe der Publikation [der Prüfungssätze und Lösungshinweise]
+ist nicht gestattet ($8 53, 54 UrhG) und strafbar (8 106 UrhG). Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+
+Legende:
+
+Dauer
+
+Bezeichnung
+
+| P 050-03-1114-5 | Seite 35
+
+=== Seite 10 ===
+Seite 36 | P 050-03-1114-5 |
+
+< > »
+il 23
+rBrBe es AN} 5
+a (O 7}
+N ® 3
+2% Dn 3
+SI) e 3
+a T
+JE > &
+Sn 3
+[eb] ..
+—ı oO’
+®
+62) >
+> =3
+S [og ® N”
+—_ Fi 9%
+.. Q -
+ee) E PR
+oe cE_J
+<>D>m
+.- STE:
+=) 2 2028
+2 °%3
+3 ao
+& ® er
+= 2 24
+= Sa
+; $m
+= ° Sn
+5 So
+a = 2 —
+f < om
+6) z mE
+S nal
+® So,
+es x mo
+© = oLI
+m s:s ca
+fe) = >20
+Ers
+a Sa
+= =—=C
+NS) 5 Sr-
+N fa (m)
+8 = oO c:
+en Zu
+> z5
+= En
+3) m
+© 7
+N m
+N 2
+\w)
+63 m
+N
+©
+&
+ö
+
+© DIHK - Gesellschaft für berufliche Bildung — Organisation zur Förderung der IHK-Weiterbildung mbH — Bonn
+Die Vervielfältigung, Verbreitung oder öffentliche Wiedergabe der Publikation [der Prüfungssätze und Lösungshinweise]
+ist nicht gestattet (88 53, 54 UrhG) und strafbar ($ 106 UrhG). Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+
+=== Seite 11 ===
+Ziel
+28
+28
+
+co [eo] E°0)
+N NIN
+co NIO
+
+23
+
+2| 2 \
+
+8 123] ———e | 23
+
+5 120] — > [20
+2
+
+WU
+
+[a]
+
+mm
+
+IL A x
+Ww
+
+04 fe)
+6)
+
+Xz
+
+Du om ınlın
+ni O0)
+
+or 5
+
+X 8
+
+= ı
+
+Fi oo
+
+SE TT ee
+
+oa« >
+
+K>25
+
+2O 3 olr ale Io
+Qu = 3
+
+<o = 1) ol olo N|=
+u =
+
+in = x
+
+m ° ®
+
+4 X ol [o»1 Ke>) 10
+er E — 6) ” a‘ ul
+un 5
+
+03:8 Rn
+
+un 5 2
+
+= OB: <
+
+U _ o)
+
+Eu 3 u - Sc N|@®
+zZ e ö >
+
+20% ED
+
+es = :O olo Nie
+Dax c2 =
+
+ze 3 = ,J
+
+X ir 2 > SI IR
+mag EN < en)
+rS o gs m
+
+>50:
+
+rn 2 fe) je2)
+
+an =: = E
+
+oc: wi lol
+
+© DIHK - Gesellschaft für berufliche Bildung — Organisation zur Förderung der IHK-Weiterbildung mbH - Bonn
+Die Vervielfältigung, Verbreitung oder öffentliche Wiedergabe der Publikation [der Prüfungssätze und Lösungshinweise]
+ist nicht gestattet ($8 53, 54 UrhG) und strafbar ($ 106 UrhG). Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+
+Legende:
+
+Kritischer Pfad: Stat-A-D-G-I- Ziel
+
+NE
+je>)
+
+EI SI SS
+3/32
+e| 8| 2
+A ha
+©®
+
+NININ
+®
+
+all
+
+| L 050-03-1114-5 | Seite 37
+
+=== Seite 12 ===
+Seite 38 | L 050-03-1114-5 |
+
+:uoße] ul 187
+
+awWwnNn-Jswysujsjsbungnid
+
+y agqeßjny Bunso7 nz zZ abejuy
+
+>
+>
+s
+®
+=
+Q.
+er
+je]
+Io)
+<
+ie)
+=
+s
+®
+ne
+=
+[e)
+Q
+&D
+3
+Q.
+®
+3
+=]
+=)
+oO
+=
+3
+3)
+Kata
+[e}
+=
+Ex
+[o)
+=;
+3
+[=
+3.
+x
+2
+=.
+je]
+=)
+=
+=)
+Q
+au
+)
+Ss
+c
+=!
+a
+
+N3SNOILVMIAIIVND JANF9FTANNYO/N3NOLLVMIAITVNOSISVA
+
+JAN3413U9YIANSSNNLHIIAHIVS 'NI-/UILSIINFIALSNANI U/314N9439
+
+oe 62 8z 12 Igz Isz ve lez jez Iız 02 j6r sr lzı Jar Isı Irı ler jzı Ir lor [6 8 2 ja |s
+
+© DIHK - Gesellschaft für berufliche Bildung — Organisation zur Förderung der IHK-Weiterbildung mbH — Bonn
+Die Vervielfältigung, Verbreitung oder öffentliche Wiedergabe der Publikation [der Prüfungssätze undLösungshinweise]
+ist nicht gestattet (88 53, 54 UrhG) und strafbar ($ 106 UrhG). Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+

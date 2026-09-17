@@ -1,0 +1,572 @@
+=== Seite 1 ===
+Bundeseinheitliche Fortbildungsprüfung der Industrie- und Handelskammern
+
+Geprüfte/-r Industriemeister/-in,
+fachrichtungsübergreifende
+Basisqualifikationen/
+grundlegende Qualifikationen
+Rechtsbewusstes Handeln
+
+Lösungshinweise
+Datum:                                          7. Mai 2019
+
+Bearbeitungszeit:                               90 Minuten
+
+Anzahl Aufgaben:                                8
+
+
+Hinweise für den Korrektor:
+■   Die folgenden Lösungen sind lediglich Lösungshinweise.
+■   Sie sollen nur den Rahmen der zu erwartenden Prüfungsleistung abstecken.
+■   Der Korrektor ist durch die hier aufgeführten Lösungshinweise in seinem
+    Bewertungsspielraum nicht eingeengt.
+■   Bei Aufgaben, die eine Aufzählung von n-Fakten zur Lösung erfordern, werden nur die
+    ersten n-Fakten gewertet. Alle darüber hinausgehenden Aufzählungen werden
+    gestrichen.
+■   Bei Berechnungen sollen Folgefehler berücksichtigt werden und somit nicht zum
+    Punktabzug führen.
+■   Der leichteren Lesbarkeit wegen geben wir in den Aufgaben/Texten der männlichen
+    Form den Vorzug. Mit diesem einfacheren sprachlichen Ausdruck sind selbstverständlich
+    immer alle Geschlechter gemeint.
+Die Aufgaben mit Lösungsvorschlägen können von den Industrie- und Handelskammern oder Dritten nach einer Frist von sechs Monaten
+direkt bestellt werden bei:
+wbv Media GmbH & Co. KG, Service-Center DIHK,
+Postfach 10 06 33, 33506 Bielefeld
+Tel.: 0521/91101-16, Fax: 0521/91101-19, E-Mail: service@wbv.de
+
+
+
+
+                               © DIHK – Gesellschaft für berufliche Bildung – Organisation zur Förderung der IHK-Weiterbildung mbH – Bonn
+               Die Vervielfältigung, Verbreitung oder öffentliche Wiedergabe der Publikation ist nicht gestattet (§§ 53, 54 UrhG) und strafbar (§ 106 UrhG).
+                                                           Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+                                                                              L 050-01-0519-7
+
+=== Seite 2 ===
+Geprüfte/-r Industriemeister/-in,
+fachrichtungsübergreifende Basisqualifikationen/
+grundlegende Qualifikationen
+Rechtsbewusstes Handeln
+
+
+Betriebliche Situationsbeschreibung zu allen Aufgaben:
+Die R- GmbH – ein Zulieferer - hat seine Produktion weitgehend automatisiert und will sich nun mit
+einem neuen Produktionsbereich in Form einer Junior-Firma vergrößern.
+
+Zum einen werden Mitarbeiter durch Änderungen in der Logistik und Verbesserungen im
+Produktionsprozess entlassen und zum anderen werden weitere Mitarbeiter benötigt.
+
+Ein Betriebsrat ist gewählt; das Unternehmen ist tarifgebunden.
+
+
+
+Aufgabe 1
+Ein neuer Industriemeister soll eingestellt werden. Da die Auftragslage ungewiss ist, soll ein
+befristeter Arbeitsvertrag abgeschlossen werden. Ein Sachgrund für die Befristung besteht
+nicht. Sie werden damit beauftragt, die wesentlichen Punkte für die Vertragsgestaltung zu
+klären.
+
+  a Mögliche Punktzahl: 4
+Begründen Sie unter Angabe der gesetzlichen Grundlage, welche Form beim
+Vertragsschluss zu berücksichtigen ist und welchen Zweck dies dient.
+
+  b Mögliche Punktzahl:4
+Geben Sie unter Angabe der Rechtsvorschrift an, wie lange der Arbeitsvertrag
+maximal befristet werden darf.
+
+  c Mögliche Punktzahl: 4
+Erläutern Sie, ob der befristete Arbeitsvertrag bei einer Verschlechterung der
+Auftragslage vorzeitig durch ordentliche Kündigung beendet werden kann.
+
+
+
+
+                                                 Seite 2
+                                             L 050-01-0519-7
+
+=== Seite 3 ===
+Geprüfte/-r Industriemeister/-in,
+fachrichtungsübergreifende Basisqualifikationen/
+grundlegende Qualifikationen
+Rechtsbewusstes Handeln
+
+
+Lösungshinweise Aufgabe 1
+[VO: § 4 Absatz 2 Nr. 1]
+
+  a Mögliche Punktzahl: 4
+Gemäß § 14 Absatz 4 TzBfG bedarf mindestens der Beendigungszeitpunkt zwingend der
+Schriftform.
+Begründung: Eine schriftliche Fixierung erfolgt aus den Gründen der Beweisbarkeit
+hinsichtlich des Datums bzw. Zweckerreichung – mithin der Beendigung des
+Arbeitsvertrages.
+
+  b Mögliche Punktzahl: 4
+Gemäß § 14 Absatz 2a TzBfG ist in den ersten vier Jahren nach der Gründung eines
+Unternehmens die Befristung eines Arbeitsvertrages ohne Sachgrund bis zur Dauer von vier
+Jahren zulässig.
+
+  c Mögliche Punktzahl: 4
+Eine ordentliche Kündigung ist dann möglich, wenn es zwischen den Parteien im
+Arbeitsvertrag vereinbart wurde, oder der Tarifvertrag dies vorsieht.
+
+
+
+
+                                            Seite 3
+                                        L 050-01-0519-7
+
+=== Seite 4 ===
+Geprüfte/-r Industriemeister/-in,
+fachrichtungsübergreifende Basisqualifikationen/
+grundlegende Qualifikationen
+Rechtsbewusstes Handeln
+
+Aufgabe 2
+Der Betriebsteil Schrankenproduktion wurde weitgehend automatisiert. Die Geschäftsleitung
+hat nun beschlossen, die Zahl der Mitarbeiter in diesem Bereich zu reduzieren und den
+neuen Anforderungen anzupassen. Von den 18 Mitarbeitern dieses Bereiches soll sechs
+Mitarbeitern betriebsbedingt gekündigt werden. Der Betriebsrat war an der Sozialauswahl
+beteiligt.
+
+  a Mögliche Punktzahl: 3
+Beschreiben Sie das Ziel der Sozialauswahl im Rahmen der betriebsbedingten
+Kündigung.
+
+  b Mögliche Punktzahl: 4
+Nennen Sie vier Kriterien, die bei der Sozialauswahl berücksichtigt werden müssen,
+und geben Sie die entsprechende Rechtsquelle an.
+
+  c Mögliche Punktzahl: 5
+Erläutern Sie, ob bei der Sozialauswahl alle Mitarbeiter des betroffenen Bereiches
+einbezogen werden müssen. Begründen Sie Ihre Entscheidung unter Angabe der
+Rechtsquelle.
+
+  d Mögliche Punktzahl: 4
+Der Betriebsrat einigt sich mit der Geschäftsführung auf einen Sozialplan für die zu
+kündigenden Arbeitnehmer. Erklären Sie das Ziel eines solchen Sozialplanes und
+nennen Sie zwei Möglichkeiten, die in einem Sozialplan vereinbart werden können.
+
+
+
+
+                                            Seite 4
+                                        L 050-01-0519-7
+
+=== Seite 5 ===
+Geprüfte/-r Industriemeister/-in,
+fachrichtungsübergreifende Basisqualifikationen/
+grundlegende Qualifikationen
+Rechtsbewusstes Handeln
+
+
+
+Lösungshinweise Aufgabe 2
+[VO: § 4 Absatz 2 Nr. 1]
+
+    a Mögliche Punktzahl: 3
+Bei der Sozialauswahl sind soziale Gesichtspunkte der betroffenen Arbeitnehmer zu
+berücksichtigen, wenn diesen aus dringenden betrieblichen Erfordernissen gekündigt
+werden soll.
+Hinweis für den Korrektor: Auch andere plausible Antworten sind zu werten.
+
+    b Mögliche Punktzahl: 4
+§ 1 Absatz 3 KSchG:
+     ■   die Dauer der Betriebszugehörigkeit
+     ■   das Lebensalter des Arbeitnehmers
+     ■   bestehende Unterhaltspflichten
+     ■   vorhandene Schwerbehinderung
+
+    c Mögliche Punktzahl: 5
+In die Sozialauswahl müssen nicht zwingend alle Arbeitnehmer einbezogen werden.
+§ 1 Absatz 3 KSchG:
+In die soziale Auswahl nach Satz 1 sind Arbeitnehmer nicht einzubeziehen, deren
+Weiterbeschäftigung, insbesondere wegen ihrer Kenntnisse, Fähigkeiten und Leistungen
+oder zur Sicherung einer ausgewogenen Personalstruktur des Betriebes, im berechtigten
+betrieblichen Interesse liegt.
+
+    d Mögliche Punktzahl: 4
+Durch den Sozialplan sollen unter anderen die wirtschaftlichen Nachteile des gekündigten
+Arbeitnehmers gemildert werden.
+Z. B.:
+■    durch eine Abfindung
+■    Unterstützung bei der Stellensuche durch den Arbeitgeber
+■    Möglichkeiten der Qualifizierung durch den Arbeitgeber
+■    Fahrtkostenzuschuss
+■    Outplacement-Beratung
+
+
+
+
+                                               Seite 5
+                                          L 050-01-0519-7
+
+=== Seite 6 ===
+Geprüfte/-r Industriemeister/-in,
+fachrichtungsübergreifende Basisqualifikationen/
+grundlegende Qualifikationen
+Rechtsbewusstes Handeln
+
+
+
+Aufgabe 3
+Aufgrund der nachlassenden Konjunktur beschließt die Geschäftsführung, einen
+Produktionsbereich zu schließen und für mehrere Monate Kurzarbeit einzuführen. Nachdem
+der Betriebsrat von den beabsichtigten Maßnahmen erfährt, beruft der Betriebsrats-
+vorsitzende sofort eine Betriebsversammlung ein, um die Belegschaft zu informieren.
+Außerdem lädt er den Gewerkschaftssekretär Herrn Forster, ein.
+
+  a Mögliche Punktzahl: 3
+Der Arbeitgeber verweigert Herrn Forster den Zutritt zur Betriebsversammlung.
+Erläutern Sie, ob das Verhalten des Arbeitgebers korrekt ist.
+
+  b Mögliche Punktzahl: 4
+Nennen Sie die Anzahl der Betriebsversammlungen, die der Betriebsrat in einem
+Kalenderjahr durchzuführen hat.
+
+  c Mögliche Punktzahl: 3
+Erläutern Sie, wer die anfallenden Kosten der Betriebsversammlung in Bezug auf den
+Arbeitnehmer tragen muss.
+
+  d Mögliche Punktzahl: 3
+Beschreiben Sie, ob und gegebenenfalls unter welchen Voraussetzungen der
+Arbeitgeber zur Betriebsversammlung einzuladen ist.
+
+  e Mögliche Punktzahl: 3
+Erklären Sie, ob und gegebenenfalls unter welchen Voraussetzungen der Arbeitgeber
+eine Betriebsversammlung einberufen kann, um eigene Punkte auf die Tagesordnung
+zu setzen.
+
+Hinweis für den Prüfungsteilnehmer Aufgabe 3a-e: Die entsprechende gesetzliche
+Grundlage ist jeweils anzugeben.
+
+
+
+
+                                            Seite 6
+                                        L 050-01-0519-7
+
+=== Seite 7 ===
+Geprüfte/-r Industriemeister/-in,
+fachrichtungsübergreifende Basisqualifikationen/
+grundlegende Qualifikationen
+Rechtsbewusstes Handeln
+
+
+
+Lösungshinweise Aufgabe 3
+[VO: § 4 Absatz 2 Nr. 2]
+
+  a Mögliche Punktzahl: 3
+Das Verhalten des Arbeitgebers ist nicht korrekt. Gemäß § 46 Abs. 1 BetrVG können
+Beauftragte der im Betrieb vertretenen Gewerkschaften beratend an
+Betriebsversammlungen teilnehmen.
+
+  b Mögliche Punktzahl: 4
+Gemäß § 43 BetrVG hat der Betriebsrat einmal im Quartal eine Betriebsversammlung
+einzuberufen und in ihr einen Tätigkeitsbericht zu erstatten. Somit sind vier
+Betriebsversammlungen in einem Kalenderjahr durchzuführen.
+
+  c Mögliche Punktzahl: 3
+Gemäß § 44 Abs. 1 BetrVG hat der Arbeitgeber dem Arbeitnehmer die Zeit der Teilnahme
+einschließlich der zusätzlichen Wegezeiten wie Arbeitszeit zu vergüten.
+
+  d Mögliche Punktzahl: 3
+Ja, der Arbeitgeber ist gemäß § 43 Abs. 2 BetrVG zu den Betriebsversammlungen unter
+Mitteilung der Tagesordnung einzuladen.
+
+  e Mögliche Punktzahl: 3
+Grundsätzlich kann der Arbeitgeber keine Betriebsversammlung einberufen. Gemäß
+§ 43 Abs. 3 BetrVG ist jedoch der Betriebsrat auf Wunsch des Arbeitgebers verpflichtet, eine
+Betriebsversammlung einzuberufen und den beantragten Beratungsgegenstand auf die
+Tagesordnung zu setzen.
+
+
+
+
+                                             Seite 7
+                                         L 050-01-0519-7
+
+=== Seite 8 ===
+Geprüfte/-r Industriemeister/-in,
+fachrichtungsübergreifende Basisqualifikationen/
+grundlegende Qualifikationen
+Rechtsbewusstes Handeln
+
+
+Aufgabe 4
+In der Vergangenheit ist einer ihrer Mitarbeiter mehrfach durch rassistische Äußerungen
+gegenüber bestimmten Kollegen aufgefallen. Aus diesem Grund erhielt er vor zwei Monaten
+schon eine Abmahnung. Trotzdem hat er sein Verhalten nicht geändert. Ein Mitarbeiter
+beklagt sich daraufhin beim Betriebsrat.
+
+    a Mögliche Punktzahl: 8
+Beschreiben Sie zwei Pflichten, die sich in diesem Fall aus dem
+Betriebsverfassungsgesetz für den Betriebsrat ergeben, und nennen Sie dazu die
+entsprechenden Paragrafen.
+
+    b Mögliche Punktzahl: 4
+Erklären Sie unter Nennung der Rechtsquelle zwei Maßnahmen, die der Betriebsrat in
+einem solchen Fall ergreifen kann.
+
+
+Lösungshinweise Aufgabe 4
+[VO: § 4 Absatz 2 Nr. 2]
+
+    a Mögliche Punktzahl: 8
+Der Betriebsrat hat Beschwerden von Arbeitnehmern entgegenzunehmen und beim
+Arbeitgeber auf Abhilfe hinzuwirken, § 85 Absatz 1 BetrVG.
+Der Betriebsrat hat neben dem Arbeitgeber darüber zu wachen, dass alle Arbeitnehmer
+nach Recht und Billigkeit behandelt werden, § 75 Absatz 1 BetrVG.
+Der Betriebsrat hat die Aufgabe, Maßnahmen zur Bekämpfung von Rassismus und
+Fremdenfeindlichkeit im Betrieb zu beantragen, § 80 Absatz 1 Nr. 7 BetrVG.
+
+
+    b Mögliche Punktzahl: 4
+Maßnahmen: z. B.:
+Der Betriebsrat kann vom Arbeitgeber
+■    die Versetzung oder
+■    Entlassung
+des betriebsstörenden Arbeitnehmers verlangen, § 104 BetrVG.
+
+
+
+
+                                              Seite 8
+                                           L 050-01-0519-7
+
+=== Seite 9 ===
+Geprüfte/-r Industriemeister/-in,
+fachrichtungsübergreifende Basisqualifikationen/
+grundlegende Qualifikationen
+Rechtsbewusstes Handeln
+
+
+
+Aufgabe 5
+Mögliche Punktzahl: 5
+Das deutsche Sozialversicherungssystem besteht aus mehreren Säulen.
+
+Nennen Sie die fünf Sozialversicherungszweige.
+
+
+Lösungshinweise Aufgabe 5
+[VO: § 4 Absatz 2 Nr. 3]
+Mögliche Punktzahl: 5
+■   Sozialversicherungszweige, z. B.:
+   Krankenversicherung
+   Pflegeversicherung
+   Rentenversicherung
+   Arbeitslosenversicherung
+   Unfallversicherung
+
+
+
+
+                                           Seite 9
+                                        L 050-01-0519-7
+
+=== Seite 10 ===
+Geprüfte/-r Industriemeister/-in,
+fachrichtungsübergreifende Basisqualifikationen/
+grundlegende Qualifikationen
+Rechtsbewusstes Handeln
+
+
+
+Aufgabe 6
+In Ihrem Unternehmen nimmt die Anzahl der meldepflichtigen Arbeitsunfälle (Stolper-,
+Rutsch- und Sturzunfälle) seit einem Jahr zu.
+
+  a Mögliche Punktzahl: 2
+Nennen Sie den Verantwortlichen für den Arbeits- und Gesundheitsschutz in ihrem
+Unternehmen gemäß der gesetzlichen Regelungen.
+
+  b Mögliche Punktzahl: 5
+Führen Sie fünf Maßnahmen des Verantwortlichen in Sachen Arbeits- und
+Gesundheitsschutz auf.
+
+  c Mögliche Punktzahl: 4
+Sie sind aufgefordert, die Arbeitsunfälle systematisch zu untersuchen. Nennen Sie
+vier an der Unfalluntersuchung zu beteiligende betriebliche Stellen bzw. Funktionen.
+
+  d Mögliche Punktzahl: 4
+Begründen Sie, warum bereits unsichere Handlungen und Zustände bzw. Beinahe-
+Unfälle aufgenommen und untersucht werden sollen.
+
+
+
+
+                                            Seite 10
+                                         L 050-01-0519-7
+
+=== Seite 11 ===
+Geprüfte/-r Industriemeister/-in,
+fachrichtungsübergreifende Basisqualifikationen/
+grundlegende Qualifikationen
+Rechtsbewusstes Handeln
+
+
+Lösungshinweise Aufgabe 6
+[VO: § 4 Absatz 2 Nr. 4]
+
+    a Mögliche Punktzahl: 2
+Der Unternehmer bzw. Arbeitgeber ist der Verantwortliche des Unternehmens bezüglich
+Arbeits- und Gesundheitsschutz seiner Beschäftigten
+
+    b Mögliche Punktzahl: 5
+Der Unternehmer/Arbeitergeber hat z. B.:
+    Maßnahmen zu konkretisieren, z. B.:
+        Aufbau einer Arbeitsschutzorganisation (ASA, Sifa, B-Arzt, SiBe)
+        Durchführung von Gefährdungsbeurteilungen
+        Dokumentieren von Gefährdungsbeurteilungen
+        Schulungen/Unterweisungen der Mitarbeiter
+    Sicherheit und Gesundheit der Beschäftigten zu gewährleisten.
+    die Maßnahmen zu überprüfen und gegebenenfalls anzupassen.
+    die Verbesserung von Sicherheits- und Gesundheitsschutz anzustreben.
+
+    c Mögliche Punktzahl: 4
+Zu beteiligen sind z. B.:
+    Fachkraft für Arbeitssicherheit
+    Sicherheitsbeauftragter
+    gegebenenfalls Betriebsarzt
+    Betriebsrat
+    Verunfallter/betroffener Mitarbeiter
+    verantwortliche Führungskraft/verantwortlicher Vorgesetzter
+    gegebenenfalls Zeugen des Unfallereignisses
+
+    d Mögliche Punktzahl: 4
+Eine unsichere Handlung oder Situation bzw. ein Beinahe-Unfall kann ohne Folgen bleiben,
+aber auch ein Auslöser für alle Verletzungskategorien (Ereignisschwere) sein. Aus dieser
+Abhängigkeit lässt sich schließen, dass Arbeitsunfälle durch die Beseitigung/Vermeidung
+von unsicheren Situationen/unsicheren Handlungen/Beinahe-Unfällen reduziert werden
+können.
+
+
+
+
+                                               Seite 11
+                                            L 050-01-0519-7
+
+=== Seite 12 ===
+Geprüfte/-r Industriemeister/-in,
+fachrichtungsübergreifende Basisqualifikationen/
+grundlegende Qualifikationen
+Rechtsbewusstes Handeln
+
+
+Aufgabe 7
+Am 25. Mai 2018 wurde das Bundesdatenschutzgesetz (BDSG) durch die Europäische
+Datenschutzgrundverordnung abgelöst.
+
+    a Mögliche Punktzahl: 3
+Beschreiben Sie die Zielsetzung der Europäischen Datenschutzgrundverordnung.
+
+    b Mögliche Punktzahl: 5
+Nennen Sie fünf Grundsätze, die bei der Verarbeitung personenbezogener Daten
+eingehalten werden müssen.
+
+    c Mögliche Punktzahl: 4
+Ihr Arbeitgeber hat personenbezogene Daten über Sie gespeichert. Nennen Sie vier
+Informationen, die Ihnen der Arbeitgeber im Rahmen Ihres Auskunftsrechtes mitteilen
+muss.
+
+Lösungshinweise Aufgabe 7
+[VO: § 4 Absatz 2 Nr. 6]
+
+    a Mögliche Punktzahl: 3
+Ziel der Europäischen Datenschutzgrundverordnung ist es, das Datenschutzrecht in den EU-
+Mitgliedsstaaten zu harmonisieren und einen gleichen Datenschutzstandard herzustellen.
+
+    b Mögliche Punktzahl: 5
+Grundsätze für die Verarbeitung personenbezogener Daten gemäß Artikel 5 DSGVO:
+■    Rechtmäßigkeit, Verarbeitung nach Treu und Glauben, Transparenz
+■    Zweckbindung
+■    Datenminimierung
+■    Richtigkeit
+■    Speicherbegrenzung
+■    Integrität und Vertraulichkeit
+
+
+
+
+                                          Seite 12
+                                       L 050-01-0519-7
+
+=== Seite 13 ===
+Geprüfte/-r Industriemeister/-in,
+fachrichtungsübergreifende Basisqualifikationen/
+grundlegende Qualifikationen
+Rechtsbewusstes Handeln
+
+
+    c Mögliche Punktzahl: 4
+Die betroffene Person hat gemäß Artikel 15 DSGVO ein Recht auf folgende Informationen:
+■    die Verarbeitungszwecke
+■    die Kategorien personenbezogener Daten, die verarbeitet werden
+■    die Empfänger, denen die personenbezogenen Daten offengelegt werden
+■    geplante Speicherdauer
+■    das Recht auf Berichtigung oder Löschung
+■    das Recht auf Beschwerde bei der Aufsichtsbehörde
+
+Aufgabe 8
+Sie bearbeiten mit Ihren Auszubildenden das Thema „Umweltschutz“ für die
+Marketingabteilung. Anwohner der Region sind besorgt, aufgrund der erhöhten
+Niederschläge.
+
+    a Mögliche Punktzahl: 6
+Erläutern Sie die Zielsetzung des Bodenschutzes, und nennen Sie zwei Funktionen
+des Bodens.
+
+    b Mögliche Punktzahl: 6
+Erklären Sie jeweils an einem Beispiel die Begriffe „Immissionen“ und „Emissionen“.
+
+
+Lösungshinweise Aufgabe 8
+[VO: § 4 Absatz 2 Nr. 5]
+
+    a Mögliche Punktzahl: 6
+Die Zielsetzung ist der Schutz und die Erhaltung des Bodens als Lebensgrundlage für
+Mensch, Flora und Fauna. Der Boden erfüllt z. B. folgende Funktionen (§ 2 BBodSchG):
+    Raum für die wirtschaftliche Nutzung, für Siedlung, Verkehr und Freizeit
+    Produktionsgrundlage für die Land- und Forstwirtschaft, für Gartenbau und
+     Rohstoffgewinnung
+    Speicherung und Filterung von Wasser
+    Grundlage der menschlichen Kulturentwicklung, aus der auch historische Vorgänge
+     ablesbar sind
+
+
+
+
+                                             Seite 13
+                                          L 050-01-0519-7
+
+=== Seite 14 ===
+Geprüfte/-r Industriemeister/-in,
+fachrichtungsübergreifende Basisqualifikationen/
+grundlegende Qualifikationen
+Rechtsbewusstes Handeln
+
+
+    b Mögliche Punktzahl: 6
+Immissionen sind die auf Menschen, Tiere, Pflanzen, den Boden, Wasser, die Atmosphäre
+sowie Kultur und sonstige Sachgüter schädigend einwirkenden Umwelteinflüsse, § 3 Abs. 2
+BImSchG. Z. B.:
+    Autoabgase
+    Verkehrslärm
+    Strahlenbelastung
+    Staubbelastung
+    Vibrationsbelastung
+Emissionen sind die von einer Anlage ausgehenden Luftverunreinigungen, Geräusche,
+Erschütterungen, Licht, Wärme, Strahlen und ähnliche Erscheinungen, § 3 Abs. 3 BimSchG.
+Z. B.:
+    Rauchgaskamine
+    Betankung von Tankfahrzeugen
+    Undichtigkeiten/Leckagen
+
+
+
+
+                                          Seite 14
+                                       L 050-01-0519-7
+

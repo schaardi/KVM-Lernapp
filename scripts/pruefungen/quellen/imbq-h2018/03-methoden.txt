@@ -1,0 +1,411 @@
+=== Seite 1 ===
+der Industrie- und Handelskammern
+
+
+
+
+Basisqualifikation                                      Anwendung von Methoden der Information,
+                                                        Kommunikation und Planung
+Prüfungstag                                             5. November 2018
+Bearbeitungszeit                                        90 Minuten
+
+
+
+Hinweise für den Korrektor:
+■    Die folgenden Lösungen sind lediglich Lösungshinweise.
+■    Sie sollen nur den Rahmen der zu erwartenden Prüfungsleistung abstecken.
+■    Der Korrektor ist durch die hier aufgeführten Lösungshinweise in seinem Bewertungsspielraum nicht
+     eingeengt.
+■    Bei Aufgaben, die eine Aufzählung von n-Fakten zur Lösung erfordern, werden nur die ersten n-Fakten
+     gewertet. Alle darüber hinausgehenden Aufzählungen werden gestrichen.
+■    Bei Berechnungen sollen Folgefehler berücksichtigt werden und somit nicht zum Punktabzug führen.
+■    Der leichteren Lesbarkeit wegen geben wir in den Aufgaben/Texten der männlichen Form den Vorzug. Mit
+     diesem einfacheren sprachlichen Ausdruck sind selbstverständlich immer Männer und Frauen gemeint.
+
+
+
+
+Die Aufgaben mit Lösungsvorschlägen können von den Industrie- und Handelskammern oder Dritten nach einer Frist von sechs
+Monaten direkt bestellt werden bei:
+wbv Media GmbH & Co. KG, Service-Center DIHK,
+Postfach 10 06 33, 33506 Bielefeld
+Tel.: 0521/91101-16, Fax: 0521/91101-19, E-Mail: service@wbv.de
+
+                                                                                                        | L 050-03-1118-8 |
+
+=== Seite 2 ===
+GEPRÜFTE/-R INDUSTRIEMEISTER/-IN,
+FACHRICHTUNGSÜBERGREIFENDEBASISQUALIFIKATIONEN/
+GRUNDLEGENDE QUALIFIKATIONEN
+Anwendung von Methoden der Information, Kommunikation und Planung
+
+Aufgabe 1
+Ihr Unternehmen möchte alle notwendigen Unterlagen für den Arbeitsschutz im Intranet
+zugänglich    machen.   Im    lokalen   Netz  des    Unternehmens     sollen   auch
+arbeitsschutzbezogene Daten erfasst werden.
+a)    Beschreiben     Sie fünf    technische,     organisatorische   oder    personelle                                                (10 Punkte)
+      Grundvoraussetzungen für die Bereitstellung der Unterlagen und die Erfassung der
+      Daten im Intranet.
+b)    Benennen Sie vier Vorteile der Bereitstellung der Unterlagen im Intranet gegenüber                                                 (4 Punkte)
+      der Bereitstellung in gedruckter Form.
+c)   Beschreiben Sie drei Beispiele für die Erfassung von Arbeitsschutzdaten.                                                            (6 Punkte)
+
+
+Lösungshinweise Aufgabe 1                                                                                                             (20 Punkte)
+[VO: § 4 Absatz 4 Nr. 1]
+a)   technische, organisatorische oder personelle Grundvoraussetzungen z. B.:
+      ■    Vernetzung aller Teile des Unternehmens, um den Zugang zu ermöglichen
+      ■    Bereitstellung der Intranet-Server mit den notwendigen Anwendungen
+      ■    Bereitstellung der notwendigen Endgeräte (Clients) in allen Teilen des
+           Unternehmens
+      ■    Erarbeitung einer Organisationsrichtlinie für die Lenkung der Unterlagen
+      ■    Bereitstellung von Dokumentvorlagen und Formularen für Arbeitsschutzzwecke
+      ■    Schulung der Mitarbeiter für die Nutzung der Unterlagen und das Erfassen der
+           Daten                                                                                                                       (10 Punkte)
+b)   Vorteile sind z. B.:
+      ■    schnellerer Zugriff
+      ■    Aktualität der Inhalte
+      ■    Aktualität der Dokumentvorlagen
+      ■    Volltextsuche in den Unterlagen
+      ■    Schulungsunterlagen oder Apps                                                                                                 (4 Punkte)
+c)   Beschrieben werden können z. B.:
+      ■    meldepflichtige Arbeitsunfälle
+      ■    Beinaheunfälle
+      ■    Inhalte der Arbeitsschutzbelehrungen
+      ■    Teilnahme an den Arbeitsschutzbelehrungen
+      ■    arbeitsschutzbezogene Kosten                                                                                                  (6 Punkte)
+
+
+
+
+Seite 2 | L 050-03-1118-8 |         © DIHK – Gesellschaft für berufliche Bildung – Organisation zur Förderung der IHK-Weiterbildung mbH – Bonn
+                                    Die Vervielfältigung, Verbreitung oder öffentliche Wiedergabe der Publikation ist nicht gestattet (§§ 53, 54 UrhG) und
+                                    strafbar (§ 106 UrhG). Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+
+=== Seite 3 ===
+GEPRÜFTE/-R INDUSTRIEMEISTER/-IN,
+FACHRICHTUNGSÜBERGREIFENDEBASISQUALIFIKATIONEN/
+GRUNDLEGENDE QUALIFIKATIONEN
+Anwendung von Methoden der Information, Kommunikation und Planung
+
+Aufgabe 2
+In Ihrem Unternehmen sollen alle PC-Arbeitsplätze mit neuen ergonomischen Geräten
+ausgestattet werden. Zur Auswahl der neuen Geräte wird die Nutzwertanalyse eingesetzt.
+a)     Beschreiben Sie drei Auswirkungen der Arbeit an ergonomisch besser als zuvor                                                 (6 Punkte)
+       eingerichteten Arbeitsplätzen.
+b)     Beschreiben Sie die Vorgehensweise beim Einsatz der Nutzwertanalyse zur Auswahl                                             (10 Punkte)
+       eines Gerätes in fünf Schritten.
+c)     Benennen Sie vier Kriterien, die bei einer Nutzwertanalyse für neue Geräte zum                                               (4 Punkte)
+       bedacht werden müssen.
+
+
+Lösungshinweise Aufgabe 2                                                                                                         (20 Punkte)
+[VO: § 4 Absatz 4 Nr. 2]
+a)     Es können z. B. folgende Auswirkungen beschrieben werden:
+       ■     Das Unternehmen erreicht eine Senkung der Ausfallzeiten.
+       ■     In der Folge sinken die Kosten für die Lohnfortzahlung.
+       ■     Die Fehlerquote sinkt bzw. die Qualität der Arbeit steigt.
+       ■     Zufriedenheit, Motivation und Beteiligung der Mitarbeiter verbessern sich.                                             (6 Punkte)
+
+b)     Die Nutzwertanalyse erfolgt in folgenden Schritten:
+      1. Es werden Kriterien für die Auswahl der Rechner definiert.
+      2. Diese Kriterien werden im paarweisen Vergleich gewichtet.
+      3. Es wird eine Tabelle zur Leistungsbewertung nach Punkten oder Noten erstellt.
+      4. Die infrage kommenden Geräte werden bewertet.
+      5. Die Bewertungen werden gewichtet, pro Gerät summiert und es wird eine
+         Entscheidung getroffen.                                                                                                   (10 Punkte)
+c)     Es können z. B. genannt werden:
+       ■     Anschaffungspreis
+       ■     laufende Kosten
+       ■     Leistungsfähigkeit
+       ■     Qualität der mitgelieferten Software
+       ■     Umweltauswirkungen
+       ■     Umfang und Qualität des Supports                                                                                       (4 Punkte)
+Hinweise für den Korrektor: Die Abfolge der Schritte in Teilaufgabe kann von den
+                            Prüfungsteilnehmern unterschiedlich dargestellt werden.
+                            Auch andere sachlogische Darstellungen können gewertet
+                            werden.
+
+
+
+
+© DIHK – Gesellschaft für berufliche Bildung – Organisation zur Förderung der IHK-Weiterbildung mbH – Bonn               Seite 3 | L 050-03-1118-8 |
+Die Vervielfältigung, Verbreitung oder öffentliche Wiedergabe der Publikation ist nicht gestattet (§§ 53, 54 UrhG) und
+strafbar (§ 106 UrhG). Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+
+=== Seite 4 ===
+GEPRÜFTE/-R INDUSTRIEMEISTER/-IN,
+FACHRICHTUNGSÜBERGREIFENDEBASISQUALIFIKATIONEN/
+GRUNDLEGENDE QUALIFIKATIONEN
+Anwendung von Methoden der Information, Kommunikation und Planung
+
+Aufgabe 3
+In ihrer Abteilung hat es einen arbeitssicherheitsrelevanten Vorfall gegeben. Als                                                 (10 Punkte)
+Abteilungsleiter bereiten Sie eine Präsentation für die bevorstehende anlassbezogene
+Arbeitssicherheitsunterweisung vor.
+Beschreiben Sie fünf Gesichtspunkte, die Sie in der Vorbereitungsphase der Präsentation
+beachten müssen.
+
+
+Lösungshinweise Aufgabe 3                                                                                                        (10 Punkte)
+[VO: § 4 Absatz 4 Nr. 3]
+■    Es können u. a. folgende Gesichtspunkte beschrieben werden:
+■    Analyse der Situation: Anlass der Präsentation analysieren und Thema ableiten.
+■    Zielsetzung: Abteilungsleiter muss sich über seine                           Ziele      der     Präsentation
+     (Information, Motivation, Überzeugung) im Klaren sein.
+■    Zielgruppenanalyse: Der Vortragende stimmt seine bevorstehende Präsentation
+     (Medien, fachlicher Anspruch, Rhetorik) auf die Zielgruppe ab.
+■    Strukturierung: Der Vortragende sollte eine sachliche und zeitliche Gliederung seiner
+     Präsentation erstellen.
+■    fachliche Vorbereitung: Der Vortragende informiert sich selbst über die inhaltlichen
+     Themen der Präsentation und arbeitet diese adressatengerecht aus.
+■    fachlicher Austausch: Der Vortragende kommuniziert mit Fachleuten im Unternehmen
+     und mit externen Fachleuten über das Thema der Unterweisung.
+
+
+
+
+Seite 4 | L 050-03-1118-8 |    © DIHK – Gesellschaft für berufliche Bildung – Organisation zur Förderung der IHK-Weiterbildung mbH – Bonn
+                               Die Vervielfältigung, Verbreitung oder öffentliche Wiedergabe der Publikation ist nicht gestattet (§§ 53, 54 UrhG) und
+                               strafbar (§ 106 UrhG). Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+
+=== Seite 5 ===
+GEPRÜFTE/-R INDUSTRIEMEISTER/-IN,
+FACHRICHTUNGSÜBERGREIFENDEBASISQUALIFIKATIONEN/
+GRUNDLEGENDE QUALIFIKATIONEN
+Anwendung von Methoden der Information, Kommunikation und Planung
+
+Aufgabe 4
+In einem großen Unternehmen wurden die Mitarbeiterzahlen, die meldepflichtigen
+Arbeitsunfälle und die Arbeitsstunden erfasst.
+Aus diesen Angaben werden in der Arbeitsschutzstatistik die Kennzahlen
+■      meldepflichtige Arbeitsunfälle pro 1 Million Arbeitsstunden
+■      meldepflichtige Arbeitsunfälle pro 1000 Vollbeschäftigte berechnet.
+
+       Jahr                    Mitarbeiter                     meldepflichtige                     Arbeitsstunden
+                                                               Arbeitsunfälle
+           1                       2 500                             76                                  4 000 000
+           2                       2 400                             65                                  3 840 000
+           3                       2 600                             62                                  4 160 000
+           4                       2 700                             61                                  4 320 000
+           5                       2 800                             58                                  4 480 000
+           6                       3 000                             60                                  4 800 000
+
+a)     Berechnen Sie:                                                                                                               (6 Punkte)
+       ■       die Anzahl der meldepflichtigen Arbeitsunfälle pro 1 Million Arbeitsstunden und
+       ■       die Anzahl der meldepflichtigen Arbeitsunfälle pro 1000Mitarbeiter.
+b)     Stellen Sie die Anzahl der meldepflichtigen Arbeitsunfälle pro 1 Million Arbeitsstunden                                      (9 Punkte)
+       im zeitlichen Verlauf in einem Diagramm dar.
+
+
+
+
+© DIHK – Gesellschaft für berufliche Bildung – Organisation zur Förderung der IHK-Weiterbildung mbH – Bonn               Seite 5 | L 050-03-1118-8 |
+Die Vervielfältigung, Verbreitung oder öffentliche Wiedergabe der Publikation ist nicht gestattet (§§ 53, 54 UrhG) und
+strafbar (§ 106 UrhG). Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+
+=== Seite 6 ===
+GEPRÜFTE/-
+GEPRÜFTE/-RR INDUSTRIEMEISTER/
+             INDUSTRIEMEISTER/-IN,
+                                IN,
+FACHRICHTUNGSÜBERGRE
+FACHRICHTUNGSÜBERGREIFENDEBASISQUALIFIK
+                     IFENDEBASISQUALIFIKATIONEN/
+                     IFENDEBASISQUALIFIKATIONEN/
+GRUNDLEGENDE QUALIFIKATIONEN
+                QUALIFIKATIONEN
+Anwendung von Methoden der Information,
+                           Information, Kommunikation
+                                        Kommunikation und
+                                                      und Planung
+                                                          Planung
+
+
+Lösungshinweise Aufgabe 4                                                                                                               (15
+                                                                                                                                         15 Punkte)
+[VO: § 4 Absatz 4 Nr. 4]
+a)
+       Jahr Arbeitsunfälle                                       Arbeitsunfälle
+               pro 1 Million Arbeitss
+                             Arbeitsstunden
+                                      tunden                     pro 1000 Mitarbeiter
+        1      19,00                                             30,40
+        2      16,93                                             27,08
+        3      14,90                                             23,85
+        4      14,12                                             22,59
+        5      12,95                                             20,71
+        6      12,50                                             20,00                                                                      (6
+                                                                                                                                             6 Punkte
+                                                                                                                                               Punkte)
+b)
+
+
+
+
+                                                                                                                                            (9
+                                                                                                                                             9 Punkte
+                                                                                                                                               Punkte)
+
+
+Aufgabe 5
+    Geschäftsleitung initiiert
+Die Geschäftsleitung   initiiert ein
+                                 ein standortübergreifendes
+                                     standortübergreifendes Projekt
+                                                             Projekt zur
+                                                                      zur Verbesserung
+                                                                          Verbesserung der
+                                                                                       der
+Arbeitssicherheit und zur Reduzierung
+                           Reduzierung der Anzahl der Arbeitsunfäl  le.
+                                                        Arbeitsunfälle.
+a)                                     für eine
+      Beschreiben Sie drei Gründe, die für eine Lösung
+                                                Lösung dieser
+                                                       dieser Probleme
+                                                              Probleme in
+                                                                       in Form
+                                                                          Form von
+                                                                               von                                                         (6 Punkte)
+      Projekten sprechen.
+b)                                                erstellt.. Beschreiben Sie fünf inhaltliche
+      Für das Projekt wird ein Projektauftrag erstellt                                                                                   (10
+                                                                                                                                          10 Punkte)
+      Punkte, die im Projektauftrag dieses Projektes enthalten sein müssen.
+c)                                              eingesetzt. Nennen
+      Für das Projekt wird eine Projektleitung eingesetzt.  Nennen S
+                                                                   S
+                                                                   Sie
+                                                                     ie vier Aufgaben der                                                  (4 Punkte)
+      Projektleitung in der Realisierungsphase des Projektes.
+
+
+
+
+Seite 6 | L 050
+            050-03
+                03-1118
+                   1118--8 |      © DIHK – Gesellschaft für berufliche Bildung – Organisation zur Förderung der IHK           IHK-Weiterbildung
+                                                                                                                                  Weiterbildung mbH – Bonn
+                                  Die Vervielfältigung,
+                                  Die  Vervielfältigung, Verbreitung
+                                                         Verbreitung oder
+                                                                      oder öffentliche
+                                                                           öffentliche Wiedergabe
+                                                                                       Wiedergabe der
+                                                                                                    der Publikation
+                                                                                                        Publikation ist
+                                                                                                                     ist nicht
+                                                                                                                         nicht gestattet
+                                                                                                                               gestattet (§§
+                                                                                                                                         (§§ 53,
+                                                                                                                                             53, 54
+                                                                                                                                                 54 UrhG)
+                                                                                                                                                    UrhG) und
+                                                                                                                                                          und
+                                           (§ 106
+                                  strafbar (§ 106 UrhG).
+                                                   UrhG). Im
+                                                          Im Fall
+                                                             Fall der
+                                                                  der Zuwiderhandlung
+                                                                      Zuwiderhandlung wird
+                                                                                        wird Strafantrag
+                                                                                             Strafantrag gestellt.
+                                                                                                         gestellt.
+
+=== Seite 7 ===
+GEPRÜFTE/-R INDUSTRIEMEISTER/-IN,
+FACHRICHTUNGSÜBERGREIFENDEBASISQUALIFIKATIONEN/
+GRUNDLEGENDE QUALIFIKATIONEN
+Anwendung von Methoden der Information, Kommunikation und Planung
+
+Lösungshinweise Aufgabe 5                                                                                                          (20 Punkte)
+[VO: § 4 Absatz 4 Nr. 5]
+a)     Mit der Initiierung eines Projektes dokumentiert die Geschäftsleitung die Bedeutung
+       der Aufgabe. Die Ressourcen werden auf die wesentlichen Gesichtspunkte der
+       Aufgabe konzentriert.
+       Der Aufgabe können alle maßgeblichen Eigenschaften eines Projektes zugeordnet
+       werden, wie z. B.:
+       ■     Einmaligkeit/Erstmaligkeit
+       ■     klare Zieldefinition (Sachziele)
+       ■     zeitliche Befristung (Terminziel)
+       ■     begrenzte Ressourcen (Kostenziel)                                                                                       (6 Punkte)
+b)     Z. B.:
+       ■ Projektleitung:              Person,         Status,        Kompetenzen               und       Verantwortung   der
+          Projektleitung
+       ■ Projektsachziel: eindeutige, vollständige und überprüfbare Beschreibung des
+         Sollzustandes, der durch das Projekt herbeigeführt werden soll
+       ■ Projektbudget: Der zur Verfügung stehende Finanzrahmen für notwendige
+         Investitionen und Kosten muss festgelegt werden
+       ■ Projektressourcen: Es ist zu spezifizieren, welche Mitarbeiter und Betriebsmittel in
+         welcher Form in dem Projekt integriert werden
+       ■ Umfeld- und Randbedingungen: Unter diesem Gesichtspunkt können soziale,
+         politische oder auch unternehmenspolitische Bedingungen genannt werden.
+       ■ Termine: Wesentliches Kennzeichen eines Projektauftrages ist eine klare
+         Terminspezifikation für die Meilensteine und das Gesamtziel.                                                               (10 Punkte)
+c)     ■      Zuweisen von Aufgaben an die Projektmitarbeiter
+       ■     Erkennen und Lösen von Problemen und Konflikten
+       ■     permanenter Soll-Ist-Vergleich (Termin-, Kosten- und Sachziele)
+       ■     Erstellen von Berichten an den Auftraggeber (die Geschäftsleitung)
+       ■     Motivation der Mitarbeiter                                                                                              (4 Punkte)
+
+
+
+
+© DIHK – Gesellschaft für berufliche Bildung – Organisation zur Förderung der IHK-Weiterbildung mbH – Bonn                Seite 7 | L 050-03-1118-8 |
+Die Vervielfältigung, Verbreitung oder öffentliche Wiedergabe der Publikation ist nicht gestattet (§§ 53, 54 UrhG) und
+strafbar (§ 106 UrhG). Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+
+=== Seite 8 ===
+GEPRÜFTE/-R INDUSTRIEMEISTER/-IN,
+FACHRICHTUNGSÜBERGREIFENDEBASISQUALIFIKATIONEN/
+GRUNDLEGENDE QUALIFIKATIONEN
+Anwendung von Methoden der Information, Kommunikation und Planung
+
+Aufgabe 6
+Die Kommunikation von Arbeitsschutzthemen im Unternehmen soll verbessert werden.
+a)   Benennen Sie je zwei Maßnahmen                                                                                                   (4 Punkte)
+     ■ der Aufwärtskommunikation und
+     ■ der Abwärtskommunikation von Arbeitsschutzthemen im Unternehmen.
+b)    Beschreiben Sie vier organisatorische Maßnahmen zur Sicherstellung der                                                          (8 Punkte)
+      Kommunikation im Unternehmen.
+c)    Begründen Sie, warum die Kommunikation der Arbeitsschutzthemen im Unternehmen                                                   (3 Punkte)
+      besonders sichergestellt werden muss.
+
+
+Lösungshinweise Aufgabe 6                                                                                                          (15 Punkte)
+[VO: § 4 Absatz 4 Nr. 6]
+
+a)   Z. B.:
+     Abwärtskommunikation:
+     ■  Betriebsanweisungen
+     ■  Arbeitsanweisungen
+     ■  Sicherheitsunterweisungen
+     Aufwärtskommunikation:
+     ■   Berichte
+     ■   Vorschläge
+     ■   Protokolle
+     ■   Unfallmeldungen                                                                                                              (4 Punkte)
+
+b)   Es können z. B. folgende Maßnahmen beschrieben werden:
+      ■    klare Zuweisung der Verantwortung für Dokumente und Kommunikationsprozesse
+      ■    Einsetzen von Gremien, in denen über Arbeitsschutz beraten wird
+      ■    regelmäßige Durchführung von Gremiensitzungen
+      ■    Protokollierung und Kommunikation der Ergebnisse der Gremiensitzungen
+      ■    Archivierung der Protokolle und aller anderen relevanten Dokumente                                                         (8 Punkte)
+
+c)    Die Kommunikation der Arbeitsschutzthemen muss sichergestellt werden, damit die
+      Themen
+      ■    den Mitarbeitern nachweislich bekannt sind,
+      ■    verständlich vermittelt wurden und
+      ■    in der Praxis angewendet werden können.                                                                                    (3 Punkte)
+
+
+
+
+Seite 8 | L 050-03-1118-8 |      © DIHK – Gesellschaft für berufliche Bildung – Organisation zur Förderung der IHK-Weiterbildung mbH – Bonn
+                                 Die Vervielfältigung, Verbreitung oder öffentliche Wiedergabe der Publikation ist nicht gestattet (§§ 53, 54 UrhG) und
+                                 strafbar (§ 106 UrhG). Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+
