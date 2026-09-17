@@ -228,7 +228,7 @@ class ResultScreen extends StatelessWidget {
       if (max == 0) continue;
       final got = AnswerStore.instance.points(q.id) ?? 0;
       final p = max == 0 ? 0 : (got / max * 100).round();
-      final nr = TaskParts.of(q.q).nr;
+      final nr = TaskParts.of(q).nr;
       rows.add(Padding(
         padding: const EdgeInsets.only(bottom: 10),
         child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [

@@ -40,7 +40,7 @@ class DataService {
   /// Bildanlage auflösen: Schlüssel aus anlagen.json oder direkte Data-URI.
   Anlagenbild? anlage(String? ref) {
     if (ref == null || ref.isEmpty) return null;
-    if (ref.startsWith('data:')) return Anlagenbild(ref, '');
+    if (ref.startsWith('data:')) return Anlagenbild('', '', uri: ref);
     return anlagen[ref];
   }
 

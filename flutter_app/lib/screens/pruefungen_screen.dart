@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import '../constants.dart';
 import '../models.dart';
+import '../services/answer_store.dart';
 import '../services/data_service.dart';
-import '../services/round_builder.dart';
-import 'quiz_screen.dart';
+import 'aufgabenblatt_screen.dart';
 
 /// Übersicht der Original-IHK-Prüfungen: gezielt auswählbar statt zufällig
 /// aus dem Fallaufgaben-Bestand gezogen.
@@ -86,8 +86,12 @@ class PruefungenScreen extends StatelessWidget {
       ..writeln('AUSGANGSSITUATION')
       ..writeln(c.context)
       ..writeln();
-    for (final s in c.steps) {
-      final teile = s.q.split('\n\n');
+    for (final roh in c.steps) {
+      // Mit der Aufgabe verbinden: Kopf und Ausgangslage stehen dort, damit
+      // der Export dieselbe Form behält wie vor dem Umbau auf Aufgabenblätter.
+      final s = roh.withCase(CaseContext(c.title, c.context, 0, c.steps.length),
+          c.aufgabeVon(roh.nr));
+      final teile = TaskParts.of(s).volltext.split('\n\n');
       b
         ..writeln('------------------------------')
         ..writeln(teile.isNotEmpty ? teile.first : '')
@@ -98,10 +102,10 @@ class PruefungenScreen extends StatelessWidget {
             ? 'AMTLICHER LÖSUNGSHINWEIS (IHK):'
             : 'MUSTERLÖSUNG (zu prüfen):')
         ..writeln(s.a ?? '');
-      if (s.tab != null) {
-        b.writeln(s.tab!.asText());
+      if (s.tabEffektiv != null) {
+        b.writeln(s.tabEffektiv!.asText());
       }
-      final anlage = DataService.instance.anlage(s.bild);
+      final anlage = DataService.instance.anlage(s.bildEffektiv);
       if (anlage != null) {
         b.writeln('[Zur Aufgabe gehört eine Abbildung: '
             '${anlage.titel.isNotEmpty ? anlage.titel : 'Anlage zur Aufgabe'}]');
@@ -223,19 +227,20 @@ class PruefungenScreen extends StatelessWidget {
             ),
         ]),
         const SizedBox(height: 4),
-        Text('${_datum(c)} · ${c.steps.length} Teilaufgaben · 180 Minuten',
+        Text(
+            '${_datum(c)} · ${c.aufgaben.length} Aufgaben mit '
+            '${c.steps.length} Teilaufgaben · 180 Minuten',
             style: const TextStyle(fontSize: 12, color: kMuted)),
+        if (c.aufgaben.isNotEmpty) ...[
+          const SizedBox(height: 9),
+          _aufgabenListe(context, c),
+        ],
         const SizedBox(height: 11),
         Row(children: [
           Expanded(
             child: FilledButton(
               onPressed: () => Navigator.of(context).push(MaterialPageRoute(
-                builder: (_) => QuizScreen(
-                  mode: RoundMode.cases,
-                  pool: c.asPool(),
-                  fach: c.f,
-                  sub: c.sub,
-                ),
+                builder: (_) => AufgabenblattScreen(fall: c),
               )),
               style: FilledButton.styleFrom(
                   backgroundColor: kPetrol,
@@ -265,6 +270,62 @@ class PruefungenScreen extends StatelessWidget {
         ]),
       ]),
     );
+  }
+
+  /// Die Aufgaben einer Prüfung mit ihren Teilaufgaben – tippen öffnet das
+  /// Aufgabenblatt direkt bei dieser Aufgabe.
+  Widget _aufgabenListe(BuildContext context, CaseStudy c) {
+    return Wrap(spacing: 6, runSpacing: 6, children: [
+      for (final a in c.aufgaben)
+        InkWell(
+          onTap: () {
+            final i = c.steps.indexWhere((s) => s.nr == a.nr);
+            Navigator.of(context).push(MaterialPageRoute(
+              builder: (_) =>
+                  AufgabenblattScreen(fall: c, startIndex: i < 0 ? 0 : i),
+            ));
+          },
+          borderRadius: BorderRadius.circular(9),
+          child: Container(
+            padding: const EdgeInsets.symmetric(horizontal: 9, vertical: 6),
+            decoration: BoxDecoration(
+              border: Border.all(color: kLine),
+              borderRadius: BorderRadius.circular(9),
+            ),
+            child: Row(mainAxisSize: MainAxisSize.min, children: [
+              Text('Aufgabe ${a.nr}',
+                  style: const TextStyle(
+                      fontSize: 11.5, fontWeight: FontWeight.w700, color: kInk)),
+              const SizedBox(width: 6),
+              Text('${a.pts} P.',
+                  style: const TextStyle(fontSize: 10.5, color: kMuted)),
+              const SizedBox(width: 6),
+              for (final s in c.steps.where((s) => s.nr == a.nr))
+                Padding(
+                  padding: const EdgeInsets.only(left: 2),
+                  child: Container(
+                    width: 16,
+                    height: 16,
+                    alignment: Alignment.center,
+                    decoration: BoxDecoration(
+                      color: AnswerStore.instance.get(s.id).trim().isNotEmpty
+                          ? kOkSoft
+                          : kBgTint,
+                      borderRadius: BorderRadius.circular(5),
+                    ),
+                    child: Text(s.teil,
+                        style: TextStyle(
+                            fontSize: 9,
+                            fontWeight: FontWeight.w700,
+                            color: AnswerStore.instance.get(s.id).trim().isNotEmpty
+                                ? kOk
+                                : kMuted)),
+                  ),
+                ),
+            ]),
+          ),
+        ),
+    ]);
   }
 
   Widget _hinweis() {

@@ -1,10 +1,9 @@
 import 'dart:async';
-import 'dart:convert';
 import 'package:flutter/services.dart';
 import 'package:flutter/material.dart';
 import '../constants.dart';
 import '../models.dart';
-import '../services/data_service.dart';
+import '../widgets/anlage_bild.dart';
 import '../services/progress_service.dart';
 import '../services/round_builder.dart';
 import '../services/voice_service.dart';
@@ -270,7 +269,7 @@ class _QuizScreenState extends State<QuizScreen> {
             ]),
             const SizedBox(height: 10),
             ..._taskText(),
-            if (_q.tab != null) _anlage(_q.tab!),
+            if (_q.tabEffektiv != null) _anlage(_q.tabEffektiv!),
             const SizedBox(height: 16),
             if (_q.type == 'mc') ..._mcOptions(),
             if (_q.type == 'calc') _calcInput(),
@@ -335,7 +334,7 @@ class _QuizScreenState extends State<QuizScreen> {
   /// Aufgabenkopf, Ausgangslage und Fragestellung getrennt darstellen – sonst
   /// verschwimmt bei den Original-Prüfungen alles zu einem fetten Textblock.
   List<Widget> _taskText() {
-    final t = TaskParts.of(_q.q);
+    final t = TaskParts.of(_q);
     final frage = Text(t.frage,
         style: const TextStyle(fontSize: 19, fontWeight: FontWeight.w600, height: 1.3, color: kInk));
     if (t.nr.isEmpty) return [frage];
@@ -527,7 +526,7 @@ class _QuizScreenState extends State<QuizScreen> {
   Widget _openChat() {
     final gespeichert = AnswerStore.instance.get(_q.id);
     if (_eigene.text != gespeichert) _eigene.text = gespeichert;
-    final t = TaskParts.of(_q.q);
+    final t = TaskParts.of(_q);
     final ans = gespeichert.trim();
     final w = MediaQuery.of(context).size.width;
 
@@ -601,11 +600,11 @@ class _QuizScreenState extends State<QuizScreen> {
                       fontWeight: FontWeight.w600,
                       height: 1.5,
                       color: kInk)),
-              if (_q.tab != null)
+              if (_q.tabEffektiv != null)
                 Padding(
                     padding: const EdgeInsets.only(top: 10),
-                    child: _anlage(_q.tab!)),
-              _bild(_q.bild),
+                    child: _anlage(_q.tabEffektiv!)),
+              _bild(_q.bildEffektiv),
             ]),
           ),
         ),
@@ -770,42 +769,10 @@ class _QuizScreenState extends State<QuizScreen> {
 
   /// Bildanlage in der Prüfer- oder Lösungsblase – z. B. ein Diagramm.
   ///
-  /// [ref] ist der Schlüssel in anlagen.json; ältere Einträge tragen die
-  /// Data-URI direkt. [fallbackTitel] greift, wenn keine Bildunterschrift
-  /// hinterlegt ist.
-  Widget _bild(String? ref, {String fallbackTitel = 'Anlage zur Aufgabe'}) {
-    final a = DataService.instance.anlage(ref);
-    if (a == null) return const SizedBox.shrink();
-    final komma = a.uri.indexOf(',');
-    if (!a.uri.startsWith('data:') || komma < 0) return const SizedBox.shrink();
-    try {
-      final bytes = base64Decode(a.uri.substring(komma + 1));
-      final titel = a.titel.isNotEmpty ? a.titel : fallbackTitel;
-      return Padding(
-        padding: const EdgeInsets.only(top: 10),
-        child: Column(crossAxisAlignment: CrossAxisAlignment.stretch, children: [
-          ClipRRect(
-            borderRadius: BorderRadius.circular(10),
-            child: Container(
-              decoration: BoxDecoration(
-                  color: kPaper,
-                  border: Border.all(color: kLine),
-                  borderRadius: BorderRadius.circular(10)),
-              child: Image.memory(bytes,
-                  fit: BoxFit.fitWidth, width: double.infinity),
-            ),
-          ),
-          const SizedBox(height: 5),
-          Text(titel,
-              textAlign: TextAlign.center,
-              style: const TextStyle(
-                  fontSize: 11.5, height: 1.4, color: kMuted)),
-        ]),
-      );
-    } catch (_) {
-      return const SizedBox.shrink();
-    }
-  }
+  /// [ref] ist der Schlüssel in anlagen.json. Die Darstellung samt Vollbild
+  /// und Zoom steckt in [AnlageBild], damit das Aufgabenblatt dieselbe nutzt.
+  Widget _bild(String? ref, {String fallbackTitel = 'Anlage zur Aufgabe'}) =>
+      AnlageBild(ref, fallbackTitel: fallbackTitel);
 
   Widget _composer() {
     return Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
