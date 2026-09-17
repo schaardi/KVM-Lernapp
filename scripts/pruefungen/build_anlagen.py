@@ -47,8 +47,10 @@ ENDUNGEN = ('.jpg', '.jpeg', '.png')
 # Bildunterschrift zurück.
 sys.path.insert(0, HERE)
 from anlagen_bau import FIGUREN
+from anlagen_titel import TITEL as TITEL_EXTRAKT
 
 TITEL = {k: v[3] for k, v in FIGUREN.items()}
+TITEL.update(TITEL_EXTRAKT)
 TITEL.setdefault('P-FT-20251111-s3', 'Lastverteilungsplan Sattelauflieger')
 
 
