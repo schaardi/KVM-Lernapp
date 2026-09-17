@@ -5,9 +5,10 @@ Aufgaben samt amtlichen Lösungshinweisen.
 Quelle: ``quellen/imbq-<jahrgang>/*.txt`` – Textlayer der PDFs
 (``pdftotext -layout``) mit Seitenmarkern. Aufbau je Datei: Deckblatt,
 Aufgabenteil, dann ab einer Zeile, die nur ``Lösungshinweise`` enthält, der
-Lösungsteil. Beide Jahrgänge (Herbst 2024 und Herbst 2025) folgen demselben
-Aufbau; ``JAHRGAENGE`` hält die Unterschiede (Verzeichnis, Prüfungshefte,
-Korrekturdatei).
+Lösungsteil. Alle Termine ab Frühjahr 2023 folgen demselben Aufbau;
+``JAHRGAENGE`` hält die Unterschiede (Verzeichnis, Prüfungshefte,
+Korrekturdatei). Ältere Termine sind anders aufgebaut – siehe
+``docs/PLAN-altklausuren-und-aufgabenblatt.md``, Teil A.
 
 Anders als bei den Kraftverkehr-Prüfungen ist der Buchstabe vor
 ``Mögliche Punktzahl`` optional (Aufgaben ohne Teilaufgaben) und kommt auch
@@ -27,6 +28,14 @@ NTG    = ('05-ntg.txt',            'NT',
 
 # Prüfungstermine: Verzeichnis, Hefte und die zugehörige Korrekturdatei.
 JAHRGAENGE = {
+    # Herbst 2023: das Heft "Methoden …" fehlt im Archiv (die abgelegte Datei
+    # ist ein Doppel der ZiB-Prüfung desselben Termins).
+    'f2023': {'dir': 'imbq-f2023', 'korrekturen': 'korrekturen_imbq_f2023',
+              'pruefungen': [RECHT, BWL, METHOD, ZUSAMM, NTG]},
+    'h2023': {'dir': 'imbq-h2023', 'korrekturen': 'korrekturen_imbq_h2023',
+              'pruefungen': [RECHT, BWL, ZUSAMM, NTG]},
+    'f2024': {'dir': 'imbq-f2024', 'korrekturen': 'korrekturen_imbq_f2024',
+              'pruefungen': [RECHT, BWL, METHOD, ZUSAMM, NTG]},
     'h2024': {'dir': 'imbq-h2024', 'korrekturen': 'korrekturen_imbq_h2024',
               'pruefungen': [RECHT, BWL, METHOD, ZUSAMM, NTG]},
     'h2025': {'dir': 'imbq-h2025', 'korrekturen': 'korrekturen_imbq',
@@ -44,7 +53,9 @@ AUFG    = re.compile(r'^Aufgabe\s+(\d+)$')
 LOES_A  = re.compile(r'^L[öo]sungshinweise\s+Aufgabe\s+(\d+)$')
 LOES_TL = re.compile(r'^L[öo]sungshinweise$')
 # Buchstabe optional und case-insensitiv – siehe Modul-Doku.
-PUNKTE  = re.compile(r'^(?:([a-hA-H])\s+)?M[öo]gliche\s+Punktzahl:\s*(\d+)$')
+# "Mögliche Punktzahl: 8" – ein Heft schreibt "Punktezahle" (NTG F2023, A2);
+# ohne Toleranz fiele die Teilaufgabe samt 17 Punkten weg.
+PUNKTE  = re.compile(r'^(?:([a-hA-H])\s+)?M[öo]gliche\s+Punkte?zahle?:\s*(\d+)$')
 VO      = re.compile(r'^\[?\s*VO:\s*(.+?)\s*\]?$')
 # Anlagen stehen physisch hinter der letzten Aufgabe, gehören aber zu einer
 # früheren – ihr Block darf nicht in den Text der letzten Aufgabe rutschen.
@@ -96,6 +107,14 @@ def clean(line):
     l = re.sub(r'[\ue000-\uf8ff]', '', l)
     return re.sub(r'\s{2,}', ' ', l).strip()
 
+# Das Punkte-Badge steht gelegentlich über zwei Zeilen: "a Mögliche Punktzahl:"
+# und darunter die Zahl, mitunter mit einem Strich davor (NTG H2023, Aufgabe 4).
+# Ohne Zusammenführung fehlt die Teilaufgabe komplett und die Prüfung kommt
+# nicht auf 100 Punkte.
+BADGE_OHNE_ZAHL = re.compile(r'^(?:[a-hA-H]\s+)?M[öo]gliche\s+Punktzahl:\s*$')
+NUR_ZAHL = re.compile(r'^[-–—•■\s]*(\d+)\s*$')
+
+
 def load(path, bezeichnung):
     """Zeilen laden, Deko/Wasserzeichen entfernen."""
     out = []
@@ -103,7 +122,16 @@ def load(path, bezeichnung):
         if PAGE.match(raw):
             continue
         l = clean(raw)
-        if not l or JUNK.match(l):
+        if not l:
+            continue
+        # Vor den JUNK-Filtern: eine alleinstehende Zahl unter einem Badge ohne
+        # Punktzahl gehört zu diesem Badge. JUNK verwirft blanke Zahlen
+        # (Seitenzahlen), diese hier darf es nicht erwischen.
+        m = NUR_ZAHL.match(l)
+        if m and out and BADGE_OHNE_ZAHL.match(out[-1]):
+            out[-1] = out[-1] + ' ' + m.group(1)
+            continue
+        if JUNK.match(l):
             continue
         if l == bezeichnung or l.lower() == bezeichnung.lower():
             continue
