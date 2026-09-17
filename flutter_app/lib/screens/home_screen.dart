@@ -1,3 +1,4 @@
+import 'dart:math';
 import 'package:flutter/material.dart';
 import '../constants.dart';
 import '../config.dart';
@@ -14,6 +15,7 @@ import '../widgets/account_sheet.dart';
 import '../widgets/premium_sheet.dart';
 import 'kw/kw_hub.dart';
 import 'pruefungen_screen.dart';
+import 'aufgabenblatt_screen.dart';
 import 'quiz_screen.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -42,6 +44,22 @@ class _HomeScreenState extends State<HomeScreen> {
       _sub == '*' ? '${kFachKurz[_fach]} – alle Bereiche' : _sub;
 
   Future<void> _start(RoundMode mode) async {
+    // Fallaufgaben und Prüfungen laufen über das Aufgabenblatt: eine Aufgabe
+    // mit allen Teilaufgaben statt einer Teilaufgabe je Bildschirm.
+    if (mode == RoundMode.cases) {
+      final faelle = DataService.instance.cases;
+      if (faelle.isEmpty) {
+        ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
+            content: Text('Es sind noch keine Fallaufgaben verfügbar.')));
+        return;
+      }
+      final fall = faelle[Random().nextInt(faelle.length)];
+      await Navigator.of(context).push(MaterialPageRoute(
+        builder: (_) => AufgabenblattScreen(fall: fall),
+      ));
+      setState(() {});
+      return;
+    }
     final pool = RoundBuilder.build(mode, _fach, _sub, const []);
     if (pool.isEmpty) {
       ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
