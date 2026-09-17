@@ -36,9 +36,10 @@ richtig zu lösen." – und: „Nutze diese ganzen Klausuren für unsere App."
 | **B2** Web-Aufgabenblatt | **fertig** – eigener Bildschirm `scrBlatt`: Aufgaben-Stepper, Ausgangslage und Anlagen einmal am Kopf, alle Teilaufgaben a–x als Karten mit eigenem Antwortfeld, Aufdecken je Teil oder je Aufgabe, Zwischenergebnis aus `braucht`, Lightbox mit Zoom, Ergebnis nach Aufgaben gruppiert, Übersicht mit Fach-Filter |
 | **B3** Flutter-Aufgabenblatt | **fertig** – `screens/aufgabenblatt_screen.dart` mit Stepper, Ausgangslage, Anlagen am Kopf, Teil-Karten mit Antwortfeld und Selbstbewertung, Prüfauftrag über die ganze Aufgabe; Prüfungsübersicht zeigt die Aufgaben mit Teil-Chips |
 | **A T2** F2019 … H2022 | **fertig** – 40 Prüfungen, 36 neue Anlagen; Bestand jetzt **76 Original-Prüfungen** |
-| **A T3, T4** | offen – 45 Prüfungen (L-ALT, davon 35 als Scan) |
+| **A T3** F2018, H2018 | **fertig** – 10 Prüfungen, 7 Anlagen, neuer `parse_imbq_alt.py`; Bestand jetzt **86 Original-Prüfungen** |
+| **A T4** H2017 … H2014 | offen – 35 Prüfungen, alle als Scan (OCR) |
 | **C** Aufgabenserien | offen |
-| Übungsfragen (`PX-`) aus T1 und T2 | offen – die 54 neuen Prüfungen haben noch keine |
+| Übungsfragen (`PX-`) aus T1 bis T3 | offen – die 64 neuen Prüfungen haben noch keine |
 | Lösungszeichnungen der Methoden-Hefte | teils offen – acht Aufgaben „Stellen Sie … in einem Diagramm dar“ aus T2 haben zwar den amtlichen Lösungstext, aber noch kein Lösungsbild (`bildL`) |
 
 Neue Werkzeuge: `scripts/pruefungen/anlagen_extrakt.py` (Abbildungen über ihre
@@ -55,15 +56,15 @@ zum ersten Mal im Repository und lässt sich aus den PDFs nachbauen.
 
 ### Bestand in der App
 
-Stand nach T2 (in Klammern der Stand vor dieser Session):
+Stand nach T3 (in Klammern der Stand vor dieser Session):
 
 | Was | Stand | Wo |
 |---|---|---|
-| Startbare Prüfungen (`P-`) | **76** (22) – 13 × Kraftverkehr FT/OK 2021–2026, 63 × Basisqualifikation F2019–H2025, alle mit amtlichen Lösungshinweisen, je 100 Punkte; 511 Aufgaben mit 1.291 Teilaufgaben | `flutter_app/assets/data/cases.json` (1,2 MB), `data/cases.js` |
+| Startbare Prüfungen (`P-`) | **86** (22) – 13 × Kraftverkehr FT/OK 2021–2026, 73 × Basisqualifikation F2018–H2025, alle mit amtlichen Lösungshinweisen, je 100 Punkte; 582 Aufgaben mit 1.458 Teilaufgaben | `flutter_app/assets/data/cases.json` (1,4 MB), `data/cases.js` |
 | Fallaufgaben ohne IHK-Bezug | 15 (`F-`/`R-`/`M-`/`Z-`, je 4–5 Teile, Musterlösungen) | ebd. |
 | Übungsfragen aus Prüfungen (`PX-`) | 327 (127 Kraftverkehr, 94 BQ H2025, 107 BQ H2024) – aus T1 und T2 noch keine | `questions.json`, Quellensätze `scripts/pruefungen/fragen/*.json` |
-| Bildanlagen | **60** (14) als Dateien, 1,4 MB; 40 an einer Aufgabe, 1 an einem Teil, 18 an einer Lösung | `anlagen/`, `flutter_app/assets/anlagen/`, Verzeichnis in `data/anlagen.js` |
-| Tabellenanlagen | 6 (`tab`) – 4 an einer Aufgabe, 2 an einem Schritt | an Aufgabe oder Schritt |
+| Bildanlagen | **67** (14) als Dateien, 1,5 MB; 45 an einer Aufgabe, 21 an einer Lösung | `anlagen/`, `flutter_app/assets/anlagen/`, Verzeichnis in `data/anlagen.js` |
+| Tabellenanlagen | 7 (`tab`) – an Aufgabe oder Schritt | an Aufgabe oder Schritt |
 | `index.html` | **280 KB** (3,3 MB) – die Inhalte liegen daneben in `data/*.js` | Root |
 
 ### Wie eine Prüfung heute dargestellt wird
@@ -260,6 +261,24 @@ for l in lines:
 A, L = aufgaben(frage, False), aufgaben(loes, True)
 ```
 
+**Erfahrungen aus T3** (für T4 einplanen):
+
+- Die Symbol-Schrift war die größte Fehlerquelle im ganzen Archiv, nicht die
+  Heftform: ``clean()`` hat alles aus dem Privatbereich U+F0xx weggeworfen, was
+  die Tabelle nicht kannte – **845 Gleichheitszeichen**, 124 Plus, 91 Minus.
+  Die Tabelle deckt jetzt die ganze Adobe-Symbol-Kodierung ab. Vor jeder
+  weiteren Tranche lohnt ein Blick auf die Privatbereich-Zeichen der neuen
+  Quellen.
+- Die Punktzahl am rechten Rand verrutscht in der Heftform L-ALT regelmäßig um
+  eine Zeile. Die Regel „allein stehende Punktzahl unmittelbar vor einer
+  Teilaufgabe gehört zu dieser“ trägt; die 100-Punkte-Summe allein deckt den
+  Fehler **nicht** auf, weil zwei Teile nur ihre Punkte tauschen. Der Abgleich
+  mit den eindeutig gedruckten Paaren (Buchstabe und Klammer in derselben
+  Zeile) ist die eigentliche Probe.
+- Kopfzeilen können doppelt und versetzt gesetzt sein (MIKP H2018). Die
+  Bruchstücke am Ende („IN,“, „Kommunikation und“) sind so gewöhnliche Wörter,
+  dass nur eine Korrektur hilft – ein Filtermuster nähme echten Text mit.
+
 **Erfahrungen aus T2** (für T3/T4 einplanen):
 
 - Die Fußzeile `L 050-01-0519-7` trägt eine Prüfziffer, die das alte
@@ -321,7 +340,7 @@ Neueste zuerst; jede Tranche ein eigener PR mit Prüfungen **und** ihren
 |---|---|---|---:|---|
 | T1 | F2024, H2023, F2023 | 14 | PL, vorhanden | 6 Korrekturen · je Prüfung 30–45 min + Fragen-Workflow |
 | T2 | H2022 … F2019 | 40 | L-I, 15 Zeilen neu | **erledigt** – 35 Hefte sofort 100/100; 9 Korrekturen (Datum, Doppelpunkt im Badge, OCR ZiB H2021, 5 Zeichnungs-Lösungen), 6 bereinigte Ausgangslagen, 36 Anlagen |
-| T3 | H2018, F2018 | 10 | L-ALT neu (½ Tag) | 2 Korrekturen |
+| T3 | H2018, F2018 | 10 | L-ALT neu (`parse_imbq_alt.py`) | **erledigt** – alle zehn Hefte auf 100/100; 4 Korrekturen (Zeichnung, zwei verrutschte Formeln, doppelt gesetzte Kopfzeile), 7 Anlagen |
 | T4 | H2017 … H2014 | 35 | L-ALT + OCR-Normalisierung | je Prüfung 1–2 h Sichtprüfung gegen Seitenbilder; Rechtsstand-Hinweis Pflicht |
 
 Erst B0 (Daten auslagern) und B1 (Datenmodell) umsetzen, dann T1 – sonst
