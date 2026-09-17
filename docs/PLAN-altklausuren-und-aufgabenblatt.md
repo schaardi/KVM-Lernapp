@@ -1,9 +1,9 @@
 # Plan: Altklausuren einspielen, Prüfungen als Aufgabenblatt, Aufgabenserien
 
 Stand 17. 9. 2026. Drei Themen, die zusammengehören, aber getrennt umsetzbar
-sind. **Erledigt** sind inzwischen B0, B1, B4 und die erste Tranche A T1
-(siehe „Was steht" weiter unten); offen sind vor allem die beiden
-Aufgabenblatt-Oberflächen B2/B3 und die Tranchen T2–T4.
+sind. **Erledigt** sind inzwischen B0, B1, B2, B4 und die erste Tranche A T1
+(siehe „Was steht" weiter unten); offen sind vor allem das Aufgabenblatt in der
+Flutter-App (B3) und die Tranchen T2–T4.
 
 - **Teil A** – Das Archiv `Altklausuren.rar` (99 IHK-Prüfungen der
   Industriemeister-Basisqualifikationen, Herbst 2014 bis Frühjahr 2024, alle
@@ -33,7 +33,7 @@ richtig zu lösen." – und: „Nutze diese ganzen Klausuren für unsere App."
 | **B4** Bilder als Dateien | **fertig** – `anlagen/` bzw. `assets/anlagen/`, Verzeichnis nur noch mit Dateiname, Titel und Maßen; in der App öffnen sie sich als Vollbild mit Zoom |
 | **A0/A1** Archiv, Inventar, Textlayer | **fertig** – 99 Textlayer, `quellen/INVENTAR-altklausuren.md` |
 | **A T1** F2023, H2023, F2024 | **fertig** – 14 Prüfungen, 10 Abbildungen; Bestand jetzt **36 Original-Prüfungen** |
-| **B2** Web-Aufgabenblatt | offen – das eigentliche Ziel des Nutzers |
+| **B2** Web-Aufgabenblatt | **fertig** – eigener Bildschirm `scrBlatt`: Aufgaben-Stepper, Ausgangslage und Anlagen einmal am Kopf, alle Teilaufgaben a–x als Karten mit eigenem Antwortfeld, Aufdecken je Teil oder je Aufgabe, Zwischenergebnis aus `braucht`, Lightbox mit Zoom, Ergebnis nach Aufgaben gruppiert, Übersicht mit Fach-Filter |
 | **B3** Flutter-Aufgabenblatt | offen |
 | **A T2–T4** | offen – 85 Prüfungen (L-I, L-ALT, OCR) |
 | **C** Aufgabenserien | offen |
