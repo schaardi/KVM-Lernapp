@@ -1,8 +1,9 @@
 # Plan: Altklausuren einspielen, Prüfungen als Aufgabenblatt, Aufgabenserien
 
-Umsetzungsplan für die nächste Session (Stand 17. 9. 2026; erstellt nach
-Merge von PR #36, ergänzt um das Inventar des Archivs). Drei Themen, die
-zusammengehören, aber getrennt umsetzbar sind:
+Stand 17. 9. 2026. Drei Themen, die zusammengehören, aber getrennt umsetzbar
+sind. **Erledigt** sind inzwischen B0, B1, B4 und die erste Tranche A T1
+(siehe „Was steht" weiter unten); offen sind vor allem die beiden
+Aufgabenblatt-Oberflächen B2/B3 und die Tranchen T2–T4.
 
 - **Teil A** – Das Archiv `Altklausuren.rar` (99 IHK-Prüfungen der
   Industriemeister-Basisqualifikationen, Herbst 2014 bis Frühjahr 2024, alle
@@ -23,18 +24,41 @@ Auslöser (Nutzer, 14. 9. 2026): „Die Darstellung (auch die Grafiken)
 Manchmal ist es wichtig, auch die anderen Fragen zu kennen, um z. B. a)
 richtig zu lösen." – und: „Nutze diese ganzen Klausuren für unsere App."
 
+## Was steht (17. 9. 2026)
+
+| Schritt | Stand |
+|---|---|
+| **B0** Inhalte aus `index.html` auslagern | **fertig** – `data/questions.js`, `data/cases.js`, `data/anlagen.js`, geladen über `<script src>`; `index.html` 3,3 MB → 280 KB. Einzige Schnittstelle: `tools/webdaten.py` |
+| **B1** Datenmodell Aufgabenblatt | **fertig** – `scripts/pruefungen/aufgaben_modell.py`; Fälle tragen `aufgaben[]`, Schritte `nr/teil/pts/braucht`. Schritt-IDs unverändert, Exporte zeichengleich, Web und App lesen die Felder (Darstellung noch wie bisher) |
+| **B4** Bilder als Dateien | **fertig** – `anlagen/` bzw. `assets/anlagen/`, Verzeichnis nur noch mit Dateiname, Titel und Maßen; in der App öffnen sie sich als Vollbild mit Zoom |
+| **A0/A1** Archiv, Inventar, Textlayer | **fertig** – 99 Textlayer, `quellen/INVENTAR-altklausuren.md` |
+| **A T1** F2023, H2023, F2024 | **fertig** – 14 Prüfungen, 10 Abbildungen; Bestand jetzt **36 Original-Prüfungen** |
+| **B2** Web-Aufgabenblatt | offen – das eigentliche Ziel des Nutzers |
+| **B3** Flutter-Aufgabenblatt | offen |
+| **A T2–T4** | offen – 85 Prüfungen (L-I, L-ALT, OCR) |
+| **C** Aufgabenserien | offen |
+| Übungsfragen (`PX-`) aus T1 | offen – die 14 neuen Prüfungen haben noch keine |
+
+Neue Werkzeuge: `scripts/pruefungen/anlagen_extrakt.py` (Abbildungen über ihre
+Bildunterschrift aus dem Heft schneiden – ersetzt das Abmessen von Koordinaten
+in `anlagen_bau.py`), `scripts/pruefungen/korrekturen_basis.py` (Nachkorrekturen
+für Text, Punktzahlen und Teil-Buchstaben), `scripts/pruefungen/inventar.py`,
+`scripts/pruefungen/quellen_bau.py`.
+
 ## Ausgangslage
 
 ### Bestand in der App
 
+Stand nach T1 (in Klammern der Stand vor dieser Session):
+
 | Was | Stand | Wo |
 |---|---|---|
-| Startbare Prüfungen (`P-`) | 22 (13 × Kraftverkehr FT/OK 2021–2026, 9 × Basisqualifikation H2024/H2025), alle mit amtlichen Lösungshinweisen, je 100 Punkte | `flutter_app/assets/data/cases.json` (560 KB), `window.KVM_CASES` in `index.html` |
+| Startbare Prüfungen (`P-`) | **36** (22) – 13 × Kraftverkehr FT/OK 2021–2026, 23 × Basisqualifikation F2023–H2025, alle mit amtlichen Lösungshinweisen, je 100 Punkte; 232 Aufgaben mit 593 Teilaufgaben | `flutter_app/assets/data/cases.json` (685 KB), `data/cases.js` |
 | Fallaufgaben ohne IHK-Bezug | 15 (`F-`/`R-`/`M-`/`Z-`, je 4–5 Teile, Musterlösungen) | ebd. |
-| Übungsfragen aus Prüfungen (`PX-`) | 327 (127 Kraftverkehr, 94 BQ H2025, 107 BQ H2024) | `questions.json`, Quellensätze `scripts/pruefungen/fragen/*.json` |
-| Bildanlagen | 14 (20 Teilaufgaben mit `bild`, 6 mit `bildL`), als Data-URI | `assets/data/anlagen.json` (676 KB), `window.KVM_ANLAGEN` |
-| Tabellenanlagen | 4 (`tab`) | in den Schritten |
-| `index.html` | 3,3 MB – davon ~2,1 MB Fragen, ~0,6 MB Prüfungen, ~0,7 MB Bilder | Root |
+| Übungsfragen aus Prüfungen (`PX-`) | 327 (127 Kraftverkehr, 94 BQ H2025, 107 BQ H2024) – aus T1 noch keine | `questions.json`, Quellensätze `scripts/pruefungen/fragen/*.json` |
+| Bildanlagen | **24** (14) als Dateien, 783 KB; 17 an einer Aufgabe, 2 an einem Teil, 6 an einer Lösung | `anlagen/`, `flutter_app/assets/anlagen/`, Verzeichnis in `data/anlagen.js` |
+| Tabellenanlagen | 4 (`tab`) | an Aufgabe oder Schritt |
+| `index.html` | **280 KB** (3,3 MB) – die Inhalte liegen daneben in `data/*.js` | Root |
 
 ### Wie eine Prüfung heute dargestellt wird
 
