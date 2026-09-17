@@ -133,7 +133,13 @@ def zerlegen(case):
         teile = [s for s in schritte if s['nr'] == a['nr']]
         for feld in ('bild', 'tab'):
             werte = [s[feld] for s in teile if s.get(feld)]
-            if len(werte) < 2 or any(w != werte[0] for w in werte):
+            # Eine Anlage gehört zur Aufgabe, wenn mehrere Teile dieselbe
+            # tragen – oder wenn die Aufgabe nur aus einem Teil besteht. Trägt
+            # dagegen nur einer von mehreren Teilen eine Anlage, gehört sie
+            # allein zu diesem Teil und bleibt dort.
+            if not werte or any(w != werte[0] for w in werte):
+                continue
+            if len(werte) < 2 and len(teile) > 1:
                 continue
             a[feld] = werte[0]
             for s in teile:

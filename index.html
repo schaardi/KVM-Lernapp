@@ -263,6 +263,9 @@
   .ghost{border:1px solid var(--line-strong);background:#fff;color:var(--ink);border-radius:10px;font-size:14px;font-weight:500;padding:12px 15px}
   .ghost:hover{border-color:var(--petrol)}
   .split{display:flex;gap:10px;flex:1 1 auto}
+  /* gewählte Selbsteinschätzung im Aufgabenblatt hervorheben */
+  .bl-teil .btn-ok.sel{box-shadow:0 0 0 2px var(--ok)}
+  .bl-teil .btn-no.sel{box-shadow:0 0 0 2px var(--err)}
   .btn-ok{flex:1 1 0;border:1.5px solid var(--ok);background:var(--ok-soft);color:var(--ok);border-radius:10px;font-size:14.5px;font-weight:600;padding:12px}
   .btn-ok:hover{background:#d3ecdb}
   .btn-no{flex:1 1 0;border:1.5px solid var(--err);background:var(--err-soft);color:var(--err);border-radius:10px;font-size:14.5px;font-weight:600;padding:12px}
@@ -290,6 +293,10 @@
   .tasklist{padding:2px 18px 16px}
   .tl-head{font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin:6px 0 10px}
   .tl-row{margin-bottom:9px}
+  .tl-teile{display:flex;flex-wrap:wrap;gap:5px;margin-top:7px}
+  .tl-t{font-family:var(--mono);font-size:10.5px;color:var(--muted);border:1px solid var(--line);
+    border-radius:6px;padding:2px 6px}
+  .tl-t.ok{border-color:#b9dcc5;background:var(--ok-soft);color:var(--ok)}
   .tl-top{display:flex;justify-content:space-between;font-size:12.5px;margin-bottom:3px}
   .tl-nr{font-weight:600;color:var(--ink)} .tl-pt{font-family:var(--mono);color:var(--muted)}
   .res-actions{padding:16px 18px;display:grid;gap:10px}
@@ -573,6 +580,28 @@
 .pr-hint{margin-top:14px;border-left:3px solid var(--amber);background:var(--amber-soft);
   border-radius:8px;padding:11px 13px;font-size:12.5px;line-height:1.5;color:var(--ink)}
 /* Sprungliste: direkt zu einer einzelnen Teilaufgabe */
+.pr-filter{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 14px}
+.pr-chip{border:1px solid var(--line);background:var(--paper);border-radius:999px;
+  padding:6px 11px;font:600 11.5px var(--body);color:var(--muted);cursor:pointer}
+.pr-chip:hover{border-color:var(--petrol);color:var(--petrol)}
+.pr-chip.sel{background:var(--petrol);border-color:var(--petrol);color:#fff}
+.pr-termin{margin-bottom:6px}
+.pr-termin>summary{cursor:pointer;list-style:none}
+.pr-termin>summary::-webkit-details-marker{display:none}
+.pr-termin>summary::after{content:" ▾";color:var(--muted)}
+.pr-termin[open]>summary::after{content:" ▴"}
+.pr-anz{font-family:var(--mono);font-size:10.5px;color:var(--muted);font-weight:400}
+.pr-aufg{display:grid;grid-template-columns:repeat(auto-fill,minmax(168px,1fr));gap:6px;margin-top:9px}
+.pr-a{display:flex;align-items:center;gap:7px;flex-wrap:wrap;border:1px solid var(--line);
+  background:var(--paper);border-radius:9px;padding:8px 10px;font:600 12px var(--body);
+  color:var(--ink);cursor:pointer;text-align:left}
+.pr-a:hover{border-color:var(--petrol);background:#f6fafa}
+.pa-nr{flex:1 1 auto}
+.pa-pt{font-family:var(--mono);font-size:10.5px;color:var(--muted)}
+.pa-teile{flex:0 0 100%;display:flex;gap:3px}
+.pa-t{display:inline-flex;align-items:center;justify-content:center;width:17px;height:17px;
+  border-radius:5px;background:var(--steel);font:700 9.5px var(--mono);color:var(--muted)}
+.pa-t.done{background:var(--ok-soft);color:var(--ok)}
 .pr-steps{margin-top:10px;border-top:1px solid var(--line);padding-top:9px}
 .pr-steps>summary{cursor:pointer;list-style:none;font:600 12px var(--body);color:var(--petrol)}
 .pr-steps>summary::-webkit-details-marker{display:none}
@@ -621,6 +650,83 @@
 .msg-img{margin:10px 0 0;padding:0}
 .msg-img img{max-width:100%;height:auto;display:block;border:1px solid var(--line);border-radius:10px;background:#fff}
 .msg-img figcaption{font-size:11.5px;color:var(--muted);margin-top:5px;text-align:center;line-height:1.4}
+/* ===== Aufgabenblatt: eine Aufgabe mit allen Teilaufgaben a–x ===== */
+.bl-stepper{display:flex;gap:6px;flex-wrap:wrap;padding:0 0 12px;border-bottom:1px solid var(--line);margin-bottom:14px}
+.bl-pill{min-width:34px;border:1px solid var(--line);background:var(--paper);border-radius:9px;
+  padding:6px 9px;font:700 12.5px var(--body);color:var(--muted);cursor:pointer;position:relative}
+.bl-pill:hover{border-color:var(--petrol)}
+.bl-pill.teil{border-color:#d9c79a;background:#fdf8ec;color:var(--ink)}
+.bl-pill.voll{border-color:#b9dcc5;background:var(--ok-soft);color:var(--ink)}
+.bl-pill.auf{border-color:var(--petrol);background:var(--petrol-soft);color:var(--petrol-deep)}
+.bl-pill.cur{background:var(--petrol);border-color:var(--petrol);color:#fff}
+.bl-hinweis{margin:0 0 12px;padding:8px 11px;border-left:3px solid var(--amber);
+  background:rgba(214,158,46,.10);border-radius:0 8px 8px 0;font-size:12.5px;color:var(--ink-soft)}
+.bl-akopf{margin:0 0 14px}
+.bl-atitel{display:flex;align-items:baseline;gap:9px;flex-wrap:wrap;margin-bottom:8px}
+.bl-anr{font:800 16px var(--body);color:var(--ink)}
+.bl-apts{font-family:var(--mono);font-size:11.5px;color:var(--petrol-deep);
+  background:var(--petrol-soft);border-radius:5px;padding:2px 7px}
+.bl-sit{white-space:pre-wrap;font-size:14px;line-height:1.65;color:var(--ink);
+  border-left:2px solid var(--line-strong);padding-left:11px;margin:0 0 12px}
+.bl-anlagen{display:flex;gap:9px;flex-wrap:wrap;margin:0 0 14px}
+.bl-thumb{border:1px solid var(--line);border-radius:10px;background:var(--paper);padding:5px;
+  cursor:zoom-in;max-width:190px;display:flex;flex-direction:column;gap:4px}
+.bl-thumb:hover{border-color:var(--petrol)}
+.bl-thumb img{width:100%;height:auto;display:block;border-radius:6px}
+.bl-thumb figcaption{font-size:10.5px;line-height:1.35;color:var(--muted);text-align:center}
+.bl-teil{border:1px solid var(--line);border-radius:13px;background:var(--paper);
+  padding:13px 14px;margin:0 0 11px}
+.bl-teil.done{border-color:#b9dcc5}
+.bl-teil.revealed{border-color:var(--petrol);box-shadow:0 0 0 2px var(--petrol-soft)}
+.bl-th{display:flex;align-items:center;gap:9px;flex-wrap:wrap;margin-bottom:8px}
+.bl-badge{display:inline-flex;align-items:center;justify-content:center;min-width:26px;height:26px;
+  border-radius:8px;background:var(--steel);font:800 13px var(--body);color:var(--ink)}
+.bl-teil.revealed .bl-badge{background:var(--petrol);color:#fff}
+.bl-pts{font-family:var(--mono);font-size:11px;color:var(--muted)}
+.bl-braucht{margin-left:auto;border:1px solid #d9c79a;background:#fdf8ec;border-radius:999px;
+  padding:3px 10px;font:600 11px var(--body);color:#8a6d1f;cursor:pointer}
+.bl-frage{margin:0 0 10px;font:600 15px/1.55 var(--body);color:var(--ink);white-space:pre-wrap}
+.bl-vorher{margin:0 0 10px;padding:7px 10px;border-radius:8px;background:var(--steel);
+  font-size:12.5px;line-height:1.5;color:var(--ink-soft)}
+.bl-vorher b{color:var(--ink)}
+.bl-antwort{margin-top:4px}
+.bl-teil .cc-input{min-height:74px}
+.bl-abar{display:flex;align-items:center;gap:9px;margin-top:9px;flex-wrap:wrap}
+.bl-reveal{border:0;border-radius:10px;background:var(--petrol);color:#fff;
+  font:700 12.5px var(--body);padding:9px 15px;cursor:pointer}
+.bl-reveal:hover{background:var(--petrol-deep)}
+.bl-loesung{margin-top:11px;border-top:1px solid var(--line);padding-top:11px}
+.bl-lhead{font:700 11px var(--body);letter-spacing:.06em;text-transform:uppercase;
+  color:var(--petrol-deep);margin-bottom:6px}
+.bl-ltext{white-space:pre-wrap;font-size:13.5px;line-height:1.6;color:var(--ink)}
+.bl-meine{margin:0 0 9px;padding:8px 10px;border-radius:8px;background:var(--steel);
+  font-size:13px;line-height:1.55;color:var(--ink);white-space:pre-wrap}
+.bl-meine.leer{color:var(--muted);font-style:italic}
+.bl-foot{display:flex;gap:9px;align-items:center;margin-top:16px;padding-top:14px;
+  border-top:1px solid var(--line);flex-wrap:wrap}
+.bl-nav{border:1px solid var(--line);background:var(--paper);border-radius:10px;
+  padding:10px 15px;font:700 12.5px var(--body);color:var(--petrol);cursor:pointer}
+.bl-nav:hover{background:var(--petrol-soft)}
+.bl-nav.primary{border:0;background:var(--petrol);color:#fff;margin-left:auto}
+.bl-nav.primary:hover{background:var(--petrol-deep)}
+.bl-nav:disabled{opacity:.4;cursor:default}
+/* Lightbox: Typenschilder und Schaltpläne sind sonst nicht zu entziffern. */
+.lb{border:0;padding:0;background:transparent;max-width:100vw;max-height:100vh;width:100%;height:100%}
+.lb::backdrop{background:rgba(12,24,28,.92)}
+.lb-inner{position:fixed;inset:0;overflow:auto;display:flex;align-items:center;justify-content:center;
+  padding:46px 12px 58px;box-sizing:border-box;touch-action:pinch-zoom}
+.lb-inner img{max-width:none;background:#fff;border-radius:8px}
+.lb-cap{position:fixed;left:0;right:0;bottom:0;padding:11px 16px;text-align:center;
+  font-size:12.5px;color:#fff;background:rgba(12,24,28,.75)}
+.lb-x{position:fixed;top:8px;right:10px;border:0;background:rgba(255,255,255,.14);color:#fff;
+  width:38px;height:38px;border-radius:50%;font-size:19px;cursor:pointer}
+.lb-zoom{position:fixed;top:8px;left:10px;display:flex;gap:6px}
+.lb-zoom button{border:0;background:rgba(255,255,255,.14);color:#fff;min-width:38px;height:38px;
+  border-radius:19px;font:700 14px var(--body);cursor:pointer;padding:0 12px}
+@media(max-width:520px){
+  .bl-thumb{max-width:calc(50% - 5px)}
+  .bl-nav.primary{margin-left:0;width:100%;order:3}
+}
 .msg-tab{margin-top:10px}
 .msg-actions{align-self:stretch;display:flex;gap:8px;flex-wrap:wrap;margin-top:2px}
 .oa-score{align-self:stretch;margin-top:4px;border:1px solid var(--line);border-radius:14px;background:var(--paper);padding:12px 13px}
@@ -793,6 +899,24 @@
     </div>
   </div>
 
+  <!-- AUFGABENBLATT (Original-Prüfungen: eine Aufgabe mit allen Teilaufgaben) -->
+  <div class="card" id="scrBlatt" hidden>
+    <div class="quizhead">
+      <button class="iconbtn" id="blQuit" title="Prüfung verlassen" aria-label="Prüfung verlassen">✕</button>
+      <div class="q-meta">
+        <div class="q-fach" id="blFach">–</div>
+        <div class="q-count" id="blCount">Aufgabe 1 von 7</div>
+      </div>
+    </div>
+    <div class="qbody">
+      <div class="bl-stepper" id="blStepper" role="tablist" aria-label="Aufgaben dieser Prüfung"></div>
+      <p class="bl-hinweis" id="blHinweis" hidden></p>
+      <details class="casectx" id="blCase" hidden></details>
+      <div id="blAufgabe"></div>
+      <div class="bl-foot" id="blFoot"></div>
+    </div>
+  </div>
+
   <!-- RESULT -->
   <div class="card" id="scrResult" hidden>
     <div class="res-hero">
@@ -882,6 +1006,13 @@
 </div>
 
 <!-- Original-IHK-Prüfungen -->
+<dialog class="lb" id="lightbox" aria-label="Abbildung in Originalgröße">
+  <div class="lb-zoom"><button type="button" id="lbOut" title="Verkleinern">−</button><button type="button" id="lbIn" title="Vergrößern">+</button></div>
+  <button type="button" class="lb-x" id="lbX" title="Schließen" aria-label="Schließen">✕</button>
+  <div class="lb-inner" id="lbInner"><img id="lbImg" alt=""></div>
+  <p class="lb-cap" id="lbCap"></p>
+</dialog>
+
 <div class="modal" id="mPruef" hidden>
   <div class="backdrop" data-close></div>
   <div class="sheet wide" role="dialog" aria-modal="true" aria-label="Original-IHK-Prüfungen">
@@ -1212,6 +1343,8 @@ function startRound(mode,caseId,startIdx){
     var pick=null;
     if(caseId){pick=CASES.filter(function(c){return c.id===caseId;})[0];}
     if(!pick)pick=CASES[Math.floor(Math.random()*CASES.length)];
+    state.fall=pick;
+    state.aufgedeckt={};
     state.pool=pick.steps.map(function(st,i){
       var c={};for(var k in st)c[k]=st[k];
       c._case={title:pick.title,context:pick.context,i:i+1,total:pick.steps.length};
@@ -1226,6 +1359,15 @@ function startRound(mode,caseId,startIdx){
   if(mode==='sim'){state.timeLeft=SIM_SECONDS;$("qTimer").hidden=false;renderTimer();
     state.timerId=setInterval(function(){state.timeLeft--;renderTimer();if(state.timeLeft<=0){clearInterval(state.timerId);finishRound(true);}},1000);
   }else{$("qTimer").hidden=true;}
+  /* Original-Prüfungen und Fallaufgaben laufen über das Aufgabenblatt: eine
+     Aufgabe mit allen Teilaufgaben statt einer Teilaufgabe je Bildschirm. */
+  if(mode==='cases'&&state.fall&&(state.fall.aufgaben||[]).length){
+    var start=state.pool[state.idx];
+    state.blattNr=(start&&start.nr)||state.fall.aufgaben[0].nr;
+    show("scrBlatt");
+    blOeffnen(state.blattNr,start?start.id:null);
+    return;
+  }
   buildProtocol();show("scrQuiz");renderQuestion();
 }
 function renderTimer(){var m=Math.floor(state.timeLeft/60),s=state.timeLeft%60;var el=$("qTimer");el.textContent=(m<10?"0":"")+m+":"+(s<10?"0":"")+s;el.classList.toggle("low",state.timeLeft<=120);}
@@ -1636,6 +1778,349 @@ function ihkGrade(pct){var p=Math.round(pct),note,label;
   if(p>=92){note=1;label="sehr gut";}else if(p>=81){note=2;label="gut";}else if(p>=67){note=3;label="befriedigend";}
   else if(p>=50){note=4;label="ausreichend";}else if(p>=30){note=5;label="mangelhaft";}else{note=6;label="ungenügend";}
   return {points:p,note:note,label:label,text:"Note "+note+" ("+label+")"};}
+/* ===== Aufgabenblatt =========================================================
+   Original-Prüfungen werden nicht mehr Teilaufgabe für Teilaufgabe gezeigt,
+   sondern wie auf dem Papier: eine Aufgabe mit ihrer Ausgangslage, ihren
+   Anlagen und allen Teilaufgaben a–x untereinander. Wer a) beantwortet, sieht
+   damit auch, was b) und c) verlangen – im Original liegt das Blatt komplett
+   vor, und der Zuschnitt der Antwort hängt daran.
+
+   state.pool bleibt die flache Liste aller Teilaufgaben (Ergebnis, Punkte und
+   Fortschritt rechnen darauf weiter); hier wird sie nur nach Aufgabe
+   gruppiert dargestellt. ============================================= */
+
+function blNummern(){return ((state.fall&&state.fall.aufgaben)||[]).map(function(a){return a.nr;});}
+function blTeile(nr){return state.pool.filter(function(q){return q.nr===nr;});}
+function blIdx(q){return state.pool.indexOf(q);}
+function blAufgedeckt(q){return !!state.aufgedeckt[q.id];}
+
+/* Aufgabe öffnen; optional zu einer bestimmten Teilaufgabe scrollen. */
+function blOeffnen(nr,zuId){
+  state.blattNr=nr;
+  renderBlatt();
+  if(zuId){
+    var el=document.querySelector('.bl-teil[data-id="'+zuId+'"]');
+    if(el){el.scrollIntoView({block:'center'});return;}
+  }
+  window.scrollTo(0,0);
+}
+
+function blStepperHTML(){
+  var h='';
+  blNummern().forEach(function(nr){
+    var teile=blTeile(nr);
+    var beantwortet=teile.filter(function(q){return (oaGet(q.id)||'').trim();}).length;
+    var offen=teile.filter(blAufgedeckt).length;
+    var cls='bl-pill';
+    if(offen===teile.length&&teile.length)cls+=' auf';
+    else if(beantwortet===teile.length&&teile.length)cls+=' voll';
+    else if(beantwortet)cls+=' teil';
+    if(nr===state.blattNr)cls+=' cur';
+    h+='<button type="button" class="'+cls+'" data-nr="'+nr+'" role="tab"'+
+       (nr===state.blattNr?' aria-selected="true"':'')+
+       ' title="Aufgabe '+nr+' · '+teile.length+' Teile">'+nr+'</button>';
+  });
+  return h;
+}
+
+/* Anlagen der ganzen Aufgabe: Tabellen ausgeklappt, Abbildungen als Kachel. */
+function blAnlagenHTML(auf){
+  var h='';
+  if(auf.tab)h+='<div class="msg-tab">'+tabHTML(auf.tab)+'</div>';
+  if(auf.bild){
+    var a=anlageBild(auf.bild);
+    if(a)h+='<div class="bl-anlagen"><figure class="bl-thumb" data-bild="'+esc(auf.bild)+'">'+
+      '<img src="'+a.u+'"'+((a.w&&a.h)?(' width="'+a.w+'" height="'+a.h+'"'):'')+
+      ' alt="'+esc(a.t||'Anlage zur Aufgabe')+'" loading="lazy">'+
+      '<figcaption>'+esc(a.t||'Anlage zur Aufgabe')+' · antippen zum Vergrößern</figcaption></figure></div>';
+  }
+  return h;
+}
+
+/* Zwischenergebnis einer früheren Teilaufgabe – nur wenn sie aufgedeckt ist.
+   So schleppt sich ein Fehler aus a) nicht durch die ganze Aufgabe. */
+function blVorherHTML(q){
+  if(!q.braucht||!q.braucht.length)return '';
+  var teile=blTeile(q.nr),h='';
+  q.braucht.forEach(function(lab){
+    var v=teile.filter(function(x){return x.teil===lab;})[0];
+    if(!v||!blAufgedeckt(v))return;
+    var zeilen=(v.a||'').split('\n').filter(function(z){return z.trim();}).slice(0,2).join('\n');
+    if(zeilen)h+='<div class="bl-vorher"><b>Zwischenergebnis aus '+esc(lab)+')</b>\n'+esc(zeilen)+'</div>';
+  });
+  return h;
+}
+
+function blLoesungHTML(q){
+  var eigene=(oaGet(q.id)||'').trim();
+  var h='<div class="bl-loesung">';
+  h+='<p class="bl-lhead">Deine Antwort</p>';
+  h+='<div class="bl-meine'+(eigene?'':' leer')+'">'+(eigene?esc(eigene):'— leer abgegeben —')+'</div>';
+  h+='<p class="bl-lhead">'+(q.amtlich?'Amtliche Lösungshinweise · IHK':'Musterlösung · nicht amtlich')+'</p>';
+  h+='<div class="bl-ltext">'+esc(q.a||q.e||'')+'</div>';
+  if(q.vo)h+='<div class="sol-meta">VO-Bezug: '+esc(q.vo)+'</div>';
+  h+=bildHTML(q.bildL,'Lösungsskizze der IHK');
+  if(q.bewertung&&q.bewertung.length)
+    h+='<div class="sol-meta">Punkteverteilung: '+esc(q.bewertung.join(' + '))+' Punkte</div>';
+  var max=taskMaxPoints(q);
+  if(max>0){
+    var cur=opGet(q.id);
+    h+='<div class="oa-score" data-score="'+esc(q.id)+'"><div class="oas-lbl">Wie viele Punkte hättest du bekommen?</div><div class="oas-btns">';
+    for(var pp=0;pp<=max;pp++)h+='<button type="button" class="oas-p'+(cur===pp?' sel':'')+'" data-p="'+pp+'">'+pp+'</button>';
+    h+='</div><div class="oas-hint">'+(cur!=null?('Bewertet: '+cur+' von '+max+' Punkten'):
+        ('Vergib dir 0–'+max+' Punkte – so zählt die Aufgabe am Ende zum Gesamtergebnis.'))+'</div></div>';
+  }else{
+    /* Fallaufgaben ohne IHK-Punkte: die Selbsteinschätzung zählt fürs Ergebnis
+       und für den Lernfortschritt. */
+    var i=blIdx(q),bew=state.results[i];
+    h+='<div class="oa-score" data-gewusst="'+esc(q.id)+'"><div class="oas-lbl">Konntest du die Aufgabe?</div>'+
+       '<div class="split"><button type="button" class="btn-no'+(bew===false?' sel':'')+'" data-ok="0">Nicht gewusst</button>'+
+       '<button type="button" class="btn-ok'+(bew===true?' sel':'')+'" data-ok="1">Gewusst</button></div></div>';
+  }
+  h+='</div>';
+  return h;
+}
+
+function blTeilHTML(q){
+  var T=splitTask(q),beantwortet=(oaGet(q.id)||'').trim(),offen=blAufgedeckt(q);
+  var h='<article class="bl-teil'+(offen?' revealed':(beantwortet?' done':''))+'" data-id="'+esc(q.id)+'">';
+  h+='<header class="bl-th"><span class="bl-badge">'+esc(q.teil)+'</span>'+
+     '<span class="bl-pts">'+q.pts+' '+(q.pts===1?'Punkt':'Punkte')+'</span>';
+  if(q.braucht&&q.braucht.length)
+    h+='<button type="button" class="bl-braucht" data-zu="'+esc(q.braucht[0])+'">baut auf '+
+       esc(q.braucht.join('), '))+') auf</button>';
+  h+='</header>';
+  h+=blVorherHTML(q);
+  h+='<p class="bl-frage">'+esc(T.frage)+'</p>';
+  if(q.tab)h+='<div class="msg-tab">'+tabHTML(q.tab)+'</div>';
+  h+=bildHTML(q.bild);
+  if(offen){
+    h+=blLoesungHTML(q);
+  }else{
+    h+='<div class="bl-antwort">'+
+       '<label class="cc-lbl" for="bla-'+esc(q.id)+'">Deine Antwort · wie in der Prüfung</label>'+
+       '<textarea class="cc-input" id="bla-'+esc(q.id)+'" rows="3" data-antwort="'+esc(q.id)+'" '+
+       'placeholder="Antwort schreiben …">'+esc(oaGet(q.id))+'</textarea>'+
+       '<div class="bl-abar"><button type="button" class="bl-reveal" data-auf="'+esc(q.id)+'">'+
+       'Lösung zu '+esc(q.teil)+') aufdecken</button></div></div>';
+  }
+  h+='</article>';
+  return h;
+}
+
+function renderBlatt(){
+  var fall=state.fall,nrs=blNummern(),nr=state.blattNr;
+  var auf=aufgabeVon(fall,nr)||{},teile=blTeile(nr),pos=nrs.indexOf(nr);
+  $("blFach").textContent=(fall.sub||'').replace(/^IHK-Prüfung:\s*/,'');
+  $("blCount").textContent='Aufgabe '+nr+' von '+nrs.length+(auf.pts?(' · '+auf.pts+' Punkte'):'');
+  $("blStepper").innerHTML=blStepperHTML();
+
+  var hin=$("blHinweis");
+  hin.hidden=!fall.hinweis;
+  if(fall.hinweis)hin.textContent=fall.hinweis;
+
+  var ctx=$("blCase");
+  ctx.hidden=!fall.context;
+  if(fall.context){
+    ctx.open=state.ctxOpen;
+    ctx.innerHTML='<summary class="cc-head"><span class="cc-tag">IHK-Prüfung</span>'+
+      '<span class="cc-title"></span><span class="cc-more">Ausgangssituation</span></summary><p class="cc-ctx"></p>';
+    ctx.querySelector(".cc-title").textContent=fall.title||'';
+    ctx.querySelector(".cc-ctx").textContent=fall.context;
+    ctx.ontoggle=function(){
+      if(ctx.open===state.ctxOpen)return;
+      state.ctxOpen=ctx.open;state.ctxTouched=true;
+    };
+  }
+
+  var h='<div class="bl-akopf"><div class="bl-atitel"><span class="bl-anr">Aufgabe '+nr+'</span>';
+  if(auf.pts)h+='<span class="bl-apts">'+auf.pts+' Punkte</span>';
+  h+='<span class="bl-pts">'+teile.length+' Teilaufgabe'+(teile.length===1?'':'n')+'</span></div>';
+  if(auf.sit)h+='<div class="bl-sit">'+esc(auf.sit)+'</div>';
+  h+=blAnlagenHTML(auf)+'</div>';
+  teile.forEach(function(q){h+=blTeilHTML(q);});
+  $("blAufgabe").innerHTML=h;
+
+  var offen=teile.filter(blAufgedeckt).length;
+  var f='';
+  if(pos>0)f+='<button type="button" class="bl-nav" id="blPrev">← Aufgabe '+nrs[pos-1]+'</button>';
+  if(offen<teile.length)
+    f+='<button type="button" class="bl-nav" id="blAlle">Alle Lösungen dieser Aufgabe aufdecken</button>';
+  else
+    f+='<button type="button" class="bl-nav" id="blExport">Diese Aufgabe von Claude prüfen lassen</button>';
+  f+='<button type="button" class="bl-nav primary" id="blNext">'+
+     (pos>=nrs.length-1?'Zum Ergebnis →':('Aufgabe '+nrs[pos+1]+' →'))+'</button>';
+  $("blFoot").innerHTML=f;
+  blBinden();
+}
+
+function blBinden(){
+  $("blStepper").querySelectorAll('.bl-pill').forEach(function(b){
+    b.onclick=function(){blOeffnen(parseInt(b.dataset.nr,10));};
+  });
+  var box=$("blAufgabe");
+  box.querySelectorAll('[data-antwort]').forEach(function(t){
+    t.oninput=function(){
+      oaSet(t.dataset.antwort,t.value);
+      var karte=t.closest('.bl-teil');
+      if(karte)karte.classList.toggle('done',!!t.value.trim());
+      $("blStepper").innerHTML=blStepperHTML();
+      blBindenStepper();
+    };
+  });
+  box.querySelectorAll('[data-auf]').forEach(function(b){
+    b.onclick=function(){blAufdecken(b.dataset.auf);};
+  });
+  box.querySelectorAll('.bl-braucht').forEach(function(b){
+    b.onclick=function(){
+      var ziel=blTeile(state.blattNr).filter(function(q){return q.teil===b.dataset.zu;})[0];
+      var el=ziel&&document.querySelector('.bl-teil[data-id="'+ziel.id+'"]');
+      if(el)el.scrollIntoView({block:'center',behavior:'smooth'});
+    };
+  });
+  box.querySelectorAll('.bl-thumb, .msg-img').forEach(function(f){
+    var img=f.querySelector('img');if(!img)return;
+    f.style.cursor='zoom-in';
+    f.onclick=function(){lbOeffnen(img.getAttribute('src'),
+      (f.querySelector('figcaption')||{textContent:''}).textContent.replace(' · antippen zum Vergrößern',''));};
+  });
+  box.querySelectorAll('[data-gewusst]').forEach(function(sc){
+    var id=sc.dataset.gewusst;
+    var q=state.pool.filter(function(x){return x.id===id;})[0];if(!q)return;
+    sc.querySelectorAll('[data-ok]').forEach(function(b){
+      b.onclick=function(){
+        var korrekt=b.dataset.ok==='1';
+        sc.querySelectorAll('[data-ok]').forEach(function(x){x.classList.remove('sel');});
+        b.classList.add('sel');
+        var i=blIdx(q);
+        if(i>=0){
+          state.results[i]=korrekt;
+          if(!korrekt&&state.wrong.indexOf(q)<0)state.wrong.push(q);
+          recordResult(q.id,korrekt);
+        }
+      };
+    });
+  });
+  box.querySelectorAll('[data-score]').forEach(function(sc){
+    var id=sc.dataset.score;
+    var q=state.pool.filter(function(x){return x.id===id;})[0];if(!q)return;
+    var mx=taskMaxPoints(q);
+    sc.querySelectorAll('.oas-p').forEach(function(b){
+      b.onclick=function(){
+        var pt=parseInt(b.dataset.p,10);
+        opSet(id,pt);
+        sc.querySelectorAll('.oas-p').forEach(function(x){x.classList.remove('sel');});
+        b.classList.add('sel');
+        sc.querySelector('.oas-hint').textContent='Bewertet: '+pt+' von '+mx+' Punkten';
+        blFortschritt(q,pt,mx);
+      };
+    });
+  });
+  var pv=$("blPrev"),nx=$("blNext"),al=$("blAlle"),ex=$("blExport");
+  var nrs=blNummern(),pos=nrs.indexOf(state.blattNr);
+  if(pv)pv.onclick=function(){if(pos>0)blOeffnen(nrs[pos-1]);};
+  if(nx)nx.onclick=function(){
+    if(pos>=nrs.length-1){finishRound(false);}else{blOeffnen(nrs[pos+1]);}
+  };
+  if(al)al.onclick=function(){
+    blTeile(state.blattNr).forEach(function(q){state.aufgedeckt[q.id]=true;});
+    renderBlatt();
+  };
+  if(ex)ex.onclick=function(){oaCopy(blExport(state.blattNr),ex);};
+}
+function blBindenStepper(){
+  $("blStepper").querySelectorAll('.bl-pill').forEach(function(b){
+    b.onclick=function(){blOeffnen(parseInt(b.dataset.nr,10));};
+  });
+}
+
+/* Aufdecken zählt als bearbeitet: ohne eigene Punkte gilt die Teilaufgabe
+   am Ende als 0 von n – wie in der Prüfung eine leer abgegebene Aufgabe. */
+function blAufdecken(id){
+  state.aufgedeckt[id]=true;
+  renderBlatt();
+  var el=document.querySelector('.bl-teil[data-id="'+id+'"]');
+  if(el)el.scrollIntoView({block:'nearest'});
+}
+
+function blFortschritt(q,pt,mx){
+  var i=blIdx(q);if(i<0)return;
+  var korrekt=pt*2>=mx;
+  state.results[i]=korrekt;
+  if(!korrekt&&state.wrong.indexOf(q)<0)state.wrong.push(q);
+  recordResult(q.id,korrekt);
+}
+
+/* Die ganze Aufgabe als Prüfauftrag – mit allen Teilen, damit die KI den
+   Zusammenhang sieht, auf den die Teilaufgaben aufbauen. */
+function blExport(nr){
+  var fall=state.fall,auf=aufgabeVon(fall,nr)||{},teile=blTeile(nr),L=[];
+  var amtlich=teile.some(function(q){return q.amtlich;});
+  L.push('PRÜFAUFTRAG – Aufgabe '+nr+' einer Original-IHK-Prüfung');
+  L.push('');
+  L.push('Unten stehen eine vollständige Prüfungsaufgabe mit allen Teilaufgaben, '+
+         'MEINE eigenen Antworten und '+(amtlich?'die AMTLICHEN Lösungshinweise der IHK.':
+         'Musterlösungen, die NICHT von der IHK stammen.'));
+  L.push('');
+  L.push('Bewerte je Teilaufgabe MEINE Antwort:');
+  L.push('1. Wie viele der jeweils möglichen Punkte würdest du vergeben? Begründe kurz.');
+  L.push('2. Was fehlt zur vollen Punktzahl? Nenne die fehlenden Elemente konkret.');
+  L.push('3. Welche fachlichen Fehler enthält meine Antwort (falsche Aussage, falsche '+
+         'Rechnung, veraltete Rechtsgrundlage)?');
+  L.push('Bei Rechenaufgaben: rechne eigenständig nach und zeige deinen Rechenweg.');
+  L.push('');
+  L.push('==============================');
+  L.push(fall.title||'');
+  L.push('==============================');
+  L.push('');
+  if(fall.context){L.push('AUSGANGSSITUATION');L.push(fall.context);L.push('');}
+  L.push('AUFGABE '+nr+(auf.pts?(' · '+auf.pts+' Punkte'):''));
+  if(auf.sit){L.push('');L.push(auf.sit);}
+  if(auf.tab){L.push('');L.push(tabText(auf.tab));}
+  if(auf.bild){var ab=anlageBild(auf.bild);
+    if(ab)L.push('','[Zur Aufgabe gehört eine Abbildung: '+(ab.t||'Anlage zur Aufgabe')+']');}
+  L.push('');
+  teile.forEach(function(q){
+    L.push('------------------------------');
+    L.push(q.teil+') · '+q.pts+' '+(q.pts===1?'Punkt':'Punkte'));
+    L.push('');
+    L.push(q.q||'');
+    if(q.tab){L.push('');L.push(tabText(q.tab));}
+    if(q.bild){var b=anlageBild(q.bild);
+      if(b)L.push('','[Zur Teilaufgabe gehört eine Abbildung: '+(b.t||'Anlage')+']');}
+    L.push('');
+    L.push('MEINE ANTWORT:');
+    L.push((oaGet(q.id)||'').trim()||'— leer abgegeben —');
+    L.push('');
+    L.push(q.amtlich?'AMTLICHER LÖSUNGSHINWEIS (IHK):':'MUSTERLÖSUNG (zu prüfen):');
+    L.push(q.a||q.e||'');
+    if(q.vo)L.push('VO-Bezug: '+q.vo);
+    if(q.bewertung&&q.bewertung.length)
+      L.push('Punkteverteilung: '+q.bewertung.join(' + ')+' Punkte');
+    L.push('');
+  });
+  L.push('==============================');
+  L.push('Nenne abschließend die Gesamtpunktzahl, die du für Aufgabe '+nr+' vergeben würdest.');
+  return L.join('\n');
+}
+
+/* ===== Lightbox ===== */
+var lbNat=0,lbScale=1;
+function lbOeffnen(src,titel){
+  var dlg=$("lightbox"),img=$("lbImg");
+  img.onload=function(){
+    lbNat=img.naturalWidth||600;
+    lbSkala(Math.min(1,(window.innerWidth-28)/lbNat));
+  };
+  img.src=src;img.alt=titel||'';
+  $("lbCap").textContent=titel||'';
+  if(!dlg.open)dlg.showModal();
+}
+function lbSkala(f){
+  lbScale=Math.max(.2,Math.min(6,f));
+  $("lbImg").style.width=Math.round(lbNat*lbScale)+'px';
+}
+
 function finishRound(timeUp){
   clearInterval(state.timerId);
   if(timeUp){for(var i=0;i<state.pool.length;i++){if(state.results[i]===undefined){state.results[i]=false;state.wrong.push(state.pool[i]);recordResult(state.pool[i].id,false);}}}
@@ -1684,13 +2169,25 @@ function finishRound(timeUp){
     tl.innerHTML="";
     if(pointBased){
       var th=document.createElement("div");th.className="tl-head";th.textContent="Deine Punkte je Aufgabe";tl.appendChild(th);
+      /* Nach Aufgabe gruppieren: eine Prüfung hat bis zu 23 Teilaufgaben, als
+         Einzelzeilen ist das keine Übersicht mehr. */
+      var gruppen=[];
       state.pool.forEach(function(q){
         var mx=taskMaxPoints(q);if(!mx)return;
-        var g=opGet(q.id);var got=(g!=null?g:0);var T=splitTask(q);
-        var pc=mx?Math.round(got/mx*100):0;
+        var g=null;
+        for(var k=0;k<gruppen.length;k++)if(gruppen[k].nr===q.nr)g=gruppen[k];
+        if(!g){g={nr:q.nr,titel:(q.nr?('Aufgabe '+q.nr):(splitTask(q).nr||'Aufgabe')),max:0,got:0,teile:[]};gruppen.push(g);}
+        var v=opGet(q.id);var got=(v!=null?v:0);
+        g.max+=mx;g.got+=got;g.teile.push({teil:q.teil||'',got:got,max:mx});
+      });
+      gruppen.forEach(function(g){
+        var pc=g.max?Math.round(g.got/g.max*100):0;
         var r=document.createElement("div");r.className="tl-row";
-        r.innerHTML='<div class="tl-top"><span class="tl-nr">'+esc(T.nr||"Aufgabe")+'</span><span class="tl-pt">'+got+'/'+mx+' P</span></div>'
-          +'<div class="b-bar"><div class="b-fill" style="width:'+pc+'%;background:'+(pc>=50?'var(--ok)':'var(--amber)')+'"></div></div>';
+        var teile=g.teile.map(function(t){
+          return '<span class="tl-t'+(t.got*2>=t.max?' ok':'')+'">'+esc(t.teil)+') '+t.got+'/'+t.max+'</span>';}).join('');
+        r.innerHTML='<div class="tl-top"><span class="tl-nr">'+esc(g.titel)+'</span><span class="tl-pt">'+g.got+'/'+g.max+' P</span></div>'
+          +'<div class="b-bar"><div class="b-fill" style="width:'+pc+'%;background:'+(pc>=50?'var(--ok)':'var(--amber)')+'"></div></div>'
+          +(g.teile.length>1?('<div class="tl-teile">'+teile+'</div>'):'');
         tl.appendChild(r);
       });
     }
@@ -1700,7 +2197,7 @@ function finishRound(timeUp){
   show("scrResult");
 }
 
-function show(id){["scrHome","scrQuiz","scrResult"].forEach(function(s){$(s).hidden=(s!==id);});
+function show(id){["scrHome","scrQuiz","scrBlatt","scrResult"].forEach(function(s){$(s).hidden=(s!==id);});
   if(id!=="scrQuiz"&&window.KVMvoice)window.KVMvoice.stop();
   if(id==="scrHome"){renderProgress();renderFachGrid();renderSubChips();updateModeCards();}
   window.scrollTo(0,0);}
@@ -1719,6 +2216,12 @@ $("btnMixed").addEventListener("click",function(){startRound('all');});
 $("btnWeak").addEventListener("click",function(){startRound('weak');});
 $("btnSim").addEventListener("click",function(){startRound('sim');});
 $("btnQuit").addEventListener("click",function(){clearInterval(state.timerId);show("scrHome");});
+$("blQuit").addEventListener("click",function(){clearInterval(state.timerId);show("scrHome");});
+/* Lightbox: Schließen über ✕, Esc (vom <dialog> selbst), Tippen neben das Bild. */
+$("lbX").addEventListener("click",function(){$("lightbox").close();});
+$("lbIn").addEventListener("click",function(){lbSkala(lbScale*1.5);});
+$("lbOut").addEventListener("click",function(){lbSkala(lbScale/1.5);});
+$("lbInner").addEventListener("click",function(e){if(e.target===$("lbInner"))$("lightbox").close();});
 $("btnPrev").addEventListener("click",prev);
 $("btnAgain").addEventListener("click",function(){startRound(state.mode==='retry'?'train':state.mode);});
 $("btnHome").addEventListener("click",function(){show("scrHome");});
@@ -3460,6 +3963,7 @@ function kopieren(text,btn){
   }else fallback();
 }
 
+var filterBereich='';
 function render(){
   var list=$('pruefList');if(!list)return;
   var alle=pruefungen();
@@ -3478,36 +3982,67 @@ function render(){
     if(x.sort>gruppen[key].sort)gruppen[key].sort=x.sort;
   });
 
+  /* Filter nach Prüfungsfach – bei drei Dutzend Prüfungen sonst eine
+     endlose Liste. */
+  var bereiche=[];
+  info.forEach(function(x){if(bereiche.indexOf(x.bereich)<0)bereiche.push(x.bereich);});
+  bereiche.sort();
+  var sichtbar=info.filter(function(x){return !filterBereich||x.bereich===filterBereich;});
+
   var h='<p class="pr-lead">'+alle.length+' Prüfung'+(alle.length===1?'':'en')+' verfügbar. '
-      +'Jede enthält die vollständige Ausgangssituation und alle Teilaufgaben mit ihrer '
-      +'offiziellen Punktzahl. Zu jeder Teilaufgabe kannst du deine Antwort selbst '
-      +'formulieren und dann die amtlichen Lösungshinweise aufdecken.</p>';
-  Object.keys(gruppen).sort(function(a,b){return gruppen[b].sort-gruppen[a].sort;}).forEach(function(key){
-    h+='<div class="pr-group">'+esc(key)+'</div>';
-    gruppen[key].items.forEach(function(x){
+      +'Jede enthält die vollständige Ausgangssituation und alle Aufgaben mit ihren '
+      +'Teilaufgaben und der offiziellen Punktzahl. Du beantwortest jede Teilaufgabe '
+      +'selbst und deckst danach die amtlichen Lösungshinweise auf.</p>';
+  h+='<div class="pr-filter"><button class="pr-chip'+(filterBereich?'':' sel')+'" data-fach="">Alle ('+info.length+')</button>';
+  bereiche.forEach(function(b){
+    var n=info.filter(function(x){return x.bereich===b;}).length;
+    h+='<button class="pr-chip'+(filterBereich===b?' sel':'')+'" data-fach="'+esc(b)+'">'+esc(b)+' ('+n+')</button>';
+  });
+  h+='</div>';
+
+  var termine=Object.keys(gruppen).sort(function(a,b){return gruppen[b].sort-gruppen[a].sort;});
+  var offeneTermine=0;
+  termine.forEach(function(key){
+    var items=gruppen[key].items.filter(function(x){return sichtbar.indexOf(x)>=0;});
+    if(!items.length)return;
+    /* Die zwei jüngsten Termine offen, ältere eingeklappt. */
+    var offen=(offeneTermine<2)||!!filterBereich;offeneTermine++;
+    h+='<details class="pr-termin"'+(offen?' open':'')+'><summary class="pr-group">'+esc(key)+
+       ' <span class="pr-anz">'+items.length+'</span></summary>';
+    items.forEach(function(x){
       var bearbeitet=x.c.steps.filter(function(s){
         return window.KVM_hasAnswer&&window.KVM_hasAnswer(s.id);}).length;
+      var aufgaben=x.c.aufgaben||[];
       h+='<div class="pr-item">'
         +'<div class="pr-top"><span class="pr-date">'+esc(x.bereich)+'</span>'
         +'<span class="pr-badge">'+(x.punkte?esc(x.punkte)+' Punkte':'Prüfung')+'</span></div>'
-        +'<div class="pr-meta">'+esc(x.datum)+' · '+x.c.steps.length+' Teilaufgaben · 180 Minuten'
+        +'<div class="pr-meta">'+esc(x.datum)+' · '+aufgaben.length+' Aufgaben mit '
+        +x.c.steps.length+' Teilaufgaben · 180 Minuten'
         +(bearbeitet?' · <b>'+bearbeitet+' bearbeitet</b>':'')+'</div>'
         +'<div class="pr-actions">'
         +'<button class="pr-btn solid" data-start="'+esc(x.c.id)+'">Prüfung starten</button>'
         +'<button class="pr-btn" data-copy="'+esc(x.c.id)+'">Für KI-Prüfung kopieren</button>'
         +'</div>'
-        +'<details class="pr-steps"><summary>Einzelne Teilaufgabe öffnen</summary><div class="pr-grid">'
-        + x.c.steps.map(function(s,i){
-            var nr=s.nr?('Aufgabe '+s.nr+' '+s.teil+')'):('Teil '+(i+1));
-            var fertig=window.KVM_hasAnswer&&window.KVM_hasAnswer(s.id);
-            return '<button class="pr-step'+(fertig?' done':'')+'" data-start="'+esc(x.c.id)
-              +'" data-step="'+i+'"><span class="ps-nr">'+esc(nr)+'</span>'
-              +'<span class="ps-pt">'+(s.pts||'–')+' P.</span></button>';
+        +'<details class="pr-steps"><summary>Einzelne Aufgabe öffnen</summary><div class="pr-aufg">'
+        + aufgaben.map(function(a){
+            var erste=-1,chips='';
+            x.c.steps.forEach(function(s,i){
+              if(s.nr!==a.nr)return;
+              if(erste<0)erste=i;
+              var fertig=window.KVM_hasAnswer&&window.KVM_hasAnswer(s.id);
+              chips+='<span class="pa-t'+(fertig?' done':'')+'">'+esc(s.teil)+'</span>';
+            });
+            return '<button class="pr-a" data-start="'+esc(x.c.id)+'" data-step="'+erste+'">'
+              +'<span class="pa-nr">Aufgabe '+a.nr+'</span>'
+              +'<span class="pa-pt">'+(a.pts||'–')+' P.</span>'
+              +'<span class="pa-teile">'+chips+'</span></button>';
           }).join('')
         +'</div></details>'
         +'</div>';
     });
+    h+='</details>';
   });
+  if(!sichtbar.length)h+='<p class="pr-lead">Für dieses Fach ist noch keine Prüfung hinterlegt.</p>';
   h+='<div class="pr-hint"><b>Zu den Lösungen:</b> Hinterlegt sind die amtlichen '
     +'Lösungshinweise der IHK zur jeweiligen Prüfung, samt VO-Bezug und – wo angegeben – '
     +'der Punkteverteilung. Mit „Für KI-Prüfung kopieren“ erhältst du die komplette '
@@ -3515,6 +4050,13 @@ function render(){
     +'um deine eigene Antwort bewerten zu lassen.</div>';
   list.innerHTML=h;
 
+  list.querySelectorAll('[data-fach]').forEach(function(b){
+    b.addEventListener('click',function(){
+      filterBereich=b.getAttribute('data-fach')||'';
+      render();
+      var m=$('mPruef');if(m)m.scrollTop=0;
+    });
+  });
   list.querySelectorAll('[data-start]').forEach(function(b){
     b.addEventListener('click',function(){
       var id=b.getAttribute('data-start');

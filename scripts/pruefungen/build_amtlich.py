@@ -2,8 +2,9 @@
 """Baut aus den geparsten IHK-Prüfungen (parse_amtlich.py) Fallaufgaben mit
 amtlichen Lösungshinweisen im App-Format und schreibt sie in
 ``flutter_app/assets/data/cases.json`` sowie in ``data/cases.js`` der
-Web-App – jeweils nur die Prüfungsfälle (IDs mit Präfix ``P-``); alle
-übrigen Fälle bleiben unangetastet.
+Web-App – ersetzt werden nur die **hier gebauten** Prüfungen (IDs P-FT-… und
+P-OK-…); die Basisqualifikations-Prüfungen aus ``build_imbq.py`` tragen
+ebenfalls das Präfix ``P-`` und bleiben unangetastet, ebenso alle übrigen Fälle.
 
 Nur vollständige Prüfungen (genau 100 Punkte, jede Teilaufgabe mit amtlicher
 Lösung) werden aufgenommen.
@@ -122,14 +123,14 @@ def dump_compact(data):
 def inject_app(cases):
     path = os.path.join(ROOT, 'flutter_app', 'assets', 'data', 'cases.json')
     alle = json.load(open(path, encoding='utf-8'))
-    andere = [c for c in alle if not str(c.get('id', '')).startswith('P-')]
+    andere = [c for c in alle if c.get('id') not in {x['id'] for x in cases}]
     neu = andere + cases
     open(path, 'w', encoding='utf-8').write(dump_compact(neu))
     return len(andere), len(cases)
 
 def inject_web(cases):
     alle = W.lesen('KVM_CASES')
-    andere = [c for c in alle if not str(c.get('id', '')).startswith('P-')]
+    andere = [c for c in alle if c.get('id') not in {x['id'] for x in cases}]
     neu = andere + cases
     W.schreiben('KVM_CASES', neu)
     return len(andere), len(cases)
