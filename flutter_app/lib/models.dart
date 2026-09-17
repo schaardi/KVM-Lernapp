@@ -232,6 +232,8 @@ class CaseStudy {
   final String title;
   final String context;
   final String termin; // z. B. "Frühjahr 2025" (Gruppierung im Picker)
+  /// Hinweis über der Prüfung, z. B. "Prüfung von 2016 – Rechtsstand beachten".
+  final String hinweis;
   final List<Aufgabe> aufgaben; // Aufgabenblatt: Aufgabe 1..n mit Ausgangslage
   final List<Question> steps; // die Teilaufgaben a–x aller Aufgaben
   const CaseStudy({
@@ -241,6 +243,7 @@ class CaseStudy {
     required this.title,
     required this.context,
     this.termin = '',
+    this.hinweis = '',
     this.aufgaben = const [],
     required this.steps,
   });
@@ -256,6 +259,7 @@ class CaseStudy {
       title: (j['title'] ?? '').toString(),
       context: (j['context'] ?? '').toString(),
       termin: (j['termin'] ?? '').toString(),
+      hinweis: (j['hinweis'] ?? '').toString(),
       aufgaben: (j['aufgaben'] as List<dynamic>? ?? [])
           .map((e) => Aufgabe.fromJson(e as Map<String, dynamic>))
           .toList(),
