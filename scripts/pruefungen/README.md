@@ -148,6 +148,15 @@ python3 scripts/pruefungen/inventar.py <ordner> --md scripts/pruefungen/quellen/
 python3 scripts/pruefungen/quellen_bau.py <ordner> --nur f2024,h2023
 ```
 
+Drei Heftformen kommen im Archiv vor; `parse_imbq.JAHRGAENGE` hält fest,
+welche ein Termin hat:
+
+| Form | Termine | Punktzahl | Lösung | Parser |
+|---|---|---|---|---|
+| PL | ab F2023 | Badge `Mögliche Punktzahl: 8` | hinter dem ganzen Heft | `parse_imbq.py` |
+| L-I | F2019 – H2022 | Badge | hinter jeder Aufgabe | `parse_imbq.teilen()` |
+| L-ALT | bis H2018 | Klammer am rechten Rand | hinter jeder Aufgabe | `parse_imbq_alt.py` |
+
 `quellen_bau.py` legt `quellen/imbq-<f|h><jahr>/0N-<fach>.txt` an – das Format,
 das `parse_imbq.py` liest –, überspringt Sammelbände und Dateien, deren Inhalt
 nicht zum Dateinamen passt, und liest Scans sowie Fremd-OCR neu (Tesseract mit
