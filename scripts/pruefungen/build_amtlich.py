@@ -1,19 +1,22 @@
 # -*- coding: utf-8 -*-
 """Baut aus den geparsten IHK-Prüfungen (parse_amtlich.py) Fallaufgaben mit
 amtlichen Lösungshinweisen im App-Format und schreibt sie in
-``flutter_app/assets/data/cases.json`` sowie in ``window.KVM_CASES`` von
-``index.html`` – jeweils nur die Prüfungsfälle (IDs mit Präfix ``P-``); alle
+``flutter_app/assets/data/cases.json`` sowie in ``data/cases.js`` der
+Web-App – jeweils nur die Prüfungsfälle (IDs mit Präfix ``P-``); alle
 übrigen Fälle bleiben unangetastet.
 
 Nur vollständige Prüfungen (genau 100 Punkte, jede Teilaufgabe mit amtlicher
 Lösung) werden aufgenommen.
 """
-import json, os, re, sys, io
+import json, os, sys
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.abspath(os.path.join(HERE, '..', '..'))
 sys.path.insert(0, HERE)
+sys.path.insert(0, os.path.join(ROOT, 'tools'))
 import parse_amtlich as pa
+import webdaten as W          # Inhalte der Web-App in data/*.js
+import aufgaben_modell as AM  # Aufgabenblatt-Format
 try:
     from korrekturen import BILDER, TABELLEN, _ANLAGEN
 except Exception:
@@ -124,38 +127,11 @@ def inject_app(cases):
     open(path, 'w', encoding='utf-8').write(dump_compact(neu))
     return len(andere), len(cases)
 
-def _find_array(html, start):
-    """Klammer- und stringbewusst das JSON-Array ab Position des '[' finden.
-    Gibt (i0, i1) mit html[i0:i1] == komplettes Array zurück."""
-    i0 = html.index('[', start)
-    depth, i, instr, esc = 0, i0, False, False
-    while i < len(html):
-        ch = html[i]
-        if instr:
-            if esc: esc = False
-            elif ch == '\\': esc = True
-            elif ch == '"': instr = False
-        else:
-            if ch == '"': instr = True
-            elif ch == '[': depth += 1
-            elif ch == ']':
-                depth -= 1
-                if depth == 0:
-                    return i0, i + 1
-        i += 1
-    raise SystemExit('KVM_CASES-Array nicht geschlossen.')
-
 def inject_web(cases):
-    path = os.path.join(ROOT, 'index.html')
-    html = open(path, encoding='utf-8').read()
-    m = re.search(r'window\.KVM_CASES\s*=\s*', html)
-    if not m:
-        raise SystemExit('window.KVM_CASES=… nicht in index.html gefunden.')
-    i0, i1 = _find_array(html, m.end())
-    alle = json.loads(html[i0:i1])
+    alle = W.lesen('KVM_CASES')
     andere = [c for c in alle if not str(c.get('id', '')).startswith('P-')]
     neu = andere + cases
-    open(path, 'w', encoding='utf-8').write(html[:i0] + dump_compact(neu) + html[i1:])
+    W.schreiben('KVM_CASES', neu)
     return len(andere), len(cases)
 
 def main():
@@ -173,11 +149,21 @@ def main():
             tot += int(mm.group(1)) if mm else 0
         assert tot == 100, 'Prüfung %s hat %d Punkte' % (c['id'], tot)
         assert all(st.get('a') for st in c['steps']), 'Prüfung %s: Schritt ohne Lösung' % c['id']
+    # In das Aufgabenblatt-Format überführen und den Umbau gegen das Original
+    # prüfen (der alte Fragetext muss sich exakt rekonstruieren lassen).
+    umgebaut = []
+    for c in cases:
+        n = AM.zerlegen(c)
+        fehler = AM.pruefen(c, n)
+        assert not fehler, fehler
+        umgebaut.append(n)
+    cases = umgebaut
     a_o, a_n = inject_app(cases)
     w_o, w_n = inject_web(cases)
     print('  Prüfungen (amtlich, komplett): %d' % len(cases))
     for c in sorted(cases, key=lambda c: c['id']):
-        print('    %-16s %2d Schritte  %s' % (c['id'], len(c['steps']), c['termin']))
+        print('    %-16s %2d Aufgaben / %2d Teile  %s'
+              % (c['id'], len(c['aufgaben']), len(c['steps']), c['termin']))
     print('  Medien eingespielt: %d' % med)
     print('  App  cases.json: %d andere + %d Prüfungen' % (a_o, a_n))
     print('  Web  KVM_CASES : %d andere + %d Prüfungen' % (w_o, w_n))

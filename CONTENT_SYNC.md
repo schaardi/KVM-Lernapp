@@ -75,6 +75,39 @@ Beispiel:
 > Auto-Syncs (es ist JS, kein JSON) und wird separat in
 > `flutter_app/assets/data/formulas.json` gepflegt.
 
+## Wo die Daten im App-Branch liegen
+
+Für die Content-Session ändert sich **nichts**: Sie pflegt Fragen und Fälle
+weiterhin als Globals in ihrer `index.html`, und der Sync liest genau das.
+
+Im App-Branch liegen die Inhalte dagegen **neben** der `index.html`, weil die
+Datei sonst mit den Altklausuren auf mehrere Megabyte anwächst:
+
+| Datei | Inhalt |
+|---|---|
+| `data/questions.js` | `window.KVM_QUESTIONS=[…];` |
+| `data/cases.js` | `window.KVM_CASES=[…];` |
+| `data/anlagen.js` | `window.KVM_ANLAGEN={…};` – Verzeichnis der Abbildungen |
+| `anlagen/<schlüssel>.jpg\|png` | die Abbildungen selbst |
+
+`index.html` lädt die drei Dateien über `<script src="…">`; klassische Skripte
+laufen in Dokumentreihenfolge, die Globals stehen also fest, bevor der App-Code
+startet. Gelesen und geschrieben werden sie ausschließlich über
+`tools/webdaten.py`. **Achtung:** Die Seite braucht dadurch einen Webserver
+(GitHub Pages oder `python3 -m http.server`) – ein Doppelklick auf die Datei
+reicht nicht mehr.
+
+### Prüfungen sind Aufgabenblätter
+
+Der Sync bringt die Fälle zusätzlich in das Aufgabenblatt-Format
+(`scripts/pruefungen/aufgaben_modell.py`): Der Fall trägt eine Liste
+`aufgaben` (`nr`, `pts`, `sit`, optional `tab`/`bild`), jeder Schritt nur noch
+seine Fragestellung plus `nr`, `teil`, `pts` und optional `braucht`. Die
+Ausgangslage einer Aufgabe steht damit einmal statt in jedem Teil. Die
+**Schritt-IDs bleiben unverändert** – an ihnen hängen die selbst geschriebenen
+Antworten und die Punkte-Selbstbewertung. Die Umwandlung ist verlustfrei und
+wird bei jedem Lauf gegen das Original geprüft.
+
 ## Ablauf des Austauschs
 
 1. **Content-Session** pflegt Fragen/Fälle in `index.html` und pusht nach

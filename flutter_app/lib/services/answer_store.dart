@@ -65,7 +65,7 @@ class AnswerStore {
   /// zur Web-Fassung, damit beide Wege dasselbe Ergebnis liefern.
   static String exportTask(Question q) {
     final eigene = AnswerStore.instance.get(q.id).trim();
-    final teile = q.q.split('\n\n');
+    final teile = TaskParts.of(q).volltext.split('\n\n');
     final kopf = teile.isNotEmpty ? teile.first : '';
     final rest = teile.skip(1).join('\n\n');
     final punkte = RegExp(r'·\s*(\d+)\s*Punkt').firstMatch(kopf)?.group(1);
@@ -106,14 +106,14 @@ class AnswerStore {
       ..writeln('AUFGABE: $kopf')
       ..writeln()
       ..writeln(rest);
-    if (q.tab != null) {
+    if (q.tabEffektiv != null) {
       b
         ..writeln()
-        ..writeln(q.tab!.asText());
+        ..writeln(q.tabEffektiv!.asText());
     }
     // Die Abbildung selbst lässt sich nicht als Text mitgeben – aber der
     // Hinweis darauf verhindert, dass die KI sie stillschweigend übergeht.
-    final anlage = DataService.instance.anlage(q.bild);
+    final anlage = DataService.instance.anlage(q.bildEffektiv);
     if (anlage != null) {
       b.writeln('[Zur Aufgabe gehört eine Abbildung: '
           '${anlage.titel.isNotEmpty ? anlage.titel : 'Anlage zur Aufgabe'}]');

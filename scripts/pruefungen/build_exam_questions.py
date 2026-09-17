@@ -5,7 +5,7 @@ Eingabe: ALLE Fragensätze unter ``scripts/pruefungen/fragen/*.json``, je eine
 Datei mit {"questions": [ ... ]} (geprüfte Ausgabe der Frage-Autoren). Die
 Sätze werden in fester Reihenfolge (REIHENFOLGE) verarbeitet, damit die
 vergebenen IDs stabil bleiben – an der ID hängt der Lernfortschritt. Diese Fragen bekommen das Präfix
-``PX-`` und werden in ``window.KVM_QUESTIONS`` (index.html, Web) und in
+``PX-`` und werden in ``data/questions.js`` (Web) und in
 ``flutter_app/assets/data/questions.json`` (App) eingespielt. Vorhandene
 PX-Fragen werden zuvor entfernt (idempotenter Rebuild). Alle übrigen Fragen
 bleiben unangetastet; der nächtliche Content-Sync bewahrt die PX-Fragen.
@@ -16,6 +16,8 @@ import json, os, re, sys, unicodedata
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.abspath(os.path.join(HERE, '..', '..'))
+sys.path.insert(0, os.path.join(ROOT, 'tools'))
+import webdaten as W          # Inhalte der Web-App in data/*.js
 
 FACHLETTER = {1: 'R', 2: 'B', 3: 'M', 4: 'Z', 5: 'K'}
 # Reihenfolge der Quellensätze: bereits veröffentlichte zuerst, damit deren
@@ -66,22 +68,7 @@ def clean_q(q, drop):
     return out
 
 def load_pool_web():
-    html = open(os.path.join(ROOT, 'index.html'), encoding='utf-8').read()
-    m = re.search(r'window\.KVM_QUESTIONS\s*=\s*', html)
-    i0 = html.index('[', m.end()); depth = 0; i = i0; ins = False; esc = False
-    while i < len(html):
-        c = html[i]
-        if ins:
-            esc = (c == '\\' and not esc)
-            if c == '"' and not esc: ins = False
-        else:
-            if c == '"': ins = True
-            elif c == '[': depth += 1
-            elif c == ']':
-                depth -= 1
-                if depth == 0: return html, i0, i + 1, json.loads(html[i0:i+1])
-        i += 1
-    raise SystemExit('KVM_QUESTIONS nicht gefunden.')
+    return W.lesen('KVM_QUESTIONS')
 
 def dump_compact(x): return json.dumps(x, ensure_ascii=False, separators=(',', ':'))
 
@@ -105,7 +92,7 @@ def main():
     for f, n in herkunft:
         print('  Quelle %-30s %3d Fragen' % (f, n))
 
-    html, i0, i1, webQ = load_pool_web()
+    webQ = load_pool_web()
     # bestehende Nicht-PX-Fragen als Dublettenbasis
     behalten = [q for q in webQ if not str(q.get('id', '')).startswith('PX-')]
     seen_text = {norm(q.get('q', '')) for q in behalten}
@@ -126,8 +113,7 @@ def main():
 
     # Web schreiben
     web_neu = behalten + neu
-    open(os.path.join(ROOT, 'index.html'), 'w', encoding='utf-8').write(
-        html[:i0] + dump_compact(web_neu) + html[i1:])
+    W.schreiben('KVM_QUESTIONS', web_neu)
 
     # App schreiben (bestehende Nicht-PX + neue PX)
     qpath = os.path.join(ROOT, 'flutter_app', 'assets', 'data', 'questions.json')

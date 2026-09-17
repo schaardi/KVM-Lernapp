@@ -17,7 +17,8 @@ ROOT = os.path.abspath(os.path.join(HERE, '..', '..'))
 sys.path.insert(0, HERE)
 import parse_imbq as P
 import anlagen_imbq as AN
-import build_amtlich as BA   # _find_array, dump_compact
+import build_amtlich as BA   # dump_compact, webdaten
+import aufgaben_modell as AM  # Aufgabenblatt-Format
 
 MON = {'januar':1,'februar':2,'märz':3,'april':4,'mai':5,'juni':6,'juli':7,
        'august':8,'september':9,'oktober':10,'november':11,'dezember':12}
@@ -76,13 +77,24 @@ def main():
     import os as _os
     AN.pruefe({_os.path.splitext(f)[0]
                for f in _os.listdir(_os.path.join(HERE, 'anlagen'))})
-    neu = baue(exams)
-    neu_ids = {c['id'] for c in neu}
-    for c in neu:
+    roh = baue(exams)
+    neu_ids = {c['id'] for c in roh}
+    for c in roh:
         tot = sum(int(re.search(r'·\s*(\d+)\s*Punkte?', s['q'].split('\n\n')[0]).group(1))
                   for s in c['steps'])
         assert tot == 100, (c['id'], tot)
         assert all(s.get('a') for s in c['steps']), c['id']
+
+    # In das Aufgabenblatt-Format überführen (Aufgabe mit Teilen a–x) und den
+    # Umbau gegen das Original prüfen – der alte Fragetext muss sich exakt
+    # rekonstruieren lassen.
+    neu = []
+    for c in roh:
+        n = AM.zerlegen(c)
+        fehler_um = AM.pruefen(c, n)
+        assert not fehler_um, fehler_um
+        assert sum(a['pts'] for a in n['aufgaben']) == 100, (c['id'], 'Aufgabenpunkte')
+        neu.append(n)
 
     # App
     ap = os.path.join(ROOT, 'flutter_app', 'assets', 'data', 'cases.json')
@@ -91,23 +103,21 @@ def main():
     open(ap, 'w', encoding='utf-8').write(BA.dump_compact(rest + neu))
 
     # Web
-    wp = os.path.join(ROOT, 'index.html')
-    html = open(wp, encoding='utf-8').read()
-    m = re.search(r'window\.KVM_CASES\s*=\s*', html)
-    i0, i1 = BA._find_array(html, m.end())
-    weballe = json.loads(html[i0:i1])
+    weballe = BA.W.lesen('KVM_CASES')
     webrest = [c for c in weballe if c.get('id') not in neu_ids]
-    open(wp, 'w', encoding='utf-8').write(
-        html[:i0] + BA.dump_compact(webrest + neu) + html[i1:])
+    BA.W.schreiben('KVM_CASES', webrest + neu)
 
-    mb = sum(1 for c in neu for s in c['steps'] if s.get('bild'))
+    mb = sum(1 for c in neu for s in c['steps'] if s.get('bild')) \
+        + sum(1 for c in neu for a in c['aufgaben'] if a.get('bild'))
     ml = sum(1 for c in neu for s in c['steps'] if s.get('bildL'))
-    mt = sum(1 for c in neu for s in c['steps'] if s.get('tab'))
+    mt = sum(1 for c in neu for s in c['steps'] if s.get('tab')) \
+        + sum(1 for c in neu for a in c['aufgaben'] if a.get('tab'))
     print('  BQ-Prüfungen gebaut: %d  ·  Anlagen: %d Bilder zur Aufgabe, '
           '%d zur Lösung, %d Tabellen' % (len(neu), mb, ml, mt))
     for c in neu:
-        print('    %-16s %2d Schritte  %-12s Fach %d  %s'
-              % (c['id'], len(c['steps']), c['termin'], c['f'], c['sub'][14:44]))
+        print('    %-16s %2d Aufgaben / %2d Teile  %-12s Fach %d  %s'
+              % (c['id'], len(c['aufgaben']), len(c['steps']), c['termin'], c['f'],
+                 c['sub'][14:44]))
     print('  App  cases.json: %d Fälle (%d andere + %d neu)' % (len(rest) + len(neu), len(rest), len(neu)))
     print('  Web  KVM_CASES : %d Fälle (%d andere + %d neu)' % (len(webrest) + len(neu), len(webrest), len(neu)))
 
