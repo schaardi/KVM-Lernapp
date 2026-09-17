@@ -7,7 +7,12 @@ mit bis zu vier Tabellen, alle mit dem Schlüssel
 
 ``LOESUNG``   Lösungstext ersetzen – vor allem dort, wo ``pdftotext`` Word-
               Formeln in Zeichenfolgen zerlegt (Brüche gehen verloren).
-``FRAGE``     Fragetext ersetzen.
+``FRAGE``     Fragetext einer Teilaufgabe ersetzen.
+``INTRO``     Ausgangslage einer Aufgabe ersetzen; Schlüssel ist
+              ``(Kürzel, Aufgabennummer)``. Gebraucht vor allem dort, wo
+              ``pdftotext`` die Beschriftungen **aus einer Zeichnung**
+              („R1 R2 UEIN R3 UAUS 1 kΩ“) als Fließtext an die Ausgangslage
+              hängt – die Zeichnung selbst hängt als Anlage an der Aufgabe.
 ``PUNKTE``    Punktzahl **im Lösungsheft** berichtigen. Maßgeblich ist der
               Aufgabenteil: er ergibt in allen Heften genau 100 Punkte, das
               Lösungsheft verdruckt gelegentlich eine Zahl.
@@ -25,12 +30,14 @@ geändert und die Stelle muss neu geprüft werden, statt still zu verschwinden.
 
 
 def anwenden(exams, loesung=None, frage=None, punkte=None, label=None,
-             datum=None):
+             datum=None, intro=None):
     """Korrekturen einspielen; gibt die Zahl der Treffer zurück."""
     loesung, frage = loesung or {}, frage or {}
     punkte, label, datum = punkte or {}, label or {}, datum or {}
+    intro = intro or {}
     treffer = 0
-    genutzt = {'l': set(), 'f': set(), 'p': set(), 'b': set(), 'd': set()}
+    genutzt = {'l': set(), 'f': set(), 'p': set(), 'b': set(), 'd': set(),
+               'i': set()}
 
     for ex in exams:
         k = ex['kuerzel']
@@ -64,6 +71,13 @@ def anwenden(exams, loesung=None, frage=None, punkte=None, label=None,
                     genutzt['p'].add((k, nr, t['label']))
                     treffer += 1
         for nr, a in ex['aufgaben'].items():
+            neu_intro = intro.get((k, nr))
+            if neu_intro is not None:
+                assert neu_intro != a['intro'], \
+                    'Intro-Korrektur %s ist schon so gedruckt' % ((k, nr),)
+                a['intro'] = neu_intro
+                genutzt['i'].add((k, nr))
+                treffer += 1
             for t in a['teile']:
                 neu = frage.get((k, nr, t['label']))
                 if neu is not None:
@@ -73,6 +87,6 @@ def anwenden(exams, loesung=None, frage=None, punkte=None, label=None,
 
     fehlend = ((set(loesung) - genutzt['l']) | (set(frage) - genutzt['f'])
                | (set(punkte) - genutzt['p']) | (set(label) - genutzt['b'])
-               | (set(datum) - genutzt['d']))
+               | (set(datum) - genutzt['d']) | (set(intro) - genutzt['i']))
     assert not fehlend, 'Korrektur greift nicht mehr: %s' % sorted(map(str, fehlend))
     return treffer

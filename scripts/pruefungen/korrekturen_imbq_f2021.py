@@ -19,6 +19,19 @@ LOESUNG = {
      "– C (unten rechts): dringlich, nicht wichtig – delegieren\n"
      "– D (unten links): weder wichtig noch dringlich – nicht bearbeiten",
 
+    # MIKP, Aufgabe 4 c): "Stellen Sie den prozentualen Anteil der Teile ohne
+    # Nacharbeit in einem Diagramm dar und tragen Sie dort auch die Zielgröße
+    # von 90 % ein."
+    ('MI', 4, 'c'):
+     "Säulendiagramm „Anteil der Teile ohne Nacharbeit für die Kalenderwochen "
+     "1 bis 6“ (Zeichnung): waagerecht die Kalenderwoche 1 bis 6, senkrecht "
+     "der Anteil in Prozent von 0 % bis 100 %.\n"
+     "– KW 1: 90,0 % · KW 2: 83,3 % · KW 3: 90,9 % · KW 4: 85,7 % · "
+     "KW 5: 100,0 % · KW 6: 93,3 %\n"
+     "Zusätzlich eine waagerechte Linie bei 90 %, beschriftet mit "
+     "„Zielvorgabe“. Sichtbar wird: nur die Kalenderwochen 2 und 4 liegen "
+     "darunter.",
+
     # NTG, Aufgabe 3 a): "Vervollständigen Sie das v-t Diagramm nach diesem
     # Muster auf Ihrem Lösungsblatt."
     ('NT', 3, 'a'):
@@ -38,7 +51,8 @@ FRAGE = {}
 PUNKTE = {}
 LABEL = {}
 DATUM = {}
+INTRO = {}
 
 
 def anwenden(exams):
-    return _anwenden(exams, LOESUNG, FRAGE, PUNKTE, LABEL, DATUM)
+    return _anwenden(exams, LOESUNG, FRAGE, PUNKTE, LABEL, DATUM, INTRO)

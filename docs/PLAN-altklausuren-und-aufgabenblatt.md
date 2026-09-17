@@ -35,29 +35,35 @@ richtig zu lösen." – und: „Nutze diese ganzen Klausuren für unsere App."
 | **A T1** F2023, H2023, F2024 | **fertig** – 14 Prüfungen, 10 Abbildungen; Bestand jetzt **36 Original-Prüfungen** |
 | **B2** Web-Aufgabenblatt | **fertig** – eigener Bildschirm `scrBlatt`: Aufgaben-Stepper, Ausgangslage und Anlagen einmal am Kopf, alle Teilaufgaben a–x als Karten mit eigenem Antwortfeld, Aufdecken je Teil oder je Aufgabe, Zwischenergebnis aus `braucht`, Lightbox mit Zoom, Ergebnis nach Aufgaben gruppiert, Übersicht mit Fach-Filter |
 | **B3** Flutter-Aufgabenblatt | **fertig** – `screens/aufgabenblatt_screen.dart` mit Stepper, Ausgangslage, Anlagen am Kopf, Teil-Karten mit Antwortfeld und Selbstbewertung, Prüfauftrag über die ganze Aufgabe; Prüfungsübersicht zeigt die Aufgaben mit Teil-Chips |
-| **A T2–T4** | offen – 85 Prüfungen (L-I, L-ALT, OCR) |
+| **A T2** F2019 … H2022 | **fertig** – 40 Prüfungen, 36 neue Anlagen; Bestand jetzt **76 Original-Prüfungen** |
+| **A T3, T4** | offen – 45 Prüfungen (L-ALT, davon 35 als Scan) |
 | **C** Aufgabenserien | offen |
-| Übungsfragen (`PX-`) aus T1 | offen – die 14 neuen Prüfungen haben noch keine |
+| Übungsfragen (`PX-`) aus T1 und T2 | offen – die 54 neuen Prüfungen haben noch keine |
+| Lösungszeichnungen der Methoden-Hefte | teils offen – acht Aufgaben „Stellen Sie … in einem Diagramm dar“ aus T2 haben zwar den amtlichen Lösungstext, aber noch kein Lösungsbild (`bildL`) |
 
 Neue Werkzeuge: `scripts/pruefungen/anlagen_extrakt.py` (Abbildungen über ihre
 Bildunterschrift aus dem Heft schneiden – ersetzt das Abmessen von Koordinaten
 in `anlagen_bau.py`), `scripts/pruefungen/korrekturen_basis.py` (Nachkorrekturen
-für Text, Punktzahlen und Teil-Buchstaben), `scripts/pruefungen/inventar.py`,
-`scripts/pruefungen/quellen_bau.py`.
+für Text, Punktzahlen, Teil-Buchstaben, Prüfungstag und Ausgangslage),
+`scripts/pruefungen/inventar.py`, `scripts/pruefungen/quellen_bau.py`.
+`anlagen_bau.py` hat mit `AUSZUEGE` eine zweite Tabelle: Abbildung je
+Schlüssel, geholt ohne Koordinaten – entweder als eingebettetes Bild oder über
+ihre Bildunterschrift. Welches Bild zu welchem Schlüssel wurde, steht damit
+zum ersten Mal im Repository und lässt sich aus den PDFs nachbauen.
 
 ## Ausgangslage
 
 ### Bestand in der App
 
-Stand nach T1 (in Klammern der Stand vor dieser Session):
+Stand nach T2 (in Klammern der Stand vor dieser Session):
 
 | Was | Stand | Wo |
 |---|---|---|
-| Startbare Prüfungen (`P-`) | **36** (22) – 13 × Kraftverkehr FT/OK 2021–2026, 23 × Basisqualifikation F2023–H2025, alle mit amtlichen Lösungshinweisen, je 100 Punkte; 232 Aufgaben mit 593 Teilaufgaben | `flutter_app/assets/data/cases.json` (685 KB), `data/cases.js` |
+| Startbare Prüfungen (`P-`) | **76** (22) – 13 × Kraftverkehr FT/OK 2021–2026, 63 × Basisqualifikation F2019–H2025, alle mit amtlichen Lösungshinweisen, je 100 Punkte; 511 Aufgaben mit 1.291 Teilaufgaben | `flutter_app/assets/data/cases.json` (1,2 MB), `data/cases.js` |
 | Fallaufgaben ohne IHK-Bezug | 15 (`F-`/`R-`/`M-`/`Z-`, je 4–5 Teile, Musterlösungen) | ebd. |
-| Übungsfragen aus Prüfungen (`PX-`) | 327 (127 Kraftverkehr, 94 BQ H2025, 107 BQ H2024) – aus T1 noch keine | `questions.json`, Quellensätze `scripts/pruefungen/fragen/*.json` |
-| Bildanlagen | **24** (14) als Dateien, 783 KB; 17 an einer Aufgabe, 2 an einem Teil, 6 an einer Lösung | `anlagen/`, `flutter_app/assets/anlagen/`, Verzeichnis in `data/anlagen.js` |
-| Tabellenanlagen | 4 (`tab`) | an Aufgabe oder Schritt |
+| Übungsfragen aus Prüfungen (`PX-`) | 327 (127 Kraftverkehr, 94 BQ H2025, 107 BQ H2024) – aus T1 und T2 noch keine | `questions.json`, Quellensätze `scripts/pruefungen/fragen/*.json` |
+| Bildanlagen | **60** (14) als Dateien, 1,4 MB; 40 an einer Aufgabe, 1 an einem Teil, 18 an einer Lösung | `anlagen/`, `flutter_app/assets/anlagen/`, Verzeichnis in `data/anlagen.js` |
+| Tabellenanlagen | 6 (`tab`) – 4 an einer Aufgabe, 2 an einem Schritt | an Aufgabe oder Schritt |
 | `index.html` | **280 KB** (3,3 MB) – die Inhalte liegen daneben in `data/*.js` | Root |
 
 ### Wie eine Prüfung heute dargestellt wird
@@ -254,6 +260,22 @@ for l in lines:
 A, L = aufgaben(frage, False), aufgaben(loes, True)
 ```
 
+**Erfahrungen aus T2** (für T3/T4 einplanen):
+
+- Die Fußzeile `L 050-01-0519-7` trägt eine Prüfziffer, die das alte
+  JUNK-Muster nicht kannte – sie stand **459-mal** mitten im Aufgaben- und
+  Lösungstext. Nach dem Filter fielen fünf Lösungen auf, die *nur* aus dieser
+  Heftnummer bestanden: reine Zeichnungen ohne Text. Für T3/T4 ist das Muster
+  der Fußzeile also zuerst zu prüfen, sonst täuscht `pruefe()` Vollständigkeit
+  vor.
+- `pruefe()` prüft neben den Punkten jetzt auch den Prüfungstag gegen den
+  Termin. Das hat einen Druckfehler (NTG H2022: „3. November 2023“) und ein
+  fehlendes Deckblatt (ZiB H2021) gefunden, die sonst als falsch einsortierte
+  Prüfung durchgerutscht wären.
+- Beschriftungen aus Zeichnungen („R1 R2 UEIN R3 UAUS 1 kΩ“) landen als
+  Fließtext in der Ausgangslage. Dafür gibt es die Korrekturtabelle `INTRO`;
+  die Zeichnung selbst hängt als Anlage an der Aufgabe.
+
 **L-ALT (45 Prüfungen)** – neuer Parser `parse_imbq_alt.py` (oder dritter
 Modus), gleiche Ausgabestruktur wie `parse_imbq.parse_datei`:
 
@@ -298,7 +320,7 @@ Neueste zuerst; jede Tranche ein eigener PR mit Prüfungen **und** ihren
 | Tranche | Termine | Prüfungen | Parser | Aufwand (Richtwert) |
 |---|---|---|---:|---|
 | T1 | F2024, H2023, F2023 | 14 | PL, vorhanden | 6 Korrekturen · je Prüfung 30–45 min + Fragen-Workflow |
-| T2 | H2022 … F2019 | 40 | L-I, 15 Zeilen neu | 4 Korrekturen + ZiB H2021 (OCR) · je 30 min |
+| T2 | H2022 … F2019 | 40 | L-I, 15 Zeilen neu | **erledigt** – 35 Hefte sofort 100/100; 9 Korrekturen (Datum, Doppelpunkt im Badge, OCR ZiB H2021, 5 Zeichnungs-Lösungen), 6 bereinigte Ausgangslagen, 36 Anlagen |
 | T3 | H2018, F2018 | 10 | L-ALT neu (½ Tag) | 2 Korrekturen |
 | T4 | H2017 … H2014 | 35 | L-ALT + OCR-Normalisierung | je Prüfung 1–2 h Sichtprüfung gegen Seitenbilder; Rechtsstand-Hinweis Pflicht |
 

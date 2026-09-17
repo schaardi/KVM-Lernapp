@@ -31,6 +31,15 @@ DATUM = {
     'NT': '3. November 2022',
 }
 
+INTRO = {
+    # NTG, Aufgabe 6: "R1 R2 UEIN R3 UAUS 1 kΩ" sind die Beschriftungen des
+    # Schaltbilds, das jetzt als Abbildung an der Aufgabe hängt.
+    ('NT', 6):
+     "Die Abbildung zeigt eine Widerstandsschaltung. Die Eingangsspannung UEIN "
+     "beträgt 24 V, die Ausgangsspannung UAUS beträgt 8 Volt. R1 und R2 haben "
+     "die gleichen Widerstandswerte, R3 beträgt 1 kΩ.",
+}
+
 
 def anwenden(exams):
-    return _anwenden(exams, LOESUNG, FRAGE, PUNKTE, LABEL, DATUM)
+    return _anwenden(exams, LOESUNG, FRAGE, PUNKTE, LABEL, DATUM, INTRO)

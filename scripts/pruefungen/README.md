@@ -154,3 +154,28 @@ nicht zum Dateinamen passt, und liest Scans sowie Fremd-OCR neu (Tesseract mit
 `--psm 3` und einem Thread; `--psm 4` hängt auf den grafischen Deckblättern).
 Die drei Heftformate (PL, L-I, L-ALT) und die Parser-Deltas sind in
 `docs/PLAN-altklausuren-und-aufgabenblatt.md`, Teil A, beschrieben.
+
+## Abbildungen der Hefte (`anlagen_bau.py`)
+
+```bash
+python3 scripts/pruefungen/anlagen_bau.py <pdf-verzeichnis> [schlüssel …]
+```
+
+Baut aus den PDFs die Dateien unter `anlagen/`; eingecheckt werden nur die
+fertigen Ausschnitte. Zwei Tabellen halten fest, woher jede Abbildung kommt:
+
+- **`AUSZUEGE`** – ohne Koordinaten. Fundstelle ist entweder `(Seite, Nummer)`
+  für ein **eingebettetes** Bild (`anlagen_extrakt.holen()`, volle Auflösung)
+  oder `(Seite, "Bildunterschrift")` für eine **gezeichnete** Abbildung (der
+  Bereich über der Bildunterschrift). Das ist der Regelfall.
+- **`FIGUREN`** – Zuschnitt einer bei 100 dpi gerenderten Seite. Nötig, wenn
+  die Zeichnung keine Bildunterschrift hat, im PDF in mehrere Teilbilder
+  zerfällt oder ungleichmäßig skaliert eingebettet ist (dann käme das
+  eingebettete Bild verzerrt heraus).
+
+Mehrere Fundstellen werden untereinander gesetzt – so stehen Schaltbild und
+Kennlinie in einer Abbildung, ohne den Fragetext dazwischen. Welche Abbildung
+zu welcher Teilaufgabe gehört, steht in `anlagen_imbq.py`
+(`BILDER`, `BILDER_L`, `TABELLEN`); `build_anlagen.py` schreibt Dateien und
+Verzeichnis nach Web und App und bricht ab, sobald eine Abbildung ohne
+Bildunterschrift bliebe.

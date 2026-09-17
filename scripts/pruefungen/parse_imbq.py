@@ -101,7 +101,9 @@ JUNK = re.compile(
     r'|Bundeseinheitliche Fortbildungspr[üu]fung.*'
     r'|Gepr[üu]fter Industriemeister.*'
     r'|Seite \d+'
-    r'|[LP] \d{3}-\d{2}-\d{4}'
+    # Heftnummer der Fußzeile, mit und ohne angehängte Prüfziffer:
+    # "L 050-01-0519-7" (Termine bis 2022) wie "P 050-05-1123" (ab 2023).
+    r'|[LP] \d{3}-\d{2}-\d{4}(?:-\d+)?'
     r'|Pr[üu]fungsteilnehmer-Nummer.*'
     r'|Ber[üu]cksichtigung naturwissenschaftlicher und technischer Gesetzm[äa][ßs]igkeiten'
     r'|Anwendung von Methoden der Information, ?Kommunikation und Planung'

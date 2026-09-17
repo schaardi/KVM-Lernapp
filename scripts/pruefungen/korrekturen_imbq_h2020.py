@@ -11,7 +11,8 @@ FRAGE = {}
 PUNKTE = {}
 LABEL = {}
 DATUM = {}
+INTRO = {}
 
 
 def anwenden(exams):
-    return _anwenden(exams, LOESUNG, FRAGE, PUNKTE, LABEL, DATUM)
+    return _anwenden(exams, LOESUNG, FRAGE, PUNKTE, LABEL, DATUM, INTRO)
