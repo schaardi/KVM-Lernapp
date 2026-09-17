@@ -134,3 +134,23 @@ python3 scripts/pruefungen/build_amtlich.py   # baut & schreibt Web + App
 Nicht vollständig lesbare Termine (OCR-Lücken oder in der Quelle fehlende
 Lösungsseiten) werden automatisch ausgelassen. `korrekturen.py` (Bilder wie der
 Lastverteilungsplan, Tabellen) wird per Schritt-ID weich eingespielt.
+
+## Archiv „Altklausuren" (Basisqualifikationen 2014–2024)
+
+Zwei Werkzeuge bereiten ein Archiv voller Prüfungs-PDFs für die Pipeline
+auf – die PDFs selbst bleiben außerhalb des Repos:
+
+```bash
+# 1. Inventar: Seiten, Textlayer, Fach, Datum, Heftformat, Verarbeitungsklasse je PDF
+python3 scripts/pruefungen/inventar.py <ordner> --md scripts/pruefungen/quellen/INVENTAR-altklausuren.md
+
+# 2. Textlayer mit Seitenmarkern je Termin (Scans per Tesseract, 300 dpi)
+python3 scripts/pruefungen/quellen_bau.py <ordner> --nur f2024,h2023
+```
+
+`quellen_bau.py` legt `quellen/imbq-<f|h><jahr>/0N-<fach>.txt` an – das Format,
+das `parse_imbq.py` liest –, überspringt Sammelbände und Dateien, deren Inhalt
+nicht zum Dateinamen passt, und liest Scans sowie Fremd-OCR neu (Tesseract mit
+`--psm 3` und einem Thread; `--psm 4` hängt auf den grafischen Deckblättern).
+Die drei Heftformate (PL, L-I, L-ALT) und die Parser-Deltas sind in
+`docs/PLAN-altklausuren-und-aufgabenblatt.md`, Teil A, beschrieben.

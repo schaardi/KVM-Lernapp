@@ -1,0 +1,464 @@
+=== Seite 1 ===
+Bundeseinheitliche Weiterbildungsprüfung
+der Industrie- und Handelskammern
+
+
+Lösungshinweise
+Geprüfte/-r Industriemeister/-in
+fachrichtungsübergreifende
+Basisqualifikationen/
+grundlegende Qualifikationen
+Basisqualifikation                                      Berücksichtigung naturwissenschaftlicher und
+                                                        technischer Gesetzmäßigkeiten
+Prüfungstag                                             3. Mai 2018
+
+
+
+Hinweise für den Korrektor:
+■    Die folgenden Lösungen sind lediglich Lösungshinweise.
+■    Sie sollen nur den Rahmen der zu erwartenden Prüfungsleistung abstecken.
+■    Der Korrektor ist durch die hier aufgeführten Lösungshinweise in seinem Bewertungsspielraum nicht
+     eingeengt.
+■    Bei Aufgaben, die eine Aufzählung von n-Fakten zur Lösung erfordern, werden nur die ersten n-Fakten
+     gewertet. Alle darüber hinausgehenden Aufzählungen werden gestrichen.
+■    Bei Berechnungen sollen Folgefehler berücksichtigt werden und somit nicht zum Punktabzug führen.
+■    Der leichteren Lesbarkeit wegen geben wir in den Aufgaben/Texten der männlichen Form den Vorzug. Mit
+     diesem einfacheren sprachlichen Ausdruck sind selbstverständlich immer Männer und Frauen gemeint.
+
+
+
+
+Die Aufgaben mit Lösungsvorschlägen können von den Industrie- und Handelskammern oder Dritten nach einer Frist von sechs
+Monaten direkt bestellt werden bei:
+W. Bertelsmann Verlag GmbH & Co. KG, Service-Center DIHK,
+Postfach 10 06 33, 33506 Bielefeld
+Tel.: 0521/91101-16, Fax: 0521/91101-19, E-Mail: service@wbv.de
+
+                                                                                                                | L 050-05-0518-7 |
+
+=== Seite 2 ===
+GEPRÜFTE/-R INDUSTRIEMEISTER/-IN
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+GRUNDLEGENDE QUALIFIKATIONEN
+Naturwissenschaftliche und technische Gesetzmäßigkeiten
+
+Aufgabe 1
+Für die Verbindung zweier Wasserversorgungsleitungen aus Kupfer verwendet einer Ihrer
+Mitarbeiter ein Zwischenstück aus Stahl (Eisen). Sie weisen den Mitarbeiter darauf hin,
+dass dadurch elektrochemische Korrosion entsteht.
+a)   Beschreiben Sie Ihrem Mitarbeiter, wodurch elektrochemische Korrosion entsteht.                                                 (5 Punkte)
+b)   Führen Sie drei Folgen der elektrochemischen Korrosion auf.                                                                     (3 Punkte)
+
+c)   Ermitteln Sie die elektrische Potenzialdifferenz U zwischen den beiden Metallen                                                (2 Punkte)
+     Kupfer und Stahl (Eisen).
+d)   Geben Sie an, welches der beiden Metalle den Pluspol bildet.                                                                    (2 Punkte)
+
+
+Lösungshinweise Aufgabe 1                                                                                                         (12 Punkte)
+[VO: § 4 Absatz 6 Nr. 1]
+a)   Die elektrochemische Korrosion ist vergleichbar mit einem galvanischen Element.
+     Sind zwei unterschiedliche elektrisch leitfähige Metalle durch einen Elektrolyten, z. B.
+     Trinkwasser, miteinander verbunden, löst sich das unedlere der beiden Metalle auf;
+     es korrodiert (oxidiert).                                                                                                       (5 Punkte)
+b)   Folgen: z. B.:
+     ■ Zersetzung eines der Werkstoffe
+     ■ Undichtigkeiten in der Leitung im Bereich der Metallübergänge
+     ■ Wasserfolgeschaden
+     ■ Folgekosten                                                                                                                   (3 Punkte)
+
+        U  UCu  (  UFe )  0,34 V  0,44 V  0,78 V
+c)                                                                                                                                   (2 Punkte)
+d)   Das edlere Metall – Kupfer – bildet den Pluspol.                                                                                (2 Punkte)
+
+
+
+
+Seite 2 | L 050-05-0518-7 |     © DIHK – Gesellschaft für berufliche Bildung – Organisation zur Förderung der IHK-Weiterbildung mbH – Bonn
+                                Die Vervielfältigung, Verbreitung oder öffentliche Wiedergabe der Publikation [der Prüfungssätze und Lösungshinweise]
+                                ist nicht gestattet (§§ 53, 54 UrhG) und strafbar (§ 106 UrhG). Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+
+=== Seite 3 ===
+GEPRÜFTE/-R INDUSTRIEMEISTER/-IN
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+GRUNDLEGENDE QUALIFIKATIONEN
+Naturwissenschaftliche und technische Gesetzmäßigkeiten
+
+Aufgabe 2
+Die Rahmenprofile bei Fahrrädern werden aus Stabilitätsgründen oft aus elliptischen                                                             (10 Punkte)
+Rohrprofilen hergestellt. Diese werden sowohl auf Zug als auch auf Druck beansprucht.
+
+
+
+
+                                                        Maße in mm
+                                                (Abbildung nicht maßstäblich)
+
+Berechnen Sie die im Rahmenprofil zulässige Zugkraft, wenn aus Sicherheitsgründen die
+zulässige Zugspannung von 180 N/mm² nicht überschritten werden darf.
+
+
+
+Lösungshinweise Aufgabe 2                                                                                                                      (10 Punkte)
+[VO: § 4 Absatz 6 Nr. 1 und 3]
+                   Fzul
+       z, zul =
+                    S                                                                                                                             (6 Punkte)
+
+                                        
+      S = D1  d1           D2  d 2 
+                          4              4
+
+            
+      S=       D1  d1  D2  d 2 
+            4                                                                                                                                     (4 Punkte)
+
+                          
+      Fz =  z,zul           D1  d1  D2  d 2 
+                          4
+
+               180 N  
+      Fzul =              80 mm  40 mm  76 mm  36 mm 
+                mm 2  4
+
+      Fzul = 65596,45 N = 65,6 kN
+
+
+
+
+Seite 3 | L 050-05-0518-7 |                  © DIHK – Gesellschaft für berufliche Bildung – Organisation zur Förderung der IHK-Weiterbildung mbH – Bonn
+                                             Die Vervielfältigung, Verbreitung oder öffentliche Wiedergabe der Publikation [der Prüfungssätze und Lösungshinweise]
+                                             ist nicht gestattet (§§ 53, 54 UrhG) und strafbar (§ 106 UrhG). Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+
+=== Seite 4 ===
+GEPRÜFTE/-R INDUSTRIEMEISTER/-IN
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+GRUNDLEGENDE QUALIFIKATIONEN
+Naturwissenschaftliche und technische Gesetzmäßigkeiten
+
+Aufgabe 3
+In einem mit Erdgas befeuerten Glühofen werden gleichzeitig acht Rollen Kupferbänder
+(Coils) mit der Gesamtmasse von 6,5 t wärmebehandelt.
+Die Kupferbänder werden dazu von 20 °C auf 520 °C erwärmt. Dabei beträgt der
+Wirkungsgrad 80 %.
+Für die Glühdauer (Haltezeit) bei 520 °C sind weitere 2400 MJ Energie erforderlich.
+                                                                                        3
+Berechnen Sie die erforderliche                 Menge         Erdgas         in     m       für     den      gesamten            (15 Punkte)
+Wärmebehandlungsprozess.
+
+
+Lösungshinweise Aufgabe 3                                                                                                            (15 Punkte)
+[VO: § 4 Absatz 6 Nr. 1 und 2]
+Wärmebedarf für Erwärmung:
+
+             m  c  T 6 500 kg  0,39 kJ  500 K
+      Q1                                          1 584 375 kJ  1 584,375 MJ
+                              kg  K  0,8                                                                                             (6 Punkte)
+
+Gesamtwärmebedarf:
+     Qges = Q1 + Q2 = 1584,375 MJ + 2 400 MJ = 3 984,375 MJ                                                                             (3 Punkte)
+
+Erdgasbedarf:
+
+     Q = Hi  V
+
+             Q    3 984,375 MJ  m 3
+      V                             113,84 m 3
+             Hi         35 MJ                                                                                                           (6 Punkte)
+
+
+Aufgabe 4
+Der Beschickungswagen für die Befüllung einer Presse wird über eine 20 m lange Rampe
+auf eine Höhe h = 4 m gezogen.
+Der Wagen ist auf             Schienen geführt; die durchschnittliche Fahrgeschwindigkeit
+beträgt v = 32 m/min.
+
+
+
+                                                                  Fülltrichter
+
+
+
+
+                                     Seilzug              Presse
+
+
+
+
+Seite 4 | L 050-05-0518-7 |        © DIHK – Gesellschaft für berufliche Bildung – Organisation zur Förderung der IHK-Weiterbildung mbH – Bonn
+                                   Die Vervielfältigung, Verbreitung oder öffentliche Wiedergabe der Publikation [der Prüfungssätze und Lösungshinweise]
+                                   ist nicht gestattet (§§ 53, 54 UrhG) und strafbar (§ 106 UrhG). Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+
+=== Seite 5 ===
+GEPRÜFTE/-R INDUSTRIEMEISTER/-IN
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+GRUNDLEGENDE QUALIFIKATIONEN
+Naturwissenschaftliche und technische Gesetzmäßigkeiten
+
+
+Technische Daten für den Elektromotor und den Beschickungswagen:
+
+
+
+
+     ■     Eigengewicht des Beschickungswagens:                    m = 565 kg
+     ■     Volumen des Wagens:                                     V = 3 m³
+     ■     Rollreibungswert (Rad – Schiene):                        = 0,02
+Das im Beschickungswagen                 befindliche          Schüttgut         besitzt        eine       Schüttdichte
+              3
+von 4,74 kg/dm .
+a)   Berechnen Sie die erforderliche Zugkraft,                             um        den       randvoll        befüllten              (12 Punkte)
+     Beschickungswagen nach oben ziehen zu können.
+b)   Überprüfen Sie anhand der Angaben des Typenschildes, ob die Leistungsfähigkeit                                                     (3 Punkte)
+     des Elektromotors dafür ausreicht.
+
+Hinweis für den Prüfungsteilnehmer: Sollten Sie unter a) keine Zugkraft ermittelt haben,
+nehmen Sie für Fz = 32 kN an.
+c)   Berechnen Sie den Wirkungsgrad des Elektromotors unter Volllast.                                                                   (4 Punkte)
+
+
+Lösungshinweise Aufgabe 4                                                                                                            (19 Punkte)
+[VO: § 4 Absatz 6 Nr. 1, 2]
+a)   Gewichtskraft:
+
+                                                                                 4,74 t
+      mges  mWagen  mSchüttgut  mWagen  V    0,565 t  3 m 3                     14,22 t
+                                                                                  m3
+
+                                         N
+      FG  mges  g  14 220 kg  9,81       139,498 kN
+                                         kg
+
+Hangabtriebskraft und Reibkraft:
+
+                 4m
+      sin α          0,2
+                20 m               11,54 
+
+      FN  FG  cos   139 ,498 kN  cos 11,54  136 ,67 kN
+
+
+
+Seite 5 | L 050-05-0518-7 |        © DIHK – Gesellschaft für berufliche Bildung – Organisation zur Förderung der IHK-Weiterbildung mbH – Bonn
+                                   Die Vervielfältigung, Verbreitung oder öffentliche Wiedergabe der Publikation [der Prüfungssätze und Lösungshinweise]
+                                   ist nicht gestattet (§§ 53, 54 UrhG) und strafbar (§ 106 UrhG). Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+
+=== Seite 6 ===
+GEPRÜFTE/-R INDUSTRIEMEISTER/-IN
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+GRUNDLEGENDE QUALIFIKATIONEN
+Naturwissenschaftliche und technische Gesetzmäßigkeiten
+
+      FR  FN    136,67 kN  0,02  2,73 kN
+
+      FH  FG  sin  139,498 kN  sin11,54  27,89 kN
+
+Zugkraft:
+
+      FZ  FH  FR  27,89 kN  2 ,73 kN  30,62 kN
+                                                                                                                                       (12 Punkte)
+
+                                     m
+      P  FZ  v  30620 N  32          16,331 kW  20 kW
+                                    60 s
+b)
+      Der Motor ist dafür geeignet.
+                                                                                                                                         (3 Punkte)
+
+      Pzu  3  U  I  cos φ  3  400 V  60 A  0,84  34,9 kW
+c)
+            Pab   20 kW
+                      0,573
+            Pzu 34,9 kW
+                                                                                                                                         (4 Punkte)
+
+
+Aufgabe 5
+Der Spannungszustand der Magnetspule eines Pneumatikventils wird durch eine
+Meldeleuchte überwacht.
+Die Anschlusswerte der Meldeleuchte betragen U = 2 V, I = 20 mA.
+Die Magnetspule hat eine Leistung P = 480 mW und arbeitet mit der anliegenden
+Spannung U = 24 V.
+ +24 V
+
+
+
+
+                              Vorwiderstand
+
+
+Magnetspule                   Meldeleuchte
+     0V
+
+                                                                                                                                         (6 Punkte)
+a)    Berechnen Sie den Widerstandswert des Vorwiderstandes und die zugehörige
+      Teilspannung.
+                                                                                                                                         (4 Punkte)
+b)    Berechnen Sie die Leistung des Vorwiderstandes.
+                                                                                                                                         (4 Punkte)
+c)    Berechnen Sie den elektrischen Widerstand der Magnetspule.
+
+d)    Berechnen Sie die Gesamtstromstärke und die Gesamtleistung der Schaltung.
+                                                                                                                                         (6 Punkte)
+
+
+
+
+Seite 6 | L 050-05-0518-7 |         © DIHK – Gesellschaft für berufliche Bildung – Organisation zur Förderung der IHK-Weiterbildung mbH – Bonn
+                                    Die Vervielfältigung, Verbreitung oder öffentliche Wiedergabe der Publikation [der Prüfungssätze und Lösungshinweise]
+                                    ist nicht gestattet (§§ 53, 54 UrhG) und strafbar (§ 106 UrhG). Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+
+=== Seite 7 ===
+GEPRÜFTE/-R INDUSTRIEMEISTER/-IN
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+GRUNDLEGENDE QUALIFIKATIONEN
+Naturwissenschaftliche und technische Gesetzmäßigkeiten
+
+Lösungshinweise Aufgabe 5                                                                                                                           (20 Punkte)
+[VO: § 4 Absatz 6 Nr. 1]
+
+a)   In der Reihenschaltung ist die Stromstärke konstant: I = 20 mA                                                                                    (6 Punkte)
+
+                                                             UV  U  UMeldeleuchte  24 V  2 V  22 V
+      Teilspannung am Vorwiderstand:
+
+                                                                                Uv 22 V  1000
+                                                                       RV                     1100 
+                                                                                 I    20 A
+      Widerstandswert für den Vorwiderstand:
+
+      PV  UV  IMeldeleuchte  22 V  20 mA  440 mW
+b)                                                                                                                                                     (4 Punkte)
+
+c)    P  I2 R
+
+            P           480 mV  A                      V
+      R        2
+                          2           2
+                                                1200      1200 
+            I           20 (mA)                         A                                                                                              (4 Punkte)
+
+                        PMagnetspule           480 mV  A
+      IMagnetspule                                       20 mA
+                               U                 24 V
+d)
+      I  IMagnetspule  IMeldeleuchte  20 mA  20 mA  40 mA
+
+      P  U  I  24 V  40 mA  960 mW                                                                                                                (6 Punkte)
+
+
+Aufgabe 6
+Für die Realisierung eines Kundenauftrages sind zwei Teillieferungen erforderlich. Beide
+Lieferfahrzeuge fahren mit gleichförmiger Geschwindigkeit vom Auslieferungsort zum
+Kunden und müssen spätestens 13:00 Uhr dort eintreffen.
+Der erste Lkw startet um 12:00 Uhr mit einer durchschnittlichen Geschwindigkeit
+von 50 km/h.
+Der zweite Lkw fährt um 12:15 Uhr ab mit einer durchschnittlichen Geschwindigkeit
+von 60 km/h.
+Die beiden Fahrzeuge sollen gleichzeitig beim Kunden eintreffen und haben dabei den
+gleichen Weg zurückgelegt.
+Ermitteln Sie rechnerisch, um welche Uhrzeit die Fahrzeuge beim Kunden eintreffen.                                                                   (15 Punkte)
+Beurteilen Sie Ihr Ergebnis.
+
+
+Lösungshinweise Aufgabe 6                                                                                                                           (15 Punkte)
+[VO: § 4 Absatz 6 Nr. 1]
+s1  s 2
+
+v1  t1  v 2  (t1  0,25 h)
+
+v 1  t1  v 2  t1  0,25 h  v 2
+
+
+Seite 7 | L 050-05-0518-7 |                       © DIHK – Gesellschaft für berufliche Bildung – Organisation zur Förderung der IHK-Weiterbildung mbH – Bonn
+                                                  Die Vervielfältigung, Verbreitung oder öffentliche Wiedergabe der Publikation [der Prüfungssätze und Lösungshinweise]
+                                                  ist nicht gestattet (§§ 53, 54 UrhG) und strafbar (§ 106 UrhG). Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+
+=== Seite 8 ===
+GEPRÜFTE/-R INDUSTRIEMEISTER/-IN
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+GRUNDLEGENDE QUALIFIKATIONEN
+Naturwissenschaftliche und technische Gesetzmäßigkeiten
+
+
+v1  t1  v 2  t1   0,25 h  v 2
+
+t1  (v1  v 2 )   0,25 h  v 2
+
+        0,25 h  v 2
+t1 
+         ( v1  v 2 )
+
+        0,25 h  60 km  h
+t1 
+        (50  60) km  h
+
+t1  1,5 h
+
+v 1  50 km / h                                                       v 2  60 km / h
+
+t1  1,5 h                                                            s2  s1
+
+                                                                             s 2 75 km  h
+                                                                      t2                  1,25 h
+s1  v1  t1  75 km                                                         v2   60  km
+
+Startzeit: 12:00 Uhr                                                  Startzeit: 12:15 Uhr
+Ankunft: 13:30 Uhr                                                    Ankunft: 13:30 Uhr
+Beide Fahrzeuge erreichen um 13:30 Uhr zur gleichen Zeit den Kunden aber nicht
+rechtzeitig (Vorgabe war 13:00 Uhr).
+
+
+
+
+Seite 8 | L 050-05-0518-7 |           © DIHK – Gesellschaft für berufliche Bildung – Organisation zur Förderung der IHK-Weiterbildung mbH – Bonn
+                                      Die Vervielfältigung, Verbreitung oder öffentliche Wiedergabe der Publikation [der Prüfungssätze und Lösungshinweise]
+                                      ist nicht gestattet (§§ 53, 54 UrhG) und strafbar (§ 106 UrhG). Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+
+=== Seite 9 ===
+GEPRÜFTE/-R INDUSTRIEMEISTER/-IN
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+GRUNDLEGENDE QUALIFIKATIONEN
+Naturwissenschaftliche und technische Gesetzmäßigkeiten
+
+Aufgabe 7
+Die Abteilung „Gewerbliche Ausbildung“ führt eine Statistik über die Prüfungsergebnisse
+der Industriemechaniker im Laufe von fünf Jahrgängen. Die Datenerhebung dazu befindet
+sich in Anlage 1.
+a)   Berechnen Sie die Notenmittelwerte                       der     einzelnen          Jahrgänge           und       den              (7 Punkte)
+     Gesamtmittelwert in Anlage 1.
+                                                                                                                                        (2 Punkte)
+b)   Ermitteln Sie den Modalwert der gesamten Jahrgänge.
+
+
+Lösungshinweise Aufgabe 7                                                                                                              (9 Punkte)
+[VO: § 4 Absatz 6 Nr. 4]
+a)   Beispielrechnung für 2013:
+     0  18  18  32  0  12 80
+x                                 3,20
+                25              25                                                                                                      (7 Punkte)
+Gesamtmittelwert:
+     3,20  3,17  2,90  2,83  3,17
+x                                     3,05
+                     5
+zuzüglich der anderen Tabellenwerte
+
+
+                                      Note                              Anzahl der
+     Jahrgang                                                           Einzelwerte                    xi              ‫̅ݔ‬
+                         1    2     3        4        5        6
+ 2013                    0    9     6        8        0        2               25                     80             3,20
+ 2014                    2    5     7        7        3        0               24                     76             3,17
+ 2015                    1    8     3        8        0        0               20                     58             2,90
+ 2016                    3    6     6        8        0        0               23                     65             2,83
+ 2017                    1    6     8        6        3        0               24                     76             3,17
+ Summen                  7    34   30       37        6        2              116                    XXX            3,05
+
+b) Modalwert: Note 4                                                                                                                     (2 Punkte)
+
+
+
+
+Seite 9 | L 050-05-0518-7 |        © DIHK – Gesellschaft für berufliche Bildung – Organisation zur Förderung der IHK-Weiterbildung mbH – Bonn
+                                   Die Vervielfältigung, Verbreitung oder öffentliche Wiedergabe der Publikation [der Prüfungssätze und Lösungshinweise]
+                                   ist nicht gestattet (§§ 53, 54 UrhG) und strafbar (§ 106 UrhG). Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+

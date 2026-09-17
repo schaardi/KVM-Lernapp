@@ -1,0 +1,428 @@
+=== Seite 1 ===
+Bundeseinheitliche Weiterbildungsprüfung
+
+der Industrie- und Handelskammern
+
+Prüfungsteilnehmer-Nummer
+
+Geprüfte/-r Industriemeister/-in,
+fachrichtungsübergreifende Basisqualifikationen/
+grundlegende Qualifikationen
+
+m Basisqualifikation Anwendung von Methoden der Information,
+Kommunikation und Planung
+
+a Prüfungstag 8. Mai 2017
+
+sm Bearbeitungszeit 90 Minuten
+
+m Anzahl der Aufgaben 6
+
+Bitte prufen Sıe vor Beginn der Prufung dıe Vollständigkeit des Aufgabensatzes Sollte der Aufgabensatz nıcht vollstandig seın, ınfor-
+mieren Sıe bitte die Aufsicht
+
+Bearbeitungshinweise:
+
+Bitte lesen Sie die nachfolgenden Bearbeitungshinweise sorgfältig durch:
+
+w Dis zur Prufung zugelassenen Hilfsmittel wurden Ihnen separat mit der a Verwenden Sıe für jede Aufgabe sın neues Losungsblatt bzw eine neue
+Einladung mitgeteilt Losungsseite
+
+Sıe erhalten sınen Aufgaben- und eınen Losungsteil u Falls die Losung auf einem beigefugten Anlageblatt erfolgen soll, wırd ın
+
+Tragen Sıe auf dem Deckblatt Ihre Prufungsteilnehmer-Nummer eın der Aufgabenstellung darauf hingewesen
+Die maximale Gesamtpunktzahl der Lösungen hetragt 100 Punkte a Fur Ihre Notizen benutzen Sıe bitte ausschließlich das Konzeptpapiei
+
+Die Losungsgange bzw Rechenvorgange sind klar und nachvolizieh- " Das Konzeptpapıei st mit den Aufgaben- und dem Losungsteil abzuge-
+bar ım Losungsteil darzustellen Sollte der Platz nicht ausreichen, be- ben
+
+nutzen Sıe bitte das Konzeptpapter verweisen Sıe auf dıe Fortsetzung m Bei Aufgaben, dıe eine Aufzahlung von n-Fakten zur Lösung erfordern,
+und kennzeichnen Sıe diese Wir weisen darauf hın, dass eıne vom werden nur die ersten n-Fakten gewertet Alle daruber hınausgehenden
+Prufungsausschuss nıcht lesbare Prufungsarbeıt mit der Note „ungenu- Aufzahlungen werden gestrichen
+
+gend" {null Punkte) bewertet wırd mit den Rechtsfolgen, die sıch aus dei
+
+Prüfungsordnung ergeben
+
+Der leichteren Lesbarkeit wegen geben wir ın den Aufgaben/Texten der männlichen Form den Vorzug Mit diesem einfacheren
+sprachlichen Ausdruck sınd selbstverständlich immer Manner und Frauen gemeint
+
+Die Vervielfältigung, Verbreitung oder öffentliche Wiedergabe der Publikationen [der Prufungssätze] ıst nicht gestattet ($$ 53, 54
+UrhG) und strafbar (&$ 106 UrhG) Im Fall der Zuwiderhandlung wırd Strafanfrag gestellt.
+
+P 050-03-0517-0
+
+=== Seite 2 ===
+GEPRÜFTEI/-R INDUSTRIEMEISTER/-IN,
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+
+GRUNDLEGENDE QUALIFIKATIONEN
+AnwendungvonMethodenderinformation,KommunikationundPlanung
+
+Aufgabe 1
+
+Im gesamten Unternehmen wırd ein neues IT-System zur Produktionsplanung und -steue-
+rung eingeführt. Vor der Einfuhrung muss ein Datensicherheitskonzept entwickelt werden.
+
+a) Beschreiben Sıe drei Grundanforderungen, die dem Datensicherheitskonzept zugrunde (6 Punkte)
+liegen
+
+b) Beschreiben Sıe drei Risiken, die in einem Konzept zur Datensicherheit analysıert wer- (6 Punkte)
+den mussen
+
+c) Nennen Sie vier organısatorische Aufgaben im Datensicherheitskonzept (4 Punkte)
+
+d) Indem Produktionsplanungs- und Steuerungssystem werden auch personenbezogene
+Daten verarbeitet
+
+Beschreiben Sıe aus Sıcht des Datenschutzes zweı Anforderungen an das Datensı- (4 Punkte)
+cherhertskonzept
+
+Lösungshinweise Aufgabe 1 (20 Punkte)
+[VO: $ 4 Absatz 4 Nr. 1]
+
+a) ZB:
+= Verfügbarkeit
+=  Integritat
+= Vertraulichkeit
+= Datenschutz (6 Punkte)
+
+Hinweis für den Korrektor: Die Grundanforderungen konnen auch mit eigenen Wor-
+ten beschrieben werden, der Sınn muss erkennbar seın
+
+b} ZB.
+= höhere Gewalt
+= Versagen der Technik
+«  Fahrlassıgkeit
+
+"»  Computersabotage bzw Computerspionage (6 Punkte)
+
+= Aufstellen eıner Sıcherheitsrichtlinie
+
+= Aufstellen eınes Wartungsplanes
+
+= Vergabe von Benutzerrechten fur den Datenzugriff
+
+=  Belehrungen und regelmaßıge Nachweisfuhrung
+
+= Verpflichtung auf das Datengeheimnis bzw. die Vertraulichkeit {4 Punkte)
+d) Aus Sicht des Datenschutzes istz B. zu beachten’
+
+« Es dürfen nıcht mehr Daten gespeichert werde, als unbedingt notwendig sind
+(Datensparsamkeit).
+
+Seite 26 | P 050-03-0517-0 © DIHK — Gesellschaft für berufliche Bildung — Organisation zur Förderung der IHK-Weiterbildung mbH - Bonn
+Die Vervielfältigung, Verbreitung oder öffentliche Wiedergabe der Publikation (der Prüfungssätze und Lösungshinweise]
+ist nicht gestattet (88 53, 54 UrhG} und strafbar ($ 106 UrhG). Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+
+=== Seite 3 ===
+GEPRÜFTEI-R INDUSTRIEMEISTER/-IN,
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+
+GRUNDLEGENDE QUALIFIKATIONEN
+AnwendungvonMethodenderInformation,KommunikationundPlanung
+
+= Die Mitarbeiter mussen Auskunft über dıe Daten erhalten, dıe über sıe erhoben
+wurden
+
+= Es muss jederzeit nachweisbar seın, welche Mitarbeiter bzw Fuhrungskrafte
+Zugriff auf die personenbezogenen Daten hatten und wer diese Daten geändert
+hat (4 Punkte}
+
+Aufgabe 2
+
+In Ihrer Abteilung ist in den letzten Monaten die Ausschussquote gestiegen. Um dıe Ursa-
+chen fur dieses Qualitatsproblem zu ermitteln, stellen Sie eın Ursache-Wirkungs-Diagramm
+(Ishikawa-Diagramm) auf
+
+a) Skizzieren Sıe eine einfache Vorlage für eın Ursache-Wirkungs-Diagramm zur Ermitt- (6 Purikte)
+lung der Ursachen der Qualitätsprobleme. Benennen Sie darın die fünf Hauptachsen
+b) Beschreiben Sıe zwei Vorteile der Anwendung des Ursache-Wirkungs-Diagramms. {4 Punkte)
+c) Beschreiben Sıe zwei Schwachen dieser Methode (4 Punkte)
+d) Erläutern Sıe drei weitere Anwendungsfälle des Ursache-Wirkungs-Diagramms (6 Punkte)
+Lösungshinweise Aufgabe 2 (20 Punkte)
+[VO: 8 4 Absatz 4 Nr 2]
+a) Mensch Methode Maschine
+Qualitäts-
+> Probleme
+Milieu (Umwelt) Material (6 Punkte)
+
+b) = Das Ursache-Wirkungs-Diagramm ermöglicht eıne systematische Ursachenfor-
+schung. Es werden ım Idealfall keıne Ursachen ubersehen
+
+= Das Ursache-Wirkungs-Diagramm kann ın einer Gruppe bearbeitet werden, wobei
+mehrere Teilnehmer eınen unterschiedlichen Blick auf die Ursachen haben (4 Punkte}
+
+c) = Es können keine Kausalketten dargestellt werden. Jede Ursache steht für sich
+allein, obwohl die Ursachen oft voneinander abhangig sınd.
+
+= Beim Erstellen des Ursache-Wirkungs-Diagramms fehlen oft Zahlen, Daten oder
+Fakten, die zum Erkennen von Ursachen notwendig wären
+
+«» Die Gewichtung der Ursachen kann nicht direkt aus dem Diagramm abgelesen
+werden (4 Punkte)
+
+d} Das Ishikawa-Diagramm kann z. B zur Suche nach den Ursachen von
+=  Arbeitsunfällen,
+=  Produktionsstörungen,
+
+© DIHK - Gesellschaft für berufliche Bildung — Organisation zur Förderung der IHK-Weiterbildung mbH — Bonn IP 050-03-0517-0 | Seite 27
+Die Vervielfältigung, Verbreitung oder öffentliche Wiedergabe der Publikation [der Prüfungssätze und Lösungshinweise]
+ist nicht gestattet (58 53, 54 UrhG) und strafbar (8 106 UrhG). Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+
+=== Seite 4 ===
+GEPRÜFTEI-R INDUSTRIEMEISTER/-IN,
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+
+GRUNDLEGENDE QUALIFIKATIONEN
+AnwendungvonMethodenderInformation,KommunikationundPlanung
+
+=  Kostensteigerungen,
+= Datenverlusten
+
+verwendet werden. (6 Punkte)
+
+Aufgabe
+
+Geprufte Industriemeister setzen Präsentationstechniken zur Information und Unterweisung
+der Mitarbeiter eın Der Erfolg einer Präsentation kann durch organisatorische und technı-
+sche Risiken gefahrdet seın
+
+Beschreiben Sıe funf vorbeugende Maßnahmen, die den Erfolg Ihrer Prasentation sichern (10 Punkte)
+können
+Lösungshinweise Aufgabe 3 (10 Punkte)
+
+[VO: 8 4 Absatz 4 Nr. 3]
+= Der Raum muss rechtzeitig geöffnet und für die Prasentation vorbereitet werden
+
+= Der Vortragende muss dıe Technik rechtzeitig vor dem Termin auf Funktion prufen oder
+prüfen lassen
+
+"= _ Bei Präsentationen mit elektronischen Medien sollte ein Ersatzgerät sofort bereitstehen
+und nıcht erst besorgt werden mussen
+
+"= Bei Änderungen des geplanten Ablaufes mussen die Teilnehmer rechtzeitig informiert
+werden
+
+= Esmussein Zeitpuffer eingeplant werden, damit dıe Prasentation auch beı Verzögerun-
+gen oder Unterbrechungen noch komplett abgehalten werden kann
+
+Aufgabe 14
+
+Für Ihren Meisterbereich soll ein elektrisches Transportfahrzeug beschafft werden
+
+Die folgenden beiden Fahrzeuge wurden bereits auf einer Skala von O bis 10 Punkten
+bewertet:
+
+Kriterien Fahrzeug A Fahrzeug B
+Spurfuhrung 8 6
+Nutzlast 8 6
+Battertsladekonzept 6 8
+Preis 8 10
+maxtmale Entfernung 6 8
+a) Tragen Sıe die Leistungsbewertung der beiden Fahrzeuge ın das Netzdiagramm in (10 Punkte)
+Anlage 1 eın.
+b) Beschreiben Sie zwei weitere Einsatzmöglichkeiten des Netzdiagramms. (4 Punkte)
+Seite 28 | P 050-03-0517-0 © DIHK - Gesellschaft für berufiche Bildung — Organisation zur Förderung der IHK-Weiterbildung mbH — Bonn
+
+Die Vervielfäligung, Verbreitung oder öffentliche Wiedergabe der Publikation [der Prüfungssätze und Lösungshinweise]
+ist nicht gestattet (58 53, 54 UrhG) und strafbar (8 106 UrhG). Im Fall der Zuwiderhandiung wird Strafantrag gestellt.
+
+=== Seite 5 ===
+GEPRÜFTEI-R INDUSTRIEMEISTER/-IN,
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+
+GRUNDLEGENDE QUALIFIKATIONEN
+AnwendungvonMethodenderInformation,KommunikationundPlanung
+
+Lösungshinweise Aufgabe 4 (14 Punkte)
+
+[VO: 8 4 Absatz 4 Nr. 4]
+a)
+
+Spurfuhrun
+er g
+
+Nutzlast Entfernung
+
+—s— Fahrzeug A
+—+— Fahrzeug B
+
+Batterıeladekonzept Preis (10 Punkte)
+
+b) Das Netzdiagramm kann z B. auch bei der Bewertung
+« der Starken und Schwächen (bzw. des Potenzials) von Mitarbeitern,
+" der Leistungen von Lieferanten oder
+«= des Wertes von Kunden für das Unternehmen
+
+eingesetzt werden. Eine weitere Anwendungsmöglichkeit ist der Soll-Ist-Vergleich bei
+der Auswertung von Zielen. (4 Punkte)
+
+© DIHK — Gesellschaft für berufliche Bildung — Organisation zur Förderung der IHK-Weiterbildung mbH - Bonn P 050-03-0517-0 | Seite 29
+Die Vervielfältigung, Verbreitung oder öffentliche Wiedergabe der Publikation [der Prüfungssätze und Lösungshinweise]
+ist nicht gestattet (88 53, 54 UrhG} und strafbar {8 106 UrhG). im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+
+=== Seite 6 ===
+GEPRÜFTEI-R INDUSTRIEMEISTER!-IN,
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+
+GRUNDLEGENDE QUALIFIKATIONEN
+Anwendung vonMethodenderinformation, KommunikationundPlanung
+
+Aufgabe 5
+
+Vorgang Beschreibung Dauer in Tagen ne
+A Maschinenfundamente errichten 7 Start
+B Aufstellen der Maschinen 3 Ä
+c Anschließen der Maschinen 2 B. E,|
+D Probelauf der Maschinen 3 C
+E elektrische Leitungen verlegen 2 A
+F Innenanstrich 2 E, 1
+G Außenanstrich 1 F, |
+H Fahrwege ın der Halle markieren 1 B, |
+| Einsetzen der Fenster 2 Start + 2 Tage
+a) Zeichnen Sie diese Vorgange ın den Balkenplan in Anlage 2 eın. (10 Punkte)
+b) Nennen Sıe vier organisatorische oder technische Rısıken dieser Ablaufplanung. (4 Punkte)
+c) Beschreiben Sıe drei Schritte Ihres Vorgehens beı der Risikoanalyse. (6 Punkte)
+Lösungshinweise Aufgabe 5 (20 Punkte)
+[VO: 8 4 Absatz 4 Nr. 5]
+Zeit in Tagen
+Vorgang ıl2|3|« slelr 8[s 10|1|12 [13] 14 | 15 | 16 1 17 | 18 | 19 | 20
+A
+B
+c
+D
+E
+F
+G
+H
+(10 Punkte)
+b) ZB
+= technische Rısıken Defekt an eıner Maschine, Uberlastung der Technik
+= Personal: Ausfallrisiko
+= Material: Lieferprobleme, Logistikprobleme
+= Unfälle beim Bau oder beim Testen der Maschine (4 Punkte)
+c} Es konnen z.B. folgende Schritte beschrieben werden:
+« die Risiken des Projektes identifizieren
+Seite 30 | P 050-03-0517-0 | © DIHK - Gesellschaft für berufliche Bildung — Organisation zur Förderung der IHK-Weiterbildung mbH — Bonn
+
+Die Vervielfältigung, Verbreitung oder öffentliche Wiedergabe der Publikation [der Prüfungssätze und Lösungshinweise]
+ist nicht gestattet ($$ 53, 54 UrhG) und strafbar ($ 106 UrhG). Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+
+=== Seite 7 ===
+GEPRÜFTEI-R INDUSTRIEMEISTERI/-IN,
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+
+GRUNDLEGENDE QUALIFIKATIONEN
+AnwendungvonMethodenderlnformation, KommunikationundPlanung
+
+« Wahrscheinlichkeit des Eıntretens des Rısikos ermitteln
+« _ Intensitat der Auswirkungen des Risikos kalkulieren
+
+» jedes erkannte Rısiko in eine Rısıkomatrix sınordnen (6 Punkte)
+
+Aufgabe 6
+
+Im Leitbild Ihres Unternehmens ist eın kooperativer Führungsstil festgeschrieben. Die Unter-
+nehmensleitung legt Wert auf das Feedback der Mitarbeiter
+
+a) Beschreiben Sıe vier mundliche oder schriftliche Feedback-Möglichkeiten (8 Punkte)
+b) In der Kommunikation wird zwischen offenen und geschlossenen Fragen unterschie-
+
+den
+
+Beschreiben Sıe je zweı Einsatzmöglichkeiten (8 Punkte)
+
+=  füroffene Fragen und
+
+= für geschlossene Fragen.
+
+Lösungshinweise Aufgabe 6 (16 Punkte)
+[VO: 8 4 Absatz 4 Nr. 6]
+
+a) Die Geschaftsleitung kann z. B.
+" eine schriftliche Meinungsumfrage unter den Mitarbeitern durchführen lassen
+= ein System zur Bewertung der Führungskräfte durch ihre Mitarbeiter einführen
+= einen Betriebsdurchgang mit Kontakt zu den Mitarbeitern vor Ort durchführen
+= eine Betriebsversammlung oder mehrere Bereichsversammlungen durchführen.
+
+= Mitarbeiter aus mehreren Ebenen zu Gesprachsrunden oder Einzelgesprächen
+einladen (8 Punkte)
+
+b}) = Offene Fragen können z. B. eingesetzt werden, um
+= die Motivation und die Ziele von Mitarbeitern zu erfragen
+= Ideen und Vorschläge der Mitarbeiter zu erfassen
+= ein Stimmungsbild der Mitarbeiter zu erhalten
+= Geschlossene Fragen konnen z B. eingesetzt werden, um
+= Sachverhalte eindeutig zu klären.
+«  Missverständnisse auszuschließen
+
+«= eine Auswahl unter zwei oder mehreren Möglichkeiten treffen zu lassen. (8 Punkte)
+
+& DIHK — Gesellschaft für berufliche Bildung — Organisation zur Färderung der IHK-Weiterbildung mbH - Bonn | P 050-03-0517-0 | Seite 31
+Die Vervielfältigung, Verbreitung oder öffentliche Wiedergabe der Publikation [der Prüfungssätze und Lösungshinweise]
+ist nicht gestattet (88 53, 54 UrhG) und strafbar ($ 106 UrhG). Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+
+=== Seite 8 ===
+GEPRÜFTE/-R INDUSTRIEMEISTER/-IN,
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+
+GRUNDLEGENDE QUALIFIKATIONEN
+AnwendungvonMethodenderlInformation, KommunikationundPilanung
+
+Prüfungsteilnehmer-Nummer:
+
+Anlage 1 zu Aufgabe 4 a)
+
+10
+
+Seite 32 | P 050-03-0517-0 | © DIHK - Gesellschaft für berufliche Bildung — Organisation zur Förderung der IHK-Weiterbildung mbH — Bonn
+Die Vervieifältigung, Verbreitung oder äffentliche Wiedergabe der Publikation [der Prüfungssätze und Lösungshinweise]
+ist nicht gestattet (58 53, 54 UrhG) und strafbar (& 106 UrhG). Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+
+=== Seite 9 ===
+pun szyessBunjnig JEP] vonexiang Jep Sgebispeny, sysıgusyg sapc Bunjisuguer, "Bundneyeruss eig 'unog -— Hau BunpiqrapenA-YHI ep BunsepıgQ ınz uonesiueßug — Bunpig Synıyrsag In yeyssjasss) — YHII ®
+
+ueıseß Benugyeng pulm Bunipueypopimnz Jop leg Wı [Dun 901 S) segens pun (Dyın 73 '£g 88) jepejsaß jyou }s1 [esiemulysBunsgT
+
+| 0-21.50-£0-050 d | ££ 319S
+
+v
+
+02
+
+61
+
+Bl
+
+4
+
+9
+
+Sı
+
+vL
+
+El
+
+el
+
+Hl
+
+Ol
+
+8 Z 9 g Yy £ [4 L BueßuoA
+
+ueße, ul 19Z
+
+ASWUWINN-LSWUSUSJSBUnynId
+
+(e g ageßyny nz z abejuy
+
+Burıuej4 pun uoneyiunwwoy "uoyeunojuj Jep uspoyjeyy uon Bunpuamuy
+N3SNOILVMISIIVND JANF937TGNNYO
+
+IN3NOLLVYIHITVNOSISVE JANFII3YHYUIENSONNLHIIUHIVF
+"NI/I3LSIIWNFIALSNANI 37/313N4439
+
+

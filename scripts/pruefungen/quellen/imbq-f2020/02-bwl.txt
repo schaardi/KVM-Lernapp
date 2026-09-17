@@ -1,0 +1,595 @@
+=== Seite 1 ===
+Bundeseinheitliche Fortbildungsprüfung der Industrie- und Handelskammern
+
+Geprüfte/-r Industriemeister/-in
+Fachrichtungsübergreifende Basisqualifikationen/
+Grundlegende Qualifikationen
+Betriebswirtschaftliches Handeln
+
+
+Lösungshinweise
+Datum:                                          6. Mai 2020
+
+Bearbeitungszeit:                               90 Minuten
+
+Anzahl Aufgaben:                                7
+
+
+Hinweise für den Korrektor:
+■   Die folgenden Lösungen sind lediglich Lösungshinweise.
+■   Sie sollen nur den Rahmen der zu erwartenden Prüfungsleistung abstecken.
+■   Der Korrektor ist durch die hier aufgeführten Lösungshinweise in seinem
+    Bewertungsspielraum nicht eingeengt.
+■   Bei Aufgaben, die eine Aufzählung von n-Fakten zur Lösung erfordern, werden nur die
+    ersten n-Fakten gewertet. Alle darüber hinausgehenden Aufzählungen werden
+    gestrichen.
+■   Bei Berechnungen sollen Folgefehler berücksichtigt werden und somit nicht zum
+    Punktabzug führen.
+■   Der leichteren Lesbarkeit wegen geben wir in den Aufgaben/Texten der männlichen
+    Form den Vorzug. Mit diesem einfacheren sprachlichen Ausdruck sind selbstverständlich
+    immer alle Geschlechter gemeint.
+
+
+Die Aufgaben mit Lösungsvorschlägen können von den Industrie- und Handelskammern oder Dritten nach einer Frist von sechs Monaten
+direkt bestellt werden bei:
+wbv Media GmbH & Co. KG, Service-Center DIHK,
+Postfach 10 06 33, 33506 Bielefeld
+Tel.: 0521/91101-16, Fax: 0521/91101-19, E-Mail: service@wbv.de
+
+
+
+                               © DIHK – Gesellschaft für berufliche Bildung – Organisation zur Förderung der IHK-Weiterbildung mbH – Bonn
+               Die Vervielfältigung, Verbreitung oder öffentliche Wiedergabe der Publikation ist nicht gestattet (§§ 53, 54 UrhG) und strafbar (§ 106 UrhG).
+                                                           Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+                                                                              L 050-02-0520-5
+
+=== Seite 2 ===
+GEPRÜFTE/-R INDUSTRIEMEISTER/-IN
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+GRUNDLEGENDE QUALIFIKATIONEN
+Betriebswirtschaftliches Handeln
+
+
+Aufgabe 1
+Im Zusammenhang mit der Umwandlung von einer Personengesellschaft in eine Kapital-
+gesellschaft fallen in der Betriebsversammlung die Begriffe „Stammkapital“ und „Grund-
+kapital“.
+
+ a Mögliche Punktzahl: 2
+Ordnen Sie diese Begriffe den dazugehörigen Unternehmensformen zu.
+
+ b Mögliche Punktzahl: 10
+Beschreiben Sie diese Unternehmensformen anhand folgender Kriterien:
+
+■   Mindestgründungskapital
+
+■   Geschäftsführungsbefugnis
+
+■   Außenvertretungsrecht
+
+■   Haftung der Gesellschaft
+
+■   Stimmrecht in der Gesellschafterversammlung
+
+
+
+Lösungshinweise Aufgabe 1
+[VO: § 4 Absatz 3 Nr. 1]
+
+ a Mögliche Punktzahl: 2
+Stammkapital: GmbH
+Grundkapital:      AG
+
+ b Mögliche Punktzahl: 10
+■   GmbH:
+    ■       Mindestgründungskapital:                         25.000 €
+    ■       Geschäftsführungsbefugnis:                       Geschäftsführer
+    ■       Außenvertretungsrecht:                           Geschäftsführer
+    ■       Haftung der Gesellschaft:                        Gesellschaftsvermögen
+    ■       Stimmrecht in der Gesellschafterversammlung: jeweils nach Anteil am Stammkapital
+
+
+
+
+                                               Seite 2
+                                           L 050-02-0520-5
+
+=== Seite 3 ===
+GEPRÜFTE/-R INDUSTRIEMEISTER/-IN
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+GRUNDLEGENDE QUALIFIKATIONEN
+Betriebswirtschaftliches Handeln
+
+
+■   AG:
+    ■     Mindestgründungskapital:                          50.000 €
+    ■     Geschäftsführungsbefugnis:                        Vorstand
+    ■     Außenvertretungsrecht:                            Vorstand
+    ■     Haftung der Gesellschaft:                         Gesellschaftsvermögen
+    ■     Stimmrecht in der Gesellschafterversammlung: Aktionäre nach Anteil ihrer
+                                                       Aktiennennwerte
+
+Aufgabe 2
+In der Industrie GmbH war bisher die Aufbauorganisation in Form eines Liniensystems
+geregelt. Im Rahmen einer Reorganisation wird überlegt, welches Organisationssystem den
+zukünftigen Anforderungen am besten gerecht wird.
+
+ a Mögliche Punktzahl: 6
+Stellen Sie zwei grundlegende Eigenschaften folgender Systeme kurz dar:
+
+■   Einliniensystem
+
+■   Stabliniensystem
+
+■   Matrixsystem
+
+ b Mögliche Punktzahl: 9
+Führen Sie für jedes System jeweils zwei Vorteile und einen Nachteil an.
+
+
+
+
+                                             Seite 3
+                                          L 050-02-0520-5
+
+=== Seite 4 ===
+GEPRÜFTE/-R INDUSTRIEMEISTER/-IN
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+GRUNDLEGENDE QUALIFIKATIONEN
+Betriebswirtschaftliches Handeln
+
+
+Lösungshinweise Aufgabe 2
+[VO: § 4 Absatz 3 Nr. 2]
+
+ a Mögliche Punktzahl: 6
+Z. B.:
+■   Einliniensystem:
+    Das System ist streng hierarchisch aufgebaut; Informationen bzw. Anweisungen können
+    nur unter Einhaltung des Instanzenweges weitergegeben werden.
+■   Stabliniensystem:
+    Den Instanzen des Liniensystems werden im oberen Bereich Fachleute zur Seite
+    gestellt, die ausschließlich beratende und entscheidungsvorbereitende Aufgaben haben,
+    aber keine anweisenden Befugnisse
+■   Matrixsystem:
+    Zweiliniensystem, z. B. eine Seite produktorientiert, die andere funktionsorientiert, in dem
+    je nach Aufgabenstellung die eine oder die andere Seite eine Aufgabe einbringt, auf
+    deren Lösung sich beide Seiten einigen müssen
+
+ b Mögliche Punktzahl: 9
+Z. B.:
+■   Einliniensystem:
+    ■    Vorteile:
+         eindeutige Unterstellungsverhältnisse
+         klare Struktur
+         eindeutiger Dienstweg
+    ■    Nachteile:
+         unflexibel, starr
+         lange Informationswege
+■   Stabliniensystem:
+    ■    Vorteile:
+         klare, fachlich qualifizierte Anweisungen
+         qualifizierte Beratung durch Experten
+         klare Struktur
+    ■    Nachteile:
+         kostenintensiv durch Stabsstellen
+         mögliche Manipulation durch Experten
+
+
+
+                                                 Seite 4
+                                             L 050-02-0520-5
+
+=== Seite 5 ===
+GEPRÜFTE/-R INDUSTRIEMEISTER/-IN
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+GRUNDLEGENDE QUALIFIKATIONEN
+Betriebswirtschaftliches Handeln
+
+
+■   Matrixsystem:
+    ■   Vorteile:
+        flexibel
+        Vermeidung von Spartenegoismus
+        Spezialisierung durch Produktmanagement
+    ■   Nachteile:
+        hoher Kommunikationsbedarf
+        hohes Konfliktpotenzial
+        kostenintensiv
+
+
+Aufgabe 3
+Die Industrie GmbH plant, von einem Bauteil im nächsten Monat 8.000 Stück herzustellen.
+Verfügbar sind zwei identische Bearbeitungszentren (BAZ), die noch nicht durch
+anderweitige Aufträge belegt sind und gleichmäßig ausgelastet werden sollen.
+
+ a Mögliche Punktzahl: 5
+Ermitteln Sie rechnerisch nachvollziehbar den Kapazitätsbedarf pro Maschine und
+insgesamt in Stunden, wenn Ihnen folgende Informationen vorliegen:
+
+Betriebsmittelrüstzeit              trB    =    150 min/BAZ
+
+Betriebsmittelzeit je Einheit       teB    =     2,4 min/Bauteil
+
+ b Mögliche Punktzahl: 5
+Berechnen Sie die durchschnittliche Kapazitätsauslastung der Bearbeitungszentren,
+wenn die tägliche Arbeitszeit 7,5 Stunden beträgt und an insgesamt 21 Arbeitstagen
+im Monat produziert wird. Die durchschnittliche Anlagenverfügbarkeit beträgt 95 %.
+
+ c Mögliche Punktzahl: 5
+Berechnen Sie die zusätzliche Betriebszeit jedes Bearbeitungszentrums in Stunden
+pro Tag.
+
+
+
+
+                                               Seite 5
+                                          L 050-02-0520-5
+
+=== Seite 6 ===
+GEPRÜFTE/-R INDUSTRIEMEISTER/-IN
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+GRUNDLEGENDE QUALIFIKATIONEN
+Betriebswirtschaftliches Handeln
+
+
+Lösungshinweise Aufgabe 3
+[VO: § 4 Absatz 3 Nr. 2]
+
+ a Mögliche Punktzahl: 5
+TbB = 150 min + 2,4 min/Bauteil · 4.000 Bauteile
+TbB = 9.750 min/BAZ
+TbB = 162,5 h/BAZ
+                                                                                (3 Punkte)
+Kapazitätsbedarf    = Anzahl BAZ · TbB
+                       2  162,5 h
+                       325 h
+
+
+                                                                                (2 Punkte)
+
+
+ b Mögliche Punktzahl: 5
+Kapazitätsbestand        = 7,5 h/Tag · 21 Tage · 0,95 = 149,625 h je BAZ
+                         = 299,25 h insgesamt
+                                                                                (3 Punkte)
+                              325 h
+Kapazitätsauslastung     =            · 100
+                             299,25 h
+                         = 108,60 %
+                                                                                (2 Punkte)
+
+ c Mögliche Punktzahl: 5
+zusätzlicher Kapazitätsbedarf pro Monat         = 162,5 h/BAZ - 149,625 h/BAZ
+                                                = 12,875 h/BAZ
+                                                                                (2 Punkte)
+                                                       12,875 h
+zusätzliche Betriebszeit pro Tag und BAZ        =
+                                                    21 Tage · 0,95
+                                                = 0,65 h/Tag
+                                                                                (3 Punkte)
+
+
+
+
+                                                 Seite 6
+                                              L 050-02-0520-5
+
+=== Seite 7 ===
+GEPRÜFTE/-R INDUSTRIEMEISTER/-IN
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+GRUNDLEGENDE QUALIFIKATIONEN
+Betriebswirtschaftliches Handeln
+
+
+Aufgabe 4
+Ein Arbeitnehmer in der Endmontage der Industrie GmbH erzielte in einer 37-Stunden-
+Woche einen durchschnittlichen Stundenlohn von 19,04 €. Die Vorgabezeit pro Stück wurde
+mit 4 Minuten ermittelt. Der tarifliche Grundlohn beträgt 14 €/Stunde, der Akkordzuschlag
+20 %.
+
+ a Mögliche Punktzahl: 8
+Ermitteln Sie die in einer Woche vom Facharbeiter montierte Stückzahl.
+
+ b Mögliche Punktzahl: 5
+Berechnen Sie den erzielten Zeitgrad.
+
+ c Mögliche Punktzahl: 2
+Beschreiben Sie den Zusammenhang zwischen einem steigenden Zeitgrad und dem
+resultierenden Akkordstundenverdienst.
+
+
+Lösungshinweise Aufgabe 4
+[VO: § 4 Absatz 3 Nr. 4]
+
+ a Mögliche Punktzahl: 8
+              Akkordrichtsatz   14 €/h · 1,2
+Stückgeld =                   =              = 1,12 €/Stück
+              Normalleistung    15 Stück/h
+                             19,04 €/h
+Istleistung (Istmenge) =                = 17 Stück/h
+                           1,12 €/Stück
+Stückzahl pro Woche = 17 Stück/h · 37 h/Woche = 629 Stück/Woche
+
+ b Mögliche Punktzahl: 5
+                   Akkordlohn/h
+Zeitgradfaktor =
+                 Akkordrichtsatz
+                  19,04 €/h
+Zeitgradfaktor 
+                 14 €/h  1,2
+Zeitgradfaktor  1,13
+
+Zeitgrad = Zeitgradfaktor ∙ 100
+Zeitgrad = 1,13 ∙ 100
+Zeitgrad = 113,33%
+
+                                              Seite 7
+                                           L 050-02-0520-5
+
+=== Seite 8 ===
+GEPRÜFTE/-R INDUSTRIEMEISTER/-IN
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+GRUNDLEGENDE QUALIFIKATIONEN
+Betriebswirtschaftliches Handeln
+
+
+ c Mögliche Punktzahl: 2
+Der Akkordstundenverdienst steigt proportional zum Zeitgrad. Das gilt allerdings nur dann,
+wenn der Zeitgrad über 100 % steigt.
+
+Aufgabe 5
+Der Industrie GmbH liegt eine Anfrage über das Bestücken und Prüfen von 600 Leiterplatten
+vor.
+
+■      Materialeinzelkosten                                   290,00 €/Stück
+
+■      Fertigungslohnkosten Bestücken                           7,50 €/Stück
+
+■      Maschinenkosten Bestücken                               26,00 €/Stück
+
+■      Fertigungslohnkosten Prüfen                             16,50 €/Stück
+
+Für die Produktion der Leiterplatten werden Schablonen mit einem Einstandspreis von
+insgesamt 3.480 € benötigt.
+
+■      Materialgemeinkostenzuschlagssatz                               10 %
+
+■      Restfertigungsgemeinkostenzuschlagssatz Bestückung             120 %
+
+■      Fertigungsgemeinkostenzuschlagssatz Prüfen                     280 %
+
+■      Verwaltungsgemeinkostenzuschlagssatz                             9%
+
+■      Vertriebsgemeinkostenzuschlagssatz                               7%
+
+■      Gewinnzuschlagssatz                                             10 %
+
+■      Skonto                                                           2%
+
+■      Vertreterprovision                                              10 %
+
+■      Rabatt                                                           5%
+
+ a Mögliche Punktzahl: 15
+Ermitteln Sie den Listenverkaufspreis pro Stück.
+
+
+
+
+                                               Seite 8
+                                            L 050-02-0520-5
+
+=== Seite 9 ===
+GEPRÜFTE/-R INDUSTRIEMEISTER/-IN
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+GRUNDLEGENDE QUALIFIKATIONEN
+Betriebswirtschaftliches Handeln
+
+
+ b Mögliche Punktzahl: 5
+Der Kunde würde bei einem Rabatt von 15 % und sonst gleichbleibenden Konditionen den
+Auftrag erteilen.
+
+Errechnen Sie den absoluten und den prozentualen Gewinn pro Leiterplatte.
+
+
+Lösungshinweise Aufgabe 5
+[VO: § 4 Absatz 3 Nr. 5]
+
+ a Mögliche Punktzahl: 15
+Materialeinzelkosten                                           290,00
+Materialgemeinkosten                                 10 %       29,00        (1 Punkt)
+Materialkosten                                                 319,00        (1 Punkt)
+Fertigungslohnkosten Bestückung                                  7,50
+Maschinenkosten Bestückung                                      26,00
+Restfertigungsgemeinkosten Bestückung                120 %       9,00        (1 Punkt)
+Fertigungslohnkosten Prüffeld                                   16,50
+Fertigungsgemeinkosten Prüffeld                      280 %      46,20        (1 Punkt)
+Sondereinzelkosten der Fertigung                                 5,80        (1 Punkt)
+Fertigungskosten                                               111,00
+Herstellkosten                                                 430,00        (1 Punkt)
+Verwaltungsgemeinkosten                               9%        38,70        (1 Punkt)
+Vertriebsgemeinkosten                                 7%        30,10        (1 Punkt)
+Selbstkosten                                                   498,80        (1 Punkt)
+Gewinn                                               10 %       49,88
+Barverkaufspreis                                               548,68        (1 Punkt)
+Skonto                                                2%        12,47        (1 Punkt)
+Vertreterprovision                                   10 %       62,35        (1 Punkt)
+Zielverkaufspreis                                              623,50        (1 Punkt)
+Rabatt                                                5%        32,82        (1 Punkt)
+Listenverkaufspreis                                            656,32        (1 Punkt)
+
+
+
+
+                                           Seite 9
+                                        L 050-02-0520-5
+
+=== Seite 10 ===
+GEPRÜFTE/-R INDUSTRIEMEISTER/-IN
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+GRUNDLEGENDE QUALIFIKATIONEN
+Betriebswirtschaftliches Handeln
+
+
+ b Mögliche Punktzahl: 5
+Listenverkaufspreis                                         656,32
+Rabatt                                               15 %    98,45
+Zielverkaufspreis                                           557,87    (1 Punkt)
+Skonto                                               2%      11,16
+Vertreterprovision                                   10 %    55,79
+Barverkaufspreis                                            490,92    (1 Punkt)
+Selbstkosten                                                498,80
+Gewinn                                                       -7,88    (1 Punkt)
+                Gewinn · 100   -7,88 € · 100
+Gewinn in % =                =               = -1,58 %
+                Selbstkosten      498,80 €
+                                                                     (2 Punkte)
+
+
+
+
+                                          Seite 10
+                                       L 050-02-0520-5
+
+=== Seite 11 ===
+GEPRÜFTE/-R INDUSTRIEMEISTER/-IN
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+GRUNDLEGENDE QUALIFIKATIONEN
+Betriebswirtschaftliches Handeln
+
+
+Aufgabe 6
+Mögliche Punktzahl: 11
+Aus dem Rechnungswesen der Industrie GmbH entnehmen Sie für eine Fertigungsanlage
+folgende Daten:
+
+■   Maschinenlaufzeit/Jahr                               50 Wochen zu je 75 Stunden
+
+■   Stillstandszeiten/Jahr                               4 % der Maschinenlaufzeit
+
+■   Anschaffungsbetrag                                   550.000 €
+
+■   voraussichtliche Nutzungsdauer                       8 Jahre
+
+■   Preisindex Anschaffungszeitpunkt                     110
+
+■   Preisindex Wiederbeschaffungszeitpunkt               120
+
+■   Instandhaltungskosten                                60.000 €/Jahr
+
+■   kalkulatorischer Zinssatz                            3 %/Jahr
+
+■   Raumbedarf der Anlage                                60 m²
+
+■   kalkulatorische Miete                                5 €/m²/Monat
+
+■   Grundgebühr für Stromzähler                          50 €/Monat
+
+■   installierte Leistung                                80 kW
+
+■   Strompreis                                           0,20 €/kWh
+
+■   Werkzeugkosten                                       1 €/Maschinenstunde
+
+Ermitteln Sie den Maschinenstundensatz.
+
+
+
+
+                                          Seite 11
+                                       L 050-02-0520-5
+
+=== Seite 12 ===
+GEPRÜFTE/-R INDUSTRIEMEISTER/-IN
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+GRUNDLEGENDE QUALIFIKATIONEN
+Betriebswirtschaftliches Handeln
+
+
+Lösungshinweise Aufgabe 6
+[VO: § 4 Absatz 3 Nr. 5]
+Mögliche Punktzahl: 11
+                                      120
+Wiederbeschaffungswert: 550.000 €        = 600.000 €
+                                      110
+                            Wiederbeschaffungswert   600.000 €
+kalk. Abschreibung:                                =                     =     75.000 €/Jahr
+                                Nutzungsdauer         8 Jahre
+                  Anschaffungsbetrag · Zinssatz/J   550.000 € · 0,03
+kalk. Zinsen:                                     =                      =      8.250 €/Jahr
+                               2                           2
+Instandhaltung:                                                                60.000 €/Jahr
+Raumkosten:                60 m² · 5 €/m² · 12 Monate                    =      3.600 €/Jahr
+Energiekosten:             80 kW · 0,20 €/kWh · 3.600 h + 12 · 50 €/Monat =    58.200 €/Jahr
+Werkzeugkosten:                                                                 3.600 €/Jahr
+Maschinenkosten:                                                              208.650 €/Jahr
+Maschinenstundensatz:      208.650 €/Jahr : 3.600 h/Jahr                 =         57,96 €/h
+
+
+Aufgabe 7
+Bei einer Produktions- und Absatzmenge von 15.000 Bauteilen hat die Industrie GmbH im
+Monat März einen Gesamtdeckungsbeitrag von 442.500 € erzielt. Die Break-even-Menge
+wird bei einem Absatz von monatlich 11.500 Bauteilen erreicht.
+
+ a Mögliche Punktzahl: 4
+Ermitteln Sie den Stückdeckungsbeitrag und die fixen Kosten pro Monat.
+
+ b Mögliche Punktzahl: 2
+Berechnen Sie das im März erzielte Betriebsergebnis.
+
+ c Mögliche Punktzahl: 6
+Durch Rationalisierungsmaßnahmen können die variablen Stückkosten gesenkt werden.
+Dadurch erhöht sich der Stückdeckungsbeitrag um 10 %. Die Investitionen führen allerdings
+zu höheren Kapitalkosten, die den Fixkostenblock um 15.750 € monatlich erhöhen.
+
+Ermitteln Sie die prozentuale Auswirkung auf die Break-even-Menge.
+
+
+
+
+                                            Seite 12
+                                         L 050-02-0520-5
+
+=== Seite 13 ===
+GEPRÜFTE/-R INDUSTRIEMEISTER/-IN
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+GRUNDLEGENDE QUALIFIKATIONEN
+Betriebswirtschaftliches Handeln
+
+
+Lösungshinweise Aufgabe 7
+[VO: § 4 Absatz 3 Nr. 5]
+
+ a Mögliche Punktzahl: 4
+            DB    442.500 €/Monat
+     db =      =                    = 29,50 €/Stück
+             x   15.000 Stück/Monat
+     Kf = db · xBEP = 29,50 €/Stück · 11.500 Stück/Monat = 339.250 €/Monat
+
+ b Mögliche Punktzahl: 2
+BE        = DB - Kf
+          = 442.500 €/Monat - 339.250 € = 103.250 €/Monat
+
+ c Mögliche Punktzahl: 6
+dbneu     = 1,1 · 29,50 €/Stück = 32,45 €/Stück
+Kf, neu   = 339.250 €/Monat + 15.750 €/Monat = 355.000 €/Monat
+                                                                               (2 Punkte)
+              355.000 €/Monat
+XBEP, neu =                   = 10.939,91 Stück/Monat,
+               32,45 €/Stück
+d. h., die Break-even-Menge wird bereits bei 10.940 Stück im Monat erreicht.
+                                                                               (2 Punkte)
+                            11.500 Stück/Monat - 10.940 Stück/Monat
+prozentuale Auswirkung =                                            · 100 = 4,87 %,
+                                      11.500 Stück/Monat
+d. h., die Break-even-Menge sinkt um 4,87 %.
+                                                                               (2 Punkte)
+
+
+
+
+                                              Seite 13
+                                           L 050-02-0520-5
+

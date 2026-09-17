@@ -1,0 +1,510 @@
+=== Seite 1 ===
+Bundeseinheitliche Weiterbildungsprüfung
+
+der Industrie- und Handelskammern
+
+Prüfungsteilnehmer-Nummer
+
+Geprüfte/-r Industriemeister|/-in,
+fachrichtungsübergreifende
+Basisqualifikationen/
+grundlegende Qualifikationen
+
+m Basisqualifikation Berücksichtigung naturwissenschaftlicher und
+technischer Gesetzmäßigkeiten
+
+sm Prüfungstag 8. Mai 2017
+m Bearbeitungszeit 90 Minuten
+m Anzahl der Aufgaben 7
+
+Bitte prufen Sıe vor Begınn der Prufung dıe Vollstandigkeit des Aufgabensatzes Sollte der Aufgabensatz nıcht vollstandig sein, ınfor-
+mieren Sıe bıtte dıe Aufsicht
+
+Bearbeitungshinweise:
+
+Bitte lesen Sie die nachfolgenden Bearbeitungshinweise sorgfältig durch:
+
+m Dis Zur Prufung zugelassenen Hilfsmittel wurden Ihnen sepaıat mıt der Einladung m Verwenden Sıe fuı jede Aufgabe eın neues Losungsblatt bzw eıne neue Losungsser-
+mitgeteilt te
+
+Sie erhalten eınen Aufgaben- und eınen Losungsteil w Falls dıs Losung auf einem betgefugten Anlageblatt erfolgen soll, wird ın dar Aufga-
+
+Tragen Sıe auf dern Deckblatt !hıa Ptufungstsinehmei-Nummeı eın benelelkung darauf hingewiesen
+Die maxımala Gesamtpunktzahl der Lusungen betragt 100 Punkte s Furlhre Notizen benutzen Sıe bitte ausschließlich das Konzeptpapıar
+
+Die Losungsgange bzw Rechenvorgange sınd klar und nachveliziehbar ım Lo- ® Das Konzeptpapter ıst mıl dem Aufgaben- und dem Losungsteil abzugeben
+sungsteil darzustellen Soflte ddeı Platz nıcht ausreichen. benutzen Sıe bitte das m Bei Aufgaben, dıe eine Aufzahlung von n-Fakten zur Losung erfordern, werden nur
+Konzeptpapıer. verweisen Ste auf die Fortsetzung und kennzeichnen Sıe diese Wir die ersten n-Fakten gewertet Alla daruber hınausgehenden Aufzahlungen werden
+weisen Jaıauf hın, dass eine vom Prufungsausschuss nıcht lesbare Prufungsarbeit gesfnchen
+
+mit der Note „ungenugend” (null Punkte; bewertet wird mit rien Rechtsfolgen, dıe
+
+sıch aus der Prufungsordnung ergeben
+
+Der leichteren Lesbarkeit wegen geben wır ın den Aufgaben/Texten der mannlichen Form den Vorzug. Mit diesem einfacheren
+sprachlichen Ausdiuck sınd selbstverstandlich ımmer Männer und Frauen gemeint
+
+Die Vervielfältigung, Verbreitung oder offentliche Wiedergabe der Publikationen [der Prufungssätze] ıst nicht gestattet (88 53, 54
+UrhG) und strafbar (&$ 106 UrhG) Im Fall der Zuwiderhandlung wırd Strafantrag gestellt
+
+| P 050-05-0517-9 |
+
+=== Seite 2 ===
+GEPRÜFTEI-R INDUSTRIEMEISTER!/-IN,
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+
+GRUNDLEGENDE QUALIFIKATIONEN
+Naturwissenschaftliche und technische Gesetzmäßigkeiten
+
+Aufgabe 4)
+
+Bei der Verbrennung fossiler Energieträger entstehen Gase, z B CO und CO,
+
+a) Geben Sıe die Namen der beiden Gase CO und CO, an (2 Punkte)
+b) Nennen Sıe zu jedem der beiden Gase zwei typische Eigenschaften. (4 Punkte)
+c) Trotz der Gefährdung für den Menschen sınd die beiden Gase wichtige Reakttonspro-
+dukte
+Geben Sie für Jedes der beiden Gase zwei technische Anwendungen an. (4 Punkte)
+Lösungshinweise Aufgabe 1 (10 Punkte)
+[VO: 8 4 Absatz 6 Nr. 1, 2, 3]
+a) CO = Kohlenstoffmonoxid, CO, = Kohlenstoffdioxıd (2 Punkte)
+b) Eigenschaften, z.B.
+= CO = Kohlenstoffmonoxid
+" farblos
+»  geruchlos
+=  brennbar
+"=  sehrgiftig
+= CO, = Kohlenstoffdioxid.
+= farblos
+=  geruchlos
+= schwerer als Luft - Erstickungsgefahr
+= tragt zur Erderwarmung beı (4 Punkte)
+c) Technische Anwendungen, z B
+= CO = Kohlenstoffmonoxid
+=  Redukfionsmittel bei der Roheisengewinnung
+= Herstellung chemischer Produkte, z B. Methanol
+= CO, = Kohlenstoffdioxid.
+= Herstellung kohlensäurehaltiger Getranke
+=  Loschmittel
+= Schuftzgas
+=  Trockeneis (4 Punkte)
+Seite 42 | P 050-05-0517-9 © DIHK — Gesellschaft für berufliche Bildung — Organisation zur Förderung der IHK-Weiterbildung mbH - Bonn
+
+Die Vervielfältigung, Verbreitung oder öffentliche Wiedergabe der Publikation [der Prüfungssätze und Lösungshinweise]
+ist nicht gestattet (58 53, 54 UrhG) und strafbar ($ 106 UrhG). Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+
+=== Seite 3 ===
+GEPRÜFTEI-R INDUSTRIEMEISTERJ-IN,
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+
+GRUNDLEGENDE QUALIFIKATIONEN
+Naturwissenschaftliche und technische Gesetzmäßigkeiten
+
+Aufgabe EX
+
+Ein Lastenaufzug, ausgelegt fur eine Höchstbelastung von 3 t, soll ın 20 Sekunden die
+Höchstlast auf eine Höhe von 18 Metern transportieren.
+
+Der Wirkungsgrad des Lastenaufzuges beträgt 69 %.
+Berechnen Sie die vom Motor abzugebende Leistung des Lastenaufzuges ın kW. (10 Punkte)
+
+Lösungshinweise Aufgabe 2 (10 Punkte)
+[VO: $ 4 Absatz 6 Nr. 1, 2, 3]
+
+m
+P_.mg n _3000kg 9,81, 18m
+t-n 20 5-0,69
+
+Aufgabe
+
+Ein Fahrzeug (m = 1,4 t) wırd von 90 km/h auf 15 km/h abgebremst, dabeı wırd 70 % der
+Bremswirkung von den beiden vorderen Bremsen aufgebracht
+
+= 38 387 W = 38,4 kW
+
+Die Hälfte der beim Bremsen entstehenden Reibarbeit erwärmt die Bremsscheiben
+Die Masse einer Bremsscheibe aus legıertem Stahl betragt 2,5 kg (c = 510 J/kg K).
+
+Berechnen Sıe die Temperaturerhöhung einer Vorderradbremsscheibe durch den Brems- (20 Punkte)
+vorgang
+
+Lösungshinweise Aufgabe 3 (20 Punkte)
+[VO: 8 4 Absatz 6 Nr. 1, 2, 3]
+
+WW Wine
+
+_m
+Wen u-v2)
+
+w.= 14090 kg (a2) - arm)
+R 2 (Us os
+
+W, = 425 328 | (10 Punkte)
+Q= = - 225328) _ 2126641
+Opro Vorderrad Bremsscheibe = Ze = 74 432 J
+Q=-meceATr
+m=-.- Ze = 584K
+
+mc Zu
+
+kg.K (10 Punkte)
+© DIHK - Gesellschaft für berufliche Bildung — Organisation zur Förderung der IHK-Weiterbildung mbH — Bonn | P 050-05-0517-9 | Seite 43
+
+Die Vervielfältigung, Verbreitung oder öffentliche Wiedergabe der Publikation [der Prüfungssätze und Lösungshinweise]
+ist nicht gestattet ($8 53, 54 UrhG} und strafbar ($ 106 UrhG}. Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+
+=== Seite 4 ===
+GEPRÜFTEI-R INDUSTRIEMEISTER/-IN,
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+
+GRUNDLEGENDE QUALIFIKATIONEN
+Naturwissenschaftliche und technische Gesetzmäßigkeiten
+
+Aufgabe 4
+
+Eıne Box verlässt mit einer glerchformigen Geschwindigkeit von 90 m/min dıe Packstation
+
+Sıe bewegt sich auf einer Gleitbahn ab Position A zunächst 1,6 m nach unten und anschlie-
+ßend 0,5 m wieder nach oben zur Posıtiorı B
+
+Berechnen Sıe die Geschwindigkeit der Box an der Position B. Die Reibung wird vernach- (20 Punkte)
+lassıgt
+Position A
+Packstaton | > } Position B
+Box Y
+16m ——
+5
+Lösungshinweise Aufgabe 4 (20 Punkte)
+[VO: $][VO: & 4 Absatz 6 Nr. 1, 2, 3]
+En u Eon
+
+- m-vi+m-g h=Z m-va+m-g-he
+
+vw 2 [Av +atn-g)
+
+r 2
+va= 12.11.{157| 49,81" 46m-981T.05m
+2 Ss s? s
+
+(10 Punkte)
+
+ve=4,88."
+5 (10 Punkte)
+
+Seite 44 | P 050-05-0517-9 | © DIHK — Sesellschaft für berufliche Bildung — Organisation zur Förderung der IHK-Weiterbildung mbH - Bonn
+Die Vervielfältigung, Verbreitung oder öffentliche Wiedergabe der Publikation [der Prüfungssätze und Löäsungshinweise]
+tst nicht gestattet (88 53, 54 UrhG) und strafbar ($ 106 UrhG). Im Fall der Zuwiderhandfung wird Strafantrag gestellt.
+
+=== Seite 5 ===
+GEPRÜFTEI-R INDUSTRIEMEISTER/-IN,
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+
+GRUNDLEGENDE QUALIFIKATIONEN
+Naturwissenschaftliche und technische Gesetzmäßigkeiten
+
+Aufgabe 5
+
+Das Arbeiten an elektropneumatischen Steuerungen geschieht häufig ohne Abschaltung der
+24 V DC Energieversorgung
+
+Deshalb kann beim Arbeiten durch den menschlichen Korper elektrischer Strom fließen. Es
+sind verschiedene Strompfade möglich
+
+e
+I
+
+50002, Widerstand eınes Armes
+n 800 0, Widerstand eines Beines
+R 20.0, Widerstand des Rumpfes
+
+A A
+nu
+
+a) Berechnen Sıe dıe Stromstärke ın mA, wenn der Strom von A nach B fließt (4 Punkte)
+
+b) Berechnen Sıe die Gesamtstromstarke ın mA, wenn der Strom von AB (durch beide {8 Punkte)
+Arme) nach CD (durch beide Beine) fließt.
+
+c}) Berechnen Sıe die Gesamtstromstärke in mA, wenn die maxımal zulässige Beruh- {2 Punkte)
+rungsspannung von 120 V (Gleichspannung) anlıegt
+
+Der Strom fließt von AB (durch beide Arme} nach CD (durch beide Beine)
+
+Hinweis für die Bearbeitung: Rechnen Sıe mıt einem Gesamtwiderstand von 680 O,
+sofern Sıe b) nicht gelöst haben
+
+d) Die nach obiger Skizze ermittelten Widerstands-Stromwerte sınd rein theoretische
+Werte
+
+Geben Ste drei Faktoren an, die den theoretischen Gesamtwiderstand und damit die (6 Punkte)
+Gesamtstromstärke beeinflussen.
+
+Lösungshinweise Aufgabe 5 {20 Punkte)
+[VO: $ 4 Absatz 6 Nr. 1, 2, 3]
+
+a) Reihenschaltung
+R=R, +R, = 500 0 + 500 0 = 1000 0
+
+= Ze 0,024A = 24 mA
+
+R 10000 (4 Punkte)
+b) Parallelschaltungen von R, mit R, und R, mit R,
+
+_R_5000_
+
+Rap = = = 2500
+_Rs_ 8000_
+
+Roo= 2 = = 4000
+
+© DIHK - Gesellschaft für berufliche Bildung — Organisation zur Förderung der IHK-Weiterbildung mbH — Bonn i P 050-05-0517-9 | Seite 45
+
+Die Vervielfältigung, Verbreitung oder öffentliche Wiedergabe der Publikation [der Prüfungssätze und Lösungshinweise]
+ist nicht gestattet ($& 53, 54 UrhG) und strafbar ($ 106 UrhG). Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+
+=== Seite 6 ===
+GEPRÜFTEI-R INDUSTRIEMEISTERI/-IN,
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+
+GRUNDLEGENDE QUALIFIKATIONEN
+Naturwissenschäftliche und technische Gesetzmäßigkeiten
+
+Reihenschaltung von R,,. R, und R,..
+R= Ras + RR + Ron = 250 0+ 200+ 4000= 6700
+
+U 24V
+|=5= —— = 0,0358 A = 35,8 mA
+R 6700 (8 Punkte)
+c)
+1=0= 20V _ G179A= 179mA
+R 6700 (2 Punkte)
+d ZB
+
+= Feuchtigkeit der Hande bzw Fuße
+
+"=  Hautoberfläche erhöht den elektrischen Widerstand durch Hornhaut
+
+=  personlich Schutzausrustung, z. B. spezielle Schuhe,
+
+Beschaffenheit des Fußbodens (6 Punkte)
+
+Aufgabe 6
+
+Sıcherheitsbestimmungen nach VDE fur elektrische Betriebsmittel dienen der Verhütung
+von Unfällen durch elektrischen Strom
+
+Zum Schutz gegen elektrischen Schlag werden dıe Betriebsmittel gegen direktes und ındı-
+rektes Berühren ın dıe drei Schutzklassen I, } und Ill eingeteilt
+
+Geben Ste zu folgenden Schutzklassen I, Il, III je drei Merkmale an, woran die verwendete {9 Punkte)
+Schutzklasse erkannt wırd
+Schutzklasse Kennzeichen Art der Schutzmaßnahme
+| mit Schutzleiter
+ll mit Schutzisolierung
+Ill mit Schutzkleinspannung
+Seite 46 | P 050-05-0517-9 | © DIHK - Gesellschaft für berufliche Bildung — Organisation zur Förderung der IHK-Weiterbildung mbH - Bonn
+
+Die Vervielfältigung, Verbreitung oder öflentliche Wiedergabe der Publikation [der Prüfungssätze und Lösungshinweise]
+ist nicht gestattet (55 53, 54 UrhG) und strafbar {$ 106 UrhG). Im Fall der Zuwiderbandlung wird Strafantrag gestellt.
+
+=== Seite 7 ===
+GEPRÜFTEI-R INDUSTRIEMEISTERI-IN,
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+
+GRUNDLEGENDE QUALIFIKATIONEN
+Naturwissenschaftliche und technische Gesetzmäßigkeiten
+
+Lösungshinweise Aufgabe 6 (9 Punkte)
+[VO: 8 4 Absatz 6 Nr. 1,2, 3]
+
+Merkmale, z. B..
+= Klasse!
+
+= Sinnbild
+
+» _ Schutzleiter (grün/gelb) vorhanden
+
+=  Profilstecker mıt Schutzkontakt
+
+=  Anschlussleitung dreiadrig (3 Punkte)
+= Klassell
+
+= _ Schutzisolterung, d. h., das Gehäuse ıst elektrisch nıcht leıtend
+
+= Profilstecker ohne Schutzkontakt, oder Flachstecker
+
+=  Sınnbild
+«= Anschlussleitung zweiadrig, ohne grun/gelb {3 Punkte)
+« Klasse lll
+
+= Stecker und Steckdosen unterscheiden sich von denen der Schutzklassen I und Il
+
+"= Betriebsspannung liegt im Kleinspannungsbereich (< 50 VAC, 120 V DC)
+
+= Sınnbild
+
+=  Schutzkleinspannung wird über einen Sıcherheitstransformator erzeugt (3 Punkte)
+
+Aufgabe
+
+Ein Bildungszentrum erfasst die Lebensdauer der Hochdrucklampen in den Beamern. Für
+eine Stichprobe von 100 gleichartigen Lampen wurde ın das Wahrscheinlichkeitsnetz ın
+Anlage 1 eine Ausgleichsgerade eingezeichnet
+
+Markieren Sie im Wahrscheinlichkeitsnetz folgende Parameter und geben Sıe dıe abgele-
+senen Werte an
+
+a) die Grenzen des Intervalls -3s < X = 3s ın Stunden, {4 Punkte)
+
+b) den prozentualen Anteil der Lampen, die kürzer als 3 400 Stunden durchgehalten (2 Punkte)
+haben,
+
+c) den prozentualen Anteil der Lampen, die langer als 3 900 Stunden durchgehalten (2 Punkte)
+haben),
+
+d} die Standardabweichung der Stichprobe {2 Punkte)
+
+Lösungshinweise Aufgabe 7 (10 Punkte)
+
+[VO: & 4 Absatz 6 Nr. 4]
+
+a) zwischen ca 3 120 h und 4 080 h (4 Punkte)
+
+b} ca 11% (2 Punkte)
+
+c) ca3% (2 Punkte)
+
+© DIHK - Gesellschaft für berufliche Bildung — Organisation zur Förderung der IHK-Weiterbildung mbH — Bonn | P 050-05-0517-9 | Seite 47
+
+Die Vervielfältigung, Verbreitung oder öffentliche Wiedergabe der Publikation [der Prüfungssätze und Lösungshinweise]
+ist nicht gestatiet (88 53, 54 UrhG) und strafbar ($ 106 UrhG). Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+
+=== Seite 8 ===
+GEPRÜFTEI-R INDUSTRIEMEISTERJ/-IN,
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+
+GRUNDLEGENDE QUALIFIKATIONEN
+Naturwissenschaftliche und technische Gesetzmäßigkeiten
+
+d) ca 170h (2 Punkte)
+{siehe Lösungshinweis zu Aufgabe 7)
+
+Seite 48 | P 050-05-0517-9 | © DIHK — Gesellschaft für berufliche Bildung -— Organisation zur Förderung der IHK-Weiterbildung mbH — Bonrı
+Die Vervielfältigung, Verbreitung oder öffentliche Wiedergabe der Publikation [der Prüfungssätze und Lösungshinweise]
+ist nicht gestattet (85 53, 54 UmG) und strafbar (& 106 UrhG). Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+
+=== Seite 9 ===
+GEPRÜFTEI-R INDUSTRIEMEISTER/-IN,
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+
+GRUNDLEGENDE QUALIFIKATIONEN
+Naturwissenschaftliche und technische Gesetzmäßigkeiten
+
+Prüfungsteilnehmer-Nummer:
+Anlage 1 zu Aufgabe 7 d)
+
+Wahrscheinlichkeitsnetz der Lebensdauer der Lampen
+
+39.99 T | | | | | | 0.01
+095 heine Begehren Dunn 005
+99.865 .
+99.7
+99.5
+fe}
+97.72
+95
+ee)
+R 84.13
+S 80
+3
+> 70
+Demi
+|
+= 2)
+2 50
+&
+FR) 40
+xb
+5 30
+FI 25
+=) ? j
+E 20 on 2 ’ ; ! PIE Fee — | . - u ara an
+DZ NBBT Tb ng nn Be ne m 71 84.13
+
+s0
+
+228 6 fe pen ee nn 1 97.72
+
+BEN ee Sen EEE EEE BE
+
+_
+{=}
+I
+|
+
+ıh----- I A Eee nn \ Per .. = Zen — 99
+£ j ! , ’ N
+0.5 ale ee Bean wessenjentennn Zu nn 99,5
+03 Fu tn on pen nennen en nlenenanre 22... 99,7
+0.135 L be ter rennen re Yun 98.865
+008 Haan een eneenenegerenlennlon 1 995
+0.01 1 l | l l 99.99
+
+3100 3200 3300 3400 3500 3600 3700 3800 3900 4000 4100
+
+Lebensdauer in Stunden
+
+© DIHK — Gesellschaft für berufliche Bildung — Organisation zur Förderung der IHK-Weiterbildung mbH — Bonn | P 050-05-0517-9 | Seite 49
+Die Vervielfältigung, Verbreäung oder öffentliche Wiedergabe der Publikation [der Prüfungssätze und Lösungshinweise]
+ist nicht gestattet ($$ 53, 54 UrhG) und strafbar (& 106 UmG). Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+
+=== Seite 10 ===
+GEPRÜFTEI-R INDUSTRIEMEISTERF/-IN,
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+
+GRUNDLEGENDE QUALIFIKATIONEN
+Naturwissenschaftliche und technische Gesstzmäßigkeiten
+
+Anlage 1 zur Lösung Aufgabe 7 d)
+
+Wahrscheinlichkeitsnetz der Lebensdauer der Lampen
+
+99.99 T | T 0.01
+9995 - + Da Eu 3 = 00 0.05
+8.885: -- Bernemrnnncdnneend 241 0.135
+. k a Eu
+97 ----- -- Year ern denn : FL 0,3
+395°, 0 em ’ 4085
+@l---- \... - 1
+97.72 sen en Ben BAERESE EElEEeE EEBEEE Denen: HH 2.28
+zu(c): Anleil >3900 h Lebensdauer
+95 - DEE Eee EEE et 45
+or  erereen F le H 40
+8413 H--- Hg Meruanachnnren den PA order H 15.87
+
+Kumulierte relative Häufigkeit in %
+
+5- fe 4 95
+, =.)
+7 E
+'3 i
+28 7 I 5. 2 20H 97,72
+N ’ R ‘
+ih 7 A a 5 2 Dan Dane Tas aaa 499
+0.5 Pr foren denn 5 EEE EEE SEES kn | 99.5
+0.3 we Zu 1 aaa essen Be BU --;----- 4 39.7
+0.135 Fi Pi u. ’ -H 98.865
+'S i
+0.05 H + -R- 4895
+0.01 l l l l l l | | 99.99
+zu (a): Bereich von 99.73 % zwischen -3s und 38 R
+3100 3200 3300 3400 3500 3600 3700 3800 3900 4000 4100
+
+Seite 50 | P 050-05-0517-8 |
+
+Lebensdauer in Stunden
+
+© DIHK - Gesellschaft für berufliche Bildung — Organisation zur Förderung der IHK-Weiterbildung mbH - Bonn
+Die Vervielfältigung, Verbreitung oder öffentliche Wiedergabe der Publikation [der Prüfungssätze und Lösungshinweise]
+ist nicht gestattet (88 53, 54 UrhG) und strafbar ($ 106 UrhG}. Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+

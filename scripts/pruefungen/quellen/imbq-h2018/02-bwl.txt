@@ -1,0 +1,441 @@
+=== Seite 1 ===
+der Industrie- und Handelskammern
+
+
+
+
+Basisqualifikation                                      Betriebswirtschaftliches Handeln
+Prüfungstag                                             6. November 2018
+
+
+
+Hinweise für den Korrektor:
+■    Die folgenden Lösungen sind lediglich Lösungshinweise.
+■    Sie sollen nur den Rahmen der zu erwartenden Prüfungsleistung abstecken.
+■    Der Korrektor ist durch die hier aufgeführten Lösungshinweise in seinem Bewertungsspielraum nicht
+     eingeengt.
+■    Bei Aufgaben, die eine Aufzählung von n-Fakten zur Lösung erfordern, werden nur die ersten n-Fakten
+     gewertet. Alle darüber hinausgehenden Aufzählungen werden gestrichen.
+■    Bei Berechnungen sollen Folgefehler berücksichtigt werden und somit nicht zum Punktabzug führen.
+■    Der leichteren Lesbarkeit wegen geben wir in den Aufgaben/Texten der männlichen Form den Vorzug. Mit
+     diesem einfacheren sprachlichen Ausdruck sind selbstverständlich immer Männer und Frauen gemeint.
+
+
+
+
+Die Aufgaben mit Lösungsvorschlägen können von den Industrie- und Handelskammern oder Dritten nach einer Frist von sechs
+Monaten direkt bestellt werden bei:
+wbv Media GmbH & Co. KG, Service-Center DIHK,
+Postfach 10 06 33, 33506 Bielefeld
+Tel.: 0521/91101-16, Fax: 0521/91101-19, E-Mail: service@wbv.de
+
+                                                                                                        | L 050-02-1118-5 |
+
+=== Seite 2 ===
+GEPRÜFTE/-R INDUSTRIEMEISTER/-IN,
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+GRUNDLEGENDE QUALIFIKATIONEN
+Betriebswirtschaftliches Handeln
+
+Aufgabe 1
+a)   Nennen Sie fünf Gründe für einen Einzelunternehmer, durch Aufnahme eines                                                          (5 Punkte)
+     weiteren Eigentümers sein Unternehmen in eine Gesellschaft umzuwandeln.
+b)   Erläutern Sie einen grundlegenden Unterschied zwischen                                                                            (4 Punkte)
+     ■     Personengesellschaften und
+     ■     Kapitalgesellschaften.
+
+
+Lösungshinweise Aufgabe 1                                                                                                             (9 Punkte)
+[VO: § 4 Absatz 3 Nr. 1]
+a)   Z. B.:
+     ■     Verringerung des Haftungsrisikos
+     ■     zusätzliches Know-how
+     ■     zusätzliches Kapital
+     ■     bessere Kreditwürdigkeit
+     ■     Unternehmenserweiterung (Wachstum)
+     ■     persönliche Gründe
+     ■     ausgewogenere Entscheidungen
+     ■     mehr Kreativität
+     ■     mehr Spielraum für Investitionen                                                                                            (5 Punkte)
+b)   ■     Bei Personengesellschaften ist jeweils mindestens eine natürliche Person
+           gesellschaftsführend und voll haftend (Ausnahme: GmbH & Co. KG).
+     ■     Kapitalgesellschaften sind juristische Personen; das Unternehmen haftet mit dem
+           Gesellschaftsvermögen, die Gesellschafter sind Teilhafter.                                                                  (4 Punkte)
+
+
+Aufgabe 2
+Unternehmen schließen sich auf unterschiedliche Art und Weise zusammen.
+Beschreiben Sie jeweils eine Zielsetzung                                                                                               (6 Punkte)
+■    für einen horizontalen Unternehmenszusammenschluss und
+■    für einen vertikalen Unternehmenszusammenschluss.
+Geben Sie jeweils ein Beispiel an.
+
+
+
+
+Seite 2 | L 050-02-1118-5 |       © DIHK – Gesellschaft für berufliche Bildung – Organisation zur Förderung der IHK-Weiterbildung mbH – Bonn
+                                  Die Vervielfältigung, Verbreitung oder öffentliche Wiedergabe der Publikation ist nicht gestattet (§§ 53, 54 UrhG) und
+                                  strafbar (§ 106 UrhG). Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+
+=== Seite 3 ===
+GEPRÜFTE/-R INDUSTRIEMEISTER/-IN,
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+GRUNDLEGENDE QUALIFIKATIONEN
+Betriebswirtschaftliches Handeln
+
+
+
+Lösungshinweise Aufgabe 2                                                                                                        (6 Punkte)
+[VO: § 4 Absatz 3 Nr. 1]
+Z. B.:
+■      Horizontaler Unternehmenszusammenschluss:
+       Schaffung einer stärkeren Marktposition, mehr Marktmacht, höherer Marktanteil durch
+       z. B. Zusammenschluss von Supermärkten
+■      Vertikaler Unternehmenszusammenschluss:
+       Beschaffung und Absatz sollen gesichert werden, z. B. Zusammenschluss von
+       Bergwerk, Stahlproduzent, Maschinenbau und Handel.                                                                         (6 Punkte)
+
+
+Aufgabe 3
+Der durchschnittliche Bedarf eines Fremdbezugsteiles wurde in den letzten drei Jahren mit
+576 000 Stück pro Jahr festgestellt.
+Eine aktuelle Marktanalyse prognostiziert für das kommende Jahr einen Zuwachs von
+25 %.
+Es wird ein Sicherheitsbestand von 18 000 Stück gehalten. Die übliche Lieferzeit beträgt
+20 Tage, die interne Prüfzeit zwei Tage.
+Ermitteln Sie
+a)     den Meldebestand,                                                                                                          (4 Punkte)
+b)     die Lagerumschlagshäufigkeit bei einer Bestellmenge von 54 000 Stück,                                                      (4 Punkte)
+c)     die durchschnittliche Lagerdauer in Tagen,                                                                                 (2 Punkte)
+d)     die optimale Bestellmenge, wenn Ihnen folgende Zusatzinformationen vorliegen:                                              (6 Punkte)
+       ■      Einstandspreis = 1,50 €/Stück
+       ■      Kosten je Bestellvorgang = 70,00 €
+       ■      Lagerhaltungskosten = 20 % p. a.
+       ■      Geliefert wird in Verpackungseinheiten zu jeweils 1 000 Stück.
+e)     Stellen Sie zwei Aufgaben des Sicherheitsbestandes dar.                                                                    (4 Punkte)
+
+
+
+
+© DIHK – Gesellschaft für berufliche Bildung – Organisation zur Förderung der IHK-Weiterbildung mbH – Bonn               Seite 3 | L 050-02-1118-5 |
+Die Vervielfältigung, Verbreitung oder öffentliche Wiedergabe der Publikation ist nicht gestattet (§§ 53, 54 UrhG) und
+strafbar (§ 106 UrhG). Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+
+=== Seite 4 ===
+GEPRÜFTE/-R INDUSTRIEMEISTER/-IN,
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+GRUNDLEGENDE QUALIFIKATIONEN
+Betriebswirtschaftliches Handeln
+
+Lösungshinweise Aufgabe 3                                                                                                                  (20 Punkte)
+[VO: § 4 Absatz 3 Nr. 2]
+a)                                 Jahresbedarf 720.000 Stück
+     Verbrauch/Tag            =                =              = 2.000 Stück/Tag
+                                     360 Tage     360 Tage                                                                                    (2 Punkte)
+     Meldebestand             = Verbrauch/Tag ∙ Wiederbeschaffungszeit + Sicherheitsbestand
+                              = 2.000 Stück/Tag ∙ (20 Tage + 2 Tage) + 18.000 Stück
+                              = 62.000 Stück                                                                                                  (2 Punkte)
+b)
+                                    x
+        Lagerbestand               + Sicherheitsbestand
+                                    2
+                                    54.000 Stück
+                                                + 18.000 Stück = 45.000 Stück
+                                         2
+
+                                         Jahresverbrauch 720.000 Stück
+      Lagerumschlagshäufigkeit                         =              =16
+                                         Ø-Lagerbestand 45.000 Stück                                                                          (4 Punkte)
+c)
+                                         360 Tage            360 Tage
+        Lagerdauer                                      =           22,5 Tage
+                                  Lagerumschlagshäufigkeit      16                                                                            (2 Punkte)
+d)
+                2  k B  x ges
+      xopt 
+                   EP  iL                                                                                                                    (4 Punkte)
+
+                2  70 €  720.000 Stück
+      xopt                               18 330 Stück
+                    1,50 € / Stück  0,2
+
+     xopt = 18 000 Stück, da Verpackungseinheit jeweils 1 000 Stück                                                                           (2 Punkte)
+e)   Z. B.:
+     Produktionsbereitschaft sicherstellen bei
+     ■     zusätzlichen Aufträgen
+     ■     erhöhtem Ausschuss
+     ■     Lieferverzögerungen                                                                                                                (4 Punkte)
+
+
+
+
+Seite 4 | L 050-02-1118-5 |              © DIHK – Gesellschaft für berufliche Bildung – Organisation zur Förderung der IHK-Weiterbildung mbH – Bonn
+                                         Die Vervielfältigung, Verbreitung oder öffentliche Wiedergabe der Publikation ist nicht gestattet (§§ 53, 54 UrhG) und
+                                         strafbar (§ 106 UrhG). Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+
+=== Seite 5 ===
+GEPRÜFTE/-R INDUSTRIEMEISTER/-IN,
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+GRUNDLEGENDE QUALIFIKATIONEN
+Betriebswirtschaftliches Handeln
+
+Aufgabe 4
+Der Fertigungsplanung der Industrie AG liegen für Oktober folgende Auftragsdaten vor:
+
+    Produkt            Menge pro                      Losgröße                      Rüstzeit pro               Zeit je Einheit
+                        Monat                                                          Los
+       A             2 400 Stück                     400 Stück                         200 min                           64 min
+       B             1 500 Stück                     300 Stück                         120 min                       150 min
+       C             1 000 Stück                     125 Stück                          75 min                           70 min
+       D             2 500 Stück                     250 Stück                          70 min                           28 min
+
+Der Oktober hat 20 Arbeitstage; die tägliche Arbeitszeit beträgt acht Stunden. Kalkuliert
+wird mit urlaubsbedingter Abwesenheit von 13 % sowie krankheitsbedingten Fehlzeiten in
+Höhe von 4,5 %.
+Ermitteln Sie rechnerisch                                                                                                                (14 Punkte)
+■      den Kapazitätsbedarf und
+■      den Personalbedarf
+im Oktober.
+
+
+Lösungshinweise Aufgabe 4                                                                                                                (14 Punkte)
+[VO: § 4 Absatz 3 Nr. 2]
+Kapazitätsbedarf = TA + TB + TC + TD
+
+ TA = 6  200 min + 2.400 Stück  64 min/Stück                                  = 154.800 min
++TB = 5  120 min + 1.500 Stück  150 min/Stück                                 =    225.600 min
++TC = 8  75 min + 1.000 Stück  70 min/Stück                                   =      70.600 min
++TD = 10  70 min + 2.500 Stück  28 min/Stück                                  =      70.700 min
+=Kapazitätsbedarf                                                                    521.700 min/Monat
+                                                                            =       8.695 Stunden/Monat                                    (9 Punkte)
+
+Kapazitätsbestand pro Mitarbeiter = 8 Stunden/Tag  20 Tage/Monat  0,825
+                                                     = 132 Stunden/Monat                                                                   (3 Punkte)
+
+                               8.695 Stunden
+Personalbedarf                                    = 65,87, d. h. 66 Mitarbeiter
+                           132 Stunden/Mitarbeiter                                                                                         (2 Punkte)
+
+
+
+
+© DIHK – Gesellschaft für berufliche Bildung – Organisation zur Förderung der IHK-Weiterbildung mbH – Bonn                        Seite 5 | L 050-02-1118-5 |
+Die Vervielfältigung, Verbreitung oder öffentliche Wiedergabe der Publikation ist nicht gestattet (§§ 53, 54 UrhG) und
+strafbar (§ 106 UrhG). Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+
+=== Seite 6 ===
+GEPRÜFTE/-R INDUSTRIEMEISTER/-IN,
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+GRUNDLEGENDE QUALIFIKATIONEN
+Betriebswirtschaftliches Handeln
+
+Aufgabe 5
+Durch die zunehmende Globalisierung und die verstärkte Konkurrenzsituation ist Ihr
+Unternehmen gezwungen, Kosten zu senken.
+Deshalb beabsichtigt die Geschäftsführung, die Aufbau- und die Ablauforganisation zu
+optimieren.
+Erläutern Sie je drei geeignete Maßnahmen, um im Bereich                                                                           (12 Punkte)
+■    der Aufbauorganisation sowie
+■    der Ablauforganisation
+Kosten zu sparen.
+
+
+Lösungshinweise Aufgabe 5                                                                                                         (12 Punkte)
+[VO: § 4 Absatz 3 Nr. 3]
+Maßnahmen im Bereich der Aufbauorganisation, z. B.:
+     ■     Aufgaben oder Aufgabenbereiche (z. B. Produktion einzelner Baugruppen, Lohn-
+           und Gehaltsabrechnung, Teile der Logistik, Versand) können ausgelagert
+           werden. Damit werden Kosten im Bereich der Betriebsmittel und des Personals
+           eingespart.
+     ■     Teile der Produktion können in Billiglohnländer verlagert werden, insbesondere
+           um Personalkosten zu sparen.
+     ■     Hierarchieebenen können abgebaut werden, z. B. durch die Reduzierung von
+           Fertigungsebenen oder die Streichung von Führungsebenen.
+     ■     Personal kann abgebaut werden (Stellenabbau), indem z. B. beim Ausscheiden
+           eines Mitarbeiters dessen Stelleninhalte auf die anderen Stellen der jeweiligen
+           Abteilung umverteilt werden.
+Maßnahmen im Bereich der Ablauforganisation, z. B.:
+     ■     Durch erhöhte Automatisierung sowie Verkettungskonzepte kann rationalisiert
+           werden, um Kosten zu sparen.
+     ■     Es kann überprüft werden, ob die Durchlaufzeit verkürzt werden kann, z. B. im
+           Bereich der Rüstzeiten, Transport-, Liege- und Wartezeiten.
+     ■     Der Materialfluss kann optimiert werden, indem z. B. der innerbetriebliche
+           Transport effektiver gestaltet wird.
+     ■     Arbeitsabläufe im Bereich Einkauf, Verwaltung und Vertrieb können überprüft
+           und einfacher/effektiver gestaltet werden (Vermeidung von Doppelarbeit).
+
+
+
+
+Seite 6 | L 050-02-1118-5 |     © DIHK – Gesellschaft für berufliche Bildung – Organisation zur Förderung der IHK-Weiterbildung mbH – Bonn
+                                Die Vervielfältigung, Verbreitung oder öffentliche Wiedergabe der Publikation ist nicht gestattet (§§ 53, 54 UrhG) und
+                                strafbar (§ 106 UrhG). Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+
+=== Seite 7 ===
+GEPRÜFTE/-R INDUSTRIEMEISTER/-IN,
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+GRUNDLEGENDE QUALIFIKATIONEN
+Betriebswirtschaftliches Handeln
+
+Aufgabe 6
+Die Betriebsabrechnung der Industrie AG stellt für den Berichtszeitraum folgende Daten
+zur Verfügung:
+
+                                                                                      Fertigung                     Verwaltung
+     Kostenart                Einheit           Materialstelle                                                         und
+                                                                                  I                    II            Vertrieb
+  Einzelkosten              €/Monat                    200.000                 80.000               60.000
+  Gemeinkosten              €/Monat                      20.000              140.000              180.000                102.000
+
+a)     Ermitteln Sie die Gemeinkostenzuschlagssätze für die entsprechenden Kostenstellen.                                                   (6 Punkte)
+b)     Führen Sie die Nachkalkulation für ein Produkt durch und berechnen Sie dabei den                                                   (14 Punkte)
+       tatsächlich erzielten Gewinn in Euro und Prozent.
+       Folgende Zusatzinformationen stehen Ihnen dabei zur Verfügung:
+       ■      Fertigungsmaterial                                                                        40,00 €/Stück
+       ■      Fertigungslohn Kostenstelle I                                                             15,00 €/Stück
+       ■      Fertigungslohn Kostenstelle II                                                            10,80 €/Stück
+       ■      Spezialverpackung                                                                             1,35 €/Stück
+       ■      Listenverkaufspreis                                                                     192,00 €/Stück
+       ■      Rabatt                                                                                                 10 %
+       ■      Skonto                                                                                                     3%
+
+
+Lösungshinweise Aufgabe 6                                                                                                                 (20 Punkte)
+[VO: § 4 Absatz 3 Nr. 5]
+a)
+                                                             Materialgemeinkosten
+       Materialgemeinkostenzuschlagssatz =                                         100
+                                                              Fertigungsmaterial
+
+                                                              20.000 €
+       Materialgemeinkostenzuschlagssatz                               100 =10 %
+                                                             200.000 €                                                                        (1 Punkt)
+
+                                                                 Fertigungsgemeinkosten
+       Fertigungsgemeinkostenzuschlagssatz =                                             100
+                                                                      Fertigungslöhne
+
+                                                                  140.000 €
+       FertigungsgemeinkostenzuschlagssatzI                                 100 =175 %
+                                                                   80.000 €                                                                   (1 Punkt)
+
+                                                                  180.000 €
+       FertigungsgemeinkostenzuschlagssatzII                                100 = 300 %
+                                                                  60.000 €                                                                    (1 Punkt)
+       Herstellkosten = MK + FK I + FK II
+                      = 220.000 € + 220.000 € + 240.000 € = 680.000 €                                                                       (2 Punkte)
+
+                                                                                               102.000 €
+       Verwaltungs- und Vertriebsgemeinkostenzuschlagssatz =                                              100 =15 %
+                                                                                               680.000 €                                      (1 Punkt)
+© DIHK – Gesellschaft für berufliche Bildung – Organisation zur Förderung der IHK-Weiterbildung mbH – Bonn                         Seite 7 | L 050-02-1118-5 |
+Die Vervielfältigung, Verbreitung oder öffentliche Wiedergabe der Publikation ist nicht gestattet (§§ 53, 54 UrhG) und
+strafbar (§ 106 UrhG). Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+
+=== Seite 8 ===
+GEPRÜFTE/-R INDUSTRIEMEISTER/-IN,
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+GRUNDLEGENDE QUALIFIKATIONEN
+Betriebswirtschaftliches Handeln
+
+b)                                                                                                                               €
+       ###/abb/2_Pfeilrunter.ai###
+
+
+
+
+                                          Fertigungsmaterial                                                                    40,00
+                                     +    Materialgemeinkosten (10 %)                                                            4,00
+                                     =    Materialkosten                                                                        44,00                             (1 Punkt)
+                                          FertigungslöhneI                                                                      15,00
+                                     +    FertigungsgemeinkostenI (175 %)                                                       26,25
+                                     =    FertigungskostenI                                                                     41,25                             (1 Punkt)
+                                          FertigungslöhneII                                                                     10,80
+                                     +    FertigungsgemeinkostenII (300 %)                                                      32,40
+                                     =    FertigungskostenII                                                                    43,20                             (1 Punkt)
+                                          Herstellkosten                                                                      128,45                              (1 Punkt)
+                                     +    Verwaltungs- und Vertriebsgemeinkosten (15 %)                                        19,27
+                                     +    Sondereinzelkosten Vertrieb                                                           1,35
+                                     =    Selbstkosten                                                                        149,07                              (1 Punkt)
+                                          Gewinn
+                                                                18,55 €  100           
+                                     +             prozentual =               = 12,44 %                                       18,55                           (5 Punkte)
+                                                                  149,07   €            
+       ###/abb/2_Pfeilrauf.ai###
+
+
+
+
+                                     =    Barverkaufspreis                                                                    167,62
+                                     +    Skonto (3 %)                                                                          5,18                            (2 Punkte)
+                                     =    Zielverkaufspreis                                                                   172,80
+                                     +    Rabatt (10 %)                                                                        19,20                            (2 Punkte)
+                                     =    Listenverkaufspreis                                                                 192,00
+     Gewinn: prozentual = 12,44 %
+                                         absolut = 18,55 €                                                                                                    (14 Punkte)
+
+
+
+
+Seite 8 | L 050-02-1118-5 |                                © DIHK – Gesellschaft für berufliche Bildung – Organisation zur Förderung der IHK-Weiterbildung mbH – Bonn
+                                                           Die Vervielfältigung, Verbreitung oder öffentliche Wiedergabe der Publikation ist nicht gestattet (§§ 53, 54 UrhG) und
+                                                           strafbar (§ 106 UrhG). Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+
+=== Seite 9 ===
+GEPRÜFTE/-R INDUSTRIEMEISTER/-IN,
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+GRUNDLEGENDE QUALIFIKATIONEN
+Betriebswirtschaftliches Handeln
+
+Aufgabe 7
+In einem Unternehmen der Konsumgüterindustrie wurden in einer Abrechnungsperiode
+250 000 Stück eines Produktes hergestellt und zu 6.000.000 € verkauft. Die variablen
+Kosten betrugen 3.550.000 €, die fixen Kosten 2.205.000 €.
+Die Gesamtkapazität für die Herstellung dieses Produktes beträgt 300 000 Stück.
+a)     Ermitteln Sie für diese Periode                                                                                              (4 Punkte)
+       ■      den Beschäftigungsgrad und
+       ■      das Betriebsergebnis.
+b)     Berechnen Sie die Break-even-Menge.                                                                                          (6 Punkte)
+c)     Die Unternehmensleitung plant                            für     die      nächste         Abrechnungsperiode      ein
+       Betriebsergebnis von 294.000 €.
+       Ermitteln Sie rechnerisch die dazu erforderliche Absatzmenge.                                                                (3 Punkte)
+       Hinweis für den Prüfungsteilnehmer: Gehen Sie bei Ihrer Berechnung von
+                                           konstanten Preisen, Fixkosten und variablen
+                                           Stückkosten aus.
+d)     Ermitteln Sie den Anstieg des Stückdeckungsbeitrages, den Sie benötigen, um bei                                              (6 Punkte)
+       der derzeitigen Produktionsmenge ein Betriebsergebnis von 294.000 € zu erzielen.
+
+
+Lösungshinweise Aufgabe 7                                                                                                         (19 Punkte)
+[VO: § 4 Absatz 3 Nr. 5]
+                                                     Istleistung         250 000 Stück
+a)     ■      Beschäftigungsgrad in %                            100 =                100 = 83,33 %
+                                                      Kapazität          300 000 Stück                                              (4 Punkte)
+       ■      Betriebsergebnis: Umsatz – Kosten
+              Betriebsergebnis = 6.000.000 € – 2.205.000 € – 3.550.000 € = 245.000 €
+b)
+              DB U - Kv 6.000.000 € - 3.550.000 €
+       db       =     =                          = 9,80 €/Stück
+               x   x         250000 Stück
+
+                  Kf 2.205.000 €
+       xBEP        =             = 225000 Stück
+                  db 9,80 €/Stück                                                                                                   (6 Punkte)
+c)
+                 Kf + BESoll 2.205.000 € + 294.000 €
+       xSoll               =                        = 255 000 Stück
+                     db           9,80 €/Stück                                                                                      (3 Punkte)
+d)
+                  Kf + BESoll 2.205.000 € + 294.000 €
+       dbSoll               =                        = 9,996 €/Stück  10 €/Stück
+                     xSoll        250 000 Stück
+
+       9,996 €/Stück – 9,80 €/Stück = 0,196 €/Stück,
+       d. h., der Stückdeckungsbeitrag müsste um 20 Cent/Stück steigen.                                                             (6 Punkte)
+
+
+
+© DIHK – Gesellschaft für berufliche Bildung – Organisation zur Förderung der IHK-Weiterbildung mbH – Bonn                 Seite 9 | L 050-02-1118-5 |
+Die Vervielfältigung, Verbreitung oder öffentliche Wiedergabe der Publikation ist nicht gestattet (§§ 53, 54 UrhG) und
+strafbar (§ 106 UrhG). Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+

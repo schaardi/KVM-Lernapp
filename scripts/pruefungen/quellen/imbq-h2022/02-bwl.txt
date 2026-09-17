@@ -1,0 +1,508 @@
+=== Seite 1 ===
+Bundeseinheitliche Fortbildungsprüfung der Industrie- und Handelskammern
+Geprüfter Industriemeister / Geprüfte Industriemeisterin
+fachrichtungsübergreifende Basisqualifikationen /
+grundlegende Qualifikationen
+Betriebswirtschaftliches Handeln
+
+
+Lösungshinweise
+Datum:                                          4. November 2022
+
+Bearbeitungszeit:                               90 Minuten
+
+Anzahl Aufgaben:                                7
+
+
+Hinweise für den Korrektor:
+■   Die folgenden Lösungen sind lediglich Lösungshinweise.
+■   Sie sollen nur den Rahmen der zu erwartenden Prüfungsleistung abstecken.
+■   Der Korrektor ist durch die hier aufgeführten Lösungshinweise in seinem
+    Bewertungsspielraum nicht eingeengt.
+■   Bei Aufgaben, die eine Aufzählung von n-Fakten zur Lösung erfordern, werden nur die
+    ersten n-Fakten gewertet. Alle darüber hinausgehenden Aufzählungen werden
+    gestrichen.
+■   Bei Berechnungen sollen Folgefehler berücksichtigt werden und somit nicht zum
+    Punktabzug führen.
+■   Der leichteren Lesbarkeit wegen geben wir in den Aufgaben/Texten der männlichen
+    Form den Vorzug. Mit diesem einfacheren sprachlichen Ausdruck sind selbstverständlich
+    immer alle Geschlechter gemeint.
+
+
+
+Die Aufgaben mit Lösungsvorschlägen können von den Industrie- und Handelskammern oder Dritten nach einer Frist von sechs Monaten
+direkt bestellt werden bei:
+wbv Media GmbH & Co. KG, Service-Center DIHK,
+Postfach 10 06 33, 33506 Bielefeld
+Tel.: 0521/91101-16, Fax: 0521/91101-19, E-Mail: service@wbv.de
+
+
+
+
+                            © DIHK – Gesellschaft für berufliche Bildung – Organisation zur Förderung der IHK-Weiterbildung gGmbH – Bonn
+               Die Vervielfältigung, Verbreitung oder öffentliche Wiedergabe der Publikation ist nicht gestattet (§§ 53, 54 UrhG) und strafbar (§ 106 UrhG).
+                                                           Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+                                                                             L 050-02-1122-1
+
+=== Seite 2 ===
+GEPRÜFTE/-R INDUSTRIEMEISTER/-IN,
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+GRUNDLEGENDE QUALIFIKATIONEN
+Betriebswirtschaftliches Handeln
+
+
+Aufgabe 1
+Mögliche Punktzahl: 15
+In Ihrem Unternehmen wird über eine Änderung der bestehenden Rechtsform nachgedacht.
+
+Wählen Sie eine Personen- und zwei Kapitalgesellschaften aus und unterscheiden Sie
+diese anhand der Kriterien:
+
+■   Mindestgründungskapital,
+
+■   Geschäftsführungsbefugnis,
+
+■   Außenvertretungsrecht und
+
+■   Haftung der Gesellschafter.
+
+
+
+Lösungshinweise Aufgabe 1
+[VO: § 4 Absatz 3 Nr. 1]
+Mögliche Punktzahl: 15
+■   Personengesellschaften, z. B.:
+    ■   offene Handelsgesellschaft (OHG)
+    ■   Kommanditgesellschaft (KG)
+■   Kapitalgesellschaften: z. B.:
+    ■   Gesellschaft mit beschränkter Haftung (GmbH)
+    ■   Aktiengesellschaft (AG)
+    ■   Unternehmergesellschaft (UG haftungsbeschränkt)
+■   Personengesellschaften:
+    ■   Mindestgründungskapital: keine gesetzlichen Regelungen für OHG, KG
+    ■   Geschäftsführungsbefugnis und Außenvertretungsrecht: OHG alle Gesellschafter,
+        KG Komplementär
+    ■   Haftung der Gesellschafter: Bei der OHG sind alle Gesellschafter Vollhafter, bei der
+        KG ist der Komplementär Vollhafter, der Kommanditist Teilhafter
+■   Kapitalgesellschaften:
+    ■   Mindestgründungskapital: GmbH 25.000 €, AG 50.000 €, UG (haftungsbeschränkt)
+        1 € je Gesellschafter
+    ■   Geschäftsführungsbefugnis und Außenvertretungsrecht: GmbH Geschäftsführer, AG
+        Vorstand, UG Geschäftsführer
+    ■   Haftung: Alle Gesellschafter bei GmbH, AG und UG sind Teilhafter.
+
+
+                                             Seite 2
+                                         L 050-02-1122-1
+
+=== Seite 3 ===
+GEPRÜFTE/-R INDUSTRIEMEISTER/-IN,
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+GRUNDLEGENDE QUALIFIKATIONEN
+Betriebswirtschaftliches Handeln
+
+
+Aufgabe 2
+Die Industrie GmbH erhält einen Kundenauftrag über 5.000 Stück des Erzeugnisses X250.
+Das Erzeugnis wird aus drei Baugruppen A, fünf Baugruppen B und acht Teilen C montiert.
+Von Teil C wird immer ein Sicherheitsbestand von 4.000 Stück gehalten.
+
+ a Mögliche Punktzahl: 4
+Ermitteln Sie den Bruttobedarf von Teil C. Berücksichtigen Sie dabei, dass bei der
+Montage des Erzeugnisses X250 mit einer Ausschussquote von 3,25 % kalkuliert wird.
+
+ b Mögliche Punktzahl: 5
+Ermitteln Sie den Nettobedarf von Teil C, wenn 6.550 Stück bereits für andere Auf-
+träge reserviert sind. Vom Lieferanten der Industrie GmbH befinden sich noch
+15.000 Stück im Zulauf, der aktuelle Lagerbestand beläuft sich auf 8.000 Stück.
+
+ c Mögliche Punktzahl: 4
+Unterscheiden Sie Primärbedarf und Tertiärbedarf.
+
+
+Lösungshinweise Aufgabe 2
+[VO: § 4 Absatz 3 Nr. 2]
+
+ a Mögliche Punktzahl: 4
+  Sekundärbedarf                                                         =    40.000 Stück
++ Ausschuss (3,25 % von 40.000 Stück : 0,9675)                           =     1.344 Stück
+= Bruttobedarf (40.000 : 0,9675)                                         =    41.344 Stück
+
+ b Mögliche Punktzahl: 5
+  Bruttobedarf                                                                41.344 Stück
+– Lagerbestand                                                                – 8.000 Stück
++ Sicherheitsbestand                                                          + 4.000 Stück
+– Bestellbestand                                                             – 15.000 Stück
++ Reservierungen                                                              + 6.550 Stück
+= Nettobedarf                                                                = 28.894 Stück
+Hinweis für den Korrektor: Folgefehler aus a) bleiben bei der Lösung zu b)
+                           unberücksichtigt.
+
+
+
+                                           Seite 3
+                                        L 050-02-1122-1
+
+=== Seite 4 ===
+GEPRÜFTE/-R INDUSTRIEMEISTER/-IN,
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+GRUNDLEGENDE QUALIFIKATIONEN
+Betriebswirtschaftliches Handeln
+
+ c Mögliche Punktzahl: 4
+Z. B.:
+Der Primärbedarf umfasst alle verkaufsfähigen Produkte (Bedarf für Marktzwecke).
+Der Tertiärbedarf ist der Bedarf an Hilfs- und Betriebsstoffen für Produktionszwecke.
+
+
+Aufgabe 3
+In der Industrie GmbH wurden in der Vergangenheit sämtliche Teilpläne auf die Erreichung
+der Unternehmensziele ausgerichtet. Damit wurde maßgeblich die Zielerreichung
+unterstützt. Allerdings gibt es vermehrt Klagen aus der unteren Führungsebene, die bei den
+Planungen fast überhaupt nicht beteiligt wird.
+
+ a Mögliche Punktzahl: 1
+Geben Sie das unternehmerische Planungsprinzip der Industrie GmbH an.
+
+ b Mögliche Punktzahl: 8
+Führen Sie jeweils zwei Vor- und Nachteile dieses Planungsprinzips an.
+
+ c Mögliche Punktzahl: 6
+Beschreiben Sie das Gegenstromverfahren als unternehmerisches Planungsprinzip.
+
+Lösungshinweise Aufgabe 3
+[VO: § 4 Absatz 3 Nr. 3]
+
+ a Mögliche Punktzahl: 1
+Top-down-Planung
+
+ b Mögliche Punktzahl: 8
+■   Vorteile, z. B.:
+    ■    Die Unternehmensplanung kann einfach von oben nach unten durchgesetzt werden.
+    ■    Alle Teilpläne werden auf die Unternehmensziele ausgerichtet.
+    ■    Es gibt keine konkurrierenden Einzelpläne.
+■   Nachteile, z. B.:
+    ■    Die Motivation der Mitarbeiter und auch der unteren Führungsebene sinkt, wenn sie
+         bei der Planung nicht berücksichtigt werden.
+    ■    Wenn das Management keine klare Vorstellung von den Systemen, Strukturen und
+         Kapazitäten untergeordneter Organisationseinheiten hat, besteht die Gefahr, dass
+         unrealistische Ziele und daraus abgeleitete Teilpläne vorgegeben werden.
+
+                                                 Seite 4
+                                          L 050-02-1122-1
+
+=== Seite 5 ===
+GEPRÜFTE/-R INDUSTRIEMEISTER/-IN,
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+GRUNDLEGENDE QUALIFIKATIONEN
+Betriebswirtschaftliches Handeln
+    ■    Mitarbeiter empfinden die Top-down-Planung der obersten Führungsebene als auto-
+         ritär und nicht mehr zeitgemäß. Dadurch werden Teamarbeit und Kreativität ausge-
+         bremst.
+
+ c Mögliche Punktzahl: 6
+Das Gegenstromverfahren ist eine Kombination aus Top-down-Planung und Bottom-up-
+Planung.
+Dabei werden zunächst Ziele von der Unternehmensleitung formuliert. Durch die nachgela-
+gerten Führungsebenen werden diese Ziele auf Plausibilität und Machbarkeit überprüft und
+dadurch konkretisiert.
+Die resultierenden Änderungs- und Verbesserungsvorschläge gehen zurück zur übergeord-
+neten Führungsebene, wo der Abgleich der Ziele erfolgt und bei der Erstellung der einzelnen
+Teilpläne Berücksichtigung findet.
+
+
+Aufgabe 4
+Die Geschäftsführung der Industrie GmbH informiert die Belegschaft auf der
+Betriebsversammlung über die Absicht, Abteilungen oder eventuell ganze Bereiche outzu-
+sourcen.
+
+ a Mögliche Punktzahl: 6
+Erläutern Sie zwei Gründe, die für das Outsourcen von Abteilungen/Bereichen
+sprechen.
+
+ b Mögliche Punktzahl: 9
+Beschreiben Sie drei Gründe, die gegen ein Outsourcing sprechen.
+
+
+Lösungshinweise Aufgabe 4
+[VO: § 4 Absatz 3 Nr. 2]
+
+ a Mögliche Punktzahl: 6
+Z. B.:
+■   Kostenersparnis/Risikominimierung:
+    Die durch Outsourcing freigestellten Mitarbeiter gehören nicht mehr zum
+    Personalstamm, müssen damit auch nicht vom eigenen Unternehmen vorgehalten
+    werden. Mit dem Abbau von Fixkosten im Personalbereich sinkt auch das Kostenrisiko
+    des Unternehmens.
+■   Struktur des Unternehmens:
+    Durch Outsourcing versucht man, sich auf die Kernbereiche des Unternehmens zu
+    konzentrieren. Alle erforderlichen Nebentätigkeiten werden als Dienstleistungen
+
+                                            Seite 5
+                                         L 050-02-1122-1
+
+=== Seite 6 ===
+GEPRÜFTE/-R INDUSTRIEMEISTER/-IN,
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+GRUNDLEGENDE QUALIFIKATIONEN
+Betriebswirtschaftliches Handeln
+    erworben. So ist es nicht mehr erforderlich, hierfür Know-how aufzubauen und zu
+    erhalten.
+■   Konzentration auf die Kernkompetenz:
+    Man kann seine Kapazität/Fachkenntnis/Entwicklung auf die Kernkompetenzen
+    konzentrieren und dort die Qualität verbessern.
+
+ b Mögliche Punktzahl: 9
+Z. B.:
+■   Abhängigkeit:
+    Durch Outsourcing kann eine Abhängigkeit vom Dienstleister/Lieferanten entstehen, weil
+    zum Beispiel Termine, Zeiten, Kapazitäten, Preise abgesprochen, angepasst und
+    bewertet werden müssen.
+■   Know-how-Verlust:
+    Die ausgelagerten Tätigkeiten werden im eigenen Unternehmen nicht mehr
+    weiterentwickelt. Das Know-how geht im Laufe der Zeit verloren.
+■   Endgültigkeit der Entscheidung:
+    Es ist schwierig und mit erheblichem Aufwand verbunden, den Outsourcing-Vorgang
+    wieder rückgängig zu machen. Soll der outgesourcte Bereich wieder zurückintegriert
+    werden, müssten die entsprechenden Räumlichkeiten und Betriebsmittel wieder zur
+    Verfügung gestellt, Mitarbeiter eingestellt/wieder qualifiziert werden. Entsprechend hohe
+    Kosten würden entstehen.
+■   Kundenverlust/Imageverlust:
+    Der Kunde möchte nicht den Subunternehmer, sondern die Leistung der ihm bekannten
+    Unternehmung in Anspruch nehmen.
+
+
+
+
+                                             Seite 6
+                                          L 050-02-1122-1
+
+=== Seite 7 ===
+GEPRÜFTE/-R INDUSTRIEMEISTER/-IN,
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+GRUNDLEGENDE QUALIFIKATIONEN
+Betriebswirtschaftliches Handeln
+
+
+Aufgabe 5
+Für ein ausgelaufenes Produkt liegen aus früheren Fertigungsaufträgen folgende Informatio-
+nen gleichbleibender Kostenstruktur vor:
+
+■   125 € Herstellkosten/Stück bei einem Fertigungslos von 450 Stück
+
+■   170 € Herstellkosten/Stück bei einem Fertigungslos von 200 Stück
+
+ a Mögliche Punktzahl: 8
+Berechnen Sie
+
+■   die variablen Kosten pro Stück und
+
+■   die fixen Gesamtkosten
+
+bei Eigenfertigung.
+
+ b Mögliche Punktzahl: 4
+Das ausgelaufene Produkt wird nur noch als Ersatzteil angeboten; aufgrund des geringeren
+Bedarfs wurde es bei einem Zulieferer angefragt. Es liegt ein Fremdbezugspreis von 190 €
+pro Stück vor.
+
+Zur Ersatzteilbevorratung sollen 100 Stück beschafft werden.
+
+Entscheiden Sie sich für Eigenfertigung oder Fremdbezug. Begründen Sie Ihre
+Entscheidung rechnerisch.
+
+ c Mögliche Punktzahl: 5
+Berechnen Sie die kritische Menge und interpretieren Sie Ihr Ergebnis.
+
+
+Lösungshinweise Aufgabe 5
+[VO: § 4 Absatz 3 Nr. 5]
+
+ a Mögliche Punktzahl: 8
+K1 = x1 · k1 = 450 Stück · 125 €/Stück = 56.250 €                              (2 Punkte)
+K2 = x2 · k2 = 200 Stück · 170 €/Stück = 34.000 €                              (2 Punkte)
+       K 1 – K2    56.250 € – 34.000 €
+kv =            =                       = 89 €/Stück                           (2 Punkte)
+       x1 – x2    450 Stück – 200 Stück
+Kf = K1 – kv · x1 = 56.250 € – 89 €/Stück · 450 Stück = 16.200 €               (2 Punkte)
+
+                                              Seite 7
+                                           L 050-02-1122-1
+
+=== Seite 8 ===
+GEPRÜFTE/-R INDUSTRIEMEISTER/-IN,
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+GRUNDLEGENDE QUALIFIKATIONEN
+Betriebswirtschaftliches Handeln
+
+ b Mögliche Punktzahl: 4
+                                  Kf                16.200 €/Los
+K Eigenfertigung bei 100 = kv +      = 89 €/Stück +               = 251 €/Stück
+                                  x                 100 Stück/Los
+Der Zukauf ist bei 100 Stück günstiger, da der Fremdbezugspreis nur 190 €/Stück beträgt.
+
+ c Mögliche Punktzahl: 5
+           Kf           16.200 €/Los
+xkr =           =                          = 160,40 Stück/Los
+        pF – kv   190 €/Stück – 89 €/Stück
+                                                                                  (4 Punkte)
+Die Eigenfertigung ist erst ab einer Losgröße von 161 Stück kostengünstiger.
+Bei kleineren Mengen kommt Fremdbezug in Betracht.
+                                                                                   (1 Punkt)
+
+
+Aufgabe 6
+Ein Auftrag über 50 Bohrvorrichtungen zu einem Nettoverkaufspreis von 280 € pro Stück
+wurde vom Vertrieb mit der Begründung abgelehnt, dass die Selbstkosten nicht gedeckt
+werden.
+
+Freie Produktionskapazitäten sind vorhanden.
+
+Dazu liefert das Controlling folgende Daten für die Bohrvorrichtung:
+
+■    Fertigungsmaterial: 60 €/Stück
+
+■    MGKZ: 25 %, wobei 20 % der Materialgemeinkosten variabel sind
+
+■    Fertigungslohn: 110 €/Stück
+
+■    FGKZ: 70 %, wobei 30 % der Fertigungsgemeinkosten variabel sind
+
+■    Die Verwaltungs- und Vertriebsgemeinkosten sind vollkommen beschäftigungsunab-
+     hängig.
+
+■    Die Sondereinzelkosten der Fertigung betragen 250 € für den Gesamtauftrag.
+
+■    Die Sondereinzelkosten des Vertriebs belaufen sich auf 4 € pro Bohrvorrichtung.
+
+■    Der Kunde erhält 2 % Skonto bei Zahlung innerhalb von zehn Tagen.
+
+Die zur Abwicklung des Auftrags erforderlichen Produktionskapazitäten stehen zur
+Verfügung.
+
+
+                                                     Seite 8
+                                                  L 050-02-1122-1
+
+=== Seite 9 ===
+GEPRÜFTE/-R INDUSTRIEMEISTER/-IN,
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+GRUNDLEGENDE QUALIFIKATIONEN
+Betriebswirtschaftliches Handeln
+
+ a Mögliche Punktzahl: 12
+Überprüfen Sie rechnerisch anhand der Deckungsbeitragsrechnung, ob die
+Entscheidung des Vertriebs, den Auftrag abzulehnen, betriebswirtschaftlich sinnvoll
+ist.
+
+ b Mögliche Punktzahl: 3
+Ermitteln Sie die eventuelle Verbesserung des Betriebsergebnisses bei Auftragsan-
+nahme.
+
+
+Lösungshinweise Aufgabe 6
+[VO: § 4 Absatz 3 Nr. 5]
+
+ a Mögliche Punktzahl: 12
+   Fertigungsmaterial                   60,00 €
++ variable MGK (5 %)                     3,00 €            20 % von 15,00 €
++ Fertigungslöhne                      110,00 €
++ variable FGK (21 %)                   23,10 €            30 % von 77,00 €
++ SEF                                    5,00 €
++ SEV                                    4,00 €
+= variable Kosten kv                   205,10 €                                  (8 Punkte)
+
+
+   Stückerlös (Preis) p                274,40 €        280,00 – 2 % Skonto       (2 Punkte)
+– variable Kosten kv                   205,10 €
+= Stückdeckungsbeitrag db               69,30 €                                  (2 Punkte)
+
+
+Aufgrund des positiven Stückdeckungsbeitrags hätte der Auftrag angenommen werden
+sollen, da er zu einer Verbesserung des Betriebsergebnisses führen würde.
+
+ b Mögliche Punktzahl: 3
+Δ BE = 69,30 €/Stück · 50 Stück = 3.465 €, d. h., um diesen Betrag hätte sich das Betriebs-
+ergebnis verbessert.
+
+
+
+
+                                             Seite 9
+                                         L 050-02-1122-1
+
+=== Seite 10 ===
+GEPRÜFTE/-R INDUSTRIEMEISTER/-IN,
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+GRUNDLEGENDE QUALIFIKATIONEN
+Betriebswirtschaftliches Handeln
+
+
+Aufgabe 7
+Mögliche Punktzahl: 10
+In der Industrie GmbH stehen für den Fertigungsbereich folgende Kostenstellendaten im
+aktuellen Monat zur Verfügung:
+
+■   Grundstücke und Gebäude                   20.000 €
+
+■   Sozialbereich                              2.160 €
+
+■   Betriebsbüro                               8.600 €
+
+■   Werkstatt I                               56.000 €
+
+■   Werkstatt II                              84.000 €
+
+Der Sozialbereich und das Betriebsbüro sind jeweils 150 m² groß, die Werkstatt I hat 300 m²
+und die Werkstatt II hat 650 m² Fläche.
+
+Im Betriebsbüro arbeiten vier Sachbearbeiter, in der Werkstatt I sind ein Meister und sechs
+Mitarbeiter tätig und in der Werkstatt II ein Meister, sechs Mitarbeiter und ein
+Auszubildender.
+
+Das Betriebsbüro wird mit 30 % auf die Werkstatt I und mit 70 % auf die Werkstatt II
+umgelegt.
+
+Legen Sie die Kosten der Hilfskostenstellen so um, dass alle Kosten verursachungs-
+gerecht Werkstatt I und Werkstatt II zugeordnet werden. Nutzen Sie zur Lösung die
+Anlage 1.
+
+
+
+
+                                              Seite 10
+                                           L 050-02-1122-1
+
+=== Seite 11 ===
+GEPRÜFTE/-R INDUSTRIEMEISTER/-IN,
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+GRUNDLEGENDE QUALIFIKATIONEN
+Betriebswirtschaftliches Handeln
+
+
+Lösungshinweise Aufgabe 7
+[VO: § 4 Absatz 3 Nr. 5]
+Mögliche Punktzahl: 10
+
+                Grundstücke        Sozial-     Betriebs-
+   Umlage                                                   Werkstatt I   Werkstatt II
+                und Gebäude        bereich       büro
+
+ primäre GK         20.000 €       2.160 €      8.600 €       56.000 €      84.000 €
+
+ Grundstücke                       2.400 €      2.400 €        4.800 €      10.400 €
+ und Gebäude
+
+ Sozial-                                          960 €        1.680 €        1.920 €
+ bereich
+
+ Betriebsbüro                                                  3.588 €        8.372 €
+
+                           —           —                —     66.068 €     104.692 €
+
+
+
+
+                                             Seite 11
+                                         L 050-02-1122-1
+

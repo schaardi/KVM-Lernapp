@@ -1,0 +1,482 @@
+=== Seite 1 ===
+Bundeseinheitliche Weiterbildungsprüfung
+der Industrie- und Handelskammern
+
+Prüfungsteilinehmer-Nummer
+
+Geprüfte/-r Industriemeister/-in,
+fachrichtungsübergreifende
+Basisqualifikationen/
+grundlegende Qualifikationen
+
+m Basisqualifikation Betriebswirtschaftliches Handeln
+m Prüfungstag 9. Mai 2017
+
+a Bearbeitungszeit 90 Minuten
+
+m Anzahl der Aufgaben 7
+
+Bitte prufen Ste vor Beginn der Prufung die Vollständigkeit des Aufgabensatzes. Sollte der Aufgabensatz nıchi vollstandig sein. ınfor-
+miıeren Sıe bitte die Aufsicht
+
+Bearbeitungshinweise:
+Bitte lesen Sie die nachfolgenden Bearbeitungshinweise sorgfältig durch:
+
+w Die zur Pnifung zugelassenen Hıfemiftel wurden Ihnen separat mıt des Einla- = Verwenden Sie fur jede Aufgabe zın neues Lösungsblatt bzw eine neue Lo-
+
+dung mitgeteilt sungsseile
+
+a Sıe erhalten einen Aufgaben- und sınen Losungsteil m Falls die Losung auf einem beigefügten Anlageblatt erfolgen soll, wırd ın der
+
+m Tragen Sıe auf dem Deckblatt Ihre Prufungsteilnehmei-Nummer en Aufgabenstellung darauf hingewiesen
+
+m Die maxımale Gesamtpunktzahl der Losungen betiagt 100 Punkte = FurlIhre Notizen benutzen Sıe bitte ausschließlich das Konzeptpapier
+
+= Die Losungsgange bzw Rechenvorgange sınd klar und nachvollziehbar ım = Das Konzeptpapter ıst mıt dem Aufgaben- und dem Lasungsteil abzugeben
+Lostngsteil darzustellen Sollte der Platz nıcht austeichen benutzen Sıe bite m Bei Aufgaben, dıe eıne Aufzahlung von n-Fakten zuı Losung erfordern, wer-
+das Konzeptpapier verweisen Sıe auf die Foitsetzung und kennzsichnen Sıe den nur dıe ersten n-Fakten gewertet Alle daruber hınausgehenden Aufzah-
+diese Wu weisen darauf hın dass sıne vom Prufungsausschuss nicht lesbare lungen werden gestrichen
+
+Prufungsarbsıt mit der Note ‚ungenugend” {null Punkte) bewertet wırd mit den
+Rechtsfolgen, dre sıch aus det Prufungsordnung ergeben
+
+Der leichteren Lesbarkeit wegen geben wır in den Aufgaben/Texten der männlichen Form den Vorzug Mit diesem einfacheren
+sprachlichen Ausdruck sınd selbstverständlich ımımer Manner und Frauen gemeint
+
+Die Vervielfältigung, Verbreitung oder offentliche Wiedergabe der Publikationen [der Prufungssätze] ist nıcht gestattet ($8 53, 54
+UrhG) und strafbar ($ 106 UrhG} Im Fall der Zuwiderhandlung wırd Strafantrag gestellt.
+
+| P 050-02-0517-5 |
+
+=== Seite 2 ===
+GEPRÜFTE/-R INDUSTRIEMEISTERI-IN
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+
+GRUNDLEGENDE QUALIFIKATIONEN
+Betriebswirtschaftliches Handeln
+
+Aufgabe
+
+Sie beabsichtigen, ein Unternehmen zu grunden. Die deutsche Rechtsordnung bietet dazu
+verschiedene Moglıchkeiten arı
+
+a) Vervollstandigen Sıe dıe Tabelle ausgewählter Rechtsformen ın Anlage 1 {9 Punkte)
+b) Nennen Sıe das Mindestgrundungskapital für die UG (haftungsbeschrankt) (2 Punkte)
+c) Erläutern Sie dıe gesetzliche Regelung zur Gewinnverwendung beı der UG (haftungs- (3 Punkte)
+beschränkt)
+Lösungshinweise Aufgabe 1 (14 Punkte)
+[YO: 8 4 Absatz 3 Nr. 1]
+a) Rechtsform Geschäfts- Haftungsumfang der Mindestgründungs-
+führungs- Gesellschafter kapital der Gesell-
+befugnisse schaft
+GmbH Geschäftsführer beschrankt auf Kapıtal- 25.000 €
+einlage
+OHG jeder Geseilschaf- unbeschränkt, d. h., mit nicht vorgeschrieben
+ter Geschafts- und Privat-
+vermögen
+KG Komplementar Komplementär ıst Voll- nicht vorgeschrieben
+
+hafter, Kommandıtist
+haftet mıt Einlage (Teil-
+
+hafter) (9 Punkte)
+b) Mindestgrundungskapital fur dıe UG (haftungsbeschrankt): 1 € (2 Punkte)
+c) Im Falle eines Gewinnes mussen 25 % der Jahresgewinnsumme angespart werden,
+bıs 25 000 € und damit dıe Option zur Gründung einer GmbH erreicht ıst (3 Punkte)
+Seite 14 | P 050-02-0517-5 © DIHK — Gesellschaft für berufliche Bildung — Organisation zur Förderung der IHK-Weiterbildung mbH — Bonn
+
+Die Vervielfäliigung, Verbreitung oder öffentliche Wiedergabe der Publikation [der Prüfungssätze und Lösungshinweise]
+ist nicht gestattet (88 53, 54 UrhG) und strafbar {$ 106 UrhG). Im Fall der Zuwiderhandlung wird Sirafantrag gestellt.
+
+=== Seite 3 ===
+GEPRÜFTEI/-R INDUSTRIEMEISTERI-IN
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+
+GRUNDLEGENDE QUALIFIKATIONEN
+Betriebswirtschaftliches Handeln
+
+Aufgabe 2
+
+Im September mussen 1500 Bauteile ın der Fertigungskostenstelle 2000 gefertigt werden
+
+Folgende zusätzliche Informationen liegen Ihnen für die Kapazıtätsplanung vor
+
+Vorgabezeit 160 mın/Bauteil
+Personalbestand: 24 Facharbeiter
+Arbeitstage 20 Tage
+Arbeitszeit: 8 Stunden/Tag
+Ausfallzeiten’ 12 % Urlaub
+
+3% krankheitsbedingte Fehlzeiten
+a) Berechnen Sıe auf Basıs dieser Angaben (11 Punkte)
+= den Kapazıtatsbestand ın Stunden,
+= den Kapazıtatsbedarf ın Stunden,
+= den Zusatzbedarf ın Stunden
+
+b) Ermitteln Sıe die erforderliche Mehrarbeit pro Arbeitstag und Mitarbeiter, um dıe Auf- (6 Punkte)
+träge im September termingerecht zu erledigen. Berücksichtigen Sıe dabei einen Zeit-
+grad von 110 %
+
+Lösungshinweise Aufgabe 2 (17 Punkte)
+[VO: 8 4 Absatz 3 Nr. 2]
+
+a) Kapazıtatsbestand = Anzahl Mitarbeiter ‘ Arbeitszeit pro Tag Anzahl Arbeitstage pro
+Periode - Planungsfaktor
+
+Kapazitätsbestand = 24 Mitarbeiter - 8 Std. /Tag 20 Tage : 0,85 = 3264 Std {5 Punkte)
+
+Anzahl Bauteile - Vorgabezeit pro Bauteil
+60 Minuten pro Stunde
+
+Kapaziıtatsbedarf =
+
+1500 Teile 160 min/Bauteil
+
+Kapazitätsbedarf =
+60 min/Std (4 Punkte)
+
+Zusatzbedarf = Kapazitätsbedarf - Kapazitätsbestand
+Zusatzbedarf = 4000 Std. — 3264 Std. = 736 Std (2 Punkte)
+b) Mehrarbeit pro Mitarbeiter und Tag'
+
+_ Zusatzbedarf
+Anzahl Mitarbeiter : Anzahl Arbeitstage : Planungsfaktor - Zeitgradfaktor
+
+Z— SEN = 1,64 Std /Tag
+24 Mitarbeiter 20 Tage 0,85 11 (6 Punkte)
+® DIHK - Gesellschaft für berufliche Bildung — Organisation zur Fördenring der IHK-Weiterbildung mbH — Bonn P 050-02-0517-5 | Seite 15
+
+Dia Vervielfältigung, Verbreitung oder öffentliche Wiedergabe der Publikation (der Prüfungssätze und Lösungshinweise]
+ist nicht gestattet (8$ 53, 54 UrhG} und strafbar ($ 106 UrhG). Im Fall der Zuwiderhandtung wird Strafantrag gestellt.
+
+=== Seite 4 ===
+GEPRÜFTEI-R INDUSTRIEMEISTER/-IN
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+
+GRUNDLEGENDE QUALIFIKATIONEN
+Betriebswirtschaftliches Handeln
+
+Aufgabe
+
+Zu Begınn dıeses Jahres betrug der Lagerbestand eines Rohstoffes 22 t. Der Materialeın-
+kauf betrug 210 t. Bei den Bestandskontrollen zum Ende der folgenden Monate betrugen
+dıe Lagerbestände
+
+= ‚Januar 30t
+= Februar 36t
+=» Marz 35t
+
+= April 45t
+= Mai 44t
+= Juni 401
+a) Ermitteln Sie den durchschnittlichen Lagerbestand ım ersten Halbjahr. {3 Punkte)
+b) Ermitteln Sie den Materialverbrauch ım ersten Halbjahr (2 Punkte)
+
+c) Im vergangenen Jahr betrug der durchschnittliche Lagerbestand 45 t
+
+Ermitteln Sıe dıe Umschlagshäufigkeit bei einem Materalverbrauch ım vergangenen {2 Punkte)
+Jahr ın Hohe von 420 t
+d) Beschreiben Sıe zweı Auswirkungen einer sehr hohen Lagerumschlagshäufigkeit. (6 Punkte)
+Lösungshinweise Aufgabe 3 (13 Punkte)
+
+[VO: 8 4 Absatz 3 Nr. 2]
+
+a) durchschnittlicher Lagerbestand = Änfangsbestand +6 Monatsbestände
+
+7
+durchschnittlicher Lagerbestand = 22-35:
+T (3 Punkte)
+b} Matertalverbrauch = Anfangsbestand + Zugänge — Endbestand
+Materialverbrauch = 22 t+ 210 t- 40 t= 192t (2 Punkte)
+Verbrauch pro Jahr
+c) Lagerumschlagshäufigkeit =
+) u u . Ö Lagerbestand
+Lagerumschlagshäufigkeit = “201. 9,33
+at (2 Punkte)
+d) ZB
+= Eine hohe Lagerumschlagshaufigkeit kann zu geringeren Kapitalbındungs- und
+Lagerkosten führen
+= Eine hohe Lagerumschlagshäufigkeit reduziert das Rısıko einer Veralterung der
+Lagerbestände.
+"=  Bestellkosten erhöhen sıch, die Lieferbereitschaft wırd durch geringe Lagerbe-
+stande eingeschränkt. {6 Punkte)
+Seite 16 | P 050-02-0517-5 | © DIHK - Gesellschaft für berufliche Bildung — Organisation zur Förderung der IHK-Weiterbildung mbH - Bonn
+
+Die Vervielfältigung, Verbreitung oder öffentliche Wiedergabe der Publikation [der Prüfungssätze und Lösungshinweise]
+ist nicht gestattet (85 53, 54 UrhG) und strafbar (8 106 UrhG). Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+
+=== Seite 5 ===
+GEPRÜFTEI-R INDUSTRIEMEISTER/-IN
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+
+GRUNDLEGENDE QUALIFIKATIONEN
+Beiriebswirtschaftliches Handeln
+
+Aufgabe 4
+
+Fur die Herstellung von 1200 Teilen wird eine Vorgabezeit von 2070 Minuten festgelegt Der
+Akkordgrundlohn betragt 16 €/Stunde. der Akkordzuschlag 10%
+
+Der Facharbeiter benotigt für den Auftrag 30 Stunden.
+
+a) Berechnen Sie den erreichten Zeitgrad. (3 Punkte)
+b) Ermittein Sie den tatsächlichen Stundenlohn des Facharbeıters. (4 Punkte)
+c} Ermitteln Sie die Lohnkosten fur den Auftrag (2 Punkte)
+d\) Ermitteln Sie die Lohnkosten pro Stuck. (4 Punkte)
+Lösungshinweise Aufgabe 4 (13 Punkte)
+
+[VO: $ 4 Absatz 3 Nr.4]
+
+a) Zeitgrad ın % = -
+Istauftragszeit 30 Stunden (3 Punkte)
+
+b) Akkordrichtsatz pro Stunde Akkordgrundliohn + Akkordzuschlag
+= 16 €&/Stunden + 10 % = 17,60 &/Stunde {2 Punkte)
+tatsächlicher Stundenlohn = Akkordrichtsatz/Stunde © Zeitgradfaktor
+= 17,60 €/Std. - 1,15 = 20,24 €/Stunde (2 Punkte)
+c} Lohnkosten pro Auftrag = Akkordiohn - Istzeit
+= 20,24 €/Std. 30 Stunden = 607,20 €
+bzw = Akkordrichtsatz - Vorgabezeit
+
+= 17,60 €/Std. 34,5 Stunden = 607,20 € {2 Punkte)
+
+d) Lohnkosten/Stück Akkordrichtsatz/Stunden - Vorgabezeit
+
+Auftragsmenge
+_. 17,60 €/Std.:34,5 Std. _ 0,506 €/Stück
+1200 Teile
+oder
+Lohnkosten/Stfick = Akkordiohn/Stunde - Istzeit
+Auftragsmenge
+_ 20,24 €/Std..30 Std. _ 0,506 €/Std.
+1200 Teile
+oder
+Lohnkosten/Stuck = Lohrkoston pro Auftrag
+Auftragsmenge
+- _607,20€ _ ),506 €/Stück
+1200 Stück 1 EL)
+© DIHK - Gesallschaft für berufliche Bildung — Organisation zur Förderung der IHK-Weiterbildung mb — Bonn P 050-02-0517-5 | Seite 17
+
+Die Vervieffältigung, Verbreitung oder öffentliche Wiedergabe der Publikation [der Prüfungssätze und Lösungshinweiss]
+ist nicht gestattet (88 53, 54 UrhG) und strafbar {$ 106 UrhG). Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+
+=== Seite 6 ===
+GEPRÜFTEI-R INDUSTRIEMEISTER/-IN
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+
+GRUNDLEGENDE QUALIFIKATIONEN
+Betriebswirtschaftliches Handeln
+
+Aufgabe EX
+
+Im Unternehmen soll eine neue Werkzeugmaschine angeschafft werden. Für dıe Maschine
+legen folgende Daten vor
+
+=  Anschaffungskosten 510.000,00 €
+= Nutzungsdauer 6 Jahre
+= Restwert nach 6 Jahren 120.000,00 €
+= jährliche Laufzeit 3000 Stunden
+n  Flachenbedarf 16 m?
+= Durchschnittlicher Energieverbrauch
+
+(Anschlusswert) 15 KW
+Im Betrieb werden mit folgenden Daten gerechnet
+“  Kalkulatorısch Zinssatz 6 % pro Jahr
+=  Instandhaltungskostensatz
+
+auf Anschaffungskosten pro Jahr 8%
+=  Kalkulatorische Monatsmiete 14,00 €/m?
+= Stromkosten 0,21 &/kWh
+
+Es wırd davon ausgegangen, dass nach 6 Jahren Nutzungsdauer der Wiederbeschaffungs-
+wert 10 % uber den aktuellen Anschaffungskosten hegt.
+
+a) Berechnen Sıe den Maschinenstundensatz (12 Punkte)
+
+b) Berechnen Sıe den Maschinenstundensatz, wenn sich die Laufzeit auf 3300 Maschı- (6 Punkte)
+nenstunden ım Jahr erhoht
+
+Lösungshinweise Aufgabe 5 (18 Punkte)
+[VO: 8 4 Absatz 3 Nr.5]
+a) Position Formel Wert
+
+Kalkulatorscee _ WEBW - RW 561.000 € -120.000 € _
+
+Abschreibung u n u 6 Jahre = 73.500 €/J
+
+= AK+RW Zinssatz
+Kalkulatorische 2
+Zinsen _ 510.000 €+120.000 € 6% u
+2 100 %
+
+18.900 &/J
+
+= Flachenbedarf - Mietpreis 12 Monate/Jahr
+Raumkosten 2.688 €/)
+= 16 m? 14,00 €/m? Monat 12 Monate/Jahr =
+
+= Energieverbrauch ‘Energiekosten Laufzeit
+Energiekosten 9.450 E/J
+=15kW 0,21 &/kWh - 3000 Stunden/Jahr =
+
+Seite 18 | P 050-02-0517-5 | © DIHK - Gesellschaft für bensfliche Bildung — Organisation zur Förderung der IHK-Weiterbildung mbH — Bonn
+Die Vervielfältigung, Verbreitung oder öffentliche Wiedergabe der Publikation [der Prüfungssätze und Lösungshinweise]
+ist nicht gestattet (88 53, 54 UrhG) und strafbar (& 106 UrhG). Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+
+=== Seite 7 ===
+GEPRÜFTEI-R INDUSTRIEMEISTER/-IN
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+
+GRUNDLEGENDE QUALIFIKATIONEN
+Betriebswirtschaftliches Handeln
+
+= AK - Instandhaltungskostensatz
+
+Instandhaltungs-
+kosten - 510 000€: _2%_= 40.800 Ey
+100 %
+Maschınen-
+kosten/Jahr 2 145.338 €/J
+Maschinen- _ Maschinenkosten _ 145.000 €/J _
+stundensatz Laufzeit 3000 Std./J 48,45 €/Std.
+{12 Punkte}
+b) Position Formel Wert
+Maschınen-
+kosten/Jahr 145.338 E/J
+Energiekosten
+falt] — 9.450 €/J
+= Energieverbrauch Energiekosten Laufzeit
+Energiekosten 10.395 €/J
+= 15 KW 0,21 €/kWh : 3300 Stunden/Jahr =
+Maschinen-
+kosten/Jahr 2 146.283 €
+Maschinen- _ Maschinenkosten _ 146.282 €) _
+stundensatz Laufzeit 3300 Std. 44,33 e/Std
+(6 Punkte)
+Aufgabe 6
+Als angehender Industriemeister werden Sıe vom Controller mit der Kosten- und Erlossitua-
+tion ın Ihrem Betrieb konfrontiert. Die Daten sind allerdings unvollständig
+Um sich einen Überblick über die Kosten- und Erlössituation zu verschaffen, müssen Sıe die (10 Punkte)
+leeren Felder ın Anlage 2 ergänzen.
+© DIHK - Gesellschaft für berufliche Bildung — Organisation zur Förderung der IHK-Weiterbildung mbH - Bonn | P 050-02-0517-5 | Seite 19
+
+Die Vervielfältigung, Verbreitung oder öffentliche Wiedergabe der Publikation jder Prüfungssätze und Lösungshinweise]
+ist nicht gestattet (88 53, 54 UrhG) und strafbar ($ 106 UrhG). Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+
+=== Seite 8 ===
+GEPRÜFTEI-R INDUSTRIEMEISTER/-IN
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+
+GRUNDLEGENDE QUALIFIKATIONEN
+Betriebswirtschaftliches Handeln
+
+Lösungshinweise Aufgabe 6 (10 Punkte)
+[VO: & 4 Absatz 3 Nr. 5]
+Beschäftigungsgrad BG 80% 100%
+Menge in Stuck x 96000 Stück 120000 Stuck
+fixe Stuckkosten k, 12,50 €/Stuck 10,00 €/Stuck
+gesamte Fixkosten K, 1.200.000 € 1.200.000 €
+gesamte varıable Kosten K, 1.440 000 € 1.800.000 €
+Stüuckdeckungsbeitrag db 12,00 €/Stuck 12,00 €/Stück
+Gesamtdeckungsbeitrag DB 1.152.000 € 1.440.000 €
+Betriebsergebnis BE 48.000 € 240.000 €
+Aufgabe
+Aufgrund zunehmenden Wettbewerbs kann das Unternehmen ein Spezialbauteil nur noch
+zu einem Listenverkaufspreis von 295,00 € pro Stück am Markt verkaufen
+Durch Ratıonalisierungsmaßnahmen in der Fertigung ıst es gelungen, die Fertigungs-
+lIohn-kosten auf 35,00 € pro Bauteil zu senken. Die Kosten fur das Fertigungsmaterial betra-
+gen 28,00 € pro Bauteil. Für eine Spezialverpackung müssen 2,00 € pro Bauteil aufgewen-
+det werden. Dem Kunden werden 2 % Skonto und ein Rabatt von 16 % gewährt
+Ermitteln Ste den Gewinn pro Bauteil und den realisierten Gewinnzuschlag für den Fall, dass (15 Punkte)
+mit folgenden Gemeinkostenzuschlagssätzen kalkuliert wird
+=  Maferialgemeinkostenzuschlagssatz 15%
+=  Ferligungsgemeinkostenzuschlagssatz 215 %
+= Verwaltungsgemeinkostenzuschlagssatz. 22%
+=  Vertriebsgemeinkostenzuschlagssatz 13%
+Lösungshinweise Aufgabe 7 (15 Punkte)
+[VO: $ 4 Absatz 3 Nr. 5]
+Fertigungsmaterial 28,00 €
++ Matenal-GK (15 %) 420 € (1 Punkt)
+= Materialkosten 32,20 €
+Fertigungslohne 35,00 €
++ Fertigungs-GK (215%) 75,25€ (1 Punkt)
+= Fertigungskosten 110,25 €
+Herstellkosten 142,45 € (1 Punkt)
++ Verwaltungs-GK (22 %) 31,34 € (1 Punkt)
++ Vertriebs-GK (13 %) 18,52 € (1 Punkt)
++ SEV 2,00 € (1 Punkt)
+= Selbstkosten 194,31 € (1 Punkt)
++ Gewinn pro Stück 48,53 € (1 Punkt)
+
+© DIHK — Gesellschaft für berufliche Bildung — Organisation zur Förderung der IHK-Weiterbildung mbH — Bonn
+Die Vervielfältigung, Verbreitung oder öffentliche Wiedergabe der Publikation [der Prüfungssätze und Lösungshinweise]
+ist nicht gestattet ($$ 53, 54 UrhG) und strafbar ($ 106 UrhG). Im Fall der Zuwiderhandlung wird Strafantrag gestellt,
+
+Seite 20 | P 050-02-0517-5 |
+
+=== Seite 9 ===
+GEPRÜFTEI-R INDUSTRIEMEISTER/-IN
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+
+GRUNDLEGENDE QUALIFIKATIONEN
+Betriebswirtschaftliches Handeln
+
+= Barverkaufspreis 242,84 € (1 Punkt)
++ Skonto (2 %) 4,96 € (1 Punkt)
+= Zielverkaufspreis 247,80 € (1 Punkt)
++ Rabatt (16 %) 47,20 € (1 Punkt)
+= Listenverkaufspreis 295,00 €
+Gewinnzuschlag = 9 10 _ 4.98%
+
+194,31 € (3 Punkte)
+
+© DIHK - Gesellschaft für berufliche Bildung — Organisation zur Förderung der IHK-Weiterbildung mbH — Bonn P 050-02-06517-5 | Seite 21
+
+Die Vervielfältigung, Verbreitung odar öffentliche Wiedergabe der Publikation [der Prüfungssätze und Lösungshinweise]
+ist nicht gestattet (88 53, 54 UrhG) und strafbar ($ 106 UrhG). Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+
+=== Seite 10 ===
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+
+GRUNDLEGENDE QUALIFIKATIONEN
+Betriebswirtschaftliches Handeln
+
+Anlage 1 zu Aufgabe 1 Prüfungsteilnehmer-Nummer:
+Rechtsform Geschäftsführungsbefugnisse Haftungsumfang der Gesellschafter Mindestgründungskapital der Gesellschaft
+GmbH
+OHG
+KG
+© DIHK — Gesellschaft für berufliche Bildung - Organisation zur Förderung der IHK-Weiterbildung mbH - Bonn. Die Vervielfältigung, Verbreitung oder öffentliche Wiedergabe der Publikation [der Prüfungssätze und P 050-02-0517-5 | Seite 22
+
+Lösungshinweise] ist nicht gestattet (88 53, 54 UrhG) und strafbar ($ 106 UrhG). Im Fall der Zuwiderhandlung wird Strafantrag gestellt,
+
+=== Seite 11 ===
+usjseb Beuyugeng pam Bunjpueyuepanz op jjeg wu (Hyarı gg, 9) egyens pur (Oyır) #5 "05 58) Jeyersaß yyaıu ysı [estamulysBunsg]
+
+Pun szjgssBungud Jap] vogesmand Jap egeBlepejm eysıpuayg Jspo Bunyaugas ‘Bundpgeyalasa eig 'uuog — Hau Äunpiqeja/yHHl sep Buriepig nz vogesjueßug — Bunpyg eyalynıeq an) yeyosaseg - YHIT © 1 9-21.80"Z0-050 d | EZ S11eg
+
+3000072 3g sıugsßlesgqaNsg
+
+3000 OFF I [a Beunsgsßbungdspjiueses)
+
+ap Besyagsburygdspyanis
+
+3 000 008 L 5 USISOY SIgelIeA Sjweseß
+
+'y USISOYXI4 Syuesaß
+
+yonıs/3 05‘Z1 & USSOPOMS axıj
+
+x yanıs ui aßuer
+
+%001 %08 9a pesBsBundiyeyssag
+
+Joumunn-iswysullejsßunynid 9 ageßyny nz z abejuy
+
+LIBPUEH sayoıyeyasuimsgemag
+N3NOILLVYMIJITVND JANF393IGNNYD
+
+IN3NOLLVYMIAITVNOSISVI JONFIJIIYDOYIEANSONNLHIIUHIVA
+NI/S3LSIIW3IULSNANI 4/3L14N4439
+
+

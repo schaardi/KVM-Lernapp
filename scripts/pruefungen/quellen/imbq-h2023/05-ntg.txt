@@ -1,0 +1,893 @@
+=== Seite 1 ===
+                                                         Einsatz nur im Rahmen des Korrekturprozesses gestattet. Weitergabe an unbefugte Dritte untersagt.
+
+
+
+                                                            Prüfungsteilnehmer-Nummer:
+
+
+
+
+                                                           Bundeseinheitliche Fortbildungsprüfung der Industrie- und Handelskammern
+                                                           Geprüfter Industriemeister / Geprüfte Industriemeisterin,
+                                                           fachrichtungsübergreifende Basisqualifikationen/grundlegende
+                                                           Qualifikationen
+                                                           Berücksichtigung naturwissenschaftlicher und technischer Gesetzmäßigkeiten
+
+                                                            Datum:                                     8. November 2023
+
+                                                            Bearbeitungszeit:                          90 Minuten
+
+                                                            Anzahl Aufgaben:                           7
+Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+
+
+
+
+                                                                                                                                                                                                                      Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+                                                            Anzahl Anlagen:                            1
+
+                                                            Seiten:                                    6
+
+
+                                                           Bevor Sie mit der Prüfung beginnen, prüfen Sie bitte die Prüfungsunterlagen. Wenn
+                                                           die Prüfungsunterlagen nicht vollständig sind, informieren Sie bitte die Aufsicht.
+
+                                                           Bitte lesen Sie die nachfolgenden Bearbeitungshinweise gut durch:
+                                                              Alle erlaubten Hilfsmittel wurden Ihnen mit der Einladung mitgeteilt.
+                                                              Sie erhalten einen Aufgabenteil sowie ein Heft für Ihre Lösungen.
+                                                              Sie können maximal 100 Punkte erreichen.
+                                                              Verwenden Sie je Aufgabe bitte eine neue Lösungsseite.
+                                                              Wenn Sie die Lösung einer Aufgabe auf eine Anlage schreiben sollen, wird Ihnen dies in
+                                                               der Aufgabe mitgeteilt.
+                                                              Stellen Sie Ihre Lösungs- und Rechenvorgänge nachvollziehbar im Lösungsteil dar.
+                                                               Reicht der Platz nicht aus, verwenden Sie bitte das Konzeptpapier. Weisen Sie auf die
+                                                               Fortsetzung hin und kennzeichnen Sie diese.
+                                                              Eine nicht lesbare Prüfungsarbeit wird mit der Note „ungenügend“ (null Punkte)
+                                                               bewertet. Die Konsequenzen entnehmen Sie bitte der Prüfungsordnung.
+                                                              Es gibt Aufgaben, die eine exakte Anzahl an Antworten vorgeben. Es werden nur die
+                                                               ersten Antworten gewertet. Was über die exakte Anzahl hinausgeht, wird gestrichen.
+                                                              Geben Sie alle Ihnen zur Verfügung gestellten Unterlagen am Ende der Prüfung ab.
+                                                              Aufgrund der besseren Lesbarkeit bevorzugen wir in diesen Texten die männliche Form.
+                                                               Mit diesem vereinfachten Ausdruck sind selbstverständlich alle Geschlechter gemeint.
+
+                                                                                   © DIHK – Gesellschaft für berufliche Bildung – Organisation zur Förderung der IHK-Weiterbildung gGmbH – Bonn
+                                                                      Die Vervielfältigung, Verbreitung oder öffentliche Wiedergabe der Publikation ist nicht gestattet (§§ 53, 54 UrhG) und strafbar (§ 106 UrhG).
+                                                                                                                  Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+                                                                                                                                    P P050-05-1123
+
+=== Seite 2 ===
+                                                         Einsatz nur im Rahmen des Korrekturprozesses gestattet. Weitergabe an unbefugte Dritte untersagt.
+
+                                                           GEPRÜFTE/-R INDUSTRIEMEISTER/-IN,
+                                                           FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+                                                           GRUNDLEGENDE QUALIFIKATIONEN
+                                                           Berücksichtigung naturwissenschaftlicher und technischer Gesetzmäßigkeiten
+
+
+
+                                                           Aufgabe 1
+                                                           Ihr Unternehmen verwendet bei der Produktion von Metallteilen Säuren und Basen.
+
+                                                            a Mögliche Punktzahl: 3
+                                                           Geben Sie drei Anwendungsbeispiele für Säuren in technischen Bereichen an.
+
+                                                            b Mögliche Punktzahl: 2
+                                                           Nennen Sie zwei unterschiedliche Eigenschaften von Säuren.
+
+                                                            c Mögliche Punktzahl: 3
+Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+
+
+
+
+                                                                                                                                                             Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+                                                           Eine Salzsäure wird mit einer Natronlauge im Verhältnis 1:1 gemischt.
+
+                                                           Geben Sie an, wie diese Reaktion genannt wird sowie die Bezeichnung der Stoffe,
+                                                           die dabei entstehen.
+
+                                                            d Mögliche Punktzahl: 4
+                                                           Nennen Sie zwei Gefährdungen, denen der menschliche Körper beim Umgang mit
+                                                           Säuren und Basen ausgesetzt ist und geben Sie jeweils eine geeignete
+                                                           Schutzmaßnahme an.
+
+                                                           Aufgabe 2
+                                                           Ein PKW fährt mit einer Geschwindigkeit von 72 km/h. Der Fahrer bemerkt ein Hindernis
+                                                           in 75 Metern Entfernung und bremst nach einer Reaktionszeit von einer Sekunde innerhalb
+                                                           von 5 Sekunden gleichmäßig bis zum Stillstand.
+
+                                                            a Mögliche Punktzahl: 6
+                                                           Zeichnen Sie maßstabsgetreu das Geschwindigkeits-Zeit-Diagramm für den Zeitraum
+                                                           zwischen dem Erkennen des Hindernisses bis zum Stillstand.
+
+                                                            b Mögliche Punktzahl: 6
+                                                           Berechnen Sie, ob der PKW rechtzeitig vor dem Hindernis zum Stehen kommt.
+
+                                                            c Mögliche Punktzahl: 4
+                                                           Berechnen Sie den Wert der Verzögerung.
+
+
+
+
+                                                                                                              Seite 2
+                                                                                                           P 050-05-1123
+
+=== Seite 3 ===
+                                                         Einsatz nur im Rahmen des Korrekturprozesses gestattet. Weitergabe an unbefugte Dritte untersagt.
+
+                                                           GEPRÜFTE/-R INDUSTRIEMEISTER/-IN,
+                                                           FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+                                                           GRUNDLEGENDE QUALIFIKATIONEN
+                                                           Berücksichtigung naturwissenschaftlicher und technischer Gesetzmäßigkeiten
+
+                                                           Aufgabe 3
+                                                           Ein 6 m langes ungleichschenkliges Winkelprofil (Abbildung 1) hat folgende Abmessungen:
+                                                           60 mm x 40 mm x 5 mm. Es besitzt eine Querschnittsfläche S = 4,79 cm²,
+                                                           eine Materialdichte von ρ = 2,70 kg/dm³ und wird mit einer Zugkraft von 36.000 N belastet.
+Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+
+
+
+
+                                                                                                                                                             Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+                                                                                        Abbildung 1: Querschnittsfläche des Winkelprofils
+
+                                                             a Mögliche Punktzahl: 4
+                                                           Berechnen Sie die Masse des Winkelprofils.
+
+                                                             b Mögliche Punktzahl: 5
+                                                           Berechnen Sie die auftretende Zugspannung im Winkelprofil.
+
+                                                             c Mögliche Punktzahl: 9
+                                                           In den längeren Schenkel des Winkelprofils wird ein Durchgangsloch mit dem Durchmesser
+                                                           von 17 mm gebohrt.
+                                                           Berechnen Sie die auftretende Zugspannung im Winkelprofil bei gleichbleibender
+                                                           Zugkraft.
+
+
+
+
+                                                                                                               Seite 3
+                                                                                                           P 050-05-1123
+
+=== Seite 4 ===
+                                                         Einsatz nur im Rahmen des Korrekturprozesses gestattet. Weitergabe an unbefugte Dritte untersagt.
+
+                                                           GEPRÜFTE/-R INDUSTRIEMEISTER/-IN,
+                                                           FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+                                                           GRUNDLEGENDE QUALIFIKATIONEN
+                                                           Berücksichtigung naturwissenschaftlicher und technischer Gesetzmäßigkeiten
+
+
+
+                                                           Aufgabe 4
+                                                           Bei der dargestellten Schaltung soll die Spannung am Widerstand R1 genau so groß sein,
+                                                           wie die Spannung am Widerstand R3.
+
+                                                                                                                                 R2 = 300 Ω
+
+                                                                                                                                 R3 = 100 Ω
+
+                                                                                                                                 R4 = 200 Ω
+Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+
+
+
+
+                                                                                                                                                             Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+                                                             Abbildung 2: Schaltbild
+
+                                                            a Mögliche Punktzahl:
+                                                                              -   8
+
+                                                           Berechnen Sie den Wert des Widerstands R1 und die dort anliegende Spannung U1.
+
+                                                            b Mögliche Punktzahl: 2
+                                                           Der Widerstand R2 hat eine Bemessungsleistung (max. zulässige Leistung) von 1,5 W.
+
+                                                           Bestimmen Sie die Spannung, die an R2 maximal anliegen darf.
+
+                                                            c Mögliche Punktzahl: 2
+                                                           Beschreiben Sie, wie der Gesamtstrom der Schaltung mit einem Strommessgerät
+                                                           gemessen werden kann.
+
+
+                                                           Aufgabe 5
+                                                           Die Spule eines Hubmagnetes ist an 24 V DC angeschlossen und erwärmt sich im Betrieb
+                                                           auf 90 °C. Die Spule ist aus 100 m Kupferdraht mit einem Durchmesser von 0,3 mm
+                                                           gewickelt. Der Temperaturkoeffizient  R von Kupfer ist 0,0039 1/K.
+
+                                                            a Mögliche Punktzahl: 10
+                                                           Berechnen Sie die Stromänderung zwischen dem Einschalten (bei 20 °C) und der
+                                                           aktuellen Betriebstemperatur.
+
+                                                            b Mögliche Punktzahl: 2
+                                                           Beschreiben Sie, welche Art von temperaturabhängigem Widerstand hier vorliegt.
+
+
+
+                                                                                                              Seite 4
+                                                                                                           P 050-05-1123
+
+=== Seite 5 ===
+                                                         Einsatz nur im Rahmen des Korrekturprozesses gestattet. Weitergabe an unbefugte Dritte untersagt.
+
+                                                           GEPRÜFTE/-R INDUSTRIEMEISTER/-IN,
+                                                           FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+                                                           GRUNDLEGENDE QUALIFIKATIONEN
+                                                           Berücksichtigung naturwissenschaftlicher und technischer Gesetzmäßigkeiten
+
+
+
+                                                           Aufgabe 6
+                                                           Waren werden zum Versand in Kisten (Höhe = 1 m, Breite = 1,5 m, Gesamtmasse = 1.500 kg)
+                                                           verpackt. Jede Kiste wird mittig auf entsprechende Transportkonstruktionen aus Stahl mit
+                                                           einem Spanngurt fixiert.
+
+                                                           Jede der beiden Fixierlaschen wird mit 3.000 N belastet. Der Abstand der Fixierlaschen
+                                                           zum Anbringen des Spanngurtes auf den Transportkonstruktionen beträgt 1,84 m.
+Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+
+
+
+
+                                                                                                                                                             Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+                                                                        Abbildung 3: Transportkonstruktion der Kiste
+
+
+                                                            a Mögliche Punktzahl: 10
+                                                           Berechnen Sie, ob die maximale Vorspannkraft des Spanngurtes ausreicht, um
+                                                           mindestens eine senkrechte Gesamtkraft FVges von 20.000 N zu erreichen.
+
+                                                            b Mögliche Punktzahl: 6
+                                                           Die Transportkonstruktion steht auf der LkW-Ladefläche aus Stahl. Der LkW durchfährt eine
+                                                           Kurve mit einem Radius von 33 m, mit einer Geschwindigkeit von 30 km/h.
+
+                                                           Weisen Sie durch Rechnung nach, ob die Kisten verrutschen.
+                                                           Hinweis für den Prüfungsteilnehmer: Sollte a) nicht errechnet werden, rechnen Sie
+                                                           mit der geforderten Gesamtkraft FVges.
+
+
+
+
+                                                                                                              Seite 5
+                                                                                                           P 050-05-1123
+
+=== Seite 6 ===
+                                                         Einsatz nur im Rahmen des Korrekturprozesses gestattet. Weitergabe an unbefugte Dritte untersagt.
+
+                                                           GEPRÜFTE/-R INDUSTRIEMEISTER/-IN,
+                                                           FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+                                                           GRUNDLEGENDE QUALIFIKATIONEN
+                                                           Berücksichtigung naturwissenschaftlicher und technischer Gesetzmäßigkeiten
+
+
+
+                                                           Aufgabe 7
+                                                           Um die Belastbarkeit von Aufzügen zu überprüfen, wurde mittels einer Stichprobe die Masse
+                                                           von zehn Personen erfasst und statistisch ausgewertet.
+
+                                                               Person         a       b       c        d       e        f        g      h    i    j
+
+                                                               Masse
+                                                                              68      74      88       78      52       64       90     58   60   98
+                                                               in kg
+Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+
+
+
+
+                                                                                                                                                             Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+                                                            a Mögliche Punktzahl: 2
+                                                           Berechnen Sie den arithmetischen Mittelwert.
+
+                                                            b Mögliche Punktzahl: 2
+                                                           Bestimmen Sie die Spannweite R.
+
+                                                            c Mögliche Punktzahl: 10
+                                                           Stellen Sie die Normalverteilung nach Gauß grafisch in der Anlage 1 dar.
+
+                                                           Tragen Sie dazu den Mittelwert (kg) sowie die Massenwerte (kg) der Flächenanteile
+                                                           von 68,26 %, 95,45 % und 99,73 % ein.
+
+
+
+
+                                                                                                              Seite 6
+                                                                                                            P 050-05-1123
+
+=== Seite 7 ===
+                                                         Einsatz nur im Rahmen des Korrekturprozesses gestattet. Weitergabe an unbefugte Dritte untersagt.
+
+                                                           GEPRÜFTE/-R INDUSTRIEMEISTER/-IN,
+                                                           FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+                                                           GRUNDLEGENDE QUALIFIKATIONEN
+                                                           Berücksichtigung naturwissenschaftlicher und technischer Gesetzmäßigkeiten
+
+
+
+
+                                                            Prüfungsteilnehmer-Nummer:
+
+
+                                                           Anlage 1 zu Aufgabe 7
+Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+
+
+
+
+                                                                                                                                                             Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+
+
+
+
+                                                                                                         Seite 1 von 1
+                                                                                                         P 050-05-1123
+
+=== Seite 8 ===
+                                                         Einsatz nur im Rahmen des Korrekturprozesses gestattet. Weitergabe an unbefugte Dritte untersagt.
+
+
+
+
+                                                           Bundeseinheitliche Fortbildungsprüfung der Industrie- und Handelskammern
+                                                           Geprüfter Industriemeister / Geprüfte Industriemeisterin,
+                                                           fachrichtungsübergreifende Basisqualifikationen/grundlegende
+                                                           Qualifikationen
+                                                           Berücksichtigung naturwissenschaftlicher und technischer Gesetzmäßigkeiten
+
+
+                                                           Lösungshinweise
+                                                            Datum:                                         8. November 2023
+Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+
+
+
+
+                                                                                                                                                                                                                          Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+                                                            Bearbeitungszeit:                              90 Minuten
+
+                                                            Anzahl Aufgaben:                               7
+
+
+                                                           Hinweise für den Korrektor:
+                                                           ■   Die folgenden Lösungen sind lediglich Lösungshinweise.
+                                                           ■   Sie sollen nur den Rahmen der zu erwartenden Prüfungsleistung abstecken.
+                                                           ■   Der Korrektor ist durch die hier aufgeführten Lösungshinweise in seinem
+                                                               Bewertungsspielraum nicht eingeengt.
+                                                           ■   Bei Aufgaben, die eine Aufzählung von n-Fakten zur Lösung erfordern, werden nur die
+                                                               ersten n-Fakten gewertet. Alle darüber hinausgehenden Aufzählungen werden
+                                                               gestrichen.
+                                                           ■   Bei Berechnungen sollen Folgefehler berücksichtigt werden und somit nicht zum
+                                                               Punktabzug führen.
+                                                           ■   Der leichteren Lesbarkeit wegen geben wir in den Aufgaben/Texten der männlichen
+                                                               Form den Vorzug. Mit diesem einfacheren sprachlichen Ausdruck sind selbstverständlich
+                                                               immer alle Geschlechter gemeint.
+
+
+                                                           Die Aufgaben mit Lösungsvorschlägen können von den Industrie- und Handelskammern oder Dritten nach einer Frist von sechs Monaten
+                                                           direkt bestellt werden bei:
+                                                           wbv Media GmbH & Co. KG, Service-Center DIHK,
+                                                           Postfach 10 06 33, 33506 Bielefeld
+                                                           Tel.: 0521/91101-16, Fax: 0521/91101-19, E-Mail: service@wbv.de
+
+
+
+
+                                                                                       © DIHK – Gesellschaft für berufliche Bildung – Organisation zur Förderung der IHK-Weiterbildung gGmbH – Bonn
+                                                                          Die Vervielfältigung, Verbreitung oder öffentliche Wiedergabe der Publikation ist nicht gestattet (§§ 53, 54 UrhG) und strafbar (§ 106 UrhG).
+                                                                                                                      Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+                                                                                                                                        P P050-05-1123
+
+=== Seite 9 ===
+                                                         Einsatz nur im Rahmen des Korrekturprozesses gestattet. Weitergabe an unbefugte Dritte untersagt.
+
+                                                           GEPRÜFTE/-R INDUSTRIEMEISTER/-IN,
+                                                           FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+                                                           GRUNDLEGENDE QUALIFIKATIONEN
+                                                           Berücksichtigung naturwissenschaftlicher und technischer Gesetzmäßigkeiten
+
+
+
+                                                           Lösungshinweise Aufgabe 1
+                                                           [VO: § 4 Absatz 6 Nr. 1-3]
+
+                                                            a Mögliche Punktzahl: 3
+                                                           Anwendungsbeispiele für Säuren in technischen Bereichen sind z. B.:
+                                                           ■   Reinigungsmittel
+                                                           ■   Einsatz in der Galvanik zum Beizen von Metallen
+                                                           ■   Verwendung von Schwefelsäure in Batterien
+                                                           ■   Desinfektionsmittel
+Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+
+
+
+
+                                                                                                                                                             Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+                                                            b Mögliche Punktzahl: 2
+                                                           Eigenschaften von Säuren sind z. B.:
+                                                           ■   Säuren wirken ätzend.
+                                                           ■   Säuren können unedle Metalle oder Metalloxide auflösen.
+                                                           ■   Säuren haben einen sauren Geschmack.
+                                                           ■   Säuren verfügen über einen pH-Wert von unter 7.
+                                                           ■   Säuren in wässriger Lösung sind elektrisch leitfähig.
+
+                                                            c Mögliche Punktzahl: 3
+                                                           ■   Dieser Vorgang wird als Neutralisation bezeichnet.
+                                                           ■   In dem genannten Beispiel entstehen gelöstes Natriumchlorid (Kochsalz) und Wasser.
+
+                                                            d Mögliche Punktzahl: 4
+                                                           Körperteile, die beim Umgang mit Säuren und Basen Gefährdungen ausgesetzt sind, sind
+                                                           z. B.:
+                                                           ■   Gefährdung der Haut durch direkten Kontakt:
+                                                               Schutzmaßnahmen (PSA):
+                                                               ■ undurchlässige Handschuhe
+                                                               ■ armbedeckende Bekleidung
+                                                               ■ Hautschutz
+                                                               ■ Schutzkleidung
+                                                           ■   Gefährdung der Atemwege durch Dämpfe:
+                                                               Schutzmaßnahmen (PSA):
+                                                               ■ Atemschutzgerät verwenden
+                                                               ■ Nutzung einer Absaugung
+                                                               ■ Belüftung
+
+
+
+                                                                                                              Seite 2
+                                                                                                           L 050-05-1123
+
+=== Seite 10 ===
+                                                         Einsatz nur im Rahmen des Korrekturprozesses gestattet. Weitergabe an unbefugte Dritte untersagt.
+
+                                                           GEPRÜFTE/-R INDUSTRIEMEISTER/-IN,
+                                                           FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+                                                           GRUNDLEGENDE QUALIFIKATIONEN
+                                                           Berücksichtigung naturwissenschaftlicher und technischer Gesetzmäßigkeiten
+
+
+
+                                                           ■                       Gefährdung von Augen und Gesicht durch Spritzer:
+                                                                                   Schutzmaßnahmen (PSA):
+                                                                                   ■ Gesichts- und Augenschutz (Schutzbrille)
+
+                                                           Lösungshinweise Aufgabe 2
+                                                           [VO: § 4 Absatz 6 Nr. 1-3]
+
+                                                            a Mögliche Punktzahl: 6
+
+                                                                                                         Geschwindigkeits-Zeit-Diagramm
+Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+
+
+
+
+                                                                                                                                                              Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+                                                                                             80
+                                                               Geschwindigkeit v in [km/h]
+
+
+
+
+                                                                                             70
+                                                                                             60
+                                                                                             50
+                                                                                             40
+                                                                                             30
+                                                                                             20
+                                                                                             10
+                                                                                             0
+                                                                                                  0           1   2        3             4            5   6
+                                                                                                                      Zeit t in [s]
+
+
+                                                           Hinweis: Die Angabe der Geschwindigkeit in einer anderen Einheit ist auch möglich.
+
+                                                            b Mögliche Punktzahl: 6
+                                                           ■                       zurückgelegter Weg innerhalb der Reaktionszeit:
+                                                                            m
+                                                                                                      1.000
+                                                                  km       km = 20 m
+                                                           v = 72    
+                                                                   h        s      s
+                                                                       3600
+                                                                            h
+                                                           s1 = v  t1
+                                                                   m
+                                                           s1 = 20    1s
+                                                                   s
+                                                           s1 = 20 m
+
+
+
+
+                                                                                                                                        Seite 3
+                                                                                                                                      L 050-05-1123
+
+=== Seite 11 ===
+                                                         Einsatz nur im Rahmen des Korrekturprozesses gestattet. Weitergabe an unbefugte Dritte untersagt.
+
+                                                           GEPRÜFTE/-R INDUSTRIEMEISTER/-IN,
+                                                           FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+                                                           GRUNDLEGENDE QUALIFIKATIONEN
+                                                           Berücksichtigung naturwissenschaftlicher und technischer Gesetzmäßigkeiten
+
+                                                           ■    Bremsweg:
+                                                                1
+                                                           s2 =    v  t2
+                                                                2
+                                                                1        m
+                                                           s2 =  20  5s
+                                                                2        s
+                                                           s2 = 50 m
+
+
+                                                           ■    Anhalteweg:
+                                                           sges = s1 + s2
+                                                           sges = 20 m + 50 m
+Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+
+
+
+
+                                                                                                                                                             Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+                                                           sges = 70 m
+
+
+                                                           Der PKW kommt rechtzeitig vor dem Hindernis zum Stehen.
+
+                                                            c Mögliche Punktzahl: 4
+                                                                v
+                                                           a=
+                                                                t2
+                                                               m
+                                                                20
+                                                           a=   s
+                                                              5s
+                                                                     m
+                                                           a=4
+                                                                     s2
+
+
+
+
+                                                                                                              Seite 4
+                                                                                                           L 050-05-1123
+
+=== Seite 12 ===
+                                                         Einsatz nur im Rahmen des Korrekturprozesses gestattet. Weitergabe an unbefugte Dritte untersagt.
+
+                                                           GEPRÜFTE/-R INDUSTRIEMEISTER/-IN,
+                                                           FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+                                                           GRUNDLEGENDE QUALIFIKATIONEN
+                                                           Berücksichtigung naturwissenschaftlicher und technischer Gesetzmäßigkeiten
+
+
+
+                                                           Lösungshinweise Aufgabe 3
+                                                           [VO: § 4 Absatz 6 Nr. 2 und 3]
+
+                                                             a Mögliche Punktzahl: 4
+                                                                  m V  
+                                                                  V Sl
+                                                                  m Sl 
+                                                                                                    g
+                                                                  m  4,79 cm ²  600 cm  2,70
+                                                                                                   cm ³
+Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+
+
+
+
+                                                                                                                                                             Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+                                                                  m  7.759,80 g
+                                                                  m  7,76 kg
+
+                                                             b Mögliche Punktzahl: 5
+                                                                       F
+                                                                  z 
+                                                                       S
+                                                                       36.000 N
+                                                                  z 
+                                                                       479 mm ²
+                                                                                 N
+                                                                   z  75,16
+                                                                                mm ²
+
+                                                             c Mögliche Punktzahl: 9
+                                                                               36.000 N
+                                                                  z 
+                                                                         479 mm ²  17 mm  5 mm
+                                                                                 N
+                                                                   z  91,37
+                                                                                mm ²
+
+
+
+
+                                                                                                              Seite 5
+                                                                                                           L 050-05-1123
+
+=== Seite 13 ===
+                                                         Einsatz nur im Rahmen des Korrekturprozesses gestattet. Weitergabe an unbefugte Dritte untersagt.
+
+                                                           GEPRÜFTE/-R INDUSTRIEMEISTER/-IN,
+                                                           FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+                                                           GRUNDLEGENDE QUALIFIKATIONEN
+                                                           Berücksichtigung naturwissenschaftlicher und technischer Gesetzmäßigkeiten
+
+
+
+                                                           Lösungshinweise Aufgabe 4
+                                                           [VO: § 4 Absatz 6 Nr. 1-3]
+
+                                                            a Mögliche Punktzahl: 8
+                                                           R34  R3  R4
+                                                                100   200 
+                                                           R34  300 
+                                                                    U
+                                                           I34 =
+Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+
+
+
+
+                                                                                                                                                             Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+                                                                   R34
+                                                                   24 V
+                                                             =
+                                                                   300 Ω
+                                                             = 0,08 A
+                                                           U3 = I34  R3
+                                                              = 0,08 A  100 Ω
+                                                              =8 V
+                                                           U3 = U1 = 8 V
+
+                                                                   U1  R2
+                                                           R1 =
+                                                                     U2
+                                                                8 V  300 Ω
+                                                              =
+                                                                   16 V
+                                                           R1 = 150 Ω
+
+                                                            b Mögliche Punktzahl: 2
+                                                                 U2
+                                                           P=
+                                                                 R
+                                                           U= P R
+                                                           U = 1,5 W  300 Ω
+                                                           U = 21,2 V
+
+                                                            c Mögliche Punktzahl: 2
+                                                           Z. B.:
+                                                           Leitung von + zu R1/R2 oder zu R2/R4 auftrennen und Strommesser in Reihe schalten.
+                                                           ODER
+                                                           eine Strommesszange an Leitung von + zu R1/R2 anlegen.
+
+                                                                                                              Seite 6
+                                                                                                           L 050-05-1123
+
+=== Seite 14 ===
+                                                         Einsatz nur im Rahmen des Korrekturprozesses gestattet. Weitergabe an unbefugte Dritte untersagt.
+
+                                                           GEPRÜFTE/-R INDUSTRIEMEISTER/-IN,
+                                                           FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+                                                           GRUNDLEGENDE QUALIFIKATIONEN
+                                                           Berücksichtigung naturwissenschaftlicher und technischer Gesetzmäßigkeiten
+
+
+
+                                                           Lösungshinweise Aufgabe 5
+                                                           [VO: § 4 Absatz 6 Nr. 1-3]
+
+                                                            a Mögliche Punktzahl: 10
+                                                               d2 
+                                                           A
+                                                                 4
+                                                               (0,3 mm )2  
+                                                           A
+                                                                     4
+                                                           A  0,071 mm 2
+Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+
+
+
+
+                                                                                                                                                             Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+                                                                     L
+                                                           R20 
+                                                                     A
+                                                                            mm2
+                                                                 0,0179        100 m
+                                                           R20 =             m
+                                                                       0,071mm2
+                                                           R20  25,21 
+                                                                                                                  1
+                                                           R 90 = R 20  (1 +  R  T) = 25,21   (1 + 0,0039      70 K) = 32,1 
+                                                                                                                  K
+                                                                    U    24 V
+                                                           I20 =       =        = 0,95 A
+                                                                   R 20 25,21 
+                                                                    U   24 V
+                                                           I90 =      =       = 0,75 A
+                                                                   R90 32,1 
+
+                                                           I = I20 - I90 = 0,95 A - 0,75 A = 0,2 A
+
+                                                            b Mögliche Punktzahl: 2
+                                                           Der Widerstand wird bei Erwärmung größer, daher liegt ein Kaltleiter (PTC) vor.
+
+
+
+
+                                                                                                                  Seite 7
+                                                                                                            L 050-05-1123
+
+=== Seite 15 ===
+                                                         Einsatz nur im Rahmen des Korrekturprozesses gestattet. Weitergabe an unbefugte Dritte untersagt.
+
+                                                           GEPRÜFTE/-R INDUSTRIEMEISTER/-IN,
+                                                           FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+                                                           GRUNDLEGENDE QUALIFIKATIONEN
+                                                           Berücksichtigung naturwissenschaftlicher und technischer Gesetzmäßigkeiten
+
+
+
+
+                                                           Lösungshinweise Aufgabe 6
+                                                           [VO: § 4 Absatz 6 Nr. 1-3]
+
+                                                            a Mögliche Punktzahl: 10
+                                                           Berechnung Winkel:
+                                                                     a
+                                                           tan(α) =
+                                                                     b
+                                                                     a
+                                                           α = tan-1  
+                                                                     b
+Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+
+
+
+
+                                                                                                                                                             Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+                                                                      1m 
+                                                           α = tan-1         
+                                                                      0,17 m 
+                                                           α = 80,35°
+
+
+                                                           Berechnung des senkrechten (FV)Anteils der Kraft:
+                                                           FSpanngurt ≙ FS
+                                                           FVertikaler Anteil ≙ FV
+                                                                      FV
+                                                           sin(α) =
+                                                                      FS
+                                                           FV = FS  sin(α)
+                                                           FV = 3.000 N  sin(80,35°)
+                                                           FV = 2.957,55 N
+
+
+
+                                                           Auf beiden Seiten zusammen:
+                                                           FVSpanngurt = 2  FV
+                                                           FVSpanngurt = 2  2.957,55 N
+                                                           FVSpanngurt = 5.915,1N
+
+
+
+                                                           Gewichtskraft der Kiste:
+                                                           FG = m  g
+                                                                                     m
+                                                           FG = 1.500 kg  9,81
+                                                                                     s2
+                                                           FG = 14.715 N
+
+
+
+                                                                                                              Seite 8
+                                                                                                           L 050-05-1123
+
+=== Seite 16 ===
+                                                         Einsatz nur im Rahmen des Korrekturprozesses gestattet. Weitergabe an unbefugte Dritte untersagt.
+
+                                                           GEPRÜFTE/-R INDUSTRIEMEISTER/-IN,
+                                                           FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+                                                           GRUNDLEGENDE QUALIFIKATIONEN
+                                                           Berücksichtigung naturwissenschaftlicher und technischer Gesetzmäßigkeiten
+
+
+
+                                                           FVges = FG + FVSpanngurt
+                                                           FVges = 14.715 N + 5.915,1N
+                                                           FVges = 20.630,1N
+
+                                                           Die Spannkraft reicht aus.
+
+                                                            b    Mögliche Punktzahl: 6
+                                                           Reibkraft:
+                                                           FR = μ  FN
+                                                           FR = 0,15  20.630,1N
+Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+
+
+
+
+                                                                                                                                                             Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+                                                           FR = 3.094,52 N
+
+
+                                                           Fliehkraft:
+                                                           v  30 km / h  8,33 m / s
+                                                                m v²
+                                                           Fz 
+                                                                   r
+                                                                1.500 kg  (8,33)² m ²
+                                                           Fz 
+                                                                       33 m  s ²
+                                                                           kg  m
+                                                           Fz  3.154,04
+                                                                             s²
+                                                           Fz  3.154,04 N
+                                                           Die Kisten verrutschen, da FZ größer ist als FR.
+
+
+                                                           Lösungshinweise Aufgabe 7
+                                                           [VO: § 4 Absatz 6 Nr. 4]
+
+                                                            a Mögliche Punktzahl: 2
+                                                               68 kg + 74 kg + 88 kg + 78 kg + 52 kg + 64 kg + 90 kg + 58 kg + 60 kg + 98 kg
+                                                           x
+                                                                                                    10
+                                                           x  73 kg
+
+                                                            b Mögliche Punktzahl: 2
+                                                           R = xmax - xmin = 98 kg - 52 kg = 46 kg
+
+
+
+
+                                                                                                              Seite 9
+                                                                                                           L 050-05-1123
+
+=== Seite 17 ===
+                                                         Einsatz nur im Rahmen des Korrekturprozesses gestattet. Weitergabe an unbefugte Dritte untersagt.
+
+                                                           GEPRÜFTE/-R INDUSTRIEMEISTER/-IN,
+                                                           FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+                                                           GRUNDLEGENDE QUALIFIKATIONEN
+                                                           Berücksichtigung naturwissenschaftlicher und technischer Gesetzmäßigkeiten
+
+
+
+                                                            c Mögliche Punktzahl: 10
+
+                                                                  1               2
+                                                           s          ( xi  x )
+                                                                 n 1
+
+
+                                                           s  15,3 kg
+
+                                                           𝒙 – 1 s = 73 kg – 15,3 kg = 57,7 kg
+                                                           𝒙 – 2 s = 73 kg – 2 x 15,3 kg = 42,4 kg
+Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+
+
+
+
+                                                                                                                                                             Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+                                                           𝒙 – 3 s = 73 kg – 3 x 15,3 kg = 27,1 kg
+
+
+                                                           𝒙 + 1 s = 73 kg + 15,3 kg = 88,3 kg
+                                                           𝒙 + 2 s = 73 kg + 2 x 15,3 kg = 103,6 kg
+                                                           𝒙 + 3 s = 73 kg + 3 x 15,3 kg = 118,9 kg
+
+
+
+
+                                                                                                              Seite 10
+                                                                                                           L 050-05-1123
+

@@ -1,0 +1,814 @@
+=== Seite 1 ===
+                                                         Einsatz nur im Rahmen des Korrekturprozesses gestattet. Weitergabe an unbefugte Dritte untersagt.
+
+
+
+                                                            Prüfungsteilnehmer-Nummer:
+
+
+
+
+                                                           Bundeseinheitliche Fortbildungsprüfung der Industrie- und Handelskammern
+                                                           Geprüfter Industriemeister / Geprüfte Industriemeisterin
+                                                           fachrichtungsübergreifende Basisqualifikationen /
+                                                           grundlegende Qualifikationen
+                                                           Berücksichtigung naturwissenschaftlicher und technischer Gesetzmäßigkeiten
+
+                                                            Datum:                                     3. Mai 2023
+
+                                                            Bearbeitungszeit:                          90 Minuten
+Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+
+
+
+
+                                                                                                                                                                                                                      Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+                                                            Anzahl Aufgaben:                           7
+
+                                                            Seiten:                                    6
+
+
+                                                           Bevor Sie mit der Prüfung beginnen, prüfen Sie bitte die Prüfungsunterlagen. Wenn
+                                                           die Prüfungsunterlagen nicht vollständig sind, informieren Sie bitte die Aufsicht.
+
+                                                           Bitte lesen Sie die nachfolgenden Bearbeitungshinweise gut durch:
+                                                           ◼   Alle erlaubten Hilfsmittel wurden Ihnen mit der Einladung mitgeteilt.
+                                                           ◼   Sie erhalten einen Aufgabenteil sowie ein Heft für Ihre Lösungen.
+                                                           ◼   Sie können maximal 100 Punkte erreichen.
+                                                           ◼   Verwenden Sie je Aufgabe bitte eine neue Lösungsseite.
+                                                           ◼   Wenn Sie die Lösung einer Aufgabe auf eine Anlage schreiben sollen, wird Ihnen dies in
+                                                               der Aufgabe mitgeteilt.
+                                                           ◼   Stellen Sie Ihre Lösungs- und Rechenvorgänge nachvollziehbar im Lösungsteil dar.
+                                                               Reicht der Platz nicht aus, verwenden Sie bitte das Konzeptpapier. Weisen Sie auf die
+                                                               Fortsetzung hin und kennzeichnen Sie diese.
+                                                           ◼   Eine nicht lesbare Prüfungsarbeit wird mit der Note „ungenügend“ (null Punkte)
+                                                               bewertet. Die Konsequenzen entnehmen Sie bitte der Prüfungsordnung.
+                                                           ◼   Es gibt Aufgaben, die eine exakte Anzahl an Antworten vorgeben. Es werden nur die
+                                                               ersten Antworten gewertet. Was über die exakte Anzahl hinausgeht, wird gestrichen.
+                                                           ◼   Geben Sie alle Ihnen zur Verfügung gestellten Unterlagen am Ende der Prüfung ab.
+                                                           ◼   Aufgrund der besseren Lesbarkeit bevorzugen wir in diesen Texten die männliche Form.
+                                                               Mit diesem vereinfachten Ausdruck sind selbstverständlich alle Geschlechter gemeint.
+
+
+
+                                                                                   © DIHK – Gesellschaft für berufliche Bildung – Organisation zur Förderung der IHK-Weiterbildung gGmbH – Bonn
+                                                                      Die Vervielfältigung, Verbreitung oder öffentliche Wiedergabe der Publikation ist nicht gestattet (§§ 53, 54 UrhG) und strafbar (§ 106 UrhG).
+                                                                                                                  Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+                                                                                                                                     P 050-05-0523
+
+=== Seite 2 ===
+                                                         Einsatz nur im Rahmen des Korrekturprozesses gestattet. Weitergabe an unbefugte Dritte untersagt.
+
+                                                           GEPRÜFTE/-R INDUSTRIEMEISTER/-IN,
+                                                           FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+                                                           GRUNDLEGENDE QUALIFIKATIONEN
+                                                           Berücksichtigung naturwissenschaftlicher und technischer Gesetzmäßigkeiten
+
+
+
+                                                           Aufgabe 1
+                                                           Je nach Region hat das Grundwasser einen unterschiedlichen Härtegrad. Sind z. B. viele
+                                                           Calziumsalze gelöst, spricht man unter anderem von hartem Wasser.
+
+                                                            a Mögliche Punktzahl: 2
+                                                           Beschreiben Sie eine Möglichkeit, wie gelöste Calziumsalze in das Grundwasser
+                                                           gelangen können.
+
+                                                            b Mögliche Punktzahl: 2
+Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+
+
+
+
+                                                                                                                                                             Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+                                                           Erläutern Sie eine Auswirkung, die dadurch für technische Anlagen entsteht.
+
+                                                            c Mögliche Punktzahl: 6
+                                                           Beschreiben Sie drei Möglichkeiten, wie die Wasserhärte gesenkt werden kann.
+
+
+                                                           Aufgabe 2
+                                                           Mögliche Punktzahl: 17
+                                                           In einer Produktionsmaschine wird eine Rollenkette durch einen pneumatisch betätigten
+                                                           Kettenspanner (Abbildung 1) auf die vorgesehene Spannung gebracht.
+                                                           Berechnen Sie, die erforderliche Kraft des Spannzylinders (FSpannzylinder).
+
+
+
+
+                                                                                        Abbildung 1: Kettenspanner
+
+                                                                                                              Seite 2
+                                                                                                           P 050-05-0523
+
+=== Seite 3 ===
+                                                         Einsatz nur im Rahmen des Korrekturprozesses gestattet. Weitergabe an unbefugte Dritte untersagt.
+
+                                                           GEPRÜFTE/-R INDUSTRIEMEISTER/-IN,
+                                                           FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+                                                           GRUNDLEGENDE QUALIFIKATIONEN
+                                                           Berücksichtigung naturwissenschaftlicher und technischer Gesetzmäßigkeiten
+
+
+
+                                                           Aufgabe 3
+                                                           In einer Produktionshalle müssen in regelmäßigen Abständen insgesamt 1.000 Behälter mit
+                                                           einer Masse von je 500 kg vom Wareneingang bis zum Zwischenlager transportiert werden.
+                                                           Die Fahrstrecke zwischen den beiden Orten beträgt 150 m.
+                                                           Für den Transport der Behälter stehen zwei unterschiedliche Beförderungsmöglichkeiten
+                                                           zur Auswahl:
+
+                                                                                                        Beförderungssystem 1 Beförderungssystem 2
+Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+
+
+
+
+                                                                                                                                                             Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+                                                            Behälter pro Fahrt                                                     1                  2
+
+                                                            Gesamtzeit für das Auf- und                                         20 s              30 s
+                                                            Absetzen der Behälter pro
+                                                            Transport
+                                                            durchschnittliche Geschwindigkeit                                     km                 km
+                                                                                                                              9                  5
+                                                                                                                                   h                  h
+
+
+                                                             Hinweis: Beschleunigungs- und Verzögerungsvorgänge werden nicht
+                                                                      berücksichtigt.
+
+
+                                                            a Mögliche Punktzahl: 12
+                                                           Ermitteln Sie für die Beförderungssysteme 1 und 2 jeweils die benötigte Gesamtzeit
+                                                           in Stunden. Start und Endpunkt ist jeweils der Wareneingang.
+
+                                                            b Mögliche Punktzahl: 6
+                                                           Im Zwischenlager müssen alle Behälter einzeln über ein Transportsystem mit einem
+                                                           elektrischen Antrieb in eine Höhe von 8 Metern gehoben werden. Das Transportsystem hat
+                                                           einen Gesamtwirkungsgrad von 60 %.
+                                                           Berechnen Sie den benötigten Gesamtenergiebedarf in kWh.
+
+
+
+
+                                                                                                              Seite 3
+                                                                                                           P 050-05-0523
+
+=== Seite 4 ===
+                                                         Einsatz nur im Rahmen des Korrekturprozesses gestattet. Weitergabe an unbefugte Dritte untersagt.
+
+                                                           GEPRÜFTE/-R INDUSTRIEMEISTER/-IN,
+                                                           FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+                                                           GRUNDLEGENDE QUALIFIKATIONEN
+                                                           Berücksichtigung naturwissenschaftlicher und technischer Gesetzmäßigkeiten
+
+
+
+                                                           Aufgabe 4
+                                                           Mögliche Punktzahl: 15
+                                                           Im Fuhrpark ihres Unternehmens befindet sich ein Fahrzeug mit Verbrennungsmotor
+                                                           (Benzin) und einem Verbrauch von 7 Litern pro 100 km.
+                                                           Das Fahrzeug wird durch ein Elektrofahrzeug ersetzt.
+                                                           Dieses benötigt 20 kWh elektrische Energie pro 100 km Fahrstrecke.
+                                                           Berechnen Sie die eingesparte Energiemenge in kWh für eine Fahrstrecke von
+                                                           15.000 km im Jahr.
+Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+
+
+
+
+                                                                                                                                                                    Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+                                                           Aufgabe 5
+                                                           In einem Wasserbehälter ist ein NTC-Widerstand eingebaut. Der NTC-Widerstand R2 hat
+                                                           die unten dargestellte Kennlinie und ist in Reihe mit einem Widerstand R1 mit dem Wert
+                                                           von 3 kΩ eingebaut (Abbildung 3). Die Spannung UEIN beträgt 24 V.
+
+
+
+
+                                                                                                                                                   R1
+
+
+                                                                                                                                        UEIN
+
+
+                                                                                                                                                    R2    UAUS
+                                                                                                                                               ϑ
+
+
+
+
+                                                                 Abbildung 2: NTC – Widerstand                                  Abbildung 3: Widerstandsschaltung
+
+                                                            a Mögliche Punktzahl: 4
+                                                           Ermitteln Sie unter Verwendung der Abbildung 2 die Temperatur des Wassers, wenn
+                                                           UAUS 4 V beträgt.
+
+
+
+
+                                                                                                              Seite 4
+                                                                                                           P 050-05-0523
+
+=== Seite 5 ===
+                                                         Einsatz nur im Rahmen des Korrekturprozesses gestattet. Weitergabe an unbefugte Dritte untersagt.
+
+                                                           GEPRÜFTE/-R INDUSTRIEMEISTER/-IN,
+                                                           FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+                                                           GRUNDLEGENDE QUALIFIKATIONEN
+                                                           Berücksichtigung naturwissenschaftlicher und technischer Gesetzmäßigkeiten
+
+
+
+
+                                                            b Mögliche Punktzahl: 4
+                                                           Berechnen Sie die Leistung am Widerstand R1 bei einem Widerstandswert von 300 Ω
+                                                           des NTC-Widerstandes.
+
+                                                            c Mögliche Punktzahl: 2
+                                                           Erläutern Sie den Unterschied zwischen einem NTC-Widerstand und einem PTC-
+                                                           Widerstand.
+Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+
+
+
+
+                                                                                                                                                             Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+                                                           Aufgabe 6
+                                                           Aus dem Sortiment an Sonderwiderständen ihrer Firma bestellt ein Kunde Widerstände mit
+                                                           15 Ω und einer Bemessungsleistung von 60 W. Der Widerstand wird aus Konstantandraht
+                                                           mit einem Durchmesser von 0,6 mm hergestellt.
+
+                                                            a Mögliche Punktzahl: 3
+                                                           Berechnen Sie den maximalen Strom, der durch einen Widerstand fließen darf.
+
+                                                            b Mögliche Punktzahl: 5
+                                                           Berechnen Sie die benötigte Länge des Konstantandrahts für einen Widerstand.
+
+                                                            c Mögliche Punktzahl: 6
+                                                           Die Widerstände dürfen eine Toleranz von max. ± 10 % des Widerstandswertes haben.
+                                                           Die Prüfung der Widerstände erfolgt mit einem konstanten Gleichstrom von 100 mA.
+                                                           Berechnen Sie die maximale und minimale Spannung, die bei der Prüfung an einem
+                                                           Widerstand anliegen darf.
+
+                                                            d Mögliche Punktzahl: 4
+                                                           Das Prüfen der Widerstände erfolgt nach festgelegter Prüfvorschrift, um fehlerhafte
+                                                           Messwerte auszuschließen.
+                                                           Geben Sie eine mögliche Fehlerquelle an.
+
+
+
+
+                                                                                                              Seite 5
+                                                                                                           P 050-05-0523
+
+=== Seite 6 ===
+                                                         Einsatz nur im Rahmen des Korrekturprozesses gestattet. Weitergabe an unbefugte Dritte untersagt.
+
+                                                           GEPRÜFTE/-R INDUSTRIEMEISTER/-IN,
+                                                           FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+                                                           GRUNDLEGENDE QUALIFIKATIONEN
+                                                           Berücksichtigung naturwissenschaftlicher und technischer Gesetzmäßigkeiten
+
+
+
+                                                           Aufgabe 7
+                                                           Während eines Kühlprozesses bei der Herstellung von Lebensmitteln wird die
+                                                           Kühltemperatur überwacht.
+                                                           Es liegen folgende Werte für die Temperaturmessung der letzten 15 Stichproben vor.
+
+                                                            Stichprobe      1       2     3     4      5      6      7      8     9     10    11    12    13    14    15
+
+
+                                                            Temperatur-     3,2     4,0   3,8   3,7    2,9    3,0    3,2    2,6   2,4   3,1   2,2   2,8   3,3   3,2   3,8
+
+                                                            wert °C
+Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+
+
+
+
+                                                                                                                                                                            Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+                                                            a Mögliche Punktzahl: 4
+                                                           Berechnen Sie den Mittelwert aller ermittelten Temperaturwerte.
+
+                                                            b Mögliche Punktzahl: 4
+                                                           Berechnen Sie die Standardabweichung aller Stichproben.
+
+                                                            c Mögliche Punktzahl: 4
+                                                           Die Toleranzgrenzen liegen im Bereich 0°C bis 5°C.
+                                                           Berechnen Sie, ob 99,73 % der Messwerte diesen Bereich einhalten.
+
+
+
+
+                                                                                                                  Seite 6
+                                                                                                             P 050-05-0523
+
+=== Seite 7 ===
+                                                         Einsatz nur im Rahmen des Korrekturprozesses gestattet. Weitergabe an unbefugte Dritte untersagt.
+
+
+
+
+                                                           Bundeseinheitliche Fortbildungsprüfung der Industrie- und Handelskammern
+                                                           Geprüfter Industriemeister / Geprüfte Industriemeisterin
+                                                           fachrichtungsübergreifende Basisqualifikationen /
+                                                           grundlegende Qualifikationen
+                                                           Berücksichtigung naturwissenschaftlicher und technischer Gesetzmäßigkeiten
+
+
+                                                           Lösungshinweise
+Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+
+
+
+
+                                                                                                                                                                                                                          Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+                                                            Datum:                                         3. Mai 2023
+
+                                                            Bearbeitungszeit:                              90 Minuten
+
+                                                            Anzahl Aufgaben:                               7
+
+
+                                                           Hinweise für den Korrektor:
+                                                           ■   Die folgenden Lösungen sind lediglich Lösungshinweise.
+                                                           ■   Sie sollen nur den Rahmen der zu erwartenden Prüfungsleistung abstecken.
+                                                           ■   Der Korrektor ist durch die hier aufgeführten Lösungshinweise in seinem
+                                                               Bewertungsspielraum nicht eingeengt.
+                                                           ■   Bei Aufgaben, die eine Aufzählung von n-Fakten zur Lösung erfordern, werden nur die
+                                                               ersten n-Fakten gewertet. Alle darüber hinausgehenden Aufzählungen werden
+                                                               gestrichen.
+                                                           ■   Bei Berechnungen sollen Folgefehler berücksichtigt werden und somit nicht zum
+                                                               Punktabzug führen.
+                                                           ■   Der leichteren Lesbarkeit wegen geben wir in den Aufgaben/Texten der männlichen
+                                                               Form den Vorzug. Mit diesem einfacheren sprachlichen Ausdruck sind selbstverständlich
+                                                               immer alle Geschlechter gemeint.
+
+
+
+                                                           Die Aufgaben mit Lösungsvorschlägen können von den Industrie- und Handelskammern oder Dritten nach einer Frist von sechs Monaten
+                                                           direkt bestellt werden bei:
+                                                           wbv Media GmbH & Co. KG, Service-Center DIHK,
+                                                           Postfach 10 06 33, 33506 Bielefeld
+                                                           Tel.: 0521/91101-16, Fax: 0521/91101-19, E-Mail: service@wbv.de
+
+
+
+
+                                                                                       © DIHK – Gesellschaft für berufliche Bildung – Organisation zur Förderung der IHK-Weiterbildung gGmbH – Bonn
+                                                                          Die Vervielfältigung, Verbreitung oder öffentliche Wiedergabe der Publikation ist nicht gestattet (§§ 53, 54 UrhG) und strafbar (§ 106 UrhG).
+                                                                                                                      Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+                                                                                                                                         L 050-05-0523
+
+=== Seite 8 ===
+                                                         Einsatz nur im Rahmen des Korrekturprozesses gestattet. Weitergabe an unbefugte Dritte untersagt.
+
+                                                           GEPRÜFTE/-R INDUSTRIEMEISTER/-IN,
+                                                           FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+                                                           GRUNDLEGENDE QUALIFIKATIONEN
+                                                           Berücksichtigung naturwissenschaftlicher und technischer Gesetzmäßigkeiten
+
+
+
+                                                           Lösungshinweise Aufgabe 1
+                                                           [VO: § 4 Absatz 6 Nr. 1-3]
+
+                                                            a Mögliche Punktzahl: 2
+                                                           Z. B.:
+                                                           Regenwasser hat einen ph-Wert von ca. 5,5 und gelangt als Niederschlag in den Boden.
+                                                           Dort löst es die im Boden vorhandenen Calziumsalze und es entsteht Calziumhydroxid.
+                                                           Hierdurch steigt der Härtegrad des Wassers.
+
+                                                            b Mögliche Punktzahl: 2
+Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+
+
+
+
+                                                                                                                                                             Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+                                                           Auswirkung, für technische Anlagen: z. B.:
+                                                           Infolgedessen können sich unerwünschte Ablagerungen (Kesselstein) bilden und z. B.
+                                                           zu einem erhöhten Energiebedarf bei der Erwärmung von Wasser führen.
+                                                             c Mögliche Punktzahl: 6
+                                                           Möglichkeiten, wie Wasserhärte gesenkt werden kann: z. B.:
+                                                           ■   Ionenaustauscher:
+                                                               Ionentauschersubstanzen sind oberflächenaktive Stoffe. Sie geben an ihre Oberfläche
+                                                               gebundene Ionen in die Lösung ab und nehmen dafür andere Ionen aus der Lösung auf.
+                                                               Einfach ausgedrückt ersetzt ein Ionentauscher unerwünschte durch unschädliche Ionen.
+                                                           ■   Umkehrosmose:
+                                                               Ein Behälter ist durch eine Membran, die nur Wassermoleküle hindurchlässt, in zwei
+                                                               Bereiche getrennt. Übt man im Bereich des Rohwassers einen gewissen Druck aus,
+                                                               so werden nur die Wassermoleküle und nicht die Härtebildner durch die Membran in
+                                                               den zweiten Bereich gedrückt.
+                                                           ■   Chemikalien:
+                                                               Die Substanzen gehen starke Wechselwirkungen mit den entsprechenden Ionen ein,
+                                                               damit diese keine störende Reaktionen verursachen.
+
+
+
+
+                                                                                                              Seite 2
+                                                                                                           L 050-05-0523
+
+=== Seite 9 ===
+                                                         Einsatz nur im Rahmen des Korrekturprozesses gestattet. Weitergabe an unbefugte Dritte untersagt.
+
+                                                           GEPRÜFTE/-R INDUSTRIEMEISTER/-IN,
+                                                           FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+                                                           GRUNDLEGENDE QUALIFIKATIONEN
+                                                           Berücksichtigung naturwissenschaftlicher und technischer Gesetzmäßigkeiten
+
+
+
+                                                           Lösungshinweise Aufgabe 2
+                                                           [VO: § 4 Absatz 6 Nr. 1-3]
+                                                           Mögliche Punktezahle: 17
+                                                           Kraftzerlegung am Spannzylinder:
+                                                                              FZx
+                                                           cos25 =
+                                                                       FSpannzylinder
+                                                           FZx = cos25  FSpannzylinder
+Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+
+
+
+
+                                                                                                                                                             Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+                                                           wirksamer Hebelarm zur Kette:
+                                                                          l
+                                                           sin40 =
+                                                                     225 mm
+                                                           l = sin40  225 mm
+
+
+                                                           Drehmomentgleichung:
+                                                                                    FKx  250 mm  FN  I
+                                                           cos25  FSpannzylinder  250 mm  850 N  sin40  225 mm
+                                                                              850 N  (sin40  225 mm)
+                                                           FSpannzylinder 
+                                                                                 (cos25  250 mm)
+                                                           FSpannzylinder  542,6 N
+
+
+
+
+                                                                                                              Seite 3
+                                                                                                            L 050-05-0523
+
+=== Seite 10 ===
+                                                         Einsatz nur im Rahmen des Korrekturprozesses gestattet. Weitergabe an unbefugte Dritte untersagt.
+
+                                                           GEPRÜFTE/-R INDUSTRIEMEISTER/-IN,
+                                                           FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+                                                           GRUNDLEGENDE QUALIFIKATIONEN
+                                                           Berücksichtigung naturwissenschaftlicher und technischer Gesetzmäßigkeiten
+
+
+
+                                                           Lösungshinweise Aufgabe 3
+                                                           [VO: § 4 Absatz 6 Nr. 1-3]
+
+                                                            a Mögliche Punktzahl: 12
+                                                           Beförderungssystem 1:
+                                                           Fahrtzeit mit konstanter Geschwindigkeit:
+                                                                         s1ges
+                                                           v1fahren =
+                                                                        t1fahren
+                                                                         s1ges
+Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+
+
+
+
+                                                                                                                                                             Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+                                                           t1fahren =
+                                                                        v1fahren
+                                                                        1.000  300 m
+                                                           t1fahren =
+                                                                         km         m
+                                                                      9      1.000
+                                                                          h         km
+                                                           t1fahren = 33,33 h
+
+
+                                                           Zeit für das Auf- und Absetzen:
+                                                           t1auf/ab = n1  t1
+                                                                                    20 s
+                                                           t1auf/ab = 1.000 
+                                                                                           s
+                                                                                   3.600
+                                                                                           h
+                                                           t1auf/ab = 5,56 h
+
+
+                                                           Gesamtzeit für Beförderungssystem 1:
+                                                           t1ges = t1fahren + t1auf/ab
+                                                           t1ges = 33,33 h + 5,56 h
+                                                           t1ges = 38,89 h
+
+
+
+
+                                                                                                              Seite 4
+                                                                                                           L 050-05-0523
+
+=== Seite 11 ===
+                                                         Einsatz nur im Rahmen des Korrekturprozesses gestattet. Weitergabe an unbefugte Dritte untersagt.
+
+                                                           GEPRÜFTE/-R INDUSTRIEMEISTER/-IN,
+                                                           FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+                                                           GRUNDLEGENDE QUALIFIKATIONEN
+                                                           Berücksichtigung naturwissenschaftlicher und technischer Gesetzmäßigkeiten
+
+
+                                                           Beförderungssystem 2:
+                                                           Fahrtzeit mit konstanter Geschwindigkeit:
+                                                                          s2ges
+                                                           v 2fahren =
+                                                                         t 2fahren
+                                                                          s2ges
+                                                           t 2fahren =
+                                                                         v 2fahren
+                                                                         500  300 m
+                                                           t 2fahren =
+                                                                         km         m
+                                                                       5     1.000
+                                                                          h         km
+Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+
+
+
+
+                                                                                                                                                             Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+                                                           t 2fahren = 30 h
+
+
+                                                           Zeit für das Auf- und Absetzen:
+                                                           t 2auf/ab = n2  t 2
+                                                                                     30 s
+                                                           t 2auf/ab = 500 
+                                                                                            s
+                                                                                  3.600
+                                                                                            h
+                                                           t 2auf/ab = 4,17 h
+
+                                                           Gesamtzeit für Beförderungssystem 2:
+                                                           t 2ges = t 2fahren + t 2auf/ab
+                                                           t 2ges = 30 h + 4,17 h
+                                                           t 2ges = 34,17 h
+
+                                                            b Mögliche Punktzahl: 6
+                                                           Gesamte zu befördernde Masse:
+                                                           mges = n  mBehälter
+                                                           mges = 1.000  500 kg
+                                                           mges = 500.000 kg
+
+                                                           Benötigte Energie für den Antrieb:
+                                                                    mges  g  h
+                                                           E zu 
+                                                                            η
+                                                                                      m
+                                                                    500.000 kg  9,81    8m
+                                                           E zu                      s2
+                                                                                       J
+                                                                     0,6  3,6  106
+                                                                                     kWh
+                                                           E zu  18,17 kWh
+
+                                                                                                              Seite 5
+                                                                                                           L 050-05-0523
+
+=== Seite 12 ===
+                                                         Einsatz nur im Rahmen des Korrekturprozesses gestattet. Weitergabe an unbefugte Dritte untersagt.
+
+                                                           GEPRÜFTE/-R INDUSTRIEMEISTER/-IN,
+                                                           FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+                                                           GRUNDLEGENDE QUALIFIKATIONEN
+                                                           Berücksichtigung naturwissenschaftlicher und technischer Gesetzmäßigkeiten
+
+
+
+                                                           Lösungshinweise Aufgabe 4
+                                                           [VO: § 4 Absatz 6 Nr. 1-3]
+                                                           Mögliche Punktzahl: 15
+                                                                                                                   kWh
+                                                           Benötigte Energie mit Elektroantrieb pro km: 0,2
+                                                                                                                    km
+                                                           Energie des Fahrzeugs mit 15.000 km Laufleistung:
+                                                                                  kWh
+                                                           E1 = 15.000 km  0,2
+                                                                                   km
+                                                           E1 = 3.000 kWh
+Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+
+
+
+
+                                                                                                                                                             Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+                                                           Benötigte Energie mit Benzinantrieb:
+                                                           Masse Benzin pro km und pro Fahrzeug:
+                                                                                               dm3
+                                                           (pro Fahrzeug werden V = 0,07           an Benzin benötigt)
+                                                                                               km
+                                                           mB = ρ  V
+                                                                     kg         dm3
+                                                           mB = 0,8       0,07
+                                                                    dm3         km
+                                                                       kg
+                                                           mB = 0,056
+                                                                      km
+
+                                                           E2 = 15.000 km  mB  Hi
+                                                                                   kg          kJ
+                                                                  15.000 km  0,056    42.000
+                                                                                   km          kg
+                                                           E2 =
+                                                                                  kWs
+                                                                            3.600
+                                                                                  kWh
+                                                           E2 = 9.800 kWh
+
+                                                           Eingesparte Energie pro Jahr:
+                                                           E = E2 - E1
+                                                           E = 9.800 kWh - 3.000 kWh
+                                                           E = 6.800 kWh
+
+
+
+
+                                                                                                              Seite 6
+                                                                                                           L 050-05-0523
+
+=== Seite 13 ===
+                                                         Einsatz nur im Rahmen des Korrekturprozesses gestattet. Weitergabe an unbefugte Dritte untersagt.
+
+                                                           GEPRÜFTE/-R INDUSTRIEMEISTER/-IN,
+                                                           FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+                                                           GRUNDLEGENDE QUALIFIKATIONEN
+                                                           Berücksichtigung naturwissenschaftlicher und technischer Gesetzmäßigkeiten
+
+
+
+                                                           Lösungshinweise Aufgabe 5
+                                                           [VO: § 4 Absatz 6 Nr. 1-3]
+
+                                                            a Mögliche Punktzahl: 4
+
+                                                           UR1  UEIN  UAUS
+                                                                 24 V  4 V
+                                                           UR1  20 V
+                                                                  UAUS  R1
+                                                           R2 
+                                                                    UR1
+Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+
+
+
+
+                                                                                                                                                             Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+                                                                4 V  3.000 
+                                                           R2 
+                                                                    20 V
+                                                           R2  600 
+
+                                                           Temperatur aus Kennlinie abgelesen: Bei 600 Ω = 20 ºC
+
+                                                            b Mögliche Punktzahl: 4
+                                                           RGesamt = R1+ R2
+                                                                    = 3.000 Ω + 300 Ω
+                                                                    = 3.300 
+                                                                 UEIN
+                                                           I=
+                                                                RGesamt
+                                                                 24 V
+                                                           I=
+                                                               3.300 Ω
+                                                           I = 0,0073 A
+
+                                                           PR1 = I2  R1
+                                                                = (0,0073 A)2  3.000 Ω
+                                                                 0,160 W
+
+                                                            c Mögliche Punktzahl: 2
+                                                           Bei einem NTC-Widerstand wird der Widerstandswert bei Erwärmung kleiner, bei einem
+                                                           PTC-Widerstand wird der Widerstandswert bei Erwärmung größer.
+
+
+
+
+                                                                                                              Seite 7
+                                                                                                           L 050-05-0523
+
+=== Seite 14 ===
+                                                         Einsatz nur im Rahmen des Korrekturprozesses gestattet. Weitergabe an unbefugte Dritte untersagt.
+
+                                                           GEPRÜFTE/-R INDUSTRIEMEISTER/-IN,
+                                                           FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+                                                           GRUNDLEGENDE QUALIFIKATIONEN
+                                                           Berücksichtigung naturwissenschaftlicher und technischer Gesetzmäßigkeiten
+
+
+
+                                                           Lösungshinweise Aufgabe 6
+                                                           [VO: § 4 Absatz 6 Nr. 1-3]
+
+                                                            a Mögliche Punktzahl: 3
+                                                                P   60 W
+                                                           I=     =      =2A
+                                                                R   15 Ω
+
+                                                            b Mögliche Punktzahl: 5
+                                                                                                                                    mm ²
+                                                           Spezifischer Widerstand aus der IHK-Formelsammlung: 0,49
+                                                                                                                                      m
+Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+
+
+
+
+                                                                                                                                                             Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+                                                           Querschnitt des Konstantandrahts:
+                                                                d2  π (0,6mm)2  π
+                                                           A=         =             = 0,28 mm2
+                                                                  4         4
+                                                           Länge des Konstantandrahts:
+                                                                R  A 15 Ω  0,28 mm2
+                                                           L=        =                = 8,57 m
+                                                                 ρ           Ω  mm2
+                                                                       0,49
+                                                                                 m
+
+                                                            c Mögliche Punktzahl: 6
+                                                           Rmax = R + Toleranz = 15 Ω + 1,5 Ω =16,5 Ω
+
+                                                           Umax = I  Rmax = 0,1 A  16,5 Ω = 1,65 V
+                                                           Rmin  R  Toleranz  15   1,5   13,5 
+                                                           Umin  0,1 A  13,5   1,35 V
+
+                                                            d Mögliche Punktzahl: 4
+                                                           Z. B.:
+                                                           ■    Genauigkeit des Messgerätes passt nicht zur Messaufgabe.
+                                                           ■    falsch eingestellter Messbereich
+                                                           ■    kein überwachtes (kalibriertes) Prüfmittel verwendet
+                                                           ■    Umgebungstemperatur bei der Prüfung <> 20 °C
+                                                           ■    zu hohe Luftfeuchtigkeit
+                                                           ■    Qualifikation des Mitarbeiters nicht ausreichend
+
+
+
+
+                                                                                                              Seite 8
+                                                                                                           L 050-05-0523
+
+=== Seite 15 ===
+                                                         Einsatz nur im Rahmen des Korrekturprozesses gestattet. Weitergabe an unbefugte Dritte untersagt.
+
+                                                           GEPRÜFTE/-R INDUSTRIEMEISTER/-IN,
+                                                           FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+                                                           GRUNDLEGENDE QUALIFIKATIONEN
+                                                           Berücksichtigung naturwissenschaftlicher und technischer Gesetzmäßigkeiten
+
+
+
+                                                           Lösungshinweise Aufgabe 7
+                                                           [VO: § 4 Absatz 6 Nr. 4]
+
+                                                            a Mögliche Punktzahl: 4
+                                                           Mittelwert:
+                                                               1
+                                                           x
+                                                               n
+                                                                  xi
+                                                              3,14666C
+                                                              3,15 C
+Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+
+
+
+
+                                                                                                                                                             Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+                                                            b Mögliche Punktzahl: 4
+                                                           Standardabweichung:
+
+                                                                       1              2
+                                                           s              (xi  x )
+                                                                     n 1
+                                                           s  0, 5 2 6 3 C
+
+                                                            c Mögliche Punktzahl: 4
+
+                                                           x + 3  s = 3,14666 + 3  0,5263 = 4,73
+                                                           und
+                                                           x - 3  s = 3,14666 - 3  0,5263 = 1,57
+
+                                                           Die Toleranzgrenzen von 0°C bis 5°C werden eingehalten.
+
+
+
+
+                                                                                                              Seite 9
+                                                                                                           L 050-05-0523
+

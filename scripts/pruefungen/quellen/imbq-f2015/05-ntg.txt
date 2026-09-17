@@ -1,0 +1,557 @@
+=== Seite 1 ===
+Bundeseinheitliche
+Weiterbildungsprüfung
+
+der Industrie- und Handelskammern
+
+Prüfungsteilnehmer-Nummer
+
+Geprüfte/-r Industriemeister]-in,
+fachrichtungsübergreifende
+Basisqualifikationen/
+grundlegende Qualifikationen
+
+m Basisqualifikation Berücksichtigung naturwissenschaftlicher
+und technischer Gesetzmäßigkeiten
+
+m Prüfungstag 29. April 2015
+m Bearbeitungszeit 90 Minuten
+m Anzahl der Aufgaben 7
+
+Bitte prüfen Sie vor Beginn der Prüfung die Vollständigkeit des Aufgabensatzes. Sollte der
+Aufgabensatz nicht vollständig sein, informieren Sie bitte die Aufsicht.
+
+L 050-05-0415-6
+
+=== Seite 2 ===
+Bearbeitungshinweise
+
+Bitte lesen Sie die nachfolgenden Bearbeitungshinweise sorgfältig durch:
+
+Die zur Prüfung zugelassenen Hilfsmittel wurden Ihnen separat mit der Einladung mitgeteilt.
+Sie erhalten einen Aufgaben- und einen Lösunggsteil.
+Tragen Sie auf dem Deckblatt Ihre Prüfungsteilnehmer-Nummer ein.
+Die maximale Gesamtpunktzahl der Lösungen beträgt 100 Punkte.
+Die Lösungsgänge bzw. Rechenvorgänge sind klar und nachvollziehbar im Lösungsteil darzu-
+stellen. Sollte der Platz nicht ausreichen, benutzen Sie bitte das Konzeptpapier, verweisen Sie
+auf die Fortsetzung und kennzeichnen Sie diese. Wir weisen darauf hin, dass eine vom Prüfungs-
+ausschuss nicht lesbare Prüfungsarbeit mit der Note „ungenügend“ (null Punkte) bewertet wird
+mit den Rechtsfolgen, die sich aus der Prüfungsordnung ergeben.
+m Verwenden Sie für jede Aufgabe ein neues Lösungsblatt bzw. eine neue Lösungsseite.
+Falls die Lösung auf einem beigefügten Anlageblatt erfolgen soll, wird in der Aufgabenstellung
+darauf hingewiesen.
+Für Ihre Notizen benutzen Sie bitte ausschließlich das Konzeptpapier.
+Das Konzeptpapier ist mit dem Aufgaben- und dem Lösungsteil abzugeben.
+m Bei Aufgaben, die eine Aufzählung von n-Fakten zur Lösung erfordern, werden nur die ersten
+n-Fakten gewertet. Alle darüber hinausgehenden Aufzählungen werden gestrichen.
+
+Wir wünschen Ihnen bei der Bearbeitung viel Erfolg.
+
+Der leichteren Lesbarkeit wegen geben wir in den Aufgaben/Texten der männlichen Form den
+Vorzug. Mit diesem einfacheren sprachlichen Ausdruck sind selbstverständlich immer Männer und
+Frauen gemeint.
+
+Die Vervielfältigung, Verbreitung oder öffentliche Wiedergabe der Publikation [der Prüfungssätze]
+ist nicht gestattet (8853, 54 UrhG) und strafbar (8 106 UrhG). Im Fall der Zuwiderhandlung wird
+Strafantrag gestellt.
+
+=== Seite 3 ===
+GEPRÜFTEI/-R INDUSTRIEMEISTER/-IN, FACH-
+RICHTUNGSUBERGREIFENDE BASISQUALIFIKATIONEN/
+
+GRUNDLEGENDE QUALIFIKATIONEN
+
+Berücksichtigung naturwissenschaftlicher und technischer Gesetzmäßigkeiten
+
+Aufgabe RR
+
+Nachfolgend sind die Reaktionsgleichungen zur Herstellung einer Säure aufgeführt:
+1. S+0,— SO,
+2. 2 S0O,+ 0, 2SO;
+
+SO; + H3O — H3SOy
+
+a) Geben Sie den Namen der Säure an, deren Darstellung (Herstellung) in den Reak- (1 Punkt)
+tionsgleichungen beschrieben wird.
+
+b) Handelt es sich in den Reaktionsgleichungen 1. und 2. um Oxidationen oder Reduk- (3 Punkte)
+tionen? Begründen Sie Ihre Aussage.
+
+c) Oxidationen sind exotherme Reaktionen.
+
+Erläutern Sie den Begriff „exotherme Reaktion“. (4 Punkte)
+
+d) Die Reaktionsgeschwindigkeit einer Oxidation ist von mehreren Faktoren abhängig.
+
+Nennen Sie zwei Faktoren. (2 Punkte)
+
+Lösungshinweise Aufgabe 1 (10 Punkte)
+(RVO $ 4 Absatz 6 Nr. 1)
+a) Schwefelsäure (1 Punkt)
+
+b) Es handelt sich in beiden Gleichungen um eine Oxidation.
+
+Die Verbindung eines Elementes bzw. eines Stoffes mit Sauerstoff (Sauerstoffauf-
+
+nahme) wird als Oxidation bezeichnet. (3 Punkte)
+c) Läuft eine chemische Reaktion ab, wenn Energie freigesetzt wird, so spricht man von
+
+einer exothermen Reaktion. (4 Punkte)
+ITZaB.
+
+m die Reinheit der an der Reaktion beteiligten Stoffe
+die Größe der Kontaktfläche zwischen den oxidierenden Stoffen
+
+=
+
+m die Affinität (Bindungsbestreben) zu Sauerstoff
+
+m die Temperatur
+
+= der Druck (2 Punkte)
+© DIHK - Gesellschaft für berufliche Bildung — Organisation zur Förderung der IHK-Weiterbildung mbH - Bonn | L 050-05-0415-6 | Seite 55
+
+Die Vervielfältigung, Verbreitung oderöffentliche Wiedergabe der Publikation [der Prüfungssätze und Lösungshinweise]
+ist nicht gestattet (8853, 54 UrhG) und strafbar (8106 UrhG). Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+
+=== Seite 4 ===
+GEPRÜFTEI/-R INDUSTRIEMEISTER/-IN, FACH-
+RICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+
+GRUNDLEGENDE QUALIFIKATIONEN
+
+Berücksichtigung naturwissenschaftlicher und technischer Gesetzmäßigkeiten
+
+Aufgabe 2
+
+Eine elektrische Schaltung besteht aus drei Widerständen.
+
+—>——
+R,
+U R, | I U, R,
+
+U=24V,1=2A,U,=18V,R3=36Q
+
+a) Bestimmen Sie die Widerstandswerte von (8 Punkte)
+Rı und R..
+b) Begründen Sie durch Berechnung, wie sich die Gesamtleistung der Schaltung verändert, (7 Punkte)
+
+wenn der Widerstand R; kurzgeschlossen wird.
+
+Lösungshinweise Aufgabe 2 (15 Punkte)
+(RVO 8 4 Absatz 6 Nr. 1-3)
+
+a) R;: R::
+U,=U-U, U, U,
+I, ee R, = —
+U,=24V -18V R; P
+U,=6V RN. R _ 18V
+u 7380 OR
+a l, =0,5A R2=120
+R, Bo, ,=1-1;
+2A l, =2A-0,5A
+R,=3N 1, =15A (8 Punkte)
+b) mitR;: ohne R.:
+ze ER. a 1
+P=24V-2A RER IR,
+P=48W ee » 1
+RR" 968
+R, =90Q
+D— S
+Rz
+e.V)
+9n
+P=64W
+Die Gesamtleistung erhöht sich bei kurzgeschlossenem Widerstand R; (von 48 W auf
+64 W). (7 Punkte)
+Seite 56 | L 050-05-0415-6 | © DIHK - Gesellschaft für berufliche Bildung - Organisation zur Förderung der IHK-Weiterbildung mbH — Bonn
+
+Die Vervielfältigung, Verbreitung oder öffentliche Wiedergabe der Publikation [der Prüfungssätze undLösungshinweise]
+ist nicht gestattet (8853, 54 UrhG) und strafbar (8106 UrhG). Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+
+=== Seite 5 ===
+GEPRÜFTEI-R INDUSTRIEMEISTER/-IN, FACH-
+RICHTUNGSUBERGREIFENDE BASISQUALIFIKATIONEN/
+
+GRUNDLEGENDE QUALIFIKATIONEN
+
+Berücksichtigung naturwissenschaftlicher und technischer Gesetzmäßigkeiten
+
+Aufgabe nn
+
+Ein Pumpspeicherkraftwerk hat ein Wasserbecken mit einem Nutzgefälle von 45 m. Die
+Maschinenanlage hat einen Gesamtwirkungsgrad von 85 %. Während der Spitzenbedarfs-
+zeit werden in drei Stunden 18000 kWh elektrischer Energie (Arbeit) benötigt.
+
+a) Berechnen Sie die dazu benötigte potenzielle Energie. (5 Punkte)
+b) Berechnen Sie die dafür insgesamt benötigte Wassermasse in Tonnen. (5 Punkte)
+c) Berechnen Sie den erforderlichen Volumenstrom (Q) des Wassers in m?/min. (5 Punkte)
+Lösungshinweise Aufgabe 3 (15 Punkte)
+
+(RVO $ 4 Absatz 6 Nr. 1-3)
+
+Wan
+N
+Wu
+
+Eab
+
+E pot
+
+_ Eab
+Eoot :
+
+18000 kWh
+
+PO BE
+E,.ı=21 176,5KWh (5 Punkte)
+
+b) E,, =m:g-h
+
+= Est
+g-h
+_ 21 176,5 kWh .5? _ 21 176,5-3600 kJs”
+ -9,81m-45 m 9,81-45 m?
+m = 172693,2 t (5 Punkte)
+c) Q= ea vn
+t p
+V 3
+Be  . 172693,2 t:m
+t 1t
+3
+a- 1726932 m V =172693,2 m?
+180 min
+9594."
+a sa (5 Punkte)
+© DIHK - Gesellschaft für berufliche Bildung - Organisation zur Förderung der IHK-Weiterbildung mbH - Bonn | L 050-05-0415-6 | Seite 57
+
+Die Vervielfältigung, Verbreitung oder öffentliche Wiedergabe der Publikation [der Prüfungssätze und Lösungshinweise]
+ist nicht gestattet (8853, 54 UrhG) und strafbar (8106 UrhG). Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+
+=== Seite 6 ===
+GEPRÜFTEI/-R INDUSTRIEMEISTER/-IN, FACH-
+RICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+
+GRUNDLEGENDE QUALIFIKATIONEN
+
+Berücksichtigung naturwissenschaftlicher und technischer Gesetzmäßigkeiten
+
+Aufgabe RE
+
+Eine Zugstange (R. = 225 N/mm?) wird mit 120 kN belastet. Die zulässige Zugspannung
+beträgt bei schwellender Belastung '/; R..
+
+b
+
+ODRLEH
+KEITH
+%, 28 BES 1%
+
+7 A Y X
+
+a) Berechnen Sie den erforderlichen Querschnitt des Zugstangenquerschnittes. (8 Punkte)
+
+b) Berechnen Sie das Mindestmaß b des skizzierten Zugstangenquerschnittes. (10 Punkte)
+
+Lösungshinweise Aufgabe 4 (18 Punkte)
+
+(RVO 8 4 Absatz 6 Nr. 3)
+
+1
+a) zu =s R,
+
+a
+@al—
+=
+S
+3
+=
+
+Ozu1
+
+_ 120000 N-mm?
+$ 75N
+S=1600 mm?
+
+S
+(8 Punkte)
+
+b) S=b? +b?-
+
+s=v [14 \- 1,785
+
+ER RR
+1,785
+2 1.600mn?
+"\ 1,785
+
+b=29,9mm (10 Punkte)
+
+Seite 58 | L 050-05-0415-6 | © DIHK - Gesellschaft für berufliche Bildung — Organisation zur Förderung der IHK-Weiterbildung mbH — Bonn
+Die Vervielfältigung, Verbreitung oderöffentliche Wiedergabe der Publikation [der Prüfungssätze und Lösungshinweise]
+ist nicht gestattet ($853, 54 UrhG) und strafbar ($ 106 UrhG). Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+
+=== Seite 7 ===
+GEPRÜFTEI/-R INDUSTRIEMEISTER/-IN, FACH-
+RICHTUNGSUBERGREIFENDE BASISQUALIFIKATIONEN/
+
+GRUNDLEGENDE QUALIFIKATIONEN
+
+Berücksichtigung naturwissenschaftlicher und technischer Gesetzmäßigkeiten
+
+Aufgabe 5
+
+Ein Stahlkörper mit der Masse 500 kg soll mit gleichbleibender Geschwindigkeit auf einer
+Stahlrampe abwärts bewegt werden.
+
+8m
+
+0,5m
+
+Berechnen Sie die Kraft F, die zum Verschieben der Kiste mit konstanter Geschwindigkeit
+erforderlich ist.
+
+Lösungshinweise Aufgabe 5
+(RVO 8 4 Absatz 6 Nr. 3)
+
+SE=0 Gleitreibung: u = 0,12
+O=F+F Fr tan - O9 _ 0.0625
+F=FR-F, m
+
+0.=3,082
+
+F=u-F,-cosa-F, sina
+F=F,:(n-cosa -sin«)
+
+F=500kg: 9,81. (0,12-005358 - sin 35&°)
+S
+F=2812N
+
+(15 Punkte)
+
+(15 Punkte)
+
+© DIHK - Gesellschaft für berufliche Bildung — Organisation zur Förderung der IHK-Weiterbildung mbH - Bonn | L 050-05-0415-6 | Seite 59
+
+Die Vervielfältigung, Verbreitung oder öffentliche Wiedergabe der Publikation [der Prüfungssätze und Lösungshinweise]
+ist nicht gestattet ($853, 54 UrhG) und strafbar (8106 UrhG). Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+
+=== Seite 8 ===
+GEPRÜFTEI/-R INDUSTRIEMEISTER/-IN, FACH-
+RICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+
+GRUNDLEGENDE QUALIFIKATIONEN
+
+Berücksichtigung naturwissenschaftlicher und technischer Gesetzmäßigkeiten
+
+Aufgabe | s|
+
+Die Drehzahl einer Bauwinde mit einem Seiltrommeldurchmesser von 200 mm beträgt
+192 min-'. Mit dieser Winde soll eine Last von 500 kg 25 m hochgehoben werden.
+
+h=25m
+
+m
+
+ÄLEERIRHIGG
+Berechnen Sie die dazu erforderliche Zeit. (10 Punkte)
+
+Lösungshinweise Aufgabe 6 (10 Punkte)
+(RVO $ 4 Absatz 6 Nr. 3)
+v=d'’nı°n
+
+192
+
+605
+
+v=0,2m-rn-
+
+m
+V=201
+s
+
+Seite 60 | L 050-05-0415-6 | © DIHK - Gesellschaft für berufliche Bildung - Organisation zur Förderung der IHK-Weiterbildung mbH - Bonn
+Die Vervielfältigung, Verbreitung oderöffentliche Wiedergabe der Publikation [der Prüfungssätze und Lösungshinweise]
+ist nicht gestattet (8853, 54 UrhG) und strafbar (8 106 UrhG). Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+
+=== Seite 9 ===
+GEPRÜFTEI/-R INDUSTRIEMEISTER/-IN, FACH-
+RICHTUNGSUBERGREIFENDE BASISQUALIFIKATIONEN/
+
+GRUNDLEGENDE QUALIFIKATIONEN
+
+Berücksichtigung naturwissenschaftlicher und technischer Gesetzmäßigkeiten
+
+Aufgabe
+
+Die tägliche Lieferung von Airbags eines Automobilzulieferers hat den Umfang N = 1000.
+Aus jeder Lieferung wird eine Stichprobe von n = 32 entnommen und jeweils die Auslösezeit
+in Millisekunden ermittelt.
+
+Die Stichprobenergebnisse der letzten Tage waren:
+
+Messergebnis in ms 27 28 29 30 31 32 33 34
+absolute Einzelhäufigkeit 1 2 6 10 8 3 1 1
+
+Ermitteln Sie daraus
+
+a) den Modalwert. (2 Punkte)
+b) den Medianwert. (2 Punkte)
+c) den arithmetischen Mittelwert. (2 Punkte)
+d) die Spannweite. (2 Punkte)
+e) die Standardabweichung s. (4 Punkte)
+f) die jeweilige prozentuale Einzelhäufigkeit der Stichprobenergebnisse und stellen Sie (5 Punkte)
+
+diese als Säulendiagramm im vorgegebenen Schema in Anlage 1 dar.
+
+© DIHK - Gesellschaft für berufliche Bildung — Organisation zur Förderung der IHK-Weiterbildung mbH - Bonn | L050-05-0415-6 | Seite 61
+Die Vervielfältigung, Verbreitung oderöffentliche Wiedergabe der Publikation [der Prüfungssätze undLösungshinweise]
+ist nicht gestattet (8853, 54 UrhG) und strafbar (8106 UrhG). Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+
+=== Seite 10 ===
+GEPRÜFTEI!-R INDUSTRIEMEISTER/-IN, FACH-
+RICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+
+GRUNDLEGENDE QUALIFIKATIONEN
+
+Berücksichtigung naturwissenschaftlicher und technischer Gesetzmäßigkeiten
+
+Lösungshinweise Aufgabe 7 (17 Punkte)
+(RVO 8 4 Absatz 6 Nr. 4)
+
+a) D=30 ms (2 Punkte)
+b) X=30 ms (2 Punkte)
+c) X=30,25 ms (2 Punkte)
+d) R=7ms (2 Punkte)
+e) s= 1,459 ms (4 Punkte)
+f} hrzin% = I haı in % = An g%
+32 32
+= Zn hoa in h = 2-94 %
+ea 150% a 7
+B 32
+ne LE A
+32 32
+h,in% A
+635)
+30
+23
+20
+15
+10
+5
+
+37:98. 29..80: 31.2.8327 789.34: 8
+(5 Punkte)
+
+Seite 62 | L 050-05-0415-6 | © DIHK - Gesellschaft für berufliche Bildung - Organisation zur Förderung der IHK-Weiterbildung mbH — Bonn
+Die Vervielfältigung, Verbreitung oder öffentliche Wiedergabe der Publikation [der Prüfungssätze und Lösungshinweise]
+ist nicht gestattet ($853, 54 UrhG) und strafbar (8 106 UrhG). Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+
+=== Seite 11 ===
+GEPRÜFTE/-R INDUSTRIEMEISTER/-IN, FACH-
+RICHTUNGSUBERGREIFENDE BASISQUALIFIKATIONEN/
+
+GRUNDLEGENDE QUALIFIKATIONEN
+
+Berücksichtigung naturwissenschaftlicher und technischer Gesetzmäßigkeiten
+
+Prüfungsteilnehmer-Nummer:
+
+Anlage 1 zu Aufgabe 7 f)
+
+h,, in % =
+h,, in % =
+h,, in % =
+hin % =
+h,, in % =
+h,in% =
+h,,in % =
+h,,in % =
+h, in Prozent #
+
+35
+
+30
+
+25
+
+20
+
+15
+
+10
+
+5
+N ı ı 1 f ı ı f PR N
+27 8 8 u 31 32 33 34 ms
+
+© DIHK - Gesellschaft für berufliche Bildung — Organisation zur Förderung der IHK-Weiterbildung mbH - Bonn | P 050-05-0415-6 | Seite 63
+
+Die Vervielfältigung, Verbreitung oderöffentliche Wiedergabe der Publikation [der Prüfungssätze und Lösungshinweise]
+ist nicht gestattet (88 53, 54 UrhG) und strafbar (8 106 UrhG). Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+
+=== Seite 12 ===
+GEPRÜFTEI-R INDUSTRIEMEISTER/-IN, FACH-
+RICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+
+GRUNDLEGENDE QUALIFIKATIONEN
+
+Berücksichtigung naturwissenschaftlicher und technischer Gesetzmäßigkeiten
+
+Prüfungsteilnehmer-Nummer:
+
+Anlage 2
+Werte der Winkelfunktionen
+Grad sin cos tan cot Grad sin cos tan cot
+0% 0,00000 | 1,00000 | 0,00000 [6) 45° 0,70711 | 0,70711 | 1,00000 1,00000
+
+E° 0,01745 | 0,99985 | 0,01746 |57,28996| 46° 0,71934 | 0,69466 | 1,03553 | 0,96569
+22 0,03490 | 0,99939 | 0,03492 |28,63625] 47° 0,73135 | 0,68200 | 1,07237 | 0,93252
+Is 0,05234 | 0,99863 | 0,05241 |19,08114| _ 48° 0,74314 | 0,66913 | 1,11061 | 0,90040
+4° 0,06976 | 0,99756 | 0,06993 |14,30067| 49° 0,75471 | 0,65606 | 1,15037 | 0,86929
+55 0,08716 | 0,99619 | 0,08749 |11,43005| 50° 0,76604 | 0,64279 | 1,19175 | 0,83910
+D% 0,10453 | 0,99452 | 0,10510 | 9,51436 Sr 0,77715 | 0,62932 | 1,23490 | 0,80978
+He 0,12187 | 0,99255 | 0,12278 | 8,14435 52: 0,78801 | 0,61566 | 1,27994 | 0,78129
+8° 0,13917 | 0,99027 | 0,14054 | 7,11537 535 0,79864 | 0,60182 | 1,32704 | 0,75355
+5 0,15643 | 0,98769 | 0,15833 | 6,31375 54° 0,80902 | 0,58779 | 1,37638 | 0,72654
+10° 0,17365 | 0,98481 | 0,17633 | 5,67128 555 0,81915 | 0,57358 | 1,42815 | 0,70021
+A 0,19081 | 0,98163 | 0,19438 | 5,14455 56° 0,82904 | 0,55919 | 1,48256 | 0,67451
+ar 0,20791 | 0,97815 | 0,21256 | 4,70463 SER 0,83867 | 0,54464 | 1,53986 | 0,64941
+Fa 0,22495 | 0,97437 | 0,23087 | 4,33148 586 0,84805 | 0,52992 | 1,60033 | 0,62487
+14° 0,24192 | 0,97030 | 0,24933 | 4,01078 595 0,85717 | 0,51504 | 1,66428 | 0,60086
+Pe 0,25882 | 0,96593 | 0,26795 | 3,73205 60° 0,86603 | 0,50000 | 1,73205 | 0,57735
+16° 0,27564 | 0,96126 | 0,28675 | 3,48741 61 0,37462 | 0,48481 | 1,80405 | 0,55431
+37° 0,29237 | 0,95630 | 0,30573 | 3,27085 62° 0,88295 | 0,46947 | 1,88073 | 0,53171
+138 0,30902 | 0,95106 | 0,32492 | 3,07768 63° 0,89101 | 0,45399 | 1,96261 | 0,50953
+1a: 0,32557 | 0,94552 | 0,34433 | 2,90421 64° 0,89879 | 0,43837 | 2,05030 | 0,483773
+20° 0,34202 | 0,93969 | 0,36397 | 2,74748 65° 0,90631 | 0,42262 | 2,14451 | 0,46631
+248 0,35837 | 0,93358 | 0,38386 | 2,60509 66° 0,91355 | 0,40674 | 2,24604 | 0,44523
+22° 0,37461 | 0,92718 | 0,40403 | 2,47509 67° 0,92050 | 0,39073 | 2,35585 | 0,42447
+235 0,39073 | 0,92050 | 0,42447 | 2,35585 68° 0,92718 | 0,37461 | 2,47509 | 0,40403
+24° 0,40674 | 0,91355 | 0,44523 | 2,24604 69° 0,93358 | 0,35837 | 2,60509 | 0,338386
+255 0,42262 | 0,90631 | 0,46631 | 2,14451 70° 0,93969 | 0,34202 | 2,74748 | 0,36397
+26 ° 0,43837 | 0,89879 | 0,48773 | 2,05030 LET 0,94552 | 0,32557 | 2,90421 | 0,34433
+27,0 0,45399 | 0,89101 | 0,50953 | 1,96261 RE 0,95106 | 0,30902 | 3,07768 | 0,32492
+28° 0,46947 | 0,88295 | 0,53171 | 1,88073 TE 0,95630 | 0,29237 | 3,27085 | 0,30573
+295 0,48481 | 0,87462 | 0,55431 | 1,80405 74° 0,96126 | 0,27564 | 3,48741 | 0,28675
+30° 0,50000 | 0,86603 | 0,57735 | 1,73205 TR 0,96593 | 0,25882 | 3,73205 | 0,26795
+31 0,51504 | 0,85717 | 0,60086 | 1,66428 76° 0,97030 | 0,24192 | 4,01078 | 0,24933
+32 0,52992 | 0,84805 | 0,62437 | 1,60033 FIIR 0,97437 | 0,22495 | 4,33148 | 0,23087
+33% 0,54464 | 0,83867 | 0,64941 | 1,53986 78° 0,97815 | 0,20791 | 4,70463 | 0,21256
+34° 0,55919 | 0,82904 | 0,67451 | 1,48256 492 0,98163 | 0,19081 | 5,14455 | 0,19438
+355 0,57358 | 0,81915 | 0,70021 | 1,42815 80° 0,98481 | 0,17365 | 5,67128 | 0,17633
+36° 0,58779 | 0,80902 | 0,72654 | 1,37638 81° 0,98769 | 0,15643 | 6,31375 | 0,15838
+37 0,60182 | 0,79864 | 0,75355 | 1,32704 82° 0,99027 | 0,13917 | 7,11537 | 0,14054
+38° 0,61566 | 0,78801 | 0,78129 | 1,27994 83° 0,99255 | 0,12187 | 8,14435 | 0,12278
+ER 0,62932 | 0,77715 | 0,80978 | 1,23490 84° 0,99452 | 0,10453 | 9,51436 | 0,10510
+40° 0,64279 | 0,76604 | 0,83910 | 1,19175 35 0,99619 | 0,08716 |11,43005| 0,08749
+41° 0,65606 | 0,75471 | 0,86929 | 1,15037 86° 0,99756 | 0,06976 |14,30067| 0,06993
+42° 0,66913 | 0,74314 | 0,90040 | 1,11061 87° 0,99863 | 0,05234 |19,08114| 0,05241
+43° 0,68200 | 0,73135 | 0,93252 | 1,07237 88° 0,99939 | 0,03490 |28,63625| 0,03492
+44° 0,69466 | 0,71934 | 0,96569 | 1,03553 89° 0,99985 | 0,01745 |57,28996| 0,01746
+45° 0,70711 | 0,70711 | 1,00000 | 1,00000 905 1,00000 | 0,00000 © 0,00000
+
+Seite 64 | P 050-05-0415-6 | © DIHK - Gesellschaft für berufliche Bildung — Organisation zur Förderung der IHK-Weiterbildung mbH — Bonn
+Die Vervielfältigung, Verbreitung oder öffentliche Wiedergabe der Publikation [der Prüfungssätze und Lösungshinweise]
+ist nicht gestattet ($$ 53, 54 UrhG) und strafbar ($ 106 UrhG). Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+

@@ -1,22 +1,27 @@
 # Plan: Altklausuren einspielen, Prüfungen als Aufgabenblatt, Aufgabenserien
 
-Umsetzungsplan für die nächste Session (Stand 14. 9. 2026, nach Merge von
-PR #36). Drei Themen, die zusammengehören, aber getrennt umsetzbar sind:
+Umsetzungsplan für die nächste Session (Stand 17. 9. 2026; erstellt nach
+Merge von PR #36, ergänzt um das Inventar des Archivs). Drei Themen, die
+zusammengehören, aber getrennt umsetzbar sind:
 
-- **Teil A** – Das Archiv `Altklausuren.rar` vom Google Drive beschaffen,
-  inventarisieren und über die bestehende Pipeline in startbare Prüfungen,
-  Übungsfragen und Anlagen überführen.
+- **Teil A** – Das Archiv `Altklausuren.rar` (99 IHK-Prüfungen der
+  Industriemeister-Basisqualifikationen, Herbst 2014 bis Frühjahr 2024, alle
+  mit amtlichen Lösungshinweisen) über die bestehende Pipeline in startbare
+  Prüfungen, Übungsfragen und Anlagen überführen. Textlayer und Inventar
+  liegen bereits im Repo.
 - **Teil B** – Die Darstellung der Prüfungen neu schichten: statt einer
   Teilaufgabe je Bildschirm ein **Aufgabenblatt**, auf dem Aufgabe N mit
   Ausgangslage, Anlagen und **allen** Teilaufgaben a–x sichtbar ist. Grafiken
-  und Tabellen bekommen dabei einen festen Platz und werden zoombar.
+  und Tabellen bekommen dabei einen festen Platz und werden zoombar. Vorweg
+  müssen die Daten aus `index.html` ausgelagert werden – mit 121 Prüfungen
+  passt das nicht mehr in eine Datei.
 - **Teil C** – Die Übungsfragen (`PX-`) als **Aufgabenserien** verketten, damit
   die Lernenden beim Lösen von a) auch b) und c) kennen.
 
 Auslöser (Nutzer, 14. 9. 2026): „Die Darstellung (auch die Grafiken)
 überdenken und den Aufbau der Fragen von a–x durchdenken und neu schichten.
 Manchmal ist es wichtig, auch die anderen Fragen zu kennen, um z. B. a)
-richtig zu lösen."
+richtig zu lösen." – und: „Nutze diese ganzen Klausuren für unsere App."
 
 ## Ausgangslage
 
@@ -29,7 +34,7 @@ richtig zu lösen."
 | Übungsfragen aus Prüfungen (`PX-`) | 327 (127 Kraftverkehr, 94 BQ H2025, 107 BQ H2024) | `questions.json`, Quellensätze `scripts/pruefungen/fragen/*.json` |
 | Bildanlagen | 14 (20 Teilaufgaben mit `bild`, 6 mit `bildL`), als Data-URI | `assets/data/anlagen.json` (676 KB), `window.KVM_ANLAGEN` |
 | Tabellenanlagen | 4 (`tab`) | in den Schritten |
-| `index.html` | 3,3 MB – davon ~0,7 MB Bilder | Root |
+| `index.html` | 3,3 MB – davon ~2,1 MB Fragen, ~0,6 MB Prüfungen, ~0,7 MB Bilder | Root |
 
 ### Wie eine Prüfung heute dargestellt wird
 
@@ -68,147 +73,261 @@ optimale Bestellmenge und 2 d) die Gesamtkosten verlangt – und rechnet in a)
 schon zu viel oder das Falsche. Im Original liegt das Aufgabenblatt komplett
 vor; die IHK erwartet die Antwort im Umfang der Teilaufgabe.
 
-### Das Archiv `Altklausuren.rar`
+### Das Archiv `Altklausuren.rar` – was drin ist
 
-- Google Drive, Datei-ID `1REtcGsj7_pR2w0iely_zHF3mq2HFLeZP`, **201 MB**,
-  `application/x-rar`, hochgeladen 14. 9. 2026 20:45 UTC, Freigabe nur für den
-  Eigentümer. (Es liegt außerdem ein **leerer** Zwilling mit 0 Byte vom
-  20:39 UTC im selben Ordner – ID `1D_e_iWkd6qxH2qZlSzYZYPz62juxKpqR` –, den der
-  Nutzer löschen kann.)
-- **In dieser Session nicht beschaffbar:** Der Drive-Connector liefert
-  Dateiinhalte nur base64-kodiert in die Konversation (≈ 270 MB Text – nicht
-  verarbeitbar), und ein direkter Download ohne Anmeldung liefert nur die
-  Google-Anmeldeseite (geprüft mit `drive.google.com/uc?export=download` und
-  `drive.usercontent.google.com/download`).
-- Inhalt daher **unbekannt**. Aus der Größe (201 MB) sind eher gescannte
-  Prüfungen als Word-PDFs zu erwarten (die BQ-PDFs H2024 hatten je 0,3–0,8 MB).
-- Entpacken: `bsdtar` (Paket `libarchive-tools`, liest RAR 4 und 5) und
-  `unrar-free` lassen sich in der Umgebung per `apt-get install` installieren
-  (in dieser Session verifiziert; `deb.debian.org` ist erreichbar). Für Scans
-  zusätzlich `tesseract-ocr tesseract-ocr-deu` (noch nicht installiert, Paket
-  verfügbar).
+Google Drive, Datei-ID `1REtcGsj7_pR2w0iely_zHF3mq2HFLeZP`, 201 MB, RAR 5;
+am 17. 9. 2026 per Link-Freigabe geholt, entpackt und inventarisiert
+(`scripts/pruefungen/inventar.py` → `scripts/pruefungen/quellen/INVENTAR-altklausuren.md`).
+Die PDFs selbst bleiben außerhalb des Repos.
+
+- **108 PDFs = 100 Fachhefte + 8 Sammelbände.** Ausschließlich
+  **Industriemeister-Basisqualifikationen** (keine Kraftverkehr-Prüfungen):
+  fünf Fächer (RBH = Rechtsbewusstes Handeln, BWH = Betriebswirtschaftliches
+  Handeln, MIKP = Methoden der Information, Kommunikation und Planung, ZIB =
+  Zusammenarbeit im Betrieb, NTG = Naturwissenschaftliche und technische
+  Gesetzmäßigkeiten) × **20 Termine** von Herbst 2014 bis Frühjahr 2024.
+  Kein Termin überschneidet sich mit den 9 vorhandenen BQ-Prüfungen
+  (H2024, H2025).
+- **99 verschiedene Prüfungen.** `BQ 2023/Herbst/MIKP 2023 November.pdf` ist
+  zeichengleich mit der ZiB-Prüfung desselben Termins – **MIKP H2023 fehlt**
+  im Archiv. Die 8 Sammelbände (`Herbst 2014.pdf`, `BQ Frühjahr 2015.pdf`, …,
+  `2019 Herbst_compressed.pdf`) enthalten nur Hilfsmittelliste + die fünf
+  Fachhefte desselben Termins noch einmal – Dubletten, nur als Ersatz für
+  fehlende Seiten nützlich.
+- **Alle 99 sind Lösungshefte** („L 050-0N-MMJJ"): sie enthalten die
+  vollständigen Aufgaben **und** die amtlichen Lösungshinweise. Prüfungen
+  ohne Lösung (Klasse K4) kommen im Archiv nicht vor; die Entscheidung dazu
+  (unten, Nr. 2) bleibt für künftige Quellen gültig, greift hier aber nicht.
+- **Drei Heftformate** (Spalte „Format" im Inventar):
+
+  | Format | Termine | Prüfungen | Aufbau | Textlayer |
+  |---|---|---:|---|---|
+  | **PL** | F2023, H2023, F2024 | 14 | Prüfungsheft (P-Nr.) und Lösungsheft (L-Nr.) hintereinander, Lösungsteil beginnt mit Zeile `Lösungshinweise`, Badges `a Mögliche Punktzahl: n` – identisch zu H2024/H2025 | nativ (Word/Acrobat) |
+  | **L-I** | F2019 – H2022 | 40 | nur Lösungsheft; `Aufgabe N` (mit Badges) und `Lösungshinweise Aufgabe N` (Badges wiederholt, `[VO: …]`) **wechseln sich ab**; Deckblatt trägt schon die Zeile `Lösungshinweise` | nativ; ZiB H2021 nur als Scan (7 Seiten, ohne Deckblatt) |
+  | **L-ALT** | H2014 – H2018 | 45 | nur Lösungsheft; Teilaufgaben `a) … (4 Punkte)` (Punkte am Ende der ersten Zeile), Kopf `Lösungshinweise Aufgabe N (13 Punkte)`, `[VO: § 4 Absatz 3 Nr. 1]` (ab 2016) bzw. `(RP: 1.4.4)` (2014/15), Deckblatt mit `Prüfungstag` statt `Datum:` | 2018 nativ (10); 2014–2017 Scans (28) und RBH mit unbrauchbarer Fremd-OCR (7) → alle 35 mit Tesseract neu gelesen |
+
+- **Textlayer liegen im Repo:** `scripts/pruefungen/quellen/imbq-<f|h><jahr>/0N-<fach>.txt`
+  mit Seitenmarkern, erzeugt von `scripts/pruefungen/quellen_bau.py`
+  (`pdftotext -layout`; für Scans `pdftoppm -r 300 -gray` + `tesseract -l deu
+  --psm 3`). 99 Dateien, 19 Termine (`imbq-h2014` … `imbq-f2024`; `imbq-h2023`
+  ohne `03-methoden.txt`).
+- **Auffälligkeiten aus dem Inventar**, die Korrekturen brauchen:
+  - NTG H2022: Deckblatt sagt „3. November **2023**" – Druckfehler, Termin laut
+    Ordner und Schwesterheften 3. 11. 2022 → Fall-ID `P-NT-20221103`, Datum
+    per Korrektur setzen.
+  - ZiB H2021: Scan ohne Deckblatt → Datum/Anzahl Aufgaben aus dem
+    Schwesterheft RBH H2021 (3./4. November 2021) übernehmen.
+  - Deckblätter von BWH F2016, BWH H2016, ZiB H2016 sind per OCR nicht
+    lesbar (Datum fehlt) → Datum aus den Schwesterheften.
+  - Eingebettete Bilder (Spalte „Bilder"): NTG-Hefte im Median 15
+    (Abbildungen zu Mechanik/Elektrotechnik), RBH F2017 185 und MIKP H2018
+    87 sind Bildkacheln aus Scan/Layout, keine Anlagen – je Prüfung sichten.
+- **Fachlicher Stand:** Recht und BWL von 2014–2018 spiegeln den damaligen
+  Rechtsstand (u. a. Mutterschutz 2018, BetrVG-Novelle 2021, Nachweisgesetz
+  2022, Mindestlohn). Die Aufgaben sind als Prüfungstraining weiter wertvoll,
+  aber Übungsfragen daraus brauchen einen Gegenprüfer mit ausdrücklichem
+  Auftrag „Rechtsstand heute". Vorschlag: Prüfungen vor 2019 im
+  Aufgabenkopf mit „Prüfung von 2016 – Rechtsstand beachten" kennzeichnen
+  (Feld `hinweis` am Fall, siehe B1).
 
 ## Rechtliches (bleibt eine Entscheidung des Nutzers)
 
 Die IHK-/DIHK-Prüfungen tragen den Vermerk „Einsatz nur im Rahmen des
 Korrekturprozesses gestattet. Weitergabe an unbefugte Dritte untersagt."
-PDFs werden **nicht** eingecheckt. Textlayer (`scripts/pruefungen/quellen/`)
-und zugeschnittene Abbildungen (`scripts/pruefungen/anlagen/`) liegen heute
-im **öffentlichen** Repo; das gilt ebenso für alles, was aus dem Archiv
-übernommen wird. Wer umsetzt, hält sich an diese Praxis, weist im PR aber
-erneut darauf hin.
+PDFs werden **nicht** eingecheckt. Textlayer (`scripts/pruefungen/quellen/`,
+jetzt 99 Dateien mehr) und zugeschnittene Abbildungen
+(`scripts/pruefungen/anlagen/`) liegen im **öffentlichen** Repo. Wer umsetzt,
+hält sich an diese Praxis, weist im PR aber erneut darauf hin.
 
-## Teil A – Altklausuren beschaffen, inventarisieren, einspielen
+## Teil A – Altklausuren einspielen
 
-### A0 – Beschaffung (blockiert, Nutzer muss einen Weg wählen)
+### A0 – Beschaffung (erledigt) und Reproduktion
 
-Eine der drei Möglichkeiten, in absteigender Bequemlichkeit:
+Sollte das Archiv erneut gebraucht werden (Sammelbände, Seitenbilder für
+Anlagen), solange die Link-Freigabe steht:
 
-1. **Freigabe „Jeder mit dem Link" (Leser)** für `Altklausuren.rar`, nur für
-   die Dauer der Session. Dann im Scratchpad:
-   ```bash
-   curl -L -o Altklausuren.rar \
-     'https://drive.usercontent.google.com/download?id=1REtcGsj7_pR2w0iely_zHF3mq2HFLeZP&export=download&confirm=t'
-   file Altklausuren.rar            # muss "RAR archive" melden, nicht HTML
-   mkdir alt && bsdtar -xf Altklausuren.rar -C alt
-   ```
-   Danach Freigabe wieder zurücknehmen.
-2. **Upload der PDFs in die Session** (wie bei den H2024-PDFs) – ohne RAR,
-   die Dateien landen unter `/root/.claude/uploads/<session>/`.
-3. Archiv auf dem Drive in einen **Ordner entpacken** und die PDFs einzeln
-   über den Drive-Connector holen. Nur für wenige, kleine Dateien sinnvoll
-   (jede Datei geht base64 durch die Konversation).
+```bash
+curl -L -o Altklausuren.rar \
+  'https://drive.usercontent.google.com/download?id=1REtcGsj7_pR2w0iely_zHF3mq2HFLeZP&export=download&confirm=t'
+file Altklausuren.rar                      # "RAR archive data, v5" – sonst kam die Login-Seite
+apt-get install -y libarchive-tools tesseract-ocr tesseract-ocr-deu poppler-utils
+bsdtar -xf Altklausuren.rar -C <scratch>
+python3 scripts/pruefungen/inventar.py <scratch>/Altklausuren --md quellen/INVENTAR-altklausuren.md
+python3 scripts/pruefungen/quellen_bau.py <scratch>/Altklausuren --nur f2024,h2023   # Textlayer je Termin
+```
 
-Der Umsetzer darf die Freigabe **nicht selbst** setzen (`share_file`) – das
-wäre eine Veröffentlichung geschützten Materials ohne Rückfrage.
+`quellen_bau.py` überspringt Sammelbände und Dateien, deren Inhalt nicht zum
+Dateinamen passt (so fiel das ZiB-Doppel auf), und liest Scans sowie
+Fremd-OCR („PDF24 Tools - OCR") mit Tesseract neu. Tesseract nur mit
+`--psm 3` und `OMP_THREAD_LIMIT=1` aufrufen – `--psm 4` hängt minutenlang auf
+den grafischen Deckblättern.
 
-### A1 – Inventar (`scripts/pruefungen/inventar.py`, neu)
+### A1 – Inventar (erledigt)
 
-Läuft über den entpackten Baum und schreibt `scripts/pruefungen/quellen/INVENTAR.md`
-(Markdown-Tabelle) plus `inventar.json`. Je PDF:
+`scripts/pruefungen/quellen/INVENTAR-altklausuren.md` (Markdown-Tabelle je
+PDF: Seiten, Zeichen/Seite, Bilder, Fach, Datum, Anzahl Aufgaben, Badges,
+Lösungshinweise, Heftnummer, Format, Klasse, Fall-ID, Erzeuger, Hinweis).
+Termin × Fach (Format; `*` = Scan/OCR):
 
-- Datei, Größe, Seiten (`pdfinfo`).
-- **Textlayer?** `pdftotext -l 3 -layout` → Zeichen je Seite; < 200 Zeichen/Seite
-  = Scan (OCR nötig).
-- **Kopf** aus den ersten zwei Seiten (Textlayer oder OCR der ersten Seite mit
-  `pdftoppm -f 1 -l 1 -r 200` + `tesseract -l deu`): Fortbildung („Geprüfte/-r
-  Meister/-in für Kraftverkehr", „Industriemeister"), Teil („Handlungsspezifische
-  Qualifikationen" → HQ, „Basisqualifikationen" → BQ), `Handlungsbereich:` /
-  Prüfungsfach, `Datum:`, `Anzahl Aufgaben:`, Vorkommen von `Lösungshinweise`.
-- **Klasse**:
-  - **K1** BQ mit Textlayer und Lösungshinweisen → `parse_imbq.py` (JAHRGAENGE
-    erweitern; Format ist seit H2024 stabil).
-  - **K2** Kraftverkehr HQ mit Textlayer und Lösungshinweisen → `parse_amtlich.py`
-    (ist auf OCR-Text ausgelegt, verträgt `pdftotext -layout` nach dem
-    `clean()`-Schritt – am ersten Exemplar prüfen).
-  - **K3** Scan (kein Textlayer) → OCR-Weg wie in `scripts/pruefungen/README.md`
-    (`pdftoppm -r 300 -gray`, `tesseract -l deu --psm 4`), danach K1/K2-Parser
-    plus `korrekturen_*.py`.
-  - **K4** ohne Lösungshinweise → siehe Entscheidung unten.
-  - **K0** Dublette eines bereits eingespielten Termins (Bereich + Datum
-    identisch mit einem `P-`-Fall) → nur als Quelle für fehlende Anlagen nutzen.
-- Aus dem Kopf die **Fall-ID** ableiten: `P-<Kürzel>-<JJJJMMTT>`; Kürzel wie
-  bisher `FT`, `OK`, `RE`, `BW`, `MI`, `ZI`, `NT`. Unbekannte Handlungsbereiche
-  (ältere Prüfungsordnung, andere Bezeichnungen) im Inventar als „offen"
-  markieren – Fach-Zuordnung und Kürzel legt der Nutzer fest, bevor eingespielt
-  wird (`build_amtlich.BEREICH_FACH/BEREICH_LANG`, `SUB_ORDER` in
-  `index.html`, `kSubOrder` in `constants.dart`).
+| Termin | RE | BW | MI | ZI | NT |
+|---|---|---|---|---|---|
+| H2014 – H2016 (5 Termine) | L-ALT* | L-ALT* | L-ALT* | L-ALT* | L-ALT* |
+| F2017, H2017 | L-ALT* | L-ALT* | L-ALT* | L-ALT* | L-ALT* |
+| F2018, H2018 | L-ALT | L-ALT | L-ALT | L-ALT | L-ALT |
+| F2019 – F2022 (7 Termine) | L-I | L-I | L-I | L-I | L-I (ZI H2021: L-I*) |
+| H2022 | L-I | L-I | L-I | L-I | L-I (Datum korrigieren) |
+| F2023 | PL | PL | PL | PL | PL |
+| H2023 | PL | PL | **fehlt** | PL | PL |
+| F2024 | PL | PL | PL | PL | PL |
 
-Das Inventar wird als erster Commit gepusht, damit der Nutzer die Auswahl
-sehen und Reihenfolge/Auslassungen bestimmen kann.
+Fall-IDs wie bisher `P-<RE|BW|MI|ZI|NT>-<JJJJMMTT>` aus dem Datum des
+Deckblatts (Termin: Mai = Frühjahr, November = Herbst).
 
-### A2 – Einspielen je Klasse
+### A2 – Parser je Format (mit Trockenlauf-Ergebnissen)
 
-Reihenfolge: neueste Termine zuerst, innerhalb eines Termins Kraftverkehr vor
-BQ. Pro Prüfung derselbe Ablauf wie in PR #36:
+Alle Termine werden in `parse_imbq.JAHRGAENGE` eingetragen
+(`'f2024': {'dir': 'imbq-f2024', 'korrekturen': 'korrekturen_imbq_f2024',
+'format': 'PL', 'pruefungen': [...]}`); `H2023` ohne `METHOD`. Der Parser
+wählt nach `format`:
 
-1. Textlayer mit Seitenmarkern (`=== Seite N ===`) unter
-   `quellen/<sammlung>/`, Seiten-JPEGs (`pdftoppm -jpeg -r 100`) für die
-   Sichtprüfung **nicht** einchecken (nur im Scratchpad).
-2. Parser laufen lassen; **Invariante: Frageteil = Lösungsteil = 100 Punkte**,
-   sonst Abbruch mit der abweichenden Aufgabe. Abweichungen (fehlende Badges,
-   Symbol-Font-Zeichen, Kopfzeilen im Text, Lösungsanhänge) über
-   `korrekturen_<sammlung>.py` beheben – jede Korrektur muss greifen, sonst
-   bricht der Build ab.
-3. `build_imbq.py` / `build_amtlich.py` → `cases.json` + `KVM_CASES`; dabei
-   die **neuen Felder aus Teil B1** gleich mit erzeugen.
-4. Übungsfragen: je Prüfung ein Autor-Agent (nur die amtliche Lösung als
-   Quelle, 4–10 Fragen, `mc` mit genau einer richtigen Option oder `calc` mit
-   `ans`+`unit`), je Frage ein Gegenprüfer; Ergebnis als
-   `scripts/pruefungen/fragen/<sammlung>.json`, Datei in `REIHENFOLGE`
-   (`build_exam_questions.py:23`) **hinten** anhängen (ID-Stabilität der 327
-   vorhandenen `PX-`). Dabei die Serien-Felder aus Teil C1 setzen.
-5. Anlagen: `anlagen_bau.FIGUREN` (Heft, Seite, Box in 100-dpi-Einheiten,
-   Titel) ergänzen, `anlagen_bau.py <pdf-dir> <keys>` → `anlagen/`,
-   `anlagen_<sammlung>.py` mit `BILDER`/`BILDER_L`/`TABELLEN`,
-   `build_anlagen.py`. Bilder nach dem Schema aus Teil B4 (extern, nicht als
-   Data-URI).
-6. `tools/sync_content.py --check` und `--validate-assets` grün, Web-App im
-   Headless-Chromium ohne JS-Fehler, CI `build-apk` grün (Logs lesen –
-   `continue-on-error`).
+**PL (14 Prüfungen)** – `parse_imbq.py` unverändert. Trockenlauf ohne
+Korrekturen: 8 von 14 sofort 100/100 (RE/MI/ZI F2024, RE/BW/ZI H2023, MI/ZI
+F2023). Zu korrigieren wie bei H2024/H2025 (Badge-Tippfehler, Bild-Lösungen):
 
-### A3 – Prüfungen ohne Lösungshinweise (K4)
+| Prüfung | Befund | Vermutung |
+|---|---|---|
+| BW F2024 | Lösungsteil 103 P, A1c 6≠9 | Badge im Lösungsheft falsch |
+| NT F2024 | Lösungsteil 102 P, A4a 10≠11, A4b 6≠7 | Badges im Lösungsheft |
+| NT H2023 | Frageteil 92 P | Badge fehlt im Textlayer (Zeilenumbruch) – Seite prüfen |
+| RE F2023 | A8a 6≠4, A8b Lösung fehlt | Lösungsteil A8 anders gegliedert |
+| BW F2023 | Lösungsteil 93 P, A6a 10≠3 | Badge/Anlage |
+| NT F2023 | Lösungsteil 83 P, A2a Lösung fehlt | Lösung nur als Bild/Anlage |
 
-Empfehlung: **einspielen, aber sichtbar als „Musterlösung · nicht amtlich"**
-(`amtlich: false`; das Label existiert in Web und App bereits, ebenso der
-KI-Prüfauftrag „Musterlösung (zu prüfen)"). Musterlösungen erarbeitet ein
-Autor-Agent je Aufgabe mit Gegenprüfer wie bei den ersten Kraftverkehr-Fällen.
-**Keine `PX-`-Übungsfragen** aus K4 (die Regel „Quelle = amtliche Lösung"
-bleibt). Wenn der Nutzer das nicht will: K4 auslassen, im Inventar bleibt es
-dokumentiert.
+**L-I (40 Prüfungen)** – neuer Modus in `parse_datei`: Sobald vor der ersten
+`Aufgabe N` eine Zeile `Lösungshinweise` steht (Deckblatt), werden die Zeilen
+nicht am Deckblatt geteilt, sondern **umsortiert**: jede Zeile ab `^Aufgabe N$`
+gehört zum Frageteil, ab `^Lösungshinweise Aufgabe N$` zum Lösungsteil, bis
+zum nächsten Wechsel; danach laufen `aufgaben(frage, False)` und
+`aufgaben(loes, True)` wie bisher. Die Ausgangssituation (nur RBH) steht
+zwischen Deckblatt und Aufgabe 1. Prototyp (15 Zeilen) im Trockenlauf:
+**35 von 39** Textlayer-Prüfungen sofort 100/100 mit Label-Deckung. Rest:
 
-### A4 – Aufwand (grobe Richtwerte je Prüfung)
+| Prüfung | Befund |
+|---|---|
+| NT H2022 | Datum „3. November 2023" (Druckfehler) → per Korrektur; A6d Lösung leer (Bild) |
+| MI F2021 | A2a Lösung leer (Diagramm) |
+| NT F2021 | A3a Lösung leer (Skizze) |
+| BW H2019 | Lösungsteil 88 P, A7a Lösung fehlt (Anlage/Tabelle) |
+| ZI H2021 | OCR-Text, noch nicht getestet |
 
-| Klasse | Parser + Korrekturen | Übungsfragen (Workflow) | Anlagen |
-|---|---|---|---|
-| K1/K2 Textlayer | 30–60 min | 20–30 min (läuft parallel) | 10–20 min je Abbildung |
-| K3 Scan/OCR | 1,5–3 h (OCR-Fehler, Tabellen) | wie oben | wie oben |
-| K4 ohne Lösung | + 1 h Musterlösungen | entfällt | wie oben |
+```python
+# Prototyp L-I (in parse_datei, wenn LOES_TL vor der ersten AUFG-Zeile steht)
+frage, loes, ziel = [], [], None
+for l in lines:
+    if AUFG.match(l):   ziel = frage
+    elif LOES_A.match(l): ziel = loes
+    if ziel is not None: ziel.append(l)
+A, L = aufgaben(frage, False), aufgaben(loes, True)
+```
 
-Bei > 10 Prüfungen in Tranchen von 3–5 arbeiten und jede Tranche als eigenen
-PR abschließen (Reviewbarkeit, Größe von `index.html`).
+**L-ALT (45 Prüfungen)** – neuer Parser `parse_imbq_alt.py` (oder dritter
+Modus), gleiche Ausgabestruktur wie `parse_imbq.parse_datei`:
+
+- Kopf: `Prüfungstag 13. November 2014`, `Anzahl der Aufgaben 7`,
+  Fach in der Zeile `Basisqualifikation <Fach>`.
+- Block je Aufgabe: `^Aufgabe (\d+)$` … `^Lösungshinweise Aufgabe \1 \((\d+) Punkte\)$`
+  … bis zur nächsten `Aufgabe`. Gesamtpunkte der Aufgabe aus dem Lösungskopf.
+- Teilaufgaben im Frageteil: `^([a-h])\)\s+(.*?)\s*\((\d+) Punkte?\)\s*$` –
+  die Punkte stehen am Ende der **ersten** Zeile, Folgezeilen sind eingerückt
+  und ohne Marker; Aufgaben ohne Teile haben genau eine Punktangabe in Klammern
+  oder gar keine (dann Gesamtpunkte aus dem Kopf, Label `a`).
+- Lösungen: `^([a-h])\)` beginnt den Teil; `(n Punkte)` am Ende bestätigt die
+  Teilpunkte; `[VO: …]`/`(RP: …)` in der Zeile nach dem Kopf → `vo`
+  (RP-Verweise als `vo: 'Rahmenplan 1.4.4'` mitführen); Präfix `z. B.:`
+  stehen lassen.
+- Invariante wie bisher: Summe der Teilpunkte = Kopfpunkte je Aufgabe, Summe
+  je Prüfung = 100. Trockenlauf per Regex auf den 10 nativen 2018-Heften:
+  **8 von 10** sauber (100/100); MIKP H2018 (90/85) und NTG H2018 (114/86)
+  mischen Formen (Punkte teils im Text) → Korrekturen.
+- OCR-Normalisierung vor dem Parsen (nur für `imbq-h2014` … `imbq-h2017`):
+  `ı`→`i`, `{`→`(`, `}`→`)`, `8 (\d)`/`§ ` bei `Absatz`/`Abs.`, `8§`/`88`/`8$`→`§§`,
+  Aufzählungszeichen `= `, `m `, `ms `, `a ` am Zeilenanfang → `– `; JUNK um
+  Fußzeilen (`Seite N | © DIHK …`, `Die Vervielfältigung …`, `ist nicht
+  gestattet …`, `GEPRÜFTE/-R INDUSTRIEMEISTER …`, `FACHRICHTUNGSÜBERGREIFENDE
+  …`, `GRUNDLEGENDE QUALIFIKATIONEN`, `P 050-…`, `L 050-…`) erweitern. Die
+  Tesseract-Ausgabe ist strukturell brauchbar (Aufgaben-, Teil- und
+  Lösungsköpfe sicher erkannt), Zahlen und Paragrafen müssen je Prüfung gegen
+  die Seitenbilder geprüft werden (`pdftoppm -jpeg -r 100` in den Scratch).
+  Bekannte Stolperstelle: Die Überschrift der **ersten** Aufgabe der
+  RBH-Hefte 2014/15 wird als `Aufgabe En` gelesen (verzierte Ziffer) –
+  `^Aufgabe\s+(En|EN|I|l)$` als `Aufgabe 1` werten, danach fortlaufend prüfen.
+
+**Builder** `build_imbq.py`: läuft bereits über `sorted(JAHRGAENGE)`; neu nur
+`format` durchreichen, `termin` aus dem Datum, und der Fall bekommt
+`hinweis` (Rechtsstand, siehe oben) sowie die Felder aus B1.
+
+### A3 – Reihenfolge, Tranchen, Aufwand
+
+Neueste zuerst; jede Tranche ein eigener PR mit Prüfungen **und** ihren
+Übungsfragen und Anlagen:
+
+| Tranche | Termine | Prüfungen | Parser | Aufwand (Richtwert) |
+|---|---|---|---:|---|
+| T1 | F2024, H2023, F2023 | 14 | PL, vorhanden | 6 Korrekturen · je Prüfung 30–45 min + Fragen-Workflow |
+| T2 | H2022 … F2019 | 40 | L-I, 15 Zeilen neu | 4 Korrekturen + ZiB H2021 (OCR) · je 30 min |
+| T3 | H2018, F2018 | 10 | L-ALT neu (½ Tag) | 2 Korrekturen |
+| T4 | H2017 … H2014 | 35 | L-ALT + OCR-Normalisierung | je Prüfung 1–2 h Sichtprüfung gegen Seitenbilder; Rechtsstand-Hinweis Pflicht |
+
+Erst B0 (Daten auslagern) und B1 (Datenmodell) umsetzen, dann T1 – sonst
+wächst `index.html` je Tranche um 1–2 MB.
+
+### A4 – Übungsfragen und Anlagen je Tranche
+
+- Fragen wie in PR #33/#36: je Prüfung ein Autor-Agent (nur die amtliche
+  Lösung als Quelle, 4–10 Fragen, `mc` mit genau einer richtigen Option oder
+  `calc` mit `ans`+`unit`, Serienfelder aus C1), je Frage ein Gegenprüfer –
+  für T3/T4 zusätzlich mit dem Auftrag, Rechts- und Normstand auf heute zu
+  prüfen und veraltete Fragen zu verwerfen. Quellensatz je Termin
+  `scripts/pruefungen/fragen/imbq-<termin>.json`, in `REIHENFOLGE`
+  (`build_exam_questions.py:23`) **hinten** anhängen (ID-Stabilität der 327
+  vorhandenen `PX-`). Erwartung: 99 × 6–10 ≈ 600–1.000 neue Fragen.
+- Anlagen: NTG-Hefte tragen fast immer Abbildungen (Schaltungen, Kräfte,
+  Typenschilder), MIKP gelegentlich Diagramme, BWL Tabellen. Je Prüfung
+  `anlagen_bau.FIGUREN` ergänzen (Heft = PDF im Scratch, Seite, Box, Titel),
+  `anlagen_<termin>.py` mit `BILDER`/`BILDER_L`/`TABELLEN` (Aufgabenebene
+  `"*"`, siehe B4). Erwartung: 100–150 Abbildungen – ein Grund mehr für B4
+  (externe Dateien).
+- Abnahme je Tranche: `parse_imbq.py <termine>` ohne Fehler (100/100 beidseitig),
+  `build_imbq.py`, `build_exam_questions.py`, `build_anlagen.py`,
+  `tools/sync_content.py --check` und `--validate-assets`, Headless-Browser,
+  CI `build-apk` (Logs lesen).
 
 ## Teil B – Darstellung: vom Teilaufgaben-Chat zum Aufgabenblatt
+
+### B0 – Daten aus `index.html` auslagern (Voraussetzung)
+
+Heute stecken `KVM_QUESTIONS` (2,1 MB), `KVM_CASES` (0,6 MB) und
+`KVM_ANLAGEN` (0,7 MB) als Literale in `index.html`; `tools/sync_content.py`
+und die Builder patchen die Arrays per `finde_array` in die Datei. Mit 121
+Prüfungen (~3 MB) und 100+ Bildern trägt das nicht mehr.
+
+- `data/questions.json`, `data/cases.json`, `data/anlagen.json` neben
+  `index.html` (GitHub Pages liefert sie mit); die App lädt sie beim Start
+  mit `fetch` (relativ, ohne führenden `/`), zeigt solange einen Ladehinweis
+  und setzt danach dieselben Globals (`window.KVM_QUESTIONS` …), damit die
+  bestehenden IIFEs unverändert bleiben. Bilder als Dateien `anlagen/<key>.jpg`
+  (B4).
+- Builder (`build_imbq.py`, `build_amtlich.py`, `build_exam_questions.py`,
+  `build_anlagen.py`, `build_formulas.py`) schreiben JSON-Dateien statt in
+  `index.html` zu injizieren; `tools/sync_content.py` liest/schreibt die
+  JSON-Dateien (`_extract_global`/`finde_array` entfallen), die Bewahrung von
+  `P-`/`PX-` bleibt. `sync-content.yml` prüfen (Pfad der Content-Quelle).
+- `file://`-Nutzung geht damit verloren (kein `fetch`); die Web-App wird über
+  GitHub Pages genutzt, die Flutter-App bringt ihre Assets mit – akzeptiert,
+  im README vermerken.
+- Abnahme: `index.html` < 1 MB, Web-App lädt Fragen/Prüfungen/Bilder von
+  Pages, `sync_content.py --check` grün, Test-Kopie im Headless-Chromium über
+  einen lokalen HTTP-Server (`python3 -m http.server`) statt `file://`.
 
 ### B1 – Datenmodell (Build-Zeit, beide Front-Ends)
 
@@ -220,6 +339,7 @@ weiter passen.
 // case
 { "id": "P-BW-20251106", "f": 2, "sub": "IHK-Prüfung: …", "title": "…",
   "termin": "Herbst 2025", "amtlich": true,
+  "hinweis": "",                  // z. B. "Prüfung von 2016 – Rechtsstand beachten"
   "context": "Ausgangssituation zu allen Aufgaben …",
   "aufgaben": [
     { "nr": 2, "pts": 17,
@@ -265,7 +385,8 @@ Anzeige gruppiert nach `nr`:
 1. **Kopfzeile** (sticky): „Aufgabe 2 von 7 · 17 Punkte", darunter der
    **Aufgaben-Stepper** – 7 Pillen `1 … 7` mit Zustand
    leer / teilweise beantwortet / alle beantwortet / aufgedeckt. Tippen wechselt
-   die Aufgabe. Ersetzt `qCount` „Teil 4/17" und `btnPrev`.
+   die Aufgabe. Ersetzt `qCount` „Teil 4/17" und `btnPrev`. Darunter, falls
+   gesetzt, der `hinweis` des Falls (Rechtsstand) als schmale Zeile.
 2. **Ausgangssituation zu allen Aufgaben**: bestehendes `<details id="qCase">`,
    bei Aufgabe 1 offen, Nutzerentscheidung wird gemerkt (`state.ctxOpen`).
 3. **Aufgabenkopf**: `aufgaben[].sit` als ruhiger Absatz (`.msg-sit`-Stil),
@@ -293,14 +414,16 @@ Anzeige gruppiert nach `nr`:
 6. **Ergebnis** (`finishRound`): `taskList` nach Aufgabe gruppieren
    („Aufgabe 2 · 12/17 P", darunter a–d als schmale Zeilen); Breakdown je
    Themenbereich bleibt.
-7. **Übersicht** (`mPruef`): je Prüfung statt des Teilaufgaben-Rasters eine
-   Liste **„Aufgabe N · 17 P"** mit Chips `a b c d` (grün = beantwortet,
+7. **Übersicht** (`mPruef`): mit 121 Prüfungen braucht die Liste Filter –
+   Chips je Fach (RE/BW/MI/ZI/NT/FT/OK) und Jahr-Gruppen, nur die zwei
+   neuesten Termine ausgeklappt. Je Prüfung statt des Teilaufgaben-Rasters
+   eine Liste **„Aufgabe N · 17 P"** mit Chips `a b c d` (grün = beantwortet,
    gefüllt = aufgedeckt); Tippen öffnet die Aufgabe und scrollt zum Teil
    (`KVM_startCase(id, stepIdx)` bleibt die Schnittstelle, `startIdx` ist
    weiter der Schritt-Index).
-8. `buildOpenChat` und die Chat-Blasen entfallen für Prüfungen; die 15
-   Fallaufgaben laufen über dasselbe Aufgabenblatt (eine Aufgabe, fünf Teile).
-   Erst entfernen, wenn beide Front-Ends umgestellt sind.
+8. `buildOpenChat` und die Chat-Blasen entfallen (Entscheidung des Nutzers,
+   17. 9. 2026); die 15 Fallaufgaben laufen über dasselbe Aufgabenblatt (eine
+   Aufgabe, fünf Teile). Erst entfernen, wenn beide Front-Ends umgestellt sind.
 
 CSS: `.blatt`, `.bl-head`, `.bl-stepper`, `.bl-sit`, `.bl-anlagen`,
 `.bl-thumb`, `.bl-teil`, `.bl-teil.done/.revealed`, `.bl-braucht`, `.lb`.
@@ -310,7 +433,8 @@ Mobil zuerst (Kacheln umbrechen, Karten volle Breite, 16 px Rand), Tokens
 ### B3 – Flutter-App
 
 - `models.dart`: `Aufgabe {nr, pts, sit, tab, bild[]}`, `CaseStudy.aufgaben`,
-  `Question.nr/teil/pts/braucht`; `TaskParts` nur noch Fallback.
+  `CaseStudy.hinweis`, `Question.nr/teil/pts/braucht`; `TaskParts` nur noch
+  Fallback.
 - Neuer `screens/aufgabenblatt_screen.dart` für `RoundMode.cases`: `PageView`
   je Aufgabe (Wischen = Aufgabe wechseln), oben Stepper (`Wrap` aus
   `ChoiceChip`s), `ListView` mit Situationskarte, Anlagen-Leiste
@@ -323,8 +447,8 @@ Mobil zuerst (Kacheln umbrechen, Karten volle Breite, 16 px Rand), Tokens
   (Banner, „Teil i/total", `_caseBanner`) wird entfernt, sobald das Blatt
   steht. `ResultScreen` bekommt die Aufgaben-Gruppierung (Parameter
   `aufgaben` mit Punkten je Aufgabe und je Teil).
-- `pruefungen_screen.dart`: Kachel mit Aufgaben-Zeilen + Teil-Chips wie im
-  Web; `_exportText` aus den Feldern (siehe B1).
+- `pruefungen_screen.dart`: Filter-Chips und Jahr-Gruppen wie im Web, Kachel
+  mit Aufgaben-Zeilen + Teil-Chips; `_exportText` aus den Feldern (siehe B1).
 - `flutter analyze`/`flutter test` in der CI lesen; Tests: Modell-Parsing
   (`aufgaben` ↔ `steps` konsistent, Punktsumme 100), `braucht`-Auflösung,
   Export-Text unverändert.
@@ -332,18 +456,18 @@ Mobil zuerst (Kacheln umbrechen, Karten volle Breite, 16 px Rand), Tokens
 ### B4 – Grafiken und Tabellen
 
 - **Extern statt eingebettet.** Web: Dateien `anlagen/<key>.jpg|png` im Root
-  (GitHub Pages liefert sie mit aus), `window.KVM_ANLAGEN = {key: {f:
-  "anlagen/nt24-ntc.png", t: "Titel", w: 780, h: 431}}` – nur noch Metadaten;
-  `index.html` verliert ~0,7 MB. App: `assets/anlagen/<key>.*` in
-  `pubspec.yaml`, `anlagen.json` mit `{f,t,w,h}`, `DataService.anlage()`
-  liefert den Asset-Pfad, Anzeige über `Image.asset`. `build_anlagen.py`
-  schreibt beides; die Data-URI-Variante entfällt (alle 14 Bilder migrieren,
-  `anlageBild()`/`Anlagenbild` verlieren den `data:`-Zweig nach der
-  Migration).
+  (GitHub Pages liefert sie mit aus), `data/anlagen.json = {key: {f:
+  "anlagen/nt24-ntc.png", t: "Titel", w: 780, h: 431}}` – nur noch Metadaten.
+  App: `assets/anlagen/<key>.*` in `pubspec.yaml`, `anlagen.json` mit
+  `{f,t,w,h}`, `DataService.anlage()` liefert den Asset-Pfad, Anzeige über
+  `Image.asset`. `build_anlagen.py` schreibt beides; die Data-URI-Variante
+  entfällt (alle 14 Bilder migrieren, `anlageBild()`/`Anlagenbild` verlieren
+  den `data:`-Zweig nach der Migration).
 - **Auflösung für den Zoom:** `anlagen_bau.py` `RENDER_DPI = 300`,
   `MAX_BREITE = 1400`, JPEG-Qualität 78 (Fotos/Schaltungen) bzw. PNG-32
   (Strichzeichnungen) – bei externen Dateien ist die Größe (150–300 KB)
-  unkritisch; `w`/`h` verhindern Layout-Sprünge.
+  unkritisch; `w`/`h` verhindern Layout-Sprünge. Für die gescannten Hefte
+  2014–2017 direkt aus dem Scan schneiden (200 dpi Vorlage, keine Vergrößerung).
 - **Ort der Anlage:** gehört eine Abbildung/Tabelle zur ganzen Aufgabe
   (mehrere Teile verweisen darauf oder sie steht vor a)), liegt sie an
   `aufgaben[].bild/tab`; nur teil-spezifische Anlagen bleiben am Schritt.
@@ -363,7 +487,7 @@ Mobil zuerst (Kacheln umbrechen, Karten volle Breite, 16 px Rand), Tokens
 - **Lösungsskizzen** (`bildL`) bleiben in der Lösung, ebenfalls in der Lightbox.
 - Offen aus PR #36: Anlagen der Kraftverkehr-Prüfungen `P-FT-20250507`,
   `P-OK-20221115`, `P-FT-20260506` (Lastverteilungsplan, Tabellen) – aus den
-  Original-PDFs bzw. dem Archiv (K0) nachziehen.
+  Original-PDFs nachziehen.
 
 ## Teil C – Übungsfragen a–x als Aufgabenserien
 
@@ -418,46 +542,55 @@ und `retry` bleiben unverändert (Simulation soll mischen).
 ## Abnahme
 
 1. Datenmodell: `tools/sync_content.py --check` und `--validate-assets` grün;
-   Punktsumme je Prüfung 100 (Frage- und Lösungsseite); alle 22 + neuen
-   Prüfungen haben `aufgaben[]`; Schritt-IDs unverändert (Diff gegen `main`).
+   Punktsumme je Prüfung 100 (Frage- und Lösungsseite); alle Prüfungen haben
+   `aufgaben[]`; Schritt-IDs unverändert (Diff gegen `main`).
 2. Exporte („Für KI kopieren") vor/nach der Umstellung zeichengleich.
-3. Web (Headless-Chromium): `P-BW-20251106` öffnen → Aufgabe 2 zeigt vier
-   Teile a–d, Situation einmal, Stepper mit 7 Aufgaben; Lightbox für
-   `nt25-schaltung` öffnet/schließt; Antwort in c) speichern, Seite neu laden,
-   Antwort da; Ergebnis nach Aufgaben gruppiert; keine JS-Fehler.
+3. Web (Headless-Chromium über lokalen HTTP-Server): `P-BW-20251106` öffnen →
+   Aufgabe 2 zeigt vier Teile a–d, Situation einmal, Stepper mit 7 Aufgaben;
+   Lightbox für `nt25-schaltung` öffnet/schließt; Antwort in c) speichern,
+   Seite neu laden, Antwort da; Ergebnis nach Aufgaben gruppiert; keine
+   JS-Fehler.
 4. Serien: Trainingsrunde Fach 2 enthält mindestens eine Serie in richtiger
    Reihenfolge mit Banner; Rundenlänge ≤ ROUND_LEN + 5.
-5. `index.html` < 2,7 MB nach der Bild-Externalisierung; Bilder laden auf
-   GitHub Pages (relativer Pfad, keine absoluten `/`-Pfade).
+5. `index.html` < 1 MB nach B0/B4; Daten und Bilder laden auf GitHub Pages
+   (relative Pfade).
 6. CI `build-apk` grün, `flutter analyze` ohne neue Meldungen (11 bekannte
    Infos), Tests grün.
 7. Nutzer-Abnahme auf dem Handy: Aufgabenblatt mit 20 Teilen (RE H2024) bleibt
-   flüssig; Pinch-Zoom auf Typenschild lesbar.
+   flüssig; Pinch-Zoom auf Typenschild lesbar; Prüfungsübersicht mit 121
+   Prüfungen über Filter bedienbar.
 
 ## Reihenfolge und Aufwand
 
-1. **B1 Datenmodell + Builder** (inkl. Fallaufgaben, `braucht`, Validierung,
-   Export-Diff) – 2–3 h. Erst dann lohnt jede weitere Prüfung.
-2. **B4 Bilder externalisieren** – 1 h (14 Bilder, zwei Builder, zwei Loader).
-3. **B2 Web-Aufgabenblatt** – 4–6 h inkl. Lightbox, Ergebnis, Übersicht.
-4. **B3 Flutter-Aufgabenblatt** – 4–6 h (ohne lokales Flutter: CI-Runden
+1. **B0 Daten auslagern** – 2–3 h (Loader, fünf Builder, `sync_content.py`,
+   Workflow, README).
+2. **B1 Datenmodell + Builder** (inkl. Fallaufgaben, `braucht`, `hinweis`,
+   Validierung, Export-Diff) – 2–3 h.
+3. **B4 Bilder externalisieren** – 1 h (14 Bilder, zwei Builder, zwei Loader).
+4. **A T1** (F2024, H2023, F2023 – 14 Prüfungen, PL) – 1 Tag inkl. Fragen und
+   Anlagen.
+5. **B2 Web-Aufgabenblatt** – 4–6 h inkl. Lightbox, Ergebnis, Übersicht mit
+   Filtern.
+6. **B3 Flutter-Aufgabenblatt** – 4–6 h (ohne lokales Flutter: CI-Runden
    einplanen).
-5. **A0/A1 Beschaffung + Inventar** – 1 h, sobald der Zugriff steht; Inventar
-   als eigener Commit → Nutzer entscheidet Auswahl.
-6. **A2 Einspielen** – je Prüfung nach Tabelle A4; in Tranchen à 3–5.
-7. **C1–C3 Serien** – 3 h (Skript, Nachrüsten von Hand, Runden-Aufbau, Banner).
+7. **A T2** (L-I, 40 Prüfungen) – 2–3 Tage in Tranchen à 10.
+8. **C1–C3 Serien** – 3 h (Skript, Nachrüsten von Hand, Runden-Aufbau, Banner).
+9. **A T3, T4** (L-ALT, 45 Prüfungen) – Parser ½ Tag, dann 1–2 h je Prüfung;
+   T4 nur mit Sichtprüfung gegen die Seitenbilder.
 
-Empfohlene PR-Schnitte: (1) B1+B4, (2) B2+B3, (3) A1 Inventar, (4…) A2-Tranchen,
-(n) C.
+Empfohlene PR-Schnitte: (1) B0+B1+B4, (2) A T1, (3) B2+B3, (4…) A T2 in
+Zehnerpaketen, (n) C, (n+1…) A T3/T4.
 
 ## Risiken
 
-- **Archivinhalt unbekannt.** Scans mit schlechter Qualität (Tabellen,
-  Formeln) sind teuer; im Inventar Tesseract-Konfidenz je Seite ausweisen und
-  schwache Prüfungen zurückstellen.
-- **Ältere Prüfungsordnung.** Andere Handlungsbereiche/Fächer lassen sich nicht
-  1:1 auf die fünf Fächer der App legen – Entscheidung des Nutzers vor dem
-  Einspielen (A1).
+- **Menge.** 99 Prüfungen sind das Vierfache des heutigen Bestands; ohne B0
+  wächst `index.html` auf > 8 MB. Tranchen und PR-Schnitte einhalten.
+- **OCR-Hefte 2014–2017.** Tesseract erkennt die Struktur sicher, aber
+  Zahlen, Paragrafen und Umlaute nicht fehlerfrei („ı" statt „i", „8 4" statt
+  „§ 4"). Jede dieser Prüfungen braucht eine Sichtprüfung gegen die
+  Seitenbilder; Rechenaufgaben nachrechnen (`rechenpruefung.py`).
+- **Rechtsstand** älterer Recht-/BWL-Prüfungen: Hinweis im Aufgabenkopf und
+  strenger Gegenprüfer bei den Übungsfragen; im Zweifel keine `PX-`-Frage.
 - **Datenmodell-Umstellung** berührt Web, App, Sync, Exporte und den
   Content-Branch gleichzeitig. Deshalb zuerst und als eigener PR, mit dem
   Export-Diff als Sicherheitsnetz.
@@ -465,13 +598,19 @@ Empfohlene PR-Schnitte: (1) B1+B4, (2) B2+B3, (3) A1 Inventar, (4…) A2-Tranche
   (gespeicherte Antworten, Lernfortschritt) – Diff gegen `main` in der Abnahme.
 - **Copyright** der Textlayer und Bilder im öffentlichen Repo (siehe oben).
 
-## Entscheidungen, die der Nutzer treffen muss
+## Entscheidungen des Nutzers
 
-1. **Zugriff auf `Altklausuren.rar`** – Link-Freigabe, Upload oder
-   Einzeldateien (A0).
-2. **Prüfungen ohne amtliche Lösung** – einspielen mit KI-Musterlösung
-   (empfohlen, klar gekennzeichnet) oder auslassen (A3).
-3. **Chat-Darstellung** der Prüfungen ganz durch das Aufgabenblatt ersetzen
-   (empfohlen) oder als Option behalten (B2 Punkt 8).
+1. **Zugriff auf `Altklausuren.rar`** – erledigt (Link-Freigabe am
+   17. 9. 2026; Archiv inventarisiert, Textlayer im Repo).
+2. **Prüfungen ohne amtliche Lösung** – **entschieden 17. 9. 2026: wie
+   empfohlen** – einspielen mit KI-Musterlösung, klar als „Musterlösung ·
+   nicht amtlich" gekennzeichnet, keine `PX-`-Fragen daraus. Für dieses
+   Archiv gegenstandslos (alle Hefte enthalten die amtlichen Lösungshinweise).
+3. **Chat-Darstellung** – **entschieden 17. 9. 2026: wie empfohlen** – das
+   Aufgabenblatt ersetzt den Teilaufgaben-Chat vollständig, auch für die 15
+   Fallaufgaben (B2 Punkt 8).
 4. **Copyright**: Textlayer/Bilder weiter im öffentlichen Repo oder nur
-   lokal halten.
+   lokal halten – **offen**.
+5. **Neu – Reihenfolge der Tranchen**: neueste zuerst (T1 → T4) wie
+   vorgeschlagen, oder ein bestimmtes Fach (z. B. NTG komplett) vorziehen?
+   Ohne Rückmeldung gilt T1 → T4.

@@ -1,0 +1,417 @@
+=== Seite 1 ===
+Bundeseinheitliche Fortbildungsprüfung der Industrie- und Handelskammern
+
+Geprüfte/-r Industriemeister/-in,
+fachrichtungsübergreifende Basisqualifikationen/
+grundlegende Qualifikationen
+Anwendung von Methoden der Information, Kommunikation und Planung
+
+
+Lösungshinweise
+Datum:                                         4. November 2019
+
+Bearbeitungszeit:                              90 Minuten
+
+Anzahl Aufgaben:                               6
+
+
+Hinweise für den Korrektor:
+■     Die folgenden Lösungen sind lediglich Lösungshinweise.
+■     Sie sollen nur den Rahmen der zu erwartenden Prüfungsleistung abstecken.
+■     Der Korrektor ist durch die hier aufgeführten Lösungshinweise in seinem
+      Bewertungsspielraum nicht eingeengt.
+■     Bei Aufgaben, die eine Aufzählung von n-Fakten zur Lösung erfordern, werden nur die
+      ersten n-Fakten gewertet. Alle darüber hinaus gehenden Aufzählungen werden
+      gestrichen.
+■     Bei Berechnungen sollen Folgefehler berücksichtigt werden und somit nicht zum
+      Punktabzug führen.
+■     Der leichteren Lesbarkeit wegen geben wir in den Aufgaben/Texten der männlichen
+      Form den Vorzug. Mit diesem einfacheren sprachlichen Ausdruck sind selbstverständlich
+      immer alle Geschlechter gemeint.
+
+
+Die Aufgaben mit Lösungsvorschlägen können von den Industrie- und Handelskammern oder Dritten nach einer Frist von sechs Monaten
+direkt bestellt werden bei:
+wbv Media GmbH & Co. KG, Service-Center DIHK,
+Postfach 10 06 33, 33506 Bielefeld
+Tel.: 0521/91101-16, Fax: 0521/91101-19, E-Mail: service@wbv.de
+
+
+
+
+                              © DIHK – Gesellschaft für berufliche Bildung – Organisation zur Förderung der IHK-Weiterbildung mbH – Bonn
+              Die Vervielfältigung, Verbreitung oder öffentliche Wiedergabe der Publikation ist nicht gestattet (§§ 53, 54 UrhG) und strafbar (§ 106 UrhG).
+                                                          Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+                                                                             L 050-03-1119-6
+
+=== Seite 2 ===
+Geprüfte/-r Industriemeister/-in,
+fachrichtungsübergreifende Basisqualifikationen/
+grundlegende Qualifikationen
+Anwendung von Methoden der Information, Kommunikation und Planung
+
+
+
+Betriebliche Situationsbeschreibung zu allen Aufgaben:
+Die Geschäftsleitung Ihres Unternehmens will im Intranet ein digitales betriebliches
+Vorschlagswesen einführen. Das digitale Vorschlagswesen soll von den Mitarbeitern aller
+Unternehmensbereiche genutzt werden.
+
+
+Aufgabe 1
+Rechner und Terminals (Clients) werden bereitgestellt, an denen die Mitarbeiter ihre
+Verbesserungsvorschläge eingeben können. Für diese Nutzung der Clients müssen
+technische und organisatorische Voraussetzungen erfüllt sein.
+
+Beschreiben Sie
+
+ a Mögliche Punktzahl: 6
+drei technische Voraussetzungen und
+
+ b Mögliche Punktzahl: 6
+drei organisatorische Voraussetzungen.
+
+ c Mögliche Punktzahl: 8
+Beschreiben Sie vier Maßnahmen zur vertraulichen Datensicherung der
+Mitarbeitervorschläge.
+
+
+Lösungshinweise Aufgabe 1
+[VO: § 4 Absatz 4 Nr. 1]
+
+ a Mögliche Punktzahl: 6
+Technische Voraussetzungen sind z. B.:
+■   Verfügbarkeit eines Servers für das Vorschlagswesen
+■   Vernetzung aller Rechner und Terminals (Clients) mit dem Server
+■   Absicherung des Netzwerks nach außen
+■   geeignete Software für Client und Server
+
+
+
+
+                                                Seite 2
+                                            L 050-03-1119-6
+
+=== Seite 3 ===
+Geprüfte/-r Industriemeister/-in,
+fachrichtungsübergreifende Basisqualifikationen/
+grundlegende Qualifikationen
+Anwendung von Methoden der Information, Kommunikation und Planung
+
+
+
+ b Mögliche Punktzahl: 6
+Organisatorische Voraussetzungen sind z. B.:
+■   Einweisung/Schulung der Nutzer
+■   Belehrung über die Vertraulichkeit
+■   Beauftragung eines Verantwortlichen
+■   Wartungsvertrag
+
+ c Mögliche Punktzahl: 8
+Maßnahmen zur vertraulichen Datensicherung sind z. B.:
+■   Verschlüsselung
+■   Zutrittskontrolle (zum Server)
+■   Zugangskontrolle
+■   Zugriffskontrolle
+■   Netzwerksicherheit
+■   Kontrolle bzw. Sperrung der Schnittstellen an den Clients
+
+
+Aufgabe 2
+Beim Test eines Servers ist es zu Fehlern und Ausfällen gekommen.
+
+ a Mögliche Punktzahl: 15
+Stellen Sie in einem Ursache-Wirkungs-Diagramm fünf Ursachenkategorien mit je zwei
+möglichen Ursachen dar.
+
+ b Mögliche Punktzahl: 4
+Eine weitere Methode zur Suche nach den Ursachen eines Problems ist das
+Brainstorming. Beschreiben Sie zwei Gemeinsamkeiten und zwei Unterschiede
+zwischen dem Brainstorming und dem Einsatz eines Ursache-Wirkungs-Diagramms.
+
+
+
+
+                                                Seite 3
+                                            L 050-03-1119-6
+
+=== Seite 4 ===
+Geprüfte/-r Industriemeister/-in,
+fachrichtungsübergreifende Basisqualifikationen/
+grundlegende Qualifikationen
+Anwendung von Methoden der Information, Kommunikation und Planung
+
+
+
+Lösungshinweise Aufgabe 2
+[VO: § 4 Absatz 4 Nr. 2]
+
+ a Mögliche Punktzahl: 15
+
+
+
+
+Hinweis für den Korrektor: Zwei Punkte für jede sachlich richtige Kategorie. Auch andere
+mögliche Ursachen können gewertet werden, wenn sie zum Problem passen.
+
+ b Mögliche Punktzahl: 4
+Gemeinsamkeiten sind z. B.:
+■   Es können sich mehrere Mitarbeiter jeweils mit ihrem speziellen Fachwissen beteiligen.
+    Die Gruppengröße ist in beiden Fällen sinnvoll zu begrenzen.
+■   Es werden Vorschläge eingebracht, die später noch im Detail zugeordnet und
+    ausgewertet werden müssen.
+■   In beiden Fällen gibt es eine Moderation, schriftliche Aufzeichnungen und ein Protokoll.
+
+
+Unterschiede sind z. B.:
+■   Das Brainstorming ist im Gegensatz zum Ursache-Wirkungs-Diagramm an keine feste
+    Form gebunden.
+■   Im Brainstorming werden alle Ideen akzeptiert, ohne sie zu bewerten. Beim Erstellen des
+    Ursache-Wirkungs-Diagramms darf schon bewertet und eingeordnet werden.
+■   Nach einem Brainstorming sind die Vorschläge (Beiträge) weniger gut geordnet, der
+    Aufwand für die Auswertung ist dementsprechend höher.
+
+
+
+
+                                                Seite 4
+                                            L 050-03-1119-6
+
+=== Seite 5 ===
+Geprüfte/-r Industriemeister/-in,
+fachrichtungsübergreifende Basisqualifikationen/
+grundlegende Qualifikationen
+Anwendung von Methoden der Information, Kommunikation und Planung
+
+
+
+Aufgabe 3
+Mögliche Punktzahl: 10
+Sie zeigen demnächst eine digitale Präsentation zur Einführung des neuen
+Vorschlagswesens vor Ihren Mitarbeitern.
+
+Beschreiben Sie fünf Voraussetzungen, die dafür nötig sind.
+
+
+
+Lösungshinweise Aufgabe 3
+[VO: § 4 Absatz 4 Nr. 3]
+Mögliche Punktzahl: 10
+Folgende Voraussetzungen müssen dafür z. B. erfüllt werden:
+
+
+■   ein Gerät (Rechner, Notebook oder Tablet) zum Darstellen der Präsentation
+■   Auf dem Gerät ist eine Präsentationssoftware installiert.
+■   Im Raum steht Präsentationstechnik bereit (z. B. Beamer oder digitale Tafel).
+■   geeignete Akustik (ggf. Mikrofon, Verstärker, Lautsprecher) vorhanden
+■   geeignete Lichtverhältnisse (ggf. Verdunkelung oder dimmbares Licht)
+■   Stromversorgung (Verteiler, Kabel)
+
+
+
+
+                                                Seite 5
+                                            L 050-03-1119-6
+
+=== Seite 6 ===
+Geprüfte/-r Industriemeister/-in,
+fachrichtungsübergreifende Basisqualifikationen/
+grundlegende Qualifikationen
+Anwendung von Methoden der Information, Kommunikation und Planung
+
+
+
+Aufgabe 4
+Im Wareneingang werden alle Zukaufteile geprüft. Dabei wird zwischen verwendbaren und
+nicht verwendbaren Teilen unterschieden. Die Zahl der verwendbaren Teile wird für jede
+Kalenderwoche statistisch erhoben.
+
+ Kalenderwoche              gelieferte Teile       verwendbare Teile
+ 1                               2.166                    2.090
+
+ 2                               3.129                    3.025
+
+ 3                               3.050                    2.975
+
+ 4                               3.300                    3.225
+
+ 5                               2.837                    2.750
+
+
+ a Mögliche Punktzahl: 5
+Ermitteln Sie den prozentualen Anteil der nicht verwendbaren Teile und stellen Sie ihn
+für die fünf Kalenderwochen tabellarisch dar.
+
+ b Mögliche Punktzahl: 11
+Stellen Sie in einem Kombinationsdiagramm (Verbunddiagramm) mit zwei
+Größenachsen die Anzahl der gelieferten Teile und den prozentualen Anteil der nicht
+verwendbaren Teile dar.
+
+
+
+
+                                                Seite 6
+                                            L 050-03-1119-6
+
+=== Seite 7 ===
+Geprüfte/-r Industriemeister/-in,
+fachrichtungsübergreifende Basisqualifikationen/
+grundlegende Qualifikationen
+Anwendung von Methoden der Information, Kommunikation und Planung
+
+
+
+Lösungshinweise Aufgabe 4
+[VO: § 4 Absatz 4 Nr. 4]
+ a Mögliche Punktzahl: 5
+ Kalenderwoche           Anteil der nicht verwendbaren Teile (in %)
+ 1                       3,51 %
+ 2                       3,32 %
+ 3                       2,46 %
+ 4                       2,27 %
+ 5                       3,07 %
+
+
+ b Mögliche Punktzahl: 11
+
+
+
+
+                                                Seite 7
+                                            L 050-03-1119-6
+
+=== Seite 8 ===
+Geprüfte/-r Industriemeister/-in,
+fachrichtungsübergreifende Basisqualifikationen/
+grundlegende Qualifikationen
+Anwendung von Methoden der Information, Kommunikation und Planung
+
+
+
+Aufgabe 5
+Die Einführung des neuen betrieblichen Vorschlagswesens ist ein innerbetriebliches Projekt.
+
+ a Mögliche Punktzahl: 8
+Begründen Sie anhand von vier Projektmerkmalen, warum Ihre Geschäftsführung
+dieses Vorhaben als Projekt organisiert.
+
+ b Mögliche Punktzahl: 12
+Erläutern Sie an je einem konkreten Beispiel vier Aufgaben der Projektleitung bei der
+Planung oder bei der Realisierung dieses Projekts.
+
+
+
+Lösungshinweise Aufgabe 5
+[VO: § 4 Absatz 4 Nr. 5]
+
+ a Mögliche Punktzahl: 8
+Projektmerkmale:
+■   Zeitliche Begrenzung: Das Projekt hat einen festen Start- und Endzeitpunkt sowie
+    Meilensteine.
+■   Definierte/begrenzte Ressourcen: Die zur Verfügung stehenden Projektressourcen
+    werden im Projektauftrag festgelegt, z. B. personelle, technische oder finanzielle
+    Ressourcen.
+■   Vorgegebenes Ziel: Mit der Einführung der neuen Terminals liegt eine abgegrenzte
+    Aufgabe vor. Daraus ergibt sich das Sachziel des Projekts.
+■   Einmaligkeit/Erstmaligkeit: Die Einführung der neuen Terminals erfolgt erstmalig. Eine
+    solche Technik wurde bisher in dem Unternehmen nicht genutzt.
+■   Abgrenzung der Projektorganisation: Es werden für die Dauer des Projekts eine
+    Projektleitung eingesetzt und ein Projektteam gebildet. Das Projekt ist von der
+    normalen Arbeit abgegrenzt.
+■   Komplexität: Nicht alle Schritte im Verlauf dieser Aufgabe sind von vornherein klar.
+    Unter Berücksichtigung der vorhandenen Rahmenbedingungen müssen vor
+    Projektstart viele Problemstellungen und Teilaufgaben durchdacht und geplant werden.
+
+
+
+
+                                                Seite 8
+                                            L 050-03-1119-6
+
+=== Seite 9 ===
+Geprüfte/-r Industriemeister/-in,
+fachrichtungsübergreifende Basisqualifikationen/
+grundlegende Qualifikationen
+Anwendung von Methoden der Information, Kommunikation und Planung
+
+
+
+ b Mögliche Punktzahl: 12
+Folgende Aufgaben aus der Projektplanung können am Beispiel erläutert werden: z. B.:
+■   Strukturplanung
+■   Ablaufplanung
+■   Terminplanung
+■   Ressourcenplanung
+■   Kostenplanung
+Folgende Aufgaben aus der Realisierungsphase können am Beispiel erläutert werden:
+■   Kontrolle des Projektfortschritts
+■   Abnahme von Teilleistungen
+■   Koordination eigener Ressourcen
+■   Koordination der Auftragnehmer/Dienstleister
+■   Lösung von Konflikten
+
+
+Aufgabe 6
+Sie weisen alle Mitarbeiter Ihres Meisterbereichs in die Handhabung eines neuen Geräts ein.
+Dazu können Sie unterschiedliche Informations- und Kommunikationsmittel verwenden.
+
+ a Mögliche Punktzahl: 3
+Nennen Sie drei Kriterien, die Sie bei der Entscheidung über die Wahl des
+Kommunikationsmittels zugrunde legen.
+
+ b Mögliche Punktzahl: 12
+Wählen Sie vier Informations- und Kommunikationsmittel aus, die zur Information der
+Mitarbeiter über die Handhabung der neuen Terminals geeignet sind.
+
+Nennen Sie zu jedem Informations- und Kommunikationsmittel einen Vorteil und
+einen Nachteil.
+
+
+
+
+                                                Seite 9
+                                            L 050-03-1119-6
+
+=== Seite 10 ===
+Geprüfte/-r Industriemeister/-in,
+fachrichtungsübergreifende Basisqualifikationen/
+grundlegende Qualifikationen
+Anwendung von Methoden der Information, Kommunikation und Planung
+
+
+
+Lösungshinweise Aufgabe 6
+[VO: § 4 Absatz 4 Nr. 6]
+
+ a Mögliche Punktzahl: 3
+Kriterien zur Wahl des Kommunikationsmittels, z. B.:
+■   Arbeitszeitaufwand des Industriemeisters
+■   Arbeitszeitaufwand bei den Mitarbeitern
+■   Komplexität der zu vermittelnden Informationen
+■   Vorkenntnisse und Qualifikation der Mitarbeiter
+
+ b Mögliche Punktzahl: 12
+Informations- und Kommunikationsmittel:
+■   Information per E-Mail:
+    Vorteil: papierlos, alle Mitarbeiter sind schnell erreichbar
+    Nachteil: Direkte Rückfragen führen zu hohem Aufwand des Meisters.
+■   Information an einem „Schwarzen Brett“ im Intranet:
+    Vorteil: papierlos, alle Mitarbeiter sind schnell erreichbar
+    Nachteil: unpersönlich, keine direkten Rückfragen möglich
+■   Präsentation im Meisterbereich:
+    Vorteil: ausführliche Erklärungen und auch Vorführung der neuen Geräte möglich
+    Nachteil: hoher Aufwand für Organisation, Vorbereitung und Durchführung
+■   Bedienungsanleitung als Aushang am Gerät:
+    Vorteil: Anleitung ist direkt am Gerät nutzbar
+    Nachteil: unpersönlich, keine Rückfragen möglich
+■   Kurze mündliche Information bei Arbeitsbeginn oder nach einer Pause:
+    Vorteil: Rückfragen direkt möglich, Zeitaufwand ist gering
+    Nachteil: abwesende Mitarbeiter werden nicht erreicht, wenig Informationen
+    nachhaltig vermittelbar
+
+
+
+
+                                               Seite 10
+                                            L 050-03-1119-6
+

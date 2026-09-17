@@ -1,0 +1,548 @@
+=== Seite 1 ===
+Prüfungsteilnehmer-Nummer:
+
+
+
+
+Bundeseinheitliche Fortbildungsprüfung der Industrie- und Handelskammern
+
+Geprüfte/-r Industriemeister/-in,
+fachrichtungsübergreifende Basisqualifikationen/
+grundlegende Qualifikationen
+Anwendung von Methoden der Information, Kommunikation und Planung
+
+
+Lösungshinweise
+Datum:                                          7. Mai 2019
+
+Bearbeitungszeit:                               90 Minuten
+
+Anzahl Aufgaben:                                6
+
+
+Hinweise für den Korrektor:
+■   Die folgenden Lösungen sind lediglich Lösungshinweise.
+■   Sie sollen nur den Rahmen der zu erwartenden Prüfungsleistung abstecken.
+■   Der Korrektor ist durch die hier aufgeführten Lösungshinweise in seinem
+    Bewertungsspielraum nicht eingeengt.
+■   Bei Aufgaben, die eine Aufzählung von n-Fakten zur Lösung erfordern, werden nur die
+    ersten n-Fakten gewertet. Alle darüber hinausgehenden Aufzählungen werden
+    gestrichen.
+■   Bei Berechnungen sollen Folgefehler berücksichtigt werden und somit nicht zum
+    Punktabzug führen.
+■   Der leichteren Lesbarkeit wegen geben wir in den Aufgaben/Texten der männlichen
+    Form den Vorzug. Mit diesem einfacheren sprachlichen Ausdruck sind selbstverständlich
+    immer alle Geschlechter gemeint.
+
+
+
+Die Aufgaben mit Lösungsvorschlägen können von den Industrie- und Handelskammern oder Dritten nach einer Frist von sechs Monaten
+direkt bestellt werden bei:
+wbv Media GmbH & Co. KG, Service-Center DIHK,
+Postfach 10 06 33, 33506 Bielefeld
+Tel.: 0521/91101-16, Fax: 0521/91101-19, E-Mail: service@wbv.de
+
+
+
+                               © DIHK – Gesellschaft für berufliche Bildung – Organisation zur Förderung der IHK-Weiterbildung mbH – Bonn
+               Die Vervielfältigung, Verbreitung oder öffentliche Wiedergabe der Publikation ist nicht gestattet (§§ 53, 54 UrhG) und strafbar (§ 106 UrhG).
+                                                           Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+                                                                              L 050-03-0519-6
+
+=== Seite 2 ===
+Geprüfte/-r Industriemeister/-in,
+fachrichtungsübergreifende Basisqualifikationen/
+grundlegende Qualifikationen
+Anwendung von Methoden der Information, Kommunikation und Planung
+
+
+
+
+Aufgabe 1
+Ihr Unternehmen erfasst und verarbeitet personenbezogene Daten der Mitarbeiter. Dabei
+müssen die gesetzlichen Bestimmungen zum Schutz der personenbezogenen Daten
+beachtet werden.
+
+    a Mögliche Punktzahl: 4
+Nennen Sie vier Arten personenbezogener Daten der Mitarbeiter.
+
+    b Mögliche Punktzahl: 6
+Beschreiben Sie drei organisatorische Schutzmaßnahmen für personenbezogene
+Daten.
+
+    c Mögliche Punktzahl: 6
+Beschreiben Sie drei technische Schutzmaßnahmen für personenbezogene Daten.
+
+    d Mögliche Punktzahl: 4
+Beschreiben Sie zwei Pflichten des Industriemeisters beim Umgang mit personen-
+bezogenen Daten der Mitarbeiter.
+
+
+Lösungshinweise Aufgabe 1
+[VO: § 4 Absatz 4 Nr. 1]
+
+    a Mögliche Punktzahl: 4
+Zu den personenbezogenen Daten der Mitarbeiter zählen z. B.:
+■    Adressdaten, Kontaktdaten
+■    Zeiterfassungsdaten
+■    Lohn- und Gehaltsdaten
+■    steuerliche Daten (Steuerklasse usw.)
+■    Bankverbindungen
+■    Leistungsbewertungen
+    b Mögliche Punktzahl: 6
+Organisatorische Schutzmaßnahmen, z. B.:
+■    betriebliche Anweisungen für datenschutzrelevante Abläufe
+■    Vier-Augen-Prinzip, Aufgabenteilung
+■    Schulung und Qualifizierung der Mitarbeiter in Datenschutzfragen
+
+                                              Seite 2
+                                           L 050-03-0519-6
+
+=== Seite 3 ===
+Geprüfte/-r Industriemeister/-in,
+fachrichtungsübergreifende Basisqualifikationen/
+grundlegende Qualifikationen
+Anwendung von Methoden der Information, Kommunikation und Planung
+
+■    Kontrollen des Datenschutzes
+■    Zertifizierung/Audit des Datenschutzes
+■    Beauftragung eines Datenschutzbeauftragten
+■    Wartung und Wartungsvertrag für die IT-Systeme mit personenbezogenen Daten
+    c Mögliche Punktzahl: 6
+Technische Schutzmaßnahmen, z. B.:
+■    Verschlüsselung personenbezogener Daten
+■    Daten-Backup und andere Maßnahmen zur Gewährleistung der Verfügbarkeit
+■    Zutrittskontrolle zu Räumen, in denen personenbezogene Daten verarbeitet werden
+■    Zugangskontrolle zum IT-System, mit dem die Daten verarbeitet werden
+■    Zugriffskontrolle auf unterschiedliche Stufen personenbezogener Daten
+■    Maßnahmen gegen Computersabotage
+■    Maßnahmen zur Netzwerksicherheit gegen das Ausspähen der Daten
+    d Mögliche Punktzahl: 4
+Pflichten beim Umgang mit personenbezogenen Daten, z. B.:
+■    Schweigepflicht über personenbezogene Daten (intern und extern)
+■    Sorgfalt beim Umgang mit digitalen Daten und gedruckten Dokumenten
+■    Pflicht zur ausschließlich zweckgebundenen Verwendung der Daten
+■    Pflicht zur Weiterbildung, um auf dem aktuellen Stand des Datenschutzes zu bleiben
+
+
+
+
+                                              Seite 3
+                                           L 050-03-0519-6
+
+=== Seite 4 ===
+Geprüfte/-r Industriemeister/-in,
+fachrichtungsübergreifende Basisqualifikationen/
+grundlegende Qualifikationen
+Anwendung von Methoden der Information, Kommunikation und Planung
+
+
+Aufgabe 2
+In Ihrem Unternehmen werden Flussdiagramme zur Beschreibung organisatorischer
+Vorgänge eingesetzt.
+
+  a Mögliche Punktzahl: 12
+Stellen Sie den im folgenden Text beschriebenen Vorgang in einem Flussdiagramm
+dar.
+
+Der Nutzer meldet sich mit seinem persönlichen Nutzernamen am IT-System an. Dann wird
+geprüft, ob der Nutzer für den Zugriff auf die Daten zugelassen ist.
+
+Wenn der Nutzer für den Zugriff auf die Daten zugelassen ist, dann erstellt er ein
+persönliches Passwort. Das IT-System prüft die Gültigkeit des Passwortes.
+
+Wenn die Bedingungen zur Erstellung des Passwortes erfüllt wurden, dann erhält der Nutzer
+eine Bestätigung und kann mit dem IT-System arbeiten.
+
+Wenn die Bedingungen nicht erfüllt wurden, dann muss der Nutzer ein neues Passwort
+erstellen, bis das Passwort gültig ist.
+
+Wenn der Nutzer für den Zugriff auf die Daten nicht zugelassen ist, dann erhält er eine
+entsprechende Information und der Vorgang ist beendet.
+
+  b Mögliche Punktzahl: 5
+Begründen Sie, warum zur Beschreibung von Abläufen Flussdiagramme eingesetzt
+werden.
+
+  c Mögliche Punktzahl: 3
+Nennen Sie drei weitere Beispiele für den Einsatz von Flussdiagrammen.
+
+
+
+
+                                              Seite 4
+                                           L 050-03-0519-6
+
+=== Seite 5 ===
+Geprüfte/-r Industriemeister/-in,
+fachrichtungsübergreifende Basisqualifikationen/
+grundlegende Qualifikationen
+Anwendung von Methoden der Information, Kommunikation und Planung
+
+
+
+Lösungshinweise Aufgabe 2
+[VO: § 4 Absatz 4 Nr. 2]
+
+  a Mögliche Punktzahl: 12
+
+
+
+
+                                              Seite 5
+                                           L 050-03-0519-6
+
+=== Seite 6 ===
+Geprüfte/-r Industriemeister/-in,
+fachrichtungsübergreifende Basisqualifikationen/
+grundlegende Qualifikationen
+Anwendung von Methoden der Information, Kommunikation und Planung
+
+
+
+    b Mögliche Punktzahl: 5
+Die Begründung kann z. B. anhand folgender Argumente erfolgen:
+■    Eindeutigkeit
+■    Gewährleistung der Vollständigkeit
+■    Verständlichkeit
+■    Anschaulichkeit
+■    effizientere Informationsvermittlung als mit Texten
+■    Flussdiagramme stellen eine Art Standard dar und werden überall verstanden.
+    c Mögliche Punktzahl: 3
+Es können z. B. folgende Beispiele genannt werden:
+
+
+■    Qualitätssicherung
+■    Arbeitssicherheit
+■    Datensicherheit
+■    Datenschutz
+■    Organisationsanweisungen
+■    Anweisungen für Krisen- und Katastrophenfälle
+
+
+
+
+                                              Seite 6
+                                           L 050-03-0519-6
+
+=== Seite 7 ===
+Geprüfte/-r Industriemeister/-in,
+fachrichtungsübergreifende Basisqualifikationen/
+grundlegende Qualifikationen
+Anwendung von Methoden der Information, Kommunikation und Planung
+
+
+Aufgabe 3
+Mögliche Punktzahl: 10
+Als Industriemeister sind Sie in einem Industriebetrieb für das Lager verantwortlich. In Ihrem
+Verantwortungsbereich arbeiten 30 Mitarbeiter in der Früh- und Spätschicht.
+
+Sie möchten für Ihre Mitarbeiter monatliche Kurzpräsentationen zu den aktuellen Arbeits-
+ergebnissen und Arbeitsaufgaben durchführen. Der Zeitaufwand darf aus betrieblichen
+Gründen nicht länger als zehn Minuten sein.
+
+Beschreiben Sie fünf Rahmenbedingungen, die Sie für die erfolgreiche Durchführung
+dieser Kurzpräsentationen schaffen müssen.
+
+
+Lösungshinweise Aufgabe 3
+[VO: § 4 Absatz 4 Nr. 3]
+Mögliche Punktzahl: 10
+Folgende Rahmenbedingungen können beschrieben werden, z. B.:
+Es wird zeitnah je eine Veranstaltung für die Früh- und Spätschicht durchgeführt, damit
+beide Teilgruppen informiert werden.
+Die Einladung erfolgt rechtzeitig per Aushang oder E-Mail. Die Mitarbeiter werden über das
+aktuelle Thema informiert.
+Die Veranstaltung kann angrenzend an eine Arbeitspause geplant werden, wenn die
+Mitarbeiter ohnehin zusammengekommen sind.
+Benachbarte Abteilungen sowie betriebsinterne Kunden des Lagers werden über die
+Veranstaltung informiert, um Störungen zu vermeiden.
+Aufgrund der kurzen Dauer kann die Präsentation im Stehen durchgeführt werden. Ein
+besonderer Raum ist nicht unbedingt erforderlich.
+Die Visualisierung kann mit einfachen Mitteln am Flipchart, an vorbereiteten Postern oder via
+digitaler Übertragungsmedien auf einem Bildschirm durchgeführt werden.
+Die Beleuchtung des Raumes muss so beschaffen sein, dass die Mitarbeiter alle
+Präsentationsmittel gut lesen können.
+Automatische Anlagen oder Maschinen werden während der Präsentation nicht betrieben
+(um Lärmentwicklung zu vermeiden).
+Hinweis für den Korrektor: Auch andere zur Situation passende Beschreibungen von
+                           Rahmenbedingungen können entsprechend gewertet werden.
+
+
+
+
+                                              Seite 7
+                                           L 050-03-0519-6
+
+=== Seite 8 ===
+Geprüfte/-r Industriemeister/-in,
+fachrichtungsübergreifende Basisqualifikationen/
+grundlegende Qualifikationen
+Anwendung von Methoden der Information, Kommunikation und Planung
+
+
+Aufgabe 4
+In einem Unternehmen werden für jedes Jahr die durchschnittlich gezahlten Energiepreise
+pro kWh und der Energieverbrauch erfasst.
+
+             Jahr                   mittlerer Energiepreis in       Energieverbrauch in MWh
+                                       Eurocent pro kWh
+
+             2012                               15,5                         2.750
+
+             2013                               16,2                         2.500
+
+             2014                               16,9                         2.400
+
+             2015                               17,5                         2.200
+
+             2016                               18,2                         2.100
+
+             2017                               20,6                         2.000
+
+
+
+  a Mögliche Punktzahl: 6
+Stellen Sie die Entwicklung der jährlichen Energiekosten in Euro tabellarisch dar.
+
+  b Mögliche Punktzahl: 9
+Stellen Sie die Entwicklung der jährlichen Energiekosten in einem Diagramm dar.
+
+
+Lösungshinweise Aufgabe 4
+[VO: § 4 Absatz 4 Nr. 4]
+
+  a Mögliche Punktzahl: 6
+
+
+                      Jahr                                     Energiekosten in Euro
+ 2012                                              426.250 €
+ 2013                                              405.000 €
+ 2014                                              405.600 €
+ 2015                                              385.000 €
+ 2016                                              382.200 €
+ 2017                                              412.000 €
+
+                                              Seite 8
+                                           L 050-03-0519-6
+
+=== Seite 9 ===
+Geprüfte/-r Industriemeister/-in,
+fachrichtungsübergreifende Basisqualifikationen/
+grundlegende Qualifikationen
+Anwendung von Methoden der Information, Kommunikation und Planung
+
+
+
+  b Mögliche Punktzahl: 9
+Hinweis für den Korrektor: Neben den beiden dargestellten Lösungsmöglichkeiten
+                           Liniendiagramm (angepasste Größenachse) und
+                           Säulendiagramm (bei null beginnende Größenachse) können
+                           auch andere sachgerechte Diagramme gewertet werden.
+
+
+                                         Entwicklung der Energiekosten
+                      450.000 €
+
+
+
+                      425.000 €
+
+
+
+                      400.000 €
+
+
+
+                      375.000 €
+
+
+
+                      350.000 €
+                                  2012    2013       2014     2015       2016   2017
+
+
+
+
+                                         Entwicklung der Energiekosten
+                      500.000 €
+
+
+                      400.000 €
+
+
+                      300.000 €
+
+
+                      200.000 €
+
+
+                      100.000 €
+
+
+                            0€
+                                  2012    2013       2014     2015       2016   2017
+
+
+
+
+                                                    Seite 9
+                                                 L 050-03-0519-6
+
+=== Seite 10 ===
+Geprüfte/-r Industriemeister/-in,
+fachrichtungsübergreifende Basisqualifikationen/
+grundlegende Qualifikationen
+Anwendung von Methoden der Information, Kommunikation und Planung
+
+
+Aufgabe 5
+Ihr Unternehmen ist ein Zulieferer der Automobilindustrie. Um weiterhin innovativ und wett-
+bewerbsfähig zu bleiben, werden vorhandene Produkte verbessert bzw. Neuentwicklungen
+angestrebt.
+
+Als Industriemeister sind Sie an der Bearbeitung eines Lastenheftes für eine Entwicklungs-
+kooperation beteiligt. Dabei entnehmen Sie u. a. einige Informationen aus einem früheren
+Pflichtenheft des Kooperationspartners.
+
+Sowohl das Lastenheft als auch das Pflichtenheft bilden die Grundlage der weiteren
+Zusammenarbeit.
+
+    a Mögliche Punktzahl: 6
+Erläutern Sie drei Aufgaben des Lastenheftes im Projekt.
+
+    b Mögliche Punktzahl: 6
+Erläutern Sie drei Aufgaben des Pflichtenheftes im Projekt.
+
+    c Mögliche Punktzahl: 5
+Begründen Sie, warum Lasten- und Pflichtenhefte in Projekten notwendig sind.
+
+    d Mögliche Punktzahl: 3
+Nennen Sie drei weitere Projektdokumente.
+
+
+Lösungshinweise Aufgabe 5
+[VO: § 4 Absatz 4 Nr. 5]
+
+    a Mögliche Punktzahl: 6
+Aufgaben des Lastenheftes:
+■    geforderter Sollzustand: beschreibt die Zielsetzungen des Gesamtprojektes
+■    aktueller Istzustand: worauf das Projekt aufgebaut werden kann
+■    Definition von Zuständigkeiten und Schnittstellen
+■    Zeitrahmen der Planung und Realisierung
+■    wichtige Rahmenbedingungen innerhalb der Firma bzw. des Projektes
+
+
+
+
+                                              Seite 10
+                                           L 050-03-0519-6
+
+=== Seite 11 ===
+Geprüfte/-r Industriemeister/-in,
+fachrichtungsübergreifende Basisqualifikationen/
+grundlegende Qualifikationen
+Anwendung von Methoden der Information, Kommunikation und Planung
+
+
+
+    b Mögliche Punktzahl: 6
+Aufgaben des Pflichtenheftes:
+■    beschreibt, wie der Auftragnehmer die Inhalte des Lastenheftes umsetzen will
+■    bildet im Zusammenhang mit Lastenheft und Angebot die vertragliche Grundlage
+■    ist die Grundlage der späteren Projektdurchführung seitens des Auftragnehmers
+■    bildet eine Grundlage für die spätere Abnahme des Projektes
+    c Mögliche Punktzahl: 5
+Die Begründung kann z. B. anhand folgender Argumente erfolgen:
+■    Vollständigkeit der Anforderungen
+■    Eindeutigkeit der Anforderungen
+■    gute Strukturierung der Projekte
+■    Plausibilität der Lasten und Pflichten seitens Auftraggeber und Auftragnehmer
+■    Rechtssicherheit beider Seiten
+    d Mögliche Punktzahl: 3
+Weitere Dokumente eines Projektes sind z. B:
+■    Projektauftrag
+■    Projektstrukturplan
+■    Projektablaufplan
+■    Projektterminplan
+■    Projektabschlussbericht
+■    technische Unterlagen
+
+
+
+
+                                              Seite 11
+                                           L 050-03-0519-6
+
+=== Seite 12 ===
+Geprüfte/-r Industriemeister/-in,
+fachrichtungsübergreifende Basisqualifikationen/
+grundlegende Qualifikationen
+Anwendung von Methoden der Information, Kommunikation und Planung
+
+
+Aufgabe 6
+Als Industriemeister wollen Sie im Rahmen der innerbetrieblichen Kommunikation erreichen,
+dass sich die Mitarbeiter wesentliche Informationen tatsächlich merken. Auch das Feedback
+Ihrer Mitarbeiter ist Ihnen wichtig.
+
+    a Mögliche Punktzahl: 6
+Beschreiben Sie drei Methoden, um in der schriftlichen Kommunikation wesentliche
+Informationen hervorzuheben.
+
+    b Mögliche Punktzahl: 6
+Beschreiben Sie drei Methoden, um in Vorträgen wesentliche Informationen im
+Bewusstsein der Zuhörer zu verankern.
+
+    c Mögliche Punktzahl: 3
+Nennen Sie drei Möglichkeiten für ein Feedback der Mitarbeiter gegenüber ihren
+Vorgesetzten.
+
+
+Lösungshinweise Aufgabe 6
+[VO: § 4 Absatz 4 Nr. 6]
+
+    a Mögliche Punktzahl: 6
+Beschrieben werden können z. B.:
+■    farbliche Hervorhebung
+■    farbiger Hintergrund oder farbiges Papier
+■    kursive bzw. fette Schrift
+■    vom Text abgesetzte Zusammenfassungen
+■    Wichtige Informationen werden an Symbole gebunden.
+    b Mögliche Punktzahl: 6
+Beschrieben werden können z. B.:
+■    Einsatz von Signalwörtern
+■    Einsatz von Beispielen und „Eselsbrücken“
+■    Wiederholung wichtiger Informationen am Ende
+■    Hervorheben wichtiger Inhalte in fester, langsamerer Sprechweise
+■    Unterstreichen wichtiger Informationen mit Präsentationsmitteln bzw. Handouts
+
+
+
+                                              Seite 12
+                                           L 050-03-0519-6
+
+=== Seite 13 ===
+Geprüfte/-r Industriemeister/-in,
+fachrichtungsübergreifende Basisqualifikationen/
+grundlegende Qualifikationen
+Anwendung von Methoden der Information, Kommunikation und Planung
+
+
+
+    c Mögliche Punktzahl: 3
+Genannt werden können z. B.:
+■    Es wird eine schriftliche Umfrage unter den Mitarbeitern durchgeführt.
+■    Mitarbeiter können ein schriftliches Feedback in einen Briefkasten legen.
+■    Es wird ein Forum oder ein Formular im Intranet eingesetzt.
+■    Es werden mündliche Feedback-Runden organisiert.
+■    Vorgesetzte suchen die Mitarbeiter bei einem Rundgang direkt am Arbeitsplatz auf.
+■    Betriebsversammlung, Bereichsversammlungen, Teambesprechungen
+■    In manchen Unternehmen werden Aufwärtsbewertungen durchgeführt.
+
+
+
+
+                                              Seite 13
+                                           L 050-03-0519-6
+

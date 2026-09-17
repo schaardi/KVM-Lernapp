@@ -1,0 +1,583 @@
+=== Seite 1 ===
+Bundeseinheitliche Fortbildungsprüfung der Industrie- und Handelskammern
+
+Geprüfte/-r Industriemeister/-in
+Fachrichtungsübergreifende Basisqualifikationen/
+Grundlegende Qualifikationen
+Berücksichtigung naturwissenschaftlicher und technischer Gesetzmäßigkeiten
+
+
+Lösungshinweise
+Datum:                                         5. Mai 2020
+
+Bearbeitungszeit:                              90 Minuten
+
+Anzahl Aufgaben:                               7
+
+
+Hinweise für den Korrektor:
+■     Die folgenden Lösungen sind lediglich Lösungshinweise.
+
+■     Sie sollen nur den Rahmen der zu erwartenden Prüfungsleistung abstecken.
+
+■     Der Korrektor ist durch die hier aufgeführten Lösungshinweise in seinem Bewertungs-
+      spielraum nicht eingeengt.
+
+■     Bei Aufgaben, die eine Aufzählung von n-Fakten zur Lösung erfordern, werden nur die
+      ersten n-Fakten gewertet. Alle darüber hinausgehenden Aufzählungen werden
+      gestrichen.
+
+■     Bei Berechnungen sollen Folgefehler berücksichtigt werden und somit nicht zum Punkt-
+      abzug führen.
+
+■     Der leichteren Lesbarkeit wegen geben wir in den Aufgaben/Texten der männlichen
+      Form den Vorzug. Mit diesem einfacheren sprachlichen Ausdruck sind selbstverständlich
+      immer alle Geschlechter gemeint.
+Die Aufgaben mit Lösungsvorschlägen können von den Industrie- und Handelskammern oder Dritten nach einer Frist von sechs Monaten
+direkt bestellt werden bei:
+wbv Media GmbH & Co. KG, Service-Center DIHK,
+Postfach 10 06 33, 33506 Bielefeld
+Tel.: 0521/91101-16, Fax: 0521/91101-19, E-Mail: service@wbv.de
+
+
+                              © DIHK – Gesellschaft für berufliche Bildung – Organisation zur Förderung der IHK-Weiterbildung mbH – Bonn
+              Die Vervielfältigung, Verbreitung oder öffentliche Wiedergabe der Publikation ist nicht gestattet (§§ 53, 54 UrhG) und strafbar (§ 106 UrhG).
+                                                          Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+                                                                             L 050-05-0520-9
+
+=== Seite 2 ===
+GEPRÜFTE/-R INDUSTRIEMEISTER/-IN
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+GRUNDLEGENDE QUALIFIKATIONEN
+Berücksichtigung naturwissenschaftlicher und technischer Gesetzmäßigkeiten
+
+
+Aufgabe 1
+Bei der Nutzung von Wasser bereitet die Wasserhärte Probleme.
+
+ a Mögliche Punktzahl: 2
+Geben Sie die beiden Haupthärtebildner im Wasser an.
+
+ b Mögliche Punktzahl: 3
+Erläutern Sie, warum die Speisung von Warmwasserboilern mit hartem Wasser
+längerfristig Probleme bereitet. Nennen Sie eine Auswirkung.
+
+ c Mögliche Punktzahl: 3
+Beschreiben Sie den Begriff „vollentsalztes Wasser“/„demineralisiertes Wasser“
+(VE-Wasser/Deionat), welches meist in technischen Großanlagen eingesetzt wird.
+
+ d Mögliche Punktzahl: 2
+Das zuständige Wasserwerk gibt folgende Auskunft: „Die Wasserhärte beträgt
+1,1 mmol/l.“ Geben Sie an, ob das Wasser hart, mittel oder weich ist.
+
+
+Lösungshinweise Aufgabe 1
+[VO: § 4 Absatz 6 Nr. 1]
+
+ a Mögliche Punktzahl: 2
+Die Haupthärtebildner für die Wasserhärte sind Calcium- und Magnesiumionen.
+ b Mögliche Punktzahl: 3
+Die temporären Härtebildner Kalzium-, Magnesiumcarbonat werden zu wasserunlöslichen
+Salzen (Kesselstein) umgewandelt, die sich auf den Heizflächen als schlecht wärmeleitender
+Belag absetzen;
+die Auswirkung: Leistungsminderung des Boilers und/oder Überhitzung der Heizelemente.
+ c Mögliche Punktzahl: 3
+„Vollentsalztes Wasser“ (VE-Wasser):
+ist Wasser ohne die im normalen Quell- und Leitungswasser vorkommenden Salze und
+Ionen.
+ d Mögliche Punktzahl: 2
+Das Wasser ist weich (zwischen 0 bis 1,5 mmol Calciumcarbonat je Liter: weiches Wasser).
+
+
+                                                Seite 2
+                                            L 050-05-0520-9
+
+=== Seite 3 ===
+GEPRÜFTE/-R INDUSTRIEMEISTER/-IN
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+GRUNDLEGENDE QUALIFIKATIONEN
+Berücksichtigung naturwissenschaftlicher und technischer Gesetzmäßigkeiten
+
+
+
+Aufgabe 2
+Mögliche Punktzahl: 16
+Die Heizungsanlage eines Betriebs wird mit Erdgas betrieben. Erdgas hat im Normzustand
+(0 °C; 1.013 mbar) eine Dichte von 0,80 kg/m³.
+
+Berechnen Sie die Dichte des Erdgases bei 1.050 mbar und 15 °C.
+
+
+Lösungshinweise Aufgabe 2
+[VO: § 4 Absatz 6 Nr. 2 und 3]
+Mögliche Punktzahl: 16
+p1  V1 p2  V2 pn  Vn
+                       const .
+ T1       T2      Tn
+             m1         m
+mit : V1       und V2  2
+             1         2
+p1  m1 p2  m2
+       
+1  T1 2  T2
+mit : m1  m2  m  const .
+  p1      p2
+       
+1  T1 2  T2
+       p2  T1  1
+2 
+         p1  T2
+                                       kg
+       1.050 mbar  273,15 K  0,80
+2                                    m³
+          1.013 mbar  288,15 K
+            kg
+ 2  0,786
+            m³
+
+
+
+
+                                                Seite 3
+                                            L 050-05-0520-9
+
+=== Seite 4 ===
+GEPRÜFTE/-R INDUSTRIEMEISTER/-IN
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+GRUNDLEGENDE QUALIFIKATIONEN
+Berücksichtigung naturwissenschaftlicher und technischer Gesetzmäßigkeiten
+
+
+
+ Aufgabe 3
+Mit einem Kran (Abbildung 1) werden Blechrollen aus Aluminium verladen.
+Die Blechrolle wird zu einem Hohlzylinder mit den Maßen D = 1 m, d = 0,3 m und L = 2 m
+aufgerollt. Die Brücke hat eine Gewichtskraft (Eigenlast) von FG Brücke = 50 kN.
+
+
+
+
+                                             Abbildung 1: Kran
+
+Hinweis für den Prüfungsteilnehmer: Die Masse des Tragegeschirrs wird vernachlässigt.
+
+ a Mögliche Punktzahl: 8
+Das Stahlseil besteht aus 152 Einzeldrähten mit jeweils 2 mm Durchmesser.
+Berechnen Sie die Zugspannung im Stahlseil.
+
+ b Mögliche Punktzahl: 12
+Die Gewichtskraft der Laufkatze beträgt 5.000 N.
+Berechnen Sie die Auflagerkräfte FA und FB.
+
+Hinweis für den Prüfungsteilnehmer: Sollten Sie in Aufgabe 3a) die Masse der Blechrolle
+nicht ermittelt haben, rechnen Sie mit einer Masse von 4.000 kg weiter.
+
+
+                                                Seite 4
+                                            L 050-05-0520-9
+
+=== Seite 5 ===
+GEPRÜFTE/-R INDUSTRIEMEISTER/-IN
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+GRUNDLEGENDE QUALIFIKATIONEN
+Berücksichtigung naturwissenschaftlicher und technischer Gesetzmäßigkeiten
+
+
+Lösungshinweise Aufgabe 3
+[VO: § 4 Absatz 6 Nr. 2 und 3]
+ a Mögliche Punktzahl: 8
+Masse der Blechrolle:
+m   V
+                          kg
+                 Al  2,7
+                         dm3
+                    D2  d ²
+                V            L
+                       4
+                    (10 dm )²  (3 dm )²
+                V                          20 dm
+                              4
+                V  1.429,4 dm ³
+        kg
+m  2,7      1.429, 4 dm ³
+       dm 3
+m  3.859,4 kg
+Berechnung der Zugspannung im Stahlseil:
+    F
+ 
+    A
+    F
+  Blechrolle
+      ASeil
+
+                        FBlechrolle  m  g
+                                                          m
+                        FBlechrolle  3.859,4 kg  9,81
+                                                          s²
+                        FBlechrolle  37.860,7 N
+
+
+                        ASeil  ADraht  152
+                                
+                        ASeil    d ²  152
+                                4
+                                
+                        ASeil   (2 mm )²  152
+                                4
+                        ASeil  477,5 mm ²
+    37.860,7 N
+ 
+    477,5 mm ²
+          N
+  79,3
+         mm ²
+
+
+                                                   Seite 5
+                                               L 050-05-0520-9
+
+=== Seite 6 ===
+GEPRÜFTE/-R INDUSTRIEMEISTER/-IN
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+GRUNDLEGENDE QUALIFIKATIONEN
+Berücksichtigung naturwissenschaftlicher und technischer Gesetzmäßigkeiten
+
+
+
+ b Mögliche Punktzahl: 12
+Summe aller Momente am Träger ergibt jeweils 0.
+                                                l
+(FBlechrolle  FLaufkatze )  l 2  FG Brücke  1  FB  l1  0
+                                                2
+                                                      l
+      (FBlechrolle  FLaufkatze )  l 2  FG Brücke  1
+FB                                                   2
+                                 l1
+     (37.860,7 N  5.000 N )  3 m  50.000 N  5 m
+FB 
+                         10 m
+     128.582,1 N m  250.000 N m
+FB 
+                 10 m
+FB  37.858,2 N
+
+
+            l
+FG Brücke  1  (FBlechrolle  FLaufkatze )  (l1  l 2 )  FA  l1  0
+            2
+                   l
+       FG Brücke  1  (FBlechrolle  FLaufkatze )  (l1  l 2 )
+FA                2
+                                l1
+       50.000 N  5 m  (37.860,7 N  5.000 N )  7 m
+FA 
+                           10 m
+     250.000 N m  300.024,9 N m
+FA 
+                10 m
+FA  55.002,5 N
+Hinweis für den Korrektor: Bei 4.000kg ist das Ergebnis FA  55.968 N.
+
+
+Aufgabe 4
+Mögliche Punktzahl: 14
+Ein Pkw (Länge = 4,9 m) fährt mit konstanter Geschwindigkeit von 120 km/h auf einer
+Autobahn. Vor dem Pkw fährt ein Lkw (Länge = 18 m) mit einer konstanten Geschwindigkeit
+von 80 km/h.
+
+Der Pkw-Fahrer setzt 60 m, bevor er den Lkw erreicht, zum Überholen an und wechselt vom
+rechten auf den linken Fahrstreifen. 40 m nach dem vollständigen Passieren des Lkws
+schert der Pkw wieder auf den rechten Fahrstreifen ein.
+
+Berechnen Sie die Gesamtstrecke des Überholvorgangs für den Pkw.
+
+                                                           Seite 6
+                                                      L 050-05-0520-9
+
+=== Seite 7 ===
+GEPRÜFTE/-R INDUSTRIEMEISTER/-IN
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+GRUNDLEGENDE QUALIFIKATIONEN
+Berücksichtigung naturwissenschaftlicher und technischer Gesetzmäßigkeiten
+
+
+Lösungshinweise Aufgabe 4
+[VO: § 4 Absatz 6 Nr. 2 und 3]
+
+Mögliche Punktzahl: 14
+Relativstrecke des Überholvorgangs:
+
+srel  LängePkw  LängeLkw  s1  s2
+
+srel  4,9 m  18 m  60 m  40 m
+srel  122,9 m
+
+
+Relativgeschwindigkeit:
+                                                           km        m
+v rel  v Pkw  v Lkw                          v Pkw  120     33,3
+                                                            h         s
+              m         m                                 km         m
+v rel  33,3      22,2                        v Lkw  80      22,2
+               s        s                                  h         s
+             m
+v rel  11,1
+             s
+Überholzeit:
+       s
+tÜ  rel
+       v rel
+       122,9 m
+tÜ 
+             m
+       11, 1
+             s
+
+tÜ  11,06 s
+
+
+Gesamtstrecke des Pkw für den Überholvorgang:
+sGes Pkw  v Pkw  tÜ
+                m
+sGes Pkw  33,3    11,06 s
+                s
+sGes Pkw  368,7 m
+
+
+
+
+                                                Seite 7
+                                            L 050-05-0520-9
+
+=== Seite 8 ===
+GEPRÜFTE/-R INDUSTRIEMEISTER/-IN
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+GRUNDLEGENDE QUALIFIKATIONEN
+Berücksichtigung naturwissenschaftlicher und technischer Gesetzmäßigkeiten
+
+
+Aufgabe 5
+Der elektrische Energieverbrauch eines an 230 V angeschlossenen Ofens wird über den
+unten dargestellten Drehstromzähler angezeigt. Alle anderen am Stromzähler
+angeschlossenen Verbraucher sind ausgeschaltet.
+
+
+
+
+                                         Abbildung: Drehstromzähler
+
+Sie ermitteln am Stromzähler in 6 Minuten (Ofen im Dauerbetrieb) genau 15 Umdrehungen
+der Zählerscheibe.
+
+ a Mögliche Punktzahl: 4
+Berechnen Sie die Leistung des Ofens.
+
+ b Mögliche Punktzahl: 2
+Berechnen Sie den elektrischen Widerstand des Ofens.
+
+ c Mögliche Punktzahl: 6
+Aus dem Schaltplan des Ofens haben Sie entnommen, dass im Ofen drei gleiche
+Heizwiderstände parallel geschaltet sind.
+
+Berechnen Sie den Widerstand eines Heizwiderstandes.
+
+ d Mögliche Punktzahl: 3
+Ermitteln Sie die Leistungsaufnahme des Ofens, wenn alle drei Heizwiderstände in
+Reihe geschaltet werden.
+
+Hinweis für den Prüfungsteilnehmer: Falls Sie c) nicht lösen konnten, nehmen Sie einen
+                                              Wert von 80 Ohm an.
+
+                                                Seite 8
+                                            L 050-05-0520-9
+
+=== Seite 9 ===
+GEPRÜFTE/-R INDUSTRIEMEISTER/-IN
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+GRUNDLEGENDE QUALIFIKATIONEN
+Berücksichtigung naturwissenschaftlicher und technischer Gesetzmäßigkeiten
+
+
+Lösungshinweise Aufgabe 5
+[VO: § 4 Absatz 6 Nr. 2 und 3]
+
+ a Mögliche Punktzahl: 4
+geg.: 75 U/kW h (Anzeige Stromzähler)
+ges. : P
+             W
+Lös. : P 
+             t
+                                     1.000 W h  15 Umdrehungen
+                               W
+                                          75 Umdrehungen
+                               W  200 W h
+                    min
+     200 W h  60
+P                   h
+         6 min
+P  2.000 W
+
+ b Mögliche Punktzahl: 2
+   U²
+R
+   P
+   (230V )²
+R
+   2.000 W
+R  26,45 
+
+ c Mögliche Punktzahl: 6
+1   1   1   1
+        
+R R1 R2 R3
+R1  R2  R3
+1   1   1   1
+        
+R R1 R1 R1
+1 3
+ 
+R R1
+R1  3  R
+R1  3  26,45 
+R1  79,35 
+
+
+
+
+                                                Seite 9
+                                            L 050-05-0520-9
+
+=== Seite 10 ===
+GEPRÜFTE/-R INDUSTRIEMEISTER/-IN
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+GRUNDLEGENDE QUALIFIKATIONEN
+Berücksichtigung naturwissenschaftlicher und technischer Gesetzmäßigkeiten
+
+
+
+ d Mögliche Punktzahl: 3
+        Rges  R1  R2  R3
+
+        Rges  79,35   3  238,05 
+     U²
+P
+     Rges
+     (230 V )²
+P
+     238,05 
+P  222,22 W
+
+
+Aufgabe 6
+In einem Wasserbehälter ist ein NTC-Widerstand eingebaut. Es wird eine Temperatur von
+60 ºC gemessen. Der NTC-Widerstand hat die unten dargestellte Kennlinie und ist in Reihe
+mit einem Widerstand R1 eingebaut. Die Spannung UEIN beträgt 12 V.
+
+
+
+
+                                                                                        R1
+
+                                                                             UEIN
+
+                                                                                        R2
+                                                                                    ϑ
+
+
+
+
+                                                                                             UAUS
+
+
+
+
+ a Mögliche Punktzahl: 8
+Berechnen Sie den Strom durch den Widerstand R1 bei UAUS = 1 V.
+
+ b Mögliche Punktzahl: 4
+Ermitteln Sie die Temperatur des Wassers bei einer Änderung des
+NTC- Widerstandswertes R2 um 9.900 Ω.
+
+
+                                               Seite 10
+                                            L 050-05-0520-9
+
+=== Seite 11 ===
+GEPRÜFTE/-R INDUSTRIEMEISTER/-IN
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+GRUNDLEGENDE QUALIFIKATIONEN
+Berücksichtigung naturwissenschaftlicher und technischer Gesetzmäßigkeiten
+
+
+Lösungshinweise Aufgabe 6
+[VO: § 4 Absatz 6 Nr. 2 und 3]
+
+ a Mögliche Punktzahl: 8
+       (UEin  U Aus )  R2 (12 V  1V )  100 
+R1                                              1.100 
+              U Aus                 1V
+       UEin           12 V
+I                                 0,01 A
+     (R1  R2 ) (1.100   100  )
+
+ b Mögliche Punktzahl: 4
+Widerstandswert aus Kennlinie: bei 10 kΩ (9.900 Ω + 100 Ω) = 10 ºC
+
+Aufgabe 7
+Für eine statistische Erhebung über die Belastbarkeit von Aufzügen wurde das Gewicht von
+zehn Personen ermittelt.
+
+
+     Person                 1      2      3       4     5       6    7       8    9    10
+
+     Gewicht [kg]           68     74     88      78    52      64   90      58   60   98
+
+
+ a Mögliche Punktzahl: 4
+Berechnen Sie den arithmetischen Mittelwert.
+
+ b Mögliche Punktzahl: 3
+Berechnen Sie die Spannweite R.
+
+ c Mögliche Punktzahl: 6
+Die Standardabweichung beträgt s = 15,3 kg.
+
+Skizzieren Sie qualitativ die Normalverteilung nach Gauß. Tragen Sie den
+arithmetischen Mittelwert und die Werte der Standardabweichung im Bereich von
+99,73 % der Messwerte ein.
+
+
+
+
+                                                 Seite 11
+                                              L 050-05-0520-9
+
+=== Seite 12 ===
+GEPRÜFTE/-R INDUSTRIEMEISTER/-IN
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+GRUNDLEGENDE QUALIFIKATIONEN
+Berücksichtigung naturwissenschaftlicher und technischer Gesetzmäßigkeiten
+
+
+
+
+Lösungshinweise Aufgabe 7
+[VO: § 4 Absatz 6 Nr. 4]
+
+ a Mögliche Punktzahl: 4
+     (68  74  88  78  52  64  90  58  60  98) kg
+x                                                         73 kg
+                        10 Personen
+
+ b Mögliche Punktzahl: 3
+R = xmax – xmin
+R = 98 kg – 52 kg = 46 kg
+
+ c Mögliche Punktzahl: 6
+
+
+
+
+                                               Seite 12
+                                            L 050-05-0520-9
+

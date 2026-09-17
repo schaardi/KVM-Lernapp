@@ -1,0 +1,551 @@
+=== Seite 1 ===
+Prüfungsteilnehmer-Nummer:
+
+
+
+
+Bundeseinheitliche Fortbildungsprüfung der Industrie- und Handelskammern
+
+Geprüfte/-r Industriemeister/-in,
+fachrichtungsübergreifende Basisqualifikationen/
+grundlegende Qualifikationen
+Betriebswirtschaftliches Handeln
+
+
+Lösungshinweise
+Datum:                                          8. Mai 2019
+
+Bearbeitungszeit:                               90 Minuten
+
+Anzahl Aufgaben:                                7
+
+
+Hinweise für den Korrektor:
+■   Die folgenden Lösungen sind lediglich Lösungshinweise.
+■   Sie sollen nur den Rahmen der zu erwartenden Prüfungsleistung abstecken.
+■   Der Korrektor ist durch die hier aufgeführten Lösungshinweise in seinem
+    Bewertungsspielraum nicht eingeengt.
+■   Bei Aufgaben, die eine Aufzählung von n-Fakten zur Lösung erfordern, werden nur die
+    ersten n-Fakten gewertet. Alle darüber hinausgehenden Aufzählungen werden
+    gestrichen.
+■   Bei Berechnungen sollen Folgefehler berücksichtigt werden und somit nicht zum
+    Punktabzug führen.
+■   Der leichteren Lesbarkeit wegen geben wir in den Aufgaben/Texten der männlichen
+    Form den Vorzug. Mit diesem einfacheren sprachlichen Ausdruck sind selbstverständlich
+    immer alle Geschlechter gemeint.
+
+
+
+Die Aufgaben mit Lösungsvorschlägen können von den Industrie- und Handelskammern oder Dritten nach einer Frist von sechs Monaten
+direkt bestellt werden bei:
+wbv Media GmbH & Co. KG, Service-Center DIHK,
+Postfach 10 06 33, 33506 Bielefeld
+Tel.: 0521/91101-16, Fax: 0521/91101-19, E-Mail: service@wbv.de
+
+
+
+                               © DIHK – Gesellschaft für berufliche Bildung – Organisation zur Förderung der IHK-Weiterbildung mbH – Bonn
+               Die Vervielfältigung, Verbreitung oder öffentliche Wiedergabe der Publikation ist nicht gestattet (§§ 53, 54 UrhG) und strafbar (§ 106 UrhG).
+                                                           Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+                                                                              L 050-02-0519-1
+
+=== Seite 2 ===
+Geprüfte/-r Industriemeister/-in,
+fachrichtungsübergreifende Basisqualifikationen/
+grundlegende Qualifikationen
+Betriebswirtschaftliches Handeln
+
+
+
+Aufgabe 1
+Mögliche Punktzahl: 15
+In Ihrem Unternehmen wird über eine Änderung der bestehenden Rechtsform nachgedacht.
+
+Wählen Sie eine Personen- und zwei Kapitalgesellschaften aus und unterscheiden Sie
+diese anhand der Kriterien:
+
+■   Mindestgründungskapital,
+
+■   Geschäftsführungsbefugnis,
+
+■   Außenvertretungsrecht und
+
+■   Haftung der Gesellschafter.
+
+
+Lösungshinweise Aufgabe 1
+[VO: § 4 Absatz 3 Nr. 1]
+Mögliche Punktzahl: 15
+■   Personengesellschaften, z. B.:
+    ■   offene Handelsgesellschaft (OHG)
+    ■   Kommanditgesellschaft (KG)
+■   Kapitalgesellschaften: z. B.:
+    ■   Gesellschaft mit beschränkter Haftung (GmbH)
+    ■   Aktiengesellschaft (AG)
+    ■   Unternehmergesellschaft (UG haftungsbeschränkt)
+■   Personengesellschaften:
+    ■   Mindestgründungskapital: keine gesetzlichen Regelungen für OHG, KG
+    ■   Geschäftsführungsbefugnis und Außenvertretungsrecht: OHG alle Gesellschafter,
+        KG Komplementär
+    ■   Haftung der Gesellschafter: Bei der OHG sind alle Gesellschafter Vollhafter, bei der
+        KG ist der Komplementär Vollhafter, der Kommanditist Teilhafter
+■   Kapitalgesellschaften:
+    ■   Mindestgründungskapital: GmbH 25.000 €, AG 50.000 €, UG (haftungsbeschränkt)
+        1 € je Gesellschafter
+    ■   Geschäftsführungsbefugnis und Außenvertretungsrecht: GmbH Geschäftsführer, AG
+        Vorstand, UG Geschäftsführer
+    ■   Haftung: Alle Gesellschafter bei GmbH, AG und UG sind Teilhafter.
+
+
+                                           Seite 2
+                                       L 050-02-0519-1
+
+=== Seite 3 ===
+Geprüfte/-r Industriemeister/-in,
+fachrichtungsübergreifende Basisqualifikationen/
+grundlegende Qualifikationen
+Betriebswirtschaftliches Handeln
+
+
+Aufgabe 2
+Ein Industriebetrieb entwickelt und fertigt Oberfräsen, Bohrmaschinen und Kreissägen in
+seinen Werken in Aachen, Bonn und Chemnitz. Die Geschäftsleitung erwägt die Umstruk-
+turierung des Unternehmens durch Zusammenlegung der Fertigungsstätten in einem neuen
+Werk in Düsseldorf. Alle bisherigen Standorte werden dann aufgelöst. Sie werden als Leiter
+des Projektteams „Umstrukturierung“ mit der Erstellung eines Entwurfes für die zukünftige
+Aufbauorganisation beauftragt.
+
+Dabei müssen folgende Vorgaben berücksichtigt werden:
+
+■    Die Bereiche Oberfräsen, Bohrmaschinen und Kreissägen sollen als
+     Produktmanagement geführt werden.
+
+■    Beschaffung, Produktion und Marketing werden als Funktionseinheiten eingerichtet.
+
+■    Die Produktmanager und Funktionsmanager entscheiden gemeinsam.
+
+■    Das Produktmanagement und das Funktionsmanagement sind jeweils direkt der
+     Unternehmensleitung unterstellt.
+
+    a Mögliche Punktzahl: 10
+Benennen Sie das Organisationssystem und zeichnen Sie das entsprechende
+Organigramm.
+
+    b Mögliche Punktzahl: 4
+Nennen Sie zwei Vor- und zwei Nachteile dieses Organisationssystems.
+
+
+
+
+                                           Seite 3
+                                        L 050-02-0519-1
+
+=== Seite 4 ===
+  Geprüfte/-r Industriemeister/-in,
+  fachrichtungsübergreifende Basisqualifikationen/
+  grundlegende Qualifikationen
+  Betriebswirtschaftliches Handeln
+
+
+  Lösungshinweise Aufgabe 2
+  [VO: § 4 Absatz 3 Nr. 2]
+
+      a Mögliche Punktzahl: 10
+  Matrixorganisation
+Unternehmensleitung
+
+                                  Beschaffung             Produktion   Marketing
+
+
+      Oberfräsen
+
+
+
+
+      Bohrmaschinen
+
+
+
+      Bandsägen
+
+
+
+
+      b Mögliche Punktzahl: 4
+  ■    Vorteile, z. B.:
+       ■   Abbau von Hierarchieebenen
+       ■   verbesserte Problemlösung in den Teams
+       ■   größere Kundennähe durch Produktmanagement
+  ■    Nachteile, z. B.:
+       ■   zeitintensive Entscheidungsprozesse
+       ■   nur für große Unternehmen geeignet
+       ■   Überschneidung von Kompetenzbereichen
+       ■   kostenintensiv durch zwei Managementebenen
+
+
+
+
+                                                Seite 4
+                                         L 050-02-0519-1
+
+=== Seite 5 ===
+Geprüfte/-r Industriemeister/-in,
+fachrichtungsübergreifende Basisqualifikationen/
+grundlegende Qualifikationen
+Betriebswirtschaftliches Handeln
+
+
+Aufgabe 3
+Auf einer Betriebsversammlung wird die Belegschaft eines Industrieunternehmens von dem
+Geschäftsführer informiert, dass im Zusammenhang mit der Straffung des Produktions-
+programmes eine deutliche Reduzierung der Fertigungstiefe erfolgen wird.
+
+    a Mögliche Punktzahl: 8
+Führen Sie vier Argumente an, die aus Sicht der Geschäftsführung für eine
+Reduzierung der Fertigungstiefe sprechen.
+
+    b Mögliche Punktzahl: 6
+Beschreiben Sie drei Vorteile einer Beibehaltung der Fertigungstiefe.
+
+
+Lösungshinweise Aufgabe 3
+[VO: § 4 Absatz 3 Nr. 2]
+
+    a Mögliche Punktzahl: 8
+Z. B.:
+■    geringere Lagerkapazität erforderlich, d. h. Senkung von Lagerkosten
+■    höhere Flexibilität bei Kapazitätsanpassungsmaßnahmen
+■    Abbau von Overhead-Kosten (Fixkosten), da z. B. Konstruktions- und Entwicklungs-
+     arbeiten ausgelagert werden können
+■    Zulieferer können häufig durch Spezialisierung/Rationalisierung günstiger produzieren.
+■    schnellere Anpassung an Marktveränderungen
+
+    b Mögliche Punktzahl: 6
+Vorteile, z. B.:
+■    keine Abhängigkeiten von Lieferzeiten und -mengen der Zulieferer
+■    Qualitätsstandards können selbst bestimmt werden.
+■    Know-how bleibt im Unternehmen.
+■    Sicherung der Beschäftigung
+
+
+
+
+                                           Seite 5
+                                        L 050-02-0519-1
+
+=== Seite 6 ===
+Geprüfte/-r Industriemeister/-in,
+fachrichtungsübergreifende Basisqualifikationen/
+grundlegende Qualifikationen
+Betriebswirtschaftliches Handeln
+
+
+Aufgabe 4
+Für die Herstellung von 800 Bauteilen wird eine Vorgabezeit von 1.380 Minuten festgelegt.
+
+Der Akkordgrundlohn beträgt 18,00 €/Stunde, der Akkordzuschlag 10 %. Der Facharbeiter
+benötigt für den Auftrag 20 Stunden.
+
+  a Mögliche Punktzahl: 3
+Berechnen Sie den vom Facharbeiter erreichten Zeitgrad.
+
+  b Mögliche Punktzahl: 4
+Ermitteln Sie den tatsächlichen Stundenlohn des Facharbeiters.
+
+  c Mögliche Punktzahl: 2
+Ermitteln Sie die Lohnkosten für den Auftrag.
+
+  d Mögliche Punktzahl: 6
+Ermitteln Sie rechnerisch nachvollziehbar die Lohnkosten pro Stück bei Normal-
+leistung und bei einem Zeitgrad von 115 %.
+
+
+Lösungshinweise Aufgabe 4
+[VO: § 4 Absatz 3 Nr. 4]
+
+  a Mögliche Punktzahl: 3
+                     Vorgabezeit
+Zeitgrad in %   =                   · 100
+                    Istauftragszeit
+                    23 Stunden
+                =              · 100 = 115 %
+                    20 Stunden
+  b Mögliche Punktzahl: 4
+Akkordrichtsatz pro Stunde = Akkordgrundlohn + Akkordzuschlag
+                             = 18 €/h +1,80 €/h = 19,80 €/h
+                                                                                 (2 Punkte)
+Akkordlohn pro Stunde        = Akkordrichtsatz · Zeitgradfaktor
+                             = 19,80 €/h · 1,15 = 22,77 €/h
+                                                                                 (2 Punkte)
+
+
+
+
+                                               Seite 6
+                                            L 050-02-0519-1
+
+=== Seite 7 ===
+Geprüfte/-r Industriemeister/-in,
+fachrichtungsübergreifende Basisqualifikationen/
+grundlegende Qualifikationen
+Betriebswirtschaftliches Handeln
+
+
+  c Mögliche Punktzahl: 2
+Bruttolohn                 = Akkordlohn · Istzeit
+                       = 22,77 €/h · 20 h = 455,40 €
+  d Mögliche Punktzahl: 6
+Normalleistung (Zeitgrad 100 %):
+                               Akkordrichtsatz · Vorgabezeit
+Lohnkosten/Stück           =
+                                     Auftragsmenge
+                               19,80 €/h · 23 h
+                           =                    = 0,56925 €/Stück
+                                  800 Stück
+Zeitgrad 115 %:                                                     (3 Punkte)
+                               Akkordlohn/Stunde · Istzeit
+Lohnkosten/Stück           =
+                                    Auftragsmenge
+                               22,77 €/h · 20 h
+                           =                    = 0,56925 €/Stück   (3 Punkte)
+                                 800 Stück
+
+
+
+
+                                           Seite 7
+                                        L 050-02-0519-1
+
+=== Seite 8 ===
+Geprüfte/-r Industriemeister/-in,
+fachrichtungsübergreifende Basisqualifikationen/
+grundlegende Qualifikationen
+Betriebswirtschaftliches Handeln
+
+
+Aufgabe 5
+Die P-GmbH produziert Gartenpumpen. Für das neu am Markt eingeführte Modell
+WEX 5000 liegen Ihnen für den Monat April folgende Daten aus dem Controlling vor:
+
+■    Absatzmenge:          1.200 Pumpen
+
+■    Betriebsergebnis:   – 6.000 €
+
+■    fixe Stückkosten:        35 €
+
+■    Stückkosten:            100 €
+
+Maximal können monatlich 2.500 Gartenpumpen produziert werden.
+
+    a Mögliche Punktzahl: 5
+Ermitteln Sie aus den vorliegenden Daten die variablen Stückkosten, die monatlichen
+Fixkosten und den Verkaufserlös pro Pumpe.
+
+    b Mögliche Punktzahl: 5
+Berechnen Sie die Break-even-Menge und den Break-even-Beschäftigungsgrad.
+
+
+Lösungshinweise Aufgabe 5
+[VO: § 4 Absatz 3 Nr. 5]
+
+    a Mögliche Punktzahl: 5
+kv = k – kf
+     = 100 €/Stück – 35 €/Stück = 65 €/Stück                                   (1 Punkt)
+Kf = kf · x
+     = 35 €/Stück · 1.200 Stück/Monat = 42.000 €/Monat                         (1 Punkt)
+K    =k·x
+     = 100 €/Stück · 1.200 Stück/Monat = 120.000 €/Monat                       (1 Punkt)
+Bei einem Verlust von 6.000 € beträgt der Umsatz 114.000 €/Monat.
+          114.000 €
+p    =               = 95 €/Stück                                             (2 Punkte)
+         1.200 Stück
+
+
+
+
+                                          Seite 8
+                                       L 050-02-0519-1
+
+=== Seite 9 ===
+Geprüfte/-r Industriemeister/-in,
+fachrichtungsübergreifende Basisqualifikationen/
+grundlegende Qualifikationen
+Betriebswirtschaftliches Handeln
+
+
+  b Mögliche Punktzahl: 5
+        Kf
+xBEP 
+       p - kv
+                                                                             (3 Punkte)
+            42.000 € / Monat
+xBEP                               1.400 Stück/Monat
+       95 € / Stück  65 € / Stück
+
+
+           xBEP
+BGBEP           100
+           xmax
+                                                                              (2 Punkte)
+           1.400 Stück
+                       100  56 %
+           2.500 Stück
+
+Aufgabe 6
+Ein Industrieunternehmen kann einem Kunden einen Spezialaufzug zu keinem höheren
+Preis anbieten als eine Konkurrenzfirma, die einen Netto-Barverkaufspreis von 800.982 € für
+eine solche Anlage verlangt.
+
+In der Rückwärtskalkulation sind von Ihnen rechnerisch nachvollziehbar zu ermitteln:
+
+  a Mögliche Punktzahl: 3
+der prozentuale Gewinn, wenn die Selbstkosten 762.840 € betragen,
+
+  b Mögliche Punktzahl: 3
+die Herstellkosten, wenn mit 20 % Verwaltungs- und Vertriebsgemeinkosten kalkuliert
+wird,
+
+  c Mögliche Punktzahl: 3
+die Höhe der Fertigungslöhne, wenn 80 % Fertigungsgemeinkosten zu berück-
+sichtigen sind und die Materialkosten 209.280 € betragen,
+
+  d Mögliche Punktzahl: 3
+der Materialgemeinkostenzuschlagssatz, wenn Fertigungsmaterial (Rohstoffkosten) in
+Höhe von 167.424 € angesetzt wird.
+
+
+
+
+                                          Seite 9
+                                       L 050-02-0519-1
+
+=== Seite 10 ===
+Geprüfte/-r Industriemeister/-in,
+fachrichtungsübergreifende Basisqualifikationen/
+grundlegende Qualifikationen
+Betriebswirtschaftliches Handeln
+
+
+Lösungshinweise Aufgabe 6
+[VO: § 4 Absatz 3 Nr. 5]
+
+  a Mögliche Punktzahl: 3
+  Fertigungsmaterial                                                         167.424 €
++ Materialgemeinkosten (25 %)                         d)                      41.856 €
+= Materialkosten                                                             209.280 €
+  Fertigungslöhne                                     c)                     236.900 €
++ Fertigungsgemeinkosten (80 %)                                              189.520 €
+= Fertigungskosten                                                           426.420 €
+  Herstellkosten                                      b)                     635.700 €
++ Verwaltungs- und Vertriebsgemeinkosten (20 %)                              127.140 €
+= Selbstkosten                                                               762.840 €
++ Gewinn (5 %)                                        a)                      38.142 €
+  Barverkaufspreis                                                           800.982 €
+
+
+                          38.142 €
+prozentualer Gewinn =               100  5 % ·
+                         762.840 €
+  b Mögliche Punktzahl: 3
+                   762.840 €
+Herstellkosten =              100 %  635.700 €
+                    120 %
+  c Mögliche Punktzahl: 3
+                    635.700 € - 209.280 €
+Fertigungslöhne =                          100 %  236.900 €
+                           180 %
+  d Mögliche Punktzahl: 3
+                                        209.280 € - 167.424 €
+Materialgemeinkostenzuschlagssatz =                            100  25 %
+                                             167.424 €
+
+
+
+
+                                           Seite 10
+                                        L 050-02-0519-1
+
+=== Seite 11 ===
+Geprüfte/-r Industriemeister/-in,
+fachrichtungsübergreifende Basisqualifikationen/
+grundlegende Qualifikationen
+Betriebswirtschaftliches Handeln
+
+
+Aufgabe 7
+Ein Industrieunternehmen arbeitet mit einer Kostenrechnung auf Vollkostenbasis. Für den
+Monat Juli liegt Ihnen der noch unvollständige Betriebsabrechnungsbogen in Anlage 1 vor.
+
+Weitere Angaben:
+
+■    Fertigungsmaterial:              200.000 €
+
+■    Fertigungslöhne Fertigung 1:      80.000 €
+
+■    Fertigungslöhne Fertigung 2:     100.000 €
+
+Umlageschlüssel:
+
+■    sonstige Kosten        5   ∶ 7   ∶ 3    ∶ 30    ∶ 24      ∶ 11
+
+■    Kantine                5   ∶ 2   ∶ 30    ∶ 35      ∶ 28
+
+■    Arbeitsvorbereitung:
+
+     60 % auf Fertigung 1 und
+
+     40 % auf Fertigung 2
+
+    a Mögliche Punktzahl: 18
+Vervollständigen Sie den Betriebsabrechnungsbogen in Anlage 1 und ermitteln Sie
+die Gemeinkostenzuschlagssätze auf eine Nachkommastelle genau.
+
+    b Mögliche Punktzahl: 2
+Berechnen Sie das Betriebsergebnis für den Monat September, wenn Umsatzerlöse in
+Höhe von 869.000 € realisiert wurden.
+
+
+
+
+                                             Seite 11
+                                        L 050-02-0519-1
+
+=== Seite 12 ===
+Geprüfte/-r Industriemeister/-in,
+fachrichtungsübergreifende Basisqualifikationen/
+grundlegende Qualifikationen
+Betriebswirtschaftliches Handeln
+
+
+Lösungshinweise Aufgabe 7
+[VO: § 4 Absatz 3 Nr. 5]
+
+  a Mögliche Punktzahl: 18
+Beträge in EUR (€)
+       Kosten-       Summe     Kantine      Material Arbeits-         Ferti-    Ferti-   Verwal-
+ Kosten- stellen                                      vorbe-         gung 1    gung 2     tung/
+ arten                                               reitung                             Vertrieb
+ Hilfslöhne           84.000       8.000      11.000            –     32.000    25.000     8.000
+ Gehälter            171.500       4.200       5.800     14.000       16.400    12.600   118.500
+ Betriebsstoffe       32.600        200        2.300            –     14.900    13.840     1.360
+ Abschreibungen       84.000       3.100       5.400         1.800    39.000    24.500    10.200
+ Energiekosten        21.900       1.000       2.600          100      9.500     6.500     2.200
+ sonstige Kosten      56.000       3.500       4.900         2.100    21.000    16.800     7.700
+ Σ Ist-GK            450.000    20.000        32.000     18.000      132.800    99.240   147.960
+ Umlage Kantine                                1.000          400      6.000     7.000     5.600
+ Umlage AV                                                            11.040     7.360
+ Σ Ist-GK            450.000                  33.000                 149.840   113.600   153.560
+ Bezugsbasis                                200.000                   80.000   100.000   676.440
+ Zuschlagssatz                                16,5 %                 187,3 %   113,6 %    22,7 %
+HK des Umsatzes = MK + FK1 + FK2 = 676.440 €
+ b Mögliche Punktzahl: 2
+BE = Umsatzerlöse – Selbstkosten
+   = 869.000 € – 830.000 €
+   = 39.000 €
+
+
+
+
+                                              Seite 12
+                                           L 050-02-0519-1
+

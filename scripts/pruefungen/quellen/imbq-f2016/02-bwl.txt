@@ -1,0 +1,620 @@
+=== Seite 1 ===
+Bundeseinheitliche
+Weiterbildungsprüfung
+
+der Industrie- und Handelskammern
+
+Prüfungsteilnehmer-Nummer
+
+Geprüfte/-r Industriemeister)-in,
+fachrichtungsübergreifende
+Basisqualifikationen/
+grundlegende Qualifikationen
+
+m Basisqualifikation Betriebswirtschaftliches Handeln
+m Prüfungstag 4. Mai 2016
+m Bearbeitungszeit 90 Minuten
+
+m Anzahl der Aufgaben 7
+
+Bitte prüfen Sie vor Beginn der Prüfung die Vollständigkeit des Aufgabensatzes. Sollte
+der Aufgabensatz nicht vollständig sein, informieren Sie bitte die Aufsicht.
+
+| P 050-02-0516-7 |
+
+=== Seite 2 ===
+Bearbeitungshinweise:
+
+Bitte lesen Sie die nachfolgenden Bearbeitungshinweise sorgfältig durch:
+
+= Die zur Prüfung zugelassenen Hilfsmittel wurden Ihnen separat mit der Einladung mitgeteilt.
+
+w Sie erhalten einen Aufgaben- und einen Lösungsteil.
+
+m Tragen Sie auf dem Deckblatt Ihre Prüfungsteilnehmer-Nummer ein.
+
+m Die maximale Gesamtpunktzahl der Lösungen beträgt 100 Punkte.
+
+m Die Lösungsgänge bzw. Rechenvorgänge sind klar und nachvollziehbar im Lösungsteil dar-
+zustellen. Sollte der Platz nicht ausreichen, benutzen Sie bitte das Konzeptpapier, verweisen
+Sie auf die Fortsetzung und kennzeichnen Sie diese. Wir weisen darauf hin, dass eine vom
+Prüfungsausschuss nicht lesbare Prüfungsarbeit mit der Note „ungenügend“ (null Punkte) be-
+wertet wird mit den Rechtsfolgen, die sich aus der Prüfungsordnung ergeben.
+
+m Verwenden Sie für jede Aufgabe ein neues Lösungsblatt bzw. eine neue Lösungsseite.
+
+= Falls die Lösung auf einem beigefügten Anlageblatt erfolgen soll, wird in der Aufgabenstellung
+darauf hingewiesen.
+
+m Für Ihre Notizen benutzen Sie bitte ausschließlich das Konzeptpapier.
+
+m Das Konzeptpapier ist mit dem Aufgaben- und dem Lösungsteil abzugeben.
+
+m BeiAufgaben, die eine Aufzählung von n-Fakten zur Lösung erfordern, werden nur die ersten
+
+n-Fakten gewertet. Alle darüber hinausgehenden Aufzählungen werden gestrichen.
+
+Wir wünschen Ihnen bei der Bearbeitung viel Erfolg.
+
+Der leichteren Lesbarkeit wegen geben wir in den Aufgaben/Texten der männlichen Form
+den Vorzug. Mit diesem einfacheren sprachlichen Ausdruck sind selbstverständlich immer
+Männer und Frauen gemeint.
+
+Die Vervielfältigung, Verbreitung oder öffentliche Wiedergabe der Publikationen [der Prü-
+fungssätze] ist nicht gestattet (88 53, 54 UrhG) und strafbar (8 106 UrhG). Im Fall der Zuwi-
+derhandlung wird Strafantrag gestellt.
+
+=== Seite 3 ===
+GEPRÜFTEI-R INDUSTRIEMEISTERI/-IN,
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+
+GRUNDLEGENDE QUALIFIKATIONEN
+Betriebswirtschaftliches Handeln
+
+Aufgabe 1
+
+a) Nennen Sie drei Kriterien, womit die verschiedenen Rechtsformen von Unternehmen (3 Punkte)
+zu unterscheiden sind.
+
+b) Beschreiben Sie deren Ausgestaltung bei (6 Punkte)
+" einer Kommanditgesellschaft und
+= einer Gesellschaft mit beschränkter Haftung.
+
+c) Nennen Sie die Organe einer GmbH mit 1 800 Mitarbeitern. (3 Punkte)
+
+Lösungshinweise Aufgabe 1 (12 Punkte)
+[VO: 8 4 Absatz 3 Nr. 1]
+
+a) Z.B.
+= _ Geschäftsführungsbefugnis
+= _ Außenvertretungsrecht
+a Stimmrecht bei der Gesellschafterversammlung
+= _ Gewinnverteilung
+=  Haftungsumfang
+" Mindestgründungskapital
+
+USW. (3 Punkte)
+b) Kriterien, z.B. KG GmbH
+M Geschäftsführungs- Komplementär Geschäftsführer
+befugnis, Außenver-
+tretungsrecht
+" Stimmrecht beider nach Köpfen nach Anteil am Stamm-
+Gesellschafterver- kapital
+sammlung
+" Haftung Komplementäre: Vollhaftung, Teilhaftung der Gesell-
+Kommanditisten: Teilhaftung _schafter mit ihrer Kapi-
+taleinlage
+" Mindestgründungs- keine gesetzliche Vorschrift 25.000 €
+kapital (6 Punkte)
+
+c) = Geschäftsführer
+
+" Aufsichtsrat
+
+n Gesellschafterversammlung (3 Punkte)
+© DIHK — Gesellschaft für berufliche Bildung - Organisation zur Förderung der IHK-Weiterbildung mbH - Bonn | P 050-02-0516-7 | Seite 15
+Die Vervielfältigung, Verbreitung oder öffentliche Wiedergabe der Publikation [der Prüfungssätze und Lösungshinweise]
+
+ist nicht gestattet ($$ 53, 54 UrhG) und strafbar ($ 106 UrhG). Im Fall der Zuwiderhandlung wird Strafantrag gestellt
+
+=== Seite 4 ===
+GEPRÜFTEI-R INDUSTRIEMEISTERI/-IN,
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+
+GRUNDLEGENDE QUALIFIKATIONEN
+Betriebswirtschaftliches Handeln
+
+Aufgabe 2
+
+In der Aufbauorganisation unterscheidet man unter anderem in
+
+" Einliniensysteme,
+
+= Stabliniensysteme und
+
+= _ Zweiliniensysteme (Matrixorganisationen).
+
+a) Charakterisieren Sie jedes Organisationssystem anhand von zwei Merkmalen. (6 Punkte)
+
+b) Nennen Sie je einen Vor- und einen Nachteil (4 Punkte)
+= des Einliniensystems und
+
+“ des Zweiliniensystems.
+
+Lösungshinweise Aufgabe 2 (10 Punkte)
+[VO: 8 4 Absatz 3 Nr. 2]
+
+a) = Einliniensystem, z. B.:
+
+= Die nachgeordnete Stelle erhält ausschließlich von der ihr direkt vorgesetzten
+Instanz Weisungen.
+
+= Die Linie ist formaler Kommunikationsweg.
+
+= _ streng hierarchischer Aufbau (2 Punkte)
+=  Stabliniensystem, z. B.:
+
+= Den Linieninstanzen werden zur Unterstützung Stäbe zugeordnet.
+
+= _ Stäbe beraten und bereiten Entscheidungen vor.
+
+= keine Weisungsbefugnisse gegenüber rangniedrigeren Hierarchieebenen (2 Punkte)
+= _ Zweiliniensystem (Matrixorganisation), z. B.:
+
+= Funktionsmanagement und Produkt-/Projektmanagement überlappen sich
+vertikal, horizontal und sind gleichberechtigt.
+
+= _ Schnittpunkte in der Matrix geben an, wo Koordinationsbedarf zwischen den
+Managementebenen besteht. (2 Punkte)
+
+b) =  Einliniensystem:
+
+= Vorteile, z. B.:
+= Transparenz und Einfachheit der Beziehungen
+=» eindeutige Kommunikationswege (1 Punkt)
+
+=» Nachteile, z. B.:
+= _ Gefahr der Informationsfilterung durch einzelne Instanzen
+= lange Kommunikationswege
+= Gefahr der Bürokratisierung (1 Punkt)
+
+" Zweiliniensystem (Matrixorganisation):
+
+= Vorteile, z. B.:
+
+" Entlastung der Unternehmensleitung
+Seite 16 | P 050-02-0516-7 | © DIHK - Gesellschaft für berufliche Bildung - Organisation zur Förderung der IHK-Weiterbildung mbH - Bonn
+
+Die Vervielfältigung, Verbreitung oder öffentliche Wiedergabe der Publikation [der Prüfungssätze und Lösungshinweise]
+ist nicht gestattet (88 53, 54 UrhG) und strafbar ($ 106 UrhG). Im Fall der Zuwiderhandlung wird Strafantrag gestellt
+
+=== Seite 5 ===
+GEPRÜFTEI/-R INDUSTRIEMEISTERI/-IN,
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+
+GRUNDLEGENDE QUALIFIKATIONEN
+Betriebswirtschaftliches Handeln
+
+= kurze Entscheidungswege
+= hohe Flexibilität
+
+= Problemlösungen durch Funktionsmanager und Spezialisten (Produkt-
+bzw. Projektmanager) (1 Punkt)
+
+= Nachteile, z. B.:
+= hoher Bedarf an Führungskräften
+
+= __Kompetenz- und Handlungskonflikte zwischen Funktions- und Produkt-
+managern
+
+= hoher Koordinationsbedarf (1 Punkt)
+
+Hinweis für den Korrektor: Die genannten Vor- und Nachteile stellen nur Beispiele
+
+dar, d. h., auch andere plausible Antworten sind zuläs-
+Aufgabe H
+
+sig.
+Die Beschaffungsprozesse der Industrie AG sollen unter Kostengesichtspunkten analysiert
+werden. Exemplarisch soll das Kosteneinsparpotenzial anhand eines Kaufteiles aufgezeigt
+werden. Es wird ein kontinuierlicher Bedarf angenommen. Ein Sicherheitsbestand wird nicht
+gehalten.
+
+Folgende Daten liegen Ihnen zur Entscheidungsfindung vor:
+
+= _Jahresbedarf 30 000 Stück
+=  Einstandspreis 37,50 €/Stück
+" Bestellkosten je Bestellvorgang 125 €
+" Lagerhaltungskostensatz 20 % pro Jahr
+a) Berechnen Sie die optimale Bestellmenge. (5 Punkte)
+b) Berechnen Sie die Lagerumschlagshäufigkeit. (4 Punkte)
+
+Hinweis für den Prüfungsteilnehmer: Sollten Sie die Teilaufgabe a) nicht gelöst
+haben, gehen Sie von einer optimalen
+Bestellmenge von 1 000 Stück aus.
+
+c) Bestimmen Sie rechnerisch das Kosteneinsparpotenzial, wenn im Unternehmen bisher (10 Punkte)
+mit einer Bestellmenge von 500 Stück disponiert wurde.
+
+Hinweise für den Prüfungsteilnehmer: Berücksichtigen Sie Bestellkosten und
+Lagerhaltungskosten. Sollten Sie die Teilauf-
+gabe a) nicht gelöst haben, gehen Sie von
+1.000 Stück als optimale Bestellmenge aus.
+
+© DIHK - Gesellschaft für berufliche Bildung — Organisation zur Förderung der IHK-Weiterbildung mbH - Bonn | P 050-02-0516-7 | Seite 17
+Die Vervielfältigung, Verbreitung oder öffentliche Wiedergabe der Publikation [der Prüfungssätze und Lösungshinweise]
+ist nicht gestattet ($$ 53, 54 UrhG) und strafbar ($ 106 UrhG). Im Fall der Zuwiderhandlung wird Strafantrag gestellt
+
+=== Seite 6 ===
+GEPRÜFTEI/-R INDUSTRIEMEISTER/-IN,
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+
+GRUNDLEGENDE QUALIFIKATIONEN
+Betriebswirtschaftliches Handeln
+
+Lösungshinweise Aufgabe 3 (19 Punkte)
+[VO: 8 4 Absatz 3 Nr. 3]
+
+a) Optimale Bestellmenge:
+
+x _ 2: kg " X ges
+EP-i,
+
+a [2 - (125 € /Bestellung) : (30000 Stück)
+opt
+
+37,50 €/Stück - 0,2
+
+x_,= 1000 Stück/Bestellung (5 Punkte)
+
+opt
+
+Verbrauch pro Jahr
+
+b) Lagerumschlagshäufigkeit =
+® Lagerbestand
+
+® Lagerbestand = “= + Sicherheitsbestand
+
+- 1000 Stück 4 g
+
+2
+= 500 Stück
+Lagerumschlagshäufigkeit = 30000 Stück _ 60
+500 Stück (4 Punkte)
+c) Bestellmenge x = 500 Stück
+Bestellkosten = 60 Bestellungen/Jahr : 125 €/Bestellung = 7.500 €/Jahr
+Lagerhaltungskosten = 250 Stück : 0,2 : 37,50 €/Stück = 1.875 €/Jahr
+Gesamtkosten = 9.375 €/Jahr
+optimale Bestellmenge x, = 1 000 Stück
+Bestellkosten = 30 Bestellungen/Jahr : 125 €/Bestellung = 3.750 €/Jahr
+Lagerhaltungskosten = 500 Stück : 0,2 : 37,50 €/Stück = 3.750 €/Jahr
+Gesamtkosten = 7.500 €/Jahr
+Kostenersparnis bei Wahl der optimalen Bestellmenge AK, „, = 1.875,00 €/Jahr (10 Punkte)
+Aufgabe 4
+Die Entlohnung kann unter anderem im Zeitlohn erfolgen.
+a) Stellen Sie drei mögliche Tätigkeitsbereiche dar, bei denen die Entlohnung im Zeitlohn (9 Punkte)
+erfolgt, und begründen Sie nachvollziehbar, warum die Entlohnung im Zeitlohn erfolgen
+soll.
+b) Nennen Sie je zwei Vor- und zwei Nachteile dieser Entlohnungsform. (4 Punkte)
+c) Unterbreiten Sie der Geschäftsleitung einen Vorschlag, um die Nachteile des Zeitloh- (2 Punkte)
+nes unter grundsätzlicher Beibehaltung des Zeitlohnes abzumildern.
+Sana 16 1000205167 | Die Vervielfältigung. Verbreitung oder öffentliche Wiedergabe der Pubikalion [der Prüfungesätze und Lösungshinweise|
+
+ist nicht gestattet (88 53, 54 UrhG) und strafbar ($ 106 UrhG). Im Fall der Zuwiderhandiung wird Strafantrag gestellt
+
+=== Seite 7 ===
+GEPRÜFTEI/-R INDUSTRIEMEISTER/-IN,
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+
+GRUNDLEGENDE QUALIFIKATIONEN
+Betriebswirtschaftliches Handeln
+
+Lösungshinweise Aufgabe 4 (15 Punkte)
+[VO: 8 4 Absatz 3 Nr. 4]
+
+a) Z.B:
+= _Instandhaltungsarbeiten:
+Die Dauer der Instandhaltungsarbeiten kann nicht präzise vorhergesagt werden.
+= _ Führungstätigkeiten:
+keine sich wiederholenden Tätigkeiten, besondere Sorgfalt erforderlich
+= _ Kontrolltätigkeiten:
+Besondere Sorgfalt ist erforderlich.
+= Entwicklung:
+Eine Ermittlung der individuellen Leistung ist schwierig. (9 Punkte)
+b) = Vorteile, z. B.:
+= einfache Lohnermittlung
+
+= Das Einkommen ist gleichbleibend und dadurch für den Mitarbeiter kalkulier-
+bar.
+
+= mehr Qualität möglich, da kein Zeitdruck vorhanden ist
+= kein voreiliges Handeln bei gefährlichen Tätigkeiten (weniger Unfälle)
+
+= Reduzierung der Lohnstückkosten, wenn der Mitarbeiter eine hohe Leistung
+erbringt
+
+= Nachteile, z. B.:
+= kein Anreiz zu Mehrleistung
+= keine Berücksichtigung der Leistungsunterschiede
+
+= Risiko verminderter Leistung und dadurch höhere Lohnstückkosten
+
+= mehr Personal erforderlich, da die Leistung nicht zu 100 % kontrollierbar ist (4 Punkte)
+c) Ergänzung des Zeitlohnes als Grundlohn durch eine Leistungszulage (2 Punkte)
+© DIHK — Gesellschaft für berufliche Bildung — Organisation zur Förderung der IHK-Weiterbildung mbH —- Bonn | P 050-02-0516-7 | Seite 19
+
+Die Vervielfältigung, Verbreitung oder öffentliche Wiedergabe der Publikation [der Prüfungssätze und Lösungshinweise]
+ist nicht gestattet (8$ 53, 54 UrhG) und strafbar ($ 106 UrhG). Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+
+=== Seite 8 ===
+GEPRÜFTEI/-R INDUSTRIEMEISTER/-IN,
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+
+GRUNDLEGENDE QUALIFIKATIONEN
+Betriebswirtschaftliches Handeln
+
+Aufgabe 5
+
+In einem Unternehmen soll ein neues Bearbeitungszentrum angeschafft werden.
+
+Für die Maschine liegen folgende Daten vor:
+
+= _ Anschaffungskosten 768.000 €
+= Wiederbeschaffungswert 921.600 €
+= Nutzungsdauer 7 Jahre
+= Restwert 230.000 €
+= jährliche Einsatzzeit 3 250 Stunden
+= Platzbedarf 30 m?
+= Energiebedarf pro Stunde 13,5 kW
+In diesem Betrieb wird mit folgenden Daten gerechnet:
+= kalkulatorischer Zinssatz 6,5 % pro Jahr
+=  kalkulatorische Miete 16,25 €/m? im Monat
+= Energiekosten pro Stunde 0,28 €/kW
+= _Instandhaltungskostensatz 8 % von den Anschaffungs-
+kosten pro Jahr
+a) Berechnen Sie den Maschinenstundensatz. (12 Punkte)
+b) Kalkulieren Sie die Fertigungskosten für ein Bauteil. (5 Punkte)
+Folgende Informationen liegen Ihnen vor:
+=  Fertigungsiohnkostensatz 21,00 € pro Stunde
+= Bearbeitungszeit 42 Minuten pro Bauteil
+= _ Spezialwerkzeug 1,57 € pro Bauteil
+a Maschinenstundensatz 105,00 € pro Stunde
+=  Restfertigungsgemeinkostenzuschlagssatz 90%
+Seite 20 | P 050-02-0516-7 | Die Vervieäigung, Verbreitung oder öffentliche Wiedergabe der Publkalln [der Prüfungssstse und Lösungohinunse]
+
+ist nicht gestattet ($$ 53, 54 UrhG) und strafbar ($ 106 UrhG). Im Fall der Zuwiderhandlung wird Strafantrag gestellt
+
+=== Seite 9 ===
+GEPRÜFTEI/-R INDUSTRIEMEISTER/-IN,
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+
+GRUNDLEGENDE QUALIFIKATIONEN
+Betriebswirtschaftliches Handeln
+
+Lösungshinweise Aufgabe 5 (17 Punkte)
+[VO: 8 4 Absatz 3 Nr. 5]
+
+a) Benennung Berechnung lan
+921.600 € - 230.000 €
+kalkulatorische Abschreibung = = 98.800
+7 Jahre
+768.000 € + 230.00 -6,5
+kalkulatorische Zinsen = ‚7E8 . nr = 32.435
+100 -2
+Raumkosten = 30 m? . 16,25 €/m? . 12 Monate = 5.850
+Energiekosten = 13,5 kW - 0,28 €/KWh - 3250 h = 12.285
+768.000 € - 8,0
+Instandhaltungskosten = 100 = 61.440
+Maschinenkosten 210.810 (12 Punkte)
+i 210.810 €/Jah
+Maschinenstundensatz = MasehinenkastenJähr = ua = 64,86 €/h
+geplante Einsatzzeit/Jahr 3250 h/Jahr
+. 21€/h . ..
+Fertigungslohn | ———— . 42 min/Stück 70 €/Stück
+b) gone % min/h = u.
++ Restfertigungsgemeinkosten (90 %) 13,23 €/Stück
++ Maschinenkosten meh 75 min/Stück 73,50 €/Stück
+60 min/h
++ Sondereinzelkosten der Fertigung 1,57 €/Stück
+= Fertigungskosten 103,00 €/Stück (5 Punkte)
+© DIHK - Gesellschaft für berufliche Bildung — Organisation zur Förderung der IHK-Weiterbildung mbH Bonn | P 050-02-0516-7 | Seite 21
+Die Vervielfältigung, Verbreitung oder öffentliche Wiedergabe der Publikation [der Prüfungssätze und Lösungshinweise]
+
+ist nicht gestattet ($$ 53, 54 UrhG) und strafbar ($ 106 UrhG). Im Fail der Zuwiderhandlung wird Strafantrag gestellt
+
+=== Seite 10 ===
+GEPRÜFTEI-R INDUSTRIEMEISTER/-IN,
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+
+GRUNDLEGENDE QUALIFIKATIONEN
+Betriebswirtschaftliches Handeln
+
+Aufgabe 6
+
+Die Geschäftsführung legt Ihnen nachfolgende Grafik vor, um mit Ihnen die Kostensituation
+einer Sonderanfertigung von Wellen zu besprechen:
+
+Kosten-Umsatz-Diagramm
+
+60.000 -ı
+50.000 -
+40.000 -
+
+30.000 -
+
+Umsatz, Kosten (€)
+
+20.000 -'
+
+10.000 -
+
+0 100 200 300 400 500 600
+Menge (Stück)
+a) Ermitteln Sie: (6 Punkte)
+
+= die Anzahl der Wellen, die mindestens produziert werden müsste, um kostende-
+ckend zu arbeiten,
+
+" den Umsatzerlös, der dabei erzielt wird, und
+= die fixen Gesamtkosten.
+
+b) Ermitteln Sie aus diesen Zahlen rechnerisch für eine Auftragsmenge von 450 Stück (6 Punkte)
+= den Umsatzerlös,
+= die variablen Gesamtkosten,
+= das Betriebsergebnis.
+
+c) Berechnen Sie (4 Punkte)
+= den Preis und
+
+“ die variablen Stückkosten
+
+pro Welle.
+d) Ermitteln Sie den Gesamtdeckungsbeitrag für 200 Wellen. (2 Punkte)
+Seite 22 | P 050-02-0516-7 | © DIHK Gesellschaft für berufliche Bildung Organisation zur Förderung der IHK-Weiterbildung mbH - Bonn
+
+Die Vervielfältigung, Verbreitung oder öffentliche Wiedergabe der Publikation [der Prüfungssätze und Lösungshinweise]
+ist nicht gestattet (88 53, 54 UrhG) und strafbar ($ 106 UrhG). Im Fall der Zuwiderhandlung wird Strafantrag gestellt
+
+=== Seite 11 ===
+GEPRÜFTEI/-R INDUSTRIEMEISTERI/-IN,
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+
+GRUNDLEGENDE QUALIFIKATIONEN
+Betriebswirtschaftliches Handeln
+
+Lösungshinweise Aufgabe 6 (18 Punkte)
+[VO: 8 4 Absatz 3 Nr. 5]
+
+a)
+
+Umsatz, Kosten (€)
+
+T E
+T K
+Tr
+25.000 € +
+15.000€ -
+0€ t 4 + + + + + >
+0 100 250 Menge (Stück)
+= _ Break-even-Menge: 250 Stück
+" Break-even-Umsatz: 25.000 €
+= fixe Gesamtkosten: 15.000 € (6 Punkte)
+
+b) = _ Umsatzerlöse (U):
+
+_ 25.000 € - 450 Stück
+. 250 Stück
+
+= 45.000 €
+
+"= variable Gesamtkosten (K,,):
+K,,.25.000 € - 15.000 € = 10.000 € für x = 250 Stück
+
+x 10.000 € . 450 Stück
+
+, = 18.000 € für x = 450 Stück
+250 Stück
+
+“ Betriebsergebnis (BE):
+BE = 45.000 € — 15.000 € — 18.000 € = 12.000 € (6 Punkte)
+c) = Preis (p):
+
+_ 25.000 €
+
+p = — ——— = 100 €/Stück
+250 Stück
+
+"= variable Stückkosten (K,):
+
+„DE „40 €/Stück
+250 Stück (4 Punkte)
+d) = _Gesamtdeckungsbeitrag (DB):
+DB = 200 Stück - (100 €/Stück — 40 €/Stück) = 12.000 € (2 Punkte)
+© DIHK - Gesellschaft für berufliche Bildung — Organisation zur Förderung der IHK-Weiterbildung mbH - Bonn | P 050-02-0516-7 | Seite 23
+
+Die Vervielfältigung, Verbreitung oder öffentliche Wiedergabe der Publikation [der Prüfungssätze und Lösungshinweise]
+ist nicht gestattet ($$ 53, 54 UrhG) und strafbar ($ 106 UrhG). Im Fall der Zuwiderhandlung wird Strafantrag gestellt
+
+=== Seite 12 ===
+GEPRÜFTEI-R INDUSTRIEMEISTER/-IN,
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+
+GRUNDLEGENDE QUALIFIKATIONEN
+
+Betriebswirtschaftliches Handeln
+
+Aufgabe
+
+Für einen Auftrag der Industrie GmbH stehen Ihnen folgende Angaben zur Verfügung:
+12.000 €
+
+= Fertigungsmaterial
+
+=  Fertigungslöhne
+
+= Kosten für Spezialwerkzeug
+
+= Kosten für Spezialverpackung
+= _Gewinnzuschlag
+
+Gemeinkostenzuschlagssätze:
+
+= _ Materialgemeinkosten
+
+= _ Fertigungsgemeinkosten
+
+5.000 €
+300 €
+350 €
+25 %
+
+10%
+50 %
+
+= _ Verwaltungs- und Vertriebsgemeinkosten 15%
+
+Berechnen Sie:
+
+a) die Selbstkosten
+
+b) den Barverkaufspreis
+
+Lösungshinweise Aufgabe 7
+
+[VO: 8 4 Absatz 3 Nr. 5]
+
+a) Fertigungsmaterial 12.000,00 €
++__10 % Materialgemeinkosten 1.200,00 €
+=_ Materialkosten 13.200,00 €
+
+Fertigungslöhne 5.000,00 €
+
++ 50 % Fertigungsgemeinkosten 2.500,00 €
++_Sondereinzelkosten der Fertigung 300,00 €
+=_ Fertigungskosten 7.800,00 €
+= Herstellkosten 21.000,00 €
++ 15% Verwaltungs- und Vertriebsgemeinkosten 3.150,00 €
++_Sondereinzelkosten des Vertriebes 350,00 €
+= _Selbstkosten ____.____.___.....24,500,00 €
+
+b) Selbstkosten 24.500,00 €
++ _25 % Gewinn 6.125,00 €
+= _Barverkaufspreis  _________.. 30.625,00 €
+
+Seite 24 | P 050-02-0516-7 |
+
+(7 Punkte)
+(2 Punkte)
+
+(9 Punkte)
+
+(7 Punkte)
+
+(2 Punkte)
+
+© DIHK - Gesellschaft für berufliche Bildung — Organisation zur Förderung der IHK-Weiterbildung mbH - Bonn
+
+Die Vervielfältigung, Verbreitung oder öffentliche Wiedergabe der Publikation [der Prüfungssätze und Lösungshinweise]
+ist nicht gestattet (88 53, 54 UrhG) und strafbar ($ 106 UrhG). Im Fall der Zuwiderhandlung wird Strafantrag gestellt
+

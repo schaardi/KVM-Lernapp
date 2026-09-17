@@ -1,0 +1,417 @@
+=== Seite 1 ===
+Bundeseinheitliche Weiterbildungsprüfung
+der Industrie- und Handelskammern
+
+Prüfungsteilnehmer-Nummer
+
+Geprüfte/-r Industriemeister/-in,
+fachrichtungsübergreifende
+Basisqualifikationen/
+grundlegende Qualifikationen
+
+Basisqualifikation Anwendung von Methoden der Information,
+Kommunikation und Planung
+
+Prüfungstag 6. November 2017
+Bearbeitungszeit 90 Minuten
+Anzahl der Aufgaben 6
+
+Bitfe prufen Sie vor Begınn der Prufung die Vollständigkeit des Aufgabensätzes. Sollte der Aufgabensatz nicht vollstandig seın,
+informieren Sıe bitte dıe Aufsicht
+
+Bearbeitungshinweise:
+
+Bitte lesen Sie die nachfolgenden Bearbeitungshinweise sorgfältig durch:
+
+wm Die zur Prufung zugelassenen Hilfsmittel wurden Ihnen separat = Verwenden Sıe fur jede Aufgabe eın neues Lösungsblatt bzw
+
+mit der Einladung mitgeteilt eıne neue Losungsseite
+
+Sıe erhalten einen Aufgaben- und sınen Losungsteil = Falls des Losung auf eınem beigefugten Anlageblatt erfolgen
+
+Fur dıe Bearbeitung der Aufgaben benotigte Anlagen liegen am soll. wırd ın der Aufgabenstellung darauf hingewiesen
+
+Ende des Aufgabensatzes zum Heraustrennen beı = Für Ihre Notizen benutzen Sıe bitte ausschließlich das
+= Tragen Sıa auf dem Deckblatt Ihre Pıufungsteilnehmer- Konzepipapier
+
+Nummer eın s Das Konzeptpapıer ıst mıl dem Aufgaben- und dem Lösungsteil
+= Die maximale Gesamtpunktzahl der Losungen betragt abzugeben
+
+100 Punkte = Beı Aufgaben, dıe eıne Aufzahlung von n-Fakten zur Losung
+
+erfordern, werden nur dıe ersten n-Fakten gewertet Alle
+
+D Rech | d
+" ia Lösungsgange hzw. Rechenvorgange sind klar un daruber hınausgehenden Aufzahlungen werden gestrichen
+
+nachvollziehbar ım Losungsteil darzustellen Sollte der Platz
+nıcht ausreichen, benutzen Sıe bitte das Konzeptpapıer,
+verweisen Sıe auf die Fortsetzung und kennzeichnen Sıe diese
+Wir weisen darauf hın, dass eine vom Prufungsausschuss nicht
+lesbare Prufungsarbeit mit der Note ungenügend” {null Punkte}
+bewertet wırd mit den Rechtsfolgen die sıch aus der
+Prufungsordnung ergeben
+
+Der leıchteren Lesbarkeit wegen geben wir ın den Aufgaben/Texten der mannlıchen Form den Vorzug Mit dıesem einfacheren
+sprachlichen Ausdruck sind selbstverstandlich ımmer Manner und Frauen gemeint
+
+Die Vervielfältigung, Verbreitung oder öffentliche Wiedergabe der Publikation [der Prufungssatze] ıst nıcht gestattei (88 53, 54 UrhG)
+und strafbar ($ 106 UrhG) Im Fall der Zuwiderhandlung wird Strafantrag gestellt
+
+| P 050-03-1117-0 |
+
+=== Seite 2 ===
+GEPRÜFTEI/-R INDUSTRIEMEISTER/-IN
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN
+Grundlegende Qualifikationen, Anwendung von Methoden der
+
+Information, Kommunikation und Planung
+
+Aufgabe 1
+
+Als Geprufter Industriemeister tragen Sıe Verantwortung fur die Erfassung digitaler Daten
+ın Ihrem Meisterbereich
+
+a) Nennen Sıe je vier technische Möglichkeiten zur (8 Punkte)
+sm manuellen Erfassung
+m automatischen Erfassung
+
+digıtaler Daten.
+
+b) In Ihrem Unternehmen wird regelmaßıg eın Backup der erfassten Daten erstellt. Er- (6 Punkte)
+läutern Sıe zwei Anforderungen an dieses Backup
+
+c) Die erfassten Daten werden zentralisiett auf einem Server gespeichert (6 Punkte)
+Nennen Sıe sechs Maßnahmen, mit denen dıe Verfügbarkeit der Daten gewährleistet
+wird
+
+Lösungshinweise Aufgabe 1 (20 Punkte)
+
+[VO: $ 4 Absatz 4 Nr.1]
+
+a) Manuelle Erfassung z B
+m Tastatureingabe
+m Scannen von Belegen mıt einem Handscanner
+m Eingabe mittels Touchscreen
+m Eingabe mittels Zeigegeräten
+m Einsatz von Lesegeraäten für Chip- oder Magnetkarten
+
+Automatische Erfassung z B.
+
+m Erfassen von Messwerten eıner Anlage mittels Sensoren
+m Erfassen der Anzahl von Objekten mittels Lichtschranke
+sw Wiegen von Objekten auf einer elektronischen Waage
+
+m automatisches Scannen von Barcodes bei Lieferung
+
+= Erfassen der Informationen von Transpondern (RFID) (8 Punkte)
+
+b} Der operative Datenbestand muss kurzfristig und vollständig wıederhergestellt werden
+können, damit die Verfügbarkeit nach einer Störung ohne größere Datenverluste un-
+mittelbar gewährleistet ıst
+
+Das Backup muss raumlıch getrennt von den Orıginaldaten gespeichert werden, da-
+mit es bei einer Storung oder beı einem Unfall unbeschädigt bleibt und kurzfristig ver-
+fugbar ıst. (6 Punkte)
+
+Seite 24 | © DIHK — Gesellschaft für berufliche Bildung — Organisation zur Förderung der IHK-Weiterbildung mbH - Bonn
+Die Vervielfältigung, Verbreitung oder öffentliche Wiedergabe der Publikation [der Prüfungssätze und Lösungshinweise]
+ist nicht gestattet (55 53, 54 UrhG) und strafbar ($ 106 UrhG). im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+
+=== Seite 3 ===
+GEPRÜFTEI-R INDUSTRIEMEISTER/-IN
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN
+
+Grundlegende Qualifikationen, Anwendung von Methoden der
+
+Information, Kommunikation und Planung
+
+c) ZB
+= unterbrechungsfreie Stromversorgung
+sm Brandschutzanlage
+s Alarmanlage
+
+= Videouberwachung
+=  Zufrittskontrolle
+= Zugangskontrolle
+
+Zugriffskontrolle
+= Backup/Datensicherung
+
+m organisatorische Verfahrensanweisungen {6 Punkte)
+
+Aufgabe 2
+
+In Ihrem Unternehmen wird die Neizplantechnik beı der Planung und Durchfuhrung von
+Projekten eingesetzt
+
+a) Begründen Sıe anhand von zwei Vorteilen, warum Sıe ın Ihrem Meisterbereich die (4 Punkte)
+Netzplantechnik einsetzen
+
+b) Erstellen Sie aus den Angaben ın der folgenden Tabelle einen Netzplan und kenn- (16 Punkte)
+zeichnen Sie den kritischen Pfad
+
+Nummer Kürzel Dauer Vorgänger
+1 Start
+Start
+Ä
+A,B
+B
+CD
+D,E
+F
+FG
+
+OO SOC BE W MN
+-IPnmMU9UP>r
+BOB nMnmnm©m
+
+Lösungshinweise Aufgabe 2 (20 Punkte)
+[VO: 8 4 Absatz 4 Nr.2]
+
+a) Vorteil bei der Planung Im Meisterbereich können mittels Netzplantechnik Termine,
+Ressourcen und Kosten übersichtlich geplant werden. Die Mitarbeiter können uber
+Inhalt und Dauer der geplanten Abläufe informiert werden.
+
+Vorteil bei der Durchführung: Die Netzplantechnik kann auch zur anschaulichen Do-
+kumentation der Projektabläufe und zum transparenten Soll-Ist-Vergleich während der
+Projektdurchführung eingesetzt werden {4 Punkte}
+
+© DIHK - Gesellschaft für berufliche Bildung — Organisation zur Förderung der IHK-Weiterbildung mbH — Bonn | Seite 25
+Die Vervielfältigung, Verbreitung oder öffentliche Wiedergabe der Publikation [der Prüfungssätze und Lösungshinweise]
+ist nicht gestattet (58 53, 54 UrhG) und strafbar ($ 106 UrhG). Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+
+=== Seite 4 ===
+GEPRÜFTE/-R INDUSTRIEMEISTER/-IN
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN
+Grundlegende Qualifikationen, Anwendung von Methoden der
+
+Information, Kommunikation und Planung
+
+Kritischer Pfaı Start = B = E = Bu iu Ziel
+
+(16 Punkte)
+Aufgabe 3
+Als Industriemeister mussen Sıe beı einer Präsentation vor Ihren Mitarbeitern auch auf dıe (10 Punkte)
+Rhetorik achten. Beschreiben Sıe fünf Gesichtspunkte, die dabeı eine wichtige Rolle spie-
+len
+Lösungshinweise Aufgabe 3 (10 Punkte)
+[VO: 8 4 Absatz 4 Nr.3]
+ZB
+m Der Vortragende sollte ın angemessener Lautstärke und so deutlich sprechen, dass
+er ım ganzen Raum verstanden wird
+sm Beim Vortragen sollte möglichst in Hauptsatzen gesprochen werden Verschachtelte
+Sätze sind schwer verständlich
+m Es ist auf eine gute Aussprache zu achten, damit bei den Zuhörern keine Missver-
+ständnisse entstehen
+sw Der Vortragende sollte eın angemessenes Sprechtempo wählen (nicht zu schnell,
+nicht zu langsam)
+sm Damit der Vortrag für dıe Teilnehmer nıcht langweilig wird, sollte die Stimme modulıert
+und das Tempo variiert werden
+= Für eın gutes Verständnis des Vortrags ıst außerdem auf eıne adressatengerechte
+(zielgruppengerechte) Sprache zu achten.
+Seite 26 | © DIHK — Gesellschaft für berufliche Bildung — Organisation zur Förderung der IHK-Weiterbildung mbH -— Bonn
+
+Die Vervielfältigung, Verbreitung oder öffentliche Wiedergabe der Publikation [der Prüfungssätze und Lösungshinweise]
+ist nicht gestattet ($$ 53, 54 UrhG} und strafbar ($ 106 UrhG). Im Fall der Zuwiderhandfung wird Strafantrag gestallt.
+
+=== Seite 5 ===
+GEPRÜFTEI-R INDUSTRIEMEISTER/-IN
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN
+
+Grundlegende Qualifikationen, Anwendung von Methoden der
+
+Information, Kommunikation und Planung
+
+Aufgabe 4
+
+In Ihrem Meisterbereich wurden 7200 Werkzeuge innerhalb von sechs Monaten einer
+technischen Überprufung unterzogen. Pro Monat sollten laut Plan 1200 Werkzeuge geprüft
+werden (Soll). Tatsächlich wurden ın den einzelnen Monaten folgende Ist-Werte erreicht
+
+Monat tatsächlich geprüfte Werkzeuge (Ist)
+Januar 800
+Februar 800
+März 1.000
+April 1.400
+Maı 1.400
+Juni 1.800
+a) Stellen Sie in einer Tabelle die monatlich kumulierten Soll- und Ist-Werte gegenuber. (6 Punkte)
+b) Stellen Sie den monatlichen Verlauf der kumulierten Soll- und Ist-Werte ın einem Dia- (9 Punkte)
+gramm dar
+Lösungshinweise Aufgabe 4 (15 Punkte)
+[VO: $ 4 Absatz 4 Nr.4]
+a)
+Monat Bis zum Monatsende Bis zum Monatsende
+insgesamt zu prüfende insgesamt geprüfte
+Werkzeuge Werkzeuge
+Januar 1.200 800
+Februar 2.400 1.600
+Marz 3.600 2.600
+Aprıl 4.800 4.000
+Maı 6.000 5.400
+Juni 7.200 7.200 (6 Punkte)
+© DIHK — Gesellschaft für berufliche Bildung — Organisation zur Förderung der IHK-Weiterbildung mbH - Bonn | Seite 27
+
+Die Vervielfältigung, Verbreitung oder öffentliche Wiedergabe der Publikation [der Prüfungssätze und Lösungshinweise]
+ist nicht gestattet (88 53, 54 UrhG) und strafbar ($ 106 UrhG). Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+
+=== Seite 6 ===
+GEPRÜFTEI-R INDUSTRIEMEISTER/-IN
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN
+
+Grundlegende Qualifikationen, Anwendung von Methoden der
+
+Information, Kommunikation und Planung
+b)
+
+Soli-ist-Vergleich der Prüfung von Werkzeugen
+
+Pa et
+ws
+we
+= un
+Eon
+=
+es
+So ang
+4
+zo nun
+Fi
+De
+ad
+Bir
+
+Karsisar Feprugr LuFZ; Ap Kai Karl
+
+Mom
+
+tee soll zum Manatsend funahner:
+
+ih in Biomuistgie Buster,
+
+(3 Punkte)
+
+Aufgabe 5
+
+Alle komplexen Projekte durchlaufen vier Phasen: Initiierung, Planung, Durchführung und
+Abschluss
+
+In Ihrem Unternehmen steht im kommenden Jahr ein Projekt zur Opfimierung der Be-
+triebsdatenerfassung bevor. Auftraggeber des Projektes ıst die Geschäftsleitung
+
+a) Beschreiben Ste fur dıe Phasen Initiierung und Durchführung jeweils dreı Aufgaben {12 Punkte)
+des Auftraggebers
+
+b} Benennen Sıe fur alle vier Projektphasen jeweils zwei Ergebnisse, dıe am Ende der (8 Punkte)
+Projektphase vorliegen mussen
+
+Seite 28 | © DIHK - Gesellschaft für berufliche Bildung - Organisation zur Förderung der IHK-Weiterbildung mbH - Bonn
+Die Vervielfältigung, Verbreitung oder öffentliche Wiedergabe der Publikation [der Prüfungssätze und Lösungshinweise]
+Ist nicht gestattet (85 53, 54 UrhG) und strafbar ($ 106 UrhG). Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+
+=== Seite 7 ===
+GEPRÜFTEI-R INDUSTRIEMEISTER/-IN
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN
+
+Grundlegende Qualifikationen, Anwendung von Methoden der
+
+Information, Kommunikation und Planung
+
+Lösungshinweise Aufgabe 5 (20 Punkte)
+[VO: $ 4 Absatz 4 Nr.5]
+
+a} Beschrieben werden können z.B.
+Phase der Initiierung
+= Ziele für die Optimierung setzen
+= Projektauftrag formulieren
+= _Projektorganisation auswählen
+= Projektleitung auswählen
+m personelle und finanzielle Ressourcen bereitstellen
+Phase der Durchführung
+m Kontrolle der Arbeit der Projektleitung
+= Freigabe der Teilbudgets
+m Teilabnahme von erfüllten Aufgaben
+= Änderungsanforderungen aushandeln (12 Punkte)
+
+b) Am Ende der Inıtierungsphase z. B
+= Ziele des Projektes
+=  Projektauftrag
+m  Projektleitungsvereinbarung
+
+s zeitlicher Rahmen
+
+Am Ende der Planungsphase z.B
+m Strukturplanung
+
+za Ablaufplanung
+
+= Terminplanung
+
+» Ressourcenplanung
+
+s Kostenplanung
+
+Am Ende der Durchführungsphase z. B
+m umgesetzte Arbeitspakete
+m abgenommene Teilaufgaben
+
+m Auflösung der Projektorganısatıon
+
+Am Ende des Projektabschlusses.
+
+s Projektabschlussbericht
+
+m Projekterfahrungen
+
+=  Soll-Ist-Vergleiche (Zeit, Kosten) (8 Punkte)
+
+© DIHK - Gesellschaft für berufliche Bildung — Organisation zur Förderung der IHK-Weiterbildung mbH — Bonn Seite 29
+Die Vervielfältigung, Verbreitung oder öffentliche Wiedergabe der Publikation [der Prüfungssätze und Lösungshinweise]
+ist nicht gestattet (88 53, 54 UrhG) und strafbar ($ 106 UrhG). Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+
+=== Seite 8 ===
+GEPRÜFTEI-R INDUSTRIEMEISTER/-IN
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN
+
+Grundlegende Qualifikationen, Anwendung von Methoden der
+
+Ihformation, Kommunikation und Planung
+
+Aufgabe 6
+
+Als Industrıemeister mussen Sıe regelmäßig technische Berichte lesen und erstellen.
+
+a) Erläutern Sıe drei Eigenschaften eines technischen Berichtes. {6 Punkte)
+
+b} Nennen Sıe neben dem Text drei weitere Bestandteile technischer Berichte {3 Punkte)
+
+€) Beschreiben Sıe am Beispiel eınes Berichts drei Merkmale, welche die Verstandlich- (6 Punkte)
+keit erhöhen
+
+Lösungshinweise Aufgabe 6 (15 Punkte)
+
+[VO: 8 4 Absatz 4 Nr.6]
+
+a) Eigenschaften eines technischen Berichtes, z B.
+m Zusammenfassung von Vorgängen zur Information des Empfängers
+m Eindeutigkeit. Missverständnisse ın der Sache mussen ausgeschlossen seın
+
+m Konzentration auf das Wesentliche. keine Nebensächlichkeiten (6 Punkte)
+
+b) Bestandteile technischer Berichte, z. B.
+sm Diagramme
+m technische Zeichnungen
+u Tabellen
+sm Abbildungen
+s= Verzeichnisse (3 Punkte)
+
+c) Beschrieben werden können z. B. dıe Merkmale.
+ws Prägnanz
+m Ubersichtlichkeit
+m adressatengerechte Sprache (6 Punkte)
+
+Seite 30 | © DIHK — Gesellschaft für berufliche Bildung — Organisation zur Förderung der IHK-Weiterbildung mbH — Bonn
+Die Vervielfältigung, Verbreitung oder öffentliche Wiedergabe der Publikation [der Prüfungssätze und Lösungshinweise]
+ist nicht gestattet ($$ 53, 54 Urh5) und strafbar ($ 106 UrhG). Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+

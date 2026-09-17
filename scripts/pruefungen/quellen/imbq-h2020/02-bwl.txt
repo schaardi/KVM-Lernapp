@@ -1,0 +1,686 @@
+=== Seite 1 ===
+Bundeseinheitliche Fortbildungsprüfung der Industrie- und Handelskammern
+
+Geprüfte/-r Industriemeister/-in
+Fachrichtungsübergreifende Basisqualifikationen/
+Grundlegende Qualifikationen
+Betriebswirtschaftliches Handeln
+
+
+Lösungshinweise
+Datum:                                          3. November 2020
+
+Bearbeitungszeit:                               90 Minuten
+
+Anzahl Aufgaben:                                7
+
+
+Hinweise für den Korrektor:
+■   Die folgenden Lösungen sind lediglich Lösungshinweise.
+■   Sie sollen nur den Rahmen der zu erwartenden Prüfungsleistung abstecken.
+■   Der Korrektor ist durch die hier aufgeführten Lösungshinweise in seinem
+    Bewertungsspielraum nicht eingeengt.
+■   Bei Aufgaben, die eine Aufzählung von n-Fakten zur Lösung erfordern, werden nur die
+    ersten n-Fakten gewertet. Alle darüber hinausgehenden Aufzählungen werden
+    gestrichen.
+■   Bei Berechnungen sollen Folgefehler berücksichtigt werden und somit nicht zum
+    Punktabzug führen.
+■   Der leichteren Lesbarkeit wegen geben wir in den Aufgaben/Texten der männlichen
+    Form den Vorzug. Mit diesem einfacheren sprachlichen Ausdruck sind selbstverständlich
+    immer alle Geschlechter gemeint.
+
+
+
+Die Aufgaben mit Lösungsvorschlägen können von den Industrie- und Handelskammern oder Dritten nach einer Frist von sechs Monaten
+direkt bestellt werden bei:
+wbv Media GmbH & Co. KG, Service-Center DIHK,
+Postfach 10 06 33, 33506 Bielefeld
+Tel.: 0521/91101-16, Fax: 0521/91101-19, E-Mail: service@wbv.de
+
+
+
+                               © DIHK – Gesellschaft für berufliche Bildung – Organisation zur Förderung der IHK-Weiterbildung mbH – Bonn
+               Die Vervielfältigung, Verbreitung oder öffentliche Wiedergabe der Publikation ist nicht gestattet (§§ 53, 54 UrhG) und strafbar (§ 106 UrhG).
+                                                           Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+                                                                              L 050-02-1120-5
+
+=== Seite 2 ===
+GEPRÜFTE/-R INDUSTRIEMEISTER/-IN
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+GRUNDLEGENDE QUALIFIKATIONEN
+Betriebswirtschaftliches Handeln
+
+
+Aufgabe 1
+Die Industrie GmbH hat einen stetig wachsenden Kapitalbedarf. Aus diesem Grund wird
+über die Gründung einer Aktiengesellschaft nachgedacht.
+
+ a Mögliche Punktzahl: 1
+Geben Sie das Mindestgründungskapital einer AG an.
+
+ b Mögliche Punktzahl: 4
+Erklären Sie die unterschiedliche Bedeutung der Begriffe „Nennwert“ und „Kurswert“
+einer Aktie.
+
+ c Mögliche Punktzahl: 9
+Nennen Sie die Organe der AG und beschreiben Sie jeweils zwei Aufgaben der einzel-
+nen Organe.
+
+
+
+Lösungshinweise Aufgabe 1
+[VO: § 4 Absatz 3 Nr. 1]
+
+ a Mögliche Punktzahl: 1
+50 000 €
+
+ b Mögliche Punktzahl: 4
+■   Nennwert ist der Anteil am Grundkapital, den die Aktie beinhaltet.
+■   Kurswert ist der Tagespreis einer Aktie an der Aktienbörse
+
+ c Mögliche Punktzahl: 9
+■   Vorstand:
+    hat Geschäftsführungsbefugnis und Außenvertretungsrecht
+■   Aufsichtsrat:
+    bestellt den Vorstand und überwacht dessen Geschäftsführung
+■   Hauptversammlung:
+    Gesellschafterversammlung der Aktionäre, dort trägt der Vorstand den Geschäftsbericht
+    vor und die Aktionäre stimmen u.a. über die Entlastung des Vorstands ab. Hauptver-
+    sammlung beschließt über Satzungsänderungen, Dividendenausschüttung und wählt
+    Vertreter der Anteilseigner in den Aufsichtsrat.
+
+
+
+
+                                             Seite 2
+                                          L 050-02-1120-5
+
+=== Seite 3 ===
+GEPRÜFTE/-R INDUSTRIEMEISTER/-IN
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+GRUNDLEGENDE QUALIFIKATIONEN
+Betriebswirtschaftliches Handeln
+
+
+Aufgabe 2
+Neben der Fertigungsorganisation plant die Geschäftsführung der Industrie GmbH, auch die
+Materiallager auf Verbesserungspotenziale zu untersuchen.
+
+Es wurde festgestellt, dass vor allem die Lagerung von Feinblechen aus Edelstahl durch
+eine hohe Anzahl an verschiedenen Formaten in unterschiedlichen Blechstärken sowie hohe
+und stark schwankende Lagerbestände gekennzeichnet ist. Die Bestandsführung und
+Bedarfsermittlung erfolgt auf Basis von Sichtprüfungen in den Blechtafelregalen durch den
+Lagermeister.
+
+In einem ersten Schritt soll im Lager exemplarisch anhand einer Materialart eine Kenn-
+zahlenanalyse durchgeführt werden.
+
+                   Datum                                   Lagerbestand in Tonnen
+
+                 01.11.2019                                         25,0
+                 30.11.2019                                         24,0
+                 31.12.2019                                         28,0
+                 31.01.2020                                         22,0
+                 29.02.2020                                         18,0
+                 31.03.2020                                         14,0
+                 30.04.2020                                         13,0
+                 31.05.2020                                         20,0
+                 30.06.2020                                         16,0
+                 31.07.2020                                         18,0
+                 31.08.2020                                         25,0
+                 30.09.2020                                         16,0
+                 31.10.2020                                         21,0
+
+
+
+
+                                            Seite 3
+                                         L 050-02-1120-5
+
+=== Seite 4 ===
+GEPRÜFTE/-R INDUSTRIEMEISTER/-IN
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+GRUNDLEGENDE QUALIFIKATIONEN
+Betriebswirtschaftliches Handeln
+
+
+ a Mögliche Punktzahl: 7
+Ermitteln Sie rechnerisch nachvollziehbar für die vergangenen 12 Monate
+
+■   den durchschnittlichen Lagerbestand.
+
+■   die Lagerumschlagshäufigkeit, wenn von einem Stammlieferanten monatlich
+    jeweils 8 Tonnen Blech bezogen wurden und
+
+■   die durchschnittliche Lagerdauer in Tagen.
+
+ b Mögliche Punktzahl: 6
+Stellen Sie drei Maßnahmen dar, mit denen die Lagerhaltung der Materialart Fein-
+bleche aus Edelstahl verbessert werden kann.
+
+
+
+
+                                           Seite 4
+                                      L 050-02-1120-5
+
+=== Seite 5 ===
+GEPRÜFTE/-R INDUSTRIEMEISTER/-IN
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+GRUNDLEGENDE QUALIFIKATIONEN
+Betriebswirtschaftliches Handeln
+
+
+Lösungshinweise Aufgabe 2
+[VO: § 4 Absatz 3 Nr. 2]
+
+ a Mögliche Punktzahl: 7
+                     Anfangsbestand + 12 Monatsendbestände
+ Lagerbestand 
+                                       13
+                     260 t
+                           20 t
+                      13
+Anfangsbestand + Zugänge – Endbestand = Verbrauch
+25 t + 96 t – 21 t = 100 t
+                             Verbrauch pro Jahr   100 t
+Lagerumschlagshäufigkeit =                      =       =5
+                              Ø Lagerbestand       20 t
+                                                      360
+durchschnittliche Lagerdauer in Tagen =
+                                             Lagerumschlagshäufigkeit
+                                             360 Tage
+                                         =            = 72 Tage
+                                                 5
+
+ b Mögliche Punktzahl: 6
+Maßnahmen, mit denen die Bewirtschaftung der Materialart Feinbleche aus Edelstahl ver-
+bessert werden kann, sind
+Z. B.:
+■   Einführung einer EDV-gestützten Bestandsführung
+■   Sicherheits- und Meldebestand festlegen
+■   Ermittlung von fertigungsauftragsbezogenen Verbrauchsmengen und Verschnittquoten
+■   Reduzierung der Anzahl an Blechformaten
+■   Ermittlung optimaler Bestellmengen
+
+
+
+
+                                                Seite 5
+                                             L 050-02-1120-5
+
+=== Seite 6 ===
+GEPRÜFTE/-R INDUSTRIEMEISTER/-IN
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+GRUNDLEGENDE QUALIFIKATIONEN
+Betriebswirtschaftliches Handeln
+
+
+Aufgabe 3
+Im Zusammenhang mit der Umgestaltung des Produktionsprogrammes hat die Geschäfts-
+führung der Industrie GmbH beschlossen, den Ablaufprozess in der Fertigung neu zu gestal-
+ten. Die Fertigungsorganisation soll von der bisher durchgeführten Werkstattfertigung auf
+eine Reihenfertigung umgestellt werden.
+
+Sie werden beauftragt, den Umstellungsprozess zu begleiten.
+
+ a Mögliche Punktzahl: 4
+Grenzen Sie anhand von zwei Merkmalen die Fertigungsorganisationstypen
+„Werkstattfertigung“ und „Reihenfertigung“ voneinander ab.
+
+ b Mögliche Punktzahl: 8
+Beschreiben Sie jeweils zwei Vor- und Nachteile der Werkstattfertigung gegenüber der
+Reihenfertigung.
+
+
+
+
+                                             Seite 6
+                                          L 050-02-1120-5
+
+=== Seite 7 ===
+GEPRÜFTE/-R INDUSTRIEMEISTER/-IN
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+GRUNDLEGENDE QUALIFIKATIONEN
+Betriebswirtschaftliches Handeln
+
+
+Lösungshinweise Aufgabe 3
+[VO: § 4 Absatz 3 Nr. 2]
+
+ a Mögliche Punktzahl: 4
+■   Werkstattfertigung:
+    ■   räumliche Zusammenfassung gleichartiger Betriebsmittel und Arbeitsplätze
+        → Verrichtungsprinzip
+    ■   Materialtransport vor allem durch flurgebundene, unstetige Transportmittel
+■   Reihenfertigung
+    ■   Anordnung der Betriebsmittel und Arbeitsplätze in der Reihenfolge der
+        auszuführenden Arbeiten
+        → Flussprinzip
+    ■   verkürzte Transportwege durch nicht taktgebundene Fördermittel
+
+ b Mögliche Punktzahl: 8
+■   Vorteile der Werkstattfertigung sind z. B.:
+    ■   höhere Flexibilität durch problemlosen Wechsel der zu fertigenden Produkte
+    ■   geringere Investitionen in Betriebsmittel erforderlich, da Maschinen universell
+        einsetzbar sind
+    ■   störungsfreier Betrieb, da bei Maschinenausfall mehrere gleichartige Maschinen
+        genutzt werden können
+■   Nachteile der Werkstattfertigung sind z. B.:
+    ■   geringere Produktivität aufgrund längerer Durchlaufzeiten sowie einer geringeren
+        Arbeitsteilung
+    ■   längere Transportwege, da die Werkstücke zum Teil mehrfach zwischen den Werk-
+        stätten transportiert werden müssen
+    ■   höherer Platzbedarf aufgrund der Notwendigkeit von Transportwegen
+    ■   schlechtere Auslastung der Kapazität aufgrund von hohen Reserven an
+        Betriebsmitteln.
+
+
+
+
+                                                  Seite 7
+                                           L 050-02-1120-5
+
+=== Seite 8 ===
+GEPRÜFTE/-R INDUSTRIEMEISTER/-IN
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+GRUNDLEGENDE QUALIFIKATIONEN
+Betriebswirtschaftliches Handeln
+
+
+Aufgabe 4
+Die Geschäftsführung der Industrie GmbH beschließt die Aufbau- und die Ablauforganisation
+zu optimieren, um Kosten zu senken und damit wettbewerbsfähig zu bleiben.
+
+ a Mögliche Punktzahl: 4
+Unterscheiden Sie die Begriffe Aufbauorganisation und Ablauforganisation.
+
+ b Mögliche Punktzahl: 6
+Beschreiben Sie zwei Maßnahmen, um die Aufbauorganisation effizienter zu
+gestalten.
+
+ c Mögliche Punktzahl: 6
+Beschreiben Sie zwei Maßnahmen, um die Ablauforganisation effizienter zu gestalten.
+
+
+
+Lösungshinweise Aufgabe 4
+[VO: § 4 Absatz 3 Nr. 4]
+
+ a Mögliche Punktzahl: 4
+Die Aufbauorganisation bezieht sich auf die Struktur des Unternehmens, die Hierarchie-
+ebenen und die Bildung von Abteilungen und Stellen. Es werden Aufgaben und Kompe-
+tenzen zugeordnet.
+Die Ablauforganisation regelt Reihenfolge, Ort, Zeit und Raum der Tätigkeiten.
+
+ b Mögliche Punktzahl: 6
+Maßnahmen zur Effizienzsteigerung im Bereich der Aufbauorganisation sind z. B.:
+■   Outsourcing von Funktionen/Funktionsbereichen (z. B.: dauerhafte Vergabe der
+    Fertigung von Baugruppen an andere Unternehmen mit dem Ziel einer Verringerung der
+    Fertigungstiefe) und Fokussierung des Unternehmens auf dessen Kernkompetenzen,
+    dadurch qualitative Verbesserungen.
+■   Verschlankung des Unternehmensmanagements durch Abbau von Hierarchieebenen,
+    dadurch Verkürzung der Entscheidungs- und Informationswege
+■   Zusammenarbeit mit anderen Unternehmen oder Erwerb anderer Unternehmen, um z. B.
+    Synergieeffekte in den Bereichen FuE oder Beschaffung zu nutzen.
+■   Veräußerung von Unternehmensanteilen, dadurch Kostenreduzierung und
+    Risikominimierung
+■   Personalabbau durch Wegfall unproduktiver Stellen, dadurch Kostenreduzierung
+
+
+
+
+                                            Seite 8
+                                         L 050-02-1120-5
+
+=== Seite 9 ===
+GEPRÜFTE/-R INDUSTRIEMEISTER/-IN
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+GRUNDLEGENDE QUALIFIKATIONEN
+Betriebswirtschaftliches Handeln
+
+
+ c Mögliche Punktzahl: 6
+Maßnahmen im Bereich der Ablauforganisation sind z. B.:
+■   Rationalisierung durch erhöhte Automatisierung sowie Verkettungskonzepte zur
+    Verkürzung von Durchlaufzeiten sowie zur Materialflussoptimierung, Kostenersparnis
+    und erhöhte Produktivität, geringere Ausschussquoten
+■   Produktcontrolling: Produktvariationen zur Steigerung /Erhaltung der Wettbewerbs-
+    fähigkeit, qualitativer Verbesserungen des Produkts, Reduzierung von Reklamationen
+    und Steigerung der Kundenzufriedenheit, Erhöhung des Umsatzes, Steigerung des
+    Markanteils
+■   Optimierung der Abläufe unter sicherheitstechnischen Aspekten, höherer Arbeits- und
+    Gesundheitsschutz der Arbeitnehmer einhergehend mit Kosteneinsparungen.
+
+
+
+
+                                           Seite 9
+                                        L 050-02-1120-5
+
+=== Seite 10 ===
+GEPRÜFTE/-R INDUSTRIEMEISTER/-IN
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+GRUNDLEGENDE QUALIFIKATIONEN
+Betriebswirtschaftliches Handeln
+
+
+Aufgabe 5
+Mögliche Punktzahl: 15
+Aus der Betriebsabrechnung der Industrie GmbH liegt in der Anlage 1 der noch unvoll-
+ständige Betriebsabrechnungsbogen vor.
+
+Dabei wird die Kostenstelle „Gebäude“ über die benötigte Fläche der einzelnen Kosten-
+stellen und die Kostenstelle „Arbeitsvorbereitung“ auf die Fertigungshauptkostenstellen nach
+der Anzahl der Mitarbeiter verteilt:
+
+                                        Arbeits-
+ Verteilung                                          Fertigung    Fertigung     Verwaltung
+                Gebäude      Material   vorberei-
+ sschlüssel                                                 1         2         und Vertrieb
+                                          tung
+
+ Flächenbe
+                               460         60            840         420            620
+ darf in m²
+
+ Mitarbeiter                                                14        7
+
+Weiterhin liegen folgende Einzelkosten vor:
+
+ Fertigungslohnkosten 1                                            780 TSD €
+
+ Fertigungslohnkosten 2                                             430TSD €
+
+ Fertigungsmaterial                                              12.500 TSD €
+
+Führen Sie die innerbetriebliche Leistungsverrechnung durch und ermitteln Sie die
+Gemeinkostenzuschlagssätze.
+
+
+
+Lösungshinweise Aufgabe 5
+[VO: § 4 Absatz 3 Nr. 5]
+Mögliche Punktzahl: 15
+siehe Lösungshinweis zu Aufgabe 5
+
+
+
+
+                                              Seite 10
+                                          L 050-02-1120-5
+
+=== Seite 11 ===
+GEPRÜFTE/-R INDUSTRIEMEISTER/-IN
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+GRUNDLEGENDE QUALIFIKATIONEN
+Betriebswirtschaftliches Handeln
+
+
+Aufgabe 6
+Für eine CNC-Fräsmaschine der Industrie GmbH liegt für den bisherigen Dreischichtbetrieb
+folgende Maschinenstundensatzrechnung vor:
+
+                  Maschine                                   Fräsmaschine
+
+ jährliche Einsatzzeit                                             5.000 h
+
+ kalkulatorische Abschreibung                                    35,00 €/h
+
+ kalkulatorische Zinsen                                           9,80 €/h
+
+ Raumkosten                                                       1,75 €/h
+
+ Energieverbrauch                                                 6,00 €/h
+
+ Instandhaltungskosten                                           28,00 €/h
+
+ Maschinenstundensatz                                            80,55 €/h
+
+Die Produktion soll aufgrund der schlechten Auftragssituation vom Dreischichtbetrieb auf
+Zweischichtbetrieb umgestellt werden. Bei einem Zweischichtbetrieb würde sich die jährliche
+Einsatzzeit auf 3.500 Stunden reduzieren. Aufgrund von Erfahrungswerten kann davon
+ausgegangen werden, dass sich der Instandhaltungskostensatz bei dieser Maßnahme von
+10 % auf 8 % reduziert.
+
+ a Mögliche Punktzahl: 7
+Berechnen Sie nachvollziehbar den Maschinenstundensatz für den
+Zweischichtbetrieb.
+
+ b Mögliche Punktzahl: 4
+Beschreiben Sie den Unterschied zwischen den Fertigungsgemeinkosten und den
+Restfertigungsgemeinkosten.
+
+ c Mögliche Punktzahl: 4
+Es wird immer wichtiger, bei der Kalkulation die Maschinenkosten separat zu erfassen.
+
+Beschreiben Sie zwei Gründe, die hierfür sprechen.
+
+
+
+
+                                            Seite 11
+                                         L 050-02-1120-5
+
+=== Seite 12 ===
+GEPRÜFTE/-R INDUSTRIEMEISTER/-IN
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+GRUNDLEGENDE QUALIFIKATIONEN
+Betriebswirtschaftliches Handeln
+
+
+Lösungshinweise Aufgabe 6
+[VO: § 4 Absatz 3 Nr. 5]
+
+ a Mögliche Punktzahl: 7
+                                               5.000 h
+kalkulatorische Abschreibung    = 35,00 €/h·           = 50,00 €/h
+                                               3.500 h
+                                                                                  (1 Punkt)
+                                              5.000 h
+kalkulatorische Zinsen          = 9,80 €/h·           = 14,00 €/h
+                                              3.500 h
+                                                                                  (1 Punkt)
+                                              5.000 h
+Raumkosten                      = 1,75 €/h·           =2,50 €/h
+                                              3.500 h
+                                                                                  (1 Punkt)
+Der Energieverbrauch bleibt unverändert bei 6,00 €/h
+                                                                                  (1 Punkt)
+                                                5.000 h · 8 %
+Instandhaltungskosten           = 28,00 €/h·                  =32,00 €/h
+                                               3.500 h · 10 %
+                                                                                 (2 Punkte)
+                  Maschine                                    Fräsmaschine
+
+ jährliche Einsatzzeit                                                3.500 h
+
+ kalkulatorische Abschreibung                                        50,00 €/h
+
+ kalkulatorische Zinsen                                              14,00 €/h
+
+ Raumkosten                                                           2,50 €/h
+
+ Energieverbrauch                                                     6,00 €/h
+
+ Instandhaltungskosten                                               32,00 €/h
+
+ Maschinenstundensatz                                             104,50 €/h
+
+                                                                                  (1 Punkt)
+
+
+
+
+                                               Seite 12
+                                         L 050-02-1120-5
+
+=== Seite 13 ===
+GEPRÜFTE/-R INDUSTRIEMEISTER/-IN
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+GRUNDLEGENDE QUALIFIKATIONEN
+Betriebswirtschaftliches Handeln
+
+
+ b Mögliche Punktzahl: 4
+Die Fertigungsgemeinkosten enthalten alle Gemeinkosten einer Fertigungshauptkosten-
+stelle. Die Restfertigungsgemeinkosten sind alle Fertigungsgemeinkosten reduziert um die
+maschinenabhängigen Gemeinkosten.
+
+ c Mögliche Punktzahl: 4
+Z. B.:
+■   Zunehmende Automatisierung führt zu immer höheren Fertigungsgemeinkosten bei
+    sinkenden Fertigungslöhnen. Das führt zu sehr hohen Gemeinkostenzuschlagssätzen
+    und Ungenauigkeiten selbst bei geringen Fehleinschätzungen der Fertigungslöhne.
+■   Bei einem Maschinenpark mit stark unterschiedlichen Maschinenstundensätzen ist eine
+    verursachungsgerechte Zuordnung der Fertigungsgemeinkosten über einen pauschalen
+    Fertigungsgemeinkostenzuschlagssatz nicht mehr möglich.
+■   Der in der Kostenstellenrechnung ermittelte Fertigungsgemeinkostenzuschlagssatz wird
+    auf alle Kostenträger, die diese Kostenstelle durchlaufen kalkuliert. Das führt zu einer
+    falschen Belastung der Kostenträger, wenn diese die in der Kostenstelle vorhandenen
+    Maschinen unterschiedlich in Anspruch nehmen.
+
+
+
+
+                                            Seite 13
+                                         L 050-02-1120-5
+
+=== Seite 14 ===
+GEPRÜFTE/-R INDUSTRIEMEISTER/-IN
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+GRUNDLEGENDE QUALIFIKATIONEN
+Betriebswirtschaftliches Handeln
+
+
+Aufgabe 7
+Die Industrie GmbH plant im zweiten Quartal 90 000 Bauteile herzustellen und für
+6.750.000 € zu verkaufen. Die variablen Kosten werden dabei auf 4.050.000 € veranschlagt.
+Die Auslastung der Fertigungskapazität beträgt 80 %.
+
+Im ersten Quartal wurde bei 60 % Kapazitätsauslastung ein negatives Betriebsergebnis von
+165.000 € erzielt. Die Industrie GmbH geht bei ihren Planungen von einem konstanten Ver-
+kaufspreis und gleicher Kostenstruktur aus.
+
+ a Mögliche Punktzahl: 10
+Berechnen Sie rechnerisch nachvollziehbar die Break-even-Menge.
+
+ b Mögliche Punktzahl: 5
+Ermitteln Sie
+
+■   den Break-even-Beschäftigungsgrad und
+
+■   das geplante Betriebsergebnis für das zweite Quartal.
+
+
+
+
+                                              Seite 14
+                                         L 050-02-1120-5
+
+=== Seite 15 ===
+GEPRÜFTE/-R INDUSTRIEMEISTER/-IN
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+GRUNDLEGENDE QUALIFIKATIONEN
+Betriebswirtschaftliches Handeln
+
+
+Lösungshinweise Aufgabe 7
+[VO: § 4 Absatz 3 Nr. 5]
+
+ a Mögliche Punktzahl: 10
+           DB   U - Kv   6.750.000 €/Quartal - 4.050.000 €/Quartal
+db     =      =        =                                           = 30 €/Stück
+            x     x               90.000 Stück/Quartal
+                                                                                (3 Punkte)
+BE     = DB - Kf = db · x - Kf
+Kf     = db · x - BE
+       = 30 €/Stück · 67.500 Stück/Quartal - (-165.000 €/Quartal) = 2.190.000 €/Quartal
+                                                                                (4 Punkte)
+           Kf   2.190.000 €/Quartal
+xBEP   =      =                     = 73.000 Stück/Quartal
+           db       30 €/Stück
+                                                                                (3 Punkte)
+
+
+
+ b Mögliche Punktzahl: 5
+            73.000 Stück/Quartal
+BGBEP =                          · 100 = 64,89 %
+           112.500 Stück/Quartal
+                                                                                (2 Punkte)
+BE     = db ∙ x - Kf
+       = 30 €/Stück ∙ 90.000 Stück/Quartal - 2.190.000 €/Quartal = 510.000 €/Quartal
+                                                                                (3 Punkte)
+
+
+
+
+                                           Seite 15
+                                        L 050-02-1120-5
+
+=== Seite 16 ===
+GEPRÜFTE/-R INDUSTRIEMEISTER/-IN
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+GRUNDLEGENDE QUALIFIKATIONEN
+Betriebswirtschaftliches Handeln
+
+
+Lösungshinweis zu Aufgabe 5
+                                                                 Arbeits-                        Verwal-
+                                                                            Fertigung   Ferti-
+          Kostenart                Summe    Gebäude   Material   vorbe-                          tung und
+                                                                               1        gung 2
+                                                                 reitung                         Vertrieb
+
+∑ Gemeinkosten                     11.450    2.760      596        282        2.115     1.378     4.319
+
+Umlage Gebäude                                          529         69          966       483       713
+
+Umlage Arbeitsvorbereitung                                                      234       117
+
+∑ Gemeinkosten                     11.450              1.125                  3.315     1.978     5.032
+
+Zuschlagsbasis                                        12.500                    780       430    20.128
+
+Gemeinkostenzuschlagssätze                              9%                   425 %      460 %      25 %
+
+
+
+
+                                                         Seite 1 von 2
+                                                         L 050-02-1120-5
+
+=== Seite 17 ===
+GEPRÜFTE/-R INDUSTRIEMEISTER/-IN
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+GRUNDLEGENDE QUALIFIKATIONEN
+Betriebswirtschaftliches Handeln
+
+
+                                      Materialgemeinkosten · 100 %   1.125 Tsd. € · 100 %
+Materialgemeinkostenzuschlagssatz =                                =                      =9%
+                                          Materialeinzelkosten          12.500 Tsd. €
+
+
+                                          Fertigungsgemeinkosten 1 · 100 %   3.315 Tsd. € · 100 %
+Fertigungsgemeinkostenzuschlagssatz 1 =                                    =                      = 425 %
+                                                Fertigungslohnkosten 1            780 Tsd. €
+
+
+                                          Fertigungsgemeinkosten 2 · 100 %   1.978 Tsd. € · 100 %
+Fertigungsgemeinkostenzuschlagssatz 2 =                                    =                      = 460 %
+                                                Fertigungslohnkosten 2            430 Tsd. €
+
+
+                                                        Verwaltungs- und Vertriebsgemeinkosten · 100 %   5.032 Tsd. € · 100 %
+Verwaltungs- und Vertriebsgemeinkostenzuschlagssatz =                                                  =                      =
+                                                                 Herstellkosten des Umsatzes                20.128 Tsd. €
+                                                         25 %
+
+
+
+
+                                                            Seite 2 von 2
+                                                            L 050-02-1120-5
+

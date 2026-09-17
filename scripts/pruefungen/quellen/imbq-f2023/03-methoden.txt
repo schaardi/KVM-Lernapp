@@ -1,0 +1,873 @@
+=== Seite 1 ===
+                                                         Einsatz nur im Rahmen des Korrekturprozesses gestattet. Weitergabe an unbefugte Dritte untersagt.
+
+
+
+                                                            Prüfungsteilnehmer-Nummer:
+
+
+
+
+                                                           Bundeseinheitliche Fortbildungsprüfung der Industrie- und Handelskammern
+                                                           Geprüfter Industriemeister / Geprüfte Industriemeisterin,
+                                                           fachrichtungsübergreifende Basisqualifikationen/grundlegende
+                                                           Qualifikationen
+                                                           Anwendung von Methoden der Information, Kommunikation und Planung
+                                                            Datum:                                     3. Mai 2023
+                                                            Bearbeitungszeit:                          90 Minuten
+                                                            Anzahl Aufgaben:                           6
+Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+
+
+
+
+                                                                                                                                                                                                                      Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+                                                            Anzahl Anlagen:                            2
+                                                            Seiten:                                    5
+
+                                                           Bevor Sie mit der Prüfung beginnen, prüfen Sie bitte die Prüfungsunterlagen. Wenn
+                                                           die Prüfungsunterlagen nicht vollständig sind, informieren Sie bitte die Aufsicht.
+
+                                                           Bitte lesen Sie die nachfolgenden Bearbeitungshinweise gut durch:
+                                                           ◼   Alle erlaubten Hilfsmittel wurden Ihnen mit der Einladung mitgeteilt.
+                                                           ◼   Sie erhalten einen Aufgabenteil sowie ein Heft für Ihre Lösungen.
+                                                           ◼   Sie können maximal 100 Punkte erreichen.
+                                                           ◼   Verwenden Sie je Aufgabe bitte eine neue Lösungsseite.
+                                                           ◼   Wenn Sie die Lösung einer Aufgabe auf eine Anlage schreiben sollen, wird Ihnen dies in
+                                                               der Aufgabe mitgeteilt.
+                                                           ◼   Stellen Sie Ihre Lösungs- und Rechenvorgänge nachvollziehbar im Lösungsteil dar.
+                                                               Reicht der Platz nicht aus, verwenden Sie bitte das Konzeptpapier. Weisen Sie auf die
+                                                               Fortsetzung hin und kennzeichnen Sie diese.
+                                                           ◼   Eine nicht lesbare Prüfungsarbeit wird mit der Note „ungenügend“ (null Punkte)
+                                                               bewertet. Die Konsequenzen entnehmen Sie bitte der Prüfungsordnung.
+                                                           ◼   Es gibt Aufgaben, die eine exakte Anzahl an Antworten vorgeben. Es werden nur die
+                                                               ersten Antworten gewertet. Was über die exakte Anzahl hinausgeht, wird gestrichen.
+                                                           ◼   Geben Sie alle Ihnen zur Verfügung gestellten Unterlagen am Ende der Prüfung ab.
+                                                           ◼   Aufgrund der besseren Lesbarkeit bevorzugen wir in diesen Texten die männliche Form.
+                                                               Mit diesem vereinfachten Ausdruck sind selbstverständlich alle Geschlechter gemeint.
+
+
+
+
+                                                                                   © DIHK – Gesellschaft für berufliche Bildung – Organisation zur Förderung der IHK-Weiterbildung gGmbH – Bonn
+                                                                      Die Vervielfältigung, Verbreitung oder öffentliche Wiedergabe der Publikation ist nicht gestattet (§§ 53, 54 UrhG) und strafbar (§ 106 UrhG).
+                                                                                                                  Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+                                                                                                                                     P 050-03-0523
+
+=== Seite 2 ===
+                                                         Einsatz nur im Rahmen des Korrekturprozesses gestattet. Weitergabe an unbefugte Dritte untersagt.
+
+                                                           GEPRÜFTE/-R INDUSTRIEMEISTER /-IN,
+                                                           FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN /
+                                                           GRUNDLEGENDE QUALIFIKATIONEN
+                                                           Anwendung von Methoden der Information, Kommunikation und Planung
+
+
+
+                                                           Aufgabe 1
+                                                           In Ihrem Unternehmen werden kontinuierlich digitale Daten aus der Produktion und
+                                                           Instandhaltung erfasst. Die digitalen Daten werden aufbereitet und stehen den
+                                                           Führungskräften zur Auswertung zur Verfügung.
+
+                                                           Aus der Instandhaltung erhalten Sie das folgende Diagramm:
+
+                                                                                                                 Korrelationsdiagramm
+                                                                                                        Inspektionsabstand – Wartungsabstand
+Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+
+
+
+
+                                                                                                                                                                 Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+                                                                                          100
+
+                                                                                           90
+
+                                                                                           80
+                                                             Wartungsaufwand in Stunden
+
+
+
+
+                                                                                           70
+
+                                                                                           60
+
+                                                                                           50
+
+                                                                                           40
+
+                                                                                           30
+
+                                                                                           20
+
+                                                                                           10
+
+                                                                                            0
+                                                                                                0   5      10    15       20        25       30   35   40   45
+                                                                                                                  Inspektionsabstand in Stunden
+
+
+                                                            a Mögliche Punktzahl: 3
+                                                           Beschreiben Sie, aus welchen Quellen die digitalen Daten für das Erstellen des
+                                                           Diagramms stammen.
+
+                                                            b Mögliche Punktzahl: 3
+                                                           Erläutern Sie die Korrelation zwischen Inspektionsabstand und Wartungsaufwand.
+
+
+
+
+                                                                                                                               Seite 2
+                                                                                                                           P 050-03-0523
+
+=== Seite 3 ===
+                                                         Einsatz nur im Rahmen des Korrekturprozesses gestattet. Weitergabe an unbefugte Dritte untersagt.
+
+                                                           GEPRÜFTE/-R INDUSTRIEMEISTER /-IN,
+                                                           FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN /
+                                                           GRUNDLEGENDE QUALIFIKATIONEN
+                                                           Anwendung von Methoden der Information, Kommunikation und Planung
+
+
+
+                                                            c Mögliche Punktzahl: 6
+                                                           Beschreiben Sie drei Methoden der Fehlervermeidung beim Erfassen und Verarbeiten
+                                                           digitaler Daten.
+
+                                                            d Mögliche Punktzahl: 8
+                                                           Beschreiben Sie vier technische oder organisatorische Maßnahmen zur
+                                                           Gewährleistung einer hohen Datenverfügbarkeit.
+Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+
+
+
+
+                                                                                                                                                             Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+                                                           Aufgabe 2
+                                                           In Ihrem Unternehmen sollen für eine Nutzwertanalyse zur Vergabe von Dienstleistungen
+                                                           neue Kriterien gefunden werden.
+
+                                                            a Mögliche Punktzahl: 5
+                                                           Erläutern Sie in fünf Schritten den grundsätzlichen Ablauf einer schriftlichen
+                                                           Ideenfindung zum Aufstellen der Kriterien.
+
+                                                            b Mögliche Punktzahl: 12
+                                                           Erstellen Sie zu den Aussagen in der Anlage 1 einen paarweisen Vergleich und
+                                                           ermitteln Sie die Gewichtungsfaktoren.
+
+                                                            c Mögliche Punktzahl: 3
+                                                           Zur Vergabe der Bewertungspunkte bei der Nutzwertanalyse dient die Tabelle in Anlage 2.
+                                                           Ergänzen Sie mit den Angaben aus der Anlage 1 die Werte zur Bewertung der
+                                                           „laufenden Kosten“.
+
+
+                                                           Aufgabe 3
+                                                           Mögliche Punktzahl: 10
+                                                           In Ihrem Unternehmen sollen Führungskräfte den Großteil der Präsentationen in einem
+                                                           Online-Konferenzsystem halten. Sie nehmen deshalb an einem Online-Seminar für digitale
+                                                           Präsentationstechniken teil.
+                                                           Am Ende des Seminars werden Sie beauftragt, eine Kurzpräsentation zum Thema
+                                                           „Vermeiden von Fehlern beim Präsentieren mit einem Online-Konferenzsystem“ zu halten.
+                                                           Beschreiben Sie fünf zu vermeidende Präsentationsfehler bei Online-Präsentationen.
+
+
+
+
+                                                                                                            Seite 3
+                                                                                                         P 050-03-0523
+
+=== Seite 4 ===
+                                                         Einsatz nur im Rahmen des Korrekturprozesses gestattet. Weitergabe an unbefugte Dritte untersagt.
+
+                                                           GEPRÜFTE/-R INDUSTRIEMEISTER /-IN,
+                                                           FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN /
+                                                           GRUNDLEGENDE QUALIFIKATIONEN
+                                                           Anwendung von Methoden der Information, Kommunikation und Planung
+
+
+
+                                                           Aufgabe 4
+                                                           Für die beiden Erzeugnisse A und B sind die Stückzahlen und die Erlöse in den letzten fünf
+                                                           Monaten gegeben.
+
+
+                                                                              Erzeugnis A                   Erzeugnis B
+                                                            Monat
+                                                                        Stückzahl         Erlös       Stückzahl          Erlös
+
+                                                                    1         1.000      10.000 €           2.400        24.000 €
+Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+
+
+
+
+                                                                                                                                                             Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+                                                                    2         1.100      12.100 €           2.640        26.400 €
+
+                                                                    3         1.200      14.400 €           2.880        28.800 €
+
+                                                                    4         1.500      18.000 €           3.120        37.400 €
+
+                                                                    5         1.800      21.600 €           3.360        40.320 €
+
+
+                                                            a Mögliche Punktzahl: 5
+                                                           Berechnen Sie rechnerisch nachvollziehbar die indexierte Steigerung der Stückzahlen
+                                                           für die Produkte A und B bezogen auf den ersten Monat. Setzen Sie dazu die
+                                                           Stückzahlen des ersten Monats jeweils als Basiswert mit 100 % an. Stellen Sie die
+                                                           Steigerungen tabellarisch dar.
+
+
+                                                           Wichtig: Wenn Sie mehrere gleichartige Werte berechnen, muss die Formel nur einmal
+                                                           dargestellt werden. Die restlichen Werte können tabelliert werden.
+
+                                                            b Mögliche Punktzahl: 6
+                                                           Stellen Sie die beiden indexierten Steigerungen für die Monate 1 bis 5 in einem
+                                                           Diagramm dar.
+
+                                                            c Mögliche Punktzahl: 4
+                                                           Berechnen Sie rechnerisch nachvollziehbar für die Erzeugnisse A und B im Gesamt-
+                                                           zeitraum von fünf Monaten den durchschnittlichen Erlös pro Stück.
+
+
+
+
+                                                                                                            Seite 4
+                                                                                                         P 050-03-0523
+
+=== Seite 5 ===
+                                                         Einsatz nur im Rahmen des Korrekturprozesses gestattet. Weitergabe an unbefugte Dritte untersagt.
+
+                                                           GEPRÜFTE/-R INDUSTRIEMEISTER /-IN,
+                                                           FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN /
+                                                           GRUNDLEGENDE QUALIFIKATIONEN
+                                                           Anwendung von Methoden der Information, Kommunikation und Planung
+
+
+
+                                                           Aufgabe 5
+                                                           In Ihrem Unternehmen werden Maschinen auf Wunsch der Kunden an spezielle
+                                                           Anforderungen angepasst. Bei der Planung und Durchführung dieser Kundenprojekte sind
+                                                           Risiken zu analysieren. In jeder Projektphase muss für alle Beteiligten der Informationsstand
+                                                           gewährleistet sein.
+
+                                                            a Mögliche Punktzahl: 4
+                                                           Nennen Sie dazu vier Risikoarten.
+Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+
+
+
+
+                                                                                                                                                             Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+                                                            b Mögliche Punktzahl: 8
+                                                           Beschreiben Sie vier Schritte bei der Risikoanalyse.
+
+                                                            c Mögliche Punktzahl: 8
+                                                           Beschreiben Sie vier Maßnahmen, mit denen für alle Projektbeteiligten jederzeit ein
+                                                           aktueller Informationsstand gewährleistet wird.
+
+
+                                                           Aufgabe 6
+                                                           Ihre Vorgesetzten beauftragen Sie mit der Moderation einer Ideenfindung. Neben der
+                                                           Vorbereitung, Moderation und Nachbereitung von Gruppenveranstaltungen führen Sie
+                                                           auch Einzelgespräche mit einigen Beteiligten.
+
+                                                            a Mögliche Punktzahl: 3
+                                                           Nennen Sie drei Dokumente, die im Moderationsprozess eingesetzt werden.
+                                                           Ordnen Sie jedem Dokument einen Einsatzweck zu.
+
+                                                            b Mögliche Punktzahl: 6
+                                                           Beschreiben Sie drei Methoden, um in den Gruppenveranstaltungen das Interesse
+                                                           der Beteiligten zu wecken und sie positiv zu motivieren.
+
+                                                            c Mögliche Punktzahl: 6
+                                                           Beschreiben Sie drei positiv motivierende Gesprächstechniken im Rahmen der
+                                                           Einzelgespräche.
+
+
+
+
+                                                                                                            Seite 5
+                                                                                                         P 050-03-0523
+
+=== Seite 6 ===
+                                             Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+GEPRÜFTE/-R INDUSTRIEMEISTER/-IN,
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+GRUNDLEGENDE QUALIFIKATIONEN
+Anwendung von Methoden der Information, Kommunikation und Planung
+
+
+
+ Prüfungsteilnehmer-Nummer:                          Anlage 1 zu Aufgabe 2 b)
+
+Vergeben Sie in dem folgenden paarweisen Vergleich 2 Punkte bzw. 0 Punkte, wenn ein Kriterium wichtiger als das andere
+Kriterium ist. Vergeben Sie bei gleicher Wichtigkeit jeweils 1 Punkt.
+■   Die Servicequalität ist wichtiger als die Verfügbarkeit.
+■   Die Servicequalität ist gleich wichtig wie die Reaktionszeit.
+■   Die Servicequalität ist wichtiger als der Funktionsumfang.
+■   Die Servicequalität ist weniger wichtig als die laufenden Kosten.
+■   Die Verfügbarkeit ist wichtiger als die Reaktionszeit.
+■   Die Verfügbarkeit ist gleich wichtig wie der Funktionsumfang.
+■   Die Verfügbarkeit ist weniger wichtig als die laufenden Kosten.
+■   Die Reaktionszeit ist wichtiger als der Funktionsumfang.
+■   Die Reaktionszeit ist weniger wichtig als die laufenden Kosten.
+■   Der Funktionsumfang und die laufenden Kosten sind gleich wichtig.
+
+                        Service-                                           Funktions-      laufende   Summe der   Gewichtungs-
+                                         Verfügbarkeit Reaktionszeit
+                        qualität                                           umfang          Kosten     Punkte      faktoren in %
+
+ Servicequalität
+ Verfügbarkeit
+ Reaktionszeit
+ Funktionsumfang
+ Laufende Kosten
+ Summen
+                                                                                                                                  Einsatz nur im Rahmen des Korrekturprozesses gestattet. Weitergabe an unbefugte Dritte untersagt.
+
+
+
+
+                                                                   Seite 1 von 1
+                                             Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+                                                                   P 050-03-0523
+
+=== Seite 7 ===
+                                             Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+GEPRÜFTE/-R INDUSTRIEMEISTER/-IN,
+FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+GRUNDLEGENDE QUALIFIKATIONEN
+Anwendung von Methoden der Information, Kommunikation und Planung
+
+
+
+ Prüfungsteilnehmer-Nummer:
+
+
+Anlage 2 zu Aufgabe 2 c)
+Aus mehreren Angeboten ergibt sich eine Spanne der laufenden Kosten zwischen 2.400 € pro Tag und 3.000 € pro Tag.
+Tabelle zur Vergabe der Bewertungspunkte bei der Nutzwertanalyse:
+
+                                                                                                Funktionsumfang      laufende Kosten in
+                                            Verfügbarkeit in          Reaktionszeit in
+ Punkte     Servicequalität                                                                     (Anzahl nützlicher      Euro pro Tag
+                                                Prozent                  Stunden
+                                                                                                Zusatzfunktionen)
+
+ 10         gerade noch akzeptabel                   90                       10                         6
+
+ 20         ausreichend                              92                        8                         8
+
+ 30         befriedigend                             94                        6                       10
+
+ 40         gut                                      96                        4                       12
+
+ 50         sehr gut                                 98                        3                       14
+
+ 60         ausgezeichnet                           100                        2                       16
+                                                                                                                                          Einsatz nur im Rahmen des Korrekturprozesses gestattet. Weitergabe an unbefugte Dritte untersagt.
+
+
+
+
+                                                                   Seite 1 von 1
+                                             Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+                                                                   P 050-03-0523
+
+=== Seite 8 ===
+                                                         Einsatz nur im Rahmen des Korrekturprozesses gestattet. Weitergabe an unbefugte Dritte untersagt.
+
+
+
+
+                                                           Bundeseinheitliche Fortbildungsprüfung der Industrie- und Handelskammern
+                                                           Geprüfter Industriemeister / Geprüfte Industriemeisterin,
+                                                           fachrichtungsübergreifende Basisqualifikationen/grundlegende
+                                                           Qualifikationen
+                                                           Anwendung von Methoden der Information, Kommunikation und Planung
+
+                                                           Lösungshinweise
+                                                            Datum:                                         3. Mai 2023
+Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+
+
+
+
+                                                                                                                                                                                                                          Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+                                                            Bearbeitungszeit:                              90 Minuten
+
+                                                            Anzahl Aufgaben:                               6
+
+
+                                                           Hinweise für den Korrektor:
+                                                           ■   Die folgenden Lösungen sind lediglich Lösungshinweise.
+                                                           ■   Sie sollen nur den Rahmen der zu erwartenden Prüfungsleistung abstecken.
+                                                           ■   Der Korrektor ist durch die hier aufgeführten Lösungshinweise in seinem
+                                                               Bewertungsspielraum nicht eingeengt.
+                                                           ■   Bei Aufgaben, die eine Aufzählung von n-Fakten zur Lösung erfordern, werden nur die
+                                                               ersten n-Fakten gewertet. Alle darüber hinausgehenden Aufzählungen werden
+                                                               gestrichen.
+                                                           ■   Bei Berechnungen sollen Folgefehler berücksichtigt werden und somit nicht zum
+                                                               Punktabzug führen.
+                                                           ■   Der leichteren Lesbarkeit wegen geben wir in den Aufgaben/Texten der männlichen
+                                                               Form den Vorzug. Mit diesem einfacheren sprachlichen Ausdruck sind selbstverständlich
+                                                               immer alle Geschlechter gemeint.
+
+
+
+                                                           Die Aufgaben mit Lösungsvorschlägen können von den Industrie- und Handelskammern oder Dritten nach einer Frist von sechs Monaten
+                                                           direkt bestellt werden bei:
+                                                           wbv Media GmbH & Co. KG, Service-Center DIHK,
+                                                           Postfach 10 06 33, 33506 Bielefeld
+                                                           Tel.: 0521/91101-16, Fax: 0521/91101-19, E-Mail: service@wbv.de
+
+
+
+
+                                                                                       © DIHK – Gesellschaft für berufliche Bildung – Organisation zur Förderung der IHK-Weiterbildung gGmbH – Bonn
+                                                                          Die Vervielfältigung, Verbreitung oder öffentliche Wiedergabe der Publikation ist nicht gestattet (§§ 53, 54 UrhG) und strafbar (§ 106 UrhG).
+                                                                                                                      Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+                                                                                                                                         L 050-03-0523
+
+=== Seite 9 ===
+                                                         Einsatz nur im Rahmen des Korrekturprozesses gestattet. Weitergabe an unbefugte Dritte untersagt.
+
+                                                           GEPRÜFTE/-R INDUSTRIEMEISTER /-IN,
+                                                           FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN /
+                                                           GRUNDLEGENDE QUALIFIKATIONEN
+                                                           Anwendung von Methoden der Information, Kommunikation und Planung
+
+
+
+                                                           Lösungshinweise Aufgabe 1
+                                                           [VO: § 4 Absatz 4 Nr. 1]
+
+                                                            a Mögliche Punktzahl: 3
+                                                           Z. B.:
+                                                           ■   Die Daten zum Inspektionsabstand stammen aus den digital vorliegenden Inspektions-
+                                                               plänen bzw. aus den digitalen Protokollen, die bei der Inspektion angelegt wurden.
+                                                           ■   Die Daten zum Wartungsaufwand stammen aus den digitalen Wartungsplänen bzw.
+                                                               Wartungsprotokollen.
+Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+
+
+
+
+                                                                                                                                                             Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+                                                           ■   Alle relevanten Daten werden in ein ERP-System, in ein TPM-System, in eine Software
+                                                               für Inspektion/Wartung oder direkt in eine Datenbank übertragen. Dort stehen sie jeweils
+                                                               zentral für die Auswertung bereit.
+                                                           Es kann auch beschrieben werden, dass
+                                                           ■   digitale Daten aus den handgeschriebenen Aufzeichnungen der Inspektion und Wartung
+                                                               später am Rechner erfasst und auf dem Server gespeichert wurden.
+                                                           ■   digitale Daten mit einer App für die Beschäftigten in der Inspektion und Wartung erfasst
+                                                               und auf dem Server gespeichert wurden.
+
+                                                            b Mögliche Punktzahl: 3
+                                                           Z. B.:
+                                                           Die Korrelation ist positiv: Ein größerer Inspektionsabstand hängt mit einem höheren
+                                                           Wartungsaufwand zusammen. Die Korrelation ist schwach: Die Punkte liegen nicht
+                                                           besonders eng an der Geraden. Es ist ein klarer Trend erkennbar: Bei noch größeren
+                                                           Inspektionsabständen würde der Wartungsaufwand weiter steigen.
+
+                                                            c Mögliche Punktzahl: 6
+                                                           Beschrieben werden können z. B.:
+                                                           ■   Plausibilitätskontrolle bereits bei der Erfassung der Daten
+                                                           ■   Kontrolle der visualisierten Daten auf „Ausreißer“
+                                                           ■   stichprobenartige Kontrolle der Ergebnisse der Datenerfassung
+                                                           ■   Vier-Augen-Prinzip zur Überprüfung der Ergebnisse
+                                                           ■   Verwendung von zuverlässigen Tabellen- und Diagrammvorlagen
+                                                           ■   Verwendung von zuverlässigen Apps und Anwendungsprogrammen
+
+                                                            d Mögliche Punktzahl: 8
+                                                           Beschrieben werden können organisatorische Maßnahmen wie z. B.:
+                                                           ■   Wartungsverträge für die IT-Systeme
+                                                           ■   Schulung und Qualifizierung der Beschäftigten gemäß ihren Aufgaben
+
+
+                                                                                                            Seite 2
+                                                                                                         L 050-03-0523
+
+=== Seite 10 ===
+                                                         Einsatz nur im Rahmen des Korrekturprozesses gestattet. Weitergabe an unbefugte Dritte untersagt.
+
+                                                           GEPRÜFTE/-R INDUSTRIEMEISTER /-IN,
+                                                           FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN /
+                                                           GRUNDLEGENDE QUALIFIKATIONEN
+                                                           Anwendung von Methoden der Information, Kommunikation und Planung
+
+
+
+                                                           ■   Autorisierung der Beschäftigten gemäß ihren Aufgaben, Vergabe von Rechten
+                                                           ■   Informationsmanagementsystem mit Audits/Zertifizierungen der Datensicherheit
+                                                           Beschrieben werden können technische Maßnahmen wie z. B.:
+                                                           ■   Netzwerksicherheit mit Firewalls
+                                                           ■   redundante Auslegung der zentralen IT-Systeme
+                                                           ■   regelmäßiges Daten-Backup in mehreren Stufen
+                                                           ■   Antivirenprogramme gegen Schadsoftware
+Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+
+
+
+
+                                                           Hinweis für den Korrektor:        Auch andere plausibel beschriebene Maßnahmen sollen
+
+
+
+
+                                                                                                                                                             Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+                                                                                             entsprechend gewertet werden.
+
+
+                                                           Lösungshinweise Aufgabe 2
+                                                           [VO: § 4 Absatz 4 Nr. 2]
+
+                                                            a Mögliche Punktzahl: 5
+                                                           Z. B.:
+                                                           1. Ziel der Ideenfindung setzen und Methodik festlegen
+                                                           2. Beteiligte in das Thema und ggf. in die Methodik einführen (Impulse geben)
+                                                           3. Ideen einzeln oder in einer kleinen Gruppe schriftlich notieren
+                                                           4. Ideen sortieren und nach ihrer Häufigkeit zusammenfassen
+                                                           5. Auswertung und Entscheidung über die zu wählenden Kriterien
+
+
+                                                           Hinweis für den Korrektor:        Auch andere plausibel beschriebene Abläufe der
+                                                                                             Ideenfindung sollen mit einem Punkt pro Schritt gewertet
+                                                                                             werden.
+
+
+
+
+                                                                                                            Seite 3
+                                                                                                         L 050-03-0523
+
+=== Seite 11 ===
+                                                         Einsatz nur im Rahmen des Korrekturprozesses gestattet. Weitergabe an unbefugte Dritte untersagt.
+
+                                                           GEPRÜFTE/-R INDUSTRIEMEISTER /-IN,
+                                                           FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN /
+                                                           GRUNDLEGENDE QUALIFIKATIONEN
+                                                           Anwendung von Methoden der Information, Kommunikation und Planung
+
+
+
+                                                            b Mögliche Punktzahl: 12
+
+
+                                                                           Service-     Verfüg-    Reaktions-    Funktions- Laufende
+                                                                                                                                           Summe      Faktor
+                                                                           qualität     barkeit    zeit          umfang     Kosten
+                                                            Service-                                             2             0           5           25 %
+                                                                                        2          1
+                                                            qualität
+                                                            Verfüg-                                              1             0           3           15 %
+                                                                           0                       2
+                                                            barkeit
+Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+
+
+
+
+                                                                                                                                                                Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+                                                            Reaktions-                                           2             0           3           15 %
+                                                                           1            0
+                                                            zeit
+                                                            Funktions-                                                         0           2           10 %
+                                                                           0            1          0
+                                                            umfang
+                                                            Laufende                                             1                         7           35 %
+                                                                           2            2          2
+                                                            Kosten
+                                                            Summen                                                                         20         100 %
+
+                                                           Hinweis für den Korrektor:          Es sollen je 2 Punkte für jede richtige Zeile (bis zur Zeilen-
+                                                                                               summe) vergeben werden und die restlichen beiden Punkte
+                                                                                               für die Umrechnung der Zeilensummen in Gewichtungs-
+                                                                                               faktoren.
+
+                                                            c Mögliche Punktzahl: 3
+
+
+                                                                                                                                   Funktions-     laufende
+                                                                         Service-           Verfügbarkeit     Reaktionszeit
+                                                            Punkte                                                                  umfang          Kosten
+                                                                         qualität            in Prozent        in Stunden
+                                                                                                                                                   in €/Tag
+                                                                         gerade noch                                                   6           3.000
+                                                            10                                     90                  10
+                                                                         akzeptabel
+                                                            20           ausreichend               92                  8               8           2.880
+
+                                                            30           befriedigend              94                  6              10           2.760
+
+                                                            40           gut                       96                  4              12           2.640
+
+                                                            50           sehr gut                  98                  3              14           2.520
+
+                                                                         aus-                                                         16           2.400
+                                                            60                                    100                  2
+                                                                         gezeichnet
+
+
+
+                                                                                                             Seite 4
+                                                                                                           L 050-03-0523
+
+=== Seite 12 ===
+                                                         Einsatz nur im Rahmen des Korrekturprozesses gestattet. Weitergabe an unbefugte Dritte untersagt.
+
+                                                           GEPRÜFTE/-R INDUSTRIEMEISTER /-IN,
+                                                           FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN /
+                                                           GRUNDLEGENDE QUALIFIKATIONEN
+                                                           Anwendung von Methoden der Information, Kommunikation und Planung
+
+
+
+                                                           Lösungshinweise Aufgabe 3
+                                                           [VO: § 4 Absatz 4 Nr. 3]
+                                                           Mögliche Punktzahl: 10
+                                                           Folgende Fehler sollen beim Präsentieren in Online-Konferenzsystemen z. B. vermieden
+                                                           werden:
+                                                           ■    Das reine Vorlesen des visualisierten Inhalts.
+                                                           ■    Das Verwenden von Bestandteilen aus fremden Präsentationen ohne Quellenangaben.
+                                                           ■    Das versehentliche (unkontrollierte) Ein- oder Ausschalten des Mikrofons.
+Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+
+
+
+
+                                                                                                                                                             Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+                                                           ■    unkoordinierte Bewegungen des Zeigegeräts auf dem Bildschirm
+                                                           ■    Rückkoppelungen mit anderen Geräten in der Umgebung der Präsentierenden
+                                                           ■    Verzicht auf Regeln für Wortmeldungen der Beteiligten
+                                                           ■    Verzicht auf Regeln für das Verwenden des Chats
+                                                           ■    Überschreiten der vorgegebenen Vortragszeiten
+
+
+                                                           Lösungshinweise Aufgabe 4
+                                                           [VO: § 4 Absatz 4 Nr. 4]
+
+                                                            a Mögliche Punktzahl: 5
+                                                           prozentuale Entwicklung der Stückzahlen mit Monat 1 = 100 %
+                                                                                               aktueller Monatswert
+                                                           Formel: indexierter Monatswert                           100
+                                                                                                erster Monatswert
+
+
+
+                                                                       Steigerung der Stückzahlen
+                                                            Monat
+                                                                       Erzeugnis A in %         Erzeugnis B in %
+                                                            1                            100                     100
+
+                                                            2                            110                     110
+
+                                                            3                            120                     120
+
+                                                            4                            150                     130
+
+                                                            5                            180                     140
+
+
+                                                           Hinweis für den Korrektor:        Die Formel muss nur einmal notiert werden.
+
+
+
+                                                                                                            Seite 5
+                                                                                                         L 050-03-0523
+
+=== Seite 13 ===
+                                                         Einsatz nur im Rahmen des Korrekturprozesses gestattet. Weitergabe an unbefugte Dritte untersagt.
+
+                                                           GEPRÜFTE/-R INDUSTRIEMEISTER /-IN,
+                                                           FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN /
+                                                           GRUNDLEGENDE QUALIFIKATIONEN
+                                                           Anwendung von Methoden der Information, Kommunikation und Planung
+
+
+
+
+                                                            b Mögliche Punktzahl: 6
+
+                                                                                           indexierte Steigerung der Stückzahlen für A und B
+                                                                                       200,00%
+
+                                                                                       180,00%
+
+                                                                                       160,00%
+
+                                                                                       140,00%
+                                                                          Steigerung
+
+
+
+
+                                                                                       120,00%
+
+                                                                                       100,00%
+Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+
+
+
+
+                                                                                                                                                                    Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+                                                                                                                                               Erzeugnis A
+                                                                                       80,00%
+                                                                                                                                               Erzeugnis B
+                                                                                       60,00%
+
+                                                                                       40,00%
+
+                                                                                       20,00%
+
+                                                                                        0,00%
+                                                                                                   1        2       3       4        5
+                                                                                                                 Monate
+
+
+                                                           Hinweis für den Korrektor:                    Auch andere Diagramme sind möglich, wenn die indexierten
+                                                                                                         Steigerungen der Stückzahlen der beiden Produkte darin
+                                                                                                         erkennbar sind.
+
+                                                            c Mögliche Punktzahl: 4
+                                                                       Erzeugnis A                              Erzeugnis B
+                                                            Monat
+                                                                       Stückzahl                 Erlös          Stückzahl         Erlös
+
+                                                            1                          1.000       10.000 €              2.400      24.000 €
+
+                                                            2                          1.100       12.100 €              2.640      26.400 €
+
+                                                            3                          1.200       14.400 €              2.880      28.800 €
+
+                                                            4                          1.500       18.000 €              3.120      37.400 €
+
+                                                            5                          1.800       21.600 €              3.360      40.320 €
+
+                                                            Summe                      6.600       76.100 €             14.400     156.920 €
+
+                                                                                                                  gesamter Erlös
+                                                           durchschnittlicher Erlös pro Stück 
+                                                                                                                gesamte Stückzahl
+
+                                                            Erzeugnis A            Erzeugnis B
+                                                                  11,53 €                    10,90 €
+
+                                                                                                                        Seite 6
+                                                                                                                   L 050-03-0523
+
+=== Seite 14 ===
+                                                         Einsatz nur im Rahmen des Korrekturprozesses gestattet. Weitergabe an unbefugte Dritte untersagt.
+
+                                                           GEPRÜFTE/-R INDUSTRIEMEISTER /-IN,
+                                                           FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN /
+                                                           GRUNDLEGENDE QUALIFIKATIONEN
+                                                           Anwendung von Methoden der Information, Kommunikation und Planung
+
+
+
+                                                           Lösungshinweise Aufgabe 5
+                                                           [VO: § 4 Absatz 4 Nr. 5]
+
+                                                            a Mögliche Punktzahl: 4
+                                                           Es können z. B. folgende Risiken genannt werden:
+                                                           ■   Kostenrisiko
+                                                           ■   Terminrisiko
+                                                           ■   Funktionsrisiko
+                                                           ■   personelles Risiko
+Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+
+
+
+
+                                                                                                                                                             Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+                                                           ■   juristisches Risiko
+
+                                                            b Mögliche Punktzahl: 8
+                                                           Es können z.B. folgende Schritte beschrieben werden:
+                                                           ■   Risiken identifizieren: Welche Risiken könnten im Projektverlauf eintreten?
+                                                           ■   Risiken nach ihrer Art klassifizieren, wie es etwa in Aufgabenteil a) geschehen ist
+                                                           ■   Risiken nach ihren Auswirkungen einordnen: geringer, mittlerer oder hoher Schaden
+                                                           ■   Risiken nach der Wahrscheinlichkeit ihres Eintretens einordnen: gering, mittel oder hoch
+                                                           ■   Risiken nach ihren Auswirkungen und ihrer Wahrscheinlichkeit in eine Risikomatrix
+                                                               einordnen
+
+                                                            c Mögliche Punktzahl: 8
+                                                           Beschrieben werden können z. B.:
+                                                           ■   Aufstellen einer RACI-Matrix: Wer ist operativ verantwortlich, wer ist letztverantwortlich,
+                                                               wer ist zu konsultieren, wer ist zu informieren?
+                                                           ■   Festlegen und Kontrollieren der Abläufe bei der Vergabe von Aufgaben an interne oder
+                                                               externe Beteiligte
+                                                           ■   Festlegen und Kontrollieren der Abläufe bei der Protokollierung von
+                                                               Änderungsanforderungen bzw. Abnahmen
+                                                           ■   Festlegen und Kontrollieren der Abläufe bei der Berichterstattung an die auftraggebende
+                                                               Instanz
+                                                           ■   Dokumentlenkung im Projektmanagement: Versionskontrolle aller Planungen und
+                                                               Zeichnungen bei der Aktualisierung, Freigabe, Archivierung usw.
+
+
+
+
+                                                                                                            Seite 7
+                                                                                                         L 050-03-0523
+
+=== Seite 15 ===
+                                                         Einsatz nur im Rahmen des Korrekturprozesses gestattet. Weitergabe an unbefugte Dritte untersagt.
+
+                                                           GEPRÜFTE/-R INDUSTRIEMEISTER /-IN,
+                                                           FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN /
+                                                           GRUNDLEGENDE QUALIFIKATIONEN
+                                                           Anwendung von Methoden der Information, Kommunikation und Planung
+
+
+
+                                                           Lösungshinweise Aufgabe 6
+                                                           [VO: § 4 Absatz 4 Nr. 6]
+
+                                                            a Mögliche Punktzahl: 3
+                                                           Z. B.:
+                                                           ■   Auftrag zur Moderation: Ziele, Themen und Personenkreis
+                                                           ■   Einladung zur Veranstaltung: Informationen (Thema, Ort, Termin und Dauer)
+                                                           ■   Handout zum Impulsreferat: Interesse wecken, Thema vorstellen
+                                                           ■   Notizen während der Ideenfindung: Festhalten der Ideen
+Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+
+
+
+
+                                                                                                                                                             Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+                                                           ■   Protokoll nach der Ideenfindung: Dokumentation der Ideen
+                                                           ■   Bericht als Zusammenfassung der Ergebnisse für die auftraggebende Führungsebene
+
+                                                           Hinweis für den Korrektor:        Das einfache Nennen von Dokumenten oder
+                                                                                             Kommunikationsmitteln ohne Zweck ist nicht ausreichend.
+
+                                                            b Mögliche Punktzahl: 6
+                                                           Methoden z. B.:
+                                                           ■   Die Beteiligten erhalten ein fachliches Impulsreferat und die notwendigen Informationen
+                                                               über die Ziele der Ideenfindung.
+                                                           ■   Den Beteiligten wird plausibel gemacht, worin für sie und das Unternehmen der Nutzen
+                                                               der Ideen besteht.
+                                                           ■   Die Ideenfindung wird in die aktuelle Situation des Unternehmens eingeordnet, um die
+                                                               Notwendigkeit aufzuzeigen.
+                                                           ■   Interessante Ideen werden in den Raum gestellt und es kann darüber diskutiert oder
+                                                               abgestimmt werden.
+                                                           ■   Die Ideenfindung erfolgt mit wechselnder Gruppenzusammensetzung und
+                                                               unterschiedlichen Ideenfindungsmethoden.
+
+                                                            c Mögliche Punktzahl: 6
+                                                           Beschrieben werden können Techniken des aktiven Zuhörens und Fragetechniken z. B.:
+                                                           ■   volle Konzentration auf das Gespräch und die Gesprächsführung
+                                                           ■   Wiederholen wichtiger Punkte zum Vermeiden von Missverständnissen
+                                                           ■   Bei der Gesprächsführung eine offene Haltung in Mimik und Gestik zeigen.
+                                                           ■   Einwände und Kritik des Gegenübers konstruktiv behandeln
+                                                           ■   offene Fragen und interessierte Rückfragen stellen
+                                                           ■   Nach dem Beantworten der Fragen Rückmeldungen geben.
+
+
+
+                                                                                                            Seite 8
+                                                                                                         L 050-03-0523
+

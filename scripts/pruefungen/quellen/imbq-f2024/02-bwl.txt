@@ -1,0 +1,754 @@
+=== Seite 1 ===
+                                                         Einsatz nur im Rahmen des Korrekturprozesses gestattet. Weitergabe an unbefugte Dritte untersagt.
+
+
+
+                                                            Prüfungsteilnehmer-Nummer:
+
+
+
+
+                                                           Bundeseinheitliche Fortbildungsprüfung der Industrie- und Handelskammern
+
+                                                           Geprüfter Industriemeister/Geprüfte Industriemeisterin,
+                                                           fachrichtungsübergreifende Basisqualifikationen/
+                                                           grundlegende Qualifikationen
+                                                           Betriebswirtschaftliches Handeln
+
+                                                            Datum:                                     3. Mai 2024
+
+                                                            Bearbeitungszeit:                          90 Minuten
+Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+
+
+
+
+                                                                                                                                                                                                                      Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+                                                            Anzahl Aufgaben:                           7
+
+                                                            Seiten:                                    6
+
+
+                                                           Bevor Sie mit der Prüfung beginnen, prüfen Sie bitte die Prüfungsunterlagen. Wenn
+                                                           die Prüfungsunterlagen nicht vollständig sind, informieren Sie bitte die Aufsicht.
+
+                                                           Bitte lesen Sie die nachfolgenden Bearbeitungshinweise gut durch:
+                                                           ◼   Alle erlaubten Hilfsmittel wurden Ihnen mit der Einladung mitgeteilt.
+                                                           ◼   Sie erhalten einen Aufgabenteil sowie ein Heft für Ihre Lösungen.
+                                                           ◼   Sie können maximal 100 Punkte erreichen.
+                                                           ◼   Verwenden Sie je Aufgabe bitte eine neue Lösungsseite.
+                                                           ◼   Wenn Sie die Lösung einer Aufgabe auf eine Anlage schreiben sollen, wird Ihnen dies in
+                                                               der Aufgabe mitgeteilt.
+                                                           ◼   Stellen Sie Ihre Lösungs- und Rechenvorgänge nachvollziehbar im Lösungsteil dar.
+                                                               Reicht der Platz nicht aus, verwenden Sie bitte das Konzeptpapier. Weisen Sie auf die
+                                                               Fortsetzung hin und kennzeichnen Sie diese.
+                                                           ◼   Eine nicht lesbare Prüfungsarbeit wird mit der Note „ungenügend“ (null Punkte)
+                                                               bewertet. Die Konsequenzen entnehmen Sie bitte der Prüfungsordnung.
+                                                           ◼   Es gibt Aufgaben, die eine exakte Anzahl an Antworten vorgeben. Es werden nur die
+                                                               ersten Antworten gewertet. Was über die exakte Anzahl hinausgeht, wird gestrichen.
+                                                           ◼   Geben Sie alle Ihnen zur Verfügung gestellten Unterlagen am Ende der Prüfung ab.
+                                                           ◼   Aufgrund der besseren Lesbarkeit bevorzugen wir in diesen Texten die männliche Form.
+                                                               Mit diesem vereinfachten Ausdruck sind selbstverständlich alle Geschlechter gemeint.
+
+
+
+
+                                                                                   © DIHK – Gesellschaft für berufliche Bildung – Organisation zur Förderung der IHK-Weiterbildung gGmbH – Bonn
+                                                                      Die Vervielfältigung, Verbreitung oder öffentliche Wiedergabe der Publikation ist nicht gestattet (§§ 53, 54 UrhG) und strafbar (§ 106 UrhG).
+                                                                                                                  Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+                                                                                                                                     P 050-02-0524
+
+=== Seite 2 ===
+                                                         Einsatz nur im Rahmen des Korrekturprozesses gestattet. Weitergabe an unbefugte Dritte untersagt.
+
+                                                           GEPRÜFTE/-R INDUSTRIEMEISTER/-IN,
+                                                           FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+                                                           GRUNDLEGENDE QUALIFIKATIONEN
+                                                           Betriebswirtschaftliches Handeln
+
+
+
+                                                           Aufgabe 1
+                                                           Da die Industrie GmbH einen wachsenden Kapitalbedarf hat, wird über die Gründung einer
+                                                           Aktiengesellschaft (AG) nachgedacht.
+
+                                                            a Mögliche Punktzahl: 1
+                                                           Geben Sie das Mindestgründungskapital einer AG an.
+
+                                                            b Mögliche Punktzahl: 4
+                                                           Erläutern Sie den Unterschied zwischen „Nennwert“ und „Kurswert“ einer Aktie.
+Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+
+
+
+
+                                                                                                                                                             Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+                                                            c Mögliche Punktzahl: 6
+                                                           Beschreiben Sie jeweils zwei Aufgaben der Organe einer AG.
+
+                                                            d Mögliche Punktzahl: 2
+                                                           Nennen Sie zwei Rechte des Aktionärs aus seiner Aktie.
+
+
+
+                                                           Aufgabe 2
+                                                           Der Fertigungsplanung der Industrie GmbH liegen für den Juni folgende Auftragsdaten vor:
+
+                                                                                   Produktions-
+                                                                                                                         Rüstzeit
+                                                                Produkt                menge         Losgröße                            Zeit je Einheit
+                                                                                                                         pro Los
+                                                                                     pro Monat
+
+                                                                    A               4.000 Stück      500 Stück           180 min.            25 min.
+
+                                                                    B               2.500 Stück      500 Stück           152 min.            44 min.
+
+                                                                    C                 900 Stück      300 Stück             75 min.           30 min.
+
+                                                                    D                 500 Stück      500 Stück           275 min.            75 min.
+
+                                                           Der Juni hat 20 Arbeitstage, die tägliche Arbeitszeit beträgt 8 Stunden. Kalkuliert wird mit
+                                                           urlaubsbedingter Abwesenheit von 14 % sowie krankheitsbedingten Fehlzeiten in Höhe von
+                                                           5,8 %.
+
+
+
+
+                                                                                                         Seite 2
+                                                                                                       P 050-02-0524
+
+=== Seite 3 ===
+                                                         Einsatz nur im Rahmen des Korrekturprozesses gestattet. Weitergabe an unbefugte Dritte untersagt.
+
+                                                           GEPRÜFTE/-R INDUSTRIEMEISTER/-IN,
+                                                           FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+                                                           GRUNDLEGENDE QUALIFIKATIONEN
+                                                           Betriebswirtschaftliches Handeln
+
+                                                            a Mögliche Punktzahl: 14
+                                                           Ermitteln Sie den Kapazitäts- und Personalbedarf im Juni bei einer Normalleistung der
+                                                           Mitarbeiter.
+
+                                                            b Mögliche Punktzahl: 4
+                                                           Berechnen Sie den Personalbedarf bei einem prognostizierten Zeitgrad von 112 %
+                                                           und unter Berücksichtigung von 2,65 % Störzeiten.
+
+
+                                                           Aufgabe 3
+Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+
+
+
+
+                                                                                                                                                             Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+                                                           Die Industrie GmbH befindet sich mitten im Umstrukturierungsprozess. Von der Geschäfts-
+                                                           führung wird ein Wechsel von der bisherigen Einlinienorganisation zu einer Sparten-
+                                                           organisation favorisiert.
+
+                                                            a Mögliche Punktzahl: 6
+                                                           Beschreiben Sie zwei mögliche Gründe für diesen Wechsel des Organisations-
+                                                           systems.
+
+                                                            b Mögliche Punktzahl: 6
+                                                           Beschreiben Sie drei Probleme, die durch diesen Wechsel des Organisationssystems
+                                                           auftreten könnten.
+
+
+                                                           Aufgabe 4
+                                                           Die Industrie GmbH plant in einem Zweigwerk in Polen die Einführung der Akkord-
+                                                           entlohnung.
+
+                                                            a Mögliche Punktzahl: 6
+                                                           Beschreiben Sie drei Voraussetzungen, die erfüllt sein müssen, damit Akkordarbeit
+                                                           im Unternehmen eingeführt werden kann.
+
+                                                            b Mögliche Punktzahl: 4
+                                                           Nennen Sie je zwei Vor- und Nachteile des Akkordlohns.
+
+
+
+
+                                                                                                        Seite 3
+                                                                                                     P 050-02-0524
+
+=== Seite 4 ===
+                                                         Einsatz nur im Rahmen des Korrekturprozesses gestattet. Weitergabe an unbefugte Dritte untersagt.
+
+                                                           GEPRÜFTE/-R INDUSTRIEMEISTER/-IN,
+                                                           FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+                                                           GRUNDLEGENDE QUALIFIKATIONEN
+                                                           Betriebswirtschaftliches Handeln
+
+
+
+                                                            c Mögliche Punktzahl: 5
+                                                           Berechnen Sie den Akkordstundenverdienst eines Mitarbeiters, wenn Ihnen folgende
+                                                           Daten vorliegen:
+
+                                                           ■   Akkordgrundlohn                18,00 €/h
+
+                                                           ■   Akkordzuschlag                 10 %
+
+                                                           ■   Vorgabezeit                    1.518 min
+Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+
+
+
+
+                                                                                                                                                             Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+                                                           ■   Ist-Auftragszeit               1.265 min
+
+
+                                                           Aufgabe 5
+                                                           Die Industrie GmbH erhält von einem Neukunden einen Auftrag über 200 Frästeile.
+                                                           Für die Fertigung stehen zwei Fräsmaschinen zur Auswahl.
+
+                                                           Dazu liefert Ihnen die Arbeitsvorbereitung folgende Daten:
+
+                                                                                                          Fräsmaschine 1          Fräsmaschine 2
+
+                                                                Maschinenstundensatz                                45,00 €/h             63,00 €/h
+
+                                                                         Rüstzeit                                       72 min              90 min
+
+                                                                 Fertigungszeit je Stück                                6,4 min             5,2 min
+
+                                                                     Fertigungslohn                                 24,00 €/h             24,00 €/h
+
+
+                                                            a Mögliche Punktzahl: 10
+                                                           Berechnen Sie die Fertigungskosten für den Auftrag bei Nutzung der Fräsmaschine 1
+                                                           und alternativ bei Nutzung der Fräsmaschine 2.
+
+                                                            b Mögliche Punktzahl: 2
+                                                           Entscheiden Sie sich für die kostengünstigere Alternative und ermitteln Sie die
+                                                           absolute Kosteneinsparung.
+
+
+
+
+                                                                                                              Seite 4
+                                                                                                            P 050-02-0524
+
+=== Seite 5 ===
+                                                         Einsatz nur im Rahmen des Korrekturprozesses gestattet. Weitergabe an unbefugte Dritte untersagt.
+
+                                                           GEPRÜFTE/-R INDUSTRIEMEISTER/-IN,
+                                                           FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+                                                           GRUNDLEGENDE QUALIFIKATIONEN
+                                                           Betriebswirtschaftliches Handeln
+
+
+
+                                                           Aufgabe 6
+                                                           Die Industrie GmbH produziert Wellen für den Bau von Windkraftanlagen. Zur Erhöhung
+                                                           der Flexibilität und nicht zuletzt unter Kostengesichtspunkten wurde dazu ein neues
+                                                           CNC-Bearbeitungszentrum für ihre Abteilung angeschafft.
+
+                                                           Um zukünftig auch die Kosten verursachungsgerechter zu erfassen, macht sich die
+                                                           Geschäftsführung Gedanken über die Einführung der Maschinenstundensatzrechnung.
+
+                                                           Folgende Daten stehen für das CNC-Bearbeitungszentrum zur Verfügung:
+Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+
+
+
+
+                                                                                                                                                             Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+                                                           ■   Anschaffungswert                                                               400.000 €
+
+                                                           ■   voraussichtliche Nutzungsdauer                                                  10 Jahre
+
+                                                           ■   voraussichtlicher Wiederbeschaffungswert                                       500.000 €
+
+                                                           ■   Restwert am Ende der Nutzungsdauer                                              30.000 €
+
+                                                           ■   kalkulatorischer Zinssatz           8 % p. a. auf das durchschnittlich investierte Kapital
+
+                                                           ■   Flächenbedarf                                                                       50 m²
+
+                                                           ■   Raumkostenverrechnungssatz                                                 7,50 €/m² mtl.
+
+                                                           ■   Anschlusswert                                                                       40 kW
+
+                                                           ■   Strompreis                                                                    0,35 €/kWh
+
+                                                           ■   Grundgebühr für Zähler                                                            75 €/mtl.
+
+                                                           ■   Instandhaltungskosten (zu 60 % variabel)                                   20.000 €/Jahr
+
+                                                           ■   Werkzeugkosten                                                                    6,00 €/h
+
+                                                           Die Beschäftigung des Bearbeitungszentrums wird auf insgesamt 2.400 Stunden
+                                                           pro Jahr im Zweischichtbetrieb geschätzt.
+
+                                                            a Mögliche Punktzahl: 10
+                                                           Ermitteln Sie die fixen und variablen Maschinenkosten pro Jahr.
+
+                                                            b Mögliche Punktzahl: 2
+                                                           Berechnen Sie den Maschinenstundensatz.
+
+
+
+                                                                                                         Seite 5
+                                                                                                       P 050-02-0524
+
+=== Seite 6 ===
+                                                         Einsatz nur im Rahmen des Korrekturprozesses gestattet. Weitergabe an unbefugte Dritte untersagt.
+
+                                                           GEPRÜFTE/-R INDUSTRIEMEISTER/-IN,
+                                                           FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+                                                           GRUNDLEGENDE QUALIFIKATIONEN
+                                                           Betriebswirtschaftliches Handeln
+
+
+
+                                                            c Mögliche Punktzahl: 5
+                                                           Am Ende des Geschäftsjahres wurde eine Beschäftigung von 2.000 Stunden festgestellt.
+
+                                                           Ermitteln Sie die tatsächlichen Maschinenkosten pro Laufzeitstunde.
+
+
+                                                           Aufgabe 7
+                                                           Die Industrie GmbH produziert hochwertige Akkuschrauber. Bei einer Produktions- und
+                                                           Absatzmenge von 6.000 Stück eines 18 Volt-Modells wurde ein Gesamtdeckungsbeitrag
+Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+
+
+
+
+                                                                                                                                                             Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+                                                           von 252.000 € im April erzielt.
+
+                                                           Der Break-even-Point wird bei einem Absatz von 4.850 Akkuschraubern im Monat erreicht.
+
+                                                            a Mögliche Punktzahl: 5
+                                                           Berechnen Sie das im April erzielte Betriebsergebnis.
+
+                                                            b Mögliche Punktzahl: 4
+                                                           Die Industrie GmbH rechnet aufgrund schwieriger Wettbewerbsbedingungen damit, dass
+                                                           sich der Stückdeckungsbeitrag im nächsten Monat um 5 % reduzieren wird.
+
+                                                           Ermitteln Sie die daraus resultierende prozentuale Veränderung der Break-even-
+                                                           Menge.
+
+                                                            c Mögliche Punktzahl: 4
+                                                           Erklären Sie den Unterschied zwischen kurz- und langfristiger Preisuntergrenze.
+
+
+
+
+                                                                                                        Seite 6
+                                                                                                     P 050-02-0524
+
+=== Seite 7 ===
+                                                         Einsatz nur im Rahmen des Korrekturprozesses gestattet. Weitergabe an unbefugte Dritte untersagt.
+
+
+
+
+                                                           Bundeseinheitliche Fortbildungsprüfung der Industrie- und Handelskammern
+
+                                                           Geprüfter Industriemeister/Geprüfte Industriemeisterin,
+                                                           fachrichtungsübergreifende Basisqualifikationen/
+                                                           grundlegende Qualifikationen
+                                                           Betriebswirtschaftliches Handeln
+
+
+                                                           Lösungshinweise
+Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+
+
+
+
+                                                                                                                                                                                                                           Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+                                                            Datum:                                          3. Mai 2024
+
+                                                            Bearbeitungszeit:                               90 Minuten
+
+                                                            Anzahl Aufgaben:                                7
+
+
+                                                           Hinweise für den Korrektor:
+                                                           ■    Die folgenden Lösungen sind lediglich Lösungshinweise.
+                                                           ■    Sie sollen nur den Rahmen der zu erwartenden Prüfungsleistung abstecken.
+                                                           ■    Der Korrektor ist durch die hier aufgeführten Lösungshinweise in seinem
+                                                                Bewertungsspielraum nicht eingeengt.
+                                                           ■    Bei Aufgaben, die eine Aufzählung von n-Fakten zur Lösung erfordern, werden nur die
+                                                                ersten n-Fakten gewertet. Alle darüber hinausgehenden Aufzählungen werden
+                                                                gestrichen.
+                                                           ■    Bei Berechnungen sollen Folgefehler berücksichtigt werden und somit nicht zum
+                                                                Punktabzug führen.
+                                                           ■    Der leichteren Lesbarkeit wegen geben wir in den Aufgaben/Texten der männlichen
+                                                                Form den Vorzug. Mit diesem einfacheren sprachlichen Ausdruck sind selbstverständlich
+                                                                immer alle Geschlechter gemeint.
+
+
+
+                                                           Die Aufgaben mit Lösungsvorschlägen können von den Industrie- und Handelskammern oder Dritten nach einer Frist von sechs Monaten
+                                                           direkt bestellt werden bei:
+
+                                                           wbv Media GmbH & Co. KG, Service-Center DIHK,
+
+                                                           Postfach 10 06 33, 33506 Bielefeld
+
+                                                           Tel.: 0521/91101-16, Fax: 0521/91101-19, E-Mail: service@wbv.de
+
+
+
+
+                                                                                        © DIHK – Gesellschaft für berufliche Bildung – Organisation zur Förderung der IHK-Weiterbildung gGmbH – Bonn
+                                                                           Die Vervielfältigung, Verbreitung oder öffentliche Wiedergabe der Publikation ist nicht gestattet (§§ 53, 54 UrhG) und strafbar (§ 106 UrhG).
+                                                                                                                       Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+                                                                                                                                          L 050-02-0524
+
+=== Seite 8 ===
+                                                         Einsatz nur im Rahmen des Korrekturprozesses gestattet. Weitergabe an unbefugte Dritte untersagt.
+
+                                                           GEPRÜFTE/-R INDUSTRIEMEISTER/-IN,
+                                                           FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+                                                           GRUNDLEGENDE QUALIFIKATIONEN
+                                                           Betriebswirtschaftliches Handeln
+
+
+
+                                                           Lösungshinweise Aufgabe 1
+                                                           [VO: § 4 Absatz 3 Nr. 1]
+
+                                                            a Mögliche Punktzahl: 1
+                                                           50.000 €
+
+                                                            b Mögliche Punktzahl: 4
+                                                           ■   Nennwert ist der Anteil am Grundkapital, den die Aktie beinhaltet
+                                                           ■   Kurswert ist der Tagespreis einer Aktie an der Aktienbörse
+Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+
+
+
+
+                                                                                                                                                             Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+                                                            c Mögliche Punktzahl: 9
+                                                           Z. B.:
+                                                           ■   Vorstand:
+                                                               ■    hat Geschäftsführungsbefugnis
+                                                               ■    hat Außenvertretungsrecht
+                                                           ■   Aufsichtsrat:
+                                                               ■    setzt den Vorstand ein
+                                                               ■    überwacht die Geschäftsführung des Vorstandes (Kontrollorgan)
+                                                           ■   Hauptversammlung:
+                                                               ■    die Aktionäre stimmen u.a. über die Entlastung des Vorstands ab.
+                                                               ■    beschließt Satzungsänderungen
+                                                               ■    beschließt Dividendenausschüttung
+
+                                                            d Mögliche Punktzahl: 2
+                                                           Z. B.:
+                                                           ■   Stimmrecht bei der Hauptversammlung
+                                                           ■   Stimmrecht bei der Wahl der Anteilseignervertreter im Aufsichtsrat
+                                                           ■   Recht auf Gewinnanteil, falls Gewinn ausgeschüttet wird.
+
+
+
+
+                                                                                                        Seite 2
+                                                                                                     L 050-02-0524
+
+=== Seite 9 ===
+                                                         Einsatz nur im Rahmen des Korrekturprozesses gestattet. Weitergabe an unbefugte Dritte untersagt.
+
+                                                           GEPRÜFTE/-R INDUSTRIEMEISTER/-IN,
+                                                           FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+                                                           GRUNDLEGENDE QUALIFIKATIONEN
+                                                           Betriebswirtschaftliches Handeln
+
+
+
+                                                           Lösungshinweise Aufgabe 2
+                                                           [VO: § 4 Absatz 3 Nr. 2]
+
+                                                            a Mögliche Punktzahl: 14
+                                                           Kapazitätsbedarf = TA + TB + TC + TD
+                                                               TA = 8 · 180 min +4.000 St.· 25 min = 101.440 min
+                                                           + TB = 5 · 152 min +2.500 St.· 44 min = 110.760 min
+                                                           + TC =    3 · 75 min +900 St. · 30 min =    27.225 min
+                                                           + TD = 1 · 275 min +500 St.· 75 min =      37.775 min.
+Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+
+
+
+
+                                                                                                                                                             Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+                                                           = Kapazitätsbedarf                 277.200 min/Monat
+                                                           =                                        4.620 h/Monat
+                                                                                                                                             (8 Punkte)
+                                                           Kapazitätsbestand pro Mitarbeiter = 8 h/Tag · 20 Tage/Monat · 0,802
+                                                                                               = 128,32 h/Monat
+                                                                                                                                             (3 Punkte)
+                                                                                   4.620 h/Monat
+                                                           Personalbedarf =                           = 36,00 Mitarbeiter
+                                                                                            h
+                                                                                128,32
+                                                                                       MA  Monat
+                                                                                                                                             (3 Punkte)
+
+                                                            b Mögliche Punktzahl: 4
+                                                                                     h
+                                                                                   4.620  · 1,0265
+                                                           Personalbedarf =        Monat              = 33,00 Mitarbeiter
+                                                                                        h
+                                                                            128,32             · 1,12
+                                                                                   MA  Monat
+
+
+
+
+                                                                                                          Seite 3
+                                                                                                       L 050-02-0524
+
+=== Seite 10 ===
+                                                         Einsatz nur im Rahmen des Korrekturprozesses gestattet. Weitergabe an unbefugte Dritte untersagt.
+
+                                                           GEPRÜFTE/-R INDUSTRIEMEISTER/-IN,
+                                                           FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+                                                           GRUNDLEGENDE QUALIFIKATIONEN
+                                                           Betriebswirtschaftliches Handeln
+
+
+
+                                                           Lösungshinweise Aufgabe 3
+                                                           [VO: § 4 Absatz 3 Nr. 3]
+
+                                                            a Mögliche Punktzahl: 6
+                                                           Z. B.:
+                                                           ■   Die Industrie GmbH hat mehrere Produkte/Produktgruppen im Portfolio und strebt
+                                                               durch die Fokussierung auf Produkte bzw. Produktgruppen mehr Marktnähe und
+                                                               Kundenorientierung an.
+                                                           ■   Die Produkte erfordern produktbezogene Spezialkenntnisse im Einkauf und der
+                                                               Produktion. Eine Trennung in Produktbereiche (Sparten) würde hier die Effektivität
+Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+
+
+
+
+                                                                                                                                                             Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+                                                               erhöhen.
+                                                           ■   Mittelfristig könnte dahinter auch die Forderung der Geschäftsführung nach Einführung
+                                                               von Profit-Centern stehen, um mehr Transparenz und Vergleichbarkeit zwischen
+                                                               Produkten bzw. Produktgruppen zu erreichen.
+
+                                                            b Mögliche Punktzahl: 6
+                                                           Z. B.:
+                                                           ■   Umstellung ist sehr zeit- und damit auch kostenintensiv. Es werden neue Stellen-
+                                                               beschreibungen erforderlich und die Zuständigkeiten der Mitarbeiter verändern sich.
+                                                               Daraus resultiert ein entsprechender Qualifizierungsbedarf der Mitarbeiter.
+                                                           ■   Es werden mehr Stellen im Bereich der Führung erforderlich, was zu dauerhaft höheren
+                                                               Kosten führt.
+                                                           ■   Der Informations- und Erfahrungsaustausch zwischen den einzelnen Sparten kommt
+                                                               häufig zu kurz.
+                                                           ■   Verselbstständigung einzelner Sparten führt zur Vernachlässigung übergeordneter
+                                                               Unternehmensziele (Spartenblindheit).
+
+
+                                                           Lösungshinweise Aufgabe 4
+                                                           [VO: § 4 Absatz 3 Nr. 4]
+
+                                                            a Mögliche Punktzahl: 6
+                                                           Z. B.:
+                                                           ■   Es müssen genügend vom Mitarbeiter beeinflussbare Zeiten vorliegen.
+                                                           ■   Der Arbeitnehmer muss hinreichend geübt und eingearbeitet sein.
+                                                           ■   Der Materialfluss muss gesichert sein
+                                                           ■   Die Ermittlung der Vorgabezeiten muss nachvollziehbar sein
+                                                           ■   Der Betriebsrat hat bei der Einführung der Akkordentlohnung ein Mitbestimmungsrecht.
+                                                                                                                (je 2 Punkte, insgesamt max. 6 Punkte)
+
+                                                                                                         Seite 4
+                                                                                                       L 050-02-0524
+
+=== Seite 11 ===
+                                                         Einsatz nur im Rahmen des Korrekturprozesses gestattet. Weitergabe an unbefugte Dritte untersagt.
+
+                                                           GEPRÜFTE/-R INDUSTRIEMEISTER/-IN,
+                                                           FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+                                                           GRUNDLEGENDE QUALIFIKATIONEN
+                                                           Betriebswirtschaftliches Handeln
+
+                                                            b Mögliche Punktzahl: 4
+                                                           ■   Vorteile, z. B.:
+                                                               ■   höhere Produktivität des Betriebes
+                                                               ■   im Vergleich zum Zeitlohn bessere Kalkulationsgrundlage für die Fertigungslohn-
+                                                                   kosten, da die Fertigungslohnkosten konstant sind.
+                                                               ■   Entlohnung wird vom Mitarbeiter als gerechter empfunden (mehr Leistung, mehr
+                                                                   Geld)
+                                                                                                                     (je 1 Punkt, insgesamt max. 2 Punkte)
+                                                           ■   Nachteile, z. B.:
+                                                               ■
+Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+
+
+
+
+                                                                                                                                                             Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+                                                                   höhere Mengenleistung bringt oft Qualitätsprobleme mit sich
+                                                               ■   höhere Inanspruchnahme der Betriebsmittel
+                                                               ■   körperliche Überanstrengung, Gesundheitsschäden, zunehmende Arbeitsunfälle
+                                                                                                                     (je 1 Punkt, insgesamt max. 2 Punkte)
+
+                                                            c Mögliche Punktzahl: 5
+                                                           Akkordstundenverdienst = ARS · ZGF
+
+                                                           Akkordrichtsatz ARS = 18,00 €/h · 1,1 = 19,80 €/h
+
+                                                                                       Vorgabezeit      1.518 min
+                                                           Zeitgradfaktor ZGF =                       =           = 1,2
+                                                                                     Ist-Auftragszeit   1.265 min
+
+                                                           Akkordstundenverdienst = Akkordrichtsatz · Zeitgradfaktor
+
+                                                           Akkordstundenverdienst = 19,80 €/h · 1,2 = 23,76 €/h
+
+
+                                                           Lösungshinweise Aufgabe 5
+                                                           [VO: § 4 Absatz 3 Nr. 5]
+
+                                                            a Mögliche Punktzahl: 10
+                                                           Auftragskosten bei Nutzung der Fräsmaschine 1:
+
+                                                                                     45 € / h + 24 € / h
+                                                           Fixkosten (Rüstkosten) =                       72min/ Auftrag = 82,80 € / Auftrag
+                                                                                          60 min
+                                                                             45 € / h + 24 € / h
+                                                           variable Kosten =                      6,4 min/ Stück  200 Stück = 1.472 € / Auftrag
+                                                                                  60 min
+                                                           Gesamtkosten = 1.554,80 € / Auftrag
+
+
+
+
+                                                                                                           Seite 5
+                                                                                                        L 050-02-0524
+
+=== Seite 12 ===
+                                                         Einsatz nur im Rahmen des Korrekturprozesses gestattet. Weitergabe an unbefugte Dritte untersagt.
+
+                                                           GEPRÜFTE/-R INDUSTRIEMEISTER/-IN,
+                                                           FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+                                                           GRUNDLEGENDE QUALIFIKATIONEN
+                                                           Betriebswirtschaftliches Handeln
+
+                                                           Auftragkosten bei Nutzung der Fräsmaschine 2 :
+                                                                                     63 € / h + 24 € / h
+                                                           Fixkosten (Rüstkosten) =                       90 min/ Auftrag = 130,50 € / Auftrag
+                                                                                         60 min/ h
+                                                                             63 € / h + 24 € / h
+                                                           variable Kosten =                      5,2 min/ Stück  200 Stück = 1.508 € / Auftrag
+                                                                                 60 min/ h
+                                                           Gesamtkosten = 1.638,50 € / Auftrag
+
+                                                            b Mögliche Punktzahl: 2
+                                                           Kosteneinsparung = ∆K = 1.638,50 € - 1.554,80 € = 83,70 €/Auftrag bei Nutzung (Einsatz)
+                                                           von Fräsmaschine 1.
+Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+
+
+
+
+                                                                                                                                                             Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+                                                           Lösungshinweise Aufgabe 6
+                                                           [VO: § 4 Absatz 3 Nr. 5]
+
+                                                            a Mögliche Punktzahl: 10
+                                                           Ermittlung der Maschinenkosten pro Jahr:
+
+                                                                                                                          fix (€)           variabel (€)
+
+                                                            kalk. Abschreibung1)                                      47.000,00
+
+                                                            kalk. Zinsen2)                                            17.200,00
+
+                                                            Raumkosten3)                                               4.500,00
+
+                                                            Energiekosten4)                                                900,00           33.600,00
+
+                                                            Instandhaltung                                             8.000,00             12.000,00
+
+                                                            Werkzeugkosten                                                                  14.400,00
+
+                                                            ∑ Maschinenkosten/Jahr                                    77.600,00             60,000,00
+
+
+                                                                                                    500.000 € - 30.000 €
+                                                           1)   kalkulatorische Abschreibung =                           = 47.000 €/Jahr
+                                                                                                         10 Jahre
+                                                                                              400.000 € + 30.000 €
+                                                           2)   kalkulatorische Zinsen =                           · 0,08 = 17.200 €/Jahr
+                                                                                                       2
+                                                           3)   Raumkosten = 50 m² · 7,50 €/m² /Monat · 12 Monate/Jahr = 4.500 €/Jahr
+                                                           4)   Energiekosten = 75 €/Monat · 12 Monate/Jahr + 40 kW · 0,35 €/kWh · 2.400 h/Jahr
+                                                                                  = 900 €/Jahr + 33.600 €/Jahr = 34.500 €/Jahr
+
+
+                                                                                                            Seite 6
+                                                                                                          L 050-02-0524
+
+=== Seite 13 ===
+                                                         Einsatz nur im Rahmen des Korrekturprozesses gestattet. Weitergabe an unbefugte Dritte untersagt.
+
+                                                           GEPRÜFTE/-R INDUSTRIEMEISTER/-IN,
+                                                           FACHRICHTUNGSÜBERGREIFENDE BASISQUALIFIKATIONEN/
+                                                           GRUNDLEGENDE QUALIFIKATIONEN
+                                                           Betriebswirtschaftliches Handeln
+
+                                                            b Mögliche Punktzahl: 2
+                                                                    77.600 € + 60.000 €
+                                                           MSS =                        = 57,33 €/Jahr
+                                                                          2.400 h
+
+                                                            c Mögliche Punktzahl: 5
+                                                                    77.600 €   60.000 €
+                                                           MSS =             +          = 38,80 €/h + 25,00 €/h = 63,80 €/h
+                                                                     2.000 h    2.400 h
+
+
+                                                           Lösungshinweise Aufgabe 7
+Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+
+
+
+
+                                                                                                                                                             Im Fall der Zuwiderhandlung wird Strafantrag gestellt.
+                                                           [VO: § 4 Absatz 3 Nr. 5]
+
+                                                            a Mögliche Punktzahl: 5
+
+                                                                   252.000 €
+                                                           db =               = 42 € / Stück
+                                                                  6.000 Stück
+                                                           K f = db  xBEP = 42€ / Stück  4.850 Stück / Monat = 203.700 € / Monat
+                                                           BE = DB − K f
+                                                           BE = 252.000 € / Monat − 203.700 € / Monat = 48.300 € / Monat
+
+                                                            b Mögliche Punktzahl: 4
+                                                           dbneu = 0,95  42 € / Stück = 39,90 €
+                                                                       Kf   203.700 €
+                                                           xBEPneu =      =               = 5.105,26 Stück / Monat
+                                                                       db 39,90 € / Stück
+                                                           xBEPneu = 5.106 Stück / Monat
+
+                                                           Die Break-even-Menge steigt absolut um 256 Stück.
+                                                                                                                       256 Stück
+                                                           Der prozentuale Anstieg der Break-even-Menge beträgt                    100 = 5,28 % .
+                                                                                                                      4.850 Stück
+
+                                                            c Mögliche Punktzahl: 4
+                                                           Bei der kurzfristigen Preisuntergrenze muss der Preis mindestens die variablen Stückkosten
+                                                           abdecken, bei der langfristigen Preisuntergrenze muss der Preis die vollen Stückkosten
+                                                           abdecken bzw.:
+                                                           kurzfristige Preisuntergrenze           p ≥ kv
+                                                           langfristige Preisuntergrenze           p ≥k
+
+
+
+
+                                                                                                         Seite 7
+                                                                                                      L 050-02-0524
+
