@@ -50,6 +50,13 @@ BILDER = {
     ('NT', 'h2025', 5, 'd'): 'nt25-typenschild',
     ('NT', 'h2025', 6, 'a'): 'nt25-schaltung',
 
+    # ---- Archiv „Altklausuren“, Heftform L-ALT 2018. Die Maße stehen nur in
+    # der Zeichnung – ohne sie ist die Aufgabe nicht zu rechnen.
+    ('NT', 'f2018', 2, '*'): 'ntf18-rohrprofil',
+    ('NT', 'f2018', 5, '*'): 'ntf18-schaltung',
+    ('NT', 'h2018', 2, '*'): 'nth18-bremsanlage',
+    ('NT', 'h2018', 5, '*'): 'nth18-formteil',
+
     # ---- Archiv „Altklausuren“, Naturwissenschaft und Technik 2019–2022.
     # Ohne diese Abbildungen fehlen der Aufgabe die Maße, die Schaltung oder
     # die Kennlinie – sie ist dann nicht lösbar.
@@ -88,6 +95,11 @@ BILDER_L = {
     ('MI', 'h2024', 2, 'a'): 'mi24-l-fluss',
     ('MI', 'h2024', 4, 'b'): 'mi24-l-diagramm',
     ('BW', 'h2025', 4, 'b'): 'bw25-l-akkord',
+
+    # ---- Archiv „Altklausuren“, Heftform L-ALT 2018
+    ('MI', 'f2018', 4, 'a'): 'mif18-l-diagramm',
+    ('BW', 'f2018', 7, 'b'): 'bwf18-l-breakeven',
+    ('MI', 'h2018', 4, 'b'): 'mih18-l-unfaelle',
 
     # ---- Archiv „Altklausuren“ 2019–2022
     ('MI', 'f2019', 2, 'a'): 'mif19-l-fluss',
@@ -190,6 +202,22 @@ _SOZIALVERSICHERUNG = {
     'hinweis': 'Vier Zweige und ihre Träger eintragen.',
 }
 
+_NOTENSTATISTIK = {
+    'titel': 'Anlage 1 zu Aufgabe 7: Prüfungsergebnisse der Industriemechaniker',
+    'kopf': ['Jahrgang', 'Note 1', 'Note 2', 'Note 3', 'Note 4', 'Note 5', 'Note 6',
+             'Anzahl der Einzelwerte', 'Σ xi', 'x̄'],
+    'zeilen': [
+        ['2013', '0', '9', '6', '8', '0', '2', '25', '', ''],
+        ['2014', '2', '5', '7', '7', '3', '0', '24', '', ''],
+        ['2015', '1', '8', '3', '8', '0', '0', '20', '', ''],
+        ['2016', '3', '6', '6', '8', '0', '0', '23', '', ''],
+        ['2017', '1', '6', '8', '6', '3', '0', '24', '', ''],
+        ['Summen', '', '', '', '', '', '', '', '', ''],
+    ],
+    'hinweis': 'Die leeren Felder sind zu ergänzen: Σ xi ist die Summe der '
+               'Einzelnoten eines Jahrgangs, x̄ sein Notenmittelwert.',
+}
+
 TABELLEN = {
     ('BW', 'h2024', 6, 'a'): _KOSTENTABELLE,
     ('BW', 'h2024', 6, 'b'): _KOSTENTABELLE,
@@ -197,6 +225,7 @@ TABELLEN = {
     ('BW', 'f2019', 7, 'a'): _BAB_F2019,
     ('BW', 'h2020', 5, 'a'): _BAB_H2020,
     ('RE', 'h2022', 5, 'a'): _SOZIALVERSICHERUNG,
+    ('NT', 'f2018', 7, 'a'): _NOTENSTATISTIK,
 }
 
 

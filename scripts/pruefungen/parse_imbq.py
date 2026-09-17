@@ -52,6 +52,14 @@ JAHRGAENGE = {
               'pruefungen': [RECHT, BWL, METHOD, ZUSAMM, NTG]},
     # Herbst 2023: das Heft "Methoden …" fehlt im Archiv (die abgelegte Datei
     # ist ein Doppel der ZiB-Prüfung desselben Termins).
+    # Frühjahr und Herbst 2018: Bauform L-ALT (Punktzahl in Klammern am
+    # rechten Rand, Lösung hinter jeder Aufgabe) – siehe parse_imbq_alt.py.
+    'f2018': {'dir': 'imbq-f2018', 'korrekturen': 'korrekturen_imbq_f2018',
+              'format': 'alt',
+              'pruefungen': [RECHT, BWL, METHOD, ZUSAMM, NTG]},
+    'h2018': {'dir': 'imbq-h2018', 'korrekturen': 'korrekturen_imbq_h2018',
+              'format': 'alt',
+              'pruefungen': [RECHT, BWL, METHOD, ZUSAMM, NTG]},
     'f2023': {'dir': 'imbq-f2023', 'korrekturen': 'korrekturen_imbq_f2023',
               'pruefungen': [RECHT, BWL, METHOD, ZUSAMM, NTG]},
     'h2023': {'dir': 'imbq-h2023', 'korrekturen': 'korrekturen_imbq_h2023',
@@ -70,7 +78,9 @@ def quellen(jahrgang):
     return os.path.join(HERE, 'quellen', JAHRGAENGE[jahrgang]['dir'])
 
 PAGE    = re.compile(r'^=== Seite (\d+) ===\s*$')
-DATUM   = re.compile(r'Datum:\s*(\d{1,2}\.\s*\w+\s*\d{4})')
+# Das Deckblatt nennt den Prüfungstag je nach Heftform als "Datum:" (PL, L-I)
+# oder als "Prüfungstag" (L-ALT).
+DATUM   = re.compile(r'(?:Datum:|Pr[üu]fungstag)\s*(\d{1,2}\.\s*\w+\s*\d{4})')
 AUFG    = re.compile(r'^Aufgabe\s+(\d+)$')
 LOES_A  = re.compile(r'^L[öo]sungshinweise\s+Aufgabe\s+(\d+)$')
 LOES_TL = re.compile(r'^L[öo]sungshinweise$')
@@ -95,9 +105,15 @@ MON = {'januar':1,'februar':2,'märz':3,'april':4,'mai':5,'juni':6,'juli':7,
 JUNK = re.compile(
     r'^(Einsatz nur im Rahmen des Korrekturprozesses.*'
     r'|Im Fall der Zuwiderhandlung wird Strafantrag gestellt\.?'
-    r'|GEPR[ÜU]FTE/-R INDUSTRIEMEISTER/-IN,?'
-    r'|FACHRICHTUNGS[ÜU]BERGREIFENDE BASISQUALIFIKATIONEN/?'
-    r'|GRUNDLEGENDE QUALIFIKATIONEN'
+    # Die Kopfzeile jeder Seite. Im MIKP-Heft Herbst 2018 ist sie zweimal
+    # leicht versetzt gesetzt; pdftotext liest daraus Bruchstücke
+    # ("GEPRÜFTE/-RR INDUSTRIEMEISTER/", "IFENDEBASISQUALIFIK"). Die Muster
+    # sind deshalb absichtlich weit – so beginnt keine echte Textzeile.
+    r'|GEPR[ÜU]FTE/-.*'
+    r'|INDUSTRIEMEISTER/-?IN,?'
+    r'|FACHRICHTUNGS[ÜU]BERGRE.*'
+    r'|IFENDEBASISQUALIFIK.*'
+    r'|(?:GRUNDLEGENDE )?QUALIFIKATIONEN'
     r'|Bundeseinheitliche Fortbildungspr[üu]fung.*'
     r'|Gepr[üu]fter Industriemeister.*'
     r'|Seite \d+'
@@ -106,20 +122,42 @@ JUNK = re.compile(
     r'|[LP] \d{3}-\d{2}-\d{4}(?:-\d+)?'
     r'|Pr[üu]fungsteilnehmer-Nummer.*'
     r'|Ber[üu]cksichtigung naturwissenschaftlicher und technischer Gesetzm[äa][ßs]igkeiten'
-    r'|Anwendung von Methoden der Information, ?Kommunikation und Planung'
+    r'|Anwendung von Methoden der Information,.*'
+    # Fußzeile und Urheberrechtshinweis der L-ALT-Hefte. Sie stehen dort auf
+    # jeder Seite und landeten sonst mitten im Aufgaben- und Lösungstext.
+    r'|\|?\s*Seite \d+\s*\|.*'
+    r'|\|\s*[LP] \d{3}-\d{2}-\d{4}.*'
+    r'|©\s*DIHK.*'
+    r'|Die Vervielf[äa]ltigung, Verbreitung oder [öo]ffentliche Wiedergabe.*'
+    r'|ist nicht gestattet \(§§ 53, 54 UrhG\).*'
+    r'|strafbar \(§ 106 UrhG\).*'
+    r'|Bundeseinheitliche Weiterbildungspr[üu]fung.*'
+    r'|der Industrie- und Handelskammern'
+    r'|Hinweise f[üu]r den Korrektor:'
     r'|M[öo]gliche Punktzahl:?\s*'
     r'|\d{1,3})$', re.I)
 
 # Word setzt Formeln in der Symbol-Schrift; pdftotext liefert deren Zeichen im
-# Privatbereich U+F0xx. Die Codes sind die der Adobe-Symbol-Kodierung.
-SYMBOL = {
-    '\uf0de': '→',
-    '\uf0d7': '·',  '\uf0b0': '°',  '\uf0b1': '±',  '\uf0c6': 'Ø',
-    '\uf061': 'α',  '\uf070': 'π',  '\uf06e': 'ν',  '\uf044': 'Δ',
+# Privatbereich U+F0xx. Die Codes sind die der Adobe-Symbol-Kodierung: der
+# Bereich 0x20–0x7E deckt sich in der Anordnung mit ASCII, die Buchstaben stehen
+# dort aber für griechische.
+#
+# Ohne diese Tabelle verschwinden die Rechenzeichen: ``clean()`` wirft alles aus
+# dem Privatbereich weg, was nicht übersetzt wurde – und damit allein in den
+# Basisqualifikations-Heften 845 Gleichheitszeichen, 124 Plus und 91 Minus.
+# Aus "σz,zul = Fzul ÷ S" wurde so "z, zul Fzul S".
+_SYMBOL_0X20 = (' !∀#∃%&∋()∗+,−./0123456789:;<=>?'
+                '≅ΑΒΧΔΕΦΓΗΙϑΚΛΜΝΟΠΘΡΣΤΥςΩΞΨΖ[∴]⊥_'
+                '‾αβχδεφγηιϕκλμνοπθρστυϖωξψζ{|}∼')
+SYMBOL = {chr(0xF020 + i): z for i, z in enumerate(_SYMBOL_0X20)}
+SYMBOL.update({
+    '\uf0a3': '≤',  '\uf0a7': '•',  '\uf0ae': '→',  '\uf0b0': '°',
+    '\uf0b1': '±',  '\uf0b3': '≥',  '\uf0bb': '≈',  '\uf0c6': 'Ø',
+    '\uf0d6': '√',  '\uf0d7': '·',  '\uf0de': '→',  '\uf0e5': '∑',
     # Die sechs Teilstücke großer Klammern tragen keine Bedeutung.
     '\uf0e6': '', '\uf0e7': '', '\uf0e8': '',
     '\uf0f6': '', '\uf0f7': '', '\uf0f8': '',
-}
+})
 
 def clean(line):
     l = re.sub(r'\s{2,}', ' ', line).strip()
@@ -277,6 +315,9 @@ def teilen(lines):
 
 
 def parse_datei(fn, kuerzel, bezeichnung, fach, jahrgang=STANDARD):
+    if JAHRGAENGE[jahrgang].get('format') == 'alt':
+        import parse_imbq_alt
+        return parse_imbq_alt.parse_datei(fn, kuerzel, bezeichnung, fach, jahrgang)
     ocr = fn in JAHRGAENGE[jahrgang].get('ocr', ())
     lines = load(os.path.join(quellen(jahrgang), fn), bezeichnung, ocr)
     kopf = ' '.join(lines[:20])
