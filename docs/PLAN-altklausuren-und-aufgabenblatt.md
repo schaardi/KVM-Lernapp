@@ -37,7 +37,7 @@ richtig zu lösen." – und: „Nutze diese ganzen Klausuren für unsere App."
 | **B3** Flutter-Aufgabenblatt | **fertig** – `screens/aufgabenblatt_screen.dart` mit Stepper, Ausgangslage, Anlagen am Kopf, Teil-Karten mit Antwortfeld und Selbstbewertung, Prüfauftrag über die ganze Aufgabe; Prüfungsübersicht zeigt die Aufgaben mit Teil-Chips |
 | **A T2** F2019 … H2022 | **fertig** – 40 Prüfungen, 36 neue Anlagen; Bestand jetzt **76 Original-Prüfungen** |
 | **A T3** F2018, H2018 | **fertig** – 10 Prüfungen, 7 Anlagen, neuer `parse_imbq_alt.py`; Bestand jetzt **86 Original-Prüfungen** |
-| **A T4** H2017 … H2014 | offen – 35 Prüfungen, alle als Scan (OCR) |
+| **A T4** H2017 … H2014 | **angefangen** – Parser liest alle 35 Scans (Aufgabenzahl stimmt mit dem Deckblatt überein), aber nur 1 erreicht ohne Handarbeit 100/100. Termine stehen als `in_arbeit` in `JAHRGAENGE`; `build_imbq.py` lässt sie aus, bis sie abgenommen sind |
 | **C** Aufgabenserien | offen |
 | Übungsfragen (`PX-`) aus T1 bis T3 | offen – die 64 neuen Prüfungen haben noch keine |
 | Lösungszeichnungen der Methoden-Hefte | teils offen – acht Aufgaben „Stellen Sie … in einem Diagramm dar“ aus T2 haben zwar den amtlichen Lösungstext, aber noch kein Lösungsbild (`bildL`) |
@@ -294,6 +294,31 @@ A, L = aufgaben(frage, False), aufgaben(loes, True)
 - Beschriftungen aus Zeichnungen („R1 R2 UEIN R3 UAUS 1 kΩ“) landen als
   Fließtext in der Ausgangslage. Dafür gibt es die Korrekturtabelle `INTRO`;
   die Zeichnung selbst hängt als Anlage an der Aufgabe.
+
+### A2a – Stand der Scans (T4)
+
+`parse_imbq_alt.py` liest die 35 Scans über den **Lösungskopf** statt über die
+Aufgabenüberschrift: `Lösungshinweise Aufgabe N (x Punkte)` wird zuverlässig
+erkannt, die verzierte Ziffer der Überschrift dagegen nicht (`Aufgabe En`,
+`Aufgabe |s`, manchmal gar nichts). Die Zahl der Aufgaben stimmt damit in allen
+35 Heften mit der Angabe auf dem Deckblatt überein.
+
+Trotzdem erreicht nur **1 von 35** ohne Handarbeit 100/100; bei 10 weiteren
+stimmt immerhin der Aufgabenteil schon. Was fehlt, sind einzelne Klammern
+(`(6 Punkte)` → unlesbar) und Teil-Buchstaben, die die OCR verschluckt hat.
+
+**Der Haken ist ein anderer.** Selbst wenn die Punkte aufgehen, sagt das nichts
+über die Zahlen *im Text*: Maße, Geldbeträge, Paragrafen. Keine Invariante kann
+prüfen, ob dort „36.000 N“ oder „35.000 N“ steht – dafür braucht es den Blick
+auf das Seitenbild, Prüfung für Prüfung. Auch die als „Textlayer“ eingebetteten
+Ebenen der RBH-Hefte helfen nicht: sie sind selbst OCR (`GEPRÜFTEI/-R`,
+`($853, 54 UrhG)`).
+
+Deshalb ist T4 eine andere Art von Arbeit als T1–T3, deren Quellen echte
+Textebenen hatten. Vorschlag zur Entscheidung: entweder die 35 Prüfungen
+nacheinander mit Sichtprüfung (Richtwert des Plans: 1–2 h je Prüfung), oder
+zuerst die offenen Punkte mit besserem Verhältnis von Aufwand und Nutzen –
+Übungsfragen (`PX-`) zu den 64 neuen Prüfungen und Teil C (Aufgabenserien).
 
 **L-ALT (45 Prüfungen)** – neuer Parser `parse_imbq_alt.py` (oder dritter
 Modus), gleiche Ausgabestruktur wie `parse_imbq.parse_datei`:
