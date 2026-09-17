@@ -63,7 +63,11 @@ def baue(exams):
 
 def main():
     exams = []
+    offen = []
     for jahrgang in sorted(P.JAHRGAENGE):
+        if P.JAHRGAENGE[jahrgang].get('in_arbeit'):
+            offen.append(jahrgang)
+            continue
         exams += P.parse_alle(jahrgang=jahrgang)
     fehler = [f'{e["kuerzel"]}: {P.pruefe(e)}' for e in exams if P.pruefe(e)]
     assert not fehler, fehler
@@ -105,6 +109,8 @@ def main():
     ml = sum(1 for c in neu for s in c['steps'] if s.get('bildL'))
     mt = sum(1 for c in neu for s in c['steps'] if s.get('tab')) \
         + sum(1 for c in neu for a in c['aufgaben'] if a.get('tab'))
+    if offen:
+        print('  noch in Arbeit, nicht eingespielt: %s' % ', '.join(offen))
     print('  BQ-Prüfungen gebaut: %d  ·  Anlagen: %d Bilder zur Aufgabe, '
           '%d zur Lösung, %d Tabellen' % (len(neu), mb, ml, mt))
     for c in neu:

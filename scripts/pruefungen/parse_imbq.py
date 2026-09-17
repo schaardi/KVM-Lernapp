@@ -29,6 +29,11 @@ NTG    = ('05-ntg.txt',            'NT',
           'Naturwissenschaftliche und technische Gesetzmäßigkeiten', 5)
 
 # Prüfungstermine: Verzeichnis, Hefte und die zugehörige Korrekturdatei.
+# ``format``   fehlt (PL/L-I) oder 'alt' – siehe parse_imbq_alt.py
+# ``scan``     Textlayer stammt aus Tesseract, nicht aus dem PDF
+# ``ocr``      einzelne Hefte eines sonst sauberen Termins als Scan
+# ``in_arbeit`` noch nicht abgenommen: build_imbq.py lässt den Termin aus,
+#              parse_imbq.py liest ihn trotzdem (Arbeitsstand sichtbar halten)
 JAHRGAENGE = {
     # Frühjahr 2019 bis Herbst 2022: Bauform L-I (Lösung hinter jeder Aufgabe).
     'f2019': {'dir': 'imbq-f2019', 'korrekturen': 'korrekturen_imbq_f2019',
@@ -52,6 +57,29 @@ JAHRGAENGE = {
               'pruefungen': [RECHT, BWL, METHOD, ZUSAMM, NTG]},
     # Herbst 2023: das Heft "Methoden …" fehlt im Archiv (die abgelegte Datei
     # ist ein Doppel der ZiB-Prüfung desselben Termins).
+    # Herbst 2014 bis Herbst 2017: Bauform L-ALT, aber nur als Scan – der
+    # Textlayer stammt aus Tesseract.
+    'h2014': {'dir': 'imbq-h2014', 'korrekturen': 'korrekturen_imbq_h2014',
+              'format': 'alt', 'scan': True, 'in_arbeit': True,
+              'pruefungen': [RECHT, BWL, METHOD, ZUSAMM, NTG]},
+    'f2015': {'dir': 'imbq-f2015', 'korrekturen': 'korrekturen_imbq_f2015',
+              'format': 'alt', 'scan': True, 'in_arbeit': True,
+              'pruefungen': [RECHT, BWL, METHOD, ZUSAMM, NTG]},
+    'h2015': {'dir': 'imbq-h2015', 'korrekturen': 'korrekturen_imbq_h2015',
+              'format': 'alt', 'scan': True, 'in_arbeit': True,
+              'pruefungen': [RECHT, BWL, METHOD, ZUSAMM, NTG]},
+    'f2016': {'dir': 'imbq-f2016', 'korrekturen': 'korrekturen_imbq_f2016',
+              'format': 'alt', 'scan': True, 'in_arbeit': True,
+              'pruefungen': [RECHT, BWL, METHOD, ZUSAMM, NTG]},
+    'h2016': {'dir': 'imbq-h2016', 'korrekturen': 'korrekturen_imbq_h2016',
+              'format': 'alt', 'scan': True, 'in_arbeit': True,
+              'pruefungen': [RECHT, BWL, METHOD, ZUSAMM, NTG]},
+    'f2017': {'dir': 'imbq-f2017', 'korrekturen': 'korrekturen_imbq_f2017',
+              'format': 'alt', 'scan': True, 'in_arbeit': True,
+              'pruefungen': [RECHT, BWL, METHOD, ZUSAMM, NTG]},
+    'h2017': {'dir': 'imbq-h2017', 'korrekturen': 'korrekturen_imbq_h2017',
+              'format': 'alt', 'scan': True, 'in_arbeit': True,
+              'pruefungen': [RECHT, BWL, METHOD, ZUSAMM, NTG]},
     # Frühjahr und Herbst 2018: Bauform L-ALT (Punktzahl in Klammern am
     # rechten Rand, Lösung hinter jeder Aufgabe) – siehe parse_imbq_alt.py.
     'f2018': {'dir': 'imbq-f2018', 'korrekturen': 'korrekturen_imbq_f2018',

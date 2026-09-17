@@ -41,13 +41,21 @@ import re
 import parse_imbq as P
 
 AUFGABE = re.compile(r'^Aufgabe\s+(\d+)$')
+# In den Scans (2014–2017) ist die Ziffer der Überschrift verziert gesetzt;
+# Tesseract liest daraus Zeichensalat: "Aufgabe En", "Aufgabe |s", "Aufgabe 5 |",
+# manchmal auch gar nichts. Erkannt wird deshalb "Aufgabe" plus höchstens zwei
+# kurze Bruchstücke – die Nummer kommt ohnehin aus dem Lösungskopf.
+AUFGABE_SCAN = re.compile(r'^Aufgabe(?:\s+\S{1,4}){0,2}\s*$')
+AUFGABE_ZIFFER = re.compile(r'^Aufgabe\s+(\d{1,2})\s*\S{0,3}$')
 KOPF_L = re.compile(r'^L[öo]sungshinweise\s+Aufgabe\s+(\d+)\b(.*)$')
 MARKER = re.compile(r'^([a-hA-H])\)\s*(.*)$')
 # "(6 Punkte)" – am Zeilenende, mitten in der Zeile oder allein auf einer.
-TOKEN = re.compile(r'\((\d+)\s*Punkte?\)')
+# In den Scans liest die OCR die runde Klammer gelegentlich als geschweifte
+# ("{6 Punkte)", "(6 Punkte}"), der Singular "(1 Punkt)" kommt ohnehin vor.
+TOKEN = re.compile(r'[({]\s*(\d+)\s*Punkte?\s*[)}]')
 # Der Lösungskopf von MIKP H2018 bricht die Klammer um: "… (15" / "15 Punkte)".
-TOKEN_OFFEN = re.compile(r'\((\d+)\s*$')
-TOKEN_SCHLUSS = re.compile(r'^\s*(\d+)\s*Punkte?\)')
+TOKEN_OFFEN = re.compile(r'[({]\s*(\d+)\s*$')
+TOKEN_SCHLUSS = re.compile(r'^\s*(\d+)\s*Punkte?\s*[)}]')
 AUSGANG = re.compile(r'^Ausgangssituation', re.I)
 
 
@@ -121,7 +129,9 @@ def _teile(zeilen, gesamt, loesung):
         zeilen = _vorziehen(zeilen)
     idx = [i for i, l in enumerate(zeilen) if MARKER.match(l)]
     if not idx:
-        eintrag = {'label': 'a', 'punkte': gesamt, feld: _text(zeilen)}
+        # Ohne lesbaren Lösungskopf bleibt die Punktzahl offen; 0 macht das in
+        # der 100-Punkte-Probe sichtbar, statt später beim Summieren zu stolpern.
+        eintrag = {'label': 'a', 'punkte': gesamt or 0, feld: _text(zeilen)}
         # Bei Aufgaben ohne Teile ist die Klammer im Lösungstext die
         # Punkteverteilung, keine Teilaufgabe.
         verteilung = _tokens(zeilen)
@@ -166,35 +176,76 @@ def _aufgaben(block, gesamt, loesung):
     return intro, teile, vo
 
 
+def _aufgabenkopf(zeilen, von, bis, scan):
+    """Zeile mit der Aufgabenüberschrift zwischen zwei Lösungsköpfen.
+
+    Gesucht wird von hinten: die Überschrift steht unmittelbar vor ihrer
+    Aufgabe, ein „Aufgabe …“ weiter oben gehörte noch zum Lösungstext davor.
+    Eine Überschrift mit lesbarer Ziffer schlägt jede andere.
+    """
+    genau = [i for i in range(von, bis) if AUFGABE.match(zeilen[i])]
+    if genau:
+        return genau[-1]
+    if not scan:
+        return None
+    for muster in (AUFGABE_ZIFFER, AUFGABE_SCAN):
+        treffer = [i for i in range(von, bis) if muster.match(zeilen[i])]
+        if treffer:
+            return treffer[-1]
+    return None
+
+
 def parse_datei(fn, kuerzel, bezeichnung, fach, jahrgang):
+    """Ein Heft der Bauform L-ALT lesen.
+
+    Angelpunkt ist der **Lösungskopf** ``Lösungshinweise Aufgabe N``: er trägt
+    die Nummer und die Gesamtpunktzahl und wird auch in den Scans zuverlässig
+    gelesen – anders als die Aufgabenüberschrift, deren verzierte Ziffer die OCR
+    regelmäßig verstümmelt oder ganz verschluckt.
+    """
+    scan = P.JAHRGAENGE[jahrgang].get('scan', False)
     lines = P.load(os.path.join(P.quellen(jahrgang), fn), bezeichnung)
-    m = P.DATUM.search(' '.join(lines[:25]))
+    m = P.DATUM.search(' '.join(lines[:30]))
     datum = m.group(1) if m else None
 
-    start = [i for i, l in enumerate(lines) if AUFGABE.match(l)]
-    erste = start[0] if start else len(lines)
+    anker = [i for i, l in enumerate(lines) if KOPF_L.match(l)]
+    # Überschrift je Aufgabe; sie begrenzt zugleich den Lösungsteil davor.
+    koepfe = []
+    for k, li in enumerate(anker):
+        von = anker[k - 1] + 1 if k else 0
+        koepfe.append(_aufgabenkopf(lines, von, li, scan))
+
+    erste = next((i for i in koepfe if i is not None), len(lines))
     cs = next((i for i, l in enumerate(lines[:erste]) if AUSGANG.match(l)), None)
     kontext = _text(lines[cs + 1:erste]) if cs is not None else ''
 
     A, L = {}, {}
-    for k, i in enumerate(start):
-        nr = int(AUFGABE.match(lines[i]).group(1))
-        ende = start[k + 1] if k + 1 < len(start) else len(lines)
-        block = lines[i + 1:ende]
-        li = next((j for j, l in enumerate(block) if KOPF_L.match(l)), None)
-        if li is None:
-            continue
-        gesamt, verbraucht = _kopf_punkte(block, li)
-        frage = [l for j, l in enumerate(block[:li]) if j not in verbraucht]
-        loes = [l for j, l in enumerate(block[li + 1:], li + 1) if j not in verbraucht]
+    for k, li in enumerate(anker):
+        nr = int(KOPF_L.match(lines[li]).group(1))
+        kopf_i = koepfe[k]
+        # Frageteil: von der Überschrift bis zum Lösungskopf. Fehlt die
+        # Überschrift (OCR), bleibt der Frageteil leer – pruefe() meldet das.
+        frage_von = kopf_i + 1 if kopf_i is not None else li
+        # Lösungsteil: bis zur Überschrift der nächsten Aufgabe.
+        naechster = next((i for i in koepfe[k + 1:] if i is not None), None)
+        loes_bis = naechster if naechster is not None else len(lines)
+        if k + 1 < len(anker) and loes_bis > anker[k + 1]:
+            loes_bis = anker[k + 1]
+
+        block = lines[frage_von:loes_bis]
+        li_rel = li - frage_von
+        gesamt, verbraucht = _kopf_punkte(block, li_rel)
+        frage = [l for j, l in enumerate(block[:li_rel]) if j not in verbraucht]
+        loes = [l for j, l in enumerate(block[li_rel + 1:], li_rel + 1)
+                if j not in verbraucht]
         intro, tf, _ = _aufgaben(frage, gesamt, False)
         _, tl, vo = _aufgaben(loes, gesamt, True)
-        # Maßgeblich ist der Aufgabenteil: er geht in allen zehn Heften genau
-        # auf 100 Punkte auf. Im Lösungsteil verrutscht die Klammer am rechten
-        # Rand deutlich öfter – sie steht dort am Ende des Teils, nicht am
-        # Anfang, und wandert dabei über Teilgrenzen hinweg. Der Lösungsteil
-        # übernimmt deshalb die Punktzahl seines Aufgabenteils; geprüft wird
-        # weiterhin, dass es zu jedem Teil überhaupt eine Lösung gibt.
+        # Maßgeblich ist der Aufgabenteil: er geht in allen Heften genau auf
+        # 100 Punkte auf. Im Lösungsteil verrutscht die Klammer am rechten Rand
+        # deutlich öfter – sie steht dort am Ende des Teils, nicht am Anfang,
+        # und wandert dabei über Teilgrenzen hinweg. Der Lösungsteil übernimmt
+        # deshalb die Punktzahl seines Aufgabenteils; geprüft wird weiterhin,
+        # dass es zu jedem Teil überhaupt eine Lösung gibt.
         nach_label = {t['label']: t['punkte'] for t in tf}
         for t in tl:
             if t['label'] in nach_label:
