@@ -36,4 +36,5 @@ flutter:
     - assets/data/cases.json
     - assets/data/formulas.json
     - assets/data/anlagen.json
+    - assets/anlagen/
     - assets/branding/app_logo.png

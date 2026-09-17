@@ -86,8 +86,12 @@ class PruefungenScreen extends StatelessWidget {
       ..writeln('AUSGANGSSITUATION')
       ..writeln(c.context)
       ..writeln();
-    for (final s in c.steps) {
-      final teile = s.q.split('\n\n');
+    for (final roh in c.steps) {
+      // Mit der Aufgabe verbinden: Kopf und Ausgangslage stehen dort, damit
+      // der Export dieselbe Form behält wie vor dem Umbau auf Aufgabenblätter.
+      final s = roh.withCase(CaseContext(c.title, c.context, 0, c.steps.length),
+          c.aufgabeVon(roh.nr));
+      final teile = TaskParts.of(s).volltext.split('\n\n');
       b
         ..writeln('------------------------------')
         ..writeln(teile.isNotEmpty ? teile.first : '')
@@ -98,10 +102,10 @@ class PruefungenScreen extends StatelessWidget {
             ? 'AMTLICHER LÖSUNGSHINWEIS (IHK):'
             : 'MUSTERLÖSUNG (zu prüfen):')
         ..writeln(s.a ?? '');
-      if (s.tab != null) {
-        b.writeln(s.tab!.asText());
+      if (s.tabEffektiv != null) {
+        b.writeln(s.tabEffektiv!.asText());
       }
-      final anlage = DataService.instance.anlage(s.bild);
+      final anlage = DataService.instance.anlage(s.bildEffektiv);
       if (anlage != null) {
         b.writeln('[Zur Aufgabe gehört eine Abbildung: '
             '${anlage.titel.isNotEmpty ? anlage.titel : 'Anlage zur Aufgabe'}]');
