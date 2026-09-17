@@ -20,17 +20,10 @@ import anlagen_imbq as AN
 import build_amtlich as BA   # dump_compact, webdaten
 import aufgaben_modell as AM  # Aufgabenblatt-Format
 
-MON = {'januar':1,'februar':2,'märz':3,'april':4,'mai':5,'juni':6,'juli':7,
-       'august':8,'september':9,'oktober':10,'november':11,'dezember':12}
-
-def datum_teile(d):
-    m = re.match(r'(\d{1,2})\.\s*(\w+)\s*(\d{4})', d or '')
-    return (int(m.group(3)), MON[m.group(2).lower()], int(m.group(1))) if m else None
-
 def baue(exams):
     cases = []
     for ex in exams:
-        j, mo, tg = datum_teile(ex['datum'])
+        j, mo, tg = P.datum_teile(ex['datum'])
         cid = 'P-%s-%04d%02d%02d' % (ex['kuerzel'], j, mo, tg)
         sub = 'IHK-Prüfung: ' + ex['bezeichnung']
         termin = ('%s %d' % ('Frühjahr' if mo <= 6 else 'Herbst', j))

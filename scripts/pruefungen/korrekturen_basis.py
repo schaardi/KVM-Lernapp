@@ -14,21 +14,33 @@ mit bis zu vier Tabellen, alle mit dem Schlüssel
 ``LABEL``     Teil-Buchstaben **im Lösungsheft** berichtigen; Schlüssel ist hier
               ``(Kürzel, Aufgabennummer, Position)`` mit der Position ab 0,
               weil derselbe Buchstabe zweimal gedruckt sein kann.
+``DATUM``     Prüfungstag setzen oder berichtigen; Schlüssel ist allein das
+              Kürzel. Gebraucht, wo das Deckblatt fehlt (Scans ohne Deckblatt)
+              oder ein falsches Jahr trägt. Aus dem Datum entstehen Fall-ID und
+              Termin, deshalb darf es nicht raten.
 
 Greift eine Korrektur ins Leere, bricht der Lauf ab: dann hat sich die Quelle
 geändert und die Stelle muss neu geprüft werden, statt still zu verschwinden.
 """
 
 
-def anwenden(exams, loesung=None, frage=None, punkte=None, label=None):
+def anwenden(exams, loesung=None, frage=None, punkte=None, label=None,
+             datum=None):
     """Korrekturen einspielen; gibt die Zahl der Treffer zurück."""
     loesung, frage = loesung or {}, frage or {}
-    punkte, label = punkte or {}, label or {}
+    punkte, label, datum = punkte or {}, label or {}, datum or {}
     treffer = 0
-    genutzt = {'l': set(), 'f': set(), 'p': set(), 'b': set()}
+    genutzt = {'l': set(), 'f': set(), 'p': set(), 'b': set(), 'd': set()}
 
     for ex in exams:
         k = ex['kuerzel']
+        neu_datum = datum.get(k)
+        if neu_datum is not None:
+            assert neu_datum != ex['datum'], \
+                'Datums-Korrektur %s ist schon so gedruckt' % k
+            ex['datum'] = neu_datum
+            genutzt['d'].add(k)
+            treffer += 1
         for nr, a in ex['loesungen'].items():
             for pos, t in enumerate(a['teile']):
                 neu_label = label.get((k, nr, pos))
@@ -60,6 +72,7 @@ def anwenden(exams, loesung=None, frage=None, punkte=None, label=None):
                     treffer += 1
 
     fehlend = ((set(loesung) - genutzt['l']) | (set(frage) - genutzt['f'])
-               | (set(punkte) - genutzt['p']) | (set(label) - genutzt['b']))
+               | (set(punkte) - genutzt['p']) | (set(label) - genutzt['b'])
+               | (set(datum) - genutzt['d']))
     assert not fehlend, 'Korrektur greift nicht mehr: %s' % sorted(map(str, fehlend))
     return treffer
