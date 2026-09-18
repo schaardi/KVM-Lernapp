@@ -24,5 +24,18 @@ PUNKTE = {
 LABEL = {}
 
 
+INTRO = {
+    # BWL, Aufgabe 2: Die Auftragstabelle (Produkt, Produktionsmenge, Losgröße,
+    # Rüstzeit, Zeit je Einheit) lief als Fließtext in die Ausgangslage. Die
+    # Werte hängen jetzt als Tabellenanlage an der Aufgabe.
+    ('BW', 2):
+     "Der Fertigungsplanung der Industrie GmbH liegen für den Juni die in der "
+     "Tabelle genannten Auftragsdaten vor. Der Juni hat 20 Arbeitstage, die "
+     "tägliche Arbeitszeit beträgt 8 Stunden. Kalkuliert wird mit "
+     "urlaubsbedingter Abwesenheit von 14 % sowie krankheitsbedingten "
+     "Fehlzeiten in Höhe von 5,8 %.",
+}
+
+
 def anwenden(exams):
-    return _anwenden(exams, LOESUNG, FRAGE, PUNKTE, LABEL)
+    return _anwenden(exams, LOESUNG, FRAGE, PUNKTE, LABEL, {}, INTRO)

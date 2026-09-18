@@ -184,11 +184,28 @@ FRAGE = {
 }
 
 
+# ── Ausgangslagen ──────────────────────────────────────────────────────────
+# Schlüssel: (Kürzel, Aufgabennummer).
+INTRO = {
+    # BWL, Aufgabe 6: Die Tabelle mit Menge und Gesamtkosten der drei Quartale
+    # lief als Fließtext in die Ausgangslage ("Quartal 1 2 3 Produktions- und
+    # Absatzmenge 680 940 820 Gesamtkosten 3.940.200 € …"). Die Werte hängen
+    # jetzt als Tabellenanlage an der Aufgabe.
+    ('BW', 6):
+     "Die Industrie GmbH produziert in Gütersloh ein spezielles E-Bike, das "
+     "stark nachgefragt wird. Bei Vollauslastung können 1.060 Stück pro Quartal "
+     "produziert werden. Menge und Gesamtkosten der vergangenen Quartale stehen "
+     "in der Tabelle. Die Fixkosten und die variablen Stückkosten sind in den "
+     "genannten Quartalen konstant geblieben. Der Verkaufspreis beträgt im "
+     "gesamten Zeitraum 5.625 € pro E-Bike.",
+}
+
+
 def anwenden(exams):
     """Korrekturen einspielen. Wirft AssertionError, sobald eine Korrektur ins
     Leere läuft – dann hat sich die Quelle geändert und muss neu geprüft werden."""
     treffer = 0
-    genutzt_l, genutzt_f = set(), set()
+    genutzt_l, genutzt_f, genutzt_i = set(), set(), set()
     for ex in exams:
         k = ex['kuerzel']
         for nr, a in ex['loesungen'].items():
@@ -199,12 +216,18 @@ def anwenden(exams):
                     genutzt_l.add((k, nr, t['label']))
                     treffer += 1
         for nr, a in ex['aufgaben'].items():
+            neu = INTRO.get((k, nr))
+            if neu is not None:
+                a['intro'] = neu
+                genutzt_i.add((k, nr))
+                treffer += 1
             for t in a['teile']:
                 neu = FRAGE.get((k, nr, t['label']))
                 if neu is not None:
                     t['text'] = neu
                     genutzt_f.add((k, nr, t['label']))
                     treffer += 1
-    fehlend = (set(LOESUNG) - genutzt_l) | (set(FRAGE) - genutzt_f)
+    fehlend = ((set(LOESUNG) - genutzt_l) | (set(FRAGE) - genutzt_f)
+               | (set(INTRO) - genutzt_i))
     assert not fehlend, 'Korrektur greift nicht mehr: %s' % sorted(fehlend)
     return treffer

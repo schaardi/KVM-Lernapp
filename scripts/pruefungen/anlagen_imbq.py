@@ -106,6 +106,17 @@ BILDER_L = {
     ('MI', 'h2019', 4, 'b'): 'mih19-l-verbund',
     ('MI', 'f2021', 2, 'a'): 'mif21-l-eisenhower',
     ('MI', 'f2021', 4, 'c'): 'mif21-l-diagramm',
+    # Die acht „Stellen Sie … in einem Diagramm dar“-Aufgaben aus T2. Bei
+    # F2022 4 b) ist die amtliche Lösung eine Tabelle, keine Zeichnung – dort
+    # trägt der Lösungstext die Zahlen schon.
+    ('MI', 'h2019', 2, 'a'): 'mih19-l-ishikawa',
+    ('MI', 'f2019', 4, 'b'): 'mif19-l-energie',
+    ('MI', 'f2020', 2, 'a'): 'mif20-l-netzplan',
+    ('MI', 'f2020', 2, 'b'): 'mif20-l-netzplan',
+    ('MI', 'f2020', 4, 'b'): 'mif20-l-fremd',
+    ('MI', 'h2020', 4, 'b'): 'mih20-l-kosten',
+    ('MI', 'h2021', 4, 'b'): 'mih21-l-lieferant',
+    ('MI', 'h2022', 4, 'b'): 'mih22-l-fehler',
     ('NT', 'f2019', 5, 'c'): 'ntf19-l-schaltung',
     ('NT', 'f2020', 7, 'c'): 'ntf20-l-gauss',
     ('NT', 'h2020', 2, 'a'): 'nth20-l-kraefte',
@@ -218,6 +229,69 @@ _NOTENSTATISTIK = {
                'Einzelnoten eines Jahrgangs, x̄ sein Notenmittelwert.',
 }
 
+_BAB_H2023 = {
+    'titel': 'Anlage 1 zu Aufgabe 5 a) und b): Betriebsabrechnungsbogen Mai '
+             '(Beträge in €)',
+    'kopf': ['Kostenart', 'Summe Gemeinkosten', 'Material', 'Fertigung',
+             'Verwaltung', 'Vertrieb'],
+    'zeilen': [
+        ['Gehälter', '55.982', '3.600', '12.000', '27.982', '12.400'],
+        ['Hilfslöhne', '13.000', '5.000', '8.000', '–', '–'],
+        ['Heizungskosten', '4.800', '', '', '', ''],
+        ['Betriebliche Steuern', '6.500', '', '', '', ''],
+        ['Betriebsstoffe', '2.800', '–', '2.800', '–', '–'],
+        ['Abschreibung', '14.400', '', '', '', ''],
+        ['sonstige Gemeinkosten', '25.898', '3.560', '11.700', '5.998', '4.640'],
+        ['Summe Gemeinkosten', '', '', '', '', ''],
+        ['Bezugsbasis/Zuschlagsgrundlage in €', '', '', '', '', ''],
+        ['Gemeinkostenzuschlagsatz in %', '', '', '', '', ''],
+    ],
+    'hinweis': 'Material, Fertigung, Verwaltung und Vertrieb sind '
+               'Hauptkostenstellen. Die leeren Felder sind zu ergänzen.',
+}
+
+_AUFTRAGSDATEN_H2018 = {
+    'titel': 'Aufgabe 4: Auftragsdaten der Fertigungsplanung für Oktober',
+    'kopf': ['Produkt', 'Menge pro Monat', 'Losgröße', 'Rüstzeit pro Los',
+             'Zeit je Einheit'],
+    'zeilen': [
+        ['A', '2.400 Stück', '400 Stück', '200 min', '64 min'],
+        ['B', '1.500 Stück', '300 Stück', '120 min', '150 min'],
+        ['C', '1.000 Stück', '125 Stück', '75 min', '70 min'],
+        ['D', '2.500 Stück', '250 Stück', '70 min', '28 min'],
+    ],
+}
+
+_AUFTRAGSDATEN_F2024 = {
+    'titel': 'Aufgabe 2: Auftragsdaten der Fertigungsplanung für Juni',
+    'kopf': ['Produkt', 'Produktionsmenge pro Monat', 'Losgröße',
+             'Rüstzeit pro Los', 'Zeit je Einheit'],
+    'zeilen': [
+        ['A', '4.000 Stück', '500 Stück', '180 min', '25 min'],
+        ['B', '2.500 Stück', '500 Stück', '152 min', '44 min'],
+        ['C', '900 Stück', '300 Stück', '75 min', '30 min'],
+        ['D', '500 Stück', '500 Stück', '275 min', '75 min'],
+    ],
+}
+
+_QUARTALSKOSTEN_H2025 = {
+    'titel': 'Aufgabe 6: Menge und Gesamtkosten der vergangenen Quartale',
+    'kopf': ['Quartal', '1', '2', '3'],
+    'zeilen': [
+        ['Produktions- und Absatzmenge', '680', '940', '820'],
+        ['Gesamtkosten', '3.940.200 €', '4.778.700 €', '4.391.700 €'],
+    ],
+}
+
+_MASCHINENVARIANTEN = {
+    'titel': 'Aufgabe 7: Kostenverläufe und Maximalkapazitäten der beiden Varianten',
+    'kopf': ['', 'variable Kosten pro Stück', 'Fixkosten pro Monat', 'max. Kapazität'],
+    'zeilen': [
+        ['Neuanschaffung', '200 €', '16.428 €', '150 Stück'],
+        ['Umrüstung', '256 €', '8.700 €', '200 Stück'],
+    ],
+}
+
 TABELLEN = {
     ('BW', 'h2024', 6, 'a'): _KOSTENTABELLE,
     ('BW', 'h2024', 6, 'b'): _KOSTENTABELLE,
@@ -226,6 +300,11 @@ TABELLEN = {
     ('BW', 'h2020', 5, 'a'): _BAB_H2020,
     ('RE', 'h2022', 5, 'a'): _SOZIALVERSICHERUNG,
     ('NT', 'f2018', 7, 'a'): _NOTENSTATISTIK,
+    ('BW', 'f2023', 7, 'a'): _MASCHINENVARIANTEN,
+    ('BW', 'h2018', 4, 'a'): _AUFTRAGSDATEN_H2018,
+    ('BW', 'f2024', 2, '*'): _AUFTRAGSDATEN_F2024,
+    ('BW', 'h2025', 6, '*'): _QUARTALSKOSTEN_H2025,
+    ('BW', 'h2023', 5, '*'): _BAB_H2023,
 }
 
 

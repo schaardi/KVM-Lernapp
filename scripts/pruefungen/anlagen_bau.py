@@ -105,6 +105,23 @@ FIGUREN = {
                          'Lösung 4 b): Verbunddiagramm der Teilequalität'),
     'mif21-l-diagramm': ('mif21', 10, (66, 203, 650, 450),
                          'Lösung 4 c): Anteil der Teile ohne Nacharbeit'),
+    'mih19-l-ishikawa': ('mih19', 4, (66, 268, 625, 272),
+                         'Lösung 2 a): Ursache-Wirkungs-Diagramm zu Fehlern und '
+                         'Ausfällen des Servers'),
+    'mif19-l-energie':  ('mif19', 9, (212, 310, 405, 415),
+                         'Lösung 4 b): Entwicklung der Energiekosten als Linien- '
+                         'und als Säulendiagramm'),
+    'mif20-l-netzplan': ('mif20', 14, (130, 220, 915, 525),
+                         'Lösung 2 a) und b): Netzplan mit kritischem Pfad und '
+                         'Balkenplan ab dem 9. September 2020'),
+    'mif20-l-fremd':    ('mif20', 9, (70, 470, 692, 295),
+                         'Lösung 4 b): Anteil der fremdgefertigten Teile 2015 bis 2019'),
+    'mih20-l-kosten':   ('mih20', 8, (70, 200, 692, 450),
+                         'Lösung 4 b): Kostenentwicklung zum Vorjahr je Arbeitsstunde'),
+    'mih21-l-lieferant':('mih21', 8, (70, 585, 630, 405),
+                         'Lösung 4 b): Anteil der vertragsgemäßen Lieferungen je Lieferant'),
+    'mih22-l-fehler':   ('mih22', 7, (70, 638, 505, 292),
+                         'Lösung 4 b): Vergleich der Fehlerquoten von Lieferant A und B'),
     # ---- Heftform L-ALT (2018). Die Hefte setzen alles als Vektorgrafik und
     # beschriften ihre Abbildungen nicht – deshalb durchweg Zuschnitt.
     'ntf18-rohrprofil': ('ntf18', 3, (248, 233, 205, 210),

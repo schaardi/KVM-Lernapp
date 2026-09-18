@@ -32,6 +32,14 @@ import sys
 # Angewandt auf die Ausgangssituation und auf jede Teilaufgabe.
 # --------------------------------------------------------------------------- #
 TEXTE = {
+    # ---------------------------------------------------------------- 20.11.2023
+    # Die Kalkulationstabelle des Reisebusses zerfiel in zwei Blöcke: erst alle
+    # zwanzig Beschriftungen, dann alle zwanzig Werte. So ist die Aufgabe nicht
+    # lösbar; die Zuordnung steht jetzt als Tabellenanlage an der Aufgabe.
+    'P-FT-20231120': [
+        ('Wiederbeschaffungskosten kalkulierter Restwert\nWert des Reifensatzes Nutzungszeit\nKalkulationszins\nFahrleistung pro Jahr\nVerbrauch Dieselkraftstoff (1,50 €/ I) AdBlue (0,90 €/ |)\nSchmierstoffe\nMaut\nmautpflichtige km pro Jahr\nLebensdauer eines Reifensatzes\nReparatur und Wartungskosten pro Jahr\nSteuern und Versicherungen pro Jahr\nNettolohn Fahrer je Monat\nLohnnebenkosten\nPersonaleinsatzfaktor\nSpesen pro Jahr und Fahrzeug\nGemeinkostenumlage gemäß Betriebsabrechnungsbogen (BAB) je Fahrzeug\nkalkuliertes Einzelwagnis je Fahrzeug\nHinweis: sw Die Entwertung ist mit 60 % zu berücksichtigen.\n380.000 € 95.000 € 3.200 €\n5 Jahre 4%\n115.000 km\n37 /100 km\n0,4 1/1100 km 3,50 €/1.000 km 17,3 Cent/km 92.000 km 130.000 km\n5.400 €\n7.500 €\n2.400 €\n25%\n1,3\n1.250 €\n7.000 € 1.500 €\n',
+         'Die Kalkulationsdaten des Fahrzeugs stehen in der Tabelle zu dieser Aufgabe.\n'),
+    ],
     # ---------------------------------------------------------------- 12.11.2025
     'P-OK-20251112': [
         # Die Daten beider Buslinien liefen zu einem einzigen Absatz zusammen.
@@ -58,17 +66,14 @@ TEXTE = {
     ],
     # ---------------------------------------------------------------- 11.11.2025
     'P-FT-20251111': [
-        ('– zweiReisebusse', '– zwei Reisebusse'),
-        ('sowie Ver-\nstöße', 'sowie Verstöße'),
-        ('mit einer zGM von 18 t, einem Leergewicht von 8 t und einer\n'
-         'Sattellast von 10t',
-         'mit einer zGM von 18 t, einem Leergewicht von 8 t und einer '
-         'Sattellast von 10 t'),
+        # Dieselben OCR-Reste in der Fahrzeugliste.
+        ('Der Fuhrpark umfasst folgende Fahrzeuge: m zehn Überlandbusse\nm zweiReisebusse\nm sieben Sattelkraftfahrzeuge\n– fünf Gliederzüge',
+         'Der Fuhrpark umfasst folgende Fahrzeuge:\n– zehn Überlandbusse\n– zwei Reisebusse\n– sieben Sattelkraftfahrzeuge\n– fünf Gliederzüge'),
+
+        # Aufzählungszeichen ("m") und ein Zeilenumbruch mitten in der Angabe.
+        ('– Sattelkraftfahrzeug bestehend aus\nm einer Zweiachs-Sattelzugmaschine mit einer zGM von 18 t, einem Leergewicht von 8 t und einer Sattellast von 10t\n– einem Dreiachs-Sattelauflieger (Curtainsider) mit einer zGM von 36 t, einem Leergewicht von 7 t,\neiner Aufliegelast von 10 t mit einer Länge von 13,60 m',
+         '– Sattelkraftfahrzeug bestehend aus\n  – einer Zweiachs-Sattelzugmaschine mit einer zGM von 18 t, einem Leergewicht von 8 t und einer Sattellast von 10 t\n  – einem Dreiachs-Sattelauflieger (Curtainsider) mit einer zGM von 36 t, einem Leergewicht von 7 t, einer Aufliegelast von 10 t und einer Länge von 13,60 m'),
         # zZGM gibt es nicht; beim Auflieger ist die zulässige Gesamtmasse gemeint.
-        ('mit einer zZGM von 36 t, einem Leergewicht von 7 t,\n'
-         'einer Aufliegelast von 10 t mit einer Länge von 13,60 m',
-         'mit einer zGM von 36 t, einem Leergewicht von 7 t, '
-         'einer Aufliegelast von 10 t und einer Länge von 13,60 m'),
         ('– Sattelauflieger nach DIN 12642 in Code-L-Ausführung',
          '– Sattelauflieger nach DIN EN 12642 in Code-L-Ausführung'),
         ('verteilt auf 16 Europaletten mit einem\nGewicht von 1.000 kg/Palette',
@@ -76,55 +81,29 @@ TEXTE = {
         # Das Diagramm der Anlage ist als Bild nicht lesbar; die OCR lieferte nur
         # Achsenbeschriftung und Striche. Statt des Trümmerfelds steht jetzt eine
         # Beschreibung, aus der sich die Aufgabe lösen lässt.
-        ('– Nachfolgender Lastverteilungsplan liegt Ihnen vom Sattelauflieger vor:\n'
-         'Ladefläche (m) 2m 4m 6m 8m 10m 12m 25t / \\ 20t Fi rau . 10t 5t - Last ()',
-         '– Nachfolgender Lastverteilungsplan liegt Ihnen vom Sattelauflieger vor '
-         '(Beschreibung der Anlage): Die waagerechte Achse zeigt den Abstand des '
-         'Ladungsschwerpunkts von der Stirnwand (0 m bis 13,60 m, beschriftet in '
-         'Schritten von 2 m), die senkrechte Achse die dort jeweils höchstzulässige '
-         'Last (5 t bis 25 t). Die zulässige Last steigt von der Stirnwand aus an, '
-         'erreicht zwischen 6 m und 8 m ihr Maximum von rund 25 t und fällt zum Heck '
-         'hin wieder ab.'),
+        # Aus dem Lastverteilungsplan hat die OCR nur Achsenfragmente gelesen
+        # ("Ladefläche (m) 2m 4m … ARE | E | ET. u"). Die Zeichnung selbst hängt
+        # als Bild an der Aufgabe (BILDER).
+        ('m _Nachfolgender Lastverteilungsplan liegt Ihnen vom Sattelauflieger vor:\nLadefläche (m) 2m 4m 6m 8m 10m 12m 28\nARE | E | ET. u\n10t\nst\nLast (t)',
+         '– Nachfolgender Lastverteilungsplan des Sattelaufliegers liegt Ihnen vor (siehe Abbildung):'),
         ('eines AssessmentCenters (AC)', 'eines Assessment-Centers (AC)'),
     ],
     # ----------------------------------------------------------------- 08.05.2025
     'P-OK-20250508': [
-        ('Der Fuhrpark besteht aus folgenden Fahrzeugen: m 20 Transporter, zZ6M 3,5t\n'
-         '– 4Lkws, zGM 12t\n'
-         '– 40 Sattelkraftfahrzeuge, zGM 40t\n'
-         '– 16 Gliederzüge, zGM 40 t als Kühlfahrzeuge',
-         'Der Fuhrpark besteht aus folgenden Fahrzeugen:\n'
-         '– 20 Transporter, zGM 3,5 t\n'
-         '– 4 Lkw, zGM 12 t\n'
-         '– 40 Sattelkraftfahrzeuge, zGM 40 t\n'
-         '– 16 Gliederzüge, zGM 40 t als Kühlfahrzeuge'),
+        # Die Fahrzeugliste trägt noch OCR-Reste der Aufzählungszeichen
+        # ("m", "sw") und zusammengelaufene Angaben ("4Llkws,zGM 12t").
+
+        # Die Fahrzeugliste trägt OCR-Reste der Aufzählungszeichen ("m", "sw")
+        # und zusammengelaufene Angaben ("4Llkws,zGM 12t").
+        ('Der Fuhrpark besteht aus folgenden Fahrzeugen: m 20 Transporter, z6M 3,5 t\nm 4Llkws,zGM 12t\nsw 40 Sattelkraftfahrzeuge, zGM 40t\nm 16 Gliederzüge, zGM 40 t als Kühlfahrzeuge',
+         'Der Fuhrpark besteht aus folgenden Fahrzeugen:\n– 20 Transporter, zGM 3,5 t\n– 4 Lkws, zGM 12 t\n– 40 Sattelkraftfahrzeuge, zGM 40 t\n– 16 Gliederzüge, zGM 40 t, als Kühlfahrzeuge'),
         ('nach DIN ISO EN 9001:2015 zertifiziert', 'nach DIN EN ISO 9001:2015 zertifiziert'),
-        ('‚Aufgrund des aktuellen', 'Aufgrund des aktuellen'),
-        ('von drei exter-\nnen Dienstleistern', 'von drei externen Dienstleistern'),
         ('der NutzwertanaIyse durch.', 'der Nutzwertanalyse durch.'),
-        ('ist unter ande-\nrem eine Anpassung', 'ist unter anderem eine Anpassung'),
         ('auf Grundlage des $ 3 der', 'auf Grundlage des § 3 der'),
-        ('Kaufpreis 270.000 € Jahreslaufleistung 96.000 km Nutzungszeit 10 Jahre '
-         'Kraftstoffverbrauch 35 /100 km Kraftstoffkosten 1,20 €/l jährliche '
-         'Einsatztage 240 Abschreibung wird zu 40 % den variablen Kosten zugerechnet '
-         'Kapitalverzinsung 5% Reparaturkosten 3.600 €/Jahr fester Fahrerlohn '
-         'einschließlich Nebenkosten 57.600 €/Jahr Unternehmerlohn 4.000 €/Jahr '
-         'Unternehmerrisiko 3.000 €/Jahr Kfz-Steuer 2.800 €/Jahr Kfz-Versicherung '
-         '10.200 €/Jahr',
-         '– Kaufpreis: 270.000 €\n'
-         '– Jahreslaufleistung: 96.000 km\n'
-         '– Nutzungszeit: 10 Jahre\n'
-         '– Kraftstoffverbrauch: 35 l/100 km\n'
-         '– Kraftstoffkosten: 1,20 €/l\n'
-         '– jährliche Einsatztage: 240\n'
-         '– Abschreibung wird zu 40 % den variablen Kosten zugerechnet\n'
-         '– Kapitalverzinsung: 5 %\n'
-         '– Reparaturkosten: 3.600 €/Jahr\n'
-         '– fester Fahrerlohn einschließlich Nebenkosten: 57.600 €/Jahr\n'
-         '– Unternehmerlohn: 4.000 €/Jahr\n'
-         '– Unternehmerrisiko: 3.000 €/Jahr\n'
-         '– Kfz-Steuer: 2.800 €/Jahr\n'
-         '– Kfz-Versicherung: 10.200 €/Jahr'),
+        # Die Kalkulationsdaten liefen als ein einziger Absatz in die Aufgabe;
+        # die Werte hängen jetzt als Tabellenanlage daran (TABELLEN).
+        ('Nachfolgende Daten stehen Ihnen zur Verfügung:\nKaufpreis 270.000 € Jahreslaufleistung 96.000 km Nutzungszeit 10 Jahre Kraftstoffverbrauch 35 /100 km Kraftstoffkosten 1,20 €/| jährliche Einsatztage 240 Abschreibung wird zu 40 % den variablen Kosten zugerechnet Kapitalverzinsung 5% Reparaturkosten 3.600 €/Jahr fester Fahrerlohn einschließlich Nebenkosten 57.600 €/Jahr Unternehmerlohn 4.000 €/Jahr Unternehmerrisiko 3.000 €/Jahr Kfz-Steuer 2.800 €/Jahr Kfz-Versicherung 10.200 €/Jahr',
+         'Die Kalkulationsdaten des Fahrzeugs stehen in der Tabelle zu dieser Aufgabe.'),
         ('Berechnen Sie jeweils auf zwei Stellen nach dem Komma gerundet\n\n'
          'die variablen Kosten in €/km,',
          'Berechnen Sie – jeweils auf zwei Stellen nach dem Komma gerundet – '
@@ -137,7 +116,6 @@ TEXTE = {
          'die Fahrzeugkosten pro 100 kg Fracht',
          'Berechnen Sie – jeweils auf zwei Stellen nach dem Komma gerundet – '
          'die Fahrzeugkosten pro 100 kg Fracht'),
-        ('unterstützen Sie den Ausbildunggsleiter', 'unterstützen Sie den Ausbildungsleiter'),
     ],
 }
 
@@ -154,7 +132,60 @@ ABSCHNEIDEN = {
 # Anlagen als saubere Tabelle: {Teilaufgaben-ID: Tabelle}
 # Die App zeigt sie direkt bei der Aufgabe an, zu der sie gehört.
 # --------------------------------------------------------------------------- #
+_LKW_KALKULATION = {
+    'titel': 'Aufgabe 4: Kalkulationsdaten des Kühlfahrzeugs (40 t zGM, '
+             '24 t Nutzlast)',
+    'kopf': ['Position', 'Wert'],
+    'zeilen': [
+        ['Kaufpreis', '270.000 €'],
+        ['Jahreslaufleistung', '96.000 km'],
+        ['Nutzungszeit', '10 Jahre'],
+        ['Kraftstoffverbrauch', '35 l/100 km'],
+        ['Kraftstoffkosten', '1,20 €/l'],
+        ['jährliche Einsatztage', '240'],
+        ['Anteil der Abschreibung an den variablen Kosten', '40 %'],
+        ['Kapitalverzinsung', '5 %'],
+        ['Reparaturkosten', '3.600 €/Jahr'],
+        ['fester Fahrerlohn einschließlich Nebenkosten', '57.600 €/Jahr'],
+        ['Unternehmerlohn', '4.000 €/Jahr'],
+        ['Unternehmerrisiko', '3.000 €/Jahr'],
+        ['Kfz-Steuer', '2.800 €/Jahr'],
+        ['Kfz-Versicherung', '10.200 €/Jahr'],
+    ],
+}
+
 TABELLEN = {
+    'P-OK-20250508-s8': _LKW_KALKULATION,
+    'P-OK-20250508-s9': _LKW_KALKULATION,
+    'P-OK-20250508-s10': _LKW_KALKULATION,
+    'P-FT-20231120-s7': {
+        'titel': 'Aufgabe 3: Kalkulationsdaten des Reisebusses',
+        'kopf': ['Position', 'Wert'],
+        'zeilen': [
+            ['Wiederbeschaffungskosten', '380.000 €'],
+            ['kalkulierter Restwert', '95.000 €'],
+            ['Wert des Reifensatzes', '3.200 €'],
+            ['Nutzungszeit', '5 Jahre'],
+            ['Kalkulationszins', '4 %'],
+            ['Fahrleistung pro Jahr', '115.000 km'],
+            ['Verbrauch Dieselkraftstoff (1,50 €/l)', '37 l/100 km'],
+            ['AdBlue (0,90 €/l)', '0,4 l/100 km'],
+            ['Schmierstoffe', '3,50 €/1.000 km'],
+            ['Maut', '17,3 Cent/km'],
+            ['mautpflichtige km pro Jahr', '92.000 km'],
+            ['Lebensdauer eines Reifensatzes', '130.000 km'],
+            ['Reparatur- und Wartungskosten pro Jahr', '5.400 €'],
+            ['Steuern und Versicherungen pro Jahr', '7.500 €'],
+            ['Nettolohn Fahrer je Monat', '2.400 €'],
+            ['Lohnnebenkosten', '25 %'],
+            ['Personaleinsatzfaktor', '1,3'],
+            ['Spesen pro Jahr und Fahrzeug', '1.250 €'],
+            ['Gemeinkostenumlage gemäß Betriebsabrechnungsbogen (BAB) je Fahrzeug',
+             '7.000 €'],
+            ['kalkuliertes Einzelwagnis je Fahrzeug', '1.500 €'],
+        ],
+        'hinweis': 'Die Entwertung ist mit 60 % zu berücksichtigen.',
+    },
     'P-OK-20250508-s0': {
         'titel': 'Anlage 2 zu Aufgabe 1 a): Nutzwertanalyse der drei externen '
                  'Dienstleister/Werkstätten',
