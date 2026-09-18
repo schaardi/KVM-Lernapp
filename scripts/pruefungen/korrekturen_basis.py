@@ -15,7 +15,13 @@ mit bis zu vier Tabellen, alle mit dem Schlüssel
               hängt – die Zeichnung selbst hängt als Anlage an der Aufgabe.
 ``PUNKTE``    Punktzahl **im Lösungsheft** berichtigen. Maßgeblich ist der
               Aufgabenteil: er ergibt in allen Heften genau 100 Punkte, das
-              Lösungsheft verdruckt gelegentlich eine Zahl.
+              Lösungsheft verdruckt gelegentlich eine Zahl. Weicht auch der
+              Aufgabenteil ab (Scans: Klammer unlesbar), wird er mitgezogen.
+``ROHTEXT``   Nur Scans (T4): Ersetzungen im Rohtext des Textlayers, je Datei
+              eine Liste ``[(alt, neu), …]``; Schlüssel ist der Dateiname
+              (``01-recht.txt``). Jedes Paar muss genau einmal greifen. Der
+              Weg für verschluckte Marker („a)“, „(6 Punkte)“, Lösungskopf)
+              und falsch gelesene Zahlen – alles, was die Struktur betrifft.
 ``LABEL``     Teil-Buchstaben **im Lösungsheft** berichtigen; Schlüssel ist hier
               ``(Kürzel, Aufgabennummer, Position)`` mit der Position ab 0,
               weil derselbe Buchstabe zweimal gedruckt sein kann.
@@ -84,6 +90,11 @@ def anwenden(exams, loesung=None, frage=None, punkte=None, label=None,
                     t['text'] = neu
                     genutzt['f'].add((k, nr, t['label']))
                     treffer += 1
+                # In den Scans (L-ALT) geht die Klammer auch im Aufgabenteil
+                # verloren; die Punkte-Korrektur gilt dann für beide Seiten.
+                neu_p = punkte.get((k, nr, t['label']))
+                if neu_p is not None and neu_p != t['punkte']:
+                    t['punkte'] = neu_p
 
     fehlend = ((set(loesung) - genutzt['l']) | (set(frage) - genutzt['f'])
                | (set(punkte) - genutzt['p']) | (set(label) - genutzt['b'])

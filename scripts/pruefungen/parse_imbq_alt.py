@@ -204,7 +204,18 @@ def parse_datei(fn, kuerzel, bezeichnung, fach, jahrgang):
     regelmäßig verstümmelt oder ganz verschluckt.
     """
     scan = P.JAHRGAENGE[jahrgang].get('scan', False)
-    lines = P.load(os.path.join(P.quellen(jahrgang), fn), bezeichnung)
+    # Rohtext-Korrekturen des Termins (ROHTEXT im Korrekturmodul): für die
+    # Scans der einzige Weg, verschluckte Marker („a)", „(6 Punkte)",
+    # „Lösungshinweise Aufgabe 5") oder falsch gelesene Zahlen zu setzen.
+    rohtext = ()
+    modul = P.JAHRGAENGE[jahrgang].get('korrekturen')
+    if modul:
+        try:
+            rohtext = __import__(modul).ROHTEXT.get(fn, ())
+        except (ImportError, AttributeError):
+            rohtext = ()
+    lines = P.load(os.path.join(P.quellen(jahrgang), fn), bezeichnung,
+                   scan=scan, rohtext=rohtext)
     m = P.DATUM.search(' '.join(lines[:30]))
     datum = m.group(1) if m else None
 

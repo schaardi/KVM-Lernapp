@@ -12,6 +12,15 @@ Schlüssel: (Kürzel, Jahrgang, Aufgabennummer, Teil-Label).
 
 # ---------------------------------------------------------- Bild zur Aufgabe
 BILDER = {
+    # ---- Tranche T4 (Scans), Herbst 2017
+    ('NT', 'h2017', 3, 'a'): 'nth17-heizstufe2',
+    ('NT', 'h2017', 3, 'b'): 'nth17-heizstufe1',
+    ('NT', 'h2017', 5, '*'): 'nth17-leuchte',
+    ('NT', 'h2017', 6, '*'): 'nth17-zylinder',
+    ('NT', 'f2017', 4, '*'): 'ntf17-gleitbahn',
+    ('NT', 'f2017', 5, '*'): 'ntf17-strompfade',
+    ('NT', 'f2017', 7, '*'): 'ntf17-wnetz',
+
     # Naturwissenschaft und Technik, Frühjahr 2023
     ('NT', 'f2023', 2, '*'): 'ntf23-kettenspanner',
     ('NT', 'f2023', 5, '*'): 'ntf23-ntc',
@@ -95,6 +104,15 @@ BILDER_L = {
     ('MI', 'h2024', 2, 'a'): 'mi24-l-fluss',
     ('MI', 'h2024', 4, 'b'): 'mi24-l-diagramm',
     ('BW', 'h2025', 4, 'b'): 'bw25-l-akkord',
+
+    # ---- Tranche T4 (Scans)
+    ('MI', 'h2017', 2, 'b'): 'mih17-l-netzplan',
+    ('MI', 'h2017', 4, 'b'): 'mih17-l-sollist',
+    ('NT', 'h2017', 7, 'a'): 'nth17-l-histogramm',
+    ('MI', 'f2017', 2, 'a'): 'mif17-l-ishikawa',
+    ('MI', 'f2017', 4, 'a'): 'mif17-l-netz',
+    ('MI', 'f2017', 5, 'a'): 'mif17-l-balken',
+    ('NT', 'f2017', 7, 'd'): 'ntf17-l-wnetz',
 
     # ---- Archiv „Altklausuren“, Heftform L-ALT 2018
     ('MI', 'f2018', 4, 'a'): 'mif18-l-diagramm',
@@ -292,7 +310,91 @@ _MASCHINENVARIANTEN = {
     ],
 }
 
+_NETZPLAN_H2017 = {
+    'titel': 'Aufgabe 2 b): Vorgänge des Projekts',
+    'kopf': ['Nummer', 'Kürzel', 'Dauer', 'Vorgänger'],
+    'zeilen': [
+        ['1', 'A', '6', 'Start'], ['2', 'B', '8', 'Start'], ['3', 'C', '6', 'A'],
+        ['4', 'D', '6', 'A, B'], ['5', 'E', '7', 'B'], ['6', 'F', '5', 'C, D'],
+        ['7', 'G', '8', 'D, E'], ['8', 'H', '6', 'F'], ['9', 'I', '4', 'F, G'],
+    ],
+}
+
+_SCHICHTDICKEN_H2017 = {
+    'titel': 'Aufgabe 7: Schichtdicken der Stichprobe (n = 50)',
+    'kopf': ['Dicke in µm', 'Anzahl', 'relative Häufigkeit', 'kumulierte relative Häufigkeit'],
+    'zeilen': [
+        ['32', '1', '2 %', '2 %'], ['33', '4', '8 %', '10 %'],
+        ['34', '8', '16 %', '26 %'], ['35', '12', '24 %', '50 %'],
+        ['36', '11', '22 %', '72 %'], ['37', '9', '18 %', '90 %'],
+        ['38', '4', '8 %', '98 %'], ['39', '1', '2 %', '100 %'],
+    ],
+}
+
+_RECHTSFORMEN_F2017 = {
+    'titel': 'Anlage 1 zu Aufgabe 1: Tabelle ausgewählter Rechtsformen (zu vervollständigen)',
+    'kopf': ['Rechtsform', 'Geschäftsführungsbefugnisse', 'Haftungsumfang der Gesellschafter',
+             'Mindestgründungskapital der Gesellschaft'],
+    'zeilen': [['GmbH', '', '', ''], ['OHG', '', '', ''], ['KG', '', '', '']],
+}
+
+_KOSTENSITUATION_F2017 = {
+    'titel': 'Anlage 2 zu Aufgabe 6: Kosten- und Erlössituation (leere Felder ergänzen)',
+    'kopf': ['Beschäftigungsgrad', 'BG', '80 %', '100 %'],
+    'zeilen': [
+        ['Menge in Stück', 'x', '', ''],
+        ['fixe Stückkosten', 'kf', '12,50 €/Stück', ''],
+        ['gesamte Fixkosten', 'Kf', '', ''],
+        ['gesamte variable Kosten', 'Kv', '', '1.800.000 €'],
+        ['Stückdeckungsbeitrag', 'db', '', ''],
+        ['Gesamtdeckungsbeitrag', 'DB', '', '1.440.000 €'],
+        ['Betriebsergebnis', 'BE', '', '240.000 €'],
+    ],
+}
+
+_VORGAENGE_F2017 = {
+    'titel': 'Aufgabe 5: Vorgänge des Projekts',
+    'kopf': ['Vorgang', 'Beschreibung', 'Dauer in Tagen', 'direkte Vorgänger'],
+    'zeilen': [
+        ['A', 'Maschinenfundamente errichten', '7', 'Start'],
+        ['B', 'Aufstellen der Maschinen', '3', 'A'],
+        ['C', 'Anschließen der Maschinen', '2', 'B, E, I'],
+        ['D', 'Probelauf der Maschinen', '3', 'C'],
+        ['E', 'elektrische Leitungen verlegen', '2', 'A'],
+        ['F', 'Innenanstrich', '2', 'E, I'],
+        ['G', 'Außenanstrich', '1', 'F, I'],
+        ['H', 'Fahrwege in der Halle markieren', '1', 'B, I'],
+        ['I', 'Einsetzen der Fenster', '2', 'Start + 2 Tage'],
+    ],
+}
+
+_FAHRZEUGE_F2017 = {
+    'titel': 'Aufgabe 4: Bewertung der Fahrzeuge (Skala 0 bis 10 Punkte)',
+    'kopf': ['Kriterien', 'Fahrzeug A', 'Fahrzeug B'],
+    'zeilen': [['Spurführung', '8', '6'], ['Nutzlast', '8', '6'],
+               ['Batterieladekonzept', '6', '8'], ['Preis', '8', '10'],
+               ['maximale Entfernung', '6', '8']],
+}
+
+_CONTROLLING_H2017 = {
+    'titel': 'Aufgabe 7: Daten aus dem Controlling',
+    'kopf': ['Monat', 'September', 'Oktober'],
+    'zeilen': [
+        ['Produktions- und Absatzmenge', '13.500 Stück', '10.800 Stück'],
+        ['Beschäftigungsgrad', '90 %', '72 %'],
+        ['Gesamtkosten', '1.755.000 €', '1.512.000 €'],
+        ['Betriebsergebnis', '+67.500 €', '–54.000 €'],
+    ],
+}
+
 TABELLEN = {
+    ('BW', 'h2017', 7, '*'): _CONTROLLING_H2017,
+    ('MI', 'h2017', 2, 'b'): _NETZPLAN_H2017,
+    ('NT', 'h2017', 7, '*'): _SCHICHTDICKEN_H2017,
+    ('BW', 'f2017', 1, 'a'): _RECHTSFORMEN_F2017,
+    ('BW', 'f2017', 6, 'a'): _KOSTENSITUATION_F2017,
+    ('MI', 'f2017', 4, '*'): _FAHRZEUGE_F2017,
+    ('MI', 'f2017', 5, '*'): _VORGAENGE_F2017,
     ('BW', 'h2024', 6, 'a'): _KOSTENTABELLE,
     ('BW', 'h2024', 6, 'b'): _KOSTENTABELLE,
     ('BW', 'h2025', 5, 'a'): _GESCHAEFTSFAELLE,

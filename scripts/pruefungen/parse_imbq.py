@@ -75,10 +75,10 @@ JAHRGAENGE = {
               'format': 'alt', 'scan': True, 'in_arbeit': True,
               'pruefungen': [RECHT, BWL, METHOD, ZUSAMM, NTG]},
     'f2017': {'dir': 'imbq-f2017', 'korrekturen': 'korrekturen_imbq_f2017',
-              'format': 'alt', 'scan': True, 'in_arbeit': True,
+              'format': 'alt', 'scan': True,
               'pruefungen': [RECHT, BWL, METHOD, ZUSAMM, NTG]},
     'h2017': {'dir': 'imbq-h2017', 'korrekturen': 'korrekturen_imbq_h2017',
-              'format': 'alt', 'scan': True, 'in_arbeit': True,
+              'format': 'alt', 'scan': True,
               'pruefungen': [RECHT, BWL, METHOD, ZUSAMM, NTG]},
     # Frühjahr und Herbst 2018: Bauform L-ALT (Punktzahl in Klammern am
     # rechten Rand, Lösung hinter jeder Aufgabe) – siehe parse_imbq_alt.py.
@@ -231,10 +231,33 @@ def ocr_zeile(l):
     return 'Mögliche Punktzahl: %s' % m.group(1) if m else l
 
 
-def load(path, bezeichnung, ocr=False):
-    """Zeilen laden, Deko/Wasserzeichen entfernen."""
+def _aehnlich(a, b):
+    """Kopfzeile in OCR-Lesart („Betriehswirtschaftliches Handeln“)."""
+    import difflib
+    return abs(len(a) - len(b)) <= 3 and \
+        difflib.SequenceMatcher(None, a.lower(), b.lower()).ratio() >= 0.9
+
+
+def load(path, bezeichnung, ocr=False, scan=False, rohtext=()):
+    """Zeilen laden, Deko/Wasserzeichen entfernen.
+
+    ``scan``: Textlayer eines gescannten Hefts (T4) – vorab durch die
+    Nachbesserung in ``ocr_scan`` (i-Punkte, Umlaute, Paragrafen).
+    ``rohtext``: Paare (alt, neu) aus der ``ROHTEXT``-Tabelle des
+    Korrekturmoduls, die vor allem anderen im Rohtext ersetzt werden; jedes
+    Paar muss genau einmal greifen."""
+    text = open(path, encoding='utf-8').read()
+    for alt, neu in rohtext:
+        assert text.count(alt) == 1, \
+            'ROHTEXT-Korrektur greift %d-mal statt einmal in %s: %r' % (
+                text.count(alt), os.path.basename(path), alt[:60])
+        text = text.replace(alt, neu)
+    raw_lines = text.split('\n')
+    if scan:
+        import ocr_scan
+        raw_lines = ocr_scan.zeilen(raw_lines)
     out = []
-    for raw in open(path, encoding='utf-8').read().split('\n'):
+    for raw in raw_lines:
         if PAGE.match(raw):
             continue
         l = clean(raw)
@@ -252,6 +275,8 @@ def load(path, bezeichnung, ocr=False):
         if JUNK.match(l):
             continue
         if l == bezeichnung or l.lower() == bezeichnung.lower():
+            continue
+        if scan and _aehnlich(l, bezeichnung):
             continue
         out.append(l)
     return out
