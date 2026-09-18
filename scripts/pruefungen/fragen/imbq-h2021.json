@@ -1,0 +1,676 @@
+{
+ "questions": [
+  {
+   "f": 1,
+   "sub": "Betriebsverfassung",
+   "t": "mc",
+   "q": "Die Geschäftsleitung will die bisher feste Arbeitszeit in der Produktion auf ein Zweischichtsystem umstellen. Wie kann sie diese Änderung durchsetzen?",
+   "o": [
+    {
+     "t": "Sie muss mit dem Betriebsrat eine schriftliche Betriebsvereinbarung abschließen",
+     "ok": 1
+    },
+    {
+     "t": "Sie kann die neue Arbeitszeit einseitig kraft ihres Direktionsrechts anordnen"
+    },
+    {
+     "t": "Sie benötigt die Zustimmung jedes einzelnen Mitarbeiters, der Betriebsrat bleibt außen vor"
+    },
+    {
+     "t": "Sie muss die Schichtarbeit beim Gewerbeaufsichtsamt beantragen"
+    }
+   ],
+   "e": "Beginn und Ende der täglichen Arbeitszeit sowie die Verteilung auf die Wochentage sind nach § 87 Absatz 1 Nummer 2 BetrVG erzwingbar mitbestimmungspflichtig. Ohne Einigung mit dem Betriebsrat – notfalls über die Einigungsstelle – kann der Arbeitgeber die Schichtarbeit nicht einführen."
+  },
+  {
+   "f": 1,
+   "sub": "Arbeitsrecht",
+   "t": "mc",
+   "q": "Ein Arbeitsverhältnis wurde ohne Sachgrund auf sechs Monate befristet. Wie weit darf diese Befristung noch verlängert werden?",
+   "o": [
+    {
+     "t": "Höchstens dreimal, insgesamt bis zu einer Gesamtdauer von zwei Jahren",
+     "ok": 1
+    },
+    {
+     "t": "Beliebig oft, solange der Betriebsrat jeder Verlängerung zustimmt"
+    },
+    {
+     "t": "Einmalig um höchstens weitere sechs Monate"
+    },
+    {
+     "t": "Gar nicht – eine sachgrundlose Befristung ist nie verlängerbar"
+    }
+   ],
+   "e": "Nach § 14 Absatz 2 TzBfG ist die kalendermäßige Befristung ohne Sachgrund bis zu zwei Jahren zulässig und darf in dieser Zeit höchstens dreimal verlängert werden. Liegt dagegen ein Sachgrund vor (§ 14 Absatz 1 TzBfG), ist die Verlängerung zeitlich nicht begrenzt."
+  },
+  {
+   "f": 1,
+   "sub": "Arbeitsrecht",
+   "t": "mc",
+   "q": "Ein ausscheidender Mitarbeiter beschädigt am letzten Arbeitstag ein teures Messgerät. Darf der Arbeitgeber die Arbeitspapiere zurückhalten, bis der Schaden ersetzt ist?",
+   "o": [
+    {
+     "t": "Nein – das Existenzrecht des Arbeitnehmers geht dem Schadensersatzanspruch vor",
+     "ok": 1
+    },
+    {
+     "t": "Ja, bis zur vollständigen Begleichung des Schadens"
+    },
+    {
+     "t": "Ja, aber höchstens für die Dauer der Kündigungsfrist"
+    },
+    {
+     "t": "Nur das Arbeitszeugnis darf einbehalten werden, die übrigen Papiere nicht"
+    }
+   ],
+   "e": "Ein Zurückbehaltungsrecht an den Arbeitspapieren besteht nicht. Ohne sie könnte der Arbeitnehmer weder eine neue Stelle antreten noch Leistungen beziehen – und damit den Schaden erst recht nicht ersetzen. Der Arbeitgeber muss seinen Anspruch gesondert geltend machen."
+  },
+  {
+   "f": 1,
+   "sub": "Betriebsverfassung",
+   "t": "mc",
+   "q": "Wie ist eine Einigungsstelle nach dem Betriebsverfassungsgesetz personell zusammengesetzt?",
+   "o": [
+    {
+     "t": "Aus gleich vielen Beisitzern von Arbeitgeber und Betriebsrat sowie einem unparteiischen Vorsitzenden, auf den sich beide Seiten einigen",
+     "ok": 1
+    },
+    {
+     "t": "Aus drei Berufsrichtern des zuständigen Arbeitsgerichts"
+    },
+    {
+     "t": "Aus dem Betriebsratsvorsitzenden und der Geschäftsführung allein"
+    },
+    {
+     "t": "Aus Vertretern von Gewerkschaft und Arbeitgeberverband; die Betriebsparteien nehmen nicht teil"
+    }
+   ],
+   "e": "Die Besetzung regelt § 76 BetrVG. Beschlossen wird nach mündlicher Beratung mit Stimmenmehrheit; der Vorsitzende enthält sich zunächst und stimmt erst im zweiten Durchgang mit. In mitbestimmungspflichtigen Angelegenheiten ersetzt der Spruch nach § 87 Absatz 2 BetrVG die Einigung zwischen den Betriebsparteien."
+  },
+  {
+   "f": 1,
+   "sub": "Sozialversicherung",
+   "t": "mc",
+   "q": "Eine alleinerziehende Mitarbeiterin muss ihren achtjährigen erkrankten Sohn betreuen. Welchen Anspruch hat sie gegenüber ihrem Arbeitgeber?",
+   "o": [
+    {
+     "t": "Anspruch auf unbezahlte Freistellung; das Kinderkrankengeld zahlt die Krankenkasse",
+     "ok": 1
+    },
+    {
+     "t": "Anspruch auf Entgeltfortzahlung durch den Arbeitgeber für bis zu sechs Wochen"
+    },
+    {
+     "t": "Keinen Anspruch – sie muss Erholungsurlaub nehmen"
+    },
+    {
+     "t": "Anspruch auf bezahlte Freistellung durch den Arbeitgeber bis zur Genesung des Kindes"
+    }
+   ],
+   "e": "§ 45 Absatz 3 SGB V gibt den Anspruch auf unbezahlte Freistellung, § 45 Absatz 1 und 2 SGB V das Kinderkrankengeld der Krankenkasse. Voraussetzung ist ein ärztliches Attest, ein Kind unter zwölf Jahren und dass keine andere im Haushalt lebende Person die Pflege übernehmen kann."
+  },
+  {
+   "f": 1,
+   "sub": "Arbeitsschutz",
+   "t": "mc",
+   "q": "Wann muss ein Unternehmer einen Arbeitsunfall bei der Berufsgenossenschaft anzeigen?",
+   "o": [
+    {
+     "t": "Wenn Versicherte getötet oder so verletzt werden, dass sie mehr als drei Tage arbeitsunfähig sind – binnen drei Tagen",
+     "ok": 1
+    },
+    {
+     "t": "Jeden Unfall, auch ohne Ausfallzeit, sofort am selben Tag"
+    },
+    {
+     "t": "Erst bei einer Arbeitsunfähigkeit von mehr als sechs Wochen"
+    },
+    {
+     "t": "Nur wenn der Betriebsarzt oder der Betriebsrat es verlangt"
+    }
+   ],
+   "e": "Die Anzeigepflicht folgt aus § 193 SGB VII. Für den Arbeitgeber sind Arbeits- und Wegeunfälle dabei gleich zu behandeln – das Sozialgesetzbuch kennt diese Unterscheidung nicht; beide fließen in die Beitragsberechnung zur gesetzlichen Unfallversicherung ein."
+  },
+  {
+   "f": 1,
+   "sub": "Umweltrecht",
+   "t": "mc",
+   "q": "Wie sind die Wassergefährdungsklassen abgestuft?",
+   "o": [
+    {
+     "t": "WGK 1 schwach, WGK 2 deutlich, WGK 3 stark wassergefährdend",
+     "ok": 1
+    },
+    {
+     "t": "WGK 1 stark, WGK 2 deutlich, WGK 3 schwach wassergefährdend"
+    },
+    {
+     "t": "WGK A, WGK B und WGK C nach Art des Gewässers"
+    },
+    {
+     "t": "WGK 0 bis WGK 5 nach der eingeleiteten Menge"
+    }
+   ],
+   "e": "Die Einstufung erfolgt nach der Verordnung über Anlagen zum Umgang mit wassergefährdenden Stoffen (AwSV) und steigt mit der Gefährlichkeit. Das Wasserhaushaltsgesetz unterscheidet daneben drei Gewässerarten: oberirdische Gewässer, Küstengewässer und Grundwasser."
+  },
+  {
+   "f": 1,
+   "sub": "Produkthaftung/Datenschutz",
+   "t": "mc",
+   "q": "Welcher Grundsatz für die Verarbeitung personenbezogener Daten ist in Artikel 5 DSGVO verankert?",
+   "o": [
+    {
+     "t": "Datenminimierung – es dürfen nur die für den Zweck erforderlichen Daten verarbeitet werden",
+     "ok": 1
+    },
+    {
+     "t": "Datenmaximierung – im Zweifel sind möglichst viele Daten zu erheben"
+    },
+    {
+     "t": "Unbefristete Speicherung aller einmal erhobenen Daten"
+    },
+    {
+     "t": "Verarbeitung ohne Zweckbindung, solange der Betriebsrat zustimmt"
+    }
+   ],
+   "e": "Artikel 5 DSGVO nennt Rechtmäßigkeit, Verarbeitung nach Treu und Glauben und Transparenz, Zweckbindung, Datenminimierung, Richtigkeit, Speicherbegrenzung sowie Integrität und Vertraulichkeit. Ziel der Verordnung ist ein einheitlicher Datenschutzstandard in allen EU-Mitgliedsstaaten."
+  },
+  {
+   "f": 2,
+   "sub": "Rechtsformen",
+   "t": "mc",
+   "q": "Worin unterscheidet sich ein Kartell von einem Konzern?",
+   "o": [
+    {
+     "t": "Im Kartell bleiben die Unternehmen rechtlich selbstständig und schränken ihre wirtschaftliche Selbstständigkeit nur im Rahmen der Absprache ein; im Konzern geben sie die wirtschaftliche Selbstständigkeit weitgehend an eine einheitliche Leitung ab",
+     "ok": 1
+    },
+    {
+     "t": "Im Kartell verlieren die Unternehmen ihre Rechtspersönlichkeit, im Konzern behalten sie sie"
+    },
+    {
+     "t": "Kartell und Konzern sind zwei Bezeichnungen für dieselbe Form der Fusion"
+    },
+    {
+     "t": "Das Kartell ist stets ein Zusammenschluss verschiedener Branchen, der Konzern immer einer Branche"
+    }
+   ],
+   "e": "Beim Kartell bleibt die rechtliche Selbstständigkeit vollständig erhalten. Im Konzern führt eine einheitliche Leitung – meist über Kapitalbeteiligungen – die rechtlich weiter bestehenden Unternehmen. Motive für Zusammenschlüsse sind z. B. Kostenvorteile, Synergieeffekte, Risikostreuung und höhere Wettbewerbsfähigkeit."
+  },
+  {
+   "f": 4,
+   "sub": "Personalplanung",
+   "t": "calc",
+   "q": "Für ein Quartal besteht ein Kapazitätsbedarf von 12.750 Mitarbeiterstunden; hinzu kommt ein Störzeitzuschlag von 3 %. Es verbleiben 38 Arbeitstage bei 8 Stunden täglicher Arbeitszeit; Urlaub und Krankheit führen zu 20 % Ausfallzeit. Berechnen Sie den Personalbedarf in vollen Mitarbeitern.",
+   "ans": 54,
+   "unit": "Mitarbeiter",
+   "e": "Realer Bedarf = 12.750 h · 1,03 = 13.132,5 h. Je Mitarbeiter stehen 8 h/Tag · 38 Tage · 0,8 = 243,2 h zur Verfügung. 13.132,5 h ÷ 243,2 h = 53,99 → 54 Mitarbeiter."
+  },
+  {
+   "f": 2,
+   "sub": "Betriebsorganisation",
+   "t": "calc",
+   "q": "Der reale Kapazitätsbedarf beträgt 13.132,5 Stunden, der reale Kapazitätsbestand 11.916,8 Stunden. Berechnen Sie den Beschäftigungsgrad in Prozent (zwei Nachkommastellen).",
+   "ans": 110.2,
+   "unit": "%",
+   "e": "Beschäftigungsgrad = Kapazitätsbedarf ÷ Kapazitätsbestand · 100 = 13.132,5 h ÷ 11.916,8 h · 100 = 110,20 %. Die Differenz von 1.215,7 Stunden ist eine Kapazitätsunterdeckung – der Auftrag lässt sich mit dem vorhandenen Personal nicht fristgerecht abarbeiten."
+  },
+  {
+   "f": 4,
+   "sub": "Entgelt und Arbeitszeit",
+   "t": "calc",
+   "q": "Die Arbeitsvorbereitung ermittelt für einen Druckauftrag über 1.200.000 Blatt eine Normalleistung von 20.000 Blatt pro Stunde. Der Facharbeiter benötigt 50 Stunden. Berechnen Sie seinen Zeitgrad in Prozent.",
+   "ans": 120,
+   "unit": "%",
+   "e": "Vorgabezeit = 1.200.000 Blatt ÷ 20.000 Blatt/h = 60 h. Zeitgrad = Vorgabezeit ÷ Istauftragszeit · 100 = 60 h ÷ 50 h · 100 = 120 %. Der Facharbeiter arbeitet also schneller als die Normalleistung."
+  },
+  {
+   "f": 4,
+   "sub": "Entgelt und Arbeitszeit",
+   "t": "calc",
+   "q": "Der Akkordrichtsatz beträgt 18,50 €/Stunde, der Zeitgrad des Facharbeiters 120 %. Berechnen Sie den erzielten Akkordstundenlohn.",
+   "ans": 22.2,
+   "unit": "€/h",
+   "e": "Akkordstundenlohn = Akkordrichtsatz · Zeitgradfaktor = 18,50 €/h · 1,2 = 22,20 €/h. Die Lohnkosten des Auftrags bleiben gleich: 60 h · 18,50 €/h = 50 h · 22,20 €/h = 1.110 €."
+  },
+  {
+   "f": 2,
+   "sub": "Materialwirtschaft",
+   "t": "calc",
+   "q": "Der durchschnittliche Lagerbestand an Gartenfräsen beträgt 350 Stück, der Jahresverbrauch 3.502 Stück. Berechnen Sie die durchschnittliche Lagerdauer in Tagen (kaufmännisches Jahr mit 360 Tagen, zwei Nachkommastellen).",
+   "ans": 35.98,
+   "unit": "Tage",
+   "e": "Ø Lagerdauer = 360 · Ø Lagerbestand ÷ Jahresverbrauch = 360 · 350 Stück ÷ 3.502 Stück = 35,98 Tage. Gleichwertig: Lagerumschlagshäufigkeit = 3.502 ÷ 350 = 10,01, und 360 ÷ 10,01 = 35,98 Tage."
+  },
+  {
+   "f": 2,
+   "sub": "Materialwirtschaft",
+   "t": "mc",
+   "q": "Welche Auswirkung hat eine Erhöhung der Lagerumschlagshäufigkeit?",
+   "o": [
+    {
+     "t": "Die Lagerdauer sinkt, dadurch sinken Kapitalbindung und Lagerkosten",
+     "ok": 1
+    },
+    {
+     "t": "Die Lagerdauer steigt, dadurch steigt die Lieferbereitschaft"
+    },
+    {
+     "t": "Die Kapitalbindung steigt, weil häufiger bestellt werden muss"
+    },
+    {
+     "t": "Auf die Lagerkosten hat sie keinen Einfluss, nur auf den Bestellrhythmus"
+    }
+   ],
+   "e": "Umschlagshäufigkeit und Lagerdauer verhalten sich umgekehrt proportional. Erreichen lässt sich eine höhere Umschlagshäufigkeit z. B. durch kürzere Lieferzeiten, einen niedrigeren Sicherheitsbestand in der Nachsaison oder absatzfördernde Aktionen."
+  },
+  {
+   "f": 2,
+   "sub": "Kostenrechnung",
+   "t": "calc",
+   "q": "Die Herstellkosten eines Transformators betragen 1.600 €. Der Verwaltungsgemeinkostensatz liegt bei 9 %, der Vertriebsgemeinkostensatz bei 6 %. Berechnen Sie die Selbstkosten.",
+   "ans": 1840,
+   "unit": "€",
+   "e": "VwGK = 9 % von 1.600 € = 144 €, VtGK = 6 % von 1.600 € = 96 €. Selbstkosten = 1.600 € + 144 € + 96 € = 1.840 €. Beide Zuschlagssätze werden in der Zuschlagskalkulation auf die Herstellkosten bezogen."
+  },
+  {
+   "f": 2,
+   "sub": "Kostenrechnung",
+   "t": "calc",
+   "q": "Ein Bearbeitungszentrum verursacht 14.400 € Fixkosten pro Monat, die variablen Stückkosten betragen 15 €. Ein Bauteil wird für 26 € verkauft. Ab welcher Absatzmenge pro Monat arbeitet die Maschine gewinnbringend? Geben Sie die kleinste ganze Stückzahl an.",
+   "ans": 1310,
+   "unit": "Stück",
+   "e": "Break-even-Menge = Fixkosten ÷ (Preis − variable Stückkosten) = 14.400 € ÷ (26 €/Stück − 15 €/Stück) = 1.309,09 Stück. Bei 1.309 Stück bleibt ein Restverlust, ab 1.310 Stück wird Gewinn erzielt."
+  },
+  {
+   "f": 2,
+   "sub": "Kostenrechnung",
+   "t": "mc",
+   "q": "Der Gesamtdeckungsbeitrag eines Produkts ist positiv, aber kleiner als die Fixkosten. Was bedeutet das für das Betriebsergebnis?",
+   "o": [
+    {
+     "t": "Die variablen Kosten sind gedeckt, die Fixkosten jedoch nur teilweise – es entsteht ein Verlust, der mit jedem weiteren Stück kleiner wird",
+     "ok": 1
+    },
+    {
+     "t": "Das Betriebsergebnis ist ausgeglichen, der Break-even-Punkt ist genau erreicht"
+    },
+    {
+     "t": "Es entsteht bereits ein Gewinn, weil der Deckungsbeitrag positiv ist"
+    },
+    {
+     "t": "Die variablen Kosten sind nicht gedeckt, die Produktion ist sofort einzustellen"
+    }
+   ],
+   "e": "Erst wenn der Gesamtdeckungsbeitrag die Fixkosten übersteigt, entsteht Gewinn; Gleichstand ist der Break-even-Punkt. Ein negativer Gesamtdeckungsbeitrag bedeutet dagegen, dass nicht einmal die variablen Kosten gedeckt sind – dann vergrößert jedes zusätzliche Stück den Verlust."
+  },
+  {
+   "f": 3,
+   "sub": "EDV",
+   "t": "mc",
+   "q": "Welches Verfahren gehört zur automatischen Datenerfassung in der Produktion?",
+   "o": [
+    {
+     "t": "Das Auslesen von Transpondern (RFID) an Werkstückträgern",
+     "ok": 1
+    },
+    {
+     "t": "Das Abtippen der Schichtzettel in eine Tabellenkalkulation"
+    },
+    {
+     "t": "Das mündliche Durchgeben der Stückzahlen an die Arbeitsvorbereitung"
+    },
+    {
+     "t": "Das handschriftliche Führen eines Maschinenbuchs"
+    }
+   ],
+   "e": "Zur automatischen Datenerfassung zählen u. a. Scannen von Barcodes und QR-Codes, Zählen mit Lichtschranken, smarte Zähler und Sensoren sowie RFID. Zentral gespeichert werden die Daten, damit alle Beteiligten denselben aktuellen Stand haben, Zugriffsrechte vergeben und Zugriffe protokolliert werden können."
+  },
+  {
+   "f": 3,
+   "sub": "Statistik",
+   "t": "mc",
+   "q": "Wozu dient ein Korrelationsdiagramm?",
+   "o": [
+    {
+     "t": "Es zeigt, ob und wie stark zwei Merkmale zusammenhängen, indem die Wertepaare als Punkte eingetragen und durch eine Ausgleichsgerade beschrieben werden",
+     "ok": 1
+    },
+    {
+     "t": "Es stellt die zeitliche Abfolge von Projektvorgängen mit ihren Pufferzeiten dar"
+    },
+    {
+     "t": "Es ordnet Fehlerursachen nach ihrer Häufigkeit in absteigender Reihenfolge"
+    },
+    {
+     "t": "Es zeigt den prozentualen Anteil einzelner Kostenarten an den Gesamtkosten"
+    }
+   ],
+   "e": "Für die Erstellung werden Titel und Maßstab festgelegt, beide Achsen beschriftet und eingeteilt, die Wertepaare als Punkte eingetragen und eine Ausgleichsgerade oder -kurve gelegt. Je enger die Punkte an der Geraden liegen, desto stärker ist der Zusammenhang."
+  },
+  {
+   "f": 3,
+   "sub": "Statistik",
+   "t": "calc",
+   "q": "Die verbrauchten Hilfsstoffe eines Meisterbereichs haben einen Gesamtwert von 42.000 €. Auf Artikel J entfallen davon 12.450 €. Berechnen Sie den prozentualen Wertanteil von Artikel J (zwei Nachkommastellen).",
+   "ans": 29.64,
+   "unit": "%",
+   "e": "Wertanteil = 12.450 € ÷ 42.000 € · 100 = 29,64 %. In der ABC-Analyse werden die Artikel nach fallendem Wertanteil sortiert und kumuliert; Artikel J ist mit Abstand der wertvollste und gehört damit zur Klasse A."
+  },
+  {
+   "f": 3,
+   "sub": "Arbeitsmethodik",
+   "t": "mc",
+   "q": "Welche Maßnahme leiten Sie aus einer ABC-Analyse der verbrauchten Hilfsstoffe ab?",
+   "o": [
+    {
+     "t": "Rabattverhandlungen und die Suche nach günstigeren Anbietern zuerst für die A-Artikel",
+     "ok": 1
+    },
+    {
+     "t": "Rabattverhandlungen zuerst für die C-Artikel, weil es davon die meisten gibt"
+    },
+    {
+     "t": "Gleich intensive Betreuung aller Artikel, unabhängig von ihrem Wertanteil"
+    },
+    {
+     "t": "Auslistung aller A-Artikel, weil sie die höchsten Kosten verursachen"
+    }
+   ],
+   "e": "Die ABC-Analyse lenkt die Aufmerksamkeit auf die wenigen Positionen mit dem größten Wertanteil. Bei A-Artikeln lohnen Preisverhandlungen, Lieferantensuche, gleichwertige Ersatzstoffe und Mengeneinsparungen am meisten; C-Artikel werden mit geringem Aufwand vereinfacht beschafft."
+  },
+  {
+   "f": 3,
+   "sub": "Statistik",
+   "t": "calc",
+   "q": "Lieferant A hat im Quartal 262 Lieferungen ausgeführt, davon 240 vertragsgemäß. Berechnen Sie den Anteil der vertragsgemäßen Lieferungen in Prozent (zwei Nachkommastellen).",
+   "ans": 91.6,
+   "unit": "%",
+   "e": "Anteil = 240 ÷ 262 · 100 = 91,60 %. In der Lieferantenbewertung wird dieser Anteil den anderen Lieferanten gegenübergestellt; die nicht vertragsgemäßen Lieferungen werden zusätzlich nach Mehrlieferung, Minderlieferung und falschem Artikel aufgeschlüsselt."
+  },
+  {
+   "f": 3,
+   "sub": "Projektmanagement",
+   "t": "mc",
+   "q": "Welche Risikoart erörtern Sie in der Risikoanalyse vor dem Start eines Investitionsprojekts?",
+   "o": [
+    {
+     "t": "Das Terminrisiko – die Gefahr, geplante Meilensteine und den Endtermin zu überschreiten",
+     "ok": 1
+    },
+    {
+     "t": "Das Wechselkursrisiko der Hausbank, weil es die Projektkosten bestimmt"
+    },
+    {
+     "t": "Das Insolvenzrisiko der Kunden, weil es die Abnahme der Produkte betrifft"
+    },
+    {
+     "t": "Das Zinsänderungsrisiko des Kapitalmarkts, weil es den Projektnutzen ersetzt"
+    }
+   ],
+   "e": "Typische Projektrisiken sind Funktions-, Kosten-, Termin- und Personalausfallrisiko sowie das Risiko des Imageverlusts und der Nichteinhaltung von Lieferterminen. Bei laufender Produktion ist zusätzlich der Produktionsausfall während der Umstellung zu berücksichtigen."
+  },
+  {
+   "f": 3,
+   "sub": "Kommunikation",
+   "t": "mc",
+   "q": "Welchen Vorteil hat es, wichtige Arbeitsanweisungen zusätzlich schriftlich per E-Mail zu verteilen?",
+   "o": [
+    {
+     "t": "Die Information ist nachvollziehbar dokumentiert und für alle Betroffenen jederzeit abrufbar",
+     "ok": 1
+    },
+    {
+     "t": "Die mündliche Unterweisung der Mitarbeiter wird dadurch entbehrlich"
+    },
+    {
+     "t": "Rückfragen der Mitarbeiter werden damit ausgeschlossen"
+    },
+    {
+     "t": "Die Verantwortung für die Ausführung geht auf den Empfänger über"
+    }
+   ],
+   "e": "Schriftliche Anweisungen sichern Transparenz, Nachvollziehbarkeit und gleichen Informationsstand. Sie sollten Verteiler, aussagekräftigen Betreff, Anrede, die konkrete Anweisung mit Zielvorgabe und Termin sowie die namentliche Benennung von Verantwortlichen enthalten – die persönliche Unterweisung ersetzen sie nicht."
+  },
+  {
+   "f": 4,
+   "sub": "Personalentwicklung",
+   "t": "mc",
+   "q": "Welche vier Kompetenzbereiche sollte ein neuer Gruppenleiter im Anforderungsprofil abdecken?",
+   "o": [
+    {
+     "t": "Fachkompetenz, Sozialkompetenz, Methodenkompetenz und Persönlichkeitskompetenz",
+     "ok": 1
+    },
+    {
+     "t": "Fachkompetenz, Marktkompetenz, Finanzkompetenz und Rechtskompetenz"
+    },
+    {
+     "t": "Führungskompetenz, Vertriebskompetenz, Sprachkompetenz und IT-Kompetenz"
+    },
+    {
+     "t": "Planungskompetenz, Kontrollkompetenz, Organisationskompetenz und Budgetkompetenz"
+    }
+   ],
+   "e": "Diese vier Bereiche bilden die berufliche Handlungskompetenz. In der Arbeitswelt 4.0 treten als Schlüsselqualifikationen insbesondere IT-Kompetenz und die Fähigkeit hinzu, digitale Veränderungsprozesse zu begleiten."
+  },
+  {
+   "f": 4,
+   "sub": "Gruppen",
+   "t": "mc",
+   "q": "Was kennzeichnet eine teilautonome Arbeitsgruppe?",
+   "o": [
+    {
+     "t": "Sie erledigt ihre Aufträge eigenverantwortlich nach selbst festgelegten Normen und entscheidet innerhalb ihres Bereichs selbst",
+     "ok": 1
+    },
+    {
+     "t": "Sie arbeitet vollständig weisungsfrei und ist keiner Führungskraft unterstellt"
+    },
+    {
+     "t": "Sie erhält jeden einzelnen Arbeitsschritt vom Meister vorgegeben"
+    },
+    {
+     "t": "Sie wird nur für die Dauer eines Projekts gebildet und danach wieder aufgelöst"
+    }
+   ],
+   "e": "Das Maß der Autonomie hängt davon ab, welche Entscheidungen die Gruppe eigenständig treffen darf – etwa Arbeitsverteilung, Reihenfolge oder Qualitätssicherung. Die Zielvorgaben kommen weiterhin von der Führungskraft."
+  },
+  {
+   "f": 4,
+   "sub": "Gruppen",
+   "t": "mc",
+   "q": "Wodurch unterscheiden sich formelle und informelle Gruppen im Betrieb?",
+   "o": [
+    {
+     "t": "Formelle Gruppen sind durch Aufbauorganisation und Betriebsstruktur bewusst geplant, informelle Gruppen entstehen ungeplant aus persönlichen Beziehungen",
+     "ok": 1
+    },
+    {
+     "t": "Formelle Gruppen entstehen spontan, informelle werden vom Betriebsrat eingesetzt"
+    },
+    {
+     "t": "Formelle Gruppen bestehen nur aus Führungskräften, informelle nur aus Mitarbeitern"
+    },
+    {
+     "t": "Informelle Gruppen sind im Betriebsverfassungsgesetz geregelt, formelle nicht"
+    }
+   ],
+   "e": "In formellen Gruppen sind Mitglieder, Rollen und Normen von außen vorgegeben. Informelle Gruppen bilden sich über Sympathie und gemeinsame Interessen; sie haben eigene, nicht schriftlich fixierte Normen und einen informellen Führer, den eine neue Führungskraft kennen sollte."
+  },
+  {
+   "f": 4,
+   "sub": "Führungsmethoden",
+   "t": "mc",
+   "q": "Was ist das Kernmerkmal des Lean Management?",
+   "o": [
+    {
+     "t": "Flache Hierarchien und schlanke Prozesse, in denen nicht wertschöpfende Tätigkeiten konsequent vermieden werden",
+     "ok": 1
+    },
+    {
+     "t": "Möglichst viele Hierarchieebenen, damit jede Entscheidung mehrfach geprüft wird"
+    },
+    {
+     "t": "Der vollständige Verzicht auf Qualitätssicherung zugunsten höherer Stückzahlen"
+    },
+    {
+     "t": "Die Auslagerung sämtlicher Produktionsschritte an externe Dienstleister"
+    }
+   ],
+   "e": "Lean Management setzt auf schlanke Strukturen, Eigenverantwortung qualifizierter Arbeitsgruppen und ausgeprägtes Qualitätsbewusstsein. Ziel ist bestmögliche Kosteneffizienz durch Konzentration auf die wertschöpfenden Arbeitsprozesse."
+  },
+  {
+   "f": 4,
+   "sub": "Führungsstile",
+   "t": "mc",
+   "q": "Welche Auswirkung hat anhaltend mangelhaftes Führungsverhalten eines Gruppenleiters auf seine Mitarbeiter?",
+   "o": [
+    {
+     "t": "Die Fehlzeiten steigen, die Motivation sinkt und das Betriebsklima verschlechtert sich",
+     "ok": 1
+    },
+    {
+     "t": "Die Gruppe gleicht das Defizit dauerhaft selbst aus, Auswirkungen bleiben aus"
+    },
+    {
+     "t": "Die Produktivität steigt, weil die Mitarbeiter mehr Freiraum haben"
+    },
+    {
+     "t": "Die Mitarbeiter wenden sich unmittelbar an die Gewerkschaft, andere Folgen gibt es nicht"
+    }
+   ],
+   "e": "Typische Folgen sind Demotivation und Arbeitsverweigerung, steigende Krankenquote, mehr Beschwerden, Durchsetzen von Einzelinteressen gegen die Betriebsziele und damit sinkende Leistung der gesamten Gruppe. Der Vorgesetzte muss sofort gegensteuern."
+  },
+  {
+   "f": 4,
+   "sub": "Personalentwicklung",
+   "t": "mc",
+   "q": "Welcher Inhalt gehört in ein Onboarding-Gespräch mit einem neuen Gruppenleiter?",
+   "o": [
+    {
+     "t": "Die detaillierte Besprechung des Aufgabenbereichs sowie der Über- und Unterstellungen",
+     "ok": 1
+    },
+    {
+     "t": "Die Beurteilung seiner Leistung im ersten Quartal"
+    },
+    {
+     "t": "Die Abmahnung möglicher künftiger Pflichtverletzungen"
+    },
+    {
+     "t": "Die Verhandlung über die Höhe der betrieblichen Altersversorgung der Gruppe"
+    }
+   ],
+   "e": "Das Onboarding-Gespräch klärt Aufgaben, Zuständigkeiten, Befugnisse, Ziele, Ansprechpartner und Erwartungen. So weiß der neue Gruppenleiter von Anfang an, wofür er verantwortlich ist und an wen er berichtet."
+  },
+  {
+   "f": 5,
+   "sub": "Naturwissenschaftliche und technische Grundlagen",
+   "t": "mc",
+   "q": "Beim Verbrennen schwefelhaltiger fossiler Brennstoffe entsteht Schwefeldioxid. Wie wirkt sich das auf den Regen aus?",
+   "o": [
+    {
+     "t": "Das Schwefeldioxid löst sich im Wasser der Atmosphäre zu schwefliger Säure; der pH-Wert des Regens sinkt",
+     "ok": 1
+    },
+    {
+     "t": "Das Schwefeldioxid neutralisiert den Regen; der pH-Wert steigt über 7"
+    },
+    {
+     "t": "Der pH-Wert bleibt unverändert, nur die Leitfähigkeit des Regens steigt"
+    },
+    {
+     "t": "Es entsteht Ammoniak, das den Regen basisch macht"
+    }
+   ],
+   "e": "Saurer Regen hat einen pH-Wert von etwa 5,5 oder darunter. Er greift Eisen- und andere wenig korrosionsbeständige Metalle an, fördert die Rostbildung und zerstört Baustoffe wie Sandstein oder Kalk."
+  },
+  {
+   "f": 5,
+   "sub": "Naturwissenschaftliche und technische Grundlagen",
+   "t": "mc",
+   "q": "Stickstoffoxide aus Verbrennungsmotoren reagieren mit Wasser. Welche Verbindung entsteht dabei?",
+   "o": [
+    {
+     "t": "Salpetersäure",
+     "ok": 1
+    },
+    {
+     "t": "Schwefelsäure"
+    },
+    {
+     "t": "Kohlensäure"
+    },
+    {
+     "t": "Natronlauge"
+    }
+   ],
+   "e": "Stickstoffoxid + Wasser = Salpetersäure (HNO₃). Zusammen mit der aus Schwefeldioxid entstehenden schwefligen Säure bildet sie den Sauren Regen."
+  },
+  {
+   "f": 5,
+   "sub": "Naturwissenschaftliche und technische Grundlagen",
+   "t": "calc",
+   "q": "In einem Formwerkzeug werden 200 Kunststoffteile je Stunde hergestellt; ein Teil wiegt 70 g. Die Schmelze kühlt von 230 °C auf 65 °C ab, die spezifische Wärmekapazität beträgt 1,3 kJ/(kg·K). Berechnen Sie die pro Stunde abzuführende Wärmemenge.",
+   "ans": 3003,
+   "unit": "kJ",
+   "e": "Q = m · c · ΔT = 0,07 kg · 1,3 kJ/(kg·K) · 165 K = 15,015 kJ je Teil. Für 200 Teile: Qges = 200 · 15,015 kJ = 3.003 kJ pro Stunde."
+  },
+  {
+   "f": 5,
+   "sub": "Naturwissenschaftliche und technische Grundlagen",
+   "t": "calc",
+   "q": "Eine Wärmemenge von 3.003 kJ pro Stunde wird von Kühlwasser abgeführt, das sich von 21 °C auf 25 °C erwärmt (c = 4,18 kJ/(kg·K), ρ = 1 kg/l). Berechnen Sie den erforderlichen Volumenstrom in l/min (zwei Nachkommastellen).",
+   "ans": 2.99,
+   "unit": "l/min",
+   "e": "ṁ = Q ÷ (c · ΔT) = 3.003 kJ/h ÷ (4,18 kJ/(kg·K) · 4 K) = 179,6 kg/h. Mit ρ = 1 kg/l sind das 179,6 l/h, geteilt durch 60 min/h ergibt 2,99 l/min."
+  },
+  {
+   "f": 5,
+   "sub": "Naturwissenschaftliche und technische Grundlagen",
+   "t": "calc",
+   "q": "Drei gleiche Heizelemente werden in Sternschaltung an ein Drehstromnetz mit einer Leiterspannung von 400 V angeschlossen. Berechnen Sie die Strangspannung an einem Heizelement (zwei Nachkommastellen).",
+   "ans": 230.94,
+   "unit": "V",
+   "e": "In der Sternschaltung gilt UStr = U ÷ √3 = 400 V ÷ 1,732 = 230,94 V. Bei einem Elementwiderstand von 60 Ω fließt damit ein Strangstrom von 230,94 V ÷ 60 Ω ≈ 3,85 A – unterhalb der zulässigen 4 A, weshalb die Sternschaltung hier die richtige Wahl ist."
+  },
+  {
+   "f": 5,
+   "sub": "Naturwissenschaftliche und technische Grundlagen",
+   "t": "calc",
+   "q": "Auf einem Gliederkettenförderer stauen sich Flaschen auf einer Länge von 4,9 m. Jede Flasche hat 70 mm Durchmesser und wiegt 365 g, der Reibwert beträgt 0,05 (g = 9,81 m/s²). Berechnen Sie die zu überwindende Reibkraft (zwei Nachkommastellen).",
+   "ans": 12.53,
+   "unit": "N",
+   "e": "Anzahl z = 4.900 mm ÷ 70 mm = 70 Flaschen. Aufgestaute Masse m = 70 · 0,365 kg = 25,55 kg. Normalkraft FN = 25,55 kg · 9,81 m/s² = 250,65 N. Reibkraft FR = FN · µ = 250,65 N · 0,05 = 12,53 N."
+  },
+  {
+   "f": 5,
+   "sub": "Naturwissenschaftliche und technische Grundlagen",
+   "t": "calc",
+   "q": "Ein Gliederkettenförderer muss eine Zugkraft von 150 N bei einer Kettengeschwindigkeit von 10 m/s aufbringen. Berechnen Sie die erforderliche Antriebsleistung.",
+   "ans": 1500,
+   "unit": "W",
+   "e": "P = F · v = 150 N · 10 m/s = 1.500 Nm/s = 1.500 W. Die Zugkraft setzt sich aus der durch den Stau verursachten Reibkraft und der Kettenzugkraft zusammen."
+  },
+  {
+   "f": 5,
+   "sub": "Naturwissenschaftliche und technische Grundlagen",
+   "t": "calc",
+   "q": "Ein Lastenaufzug hebt 1.000 kg in 0,5 Minuten um 8 m. Der Gesamtwirkungsgrad von Aufzug und Getriebe beträgt 0,8 (g = 9,81 m/s²). Berechnen Sie die Leistung, die der Motor abgeben muss.",
+   "ans": 3270,
+   "unit": "W",
+   "e": "Hubleistung = m · g · h ÷ t = 1.000 kg · 9,81 m/s² · 8 m ÷ 30 s = 2.616 W. Mit dem Wirkungsgrad: 2.616 W ÷ 0,8 = 3.270 W. Ein vorhandener Motor mit 3.500 W Abgabeleistung reicht damit aus."
+  },
+  {
+   "f": 5,
+   "sub": "Naturwissenschaftliche und technische Grundlagen",
+   "t": "calc",
+   "q": "Aus einem Fertigungsprozess wurden zwölf Werte der Rautiefe Rmax in µm gemessen: 3,7 – 4,0 – 3,8 – 3,9 – 4,1 – 3,6 – 3,8 – 3,9 – 3,4 – 3,8 – 3,5 – 3,8. Berechnen Sie den arithmetischen Mittelwert.",
+   "ans": 3.775,
+   "unit": "µm",
+   "e": "Summe der Messwerte = 45,3 µm, geteilt durch n = 12 ergibt x̄ = 3,775 µm. Die Standardabweichung beträgt s = 0,2006 µm; die Grenzwerte der Streuung für 99,73 % aller Teile liegen bei x̄ ± 3s, also zwischen 3,173 µm und 4,377 µm."
+  }
+ ]
+}

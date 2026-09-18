@@ -14,9 +14,9 @@ LOESUNG = {
      "Wahrscheinlichkeitsnetz (Zeichnung): waagerecht Rmax in µm von 3,0 bis "
      "4,4, senkrecht die Summe der relativen Häufigkeiten in Prozent.\n"
      "Die Verteilungsgerade wird über drei Punkte gelegt:\n"
-     "– x̄ − s = 3,173 µm bei 15,87 %\n"
+     "– x̄ − s = 3,574 µm bei 15,87 %\n"
      "– x̄ = 3,775 µm bei 50 %\n"
-     "– x̄ + s = 4,377 µm bei 84,13 %\n"
+     "– x̄ + s = 3,976 µm bei 84,13 %\n"
      "Weil die Messwerte auf dieser Geraden liegen, ist der Prozess "
      "normalverteilt.",
 }

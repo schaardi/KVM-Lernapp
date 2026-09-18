@@ -1,0 +1,529 @@
+{
+ "questions": [
+  {
+   "f": 1,
+   "sub": "Arbeitsrecht",
+   "t": "mc",
+   "q": "Welche Rangfolge haben die arbeitsrechtlichen Quellen – von oben nach unten?",
+   "o": [
+    {
+     "t": "Europarecht, Grundgesetz, Gesetze, Tarifvertrag, Betriebsvereinbarung, Arbeitsvertrag, Weisungsrecht",
+     "ok": 1
+    },
+    {
+     "t": "Arbeitsvertrag, Betriebsvereinbarung, Tarifvertrag, Gesetze, Grundgesetz, Europarecht"
+    },
+    {
+     "t": "Tarifvertrag, Europarecht, Gesetze, Arbeitsvertrag, Grundgesetz"
+    },
+    {
+     "t": "Weisungsrecht, Arbeitsvertrag, Gesetze, Europarecht, Tarifvertrag"
+    }
+   ],
+   "e": "Die höherrangige Quelle geht der niederrangigen vor. Durchbrochen wird das vom Günstigkeitsprinzip: Die rangniedrigere Regelung gilt, wenn sie für den Arbeitnehmer günstiger ist."
+  },
+  {
+   "f": 1,
+   "sub": "Arbeitsrecht",
+   "t": "mc",
+   "q": "Ein Tarifvertrag setzt für Arbeitnehmer eine Kündigungsfrist von drei Kalendermonaten fest, das Gesetz nennt vier Wochen. Ist das zulässig?",
+   "o": [
+    {
+     "t": "Ja – von § 622 Absatz 1 BGB darf durch Tarifvertrag abgewichen werden (§ 622 Absatz 4 BGB)",
+     "ok": 1
+    },
+    {
+     "t": "Nein – gesetzliche Kündigungsfristen sind unabdingbar"
+    },
+    {
+     "t": "Nur wenn der Betriebsrat zustimmt"
+    },
+    {
+     "t": "Nur wenn die Frist für den Arbeitgeber kürzer ist als für den Arbeitnehmer"
+    }
+   ],
+   "e": "§ 622 Absatz 4 BGB erlaubt tarifvertragliche Abweichungen – auch zuungunsten des Arbeitnehmers. Im Arbeitsvertrag selbst dürfen dagegen nur längere, nicht kürzere Fristen als die gesetzlichen vereinbart werden."
+  },
+  {
+   "f": 1,
+   "sub": "Betriebsverfassung",
+   "t": "mc",
+   "q": "Kann eine Betriebsvereinbarung die im Tarifvertrag geregelte Kündigungsfrist verkürzen, wenn der Tarifvertrag keine Öffnungsklausel enthält?",
+   "o": [
+    {
+     "t": "Nein – § 77 Absatz 3 BetrVG sperrt Betriebsvereinbarungen über tariflich geregelte Gegenstände",
+     "ok": 1
+    },
+    {
+     "t": "Ja, Betriebsvereinbarungen gehen dem Tarifvertrag stets vor"
+    },
+    {
+     "t": "Ja, wenn die Mehrheit der Belegschaft zustimmt"
+    },
+    {
+     "t": "Nur wenn der Arbeitgeber nicht tarifgebunden ist"
+    }
+   ],
+   "e": "Die Regelungssperre des § 77 Absatz 3 BetrVG schützt die Tarifautonomie: Was der Tarifvertrag regelt oder üblicherweise regelt, ist der Betriebsvereinbarung entzogen – es sei denn, der Tarifvertrag öffnet sie ausdrücklich."
+  },
+  {
+   "f": 1,
+   "sub": "Arbeitsrecht",
+   "t": "mc",
+   "q": "Eine Bewerberin verneint wahrheitswidrig die Frage nach dem Staplerschein für eine Stelle, auf der sie Flurförderzeuge bedienen soll. Welche Folge hat das?",
+   "o": [
+    {
+     "t": "Der Arbeitgeber kann den Arbeitsvertrag wegen arglistiger Täuschung anfechten (§ 123 BGB)",
+     "ok": 1
+    },
+    {
+     "t": "Keine – im Vorstellungsgespräch darf grundsätzlich gelogen werden"
+    },
+    {
+     "t": "Der Arbeitsvertrag ist von Anfang an nichtig, ohne dass jemand etwas tun muss"
+    },
+    {
+     "t": "Der Arbeitgeber darf nur abmahnen"
+    }
+   ],
+   "e": "Die Frage war zulässig, weil der Staplerschein in engem Zusammenhang mit der Tätigkeit steht. Eine Lüge auf eine zulässige Frage begründet das Anfechtungsrecht. Bei unzulässigen Fragen – etwa nach einer Schwangerschaft – besteht dagegen ein „Recht zur Lüge“."
+  },
+  {
+   "f": 1,
+   "sub": "Arbeitsrecht",
+   "t": "mc",
+   "q": "Ab wann ist das Kündigungsschutzgesetz auf ein Arbeitsverhältnis anwendbar?",
+   "o": [
+    {
+     "t": "Wenn es im selben Betrieb oder Unternehmen länger als sechs Monate bestanden hat",
+     "ok": 1
+    },
+    {
+     "t": "Sofort ab dem ersten Arbeitstag"
+    },
+    {
+     "t": "Nach zwölf Monaten"
+    },
+    {
+     "t": "Nach der ersten Abmahnung"
+    }
+   ],
+   "e": "Die Wartezeit von mehr als sechs Monaten ist die persönliche Voraussetzung (§ 1 KSchG). Dazu kommt die betriebliche: mehr als zehn Arbeitnehmer (§ 23 KSchG). Der besondere Kündigungsschutz – etwa nach dem MuSchG – gilt dagegen von Anfang an."
+  },
+  {
+   "f": 1,
+   "sub": "Arbeitsrecht",
+   "t": "mc",
+   "q": "Muss die Befristung eines Arbeitsvertrags schriftlich vereinbart werden?",
+   "o": [
+    {
+     "t": "Ja, in jedem Fall – kalendermäßig wie mit Sachgrund (§ 14 Absatz 4 TzBfG)",
+     "ok": 1
+    },
+    {
+     "t": "Nur bei der Befristung mit Sachgrund"
+    },
+    {
+     "t": "Nur bei einer Dauer über zwei Jahre"
+    },
+    {
+     "t": "Nein, die Schriftform ist nur eine Empfehlung"
+    }
+   ],
+   "e": "Fehlt die Schriftform der Befristungsabrede, ist die Befristung unwirksam und der Vertrag gilt als unbefristet geschlossen. Der Vertrag selbst bleibt also bestehen – nur eben ohne Ende."
+  },
+  {
+   "f": 2,
+   "sub": "Rechtsformen",
+   "t": "mc",
+   "q": "Welche Aussage trifft auf die Kommanditgesellschaft zu?",
+   "o": [
+    {
+     "t": "Der Komplementär haftet unbeschränkt, der Kommanditist nur bis zur Höhe seiner Einlage",
+     "ok": 1
+    },
+    {
+     "t": "Alle Gesellschafter haften nur mit ihrer Einlage"
+    },
+    {
+     "t": "Sie benötigt ein Mindestgründungskapital von 25.000 €"
+    },
+    {
+     "t": "Die Geschäftsführung liegt beim Kommanditisten"
+    }
+   ],
+   "e": "Die KG ist eine Personengesellschaft ohne Mindestkapital. Geschäftsführung und Außenvertretung liegen beim Komplementär, der dafür unbeschränkt haftet; der Kommanditist ist Kapitalgeber mit beschränkter Haftung."
+  },
+  {
+   "f": 2,
+   "sub": "Materialwirtschaft",
+   "t": "calc",
+   "q": "Ein Auftrag umfasst 5.000 Erzeugnisse, in jedes gehen 8 Teile C ein. Kalkuliert wird mit 3,25 % Ausschuss. Berechnen Sie den Bruttobedarf an Teil C.",
+   "ans": 41344,
+   "unit": "Stück",
+   "e": "Sekundärbedarf = 5.000 · 8 = 40.000 Stück. Der Ausschuss bezieht sich auf die Einsatzmenge, deshalb wird dividiert, nicht multipliziert: 40.000 ÷ (1 − 0,0325) = 40.000 ÷ 0,9675 = 41.344 Stück (aufgerundet)."
+  },
+  {
+   "f": 2,
+   "sub": "Materialwirtschaft",
+   "t": "calc",
+   "q": "Bruttobedarf 41.344 Stück, Lagerbestand 8.000 Stück, Sicherheitsbestand 4.000 Stück, Bestellbestand im Zulauf 15.000 Stück, Reservierungen 6.550 Stück. Berechnen Sie den Nettobedarf.",
+   "ans": 28894,
+   "unit": "Stück",
+   "e": "Nettobedarf = Bruttobedarf − Lagerbestand + Sicherheitsbestand − Bestellbestand + Reservierungen = 41.344 − 8.000 + 4.000 − 15.000 + 6.550 = 28.894 Stück. Der Sicherheitsbestand erhöht den Bedarf, weil er nicht angetastet werden soll."
+  },
+  {
+   "f": 2,
+   "sub": "Materialwirtschaft",
+   "t": "mc",
+   "q": "Worin unterscheiden sich Primär- und Tertiärbedarf?",
+   "o": [
+    {
+     "t": "Primärbedarf ist der Bedarf an verkaufsfähigen Erzeugnissen, Tertiärbedarf der an Hilfs- und Betriebsstoffen",
+     "ok": 1
+    },
+    {
+     "t": "Primärbedarf sind Rohstoffe, Tertiärbedarf sind Fertigerzeugnisse"
+    },
+    {
+     "t": "Primärbedarf ist der Bedarf des ersten Quartals, Tertiärbedarf der des dritten"
+    },
+    {
+     "t": "Beide bezeichnen dasselbe auf unterschiedlichen Planungsstufen"
+    }
+   ],
+   "e": "Primärbedarf = Erzeugnisse und verkaufsfähige Ersatzteile. Sekundärbedarf = Rohstoffe, Einzelteile und Baugruppen, die dafür nötig sind. Tertiärbedarf = Hilfs- und Betriebsstoffe wie Schmiermittel oder Schrauben."
+  },
+  {
+   "f": 2,
+   "sub": "Betriebsorganisation",
+   "t": "mc",
+   "q": "Alle Teilpläne werden aus den Unternehmenszielen abgeleitet, die untere Führungsebene wird kaum beteiligt. Welches Planungsprinzip ist das?",
+   "o": [
+    {
+     "t": "Top-down-Planung",
+     "ok": 1
+    },
+    {
+     "t": "Bottom-up-Planung"
+    },
+    {
+     "t": "Gegenstromverfahren"
+    },
+    {
+     "t": "Rollierende Planung"
+    }
+   ],
+   "e": "Top-down sichert die Ausrichtung aller Teilpläne auf die Unternehmensziele und ist schnell durchzusetzen. Der Preis: Die Erfahrung der operativen Ebene bleibt ungenutzt, und die Akzeptanz der Pläne leidet – genau die Klage aus der unteren Führungsebene."
+  },
+  {
+   "f": 3,
+   "sub": "EDV",
+   "t": "mc",
+   "q": "Warum erfassen Industrieunternehmen Maschinendaten permanent und automatisch?",
+   "o": [
+    {
+     "t": "Um Qualitätsprobleme früh zu erkennen und beheben zu können",
+     "ok": 1
+    },
+    {
+     "t": "Um die Anzahl der Mitarbeiter zu dokumentieren"
+    },
+    {
+     "t": "Weil das Datenschutzrecht es vorschreibt"
+    },
+    {
+     "t": "Um Papierarchive zu ersetzen"
+    }
+   ],
+   "e": "Automatisch erfasste Maschinendaten dienen der Qualitätssicherung, der vorausschauenden Instandhaltung, dem Datenaustausch mit den Maschinenherstellern und der Optimierung von Prozessen und Auslastung."
+  },
+  {
+   "f": 3,
+   "sub": "EDV",
+   "t": "mc",
+   "q": "Welche Maßnahme sichert die sachlich richtige manuelle Datenerfassung organisatorisch ab?",
+   "o": [
+    {
+     "t": "Arbeitsanweisungen und Richtlinien für die korrekte Erfassung sowie Schulung der Beschäftigten",
+     "ok": 1
+    },
+    {
+     "t": "Eine unterbrechungsfreie Stromversorgung"
+    },
+    {
+     "t": "Die redundante Auslegung der Server"
+    },
+    {
+     "t": "Die Verschlüsselung der Festplatten"
+    }
+   ],
+   "e": "Organisatorisch wirken Anweisungen, Schulung, klare Zuständigkeiten und Stichproben. Redundanz, USV und Verschlüsselung sind technische Maßnahmen – sie sichern Verfügbarkeit und Vertraulichkeit, nicht die inhaltliche Richtigkeit."
+  },
+  {
+   "f": 3,
+   "sub": "EDV",
+   "t": "mc",
+   "q": "Welche technische Maßnahme sichert die Verfügbarkeit der Daten?",
+   "o": [
+    {
+     "t": "Redundante Auslegung der wichtigsten IT-Systeme und mehrstufige Datensicherung",
+     "ok": 1
+    },
+    {
+     "t": "Eine Betriebsvereinbarung zur Datennutzung"
+    },
+    {
+     "t": "Die Schulung der Beschäftigten"
+    },
+    {
+     "t": "Ein Wartungsvertrag mit Hotline"
+    }
+   ],
+   "e": "Redundanz und ein erprobtes Backup mit schnellem Wiederherstellen sind technische Maßnahmen. Wartungsvertrag, Schulung und Betriebsvereinbarung wirken organisatorisch – beides zusammen ergibt erst ein Sicherheitskonzept."
+  },
+  {
+   "f": 3,
+   "sub": "Arbeitsmethodik",
+   "t": "mc",
+   "q": "Warum wird ein Ursache-Wirkungs-Diagramm eingesetzt?",
+   "o": [
+    {
+     "t": "Es sichert die Vollständigkeit der Ursachensuche und vermeidet voreilige Schuldzuweisungen",
+     "ok": 1
+    },
+    {
+     "t": "Es legt die Verantwortlichen für ein Problem fest"
+    },
+    {
+     "t": "Es berechnet die Kosten eines Problems"
+    },
+    {
+     "t": "Es ersetzt die Messung der Prozessdaten"
+    }
+   ],
+   "e": "Das Diagramm (auch Ishikawa- oder Fischgräten-Diagramm) ordnet mögliche Ursachen nach Kategorien – in der 7-M-Methode Mensch, Maschine, Methode, Material, Milieu, Messung und Management – und bindet den Sachverstand der Beteiligten ein."
+  },
+  {
+   "f": 3,
+   "sub": "Arbeitsmethodik",
+   "t": "mc",
+   "q": "Welche Kategorien umfasst die 7-M-Methode im Ursache-Wirkungs-Diagramm?",
+   "o": [
+    {
+     "t": "Mensch, Maschine, Methode, Material, Milieu, Messung und Management",
+     "ok": 1
+    },
+    {
+     "t": "Markt, Menge, Marge, Material, Mensch, Maschine und Methode"
+    },
+    {
+     "t": "Mensch, Motivation, Marketing, Material, Maschine, Methode und Messung"
+    },
+    {
+     "t": "Material, Maschine, Methode, Mengen, Minuten, Meister und Management"
+    }
+   ],
+   "e": "Die klassischen 4 M (Mensch, Maschine, Methode, Material) wurden um Milieu (Umgebung), Messung und Management erweitert. Die Kategorien sind ein Raster gegen blinde Flecken, keine Rangfolge."
+  },
+  {
+   "f": 4,
+   "sub": "Konflikte",
+   "t": "mc",
+   "q": "Welches Gesetz verbietet die Benachteiligung wegen des Geschlechts im Betrieb?",
+   "o": [
+    {
+     "t": "Das Allgemeine Gleichbehandlungsgesetz (AGG)",
+     "ok": 1
+    },
+    {
+     "t": "Das Betriebsverfassungsgesetz"
+    },
+    {
+     "t": "Das Arbeitszeitgesetz"
+    },
+    {
+     "t": "Das Nachweisgesetz"
+    }
+   ],
+   "e": "Das AGG schützt vor Benachteiligung wegen Rasse oder ethnischer Herkunft, Geschlecht, Religion oder Weltanschauung, Behinderung, Alter und sexueller Identität. Der Arbeitgeber ist verpflichtet, Benachteiligungen vorzubeugen und einzuschreiten."
+  },
+  {
+   "f": 4,
+   "sub": "Gruppen",
+   "t": "mc",
+   "q": "Ein eingespieltes Team bekommt zehn neue Mitarbeiter aus einem geschlossenen Betrieb. In welcher Phase der Gruppenbildung befindet es sich, wenn es hörbar reibt?",
+   "o": [
+    {
+     "t": "In der Konflikt- oder Storming-Phase",
+     "ok": 1
+    },
+    {
+     "t": "In der Forming-Phase"
+    },
+    {
+     "t": "In der Performing-Phase"
+    },
+    {
+     "t": "In der Adjourning-Phase"
+    }
+   ],
+   "e": "Nach Tuckman folgt auf das vorsichtige Forming das Storming: Einstellungen, Ansprüche und Rollen prallen aufeinander. Die Führungskraft moderiert hier aktiv, statt den Konflikt auszusitzen – erst danach entstehen Normen (Norming) und Leistung (Performing)."
+  },
+  {
+   "f": 4,
+   "sub": "Gruppen",
+   "t": "mc",
+   "q": "Welcher Wert trägt eine neu zusammengesetzte Arbeitsgruppe?",
+   "o": [
+    {
+     "t": "Die innere Bereitschaft zur vorurteilsfreien und kooperativen Zusammenarbeit",
+     "ok": 1
+    },
+    {
+     "t": "Der Wettbewerb zwischen alten und neuen Mitarbeitern"
+    },
+    {
+     "t": "Die klare Trennung beider Gruppen in getrennte Schichten"
+    },
+    {
+     "t": "Der Verzicht auf gemeinsame Ziele"
+    }
+   ],
+   "e": "Tragende Werte sind Kooperationsbereitschaft, der Wille jedes Einzelnen, seine Fähigkeiten einzubringen, gegenseitige Wertschätzung, Verlässlichkeit und die Bereitschaft, Konflikte offen anzusprechen."
+  },
+  {
+   "f": 4,
+   "sub": "Motivation",
+   "t": "mc",
+   "q": "Welcher betriebliche Grund kann Krankheitszeiten erhöhen?",
+   "o": [
+    {
+     "t": "Psychische Belastung durch Mobbing sowie dauerhafte Über- oder Unterforderung",
+     "ok": 1
+    },
+    {
+     "t": "Ein hoher Anteil an Teilzeitkräften"
+    },
+    {
+     "t": "Die Einführung von Gleitzeit"
+    },
+    {
+     "t": "Die Beteiligung des Betriebsrats an der Urlaubsplanung"
+    }
+   ],
+   "e": "Betrieblich bedingte Ursachen sind unter anderem Mobbing oder Bossing, zu hohe Arbeitsbelastung und Arbeitsverdichtung, ungünstige Arbeitsumgebung, fehlende Anerkennung und mangelhafte Arbeitsorganisation."
+  },
+  {
+   "f": 4,
+   "sub": "Führungsmethoden",
+   "t": "mc",
+   "q": "Wo kann ein Industriemeister die Arbeitsorganisation kurzfristig zugunsten seiner Mitarbeiter verbessern?",
+   "o": [
+    {
+     "t": "Bei Lüftung, Beleuchtung und Lärmschutz sowie bei der Pausen- und Schichtgestaltung",
+     "ok": 1
+    },
+    {
+     "t": "Bei der Höhe des Tariflohns"
+    },
+    {
+     "t": "Bei der Rechtsform des Unternehmens"
+    },
+    {
+     "t": "Bei der Besetzung der Geschäftsführung"
+    }
+   ],
+   "e": "Im eigenen Handlungsspielraum liegen Arbeitsumgebung, Raum- und Arbeitsplatzgestaltung, Ablauf- und Pausenorganisation, Belastungswechsel und die Einbindung der Mitarbeiter. Entgelt und Unternehmensverfassung liegen außerhalb."
+  },
+  {
+   "f": 5,
+   "sub": "Naturwissenschaftliche und technische Grundlagen",
+   "t": "mc",
+   "q": "Wodurch entsteht die temporäre Härte (Carbonathärte) des Wassers?",
+   "o": [
+    {
+     "t": "Das im Regenwasser gelöste CO₂ bildet eine schwache Säure und löst Kalk zu Calciumhydrogencarbonat",
+     "ok": 1
+    },
+    {
+     "t": "Durch gelöstes Kochsalz aus dem Meerwasser"
+    },
+    {
+     "t": "Durch Sauerstoff, der beim Versickern aufgenommen wird"
+    },
+    {
+     "t": "Durch Eisen aus den Wasserleitungen"
+    }
+   ],
+   "e": "Kohlendioxid und Wasser bilden Kohlensäure, die Calciumcarbonat als leicht lösliches Calciumhydrogencarbonat in Lösung bringt. Beim Erhitzen kehrt sich die Reaktion um: Kalk fällt als Kesselstein aus, CO₂ entweicht."
+  },
+  {
+   "f": 5,
+   "sub": "Naturwissenschaftliche und technische Grundlagen",
+   "t": "mc",
+   "q": "Welche Folge hat hartes Wasser in Industrieanlagen?",
+   "o": [
+    {
+     "t": "Kesselstein lagert sich ab, dadurch steigen die Energiekosten",
+     "ok": 1
+    },
+    {
+     "t": "Die Wärmeübertragung verbessert sich"
+    },
+    {
+     "t": "Die Korrosionsgefahr sinkt auf null"
+    },
+    {
+     "t": "Der Wasserdruck in den Leitungen steigt"
+    }
+   ],
+   "e": "Kesselstein dämmt: Schon dünne Schichten auf Heizflächen erhöhen den Energiebedarf deutlich, verengen Querschnitte und können zum Ausfall von Wärmetauschern führen."
+  },
+  {
+   "f": 5,
+   "sub": "Naturwissenschaftliche und technische Grundlagen",
+   "t": "calc",
+   "q": "Ein Stahlbehälter steht auf einer schiefen Ebene mit 12 % Steigung. Die Reibkraft beträgt 90 N, die Reibzahl Stahl auf Stahl 0,15. Berechnen Sie die Gewichtskraft des Behälters.",
+   "ans": 604.3,
+   "unit": "N",
+   "e": "Normalkraft FN = FR ÷ µ = 90 N ÷ 0,15 = 600 N. Der Steigungswinkel folgt aus tan α = 0,12, also α = 6,84°. Auf der schiefen Ebene gilt FN = FG · cos α, also FG = 600 N ÷ cos 6,84° = 604,3 N."
+  },
+  {
+   "f": 5,
+   "sub": "Naturwissenschaftliche und technische Grundlagen",
+   "t": "calc",
+   "q": "Ab welchem Winkel beginnt ein Körper auf einer schiefen Ebene von allein zu rutschen, wenn die Reibzahl 0,15 beträgt?",
+   "ans": 8.53,
+   "unit": "°",
+   "e": "Der Körper rutscht, sobald die Hangabtriebskraft die Reibkraft erreicht: FG · sin α = µ · FG · cos α. Das FG kürzt sich heraus: tan α = µ = 0,15, also α = 8,53°. Der Grenzwinkel hängt damit allein von der Reibzahl ab, nicht von der Masse."
+  },
+  {
+   "f": 5,
+   "sub": "Naturwissenschaftliche und technische Grundlagen",
+   "t": "calc",
+   "q": "Ein Getriebe nimmt 3.000 W auf und hat einen Wirkungsgrad von 80 %. Berechnen Sie die Verlustleistung.",
+   "ans": 600,
+   "unit": "W",
+   "e": "Abgegebene Leistung = 3.000 W · 0,8 = 2.400 W. Verlustleistung = 3.000 W − 2.400 W = 600 W. Sie wird überwiegend als Wärme frei und muss abgeführt werden."
+  },
+  {
+   "f": 5,
+   "sub": "Naturwissenschaftliche und technische Grundlagen",
+   "t": "calc",
+   "q": "Ein Drehstrommotor nimmt bei 400 V, 6,5 A und cos φ = 0,77 Leistung auf. Berechnen Sie die aufgenommene Wirkleistung.",
+   "ans": 3467.6,
+   "unit": "W",
+   "e": "P = U · I · √3 · cos φ = 400 V · 6,5 A · 1,732 · 0,77 = 3.467,6 W. Der Faktor √3 gilt für Drehstrom mit Außenleiterspannung und Außenleiterstrom."
+  },
+  {
+   "f": 5,
+   "sub": "Naturwissenschaftliche und technische Grundlagen",
+   "t": "calc",
+   "q": "Eine Antriebseinheit nimmt 3.467,6 W auf und gibt am Getriebe 2.400 W ab. Berechnen Sie den Gesamtwirkungsgrad in Prozent.",
+   "ans": 69,
+   "unit": "%",
+   "e": "η = P(ab) ÷ P(zu) = 2.400 W ÷ 3.467,6 W = 0,692, also rund 69 %. Der Gesamtwirkungsgrad ist das Produkt der Einzelwirkungsgrade von Motor und Getriebe – er kann nie größer sein als der kleinste von ihnen."
+  }
+ ]
+}

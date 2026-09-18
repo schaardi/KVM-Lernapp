@@ -1,0 +1,610 @@
+{
+ "questions": [
+  {
+   "f": 1,
+   "sub": "Arbeitsrecht",
+   "t": "mc",
+   "q": "Worin unterscheidet sich eine personenbedingte von einer verhaltensbedingten Kündigung?",
+   "o": [
+    {
+     "t": "Bei der personenbedingten Kündigung kann der Arbeitnehmer die Ursache nicht beeinflussen; bei der verhaltensbedingten verstößt er schuldhaft gegen seine Vertragspflichten",
+     "ok": 1
+    },
+    {
+     "t": "Die personenbedingte Kündigung ist stets fristlos, die verhaltensbedingte stets fristgerecht"
+    },
+    {
+     "t": "Die personenbedingte Kündigung setzt eine Abmahnung voraus, die verhaltensbedingte nicht"
+    },
+    {
+     "t": "Die personenbedingte Kündigung spricht der Betriebsrat aus, die verhaltensbedingte der Arbeitgeber"
+    }
+   ],
+   "e": "Weil der Arbeitnehmer eine Krankheit nicht steuern kann, ist bei der personenbedingten Kündigung keine Abmahnung nötig – wohl aber eine negative Zukunftsprognose, eine erhebliche Beeinträchtigung betrieblicher Interessen und eine Interessenabwägung zugunsten des Arbeitgebers. Vor einer verhaltensbedingten Kündigung ist dagegen regelmäßig abzumahnen."
+  },
+  {
+   "f": 1,
+   "sub": "Arbeitsrecht",
+   "t": "mc",
+   "q": "Wie kann ein Arbeitnehmer auf eine Änderungskündigung reagieren?",
+   "o": [
+    {
+     "t": "Er kann sie annehmen, ablehnen und Kündigungsschutzklage erheben oder unter Vorbehalt annehmen und die Änderung gerichtlich überprüfen lassen",
+     "ok": 1
+    },
+    {
+     "t": "Er kann sie nur annehmen oder ablehnen; ein Vorbehalt ist gesetzlich ausgeschlossen"
+    },
+    {
+     "t": "Er muss sie annehmen, wenn der Betriebsrat ihr zugestimmt hat"
+    },
+    {
+     "t": "Er kann sie nur über den Betriebsrat zurückweisen, nicht selbst"
+    }
+   ],
+   "e": "Die Änderungskündigung ist die Kündigung des bestehenden Arbeitsverhältnisses verbunden mit dem Angebot, es zu geänderten Bedingungen fortzusetzen. Die Annahme unter Vorbehalt (§ 2 KSchG) muss innerhalb der Kündigungsfrist erklärt werden; die Klagefrist beträgt in jedem Fall drei Wochen ab Zugang."
+  },
+  {
+   "f": 1,
+   "sub": "Betriebsverfassung",
+   "t": "mc",
+   "q": "Betriebsrat und Geschäftsführung vereinbaren, dass alle Beschäftigten drei Stunden pro Woche unentgeltlich länger arbeiten. Ist diese Betriebsvereinbarung wirksam?",
+   "o": [
+    {
+     "t": "Nein – Arbeitsentgelte und Arbeitsbedingungen, die üblicherweise tariflich geregelt werden, können nicht Gegenstand einer Betriebsvereinbarung sein",
+     "ok": 1
+    },
+    {
+     "t": "Ja, weil der Betriebsrat für alle Arbeitszeitfragen allein zuständig ist"
+    },
+    {
+     "t": "Ja, wenn die Mehrheit der Belegschaft in einer Abstimmung zustimmt"
+    },
+    {
+     "t": "Ja, sofern die Maßnahme befristet ist und Arbeitsplätze sichert"
+    }
+   ],
+   "e": "Der Tarifvorbehalt des § 77 Absatz 3 BetrVG schützt die Tarifautonomie: Ohne Öffnungsklausel im Tarifvertrag ist eine solche Vereinbarung unwirksam, die Mitarbeiter müssen nicht länger arbeiten. Eine im Betrieb vertretene Gewerkschaft kann nach § 23 Absatz 1 BetrVG beim Arbeitsgericht sogar die Auflösung des Betriebsrats beantragen."
+  },
+  {
+   "f": 1,
+   "sub": "Betriebsverfassung",
+   "t": "calc",
+   "q": "Ein Betrieb beschäftigt 410 Mitarbeiter, darunter fünf leitende Angestellte und zehn Auszubildende, von denen acht das 18. Lebensjahr noch nicht vollendet haben. Wie viele Mitarbeiter sind zur Betriebsratswahl wahlberechtigt?",
+   "ans": 397,
+   "unit": "Mitarbeiter",
+   "e": "Leitende Angestellte fallen nicht unter das BetrVG (§ 5 Absatz 3), Jugendliche unter 18 Jahren sind nach § 7 BetrVG nicht wahlberechtigt: 410 − 5 − 8 = 397. Bei 397 Wahlberechtigten besteht der Betriebsrat nach § 9 BetrVG aus neun Mitgliedern; damit ist auch ein Betriebsausschuss zu bilden (§ 27 BetrVG) und ein Mitglied freizustellen (§ 38 BetrVG)."
+  },
+  {
+   "f": 1,
+   "sub": "Sozialversicherung",
+   "t": "mc",
+   "q": "Welche fünf Zweige bilden die gesetzliche Sozialversicherung in Deutschland?",
+   "o": [
+    {
+     "t": "Renten-, Kranken-, Pflege-, Unfall- und Arbeitslosenversicherung",
+     "ok": 1
+    },
+    {
+     "t": "Renten-, Kranken-, Haftpflicht-, Unfall- und Arbeitslosenversicherung"
+    },
+    {
+     "t": "Renten-, Kranken-, Pflege-, Lebens- und Berufsunfähigkeitsversicherung"
+    },
+    {
+     "t": "Renten-, Kranken-, Pflege-, Unfall- und Rechtsschutzversicherung"
+    }
+   ],
+   "e": "Typische Leistungen sind Altersrente und Erwerbsminderungsrente, ärztliche Behandlung und Krankengeld, Pflegegeld und Pflegesachleistungen, Unfallrente und Unfallverhütung sowie Arbeitslosengeld und Förderung der beruflichen Weiterbildung."
+  },
+  {
+   "f": 1,
+   "sub": "Arbeitsschutz",
+   "t": "mc",
+   "q": "Wer trägt nach den gesetzlichen Regelungen die Verantwortung für den Arbeits- und Gesundheitsschutz im Unternehmen?",
+   "o": [
+    {
+     "t": "Der Unternehmer bzw. Arbeitgeber – er kann Aufgaben übertragen, nicht aber die Verantwortung abgeben",
+     "ok": 1
+    },
+    {
+     "t": "Die Fachkraft für Arbeitssicherheit, weil sie fachlich weisungsfrei ist"
+    },
+    {
+     "t": "Der Betriebsrat, weil er die Interessen der Beschäftigten vertritt"
+    },
+    {
+     "t": "Die Berufsgenossenschaft als Träger der gesetzlichen Unfallversicherung"
+    }
+   ],
+   "e": "Zu seinen Pflichten gehören der Aufbau einer Arbeitsschutzorganisation (Betriebsarzt, Fachkraft für Arbeitssicherheit, Sicherheitsbeauftragte, Arbeitsschutzausschuss), Gefährdungsbeurteilungen, Unterweisungen und deren Dokumentation. An einer Unfalluntersuchung sind u. a. Fachkraft für Arbeitssicherheit, Sicherheitsbeauftragter, Betriebsarzt, Betriebsrat und die verantwortliche Führungskraft zu beteiligen."
+  },
+  {
+   "f": 1,
+   "sub": "Umweltrecht",
+   "t": "mc",
+   "q": "Was sind Emissionen im Sinne des Bundes-Immissionsschutzgesetzes?",
+   "o": [
+    {
+     "t": "Die von einer Anlage ausgehenden Luftverunreinigungen, Geräusche, Erschütterungen, Licht, Wärme und Strahlen",
+     "ok": 1
+    },
+    {
+     "t": "Die auf Menschen und Umwelt einwirkenden Belastungen am Einwirkungsort"
+    },
+    {
+     "t": "Ausschließlich die von Schornsteinen abgegebenen Abgase"
+    },
+    {
+     "t": "Die im Betrieb gelagerten wassergefährdenden Stoffe"
+    }
+   ],
+   "e": "§ 3 Absatz 2 BImSchG definiert die Emission als das, was eine Anlage abgibt; die Immission (§ 3 Absatz 2 BImSchG) ist die Einwirkung am Zielort. Betriebliche Beispiele für Emissionen sind Rauchgaskamine, Betankungsanlagen, Lüfter oder laute Maschinen."
+  },
+  {
+   "f": 1,
+   "sub": "Produkthaftung/Datenschutz",
+   "t": "mc",
+   "q": "Welcher Grundsatz gilt im Datenschutzrecht für die Verarbeitung personenbezogener Daten?",
+   "o": [
+    {
+     "t": "Das Verbot mit Erlaubnisvorbehalt – die Verarbeitung ist verboten, sofern sie nicht ausdrücklich erlaubt ist",
+     "ok": 1
+    },
+    {
+     "t": "Die Erlaubnis mit Verbotsvorbehalt – die Verarbeitung ist erlaubt, bis sie untersagt wird"
+    },
+    {
+     "t": "Die freie Verarbeitung, solange die Daten im Unternehmen bleiben"
+    },
+    {
+     "t": "Die freie Verarbeitung, solange der Betriebsrat zugestimmt hat"
+    }
+   ],
+   "e": "Erlaubt ist die Verarbeitung z. B. zur Erfüllung eines Vertrags (etwa des Arbeitsvertrags), aufgrund gesetzlicher Vorschrift oder mit Einwilligung der betroffenen Person. Verstöße können Schadensersatz, Bußgelder, Imageschäden und in schweren Fällen Freiheitsstrafen nach sich ziehen."
+  },
+  {
+   "f": 2,
+   "sub": "Rechtsformen",
+   "t": "mc",
+   "q": "Welche Organe hat eine Aktiengesellschaft und welche Aufgabe hat der Aufsichtsrat?",
+   "o": [
+    {
+     "t": "Vorstand, Aufsichtsrat und Hauptversammlung; der Aufsichtsrat bestellt den Vorstand und überwacht dessen Geschäftsführung",
+     "ok": 1
+    },
+    {
+     "t": "Nur Vorstand und Hauptversammlung; der Aufsichtsrat ist freiwillig"
+    },
+    {
+     "t": "Geschäftsführung, Gesellschafterversammlung und Beirat; der Aufsichtsrat führt die Geschäfte"
+    },
+    {
+     "t": "Vorstand, Aufsichtsrat und Betriebsrat; der Aufsichtsrat vertritt die AG nach außen"
+    }
+   ],
+   "e": "Der Vorstand führt die Geschäfte und vertritt die AG nach außen, die Hauptversammlung beschließt über Gewinnverwendung, Entlastung und Satzungsänderungen und wählt die Anteilseignervertreter des Aufsichtsrats. Das Mindestgrundkapital beträgt 50.000 €."
+  },
+  {
+   "f": 2,
+   "sub": "Finanzierung",
+   "t": "mc",
+   "q": "Worin unterscheiden sich Nennwert und Kurswert einer Aktie?",
+   "o": [
+    {
+     "t": "Der Nennwert ist der auf die Aktie entfallende Anteil am Grundkapital, der Kurswert ihr aktueller Preis an der Börse",
+     "ok": 1
+    },
+    {
+     "t": "Der Nennwert ist der Börsenpreis, der Kurswert der Anteil am Grundkapital"
+    },
+    {
+     "t": "Nennwert und Kurswert sind stets identisch, nur die Bezeichnung unterscheidet sich"
+    },
+    {
+     "t": "Der Nennwert ist der Preis bei der Erstausgabe, der Kurswert die jährliche Dividende"
+    }
+   ],
+   "e": "Der Nennwert ist eine feste Rechengröße aus der Satzung (mindestens 1 €), der Kurswert schwankt mit Angebot und Nachfrage. Die Summe aller Nennwerte ergibt das Grundkapital, die Summe der Kurswerte die Marktkapitalisierung."
+  },
+  {
+   "f": 2,
+   "sub": "Materialwirtschaft",
+   "t": "calc",
+   "q": "Der durchschnittliche Lagerbestand an Feinblech beträgt 20 t. Der Anfangsbestand lag bei 25 t, der Endbestand bei 21 t; monatlich wurden 8 t bezogen. Berechnen Sie die Lagerumschlagshäufigkeit.",
+   "ans": 5,
+   "unit": "",
+   "e": "Jahreszugang = 12 · 8 t = 96 t. Verbrauch = Anfangsbestand + Zugänge − Endbestand = 25 t + 96 t − 21 t = 100 t. Lagerumschlagshäufigkeit = 100 t ÷ 20 t = 5. Die durchschnittliche Lagerdauer beträgt damit 360 ÷ 5 = 72 Tage."
+  },
+  {
+   "f": 2,
+   "sub": "Betriebsorganisation",
+   "t": "mc",
+   "q": "Worin unterscheiden sich Werkstattfertigung und Reihenfertigung?",
+   "o": [
+    {
+     "t": "Die Werkstattfertigung fasst gleichartige Betriebsmittel räumlich zusammen (Verrichtungsprinzip), die Reihenfertigung ordnet sie in der Reihenfolge der Arbeitsgänge an",
+     "ok": 1
+    },
+    {
+     "t": "Die Werkstattfertigung ordnet die Maschinen nach dem Arbeitsablauf, die Reihenfertigung nach Verrichtungen"
+    },
+    {
+     "t": "Die Werkstattfertigung ist nur bei Massenprodukten möglich, die Reihenfertigung nur bei Einzelstücken"
+    },
+    {
+     "t": "Beide unterscheiden sich nur in der Zahl der Schichten, nicht in der Anordnung"
+    }
+   ],
+   "e": "Die Werkstattfertigung ist flexibler, braucht geringere Investitionen und ist bei Maschinenausfall weniger störanfällig; sie hat jedoch längere Transportwege, höhere Durchlaufzeiten und mehr Zwischenlagerbestände als die Reihenfertigung."
+  },
+  {
+   "f": 2,
+   "sub": "Kostenrechnung",
+   "t": "calc",
+   "q": "Eine Fräsmaschine hat im Dreischichtbetrieb bei 5.000 h Einsatzzeit eine kalkulatorische Abschreibung von 35,00 €/h. Im Zweischichtbetrieb sinkt die Einsatzzeit auf 3.500 h. Berechnen Sie den neuen Abschreibungssatz je Stunde.",
+   "ans": 50,
+   "unit": "€/h",
+   "e": "Der Abschreibungsbetrag pro Jahr bleibt gleich, er verteilt sich nur auf weniger Stunden: 35,00 €/h · 5.000 h ÷ 3.500 h = 50,00 €/h. Genauso verhalten sich kalkulatorische Zinsen (9,80 → 14,00 €/h) und Raumkosten (1,75 → 2,50 €/h), während der Energieverbrauch mit 6,00 €/h unverändert bleibt."
+  },
+  {
+   "f": 2,
+   "sub": "Kostenrechnung",
+   "t": "calc",
+   "q": "Im Quartal sollen 90.000 Bauteile für 6.750.000 € verkauft werden; die variablen Kosten betragen 4.050.000 €. Berechnen Sie den Stückdeckungsbeitrag.",
+   "ans": 30,
+   "unit": "€/Stück",
+   "e": "Gesamtdeckungsbeitrag = Umsatz − variable Kosten = 6.750.000 € − 4.050.000 € = 2.700.000 €. Stückdeckungsbeitrag = 2.700.000 € ÷ 90.000 Stück = 30 €/Stück."
+  },
+  {
+   "f": 2,
+   "sub": "Kostenrechnung",
+   "t": "calc",
+   "q": "Der Stückdeckungsbeitrag beträgt 30 €. Im ersten Quartal wurden bei 60 % Auslastung (67.500 Stück) 165.000 € Verlust erzielt. Berechnen Sie die Break-even-Menge pro Quartal.",
+   "ans": 73000,
+   "unit": "Stück",
+   "e": "Aus BE = db · x − Kf folgt Kf = 30 €/Stück · 67.500 Stück + 165.000 € = 2.190.000 € pro Quartal. xBEP = Kf ÷ db = 2.190.000 € ÷ 30 €/Stück = 73.000 Stück. Bei einer Kapazität von 112.500 Stück entspricht das einem Break-even-Beschäftigungsgrad von 64,89 %."
+  },
+  {
+   "f": 2,
+   "sub": "Kostenrechnung",
+   "t": "calc",
+   "q": "Fixkosten 2.190.000 € pro Quartal, Stückdeckungsbeitrag 30 €, geplante Absatzmenge 90.000 Stück. Berechnen Sie das geplante Betriebsergebnis.",
+   "ans": 510000,
+   "unit": "€",
+   "e": "BE = db · x − Kf = 30 €/Stück · 90.000 Stück − 2.190.000 € = 2.700.000 € − 2.190.000 € = 510.000 € Gewinn pro Quartal."
+  },
+  {
+   "f": 3,
+   "sub": "EDV",
+   "t": "mc",
+   "q": "In welchen betrieblichen Bereichen werden Stücklisten eingesetzt?",
+   "o": [
+    {
+     "t": "In Konstruktion, Materialbeschaffung, Fertigungsplanung, Montage und Kalkulation",
+     "ok": 1
+    },
+    {
+     "t": "Ausschließlich in der Konstruktion, weil dort die Zeichnungen entstehen"
+    },
+    {
+     "t": "Ausschließlich im Vertrieb, weil dort die Angebote erstellt werden"
+    },
+    {
+     "t": "Ausschließlich in der Buchhaltung, weil dort die Rechnungen geprüft werden"
+    }
+   ],
+   "e": "In der Konstruktion erzeugt das CAD-System die Stückliste automatisch; die Materialwirtschaft leitet daraus den Bedarf ab, die Fertigungsplanung die Arbeitspläne, die Kalkulation die Materialkosten. Deshalb müssen die Systeme die Daten verlustfrei austauschen können."
+  },
+  {
+   "f": 3,
+   "sub": "Arbeitsmethodik",
+   "t": "mc",
+   "q": "In welcher Reihenfolge läuft eine Nutzwertanalyse ab?",
+   "o": [
+    {
+     "t": "Kriterien ermitteln und gewichten, Alternativen auswählen, bewerten, Bewertung mit Gewichtung multiplizieren, Nutzwerte vergleichen",
+     "ok": 1
+    },
+    {
+     "t": "Alternativen auswählen, Preise vergleichen, günstigste Alternative beschaffen"
+    },
+    {
+     "t": "Kriterien bewerten, Alternativen gewichten, Summe der Gewichte vergleichen"
+    },
+    {
+     "t": "Nutzwerte schätzen, Kriterien nachträglich festlegen, Entscheidung begründen"
+    }
+   ],
+   "e": "Die Gewichtungsfaktoren lassen sich über den paarweisen Vergleich bestimmen: Jedes Kriterium wird mit jedem anderen verglichen, das wichtigere erhält zwei Punkte, bei Gleichrang je einer. Die Punktsumme jedes Kriteriums geteilt durch die Gesamtpunktzahl ergibt seine Gewichtung."
+  },
+  {
+   "f": 3,
+   "sub": "Statistik",
+   "t": "calc",
+   "q": "Die Kosten je Arbeitsstunde stiegen 2013 um 5,56 % und 2014 um 9,32 % gegenüber dem jeweiligen Vorjahr. Wie hoch ist der Index für 2014, wenn 2012 = 100 % gesetzt wird (zwei Nachkommastellen)?",
+   "ans": 115.4,
+   "unit": "%",
+   "e": "Prozentuale Steigerungen werden nicht addiert, sondern multipliziert: 1,0556 · 1,0932 = 1,1540, also 115,40 %. Der Index zeigt die Entwicklung gegenüber einem festen Basisjahr, die Vorjahresrate dagegen nur die Veränderung von Jahr zu Jahr."
+  },
+  {
+   "f": 3,
+   "sub": "Präsentation",
+   "t": "mc",
+   "q": "Welcher Punkt gehört in die Abschlusspräsentation eines Projekts?",
+   "o": [
+    {
+     "t": "Der Soll-Ist-Vergleich von Terminen und Kosten sowie die erreichten Projektziele",
+     "ok": 1
+    },
+    {
+     "t": "Die Bewerbungsunterlagen der Projektmitarbeiter"
+    },
+    {
+     "t": "Die vollständige Preisliste aller angefragten Lieferanten"
+    },
+    {
+     "t": "Die Gehaltsstruktur des Projektteams"
+    }
+   ],
+   "e": "Zur Abschlusspräsentation gehören Projektanforderungen und -ziele, das Erreichte mit Nutzen und Erfolgen, der Soll-Ist-Vergleich und ein Ausblick. Weitere Aufgaben der Projektleitung in der Abschlussphase sind die Dokumentation der Abnahmeprotokolle, die Auflösung der Ressourcen und die Auswertung der Erfahrungen für künftige Projekte."
+  },
+  {
+   "f": 4,
+   "sub": "Personalentwicklung",
+   "t": "mc",
+   "q": "Was kennzeichnet den Einsatz von Multiplikatoren bei der Einführung eines neuen IT-Systems?",
+   "o": [
+    {
+     "t": "Ausgewählte Mitarbeiter werden von externen Fachleuten geschult und geben ihr Wissen dann an die Kollegen weiter",
+     "ok": 1
+    },
+    {
+     "t": "Alle Mitarbeiter werden gleichzeitig von einem externen Anbieter geschult"
+    },
+    {
+     "t": "Die Schulung entfällt; jeder Mitarbeiter erarbeitet sich das System selbst"
+    },
+    {
+     "t": "Die Führungskräfte schulen sich gegenseitig ohne externe Unterstützung"
+    }
+   ],
+   "e": "Vorbereitend sind Schulungsbedarf und Multiplikatoren zu bestimmen, geeignete Fachleute auszuwählen und Räume, Termine und Freistellungen zu planen. Die Multiplikatoren arbeiten in drei Phasen: eigene Schulung, Aufbereitung des Wissens und Schulung der Kollegen mit anschließender Begleitung."
+  },
+  {
+   "f": 4,
+   "sub": "Motivation",
+   "t": "mc",
+   "q": "Wie können Sie als Führungskraft das Selbstwertgefühl Ihrer Mitarbeiter stärken?",
+   "o": [
+    {
+     "t": "Durch Wertschätzung, sinnvolle Aufgaben mit Erfolgserlebnissen und ehrliche Anerkennung",
+     "ok": 1
+    },
+    {
+     "t": "Durch möglichst seltene Rückmeldung, damit keine Abhängigkeit entsteht"
+    },
+    {
+     "t": "Durch Kritik vor der versammelten Gruppe, damit alle daraus lernen"
+    },
+    {
+     "t": "Durch gleichmäßige Verteilung ausschließlich einfacher Routineaufgaben"
+    }
+   ],
+   "e": "Anerkennung wirkt nur, wenn sie konkret, zeitnah und verdient ist. Hinzu kommen Entscheidungsspielräume, Beteiligung an Verbesserungen und die Möglichkeit, eigene Stärken einzubringen – Kritik dagegen gehört ins Vier-Augen-Gespräch."
+  },
+  {
+   "f": 4,
+   "sub": "Personalentwicklung",
+   "t": "mc",
+   "q": "Welche Auswirkung hat eine zunehmende Automatisierung auf die Mitarbeiter?",
+   "o": [
+    {
+     "t": "Körperlich belastende, monotone Tätigkeiten entfallen; dafür steigen die Anforderungen an Überwachung, Steuerung und IT-Kenntnisse",
+     "ok": 1
+    },
+    {
+     "t": "Die Anforderungen sinken durchweg, weil die Maschine die Arbeit vollständig übernimmt"
+    },
+    {
+     "t": "Die Beschäftigten müssen ihre Qualifikation nicht anpassen, da sich nur die Technik ändert"
+    },
+    {
+     "t": "Sie betrifft ausschließlich die Instandhaltung, nicht die Produktion"
+    }
+   ],
+   "e": "Auf den Wandel bereiten Sie Ihre Mitarbeiter vor, indem Sie frühzeitig informieren, die künftigen Anforderungen mit den vorhandenen Qualifikationsprofilen abgleichen und rechtzeitig Qualifizierungsmaßnahmen einleiten."
+  },
+  {
+   "f": 4,
+   "sub": "Gruppen",
+   "t": "mc",
+   "q": "Welche Phasen durchläuft eine neu gebildete Projektgruppe im gruppendynamischen Prozess?",
+   "o": [
+    {
+     "t": "Orientierungsphase, Konfliktphase, Kooperationsphase und Produktivitätsphase",
+     "ok": 1
+    },
+    {
+     "t": "Produktivitätsphase, Konfliktphase, Orientierungsphase und Auflösungsphase"
+    },
+    {
+     "t": "Einarbeitungsphase, Probezeit, Bewährungsphase und Beurteilungsphase"
+    },
+    {
+     "t": "Planungsphase, Beschaffungsphase, Realisierungsphase und Abnahmephase"
+    }
+   ],
+   "e": "In der Orientierungsphase tasten sich die Mitglieder ab, in der Konfliktphase werden Rollen und Rangordnung ausgehandelt, in der Kooperationsphase entstehen gemeinsame Regeln und erst in der Produktivitätsphase arbeitet die Gruppe wirklich leistungsfähig. Die Führungskraft muss in der Konfliktphase moderieren."
+  },
+  {
+   "f": 4,
+   "sub": "Personalentwicklung",
+   "t": "mc",
+   "q": "Mit welcher Maßnahme fördern Sie die Work-Life-Balance Ihrer Mitarbeiter?",
+   "o": [
+    {
+     "t": "Langfristige Schicht- und Einsatzplanung, die Mitarbeiterwünsche berücksichtigt und kurzfristige Umplanungen vermeidet",
+     "ok": 1
+    },
+    {
+     "t": "Möglichst kurzfristige Schichtplanung, um flexibel auf Aufträge reagieren zu können"
+    },
+    {
+     "t": "Regelmäßige Samstagsarbeit, damit unter der Woche Freizeit entsteht"
+    },
+    {
+     "t": "Verzicht auf Urlaubsplanung, damit jeder spontan entscheiden kann"
+    }
+   ],
+   "e": "Eine gute Balance zwischen Beruf, Familie und Freizeit senkt Fehlzeiten und Krankenstand, erhöht Motivation und Produktivität und bindet Fachkräfte an das Unternehmen. Weitere Hebel sind Teilzeitmodelle, Gleitzeit, Homeoffice und Freizeitausgleich für Mehrarbeit."
+  },
+  {
+   "f": 4,
+   "sub": "Konflikte",
+   "t": "mc",
+   "q": "Ein Konflikt im Team hat Ursachen auf der Sach- und auf der Beziehungsebene. Was gehört zur Sachebene?",
+   "o": [
+    {
+     "t": "Unklar strukturierte Arbeitsprozesse, fehlende Arbeitsmittel und missverständliche Arbeitsaufträge",
+     "ok": 1
+    },
+    {
+     "t": "Antipathie zwischen zwei Mitarbeitern"
+    },
+    {
+     "t": "Konkurrenz um die Anerkennung des Vorgesetzten"
+    },
+    {
+     "t": "Unterschiedliche Wertvorstellungen der Beteiligten"
+    }
+   ],
+   "e": "Sachkonflikte lassen sich durch klare Prozesse, Zuständigkeiten und Arbeitsmittel entschärfen; Beziehungskonflikte brauchen Gespräche. Sachorientiert bewältigen Sie einen Konflikt in drei Schritten: Sachverhalt ermitteln, Ursachen und Zusammenhänge erforschen, Maßnahmen vereinbaren und ihre Wirkung überprüfen."
+  },
+  {
+   "f": 4,
+   "sub": "Personalentwicklung",
+   "t": "mc",
+   "q": "Wie ermitteln Sie den Qualifizierungsbedarf Ihrer Mitarbeiter?",
+   "o": [
+    {
+     "t": "Sie erfassen die vorhandenen Qualifikationen und vergleichen sie mit den künftig geforderten Anforderungsprofilen",
+     "ok": 1
+    },
+    {
+     "t": "Sie übernehmen das Schulungsangebot des Bildungsträgers unverändert"
+    },
+    {
+     "t": "Sie befragen ausschließlich die Mitarbeiter nach ihren Wünschen"
+    },
+    {
+     "t": "Sie leiten den Bedarf allein aus der Zahl der Reklamationen ab"
+    }
+   ],
+   "e": "Der Soll-Ist-Abgleich aus Anforderungsprofil und Qualifikationsprofil ist der Ausgangspunkt jeder Personalentwicklung. Ergänzend liefern Mitarbeitergespräche, Beurteilungen, Fehler- und Ausfallanalysen sowie geplante technische Veränderungen Hinweise auf den Bedarf."
+  },
+  {
+   "f": 5,
+   "sub": "Naturwissenschaftliche und technische Grundlagen",
+   "t": "mc",
+   "q": "Welche drei Voraussetzungen müssen für elektrochemische Korrosion erfüllt sein?",
+   "o": [
+    {
+     "t": "Zwei Metalle mit unterschiedlichem Normpotenzial, eine leitende Verbindung zwischen ihnen und ein Elektrolyt",
+     "ok": 1
+    },
+    {
+     "t": "Hohe Temperatur, hoher Druck und eine mechanische Beanspruchung"
+    },
+    {
+     "t": "Zwei gleiche Metalle, trockene Luft und eine Lackschicht"
+    },
+    {
+     "t": "Sauerstoff, Stickstoff und eine Temperatur unter 0 °C"
+    }
+   ],
+   "e": "Bei verletzter Zinkschicht auf Stahl geht das unedlere Zink in Lösung und schützt das Eisen kathodisch (Opferanode). Bei verzinntem Stahl ist dagegen das Zinn edler – hier löst sich das darunterliegende Eisen auf, sobald die Schicht beschädigt ist."
+  },
+  {
+   "f": 5,
+   "sub": "Naturwissenschaftliche und technische Grundlagen",
+   "t": "calc",
+   "q": "Eine Zugmaschine steht mit blockierten Rädern auf einer Rampe; die Haftreibzahl zwischen Gummireifen und trockenem Asphalt beträgt 1,1. Ab welchem Neigungswinkel rutscht die Maschine (zwei Nachkommastellen)?",
+   "ans": 47.73,
+   "unit": "°",
+   "e": "Rutschen beginnt, wenn die Hangabtriebskraft die Reibkraft erreicht: FG · sin α = FG · cos α · µ, also tan α = µ = 1,1 und α = 47,73°. Da der Kippwinkel mit tan α = l₁ ÷ l₂ = 0,9 m ÷ 0,75 m erst bei 50,19° erreicht wird, rutscht die Maschine, bevor sie kippt."
+  },
+  {
+   "f": 5,
+   "sub": "Naturwissenschaftliche und technische Grundlagen",
+   "t": "calc",
+   "q": "Aus einem 2 mm dicken Blech wird eine sechseckige Platte ausgeschnitten; dabei sind vier Seiten von je 50 mm Länge zu scheren. Die Scherfestigkeit beträgt 150 N/mm². Berechnen Sie die erforderliche Scherkraft in kN.",
+   "ans": 60,
+   "unit": "kN",
+   "e": "Scherfläche S = 4 · 50 mm · 2 mm = 400 mm². F = τab · S = 150 N/mm² · 400 mm² = 60.000 N = 60 kN. Die Schnittlänge ist also entscheidend, nicht die Fläche der ausgeschnittenen Platte."
+  },
+  {
+   "f": 5,
+   "sub": "Naturwissenschaftliche und technische Grundlagen",
+   "t": "calc",
+   "q": "Aus einem Blechzuschnitt von 86,6 mm · 100 mm wird eine sechseckige Platte mit 6.495 mm² Fläche ausgeschnitten. Berechnen Sie den prozentualen Verschnitt.",
+   "ans": 25,
+   "unit": "%",
+   "e": "Fläche des Halbzeugs = 86,6 mm · 100 mm = 8.660 mm². Verschnitt = (8.660 mm² − 6.495 mm²) ÷ 8.660 mm² · 100 % = 25 %. Ein Viertel des eingesetzten Materials fällt also als Abfall an."
+  },
+  {
+   "f": 5,
+   "sub": "Naturwissenschaftliche und technische Grundlagen",
+   "t": "calc",
+   "q": "In einem Wasserspeicherkraftwerk fällt das Wasser 125 m tief zur Turbine (g = 9,81 m/s²). Berechnen Sie die Fließgeschwindigkeit beim Einlauf in die Turbine (zwei Nachkommastellen).",
+   "ans": 49.52,
+   "unit": "m/s",
+   "e": "Die potenzielle Energie wandelt sich vollständig in kinetische Energie um: m · g · h = ½ · m · v². Daraus v = √(2 · g · h) = √(2 · 9,81 m/s² · 125 m) = 49,52 m/s."
+  },
+  {
+   "f": 5,
+   "sub": "Naturwissenschaftliche und technische Grundlagen",
+   "t": "calc",
+   "q": "Ein Wasserkraftwerk führt der Turbine 73,58 MW zu; der Wirkungsgrad der Turbine beträgt 83 %. Berechnen Sie die abgegebene Leistung in MW (zwei Nachkommastellen).",
+   "ans": 61.07,
+   "unit": "MW",
+   "e": "Pab = η · Pzu = 0,83 · 73,58 MW = 61,07 MW. Die zugeführte Leistung ergibt sich aus Pzu = V̇ · ρ · g · h = 60 m³/s · 1.000 kg/m³ · 9,81 m/s² · 125 m = 73,58 MW."
+  },
+  {
+   "f": 5,
+   "sub": "Naturwissenschaftliche und technische Grundlagen",
+   "t": "calc",
+   "q": "In einer Teilereinigungsanlage werden 2.500 Liter Wasser von 18 °C auf 90 °C erwärmt (c = 4,18 kJ/(kg·K)). Berechnen Sie die erforderliche Wärmemenge in kJ.",
+   "ans": 752400,
+   "unit": "kJ",
+   "e": "Q = m · c · ΔT = 2.500 kg · 4,18 kJ/(kg·K) · 72 K = 752.400 kJ. Bei einem Heizwert von 43.000 kJ/kg entspricht das 17,5 kg Heizöl – bei 30 % Wärmeverlust müssen jedoch 25 kg bzw. rund 30,12 Liter eingesetzt werden."
+  },
+  {
+   "f": 5,
+   "sub": "Naturwissenschaftliche und technische Grundlagen",
+   "t": "calc",
+   "q": "Eine Heizplatte hat vier Heizwiderstände zu je 12 Ω: je zwei in Reihe, die beiden Stränge parallel. Sie wird an 24 V betrieben. Berechnen Sie die Leistungsaufnahme.",
+   "ans": 48,
+   "unit": "W",
+   "e": "Jeder Strang hat 12 Ω + 12 Ω = 24 Ω, parallel ergibt das Rges = 24 Ω · 24 Ω ÷ (24 Ω + 24 Ω) = 12 Ω. I = 24 V ÷ 12 Ω = 2 A, P = 24 V · 2 A = 48 W. Fällt ein Widerstand aus, ist ein ganzer Strang stromlos und es bleiben 24 W."
+  },
+  {
+   "f": 5,
+   "sub": "Naturwissenschaftliche und technische Grundlagen",
+   "t": "calc",
+   "q": "Eine Erfolgskontrolle ergab den Mittelwert 3,0. Verteilung: Note 1 dreimal, Note 2 sechsmal, Note 3 achtmal, Note 4 unbekannt, Note 5 zweimal, Note 6 einmal. Berechnen Sie die Anzahl der Teilnehmer mit der Note 4.",
+   "ans": 5,
+   "unit": "Teilnehmer",
+   "e": "Aus 3,0 = (3·1 + 6·2 + 8·3 + x·4 + 2·5 + 1·6) ÷ (20 + x) folgt 3,0 · (20 + x) = 55 + 4x, also 60 + 3x = 55 + 4x und x = 5. Insgesamt haben damit 25 Personen teilgenommen."
+  },
+  {
+   "f": 5,
+   "sub": "Naturwissenschaftliche und technische Grundlagen",
+   "t": "calc",
+   "q": "Eine normalverteilte Bewertung hat den Mittelwert 3,0 und die Standardabweichung 1,29. Berechnen Sie den oberen Wendepunkt der Gaußkurve.",
+   "ans": 4.29,
+   "unit": "",
+   "e": "Die Wendepunkte der Normalverteilungsfunktion liegen genau bei x̄ ± s: WP1 = 3,0 + 1,29 = 4,29 und WP2 = 3,0 − 1,29 = 1,71. Zwischen ihnen liegen rund 68,3 % aller Werte."
+  }
+ ]
+}

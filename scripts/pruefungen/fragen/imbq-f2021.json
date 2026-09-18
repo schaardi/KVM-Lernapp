@@ -1,0 +1,703 @@
+{
+ "questions": [
+  {
+   "f": 1,
+   "sub": "Arbeitsrecht",
+   "t": "mc",
+   "q": "Eine Mitarbeiterin will ihre Arbeitszeit von 40 auf 18 Wochenstunden verringern. Welche Voraussetzung muss dafür nach dem Teilzeit- und Befristungsgesetz erfüllt sein?",
+   "o": [
+    {
+     "t": "Das Arbeitsverhältnis besteht länger als sechs Monate und im Betrieb sind mehr als 15 Arbeitnehmer beschäftigt",
+     "ok": 1
+    },
+    {
+     "t": "Das Arbeitsverhältnis besteht länger als zwei Jahre und der Betrieb hat einen Betriebsrat"
+    },
+    {
+     "t": "Die Mitarbeiterin ist älter als 55 Jahre oder hat Kinder unter drei Jahren"
+    },
+    {
+     "t": "Die Verringerung ist tarifvertraglich ausdrücklich vorgesehen"
+    }
+   ],
+   "e": "Nach § 8 TzBfG muss das Arbeitsverhältnis länger als sechs Monate bestehen (Absatz 1) und der Arbeitgeber in der Regel mehr als 15 Arbeitnehmer beschäftigen (Absatz 7). Der Antrag ist spätestens drei Monate vor dem gewünschten Beginn zu stellen."
+  },
+  {
+   "f": 1,
+   "sub": "Arbeitsrecht",
+   "t": "mc",
+   "q": "Der Arbeitgeber reagiert auf einen Teilzeitantrag überhaupt nicht. Welche Folge hat das?",
+   "o": [
+    {
+     "t": "Die Arbeitszeit verringert sich automatisch entsprechend dem Wunsch des Arbeitnehmers",
+     "ok": 1
+    },
+    {
+     "t": "Der Antrag gilt als abgelehnt, der Arbeitnehmer muss erneut beantragen"
+    },
+    {
+     "t": "Der Antrag ruht, bis der Betriebsrat entschieden hat"
+    },
+    {
+     "t": "Der Arbeitnehmer muss vor dem Arbeitsgericht auf Zustimmung klagen"
+    }
+   ],
+   "e": "Lehnt der Arbeitgeber die Verringerung nicht spätestens einen Monat vor ihrem gewünschten Beginn schriftlich ab, verringert sich die Arbeitszeit kraft Gesetzes im beantragten Umfang (§ 8 Absatz 5 TzBfG). Dieselbe Fiktion gilt für die gewünschte Verteilung der Arbeitszeit."
+  },
+  {
+   "f": 1,
+   "sub": "Betriebsverfassung",
+   "t": "mc",
+   "q": "Ein Unternehmen will einen 24-Stunden-Bereitschaftsdienst einführen. Welche Rolle hat der Betriebsrat?",
+   "o": [
+    {
+     "t": "Er hat ein echtes Mitbestimmungsrecht nach § 87 Absatz 1 Nummer 3 BetrVG",
+     "ok": 1
+    },
+    {
+     "t": "Er ist lediglich anzuhören, entscheiden kann der Arbeitgeber allein"
+    },
+    {
+     "t": "Er ist gar nicht zu beteiligen, weil es sich um eine Frage des Arbeitsvertrags handelt"
+    },
+    {
+     "t": "Er muss nur beteiligt werden, wenn mehr als 100 Mitarbeiter betroffen sind"
+    }
+   ],
+   "e": "Die vorübergehende Verkürzung oder Verlängerung der betriebsüblichen Arbeitszeit ist nach § 87 Absatz 1 Nummer 3 BetrVG mitbestimmungspflichtig. Zusätzlich braucht die Einführung eine Grundlage im Arbeitsvertrag oder in einer Betriebsvereinbarung; die Bereitschaftszeit ist zu vergüten."
+  },
+  {
+   "f": 1,
+   "sub": "Betriebsverfassung",
+   "t": "mc",
+   "q": "Ab welcher Unternehmensgröße ist ein Wirtschaftsausschuss zu bilden und wie ist er besetzt?",
+   "o": [
+    {
+     "t": "In Unternehmen mit in der Regel mehr als 100 ständig beschäftigten Arbeitnehmern; er hat drei bis sieben Mitglieder, darunter mindestens ein Betriebsratsmitglied",
+     "ok": 1
+    },
+    {
+     "t": "Ab mehr als 20 Arbeitnehmern; er besteht ausschließlich aus Betriebsratsmitgliedern"
+    },
+    {
+     "t": "Ab mehr als 500 Arbeitnehmern; er besteht aus je drei Vertretern beider Seiten"
+    },
+    {
+     "t": "Ab mehr als 100 Arbeitnehmern; er wird von der IHK besetzt"
+    }
+   ],
+   "e": "§ 106 BetrVG regelt Bildung und Aufgabe: Der Wirtschaftsausschuss berät wirtschaftliche Angelegenheiten mit dem Unternehmer und unterrichtet den Betriebsrat. Verweigert der Unternehmer die Auskunft, kann der Betriebsrat die Einigungsstelle anrufen."
+  },
+  {
+   "f": 1,
+   "sub": "Sozialversicherung",
+   "t": "mc",
+   "q": "Ein Arbeitnehmer verunglückt auf dem Weg zur Arbeit, weil er zu schnell gefahren ist. Erhält er Leistungen der gesetzlichen Unfallversicherung?",
+   "o": [
+    {
+     "t": "Ja – es ist ein Wegeunfall, und verbotswidriges Handeln schließt den Versicherungsfall nicht aus",
+     "ok": 1
+    },
+    {
+     "t": "Nein, wegen des eigenen Verschuldens entfällt der Versicherungsschutz"
+    },
+    {
+     "t": "Nein, Wegeunfälle sind nicht von der gesetzlichen Unfallversicherung erfasst"
+    },
+    {
+     "t": "Nur wenn der Arbeitgeber den Unfall ausdrücklich als Arbeitsunfall anerkennt"
+    }
+   ],
+   "e": "Der Wegeunfall ist in § 8 Absatz 2 SGB VII geregelt; § 7 Absatz 2 SGB VII stellt ausdrücklich klar, dass verbotswidriges Handeln einen Versicherungsfall nicht ausschließt. Nur eine vollständige Lösung vom versicherten Weg – etwa ein privater Umweg – beendet den Schutz."
+  },
+  {
+   "f": 1,
+   "sub": "Arbeitsschutz",
+   "t": "mc",
+   "q": "Warum gilt die Gefährdungsbeurteilung als vorbeugender Arbeitsschutz?",
+   "o": [
+    {
+     "t": "Weil Arbeitsplatz und Tätigkeit systematisch auf mögliche Gefährdungen untersucht werden, bevor ein Schaden eintritt",
+     "ok": 1
+    },
+    {
+     "t": "Weil sie erst nach einem Unfall erstellt wird und dessen Ursache dokumentiert"
+    },
+    {
+     "t": "Weil sie die Beiträge zur Berufsgenossenschaft unmittelbar senkt"
+    },
+    {
+     "t": "Weil sie die Haftung des Unternehmers auf die Beschäftigten überträgt"
+    }
+   ],
+   "e": "Die Gefährdungsbeurteilung nach § 5 ArbSchG ermittelt Gefährdungen im Voraus und leitet Schutzmaßnahmen ab. Beteiligt am betrieblichen Arbeitsschutz sind u. a. Unternehmer, Führungskräfte, Betriebsarzt, Fachkraft für Arbeitssicherheit, Sicherheitsbeauftragte, Betriebsrat und die Beschäftigten selbst."
+  },
+  {
+   "f": 1,
+   "sub": "Umweltrecht",
+   "t": "mc",
+   "q": "Was besagt das Verursacherprinzip im Umweltschutz?",
+   "o": [
+    {
+     "t": "Wer Ressourcen verbraucht oder die Umwelt belastet, muss dafür einen Ausgleich schaffen und die Kosten tragen",
+     "ok": 1
+    },
+    {
+     "t": "Die Allgemeinheit trägt die Kosten von Umweltbelastungen über Steuern"
+    },
+    {
+     "t": "Umweltschäden sind vorrangig durch internationale Fonds auszugleichen"
+    },
+    {
+     "t": "Nur der Hersteller eines Produkts haftet, nicht dessen Anwender"
+    }
+   ],
+   "e": "Neben dem Verursacherprinzip kennt das Umweltrecht das Vorsorge-, das Gemeinlast- und das Kooperationsprinzip. Betriebsbeauftragte im Umweltbereich sind z. B. Immissionsschutz-, Störfall-, Strahlenschutz-, Abfall- und Gewässerschutzbeauftragte."
+  },
+  {
+   "f": 1,
+   "sub": "Produkthaftung/Datenschutz",
+   "t": "mc",
+   "q": "Ein Meister hängt einen An-/Abwesenheitsplan mit den privaten Telefonnummern seiner Mitarbeiter gut sichtbar aus – auch für Besucher. Ist das datenschutzrechtlich zulässig?",
+   "o": [
+    {
+     "t": "Nein – private Telefonnummern sind personenbezogene Daten; ihre Veröffentlichung setzt die Einwilligung aller Betroffenen voraus",
+     "ok": 1
+    },
+    {
+     "t": "Ja, weil betriebliche Transparenz ein berechtigtes Interesse darstellt"
+    },
+    {
+     "t": "Ja, solange der Betriebsrat dem Aushang zugestimmt hat"
+    },
+    {
+     "t": "Nur die Namen wären unzulässig, Telefonnummern dagegen unproblematisch"
+    }
+   ],
+   "e": "Personenbezogene Daten sind alle Informationen, die sich auf eine identifizierte oder identifizierbare Person beziehen – Name, Anschrift, Geburtsdatum, Telefonnummer. Auch eine Geburtstagsliste braucht deshalb die – nachweisbar dokumentierte – Einwilligung der Betroffenen."
+  },
+  {
+   "f": 2,
+   "sub": "Rechtsformen",
+   "t": "mc",
+   "q": "Worin liegt der wesentliche Vorteil der Rechtsform GmbH & Co. KG?",
+   "o": [
+    {
+     "t": "Sie ist eine Personengesellschaft, bei der mit der GmbH als Komplementär kein Gesellschafter unbeschränkt mit Privatvermögen haftet",
+     "ok": 1
+    },
+    {
+     "t": "Sie ist eine Kapitalgesellschaft und deshalb von der Gewerbesteuer befreit"
+    },
+    {
+     "t": "Sie benötigt kein Stammkapital und keine Eintragung im Handelsregister"
+    },
+    {
+     "t": "Sie erlaubt es, die Geschäftsführung vollständig an die Kommanditisten zu übertragen"
+    }
+   ],
+   "e": "Die GmbH & Co. KG kombiniert die Kommanditgesellschaft mit einer GmbH als Vollhafter. Die Kommanditisten haften nur mit ihrer Einlage, die GmbH als Komplementär nur mit ihrem Gesellschaftsvermögen. Geführt wird die KG grundsätzlich von der GmbH, vertreten durch deren Geschäftsführer."
+  },
+  {
+   "f": 2,
+   "sub": "Betriebsorganisation",
+   "t": "mc",
+   "q": "Worin unterscheiden sich Aufbau- und Ablauforganisation?",
+   "o": [
+    {
+     "t": "Die Aufbauorganisation legt Struktur und Hierarchie fest, die Ablauforganisation regelt die Prozesse – also wie die Aufgaben erledigt werden",
+     "ok": 1
+    },
+    {
+     "t": "Die Aufbauorganisation gilt für die Verwaltung, die Ablauforganisation nur für die Fertigung"
+    },
+    {
+     "t": "Die Aufbauorganisation ist gesetzlich vorgeschrieben, die Ablauforganisation freiwillig"
+    },
+    {
+     "t": "Die Aufbauorganisation betrifft kurzfristige, die Ablauforganisation langfristige Planung"
+    }
+   ],
+   "e": "Dokumentiert wird die Aufbauorganisation z. B. durch Organigramm, Stellenplan und Stellenbeschreibung, die Ablauforganisation durch Arbeitsanweisungen, Ablaufdiagramme und Softwarehandbücher. Das Organigramm zeigt Abteilungen und Stellen, die Stellenbeschreibung Aufgaben, Befugnisse und Vertretung einer einzelnen Stelle."
+  },
+  {
+   "f": 2,
+   "sub": "Materialwirtschaft",
+   "t": "calc",
+   "q": "Der Lagerbestand eines Kaufteils betrug zu Jahresbeginn 520 Stück und am Jahresende 280 Stück. Im ersten Halbjahr wurden monatlich 410 Stück bestellt, im zweiten Halbjahr monatlich 350 Stück. Berechnen Sie die Lagerumschlagshäufigkeit.",
+   "ans": 12,
+   "unit": "",
+   "e": "Ø Lagerbestand = (520 + 280) ÷ 2 = 400 Stück. Jahresverbrauch = 520 + 6 · 410 + 6 · 350 − 280 = 4.800 Stück. Lagerumschlagshäufigkeit = 4.800 ÷ 400 = 12. Daraus folgt eine durchschnittliche Lagerdauer von 360 ÷ 12 = 30 Tagen."
+  },
+  {
+   "f": 4,
+   "sub": "Entgelt und Arbeitszeit",
+   "t": "calc",
+   "q": "Der tarifliche Grundlohn beträgt 20 €/Stunde, der Akkordzuschlag 10 %. Die Normalleistung liegt bei 15 Stück pro Stunde. Berechnen Sie den Stundenverdienst eines Mitarbeiters, der 17 Stück pro Stunde herstellt (zwei Nachkommastellen).",
+   "ans": 24.93,
+   "unit": "€/h",
+   "e": "Akkordrichtsatz = 20 €/h · 1,1 = 22 €/h. Leistungsgrad = 17 ÷ 15 · 100 = 113,33 %. Akkordlohn = 22 €/h · 1,1333 = 24,93 €/h. Bei Normalleistung (15 Stück) wird genau der Akkordrichtsatz von 22 €/h gezahlt."
+  },
+  {
+   "f": 4,
+   "sub": "Entgelt und Arbeitszeit",
+   "t": "calc",
+   "q": "Der Akkordrichtsatz beträgt 22 €/Stunde. Welchen Zeitgrad in Prozent muss ein Mitarbeiter erreichen, um auf einen Akkordlohn von 28 €/Stunde zu kommen (zwei Nachkommastellen)?",
+   "ans": 127.27,
+   "unit": "%",
+   "e": "Zeitgradfaktor = Akkordlohn ÷ Akkordrichtsatz = 28 €/h ÷ 22 €/h = 1,2727. Zeitgrad = 1,2727 · 100 = 127,27 %. Akkordentlohnung setzt messbare, hinreichend oft wiederkehrende Tätigkeiten und einen entsprechend eingearbeiteten Mitarbeiter voraus."
+  },
+  {
+   "f": 2,
+   "sub": "Kostenrechnung",
+   "t": "calc",
+   "q": "Aus der Betriebsabrechnung liegen vor: Fertigungsmaterial 120.000 €, Materialgemeinkosten 36.000 €, Fertigungslöhne 120.000 €, Fertigungsgemeinkosten 324.000 €. Berechnen Sie den Fertigungsgemeinkostenzuschlagssatz.",
+   "ans": 270,
+   "unit": "%",
+   "e": "Fertigungsgemeinkostenzuschlag = Fertigungsgemeinkosten ÷ Fertigungslöhne · 100 = 324.000 € ÷ 120.000 € · 100 = 270 %. Der Materialgemeinkostenzuschlag beträgt entsprechend 36.000 € ÷ 120.000 € · 100 = 30 %."
+  },
+  {
+   "f": 2,
+   "sub": "Kostenrechnung",
+   "t": "calc",
+   "q": "Die Selbstkosten eines Monats betragen 726.000 €, die Umsatzerlöse 816.750 €. Berechnen Sie den Gewinnzuschlagssatz.",
+   "ans": 12.5,
+   "unit": "%",
+   "e": "Gewinn = Umsatz − Selbstkosten = 816.750 € − 726.000 € = 90.750 €. Gewinnzuschlagssatz = Gewinn ÷ Selbstkosten · 100 = 90.750 € ÷ 726.000 € · 100 = 12,5 %. Der Zuschlag wird immer auf die Selbstkosten bezogen, nicht auf den Umsatz."
+  },
+  {
+   "f": 2,
+   "sub": "Kostenrechnung",
+   "t": "calc",
+   "q": "Ein Werk kann maximal 1.300 Oberfräsen im Monat herstellen. Bei 75 % Auslastung betrugen die Gesamtkosten 235.425 €, bei 80 % Auslastung 242.120 €. Berechnen Sie die variablen Stückkosten.",
+   "ans": 103,
+   "unit": "€/Stück",
+   "e": "75 % von 1.300 = 975 Stück, 80 % = 1.040 Stück. kv = ΔK ÷ Δx = (242.120 € − 235.425 €) ÷ (1.040 − 975) Stück = 6.695 € ÷ 65 Stück = 103 €/Stück. Daraus folgen Fixkosten von 235.425 € − 103 €/Stück · 975 Stück = 135.000 € pro Monat."
+  },
+  {
+   "f": 2,
+   "sub": "Kostenrechnung",
+   "t": "calc",
+   "q": "Die Fixkosten betragen 135.000 € pro Monat, die variablen Stückkosten 103 €, der Verkaufspreis 228 €. Berechnen Sie die Break-even-Menge pro Monat.",
+   "ans": 1080,
+   "unit": "Stück",
+   "e": "xBEP = Kf ÷ (p − kv) = 135.000 € ÷ (228 €/Stück − 103 €/Stück) = 135.000 € ÷ 125 €/Stück = 1.080 Stück. Bei einer Maximalkapazität von 1.300 Stück entspricht das einem Break-even-Beschäftigungsgrad von 1.080 ÷ 1.300 · 100 = 83,08 %."
+  },
+  {
+   "f": 2,
+   "sub": "Kostenrechnung",
+   "t": "calc",
+   "q": "Kapazität 1.300 Stück pro Monat, Auslastung 90 %, Stückdeckungsbeitrag 125 €, Fixkosten 135.000 € pro Monat. Berechnen Sie das Betriebsergebnis.",
+   "ans": 11250,
+   "unit": "€",
+   "e": "Absatzmenge = 90 % von 1.300 Stück = 1.170 Stück. Gesamtdeckungsbeitrag = 125 €/Stück · 1.170 Stück = 146.250 €. Betriebsergebnis = 146.250 € − 135.000 € = 11.250 € Gewinn."
+  },
+  {
+   "f": 4,
+   "sub": "Entgelt und Arbeitszeit",
+   "t": "mc",
+   "q": "Welche Voraussetzung muss erfüllt sein, damit im Akkord entlohnt werden darf?",
+   "o": [
+    {
+     "t": "Die Arbeitsleistung muss messbar sein und die Tätigkeit ausreichend oft wiederkehren",
+     "ok": 1
+    },
+    {
+     "t": "Die Tätigkeit muss überwiegend geistiger Art sein"
+    },
+    {
+     "t": "Der Mitarbeiter muss mindestens fünf Jahre Betriebszugehörigkeit haben"
+    },
+    {
+     "t": "Der Arbeitsablauf muss sich ständig ändern, damit Leistungsanreize entstehen"
+    }
+   ],
+   "e": "Akkordfähig sind nur Tätigkeiten mit messbarem, regelmäßig wiederkehrendem Ablauf, bei denen der Mitarbeiter das Arbeitstempo beeinflussen kann und ausreichend eingearbeitet ist. Die Einführung ist zudem nach § 87 Absatz 1 Nummer 11 BetrVG mitbestimmungspflichtig."
+  },
+  {
+   "f": 3,
+   "sub": "EDV",
+   "t": "mc",
+   "q": "Mit welcher Maßnahme sichern Sie die Übertragung von Maschinendaten an den Maschinenhersteller technisch ab?",
+   "o": [
+    {
+     "t": "Ein VPN zwischen Unternehmen und Hersteller, das die Datenübertragung verschlüsselt",
+     "ok": 1
+    },
+    {
+     "t": "Ein Aushang der Zugangsdaten am Schaltschrank, damit alle Schichten zugreifen können"
+    },
+    {
+     "t": "Die Abschaltung sämtlicher Firewalls, damit die Fernwartung nicht behindert wird"
+    },
+    {
+     "t": "Die Verwendung eines gemeinsamen Sammelkontos für alle Mitarbeiter"
+    }
+   ],
+   "e": "Zur technischen Datensicherheit gehören außerdem regelmäßige Aktualisierung von System- und Anwendersoftware, Sicherheitssoftware zur Angriffserkennung, abgestufte Zugriffsrechte und protokollierte Zugriffe. An einen externen IT-Dienstleister sind Reaktionszeit, Erreichbarkeit, Fachkompetenz und Zuverlässigkeit vertraglich zu binden."
+  },
+  {
+   "f": 3,
+   "sub": "Arbeitsmethodik",
+   "t": "mc",
+   "q": "Sie sollen eine Mitarbeiterbeurteilung erstellen, die in drei Wochen vorliegen muss. Wie ordnen Sie die Aufgabe in der Eisenhower-Matrix ein?",
+   "o": [
+    {
+     "t": "Wichtig, aber nicht dringlich – terminieren und störungsfreie Arbeitszeit dafür reservieren",
+     "ok": 1
+    },
+    {
+     "t": "Wichtig und dringlich – sofort alles andere unterbrechen"
+    },
+    {
+     "t": "Nicht wichtig, aber dringlich – an einen Mitarbeiter delegieren"
+    },
+    {
+     "t": "Weder wichtig noch dringlich – in den Papierkorb"
+    }
+   ],
+   "e": "Die Eisenhower-Matrix ordnet Aufgaben nach Wichtigkeit und Dringlichkeit: A-Aufgaben sofort selbst erledigen, B-Aufgaben terminieren, C-Aufgaben delegieren, D-Aufgaben nicht bearbeiten. Eine Beurteilung ist Führungsaufgabe und damit nicht delegierbar."
+  },
+  {
+   "f": 3,
+   "sub": "Arbeitsmethodik",
+   "t": "mc",
+   "q": "Welche Voraussetzung muss erfüllt sein, damit Sie eine Aufgabe an einen Mitarbeiter delegieren können?",
+   "o": [
+    {
+     "t": "Die Aufgabe ist eindeutig abgegrenzt und terminiert, das erwartete Ergebnis ist definiert und der Mitarbeiter ist qualifiziert",
+     "ok": 1
+    },
+    {
+     "t": "Die Aufgabe gehört zu den unangenehmen Routinetätigkeiten des Vorgesetzten"
+    },
+    {
+     "t": "Der Mitarbeiter hat bereits eine vergleichbare Aufgabe abgelehnt"
+    },
+    {
+     "t": "Die Aufgabe betrifft die Beurteilung anderer Mitarbeiter"
+    }
+   ],
+   "e": "Delegation setzt klare Abgrenzung, Termin, definiertes Ergebnis, Qualifikation und Bereitschaft des Mitarbeiters sowie die Übertragung der nötigen Befugnisse voraus. Führungsaufgaben wie Beurteilung, Anerkennung und Kritik bleiben beim Vorgesetzten."
+  },
+  {
+   "f": 3,
+   "sub": "Präsentation",
+   "t": "mc",
+   "q": "Wie setzen Sie Ihre Körpersprache in einer Präsentation gezielt ein?",
+   "o": [
+    {
+     "t": "Blickkontakt zu den Teilnehmern halten und eine offene Körperhaltung einnehmen",
+     "ok": 1
+    },
+    {
+     "t": "Den Blick konsequent auf die Projektionsfläche richten, um den Faden nicht zu verlieren"
+    },
+    {
+     "t": "Möglichst viel und schnell durch den Raum gehen, um Dynamik zu zeigen"
+    },
+    {
+     "t": "Die Arme verschränken, um Ruhe und Souveränität zu signalisieren"
+    }
+   ],
+   "e": "Blickkontakt und offene Haltung wirken zugewandt und interessiert. Zu vermeiden sind übertriebene Bewegungen, planloses Herumlaufen und das Hantieren mit Gegenständen – all das lenkt vom Inhalt ab und wird als Hektik oder Unsicherheit wahrgenommen."
+  },
+  {
+   "f": 3,
+   "sub": "Statistik",
+   "t": "calc",
+   "q": "In sechs Kalenderwochen wurden insgesamt 7.800 Teile produziert, davon 7.100 ohne Nacharbeit. Berechnen Sie den Anteil der Teile ohne Nacharbeit in Prozent (zwei Nachkommastellen).",
+   "ans": 91.03,
+   "unit": "%",
+   "e": "Anteil = 7.100 ÷ 7.800 · 100 = 91,03 %. Die Zielvorgabe „größer als 90 %“ ist damit für den Gesamtzeitraum erfüllt – auch wenn einzelne Wochen darunter lagen."
+  },
+  {
+   "f": 3,
+   "sub": "Statistik",
+   "t": "calc",
+   "q": "Für 7.800 produzierte Teile wurden insgesamt 16.400 Arbeitsstunden aufgewendet. Berechnen Sie die durchschnittliche Arbeitszeit je Teil (zwei Nachkommastellen).",
+   "ans": 2.1,
+   "unit": "h",
+   "e": "Ø Arbeitszeit = 16.400 h ÷ 7.800 Teile = 2,10 h/Teil. Die Zielvorgabe von höchstens 2 Stunden je Teil wurde damit nicht erreicht."
+  },
+  {
+   "f": 3,
+   "sub": "Projektmanagement",
+   "t": "mc",
+   "q": "Worin unterscheiden sich Lastenheft und Pflichtenheft?",
+   "o": [
+    {
+     "t": "Das Lastenheft beschreibt die Anforderungen des Auftraggebers, das Pflichtenheft die technische Umsetzung durch den Auftragnehmer",
+     "ok": 1
+    },
+    {
+     "t": "Das Lastenheft erstellt der Auftragnehmer, das Pflichtenheft der Auftraggeber"
+    },
+    {
+     "t": "Beide Dokumente sind inhaltsgleich; das Pflichtenheft ist nur die unterschriebene Fassung"
+    },
+    {
+     "t": "Das Lastenheft regelt die Kosten, das Pflichtenheft ausschließlich die Termine"
+    }
+   ],
+   "e": "Das Lastenheft nennt Soll- und Ist-Zustand, Zeitrahmen und Anforderungen; das Pflichtenheft antwortet darauf mit den technischen Mitteln, dem zeitlichen Rahmen und den Bedingungen für Änderungsanforderungen. Beide schaffen Rechtssicherheit und sind Grundlage für den Abgleich im Projektverlauf."
+  },
+  {
+   "f": 4,
+   "sub": "Personalentwicklung",
+   "t": "mc",
+   "q": "Wie binden Sie ältere Mitarbeiter mit großem Erfahrungswissen sinnvoll in betriebliche Veränderungsprozesse ein?",
+   "o": [
+    {
+     "t": "Frühzeitig offen informieren, ihre Erfahrung aktiv erfragen und ihr Wissen an jüngere Kollegen weitergeben lassen",
+     "ok": 1
+    },
+    {
+     "t": "Sie von den Veränderungen ausnehmen, damit keine Unruhe entsteht"
+    },
+    {
+     "t": "Sie erst nach Abschluss der Umstellung über die Neuerungen unterrichten"
+    },
+    {
+     "t": "Ihnen ausschließlich Aufgaben ohne Bezug zu den neuen Verfahren zuweisen"
+    }
+   ],
+   "e": "Transparente Information nimmt Unsicherheit. Unterstützend wirken lebensphasenorientierte Personalentwicklung, altersgerechte Arbeitsplätze, flexible Arbeitszeitmodelle und altersgemischte Teams, in denen Erfahrungswissen weitergegeben wird."
+  },
+  {
+   "f": 4,
+   "sub": "Entgelt und Arbeitszeit",
+   "t": "mc",
+   "q": "Was versteht man unter einer betrieblichen Übung?",
+   "o": [
+    {
+     "t": "Die regelmäßige Wiederholung gleichförmigen Verhaltens des Arbeitgebers, aus der die Arbeitnehmer auf eine dauerhafte Gewährung vertrauen dürfen",
+     "ok": 1
+    },
+    {
+     "t": "Die jährliche Unterweisung der Mitarbeiter im Arbeits- und Gesundheitsschutz"
+    },
+    {
+     "t": "Die Probezeit, in der neue Mitarbeiter ihre Eignung nachweisen"
+    },
+    {
+     "t": "Die regelmäßige Übung des betrieblichen Notfall- und Evakuierungsplans"
+    }
+   ],
+   "e": "Wird eine freiwillige Leistung – etwa Weihnachtsgeld – dreimal vorbehaltlos gewährt, entsteht ein Rechtsanspruch. Verhindern lässt sich das durch einen klaren Freiwilligkeitsvorbehalt bei jeder Zahlung."
+  },
+  {
+   "f": 4,
+   "sub": "Gruppen",
+   "t": "mc",
+   "q": "Welche Phase der Gruppenbildung nach Tuckman ist von Auseinandersetzungen um Rollen und Rangordnung geprägt?",
+   "o": [
+    {
+     "t": "Storming – die Konflikt- oder Sturmphase",
+     "ok": 1
+    },
+    {
+     "t": "Forming – die Formierungsphase"
+    },
+    {
+     "t": "Norming – die Normierungsphase"
+    },
+    {
+     "t": "Performing – die Arbeitsphase"
+    }
+   ],
+   "e": "Tuckman unterscheidet Forming (vorsichtiges Kennenlernen), Storming (Konflikte um Rollen und Einfluss), Norming (gemeinsame Regeln entstehen), Performing (produktive Zusammenarbeit) und Adjourning (Auflösung). In der Storming-Phase muss die Führungskraft moderieren und Regeln einfordern."
+  },
+  {
+   "f": 4,
+   "sub": "Führungsmethoden",
+   "t": "mc",
+   "q": "Was kennzeichnet die Führungstechnik „Management by Objectives“?",
+   "o": [
+    {
+     "t": "Führungskraft und Mitarbeiter vereinbaren messbare Ziele; den Weg dorthin bestimmt der Mitarbeiter selbst",
+     "ok": 1
+    },
+    {
+     "t": "Der Vorgesetzte greift nur ein, wenn Abweichungen von der Norm auftreten"
+    },
+    {
+     "t": "Der Vorgesetzte gibt jeden Arbeitsschritt detailliert vor und kontrolliert ihn"
+    },
+    {
+     "t": "Die Mitarbeiter entscheiden ohne Zielvorgabe vollständig eigenverantwortlich"
+    }
+   ],
+   "e": "Vorteile sind Entlastung der Führungskraft, höhere Motivation und objektive Erfolgskontrolle. Nachteile: aufwendige Zielfindung, Fixierung auf messbare Größen und die Gefahr, dass qualitative Aspekte oder die Zusammenarbeit vernachlässigt werden. Das Eingreifen nur bei Abweichungen beschreibt dagegen Management by Exception."
+  },
+  {
+   "f": 4,
+   "sub": "Mitarbeiterbeurteilung",
+   "t": "mc",
+   "q": "Ein Vorgesetzter schließt von einer einzelnen herausragenden Eigenschaft auf die gesamte Leistung eines Mitarbeiters. Welcher Beurteilungsfehler liegt vor?",
+   "o": [
+    {
+     "t": "Der Lorbeer- bzw. Hof-Effekt (Halo-Effekt)",
+     "ok": 1
+    },
+    {
+     "t": "Der Primacy-Effekt – der erste Eindruck überstrahlt alles Spätere"
+    },
+    {
+     "t": "Der Recency-Effekt – nur die jüngsten Ereignisse zählen"
+    },
+    {
+     "t": "Der Tendenzfehler – alle Mitarbeiter werden in der Mitte eingestuft"
+    }
+   ],
+   "e": "Weitere typische Beurteilungsfehler sind Nikolaus-Effekt, Klebe-Effekt, Hierarchie-Effekt, Kontrastfehler, Projektion und Vorurteile. Dagegen helfen klare Beurteilungsmerkmale, laufende Aufzeichnungen und geschulte Beurteiler."
+  },
+  {
+   "f": 4,
+   "sub": "Konflikte",
+   "t": "mc",
+   "q": "Zwei Abteilungen streiten darüber, wer die begrenzten Maschinenkapazitäten nutzen darf. Um welche Konfliktart handelt es sich?",
+   "o": [
+    {
+     "t": "Einen Verteilungskonflikt",
+     "ok": 1
+    },
+    {
+     "t": "Einen Bewertungskonflikt über unterschiedliche Zielvorstellungen"
+    },
+    {
+     "t": "Einen Beurteilungskonflikt über den Weg zum vereinbarten Ziel"
+    },
+    {
+     "t": "Einen Rollenkonflikt innerhalb einer Person"
+    }
+   ],
+   "e": "Beim Verteilungskonflikt geht es um knappe Ressourcen, beim Bewertungskonflikt um unterschiedliche Ziele, beim Beurteilungskonflikt um den Weg zum gemeinsamen Ziel. Konfliktpotenzial senken Sie durch klare Zuständigkeiten, frühzeitige Information und regelmäßige Abstimmung."
+  },
+  {
+   "f": 5,
+   "sub": "Naturwissenschaftliche und technische Grundlagen",
+   "t": "mc",
+   "q": "Eine Aluminiumplatte liegt in einem Kühlkreislauf an einem Kupferwärmetauscher an. Was geschieht bei galvanischer Korrosion (Kontaktkorrosion)?",
+   "o": [
+    {
+     "t": "Das unedlere Aluminium wird zur Anode und geht in Lösung, das edlere Kupfer bildet die Kathode; die Kühlflüssigkeit wirkt als Elektrolyt",
+     "ok": 1
+    },
+    {
+     "t": "Das edlere Kupfer wird zur Anode und löst sich auf"
+    },
+    {
+     "t": "Beide Metalle werden gleichmäßig abgetragen, da sie leitend verbunden sind"
+    },
+    {
+     "t": "Es entsteht keine Korrosion, solange die Kühlflüssigkeit fließt"
+    }
+   ],
+   "e": "Kontaktkorrosion setzt zwei Metalle unterschiedlicher Stellung in der Spannungsreihe, eine leitende Verbindung und einen Elektrolyten voraus. Konstruktiv vermeidet man sie durch Werkstoffwahl, Isolierung der Kontaktstellen und das Vermeiden von Spalten und Fugen."
+  },
+  {
+   "f": 5,
+   "sub": "Naturwissenschaftliche und technische Grundlagen",
+   "t": "calc",
+   "q": "Eine 25 m lange Stahlschiene (α = 0,000012 1/°C) endet an einer Stoßfuge. Bei einer Erwärmung von 5 °C auf 20 °C verengt sich die Fuge um 30 % ihrer Ausgangsbreite. Berechnen Sie die Ausgangsbreite der Fuge in Millimetern.",
+   "ans": 15,
+   "unit": "mm",
+   "e": "Längenänderung Δl = l₀ · α · Δϑ = 25 m · 0,000012 1/°C · 15 °C = 0,0045 m = 4,5 mm. Da das 30 % der Fuge sind, beträgt die Ausgangsbreite 4,5 mm ÷ 0,3 = 15 mm."
+  },
+  {
+   "f": 5,
+   "sub": "Naturwissenschaftliche und technische Grundlagen",
+   "t": "calc",
+   "q": "Die Stoßfuge zwischen zwei 25 m langen Stahlschienen (α = 0,000012 1/°C) ist bei 5 °C 15 mm breit. Bei welcher Temperatur berühren sich die Schienen?",
+   "ans": 55,
+   "unit": "°C",
+   "e": "Δϑ = Δl ÷ (l₀ · α) = 0,015 m ÷ (25 m · 0,000012 1/°C) = 50 °C. Die Schienen berühren sich also bei 5 °C + 50 °C = 55 °C."
+  },
+  {
+   "f": 5,
+   "sub": "Naturwissenschaftliche und technische Grundlagen",
+   "t": "calc",
+   "q": "Ein Pkw fährt mit 40 km/h. Er fährt 0,7 s unverändert weiter (Reaktionszeit), beschleunigt dann in 1 s gleichmäßig auf 50 km/h und fährt die restlichen 1,3 s mit 50 km/h. Berechnen Sie den in den drei Sekunden zurückgelegten Weg (zwei Nachkommastellen).",
+   "ans": 38.34,
+   "unit": "m",
+   "e": "s₁ = 40 ÷ 3,6 m/s · 0,7 s = 7,78 m. s₂ = (40 + 50) ÷ 2 ÷ 3,6 m/s · 1 s = 12,50 m. s₃ = 50 ÷ 3,6 m/s · 1,3 s = 18,06 m. Summe s = 38,34 m. Bei 40 m Abstand zur Ampel passiert der Pkw sie also erst in der Rotphase."
+  },
+  {
+   "f": 5,
+   "sub": "Naturwissenschaftliche und technische Grundlagen",
+   "t": "calc",
+   "q": "Ein Rollcontainer (m = 50 kg) rollt eine Rampe mit 5 % Gefälle hinab. Die Bremskraft beträgt 80 N, die Rollreibungskraft 10 N (g = 9,81 m/s²). Berechnen Sie die Anhaltekraft, mit der der Container zum Stehen kommt.",
+   "ans": 65.5,
+   "unit": "N",
+   "e": "Der Neigungswinkel ist α = arctan(5 ÷ 100) = 2,86°. Hangabtriebskraft FH = m · g · sin α = 50 kg · 9,81 m/s² · sin 2,86° = 24,5 N. Anhaltekraft = 80 N + 10 N − 24,5 N = 65,5 N."
+  },
+  {
+   "f": 5,
+   "sub": "Naturwissenschaftliche und technische Grundlagen",
+   "t": "calc",
+   "q": "Ein Rollcontainer (m = 50 kg) bewegt sich mit 1 m/s und wird mit einer Anhaltekraft von 65,5 N abgebremst. Berechnen Sie den Bremsweg (zwei Nachkommastellen).",
+   "ans": 0.38,
+   "unit": "m",
+   "e": "Die kinetische Energie wird von der Anhaltekraft aufgezehrt: F · s = ½ · m · v². Daraus s = ½ · 50 kg · (1 m/s)² ÷ 65,5 N = 25 J ÷ 65,5 N = 0,38 m."
+  },
+  {
+   "f": 5,
+   "sub": "Naturwissenschaftliche und technische Grundlagen",
+   "t": "calc",
+   "q": "Ein H7-Leuchtmittel nimmt bei 12 V eine Leistung von 55 W auf. Berechnen Sie den Widerstand des Glühfadens (zwei Nachkommastellen).",
+   "ans": 2.62,
+   "unit": "Ω",
+   "e": "I = P ÷ U = 55 W ÷ 12 V = 4,58 A. R = U ÷ I = 12 V ÷ 4,58 A = 2,62 Ω. Gleichwertig über R = U² ÷ P = 144 V² ÷ 55 W = 2,62 Ω."
+  },
+  {
+   "f": 5,
+   "sub": "Naturwissenschaftliche und technische Grundlagen",
+   "t": "calc",
+   "q": "Durch Korrosion entsteht in der Lampenfassung ein Übergangswiderstand von 0,5 Ω; die Spannung an der Lampe sinkt dadurch von 12 V auf 10 V. Berechnen Sie die Leistung der Lampe bei 10 V.",
+   "ans": 40,
+   "unit": "W",
+   "e": "Am Übergangswiderstand fallen 12 V − 10 V = 2 V ab, also fließt I = 2 V ÷ 0,5 Ω = 4 A. P = U · I = 10 V · 4 A = 40 W. Statt 55 W stehen der Lampe damit nur noch 40 W zur Verfügung."
+  },
+  {
+   "f": 5,
+   "sub": "Naturwissenschaftliche und technische Grundlagen",
+   "t": "mc",
+   "q": "Warum ändert sich der Widerstand eines Lampenglühfadens, wenn die anliegende Spannung von 12 V auf 10 V sinkt?",
+   "o": [
+    {
+     "t": "Der geringere Strom senkt die Heizleistung, der Glühfaden wird kühler und sein Widerstand kleiner",
+     "ok": 1
+    },
+    {
+     "t": "Der Widerstand steigt, weil bei kleinerer Spannung mehr Strom fließt"
+    },
+    {
+     "t": "Der Widerstand bleibt konstant, da er eine reine Materialkonstante ist"
+    },
+    {
+     "t": "Der Widerstand steigt, weil sich der Glühfaden bei geringerer Spannung stärker erwärmt"
+    }
+   ],
+   "e": "Metalle sind Kaltleiter: Ihr Widerstand wächst mit der Temperatur. Sinkt die Spannung, sinken Strom, Heizleistung und Fadentemperatur – und damit auch der Widerstand. Deshalb gilt der aus den Nenndaten berechnete Wert nur im Betriebspunkt."
+  },
+  {
+   "f": 5,
+   "sub": "Naturwissenschaftliche und technische Grundlagen",
+   "t": "calc",
+   "q": "Eine Sitzheizung im 12-V-Bordnetz hat die Widerstände R1 = 2 Ω, R2 = 2 Ω und R3 = 4 Ω. In Schalterstellung 3 liegt die Reihenschaltung aus R1 und R2 parallel zu R3. Berechnen Sie die dabei aufgenommene Gesamtleistung.",
+   "ans": 72,
+   "unit": "W",
+   "e": "R1,2 = 2 Ω + 2 Ω = 4 Ω. Parallel zu R3: Rges = (4 Ω · 4 Ω) ÷ (4 Ω + 4 Ω) = 2 Ω. I = 12 V ÷ 2 Ω = 6 A. P = U · I = 12 V · 6 A = 72 W – die höchste Heizstufe."
+  },
+  {
+   "f": 5,
+   "sub": "Naturwissenschaftliche und technische Grundlagen",
+   "t": "calc",
+   "q": "Von 36 gemessenen Nennmaßabweichungen liegen 8 Werte bei höchstens 2 µm. Berechnen Sie die kumulierte relative Häufigkeit in Prozent (zwei Nachkommastellen).",
+   "ans": 22.22,
+   "unit": "%",
+   "e": "Kumulierte relative Häufigkeit = 8 ÷ 36 · 100 = 22,22 %. Trägt man die kumulierten relativen Häufigkeiten in ein Wahrscheinlichkeitsnetz ein und ergibt sich annähernd eine Gerade, ist der Prozess normalverteilt; Mittelwert (50 %) und Standardabweichung lassen sich dann grafisch ablesen."
+  }
+ ]
+}
