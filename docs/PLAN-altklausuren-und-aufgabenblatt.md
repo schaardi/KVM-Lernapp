@@ -39,7 +39,7 @@ richtig zu lösen." – und: „Nutze diese ganzen Klausuren für unsere App."
 | **A T3** F2018, H2018 | **fertig** – 10 Prüfungen, 7 Anlagen, neuer `parse_imbq_alt.py`; Bestand jetzt **86 Original-Prüfungen** |
 | **A T4** H2017 … H2014 | **angefangen** – Parser liest alle 35 Scans (Aufgabenzahl stimmt mit dem Deckblatt überein), aber nur 1 erreicht ohne Handarbeit 100/100. Termine stehen als `in_arbeit` in `JAHRGAENGE`; `build_imbq.py` lässt sie aus, bis sie abgenommen sind |
 | **C** Aufgabenserien | offen |
-| Übungsfragen (`PX-`) aus T1 bis T3 | offen – die 64 neuen Prüfungen haben noch keine |
+| Übungsfragen (`PX-`) aus T1 bis T3 | **fertig** – 16 Quellensätze, 788 `PX-`-Fragen (vorher 327). Zu jeder der 64 neuen Prüfungen ein eigener Satz von 25 bis 43 Fragen, Schwerpunkt auf den Rechenwegen der Originallösungen |
 | Lösungszeichnungen der Methoden-Hefte | teils offen – acht Aufgaben „Stellen Sie … in einem Diagramm dar“ aus T2 haben zwar den amtlichen Lösungstext, aber noch kein Lösungsbild (`bildL`) |
 
 Neue Werkzeuge: `scripts/pruefungen/anlagen_extrakt.py` (Abbildungen über ihre
@@ -62,7 +62,7 @@ Stand nach T3 (in Klammern der Stand vor dieser Session):
 |---|---|---|
 | Startbare Prüfungen (`P-`) | **86** (22) – 13 × Kraftverkehr FT/OK 2021–2026, 73 × Basisqualifikation F2018–H2025, alle mit amtlichen Lösungshinweisen, je 100 Punkte; 582 Aufgaben mit 1.458 Teilaufgaben | `flutter_app/assets/data/cases.json` (1,4 MB), `data/cases.js` |
 | Fallaufgaben ohne IHK-Bezug | 15 (`F-`/`R-`/`M-`/`Z-`, je 4–5 Teile, Musterlösungen) | ebd. |
-| Übungsfragen aus Prüfungen (`PX-`) | 327 (127 Kraftverkehr, 94 BQ H2025, 107 BQ H2024) – aus T1 und T2 noch keine | `questions.json`, Quellensätze `scripts/pruefungen/fragen/*.json` |
+| Übungsfragen aus Prüfungen (`PX-`) | **788** (327) – 127 Kraftverkehr, 661 aus den Basisqualifikationen F2018–H2025; 498 Auswahl-, 290 Rechenfragen | `questions.json`, Quellensätze `scripts/pruefungen/fragen/*.json` |
 | Bildanlagen | **67** (14) als Dateien, 1,5 MB; 45 an einer Aufgabe, 21 an einer Lösung | `anlagen/`, `flutter_app/assets/anlagen/`, Verzeichnis in `data/anlagen.js` |
 | Tabellenanlagen | 7 (`tab`) – an Aufgabe oder Schritt | an Aufgabe oder Schritt |
 | `index.html` | **280 KB** (3,3 MB) – die Inhalte liegen daneben in `data/*.js` | Root |
@@ -294,6 +294,37 @@ A, L = aufgaben(frage, False), aufgaben(loes, True)
 - Beschriftungen aus Zeichnungen („R1 R2 UEIN R3 UAUS 1 kΩ“) landen als
   Fließtext in der Ausgangslage. Dafür gibt es die Korrekturtabelle `INTRO`;
   die Zeichnung selbst hängt als Anlage an der Aufgabe.
+
+### A4a – Erfahrungen aus den Übungsfragen (T1 bis T3)
+
+Zu jeder der 64 neuen Prüfungen ist ein Satz `scripts/pruefungen/fragen/imbq-<termin>.json`
+entstanden, gebaut aus dem Digest der amtlichen Lösung (Aufgabe, Teil, Punkte,
+Lösungstext). Aus 794 Kandidaten sind 788 Fragen geworden; sechs waren
+Dubletten und wurden vom Builder verworfen.
+
+- **Die Toleranz bei `calc` ist 0,01 absolut** (`index.html`, `checkCalc`) und
+  lässt sich je Frage nicht übersteuern – `clean_q` übernimmt kein `tol`.
+  Damit ist jede Frage unbrauchbar, deren Ergebnis von der Rundung des
+  Zwischenschritts abhängt: Der Verdichtungsdruck aus „1:17“ ergibt je nach
+  Rundung des Teilvolumens 68,03 oder 68,06 bar. Solche Aufgaben bekommen
+  entweder den Zwischenwert vorgegeben oder eine ausdrückliche Rundungsansage
+  („auf ganze Millimeter gerundet“).
+- **Die amtliche Lösung ist nicht immer konsistent.** Beim Beschickungswagen
+  (NTG F2018, Aufgabe 4) fehlt in der Musterrechnung die Masse des Wagens
+  selbst; die Zeichnungslösung zum Wahrscheinlichkeitsnetz (NTG H2021) war in
+  unserer eigenen Korrekturtabelle mit x̄ ∓ 3s beschriftet, obwohl die
+  Prozentwerte zu x̄ ∓ s gehören. Wo die Vorlage nicht trägt, wird die Frage
+  umformuliert statt den Fehler zu übernehmen.
+- **Dubletten entstehen fachlich, nicht wörtlich.** Der Builder vergleicht
+  normalisierten Fragetext; inhaltlich gleiche Fragen mit anderer Formulierung
+  rutschen durch. Die Streik-Voraussetzungen aus F2018 standen so fast
+  wortgleich schon als `R-BR-035` im Pool und wurden durch eine andere Aufgabe
+  desselben Hefts ersetzt. Vor jedem neuen Satz lohnt eine Stichwortsuche im
+  bestehenden Pool.
+- **Abnahme:** `build_exam_questions.py`, `tools/sync_content.py --check` und
+  `--validate-assets`, dazu zwei Läufe im Headless-Browser – ein
+  Struktur-Check über alle `PX-` und ein Lauf, der neue Rechenfragen in der
+  Oberfläche beantwortet und die Musterantwort gegen `checkCalc` prüft.
 
 ### A2a – Stand der Scans (T4)
 
