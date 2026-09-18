@@ -296,23 +296,23 @@
    "f": 4,
    "sub": "Entgelt und Arbeitszeit",
    "t": "mc",
-   "q": "Welche Voraussetzung muss erfüllt sein, damit im Akkord entlohnt werden darf?",
+   "q": "Worin unterscheiden sich betriebliche Sozialleistungen von betrieblichen Sozialeinrichtungen?",
    "o": [
     {
-     "t": "Die Arbeitsleistung muss messbar sein und die Tätigkeit ausreichend oft wiederkehren",
+     "t": "Sozialleistungen sind geldwerte Zuwendungen an den einzelnen Arbeitnehmer, Sozialeinrichtungen sind dauerhaft bereitgestellte Einrichtungen für die Belegschaft",
      "ok": 1
     },
     {
-     "t": "Die Tätigkeit muss überwiegend geistiger Art sein"
+     "t": "Sozialleistungen sind gesetzlich vorgeschrieben, Sozialeinrichtungen freiwillig"
     },
     {
-     "t": "Der Mitarbeiter muss mindestens fünf Jahre Betriebszugehörigkeit haben"
+     "t": "Sozialleistungen stehen nur Führungskräften zu, Sozialeinrichtungen allen Beschäftigten"
     },
     {
-     "t": "Der Arbeitsablauf muss sich ständig ändern, damit Leistungsanreize entstehen"
+     "t": "Beide Begriffe bezeichnen dasselbe, nur aus Sicht von Arbeitgeber bzw. Arbeitnehmer"
     }
    ],
-   "e": "Akkordfähig sind nur Tätigkeiten mit messbarem, regelmäßig wiederkehrendem Ablauf, bei denen der Mitarbeiter das Arbeitstempo beeinflussen kann und ausreichend eingearbeitet ist. Die Einführung ist zudem nach § 87 Absatz 1 Nummer 11 BetrVG mitbestimmungspflichtig."
+   "e": "Sozialleistungen sind z. B. Weihnachts- und Urlaubsgeld, Zuschüsse zur Altersversorgung oder zum Jobticket; Sozialeinrichtungen z. B. Kantine, Betriebskindergarten, Sportanlage oder Werkswohnungen. Beide sind in der Regel freiwillig – werden sie wiederholt vorbehaltlos gewährt, kann daraus eine betriebliche Übung entstehen."
   },
   {
    "f": 3,

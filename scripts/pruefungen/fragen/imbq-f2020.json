@@ -4,23 +4,23 @@
    "f": 1,
    "sub": "Arbeitsrecht",
    "t": "mc",
-   "q": "Ein unbefristeter Arbeitsvertrag wurde nur mündlich geschlossen. Ist er wirksam?",
+   "q": "Ein Betriebsteil wird geschlossen; acht Stellen müssen entfallen. Welche Maßnahme ist am besten planbar, aber am stärksten an Voraussetzungen gebunden?",
    "o": [
     {
-     "t": "Ja – ein unbefristeter Arbeitsvertrag kann formfrei, also auch mündlich oder schlüssig, geschlossen werden",
+     "t": "Die betriebsbedingte Kündigung – sie folgt festen Fristen, verlangt aber dringende betriebliche Erfordernisse und eine korrekte Sozialauswahl",
      "ok": 1
     },
     {
-     "t": "Nein, jeder Arbeitsvertrag bedarf zwingend der Schriftform und ist sonst nichtig"
+     "t": "Der Aufhebungsvertrag – er wirkt einseitig und ohne Zustimmung des Arbeitnehmers"
     },
     {
-     "t": "Nein, er ist nur wirksam, wenn der Betriebsrat ihm zugestimmt hat"
+     "t": "Die Altersteilzeit – sie baut Stellen sofort und ohne Vorlauf ab"
     },
     {
-     "t": "Ja, aber nur für die Dauer der ersten sechs Monate"
+     "t": "Der Abbau von Überstunden – er beendet Arbeitsverhältnisse unmittelbar"
     }
    ],
-   "e": "Formzwang besteht nur in Sonderfällen – etwa bei der Befristung (§ 14 Absatz 4 TzBfG), bei Kündigung und Aufhebungsvertrag (§ 623 BGB), beim Arbeitnehmerüberlassungsvertrag (§ 12 AÜG) oder wenn Tarifvertrag bzw. Betriebsvereinbarung es vorschreiben."
+   "e": "Weitere Wege sind Aufhebungsverträge mit Abfindung (schnell, aber teuer und nur einvernehmlich), das Auslaufenlassen befristeter Verträge, Altersteilzeit und Vorruhestand (sozialverträglich, aber langsam) sowie der Verzicht auf Neueinstellungen. Meist wird kombiniert; der Betriebsrat ist über § 111 f. BetrVG zu beteiligen."
   },
   {
    "f": 1,

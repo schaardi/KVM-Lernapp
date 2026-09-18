@@ -318,9 +318,12 @@ Dubletten und wurden vom Builder verworfen.
 - **Dubletten entstehen fachlich, nicht wörtlich.** Der Builder vergleicht
   normalisierten Fragetext; inhaltlich gleiche Fragen mit anderer Formulierung
   rutschen durch. Die Streik-Voraussetzungen aus F2018 standen so fast
-  wortgleich schon als `R-BR-035` im Pool und wurden durch eine andere Aufgabe
-  desselben Hefts ersetzt. Vor jedem neuen Satz lohnt eine Stichwortsuche im
-  bestehenden Pool.
+  wortgleich schon als `R-BR-035` im Pool. Ein Ähnlichkeitsvergleich über
+  Wortmengen (Jaccard ≥ 0,65 auf dem normalisierten Fragetext) hat fünf
+  weitere gefunden – darunter zwei Aufgaben, welche die IHK in zwei Terminen
+  wörtlich wiederverwendet hat (Winkelprofil H2019/H2023, Drohne H2019/H2024).
+  Alle sechs sind durch andere Aufgaben desselben Hefts ersetzt; der Vergleich
+  gehört künftig in die Abnahme jedes neuen Satzes.
 - **Abnahme:** `build_exam_questions.py`, `tools/sync_content.py --check` und
   `--validate-assets`, dazu zwei Läufe im Headless-Browser – ein
   Struktur-Check über alle `PX-` und ein Lauf, der neue Rechenfragen in der

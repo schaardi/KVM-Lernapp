@@ -568,11 +568,24 @@
   {
    "f": 5,
    "sub": "Naturwissenschaftliche und technische Grundlagen",
-   "t": "calc",
-   "q": "Ein 6 m langes Winkelprofil hat eine Querschnittsfläche von 4,79 cm² bei einer Dichte von 2,70 kg/dm³. Berechnen Sie seine Masse (zwei Nachkommastellen).",
-   "ans": 7.76,
-   "unit": "kg",
-   "e": "V = S · l = 4,79 cm² · 600 cm = 2.874 cm³. m = ρ · V = 2,70 g/cm³ · 2.874 cm³ = 7.759,8 g = 7,76 kg. Wichtig ist, alle Größen in ein gemeinsames Einheitensystem zu bringen."
+   "t": "mc",
+   "q": "Welchen Vorteil haben Solar-, Wind- und Wasserkraftanlagen gemeinsam?",
+   "o": [
+    {
+     "t": "Sie nutzen kostenlose Energiequellen und gewinnen Energie emissionsarm und dezentral",
+     "ok": 1
+    },
+    {
+     "t": "Sie kommen alle ohne nennenswerte Investitionskosten aus"
+    },
+    {
+     "t": "Sie liefern alle rund um die Uhr eine gleichbleibende Leistung"
+    },
+    {
+     "t": "Sie lassen sich alle an jedem beliebigen Standort errichten"
+    }
+   ],
+   "e": "Die Nachteile sind dagegen spezifisch: Solaranlagen brauchen Sonneneinstrahlung und haben einen geringen Wirkungsgrad, Windanlagen erzeugen Geräusche und Schattenwurf und liefern nur bei Wind, Wasserkraftanlagen greifen stark in Gewässer und Landschaft ein."
   },
   {
    "f": 5,
@@ -604,11 +617,24 @@
   {
    "f": 5,
    "sub": "Naturwissenschaftliche und technische Grundlagen",
-   "t": "calc",
-   "q": "Eine Drohne fliegt mit 12 m/s nach Süden, zugleich weht Wind aus 45° mit 10 m/s. Berechnen Sie die resultierende Geschwindigkeit (zwei Nachkommastellen).",
-   "ans": 8.62,
-   "unit": "m/s",
-   "e": "Über den Kosinussatz: v²res = 12² + 10² − 2 · 12 · 10 · cos 45° = 144 + 100 − 169,71 = 74,29, also vres = 8,62 m/s. Gleichwertig über die Komponenten: 7,071 m/s quer und 4,929 m/s längs ergeben ebenfalls 8,62 m/s."
+   "t": "mc",
+   "q": "Von einer Stichprobe sind nur kleinster und größter Messwert, Mittelwert und Standardabweichung bekannt. Warum lässt sich der Median nicht bestimmen?",
+   "o": [
+    {
+     "t": "Weil der Median der ausgezählte mittlere Wert ist und dafür alle Einzelwerte der Urliste vorliegen müssen",
+     "ok": 1
+    },
+    {
+     "t": "Weil der Median nur bei einer geraden Anzahl von Messwerten existiert"
+    },
+    {
+     "t": "Weil der Median stets mit dem arithmetischen Mittel übereinstimmt"
+    },
+    {
+     "t": "Weil der Median aus Spannweite und Standardabweichung berechnet wird"
+    }
+   ],
+   "e": "Der Median teilt die geordnete Messreihe in zwei gleich große Hälften – dafür braucht man jeden Einzelwert. Mittelwert, Spannweite und Standardabweichung lassen sich dagegen aus verdichteten Angaben gewinnen. Bei symmetrischen Verteilungen fallen Median und Mittelwert zusammen, bei schiefen nicht."
   },
   {
    "f": 5,

@@ -435,25 +435,25 @@
   },
   {
    "f": 4,
-   "sub": "Konflikte",
+   "sub": "Führungsstile",
    "t": "mc",
-   "q": "Welche Folge hat anhaltendes Mobbing für die betroffene Person?",
+   "q": "Worauf stützt sich die Autorität einer Führungskraft?",
    "o": [
     {
-     "t": "Das Selbstvertrauen wird beschädigt, die Arbeitsleistung lässt nach und die Person kapselt sich ab",
+     "t": "Auf fachliche Kompetenz, persönliche Ausstrahlung und die durch die Stelle verliehene Amtsautorität",
      "ok": 1
     },
     {
-     "t": "Die Person wird von den Kollegen stärker eingebunden"
+     "t": "Allein auf die Stellung im Organigramm"
     },
     {
-     "t": "Die Arbeitsleistung steigt durch den zusätzlichen Druck"
+     "t": "Allein auf die Dauer der Betriebszugehörigkeit"
     },
     {
-     "t": "Die Fehlzeiten sinken, weil die Person Auseinandersetzungen meiden will"
+     "t": "Allein auf die Höhe des Entgelts"
     }
    ],
-   "e": "Auf Dauer folgen psychosomatische Beschwerden, steigende Fehlzeiten und oft die eigene Kündigung. Auch das Unternehmen trägt Kosten: schlechtes Betriebsklima, sinkende Produktivität und Verlust qualifizierter Mitarbeiter."
+   "e": "Amtsautorität allein trägt nicht weit – sie verschafft Weisungsrecht, aber keine Gefolgschaft. Fachliche Autorität wächst mit Wissen und Berufserfahrung, persönliche mit Verlässlichkeit, Fairness und Vorbildverhalten; weiterentwickeln lässt sie sich durch Weiterbildung, Führungsseminare und Begleitung durch einen erfahrenen Kollegen."
   },
   {
    "f": 4,
