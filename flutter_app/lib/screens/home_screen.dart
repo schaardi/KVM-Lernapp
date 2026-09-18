@@ -161,10 +161,11 @@ class _HomeScreenState extends State<HomeScreen> {
             // Fortschritt
             _section('Lernfortschritt', trailing: TextButton.icon(
               onPressed: () async {
+                final messenger = ScaffoldMessenger.of(context);
                 final ok = await _confirmReset();
                 if (!mounted || !ok) return;
                 setState(() => prog.reset());
-                ScaffoldMessenger.of(context).showSnackBar(
+                messenger.showSnackBar(
                   const SnackBar(content: Text('Lernfortschritt zurückgesetzt.')),
                 );
               },
@@ -222,14 +223,14 @@ class _HomeScreenState extends State<HomeScreen> {
             _groupHeader('Fachrichtung', 'abwählbar', kFachColor[5]!),
             for (final f in SelectionService.zusatzFacher)
               _zusatzTile(f, counts[f] ?? 0, prog),
-            Padding(
-              padding: const EdgeInsets.only(top: 2, left: 2, bottom: 4, right: 2),
+            const Padding(
+              padding: EdgeInsets.only(top: 2, left: 2, bottom: 4, right: 2),
               child: Text(
                 'Die vier Basisqualifikationen gelten für alle IHK-Meister und sind '
                 'immer aktiv. Eine Fachrichtung (z. B. Kraftverkehr → '
                 'Kraftverkehrsmeister) kannst du dazuschalten oder abwählen – sie '
                 'zählt dann bei „Alle Themen", Fortschritt und Prüfungsreife mit.',
-                style: const TextStyle(fontSize: 12, color: kMuted, height: 1.35),
+                style: TextStyle(fontSize: 12, color: kMuted, height: 1.35),
               ),
             ),
             const SizedBox(height: 20),
@@ -681,7 +682,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
                 Switch(
                   value: on,
-                  activeColor: kFachColor[f],
+                  activeThumbColor: kFachColor[f],
                   onChanged: n == 0 ? null : (_) => _toggleZusatz(f),
                 ),
               ]),
