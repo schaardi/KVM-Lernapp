@@ -25,7 +25,13 @@ FACHLETTER = {1: 'R', 2: 'B', 3: 'M', 4: 'Z', 5: 'K'}
 REIHENFOLGE = ['kraftverkehr-2021-2026.json', 'imbq-h2025.json',
                'imbq-h2024.json',
                # Tranche T1 (Archiv „Altklausuren“), neueste zuerst
-               'imbq-f2024.json', 'imbq-h2023.json', 'imbq-f2023.json']
+               'imbq-f2024.json', 'imbq-h2023.json', 'imbq-f2023.json',
+               # Tranche T2, ebenfalls neueste zuerst
+               'imbq-h2022.json', 'imbq-f2022.json', 'imbq-h2021.json',
+               'imbq-f2021.json', 'imbq-h2020.json', 'imbq-f2020.json',
+               'imbq-h2019.json', 'imbq-f2019.json',
+               # Tranche T3 (Heftform „L-ALT“)
+               'imbq-h2018.json', 'imbq-f2018.json']
 TAX = {
  1: ["Arbeitsrecht","Betriebsverfassung","Sozialversicherung","Umweltrecht","Arbeitsschutz","Vertrags- und Handelsrecht","Produkthaftung/Datenschutz"],
  2: ["Kostenrechnung","Rechnungswesen","Materialwirtschaft","Betriebsorganisation","Volkswirtschaft","Rechtsformen","Finanzierung","Controlling","Marketing"],

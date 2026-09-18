@@ -1,0 +1,659 @@
+{
+ "questions": [
+  {
+   "f": 1,
+   "sub": "Arbeitsrecht",
+   "t": "mc",
+   "q": "Ein unbefristeter Arbeitsvertrag wurde nur mündlich geschlossen. Ist er wirksam?",
+   "o": [
+    {
+     "t": "Ja – ein unbefristeter Arbeitsvertrag kann formfrei, also auch mündlich oder schlüssig, geschlossen werden",
+     "ok": 1
+    },
+    {
+     "t": "Nein, jeder Arbeitsvertrag bedarf zwingend der Schriftform und ist sonst nichtig"
+    },
+    {
+     "t": "Nein, er ist nur wirksam, wenn der Betriebsrat ihm zugestimmt hat"
+    },
+    {
+     "t": "Ja, aber nur für die Dauer der ersten sechs Monate"
+    }
+   ],
+   "e": "Formzwang besteht nur in Sonderfällen – etwa bei der Befristung (§ 14 Absatz 4 TzBfG), bei Kündigung und Aufhebungsvertrag (§ 623 BGB), beim Arbeitnehmerüberlassungsvertrag (§ 12 AÜG) oder wenn Tarifvertrag bzw. Betriebsvereinbarung es vorschreiben."
+  },
+  {
+   "f": 1,
+   "sub": "Arbeitsrecht",
+   "t": "mc",
+   "q": "Welche Pflicht hat der Arbeitgeber nach dem Nachweisgesetz bei einem mündlich geschlossenen Arbeitsvertrag?",
+   "o": [
+    {
+     "t": "Er muss die wesentlichen Vertragsbedingungen schriftlich niederlegen, unterzeichnen und dem Arbeitnehmer aushändigen",
+     "ok": 1
+    },
+    {
+     "t": "Er muss den Vertrag nachträglich notariell beurkunden lassen"
+    },
+    {
+     "t": "Er muss den Vertrag beim Arbeitsgericht hinterlegen"
+    },
+    {
+     "t": "Er hat keine weiteren Pflichten, da der Vertrag bereits wirksam ist"
+    }
+   ],
+   "e": "§ 2 NachwG verlangt den schriftlichen Nachweis der wesentlichen Arbeitsbedingungen – Namen der Parteien, Beginn, Arbeitsort, Tätigkeit, Entgelt, Arbeitszeit, Urlaub, Kündigungsfristen. Der Nachweis begründet den Vertrag nicht, er dokumentiert ihn nur."
+  },
+  {
+   "f": 1,
+   "sub": "Betriebsverfassung",
+   "t": "mc",
+   "q": "Wie viele Betriebsversammlungen muss der Betriebsrat pro Jahr durchführen?",
+   "o": [
+    {
+     "t": "Vier – je eine im Vierteljahr; zwei davon dürfen Abteilungsversammlungen sein",
+     "ok": 1
+    },
+    {
+     "t": "Eine, jeweils zum Ende des Geschäftsjahres"
+    },
+    {
+     "t": "Zwei, jeweils zum Halbjahr"
+    },
+    {
+     "t": "So viele, wie der Arbeitgeber genehmigt"
+    }
+   ],
+   "e": "§ 43 Absatz 1 BetrVG schreibt die vierteljährliche Betriebsversammlung vor; dort berichtet der Betriebsrat über seine Tätigkeit (§ 45 BetrVG). Eine Weihnachtsfeier ersetzt sie nicht. Bleibt der Betriebsrat untätig, kann eine im Betrieb vertretene Gewerkschaft nach § 43 Absatz 4 BetrVG die Einberufung beim Arbeitsgericht durchsetzen."
+  },
+  {
+   "f": 1,
+   "sub": "Betriebsverfassung",
+   "t": "mc",
+   "q": "Ein Mitarbeiter fällt trotz Abmahnung weiter durch sexuell belästigende Äußerungen auf. Welche Möglichkeit gibt das Betriebsverfassungsgesetz dem Betriebsrat?",
+   "o": [
+    {
+     "t": "Er kann vom Arbeitgeber die Versetzung oder die Entlassung des betriebsstörenden Arbeitnehmers verlangen",
+     "ok": 1
+    },
+    {
+     "t": "Er kann dem Mitarbeiter selbst kündigen"
+    },
+    {
+     "t": "Er kann dem Mitarbeiter eine Geldbuße auferlegen"
+    },
+    {
+     "t": "Er kann den Mitarbeiter eigenständig in eine andere Abteilung versetzen"
+    }
+   ],
+   "e": "Das Verlangen nach § 104 BetrVG ist das schärfste Mittel des Betriebsrats. Außerdem muss er Beschwerden entgegennehmen und auf Abhilfe hinwirken (§ 85 BetrVG) und darüber wachen, dass niemand wegen seines Geschlechts benachteiligt wird (§ 75 BetrVG, AGG)."
+  },
+  {
+   "f": 1,
+   "sub": "Sozialversicherung",
+   "t": "mc",
+   "q": "Ein Mitarbeiter ist wegen derselben Erkrankung 47 Tage arbeitsunfähig. Wer zahlt in welchem Zeitraum?",
+   "o": [
+    {
+     "t": "Der Arbeitgeber zahlt sechs Wochen Entgeltfortzahlung, danach zahlt die Krankenkasse Krankengeld",
+     "ok": 1
+    },
+    {
+     "t": "Der Arbeitgeber zahlt die vollen 47 Tage das Entgelt weiter"
+    },
+    {
+     "t": "Die Krankenkasse zahlt ab dem ersten Tag, der Arbeitgeber gar nichts"
+    },
+    {
+     "t": "Die Berufsgenossenschaft zahlt ab dem vierten Tag Verletztengeld"
+    }
+   ],
+   "e": "§ 3 Absatz 1 EFZG gibt sechs Wochen (42 Kalendertage) Entgeltfortzahlung je Krankheitsfall; anschließend greift das Krankengeld nach § 44 SGB V. Eine neue, andere Erkrankung nach dem Ende der ersten löst einen neuen Sechs-Wochen-Zeitraum aus."
+  },
+  {
+   "f": 1,
+   "sub": "Arbeitsrecht",
+   "t": "mc",
+   "q": "Ein Mitarbeiter wird nach einem Tätowierungstermin wegen einer Entzündung 14 Tage arbeitsunfähig. Hat er Anspruch auf Entgeltfortzahlung?",
+   "o": [
+    {
+     "t": "Nein – die Arbeitsunfähigkeit beruht auf einem medizinisch nicht notwendigen Eingriff und ist damit selbst verschuldet",
+     "ok": 1
+    },
+    {
+     "t": "Ja, der Grund der Erkrankung spielt für die Entgeltfortzahlung keine Rolle"
+    },
+    {
+     "t": "Ja, weil der Eingriff im Urlaub und damit in der Freizeit erfolgte"
+    },
+    {
+     "t": "Nur zur Hälfte, weil ihn ein Mitverschulden trifft"
+    }
+   ],
+   "e": "Entgeltfortzahlung setzt nach § 3 Absatz 1 EFZG unverschuldete Arbeitsunfähigkeit voraus. Verschulden meint hier einen groben Verstoß gegen das eigene Interesse – etwa bei medizinisch nicht indizierten Eingriffen, Trunkenheitsfahrten oder gefährlichen Sportarten unter Missachtung der Regeln."
+  },
+  {
+   "f": 1,
+   "sub": "Arbeitsschutz",
+   "t": "mc",
+   "q": "Welche Anforderungen stellt das Arbeitssicherheitsgesetz an eine Fachkraft für Arbeitssicherheit?",
+   "o": [
+    {
+     "t": "Sie muss Sicherheitsingenieur, -techniker oder -meister sein und zusätzlich die sicherheitstechnische Fachkunde nachweisen",
+     "ok": 1
+    },
+    {
+     "t": "Sie muss lediglich mindestens ein Jahr im Unternehmen beschäftigt sein"
+    },
+    {
+     "t": "Sie muss vom Betriebsrat benannt und von der Berufsgenossenschaft bestätigt werden"
+    },
+    {
+     "t": "Sie muss ausschließlich eine abgeschlossene Ausbildung als Ingenieur haben"
+    }
+   ],
+   "e": "§ 7 ASiG verlangt den berufsfachlichen Abschluss und die durch einen Lehrgang erworbene sicherheitstechnische Fachkunde. Ihre Aufgaben nach § 6 ASiG sind Beratung des Arbeitgebers, Überprüfung von Anlagen und Arbeitsmitteln, Begehungen und die Untersuchung von Unfällen – die Verantwortung bleibt beim Arbeitgeber."
+  },
+  {
+   "f": 1,
+   "sub": "Umweltrecht",
+   "t": "mc",
+   "q": "Welche Maßnahme mindert Lärm am wirksamsten an der Quelle?",
+   "o": [
+    {
+     "t": "Der Ersatz lärmender Altmaschinen und Schallschutzmaßnahmen direkt an Maschine und Anlage",
+     "ok": 1
+    },
+    {
+     "t": "Das Ausgeben von Gehörschutz an alle Beschäftigten"
+    },
+    {
+     "t": "Das Verkürzen der Aufenthaltsdauer im Lärmbereich"
+    },
+    {
+     "t": "Das Aufstellen von Warnschildern am Zugang zur Halle"
+    }
+   ],
+   "e": "Nach dem STOP-Prinzip gehen Substitution und technische Maßnahmen den organisatorischen und erst recht der persönlichen Schutzausrüstung vor. Rechtsgrundlage für den Schutz vor schädlichen Umwelteinwirkungen ist das Bundes-Immissionsschutzgesetz; Lärm führt beim Menschen zu erhöhtem Blutdruck, Stress, Nervosität und nachlassender Konzentration."
+  },
+  {
+   "f": 2,
+   "sub": "Rechtsformen",
+   "t": "mc",
+   "q": "Wie hoch ist das Mindestgründungskapital von GmbH und AG?",
+   "o": [
+    {
+     "t": "GmbH 25.000 € Stammkapital, AG 50.000 € Grundkapital",
+     "ok": 1
+    },
+    {
+     "t": "GmbH 50.000 € Stammkapital, AG 25.000 € Grundkapital"
+    },
+    {
+     "t": "Beide 25.000 €; der Unterschied liegt nur in der Bezeichnung"
+    },
+    {
+     "t": "GmbH 10.000 € Stammkapital, AG 100.000 € Grundkapital"
+    }
+   ],
+   "e": "Bei der GmbH führt der Geschäftsführer die Geschäfte und vertritt nach außen; die Gesellschafter stimmen nach Geschäftsanteilen ab. Bei der AG führt der Vorstand, das Stimmrecht in der Hauptversammlung richtet sich nach Aktien. In beiden Fällen haftet nur das Gesellschaftsvermögen."
+  },
+  {
+   "f": 2,
+   "sub": "Betriebsorganisation",
+   "t": "mc",
+   "q": "Was kennzeichnet ein Stabliniensystem?",
+   "o": [
+    {
+     "t": "Den Instanzen der Linie werden Stabsstellen zugeordnet, die beraten und vorbereiten, aber keine Weisungsbefugnis haben",
+     "ok": 1
+    },
+    {
+     "t": "Jeder Mitarbeiter erhält Weisungen von mehreren gleichberechtigten Vorgesetzten"
+    },
+    {
+     "t": "Die Stabsstellen entscheiden, die Linieninstanzen führen nur aus"
+    },
+    {
+     "t": "Es gibt keine Hierarchie; alle Stellen sind gleichgestellt"
+    }
+   ],
+   "e": "Das Einliniensystem ist streng hierarchisch mit eindeutigem Dienstweg, aber starr und mit langen Informationswegen. Das Stabliniensystem ergänzt es um Fachwissen, ist jedoch kostenintensiv. Im Matrixsystem erhält eine Stelle Weisungen aus zwei Dimensionen – flexibel, aber konfliktträchtig."
+  },
+  {
+   "f": 4,
+   "sub": "Personalplanung",
+   "t": "calc",
+   "q": "Zwei gleiche Bearbeitungszentren sollen 8.000 Bauteile gleichmäßig verteilt fertigen. Je Maschine fallen 150 min Rüstzeit an, die Zeit je Einheit beträgt 2,4 min. Berechnen Sie den gesamten Kapazitätsbedarf in Stunden.",
+   "ans": 325,
+   "unit": "h",
+   "e": "Je Bearbeitungszentrum: 150 min + 2,4 min/Stück · 4.000 Stück = 9.750 min = 162,5 h. Für beide Maschinen: 2 · 162,5 h = 325 h. Die Rüstzeit fällt je Maschine einmal an und wird deshalb nicht halbiert."
+  },
+  {
+   "f": 2,
+   "sub": "Betriebsorganisation",
+   "t": "calc",
+   "q": "Der Kapazitätsbedarf beträgt 325 h. Zwei Maschinen laufen an 21 Arbeitstagen je 7,5 Stunden bei 95 % Anlagenverfügbarkeit. Berechnen Sie die Kapazitätsauslastung in Prozent (zwei Nachkommastellen).",
+   "ans": 108.6,
+   "unit": "%",
+   "e": "Kapazitätsbestand je Maschine = 7,5 h/Tag · 21 Tage · 0,95 = 149,625 h, für beide 299,25 h. Auslastung = 325 h ÷ 299,25 h · 100 = 108,60 %. Über 100 % bedeutet: Der Bedarf übersteigt den Bestand, es fehlen 25,75 Stunden."
+  },
+  {
+   "f": 4,
+   "sub": "Entgelt und Arbeitszeit",
+   "t": "calc",
+   "q": "Der tarifliche Grundlohn beträgt 14 €/Stunde, der Akkordzuschlag 20 %, die Vorgabezeit 4 Minuten je Stück. Ein Arbeitnehmer erzielt in einer 37-Stunden-Woche einen Durchschnittslohn von 19,04 €/Stunde. Berechnen Sie die montierte Stückzahl pro Woche.",
+   "ans": 629,
+   "unit": "Stück",
+   "e": "Akkordrichtsatz = 14 €/h · 1,2 = 16,80 €/h. Normalleistung = 60 min ÷ 4 min = 15 Stück/h, also Stückgeld = 16,80 € ÷ 15 Stück = 1,12 €/Stück. Istleistung = 19,04 €/h ÷ 1,12 €/Stück = 17 Stück/h. In 37 Stunden: 17 · 37 = 629 Stück."
+  },
+  {
+   "f": 4,
+   "sub": "Entgelt und Arbeitszeit",
+   "t": "calc",
+   "q": "Der Akkordrichtsatz beträgt 16,80 €/Stunde, der erzielte Akkordstundenlohn 19,04 €/Stunde. Berechnen Sie den Zeitgrad in Prozent (zwei Nachkommastellen).",
+   "ans": 113.33,
+   "unit": "%",
+   "e": "Zeitgradfaktor = 19,04 €/h ÷ 16,80 €/h = 1,1333, also 113,33 %. Oberhalb von 100 % steigt der Akkordstundenverdienst proportional zum Zeitgrad – darin liegt der Leistungsanreiz des Akkordlohns."
+  },
+  {
+   "f": 2,
+   "sub": "Kostenrechnung",
+   "t": "calc",
+   "q": "Bei 15.000 abgesetzten Bauteilen wurde ein Gesamtdeckungsbeitrag von 442.500 € erzielt; die Break-even-Menge liegt bei 11.500 Stück pro Monat. Berechnen Sie die fixen Kosten pro Monat.",
+   "ans": 339250,
+   "unit": "€",
+   "e": "Stückdeckungsbeitrag = 442.500 € ÷ 15.000 Stück = 29,50 €/Stück. Im Break-even-Punkt decken die Deckungsbeiträge genau die Fixkosten: Kf = 29,50 €/Stück · 11.500 Stück = 339.250 € pro Monat."
+  },
+  {
+   "f": 2,
+   "sub": "Kostenrechnung",
+   "t": "calc",
+   "q": "Der Gesamtdeckungsbeitrag beträgt 442.500 €, die Fixkosten 339.250 € pro Monat. Berechnen Sie das Betriebsergebnis.",
+   "ans": 103250,
+   "unit": "€",
+   "e": "BE = Gesamtdeckungsbeitrag − Fixkosten = 442.500 € − 339.250 € = 103.250 € Gewinn im Monat. Die Deckungsbeitragsrechnung kommt damit ohne Schlüsselung der Fixkosten auf einzelne Produkte aus."
+  },
+  {
+   "f": 2,
+   "sub": "Kostenrechnung",
+   "t": "calc",
+   "q": "Durch Rationalisierung steigt der Stückdeckungsbeitrag von 29,50 € um 10 %, die Fixkosten steigen von 339.250 € um 15.750 € pro Monat. Berechnen Sie die neue Break-even-Menge (aufgerundet auf ganze Stück).",
+   "ans": 10940,
+   "unit": "Stück",
+   "e": "dbneu = 1,1 · 29,50 €/Stück = 32,45 €/Stück, Kf,neu = 355.000 €/Monat. xBEP = 355.000 € ÷ 32,45 €/Stück = 10.939,91, also 10.940 Stück. Gegenüber 11.500 Stück sinkt die Break-even-Menge um 4,87 %."
+  },
+  {
+   "f": 2,
+   "sub": "Kostenrechnung",
+   "t": "calc",
+   "q": "Eine Anlage kostete 550.000 €; der Wiederbeschaffungswert beträgt 600.000 €, die Nutzungsdauer 8 Jahre. Berechnen Sie die kalkulatorische Abschreibung pro Jahr.",
+   "ans": 75000,
+   "unit": "€",
+   "e": "Kalkulatorische Abschreibung = Wiederbeschaffungswert ÷ Nutzungsdauer = 600.000 € ÷ 8 Jahre = 75.000 €/Jahr. Anders als die bilanzielle Abschreibung geht die kalkulatorische vom Wiederbeschaffungswert aus, damit die Ersatzbeschaffung aus den Preisen gedeckt wird."
+  },
+  {
+   "f": 2,
+   "sub": "Kostenrechnung",
+   "t": "calc",
+   "q": "Eine Anlage mit einem Anschaffungsbetrag von 550.000 € wird mit einem kalkulatorischen Zinssatz von 3 % belegt. Berechnen Sie die kalkulatorischen Zinsen pro Jahr.",
+   "ans": 8250,
+   "unit": "€",
+   "e": "Bei linearer Abschreibung wird das durchschnittlich gebundene Kapital mit dem halben Anschaffungsbetrag angesetzt: 550.000 € ÷ 2 · 0,03 = 8.250 €/Jahr. Gleichwertig: 550.000 € · 0,03 ÷ 2."
+  },
+  {
+   "f": 3,
+   "sub": "EDV",
+   "t": "mc",
+   "q": "Wie kann eine Software bei der manuellen Dateneingabe die Plausibilität sichern?",
+   "o": [
+    {
+     "t": "Durch Auswahlfelder mit gültigen Werten und hinterlegte Minimal- und Maximalgrenzen",
+     "ok": 1
+    },
+    {
+     "t": "Durch nachträgliche Stichproben des Vorgesetzten am Monatsende"
+    },
+    {
+     "t": "Durch Sperren der Tastatur während des Speichervorgangs"
+    },
+    {
+     "t": "Durch tägliche Sicherungskopien der erfassten Daten"
+    }
+   ],
+   "e": "Plausibilitätsprüfungen weisen erkennbar falsche Eingaben sofort ab – ergänzt durch Pflichtfelder, Formatvorgaben und Prüfziffern. Aufbereiten lassen sich die Daten anschließend in der Tabellenkalkulation durch Filtern und Sortieren, Kennzahlen, Kreuztabellen und Diagramme."
+  },
+  {
+   "f": 3,
+   "sub": "Projektmanagement",
+   "t": "mc",
+   "q": "Ein Vorgang mit vier Tagen Pufferzeit dauert zwei Tage länger als geplant. Welche Auswirkung hat das auf den Projektendtermin?",
+   "o": [
+    {
+     "t": "Keine – die Verzögerung wird von der Pufferzeit aufgefangen, kein Nachfolger verschiebt sich",
+     "ok": 1
+    },
+    {
+     "t": "Der Endtermin verschiebt sich um zwei Tage nach hinten"
+    },
+    {
+     "t": "Der Endtermin verschiebt sich um vier Tage nach hinten"
+    },
+    {
+     "t": "Der Vorgang wird dadurch automatisch Teil des kritischen Pfads"
+    }
+   ],
+   "e": "Nur Vorgänge ohne Puffer bilden den kritischen Pfad; jede Verzögerung dort verschiebt den Endtermin unmittelbar. Erst wenn die Verzögerung den Puffer übersteigt – hier ab mehr als vier Tagen – wirkt sie sich auf den Endtermin aus."
+  },
+  {
+   "f": 3,
+   "sub": "Präsentation",
+   "t": "mc",
+   "q": "Warum führen Sie vor einer Präsentation eine Zielgruppenanalyse durch?",
+   "o": [
+    {
+     "t": "Weil Inhalt, Tiefe und Ablauf zur Vorbildung, Motivation und Erwartung der Zuhörer passen müssen",
+     "ok": 1
+    },
+    {
+     "t": "Weil die Teilnehmerzahl über die Länge der Pausen entscheidet"
+    },
+    {
+     "t": "Weil die Zielgruppe die Kosten der Präsentation trägt"
+    },
+    {
+     "t": "Weil die Zielgruppe die Reihenfolge der Folien festlegt"
+    }
+   ],
+   "e": "Eine Präsentation vor Fachleuten braucht andere Tiefe und Fachsprache als eine vor Auszubildenden. Ein Feedbackbogen am Ende – zu Verständlichkeit, fachlichem Wert, Zeitrahmen und Medieneinsatz – zeigt, ob die Einschätzung getroffen hat."
+  },
+  {
+   "f": 3,
+   "sub": "Statistik",
+   "t": "calc",
+   "q": "Im Jahr 2019 wurden insgesamt 5.897 Teile eingesetzt, davon 1.718 fremdgefertigt. Berechnen Sie den Anteil der fremdgefertigten Teile in Prozent (zwei Nachkommastellen).",
+   "ans": 29.13,
+   "unit": "%",
+   "e": "Anteil = 1.718 ÷ 5.897 · 100 = 29,13 %. Der Anteil ist seit 2015 (20,23 %) stetig gestiegen – die Fertigungstiefe des Unternehmens nimmt also ab."
+  },
+  {
+   "f": 3,
+   "sub": "Projektmanagement",
+   "t": "mc",
+   "q": "Welche Ursache führt typischerweise zu Verzögerungen in der Realisierungsphase eines Projekts?",
+   "o": [
+    {
+     "t": "Der Ausfall von Mitarbeitern oder technischen Ressourcen und verspätete Materiallieferungen",
+     "ok": 1
+    },
+    {
+     "t": "Eine zu ausführliche Zieldefinition in der Startphase"
+    },
+    {
+     "t": "Die Erstellung eines Netzplans vor Projektbeginn"
+    },
+    {
+     "t": "Die regelmäßige Berichterstattung an den Auftraggeber"
+    }
+   ],
+   "e": "Weitere Ursachen sind Fehleinschätzungen bei der Dauer, verzögerte Fremdleistungen und nachträgliche Änderungswünsche. Gegensteuern lässt sich mit zusätzlichem Personal aus anderen Abteilungen, Parallelisierung von Vorgängen, Überstunden oder – als letzte Möglichkeit – der Reduzierung des Leistungsumfangs."
+  },
+  {
+   "f": 3,
+   "sub": "Kommunikation",
+   "t": "mc",
+   "q": "Sie planen in einen zweistündigen Vortrag drei kurze Austauschphasen in Kleingruppen ein. Welchen Vorteil hat das für die Teilnehmer?",
+   "o": [
+    {
+     "t": "Sie können offene Fragen zunächst untereinander klären und stehen nicht durchgehend unter Konzentrationsdruck",
+     "ok": 1
+    },
+    {
+     "t": "Sie können den Vortrag vorzeitig verlassen"
+    },
+    {
+     "t": "Sie müssen sich keine Notizen mehr machen"
+    },
+    {
+     "t": "Sie erhalten dadurch eine schriftliche Zusammenfassung"
+    }
+   ],
+   "e": "Für den Vortragenden verlagern die Austauschphasen Fragen in einen geplanten Abschnitt, geben ihm eine Rückmeldung über das Verständnis und eine kurze Pause. Risiken sind das Überziehen der Zeit, unerwartete Fragen und Gruppen, die vom Thema abschweifen."
+  },
+  {
+   "f": 4,
+   "sub": "Motivation",
+   "t": "mc",
+   "q": "Worin unterscheiden sich Job Enlargement und Job Enrichment?",
+   "o": [
+    {
+     "t": "Job Enlargement erweitert die Aufgaben auf gleichem Anforderungsniveau, Job Enrichment fügt anspruchsvollere Aufgaben mit mehr Entscheidungsspielraum hinzu",
+     "ok": 1
+    },
+    {
+     "t": "Job Enlargement bedeutet Aufgabenwechsel im Turnus, Job Enrichment Aufgabenreduzierung"
+    },
+    {
+     "t": "Job Enlargement erhöht das Entgelt, Job Enrichment die Arbeitszeit"
+    },
+    {
+     "t": "Beide bezeichnen dasselbe, nur aus Sicht von Mitarbeiter bzw. Unternehmen"
+    }
+   ],
+   "e": "Job Rotation ist der planmäßige Wechsel zwischen Arbeitsplätzen – er erhöht die Einsatzflexibilität und beugt einseitiger Belastung vor. Enlargement wirkt gegen Monotonie (horizontale Erweiterung), Enrichment gegen Unterforderung (vertikale Erweiterung)."
+  },
+  {
+   "f": 4,
+   "sub": "Führungsstile",
+   "t": "mc",
+   "q": "Ihr Unternehmen stellt vom autoritären auf den kooperativen Führungsstil um. Wie setzen Sie das in der Praxis um?",
+   "o": [
+    {
+     "t": "Sie informieren über den neuen Stil, erläutern seinen Nutzen und beteiligen die Mitarbeiter regelmäßig an Entscheidungen ihres Arbeitsbereichs",
+     "ok": 1
+    },
+    {
+     "t": "Sie ändern nichts am eigenen Verhalten und warten ab, wie sich das Leitbild auswirkt"
+    },
+    {
+     "t": "Sie übertragen den Mitarbeitern von heute auf morgen alle Entscheidungen ohne Begleitung"
+    },
+    {
+     "t": "Sie kündigen den Stilwechsel an, treffen Entscheidungen aber weiterhin allein"
+    }
+   ],
+   "e": "Ein Führungsstil wirkt nur, wenn die Führungskraft ihn vorlebt. Wichtig sind schrittweise Delegation mit klaren Befugnissen, regelmäßige Gespräche, Rückmeldung in beide Richtungen und Geduld: Mitarbeiter, die jahrelang Anweisungen gewohnt waren, müssen Eigenverantwortung erst einüben."
+  },
+  {
+   "f": 4,
+   "sub": "Konflikte",
+   "t": "mc",
+   "q": "Was ist ein Rollenkonflikt in der Arbeit eines Industriemeisters?",
+   "o": [
+    {
+     "t": "Er muss Vorgaben der Betriebsleitung umsetzen, die er als Mitglied seiner Schichtgruppe selbst nicht für sinnvoll hält",
+     "ok": 1
+    },
+    {
+     "t": "Er ist zugleich Mitglied des Betriebsrats und der Geschäftsführung"
+    },
+    {
+     "t": "Er hat mehrere fachliche Aufgaben gleichzeitig zu erledigen"
+    },
+    {
+     "t": "Er arbeitet in wechselnden Schichten"
+    }
+   ],
+   "e": "Der Meister ist Fachmann, Verantwortlicher für Arbeitssicherheit und Umweltschutz, Anweiser, Ansprechpartner bei persönlichen Problemen und Vermittler zwischen Leitung und Gruppe. Diese Rollen können kollidieren – etwa wenn er Mitarbeiterwünsche vertritt und zugleich Leitungsvorgaben durchsetzen muss."
+  },
+  {
+   "f": 4,
+   "sub": "Berufsausbildung",
+   "t": "mc",
+   "q": "Bei welchem Anlass ist eine Unterweisung der Mitarbeiter durchzuführen?",
+   "o": [
+    {
+     "t": "Bei Einstellung neuer oder entliehener Mitarbeiter, nach einem (Beinahe-)Unfall und bei neuen Arbeitsmitteln oder Verfahren",
+     "ok": 1
+    },
+    {
+     "t": "Nur einmal jährlich zum Jahresbeginn, unabhängig von Veränderungen"
+    },
+    {
+     "t": "Nur wenn die Berufsgenossenschaft eine Betriebsbesichtigung ankündigt"
+    },
+    {
+     "t": "Nur bei Auszubildenden, nicht bei erfahrenen Facharbeitern"
+    }
+   ],
+   "e": "Weitere Anlässe sind Fehlverhalten von Mitarbeitern, Änderungen im Arbeitsbereich, neue Gefahrstoffe und die jährliche Wiederholung nach § 12 ArbSchG. Unterweisungen sind schriftlich zu dokumentieren und von den Teilnehmern zu bestätigen."
+  },
+  {
+   "f": 4,
+   "sub": "Gruppen",
+   "t": "mc",
+   "q": "Welche Wirkung kann ein gemeinsames betriebliches Gesundheits- und Freizeitprogramm auf das Gruppenbewusstsein haben?",
+   "o": [
+    {
+     "t": "Die Mitarbeiter erleben sich in anderen Rollen, bauen Vorurteile ab und entwickeln ein stärkeres Zusammengehörigkeitsgefühl",
+     "ok": 1
+    },
+    {
+     "t": "Es entstehen zwangsläufig neue Konflikte, weil die Hierarchie aufgehoben wird"
+    },
+    {
+     "t": "Es wirkt sich nur auf die körperliche Fitness aus, nicht auf die Zusammenarbeit"
+    },
+    {
+     "t": "Es ersetzt die Notwendigkeit von Teambesprechungen"
+    }
+   ],
+   "e": "Für die Einzelnen wirkt das Angebot als Wertschätzung der Person und der geleisteten Arbeit, erhält die Gesundheit und stärkt die Motivation. Betrieblich schlägt sich das in weniger Fehlzeiten, besserem Betriebsklima und höherer Bindung an das Unternehmen nieder."
+  },
+  {
+   "f": 4,
+   "sub": "Motivation",
+   "t": "mc",
+   "q": "Ihre Mitarbeiter führen eine neue Anweisung widerwillig aus, sprechen das negative Betriebsklima aber nicht offen an. Was ist eine typische Ursache?",
+   "o": [
+    {
+     "t": "Sie wurden über die Hintergründe der Entscheidung nicht ausreichend informiert",
+     "ok": 1
+    },
+    {
+     "t": "Sie sind grundsätzlich nicht bereit, Anweisungen zu befolgen"
+    },
+    {
+     "t": "Die Entlohnung ist tariflich geregelt"
+    },
+    {
+     "t": "Der Betriebsrat hat der Maßnahme zugestimmt"
+    }
+   ],
+   "e": "Weitere Ursachen sind Über- oder Unterforderung, eine insgesamt zu hohe Arbeitsbelastung, eine schwache Kommunikationskultur und allgemeiner Widerstand gegen Veränderung. Der Meister wirkt am ehesten durch Vorbild, offene Erklärung der Gründe und Beteiligung an der Umsetzung entgegen."
+  },
+  {
+   "f": 5,
+   "sub": "Naturwissenschaftliche und technische Grundlagen",
+   "t": "mc",
+   "q": "Warum bereitet hartes Wasser im Warmwasserboiler langfristig Probleme?",
+   "o": [
+    {
+     "t": "Die temporären Härtebildner wandeln sich beim Erhitzen in wasserunlöslichen Kesselstein um, der als schlecht wärmeleitender Belag auf den Heizflächen liegt",
+     "ok": 1
+    },
+    {
+     "t": "Hartes Wasser leitet Strom besser und führt zu Kurzschlüssen an den Heizstäben"
+    },
+    {
+     "t": "Hartes Wasser senkt den Siedepunkt und lässt den Boiler überkochen"
+    },
+    {
+     "t": "Hartes Wasser greift den Kunststoffmantel des Boilers chemisch an"
+    }
+   ],
+   "e": "Kesselstein aus Calcium- und Magnesiumcarbonat mindert die Leistung und kann zur Überhitzung der Heizelemente führen. In technischen Großanlagen setzt man deshalb vollentsalztes Wasser (VE-Wasser, Deionat) ein, dem die gelösten Salze und Ionen entzogen wurden."
+  },
+  {
+   "f": 5,
+   "sub": "Naturwissenschaftliche und technische Grundlagen",
+   "t": "calc",
+   "q": "Erdgas hat im Normzustand (0 °C, 1.013 mbar) eine Dichte von 0,80 kg/m³. Berechnen Sie die Dichte bei 1.050 mbar und 15 °C (drei Nachkommastellen).",
+   "ans": 0.786,
+   "unit": "kg/m³",
+   "e": "Aus der allgemeinen Gasgleichung p₁ ÷ (ρ₁ · T₁) = p₂ ÷ (ρ₂ · T₂) folgt ρ₂ = p₂ · T₁ · ρ₁ ÷ (p₁ · T₂) = 1.050 mbar · 273,15 K · 0,80 kg/m³ ÷ (1.013 mbar · 288,15 K) = 0,786 kg/m³. Temperaturen sind dabei immer in Kelvin einzusetzen."
+  },
+  {
+   "f": 5,
+   "sub": "Naturwissenschaftliche und technische Grundlagen",
+   "t": "calc",
+   "q": "Eine Aluminium-Blechrolle (ρ = 2,7 kg/dm³) ist ein Hohlzylinder mit D = 1 m, d = 0,3 m und L = 2 m. Berechnen Sie ihre Masse (auf ganze Kilogramm gerundet).",
+   "ans": 3859,
+   "unit": "kg",
+   "e": "V = (D² − d²) ÷ 4 · π · L = ((10 dm)² − (3 dm)²) ÷ 4 · π · 20 dm = 1.429,4 dm³. m = ρ · V = 2,7 kg/dm³ · 1.429,4 dm³ = 3.859 kg. Ihre Gewichtskraft beträgt damit rund 37.861 N."
+  },
+  {
+   "f": 5,
+   "sub": "Naturwissenschaftliche und technische Grundlagen",
+   "t": "calc",
+   "q": "Ein 4,9 m langer Pkw überholt einen 18 m langen Lkw. Er schert 60 m vor dem Lkw aus und 40 m nach ihm wieder ein. Berechnen Sie die Relativstrecke des Überholvorgangs.",
+   "ans": 122.9,
+   "unit": "m",
+   "e": "srel = Länge Pkw + Länge Lkw + Vorabstand + Nachabstand = 4,9 m + 18 m + 60 m + 40 m = 122,9 m. Bei 120 km/h und 80 km/h beträgt die Relativgeschwindigkeit 11,11 m/s, der Überholvorgang dauert also rund 11 Sekunden."
+  },
+  {
+   "f": 5,
+   "sub": "Naturwissenschaftliche und technische Grundlagen",
+   "t": "calc",
+   "q": "Ein Stromzähler mit der Konstante 75 Umdrehungen je kWh macht in 6 Minuten genau 15 Umdrehungen. Berechnen Sie die Leistung des angeschlossenen Ofens.",
+   "ans": 2000,
+   "unit": "W",
+   "e": "Arbeit = 1.000 Wh · 15 Umdrehungen ÷ 75 Umdrehungen = 200 Wh. Leistung = W ÷ t = 200 Wh ÷ 0,1 h = 2.000 W. Die Zählerkonstante gibt an, wie viele Umdrehungen einer Kilowattstunde entsprechen."
+  },
+  {
+   "f": 5,
+   "sub": "Naturwissenschaftliche und technische Grundlagen",
+   "t": "calc",
+   "q": "Ein Ofen mit 2.000 W Leistung ist an 230 V angeschlossen. Berechnen Sie seinen elektrischen Widerstand (zwei Nachkommastellen).",
+   "ans": 26.45,
+   "unit": "Ω",
+   "e": "R = U² ÷ P = (230 V)² ÷ 2.000 W = 52.900 ÷ 2.000 = 26,45 Ω. Gleichwertig über I = P ÷ U = 8,7 A und R = U ÷ I."
+  },
+  {
+   "f": 5,
+   "sub": "Naturwissenschaftliche und technische Grundlagen",
+   "t": "calc",
+   "q": "Im Ofen sind drei gleiche Heizwiderstände parallel geschaltet; der Gesamtwiderstand beträgt 26,45 Ω. Berechnen Sie den Widerstand eines einzelnen Heizelements (zwei Nachkommastellen).",
+   "ans": 79.35,
+   "unit": "Ω",
+   "e": "Bei n gleichen parallelen Widerständen gilt R = R₁ ÷ n, also R₁ = 3 · R = 3 · 26,45 Ω = 79,35 Ω. Die Parallelschaltung hat immer einen kleineren Widerstand als der kleinste Einzelwiderstand."
+  },
+  {
+   "f": 5,
+   "sub": "Naturwissenschaftliche und technische Grundlagen",
+   "t": "calc",
+   "q": "Dieselben drei Heizwiderstände von je 79,35 Ω werden statt parallel in Reihe geschaltet und an 230 V betrieben. Berechnen Sie die Leistungsaufnahme (zwei Nachkommastellen).",
+   "ans": 222.22,
+   "unit": "W",
+   "e": "Rges = 3 · 79,35 Ω = 238,05 Ω. P = U² ÷ R = (230 V)² ÷ 238,05 Ω = 222,22 W. Die Reihenschaltung liefert damit nur ein Neuntel der Leistung der Parallelschaltung – der Widerstand wird neunmal so groß."
+  },
+  {
+   "f": 5,
+   "sub": "Naturwissenschaftliche und technische Grundlagen",
+   "t": "calc",
+   "q": "Für zehn Personen wurden folgende Massen gemessen (in kg): 68, 74, 88, 78, 52, 64, 90, 58, 60, 98. Berechnen Sie den arithmetischen Mittelwert.",
+   "ans": 73,
+   "unit": "kg",
+   "e": "Summe = 730 kg, geteilt durch 10 Personen ergibt x̄ = 73 kg. Die Spannweite als einfachstes Streuungsmaß beträgt R = 98 kg − 52 kg = 46 kg."
+  },
+  {
+   "f": 5,
+   "sub": "Naturwissenschaftliche und technische Grundlagen",
+   "t": "calc",
+   "q": "Eine normalverteilte Messreihe hat den Mittelwert 73 kg und die Standardabweichung 15,3 kg. Berechnen Sie die obere Grenze des Bereichs, in dem 99,73 % aller Werte liegen (eine Nachkommastelle).",
+   "ans": 118.9,
+   "unit": "kg",
+   "e": "Der 99,73-%-Bereich umfasst x̄ ± 3s: 73 kg + 3 · 15,3 kg = 118,9 kg als obere und 73 kg − 45,9 kg = 27,1 kg als untere Grenze. Für x̄ ± 1s sind es 68,27 %, für x̄ ± 2s 95,45 % der Messwerte."
+  }
+ ]
+}

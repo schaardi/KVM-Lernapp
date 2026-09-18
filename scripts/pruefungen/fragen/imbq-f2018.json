@@ -1,0 +1,637 @@
+{
+ "questions": [
+  {
+   "f": 1,
+   "sub": "Betriebsverfassung",
+   "t": "mc",
+   "q": "In einer Betriebsratssitzung wird vorgeschlagen, die Belegschaft zum Streik aufzurufen, weil die Entlohnung als zu niedrig empfunden wird. Wäre dieser Aufruf rechtmäßig?",
+   "o": [
+    {
+     "t": "Nein – der Betriebsrat ist zur vertrauensvollen Zusammenarbeit verpflichtet und darf keine Arbeitskampfmaßnahmen führen",
+     "ok": 1
+    },
+    {
+     "t": "Ja, der Betriebsrat vertritt die Arbeitnehmer und darf deshalb zum Streik aufrufen"
+    },
+    {
+     "t": "Ja, sofern die Belegschaft in einer Urabstimmung zustimmt"
+    },
+    {
+     "t": "Ja, wenn der Arbeitgeber zuvor Verhandlungen abgelehnt hat"
+    }
+   ],
+   "e": "§ 74 Absatz 2 BetrVG verbietet Betriebsrat und Arbeitgeber Arbeitskampfmaßnahmen gegeneinander. Zum Streik aufrufen dürfen nur die Gewerkschaften. Auch eine Betriebsvereinbarung über Lohnerhöhungen scheidet aus, weil Arbeitsentgelte den Tarifvertragsparteien vorbehalten sind."
+  },
+  {
+   "f": 2,
+   "sub": "Rechtsformen",
+   "t": "mc",
+   "q": "Welche Organe hat eine GmbH mit 1.800 Mitarbeitern?",
+   "o": [
+    {
+     "t": "Geschäftsführer, Gesellschafterversammlung und – wegen der Mitarbeiterzahl – ein mitbestimmter Aufsichtsrat",
+     "ok": 1
+    },
+    {
+     "t": "Nur Geschäftsführer und Gesellschafterversammlung; ein Aufsichtsrat ist bei der GmbH nie vorgesehen"
+    },
+    {
+     "t": "Vorstand, Aufsichtsrat und Hauptversammlung wie bei einer Aktiengesellschaft"
+    },
+    {
+     "t": "Geschäftsführer und Betriebsrat; eine Gesellschafterversammlung entfällt"
+    }
+   ],
+   "e": "Die GmbH kommt grundsätzlich mit Geschäftsführung und Gesellschafterversammlung aus. Ab mehr als 500 Arbeitnehmern schreibt das Drittelbeteiligungsgesetz einen Aufsichtsrat mit Arbeitnehmervertretern vor, ab mehr als 2.000 gilt das Mitbestimmungsgesetz mit paritätischer Besetzung."
+  },
+  {
+   "f": 1,
+   "sub": "Betriebsverfassung",
+   "t": "calc",
+   "q": "Ein Betrieb hat 620 Arbeitnehmer, davon sind 592 wahlberechtigt. Aus wie vielen Mitgliedern besteht der Betriebsrat?",
+   "ans": 11,
+   "unit": "Mitglieder",
+   "e": "Die Staffel des § 9 BetrVG sieht für 401 bis 700 Arbeitnehmer elf Betriebsratsmitglieder vor. Maßgeblich ist dabei die Zahl der Arbeitnehmer im Betrieb – nicht die Zahl der Kandidaten oder der abgegebenen Stimmen."
+  },
+  {
+   "f": 1,
+   "sub": "Betriebsverfassung",
+   "t": "mc",
+   "q": "Ein Kandidat erhielt bei der Betriebsratswahl die meisten Stimmen. Ist er damit automatisch Betriebsratsvorsitzender?",
+   "o": [
+    {
+     "t": "Nein – den Vorsitzenden wählt der Betriebsrat in seiner konstituierenden Sitzung aus seiner Mitte",
+     "ok": 1
+    },
+    {
+     "t": "Ja, die höchste Stimmenzahl bestimmt den Vorsitz"
+    },
+    {
+     "t": "Ja, sofern er dem Betriebsrat schon in der letzten Amtszeit angehörte"
+    },
+    {
+     "t": "Nein, den Vorsitzenden bestimmt der Arbeitgeber"
+    }
+   ],
+   "e": "§ 26 BetrVG regelt die Wahl von Vorsitzendem und Stellvertreter aus der Mitte des Gremiums. Auch die freizustellenden Mitglieder bestimmt der Betriebsrat selbst – in geheimer Wahl nach Beratung mit dem Arbeitgeber (§ 38 BetrVG)."
+  },
+  {
+   "f": 1,
+   "sub": "Betriebsverfassung",
+   "t": "mc",
+   "q": "Ein Prokurist will die Betriebsratswahl anfechten, weil er nicht auf der Wählerliste stand. Hat er Erfolg?",
+   "o": [
+    {
+     "t": "Nein – als leitender Angestellter fällt er nicht unter das Betriebsverfassungsgesetz und ist weder wahlberechtigt noch wählbar",
+     "ok": 1
+    },
+    {
+     "t": "Ja, jeder Arbeitnehmer des Betriebs ist wahlberechtigt"
+    },
+    {
+     "t": "Ja, wenn er seine Anfechtung innerhalb von zwei Wochen erhebt"
+    },
+    {
+     "t": "Ja, aber nur wenn der Wahlvorstand die Liste fehlerhaft geführt hat"
+    }
+   ],
+   "e": "§ 5 Absatz 3 BetrVG nimmt leitende Angestellte – darunter ausdrücklich Prokuristen mit bedeutsamer Prokura – vom Geltungsbereich aus. Ihre Interessen vertritt gegebenenfalls ein Sprecherausschuss nach dem Sprecherausschussgesetz."
+  },
+  {
+   "f": 1,
+   "sub": "Sozialversicherung",
+   "t": "mc",
+   "q": "Ein neu eingestellter Mitarbeiter erkrankt bereits drei Wochen nach Arbeitsaufnahme. Wer zahlt in dieser Zeit?",
+   "o": [
+    {
+     "t": "Die Krankenkasse zahlt Krankengeld – der Anspruch auf Entgeltfortzahlung entsteht erst nach vier Wochen ununterbrochenen Bestehens des Arbeitsverhältnisses",
+     "ok": 1
+    },
+    {
+     "t": "Der Arbeitgeber zahlt von Anfang an sechs Wochen Entgeltfortzahlung"
+    },
+    {
+     "t": "Niemand – für die ersten vier Wochen besteht kein Anspruch"
+    },
+    {
+     "t": "Die Berufsgenossenschaft zahlt Verletztengeld"
+    }
+   ],
+   "e": "Die Wartezeit von vier Wochen steht in § 3 Absatz 3 EFZG. Sie verschiebt nur den Beginn des Anspruchs; ab der fünften Woche des Arbeitsverhältnisses gilt der übliche Sechs-Wochen-Zeitraum je Krankheitsfall."
+  },
+  {
+   "f": 1,
+   "sub": "Arbeitsschutz",
+   "t": "mc",
+   "q": "Warum führt ein Industriemeister regelmäßige Sicherheitsbegehungen durch?",
+   "o": [
+    {
+     "t": "Weil er die von ihm veranlassten Schutzmaßnahmen auf ihre Einhaltung überprüfen muss und damit zugleich Präsenz im Arbeitsbereich zeigt",
+     "ok": 1
+    },
+    {
+     "t": "Weil die Berufsgenossenschaft für jede Begehung einen Beitragsnachlass gewährt"
+    },
+    {
+     "t": "Weil damit die Gefährdungsbeurteilung entbehrlich wird"
+    },
+    {
+     "t": "Weil er damit die Verantwortung auf die Beschäftigten überträgt"
+    }
+   ],
+   "e": "Wer Aufgaben überträgt, behält die Kontrollpflicht. Beurteilt werden bei der Begehung z. B. Ordnung und Sauberkeit, Zustand von Maschinen und Schutzeinrichtungen, Verkehrswege, das Tragen der persönlichen Schutzausrüstung und die Kennzeichnung von Gefahrstoffen."
+  },
+  {
+   "f": 1,
+   "sub": "Produkthaftung/Datenschutz",
+   "t": "mc",
+   "q": "Darf ein Unternehmen personenbezogene Daten seiner Mitarbeiter speichern, ohne dass diese schriftlich eingewilligt haben?",
+   "o": [
+    {
+     "t": "Ja – soweit die Verarbeitung für die Durchführung des Beschäftigungsverhältnisses erforderlich ist",
+     "ok": 1
+    },
+    {
+     "t": "Nein, jede Speicherung setzt eine schriftliche Einwilligung voraus"
+    },
+    {
+     "t": "Ja, jede Speicherung ist im Arbeitsverhältnis uneingeschränkt zulässig"
+    },
+    {
+     "t": "Nur mit Zustimmung des Betriebsrats im Einzelfall"
+    }
+   ],
+   "e": "Die Einwilligung ist nur eine von mehreren Erlaubnisgrundlagen. Zulässig gespeichert werden dürfen etwa Name, Geburtsdatum, Anschrift, Bankverbindung, Steuerklasse, Fehlzeiten und – soweit relevant – die Schwerbehinderteneigenschaft. Alles darüber hinaus braucht eine eigene Rechtfertigung."
+  },
+  {
+   "f": 2,
+   "sub": "Rechtsformen",
+   "t": "mc",
+   "q": "Wie wird in Kommanditgesellschaft und Aktiengesellschaft jeweils abgestimmt?",
+   "o": [
+    {
+     "t": "In der KG grundsätzlich nach Köpfen, in der AG nach dem Anteil am Grundkapital",
+     "ok": 1
+    },
+    {
+     "t": "In beiden Fällen nach Köpfen"
+    },
+    {
+     "t": "In der KG nach Kapitalanteil, in der AG nach Köpfen"
+    },
+    {
+     "t": "In beiden Fällen entscheidet allein die Geschäftsführung"
+    }
+   ],
+   "e": "Rechtsformen unterscheiden sich nach Geschäftsführungsbefugnis, Außenvertretung, Stimmrecht, Gewinnverteilung, Haftung und Mindestkapital. Geführt und vertreten wird die KG vom Komplementär, die AG vom Vorstand. Eine GmbH mit mehr als 500 Arbeitnehmern braucht zusätzlich einen mitbestimmten Aufsichtsrat."
+  },
+  {
+   "f": 2,
+   "sub": "Materialwirtschaft",
+   "t": "calc",
+   "q": "Jahresbedarf 80.000 Stück, Einstandspreis 12 €/Stück, Bestellkosten 180 € je Vorgang, Lagerhaltungskostensatz 15 %. Berechnen Sie die optimale Bestellmenge nach Andler.",
+   "ans": 4000,
+   "unit": "Stück",
+   "e": "xopt = √(2 · 180 € · 80.000 ÷ (12 €/Stück · 0,15)) = √(28.800.000 ÷ 1,8) = √16.000.000 = 4.000 Stück. Im Optimum sind Bestellkosten und Lagerhaltungskosten gleich hoch."
+  },
+  {
+   "f": 2,
+   "sub": "Materialwirtschaft",
+   "t": "calc",
+   "q": "Bei einem Jahresbedarf von 80.000 Stück wird in Losen zu 4.000 Stück bestellt. Berechnen Sie die Lagerumschlagshäufigkeit.",
+   "ans": 40,
+   "unit": "",
+   "e": "Ø Lagerbestand = Bestellmenge ÷ 2 = 2.000 Stück. Lagerumschlagshäufigkeit = 80.000 ÷ 2.000 = 40. Daraus folgt eine durchschnittliche Lagerdauer von 360 ÷ 40 = 9 Tagen."
+  },
+  {
+   "f": 2,
+   "sub": "Materialwirtschaft",
+   "t": "calc",
+   "q": "Bei der optimalen Bestellmenge von 4.000 Stück (Jahresbedarf 80.000 Stück, Einstandspreis 12 €, Lagerhaltungskostensatz 15 %, Bestellkosten 180 €) – wie hoch sind Bestell- und Lagerhaltungskosten zusammen pro Jahr?",
+   "ans": 7200,
+   "unit": "€",
+   "e": "Lagerhaltungskosten = 2.000 Stück · 0,15 · 12 €/Stück = 3.600 €. Bestellkosten = 20 Bestellungen · 180 € = 3.600 €. Summe 7.200 €. Bei der bisherigen Bestellmenge von 1.500 Stück wären es 1.350 € + 9.720 € = 11.070 € – die Umstellung spart also 3.870 € im Jahr."
+  },
+  {
+   "f": 2,
+   "sub": "Betriebsorganisation",
+   "t": "mc",
+   "q": "Warum stellt ein Unternehmen seinen Vertrieb von einer Funktions- auf eine Spartenorganisation um?",
+   "o": [
+    {
+     "t": "Um durch Spezialisierung auf Produktgruppen näher am Kunden zu sein und den jeweiligen Absatzmarkt besser zu bearbeiten",
+     "ok": 1
+    },
+    {
+     "t": "Um die Zahl der Hierarchieebenen im Vertrieb zu verdoppeln"
+    },
+    {
+     "t": "Um Werbung, Versand und Rechnungsstellung vollständig abzuschaffen"
+    },
+    {
+     "t": "Um den Vertrieb von der Geschäftsführung unabhängig zu machen"
+    }
+   ],
+   "e": "Der funktionsorientierte Vertrieb gliedert nach Werbung, Verkauf, Versand, Kundenservice und Beschwerdemanagement, der spartenorganisierte nach Produktgruppen oder Märkten. Die Umstellung erfordert Qualifizierung des Personals, Marktanalysen, klare Zuständigkeiten und eine begleitende Projektgruppe."
+  },
+  {
+   "f": 4,
+   "sub": "Entgelt und Arbeitszeit",
+   "t": "calc",
+   "q": "Ein Facharbeiter verdient 23,40 €/Stunde im Geldakkord und fertigt dabei 13 statt der vorgegebenen 10 Stück pro Stunde. Berechnen Sie das Stückgeld (zwei Nachkommastellen).",
+   "ans": 1.8,
+   "unit": "€/Stück",
+   "e": "Stückgeld = Stundenverdienst ÷ Leistungsmenge = 23,40 €/h ÷ 13 Stück/h = 1,80 €/Stück. Beim Geldakkord wird je gefertigtem Stück ein fester Betrag gezahlt – der Verdienst steigt also proportional zur Menge."
+  },
+  {
+   "f": 4,
+   "sub": "Entgelt und Arbeitszeit",
+   "t": "calc",
+   "q": "Das Stückgeld beträgt 1,80 €, die Normalleistung 10 Stück pro Stunde. Der Akkordrichtsatz entspricht 112,5 % des Akkordgrundlohns. Berechnen Sie den Akkordgrundlohn je Stunde (zwei Nachkommastellen).",
+   "ans": 16,
+   "unit": "€/h",
+   "e": "Akkordrichtsatz = Stückgeld · Normalleistung = 1,80 €/Stück · 10 Stück/h = 18,00 €/h. Da er 112,5 % des Grundlohns entspricht: 18,00 €/h ÷ 1,125 = 16,00 €/h. Der Akkordzuschlag beträgt also 2,00 €/h."
+  },
+  {
+   "f": 4,
+   "sub": "Entgelt und Arbeitszeit",
+   "t": "calc",
+   "q": "Der Akkordgrundlohn beträgt 16,00 €/Stunde, der Akkordzuschlag wird auf 13,75 % erhöht. Die Normalleistung liegt bei 10 Stück/Stunde. Welchen Stundenverdienst erzielt ein Mitarbeiter mit 13 Stück pro Stunde (zwei Nachkommastellen)?",
+   "ans": 23.66,
+   "unit": "€/h",
+   "e": "Akkordrichtsatz = 16,00 €/h · 1,1375 = 18,20 €/h. Stückgeld = 18,20 €/h ÷ 10 Stück/h = 1,82 €/Stück. Stundenverdienst = 1,82 €/Stück · 13 Stück/h = 23,66 €/h."
+  },
+  {
+   "f": 2,
+   "sub": "Kostenrechnung",
+   "t": "mc",
+   "q": "Welches Kalkulationsverfahren passt zur Sortenfertigung?",
+   "o": [
+    {
+     "t": "Die Äquivalenzziffernkalkulation",
+     "ok": 1
+    },
+    {
+     "t": "Die einfache Divisionskalkulation"
+    },
+    {
+     "t": "Die differenzierende Zuschlagskalkulation"
+    },
+    {
+     "t": "Die Maschinenstundensatzrechnung"
+    }
+   ],
+   "e": "Zur Massenfertigung eines einzigen Produkts passt die Divisionskalkulation, zur Sortenfertigung artverwandter Produkte die Äquivalenzziffernkalkulation und zur Einzel- und Serienfertigung die erweiterte, differenzierende Zuschlagskalkulation."
+  },
+  {
+   "f": 2,
+   "sub": "Kostenrechnung",
+   "t": "calc",
+   "q": "Ein Garagentorantrieb wird für 175 € verkauft; die variablen Kosten betragen 115 €/Stück, die Fixkosten 375.000 € pro Monat. Berechnen Sie die Break-even-Menge.",
+   "ans": 6250,
+   "unit": "Stück",
+   "e": "xBEP = Kf ÷ (p − kv) = 375.000 € ÷ (175 €/Stück − 115 €/Stück) = 375.000 € ÷ 60 €/Stück = 6.250 Stück im Monat."
+  },
+  {
+   "f": 2,
+   "sub": "Kostenrechnung",
+   "t": "calc",
+   "q": "Von den variablen Kosten von 115 €/Stück entfallen 88 € auf Fertigungsmaterial; dieses wird um 15 % günstiger. Bei 175 € Verkaufspreis und 375.000 € Fixkosten – wie hoch ist die neue Break-even-Menge (auf ganze Stück aufgerundet)?",
+   "ans": 5123,
+   "unit": "Stück",
+   "e": "kv neu = 115 €/Stück − 88 €/Stück · 0,15 = 115 € − 13,20 € = 101,80 €/Stück. xBEP = 375.000 € ÷ (175 € − 101,80 €) = 375.000 € ÷ 73,20 €/Stück = 5.122,95, also 5.123 Stück. Ein Materialrabatt von 15 % senkt den Break-even um mehr als 1.100 Stück."
+  },
+  {
+   "f": 3,
+   "sub": "EDV",
+   "t": "mc",
+   "q": "Warum werden erfasste Energiedaten in einer Datenbank statt in einzelnen Dateien gespeichert?",
+   "o": [
+    {
+     "t": "Weil zentral gehaltene Daten sicherer sind, aus beliebigen Anwendungen heraus gelesen werden können und widerspruchsfrei bleiben",
+     "ok": 1
+    },
+    {
+     "t": "Weil Datenbanken keine Sicherung benötigen"
+    },
+    {
+     "t": "Weil damit die Zugriffsrechte entfallen können"
+    },
+    {
+     "t": "Weil Datenbanken automatisch die Messgeräte kalibrieren"
+    }
+   ],
+   "e": "Zentrale Speicherung vermeidet mehrfach gepflegte Bestände und damit widersprüchliche Stände. Ausgewertet wird über Abfragen, Berichte, Diagramme und statistische Kennzahlen – erfasst wird automatisch über Sensoren und Zähler oder manuell mit mobilen bzw. stationären Geräten."
+  },
+  {
+   "f": 3,
+   "sub": "Kreativitätstechniken",
+   "t": "mc",
+   "q": "Welche Methode der Ideenfindung gehört neben dem Brainstorming zum Standardrepertoire?",
+   "o": [
+    {
+     "t": "Die 6-3-5-Methode, bei der sechs Teilnehmer je drei Ideen aufschreiben und das Blatt fünfmal weitergeben",
+     "ok": 1
+    },
+    {
+     "t": "Die ABC-Analyse, die Ideen nach ihrem Wertanteil ordnet"
+    },
+    {
+     "t": "Die Nutzwertanalyse, die Ideen nach gewichteten Kriterien erzeugt"
+    },
+    {
+     "t": "Die Netzplantechnik, die Ideen nach ihrer Dauer sortiert"
+    }
+   ],
+   "e": "Weitere Methoden sind Brainwriting, Mindmapping, Analogiebildung und Perspektivwechsel. ABC-, Nutzwertanalyse und Netzplantechnik bewerten oder planen dagegen – sie erzeugen keine Ideen. Die Auswahl richtet sich nach Teilnehmerzahl, Komplexität des Themas und Zeitaufwand."
+  },
+  {
+   "f": 3,
+   "sub": "Präsentation",
+   "t": "mc",
+   "q": "Zwei Teilnehmer unterhalten sich leise während Ihrer Präsentation. Wie reagieren Sie angemessen?",
+   "o": [
+    {
+     "t": "Zunächst weitersprechen und Blickkontakt zu den beiden aufnehmen; erst bei anhaltender Störung in einer Pause direkt ansprechen",
+     "ok": 1
+    },
+    {
+     "t": "Die Präsentation sofort abbrechen und die Veranstaltung beenden"
+    },
+    {
+     "t": "Die beiden vor der Gruppe scharf zurechtweisen"
+    },
+    {
+     "t": "Die Störung vollständig ignorieren, auch wenn sie sich ausweitet"
+    }
+   ],
+   "e": "Die Reaktion sollte so gering wie möglich und so deutlich wie nötig ausfallen. Blickkontakt, eine kurze Pause oder ein Ortswechsel des Vortragenden wirken oft schon. Eine Zurechtweisung vor der Gruppe beschädigt die Gesprächsatmosphäre und lenkt erst recht vom Thema ab."
+  },
+  {
+   "f": 3,
+   "sub": "Statistik",
+   "t": "mc",
+   "q": "Eine Messreihe zeigt: Je höher die Temperatur, desto niedriger die Druckfestigkeit, und die Punkte liegen eng an der Ausgleichsgeraden. Wie beschreiben Sie den Zusammenhang?",
+   "o": [
+    {
+     "t": "Es besteht eine starke negative Korrelation zwischen Temperatur und Druckfestigkeit",
+     "ok": 1
+    },
+    {
+     "t": "Es besteht eine starke positive Korrelation"
+    },
+    {
+     "t": "Es besteht kein erkennbarer Zusammenhang"
+    },
+    {
+     "t": "Die Streuung der Punkte beweist, dass der Zusammenhang zufällig ist"
+    }
+   ],
+   "e": "Je enger die Punkte an der Geraden liegen, desto stärker der Zusammenhang; die fallende Gerade macht ihn negativ. Solche Diagramme zeigen auch andere Abhängigkeiten – etwa zwischen Wartungszyklus und Verschleiß oder zwischen Laufzeit und Ausschussquote."
+  },
+  {
+   "f": 3,
+   "sub": "Projektmanagement",
+   "t": "mc",
+   "q": "Welche Kompetenz braucht eine Projektleitung, um ein Projekt eigenverantwortlich zu führen?",
+   "o": [
+    {
+     "t": "Fach-, Führungs-, Kommunikations-, Sozial- und Organisationskompetenz",
+     "ok": 1
+    },
+    {
+     "t": "Ausschließlich Fachkompetenz, alles andere übernimmt die Linie"
+    },
+    {
+     "t": "Ausschließlich Budgetverantwortung, die fachlichen Fragen klärt der Auftragnehmer"
+    },
+    {
+     "t": "Ausschließlich Kenntnisse in der Projektsoftware"
+    }
+   ],
+   "e": "Fachkompetenz braucht sie, um mit Fachleuten auf Augenhöhe zu sprechen; Führungskompetenz, um ein Team ohne disziplinarische Weisungsbefugnis zu steuern; Kommunikations- und Sozialkompetenz für Auftraggeber, Team und Betroffene; Organisationskompetenz für Termine, Ressourcen und Kosten."
+  },
+  {
+   "f": 3,
+   "sub": "Kommunikation",
+   "t": "mc",
+   "q": "Warum legt eine Geschäftsleitung Wert darauf, die Unternehmensziele gut zu kommunizieren?",
+   "o": [
+    {
+     "t": "Weil die Mitarbeiter nur bei bekannten und transparenten Zielen daran mitwirken und Abteilungsziele daraus abgeleitet werden können",
+     "ok": 1
+    },
+    {
+     "t": "Weil die Veröffentlichung der Ziele handelsrechtlich vorgeschrieben ist"
+    },
+    {
+     "t": "Weil Ziele dadurch automatisch erreicht werden"
+    },
+    {
+     "t": "Weil damit die Zielkontrolle entfällt"
+    }
+   ],
+   "e": "Genutzt werden dafür Betriebsversammlungen, Abteilungsbesprechungen, Mitarbeitergespräche, Betriebszeitung, Intranet und Aushänge. Wichtig ist der Rückkanal: Nur wenn Rückfragen möglich sind, entsteht aus Information auch Verständnis."
+  },
+  {
+   "f": 4,
+   "sub": "Konflikte",
+   "t": "mc",
+   "q": "Welche Folge hat anhaltendes Mobbing für die betroffene Person?",
+   "o": [
+    {
+     "t": "Das Selbstvertrauen wird beschädigt, die Arbeitsleistung lässt nach und die Person kapselt sich ab",
+     "ok": 1
+    },
+    {
+     "t": "Die Person wird von den Kollegen stärker eingebunden"
+    },
+    {
+     "t": "Die Arbeitsleistung steigt durch den zusätzlichen Druck"
+    },
+    {
+     "t": "Die Fehlzeiten sinken, weil die Person Auseinandersetzungen meiden will"
+    }
+   ],
+   "e": "Auf Dauer folgen psychosomatische Beschwerden, steigende Fehlzeiten und oft die eigene Kündigung. Auch das Unternehmen trägt Kosten: schlechtes Betriebsklima, sinkende Produktivität und Verlust qualifizierter Mitarbeiter."
+  },
+  {
+   "f": 4,
+   "sub": "Konflikte",
+   "t": "mc",
+   "q": "Welche Maßnahme ergreifen Sie als Meister gegen Mobbing in Ihrem Bereich?",
+   "o": [
+    {
+     "t": "Alle Mitarbeiter für das Thema sensibilisieren, über die Folgen aufklären und schon „Spielereien“ auf Kosten Einzelner konsequent nicht dulden",
+     "ok": 1
+    },
+    {
+     "t": "Abwarten, bis sich das Opfer von sich aus beschwert"
+    },
+    {
+     "t": "Das Opfer in eine andere Abteilung versetzen und den Fall damit abschließen"
+    },
+    {
+     "t": "Die Beteiligten unter sich klären lassen, um nicht Partei zu ergreifen"
+    }
+   ],
+   "e": "Wirksam sind klare Verhaltensregeln, Vorbildfunktion der Führungskraft, frühe Gespräche mit allen Beteiligten und – wo nötig – arbeitsrechtliche Konsequenzen für die Täter. Die Versetzung des Opfers belohnt das Verhalten der Täter und löst den Konflikt nicht."
+  },
+  {
+   "f": 4,
+   "sub": "Führungsmethoden",
+   "t": "mc",
+   "q": "Worin unterscheidet sich Selbstkontrolle von Fremdkontrolle der Arbeitsergebnisse?",
+   "o": [
+    {
+     "t": "Bei der Selbstkontrolle prüfen die Mitarbeiter ihre Arbeit nach vorgegebenen Richtlinien selbst – das wirkt stark motivierend; bei der Fremdkontrolle prüft eine andere Stelle",
+     "ok": 1
+    },
+    {
+     "t": "Die Selbstkontrolle ist gesetzlich vorgeschrieben, die Fremdkontrolle freiwillig"
+    },
+    {
+     "t": "Bei der Selbstkontrolle entfallen Richtlinien und Prüfvorgaben"
+    },
+    {
+     "t": "Die Fremdkontrolle wird immer vom Betriebsrat durchgeführt"
+    }
+   ],
+   "e": "Weitere Verfahren sind die Stichprobenkontrolle, die mit geringem Aufwand auskommt, und die Vollkontrolle, die alle Teile erfasst, aber teuer ist. Die Wahl richtet sich nach Kosten, Fehlerrisiko und den Folgen eines nicht entdeckten Fehlers."
+  },
+  {
+   "f": 4,
+   "sub": "Personalentwicklung",
+   "t": "mc",
+   "q": "Wie fördern Sie Schlüsselqualifikationen wie Kooperationsfähigkeit im Betrieb?",
+   "o": [
+    {
+     "t": "Indem Sie unterschiedliche Mitarbeiter in Partner- oder Gruppenarbeit zusammenarbeiten lassen und selbst als Vorbild auftreten",
+     "ok": 1
+    },
+    {
+     "t": "Indem Sie jeden Mitarbeiter ausschließlich allein arbeiten lassen"
+    },
+    {
+     "t": "Indem Sie ausschließlich fachliche Seminare buchen"
+    },
+    {
+     "t": "Indem Sie Aufgaben strikt nach Dienstalter verteilen"
+    }
+   ],
+   "e": "Schlüsselqualifikationen sind fach- und berufsübergreifend: Kooperations-, Team- und Kommunikationsfähigkeit, Aufgeschlossenheit, Toleranz, Fairness und Hilfsbereitschaft. Sie entstehen vor allem durch Erfahrung in der Zusammenarbeit, weniger im Seminarraum."
+  },
+  {
+   "f": 5,
+   "sub": "Naturwissenschaftliche und technische Grundlagen",
+   "t": "calc",
+   "q": "Kupfer hat ein Normalpotenzial von +0,34 V, Eisen von −0,44 V. Berechnen Sie die Potenzialdifferenz zwischen beiden Metallen (zwei Nachkommastellen).",
+   "ans": 0.78,
+   "unit": "V",
+   "e": "ΔU = UCu − UFe = 0,34 V − (−0,44 V) = 0,78 V. Je größer der Abstand in der elektrochemischen Spannungsreihe, desto stärker die Kontaktkorrosion – deshalb sollten Kupfer und Stahl in Wasserleitungen nicht direkt verbunden werden."
+  },
+  {
+   "f": 5,
+   "sub": "Naturwissenschaftliche und technische Grundlagen",
+   "t": "mc",
+   "q": "Ein Stahlzwischenstück verbindet zwei Kupferleitungen; Trinkwasser wirkt als Elektrolyt. Welches Metall bildet den Pluspol und was passiert?",
+   "o": [
+    {
+     "t": "Kupfer als edleres Metall bildet den Pluspol; das unedlere Eisen löst sich auf",
+     "ok": 1
+    },
+    {
+     "t": "Eisen bildet den Pluspol; das Kupfer löst sich auf"
+    },
+    {
+     "t": "Beide Metalle lösen sich gleichmäßig auf"
+    },
+    {
+     "t": "Es passiert nichts, solange das Wasser fließt"
+    }
+   ],
+   "e": "Die Anordnung wirkt wie ein galvanisches Element. Folgen sind die Zersetzung des Stahlstücks, Undichtigkeiten an den Metallübergängen und Wasserfolgeschäden. Abhilfe schaffen gleiche Werkstoffe oder isolierende Zwischenstücke."
+  },
+  {
+   "f": 5,
+   "sub": "Naturwissenschaftliche und technische Grundlagen",
+   "t": "calc",
+   "q": "Ein elliptisches Rohrprofil hat außen 80 mm × 40 mm und innen 76 mm × 36 mm. Die zulässige Zugspannung beträgt 180 N/mm². Berechnen Sie die zulässige Zugkraft in kN (eine Nachkommastelle).",
+   "ans": 65.6,
+   "unit": "kN",
+   "e": "Die Querschnittsfläche der Ellipse ist π ÷ 4 · D · d, also S = π ÷ 4 · (80 · 40 − 76 · 36) mm² = π ÷ 4 · 464 mm² = 364,4 mm². Fzul = σzul · S = 180 N/mm² · 364,4 mm² = 65.596 N = 65,6 kN."
+  },
+  {
+   "f": 5,
+   "sub": "Naturwissenschaftliche und technische Grundlagen",
+   "t": "calc",
+   "q": "In einem Glühofen werden 6,5 t Kupfer (c = 0,39 kJ/(kg·K)) von 20 °C auf 520 °C erwärmt; der Wirkungsgrad beträgt 80 %. Berechnen Sie den Wärmebedarf in MJ (drei Nachkommastellen).",
+   "ans": 1584.375,
+   "unit": "MJ",
+   "e": "Q = m · c · ΔT ÷ η = 6.500 kg · 0,39 kJ/(kg·K) · 500 K ÷ 0,8 = 1.267.500 kJ ÷ 0,8 = 1.584.375 kJ = 1.584,375 MJ. Der Wirkungsgrad steht im Nenner, weil mehr Energie zugeführt werden muss, als im Werkstoff ankommt."
+  },
+  {
+   "f": 5,
+   "sub": "Naturwissenschaftliche und technische Grundlagen",
+   "t": "calc",
+   "q": "Ein Glühofen benötigt insgesamt 3.984,375 MJ. Erdgas hat einen Heizwert von 35 MJ/m³. Berechnen Sie den Erdgasbedarf (zwei Nachkommastellen).",
+   "ans": 113.84,
+   "unit": "m³",
+   "e": "V = Q ÷ Hi = 3.984,375 MJ ÷ 35 MJ/m³ = 113,84 m³. Der Gesamtbedarf setzt sich aus 1.584,375 MJ für das Aufheizen und 2.400 MJ für die Haltezeit bei 520 °C zusammen."
+  },
+  {
+   "f": 5,
+   "sub": "Naturwissenschaftliche und technische Grundlagen",
+   "t": "calc",
+   "q": "Ein Drehstrommotor nimmt bei 400 V und 60 A mit cos φ = 0,84 Leistung auf. Berechnen Sie die aufgenommene Wirkleistung in kW (zwei Nachkommastellen).",
+   "ans": 34.92,
+   "unit": "kW",
+   "e": "Pzu = √3 · U · I · cos φ = 1,732 · 400 V · 60 A · 0,84 = 34.918 W = 34,92 kW. Der Faktor √3 gilt für die Leistung im Drehstromnetz bezogen auf Leiterspannung und Leiterstrom."
+  },
+  {
+   "f": 5,
+   "sub": "Naturwissenschaftliche und technische Grundlagen",
+   "t": "calc",
+   "q": "Ein Elektromotor gibt unter Volllast 20 kW ab und nimmt dabei 34,92 kW auf. Berechnen Sie den Wirkungsgrad in Prozent (zwei Nachkommastellen).",
+   "ans": 57.27,
+   "unit": "%",
+   "e": "η = Pab ÷ Pzu = 20 kW ÷ 34,92 kW = 0,5727, also 57,27 %. Der geringe Wert zeigt, dass der Motor deutlich überdimensioniert ist – im Teillastbereich arbeiten Motoren schlecht."
+  },
+  {
+   "f": 5,
+   "sub": "Naturwissenschaftliche und technische Grundlagen",
+   "t": "calc",
+   "q": "Eine Meldeleuchte (2 V, 20 mA) wird an 24 V betrieben. Berechnen Sie den erforderlichen Vorwiderstand.",
+   "ans": 1100,
+   "unit": "Ω",
+   "e": "In der Reihenschaltung fällt am Vorwiderstand UV = 24 V − 2 V = 22 V ab, bei unverändertem Strom von 20 mA. RV = 22 V ÷ 0,02 A = 1.100 Ω. Seine Verlustleistung beträgt 22 V · 20 mA = 440 mW – der Widerstand ist entsprechend zu dimensionieren."
+  },
+  {
+   "f": 5,
+   "sub": "Naturwissenschaftliche und technische Grundlagen",
+   "t": "calc",
+   "q": "Eine Magnetspule nimmt an 24 V eine Leistung von 480 mW auf. Berechnen Sie ihren elektrischen Widerstand.",
+   "ans": 1200,
+   "unit": "Ω",
+   "e": "I = P ÷ U = 0,48 W ÷ 24 V = 0,02 A = 20 mA. R = U ÷ I = 24 V ÷ 0,02 A = 1.200 Ω. Gleichwertig über R = U² ÷ P = 576 ÷ 0,48 = 1.200 Ω."
+  },
+  {
+   "f": 5,
+   "sub": "Naturwissenschaftliche und technische Grundlagen",
+   "t": "calc",
+   "q": "Eine Magnetspule (20 mA) und ein Meldezweig (20 mA) liegen parallel an 24 V. Berechnen Sie die Gesamtleistung der Schaltung in mW.",
+   "ans": 960,
+   "unit": "mW",
+   "e": "In der Parallelschaltung addieren sich die Ströme: I = 20 mA + 20 mA = 40 mA. P = U · I = 24 V · 0,04 A = 0,96 W = 960 mW. Ebenso gilt: 480 mW + 480 mW = 960 mW."
+  },
+  {
+   "f": 5,
+   "sub": "Naturwissenschaftliche und technische Grundlagen",
+   "t": "calc",
+   "q": "Ein Lkw startet um 12:00 Uhr mit 50 km/h. Ein zweiter startet 15 Minuten später mit 60 km/h auf derselben Strecke. Nach welcher Entfernung holt er den ersten ein?",
+   "ans": 75,
+   "unit": "km",
+   "e": "Gleichsetzen der Wege: 50 · t = 60 · (t − 0,25 h) ergibt t = 1,5 h für den ersten Lkw. In dieser Zeit legt er 50 km/h · 1,5 h = 75 km zurück. Der zweite braucht dafür 75 ÷ 60 = 1,25 h."
+  }
+ ]
+}
