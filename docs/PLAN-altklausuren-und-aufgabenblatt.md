@@ -40,7 +40,8 @@ richtig zu lösen." – und: „Nutze diese ganzen Klausuren für unsere App."
 | **A T4** H2017 … H2014 | **angefangen** – Parser liest alle 35 Scans (Aufgabenzahl stimmt mit dem Deckblatt überein), aber nur 1 erreicht ohne Handarbeit 100/100. Termine stehen als `in_arbeit` in `JAHRGAENGE`; `build_imbq.py` lässt sie aus, bis sie abgenommen sind |
 | **C** Aufgabenserien | offen |
 | Übungsfragen (`PX-`) aus T1 bis T3 | **fertig** – 16 Quellensätze, 788 `PX-`-Fragen (vorher 327). Zu jeder der 64 neuen Prüfungen ein eigener Satz von 25 bis 43 Fragen, Schwerpunkt auf den Rechenwegen der Originallösungen |
-| Lösungszeichnungen der Methoden-Hefte | teils offen – acht Aufgaben „Stellen Sie … in einem Diagramm dar“ aus T2 haben zwar den amtlichen Lösungstext, aber noch kein Lösungsbild (`bildL`) |
+| Lösungszeichnungen der Methoden-Hefte | **fertig** – sieben der acht Aufgaben „Stellen Sie … in einem Diagramm dar“ aus T2 haben jetzt ihr Lösungsbild (`bildL`). Die achte (F2022 4 b) hat als amtliche Lösung eine Tabelle, keine Zeichnung |
+| Verrutschte Tabellen | **fertig** – sechs Datentabellen, die als Fließtext in Frage oder Ausgangslage standen, hängen als Tabellenanlage an ihrer Aufgabe. `build_amtlich.py` spielt außerdem die Textkorrekturen wieder ein, die seit dem Aufgabenblatt-Umbau ins Leere liefen |
 
 Neue Werkzeuge: `scripts/pruefungen/anlagen_extrakt.py` (Abbildungen über ihre
 Bildunterschrift aus dem Heft schneiden – ersetzt das Abmessen von Koordinaten
@@ -63,8 +64,8 @@ Stand nach T3 (in Klammern der Stand vor dieser Session):
 | Startbare Prüfungen (`P-`) | **86** (22) – 13 × Kraftverkehr FT/OK 2021–2026, 73 × Basisqualifikation F2018–H2025, alle mit amtlichen Lösungshinweisen, je 100 Punkte; 582 Aufgaben mit 1.458 Teilaufgaben | `flutter_app/assets/data/cases.json` (1,4 MB), `data/cases.js` |
 | Fallaufgaben ohne IHK-Bezug | 15 (`F-`/`R-`/`M-`/`Z-`, je 4–5 Teile, Musterlösungen) | ebd. |
 | Übungsfragen aus Prüfungen (`PX-`) | **788** (327) – 127 Kraftverkehr, 661 aus den Basisqualifikationen F2018–H2025; 498 Auswahl-, 290 Rechenfragen | `questions.json`, Quellensätze `scripts/pruefungen/fragen/*.json` |
-| Bildanlagen | **67** (14) als Dateien, 1,5 MB; 45 an einer Aufgabe, 21 an einer Lösung | `anlagen/`, `flutter_app/assets/anlagen/`, Verzeichnis in `data/anlagen.js` |
-| Tabellenanlagen | 7 (`tab`) – an Aufgabe oder Schritt | an Aufgabe oder Schritt |
+| Bildanlagen | **74** (67) als Dateien; 46 an einer Aufgabe, 29 an einer Lösung | `anlagen/`, `flutter_app/assets/anlagen/`, Verzeichnis in `data/anlagen.js` |
+| Tabellenanlagen | **14** (7) als `tab` – an Aufgabe oder Schritt | an Aufgabe oder Schritt |
 | `index.html` | **280 KB** (3,3 MB) – die Inhalte liegen daneben in `data/*.js` | Root |
 
 ### Wie eine Prüfung heute dargestellt wird
