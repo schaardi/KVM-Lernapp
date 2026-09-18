@@ -23,7 +23,9 @@ FACHLETTER = {1: 'R', 2: 'B', 3: 'M', 4: 'Z', 5: 'K'}
 # Reihenfolge der Quellensätze: bereits veröffentlichte zuerst, damit deren
 # IDs sich beim Hinzufügen neuer Sätze nicht verschieben.
 REIHENFOLGE = ['kraftverkehr-2021-2026.json', 'imbq-h2025.json',
-               'imbq-h2024.json']
+               'imbq-h2024.json',
+               # Tranche T1 (Archiv „Altklausuren“), neueste zuerst
+               'imbq-f2024.json', 'imbq-h2023.json', 'imbq-f2023.json']
 TAX = {
  1: ["Arbeitsrecht","Betriebsverfassung","Sozialversicherung","Umweltrecht","Arbeitsschutz","Vertrags- und Handelsrecht","Produkthaftung/Datenschutz"],
  2: ["Kostenrechnung","Rechnungswesen","Materialwirtschaft","Betriebsorganisation","Volkswirtschaft","Rechtsformen","Finanzierung","Controlling","Marketing"],

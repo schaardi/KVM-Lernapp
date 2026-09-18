@@ -88,10 +88,19 @@ def kompakt(x):
     return json.dumps(x, ensure_ascii=False, separators=(',', ':'))
 
 
+def als_datei(name, daten):
+    """Dateiinhalt zu einem Datensatz – ohne zu schreiben.
+
+    Getrennt von ``schreiben()``, damit ein Aufrufer vergleichen kann, ob sich
+    überhaupt etwas ändert (``tools/sync_content.py --check``).
+    """
+    return 'window.%s=%s;\n' % (name, kompakt(daten))
+
+
 def schreiben(name, daten):
     """Datensatz ablegen. Gibt die Größe der Datei in Byte zurück."""
     os.makedirs(DATEN, exist_ok=True)
-    text = 'window.%s=%s;\n' % (name, kompakt(daten))
+    text = als_datei(name, daten)
     p = pfad(name)
     with open(p, 'w', encoding='utf-8') as f:
         f.write(text)

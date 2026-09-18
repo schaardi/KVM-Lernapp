@@ -1,0 +1,555 @@
+{
+ "questions": [
+  {
+   "f": 1,
+   "sub": "Arbeitsrecht",
+   "t": "mc",
+   "q": "Worin unterscheidet sich der kalendarisch befristete vom zweckbefristeten Arbeitsvertrag?",
+   "o": [
+    {
+     "t": "Beim kalendarisch befristeten Vertrag steht das Ende nach dem Kalender fest; beim zweckbefristeten ergibt es sich aus Art, Zweck oder Beschaffenheit der Arbeitsleistung",
+     "ok": 1
+    },
+    {
+     "t": "Der kalendarisch befristete Vertrag braucht immer einen Sachgrund, der zweckbefristete nie"
+    },
+    {
+     "t": "Der zweckbefristete Vertrag endet stets nach längstens zwei Jahren"
+    },
+    {
+     "t": "Nur der zweckbefristete Vertrag bedarf der Schriftform"
+    }
+   ],
+   "e": "§ 3 Absatz 1 TzBfG unterscheidet beide Formen. Kalendarisch befristet kann ohne Sachgrund bis zu zwei Jahre vereinbart werden (§ 14 Absatz 2 TzBfG); die Zweckbefristung setzt einen Sachgrund voraus."
+  },
+  {
+   "f": 1,
+   "sub": "Arbeitsrecht",
+   "t": "mc",
+   "q": "Ein befristeter Arbeitsvertrag ist abgelaufen, der Mitarbeiter arbeitet mit Wissen des Arbeitgebers weiter und niemand widerspricht. Welche Folge hat das?",
+   "o": [
+    {
+     "t": "Das Arbeitsverhältnis gilt als auf unbestimmte Zeit verlängert (§ 15 Absatz 5 TzBfG)",
+     "ok": 1
+    },
+    {
+     "t": "Der Vertrag verlängert sich automatisch um dieselbe Befristungsdauer"
+    },
+    {
+     "t": "Die Weiterarbeit ist unwirksam, der Mitarbeiter hat keinen Vergütungsanspruch"
+    },
+    {
+     "t": "Es entsteht ein Werkvertrag"
+    }
+   ],
+   "e": "Die Fortsetzung mit Wissen des Arbeitgebers ohne unverzüglichen Widerspruch lässt das befristete Arbeitsverhältnis in ein unbefristetes umschlagen. Der Arbeitgeber muss also aktiv widersprechen, wenn er das nicht will."
+  },
+  {
+   "f": 1,
+   "sub": "Arbeitsrecht",
+   "t": "mc",
+   "q": "Wer trägt die Anwaltskosten im Verfahren erster Instanz vor dem Arbeitsgericht, wenn der Kläger verliert?",
+   "o": [
+    {
+     "t": "Jede Partei trägt ihre Anwaltskosten selbst (§ 12a Absatz 1 ArbGG)",
+     "ok": 1
+    },
+    {
+     "t": "Die unterlegene Partei trägt auch die Anwaltskosten der Gegenseite"
+    },
+    {
+     "t": "Die Kosten trägt stets der Arbeitgeber"
+    },
+    {
+     "t": "Die Kosten übernimmt die Gewerkschaft"
+    }
+   ],
+   "e": "§ 12a Absatz 1 ArbGG schließt in erster Instanz den Anspruch auf Erstattung der Anwaltskosten aus – unabhängig vom Ausgang. Das senkt die Hemmschwelle, überhaupt zu klagen."
+  },
+  {
+   "f": 1,
+   "sub": "Arbeitsrecht",
+   "t": "mc",
+   "q": "Wie lange kann eine Probezeit im unbefristeten Arbeitsverhältnis höchstens vereinbart werden?",
+   "o": [
+    {
+     "t": "Sechs Monate (§ 622 Absatz 3 BGB)",
+     "ok": 1
+    },
+    {
+     "t": "Drei Monate"
+    },
+    {
+     "t": "Zwölf Monate"
+    },
+    {
+     "t": "Zwei Jahre"
+    }
+   ],
+   "e": "Während der vereinbarten Probezeit, längstens für sechs Monate, gilt eine verkürzte Kündigungsfrist von zwei Wochen. Nach sechs Monaten greift außerdem der allgemeine Kündigungsschutz nach dem KSchG."
+  },
+  {
+   "f": 1,
+   "sub": "Arbeitsrecht",
+   "t": "mc",
+   "q": "Eine Schwangere erfährt erst nach der Kündigung von ihrer Schwangerschaft. Innerhalb welcher Frist muss sie das mitteilen, damit die Kündigung unwirksam wird?",
+   "o": [
+    {
+     "t": "Innerhalb von zwei Wochen nach Zugang der Kündigung (§ 17 MuSchG)",
+     "ok": 1
+    },
+    {
+     "t": "Innerhalb von vier Wochen"
+    },
+    {
+     "t": "Innerhalb von drei Monaten"
+    },
+    {
+     "t": "Eine Frist gibt es nicht, der Schutz gilt zeitlich unbegrenzt"
+    }
+   ],
+   "e": "War die Schwangerschaft bei Ausspruch der Kündigung unbekannt, wird die Kündigung unwirksam, wenn die Arbeitnehmerin sie binnen zwei Wochen nach Zugang mitteilt. Nach Fristablauf bleibt die Kündigung wirksam, außer die Überschreitung ist unverschuldet."
+  },
+  {
+   "f": 1,
+   "sub": "Betriebsverfassung",
+   "t": "mc",
+   "q": "In welchen Betrieben kann ein Betriebsrat gewählt werden?",
+   "o": [
+    {
+     "t": "In Betrieben mit in der Regel mindestens fünf ständig wahlberechtigten Arbeitnehmern, von denen drei wählbar sind (§ 1 Absatz 1 BetrVG)",
+     "ok": 1
+    },
+    {
+     "t": "Erst ab 20 Arbeitnehmern"
+    },
+    {
+     "t": "In jedem Betrieb ab einem Arbeitnehmer"
+    },
+    {
+     "t": "Nur in Betrieben mit mehr als 100 Arbeitnehmern"
+    }
+   ],
+   "e": "Wahlberechtigt ist, wer das 16. Lebensjahr vollendet hat (§ 7 BetrVG); wählbar, wer zusätzlich sechs Monate dem Betrieb angehört (§ 8 BetrVG). Teilzeitbeschäftigte zählen voll mit."
+  },
+  {
+   "f": 1,
+   "sub": "Betriebsverfassung",
+   "t": "mc",
+   "q": "In welchem Zeitraum finden die regelmäßigen Betriebsratswahlen statt?",
+   "o": [
+    {
+     "t": "Alle vier Jahre in der Zeit vom 1. März bis 31. Mai (§ 13 BetrVG)",
+     "ok": 1
+    },
+    {
+     "t": "Jährlich im Januar"
+    },
+    {
+     "t": "Alle zwei Jahre im Herbst"
+    },
+    {
+     "t": "Alle fünf Jahre zu einem frei wählbaren Termin"
+    }
+   ],
+   "e": "Der feste Turnus sichert bundesweit einheitliche Amtsperioden. Außerhalb dieses Zeitraums wird nur gewählt, wenn z. B. der Betriebsrat zurücktritt oder die Zahl der Mitglieder unter die vorgeschriebene Größe sinkt."
+  },
+  {
+   "f": 1,
+   "sub": "Betriebsverfassung",
+   "t": "mc",
+   "q": "Ein Auszubildender ist Mitglied der Jugend- und Auszubildendenvertretung. Was muss der Arbeitgeber tun, wenn er ihn nach der Ausbildung nicht übernehmen will?",
+   "o": [
+    {
+     "t": "Er muss es drei Monate vor Ende des Ausbildungsverhältnisses schriftlich mitteilen (§ 78a BetrVG)",
+     "ok": 1
+    },
+    {
+     "t": "Er muss gar nichts tun, das Ausbildungsverhältnis endet ohnehin"
+    },
+    {
+     "t": "Er muss die Zustimmung der Agentur für Arbeit einholen"
+    },
+    {
+     "t": "Er muss den Auszubildenden in jedem Fall übernehmen"
+    }
+   ],
+   "e": "Ohne diese rechtzeitige schriftliche Mitteilung entsteht mit Ablauf der Ausbildung ein unbefristetes Arbeitsverhältnis. Der Schutz soll verhindern, dass die Amtstätigkeit in der JAV die berufliche Zukunft kostet."
+  },
+  {
+   "f": 1,
+   "sub": "Sozialversicherung",
+   "t": "mc",
+   "q": "Ein Mitarbeiter verunglückt auf einem 5 km längeren Umweg, den er wählt, weil die Autobahn regelmäßig verstopft ist und der Umweg 15 Minuten schneller ist. Liegt ein Wegeunfall vor?",
+   "o": [
+    {
+     "t": "Ja – der Umweg ist aus triftigem Grund gewählt, weil er den Weg zur Arbeit nachweislich verkürzt",
+     "ok": 1
+    },
+    {
+     "t": "Nein – versichert ist ausschließlich die kürzeste Strecke"
+    },
+    {
+     "t": "Nein – Wegeunfälle sind nur auf Autobahnen versichert"
+    },
+    {
+     "t": "Nur wenn der Arbeitgeber den Umweg vorher genehmigt hat"
+    }
+   ],
+   "e": "Versichert ist grundsätzlich der direkte Weg zwischen Wohnung und Arbeitsstelle. Ein Umweg bleibt versichert, wenn ein triftiger, versicherungsrechtlich anerkannter Grund vorliegt – etwa eine erheblich kürzere Fahrzeit."
+  },
+  {
+   "f": 2,
+   "sub": "Betriebsorganisation",
+   "t": "mc",
+   "q": "Zwei Hersteller derselben Branche und Produktionsstufe schließen sich zusammen. Wie heißt diese Form?",
+   "o": [
+    {
+     "t": "Horizontaler Zusammenschluss",
+     "ok": 1
+    },
+    {
+     "t": "Vertikaler Zusammenschluss"
+    },
+    {
+     "t": "Anorganischer (diagonaler) Zusammenschluss"
+    },
+    {
+     "t": "Kooperation in Form eines Joint Ventures"
+    }
+   ],
+   "e": "Horizontal = gleiche Branche und Produktionsstufe, Ziel sind meist Größenvorteile. Vertikal = vor- oder nachgelagerte Stufe. Anorganisch (diagonal) = unterschiedliche Branchen, Ziel ist die Risikostreuung."
+  },
+  {
+   "f": 2,
+   "sub": "Betriebsorganisation",
+   "t": "mc",
+   "q": "Welcher Vorteil entsteht einem zusammengeschlossenen Unternehmen typischerweise in der Beschaffung?",
+   "o": [
+    {
+     "t": "Mengenrabatte und bessere Zahlungsbedingungen durch größere Einkaufsmengen",
+     "ok": 1
+    },
+    {
+     "t": "Niedrigere Fertigungslöhne durch Tarifflucht"
+    },
+    {
+     "t": "Der Wegfall der Umsatzsteuer auf Vorleistungen"
+    },
+    {
+     "t": "Automatisch kürzere Lieferzeiten aller Lieferanten"
+    }
+   ],
+   "e": "Als größerer Abnehmer rückt das Unternehmen in die A-Kunden-Gruppe und verhandelt bessere Konditionen. In der Produktion wirken Synergieeffekte und gebündeltes Know-how, im Absatz ein größerer Marktanteil und eine breitere Produktpalette."
+  },
+  {
+   "f": 2,
+   "sub": "Betriebsorganisation",
+   "t": "mc",
+   "q": "Was kennzeichnet das Einliniensystem?",
+   "o": [
+    {
+     "t": "Streng hierarchischer Aufbau – Anweisungen und Informationen laufen nur über den Instanzenweg",
+     "ok": 1
+    },
+    {
+     "t": "Jeder Mitarbeiter erhält Anweisungen von mehreren Fachvorgesetzten"
+    },
+    {
+     "t": "Neben der Linie gibt es beratende Stellen ohne Weisungsrecht"
+    },
+    {
+     "t": "Fach- und Objektzuständigkeit überlagern sich"
+    }
+   ],
+   "e": "Einlinie: klare Struktur, aber unflexibel und lange Wege. Mehrlinie: fachlich hochwertige Anweisungen, aber Gefahr von Anordnungswirrwarr. Stablinie: Linie plus beratende Stäbe ohne Weisungsrecht. Matrix: Fach- und Objektzuständigkeit gekreuzt."
+  },
+  {
+   "f": 2,
+   "sub": "Betriebsorganisation",
+   "t": "mc",
+   "q": "Welches Organisationssystem ergänzt die Linie um beratende Stellen ohne Weisungsbefugnis?",
+   "o": [
+    {
+     "t": "Das Stabliniensystem",
+     "ok": 1
+    },
+    {
+     "t": "Das Einliniensystem"
+    },
+    {
+     "t": "Das Mehrliniensystem"
+    },
+    {
+     "t": "Das Matrixsystem"
+    }
+   ],
+   "e": "Stäbe entlasten die Linie fachlich, entscheiden aber nicht. Ihr Nachteil: Sie können faktisch Einfluss nehmen, ohne Verantwortung zu tragen, und die Entscheidung verzögern."
+  },
+  {
+   "f": 2,
+   "sub": "Materialwirtschaft",
+   "t": "calc",
+   "q": "Im zweiten Quartal wurden 420 t, 386 t und 410 t eines Rohstoffs verbraucht; der durchschnittliche Lagerbestand betrug 152 t. Berechnen Sie die Umschlaghäufigkeit.",
+   "ans": 8,
+   "unit": "",
+   "e": "Umschlaghäufigkeit = Verbrauch ÷ durchschnittlicher Lagerbestand = (420 t + 386 t + 410 t) ÷ 152 t = 1.216 t ÷ 152 t = 8. Das Lager wurde im Quartal also achtmal vollständig umgeschlagen."
+  },
+  {
+   "f": 2,
+   "sub": "Materialwirtschaft",
+   "t": "mc",
+   "q": "Welche Folge hat eine erhöhte Umschlaghäufigkeit?",
+   "o": [
+    {
+     "t": "Die Lagerdauer sinkt und damit auch die Kapitalbindung",
+     "ok": 1
+    },
+    {
+     "t": "Die Kapitalbindung steigt"
+    },
+    {
+     "t": "Die Lagerverluste durch Schwund nehmen zu"
+    },
+    {
+     "t": "Die Lieferbereitschaft steigt automatisch"
+    }
+   ],
+   "e": "Positiv: kürzere Lagerdauer, weniger gebundenes Kapital, geringere Lagerverluste. Negativ: häufigere Bestellungen erhöhen die Bestellkosten, und ein knapper Bestand gefährdet die Lieferbereitschaft."
+  },
+  {
+   "f": 4,
+   "sub": "Personalentwicklung",
+   "t": "mc",
+   "q": "Welcher Faktor fördert die Persönlichkeitsentwicklung eines Auszubildenden?",
+   "o": [
+    {
+     "t": "Positive Prägung durch Familie und Gleichaltrige sowie gezielte Förderung in Schule und Betrieb",
+     "ok": 1
+    },
+    {
+     "t": "Möglichst wenig Kontakt zu anderen Auszubildenden"
+    },
+    {
+     "t": "Ausschließlich fachliche Unterweisung ohne persönliche Rückmeldung"
+    },
+    {
+     "t": "Vermeidung jeder eigenständigen Aufgabe"
+    }
+   ],
+   "e": "Die Persönlichkeit entwickelt sich aus Anlage und Umwelt. Familiärer Rückhalt, Kontakte zu Gleichaltrigen, Förderung in Schule und Betrieb sowie Erfolgserlebnisse bei eigenständigen Aufgaben wirken entwicklungsfördernd."
+  },
+  {
+   "f": 4,
+   "sub": "Motivation",
+   "t": "mc",
+   "q": "Was ist mit „Eustress“ gemeint?",
+   "o": [
+    {
+     "t": "Positiver Stress, der anspornt und die Leistungsfähigkeit kurzfristig erhöht",
+     "ok": 1
+    },
+    {
+     "t": "Stress, der ausschließlich körperliche Beschwerden auslöst"
+    },
+    {
+     "t": "Dauerhafte Überforderung mit Erschöpfungsfolge"
+    },
+    {
+     "t": "Das vollständige Fehlen jeder Anforderung"
+    }
+   ],
+   "e": "Stress ist ein Spannungszustand zwischen Anforderung und den eigenen Möglichkeiten. Eustress wirkt anspornend, Disstress dagegen belastend – anhaltend führt er zu körperlichen und psychischen Beschwerden."
+  },
+  {
+   "f": 4,
+   "sub": "Führungsmethoden",
+   "t": "mc",
+   "q": "Welcher der folgenden „Zeitdiebe“ ist ein innerer Zeitdieb?",
+   "o": [
+    {
+     "t": "Perfektionismus und der eigene überhöhte Anspruch",
+     "ok": 1
+    },
+    {
+     "t": "Ständig klingelnde Telefone"
+    },
+    {
+     "t": "Unangekündigte Besucher"
+    },
+    {
+     "t": "Unnötig lange Besprechungen"
+    }
+   ],
+   "e": "Innere Zeitdiebe liegen in der Person: Perfektionismus, Sorgen, Versagensangst, fehlende Prioritäten, Unfähigkeit „nein“ zu sagen. Äußere Zeitdiebe kommen von außen: Telefon, Besucher, ausufernde Besprechungen, unklare Aufträge."
+  },
+  {
+   "f": 4,
+   "sub": "Konflikte",
+   "t": "mc",
+   "q": "Ein Vorgesetzter delegiert Aufgaben, mischt sich aber immer wieder ein und widerruft Entscheidungen. Um welche Konfliktart handelt es sich bei ihm selbst?",
+   "o": [
+    {
+     "t": "Um einen intrapersonellen Konflikt – gegensätzliche Motive und Interessen in einer Person",
+     "ok": 1
+    },
+    {
+     "t": "Um einen Rollenkonflikt zwischen zwei Abteilungen"
+    },
+    {
+     "t": "Um einen Verteilungskonflikt um knappe Mittel"
+    },
+    {
+     "t": "Um einen Zielkonflikt zwischen Betriebsrat und Geschäftsführung"
+    }
+   ],
+   "e": "Der intrapersonelle Konflikt spielt sich im Inneren einer Person ab: Der Vorgesetzte will entlastet werden, kann aber die Verantwortung nicht loslassen. Nach außen zeigt er sich als Spannung im Verhältnis zum Stellvertreter."
+  },
+  {
+   "f": 4,
+   "sub": "Konflikte",
+   "t": "mc",
+   "q": "Was kennzeichnet eine Mediation?",
+   "o": [
+    {
+     "t": "Ein außergerichtliches, strukturiertes Verfahren, das ein neutraler Dritter leitet, ohne selbst zu entscheiden",
+     "ok": 1
+    },
+    {
+     "t": "Ein Verfahren, in dem der Mediator eine verbindliche Entscheidung trifft"
+    },
+    {
+     "t": "Ein Verfahren vor dem Arbeitsgericht"
+    },
+    {
+     "t": "Ein Schlichtungsverfahren, das der Betriebsrat anordnet"
+    }
+   ],
+   "e": "Der Mediator verantwortet den Prozess, nicht das Ergebnis: Die Parteien erarbeiten die Lösung selbst und tragen sie deshalb mit. Voraussetzung ist die Freiwilligkeit aller Beteiligten."
+  },
+  {
+   "f": 4,
+   "sub": "Führungsmethoden",
+   "t": "mc",
+   "q": "Welche Anforderung gehört in ein klärendes Gespräch über delegierte Aufgaben?",
+   "o": [
+    {
+     "t": "Eine dokumentierte Übersicht der delegierten Aufgaben und eine schriftliche Abgrenzung der Befugnisse",
+     "ok": 1
+    },
+    {
+     "t": "Die Zusicherung, dass der Vorgesetzte sich nie wieder äußert"
+    },
+    {
+     "t": "Der Verzicht auf jede Rückmeldung an den Vorgesetzten"
+    },
+    {
+     "t": "Die Weitergabe des Konflikts an die Belegschaft"
+    }
+   ],
+   "e": "Delegation braucht drei Dinge zugleich: Aufgabe, Befugnis und Verantwortung. Werden sie schriftlich abgegrenzt, entfällt der Anlass für das Hineinregieren – und beide Seiten können sich darauf berufen."
+  },
+  {
+   "f": 5,
+   "sub": "Naturwissenschaftliche und technische Grundlagen",
+   "t": "mc",
+   "q": "Welche Eigenschaft trifft auf Säuren zu?",
+   "o": [
+    {
+     "t": "Sie haben einen pH-Wert unter 7 und können unedle Metalle auflösen",
+     "ok": 1
+    },
+    {
+     "t": "Sie haben einen pH-Wert über 7"
+    },
+    {
+     "t": "Sie fühlen sich seifig an und schmecken bitter"
+    },
+    {
+     "t": "Sie sind grundsätzlich ungefährlich für die Haut"
+    }
+   ],
+   "e": "Säuren wirken ätzend, lösen unedle Metalle und Metalloxide, schmecken sauer und liegen im pH-Wert unter 7. Basen (Laugen) liegen über 7, fühlen sich seifig an und wirken ebenfalls ätzend."
+  },
+  {
+   "f": 5,
+   "sub": "Naturwissenschaftliche und technische Grundlagen",
+   "t": "mc",
+   "q": "Salzsäure und Natronlauge werden im Verhältnis 1:1 gemischt. Wie heißt die Reaktion und was entsteht?",
+   "o": [
+    {
+     "t": "Neutralisation – es entstehen gelöstes Natriumchlorid und Wasser",
+     "ok": 1
+    },
+    {
+     "t": "Oxidation – es entsteht Natriumoxid und Wasserstoff"
+    },
+    {
+     "t": "Elektrolyse – es entstehen Chlorgas und Natrium"
+    },
+    {
+     "t": "Hydrolyse – es entsteht Salzsäuregas"
+    }
+   ],
+   "e": "HCl + NaOH → NaCl + H₂O. Säure und Base heben sich gegenseitig auf; das Ergebnis ist eine neutrale Kochsalzlösung. Die Reaktion verläuft stark exotherm."
+  },
+  {
+   "f": 5,
+   "sub": "Naturwissenschaftliche und technische Grundlagen",
+   "t": "calc",
+   "q": "Ein PKW fährt 72 km/h. Der Fahrer reagiert eine Sekunde lang und bremst dann in 5 Sekunden gleichmäßig bis zum Stillstand. Berechnen Sie den Anhalteweg.",
+   "ans": 70,
+   "unit": "m",
+   "e": "72 km/h = 20 m/s. Reaktionsweg s₁ = v · t₁ = 20 m/s · 1 s = 20 m. Bremsweg bei gleichmäßiger Verzögerung s₂ = ½ · v · t₂ = ½ · 20 m/s · 5 s = 50 m. Anhalteweg = 20 m + 50 m = 70 m – das Hindernis in 75 m Entfernung wird also nicht erreicht."
+  },
+  {
+   "f": 5,
+   "sub": "Naturwissenschaftliche und technische Grundlagen",
+   "t": "calc",
+   "q": "Ein PKW wird aus 72 km/h in 5 Sekunden gleichmäßig bis zum Stillstand abgebremst. Berechnen Sie den Betrag der Verzögerung.",
+   "ans": 4,
+   "unit": "m/s²",
+   "e": "72 km/h = 20 m/s. a = Δv ÷ t = 20 m/s ÷ 5 s = 4 m/s². Zum Vergleich: eine Vollbremsung auf trockener Fahrbahn erreicht rund 8 bis 9 m/s²."
+  },
+  {
+   "f": 5,
+   "sub": "Naturwissenschaftliche und technische Grundlagen",
+   "t": "calc",
+   "q": "Ein 6 m langes Winkelprofil hat die Querschnittsfläche 4,79 cm² und eine Dichte von 2,70 kg/dm³. Berechnen Sie seine Masse.",
+   "ans": 7.76,
+   "unit": "kg",
+   "e": "Volumen V = S · l = 4,79 cm² · 600 cm = 2.874 cm³ = 2,874 dm³. Masse m = V · ρ = 2,874 dm³ · 2,70 kg/dm³ = 7,76 kg. Die Dichte 2,70 kg/dm³ weist auf Aluminium hin."
+  },
+  {
+   "f": 5,
+   "sub": "Naturwissenschaftliche und technische Grundlagen",
+   "t": "calc",
+   "q": "Ein Profil mit der Querschnittsfläche 4,79 cm² wird mit 36.000 N auf Zug belastet. Berechnen Sie die Zugspannung in N/mm².",
+   "ans": 75.16,
+   "unit": "N/mm²",
+   "e": "σ = F ÷ S. Die Fläche in mm²: 4,79 cm² = 479 mm². σ = 36.000 N ÷ 479 mm² = 75,16 N/mm². Zum Vergleich: Baustahl S235 hat eine Streckgrenze von 235 N/mm²."
+  },
+  {
+   "f": 5,
+   "sub": "Naturwissenschaftliche und technische Grundlagen",
+   "t": "mc",
+   "q": "Welche Schutzmaßnahme gehört beim Umgang mit Säuren und Basen zur persönlichen Schutzausrüstung?",
+   "o": [
+    {
+     "t": "Undurchlässige Handschuhe und armbedeckende Kleidung",
+     "ok": 1
+    },
+    {
+     "t": "Eine Staubmaske der Klasse FFP1"
+    },
+    {
+     "t": "Gehörschutz"
+    },
+    {
+     "t": "Sicherheitsschuhe der Klasse S1"
+    }
+   ],
+   "e": "Gefährdet sind vor allem Haut und Augen. Dagegen schützen undurchlässige Handschuhe, armbedeckende Kleidung, Hautschutzmittel und eine Schutzbrille bzw. ein Gesichtsschutz; bei Dämpfen zusätzlich Atemschutz und Absaugung."
+  }
+ ]
+}

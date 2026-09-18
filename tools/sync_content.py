@@ -43,6 +43,15 @@ REPO_ROOT = Path(__file__).resolve().parents[1]
 ASSET_DIR = REPO_ROOT / "flutter_app" / "assets" / "data"
 QUESTIONS_OUT = ASSET_DIR / "questions.json"
 CASES_OUT = ASSET_DIR / "cases.json"
+# Seit die Web-App ihre Inhalte aus data/*.js lädt (nicht mehr inline aus
+# index.html), ist sie ein zweites Ziel dieses Syncs. Ohne das blieb sie auf dem
+# Stand des letzten Umbaus stehen: 157 Fragen fehlten, und bei 416 weiteren
+# fehlten die Erklärungen zu den falschen Antworten.
+sys.path.insert(0, str(REPO_ROOT / "tools"))
+import webdaten as W          # noqa: E402  – Pfad muss vorher stehen
+
+WEB_QUESTIONS = Path(W.pfad("KVM_QUESTIONS"))
+WEB_CASES = Path(W.pfad("KVM_CASES"))
 
 VALID_TYPES = {"mc", "calc", "open"}
 
@@ -391,18 +400,27 @@ def main(argv: list[str] | None = None) -> int:
     q_new, c_new = dump_compact(questions), dump_compact(cases)
     q_old_txt = QUESTIONS_OUT.read_text(encoding="utf-8") if QUESTIONS_OUT.exists() else None
     c_old_txt = CASES_OUT.read_text(encoding="utf-8") if CASES_OUT.exists() else None
+    qw_new, cw_new = W.als_datei("KVM_QUESTIONS", questions), W.als_datei("KVM_CASES", cases)
+    qw_old = WEB_QUESTIONS.read_text(encoding="utf-8") if WEB_QUESTIONS.exists() else None
+    cw_old = WEB_CASES.read_text(encoding="utf-8") if WEB_CASES.exists() else None
 
     print(summarize("Fragen", questions, _current(QUESTIONS_OUT)))
     print(summarize("Fälle ", cases, _current(CASES_OUT)))
 
-    up_to_date = (q_new == q_old_txt) and (c_new == c_old_txt)
+    up_to_date = (q_new == q_old_txt and c_new == c_old_txt
+                  and qw_new == qw_old and cw_new == cw_old)
 
     if args.check:
         if up_to_date:
-            print("OK: App-Assets sind auf dem Stand des Contents.")
+            print("OK: App- und Web-Daten sind auf dem Stand des Contents.")
             return 0
-        print("ABWEICHUNG: App-Assets weichen vom Content ab – `python tools/sync_content.py` ausführen.",
-              file=sys.stderr)
+        wo = []
+        if q_new != q_old_txt or c_new != c_old_txt:
+            wo.append("App-Assets")
+        if qw_new != qw_old or cw_new != cw_old:
+            wo.append("Web-Daten (data/*.js)")
+        print("ABWEICHUNG: %s weichen vom Content ab – `python tools/sync_content.py` ausführen."
+              % " und ".join(wo), file=sys.stderr)
         return 2
 
     if up_to_date:
@@ -412,7 +430,11 @@ def main(argv: list[str] | None = None) -> int:
     ASSET_DIR.mkdir(parents=True, exist_ok=True)
     QUESTIONS_OUT.write_text(q_new, encoding="utf-8")
     CASES_OUT.write_text(c_new, encoding="utf-8")
-    print(f"Geschrieben: {QUESTIONS_OUT.relative_to(REPO_ROOT)} & {CASES_OUT.relative_to(REPO_ROOT)}")
+    WEB_QUESTIONS.write_text(qw_new, encoding="utf-8")
+    WEB_CASES.write_text(cw_new, encoding="utf-8")
+    print("Geschrieben: %s & %s (App) · %s & %s (Web)"
+          % (QUESTIONS_OUT.relative_to(REPO_ROOT), CASES_OUT.relative_to(REPO_ROOT),
+             WEB_QUESTIONS.relative_to(REPO_ROOT), WEB_CASES.relative_to(REPO_ROOT)))
     return 0
 
 
