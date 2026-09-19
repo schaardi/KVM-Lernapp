@@ -75,6 +75,13 @@ HEFTE = {
     'bwf16': 'BQ 2016/Mai/BWH 2016 Mai.pdf',
     'mif16': 'BQ 2016/Mai/MIKP 2016 Mai.pdf',
     'ntf16': 'BQ 2016/Mai/NTG 2016 Mai.pdf',
+    'mih15': 'BQ 2015/November/MIKP 2015 November.pdf',
+    'nth15': 'BQ 2015/November/NTG 2015 November.pdf',
+    'bwf15': 'BQ 2015/Mai/BWH 2015 Mai.pdf',
+    'mih14': 'BQ 2014/November/MIKP 2014 November.pdf',
+    'nth14': 'BQ 2014/November/NTG 2014 November.pdf',
+    'mif15': 'BQ 2015/Mai/MIKP 2015 Mai.pdf',
+    'ntf15': 'BQ 2015/Mai/NTG 2015 Mai.pdf',
     'bwh20': 'BQ 2020/November/BWH 2020 November.pdf',
     'reh22': 'BQ 2022/November/RBH 2022 November.pdf',
 }
@@ -184,6 +191,52 @@ FIGUREN = {
                          'Anlage 1 zu Aufgabe 7 a): Urwertkarte der zwölf Stichproben'),
     'ntf16-l-urwertkarte':('ntf16', 10, (130, 290, 500, 470),
                          'Lösung 7 a): Urwertkarte mit den Toleranzgrenzen OGW und UGW'),
+    'mih15-l-histogramm':('mih15', 6, (75, 528, 555, 435),
+                         'Lösung 4: Säulendiagramm der relativen Häufigkeiten der Füllmengen'),
+    'nth15-seil':       ('nth15', 4, (195, 525, 320, 180),
+                         'Abbildung: Lampe am Stahlseil über der 30 m breiten Straße (Durchhang 0,66 m)'),
+    'nth15-zylinder':   ('nth15', 5, (240, 555, 240, 190),
+                         'Abbildung: doppelt wirkender Arbeitszylinder mit einseitiger Kolbenstange (v1 aus, v2 ein)'),
+    'nth15-ebene':      ('nth15', 7, (185, 472, 365, 110),
+                         'Abbildung: Wagen mit Last auf der schiefen Ebene, gezogen über Umlenkrolle und Seilwinde'),
+    # Die Anlagenseite steht im Render auf dem Kopf – der Zuschnitt wird
+    # gedreht (5. Eintrag: Grad gegen den Uhrzeigersinn).
+    'nth15-wnetz':      ('nth15', 10, (58, 183, 577, 800),
+                         'Anlage 1 zu Aufgabe 7 d): Wahrscheinlichkeitsnetz für Rmax in µm', 180),
+    'nth15-l-wnetz':    ('nth15', 11, (200, 208, 525, 760),
+                         'Lösung 7 d): Gerade der Summenhäufigkeit durch x̄ – 3s = 3,17 µm und x̄ + 3s = 4,38 µm'),
+    'bwf15-l-organigramm':('bwf15', 5, (95, 362, 535, 215),
+                         'Lösung 2 b): Matrixorganisation mit vier funktionalen Abteilungen und zwei Querschnittseinheiten'),
+    'bwf15-l-bab':      ('bwf15', 13, (215, 45, 545, 1035),
+                         'Anlage 1 zu Lösung 5: Betriebsabrechnungsbogen mit innerbetrieblicher Leistungsverrechnung', -90),
+    'mif15-l-kreis':    ('mif15', 7, (78, 498, 565, 380),
+                         'Lösung 3 b): Anteile an den Fehlerkosten als Kreisdiagramm'),
+    'ntf15-schaltung':  ('ntf15', 4, (185, 243, 290, 105),
+                         'Abbildung: Schaltung aus R1, R2 und R3 (U = 24 V, I = 2 A, U2 = 18 V, R3 = 36 Ω)'),
+    'ntf15-zugstange':  ('ntf15', 6, (243, 264, 215, 145),
+                         'Abbildung: Querschnitt der Zugstange – Quadrat b × b mit zwei angesetzten Halbkreisen'),
+    'ntf15-rampe':      ('ntf15', 7, (200, 268, 300, 112),
+                         'Abbildung: Stahlkörper auf der Stahlrampe (8 m lang, 0,5 m hoch) mit der Kraft F'),
+    'ntf15-winde':      ('ntf15', 8, (258, 258, 152, 270),
+                         'Abbildung: Bauwinde mit Seiltrommel (Durchmesser d, Drehzahl n) und Last m in h = 25 m'),
+    'ntf15-saeulen':    ('ntf15', 11, (118, 635, 490, 385),
+                         'Anlage 1 zu Aufgabe 7 f): Schema für das Säulendiagramm der Einzelhäufigkeiten'),
+    'ntf15-l-saeulen':  ('ntf15', 10, (78, 592, 462, 375),
+                         'Lösung 7 f): Säulendiagramm der prozentualen Einzelhäufigkeiten'),
+    'mih14-l-minmax':   ('mih14', 5, (75, 250, 560, 470),
+                         'Lösung 2: Min-Max-Diagramm der Lagertemperaturen der Hilfsstoffe A bis I'),
+    # Netz- und Balkenplan quer gedruckt: Seite 9 und 11 im Uhrzeigersinn,
+    # Seite 12 gegen den Uhrzeigersinn zurückdrehen
+    'mih14-netzplan':   ('mih14', 9, (265, 180, 330, 905),
+                         'Anlage 1 zu Aufgabe 4 a): Netzplan mit den Vorgängen A bis I (Dauer in Tagen)', -90),
+    'mih14-l-netzplan': ('mih14', 11, (268, 180, 395, 910),
+                         'Lösung 4 a): berechneter Netzplan (FAZ, FEZ, SAZ, SEZ, Puffer) mit kritischem Pfad', -90),
+    'mih14-l-balkenplan':('mih14', 12, (325, 50, 215, 890),
+                         'Lösung 4 b): Balkenplan der Vorgänge A bis I (Zeit in Tagen)', 90),
+    'nth14-wnetz':      ('nth14', 10, (60, 268, 555, 780),
+                         'Anlage 1 zu Aufgabe 7 a) bis c): Wahrscheinlichkeitsnetz für die Füllmenge in ml'),
+    'nth14-l-wnetz':    ('nth14', 12, (60, 260, 600, 795),
+                         'Lösung 7 a): Wahrscheinlichkeitsgerade mit UGW, OGW und der Geraden zu e)'),
     # ---- Heftform L-ALT (2018). Die Hefte setzen alles als Vektorgrafik und
     # beschriften ihre Abbildungen nicht – deshalb durchweg Zuschnitt.
     'ntf18-rohrprofil': ('ntf18', 3, (248, 233, 205, 210),
@@ -339,7 +392,9 @@ def baue(pdf_dir, schluessel=None):
     tmp = os.path.join(ZIEL, '_tmp')
     faktor = RENDER_DPI / 100.0
     gebaut = []
-    for key, (heft, seite, box, titel) in sorted(FIGUREN.items()):
+    for key, spec in sorted(FIGUREN.items()):
+        heft, seite, box, titel = spec[:4]
+        drehung = spec[4] if len(spec) > 4 else 0
         if schluessel and key not in schluessel:
             continue
         pdf = os.path.join(pdf_dir, HEFTE[heft])
@@ -354,6 +409,8 @@ def baue(pdf_dir, schluessel=None):
             x, y, b, h = (int(v * faktor) for v in (x, y, b, h))
             teile.append(trimmen(seitenimg.crop((x, y, x + b, y + h))))
         img = stapeln(teile)
+        if drehung:
+            img = img.rotate(drehung, expand=True, fillcolor='white')
         if img.width > MAX_BREITE:
             hoehe = round(img.height * MAX_BREITE / img.width)
             img = img.resize((MAX_BREITE, hoehe), Image.LANCZOS)

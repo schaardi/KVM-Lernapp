@@ -25,6 +25,17 @@ BILDER = {
     ('MI', 'f2016', 5, '*'): 'mif16-balkenplan',
     ('NT', 'f2016', 5, '*'): 'ntf16-ventil',
     ('NT', 'f2016', 7, '*'): 'ntf16-urwertkarte',
+    ('NT', 'h2015', 3, '*'): 'nth15-seil',
+    ('NT', 'h2015', 4, '*'): 'nth15-zylinder',
+    ('NT', 'h2015', 6, '*'): 'nth15-ebene',
+    ('NT', 'h2015', 7, '*'): 'nth15-wnetz',
+    ('NT', 'f2015', 2, '*'): 'ntf15-schaltung',
+    ('NT', 'f2015', 4, '*'): 'ntf15-zugstange',
+    ('NT', 'f2015', 5, '*'): 'ntf15-rampe',
+    ('NT', 'f2015', 6, '*'): 'ntf15-winde',
+    ('NT', 'f2015', 7, 'f'): 'ntf15-saeulen',
+    ('MI', 'h2014', 4, 'a'): 'mih14-netzplan',
+    ('NT', 'h2014', 7, '*'): 'nth14-wnetz',
 
     # Naturwissenschaft und Technik, Frühjahr 2023
     ('NT', 'f2023', 2, '*'): 'ntf23-kettenspanner',
@@ -124,6 +135,16 @@ BILDER_L = {
     ('BW', 'f2016', 6, 'a'): 'bwf16-l-kosten',
     ('MI', 'f2016', 4, 'a'): 'mif16-l-kosten',
     ('NT', 'f2016', 7, 'a'): 'ntf16-l-urwertkarte',
+    ('MI', 'h2015', 4, 'a'): 'mih15-l-histogramm',
+    ('NT', 'h2015', 7, 'd'): 'nth15-l-wnetz',
+    ('BW', 'f2015', 2, 'b'): 'bwf15-l-organigramm',
+    ('BW', 'f2015', 5, 'a'): 'bwf15-l-bab',
+    ('MI', 'f2015', 3, 'b'): 'mif15-l-kreis',
+    ('NT', 'f2015', 7, 'f'): 'ntf15-l-saeulen',
+    ('MI', 'h2014', 2, 'a'): 'mih14-l-minmax',
+    ('MI', 'h2014', 4, 'a'): 'mih14-l-netzplan',
+    ('MI', 'h2014', 4, 'b'): 'mih14-l-balkenplan',
+    ('NT', 'h2014', 7, 'a'): 'nth14-l-wnetz',
 
     # ---- Archiv „Altklausuren“, Heftform L-ALT 2018
     ('MI', 'f2018', 4, 'a'): 'mif18-l-diagramm',
@@ -449,6 +470,151 @@ _PROJEKTKOSTEN_F2016 = {
     ],
 }
 
+_BECHER_H2014 = {
+    'titel': 'Aufgabe 5: Produktionsprogramm des letzten Monates',
+    'kopf': ['Typ', 'Produktionsmenge (in Verpackungseinheiten)', 'Gewicht (kg/Verpackungseinheit)'],
+    'zeilen': [
+        ['S 125 ml', '8.900', '3,50'], ['M 250 ml', '6.750', '4,20'], ['L 500 ml', '3.200', '7,70'],
+    ],
+}
+
+_BAB_H2014 = {
+    'titel': 'Aufgabe 7: Werte aus dem Betriebsabrechnungsbogen',
+    'kopf': ['Kostenstelle', 'Fertigungshauptkostenstelle A', 'Fertigungshauptkostenstelle B',
+             'Material', 'Verwaltung und Vertrieb'],
+    'zeilen': [
+        ['Gemeinkosten', '1.603.674 €', '3.284.225 €', '2.839.788 €', '5.495.010 €'],
+        ['Fertigungsmaterial', '', '', '22.538.000 €', ''],
+        ['Fertigungslohnkosten', '378.225 €', '756.110 €', '', ''],
+    ],
+}
+
+_HILFSSTOFFE_H2014 = {
+    'titel': 'Aufgabe 2: Lagertemperaturen der Hilfsstoffe',
+    'kopf': ['Hilfsstoff', 'Minimaltemperatur', 'Maximaltemperatur', 'Lagerbox-Typ'],
+    'zeilen': [
+        ['A', '2 °C', '10 °C', 'T1'], ['B', '2 °C', '16 °C', 'T1'], ['C', '10 °C', '17 °C', 'T1'],
+        ['D', '10 °C', '18 °C', 'T2'], ['E', '10 °C', '15 °C', 'T2'], ['F', '15 °C', '24 °C', 'T2'],
+        ['G', '20 °C', '25 °C', 'T3'], ['H', '25 °C', '50 °C', 'T3'], ['I', '25 °C', '42 °C', 'T3'],
+    ],
+}
+
+_LEISTUNGEN_F2015 = {
+    'titel': 'Aufgabe 5: Leistungen der Hilfskostenstellen im April',
+    'kopf': ['Empfänger', 'Fuhrpark', 'Arbeitsvorbereitung', 'Instandhaltung'],
+    'zeilen': [
+        ['Fuhrpark', '–', '–', '–'], ['Material', '900 km', '–', '–'],
+        ['Arbeitsvorbereitung', '300 km', '–', '–'],
+        ['Instandhaltung', '200 km', '10 %', '–'],
+        ['Fertigung A', '400 km', '40 %', '420 Std.'],
+        ['Fertigung B', '500 km', '50 %', '480 Std.'],
+        ['Verwaltung und Vertrieb', '3.700 km', '–', '–'],
+    ],
+}
+
+_DB_F2015 = {
+    'titel': 'Anlage 2 zu Aufgabe 6: Deckungsbeitragsrechnung (auszufüllen)',
+    'kopf': ['', 'Produkt A', 'Produkt B', 'Produkt C', 'Produkt D', 'Summe'],
+    'zeilen': [
+        ['p (€/Stück)', '18,30', '10,40', '15,20', '7,50', ''],
+        ['kv (€/Stück)', '11,98', '6,30', '8,59', '8,43', ''],
+        ['db (€/Stück)', '', '', '', '', ''],
+        ['x (Stück)', '7.200', '14.300', '9.400', '23.800', ''],
+        ['DB (€)', '', '', '', '', ''],
+        ['Kf (€)', '', '', '', '', '150.000,00'],
+        ['Betriebsergebnis (€)', '', '', '', '', ''],
+    ],
+}
+
+_BLECHE_F2015 = {
+    'titel': 'Aufgabe 7: Blechsorten und Kostenerfahrungswerte',
+    'kopf': ['Stärke (mm)', 'Menge (t)', 'Zunahme der Fertigungskosten pro Tonne gegenüber 1,0 mm'],
+    'zeilen': [
+        ['0,4', '1.500', '40 %'], ['0,6', '1.000', '25 %'],
+        ['0,8', '1.800', '5 %'], ['1,0', '2.100', '–'],
+    ],
+}
+
+_VORGAENGE_F2015 = {
+    'titel': 'Aufgabe 2: Abschätzung des Arbeitszeitaufwandes (Dauer in Personentagen)',
+    'kopf': ['Vorgänge', 'Dauer'],
+    'zeilen': [
+        ['Ist-Analyse', '40'], ['Soll-Analyse', '30'], ['Anpassung der Software', '60'],
+        ['Installation der Hard- und Software', '50'], ['Tests', '20'],
+        ['Einweisung der Mitarbeiter', '20'], ['Dokumentation', '20'],
+        ['Summe Tätigkeiten bis hier', '240'], ['geteilt durch 4 Monate', '60'],
+        ['geteilt durch 20 Arbeitstage pro Monat', '3'],
+        ['Ergebnis', 'Es werden rechnerisch drei Personen benötigt.'],
+    ],
+}
+
+_FEHLER_F2015 = {
+    'titel': 'Aufgabe 3: Fehlerursachen der Pilotanlage',
+    'kopf': ['Fehlerursache', 'Anteil an der Gesamtproduktion'],
+    'zeilen': [
+        ['mangelnde Dokumentation', '8 %'], ['mangelhafte Maßhaltigkeit', '7 %'],
+        ['mangelhafte Beschaffenheit der Oberfläche', '5 %'], ['Korrosion', '4 %'],
+        ['Gesamtfehlerquote', '24 %'],
+    ],
+}
+
+_UMSATZ_F2015 = {
+    'titel': 'Aufgabe 6: Jahresumsatz je Erzeugnisgruppe',
+    'kopf': ['Erzeugnisgruppe', 'Jahresumsatz'],
+    'zeilen': [
+        ['A', '24.360 €'], ['B', '74.810 €'], ['C', '56.400 €'], ['D', '240.310 €'],
+        ['E', '18.160 €'], ['F', '540.200 €'], ['G', '160.200 €'], ['H', '84.240 €'],
+        ['gesamt', '1.198.680 €'],
+    ],
+}
+
+_AIRBAG_F2015 = {
+    'titel': 'Aufgabe 7: Auslösezeiten der Stichprobe (n = 32)',
+    'kopf': ['Messergebnis in ms', '27', '28', '29', '30', '31', '32', '33', '34'],
+    'zeilen': [['absolute Einzelhäufigkeit', '1', '2', '6', '10', '8', '3', '1', '1']],
+}
+
+_CONTROLLING_H2015 = {
+    'titel': 'Aufgabe 6: Daten aus dem Controlling',
+    'kopf': ['Monat', 'August', 'September'],
+    'zeilen': [
+        ['Produktions- und Absatzmenge', '5.400 Stück', '6.750 Stück'],
+        ['Beschäftigungsgrad', '72 %', '90 %'],
+        ['Gesamtkosten', '504.000 €', '585.000 €'],
+        ['Betriebsergebnis', '–18.000 €', '+22.500 €'],
+    ],
+}
+
+_ABC_H2015 = {
+    'titel': 'Aufgabe 2: Mengen und Einkaufswerte der acht Materialien',
+    'kopf': ['Produkt', 'Menge', 'gesamter Einkaufswert'],
+    'zeilen': [
+        ['A', '4.500', '290.000 €'], ['B', '7.000', '80.000 €'],
+        ['C', '11.000', '20.000 €'], ['D', '5.500', '10.000 €'],
+        ['E', '9.000', '40.000 €'], ['F', '8.000', '60.000 €'],
+        ['G', '4.000', '260.000 €'], ['H', '1.000', '240.000 €'],
+    ],
+}
+
+_FUELLMENGEN_H2015 = {
+    'titel': 'Aufgabe 4: Gemessene Füllmengen (80 Messungen)',
+    'kopf': ['Nummer', 'Füllmenge von (g)', 'Füllmenge bis (g)', 'Anzahl'],
+    'zeilen': [
+        ['1', '65', '66', '2'], ['2', '66', '67', '4'], ['3', '67', '68', '8'],
+        ['4', '68', '69', '16'], ['5', '69', '70', '22'], ['6', '70', '71', '14'],
+        ['7', '71', '72', '8'], ['8', '72', '73', '4'], ['9', '73', '74', '2'],
+    ],
+}
+
+_RAUTIEFE_H2015 = {
+    'titel': 'Aufgabe 7: Stichprobe – maximale Rautiefe Rmax in µm',
+    'kopf': ['Stichprobe', 'Rmax in µm', 'Stichprobe', 'Rmax in µm'],
+    'zeilen': [
+        ['1', '3,7', '7', '3,8'], ['2', '4,0', '8', '3,9'], ['3', '3,8', '9', '3,4'],
+        ['4', '3,9', '10', '3,8'], ['5', '4,1', '11', '3,5'], ['6', '3,6', '12', '3,8'],
+    ],
+}
+
 _CONTROLLING_H2017 = {
     'titel': 'Aufgabe 7: Daten aus dem Controlling',
     'kopf': ['Monat', 'September', 'Oktober'],
@@ -473,6 +639,20 @@ TABELLEN = {
     ('NT', 'h2016', 7, '*'): _STICHPROBE_H2016,
     ('MI', 'f2016', 2, '*'): _PAARVERGLEICH_F2016,
     ('MI', 'f2016', 4, '*'): _PROJEKTKOSTEN_F2016,
+    ('BW', 'h2015', 6, '*'): _CONTROLLING_H2015,
+    ('MI', 'h2015', 2, '*'): _ABC_H2015,
+    ('MI', 'h2015', 4, '*'): _FUELLMENGEN_H2015,
+    ('NT', 'h2015', 7, '*'): _RAUTIEFE_H2015,
+    ('BW', 'f2015', 5, '*'): _LEISTUNGEN_F2015,
+    ('BW', 'f2015', 6, '*'): _DB_F2015,
+    ('BW', 'f2015', 7, '*'): _BLECHE_F2015,
+    ('MI', 'f2015', 2, '*'): _VORGAENGE_F2015,
+    ('MI', 'f2015', 3, '*'): _FEHLER_F2015,
+    ('MI', 'f2015', 6, '*'): _UMSATZ_F2015,
+    ('NT', 'f2015', 7, '*'): _AIRBAG_F2015,
+    ('BW', 'h2014', 5, '*'): _BECHER_H2014,
+    ('BW', 'h2014', 7, '*'): _BAB_H2014,
+    ('MI', 'h2014', 2, '*'): _HILFSSTOFFE_H2014,
     ('BW', 'h2024', 6, 'a'): _KOSTENTABELLE,
     ('BW', 'h2024', 6, 'b'): _KOSTENTABELLE,
     ('BW', 'h2025', 5, 'a'): _GESCHAEFTSFAELLE,

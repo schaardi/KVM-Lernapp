@@ -443,10 +443,6 @@ INTRO = {
      "Arbeitszeitkonto angesammelt werden. Die unter Umständen geleistete "
      "Mehrarbeit wird durch Freizeit innerhalb eines halben Kalenderjahres "
      "ausgeglichen.",
-    ('BW', 2):
-     "In der Aufbauorganisation unterscheidet man unter anderem in\n"
-     "– Einliniensysteme,\n– Stabliniensysteme und\n– Zweiliniensysteme "
-     "(Matrixorganisationen).",
     ('BW', 3):
      "Die Beschaffungsprozesse der Industrie AG sollen unter "
      "Kostengesichtspunkten analysiert werden. Exemplarisch soll das "

@@ -186,13 +186,18 @@ PARA_VO = re.compile(r'(\[VO:\s*)(?:\$|&|8)\s*(?=\d)')
 
 # Kopf- und Fußzeilen der gescannten Seiten – in vielen Lesarten.
 SCAN_JUNK = re.compile(
-    r'^(?:\W?E?GEPR[ÜU]FTE|\W?E?PR[ÜU]FTEI|FACHRICHTUNGS|BASISQUALIFIKATIONEN\s*$'
+    r'^(?:\W{0,2}\s*E?GEPR[ÜU]\s?FTE|\(?[BR]P[:\-]?\s?[\dA-Z][\d.,\sA-Z]*\)\s*$|\W?E?PR[ÜU]FTEI|FACHRICHTUNGS|RICHTUNGS[ÜU]BERGREIFENDE|BASISQUALIFIKATIONEN\s*$'
     r'|GRUNDLEGENDE QUALIFIKATIONEN\s*$|Grundlegende Qualifikationen,'
     r'|Information, Kommunikation und Planung\s*$|Anwendung ?von ?Methoden ?der'
-    r'|\|?\s*Seite\s+\S{1,3}\s*(?:[|}\]]|$|©|DIHK)|\W{0,2}\s*DIHK\b|Die Vervielf.*Publikation'
-    r'|ist \w+ gest\w+tet\b|und strafbar\b|\|?\s*[PL]\s?\d{3}-\d{2}-\d{4}-\d)')
+    r'|Ber[üu]cksichtigung naturw'
+    r'|\|?\s*Seite\s+\S{1,3}\s*(?:[|}\]]|$|©|DIHK)|\W{0,2}\s*DIHK\b|Die Vervie\w*.*Publika'
+    r'|is\S \w+ gest\w+\b.*Urh|und strafbar\b|\|?\s*[PL]\s?\d{3}-\d{2}-\d{4}-\d'
+    r'|derhandlung wird Strafantrag|Strafantrag gestellt\.?\s*$)')
 
-BULLET = re.compile(r'^(?:[m=u«»■•®°*eaws&_]|m=|=m|s=|wm|mm|ms|sm|sw|ws|za|--|—|-)(?:\s+_)?\s+(?=\S)')
+BULLET = re.compile(r'^(?:[m=u«»■•®°*eaws&_">]|m=|=m|s=|=»|s»|"=|="|«=|®=|"»|=“|”=|wm|mm|ms|sm|sw|ws|za|--|—|-)'
+                    r'(?:\s+_)*\s+_?(?=\S)')
+# Aufzählungszeichen direkt hinter dem Teilmarker: „a) = Personengesellschaften“
+MARKER_BULLET = re.compile(r'^([a-h]\)\s+)(\S.*)$')
 KLAMMER = re.compile(r'\{\s*(\d+)\s*Punkte?\s*[)}]|\(\s*(\d+)\s*Punkte?\s*\}')
 
 
@@ -225,6 +230,14 @@ def zeile(l, protokoll=None, fortsetzung=False):
     l = KLAMMER.sub(lambda m: '(%s Punkte)' % (m.group(1) or m.group(2)), l)
     l = re.sub(r'\((\d+)\s*Punktes\)', r'(\1 Punkte)', l)
     l = BULLET.sub('– ', l)
+    m = MARKER_BULLET.match(l)
+    if m and BULLET.match(m.group(2)):
+        l = m.group(1) + BULLET.sub('– ', m.group(2))
+    # „.Z,B:“, „Z.B:“, „z.B.:“ – die Beispiel-Einleitung in allen Lesarten
+    l = re.sub(r'^([a-h]\)\s+)?[.,]?\s*[Zz]\s*[.,]?\s*B\s*[.,:;]*\s*$',
+               lambda m: (m.group(1) or '') + 'Z. B.:', l)
+    # „gemäß 8 102 Abs. 3“: das Paragrafenzeichen als Acht gelesen
+    l = re.sub(r'\b(gemäß|nach|laut|vgl\.|siehe|i\. S\. d\.)\s+8\s+(?=\d)', r'\1 § ', l)
     # „Erist“, „Ersollte“: das Pronomen klebt am Verb
     l = re.sub(r'\bEr(ist|hat|kann|wird|muss|soll|sollte|darf|war)\b', r'Er \1', l)
     l = WORT.sub(lambda m: m.group(0)
@@ -325,12 +338,56 @@ def klammern(l):
     return re.sub(r'\((\d+)\s*Punktes\)', r'(\1 Punkte)', l)
 
 
+# Kopfzeile einer auf dem Kopf stehenden Seite („QUALIFIKATIONEN“ rückwärts)
+GEDREHT = re.compile(r'N[3I]NO[LI]LV')
+
+
+def _seite_verworfen(zeilen_seite):
+    """Quer oder auf dem Kopf gescannte Anlagenseiten liefert die OCR als
+    Buchstabensalat – erkennbar an der gespiegelten Kopfzeile oder daran, dass
+    fast nur ein- und zweistellige Bruchstücke übrig bleiben."""
+    text = ' '.join(zeilen_seite)
+    if GEDREHT.search(text):
+        return True
+    tokens = text.split()
+    if len(tokens) >= 40:
+        return sum(1 for t in tokens if len(t) <= 2) / len(tokens) > 0.6
+    return False
+
+
+def seiten_filtern(roh, protokoll=None):
+    """Unlesbar gescannte Seiten bis auf den Seitenmarker leeren."""
+    out, seite = [], []
+
+    def ablegen():
+        if not seite:
+            return
+        marker = SEITE.match(seite[0])
+        if _seite_verworfen(seite[1:] if marker else seite):
+            if protokoll is not None:
+                protokoll['seite_verworfen'] += 1
+            out.append(seite[0] if marker else '')
+        else:
+            out.extend(seite)
+    for l in roh:
+        if SEITE.match(l):
+            ablegen()
+            seite = [l]
+        else:
+            seite.append(l)
+    ablegen()
+    return out
+
+
 def zeilen(roh, protokoll=None):
     """Alle Zeilen eines Textlayers geradeziehen und die Punktespalte zuordnen."""
     out, vorher = [], ''
-    # erst die Punktespalte (braucht die Fußzeile als Anker), dann die Zeilen
-    for l in spalte_zuordnen([klammern(l) for l in roh]):
-        out.append(zeile(l, protokoll, fortsetzung=vorher.rstrip().endswith('-')))
+    # erst unlesbare Seiten weg, dann die Punktespalte (braucht die Fußzeile
+    # als Anker), dann die Zeilen
+    for l in spalte_zuordnen([klammern(l) for l in seiten_filtern(roh, protokoll)]):
+        # Trennstrich am Zeilenende – auch wenn die Punkteklammer dahinter steht
+        out.append(zeile(l, protokoll,
+                         fortsetzung=TOKEN.sub('', vorher).rstrip().endswith('-')))
         if l.strip():
             vorher = l
     return out

@@ -60,13 +60,13 @@ JAHRGAENGE = {
     # Herbst 2014 bis Herbst 2017: Bauform L-ALT, aber nur als Scan – der
     # Textlayer stammt aus Tesseract.
     'h2014': {'dir': 'imbq-h2014', 'korrekturen': 'korrekturen_imbq_h2014',
-              'format': 'alt', 'scan': True, 'in_arbeit': True,
+              'format': 'alt', 'scan': True,
               'pruefungen': [RECHT, BWL, METHOD, ZUSAMM, NTG]},
     'f2015': {'dir': 'imbq-f2015', 'korrekturen': 'korrekturen_imbq_f2015',
-              'format': 'alt', 'scan': True, 'in_arbeit': True,
+              'format': 'alt', 'scan': True,
               'pruefungen': [RECHT, BWL, METHOD, ZUSAMM, NTG]},
     'h2015': {'dir': 'imbq-h2015', 'korrekturen': 'korrekturen_imbq_h2015',
-              'format': 'alt', 'scan': True, 'in_arbeit': True,
+              'format': 'alt', 'scan': True,
               'pruefungen': [RECHT, BWL, METHOD, ZUSAMM, NTG]},
     'f2016': {'dir': 'imbq-f2016', 'korrekturen': 'korrekturen_imbq_f2016',
               'format': 'alt', 'scan': True,
@@ -117,7 +117,9 @@ LOES_TL = re.compile(r'^L[öo]sungshinweise$')
 # ein anderes lässt den Doppelpunkt weg (BWL H2019, A7a); ohne diese Toleranzen
 # fiele die Teilaufgabe samt ihrer Punkte weg.
 PUNKTE  = re.compile(r'^(?:([a-hA-H])\s+)?M[öo]gliche\s+Punkte?zahle?:?\s*(\d+)$')
-VO      = re.compile(r'^\[?\s*VO:\s*(.+?)\s*\]?$')
+# Bis 2015 steht der Verweis in runden Klammern und mal als „RVO“ ohne
+# Doppelpunkt: „(VO: § 4 Abs. 2 Nr. 1-2)“, „(RVO § 4 Absatz 2 Nr. 1)“.
+VO      = re.compile(r'^[\[(]?\s*R?VO:?\s*(.+?)\s*[\])]?$')
 # Anlagen stehen physisch hinter der letzten Aufgabe, gehören aber zu einer
 # früheren – ihr Block darf nicht in den Text der letzten Aufgabe rutschen.
 ANLAGE  = re.compile(r'^Anlage\s+\d+\s+zu\s+Aufgabe\s+\d+', re.I)
@@ -125,6 +127,11 @@ ANLAGE  = re.compile(r'^Anlage\s+\d+\s+zu\s+Aufgabe\s+\d+', re.I)
 # Anlagen-Lösung und steht hinter der letzten Aufgabe. Einzahl (H2025) wie
 # Mehrzahl (H2024) kommen vor.
 ANLAGE_L = re.compile(r'^L[öo]sungshinweise?\s+zu\s+Aufgabe\s+\d+', re.I)
+
+def vo_norm(vo):
+    """Verordnungsverweis vereinheitlichen: führendes §, Leerzeichen vor Nr."""
+    vo = re.sub(r'^\s*§?\s*', '§ ', vo).strip()
+    return re.sub(r'(\d)(Nr\.)', r'\1 \2', vo)
 
 MON = {'januar':1,'februar':2,'märz':3,'april':4,'mai':5,'juni':6,'juli':7,
        'august':8,'september':9,'oktober':10,'november':11,'dezember':12}
@@ -287,11 +294,24 @@ def join_para(lines):
     for l in lines:
         if l.startswith('– '):
             if buf: out.append(buf.strip()); buf = ''
-            out.append(l); continue
+            # Trennstrich am Ende: die Fortsetzung gehört noch zum Punkt
+            if l.endswith('-'):
+                buf = l
+            else:
+                out.append(l)
+            continue
+        # „1. Z. B.:“, „2. Zweckaufwand“ nach Satzende: eigener Absatz
+        if re.match(r'^\d{1,2}\.\s+\S', l) and (not buf or buf.rstrip()[-1:] in '.:;!?'):
+            if buf: out.append(buf.strip())
+            buf = l; continue
         if buf.endswith('--'):          # Artefakt dieser Quelle
             buf = buf[:-2] + l
         elif buf.endswith('-'):
-            buf = buf[:-1] + l
+            # Ergänzungsstrich („Anfangs- und Endzeitpunkte“) bleibt stehen
+            if re.match(r'(?:und|oder|bzw\.|sowie|beziehungsweise)\b', l):
+                buf = buf + ' ' + l
+            else:
+                buf = buf[:-1] + l
         else:
             buf = (buf + ' ' + l).strip() if buf else l
     if buf: out.append(buf.strip())
@@ -329,8 +349,7 @@ def aufgaben(block, loesung):
             seg = seg[:ank]
         vo = ''
         if seg and VO.match(seg[0]):
-            vo = VO.match(seg[0]).group(1)
-            vo = re.sub(r'^\s*§?\s*', '§ ', vo).strip()
+            vo = vo_norm(VO.match(seg[0]).group(1))
             seg = seg[1:]
         intro, teile = split_teile(seg, loesung)
         res[nr] = {'nr': nr, 'intro': '\n'.join(intro), 'teile': teile, 'vo': vo}

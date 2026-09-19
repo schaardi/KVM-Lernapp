@@ -164,8 +164,7 @@ def _teile(zeilen, gesamt, loesung):
 def _aufgaben(block, gesamt, loesung):
     vo = ''
     if block and P.VO.match(block[0]):
-        vo = P.VO.match(block[0]).group(1)
-        vo = re.sub(r'^\s*§?\s*', '§ ', vo).strip()
+        vo = P.vo_norm(P.VO.match(block[0]).group(1))
         block = block[1:]
     teile = _teile(block, gesamt, loesung)
     intro = ''
@@ -249,6 +248,12 @@ def parse_datei(fn, kuerzel, bezeichnung, fach, jahrgang):
         frage = [l for j, l in enumerate(block[:li_rel]) if j not in verbraucht]
         loes = [l for j, l in enumerate(block[li_rel + 1:], li_rel + 1)
                 if j not in verbraucht]
+        # Die Anlagenseiten (Wahrscheinlichkeitsnetz usw.) stehen physisch
+        # hinter der letzten Lösung und gehören nicht in deren Text.
+        ank = next((j for j, l in enumerate(loes)
+                    if P.ANLAGE.match(l) or P.ANLAGE_L.match(l)), None)
+        if ank is not None:
+            loes = loes[:ank]
         intro, tf, _ = _aufgaben(frage, gesamt, False)
         _, tl, vo = _aufgaben(loes, gesamt, True)
         # Maßgeblich ist der Aufgabenteil: er geht in allen Heften genau auf
