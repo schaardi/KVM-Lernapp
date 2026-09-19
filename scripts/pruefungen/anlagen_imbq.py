@@ -20,6 +20,11 @@ BILDER = {
     ('NT', 'f2017', 4, '*'): 'ntf17-gleitbahn',
     ('NT', 'f2017', 5, '*'): 'ntf17-strompfade',
     ('NT', 'f2017', 7, '*'): 'ntf17-wnetz',
+    ('NT', 'h2016', 2, '*'): 'nth16-schaltung',
+    ('BW', 'f2016', 6, '*'): 'bwf16-kosten',
+    ('MI', 'f2016', 5, '*'): 'mif16-balkenplan',
+    ('NT', 'f2016', 5, '*'): 'ntf16-ventil',
+    ('NT', 'f2016', 7, '*'): 'ntf16-urwertkarte',
 
     # Naturwissenschaft und Technik, Frühjahr 2023
     ('NT', 'f2023', 2, '*'): 'ntf23-kettenspanner',
@@ -113,6 +118,12 @@ BILDER_L = {
     ('MI', 'f2017', 4, 'a'): 'mif17-l-netz',
     ('MI', 'f2017', 5, 'a'): 'mif17-l-balken',
     ('NT', 'f2017', 7, 'd'): 'ntf17-l-wnetz',
+    ('MI', 'h2016', 4, 'a'): 'mih16-l-nutzwert',
+    ('MI', 'h2016', 5, 'a'): 'mih16-l-erzeugnis',
+    ('NT', 'h2016', 3, 'a'): 'nth16-l-vtdiagramm',
+    ('BW', 'f2016', 6, 'a'): 'bwf16-l-kosten',
+    ('MI', 'f2016', 4, 'a'): 'mif16-l-kosten',
+    ('NT', 'f2016', 7, 'a'): 'ntf16-l-urwertkarte',
 
     # ---- Archiv „Altklausuren“, Heftform L-ALT 2018
     ('MI', 'f2018', 4, 'a'): 'mif18-l-diagramm',
@@ -376,6 +387,68 @@ _FAHRZEUGE_F2017 = {
                ['maximale Entfernung', '6', '8']],
 }
 
+_NUTZWERT_H2016 = {
+    'titel': 'Aufgabe 4: Gewichtung der Kriterien und Punktetabellen',
+    'kopf': ['Kriterium', 'Gewichtung', '10 Punkte', '8 Punkte', '6 Punkte'],
+    'zeilen': [
+        ['Maximale Reichweite pro Ladevorgang', '20 %', '> 100 km', '> 60 bis 100 km', '> 40 bis 60 km'],
+        ['Anschaffungskosten', '25 %', '≤ 20.000 €', '> 20.000 € und ≤ 30.000 €', '> 30.000 € und ≤ 40.000 €'],
+        ['Ladevolumen', '15 %', '2 Kubikmeter', '1,75 Kubikmeter', '1,5 Kubikmeter'],
+        ['Nutzlast', '30 %', '> 150 kg', '> 100 kg und ≤ 150 kg', '> 50 kg und ≤ 100 kg'],
+        ['Batterie-Ladekonzept', '10 %', 'induktiv', 'Wechselbatterie', 'Ladegerät'],
+    ],
+}
+
+_STUECKLISTE_H2016 = {
+    'titel': 'Aufgabe 5: Strukturstückliste des Erzeugnisses E',
+    'kopf': ['lfd. Nummer', 'Ebene 1', 'Ebene 2', 'Ebene 3', 'Anzahl'],
+    'zeilen': [
+        ['1', 'B2', '', '', '2'], ['2', '', 'T1', '', '2'], ['3', '', 'B1', '', '1'],
+        ['4', '', '', 'T2', '2'], ['5', '', '', 'T3', '3'], ['6', '', '', 'T4', '1'],
+        ['7', 'T5', '', '', '4'], ['8', 'B3', '', '', '2'], ['9', '', 'T2', '', '3'],
+        ['10', '', 'B6', '', '2'], ['11', '', '', 'T1', '4'], ['12', '', '', 'T5', '3'],
+        ['13', '', '', 'T6', '2'],
+    ],
+}
+
+_STICHPROBE_H2016 = {
+    'titel': 'Aufgabe 7: Stichprobenergebnisse (Masse in g)',
+    'kopf': ['Lfd. Stichprobe', 'Masse in g', 'Lfd. Stichprobe', 'Masse in g'],
+    'zeilen': [
+        ['1', '21,5', '11', '17,8'], ['2', '19,1', '12', '18,6'], ['3', '18,6', '13', '19,5'],
+        ['4', '20,9', '14', '20,7'], ['5', '22,3', '15', '21,3'], ['6', '19,7', '16', '22,0'],
+        ['7', '20,1', '17', '18,9'], ['8', '18,9', '18', '19,9'], ['9', '19,4', '19', '21,7'],
+        ['10', '22,0', '20', '19,0'],
+    ],
+}
+
+_PAARVERGLEICH_F2016 = {
+    'titel': 'Anlage 1 zu Aufgabe 2: Paarweiser Vergleich (auszufüllen)',
+    'kopf': ['', 'Preis', 'Handhabung', 'Lebensdauer', 'Kundendienst', 'laufende Kosten',
+             'Summe', 'Gewichtung in Prozent'],
+    'zeilen': [['Preis', '–', '', '', '', '', '', ''],
+               ['Handhabung', '', '–', '', '', '', '', ''],
+               ['Lebensdauer', '', '', '–', '', '', '', ''],
+               ['Kundendienst', '', '', '', '–', '', '', ''],
+               ['laufende Kosten', '', '', '', '', '–', '', ''],
+               ['Summe', '', '', '', '', '', '', '']],
+}
+
+_PROJEKTKOSTEN_F2016 = {
+    'titel': 'Aufgabe 4: Kennzahlen des Projekts (1. April bis 1. Oktober)',
+    'kopf': ['', '01.04.', '01.05.', '01.06.', '01.07.', '01.08.', '01.09.', '01.10.'],
+    'zeilen': [
+        ['Geplante Gesamtkosten', '80.000 €', '80.000 €', '80.000 €', '80.000 €',
+         '80.000 €', '80.000 €', '80.000 €'],
+        ['Geplanter Kostenverlauf (kumuliert)', '6.000 €', '10.000 €', '14.000 €',
+         '18.000 €', '23.000 €', '28.000 €', '33.000 €'],
+        ['Tatsächlicher Kostenverlauf (kumuliert)', '5.000 €', '7.000 €', '11.500 €',
+         '17.000 €', '28.000 €', '32.000 €', '36.000 €'],
+        ['Geschätzte Restkosten', '75.000 €', '74.000 €', '70.000 €', '66.000 €',
+         '59.000 €', '56.000 €', '52.000 €'],
+    ],
+}
+
 _CONTROLLING_H2017 = {
     'titel': 'Aufgabe 7: Daten aus dem Controlling',
     'kopf': ['Monat', 'September', 'Oktober'],
@@ -395,6 +468,11 @@ TABELLEN = {
     ('BW', 'f2017', 6, 'a'): _KOSTENSITUATION_F2017,
     ('MI', 'f2017', 4, '*'): _FAHRZEUGE_F2017,
     ('MI', 'f2017', 5, '*'): _VORGAENGE_F2017,
+    ('MI', 'h2016', 4, '*'): _NUTZWERT_H2016,
+    ('MI', 'h2016', 5, '*'): _STUECKLISTE_H2016,
+    ('NT', 'h2016', 7, '*'): _STICHPROBE_H2016,
+    ('MI', 'f2016', 2, '*'): _PAARVERGLEICH_F2016,
+    ('MI', 'f2016', 4, '*'): _PROJEKTKOSTEN_F2016,
     ('BW', 'h2024', 6, 'a'): _KOSTENTABELLE,
     ('BW', 'h2024', 6, 'b'): _KOSTENTABELLE,
     ('BW', 'h2025', 5, 'a'): _GESCHAEFTSFAELLE,

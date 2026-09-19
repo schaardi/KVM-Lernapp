@@ -211,6 +211,10 @@ def zeile(l, protokoll=None, fortsetzung=False):
     l = PARA_LOS.sub('§ ', l)
     l = PARA_ENDE.sub(lambda m: m.group(1) + '§ ' + m.group(2), l)
     l = l.replace('Urh@', 'UrhG')
+    l = re.sub(r'§\s*§\s+(\d)', r'§ 8\1', l)          # die 8 als § gelesen
+    l = re.sub(r'(§\s*\d+[a-z]?)\s+\|\s+', r'\1 I ', l)  # Absatz I als Strich
+    l = re.sub(r'(§\s*\d+[a-z]?\s+)(I?l{1,2}|lI|Ill)\b',
+               lambda m: m.group(1) + m.group(2).replace('l', 'I'), l)
     # Euro: „15,50 &/Stunde“, „56,50 €&/Stück“, „204,60 &“
     l = re.sub(r'€?&(?=/)', '€', l)
     l = re.sub(r'(?<=\d)\s*€?&(?=\s|$)', ' €', l)
@@ -238,7 +242,9 @@ def zeile(l, protokoll=None, fortsetzung=False):
 # Zahl genau aufgeht; sonst bleibt die Seite unverändert (→ ROHTEXT).
 TOKEN = re.compile(r'[({]\s*(\d+)\s*Punkte?\s*[)}]')
 NUR_TOKEN = re.compile(r'^\s*[({]\s*\d+\s*Punkte?\s*[)}]\s*$')
-FUSS = re.compile(r'^(?:©?\s*DIHK\b|Die Vervielfältigung|ist nicht gestattet|Einsatz nur im Rahmen)')
+# Fußzeile – auch die Variante „Seite 24 | P 050-02-0516-7 |“ ohne DIHK.
+FUSS = re.compile(r'^(?:©?\s*DIHK\b|Die Vervielfältigung|ist nicht gestattet|Einsatz nur im Rahmen'
+                  r'|\|?\s*Seite\s+\d+\s*\||\|?\s*[PL]\s?\d{3}-\d{2}-\d{4}-\d)')
 SLOT = re.compile(r'^(?:[eo]?[a-h]\s*[)}]\)?\s|L[öo]sungshinweise\s+Aufgabe\b)')
 SEITE = re.compile(r'^=== Seite \d+ ===')
 
@@ -254,14 +260,35 @@ def spalte_zuordnen(zeilen):
         fuss = next((i for i, l in enumerate(seite) if FUSS.match(l)), None)
         if fuss is not None:
             hinten = [i for i in range(fuss, len(seite)) if NUR_TOKEN.match(seite[i])]
-            # Slots mit ihrer Art: Frage (q), Lösungskopf (k), Lösung (l)
+            if not hinten:
+                # Die Spalte kann auch mitten auf der Seite stehen: der längste
+                # Lauf aus Klammerzeilen (nur Leerzeilen dazwischen).
+                lauf, bester = [], []
+                for i in range(fuss):
+                    if NUR_TOKEN.match(seite[i]):
+                        lauf.append(i)
+                    elif seite[i].strip():
+                        bester = max(bester, lauf, key=len); lauf = []
+                bester = max(bester, lauf, key=len)
+                if len(bester) >= 2:
+                    hinten = bester
+            # Slots mit ihrer Art: Frage (q), Lösungskopf (k), Lösung (l).
+            # Ein Slot ist besetzt, wenn in seinem Abschnitt (bis zum nächsten
+            # Slot) schon eine Klammer steht – auch auf einer Folgezeile; die
+            # Zeilen der abgetrennten Spalte selbst zählen dabei nicht.
+            starts = [i for i in range(fuss) if SLOT.match(seite[i])]
+            abschnitt = {}
+            for k, i in enumerate(starts):
+                e = starts[k + 1] if k + 1 < len(starts) else fuss
+                abschnitt[i] = any(TOKEN.search(seite[j]) for j in range(i, e)
+                                   if j not in set(hinten))
             slots, art = [], 'l'
             for i in range(fuss):
                 if UEBERSCHRIFT.match(seite[i]):
                     art = 'q'
                 elif KOPF.match(seite[i]):
                     art = 'k'
-                if SLOT.match(seite[i]) and not TOKEN.search(seite[i]):
+                if i in abschnitt and not abschnitt[i]:
                     slots.append((i, art))
                     if art == 'k':
                         art = 'l'
