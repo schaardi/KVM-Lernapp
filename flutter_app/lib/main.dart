@@ -20,7 +20,9 @@ Future<void> main() async {
     try {
       await Supabase.initialize(
         url: Config.supabaseUrl,
-        anonKey: Config.supabaseAnonKey,
+        // Supabase hat `anonKey` zugunsten von `publishableKey` abgekündigt;
+        // der Wert ist derselbe (intern `publishableKey ?? anonKey`).
+        publishableKey: Config.supabaseAnonKey,
       );
       AuthService.instance.ready = true;
     } catch (_) {

@@ -64,9 +64,11 @@ class RoundBuilder {
         final byFach = data.forFach(fach);
         return _shuffle(byFach).take(min(kSimLen, byFach.length)).toList();
       case RoundMode.cases:
-        if (data.cases.isEmpty) return [];
-        final c = data.cases[_rng.nextInt(data.cases.length)];
-        return c.asPool();
+        // Fallaufgaben und Prüfungen laufen seit dem Aufgabenblatt-Umbau nicht
+        // mehr über den RoundBuilder: HomeScreen öffnet den
+        // AufgabenblattScreen direkt. Der Zweig bleibt nur, damit der Switch
+        // über RoundMode vollständig ist.
+        return const [];
       case RoundMode.retry:
         return _shuffle(wrong);
     }

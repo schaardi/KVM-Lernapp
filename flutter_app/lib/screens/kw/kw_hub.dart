@@ -228,13 +228,15 @@ class KostenwesenScreen extends StatelessWidget {
             borderRadius: BorderRadius.circular(kRadius),
             border: Border.all(color: kPetrol.withValues(alpha: 0.25)),
           ),
-          child: Row(crossAxisAlignment: CrossAxisAlignment.start, children: [
-            const Icon(Icons.table_chart_outlined, color: kPetrol, size: 20),
-            const SizedBox(width: 11),
-            Expanded(
-              child: Column(
+          child: const Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Icon(Icons.table_chart_outlined, color: kPetrol, size: 20),
+              SizedBox(width: 11),
+              Expanded(
+                child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
-                  children: const [
+                  children: [
                     Text('Rechnen im Prüfungsschema',
                         style: TextStyle(
                             fontSize: 14.5,
@@ -245,11 +247,14 @@ class KostenwesenScreen extends StatelessWidget {
                       'Die Tabellen folgen exakt dem Aufbau, den du in der '
                       'Prüfung schreibst. Zwischen- und Endsummen rechnen live '
                       'mit, den Rechenweg kannst du jederzeit aufklappen.',
-                      style: TextStyle(fontSize: 12.5, height: 1.45, color: kInkSoft),
+                      style:
+                          TextStyle(fontSize: 12.5, height: 1.45, color: kInkSoft),
                     ),
-                  ]),
-            ),
-          ]),
+                  ],
+                ),
+              ),
+            ],
+          ),
         ),
         const SizedBox(height: 18),
         for (final c in _calcs) _calcTile(context, c),

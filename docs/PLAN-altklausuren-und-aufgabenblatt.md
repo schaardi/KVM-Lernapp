@@ -1,9 +1,10 @@
 # Plan: Altklausuren einspielen, Prüfungen als Aufgabenblatt, Aufgabenserien
 
-Stand 17. 9. 2026. Drei Themen, die zusammengehören, aber getrennt umsetzbar
-sind. **Erledigt** ist Teil B vollständig (B0, B1, B2, B3, B4) sowie die erste
-Tranche A T1 (siehe „Was steht" weiter unten); offen sind die Tranchen T2–T4,
-die Übungsfragen aus T1 und die Aufgabenserien (Teil C).
+Stand 19. 9. 2026. Drei Themen, die zusammengehören, aber getrennt umsetzbar
+sind. **Erledigt** sind Teil B vollständig (B0, B1, B2, B3, B4) und Teil A mit
+allen vier Tranchen T1–T4 (siehe „Was steht" weiter unten); offen sind die
+Übungsfragen (`PX-`) zu den 35 Scan-Prüfungen aus T4 und die Aufgabenserien
+(Teil C).
 
 - **Teil A** – Das Archiv `Altklausuren.rar` (99 IHK-Prüfungen der
   Industriemeister-Basisqualifikationen, Herbst 2014 bis Frühjahr 2024, alle
@@ -24,7 +25,7 @@ Auslöser (Nutzer, 14. 9. 2026): „Die Darstellung (auch die Grafiken)
 Manchmal ist es wichtig, auch die anderen Fragen zu kennen, um z. B. a)
 richtig zu lösen." – und: „Nutze diese ganzen Klausuren für unsere App."
 
-## Was steht (17. 9. 2026)
+## Was steht (19. 9. 2026)
 
 | Schritt | Stand |
 |---|---|
@@ -35,29 +36,37 @@ richtig zu lösen." – und: „Nutze diese ganzen Klausuren für unsere App."
 | **A T1** F2023, H2023, F2024 | **fertig** – 14 Prüfungen, 10 Abbildungen; Bestand jetzt **36 Original-Prüfungen** |
 | **B2** Web-Aufgabenblatt | **fertig** – eigener Bildschirm `scrBlatt`: Aufgaben-Stepper, Ausgangslage und Anlagen einmal am Kopf, alle Teilaufgaben a–x als Karten mit eigenem Antwortfeld, Aufdecken je Teil oder je Aufgabe, Zwischenergebnis aus `braucht`, Lightbox mit Zoom, Ergebnis nach Aufgaben gruppiert, Übersicht mit Fach-Filter |
 | **B3** Flutter-Aufgabenblatt | **fertig** – `screens/aufgabenblatt_screen.dart` mit Stepper, Ausgangslage, Anlagen am Kopf, Teil-Karten mit Antwortfeld und Selbstbewertung, Prüfauftrag über die ganze Aufgabe; Prüfungsübersicht zeigt die Aufgaben mit Teil-Chips |
-| **A T2–T4** | offen – 85 Prüfungen (L-I, L-ALT, OCR) |
+| **A T2** F2019 … H2022 | **fertig** – 40 Prüfungen, 36 neue Anlagen; Bestand jetzt **76 Original-Prüfungen** |
+| **A T3** F2018, H2018 | **fertig** – 10 Prüfungen, 7 Anlagen, neuer `parse_imbq_alt.py`; Bestand jetzt **86 Original-Prüfungen** |
+| **A T4** H2017 … H2014 | **fertig** – 35 Prüfungen aus PDF24-Scans, alle 100/100 beidseitig und gegen die Seitenbilder gesichtet; 46 Abbildungen (davon 23 Lösungszeichnungen) und 26 Tabellenanlagen; neu `ocr_scan.py` (Nachbesserung des Tesseract-Textlayers) und die Rohtext-Korrekturen `ROHTEXT`. Bestand jetzt **121 Original-Prüfungen** (alle 99 Hefte des Archivs, dazu die 22 aus H2024/H2025 und den eigenen Sätzen) |
 | **C** Aufgabenserien | offen |
-| Übungsfragen (`PX-`) aus T1 | offen – die 14 neuen Prüfungen haben noch keine |
+| Übungsfragen (`PX-`) aus T1 bis T3 | **fertig** – 16 Quellensätze, 788 `PX-`-Fragen (vorher 327). Zu jeder der 64 neuen Prüfungen ein eigener Satz von 25 bis 43 Fragen, Schwerpunkt auf den Rechenwegen der Originallösungen |
+| Lösungszeichnungen der Methoden-Hefte | **fertig** – sieben der acht Aufgaben „Stellen Sie … in einem Diagramm dar“ aus T2 haben jetzt ihr Lösungsbild (`bildL`). Die achte (F2022 4 b) hat als amtliche Lösung eine Tabelle, keine Zeichnung |
+| Verrutschte Tabellen | **fertig** – sechs Datentabellen, die als Fließtext in Frage oder Ausgangslage standen, hängen als Tabellenanlage an ihrer Aufgabe. `build_amtlich.py` spielt außerdem die Textkorrekturen wieder ein, die seit dem Aufgabenblatt-Umbau ins Leere liefen |
 
 Neue Werkzeuge: `scripts/pruefungen/anlagen_extrakt.py` (Abbildungen über ihre
 Bildunterschrift aus dem Heft schneiden – ersetzt das Abmessen von Koordinaten
 in `anlagen_bau.py`), `scripts/pruefungen/korrekturen_basis.py` (Nachkorrekturen
-für Text, Punktzahlen und Teil-Buchstaben), `scripts/pruefungen/inventar.py`,
-`scripts/pruefungen/quellen_bau.py`.
+für Text, Punktzahlen, Teil-Buchstaben, Prüfungstag und Ausgangslage),
+`scripts/pruefungen/inventar.py`, `scripts/pruefungen/quellen_bau.py`.
+`anlagen_bau.py` hat mit `AUSZUEGE` eine zweite Tabelle: Abbildung je
+Schlüssel, geholt ohne Koordinaten – entweder als eingebettetes Bild oder über
+ihre Bildunterschrift. Welches Bild zu welchem Schlüssel wurde, steht damit
+zum ersten Mal im Repository und lässt sich aus den PDFs nachbauen.
 
 ## Ausgangslage
 
 ### Bestand in der App
 
-Stand nach T1 (in Klammern der Stand vor dieser Session):
+Stand nach T3 (in Klammern der Stand vor dieser Session):
 
 | Was | Stand | Wo |
 |---|---|---|
-| Startbare Prüfungen (`P-`) | **36** (22) – 13 × Kraftverkehr FT/OK 2021–2026, 23 × Basisqualifikation F2023–H2025, alle mit amtlichen Lösungshinweisen, je 100 Punkte; 232 Aufgaben mit 593 Teilaufgaben | `flutter_app/assets/data/cases.json` (685 KB), `data/cases.js` |
+| Startbare Prüfungen (`P-`) | **86** (22) – 13 × Kraftverkehr FT/OK 2021–2026, 73 × Basisqualifikation F2018–H2025, alle mit amtlichen Lösungshinweisen, je 100 Punkte; 582 Aufgaben mit 1.458 Teilaufgaben | `flutter_app/assets/data/cases.json` (1,4 MB), `data/cases.js` |
 | Fallaufgaben ohne IHK-Bezug | 15 (`F-`/`R-`/`M-`/`Z-`, je 4–5 Teile, Musterlösungen) | ebd. |
-| Übungsfragen aus Prüfungen (`PX-`) | 327 (127 Kraftverkehr, 94 BQ H2025, 107 BQ H2024) – aus T1 noch keine | `questions.json`, Quellensätze `scripts/pruefungen/fragen/*.json` |
-| Bildanlagen | **24** (14) als Dateien, 783 KB; 17 an einer Aufgabe, 2 an einem Teil, 6 an einer Lösung | `anlagen/`, `flutter_app/assets/anlagen/`, Verzeichnis in `data/anlagen.js` |
-| Tabellenanlagen | 4 (`tab`) | an Aufgabe oder Schritt |
+| Übungsfragen aus Prüfungen (`PX-`) | **788** (327) – 127 Kraftverkehr, 661 aus den Basisqualifikationen F2018–H2025; 498 Auswahl-, 290 Rechenfragen | `questions.json`, Quellensätze `scripts/pruefungen/fragen/*.json` |
+| Bildanlagen | **74** (67) als Dateien; 46 an einer Aufgabe, 29 an einer Lösung | `anlagen/`, `flutter_app/assets/anlagen/`, Verzeichnis in `data/anlagen.js` |
+| Tabellenanlagen | **14** (7) als `tab` – an Aufgabe oder Schritt | an Aufgabe oder Schritt |
 | `index.html` | **280 KB** (3,3 MB) – die Inhalte liegen daneben in `data/*.js` | Root |
 
 ### Wie eine Prüfung heute dargestellt wird
@@ -254,41 +263,131 @@ for l in lines:
 A, L = aufgaben(frage, False), aufgaben(loes, True)
 ```
 
-**L-ALT (45 Prüfungen)** – neuer Parser `parse_imbq_alt.py` (oder dritter
-Modus), gleiche Ausgabestruktur wie `parse_imbq.parse_datei`:
+**Erfahrungen aus T3** (für T4 einplanen):
 
-- Kopf: `Prüfungstag 13. November 2014`, `Anzahl der Aufgaben 7`,
-  Fach in der Zeile `Basisqualifikation <Fach>`.
-- Block je Aufgabe: `^Aufgabe (\d+)$` … `^Lösungshinweise Aufgabe \1 \((\d+) Punkte\)$`
-  … bis zur nächsten `Aufgabe`. Gesamtpunkte der Aufgabe aus dem Lösungskopf.
-- Teilaufgaben im Frageteil: `^([a-h])\)\s+(.*?)\s*\((\d+) Punkte?\)\s*$` –
-  die Punkte stehen am Ende der **ersten** Zeile, Folgezeilen sind eingerückt
-  und ohne Marker; Aufgaben ohne Teile haben genau eine Punktangabe in Klammern
-  oder gar keine (dann Gesamtpunkte aus dem Kopf, Label `a`).
-- Lösungen: `^([a-h])\)` beginnt den Teil; `(n Punkte)` am Ende bestätigt die
-  Teilpunkte; `[VO: …]`/`(RP: …)` in der Zeile nach dem Kopf → `vo`
-  (RP-Verweise als `vo: 'Rahmenplan 1.4.4'` mitführen); Präfix `z. B.:`
-  stehen lassen.
-- Invariante wie bisher: Summe der Teilpunkte = Kopfpunkte je Aufgabe, Summe
-  je Prüfung = 100. Trockenlauf per Regex auf den 10 nativen 2018-Heften:
-  **8 von 10** sauber (100/100); MIKP H2018 (90/85) und NTG H2018 (114/86)
-  mischen Formen (Punkte teils im Text) → Korrekturen.
-- OCR-Normalisierung vor dem Parsen (nur für `imbq-h2014` … `imbq-h2017`):
-  `ı`→`i`, `{`→`(`, `}`→`)`, `8 (\d)`/`§ ` bei `Absatz`/`Abs.`, `8§`/`88`/`8$`→`§§`,
-  Aufzählungszeichen `= `, `m `, `ms `, `a ` am Zeilenanfang → `– `; JUNK um
-  Fußzeilen (`Seite N | © DIHK …`, `Die Vervielfältigung …`, `ist nicht
-  gestattet …`, `GEPRÜFTE/-R INDUSTRIEMEISTER …`, `FACHRICHTUNGSÜBERGREIFENDE
-  …`, `GRUNDLEGENDE QUALIFIKATIONEN`, `P 050-…`, `L 050-…`) erweitern. Die
-  Tesseract-Ausgabe ist strukturell brauchbar (Aufgaben-, Teil- und
-  Lösungsköpfe sicher erkannt), Zahlen und Paragrafen müssen je Prüfung gegen
-  die Seitenbilder geprüft werden (`pdftoppm -jpeg -r 100` in den Scratch).
-  Bekannte Stolperstelle: Die Überschrift der **ersten** Aufgabe der
-  RBH-Hefte 2014/15 wird als `Aufgabe En` gelesen (verzierte Ziffer) –
-  `^Aufgabe\s+(En|EN|I|l)$` als `Aufgabe 1` werten, danach fortlaufend prüfen.
+- Die Symbol-Schrift war die größte Fehlerquelle im ganzen Archiv, nicht die
+  Heftform: ``clean()`` hat alles aus dem Privatbereich U+F0xx weggeworfen, was
+  die Tabelle nicht kannte – **845 Gleichheitszeichen**, 124 Plus, 91 Minus.
+  Die Tabelle deckt jetzt die ganze Adobe-Symbol-Kodierung ab. Vor jeder
+  weiteren Tranche lohnt ein Blick auf die Privatbereich-Zeichen der neuen
+  Quellen.
+- Die Punktzahl am rechten Rand verrutscht in der Heftform L-ALT regelmäßig um
+  eine Zeile. Die Regel „allein stehende Punktzahl unmittelbar vor einer
+  Teilaufgabe gehört zu dieser“ trägt; die 100-Punkte-Summe allein deckt den
+  Fehler **nicht** auf, weil zwei Teile nur ihre Punkte tauschen. Der Abgleich
+  mit den eindeutig gedruckten Paaren (Buchstabe und Klammer in derselben
+  Zeile) ist die eigentliche Probe.
+- Kopfzeilen können doppelt und versetzt gesetzt sein (MIKP H2018). Die
+  Bruchstücke am Ende („IN,“, „Kommunikation und“) sind so gewöhnliche Wörter,
+  dass nur eine Korrektur hilft – ein Filtermuster nähme echten Text mit.
 
-**Builder** `build_imbq.py`: läuft bereits über `sorted(JAHRGAENGE)`; neu nur
-`format` durchreichen, `termin` aus dem Datum, und der Fall bekommt
-`hinweis` (Rechtsstand, siehe oben) sowie die Felder aus B1.
+**Erfahrungen aus T2** (für T3/T4 einplanen):
+
+- Die Fußzeile `L 050-01-0519-7` trägt eine Prüfziffer, die das alte
+  JUNK-Muster nicht kannte – sie stand **459-mal** mitten im Aufgaben- und
+  Lösungstext. Nach dem Filter fielen fünf Lösungen auf, die *nur* aus dieser
+  Heftnummer bestanden: reine Zeichnungen ohne Text. Für T3/T4 ist das Muster
+  der Fußzeile also zuerst zu prüfen, sonst täuscht `pruefe()` Vollständigkeit
+  vor.
+- `pruefe()` prüft neben den Punkten jetzt auch den Prüfungstag gegen den
+  Termin. Das hat einen Druckfehler (NTG H2022: „3. November 2023“) und ein
+  fehlendes Deckblatt (ZiB H2021) gefunden, die sonst als falsch einsortierte
+  Prüfung durchgerutscht wären.
+- Beschriftungen aus Zeichnungen („R1 R2 UEIN R3 UAUS 1 kΩ“) landen als
+  Fließtext in der Ausgangslage. Dafür gibt es die Korrekturtabelle `INTRO`;
+  die Zeichnung selbst hängt als Anlage an der Aufgabe.
+
+### A4a – Erfahrungen aus den Übungsfragen (T1 bis T3)
+
+Zu jeder der 64 neuen Prüfungen ist ein Satz `scripts/pruefungen/fragen/imbq-<termin>.json`
+entstanden, gebaut aus dem Digest der amtlichen Lösung (Aufgabe, Teil, Punkte,
+Lösungstext). Aus 794 Kandidaten sind 788 Fragen geworden; sechs waren
+Dubletten und wurden vom Builder verworfen.
+
+- **Die Toleranz bei `calc` ist 0,01 absolut** (`index.html`, `checkCalc`) und
+  lässt sich je Frage nicht übersteuern – `clean_q` übernimmt kein `tol`.
+  Damit ist jede Frage unbrauchbar, deren Ergebnis von der Rundung des
+  Zwischenschritts abhängt: Der Verdichtungsdruck aus „1:17“ ergibt je nach
+  Rundung des Teilvolumens 68,03 oder 68,06 bar. Solche Aufgaben bekommen
+  entweder den Zwischenwert vorgegeben oder eine ausdrückliche Rundungsansage
+  („auf ganze Millimeter gerundet“).
+- **Die amtliche Lösung ist nicht immer konsistent.** Beim Beschickungswagen
+  (NTG F2018, Aufgabe 4) fehlt in der Musterrechnung die Masse des Wagens
+  selbst; die Zeichnungslösung zum Wahrscheinlichkeitsnetz (NTG H2021) war in
+  unserer eigenen Korrekturtabelle mit x̄ ∓ 3s beschriftet, obwohl die
+  Prozentwerte zu x̄ ∓ s gehören. Wo die Vorlage nicht trägt, wird die Frage
+  umformuliert statt den Fehler zu übernehmen.
+- **Dubletten entstehen fachlich, nicht wörtlich.** Der Builder vergleicht
+  normalisierten Fragetext; inhaltlich gleiche Fragen mit anderer Formulierung
+  rutschen durch. Die Streik-Voraussetzungen aus F2018 standen so fast
+  wortgleich schon als `R-BR-035` im Pool. Ein Ähnlichkeitsvergleich über
+  Wortmengen (Jaccard ≥ 0,65 auf dem normalisierten Fragetext) hat fünf
+  weitere gefunden – darunter zwei Aufgaben, welche die IHK in zwei Terminen
+  wörtlich wiederverwendet hat (Winkelprofil H2019/H2023, Drohne H2019/H2024).
+  Alle sechs sind durch andere Aufgaben desselben Hefts ersetzt; der Vergleich
+  gehört künftig in die Abnahme jedes neuen Satzes.
+- **Abnahme:** `build_exam_questions.py`, `tools/sync_content.py --check` und
+  `--validate-assets`, dazu zwei Läufe im Headless-Browser – ein
+  Struktur-Check über alle `PX-` und ein Lauf, der neue Rechenfragen in der
+  Oberfläche beantwortet und die Musterantwort gegen `checkCalc` prüft.
+
+### A2a – Die Scans (T4): wie sie eingespielt wurden
+
+`parse_imbq_alt.py` liest die 35 Scans über den **Lösungskopf** statt über die
+Aufgabenüberschrift: `Lösungshinweise Aufgabe N (x Punkte)` wird zuverlässig
+erkannt, die verzierte Ziffer der Überschrift dagegen nicht (`Aufgabe En`,
+`Aufgabe |s`, manchmal gar nichts). Ohne Handarbeit erreichte trotzdem nur
+**1 von 35** Heften 100/100. Drei Werkzeuge haben den Rest getragen:
+
+- **`ocr_scan.py`** zieht den Tesseract-Textlayer vor dem Parsen gerade:
+  Paragrafen (`88 53` → `§§ 53`, `8 102` nach „gemäß“ → `§ 102`), Umlaute aus
+  einem Wortschatz der sauberen Hefte, Aufzählungszeichen in allen Lesarten
+  (`= _`, `=»`, `«=`, `"=`, `®`, `>` …), verstümmelte Teilmarker (`eb)`, `€)`),
+  „Z. B.:“ in jeder Schreibweise, die abgesetzte **Punktespalte** (steht mal
+  hinter der Fußzeile, mal mitten auf der Seite – sie wird den Teilmarkern
+  der Seite in Lesereihenfolge zugeordnet, wenn die Zahl der Klammern zur
+  Zahl der offenen Marker passt), Kopf- und Fußzeilen in Dutzenden Lesarten
+  sowie ganze Seiten, die quer oder auf dem Kopf gescannt sind (erkennbar an
+  der gespiegelten Kopfzeile oder daran, dass fast nur ein- und zweistellige
+  Bruchstücke übrig bleiben).
+- **`ROHTEXT`** im Korrekturmodul: Ersetzungen im Rohtext *vor* dem Parsen,
+  jede muss genau einmal greifen. Damit werden verschluckte Marker
+  (`D)N 2 Z.B` → `b) Z. B.:`), verlorene Lösungsköpfe und falsch verteilte
+  Klammern gesetzt – der einzige Weg, wenn der Parser die Struktur selbst
+  nicht mehr sehen kann.
+- **`LOESUNG`/`FRAGE`/`INTRO`** wie in T1–T3, jetzt aber für jede Rechenaufgabe
+  ein vollständiges Abschreiben des Rechenwegs vom Seitenbild: Formeln
+  überleben den Scan nie (`P = U² / R` wird zu `2 a pe R`). Tabellen im Text
+  gehen als Tabellenanlage an die Aufgabe, Zeichnungen und Lösungsdiagramme
+  als Zuschnitt (`anlagen_bau.FIGUREN`, quer gedruckte Anlagen mit
+  Drehwinkel).
+
+Jede der 35 Prüfungen wurde Aufgabe für Aufgabe gegen die Seitenbilder
+(`pdftoppm -r 120`) gelesen; die Sichtprüfung kostete je Heft die geplanten
+1–2 h. Die Hefte bis 2015 nennen den Verordnungsbezug in runden Klammern
+(`(VO: § 4 Abs. 2 Nr. 1)`, `(RVO § 4 Absatz 2 Nr. 1)`), die von 2014 nur den
+Rahmenplan (`(RP: 1.5.2)`) – letzterer wird nicht mitgeführt.
+
+**Erfahrungen aus T4:**
+
+- Die MRC-Scans (100-ppi-JPEG plus 200-ppi-Bilevel-Stencil) haben i-Punkte und
+  Umlautpunkte physisch verloren; bessere Tesseract-Modelle (`tessdata_best`)
+  und höhere Auflösung ändern daran nichts. Nachkorrektur mit Wortschatz und
+  festen Regeln ist der Hebel, nicht die OCR.
+- Die 100-Punkte-Probe bleibt notwendig, aber sie sieht nur die Struktur.
+  Zahlen im Text (Maße, Beträge, Paragrafen) sind nur mit dem Seitenbild zu
+  prüfen – und dort waren sie regelmäßig falsch („23,92“ statt 23,52 €;
+  Rang „2“ statt 3).
+- Punktespalten wandern: Zwei Klammern in einer Teilaufgabe (Szenario 1 und 2
+  à 3 Punkte) lassen den Parser die erste nehmen; das fällt nur an der Summe
+  auf. `PUNKTE` überschreibt seit T4 auch den Frageteil.
+- Lösungsseiten für Anlagen stehen physisch hinter der letzten Aufgabe und
+  liefen als Buchstabensalat in deren Lösung; der Schnitt an `Anlage N zu
+  Aufgabe M` und das Verwerfen gedrehter Seiten halten sie draußen.
+- Silbentrennung an Aufzählungspunkten und Ergänzungsstriche („Anfangs- und
+  Endzeitpunkte“) waren in allen Tranchen falsch zusammengesetzt; die
+  Korrektur in `join_para` hat rückwirkend auch T1–T3 verbessert, ohne dass
+  eine Korrektur ins Leere lief (eine wurde überflüssig).
 
 ### A3 – Reihenfolge, Tranchen, Aufwand
 
@@ -298,8 +397,8 @@ Neueste zuerst; jede Tranche ein eigener PR mit Prüfungen **und** ihren
 | Tranche | Termine | Prüfungen | Parser | Aufwand (Richtwert) |
 |---|---|---|---:|---|
 | T1 | F2024, H2023, F2023 | 14 | PL, vorhanden | 6 Korrekturen · je Prüfung 30–45 min + Fragen-Workflow |
-| T2 | H2022 … F2019 | 40 | L-I, 15 Zeilen neu | 4 Korrekturen + ZiB H2021 (OCR) · je 30 min |
-| T3 | H2018, F2018 | 10 | L-ALT neu (½ Tag) | 2 Korrekturen |
+| T2 | H2022 … F2019 | 40 | L-I, 15 Zeilen neu | **erledigt** – 35 Hefte sofort 100/100; 9 Korrekturen (Datum, Doppelpunkt im Badge, OCR ZiB H2021, 5 Zeichnungs-Lösungen), 6 bereinigte Ausgangslagen, 36 Anlagen |
+| T3 | H2018, F2018 | 10 | L-ALT neu (`parse_imbq_alt.py`) | **erledigt** – alle zehn Hefte auf 100/100; 4 Korrekturen (Zeichnung, zwei verrutschte Formeln, doppelt gesetzte Kopfzeile), 7 Anlagen |
 | T4 | H2017 … H2014 | 35 | L-ALT + OCR-Normalisierung | je Prüfung 1–2 h Sichtprüfung gegen Seitenbilder; Rechtsstand-Hinweis Pflicht |
 
 Erst B0 (Daten auslagern) und B1 (Datenmodell) umsetzen, dann T1 – sonst
