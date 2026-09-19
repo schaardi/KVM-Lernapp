@@ -1,0 +1,476 @@
+{
+ "questions": [
+  {
+   "f": 1,
+   "sub": "Arbeitsrecht",
+   "t": "mc",
+   "q": "Ein Mitarbeiter ruft im Streit „Das war es endgültig, ich kündige“. Hat er das Arbeitsverhältnis wirksam beendet?",
+   "o": [
+    {
+     "t": "Nein – jede Kündigung bedarf nach § 623 BGB der Schriftform; eine mündliche Erklärung ist unwirksam",
+     "ok": 1
+    },
+    {
+     "t": "Ja, die Kündigung wirkt sofort und fristlos"
+    },
+    {
+     "t": "Ja, aber erst nach Ablauf der gesetzlichen Frist"
+    },
+    {
+     "t": "Nur wenn ein Zeuge das Gespräch bestätigt"
+    }
+   ],
+   "e": "§ 623 BGB verlangt für Kündigung und Aufhebungsvertrag die Schriftform und schließt die elektronische Form aus. Die mündliche „Kündigung“ ist damit nichtig – das Arbeitsverhältnis besteht fort."
+  },
+  {
+   "f": 1,
+   "sub": "Arbeitsrecht",
+   "t": "mc",
+   "q": "Ein Mitarbeiter bleibt unentschuldigt der Arbeit fern. Hat er für diesen Tag Anspruch auf Arbeitslohn?",
+   "o": [
+    {
+     "t": "Nein – ohne Arbeitsleistung kein Entgelt (§§ 275, 326 BGB)",
+     "ok": 1
+    },
+    {
+     "t": "Ja, der Lohnanspruch bleibt in jedem Fall bestehen"
+    },
+    {
+     "t": "Ja, wenn er den Tag später nacharbeitet"
+    },
+    {
+     "t": "Nur wenn der Betriebsrat zustimmt"
+    }
+   ],
+   "e": "Der Grundsatz „ohne Arbeit kein Lohn“ folgt aus §§ 275, 326 BGB. Ausnahmen bestehen bei Krankheit, Urlaub, Feiertagen und Annahmeverzug des Arbeitgebers – nicht aber beim unentschuldigten Fernbleiben."
+  },
+  {
+   "f": 1,
+   "sub": "Arbeitsrecht",
+   "t": "mc",
+   "q": "Worin unterscheidet sich das qualifizierte vom einfachen Arbeitszeugnis?",
+   "o": [
+    {
+     "t": "Das qualifizierte Zeugnis bewertet zusätzlich Leistung und Verhalten, das einfache bescheinigt nur Art und Dauer der Tätigkeit",
+     "ok": 1
+    },
+    {
+     "t": "Das einfache Zeugnis ist ausführlicher als das qualifizierte"
+    },
+    {
+     "t": "Das qualifizierte Zeugnis wird nur bei Kündigung durch den Arbeitgeber erteilt"
+    },
+    {
+     "t": "Nur das einfache Zeugnis muss unterschrieben werden"
+    }
+   ],
+   "e": "Das einfache Zeugnis nennt Namen, Art und Dauer der Tätigkeit. Das qualifizierte kommt auf Verlangen des Arbeitnehmers hinzu und beurteilt Leistung und Verhalten – wohlwollend, aber wahr."
+  },
+  {
+   "f": 1,
+   "sub": "Arbeitsrecht",
+   "t": "mc",
+   "q": "Welche Angabe darf in einem Arbeitszeugnis nicht erscheinen?",
+   "o": [
+    {
+     "t": "Die Betriebsratstätigkeit des Arbeitnehmers",
+     "ok": 1
+    },
+    {
+     "t": "Die Art der ausgeübten Tätigkeit"
+    },
+    {
+     "t": "Die Dauer des Arbeitsverhältnisses"
+    },
+    {
+     "t": "Die Beurteilung der Arbeitsleistung im qualifizierten Zeugnis"
+    }
+   ],
+   "e": "Nicht ins Zeugnis gehören Betriebsratstätigkeit, Partei- und Gewerkschaftszugehörigkeit, Fehlzeiten, Krankheiten, Erziehungszeiten und Lohnpfändungen – alles, was das berufliche Fortkommen unsachlich behindern würde."
+  },
+  {
+   "f": 1,
+   "sub": "Arbeitsrecht",
+   "t": "mc",
+   "q": "Auf welcher Grundlage kann eine Arbeitnehmerin ihre Arbeitszeit für einen vorher festgelegten Zeitraum verringern?",
+   "o": [
+    {
+     "t": "Auf Grundlage der Brückenteilzeit nach § 9a TzBfG",
+     "ok": 1
+    },
+    {
+     "t": "Auf Grundlage des Mutterschutzgesetzes"
+    },
+    {
+     "t": "Auf Grundlage des Kündigungsschutzgesetzes"
+    },
+    {
+     "t": "Auf Grundlage des Arbeitszeitgesetzes"
+    }
+   ],
+   "e": "§ 9a TzBfG gibt Beschäftigten in Betrieben mit mehr als 45 Arbeitnehmern einen Anspruch auf zeitlich begrenzte Teilzeit zwischen einem und fünf Jahren. Anders als die zeitlich unbegrenzte Teilzeit nach § 8 TzBfG kehrt man danach automatisch zur alten Arbeitszeit zurück."
+  },
+  {
+   "f": 1,
+   "sub": "Arbeitsrecht",
+   "t": "mc",
+   "q": "Kann die Brückenteilzeit vorzeitig beendet werden, wenn der Grund entfällt?",
+   "o": [
+    {
+     "t": "Nein – während der vereinbarten Dauer besteht kein Anspruch auf weitere Verringerung oder auf Verlängerung der Arbeitszeit",
+     "ok": 1
+    },
+    {
+     "t": "Ja, jederzeit mit Monatsfrist"
+    },
+    {
+     "t": "Ja, wenn der Betriebsrat zustimmt"
+    },
+    {
+     "t": "Ja, weil der Arbeitgeber die Rückkehr nicht verweigern darf"
+    }
+   ],
+   "e": "Die Festlegung bindet beide Seiten – das ist der Preis für die Planungssicherheit. Eine frühere Rückkehr ist nur einvernehmlich möglich. Nach Ablauf lebt die alte Arbeitszeit ohne weiteres Zutun wieder auf."
+  },
+  {
+   "f": 2,
+   "sub": "Betriebsorganisation",
+   "t": "mc",
+   "q": "Worin unterscheiden sich „Stelle“ und „Instanz“?",
+   "o": [
+    {
+     "t": "Die Stelle ist die kleinste organisatorische Einheit; die Instanz ist eine Stelle mit Weisungs- und Entscheidungsbefugnis",
+     "ok": 1
+    },
+    {
+     "t": "Die Instanz ist die kleinste Einheit, die Stelle fasst mehrere Instanzen zusammen"
+    },
+    {
+     "t": "Die Stelle hat Weisungsbefugnis, die Instanz berät nur"
+    },
+    {
+     "t": "Beide Begriffe bezeichnen dasselbe"
+    }
+   ],
+   "e": "Eine Stelle bündelt Aufgaben, Kompetenzen und Verantwortung für einen gedachten Aufgabenträger. Kommt Leitungsbefugnis hinzu, spricht man von einer Instanz. Die Stabsstelle dagegen berät und hat kein Weisungsrecht."
+  },
+  {
+   "f": 2,
+   "sub": "Betriebsorganisation",
+   "t": "mc",
+   "q": "Welchen Vorteil hat eine Stellenbeschreibung für den Stelleninhaber?",
+   "o": [
+    {
+     "t": "Anforderungen, Aufgaben und Kompetenzen sind eindeutig festgelegt und die Beziehungen zu anderen Stellen definiert",
+     "ok": 1
+    },
+    {
+     "t": "Sie garantiert eine höhere Vergütung"
+    },
+    {
+     "t": "Sie schützt vor betriebsbedingter Kündigung"
+    },
+    {
+     "t": "Sie ersetzt den Arbeitsvertrag"
+    }
+   ],
+   "e": "Für den Stelleninhaber schafft sie Klarheit und Abgrenzung, für das Unternehmen eine Grundlage für Personalauswahl, Beurteilung, Entgeltfindung und Vertretungsregelungen. Ein Arbeitsvertrag ist sie nicht."
+  },
+  {
+   "f": 2,
+   "sub": "Materialwirtschaft",
+   "t": "calc",
+   "q": "Der Jahresbedarf beträgt 180.000 Stück bei 360 Tagen, Lieferzeit 8 Tage, Prüfzeit 1 Tag, Sicherheitsbestand für 5 Tage. Berechnen Sie den Meldebestand.",
+   "ans": 7000,
+   "unit": "Stück",
+   "e": "Tagesverbrauch = 180.000 ÷ 360 = 500 Stück/Tag. Sicherheitsbestand = 5 · 500 = 2.500 Stück. Meldebestand = Tagesverbrauch · (Lieferzeit + Prüfzeit) + Sicherheitsbestand = 500 · 9 + 2.500 = 7.000 Stück."
+  },
+  {
+   "f": 2,
+   "sub": "Materialwirtschaft",
+   "t": "calc",
+   "q": "Bestellmenge 15.000 Stück, Sicherheitsbestand 2.500 Stück, Jahresverbrauch 180.000 Stück. Berechnen Sie die Lagerumschlagshäufigkeit.",
+   "ans": 18,
+   "unit": "",
+   "e": "Durchschnittlicher Lagerbestand = Bestellmenge ÷ 2 + Sicherheitsbestand = 15.000 ÷ 2 + 2.500 = 10.000 Stück. Lagerumschlagshäufigkeit = 180.000 ÷ 10.000 = 18."
+  },
+  {
+   "f": 2,
+   "sub": "Materialwirtschaft",
+   "t": "calc",
+   "q": "Die Lagerumschlagshäufigkeit beträgt 18 bei 360 Tagen im Jahr. Berechnen Sie die durchschnittliche Lagerdauer.",
+   "ans": 20,
+   "unit": "Tage",
+   "e": "Durchschnittliche Lagerdauer = 360 Tage ÷ Umschlagshäufigkeit = 360 ÷ 18 = 20 Tage. Je häufiger das Lager umschlägt, desto kürzer liegt das Material und desto weniger Kapital ist gebunden."
+  },
+  {
+   "f": 2,
+   "sub": "Materialwirtschaft",
+   "t": "calc",
+   "q": "Berechnen Sie die optimale Bestellmenge nach Andler: Jahresbedarf 180.000 Stück, Kosten je Bestellung 50 €, Einstandspreis 1,50 €/Stück, Lagerhaltungszinssatz 12 %.",
+   "ans": 10000,
+   "unit": "Stück",
+   "e": "x(opt) = √(2 · Bestellkosten · Jahresbedarf ÷ (Einstandspreis · Lagerzinssatz)) = √(2 · 50 € · 180.000 ÷ (1,50 €/Stück · 0,12)) = √(18.000.000 ÷ 0,18) = √100.000.000 = 10.000 Stück. Die bisherige Bestellmenge von 15.000 Stück ist also nicht optimal."
+  },
+  {
+   "f": 3,
+   "sub": "EDV",
+   "t": "mc",
+   "q": "Welche Software ist ein typisches Beispiel für Standard-Anwendungssoftware im Unternehmen?",
+   "o": [
+    {
+     "t": "ERP-Software zum Management der Unternehmensressourcen",
+     "ok": 1
+    },
+    {
+     "t": "Das Betriebssystem des Servers"
+    },
+    {
+     "t": "Der Gerätetreiber des Druckers"
+    },
+    {
+     "t": "Die Firmware einer Werkzeugmaschine"
+    }
+   ],
+   "e": "Standard-Anwendungssoftware löst fachliche Aufgaben: ERP, Datenbanken, Textverarbeitung, Tabellenkalkulation, Präsentation, CAD. Betriebssysteme, Treiber und Firmware sind Systemsoftware."
+  },
+  {
+   "f": 3,
+   "sub": "EDV",
+   "t": "mc",
+   "q": "Wofür benötigt ein Unternehmen Support für seine Standard-Anwendungssoftware?",
+   "o": [
+    {
+     "t": "Für Installation, Customizing, Updates und das Schließen von Sicherheitslücken",
+     "ok": 1
+    },
+    {
+     "t": "Für die Erstellung der Geschäftsberichte"
+    },
+    {
+     "t": "Für die Einstellung neuer Mitarbeiter"
+    },
+    {
+     "t": "Für die Kalkulation der Verkaufspreise"
+    }
+   ],
+   "e": "Typische Supportfälle: unternehmensweite Installation, Anpassung an die eigenen Anforderungen, Aktualisierungen, Fehlerbehebung, Schnittstellen zu anderen Systemen und Schulung der Anwender."
+  },
+  {
+   "f": 3,
+   "sub": "EDV",
+   "t": "mc",
+   "q": "Welche Anforderung sollte ein IT-Systemhaus erfüllen, das den Support übernimmt?",
+   "o": [
+    {
+     "t": "Kurze Reaktionszeiten und gute Erreichbarkeit, belegt durch Referenzen und Zertifizierung",
+     "ok": 1
+    },
+    {
+     "t": "Der niedrigste Preis am Markt"
+    },
+    {
+     "t": "Ein Sitz im selben Bundesland"
+    },
+    {
+     "t": "Die Bereitschaft, ohne Vertrag zu arbeiten"
+    }
+   ],
+   "e": "Maßgeblich sind Fachkompetenz, Referenzen, Zertifizierungen, Erreichbarkeit, zugesagte Reaktionszeiten und kurze Anfahrtswege. Der Preis ist ein Kriterium unter mehreren – bei Ausfall der IT zählt die Reaktionszeit mehr."
+  },
+  {
+   "f": 4,
+   "sub": "Führungsmethoden",
+   "t": "mc",
+   "q": "Was ist ein Unternehmensleitbild?",
+   "o": [
+    {
+     "t": "Eine schriftliche Erklärung der Organisation über ihr Selbstverständnis und ihre Grundprinzipien",
+     "ok": 1
+    },
+    {
+     "t": "Eine Anweisung zur Bedienung der Maschinen"
+    },
+    {
+     "t": "Der Organisationsplan mit allen Stellen"
+    },
+    {
+     "t": "Die Bilanz des abgelaufenen Geschäftsjahres"
+    }
+   ],
+   "e": "Das Leitbild beschreibt, wofür das Unternehmen steht, wie es mit Mitarbeitern, Kunden und Umwelt umgeht und woran es sich messen lassen will. Es wirkt nach innen orientierend und nach außen darstellend – aber nur, wenn die Führung sich daran hält."
+  },
+  {
+   "f": 4,
+   "sub": "Führungsmethoden",
+   "t": "mc",
+   "q": "Welcher Grundsatz gehört in ein modernisiertes Leitbild eines international tätigen, hoch technisierten Unternehmens?",
+   "o": [
+    {
+     "t": "Nachhaltigkeit und Schonung von Umwelt und Ressourcen",
+     "ok": 1
+    },
+    {
+     "t": "Möglichst geringe Mitarbeiterbeteiligung"
+    },
+    {
+     "t": "Verzicht auf Digitalisierung"
+    },
+    {
+     "t": "Beschränkung auf den heimischen Markt"
+    }
+   ],
+   "e": "Zeitgemäße Grundsätze sind unter anderem Nachhaltigkeit, Ressourcenschonung, Vielfalt und Pluralität, digitale Transformation, lebenslanges Lernen, Gesundheitsschutz und faire Zusammenarbeit entlang der Lieferkette."
+  },
+  {
+   "f": 4,
+   "sub": "Personalplanung",
+   "t": "mc",
+   "q": "Welches Gesetz ist bei der Beschäftigung schwerbehinderter Menschen besonders zu beachten?",
+   "o": [
+    {
+     "t": "Das Sozialgesetzbuch IX (SGB IX)",
+     "ok": 1
+    },
+    {
+     "t": "Das Jugendarbeitsschutzgesetz"
+    },
+    {
+     "t": "Das Mutterschutzgesetz"
+    },
+    {
+     "t": "Das Berufsbildungsgesetz"
+    }
+   ],
+   "e": "Das SGB IX regelt unter anderem Beschäftigungspflicht, Zusatzurlaub, behinderungsgerechte Arbeitsgestaltung und den besonderen Kündigungsschutz. Für Jugendliche gilt das JArbSchG, für schwangere und stillende Frauen das MuSchG."
+  },
+  {
+   "f": 4,
+   "sub": "Personalentwicklung",
+   "t": "mc",
+   "q": "Warum lohnt sich kontinuierliche Fort- und Weiterbildung aus betrieblicher Sicht?",
+   "o": [
+    {
+     "t": "Sie erhöht Leistung und Produktivität, sichert die Anpassung an technische Entwicklungen und bindet Mitarbeiter",
+     "ok": 1
+    },
+    {
+     "t": "Sie senkt unmittelbar die Personalkosten"
+    },
+    {
+     "t": "Sie ersetzt die Einarbeitung neuer Mitarbeiter"
+    },
+    {
+     "t": "Sie ist gesetzlich in jedem Fall vorgeschrieben"
+    }
+   ],
+   "e": "Weiterbildung zahlt sich in Qualität, Flexibilität, Innovationsfähigkeit und geringerer Fluktuation aus – und sie verringert den Aufwand für die externe Suche nach Fachkräften."
+  },
+  {
+   "f": 4,
+   "sub": "Personalentwicklung",
+   "t": "mc",
+   "q": "Welche Lehrmethode spricht vor allem den psychomotorischen Lernzielbereich an?",
+   "o": [
+    {
+     "t": "Die Vier-Stufen-Methode am Arbeitsplatz (Vormachen – Nachmachen – Üben – Anwenden)",
+     "ok": 1
+    },
+    {
+     "t": "Der Fachvortrag"
+    },
+    {
+     "t": "Die Gruppendiskussion"
+    },
+    {
+     "t": "Das Selbststudium mit Fachliteratur"
+    }
+   ],
+   "e": "Kognitiv (Wissen) erreicht man über Vortrag, Lehrgespräch und Selbststudium; affektiv (Einstellungen) über Rollenspiel und Diskussion; psychomotorisch (Fertigkeiten) über Unterweisung und Übung an der Maschine."
+  },
+  {
+   "f": 5,
+   "sub": "Naturwissenschaftliche und technische Grundlagen",
+   "t": "mc",
+   "q": "Was ist ein Lösungsmittel?",
+   "o": [
+    {
+     "t": "Ein Stoff, der andere Stoffe löst oder verdünnt, ohne dass dabei eine chemische Reaktion stattfindet",
+     "ok": 1
+    },
+    {
+     "t": "Ein Stoff, der andere Stoffe chemisch zersetzt"
+    },
+    {
+     "t": "Ein Stoff, der die Temperatur einer Mischung senkt"
+    },
+    {
+     "t": "Ein Stoff, der ausschließlich Metalle angreift"
+    }
+   ],
+   "e": "Beim Lösen bleiben die Stoffe chemisch unverändert und lassen sich – etwa durch Verdampfen – wieder trennen. Wasser ist wegen seiner Polarität das meistverwendete Lösungsmittel in Natur und Technik."
+  },
+  {
+   "f": 5,
+   "sub": "Naturwissenschaftliche und technische Grundlagen",
+   "t": "mc",
+   "q": "Welche konstruktive Maßnahme schützt vor Korrosion?",
+   "o": [
+    {
+     "t": "Die Werkstoffauswahl und eine Gestaltung ohne Wasseransammlungen, etwa durch Schrägen und Ablauföffnungen",
+     "ok": 1
+    },
+    {
+     "t": "Das regelmäßige Abwaschen mit Leitungswasser"
+    },
+    {
+     "t": "Die Lagerung im Freien zur besseren Belüftung"
+    },
+    {
+     "t": "Der Verzicht auf jede Oberflächenbehandlung"
+    }
+   ],
+   "e": "Konstruktiv wirken nichtrostende Werkstoffe, das Vermeiden von Spalten und stehendem Wasser sowie das Trennen unterschiedlich edler Metalle. Bei Lagerung und Wartung helfen trockene Lagerung, Konservierung und regelmäßige Sichtprüfung."
+  },
+  {
+   "f": 5,
+   "sub": "Naturwissenschaftliche und technische Grundlagen",
+   "t": "calc",
+   "q": "In einer hydraulischen Anlage wirkt auf Kolben 1 (Ø 12 mm) ein Druck von 1 MPa. Berechnen Sie den Druck an Kolben 2 (Ø 36 mm) bei gleicher Kraft.",
+   "ans": 0.111,
+   "unit": "MPa",
+   "e": "Bei gleicher Kraft gilt p₁ · A₁ = p₂ · A₂. Da die Fläche mit dem Quadrat des Durchmessers wächst: p₂ = p₁ · (d₁ ÷ d₂)² = 1 MPa · (12 mm ÷ 36 mm)² = 1 MPa · (1/3)² = 0,111 MPa = 1,11 bar."
+  },
+  {
+   "f": 5,
+   "sub": "Naturwissenschaftliche und technische Grundlagen",
+   "t": "calc",
+   "q": "Luft strömt mit 18 km/h durch einen quadratischen Schacht mit 1,2 m Kantenlänge. Am Austritt beträgt die Geschwindigkeit 2,0 m/s bei einer Kanalhöhe von 1,2 m. Berechnen Sie die erforderliche Kanalbreite.",
+   "ans": 3,
+   "unit": "m",
+   "e": "Kontinuitätsgleichung: A₁ · v₁ = A₂ · v₂. 18 km/h = 5 m/s. A₁ · v₁ = 1,44 m² · 5 m/s = 7,2 m³/s. A₂ = 7,2 ÷ 2,0 = 3,6 m². Bei 1,2 m Höhe folgt b = 3,6 m² ÷ 1,2 m = 3,0 m."
+  },
+  {
+   "f": 5,
+   "sub": "Naturwissenschaftliche und technische Grundlagen",
+   "t": "mc",
+   "q": "Welche Mineralstoffe sind typischerweise im Leitungswasser gelöst?",
+   "o": [
+    {
+     "t": "Calcium, Magnesium, Natrium und Kalium sowie Chloride und Sulfate",
+     "ok": 1
+    },
+    {
+     "t": "Ausschließlich Sauerstoff und Stickstoff"
+    },
+    {
+     "t": "Kohlenstoff und Silizium in Reinform"
+    },
+    {
+     "t": "Blei und Quecksilber in messbaren Mengen"
+    }
+   ],
+   "e": "Reines Wasser kommt in der Natur nicht vor. Gelöst sind vor allem Erdalkali- und Alkalimetalle sowie deren Salze – Calcium und Magnesium bestimmen dabei die Wasserhärte."
+  }
+ ]
+}

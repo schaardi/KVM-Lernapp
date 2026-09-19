@@ -40,16 +40,18 @@ APP_BILDER = os.path.join(ROOT, 'flutter_app', 'assets', 'anlagen')
 WEB_BILDER = os.path.join(ROOT, 'anlagen')
 ENDUNGEN = ('.jpg', '.jpeg', '.png')
 
-# Bildunterschriften: die Zuschnitt-Tabelle in anlagen_bau.py ist die Quelle,
-# damit Titel und Ausschnitt nicht auseinanderlaufen. Ältere Bilder, die dort
-# nicht stehen, bekommen ihren Titel hier. Schlägt der Import fehl, bricht der
-# Lauf ab – früher fing ein `except` das ab und schrieb alle Anlagen ohne
-# Bildunterschrift zurück.
+# Bildunterschriften: die beiden Tabellen in anlagen_bau.py sind die Quelle,
+# damit Titel und Fundstelle nicht auseinanderlaufen – FIGUREN für Zuschnitte,
+# AUSZUEGE für Abbildungen, die ohne Koordinaten geholt werden. Ältere Bilder,
+# die in keiner von beiden stehen, bekommen ihren Titel in anlagen_titel.py.
+# Schlägt der Import fehl, bricht der Lauf ab – früher fing ein `except` das ab
+# und schrieb alle Anlagen ohne Bildunterschrift zurück.
 sys.path.insert(0, HERE)
-from anlagen_bau import FIGUREN
+from anlagen_bau import FIGUREN, AUSZUEGE
 from anlagen_titel import TITEL as TITEL_EXTRAKT
 
 TITEL = {k: v[3] for k, v in FIGUREN.items()}
+TITEL.update({k: v[2] for k, v in AUSZUEGE.items()})
 TITEL.update(TITEL_EXTRAKT)
 TITEL.setdefault('P-FT-20251111-s3', 'Lastverteilungsplan Sattelauflieger')
 

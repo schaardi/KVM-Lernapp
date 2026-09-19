@@ -1,0 +1,593 @@
+{
+ "questions": [
+  {
+   "f": 1,
+   "sub": "Betriebsverfassung",
+   "t": "mc",
+   "q": "Nach einem Diebstahl will die Geschäftsführung Taschenkontrollen einführen und Kameras aufstellen. Wie ist der Betriebsrat zu beteiligen?",
+   "o": [
+    {
+     "t": "In beiden Fällen hat er ein echtes Mitbestimmungsrecht – bei Taschenkontrollen nach § 87 Absatz 1 Nummer 1, bei Kameras nach § 87 Absatz 1 Nummer 6 BetrVG",
+     "ok": 1
+    },
+    {
+     "t": "Er ist nur anzuhören, weil es um Straftaten geht"
+    },
+    {
+     "t": "Er ist nur bei den Kameras zu beteiligen, nicht bei den Taschenkontrollen"
+    },
+    {
+     "t": "Er ist gar nicht zu beteiligen, solange ein konkreter Tatverdacht besteht"
+    }
+   ],
+   "e": "Nummer 1 betrifft die Ordnung des Betriebs und das Verhalten der Arbeitnehmer, Nummer 6 die Einführung technischer Einrichtungen, die zur Überwachung geeignet sind. Kommt keine Einigung zustande, entscheidet die Einigungsstelle."
+  },
+  {
+   "f": 1,
+   "sub": "Arbeitsrecht",
+   "t": "mc",
+   "q": "Ein schwerbehinderter Arbeitnehmer soll wegen Diebstahls außerordentlich gekündigt werden. Was muss der Arbeitgeber zuvor tun?",
+   "o": [
+    {
+     "t": "Er muss innerhalb von zwei Wochen ab Kenntnis des Sachverhalts die Zustimmung des Integrationsamts beantragen",
+     "ok": 1
+    },
+    {
+     "t": "Er muss die Kündigung dem Integrationsamt nachträglich anzeigen"
+    },
+    {
+     "t": "Er muss die Zustimmung der Agentur für Arbeit einholen"
+    },
+    {
+     "t": "Er braucht nichts weiter zu tun, weil bei einer Straftat der Sonderkündigungsschutz entfällt"
+    }
+   ],
+   "e": "Die Zustimmung des Integrationsamts regelt § 174 SGB IX (früher § 91). Unabhängig davon ist der Betriebsrat vor jeder Kündigung anzuhören (§ 102 BetrVG), und die Kündigung selbst bedarf nach § 623 BGB der Schriftform."
+  },
+  {
+   "f": 1,
+   "sub": "Arbeitsrecht",
+   "t": "mc",
+   "q": "Wie kann ein Tarifvertrag für ein einzelnes Arbeitsverhältnis Geltung erlangen?",
+   "o": [
+    {
+     "t": "Durch beiderseitige Tarifbindung, durch Allgemeinverbindlicherklärung oder durch eine Bezugnahmeklausel im Arbeitsvertrag",
+     "ok": 1
+    },
+    {
+     "t": "Ausschließlich dadurch, dass der Arbeitnehmer Gewerkschaftsmitglied ist"
+    },
+    {
+     "t": "Ausschließlich durch Beschluss des Betriebsrats"
+    },
+    {
+     "t": "Ausschließlich durch Aushang im Betrieb"
+    }
+   ],
+   "e": "Beiderseitige Tarifbindung setzt Mitgliedschaft in Gewerkschaft und Arbeitgeberverband voraus (§ 3 TVG). Die Allgemeinverbindlicherklärung durch das Bundesarbeitsministerium erstreckt den Tarifvertrag auf die ganze Branche (§ 5 TVG); die Bezugnahmeklausel vereinbart seine Geltung individuell."
+  },
+  {
+   "f": 1,
+   "sub": "Arbeitsrecht",
+   "t": "mc",
+   "q": "Welche gegenseitige Verpflichtung übernehmen die Tarifvertragsparteien im schuldrechtlichen Teil eines Tarifvertrags?",
+   "o": [
+    {
+     "t": "Die Friedenspflicht – während der Laufzeit werden keine Arbeitskampfmaßnahmen über die geregelten Gegenstände ergriffen",
+     "ok": 1
+    },
+    {
+     "t": "Die Pflicht, jährlich neu zu verhandeln"
+    },
+    {
+     "t": "Die Pflicht, alle Betriebe der Branche zu organisieren"
+    },
+    {
+     "t": "Die Pflicht, den Betriebsrat an den Verhandlungen zu beteiligen"
+    }
+   ],
+   "e": "Neben der Friedenspflicht besteht die Durchführungspflicht: Jede Seite muss auf ihre Mitglieder einwirken, den Tarifvertrag einzuhalten. Der normative Teil regelt dagegen die Arbeitsbedingungen und wirkt unmittelbar und zwingend auf die Arbeitsverhältnisse."
+  },
+  {
+   "f": 1,
+   "sub": "Betriebsverfassung",
+   "t": "mc",
+   "q": "Ein nicht freigestelltes Betriebsratsmitglied nimmt während der Arbeitszeit an der Betriebsratssitzung teil. Wie ist das zu vergüten?",
+   "o": [
+    {
+     "t": "Die Zeit ist ohne Minderung des Arbeitsentgelts fortzuzahlen – Betriebsratstätigkeit ist ein Ehrenamt, darf aber nicht zu Nachteilen führen",
+     "ok": 1
+    },
+    {
+     "t": "Die Zeit ist unbezahlt, weil keine Arbeitsleistung erbracht wird"
+    },
+    {
+     "t": "Die Zeit ist mit dem Mindestlohn zu vergüten"
+    },
+    {
+     "t": "Die Zeit ist nachzuarbeiten oder vom Urlaubskonto abzuziehen"
+    }
+   ],
+   "e": "§ 37 Absatz 2 BetrVG gibt den Anspruch auf Freistellung für erforderliche Betriebsratstätigkeit; die Teilnahme an Sitzungen ist stets erforderlich, der Meister kann sie nicht aus betrieblichen Gründen verweigern. Für Schulungen mit erforderlichen Kenntnissen gilt § 37 Absatz 6 BetrVG."
+  },
+  {
+   "f": 1,
+   "sub": "Sozialversicherung",
+   "t": "mc",
+   "q": "Ein Mitarbeiter verunglückt auf dem Arbeitsweg, nachdem er einen Kollegen abgeholt hat. Wie wirkt sich der Umweg auf den Versicherungsschutz aus?",
+   "o": [
+    {
+     "t": "Gar nicht – das Abholen von Arbeitskollegen zur gemeinsamen Fahrt zur Arbeit bleibt versichert",
+     "ok": 1
+    },
+    {
+     "t": "Der Versicherungsschutz entfällt für die gesamte Fahrt"
+    },
+    {
+     "t": "Der Versicherungsschutz entfällt ab dem Moment des Umwegs endgültig"
+    },
+    {
+     "t": "Der Versicherungsschutz besteht nur für den mitgenommenen Kollegen"
+    }
+   ],
+   "e": "Die gemeinsame Fahrt zur Arbeit ist ein versicherter Umweg nach § 8 Absatz 2 SGB VII. Bei längerer Arbeitsunfähigkeit zahlt der Arbeitgeber sechs Wochen Entgeltfortzahlung; danach übernimmt die Unfallversicherung Verletztengeld und Behandlungskosten – nicht die Krankenkasse."
+  },
+  {
+   "f": 1,
+   "sub": "Arbeitsrecht",
+   "t": "mc",
+   "q": "In welchem Fall muss der Arbeitgeber das Entgelt fortzahlen, obwohl keine Arbeitsleistung erbracht wird – abgesehen von der Entgeltfortzahlung im Krankheitsfall?",
+   "o": [
+    {
+     "t": "Bei Erholungsurlaub, an gesetzlichen Feiertagen und bei Annahmeverzug des Arbeitgebers",
+     "ok": 1
+    },
+    {
+     "t": "Bei unentschuldigtem Fehlen, wenn es erstmalig vorkommt"
+    },
+    {
+     "t": "Bei einem Streik, an dem der Arbeitnehmer teilnimmt"
+    },
+    {
+     "t": "Bei unbezahltem Sonderurlaub auf eigenen Wunsch"
+    }
+   ],
+   "e": "Hinzu kommt die vorübergehende Verhinderung aus persönlichen Gründen nach § 616 BGB – etwa Arztbesuch, Geburt des eigenen Kindes oder Todesfall in der Familie –, sofern sie nicht arbeits- oder tarifvertraglich ausgeschlossen ist."
+  },
+  {
+   "f": 1,
+   "sub": "Umweltrecht",
+   "t": "mc",
+   "q": "Giftstoffe gelangen in einen Fluss; der Verursacher lässt sich nicht ermitteln, und die Gemeinde lässt den Schaden beseitigen. Nach welchem Prinzip wurde gehandelt?",
+   "o": [
+    {
+     "t": "Nach dem Gemeinlastprinzip",
+     "ok": 1
+    },
+    {
+     "t": "Nach dem Verursacherprinzip"
+    },
+    {
+     "t": "Nach dem Vorsorgeprinzip"
+    },
+    {
+     "t": "Nach dem Kooperationsprinzip"
+    }
+   ],
+   "e": "Das Gemeinlastprinzip greift, wenn kein Verursacher feststellbar ist oder die Belastung unzumutbar wäre – die Allgemeinheit trägt dann die Kosten. Das Vorsorgeprinzip will Schäden von vornherein vermeiden, das Kooperationsprinzip bindet Staat, Wirtschaft und Gesellschaft gemeinsam ein."
+  },
+  {
+   "f": 2,
+   "sub": "Rechtsformen",
+   "t": "mc",
+   "q": "Worin liegt der grundlegende Unterschied zwischen Personen- und Kapitalgesellschaften?",
+   "o": [
+    {
+     "t": "Bei Personengesellschaften haftet mindestens eine natürliche Person unbeschränkt und führt die Geschäfte; Kapitalgesellschaften sind juristische Personen, die mit dem Gesellschaftsvermögen haften",
+     "ok": 1
+    },
+    {
+     "t": "Personengesellschaften brauchen ein Mindestkapital, Kapitalgesellschaften nicht"
+    },
+    {
+     "t": "Personengesellschaften sind stets im Handelsregister eingetragen, Kapitalgesellschaften nicht"
+    },
+    {
+     "t": "Personengesellschaften dürfen keine Arbeitnehmer beschäftigen"
+    }
+   ],
+   "e": "Ausnahme ist die GmbH & Co. KG, bei der eine GmbH als Komplementär haftet. Ein Einzelunternehmer nimmt Mitgesellschafter auf, um Haftungsrisiko zu verteilen, Kapital und Know-how zu gewinnen und die Kreditwürdigkeit zu verbessern."
+  },
+  {
+   "f": 2,
+   "sub": "Materialwirtschaft",
+   "t": "calc",
+   "q": "Der Jahresbedarf beträgt 720.000 Stück (kaufmännisches Jahr mit 360 Tagen). Die Lieferzeit liegt bei 20 Tagen, die interne Prüfzeit bei 2 Tagen, der Sicherheitsbestand bei 18.000 Stück. Berechnen Sie den Meldebestand.",
+   "ans": 62000,
+   "unit": "Stück",
+   "e": "Tagesverbrauch = 720.000 Stück ÷ 360 Tage = 2.000 Stück/Tag. Meldebestand = Tagesverbrauch · Wiederbeschaffungszeit + Sicherheitsbestand = 2.000 · (20 + 2) + 18.000 = 62.000 Stück. Die Prüfzeit gehört zur Wiederbeschaffungszeit dazu."
+  },
+  {
+   "f": 2,
+   "sub": "Materialwirtschaft",
+   "t": "calc",
+   "q": "Der Jahresverbrauch beträgt 720.000 Stück, die Bestellmenge 54.000 Stück, der Sicherheitsbestand 18.000 Stück. Berechnen Sie die Lagerumschlagshäufigkeit.",
+   "ans": 16,
+   "unit": "",
+   "e": "Ø Lagerbestand = Bestellmenge ÷ 2 + Sicherheitsbestand = 27.000 + 18.000 = 45.000 Stück. Lagerumschlagshäufigkeit = 720.000 ÷ 45.000 = 16. Die durchschnittliche Lagerdauer beträgt damit 360 ÷ 16 = 22,5 Tage."
+  },
+  {
+   "f": 2,
+   "sub": "Materialwirtschaft",
+   "t": "calc",
+   "q": "Jahresbedarf 720.000 Stück, Kosten je Bestellvorgang 70,00 €, Einstandspreis 1,50 €/Stück, Lagerhaltungskostensatz 20 % p. a. Berechnen Sie die optimale Bestellmenge nach Andler (auf ganze Stück gerundet).",
+   "ans": 18330,
+   "unit": "Stück",
+   "e": "xopt = √(2 · kB · xges ÷ (EP · iL)) = √(2 · 70 € · 720.000 ÷ (1,50 €/Stück · 0,2)) = √336.000.000 = 18.330 Stück. Bei Verpackungseinheiten zu 1.000 Stück wird auf 18.000 Stück abgerundet."
+  },
+  {
+   "f": 4,
+   "sub": "Personalplanung",
+   "t": "calc",
+   "q": "Von Produkt A sind im Monat 2.400 Stück in Losen zu 400 Stück zu fertigen. Je Los fallen 200 min Rüstzeit an, die Zeit je Einheit beträgt 64 min. Berechnen Sie den Kapazitätsbedarf in Minuten.",
+   "ans": 154800,
+   "unit": "min",
+   "e": "Losanzahl = 2.400 ÷ 400 = 6. T = 6 · 200 min + 2.400 Stück · 64 min/Stück = 1.200 min + 153.600 min = 154.800 min. Die Rüstzeit fällt je Los einmal an – größere Lose senken den Rüstanteil, erhöhen aber die Kapitalbindung."
+  },
+  {
+   "f": 2,
+   "sub": "Kostenrechnung",
+   "t": "calc",
+   "q": "Die Fertigungsgemeinkosten der Kostenstelle II betragen 180.000 €, die Fertigungslöhne dieser Stelle 60.000 €. Berechnen Sie den Fertigungsgemeinkostenzuschlagssatz.",
+   "ans": 300,
+   "unit": "%",
+   "e": "FGKZ II = 180.000 € ÷ 60.000 € · 100 = 300 %. Jede Fertigungshauptkostenstelle bekommt einen eigenen Zuschlagssatz – hier liegt Kostenstelle I bei 140.000 € ÷ 80.000 € · 100 = 175 %."
+  },
+  {
+   "f": 2,
+   "sub": "Kostenrechnung",
+   "t": "calc",
+   "q": "Ein Unternehmen setzt 250.000 Stück für 6.000.000 € ab. Die variablen Kosten betragen 3.550.000 €, die Fixkosten 2.205.000 €. Berechnen Sie das Betriebsergebnis.",
+   "ans": 245000,
+   "unit": "€",
+   "e": "BE = Umsatz − variable Kosten − Fixkosten = 6.000.000 € − 3.550.000 € − 2.205.000 € = 245.000 € Gewinn. Bei einer Kapazität von 300.000 Stück entspricht die Menge einem Beschäftigungsgrad von 83,33 %."
+  },
+  {
+   "f": 2,
+   "sub": "Kostenrechnung",
+   "t": "calc",
+   "q": "Der Stückdeckungsbeitrag beträgt 9,80 €, die Fixkosten 2.205.000 € je Periode. Berechnen Sie die Break-even-Menge.",
+   "ans": 225000,
+   "unit": "Stück",
+   "e": "db = (6.000.000 € − 3.550.000 €) ÷ 250.000 Stück = 9,80 €/Stück. xBEP = Kf ÷ db = 2.205.000 € ÷ 9,80 €/Stück = 225.000 Stück. Erst ab dieser Menge entsteht Gewinn."
+  },
+  {
+   "f": 2,
+   "sub": "Kostenrechnung",
+   "t": "calc",
+   "q": "Fixkosten 2.205.000 €, Stückdeckungsbeitrag 9,80 €. Welche Absatzmenge ist für ein Betriebsergebnis von 294.000 € erforderlich?",
+   "ans": 255000,
+   "unit": "Stück",
+   "e": "xSoll = (Kf + BESoll) ÷ db = (2.205.000 € + 294.000 €) ÷ 9,80 €/Stück = 2.499.000 € ÷ 9,80 €/Stück = 255.000 Stück – also 5.000 Stück mehr als bisher."
+  },
+  {
+   "f": 2,
+   "sub": "Kostenrechnung",
+   "t": "calc",
+   "q": "Um bei unveränderten 250.000 Stück ein Betriebsergebnis von 294.000 € zu erzielen (Fixkosten 2.205.000 €), muss der Stückdeckungsbeitrag steigen. Um wie viel Euro je Stück (drei Nachkommastellen)?",
+   "ans": 0.196,
+   "unit": "€/Stück",
+   "e": "dbSoll = (2.205.000 € + 294.000 €) ÷ 250.000 Stück = 9,996 €/Stück. Gegenüber den bisherigen 9,80 €/Stück sind das 0,196 €/Stück – rund 20 Cent mehr Deckungsbeitrag je Stück."
+  },
+  {
+   "f": 3,
+   "sub": "EDV",
+   "t": "mc",
+   "q": "Welcher Vorteil spricht dafür, Arbeitsschutzunterlagen im Intranet statt in gedruckter Form bereitzustellen?",
+   "o": [
+    {
+     "t": "Schnellerer Zugriff, stets aktuelle Fassungen und die Möglichkeit der Volltextsuche",
+     "ok": 1
+    },
+    {
+     "t": "Die Unterlagen müssen dann nicht mehr aktualisiert werden"
+    },
+    {
+     "t": "Die Mitarbeiter benötigen keine Unterweisung mehr"
+    },
+    {
+     "t": "Die Dokumentation der Unterweisungen entfällt"
+    }
+   ],
+   "e": "Voraussetzungen sind die Vernetzung aller Standorte, ausreichende Endgeräte, abgestufte Zugriffsrechte, ein Verantwortlicher für die Pflege der Inhalte und die Einweisung der Nutzer. Erfasst werden im System z. B. meldepflichtige Unfälle, Beinaheunfälle und die Teilnahme an Unterweisungen."
+  },
+  {
+   "f": 3,
+   "sub": "Arbeitsmethodik",
+   "t": "mc",
+   "q": "Welches Kriterium gehört in eine Nutzwertanalyse zur Beschaffung neuer Arbeitsplatzrechner?",
+   "o": [
+    {
+     "t": "Anschaffungspreis, laufende Kosten, Leistungsfähigkeit und Umweltauswirkungen",
+     "ok": 1
+    },
+    {
+     "t": "Das Dienstalter der künftigen Nutzer"
+    },
+    {
+     "t": "Die Zahl der Betriebsratsmitglieder"
+    },
+    {
+     "t": "Der Umsatz des vergangenen Geschäftsjahres"
+    }
+   ],
+   "e": "Die Nutzwertanalyse gewichtet die Kriterien – etwa über den paarweisen Vergleich –, bewertet jede Alternative je Kriterium mit Punkten, multipliziert Bewertung und Gewichtung und vergleicht die Summen. So wird eine Entscheidung mit mehreren, unterschiedlich wichtigen Kriterien nachvollziehbar."
+  },
+  {
+   "f": 3,
+   "sub": "Statistik",
+   "t": "calc",
+   "q": "In einem Jahr ereigneten sich 76 meldepflichtige Arbeitsunfälle bei 4.000.000 Arbeitsstunden. Berechnen Sie die Kennzahl „Unfälle je 1 Million Arbeitsstunden“ (zwei Nachkommastellen).",
+   "ans": 19,
+   "unit": "",
+   "e": "Kennzahl = 76 Unfälle ÷ 4.000.000 h · 1.000.000 h = 19,00. Bei 2.500 Mitarbeitern ergibt die zweite übliche Kennzahl 76 ÷ 2.500 · 1.000 = 30,40 Unfälle je 1.000 Beschäftigte. Kennzahlen machen Betriebe unterschiedlicher Größe vergleichbar."
+  },
+  {
+   "f": 3,
+   "sub": "Projektmanagement",
+   "t": "mc",
+   "q": "Welcher Punkt gehört in einen Projektauftrag?",
+   "o": [
+    {
+     "t": "Projektleitung mit Kompetenzen und Verantwortung sowie ein eindeutiges, überprüfbares Projektsachziel",
+     "ok": 1
+    },
+    {
+     "t": "Die Beurteilungen aller Projektmitarbeiter"
+    },
+    {
+     "t": "Die Liste der Konkurrenzunternehmen der Branche"
+    },
+    {
+     "t": "Das Protokoll der letzten Betriebsversammlung"
+    }
+   ],
+   "e": "Der Projektauftrag hält außerdem Termin- und Kostenrahmen, die bereitgestellten Ressourcen, die Abgrenzung zur Linienorganisation und die Berichtswege fest. Er ist die formale Grundlage, mit der die Geschäftsleitung dem Projekt Gewicht verleiht."
+  },
+  {
+   "f": 3,
+   "sub": "Kommunikation",
+   "t": "mc",
+   "q": "Was ist ein Beispiel für Aufwärtskommunikation im betrieblichen Arbeitsschutz?",
+   "o": [
+    {
+     "t": "Berichte, Verbesserungsvorschläge und Protokolle der Mitarbeiter an die Führungsebene",
+     "ok": 1
+    },
+    {
+     "t": "Betriebsanweisungen der Geschäftsleitung an die Beschäftigten"
+    },
+    {
+     "t": "Sicherheitsunterweisungen des Meisters vor Arbeitsaufnahme"
+    },
+    {
+     "t": "Arbeitsanweisungen für die Bedienung einer Maschine"
+    }
+   ],
+   "e": "Abwärtskommunikation umfasst Betriebs- und Arbeitsanweisungen sowie Unterweisungen, Aufwärtskommunikation Berichte, Vorschläge, Beinahe-Unfallmeldungen und Protokolle. Nur wenn beide Richtungen funktionieren, erreichen Gefahrenhinweise aus der Praxis die Entscheidungsebene."
+  },
+  {
+   "f": 4,
+   "sub": "Mitarbeiterbeurteilung",
+   "t": "mc",
+   "q": "Ein Mitarbeiter verlässt die Abteilung und bittet um ein Beurteilungsgespräch. Welche Bedeutung hat dieses Gespräch für ihn?",
+   "o": [
+    {
+     "t": "Er erhält eine Rückmeldung zu Leistungsstand und Führungsverhalten und kann daraus seine weitere berufliche Entwicklung ableiten",
+     "ok": 1
+    },
+    {
+     "t": "Es ersetzt das Arbeitszeugnis und macht dieses entbehrlich"
+    },
+    {
+     "t": "Es dient allein der Dokumentation für die Personalabteilung"
+    },
+    {
+     "t": "Es entscheidet über die Höhe seiner Abfindung"
+    }
+   ],
+   "e": "Der Gesprächsverlauf: freundlich eröffnen, Wertschätzung vermitteln, für die geleistete Arbeit danken, die gemeinsame Arbeit reflektieren, Entwicklungsmöglichkeiten aufzeigen und positiv abschließen. Zu vermeiden sind Tendenz zur Mitte, Überstrahlungs-, Milde- und Kontrastfehler."
+  },
+  {
+   "f": 4,
+   "sub": "Gruppen",
+   "t": "mc",
+   "q": "Wie beziehen Sie eine bestehende informelle Gruppe sinnvoll in Ihre Arbeit ein?",
+   "o": [
+    {
+     "t": "Sie beziehen den informellen Führer ein und nutzen die schnelle Informationsweitergabe in der Gruppe für die betrieblichen Ziele",
+     "ok": 1
+    },
+    {
+     "t": "Sie lösen die Gruppe auf, indem Sie ihre Mitglieder auf verschiedene Schichten verteilen"
+    },
+    {
+     "t": "Sie ignorieren die Gruppe, damit sie an Bedeutung verliert"
+    },
+    {
+     "t": "Sie verbieten Gespräche außerhalb der offiziellen Besprechungen"
+    }
+   ],
+   "e": "Informelle Gruppen erkennt man an ähnlicher Ausdrucksweise, gleichem Verhalten, gemeinsamen Netzwerken und einer klaren Rollenverteilung mit informellem Führer. Wer sie einbezieht, gewinnt einen zusätzlichen Kommunikationsweg und Rückhalt für Veränderungen."
+  },
+  {
+   "f": 4,
+   "sub": "Führungsstile",
+   "t": "mc",
+   "q": "Wie setzen Sie als Industriemeister einen kooperativen Führungsstil konkret um?",
+   "o": [
+    {
+     "t": "Sie vereinbaren klare Ziele, beteiligen die Mitarbeiter an Entscheidungen ihres Bereichs und berücksichtigen dabei auch ihre persönlichen Ziele",
+     "ok": 1
+    },
+    {
+     "t": "Sie geben jeden Arbeitsschritt vor und kontrollieren ihn lückenlos"
+    },
+    {
+     "t": "Sie überlassen der Gruppe alle Entscheidungen und halten sich vollständig heraus"
+    },
+    {
+     "t": "Sie treffen Entscheidungen allein, begründen sie aber ausführlich"
+    }
+   ],
+   "e": "Kooperative Führung heißt nicht Führungsverzicht: Ziele, Rahmen und Verantwortung bleiben beim Vorgesetzten, den Weg gestalten die Mitarbeiter mit. Dazu gehören regelmäßige Besprechungen, Delegation mit passenden Befugnissen sowie Anerkennung und Kritik als Führungsmittel."
+  },
+  {
+   "f": 4,
+   "sub": "Konflikte",
+   "t": "mc",
+   "q": "Was ist eine typische Ursache für einen sozialen Konflikt in einer Arbeitsgruppe?",
+   "o": [
+    {
+     "t": "Mitarbeiter fühlen sich ungerecht behandelt oder nehmen ihre Rolle nicht so wahr, wie die anderen es erwarten",
+     "ok": 1
+    },
+    {
+     "t": "Die Maschine hat eine zu geringe Taktzeit"
+    },
+    {
+     "t": "Der Tarifvertrag wurde neu abgeschlossen"
+    },
+    {
+     "t": "Das Unternehmen hat seinen Jahresabschluss veröffentlicht"
+    }
+   ],
+   "e": "Weitere Ursachen sind unterschiedliche politische oder religiöse Einstellungen, Raucher und Nichtraucher, ungleiche Arbeitsbelastung und Konkurrenz um Anerkennung. Die Führungskraft wirkt über Prävention – klare Regeln und Zuständigkeiten – sowie über Gespräche und Zielvereinbarungen."
+  },
+  {
+   "f": 5,
+   "sub": "Naturwissenschaftliche und technische Grundlagen",
+   "t": "mc",
+   "q": "Was geschieht bei chemischer Korrosion?",
+   "o": [
+    {
+     "t": "Sauerstoff, Salze, Gase oder Säuren wirken auf die Metalloberfläche ein; dabei entstehen chemische Verbindungen wie Eisenoxid",
+     "ok": 1
+    },
+    {
+     "t": "Zwei unterschiedlich edle Metalle bilden über einen Elektrolyten ein galvanisches Element"
+    },
+    {
+     "t": "Die Oberfläche wird ausschließlich durch mechanischen Abrieb zerstört"
+    },
+    {
+     "t": "Das Metall verändert nur seine Farbe, ohne dass sich der Werkstoff verändert"
+    }
+   ],
+   "e": "Chemische Korrosion braucht – anders als die elektrochemische – kein zweites Metall und keinen Elektrolyten. Vermeiden lässt sie sich während Lagerung, Fertigung und Versand durch Lacküberzug, Korrosionsschutzöl, Wachsschicht oder Ölpapier."
+  },
+  {
+   "f": 5,
+   "sub": "Naturwissenschaftliche und technische Grundlagen",
+   "t": "mc",
+   "q": "In welcher Reihenfolge wird eine Schutzlackierung auf ein Blech aufgebracht?",
+   "o": [
+    {
+     "t": "Oberfläche reinigen und entfetten, Haftgrund auftragen, Lackgrundschicht, dann Lackdeckschicht",
+     "ok": 1
+    },
+    {
+     "t": "Lackdeckschicht, Lackgrundschicht, Haftgrund, zuletzt reinigen"
+    },
+    {
+     "t": "Haftgrund, reinigen und entfetten, Deckschicht, Grundschicht"
+    },
+    {
+     "t": "Nur Grund- und Deckschicht; eine Reinigung erübrigt sich bei neuem Blech"
+    }
+   ],
+   "e": "Ohne Reinigung und Entfettung haftet keine Schicht dauerhaft – Fett, Staub und Oxidschichten wirken als Trennmittel. Der Haftgrund vermittelt zwischen Metall und Lack, die Grundschicht schützt vor Korrosion, die Deckschicht vor Witterung und mechanischer Belastung."
+  },
+  {
+   "f": 5,
+   "sub": "Naturwissenschaftliche und technische Grundlagen",
+   "t": "calc",
+   "q": "In einer Bremsanlage herrscht ein Druck von 1,11 bar (= 11,1 N/cm²). Der Kolben K2 hat einen Durchmesser von 24 mm. Berechnen Sie die auf die Kolbenstange wirkende Kraft (zwei Nachkommastellen).",
+   "ans": 50.21,
+   "unit": "N",
+   "e": "Kolbenfläche A = π ÷ 4 · d² = π ÷ 4 · (2,4 cm)² = 4,524 cm². F = p · A = 11,1 N/cm² · 4,524 cm² = 50,21 N. Bei gleichem Druck wächst die Kraft mit dem Quadrat des Durchmessers."
+  },
+  {
+   "f": 5,
+   "sub": "Naturwissenschaftliche und technische Grundlagen",
+   "t": "calc",
+   "q": "Auf die Pedalkolbenstange wirkt eine Kraft von 50,21 N im Abstand von 40 mm vom Drehpunkt. Der Fahrer tritt im Abstand von 200 mm. Berechnen Sie die erforderliche Pedalkraft (zwei Nachkommastellen).",
+   "ans": 10.04,
+   "unit": "N",
+   "e": "Hebelgesetz: F · l₂ = FK2 · l₁, also F = 50,21 N · 40 mm ÷ 200 mm = 10,04 N. Der Hebel übersetzt die Kraft im Verhältnis 1:5 – deshalb genügt am Pedal ein Fünftel der Kraft."
+  },
+  {
+   "f": 5,
+   "sub": "Naturwissenschaftliche und technische Grundlagen",
+   "t": "calc",
+   "q": "Vier zylindrische Behälter mit 1,0 m Durchmesser werden bis 1,5 m Höhe gefüllt. Der Zulauf liefert 18 Liter pro Minute. Berechnen Sie die Befüllzeit in Stunden (zwei Nachkommastellen).",
+   "ans": 4.36,
+   "unit": "h",
+   "e": "Grundfläche = π ÷ 4 · (1 m)² = 0,7854 m². Je Behälter 0,7854 m² · 1,5 m = 1,178 m³, für vier Behälter 4,712 m³ = 4.712 Liter. Bei 18 l/min = 1.080 l/h dauert die Befüllung 4.712 ÷ 1.080 = 4,36 Stunden, also 4 Stunden und 22 Minuten."
+  },
+  {
+   "f": 5,
+   "sub": "Naturwissenschaftliche und technische Grundlagen",
+   "t": "calc",
+   "q": "Ein Pkw durchfährt eine Kurve mit 40 m Radius auf regennasser Fahrbahn (Reibzahl 0,6, g = 9,81 m/s²). Ab welcher Geschwindigkeit in km/h wird er aus der Kurve getragen (zwei Nachkommastellen)?",
+   "ans": 55.22,
+   "unit": "km/h",
+   "e": "Grenzfall: Zentrifugalkraft = Reibkraft, also m · v² ÷ r = µ · m · g. Daraus v = √(µ · g · r) = √(0,6 · 9,81 m/s² · 40 m) = 15,34 m/s = 55,22 km/h. Die Masse kürzt sich heraus – der beladene Lkw rutscht bei derselben Geschwindigkeit wie der leere."
+  },
+  {
+   "f": 5,
+   "sub": "Naturwissenschaftliche und technische Grundlagen",
+   "t": "calc",
+   "q": "Ein Stanzteil hat einen Schnittumfang von 88,80 mm bei 2 mm Blechdicke. Die maximale Scherfestigkeit beträgt 210 N/mm². Berechnen Sie die Schneidkraft in kN (drei Nachkommastellen).",
+   "ans": 37.296,
+   "unit": "kN",
+   "e": "Scherfläche S = U · t = 88,80 mm · 2 mm = 177,60 mm². F = S · τaB = 177,60 mm² · 210 N/mm² = 37.296 N = 37,296 kN. Maßgebend ist der Schnittumfang, nicht die Fläche des ausgestanzten Teils."
+  },
+  {
+   "f": 5,
+   "sub": "Naturwissenschaftliche und technische Grundlagen",
+   "t": "calc",
+   "q": "Eine 25 m lange Kupferleitung (ρ = 0,0179 Ω·mm²/m) mit 2,5 mm² Querschnitt versorgt ein Aggregat mit 11 A. Berechnen Sie den Spannungsfall (zwei Nachkommastellen).",
+   "ans": 3.94,
+   "unit": "V",
+   "e": "Der Strom läuft hin und zurück, also RL = ρ · 2 · L ÷ A = 0,0179 · 50 ÷ 2,5 = 0,358 Ω. UV = RL · I = 0,358 Ω · 11 A = 3,94 V. Zulässig sind 3 % von 230 V = 6,9 V – der Wert liegt also in der Toleranz."
+  },
+  {
+   "f": 5,
+   "sub": "Naturwissenschaftliche und technische Grundlagen",
+   "t": "calc",
+   "q": "Ein Aggregat hat einen Widerstand von 20,91 Ω. Durch den Spannungsfall auf der Zuleitung liegen statt 230 V nur 226,06 V an. Berechnen Sie die tatsächliche Leistung (zwei Nachkommastellen).",
+   "ans": 2443.96,
+   "unit": "W",
+   "e": "P = U² ÷ R = (226,06 V)² ÷ 20,91 Ω = 51.103,1 ÷ 20,91 = 2.443,96 W. Die Bemessungsleistung läge bei 230 V · 11 A = 2.530 W – der Leitungsverlust kostet also rund 86 W."
+  },
+  {
+   "f": 5,
+   "sub": "Naturwissenschaftliche und technische Grundlagen",
+   "t": "calc",
+   "q": "Die Krankheitstage von 36 Mitarbeitern verteilen sich so: 1 Tag zweimal, 2 Tage sechsmal, 3 Tage zehnmal, 4 Tage zehnmal, 5 Tage sechsmal, 6 Tage zweimal. Berechnen Sie den arithmetischen Mittelwert.",
+   "ans": 3.5,
+   "unit": "Tage",
+   "e": "Summe = 2·1 + 6·2 + 10·3 + 10·4 + 6·5 + 2·6 = 126 Tage, geteilt durch 36 Mitarbeiter ergibt 3,5 Tage. Die Verteilung ist symmetrisch, deshalb fallen Mittelwert und Median zusammen; die Spannweite beträgt 6 − 1 = 5 Tage."
+  },
+  {
+   "f": 5,
+   "sub": "Naturwissenschaftliche und technische Grundlagen",
+   "t": "calc",
+   "q": "Insgesamt fielen 126 Krankheitstage bei 36 Mitarbeitern an; die Sollarbeitszeit beträgt 200 Arbeitstage je Mitarbeiter. Berechnen Sie den Krankenstand in Prozent (zwei Nachkommastellen).",
+   "ans": 1.75,
+   "unit": "%",
+   "e": "Krankenstand = Summe der Fehltage ÷ (Anzahl Mitarbeiter · Sollarbeitstage) · 100 = 126 ÷ (36 · 200) · 100 = 126 ÷ 7.200 · 100 = 1,75 %. Die Kennzahl macht Abteilungen unterschiedlicher Größe vergleichbar."
+  }
+ ]
+}

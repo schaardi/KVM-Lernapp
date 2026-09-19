@@ -1,0 +1,676 @@
+{
+ "questions": [
+  {
+   "f": 1,
+   "sub": "Arbeitsrecht",
+   "t": "mc",
+   "q": "Eine Frühschicht dauert von 4:00 bis 12:00 Uhr. Hat der Mitarbeiter Anspruch auf einen Nachtarbeitszuschlag?",
+   "o": [
+    {
+     "t": "Nein – Nachtarbeit ist nach dem Arbeitszeitgesetz nur Arbeit, die mehr als zwei Stunden der Nachtzeit umfasst; hier sind es genau zwei",
+     "ok": 1
+    },
+    {
+     "t": "Ja, jede Arbeit vor 6:00 Uhr gilt als Nachtarbeit"
+    },
+    {
+     "t": "Ja, weil die Schicht vor Sonnenaufgang beginnt"
+    },
+    {
+     "t": "Ja, aber nur im Winterhalbjahr"
+    }
+   ],
+   "e": "Die Nachtzeit reicht nach § 2 Absatz 3 ArbZG von 23:00 bis 6:00 Uhr; Nachtarbeit ist nach § 2 Absatz 4 ArbZG jede Arbeit, die mehr als zwei Stunden davon umfasst. Von 4:00 bis 6:00 Uhr sind es genau zwei Stunden – der Zuschlag nach § 6 Absatz 5 ArbZG steht damit nicht zu."
+  },
+  {
+   "f": 1,
+   "sub": "Arbeitsrecht",
+   "t": "mc",
+   "q": "Ein Mitarbeiter wurde zweimal wegen Verspätung abgemahnt. Drei Tage später fehlt er zwei Tage unentschuldigt. Kann der Arbeitgeber jetzt verhaltensbedingt kündigen?",
+   "o": [
+    {
+     "t": "Nein – das unentschuldigte Fehlen ist ein anderer Pflichtverstoß; dafür ist zunächst erneut abzumahnen",
+     "ok": 1
+    },
+    {
+     "t": "Ja, nach zwei Abmahnungen ist jede weitere Pflichtverletzung kündigungsrelevant"
+    },
+    {
+     "t": "Ja, unentschuldigtes Fehlen rechtfertigt immer sofort die fristlose Kündigung"
+    },
+    {
+     "t": "Ja, weil die beiden Abmahnungen innerhalb von drei Wochen ergingen"
+    }
+   ],
+   "e": "Die Abmahnung hat Warnfunktion – und die wirkt nur für gleichartige Pflichtverstöße. Inhalt einer Abmahnung sind die genaue Darstellung des Sachverhalts, die Benennung des Pflichtverstoßes, die Missbilligung des Verhaltens und die Androhung arbeitsrechtlicher Konsequenzen im Wiederholungsfall."
+  },
+  {
+   "f": 1,
+   "sub": "Arbeitsrecht",
+   "t": "mc",
+   "q": "Ein tarifgebundener Arbeitgeber vereinbart mit seinen Mitarbeitern statt der tariflichen 38 eine 42-Stunden-Woche bei gleichem Lohn – zur Sicherung der Arbeitsplätze. Ist das zulässig?",
+   "o": [
+    {
+     "t": "Nein – der Tarifvertrag geht vor; das Günstigkeitsprinzip erlaubt nur Abweichungen zugunsten der Arbeitnehmer",
+     "ok": 1
+    },
+    {
+     "t": "Ja, weil alle Mitarbeiter zugestimmt haben"
+    },
+    {
+     "t": "Ja, weil der Erhalt des Arbeitsplatzes für die Mitarbeiter günstiger ist"
+    },
+    {
+     "t": "Ja, wenn die Regelung auf ein halbes Jahr befristet wird"
+    }
+   ],
+   "e": "Ob eine Regelung günstiger ist, wird beim Sachgruppenvergleich geprüft – längere Arbeitszeit bei gleichem Entgelt ist es nicht. Ohne Öffnungsklausel im Tarifvertrag bleibt die Abweichung unwirksam, auch mit Zustimmung der Belegschaft."
+  },
+  {
+   "f": 1,
+   "sub": "Arbeitsrecht",
+   "t": "mc",
+   "q": "Was besagt das Rangprinzip im Arbeitsrecht?",
+   "o": [
+    {
+     "t": "Rangniedrigere Normen dürfen nicht gegen höherrangige verstoßen – der Arbeitsvertrag also nicht gegen Tarifvertrag oder Gesetz",
+     "ok": 1
+    },
+    {
+     "t": "Die zuletzt vereinbarte Regelung verdrängt immer alle früheren"
+    },
+    {
+     "t": "Die speziellere Regelung geht stets der allgemeineren vor"
+    },
+    {
+     "t": "Betriebsvereinbarungen stehen über dem Gesetz"
+    }
+   ],
+   "e": "Die Rangfolge lautet: EU-Recht, Grundgesetz, Gesetze, Rechtsverordnungen, Tarifvertrag, Betriebsvereinbarung, Arbeitsvertrag, Direktionsrecht. Durchbrochen wird sie nur durch das Günstigkeitsprinzip – eine rangniedrigere Regelung darf günstiger sein."
+  },
+  {
+   "f": 1,
+   "sub": "Betriebsverfassung",
+   "t": "mc",
+   "q": "Eine Betriebsversammlung findet im Einvernehmen mit dem Arbeitgeber nach Ende der Arbeitszeit statt. Welche Ansprüche haben die teilnehmenden Mitarbeiter?",
+   "o": [
+    {
+     "t": "Die Teilnahmezeit ist wie Arbeitszeit zu vergüten, dazu kommen Wegezeiten und Fahrtkosten",
+     "ok": 1
+    },
+    {
+     "t": "Keine – die Teilnahme ist Freizeit und damit unentgeltlich"
+    },
+    {
+     "t": "Nur die Fahrtkosten, nicht aber die Zeit"
+    },
+    {
+     "t": "Nur ein Freizeitausgleich im Verhältnis 1:2"
+    }
+   ],
+   "e": "§ 44 Absatz 1 BetrVG stellt Betriebsversammlungen außerhalb der Arbeitszeit ausdrücklich der Arbeitszeit gleich. Die vierteljährliche Versammlung schreibt § 43 Absatz 1 BetrVG vor; der Arbeitgeber ist dazu einzuladen (§ 43 Absatz 2 BetrVG)."
+  },
+  {
+   "f": 1,
+   "sub": "Sozialversicherung",
+   "t": "mc",
+   "q": "Ein Mitarbeiter kündigt nach einem Streit selbst und meldet sich arbeitslos. Warum verhängt die Agentur für Arbeit eine Sperrzeit?",
+   "o": [
+    {
+     "t": "Weil er das Arbeitsverhältnis ohne wichtigen Grund selbst gelöst und damit die Arbeitslosigkeit versicherungswidrig herbeigeführt hat",
+     "ok": 1
+    },
+    {
+     "t": "Weil er sich nicht rechtzeitig arbeitsuchend gemeldet hat"
+    },
+    {
+     "t": "Weil Arbeitslosengeld erst nach drei Monaten Beitragszahlung beginnt"
+    },
+    {
+     "t": "Weil sein früherer Arbeitgeber der Zahlung widersprochen hat"
+    }
+   ],
+   "e": "§ 159 SGB III sieht bei versicherungswidrigem Verhalten eine Sperrzeit von in der Regel zwölf Wochen vor. Weitere Leistungen der Arbeitslosenversicherung sind Vermittlung, Berufsberatung und die Förderung von Weiterbildung und Umschulung."
+  },
+  {
+   "f": 1,
+   "sub": "Arbeitsschutz",
+   "t": "mc",
+   "q": "Darf der Arbeitgeber der Fachkraft für Arbeitssicherheit fachliche Weisungen erteilen?",
+   "o": [
+    {
+     "t": "Nein – bei der Anwendung ihrer sicherheitstechnischen Fachkunde ist sie weisungsfrei",
+     "ok": 1
+    },
+    {
+     "t": "Ja, sie ist ihm wie jeder andere Arbeitnehmer in allen Fragen weisungsgebunden"
+    },
+    {
+     "t": "Ja, aber nur mit Zustimmung des Betriebsrats"
+    },
+    {
+     "t": "Nein, sie untersteht ausschließlich der Berufsgenossenschaft"
+    }
+   ],
+   "e": "§ 8 ASiG sichert die fachliche Weisungsfreiheit von Betriebsarzt und Fachkraft für Arbeitssicherheit; nur so können sie unabhängig beraten. In allen übrigen arbeitsvertraglichen Fragen bleiben sie normale Arbeitnehmer, und die Verantwortung für den Arbeitsschutz bleibt beim Arbeitgeber."
+  },
+  {
+   "f": 1,
+   "sub": "Umweltrecht",
+   "t": "mc",
+   "q": "Welche Bereiche zählen zum betrieblichen Umweltschutz in der Industrie?",
+   "o": [
+    {
+     "t": "Emissions- und Immissionsschutz, Gewässerschutz, Abfallwirtschaft und Klimaschutz",
+     "ok": 1
+    },
+    {
+     "t": "Ausschließlich die Abfallentsorgung, da nur sie gesetzlich geregelt ist"
+    },
+    {
+     "t": "Ausschließlich der Lärmschutz an Maschinen"
+    },
+    {
+     "t": "Ausschließlich der Schutz der Beschäftigten vor Gefahrstoffen"
+    }
+   ],
+   "e": "Umweltschutz umfasst den Schutz von Menschen, Tieren und Pflanzen samt ihren Lebensräumen. Verbessern lässt er sich betrieblich durch energiesparende Fahrweise der Anlagen, Substitution von Gefahrstoffen, Kreislaufführung von Material und Wasser sowie Abwärmenutzung."
+  },
+  {
+   "f": 2,
+   "sub": "Rechtsformen",
+   "t": "mc",
+   "q": "Zwei Unternehmen derselben Branche und Produktionsstufe schließen sich zusammen. Um welche Art des Zusammenschlusses handelt es sich?",
+   "o": [
+    {
+     "t": "Um einen horizontalen Zusammenschluss",
+     "ok": 1
+    },
+    {
+     "t": "Um einen vertikalen Zusammenschluss"
+    },
+    {
+     "t": "Um einen diagonalen (anorganischen) Zusammenschluss"
+    },
+    {
+     "t": "Um eine stille Beteiligung"
+    }
+   ],
+   "e": "Vertikal ist der Zusammenschluss vor- oder nachgelagerter Stufen (Zulieferer und Hersteller), diagonal der branchenfremde – etwa ein Maschinenbauer und ein Reiseveranstalter; er dient der Risikostreuung. Horizontale Zusammenschlüsse bringen Mengenrabatte im Einkauf, bessere Auslastung in der Fertigung und einen größeren Absatzmarkt."
+  },
+  {
+   "f": 2,
+   "sub": "Betriebsorganisation",
+   "t": "mc",
+   "q": "Worin unterscheiden sich Instanz und Stabsstelle?",
+   "o": [
+    {
+     "t": "Die Instanz ist gegenüber ausführenden Stellen weisungsbefugt, die Stabsstelle berät und unterstützt sie ohne Weisungsbefugnis",
+     "ok": 1
+    },
+    {
+     "t": "Die Stabsstelle ist weisungsbefugt, die Instanz nur beratend tätig"
+    },
+    {
+     "t": "Beide sind weisungsbefugt, nur auf verschiedenen Hierarchieebenen"
+    },
+    {
+     "t": "Die Instanz ist eine Einzelperson, die Stabsstelle immer ein Gremium"
+    }
+   ],
+   "e": "Eine Stellenbeschreibung hält für jede Stelle Bezeichnung, Ziele, Aufgaben, Kompetenzen, Anforderungen und Über-/Unterstellung fest. Sie gibt dem Stelleninhaber Klarheit über seine Zuständigkeiten und dem Unternehmen eine Grundlage für Ausschreibung, Einarbeitung und Entgeltfindung."
+  },
+  {
+   "f": 4,
+   "sub": "Personalplanung",
+   "t": "calc",
+   "q": "Auftrag A: 480 min Rüstzeit, 1.400 Stück zu je 12 min. Auftrag B: 420 min Rüstzeit, 1.800 Stück zu je 6,2 min. Bereits angenommene Aufträge binden 760 Stunden. Berechnen Sie den gesamten Kapazitätsbedarf in Stunden.",
+   "ans": 1241,
+   "unit": "h",
+   "e": "TbB = trB + x · teB. Auftrag A: 480 min + 1.400 · 12 min = 17.280 min = 288 h. Auftrag B: 420 min + 1.800 · 6,2 min = 11.580 min = 193 h. Gesamt: 288 h + 193 h + 760 h = 1.241 h."
+  },
+  {
+   "f": 2,
+   "sub": "Betriebsorganisation",
+   "t": "calc",
+   "q": "Fünf Drehmaschinen laufen im Zweischichtbetrieb (2 · 8 Stunden) an 20 Arbeitstagen im Monat. Je Maschine und Woche sind vier Stunden Wartung einzuplanen (vier Wochen). Berechnen Sie den realen Kapazitätsbestand insgesamt.",
+   "ans": 1520,
+   "unit": "h",
+   "e": "Je Betriebsmittel: 20 Tage · 16 h/Tag − 4 h/Woche · 4 Wochen = 320 h − 16 h = 304 h. Für fünf Maschinen: 5 · 304 h = 1.520 h im Monat."
+  },
+  {
+   "f": 2,
+   "sub": "Betriebsorganisation",
+   "t": "calc",
+   "q": "Der Kapazitätsbedarf beträgt 1.241 Stunden, der reale Kapazitätsbestand 1.520 Stunden. Berechnen Sie den Kapazitätsauslastungsgrad in Prozent (zwei Nachkommastellen).",
+   "ans": 81.64,
+   "unit": "%",
+   "e": "Auslastungsgrad = Kapazitätsbedarf ÷ realer Kapazitätsbestand · 100 = 1.241 h ÷ 1.520 h · 100 = 81,64 %. Beide Aufträge lassen sich also annehmen; es bleiben rund 279 Stunden freie Kapazität."
+  },
+  {
+   "f": 2,
+   "sub": "Kostenrechnung",
+   "t": "calc",
+   "q": "Die Fertigungsgemeinkosten eines Monats betragen 878.400 €, die Fertigungslöhne 720.000 €. Berechnen Sie den Ist-Fertigungsgemeinkostenzuschlagssatz.",
+   "ans": 122,
+   "unit": "%",
+   "e": "FGKZ = Fertigungsgemeinkosten ÷ Fertigungslöhne · 100 = 878.400 € ÷ 720.000 € · 100 = 122 %. Liegt der Normalzuschlag der Angebotskalkulation bei 120 %, wurden die Gemeinkosten unterdeckt – die Kalkulation ist nachzuziehen."
+  },
+  {
+   "f": 2,
+   "sub": "Kostenrechnung",
+   "t": "calc",
+   "q": "Die Verwaltungsgemeinkosten betragen 319.872 €, die Herstellkosten des Umsatzes 3.998.400 €. Berechnen Sie den Verwaltungsgemeinkostenzuschlagssatz.",
+   "ans": 8,
+   "unit": "%",
+   "e": "VwGKZ = Verwaltungsgemeinkosten ÷ Herstellkosten des Umsatzes · 100 = 319.872 € ÷ 3.998.400 € · 100 = 8 %. Verwaltungs- und Vertriebsgemeinkosten werden immer auf die Herstellkosten des Umsatzes bezogen, nicht auf die Herstellkosten der Erzeugung."
+  },
+  {
+   "f": 2,
+   "sub": "Kostenrechnung",
+   "t": "calc",
+   "q": "Verfahren 1: 85.000 € Fixkosten pro Jahr, 130 € variable Kosten je Stück. Verfahren 2: 70.000 € Fixkosten, 150 € je Stück. Berechnen Sie die kritische Menge.",
+   "ans": 750,
+   "unit": "Stück",
+   "e": "xkrit = (Kf2 − Kf1) ÷ (kv1 − kv2) = (70.000 € − 85.000 €) ÷ (130 €/Stück − 150 €/Stück) = −15.000 € ÷ −20 €/Stück = 750 Stück. Unterhalb davon ist das Verfahren mit den niedrigeren Fixkosten günstiger, oberhalb das mit den niedrigeren variablen Kosten."
+  },
+  {
+   "f": 2,
+   "sub": "Kostenrechnung",
+   "t": "calc",
+   "q": "Verfahren 1 hat 85.000 € Fixkosten und 130 € variable Kosten je Stück. Berechnen Sie die Gesamtkosten bei einer Produktionsmenge von 1.250 Stück.",
+   "ans": 247500,
+   "unit": "€",
+   "e": "K1 = 85.000 € + 1.250 Stück · 130 €/Stück = 85.000 € + 162.500 € = 247.500 €. Verfahren 2 käme auf 70.000 € + 1.250 · 150 € = 257.500 € – Verfahren 1 spart also 10.000 € bzw. rund 3,9 %."
+  },
+  {
+   "f": 2,
+   "sub": "Kostenrechnung",
+   "t": "calc",
+   "q": "Im Break-even-Punkt betragen die variablen Gesamtkosten 18.000.000 € und der Gesamtdeckungsbeitrag 7.000.000 €. Berechnen Sie den Break-even-Umsatz.",
+   "ans": 25000000,
+   "unit": "€",
+   "e": "Im Break-even-Punkt ist das Betriebsergebnis null, der Gesamtdeckungsbeitrag entspricht also genau den Fixkosten von 7.000.000 €. Der Umsatz deckt dort die Gesamtkosten: UBEP = Kf + Kv = 7.000.000 € + 18.000.000 € = 25.000.000 €."
+  },
+  {
+   "f": 2,
+   "sub": "Kostenrechnung",
+   "t": "mc",
+   "q": "Die Absatzmenge geht um 10 % zurück. Wie wirkt sich das auf die Lage des Break-even-Punktes aus?",
+   "o": [
+    {
+     "t": "Gar nicht – der Break-even-Punkt hängt nur von Preis, Fixkosten und variablen Stückkosten ab",
+     "ok": 1
+    },
+    {
+     "t": "Er steigt um 10 %, weil weniger Deckungsbeitrag erwirtschaftet wird"
+    },
+    {
+     "t": "Er sinkt um 10 %, weil auch die Gesamtkosten sinken"
+    },
+    {
+     "t": "Er verdoppelt sich, weil die Fixkosten auf weniger Stück verteilt werden"
+    }
+   ],
+   "e": "Die Absatzmenge bestimmt, ob der Break-even-Punkt erreicht wird – nicht, wo er liegt. Seine Lage verschiebt sich nur, wenn sich eine der Bestimmungsgrößen ändert, also der Preis, der Fixkostenblock oder die variablen Stückkosten."
+  },
+  {
+   "f": 3,
+   "sub": "EDV",
+   "t": "mc",
+   "q": "Mit welcher Maßnahme sichern Sie die Vertraulichkeit der im betrieblichen Vorschlagswesen gespeicherten Daten?",
+   "o": [
+    {
+     "t": "Durch Verschlüsselung sowie abgestufte Zutritts-, Zugangs- und Zugriffskontrolle",
+     "ok": 1
+    },
+    {
+     "t": "Durch Ausdruck aller Vorschläge und Aushang am schwarzen Brett"
+    },
+    {
+     "t": "Durch ein gemeinsames Passwort für die gesamte Abteilung"
+    },
+    {
+     "t": "Durch Verzicht auf jede Datensicherung, damit nichts kopiert werden kann"
+    }
+   ],
+   "e": "Technisch braucht es einen Server, die Vernetzung der Clients, Firewall und Virenschutz; organisatorisch Schulung der Nutzer, Belehrung über Vertraulichkeit, einen Verantwortlichen und einen Wartungsvertrag. Zutritt betrifft den Raum, Zugang das System, Zugriff die einzelnen Daten."
+  },
+  {
+   "f": 3,
+   "sub": "Kreativitätstechniken",
+   "t": "mc",
+   "q": "Worin unterscheidet sich das Ursache-Wirkungs-Diagramm vom Brainstorming?",
+   "o": [
+    {
+     "t": "Das Ursache-Wirkungs-Diagramm ordnet die Ursachen von Anfang an festen Kategorien zu, das Brainstorming sammelt Ideen zunächst völlig ungeordnet",
+     "ok": 1
+    },
+    {
+     "t": "Das Brainstorming ist nur allein durchführbar, das Ursache-Wirkungs-Diagramm nur in Gruppen"
+    },
+    {
+     "t": "Das Ursache-Wirkungs-Diagramm liefert unmittelbar die Lösung, das Brainstorming nur Fragen"
+    },
+    {
+     "t": "Beim Brainstorming werden Beiträge sofort bewertet, beim Diagramm gar nicht"
+    }
+   ],
+   "e": "Gemeinsam ist beiden, dass mehrere Beteiligte ihr Fachwissen einbringen und Kritik zunächst zurückgestellt wird. Das Ishikawa-Diagramm arbeitet mit Kategorien wie Mensch, Maschine, Material, Methode, Mitwelt und Messung und macht damit sichtbar, wo noch Ursachen fehlen."
+  },
+  {
+   "f": 3,
+   "sub": "Statistik",
+   "t": "calc",
+   "q": "In einer Kalenderwoche wurden 2.166 Teile geliefert, davon waren 2.090 verwendbar. Berechnen Sie den Anteil der nicht verwendbaren Teile in Prozent (zwei Nachkommastellen).",
+   "ans": 3.51,
+   "unit": "%",
+   "e": "Nicht verwendbar = 2.166 − 2.090 = 76 Teile. Anteil = 76 ÷ 2.166 · 100 = 3,51 %. Für den Vergleich mehrerer Wochen mit unterschiedlichen Liefermengen ist der prozentuale Anteil aussagekräftiger als die absolute Zahl."
+  },
+  {
+   "f": 3,
+   "sub": "Projektmanagement",
+   "t": "mc",
+   "q": "Welches Merkmal macht ein Vorhaben zum Projekt?",
+   "o": [
+    {
+     "t": "Es ist zeitlich begrenzt, einmalig, hat ein klares Ziel und begrenzte Ressourcen",
+     "ok": 1
+    },
+    {
+     "t": "Es wird ausschließlich von externen Dienstleistern durchgeführt"
+    },
+    {
+     "t": "Es läuft dauerhaft und wiederholt sich in jedem Geschäftsjahr"
+    },
+    {
+     "t": "Es betrifft ausschließlich technische Fragestellungen"
+    }
+   ],
+   "e": "Weitere Merkmale sind die Neuartigkeit der Aufgabe, ihre Komplexität, eine eigene Projektorganisation außerhalb der Linie und ein gewisses Risiko. Deshalb braucht ein Projekt Struktur-, Ablauf-, Termin-, Ressourcen- und Kostenplanung."
+  },
+  {
+   "f": 3,
+   "sub": "Kommunikation",
+   "t": "mc",
+   "q": "Wonach wählen Sie das Kommunikationsmittel für eine Einweisung in ein neues Gerät aus?",
+   "o": [
+    {
+     "t": "Nach der Komplexität des Inhalts sowie dem Zeitaufwand für Meister und Mitarbeiter",
+     "ok": 1
+    },
+    {
+     "t": "Nach dem Anschaffungspreis des Geräts"
+    },
+    {
+     "t": "Nach der Zahl der im Unternehmen vorhandenen Drucker"
+    },
+    {
+     "t": "Nach dem Dienstalter der beteiligten Mitarbeiter"
+    }
+   ],
+   "e": "Eine E-Mail erreicht alle schnell und papierlos, lässt aber keine direkte Rückfrage zu. Eine Unterweisung am Gerät vermittelt Handhabung unmittelbar, kostet aber Zeit und muss je Schicht wiederholt werden. Video und Handout eignen sich zum Nachschlagen, ersetzen die Übung am Gerät jedoch nicht."
+  },
+  {
+   "f": 3,
+   "sub": "Präsentation",
+   "t": "mc",
+   "q": "Wie gliedern Sie einen Vortrag über Erfahrungen aus einer ausländischen Niederlassung?",
+   "o": [
+    {
+     "t": "Einleitung mit Begrüßung, Anlass und Thema – Hauptteil mit den Erfahrungen – Schluss mit Zusammenfassung und Diskussion",
+     "ok": 1
+    },
+    {
+     "t": "Sofort mit den Ergebnissen beginnen und ohne Zusammenfassung enden"
+    },
+    {
+     "t": "Nur Hauptteil; Einleitung und Schluss kosten unnötig Zeit"
+    },
+    {
+     "t": "Erst die Diskussion, dann der Vortrag, zuletzt die Begrüßung"
+    }
+   ],
+   "e": "Die Vortragsform erlaubt es, den Ablauf genau zu planen und einzuhalten, ist zeitsparender als Einzelgespräche und gibt allen Mitarbeitern denselben Informationsstand. Der Schluss sollte Kernaussagen bündeln und Raum für Fragen lassen."
+  },
+  {
+   "f": 4,
+   "sub": "Personalentwicklung",
+   "t": "mc",
+   "q": "Ein Facharbeiter kehrt nach zehn Monaten aus einer ausländischen Niederlassung zurück. Warum führen Sie mit ihm ein Rückkehrgespräch?",
+   "o": [
+    {
+     "t": "Um seine Erfahrungen zu erfassen, seinen Leistungsstand einzuschätzen und die weitere Entwicklung mit ihm abzustimmen",
+     "ok": 1
+    },
+    {
+     "t": "Um ihm die Abwesenheitszeiten vom Urlaubskonto abzuziehen"
+    },
+    {
+     "t": "Um formal die Beendigung seines Arbeitsvertrags festzustellen"
+    },
+    {
+     "t": "Um ihn über den Ausgang der letzten Betriebsratswahl zu unterrichten"
+    }
+   ],
+   "e": "Besprochen werden außerdem Veränderungen im Betrieb während der Abwesenheit, die künftigen Aufgaben und die Frage, wie das im Ausland erworbene Wissen für das Team nutzbar wird. Eine mitgebrachte qualifizierte Beurteilung macht die Leistung transparent und ist Vorarbeit für ein späteres Zeugnis."
+  },
+  {
+   "f": 4,
+   "sub": "Mitarbeiterbeurteilung",
+   "t": "mc",
+   "q": "Ein Vorgesetzter stuft alle Mitarbeiter durchgehend im mittleren Bereich der Skala ein. Welcher Beurteilungsfehler liegt vor?",
+   "o": [
+    {
+     "t": "Die Tendenz zur Mitte",
+     "ok": 1
+    },
+    {
+     "t": "Der Kontrastfehler"
+    },
+    {
+     "t": "Der Nikolauseffekt"
+    },
+    {
+     "t": "Der Mildefehler"
+    }
+   ],
+   "e": "Die Tendenz zur Mitte vermeidet Extremwerte und macht die Beurteilung wertlos, weil sie nicht mehr unterscheidet. Verwandte Fehler sind Tendenz zur Strenge oder Milde, Kontrastfehler (Vergleich mit dem zuvor Beurteilten), Überstrahlungseffekt und der Nikolauseffekt, bei dem nur die letzten Wochen zählen."
+  },
+  {
+   "f": 4,
+   "sub": "Gruppen",
+   "t": "mc",
+   "q": "Woran erkennen Sie, dass sich in Ihrer Abteilung informelle Gruppen gebildet haben?",
+   "o": [
+    {
+     "t": "An gemeinsamen Ausdrucksweisen und Begriffen, festen Pausenrunden und abgestimmtem Verhalten gegenüber Dritten",
+     "ok": 1
+    },
+    {
+     "t": "Am Organigramm der Abteilung"
+    },
+    {
+     "t": "An der Schichteinteilung des Meisters"
+    },
+    {
+     "t": "An den Stellenbeschreibungen der Mitarbeiter"
+    }
+   ],
+   "e": "Informelle Gruppen entstehen ungeplant über Sympathie und gemeinsame Interessen; ihre Normen stehen nirgends geschrieben. Weitere Hinweise sind gemeinsame Sitzordnungen, gegenseitige Unterstützung außerhalb der Zuständigkeit und ein informeller Führer, an dem sich die anderen orientieren."
+  },
+  {
+   "f": 4,
+   "sub": "Personalentwicklung",
+   "t": "mc",
+   "q": "Was versteht man unter Schlüsselqualifikationen?",
+   "o": [
+    {
+     "t": "Fach- und berufsübergreifende Fähigkeiten, die in vielen wechselnden Situationen anwendbar bleiben",
+     "ok": 1
+    },
+    {
+     "t": "Die formalen Abschlüsse, die für eine Stelle vorgeschrieben sind"
+    },
+    {
+     "t": "Die Berechtigung, bestimmte Schlüssel und Zugänge im Betrieb zu nutzen"
+    },
+    {
+     "t": "Die rein fachlichen Kenntnisse zu einer bestimmten Maschine"
+    }
+   ],
+   "e": "Dazu zählen Kommunikations- und Teamfähigkeit, Lernbereitschaft, Problemlösefähigkeit, Selbstständigkeit und Belastbarkeit. Fachkompetenz entsteht durch Aufgaben mit steigendem Anspruch, Sozialkompetenz vor allem durch Zusammenarbeit in Gruppen und Projekten."
+  },
+  {
+   "f": 5,
+   "sub": "Naturwissenschaftliche und technische Grundlagen",
+   "t": "mc",
+   "q": "Welche beiden Gase sind die Hauptbestandteile der Luft?",
+   "o": [
+    {
+     "t": "Stickstoff (rund 78 %) und Sauerstoff (rund 21 %)",
+     "ok": 1
+    },
+    {
+     "t": "Sauerstoff (rund 78 %) und Kohlendioxid (rund 21 %)"
+    },
+    {
+     "t": "Kohlendioxid (rund 60 %) und Stickstoff (rund 30 %)"
+    },
+    {
+     "t": "Wasserstoff (rund 70 %) und Sauerstoff (rund 25 %)"
+    }
+   ],
+   "e": "Die restlichen rund 1 % bestehen überwiegend aus Argon, dazu Kohlendioxid und Spurengase. Stickstoffoxide entstehen bei Verbrennungsvorgängen in Motoren und Anlagen, beim Einsatz fossiler Brennstoffe und in der Landwirtschaft."
+  },
+  {
+   "f": 5,
+   "sub": "Naturwissenschaftliche und technische Grundlagen",
+   "t": "mc",
+   "q": "Mit welcher Maßnahme senkt ein Industriebetrieb seinen Stickstoffoxid-Ausstoß?",
+   "o": [
+    {
+     "t": "Durch alternative Energiequellen zur Wärmegewinnung, Wärmedämmung und optimierte Fahrzeugeinsatzpläne",
+     "ok": 1
+    },
+    {
+     "t": "Durch höhere Verbrennungstemperaturen in den Anlagen"
+    },
+    {
+     "t": "Durch Erhöhung der Kaminhöhe an den Abgasanlagen"
+    },
+    {
+     "t": "Durch Umstellung der Beleuchtung von LED auf Halogen"
+    }
+   ],
+   "e": "Höhere Kamine verteilen die Emission nur weiter, sie verringern sie nicht – und höhere Verbrennungstemperaturen lassen gerade mehr Stickstoffoxide entstehen. Wirksam sind Vermeidung an der Quelle, Elektrofahrzeuge, Wärmepumpen und Abgasnachbehandlung."
+  },
+  {
+   "f": 5,
+   "sub": "Naturwissenschaftliche und technische Grundlagen",
+   "t": "mc",
+   "q": "Welchen Vorteil haben Solar-, Wind- und Wasserkraftanlagen gemeinsam?",
+   "o": [
+    {
+     "t": "Sie nutzen kostenlose Energiequellen und gewinnen Energie emissionsarm und dezentral",
+     "ok": 1
+    },
+    {
+     "t": "Sie kommen alle ohne nennenswerte Investitionskosten aus"
+    },
+    {
+     "t": "Sie liefern alle rund um die Uhr eine gleichbleibende Leistung"
+    },
+    {
+     "t": "Sie lassen sich alle an jedem beliebigen Standort errichten"
+    }
+   ],
+   "e": "Die Nachteile sind dagegen spezifisch: Solaranlagen brauchen Sonneneinstrahlung und haben einen geringen Wirkungsgrad, Windanlagen erzeugen Geräusche und Schattenwurf und liefern nur bei Wind, Wasserkraftanlagen greifen stark in Gewässer und Landschaft ein."
+  },
+  {
+   "f": 5,
+   "sub": "Naturwissenschaftliche und technische Grundlagen",
+   "t": "calc",
+   "q": "Ein Winkelprofil mit 479 mm² Querschnittsfläche wird mit 36.000 N auf Zug belastet. Berechnen Sie die Zugspannung (zwei Nachkommastellen).",
+   "ans": 75.16,
+   "unit": "N/mm²",
+   "e": "σz = F ÷ S = 36.000 N ÷ 479 mm² = 75,16 N/mm². Die Zugspannung hängt nur von Kraft und tragendem Querschnitt ab, nicht von der Länge des Profils."
+  },
+  {
+   "f": 5,
+   "sub": "Naturwissenschaftliche und technische Grundlagen",
+   "t": "calc",
+   "q": "In den längeren Schenkel desselben Profils (479 mm², 36.000 N Zugkraft) wird ein Durchgangsloch mit 17 mm Durchmesser bei 5 mm Materialstärke gebohrt. Berechnen Sie die neue Zugspannung (zwei Nachkommastellen).",
+   "ans": 91.37,
+   "unit": "N/mm²",
+   "e": "Die Bohrung verringert den tragenden Querschnitt um 17 mm · 5 mm = 85 mm² auf 394 mm². σz = 36.000 N ÷ 394 mm² = 91,37 N/mm² – rund 22 % mehr Spannung bei unveränderter Last. Deshalb sind Bohrungen in zugbeanspruchten Bauteilen kritisch."
+  },
+  {
+   "f": 5,
+   "sub": "Naturwissenschaftliche und technische Grundlagen",
+   "t": "calc",
+   "q": "Ein Dieselmotor verbraucht in 15 Minuten 22 Liter Kraftstoff (ρ = 0,83 kg/dm³, Heizwert 42.000 kJ/kg). Berechnen Sie die zugeführte Leistung in kW (zwei Nachkommastellen).",
+   "ans": 852.13,
+   "unit": "kW",
+   "e": "m = 0,83 kg/dm³ · 22 dm³ = 18,26 kg. Q = 18,26 kg · 42.000 kJ/kg = 766.920 kJ. Pzu = Q ÷ t = 766.920 kJ ÷ 900 s = 852,13 kW. Bei 300 kW Nennleistung ergibt das einen Wirkungsgrad von rund 0,35."
+  },
+  {
+   "f": 5,
+   "sub": "Naturwissenschaftliche und technische Grundlagen",
+   "t": "mc",
+   "q": "Von einer Stichprobe sind nur kleinster und größter Messwert, Mittelwert und Standardabweichung bekannt. Warum lässt sich der Median nicht bestimmen?",
+   "o": [
+    {
+     "t": "Weil der Median der ausgezählte mittlere Wert ist und dafür alle Einzelwerte der Urliste vorliegen müssen",
+     "ok": 1
+    },
+    {
+     "t": "Weil der Median nur bei einer geraden Anzahl von Messwerten existiert"
+    },
+    {
+     "t": "Weil der Median stets mit dem arithmetischen Mittel übereinstimmt"
+    },
+    {
+     "t": "Weil der Median aus Spannweite und Standardabweichung berechnet wird"
+    }
+   ],
+   "e": "Der Median teilt die geordnete Messreihe in zwei gleich große Hälften – dafür braucht man jeden Einzelwert. Mittelwert, Spannweite und Standardabweichung lassen sich dagegen aus verdichteten Angaben gewinnen. Bei symmetrischen Verteilungen fallen Median und Mittelwert zusammen, bei schiefen nicht."
+  },
+  {
+   "f": 5,
+   "sub": "Naturwissenschaftliche und technische Grundlagen",
+   "t": "calc",
+   "q": "Eine Seilwinde hebt 500 kg gleichförmig mit 0,5 m/s (g = 9,81 m/s²). Getriebe und Winde haben zusammen einen Wirkungsgrad von 60 %. Berechnen Sie die erforderliche Antriebsleistung am Getriebeeingang.",
+   "ans": 4087.5,
+   "unit": "W",
+   "e": "F = m · g = 500 kg · 9,81 m/s² = 4.905 N. Hubleistung = F · v = 4.905 N · 0,5 m/s = 2.452,5 W. Mit dem Wirkungsgrad: 2.452,5 W ÷ 0,6 = 4.087,5 W."
+  },
+  {
+   "f": 5,
+   "sub": "Naturwissenschaftliche und technische Grundlagen",
+   "t": "calc",
+   "q": "Ein Drehstrommotor hat U = 400 V, I = 9,2 A, cos φ = 0,85 und η = 0,83. Berechnen Sie die an der Welle abgegebene Leistung (eine Nachkommastelle).",
+   "ans": 4496.8,
+   "unit": "W",
+   "e": "Pab = √3 · U · I · cos φ · η = 1,732 · 400 V · 9,2 A · 0,85 · 0,83 = 4.496,8 W. Da die Seilwinde 4.087,5 W am Getriebeeingang benötigt, reicht der Motor aus."
+  },
+  {
+   "f": 5,
+   "sub": "Naturwissenschaftliche und technische Grundlagen",
+   "t": "calc",
+   "q": "Eine Stichprobe hat den kleinsten Wert 101,22 mm und den größten 103,84 mm. Berechnen Sie die Spannweite (zwei Nachkommastellen).",
+   "ans": 2.62,
+   "unit": "mm",
+   "e": "R = xmax − xmin = 103,84 mm − 101,22 mm = 2,62 mm. Die Spannweite nutzt nur die beiden Extremwerte und reagiert deshalb stark auf Ausreißer – anders als die Standardabweichung, die alle Messwerte berücksichtigt."
+  },
+  {
+   "f": 5,
+   "sub": "Naturwissenschaftliche und technische Grundlagen",
+   "t": "calc",
+   "q": "Eine normalverteilte Stichprobe hat den Mittelwert 102,75 mm und die Standardabweichung 0,076 mm. Berechnen Sie die obere Grenze des Bereichs, der 68,26 % der Werte einschließt (drei Nachkommastellen).",
+   "ans": 102.826,
+   "unit": "mm",
+   "e": "68,26 % der Werte liegen zwischen x̄ − s und x̄ + s: 102,75 mm + 0,076 mm = 102,826 mm bzw. 102,75 mm − 0,076 mm = 102,674 mm. Den Median der Grundgesamtheit könnte man hier nicht bestimmen – dafür bräuchte man die Urliste aller Messwerte."
+  }
+ ]
+}

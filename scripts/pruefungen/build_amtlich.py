@@ -19,9 +19,10 @@ import parse_amtlich as pa
 import webdaten as W          # Inhalte der Web-App in data/*.js
 import aufgaben_modell as AM  # Aufgabenblatt-Format
 try:
-    from korrekturen import BILDER, TABELLEN, _ANLAGEN
+    from korrekturen import BILDER, TABELLEN, TEXTE, ABSCHNEIDEN, _ANLAGEN
 except Exception:
-    BILDER, TABELLEN, _ANLAGEN = {}, {}, os.path.join(HERE, 'anlagen')
+    BILDER, TABELLEN, TEXTE, ABSCHNEIDEN = {}, {}, {}, {}
+    _ANLAGEN = os.path.join(HERE, 'anlagen')
 import base64
 
 BEREICH_FACH = {'FT': 5, 'OK': 4}
@@ -102,6 +103,35 @@ def build_cases(exams):
         })
     return cases
 
+def apply_texte(cases):
+    """Textkorrekturen aus korrekturen.py einspielen (weich).
+
+    Gibt (Treffer, offene Korrekturen) zurück. Weich, weil ``parse_amtlich``
+    inzwischen einen Teil der alten OCR-Fehler selbst aufräumt – solche
+    Einträge laufen dann ins Leere und sollen den Bau nicht abbrechen. Sie
+    werden aber gemeldet, damit sie nicht unbemerkt verrotten.
+    """
+    n, offen = 0, []
+    for c in cases:
+        for alt, neu in TEXTE.get(c['id'], []):
+            k = 0
+            if alt in (c.get('context') or ''):
+                c['context'] = c['context'].replace(alt, neu); k += 1
+            for s in c['steps']:
+                if alt in s['q']:
+                    s['q'] = s['q'].replace(alt, neu); k += 1
+            n += k
+            if not k:
+                offen.append('%s: %r' % (c['id'], alt[:48]))
+        for s in c['steps']:
+            marke = ABSCHNEIDEN.get(s['id'])
+            if marke and marke in s['q']:
+                s['q'] = s['q'].split(marke)[0].rstrip(); n += 1
+            elif marke:
+                offen.append('%s: Abschnitt %r' % (s['id'], marke[:40]))
+    return n, offen
+
+
 def apply_media(cases):
     """Bilder und Tabellen aus korrekturen.py per Schritt-ID einspielen (weich)."""
     n = 0
@@ -140,6 +170,7 @@ def main():
     q, s = pa.parse(src)
     pa.pair(q, s)
     cases = build_cases(q)
+    txt, offen = apply_texte(cases)
     med = apply_media(cases)
     # Punkte-Invariante hart prüfen
     import re as _re
@@ -165,6 +196,11 @@ def main():
     for c in sorted(cases, key=lambda c: c['id']):
         print('    %-16s %2d Aufgaben / %2d Teile  %s'
               % (c['id'], len(c['aufgaben']), len(c['steps']), c['termin']))
+    print('  Textkorrekturen: %d Ersetzungen' % txt)
+    if offen:
+        print('  Korrekturen ohne Wirkung (%d) – Quelle geändert?' % len(offen))
+        for o in offen:
+            print('    ' + o)
     print('  Medien eingespielt: %d' % med)
     print('  App  cases.json: %d andere + %d Prüfungen' % (a_o, a_n))
     print('  Web  KVM_CASES : %d andere + %d Prüfungen' % (w_o, w_n))

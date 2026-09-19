@@ -860,8 +860,8 @@ class _QuizScreenState extends State<QuizScreen> {
               EdgeInsets.only(bottom: MediaQuery.of(context).viewInsets.bottom),
           child: SizedBox(
             height: MediaQuery.of(context).size.height * 0.7,
-            child: Column(children: [
-              const Padding(
+            child: const Column(children: [
+              Padding(
                 padding: EdgeInsets.fromLTRB(16, 12, 16, 4),
                 child: Row(children: [
                   Text('Rechenblatt',
@@ -871,7 +871,7 @@ class _QuizScreenState extends State<QuizScreen> {
                           color: kInk)),
                 ]),
               ),
-              const Expanded(child: DrawingPad()),
+              Expanded(child: DrawingPad()),
             ]),
           ),
         ),

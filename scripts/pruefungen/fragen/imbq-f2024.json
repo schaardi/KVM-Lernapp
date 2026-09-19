@@ -1,0 +1,710 @@
+{
+ "questions": [
+  {
+   "f": 1,
+   "sub": "Arbeitsrecht",
+   "t": "mc",
+   "q": "Ein unbefristeter Arbeitsvertrag wird nur mündlich geschlossen. Ist er wirksam?",
+   "o": [
+    {
+     "t": "Ja – ein Arbeitsvertrag darf nach § 105 Absatz 1 Satz 1 GewO auch mündlich oder konkludent geschlossen werden und ist dann voll wirksam",
+     "ok": 1
+    },
+    {
+     "t": "Nein – Arbeitsverträge bedürfen ausnahmslos der Schriftform und sind sonst nichtig"
+    },
+    {
+     "t": "Nur wenn der Betriebsrat der mündlichen Abrede zustimmt"
+    },
+    {
+     "t": "Nur bis zu einer Beschäftigungsdauer von sechs Monaten"
+    }
+   ],
+   "e": "Für den unbefristeten Arbeitsvertrag gibt es kein gesetzliches Schriftformerfordernis; § 105 Absatz 1 Satz 1 GewO lässt den formfreien Abschluss ausdrücklich zu. Der Vertrag ist damit nicht nichtig – eine darauf gestützte Kündigung wäre unwirksam."
+  },
+  {
+   "f": 1,
+   "sub": "Arbeitsrecht",
+   "t": "mc",
+   "q": "Welche Pflicht trifft den Arbeitgeber nach dem Nachweisgesetz, wenn der Arbeitsvertrag mündlich geschlossen wurde?",
+   "o": [
+    {
+     "t": "Er muss die wesentlichen Vertragsbedingungen spätestens einen Monat nach dem vereinbarten Beginn schriftlich niederlegen, unterzeichnen und dem Arbeitnehmer aushändigen",
+     "ok": 1
+    },
+    {
+     "t": "Er muss den Vertrag innerhalb einer Woche notariell beurkunden lassen"
+    },
+    {
+     "t": "Er muss den Vertrag der Berufsgenossenschaft anzeigen"
+    },
+    {
+     "t": "Ihn trifft keine weitere Pflicht, weil der Vertrag formfrei gültig ist"
+    }
+   ],
+   "e": "§ 2 NachwG verpflichtet den Arbeitgeber, die wesentlichen Vertragsbedingungen schriftlich niederzulegen, zu unterzeichnen und auszuhändigen. Die Frist knüpft an den vereinbarten Beginn des Arbeitsverhältnisses an."
+  },
+  {
+   "f": 1,
+   "sub": "Arbeitsrecht",
+   "t": "mc",
+   "q": "Bei welchem Vertrag schreibt das Gesetz die Schriftform ausdrücklich vor?",
+   "o": [
+    {
+     "t": "Beim befristeten Arbeitsvertrag – die Befristungsabrede bedarf nach § 14 Absatz 4 TzBfG der Schriftform",
+     "ok": 1
+    },
+    {
+     "t": "Beim unbefristeten Arbeitsvertrag nach § 105 GewO"
+    },
+    {
+     "t": "Bei jeder Änderung des Arbeitsortes"
+    },
+    {
+     "t": "Bei der Vereinbarung einer Probezeit"
+    }
+   ],
+   "e": "Nur die Befristungsabrede selbst ist formbedürftig (§ 14 Absatz 4 TzBfG); fehlt die Schriftform, gilt der Vertrag als unbefristet geschlossen. Auch der Ausbildungsvertrag ist nach §§ 10, 11 BBiG niederzulegen."
+  },
+  {
+   "f": 1,
+   "sub": "Arbeitsrecht",
+   "t": "mc",
+   "q": "Ein arbeitsunfähig erkrankter Mitarbeiter erscheint nicht zu einem Personalgespräch im Betrieb und wird dafür abgemahnt. Ist die Abmahnung gerechtfertigt?",
+   "o": [
+    {
+     "t": "Nein – der arbeitsunfähige Arbeitnehmer ist nicht verpflichtet, auf Anweisung des Arbeitgebers im Betrieb zu erscheinen",
+     "ok": 1
+    },
+    {
+     "t": "Ja – die Teilnahme an Personalgesprächen ist Teil der Arbeitspflicht und gilt auch während der Arbeitsunfähigkeit"
+    },
+    {
+     "t": "Ja, sofern das Gespräch mindestens drei Tage vorher angekündigt wurde"
+    },
+    {
+     "t": "Nur dann nicht, wenn der Betriebsrat der Einladung widersprochen hat"
+    }
+   ],
+   "e": "Der Arbeitgeber darf während der Arbeitsunfähigkeit in angemessenem Umfang Kontakt halten. Ein Erscheinen im Betrieb kann er aber nicht anordnen – die Arbeitspflicht ruht. Eine darauf gestützte Abmahnung ist nicht gerechtfertigt."
+  },
+  {
+   "f": 1,
+   "sub": "Arbeitsrecht",
+   "t": "mc",
+   "q": "Welche Angabe gehört zu den inhaltlichen Bestandteilen einer Abmahnung?",
+   "o": [
+    {
+     "t": "Die Androhung der Kündigung für den Wiederholungsfall",
+     "ok": 1
+    },
+    {
+     "t": "Das Datum der Abmahnung"
+    },
+    {
+     "t": "Die Anschrift des Arbeitnehmers"
+    },
+    {
+     "t": "Die Unterschrift des Abmahnenden"
+    }
+   ],
+   "e": "Datum, Anschrift und Unterschrift sind formale Bestandteile. Inhaltlich gehören dazu: detaillierte Beschreibung des Sachverhalts, Feststellung des Pflichtenverstoßes, Aufforderung zu künftig ordnungsgemäßem Verhalten und die Androhung der Kündigung im Wiederholungsfall (Warnfunktion)."
+  },
+  {
+   "f": 1,
+   "sub": "Betriebsverfassung",
+   "t": "mc",
+   "q": "Ab welcher Betriebsgröße hat der Betriebsrat ein Beteiligungsrecht bei jeder Einstellung?",
+   "o": [
+    {
+     "t": "In Betrieben mit in der Regel mehr als 20 wahlberechtigten Arbeitnehmern (§ 99 Absatz 1 BetrVG)",
+     "ok": 1
+    },
+    {
+     "t": "Ab fünf wahlberechtigten Arbeitnehmern"
+    },
+    {
+     "t": "Ab 100 Arbeitnehmern"
+    },
+    {
+     "t": "In jedem Betrieb, in dem ein Betriebsrat besteht"
+    }
+   ],
+   "e": "Nach § 99 Absatz 1 BetrVG muss der Arbeitgeber in Betrieben mit in der Regel mehr als 20 wahlberechtigten Arbeitnehmern vor jeder Einstellung den Betriebsrat unterrichten, die Bewerbungsunterlagen vorlegen und seine Zustimmung einholen."
+  },
+  {
+   "f": 1,
+   "sub": "Betriebsverfassung",
+   "t": "mc",
+   "q": "Der Betriebsrat verweigert die Zustimmung zu einer bereits vollzogenen vorläufigen Einstellung. Was muss der Arbeitgeber tun, damit die Maßnahme bestehen bleibt?",
+   "o": [
+    {
+     "t": "Er muss innerhalb von drei Tagen beim Arbeitsgericht die Ersetzung der Zustimmung und die Feststellung der dringenden Erforderlichkeit beantragen (§ 100 Absatz 2 Satz 3 BetrVG)",
+     "ok": 1
+    },
+    {
+     "t": "Er muss die Einstellung sofort rückgängig machen"
+    },
+    {
+     "t": "Er muss die Einigungsstelle anrufen"
+    },
+    {
+     "t": "Er kann die Maßnahme ohne weiteres aufrechterhalten, weil sie bereits vollzogen ist"
+    }
+   ],
+   "e": "Die vorläufige personelle Maßnahme nach § 100 BetrVG ist zulässig, wenn sie aus sachlichen Gründen dringend erforderlich ist. Verweigert der Betriebsrat die Zustimmung, muss der Arbeitgeber binnen drei Tagen das Arbeitsgericht anrufen, sonst endet die Maßnahme."
+  },
+  {
+   "f": 1,
+   "sub": "Arbeitsschutz",
+   "t": "mc",
+   "q": "Ab wie vielen Beschäftigten ist ein Arbeitsschutzausschuss zu bilden?",
+   "o": [
+    {
+     "t": "Bei mehr als 20 Beschäftigten (§ 11 ASiG)",
+     "ok": 1
+    },
+    {
+     "t": "Bei mehr als 5 Beschäftigten"
+    },
+    {
+     "t": "Bei mehr als 50 Beschäftigten"
+    },
+    {
+     "t": "Erst bei mehr als 250 Beschäftigten"
+    }
+   ],
+   "e": "§ 11 ASiG verpflichtet den Unternehmer, bei mehr als 20 Beschäftigten einen Arbeitsschutzausschuss zu bilden. Er tagt mindestens einmal vierteljährlich."
+  },
+  {
+   "f": 1,
+   "sub": "Sozialversicherung",
+   "t": "mc",
+   "q": "Welche Bedeutung hat die Unterscheidung von Arbeitsunfall und Wegeunfall für den Arbeitgeber?",
+   "o": [
+    {
+     "t": "Wegeunfälle werden dem Unternehmen nicht angelastet und beeinflussen seinen Beitrag zur gesetzlichen Unfallversicherung nicht",
+     "ok": 1
+    },
+    {
+     "t": "Wegeunfälle sind gar nicht versichert"
+    },
+    {
+     "t": "Bei Wegeunfällen zahlt der Arbeitgeber die Heilbehandlung selbst"
+    },
+    {
+     "t": "Wegeunfälle verdoppeln den Beitrag zur Berufsgenossenschaft"
+    }
+   ],
+   "e": "Das SGB VII zählt beide zu den Arbeitsunfällen. Für die Beitragsberechnung des Unternehmens zählen jedoch nur die Unfälle im Betrieb – Wegeunfälle bleiben außer Betracht, weil das Unternehmen sie nicht beeinflussen kann."
+  },
+  {
+   "f": 2,
+   "sub": "Rechtsformen",
+   "t": "mc",
+   "q": "Wie hoch ist das Mindestgrundkapital einer Aktiengesellschaft?",
+   "o": [
+    {
+     "t": "50.000 €",
+     "ok": 1
+    },
+    {
+     "t": "25.000 €"
+    },
+    {
+     "t": "100.000 €"
+    },
+    {
+     "t": "1 € (Unternehmergesellschaft)"
+    }
+   ],
+   "e": "Das Grundkapital der AG beträgt nach § 7 AktG mindestens 50.000 €. Zum Vergleich: die GmbH braucht 25.000 € Stammkapital."
+  },
+  {
+   "f": 2,
+   "sub": "Rechtsformen",
+   "t": "mc",
+   "q": "Worin unterscheiden sich Nennwert und Kurswert einer Aktie?",
+   "o": [
+    {
+     "t": "Der Nennwert ist der Anteil am Grundkapital, den die Aktie verbrieft; der Kurswert ist ihr Tagespreis an der Börse",
+     "ok": 1
+    },
+    {
+     "t": "Der Nennwert ist der Preis beim Kauf, der Kurswert der Preis beim Verkauf"
+    },
+    {
+     "t": "Der Nennwert enthält die Dividende, der Kurswert nicht"
+    },
+    {
+     "t": "Beide sind stets gleich hoch"
+    }
+   ],
+   "e": "Der Nennwert bemisst den Anteil am Grundkapital und ändert sich nicht. Der Kurswert entsteht an der Börse aus Angebot und Nachfrage und schwankt täglich."
+  },
+  {
+   "f": 2,
+   "sub": "Rechtsformen",
+   "t": "mc",
+   "q": "Welches Organ der AG bestellt den Vorstand und überwacht die Geschäftsführung?",
+   "o": [
+    {
+     "t": "Der Aufsichtsrat",
+     "ok": 1
+    },
+    {
+     "t": "Die Hauptversammlung"
+    },
+    {
+     "t": "Der Betriebsrat"
+    },
+    {
+     "t": "Die Gesellschafterversammlung"
+    }
+   ],
+   "e": "Der Aufsichtsrat setzt den Vorstand ein und kontrolliert ihn. Der Vorstand führt die Geschäfte und vertritt die AG nach außen; die Hauptversammlung entlastet den Vorstand, beschließt Satzungsänderungen und die Dividendenausschüttung."
+  },
+  {
+   "f": 2,
+   "sub": "Kostenrechnung",
+   "t": "calc",
+   "q": "Berechnen Sie den Akkordstundenverdienst: Akkordgrundlohn 18,00 €/h, Akkordzuschlag 10 %, Vorgabezeit 1.518 min, Ist-Auftragszeit 1.265 min.",
+   "ans": 23.76,
+   "unit": "€/h",
+   "e": "Akkordrichtsatz = 18,00 €/h · 1,1 = 19,80 €/h. Zeitgradfaktor = Vorgabezeit ÷ Ist-Auftragszeit = 1.518 min ÷ 1.265 min = 1,2. Akkordstundenverdienst = 19,80 €/h · 1,2 = 23,76 €/h."
+  },
+  {
+   "f": 2,
+   "sub": "Kostenrechnung",
+   "t": "calc",
+   "q": "Ein Auftrag über 200 Frästeile kostet auf Maschine 1 1.554,80 € und auf Maschine 2 1.638,50 €. Wie hoch ist die absolute Kosteneinsparung bei der günstigeren Maschine?",
+   "ans": 83.7,
+   "unit": "€",
+   "e": "1.638,50 € − 1.554,80 € = 83,70 € je Auftrag. Günstiger ist Fräsmaschine 1: Ihr höherer Zeitbedarf je Stück wird durch den deutlich niedrigeren Maschinenstundensatz mehr als ausgeglichen."
+  },
+  {
+   "f": 2,
+   "sub": "Kostenrechnung",
+   "t": "calc",
+   "q": "Ein CNC-Bearbeitungszentrum verursacht 77.600 € fixe und 60.000 € variable Maschinenkosten im Jahr bei einer geplanten Laufzeit von 2.400 Stunden. Berechnen Sie den Maschinenstundensatz.",
+   "ans": 57.33,
+   "unit": "€/h",
+   "e": "Maschinenstundensatz = (fixe + variable Maschinenkosten) ÷ Laufzeit = (77.600 € + 60.000 €) ÷ 2.400 h = 137.600 € ÷ 2.400 h = 57,33 €/h."
+  },
+  {
+   "f": 2,
+   "sub": "Kostenrechnung",
+   "t": "calc",
+   "q": "Dieselbe Maschine läuft statt der geplanten 2.400 Stunden nur 2.000 Stunden. Die fixen Kosten betragen 77.600 €/Jahr, die variablen 60.000 € bei 2.400 h Planlaufzeit. Wie hoch sind die tatsächlichen Maschinenkosten je Laufzeitstunde?",
+   "ans": 63.8,
+   "unit": "€/h",
+   "e": "Die Fixkosten verteilen sich auf die tatsächliche Laufzeit: 77.600 € ÷ 2.000 h = 38,80 €/h. Der variable Anteil bleibt leistungsbezogen: 60.000 € ÷ 2.400 h = 25,00 €/h. Summe: 63,80 €/h. Die Unterbeschäftigung verteuert die Stunde um 6,47 €."
+  },
+  {
+   "f": 2,
+   "sub": "Controlling",
+   "t": "calc",
+   "q": "Bei 6.000 verkauften Stück wurde ein Gesamtdeckungsbeitrag von 252.000 € erzielt, der Break-even-Point liegt bei 4.850 Stück. Berechnen Sie das Betriebsergebnis.",
+   "ans": 48300,
+   "unit": "€",
+   "e": "Stückdeckungsbeitrag db = 252.000 € ÷ 6.000 Stück = 42 €/Stück. Im Break-even decken die Deckungsbeiträge genau die Fixkosten: Kf = 42 €/Stück · 4.850 Stück = 203.700 €. Betriebsergebnis = 252.000 € − 203.700 € = 48.300 €."
+  },
+  {
+   "f": 2,
+   "sub": "Controlling",
+   "t": "mc",
+   "q": "Der Stückdeckungsbeitrag sinkt um 5 %. Wie verändert sich die Break-even-Menge bei unveränderten Fixkosten?",
+   "o": [
+    {
+     "t": "Sie steigt, weil zur Deckung derselben Fixkosten mehr Stück nötig sind",
+     "ok": 1
+    },
+    {
+     "t": "Sie sinkt um 5 %"
+    },
+    {
+     "t": "Sie bleibt gleich, weil die Fixkosten unverändert sind"
+    },
+    {
+     "t": "Sie steigt um genau 5 %"
+    }
+   ],
+   "e": "x(BEP) = Kf ÷ db. Sinkt db, wächst der Quotient. Im Beispiel: 203.700 € ÷ 39,90 €/Stück = 5.106 Stück gegenüber 4.850 Stück – ein Anstieg um 5,28 %, also mehr als die 5 %, um die der Deckungsbeitrag gefallen ist."
+  },
+  {
+   "f": 2,
+   "sub": "Kostenrechnung",
+   "t": "mc",
+   "q": "Worin unterscheiden sich kurzfristige und langfristige Preisuntergrenze?",
+   "o": [
+    {
+     "t": "Kurzfristig muss der Preis mindestens die variablen Stückkosten decken, langfristig die vollen Stückkosten",
+     "ok": 1
+    },
+    {
+     "t": "Kurzfristig muss der Preis die Fixkosten decken, langfristig die variablen Kosten"
+    },
+    {
+     "t": "Die kurzfristige Preisuntergrenze liegt immer über der langfristigen"
+    },
+    {
+     "t": "Beide entsprechen den Selbstkosten zuzüglich Gewinnzuschlag"
+    }
+   ],
+   "e": "Kurzfristig (p ≥ kv) wird jeder Deckungsbeitrag über null mitgenommen, weil die Fixkosten ohnehin anfallen. Langfristig (p ≥ k) muss der Preis auch die Fixkosten tragen, sonst zehrt das Unternehmen seine Substanz auf."
+  },
+  {
+   "f": 2,
+   "sub": "Betriebsorganisation",
+   "t": "mc",
+   "q": "Was spricht für den Wechsel von der Einlinien- zur Spartenorganisation?",
+   "o": [
+    {
+     "t": "Mehr Marktnähe und Kundenorientierung, wenn das Unternehmen mehrere Produktgruppen mit eigenen Spezialkenntnissen führt",
+     "ok": 1
+    },
+    {
+     "t": "Der Wegfall aller Führungsstellen"
+    },
+    {
+     "t": "Die Abschaffung von Stellenbeschreibungen"
+    },
+    {
+     "t": "Der Verzicht auf eine Qualifizierung der Mitarbeiter"
+    }
+   ],
+   "e": "Die Spartenorganisation gliedert nach Produkten oder Produktgruppen und bringt so Entscheidungen näher an den Markt. Der Preis: mehr Führungsstellen, neue Stellenbeschreibungen, Qualifizierungsbedarf und die Gefahr von Doppelarbeit in den Sparten."
+  },
+  {
+   "f": 3,
+   "sub": "EDV",
+   "t": "mc",
+   "q": "Welches Hauptziel der Datensicherheit ist verletzt, wenn Daten zwar abrufbar, aber verfälscht sind?",
+   "o": [
+    {
+     "t": "Die Integrität",
+     "ok": 1
+    },
+    {
+     "t": "Die Verfügbarkeit"
+    },
+    {
+     "t": "Die Vertraulichkeit"
+    },
+    {
+     "t": "Die Authentizität"
+    }
+   ],
+   "e": "Verfügbarkeit heißt: die Daten sind jederzeit ohne Ausfälle abrufbar. Integrität heißt: sie sind unverfälscht. Vertraulichkeit heißt: nur Berechtigte können sie einsehen. Verfälschte, aber abrufbare Daten verletzen also die Integrität."
+  },
+  {
+   "f": 3,
+   "sub": "EDV",
+   "t": "mc",
+   "q": "Welche Ursache für einen IT-Ausfall ist unternehmensintern?",
+   "o": [
+    {
+     "t": "Fehlende Organisationsanweisungen und Richtlinien, die sicherheitsgerechtes Verhalten erschweren",
+     "ok": 1
+    },
+    {
+     "t": "Ein Stromausfall im öffentlichen Netz"
+    },
+    {
+     "t": "Ein Erdbeben"
+    },
+    {
+     "t": "Ein Ausfall beim Internetanbieter"
+    }
+   ],
+   "e": "Interne Ursachen liegen im Einflussbereich des Unternehmens: fehlende Richtlinien, zu knappe Ressourcen für IT-Sicherheit, unzureichende Schulung, fehlende Datensicherung. Stromausfall, Naturereignis und Providerausfall sind externe Ursachen."
+  },
+  {
+   "f": 3,
+   "sub": "Projektmanagement",
+   "t": "mc",
+   "q": "Was kennzeichnet die Top-down-Planung?",
+   "o": [
+    {
+     "t": "Die Ziele werden von der obersten Führungsebene vorgegeben und nach unten aufgeteilt; die Teilpläne sind dadurch aufeinander abgestimmt",
+     "ok": 1
+    },
+    {
+     "t": "Die operativen Bereiche melden ihre Pläne nach oben und die Leitung fasst sie zusammen"
+    },
+    {
+     "t": "Die Planung erfolgt ausschließlich durch externe Berater"
+    },
+    {
+     "t": "Jede Abteilung plant unabhängig ohne gemeinsames Ziel"
+    }
+   ],
+   "e": "Top-down sichert Zielkonsistenz und lässt sich leicht durchsetzen, nimmt aber die Kenntnis der operativen Ebene zu wenig auf. Bottom-up ist umgekehrt. Das Gegenstromverfahren verbindet beide: Vorgaben von oben, Konkretisierung unten, Rücklauf nach oben."
+  },
+  {
+   "f": 3,
+   "sub": "Projektmanagement",
+   "t": "mc",
+   "q": "Wie arbeitet das Gegenstromverfahren?",
+   "o": [
+    {
+     "t": "Die Leitung gibt übergeordnete Ziele vor, die operativen Bereiche konkretisieren sie und melden sie zur Abstimmung zurück",
+     "ok": 1
+    },
+    {
+     "t": "Zwei Abteilungen planen dasselbe Projekt unabhängig und die bessere Planung gewinnt"
+    },
+    {
+     "t": "Die Planung läuft ausschließlich von unten nach oben"
+    },
+    {
+     "t": "Die Planung wird jährlich zwischen Top-down und Bottom-up gewechselt"
+    }
+   ],
+   "e": "Das Gegenstromverfahren nutzt die Vorteile beider Richtungen: Zielkonsistenz von oben und Realitätsnähe von unten. Der Rücklauf sorgt dafür, dass die Vorgaben mit den tatsächlichen Möglichkeiten der Bereiche abgeglichen werden."
+  },
+  {
+   "f": 3,
+   "sub": "Kreativitätstechniken",
+   "t": "mc",
+   "q": "Welche Methode eignet sich, um Ideen in strukturierter, hierarchischer Form um einen zentralen Begriff zu sammeln?",
+   "o": [
+    {
+     "t": "Mindmapping",
+     "ok": 1
+    },
+    {
+     "t": "Brainstorming"
+    },
+    {
+     "t": "Netzplantechnik"
+    },
+    {
+     "t": "ABC-Analyse"
+    }
+   ],
+   "e": "Mindmapping ordnet Ideen als Äste um einen zentralen Begriff und macht Zusammenhänge sichtbar. Brainstorming sammelt zunächst ungeordnet und bewertungsfrei möglichst viele Ideen; Netzplan und ABC-Analyse sind keine Methoden der Ideenfindung."
+  },
+  {
+   "f": 4,
+   "sub": "Führungsmethoden",
+   "t": "mc",
+   "q": "Auszubildende sind Ihnen im IT-Bereich fachlich überlegen. Wie reagieren Sie als Meister souverän?",
+   "o": [
+    {
+     "t": "Die eigene Wissenslücke einräumen, die Kompetenz der Auszubildenden anerkennen und sie in betriebliche Lösungen einbinden",
+     "ok": 1
+    },
+    {
+     "t": "Das Thema meiden, damit die eigene Autorität nicht leidet"
+    },
+    {
+     "t": "Den Auszubildenden verbieten, über das Thema zu sprechen"
+    },
+    {
+     "t": "Die Aufgaben an einen anderen Meister abgeben"
+    }
+   ],
+   "e": "Anerkannte Kompetenz stärkt das Selbstwertgefühl der Auszubildenden und bindet sie ein. Autorität als Führungskraft entsteht aus Rolle, Verlässlichkeit und Führungsverhalten – nicht daraus, in jedem Einzelthema der Beste zu sein."
+  },
+  {
+   "f": 4,
+   "sub": "Konflikte",
+   "t": "mc",
+   "q": "In einer Umstrukturierung kursieren Gerüchte im Team. Welche Folge ist typisch?",
+   "o": [
+    {
+     "t": "Angst um den Arbeitsplatz, sinkende Arbeitsqualität und Konflikte untereinander",
+     "ok": 1
+    },
+    {
+     "t": "Ein messbarer Anstieg der Produktivität"
+    },
+    {
+     "t": "Eine automatische Verbesserung des Betriebsklimas"
+    },
+    {
+     "t": "Ein Rückgang der Fehlzeiten"
+    }
+   ],
+   "e": "Gerüchte erzeugen Unsicherheit: Angst vor Arbeitsplatzverlust und höherem Druck, nachlassende Qualität und Menge, Resignation, Personalausfälle bis hin zu Kündigungen und Konflikten im Team."
+  },
+  {
+   "f": 4,
+   "sub": "Führungsstile",
+   "t": "mc",
+   "q": "Welche Maßnahme wirkt bei Gerüchten am ehesten auf das Betriebsklima?",
+   "o": [
+    {
+     "t": "Regelmäßiger Kontakt und offene Information, ergänzt um Einzelgespräche",
+     "ok": 1
+    },
+    {
+     "t": "Abwarten, bis sich die Lage von selbst beruhigt"
+    },
+    {
+     "t": "Gerüchte im Team öffentlich als Unsinn abtun"
+    },
+    {
+     "t": "Die Kommunikation vollständig an den Betriebsrat abgeben"
+    }
+   ],
+   "e": "Wirksam sind ein situativer Führungsstil, Einzelgespräche, Sinnvermittlung, ein respektvoller Umgangston und regelmäßiger Austausch. Schweigen füllt die Lücke, die das Gerücht ohnehin schon besetzt."
+  },
+  {
+   "f": 4,
+   "sub": "Berufsausbildung",
+   "t": "mc",
+   "q": "Wozu dient eine Unterweisung?",
+   "o": [
+    {
+     "t": "Die Mitarbeiter werden systematisch befähigt, einen Arbeitsablauf selbstständig und sicher auszuführen",
+     "ok": 1
+    },
+    {
+     "t": "Sie ersetzt die Gefährdungsbeurteilung"
+    },
+    {
+     "t": "Sie dient der Leistungsbeurteilung des Mitarbeiters"
+    },
+    {
+     "t": "Sie ist eine freiwillige Serviceleistung des Arbeitgebers"
+    }
+   ],
+   "e": "Die Unterweisung befähigt zur selbstständigen und sicheren Ausführung. Sie gehört zu den Grundpflichten der Führungskraft im Arbeitsschutz und ist zu dokumentieren – sie ersetzt aber weder Gefährdungsbeurteilung noch Beurteilungsgespräch."
+  },
+  {
+   "f": 4,
+   "sub": "Berufsausbildung",
+   "t": "mc",
+   "q": "In welcher Situation ist der Industriemeister zur Unterweisung verpflichtet?",
+   "o": [
+    {
+     "t": "Bei der Einführung neuer Arbeitsmittel oder Technologien",
+     "ok": 1
+    },
+    {
+     "t": "Nur einmal jährlich zum Jahresbeginn"
+    },
+    {
+     "t": "Nur auf Verlangen des Betriebsrats"
+    },
+    {
+     "t": "Nur bei Auszubildenden im ersten Lehrjahr"
+    }
+   ],
+   "e": "Unterwiesen wird bei Einstellung (Erstunterweisung), vor Aufnahme der Tätigkeit, bei Veränderungen in Prozessen und Abläufen, bei neuen Arbeitsmitteln oder Technologien und als Schlussfolgerung aus Unfallereignissen – zusätzlich zur regelmäßigen Wiederholung."
+  },
+  {
+   "f": 5,
+   "sub": "Naturwissenschaftliche und technische Grundlagen",
+   "t": "mc",
+   "q": "Was beschreibt der Begriff „Wasserhärte“?",
+   "o": [
+    {
+     "t": "Den Gehalt an zweiwertig positiv geladenen Ionen wie Calcium und Magnesium im Wasser",
+     "ok": 1
+    },
+    {
+     "t": "Den Sauerstoffgehalt des Wassers"
+    },
+    {
+     "t": "Den pH-Wert des Wassers"
+    },
+    {
+     "t": "Die Temperatur, bei der Wasser gefriert"
+    }
+   ],
+   "e": "Härtebildner sind vor allem Calcium- und Magnesium-Ionen, daneben Barium und Strontium. Sie gelangen beim Durchfluss durch Böden und Grundwasserleiter ins Wasser – wie viel, hängt vom geologischen Untergrund ab."
+  },
+  {
+   "f": 5,
+   "sub": "Naturwissenschaftliche und technische Grundlagen",
+   "t": "mc",
+   "q": "Welches Verfahren entfernt nur die temporäre Wasserhärte?",
+   "o": [
+    {
+     "t": "Das Erhitzen des Wassers – dabei fällt Kesselstein aus, die permanente Härte bleibt zurück",
+     "ok": 1
+    },
+    {
+     "t": "Der Kationenaustausch"
+    },
+    {
+     "t": "Die Umkehrosmose"
+    },
+    {
+     "t": "Die Zugabe von Kochsalz"
+    }
+   ],
+   "e": "Beim Aufkochen zerfällt Calciumhydrogencarbonat; das Calciumcarbonat fällt als Kesselstein aus. Die permanente Härte bleibt. Der Kationenaustausch tauscht dagegen Calcium- und Magnesium-Ionen gegen Natrium-Ionen und entfernt beide Anteile."
+  },
+  {
+   "f": 5,
+   "sub": "Naturwissenschaftliche und technische Grundlagen",
+   "t": "calc",
+   "q": "Ein Fahrzeug der Masse 1.500 kg fährt mit 90 km/h. Berechnen Sie seine kinetische Energie.",
+   "ans": 468750,
+   "unit": "J",
+   "e": "90 km/h = 25 m/s. E(kin) = ½ · m · v² = ½ · 1.500 kg · (25 m/s)² = 0,5 · 1.500 · 625 = 468.750 J (rund 469 kJ)."
+  },
+  {
+   "f": 5,
+   "sub": "Naturwissenschaftliche und technische Grundlagen",
+   "t": "calc",
+   "q": "Ein Fahrzeug rollt mit 468.750 J kinetischer Energie reibungsfrei eine Steigung hinauf. Die Masse beträgt 1.500 kg. Welchen Höhenunterschied überwindet es bis zum Stillstand?",
+   "ans": 31.86,
+   "unit": "m",
+   "e": "Die kinetische Energie wird vollständig in Lageenergie umgewandelt: E(pot) = E(kin), also m · g · h = 468.750 J. h = 468.750 J ÷ (1.500 kg · 9,81 m/s²) = 468.750 ÷ 14.715 = 31,86 m."
+  },
+  {
+   "f": 5,
+   "sub": "Naturwissenschaftliche und technische Grundlagen",
+   "t": "calc",
+   "q": "Ein Gabelstapler mit der Eigengewichtskraft F1 = 25 kN (Hebelarm 1,6 m) trägt eine Last von 500 kg (Hebelarm 1,4 m). Der Hebelarm der Hinterachse beträgt 1,8 m. Berechnen Sie die Auflagerkraft an der Hinterachse.",
+   "ans": 18.41,
+   "unit": "kN",
+   "e": "Lastkraft F2 = 500 kg · 9,81 m/s² = 4.905 N = 4,905 kN. Momentengleichgewicht um die Vorderachse: FH · 1,8 m = 25 kN · 1,6 m − 4,905 kN · 1,4 m = 40 − 6,867 = 33,133 kNm. FH = 33,133 ÷ 1,8 = 18,41 kN."
+  },
+  {
+   "f": 5,
+   "sub": "Naturwissenschaftliche und technische Grundlagen",
+   "t": "calc",
+   "q": "Die Hinterachse eines Staplers trägt 18,41 kN, verteilt auf zwei Reifen mit je 5 cm × 12,5 cm Auflagefläche. Berechnen Sie die Flächenpressung.",
+   "ans": 1.47,
+   "unit": "N/mm²",
+   "e": "Je Reifen: 18.410 N ÷ 2 = 9.205 N. Auflagefläche = 50 mm · 125 mm = 6.250 mm². p = F ÷ A = 9.205 N ÷ 6.250 mm² = 1,47 N/mm²."
+  },
+  {
+   "f": 5,
+   "sub": "Naturwissenschaftliche und technische Grundlagen",
+   "t": "calc",
+   "q": "Ein Stahlseil von 20,396 m Länge wird von 0 °C auf 30 °C erwärmt. Der Längenausdehnungskoeffizient beträgt 0,000012 1/°C. Berechnen Sie die Längenänderung in mm.",
+   "ans": 7.34,
+   "unit": "mm",
+   "e": "Δl = l₀ · α · Δϑ = 20.396 mm · 0,000012 1/°C · 30 °C = 7,34 mm. Bei einem gespannten Seil zeigt sich die Ausdehnung als größerer Durchhang und geringere Seilkraft."
+  },
+  {
+   "f": 5,
+   "sub": "Naturwissenschaftliche und technische Grundlagen",
+   "t": "mc",
+   "q": "Ab wann beginnt ein Gabelstapler nach vorn zu kippen?",
+   "o": [
+    {
+     "t": "Sobald die Auflagerkraft an der Hinterachse null wird",
+     "ok": 1
+    },
+    {
+     "t": "Sobald die Last schwerer ist als der Stapler"
+    },
+    {
+     "t": "Sobald die Vorderachse mehr als die Hälfte der Gesamtlast trägt"
+    },
+    {
+     "t": "Sobald die Flächenpressung 1 N/mm² überschreitet"
+    }
+   ],
+   "e": "Der Stapler kippt um die Vorderachse. Solange die Hinterachse noch Kraft überträgt, ist er standsicher; bei FH = 0 kN ist die Kippgrenze erreicht. Im Beispiel: F2 = 25 kN · 1,6 m ÷ 1,4 m = 28,57 kN, also rund 2,91 t Last."
+  }
+ ]
+}

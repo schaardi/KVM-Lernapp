@@ -1,0 +1,590 @@
+{
+ "questions": [
+  {
+   "f": 1,
+   "sub": "Betriebsverfassung",
+   "t": "mc",
+   "q": "Ein Mitarbeiter arbeitet seit drei Wochen im Betrieb. Darf er an der Betriebsratswahl teilnehmen?",
+   "o": [
+    {
+     "t": "Ja – wahlberechtigt ist nach § 7 BetrVG jeder Arbeitnehmer des Betriebs, der das 16. Lebensjahr vollendet hat; eine Mindestzugehörigkeit gibt es nicht",
+     "ok": 1
+    },
+    {
+     "t": "Nein – erst nach sechs Monaten Betriebszugehörigkeit"
+    },
+    {
+     "t": "Nein – erst nach Ablauf der Probezeit"
+    },
+    {
+     "t": "Nur wenn der Betriebsrat ihn ausdrücklich zulässt"
+    }
+   ],
+   "e": "Für das aktive Wahlrecht genügt die Betriebszugehörigkeit am Wahltag und die Vollendung des 16. Lebensjahres. Die Sechs-Monats-Frist gilt nur für die Wählbarkeit (§ 8 BetrVG)."
+  },
+  {
+   "f": 1,
+   "sub": "Betriebsverfassung",
+   "t": "mc",
+   "q": "Kann der Betriebsrat verlangen, dass eine neu zu besetzende Stelle auch intern ausgeschrieben wird?",
+   "o": [
+    {
+     "t": "Ja, nach § 93 BetrVG",
+     "ok": 1
+    },
+    {
+     "t": "Nein, die Ausschreibung ist allein Sache des Arbeitgebers"
+    },
+    {
+     "t": "Nur bei Führungspositionen"
+    },
+    {
+     "t": "Nur wenn die Stelle länger als drei Monate unbesetzt ist"
+    }
+   ],
+   "e": "§ 93 BetrVG gibt dem Betriebsrat das Recht, die innerbetriebliche Ausschreibung zu verlangen. Unterbleibt sie trotz Verlangen, kann der Betriebsrat seine Zustimmung zur Einstellung nach § 99 Absatz 2 Nummer 5 BetrVG verweigern."
+  },
+  {
+   "f": 1,
+   "sub": "Arbeitsrecht",
+   "t": "mc",
+   "q": "Eine Stellenanzeige verlangt „mindestens 5-jährige Berufserfahrung“ und beschreibt sehr schwere körperliche Belastungen. Was ist daran nach dem AGG problematisch?",
+   "o": [
+    {
+     "t": "Solche Formulierungen können mittelbar wegen Alters oder Behinderung benachteiligen; Stellenanzeigen müssen nach §§ 11, 7 AGG benachteiligungsfrei sein",
+     "ok": 1
+    },
+    {
+     "t": "Nichts – Anforderungen an die Berufserfahrung sind stets zulässig"
+    },
+    {
+     "t": "Die Anzeige verstößt gegen das Nachweisgesetz"
+    },
+    {
+     "t": "Die Anzeige muss vom Betriebsrat unterschrieben werden"
+    }
+   ],
+   "e": "Das AGG verbietet Benachteiligungen unter anderem wegen Alter und Behinderung (§ 1 AGG) und erstreckt das ausdrücklich auf die Ausschreibung (§ 11 AGG). Anforderungen müssen für die Tätigkeit sachlich erforderlich und verhältnismäßig sein."
+  },
+  {
+   "f": 1,
+   "sub": "Arbeitsrecht",
+   "t": "mc",
+   "q": "Ein Bewerber wird durch eine diskriminierende Stellenanzeige benachteiligt. Worauf hat er Anspruch?",
+   "o": [
+    {
+     "t": "Auf Entschädigung bzw. Schadensersatz – nicht aber auf den Abschluss eines Arbeitsvertrags (§ 15 Absatz 6 AGG)",
+     "ok": 1
+    },
+    {
+     "t": "Auf Abschluss des Arbeitsvertrags"
+    },
+    {
+     "t": "Auf Einstellung zur Probe für sechs Monate"
+    },
+    {
+     "t": "Auf nichts, weil noch kein Arbeitsverhältnis besteht"
+    }
+   ],
+   "e": "§ 15 Absatz 6 AGG stellt ausdrücklich klar, dass ein Verstoß keinen Anspruch auf Begründung eines Beschäftigungsverhältnisses auslöst. Bleiben können Entschädigung nach § 15 Absatz 2 AGG und Schadensersatz nach Absatz 1."
+  },
+  {
+   "f": 1,
+   "sub": "Arbeitsrecht",
+   "t": "mc",
+   "q": "Ein erwachsener Mitarbeiter beginnt um 6 Uhr. Wann muss er spätestens seine erste Pause antreten?",
+   "o": [
+    {
+     "t": "Spätestens nach sechs Stunden Arbeit, also um 12 Uhr (§ 4 ArbZG)",
+     "ok": 1
+    },
+    {
+     "t": "Spätestens nach 4,5 Stunden, also um 10:30 Uhr"
+    },
+    {
+     "t": "Spätestens nach acht Stunden, also um 14 Uhr"
+    },
+    {
+     "t": "Die Lage der Pause ist frei wählbar"
+    }
+   ],
+   "e": "§ 4 ArbZG verlangt bei mehr als sechs Stunden Arbeitszeit mindestens 30 Minuten Pause und verbietet, länger als sechs Stunden hintereinander ohne Ruhepause zu arbeiten."
+  },
+  {
+   "f": 1,
+   "sub": "Arbeitsrecht",
+   "t": "mc",
+   "q": "Ein 17-jähriger Auszubildender beginnt um 6 Uhr. Wann muss er spätestens seine erste Pause antreten?",
+   "o": [
+    {
+     "t": "Spätestens nach 4,5 Stunden, also um 10:30 Uhr (§ 11 JArbSchG)",
+     "ok": 1
+    },
+    {
+     "t": "Spätestens nach sechs Stunden wie bei Erwachsenen"
+    },
+    {
+     "t": "Spätestens nach acht Stunden"
+    },
+    {
+     "t": "Erst am Ende der Schicht"
+    }
+   ],
+   "e": "Das Jugendarbeitsschutzgesetz ist strenger: Ruhepausen spätestens nach 4,5 Stunden, mindestens 30 Minuten bei mehr als 4,5 bis 6 Stunden und 60 Minuten bei mehr als 6 Stunden. Dazu kommt die Freizeit von mindestens 12 Stunden nach Arbeitsende (§ 13 JArbSchG)."
+  },
+  {
+   "f": 1,
+   "sub": "Arbeitsrecht",
+   "t": "mc",
+   "q": "Ab wann greift der allgemeine Kündigungsschutz nach dem Kündigungsschutzgesetz in persönlicher Hinsicht?",
+   "o": [
+    {
+     "t": "Wenn das Arbeitsverhältnis länger als sechs Monate bestanden hat (§ 1 KSchG)",
+     "ok": 1
+    },
+    {
+     "t": "Ab dem ersten Arbeitstag"
+    },
+    {
+     "t": "Erst nach zwei Jahren"
+    },
+    {
+     "t": "Erst ab Vollendung des 50. Lebensjahres"
+    }
+   ],
+   "e": "Neben der persönlichen Voraussetzung (mehr als sechs Monate) muss auch die betriebliche erfüllt sein: mehr als zehn Arbeitnehmer im Betrieb (§ 23 KSchG). Erst dann braucht die Kündigung einen personen-, verhaltens- oder betriebsbedingten Grund."
+  },
+  {
+   "f": 1,
+   "sub": "Betriebsverfassung",
+   "t": "mc",
+   "q": "Eine Kündigung wird ausgesprochen, ohne den vorhandenen Betriebsrat anzuhören. Welche Folge hat das?",
+   "o": [
+    {
+     "t": "Die Kündigung ist unwirksam (§ 102 Absatz 1 BetrVG)",
+     "ok": 1
+    },
+    {
+     "t": "Die Kündigung ist wirksam, der Betriebsrat kann nur nachträglich widersprechen"
+    },
+    {
+     "t": "Die Kündigung wird erst einen Monat später wirksam"
+    },
+    {
+     "t": "Der Arbeitgeber muss lediglich ein Bußgeld zahlen"
+    }
+   ],
+   "e": "Die Anhörung des Betriebsrats ist Wirksamkeitsvoraussetzung jeder Kündigung. Ohne sie ist die Kündigung unwirksam – unabhängig davon, ob sie inhaltlich berechtigt gewesen wäre."
+  },
+  {
+   "f": 2,
+   "sub": "Rechtsformen",
+   "t": "mc",
+   "q": "Welches Kriterium eignet sich zur Unterscheidung von Rechtsformen?",
+   "o": [
+    {
+     "t": "Der Haftungsumfang der Gesellschafter",
+     "ok": 1
+    },
+    {
+     "t": "Die Anzahl der Mitarbeiter"
+    },
+    {
+     "t": "Die Branche des Unternehmens"
+    },
+    {
+     "t": "Der Standort des Unternehmens"
+    }
+   ],
+   "e": "Rechtsformen unterscheiden sich in Geschäftsführungsbefugnis, Außenvertretungsrecht, Stimmrecht, Gewinnverteilung, Haftungsumfang und Mindestgründungskapital. Mitarbeiterzahl und Branche sind dafür ohne Belang."
+  },
+  {
+   "f": 2,
+   "sub": "Rechtsformen",
+   "t": "mc",
+   "q": "Wer führt die Geschäfte einer AG, wer die einer GmbH?",
+   "o": [
+    {
+     "t": "Bei der AG der Vorstand, bei der GmbH der oder die Geschäftsführer",
+     "ok": 1
+    },
+    {
+     "t": "Bei beiden der Aufsichtsrat"
+    },
+    {
+     "t": "Bei der AG die Hauptversammlung, bei der GmbH der Beirat"
+    },
+    {
+     "t": "Bei beiden die Gesellschafterversammlung"
+    }
+   ],
+   "e": "Der Vorstand der AG führt die Geschäfte eigenverantwortlich und wird vom Aufsichtsrat bestellt und überwacht. Der GmbH-Geschäftsführer ist dagegen an Weisungen der Gesellschafterversammlung gebunden."
+  },
+  {
+   "f": 2,
+   "sub": "Betriebsorganisation",
+   "t": "mc",
+   "q": "Wie grenzen sich Stabsstelle Qualitätssicherung und Instanz Produktion voneinander ab?",
+   "o": [
+    {
+     "t": "Die Stabsstelle berät, die Entscheidung trifft die Produktionsleitung",
+     "ok": 1
+    },
+    {
+     "t": "Die Stabsstelle ist der Produktionsleitung gegenüber weisungsbefugt"
+    },
+    {
+     "t": "Beide entscheiden gemeinsam und gleichberechtigt"
+    },
+    {
+     "t": "Die Produktion berät, die Stabsstelle entscheidet"
+    }
+   ],
+   "e": "Stäbe haben kein Weisungsrecht gegenüber der Linie. Typische Aufgaben der Qualitätssicherung: Einhaltung betriebsinterner Normen, Prozesssicherung und Messmittelüberwachung – als Vorbereitung der Entscheidung, nicht als Entscheidung."
+  },
+  {
+   "f": 2,
+   "sub": "Betriebsorganisation",
+   "t": "mc",
+   "q": "Welcher Nachteil ist für die Stablinienorganisation kennzeichnend?",
+   "o": [
+    {
+     "t": "Stäbe können faktisch Einfluss nehmen, ohne Verantwortung zu tragen, und Entscheidungen verzögern",
+     "ok": 1
+    },
+    {
+     "t": "Die Kompetenzen sind nicht abgrenzbar"
+    },
+    {
+     "t": "Es gibt keine einheitliche unternehmerische Zielrichtung"
+    },
+    {
+     "t": "Jeder Mitarbeiter hat mehrere Vorgesetzte"
+    }
+   ],
+   "e": "Die Stablinie erbt die klare Kompetenzabgrenzung des Einliniensystems und ergänzt sie um Fachwissen. Der Preis: zusätzliche Kosten, längere Wege und die Spannung zwischen Fachautorität des Stabes und Entscheidungsmacht der Linie."
+  },
+  {
+   "f": 3,
+   "sub": "Statistik",
+   "t": "mc",
+   "q": "In einem Korrelationsdiagramm streuen die Punkte weit um die Ausgleichsgerade, steigen aber erkennbar an. Wie ist der Zusammenhang zu beschreiben?",
+   "o": [
+    {
+     "t": "Positiv, aber schwach – beide Größen wachsen tendenziell gemeinsam, der Zusammenhang ist jedoch locker",
+     "ok": 1
+    },
+    {
+     "t": "Negativ und stark"
+    },
+    {
+     "t": "Es besteht kein Zusammenhang"
+    },
+    {
+     "t": "Positiv und stark, weil die Gerade ansteigt"
+    }
+   ],
+   "e": "Die Richtung liest man an der Steigung ab (positiv/negativ), die Stärke an der Streuung um die Gerade. Weit streuende Punkte bedeuten einen schwachen Zusammenhang – und ein Zusammenhang ist noch keine Ursache."
+  },
+  {
+   "f": 3,
+   "sub": "EDV",
+   "t": "mc",
+   "q": "Welche Methode vermeidet Fehler bereits bei der Datenerfassung?",
+   "o": [
+    {
+     "t": "Die Plausibilitätskontrolle direkt bei der Eingabe",
+     "ok": 1
+    },
+    {
+     "t": "Die monatliche Datensicherung"
+    },
+    {
+     "t": "Die Verschlüsselung der Datenbank"
+    },
+    {
+     "t": "Die Archivierung der Daten nach zehn Jahren"
+    }
+   ],
+   "e": "Plausibilitätsprüfungen bei der Eingabe, die Kontrolle visualisierter Daten auf Ausreißer und stichprobenartige Nachrechnungen fangen Fehler früh ab. Datensicherung und Verschlüsselung dienen Verfügbarkeit und Vertraulichkeit, nicht der Richtigkeit."
+  },
+  {
+   "f": 3,
+   "sub": "EDV",
+   "t": "mc",
+   "q": "Welche Maßnahme sichert die Verfügbarkeit der IT-Systeme organisatorisch ab?",
+   "o": [
+    {
+     "t": "Wartungsverträge für die IT-Systeme und geschultes Personal",
+     "ok": 1
+    },
+    {
+     "t": "Die Anschaffung möglichst vieler Bildschirme"
+    },
+    {
+     "t": "Der Verzicht auf Passwörter, damit niemand ausgesperrt wird"
+    },
+    {
+     "t": "Die Speicherung aller Daten auf einem einzigen Server"
+    }
+   ],
+   "e": "Organisatorisch wirken Wartungsverträge, Schulung, klare Autorisierung und Notfallpläne; technisch redundante Systeme, unterbrechungsfreie Stromversorgung und regelmäßige Sicherungen. Ein einziger Server ist das Gegenteil von Verfügbarkeit."
+  },
+  {
+   "f": 3,
+   "sub": "Kreativitätstechniken",
+   "t": "mc",
+   "q": "Was ist der erste Schritt einer strukturierten schriftlichen Ideenfindung?",
+   "o": [
+    {
+     "t": "Das Ziel der Ideenfindung festlegen und die Methodik bestimmen",
+     "ok": 1
+    },
+    {
+     "t": "Die Ideen sofort bewerten und aussortieren"
+    },
+    {
+     "t": "Die Ergebnisse präsentieren"
+    },
+    {
+     "t": "Die Teilnehmer nach Hierarchie ordnen"
+    }
+   ],
+   "e": "Ablauf: Ziel und Methodik festlegen, Beteiligte einführen, Ideen schriftlich notieren, Ideen sammeln und ordnen, erst danach bewerten. Die Trennung von Sammeln und Bewerten ist der Kern aller Kreativitätstechniken."
+  },
+  {
+   "f": 3,
+   "sub": "Präsentation",
+   "t": "mc",
+   "q": "Welcher Fehler ist bei einer Präsentation im Online-Konferenzsystem besonders zu vermeiden?",
+   "o": [
+    {
+     "t": "Das reine Vorlesen des visualisierten Inhalts",
+     "ok": 1
+    },
+    {
+     "t": "Die Verwendung von Zwischenfragen"
+    },
+    {
+     "t": "Der Einsatz von Bildern statt Text"
+    },
+    {
+     "t": "Ein Blick in die Kamera statt auf den Bildschirm"
+    }
+   ],
+   "e": "Vorgelesene Folien ermüden – die Teilnehmer lesen schneller, als der Vortragende spricht. Ebenfalls zu vermeiden: fremde Präsentationsteile ohne Quelle, überfrachtete Folien und fehlende Interaktion über die Distanz."
+  },
+  {
+   "f": 4,
+   "sub": "Gruppen",
+   "t": "mc",
+   "q": "Welche Herausforderung ist für die Führung virtueller Teams kennzeichnend?",
+   "o": [
+    {
+     "t": "Die Arbeitsbeziehung ist weniger intensiv, weil die räumliche Nähe fehlt",
+     "ok": 1
+    },
+    {
+     "t": "Die Mitarbeiter sind technisch nicht in der Lage zu arbeiten"
+    },
+    {
+     "t": "Virtuelle Teams brauchen keine Führung"
+    },
+    {
+     "t": "Die Arbeitszeit lässt sich nicht erfassen"
+    }
+   ],
+   "e": "Ohne Präsenz fehlen informelle Gespräche, Identifikation und spontane Rückmeldung. Dazu kommen Zeitzonen, technische Hürden und die Schwierigkeit, Stimmungen wahrzunehmen."
+  },
+  {
+   "f": 4,
+   "sub": "Gruppen",
+   "t": "mc",
+   "q": "Welche Maßnahme führt ein virtuelles Team wirksam?",
+   "o": [
+    {
+     "t": "Verbindliche Kommunikationsregeln, feste Termine und die Einweisung aller in die genutzten Systeme",
+     "ok": 1
+    },
+    {
+     "t": "Vollständiger Verzicht auf Videokonferenzen"
+    },
+    {
+     "t": "Kontrolle über die Anzahl der Tastenanschläge"
+    },
+    {
+     "t": "Ausschließlich schriftliche Kommunikation per E-Mail"
+    }
+   ],
+   "e": "Wirksam sind sichere und ergonomische Systeme, Einweisung, feste Teilzeiten und Termine, klare Ziele und Zuständigkeiten sowie bewusst gestaltete informelle Anlässe, die die fehlende Präsenz ein Stück weit ersetzen."
+  },
+  {
+   "f": 4,
+   "sub": "Führungsstile",
+   "t": "mc",
+   "q": "Worin unterscheiden sich disziplinarische und fachliche Führung?",
+   "o": [
+    {
+     "t": "Die disziplinarische Führungskraft ist weisungsbefugt und verantwortet Personalfragen; die fachliche führt inhaltlich ohne Personalverantwortung",
+     "ok": 1
+    },
+    {
+     "t": "Die fachliche Führung entscheidet über Kündigungen"
+    },
+    {
+     "t": "Die disziplinarische Führung betrifft nur die Fachaufgaben"
+    },
+    {
+     "t": "Beide Begriffe bezeichnen dasselbe"
+    }
+   ],
+   "e": "Disziplinarisch bedeutet Weisungsbefugnis gegenüber der Person: Urlaub, Beurteilung, Entwicklung, arbeitsrechtliche Maßnahmen. Fachlich bedeutet Steuerung der Sacharbeit – in der Matrixorganisation fallen beide regelmäßig auseinander."
+  },
+  {
+   "f": 4,
+   "sub": "Motivation",
+   "t": "mc",
+   "q": "Welches Merkmal trägt zu einem positiven Betriebsklima bei?",
+   "o": [
+    {
+     "t": "Gegenseitiger Respekt, Anerkennung und transparente Information",
+     "ok": 1
+    },
+    {
+     "t": "Möglichst wenig Rückmeldung an die Mitarbeiter"
+    },
+    {
+     "t": "Wettbewerb der Mitarbeiter untereinander um knappe Prämien"
+    },
+    {
+     "t": "Strikte Trennung von Führungskraft und Team"
+    }
+   ],
+   "e": "Das Betriebsklima entsteht aus entspannter Stimmung, Respekt und Toleranz, Anerkennung und Wertschätzung, transparenter Information, fairer Konfliktbearbeitung und verlässlichen Absprachen."
+  },
+  {
+   "f": 5,
+   "sub": "Naturwissenschaftliche und technische Grundlagen",
+   "t": "mc",
+   "q": "Wie gelangen Calciumsalze in das Grundwasser?",
+   "o": [
+    {
+     "t": "Regenwasser mit einem pH-Wert um 5,5 sickert in den Boden und löst dort die vorhandenen Calciumsalze",
+     "ok": 1
+    },
+    {
+     "t": "Sie entstehen durch Elektrolyse im Grundwasserleiter"
+    },
+    {
+     "t": "Sie werden ausschließlich durch Abwasser eingetragen"
+    },
+    {
+     "t": "Sie bilden sich beim Gefrieren des Wassers"
+    }
+   ],
+   "e": "Das leicht saure Regenwasser löst beim Durchsickern Mineralien aus Böden und Gestein. Wie hart das Wasser wird, hängt deshalb stark vom geologischen Untergrund der Region ab."
+  },
+  {
+   "f": 5,
+   "sub": "Naturwissenschaftliche und technische Grundlagen",
+   "t": "mc",
+   "q": "Welche Folge hat hartes Wasser für technische Anlagen?",
+   "o": [
+    {
+     "t": "Es bildet Kesselstein und erhöht dadurch den Energiebedarf bei der Wassererwärmung",
+     "ok": 1
+    },
+    {
+     "t": "Es senkt den Energiebedarf durch bessere Wärmeleitung"
+    },
+    {
+     "t": "Es verhindert Korrosion vollständig"
+    },
+    {
+     "t": "Es hat keine technischen Auswirkungen"
+    }
+   ],
+   "e": "Kesselstein ist ein schlechter Wärmeleiter: Schon wenige Millimeter Ablagerung auf einem Heizstab treiben den Energieverbrauch spürbar hoch und können zum Ausfall führen."
+  },
+  {
+   "f": 5,
+   "sub": "Naturwissenschaftliche und technische Grundlagen",
+   "t": "mc",
+   "q": "Wie wirkt ein Ionenaustauscher zur Wasserenthärtung?",
+   "o": [
+    {
+     "t": "Er gibt gebundene Ionen an die Lösung ab und nimmt dafür die Härtebildner Calcium und Magnesium auf",
+     "ok": 1
+    },
+    {
+     "t": "Er filtert die Calciumsalze mechanisch heraus"
+    },
+    {
+     "t": "Er erhitzt das Wasser und fällt Kesselstein aus"
+    },
+    {
+     "t": "Er senkt den pH-Wert des Wassers unter 7"
+    }
+   ],
+   "e": "Die oberflächenaktive Austauschermasse tauscht Calcium- und Magnesium-Ionen gegen Natrium-Ionen. Ist sie erschöpft, wird sie mit Kochsalzlösung regeneriert. Das Erhitzen entfernt dagegen nur die temporäre Härte."
+  },
+  {
+   "f": 5,
+   "sub": "Naturwissenschaftliche und technische Grundlagen",
+   "t": "calc",
+   "q": "1.000 Behälter mit je 500 kg werden einzeln 8 m hoch gehoben. Der Gesamtwirkungsgrad des Transportsystems beträgt 60 %. Berechnen Sie den Gesamtenergiebedarf in kWh.",
+   "ans": 18.17,
+   "unit": "kWh",
+   "e": "Gesamtmasse = 1.000 · 500 kg = 500.000 kg. Nutzenergie = m · g · h = 500.000 kg · 9,81 m/s² · 8 m = 39,24 MJ. Zugeführte Energie = 39,24 MJ ÷ 0,6 = 65,4 MJ. Umrechnung: 65,4 MJ ÷ 3,6 MJ/kWh = 18,17 kWh."
+  },
+  {
+   "f": 5,
+   "sub": "Naturwissenschaftliche und technische Grundlagen",
+   "t": "calc",
+   "q": "Ein Elektrofahrzeug benötigt 20 kWh je 100 km. Berechnen Sie den Energiebedarf für eine Jahresfahrleistung von 15.000 km.",
+   "ans": 3000,
+   "unit": "kWh",
+   "e": "20 kWh je 100 km entsprechen 0,2 kWh/km. E = 15.000 km · 0,2 kWh/km = 3.000 kWh. Zum Vergleich: 7 l Benzin je 100 km entsprechen über den Heizwert rund 9.200 kWh im Jahr – der Elektroantrieb spart hier den weit überwiegenden Teil der Energie ein."
+  },
+  {
+   "f": 5,
+   "sub": "Naturwissenschaftliche und technische Grundlagen",
+   "t": "calc",
+   "q": "In einer Reihenschaltung aus R1 = 3 kΩ und einem NTC-Widerstand R2 liegen 24 V an. Über R2 werden 4 V gemessen. Berechnen Sie den Widerstandswert von R2.",
+   "ans": 600,
+   "unit": "Ω",
+   "e": "An R1 liegen U(R1) = 24 V − 4 V = 20 V. In der Reihenschaltung verhalten sich die Spannungen wie die Widerstände: R2 = U(AUS) · R1 ÷ U(R1) = 4 V · 3.000 Ω ÷ 20 V = 600 Ω. Über die Kennlinie gehört dazu eine Wassertemperatur von 20 °C."
+  },
+  {
+   "f": 5,
+   "sub": "Naturwissenschaftliche und technische Grundlagen",
+   "t": "calc",
+   "q": "In einer Reihenschaltung aus R1 = 3 kΩ und R2 = 300 Ω liegen 24 V an. Berechnen Sie die Leistung, die in R1 umgesetzt wird.",
+   "ans": 0.16,
+   "unit": "W",
+   "e": "Gesamtwiderstand R = 3.000 Ω + 300 Ω = 3.300 Ω. Strom I = 24 V ÷ 3.300 Ω = 0,00727 A. Leistung an R1: P = I² · R1 = (0,00727 A)² · 3.000 Ω = 0,16 W."
+  },
+  {
+   "f": 5,
+   "sub": "Naturwissenschaftliche und technische Grundlagen",
+   "t": "mc",
+   "q": "Worin unterscheiden sich NTC- und PTC-Widerstand?",
+   "o": [
+    {
+     "t": "Beim NTC sinkt der Widerstandswert mit steigender Temperatur, beim PTC steigt er",
+     "ok": 1
+    },
+    {
+     "t": "Beim NTC steigt der Widerstandswert mit der Temperatur, beim PTC sinkt er"
+    },
+    {
+     "t": "Beide verhalten sich gleich, nur die Bauform unterscheidet sich"
+    },
+    {
+     "t": "Der NTC ist temperaturunabhängig"
+    }
+   ],
+   "e": "NTC = negativer Temperaturkoeffizient (Heißleiter), PTC = positiver Temperaturkoeffizient (Kaltleiter). Heißleiter dienen der Temperaturmessung, Kaltleiter unter anderem dem Überlastschutz von Motoren."
+  }
+ ]
+}

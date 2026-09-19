@@ -148,9 +148,43 @@ python3 scripts/pruefungen/inventar.py <ordner> --md scripts/pruefungen/quellen/
 python3 scripts/pruefungen/quellen_bau.py <ordner> --nur f2024,h2023
 ```
 
+Drei Heftformen kommen im Archiv vor; `parse_imbq.JAHRGAENGE` hält fest,
+welche ein Termin hat:
+
+| Form | Termine | Punktzahl | Lösung | Parser |
+|---|---|---|---|---|
+| PL | ab F2023 | Badge `Mögliche Punktzahl: 8` | hinter dem ganzen Heft | `parse_imbq.py` |
+| L-I | F2019 – H2022 | Badge | hinter jeder Aufgabe | `parse_imbq.teilen()` |
+| L-ALT | bis H2018 | Klammer am rechten Rand | hinter jeder Aufgabe | `parse_imbq_alt.py` |
+
 `quellen_bau.py` legt `quellen/imbq-<f|h><jahr>/0N-<fach>.txt` an – das Format,
 das `parse_imbq.py` liest –, überspringt Sammelbände und Dateien, deren Inhalt
 nicht zum Dateinamen passt, und liest Scans sowie Fremd-OCR neu (Tesseract mit
 `--psm 3` und einem Thread; `--psm 4` hängt auf den grafischen Deckblättern).
 Die drei Heftformate (PL, L-I, L-ALT) und die Parser-Deltas sind in
 `docs/PLAN-altklausuren-und-aufgabenblatt.md`, Teil A, beschrieben.
+
+## Abbildungen der Hefte (`anlagen_bau.py`)
+
+```bash
+python3 scripts/pruefungen/anlagen_bau.py <pdf-verzeichnis> [schlüssel …]
+```
+
+Baut aus den PDFs die Dateien unter `anlagen/`; eingecheckt werden nur die
+fertigen Ausschnitte. Zwei Tabellen halten fest, woher jede Abbildung kommt:
+
+- **`AUSZUEGE`** – ohne Koordinaten. Fundstelle ist entweder `(Seite, Nummer)`
+  für ein **eingebettetes** Bild (`anlagen_extrakt.holen()`, volle Auflösung)
+  oder `(Seite, "Bildunterschrift")` für eine **gezeichnete** Abbildung (der
+  Bereich über der Bildunterschrift). Das ist der Regelfall.
+- **`FIGUREN`** – Zuschnitt einer bei 100 dpi gerenderten Seite. Nötig, wenn
+  die Zeichnung keine Bildunterschrift hat, im PDF in mehrere Teilbilder
+  zerfällt oder ungleichmäßig skaliert eingebettet ist (dann käme das
+  eingebettete Bild verzerrt heraus).
+
+Mehrere Fundstellen werden untereinander gesetzt – so stehen Schaltbild und
+Kennlinie in einer Abbildung, ohne den Fragetext dazwischen. Welche Abbildung
+zu welcher Teilaufgabe gehört, steht in `anlagen_imbq.py`
+(`BILDER`, `BILDER_L`, `TABELLEN`); `build_anlagen.py` schreibt Dateien und
+Verzeichnis nach Web und App und bricht ab, sobald eine Abbildung ohne
+Bildunterschrift bliebe.

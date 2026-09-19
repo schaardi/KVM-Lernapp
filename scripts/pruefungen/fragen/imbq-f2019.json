@@ -1,0 +1,628 @@
+{
+ "questions": [
+  {
+   "f": 1,
+   "sub": "Arbeitsrecht",
+   "t": "mc",
+   "q": "Welche Form muss eine Befristung ohne Sachgrund haben?",
+   "o": [
+    {
+     "t": "Mindestens der Beendigungszeitpunkt muss schriftlich vereinbart sein – sonst gilt der Vertrag als unbefristet",
+     "ok": 1
+    },
+    {
+     "t": "Keine besondere Form; eine mündliche Absprache genügt"
+    },
+    {
+     "t": "Notarielle Beurkundung des gesamten Arbeitsvertrags"
+    },
+    {
+     "t": "Schriftform nur dann, wenn der Betriebsrat sie verlangt"
+    }
+   ],
+   "e": "§ 14 Absatz 4 TzBfG verlangt die Schriftform für die Befristungsabrede. Sie dient der Beweisbarkeit und der Warnfunktion: Beide Seiten sollen sich über das Ende des Vertrags im Klaren sein. Fehlt sie, entsteht ein unbefristetes Arbeitsverhältnis."
+  },
+  {
+   "f": 1,
+   "sub": "Arbeitsrecht",
+   "t": "mc",
+   "q": "Kann ein befristeter Arbeitsvertrag vor Ablauf der Befristung ordentlich gekündigt werden?",
+   "o": [
+    {
+     "t": "Nur wenn das im Arbeitsvertrag vereinbart ist oder ein Tarifvertrag es vorsieht",
+     "ok": 1
+    },
+    {
+     "t": "Ja, jederzeit unter Einhaltung der gesetzlichen Kündigungsfrist"
+    },
+    {
+     "t": "Nein, ein befristeter Vertrag ist in keinem Fall vorzeitig kündbar"
+    },
+    {
+     "t": "Ja, aber nur vom Arbeitnehmer, nicht vom Arbeitgeber"
+    }
+   ],
+   "e": "§ 15 Absatz 4 TzBfG schließt die ordentliche Kündigung befristeter Verträge grundsätzlich aus; sie muss ausdrücklich vereinbart sein. Die außerordentliche Kündigung aus wichtigem Grund bleibt davon unberührt."
+  },
+  {
+   "f": 1,
+   "sub": "Arbeitsrecht",
+   "t": "mc",
+   "q": "Welche Kriterien sind bei der Sozialauswahl im Rahmen einer betriebsbedingten Kündigung zu berücksichtigen?",
+   "o": [
+    {
+     "t": "Dauer der Betriebszugehörigkeit, Lebensalter, Unterhaltspflichten und Schwerbehinderung",
+     "ok": 1
+    },
+    {
+     "t": "Leistungsbeurteilung, Fehlzeiten, Pünktlichkeit und Betriebstreue"
+    },
+    {
+     "t": "Wohnort, Familienstand, Konfession und Staatsangehörigkeit"
+    },
+    {
+     "t": "Ausbildungsabschluss, Sprachkenntnisse, Gehaltshöhe und Urlaubsanspruch"
+    }
+   ],
+   "e": "Die vier Kriterien nennt § 1 Absatz 3 KSchG abschließend. Nicht einzubeziehen sind Arbeitnehmer, deren Weiterbeschäftigung wegen ihrer Kenntnisse, Leistungen oder zur Sicherung einer ausgewogenen Personalstruktur im berechtigten betrieblichen Interesse liegt."
+  },
+  {
+   "f": 1,
+   "sub": "Betriebsverfassung",
+   "t": "mc",
+   "q": "Wozu dient ein Sozialplan?",
+   "o": [
+    {
+     "t": "Er soll die wirtschaftlichen Nachteile ausgleichen oder mildern, die den Arbeitnehmern durch eine Betriebsänderung entstehen",
+     "ok": 1
+    },
+    {
+     "t": "Er regelt die freiwilligen Sozialleistungen des laufenden Geschäftsjahres"
+    },
+    {
+     "t": "Er legt die Beiträge zur Sozialversicherung für die Belegschaft fest"
+    },
+    {
+     "t": "Er bestimmt die Reihenfolge, in der gekündigt wird"
+    }
+   ],
+   "e": "Der Sozialplan wird zwischen Arbeitgeber und Betriebsrat vereinbart (§ 112 BetrVG) und kann z. B. Abfindungen, Umzugskostenbeihilfen, Qualifizierungsangebote oder Unterstützung bei der Stellensuche vorsehen. Die Reihenfolge der Kündigungen regelt dagegen die Sozialauswahl."
+  },
+  {
+   "f": 1,
+   "sub": "Betriebsverfassung",
+   "t": "mc",
+   "q": "Der Betriebsrat lädt einen Gewerkschaftssekretär zur Betriebsversammlung ein. Der Arbeitgeber verweigert ihm den Zutritt. Ist das zulässig?",
+   "o": [
+    {
+     "t": "Nein – Beauftragte der im Betrieb vertretenen Gewerkschaften dürfen beratend teilnehmen",
+     "ok": 1
+    },
+    {
+     "t": "Ja, betriebsfremde Personen dürfen den Betrieb nicht betreten"
+    },
+    {
+     "t": "Ja, es sei denn, der Arbeitgeber wurde vier Wochen vorher informiert"
+    },
+    {
+     "t": "Nur zulässig, wenn die Versammlung außerhalb der Arbeitszeit stattfindet"
+    }
+   ],
+   "e": "§ 46 Absatz 1 BetrVG gibt den Gewerkschaftsbeauftragten dieses Teilnahmerecht. Der Arbeitgeber selbst kann keine Betriebsversammlung einberufen; auf seinen Wunsch hin ist der Betriebsrat aber nach § 43 Absatz 3 BetrVG dazu verpflichtet."
+  },
+  {
+   "f": 1,
+   "sub": "Arbeitsschutz",
+   "t": "mc",
+   "q": "Warum sollen auch Beinahe-Unfälle und unsichere Zustände erfasst und untersucht werden?",
+   "o": [
+    {
+     "t": "Weil dieselbe Ursache beim nächsten Mal zu einem schweren Unfall führen kann – die Auswertung ermöglicht vorbeugende Maßnahmen",
+     "ok": 1
+    },
+    {
+     "t": "Weil die Berufsgenossenschaft jeden Beinahe-Unfall meldepflichtig stellt"
+    },
+    {
+     "t": "Weil sich daraus der Beitrag zur Unfallversicherung unmittelbar mindert"
+    },
+    {
+     "t": "Weil der Betriebsrat sonst der Gefährdungsbeurteilung nicht zustimmt"
+    }
+   ],
+   "e": "Zwischen unsicheren Handlungen, Beinahe-Unfällen und schweren Unfällen besteht ein statistischer Zusammenhang (Unfallpyramide). Wer die breite Basis auswertet, erkennt Gefahrenschwerpunkte, bevor Personen zu Schaden kommen."
+  },
+  {
+   "f": 1,
+   "sub": "Produkthaftung/Datenschutz",
+   "t": "mc",
+   "q": "Welche Information muss ein Arbeitgeber auf Verlangen im Rahmen des Auskunftsrechts nach der DSGVO mitteilen?",
+   "o": [
+    {
+     "t": "Die Verarbeitungszwecke, die Kategorien der verarbeiteten Daten, die Empfänger und die geplante Speicherdauer",
+     "ok": 1
+    },
+    {
+     "t": "Nur den Namen des betrieblichen Datenschutzbeauftragten"
+    },
+    {
+     "t": "Nur die Daten, die für die Lohnabrechnung verwendet werden"
+    },
+    {
+     "t": "Ausschließlich die Daten, die an externe Stellen übermittelt wurden"
+    }
+   ],
+   "e": "Das Auskunftsrecht steht in Artikel 15 DSGVO; hinzu kommen die Rechte auf Berichtigung, Löschung, Einschränkung der Verarbeitung und Datenübertragbarkeit sowie das Beschwerderecht bei der Aufsichtsbehörde."
+  },
+  {
+   "f": 1,
+   "sub": "Umweltrecht",
+   "t": "mc",
+   "q": "Worin unterscheiden sich Immissionen von Emissionen?",
+   "o": [
+    {
+     "t": "Emissionen gehen von einer Anlage aus, Immissionen wirken am Zielort auf Menschen, Tiere, Pflanzen, Boden und Sachgüter ein",
+     "ok": 1
+    },
+    {
+     "t": "Immissionen gehen von einer Anlage aus, Emissionen wirken am Zielort ein"
+    },
+    {
+     "t": "Emissionen betreffen nur Luft, Immissionen nur Wasser"
+    },
+    {
+     "t": "Beide Begriffe bezeichnen dasselbe, nur in unterschiedlichen Gesetzen"
+    }
+   ],
+   "e": "Beide Begriffe definiert § 3 BImSchG. Beispiel: Die Abgase am Auspuff sind Emission, die Schadstoffbelastung in der Wohnstraße ist Immission. Der Bodenschutz nach § 2 BBodSchG schützt daneben die Lebensraum-, Filter- und Nutzfunktion des Bodens."
+  },
+  {
+   "f": 2,
+   "sub": "Rechtsformen",
+   "t": "mc",
+   "q": "Wer führt die Geschäfte einer offenen Handelsgesellschaft und wie haften die Gesellschafter?",
+   "o": [
+    {
+     "t": "Alle Gesellschafter sind zur Geschäftsführung berechtigt und haften unbeschränkt, gesamtschuldnerisch und auch mit dem Privatvermögen",
+     "ok": 1
+    },
+    {
+     "t": "Ein angestellter Geschäftsführer führt; die Gesellschafter haften nur mit der Einlage"
+    },
+    {
+     "t": "Nur der Kommanditist führt; er haftet unbeschränkt"
+    },
+    {
+     "t": "Ein Vorstand führt; die Gesellschafter haften mit dem Grundkapital"
+    }
+   ],
+   "e": "Bei der OHG ist kein Mindestkapital vorgeschrieben – dafür ist die Haftung unbeschränkt. Bei GmbH (25.000 € Stammkapital) und AG (50.000 € Grundkapital) haftet dagegen nur das Gesellschaftsvermögen; geführt wird durch Geschäftsführer bzw. Vorstand."
+  },
+  {
+   "f": 2,
+   "sub": "Betriebsorganisation",
+   "t": "mc",
+   "q": "Ein Unternehmen gliedert sich zugleich nach Funktionen (Beschaffung, Produktion, Marketing) und nach Produktgruppen. Welches Organisationssystem liegt vor?",
+   "o": [
+    {
+     "t": "Die Matrixorganisation",
+     "ok": 1
+    },
+    {
+     "t": "Das Einliniensystem"
+    },
+    {
+     "t": "Das Stabliniensystem"
+    },
+    {
+     "t": "Die Spartenorganisation"
+    }
+   ],
+   "e": "Die Matrixorganisation baut Hierarchieebenen ab, verbessert die Problemlösung in funktionsübergreifenden Teams und erhöht die Kundennähe. Nachteilig sind die doppelte Unterstellung, erhöhter Abstimmungsaufwand und die Gefahr von Kompetenzkonflikten."
+  },
+  {
+   "f": 2,
+   "sub": "Materialwirtschaft",
+   "t": "mc",
+   "q": "Welches Argument spricht aus Sicht der Geschäftsführung für eine geringere Fertigungstiefe?",
+   "o": [
+    {
+     "t": "Weniger Lagerkapazität und geringere Overhead-Kosten sowie höhere Flexibilität bei Kapazitätsanpassungen",
+     "ok": 1
+    },
+    {
+     "t": "Die Abhängigkeit von Lieferzeiten und -mengen der Zulieferer sinkt"
+    },
+    {
+     "t": "Die Qualitätsstandards lassen sich leichter selbst bestimmen"
+    },
+    {
+     "t": "Das Know-how bleibt vollständig im eigenen Unternehmen"
+    }
+   ],
+   "e": "Die drei Gegenargumente sprechen gerade für eine hohe Fertigungstiefe: Unabhängigkeit von Zulieferern, eigene Qualitätskontrolle, Erhalt von Know-how und Beschäftigung. Die Entscheidung ist deshalb eine Abwägung von Kosten und Risiko."
+  },
+  {
+   "f": 4,
+   "sub": "Entgelt und Arbeitszeit",
+   "t": "calc",
+   "q": "Für 800 Bauteile ist eine Vorgabezeit von 1.380 Minuten festgelegt. Der Facharbeiter benötigt 20 Stunden. Berechnen Sie den erreichten Zeitgrad in Prozent.",
+   "ans": 115,
+   "unit": "%",
+   "e": "Vorgabezeit = 1.380 min = 23 h. Zeitgrad = Vorgabezeit ÷ Istauftragszeit · 100 = 23 h ÷ 20 h · 100 = 115 %. Der Facharbeiter war also schneller als vorgegeben."
+  },
+  {
+   "f": 4,
+   "sub": "Entgelt und Arbeitszeit",
+   "t": "calc",
+   "q": "Der Akkordgrundlohn beträgt 18,00 €/Stunde, der Akkordzuschlag 10 %, der erreichte Zeitgrad 115 %. Berechnen Sie den tatsächlichen Stundenlohn (zwei Nachkommastellen).",
+   "ans": 22.77,
+   "unit": "€/h",
+   "e": "Akkordrichtsatz = 18,00 €/h + 10 % = 19,80 €/h. Akkordlohn = 19,80 €/h · 1,15 = 22,77 €/h. Bei 20 Stunden Istzeit ergeben sich Lohnkosten von 455,40 € für den Auftrag."
+  },
+  {
+   "f": 4,
+   "sub": "Entgelt und Arbeitszeit",
+   "t": "calc",
+   "q": "Ein Auftrag über 800 Stück wird mit einem Akkordrichtsatz von 19,80 €/Stunde und einer Vorgabezeit von 23 Stunden kalkuliert. Berechnen Sie die Lohnkosten je Stück (fünf Nachkommastellen).",
+   "ans": 0.56925,
+   "unit": "€/Stück",
+   "e": "Lohnkosten/Stück = Akkordrichtsatz · Vorgabezeit ÷ Auftragsmenge = 19,80 €/h · 23 h ÷ 800 Stück = 0,56925 €/Stück. Beim Zeitgrad 115 % ergibt 22,77 €/h · 20 h ÷ 800 Stück denselben Wert – genau das ist der Sinn des Akkordlohns: Die Lohnstückkosten bleiben konstant."
+  },
+  {
+   "f": 2,
+   "sub": "Kostenrechnung",
+   "t": "calc",
+   "q": "Für 1.200 verkaufte Pumpen betragen die Stückkosten 100 €, davon 35 € fixe Stückkosten; das Betriebsergebnis liegt bei −6.000 €. Berechnen Sie den Verkaufspreis je Pumpe.",
+   "ans": 95,
+   "unit": "€",
+   "e": "Gesamtkosten = 100 €/Stück · 1.200 Stück = 120.000 €. Bei 6.000 € Verlust beträgt der Umsatz 114.000 €, also p = 114.000 € ÷ 1.200 Stück = 95 €/Stück. Die variablen Stückkosten sind 100 € − 35 € = 65 €, die Fixkosten 35 €/Stück · 1.200 Stück = 42.000 €."
+  },
+  {
+   "f": 2,
+   "sub": "Kostenrechnung",
+   "t": "calc",
+   "q": "Fixkosten 42.000 € pro Monat, Verkaufspreis 95 €, variable Stückkosten 65 €. Berechnen Sie die Break-even-Menge pro Monat.",
+   "ans": 1400,
+   "unit": "Stück",
+   "e": "xBEP = Kf ÷ (p − kv) = 42.000 € ÷ (95 €/Stück − 65 €/Stück) = 42.000 € ÷ 30 €/Stück = 1.400 Stück. Bei einer Kapazität von 2.500 Stück entspricht das einem Break-even-Beschäftigungsgrad von 56 %."
+  },
+  {
+   "f": 2,
+   "sub": "Kostenrechnung",
+   "t": "calc",
+   "q": "Die Selbstkosten betragen 762.840 €, kalkuliert wird mit 20 % Verwaltungs- und Vertriebsgemeinkosten. Berechnen Sie die Herstellkosten.",
+   "ans": 635700,
+   "unit": "€",
+   "e": "In der Rückwärtskalkulation entsprechen die Selbstkosten 120 % der Herstellkosten: 762.840 € ÷ 120 · 100 = 635.700 €. Die Verwaltungs- und Vertriebsgemeinkosten betragen damit 127.140 €."
+  },
+  {
+   "f": 2,
+   "sub": "Kostenrechnung",
+   "t": "calc",
+   "q": "Die Materialkosten betragen 209.280 €, das Fertigungsmaterial 167.424 €. Berechnen Sie den Materialgemeinkostenzuschlagssatz.",
+   "ans": 25,
+   "unit": "%",
+   "e": "Materialgemeinkosten = 209.280 € − 167.424 € = 41.856 €. Zuschlagssatz = 41.856 € ÷ 167.424 € · 100 = 25 %. Der Zuschlag bezieht sich immer auf das Fertigungsmaterial als Einzelkosten, nicht auf die Materialkosten insgesamt."
+  },
+  {
+   "f": 2,
+   "sub": "Kostenrechnung",
+   "t": "calc",
+   "q": "Die Selbstkosten eines Spezialaufzugs betragen 762.840 €, der Netto-Barverkaufspreis der Konkurrenz liegt bei 800.982 €. Berechnen Sie den prozentualen Gewinn, wenn zu diesem Preis angeboten wird (zwei Nachkommastellen).",
+   "ans": 5,
+   "unit": "%",
+   "e": "Gewinn = 800.982 € − 762.840 € = 38.142 €. Gewinnzuschlag = 38.142 € ÷ 762.840 € · 100 = 5 %. In der Rückwärtskalkulation wird vom erzielbaren Marktpreis auf die zulässigen Kosten zurückgerechnet."
+  },
+  {
+   "f": 3,
+   "sub": "EDV",
+   "t": "mc",
+   "q": "Welche Maßnahme zum Schutz personenbezogener Daten ist organisatorisch, nicht technisch?",
+   "o": [
+    {
+     "t": "Betriebliche Anweisungen für datenschutzrelevante Abläufe und das Vier-Augen-Prinzip",
+     "ok": 1
+    },
+    {
+     "t": "Verschlüsselung der gespeicherten Personaldaten"
+    },
+    {
+     "t": "Tägliches Daten-Backup auf einem getrennten System"
+    },
+    {
+     "t": "Elektronische Zutrittskontrolle zum Serverraum"
+    }
+   ],
+   "e": "Technische Maßnahmen wirken über die Systeme (Verschlüsselung, Backup, Zutritts-, Zugangs- und Zugriffskontrolle), organisatorische über Regeln und Menschen (Anweisungen, Aufgabentrennung, Schulung, Verpflichtung auf Vertraulichkeit). Der Meister unterliegt dabei der Schweigepflicht über die Daten seiner Mitarbeiter."
+  },
+  {
+   "f": 3,
+   "sub": "Arbeitsmethodik",
+   "t": "mc",
+   "q": "Warum werden Abläufe als Flussdiagramm dargestellt?",
+   "o": [
+    {
+     "t": "Weil die grafische Darstellung Verzweigungen eindeutig, vollständig und auf einen Blick nachvollziehbar macht",
+     "ok": 1
+    },
+    {
+     "t": "Weil Flussdiagramme rechtlich vorgeschrieben sind"
+    },
+    {
+     "t": "Weil sie den Arbeitsablauf automatisch beschleunigen"
+    },
+    {
+     "t": "Weil sie ohne Kenntnis des Ablaufs erstellt werden können"
+    }
+   ],
+   "e": "Ein Flussdiagramm zwingt dazu, jeden Entscheidungspunkt mit allen Ausgängen zu benennen – Lücken fallen sofort auf. Eingesetzt wird es u. a. in Qualitätssicherung, Arbeitssicherheit, Datenschutz und für Organisations- und Arbeitsanweisungen."
+  },
+  {
+   "f": 3,
+   "sub": "Statistik",
+   "t": "calc",
+   "q": "Im Jahr 2012 wurden 2.750 MWh Energie zu durchschnittlich 15,5 Eurocent je kWh verbraucht. Berechnen Sie die Energiekosten des Jahres in Euro.",
+   "ans": 426250,
+   "unit": "€",
+   "e": "2.750 MWh = 2.750.000 kWh. Kosten = 2.750.000 kWh · 0,155 €/kWh = 426.250 €. Die Umrechnung von MWh in kWh und von Cent in Euro ist hier die eigentliche Fehlerquelle."
+  },
+  {
+   "f": 3,
+   "sub": "Projektmanagement",
+   "t": "mc",
+   "q": "Welches Dokument gehört neben Lasten- und Pflichtenheft zu den Projektdokumenten?",
+   "o": [
+    {
+     "t": "Der Projektstrukturplan",
+     "ok": 1
+    },
+    {
+     "t": "Der Jahresabschluss des Unternehmens"
+    },
+    {
+     "t": "Der Betriebsabrechnungsbogen"
+    },
+    {
+     "t": "Die Lohnsteuerbescheinigung der Projektmitarbeiter"
+    }
+   ],
+   "e": "Zu den Projektdokumenten zählen außerdem Projektauftrag, Ablauf- und Terminplan, Kostenplan, Statusberichte und der Projektabschlussbericht. Lasten- und Pflichtenheft sichern Vollständigkeit und Eindeutigkeit der Anforderungen und sind Grundlage der Abnahme."
+  },
+  {
+   "f": 3,
+   "sub": "Kommunikation",
+   "t": "mc",
+   "q": "Wie verankern Sie wesentliche Informationen in einem Vortrag im Gedächtnis der Zuhörer?",
+   "o": [
+    {
+     "t": "Durch Signalwörter, anschauliche Beispiele und die Wiederholung der Kernaussagen am Ende",
+     "ok": 1
+    },
+    {
+     "t": "Durch möglichst viele Detailangaben und Zahlen auf jeder Folie"
+    },
+    {
+     "t": "Durch gleichförmigen Vortragston ohne Betonungswechsel"
+    },
+    {
+     "t": "Durch Verzicht auf jede Zusammenfassung, um die Zeit zu wahren"
+    }
+   ],
+   "e": "In der schriftlichen Kommunikation wirken dieselben Prinzipien über Gestaltung: farbliche oder fette Hervorhebung, abgesetzte Zusammenfassungen, Aufzählungen und kurze Absätze. Entscheidend ist in beiden Fällen die Beschränkung auf das Wesentliche."
+  },
+  {
+   "f": 4,
+   "sub": "Personalentwicklung",
+   "t": "mc",
+   "q": "Was gehört zur eigenen Vorbereitung eines Meisters auf einen neuen Mitarbeiter?",
+   "o": [
+    {
+     "t": "Bewerbungsunterlagen und Zeugnisse durchsehen und die Arbeitsunterlagen wie Arbeitszeit- und Unfallverhütungsregelungen zusammenstellen",
+     "ok": 1
+    },
+    {
+     "t": "Die übrigen Teammitglieder über die Gehaltshöhe des Neuen informieren"
+    },
+    {
+     "t": "Abwarten, wie sich der neue Mitarbeiter in der ersten Woche zurechtfindet"
+    },
+    {
+     "t": "Die Einarbeitung vollständig an den Betriebsrat übergeben"
+    }
+   ],
+   "e": "Der Einarbeitungsplan umfasst darüber hinaus die Vorbereitung des Teams auf den Neuen, eine Phase der Eingewöhnung und Orientierung, die schrittweise Übernahme der Aufgaben, einen Paten und Rückmeldegespräche in festen Abständen."
+  },
+  {
+   "f": 4,
+   "sub": "Personalentwicklung",
+   "t": "mc",
+   "q": "Wie gehen Sie bei der Planung von Qualifizierungsmaßnahmen für das kommende Jahr vor?",
+   "o": [
+    {
+     "t": "Ist-Situation analysieren, künftige Anforderungen ermitteln, Bedarf ableiten, Maßnahmen auswählen und den Erfolg kontrollieren",
+     "ok": 1
+    },
+    {
+     "t": "Das Seminarangebot des Bildungsträgers übernehmen und gleichmäßig verteilen"
+    },
+    {
+     "t": "Nur die Mitarbeiter schulen, die zuletzt Fehler gemacht haben"
+    },
+    {
+     "t": "Die Qualifizierung aufschieben, bis neue Anlagen beschafft sind"
+    }
+   ],
+   "e": "Der Vergleich von Anforderungsprofil und Qualifikationsprofil macht die Lücke sichtbar. Danach folgen Auswahl der Methode (Unterweisung, Seminar, Lernen am Arbeitsplatz), Planung von Terminen und Vertretung sowie die Erfolgskontrolle in der Praxis."
+  },
+  {
+   "f": 4,
+   "sub": "Motivation",
+   "t": "mc",
+   "q": "Mit welchem Verhalten stärken Sie das Selbstvertrauen Ihrer Mitarbeiter?",
+   "o": [
+    {
+     "t": "Aufmerksamkeit schenken, gute Leistung ausdrücklich anerkennen und eigenverantwortliche Aufgaben übertragen",
+     "ok": 1
+    },
+    {
+     "t": "Jede Arbeit engmaschig kontrollieren, damit keine Fehler passieren"
+    },
+    {
+     "t": "Lob nur im Jahresgespräch aussprechen, damit es besonders wirkt"
+    },
+    {
+     "t": "Aufgaben ausschließlich nach Dienstalter vergeben"
+    }
+   ],
+   "e": "Teamarbeit nutzt das unterschiedliche Wissen aller Mitglieder, senkt das Risiko von Fehlentscheidungen und erhöht die Akzeptanz der Ergebnisse. Voraussetzung ist, dass die Einzelnen sich zutrauen, Aufgaben eigenständig zu lösen."
+  },
+  {
+   "f": 4,
+   "sub": "Führungsmethoden",
+   "t": "mc",
+   "q": "In welcher Situation setzen Sie das Führungsmittel Anerkennung ein?",
+   "o": [
+    {
+     "t": "Wenn eine Aufgabe besser oder schneller als erwartet erfüllt wurde – zeitnah, konkret und begründet",
+     "ok": 1
+    },
+    {
+     "t": "Pauschal am Jahresende für alle Mitarbeiter gleichermaßen"
+    },
+    {
+     "t": "Nur gegenüber Mitarbeitern, die ohnehin überdurchschnittlich bezahlt werden"
+    },
+    {
+     "t": "Erst dann, wenn ein Mitarbeiter von sich aus danach fragt"
+    }
+   ],
+   "e": "Anerkennung wirkt nur, wenn sie verdient und konkret begründet ist. Kritik gehört dagegen ins Vier-Augen-Gespräch, bezieht sich auf das Verhalten statt auf die Person und endet mit einer Vereinbarung über das künftige Vorgehen."
+  },
+  {
+   "f": 4,
+   "sub": "Gruppen",
+   "t": "mc",
+   "q": "In einer Arbeitsbesprechung gehen die Meinungen über Kontrollmethoden auseinander und es bilden sich informelle Gruppen. Was ist ein typischer Grund dafür?",
+   "o": [
+    {
+     "t": "Gemeinsame Interessen und Betroffenheit lassen die Mitarbeiter Rückhalt bei Gleichgesinnten suchen",
+     "ok": 1
+    },
+    {
+     "t": "Die Betriebsordnung schreibt die Bildung solcher Gruppen vor"
+    },
+    {
+     "t": "Der Betriebsrat hat die Gruppen eingesetzt"
+    },
+    {
+     "t": "Die Aufbauorganisation weist sie im Organigramm aus"
+    }
+   ],
+   "e": "Informelle Gruppen bilden sich aus Sympathie, gemeinsamen Interessen, dem Bedürfnis nach Sicherheit und Anerkennung – gerade bei Unsicherheit über anstehende Veränderungen. Die Führungskraft sollte sie kennen und die informellen Führer einbeziehen statt bekämpfen."
+  },
+  {
+   "f": 5,
+   "sub": "Naturwissenschaftliche und technische Grundlagen",
+   "t": "mc",
+   "q": "Der Flüssigkeitsstand eines Blei-Akkus ist zu niedrig. Womit füllen Sie auf und was bewirkt das?",
+   "o": [
+    {
+     "t": "Mit destilliertem Wasser – die Säurekonzentration sinkt, der pH-Wert steigt",
+     "ok": 1
+    },
+    {
+     "t": "Mit konzentrierter Schwefelsäure – die Konzentration bleibt dadurch erhalten"
+    },
+    {
+     "t": "Mit Leitungswasser – die enthaltenen Salze verbessern die Leitfähigkeit"
+    },
+    {
+     "t": "Mit Kochsalzlösung – sie ersetzt die verbrauchte Säure"
+    }
+   ],
+   "e": "Nur das Wasser verdunstet, die Schwefelsäure bleibt im Akku – deshalb wird ausschließlich destilliertes Wasser nachgefüllt. Prüfen lässt sich die Batterieflüssigkeit mit Lackmuspapier oder einem pH-Messgerät; beim Umgang sind Schutzbrille, Säureschutzhandschuhe und die richtige Zugabereihenfolge zwingend."
+  },
+  {
+   "f": 5,
+   "sub": "Naturwissenschaftliche und technische Grundlagen",
+   "t": "calc",
+   "q": "Ein Vierzylindermotor hat 2 Liter Hubraum bei einem Kolbendurchmesser von 80 mm. Berechnen Sie den Kolbenhub in cm (zwei Nachkommastellen).",
+   "ans": 9.95,
+   "unit": "cm",
+   "e": "Hubraum je Zylinder = 2 l ÷ 4 = 0,5 l = 500 cm³. Aus V = π ÷ 4 · d² · h folgt h = 4 · 500 cm³ ÷ (π · (8 cm)²) = 2.000 ÷ 201,06 = 9,95 cm."
+  },
+  {
+   "f": 5,
+   "sub": "Naturwissenschaftliche und technische Grundlagen",
+   "t": "calc",
+   "q": "Ein Zylinder mit 500 cm³ Hubraum wird auf 29,4 cm³ verdichtet. Die Ansaugtemperatur beträgt 20 °C bei 1 bar, die Temperatur des verdichteten Gases 900 °C. Berechnen Sie den Druck vor der Zündung (zwei Nachkommastellen).",
+   "ans": 68.06,
+   "unit": "bar",
+   "e": "Aus p₁ · V₁ ÷ T₁ = p₂ · V₂ ÷ T₂ folgt p₂ = 1 bar · 500 cm³ · 1.173,15 K ÷ (29,4 cm³ · 293,15 K) = 68,06 bar. Temperaturen sind dabei immer in Kelvin einzusetzen: 20 °C = 293,15 K, 900 °C = 1.173,15 K."
+  },
+  {
+   "f": 5,
+   "sub": "Naturwissenschaftliche und technische Grundlagen",
+   "t": "calc",
+   "q": "In einem Tank stehen 1.500 Liter Wasser (Raumausdehnungskoeffizient 0,00021 1/K). Der Tank ist ein Hohlzylinder mit Außendurchmesser 10 dm und Innenrohr 3 dm. Um wie viel mm steigt der Wasserstand bei Erwärmung um 75 K (auf ganze Millimeter gerundet)?",
+   "ans": 33,
+   "unit": "mm",
+   "e": "ΔV = V₀ · αV · ΔT = 1.500 dm³ · 0,00021 1/K · 75 K = 23,625 dm³. Die freie Fläche beträgt π · ((10 dm)² − (3 dm)²) ÷ 4 = 71,47 dm². Δh = 23,625 dm³ ÷ 71,47 dm² = 0,33 dm = 33 mm."
+  },
+  {
+   "f": 5,
+   "sub": "Naturwissenschaftliche und technische Grundlagen",
+   "t": "calc",
+   "q": "Wie viel m³ Erdgas (Heizwert 35.000 kJ/m³) sind nötig, um 1.500 kg Wasser um 75 K zu erwärmen (c = 4,18 kJ/(kg·K)), wenn 40 % der Energie verloren gehen (eine Nachkommastelle)?",
+   "ans": 22.4,
+   "unit": "m³",
+   "e": "Nutzwärme Q = 1.500 kg · 4,18 kJ/(kg·K) · 75 K = 470.250 kJ. Bei 60 % Wirkungsgrad: V = 470.250 kJ ÷ (0,6 · 35.000 kJ/m³) = 22,4 m³. Wärmerückgewinnung spart diese Menge vollständig ein."
+  },
+  {
+   "f": 5,
+   "sub": "Naturwissenschaftliche und technische Grundlagen",
+   "t": "calc",
+   "q": "Auf einem Schwerkraft-Rollenförderer (Rollreibungswert 0,035) sollen die Kartons weder beschleunigt noch abgebremst werden. Die Bahn ist 15 m lang, das Ende liegt 0,85 m hoch. Berechnen Sie die Höhe der Aufgabestelle (drei Nachkommastellen).",
+   "ans": 1.375,
+   "unit": "m",
+   "e": "Gleichförmige Bewegung bedeutet Hangabtriebskraft = Reibkraft, also tan α = µ = 0,035. Die Höhendifferenz beträgt 15 m · 0,035 = 0,525 m, damit HA = 0,85 m + 0,525 m = 1,375 m."
+  },
+  {
+   "f": 5,
+   "sub": "Naturwissenschaftliche und technische Grundlagen",
+   "t": "calc",
+   "q": "Eine Verpackungseinheit besteht aus 12 Kartonagen zu je 1,06 kg und wird von 2,5 m/s auf null abgebremst. Berechnen Sie die Abbremsenergie (zwei Nachkommastellen).",
+   "ans": 39.75,
+   "unit": "J",
+   "e": "Masse = 12 · 1,06 kg = 12,72 kg. E = ½ · m · v² = 0,5 · 12,72 kg · (2,5 m/s)² = 0,5 · 12,72 · 6,25 = 39,75 J. Diese Energie muss der Anschlag aufnehmen."
+  },
+  {
+   "f": 5,
+   "sub": "Naturwissenschaftliche und technische Grundlagen",
+   "t": "calc",
+   "q": "An einem 24-V-Solarmodul hängen zwei Verbraucher in Reihe. An Verbraucher 1 liegen 10 V bei 0,5 A an. Berechnen Sie die Leistung von Verbraucher 2.",
+   "ans": 7,
+   "unit": "W",
+   "e": "In der Reihenschaltung fließt derselbe Strom; an Verbraucher 2 liegen 24 V − 10 V = 14 V. P = U · I = 14 V · 0,5 A = 7 W. Verbraucher 1 nimmt 10 V · 0,5 A = 5 W auf."
+  },
+  {
+   "f": 5,
+   "sub": "Naturwissenschaftliche und technische Grundlagen",
+   "t": "calc",
+   "q": "Ein Drehstrommotor treibt eine Kreiselpumpe an; er nimmt bei 400 V und 13 A mit cos φ = 0,86 Leistung auf. Berechnen Sie die aufgenommene Wirkleistung (zwei Nachkommastellen).",
+   "ans": 7745.73,
+   "unit": "W",
+   "e": "Pauf = √3 · U · I · cos φ = 1,732 · 400 V · 13 A · 0,86 = 7.745,73 W. Mit 16 % Motorverlusten (η = 0,84) und einem Pumpenwirkungsgrad von 0,77 ergibt sich ein Gesamtwirkungsgrad von 0,65 und damit rund 5.035 W an der Pumpe."
+  },
+  {
+   "f": 5,
+   "sub": "Naturwissenschaftliche und technische Grundlagen",
+   "t": "calc",
+   "q": "Zwanzig gemessene Außendurchmesser eines Rohrs verteilen sich so: 7,8 mm zweimal, 7,9 mm fünfmal, 8,0 mm sechsmal, 8,1 mm viermal, 8,2 mm dreimal. Berechnen Sie den arithmetischen Mittelwert (drei Nachkommastellen).",
+   "ans": 8.005,
+   "unit": "mm",
+   "e": "Summe = 2·7,8 + 5·7,9 + 6·8,0 + 4·8,1 + 3·8,2 = 160,1 mm, geteilt durch 20 ergibt 8,005 mm. Modalwert (häufigster Wert) und Median liegen beide bei 8,00 mm, die Standardabweichung beträgt 0,123 mm."
+  }
+ ]
+}
