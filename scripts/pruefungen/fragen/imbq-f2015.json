@@ -1,0 +1,729 @@
+{
+ "questions": [
+  {
+   "f": 1,
+   "sub": "Arbeitsrecht",
+   "t": "mc",
+   "q": "Ein Unternehmen braucht wegen guter Auftragslage zusätzliche Monteure, will aber bei einem Auftragseinbruch schnell wieder abbauen können. Welche Vertragsverhältnisse ermöglichen das?",
+   "o": [
+    {
+     "t": "Befristete Arbeitsverhältnisse mit oder ohne Sachgrund (§ 14 TzBfG) und der Einsatz von Leiharbeitnehmern nach dem AÜG",
+     "ok": 1
+    },
+    {
+     "t": "Nur unbefristete Verträge mit verlängerter Probezeit"
+    },
+    {
+     "t": "Ausschließlich Werkverträge mit den einzelnen Monteuren"
+    },
+    {
+     "t": "Minijobs, weil sie ohne Kündigung enden"
+    }
+   ],
+   "e": "Sachgrundlose Befristungen sind bis zu zwei Jahre mit höchstens drei Verlängerungen möglich (§ 14 Absatz 2 TzBfG); Leiharbeit bis zu 18 Monate je Einsatz (§ 1 Absatz 1b AÜG). Auch Arbeitszeitkonten und Abrufarbeit (§ 12 TzBfG) schaffen Flexibilität."
+  },
+  {
+   "f": 1,
+   "sub": "Arbeitsrecht",
+   "t": "mc",
+   "q": "Mit einer 32-jährigen Mitarbeiterin wurde vor zwei Monaten ein unbefristeter Vertrag mit dreimonatiger Probezeit geschlossen. Mit welcher Frist kann jetzt gekündigt werden?",
+   "o": [
+    {
+     "t": "Mit zwei Wochen – während einer vereinbarten Probezeit von höchstens sechs Monaten (§ 622 Absatz 3 BGB)",
+     "ok": 1
+    },
+    {
+     "t": "Mit vier Wochen zum 15. oder zum Monatsende"
+    },
+    {
+     "t": "Mit einem Monat zum Monatsende"
+    },
+    {
+     "t": "Gar nicht, weil in den ersten sechs Monaten keine Kündigung möglich ist"
+    }
+   ],
+   "e": "Ohne Probezeit gilt die Grundkündigungsfrist von vier Wochen zum 15. oder zum Ende des Kalendermonats (§ 622 Absatz 1 BGB); für den Arbeitgeber verlängert sie sich mit der Betriebszugehörigkeit (§ 622 Absatz 2 BGB: nach zwei Jahren ein Monat, nach fünf Jahren zwei Monate usw., jeweils zum Monatsende)."
+  },
+  {
+   "f": 1,
+   "sub": "Arbeitsrecht",
+   "t": "mc",
+   "q": "Unter welchen Voraussetzungen findet das Kündigungsschutzgesetz Anwendung?",
+   "o": [
+    {
+     "t": "Der Betrieb beschäftigt in der Regel mehr als zehn Arbeitnehmer, und das Arbeitsverhältnis besteht bei Zugang der Kündigung länger als sechs Monate (§§ 1, 23 KSchG)",
+     "ok": 1
+    },
+    {
+     "t": "Der Betrieb hat einen Betriebsrat, und der Arbeitnehmer ist Gewerkschaftsmitglied"
+    },
+    {
+     "t": "Der Arbeitnehmer ist älter als 50 Jahre oder länger als zehn Jahre beschäftigt"
+    },
+    {
+     "t": "Das Unternehmen ist tarifgebunden"
+    }
+   ],
+   "e": "Bei der Zählung nach § 23 KSchG werden Teilzeitkräfte mit bis zu 20 Wochenstunden mit 0,5 und bis zu 30 Stunden mit 0,75 gezählt; Auszubildende zählen nicht mit. Ein Betrieb mit 120 Vollzeit- und 20 Teilzeitkräften liegt klar über der Schwelle. Dann muss eine ordentliche Kündigung sozial gerechtfertigt sein (personen-, verhaltens- oder betriebsbedingt)."
+  },
+  {
+   "f": 1,
+   "sub": "Arbeitsschutz",
+   "t": "mc",
+   "q": "In welchen Schritten geht der Arbeitgeber bei der Unfallverhütung systematisch vor?",
+   "o": [
+    {
+     "t": "Gefahrenquellen ermitteln, Ursachen analysieren, Schutzziele bestimmen, Schutzmaßnahmen planen und durchführen, Wirksamkeit kontrollieren",
+     "ok": 1
+    },
+    {
+     "t": "Unfälle abwarten, dokumentieren und die Berufsgenossenschaft informieren"
+    },
+    {
+     "t": "Alle Mitarbeiter einmalig bei der Einstellung unterweisen"
+    },
+    {
+     "t": "Schutzausrüstung beschaffen und die Verantwortung an die Mitarbeiter übertragen"
+    }
+   ],
+   "e": "Das entspricht der Gefährdungsbeurteilung nach § 5 ArbSchG mit der Rangfolge der Maßnahmen (TOP-Prinzip: technisch vor organisatorisch vor persönlich). Der Arbeitsschutzausschuss (§ 11 ASiG) berät diese Anliegen mindestens vierteljährlich; ihm gehören Arbeitgeber, zwei Betriebsratsmitglieder, Betriebsarzt, Fachkraft für Arbeitssicherheit und Sicherheitsbeauftragte an."
+  },
+  {
+   "f": 1,
+   "sub": "Arbeitsrecht",
+   "t": "mc",
+   "q": "Der Geschäftsführer tritt aus dem Arbeitgeberverband aus und meint, die Tarifverträge gälten nun nicht mehr. Stimmt das?",
+   "o": [
+    {
+     "t": "Nein – die Tarifgebundenheit bleibt bestehen, bis der Tarifvertrag endet (Nachbindung, § 3 Absatz 3 TVG); danach gelten die Tarifnormen nach § 4 Absatz 5 TVG weiter, bis sie durch eine andere Abmachung ersetzt werden",
+     "ok": 1
+    },
+    {
+     "t": "Ja, mit dem Austritt entfällt die Tarifbindung sofort"
+    },
+    {
+     "t": "Ja, aber nur für neu eingestellte Arbeitnehmer"
+    },
+    {
+     "t": "Nein, der Austritt aus dem Arbeitgeberverband ist rechtlich nicht möglich"
+    }
+   ],
+   "e": "Nichtorganisierten Arbeitnehmern schuldet der Arbeitgeber die tariflichen Leistungen grundsätzlich nicht (§ 3 Absatz 1 TVG) – außer der Tarifvertrag ist allgemeinverbindlich (§ 5 TVG) oder der Arbeitsvertrag verweist auf ihn. In der Praxis werden Tarifleistungen meist allen gewährt, um keinen Anreiz zum Gewerkschaftsbeitritt zu schaffen."
+  },
+  {
+   "f": 1,
+   "sub": "Produkthaftung/Datenschutz",
+   "t": "mc",
+   "q": "Gilt der Beschäftigtendatenschutz auch für die Daten, die ein Bewerber mit seiner Bewerbungsmappe einreicht?",
+   "o": [
+    {
+     "t": "Ja – Bewerberinnen und Bewerber gelten als Beschäftigte im Sinne des Beschäftigtendatenschutzes (§ 26 Absatz 8 BDSG)",
+     "ok": 1
+    },
+    {
+     "t": "Nein, erst mit Abschluss des Arbeitsvertrags"
+    },
+    {
+     "t": "Nur, wenn der Bewerber ausdrücklich darauf hinweist"
+    },
+    {
+     "t": "Nein, Bewerbungsunterlagen sind frei verwendbar"
+    }
+   ],
+   "e": "Aus dem Lebenslauf dürfen nur Daten gespeichert werden, die für das Arbeitsverhältnis erheblich sind – nicht etwa Hobbys, Namen der Eltern oder Zahl der Geschwister. Bis 2018 stand die Regelung in § 3 Absatz 11 Nr. 7 BDSG."
+  },
+  {
+   "f": 1,
+   "sub": "Arbeitsrecht",
+   "t": "mc",
+   "q": "Ein Aushilfsarbeiter missversteht wiederholt mündliche Anweisungen; es kam zu einem Beinaheunfall. Er weigert sich, den vom Arbeitgeber angeordneten Deutschkurs zu besuchen. Wie kann der Arbeitgeber angemessen reagieren?",
+   "o": [
+    {
+     "t": "Zunächst mit einem Kritikgespräch und einer Abmahnung mit Kündigungsandrohung; bei beharrlicher Weigerung droht die verhaltensbedingte Kündigung",
+     "ok": 1
+    },
+    {
+     "t": "Mit sofortiger fristloser Kündigung ohne Vorwarnung"
+    },
+    {
+     "t": "Gar nicht – Weiterbildung ist immer freiwillig"
+    },
+    {
+     "t": "Mit einer Geldstrafe, die vom Lohn abgezogen wird"
+    }
+   ],
+   "e": "Die Anordnung ist vom Direktionsrecht (§ 106 GewO) gedeckt, weil ausreichende Sprachkenntnisse für die Arbeitssicherheit erforderlich sind. Vor einer verhaltensbedingten Kündigung ist regelmäßig eine Abmahnung nötig; der Betriebsrat ist nach § 102 BetrVG anzuhören."
+  },
+  {
+   "f": 1,
+   "sub": "Umweltrecht",
+   "t": "mc",
+   "q": "Welches Gesetz legt die Rangfolge Vermeidung – Wiederverwertung – Beseitigung von Abfällen fest?",
+   "o": [
+    {
+     "t": "Das Kreislaufwirtschaftsgesetz (KrWG) mit seiner fünfstufigen Abfallhierarchie",
+     "ok": 1
+    },
+    {
+     "t": "Das Bundes-Immissionsschutzgesetz"
+    },
+    {
+     "t": "Das Wasserhaushaltsgesetz"
+    },
+    {
+     "t": "Das Bundesnaturschutzgesetz"
+    }
+   ],
+   "e": "§ 6 KrWG: Vermeidung, Vorbereitung zur Wiederverwendung, Recycling, sonstige Verwertung (z. B. energetisch), Beseitigung. Das KrWG löste 2012 das Kreislaufwirtschafts- und Abfallgesetz ab. Weitere Umweltgesetze: Wasserhaushaltsgesetz, Abwasserverordnung, BImSchG, Bundesnaturschutzgesetz, Umweltstrafrecht im StGB (§§ 324 ff.)."
+  },
+  {
+   "f": 1,
+   "sub": "Betriebsverfassung",
+   "t": "mc",
+   "q": "Welches Gericht ist bei Streitigkeiten zwischen Betriebsrat und Arbeitgeber zuständig, und in welchem Verfahren wird entschieden?",
+   "o": [
+    {
+     "t": "Das Arbeitsgericht, in dessen Bezirk der Betrieb liegt (§ 82 ArbGG), im Beschlussverfahren (§ 2a ArbGG)",
+     "ok": 1
+    },
+    {
+     "t": "Das Amtsgericht am Sitz des Unternehmens im Zivilprozess"
+    },
+    {
+     "t": "Das Sozialgericht im Urteilsverfahren"
+    },
+    {
+     "t": "Die Einigungsstelle als Gericht erster Instanz"
+    }
+   ],
+   "e": "Im Beschlussverfahren gibt es keinen Kläger und Beklagten, sondern Beteiligte; das Gericht ermittelt den Sachverhalt von Amts wegen. Die Einigungsstelle (§ 76 BetrVG) ist kein Gericht, sondern eine innerbetriebliche Schlichtungsstelle."
+  },
+  {
+   "f": 2,
+   "sub": "Rechtsformen",
+   "t": "mc",
+   "q": "Wie ist eine GmbH & Co. KG aufgebaut?",
+   "o": [
+    {
+     "t": "Eine Kommanditgesellschaft, deren einziger persönlich haftender Gesellschafter (Komplementär) eine GmbH ist – eine Haftung mit Privatvermögen entfällt damit",
+     "ok": 1
+    },
+    {
+     "t": "Eine GmbH, die eine KG als Tochtergesellschaft besitzt"
+    },
+    {
+     "t": "Eine GmbH mit mindestens einem Kommanditisten als Geschäftsführer"
+    },
+    {
+     "t": "Ein Zusammenschluss zweier GmbHs zu einer Kapitalgesellschaft"
+    }
+   ],
+   "e": "Die Kommanditisten haften mit ihrer Einlage, die Komplementär-GmbH mit ihrem Gesellschaftsvermögen. Vorteile: Haftungsbeschränkung bei der Flexibilität einer Personengesellschaft; Nachteile: doppelter Verwaltungsaufwand für zwei Gesellschaften."
+  },
+  {
+   "f": 2,
+   "sub": "Rechtsformen",
+   "t": "mc",
+   "q": "Wer haftet bei einer GmbH gegenüber den Gläubigern?",
+   "o": [
+    {
+     "t": "Die Gesellschaft haftet mit ihrem gesamten Gesellschaftsvermögen; die Gesellschafter haften nur bis zur Höhe ihrer Einlage und nicht mit ihrem Privatvermögen",
+     "ok": 1
+    },
+    {
+     "t": "Die Gesellschafter haften gesamtschuldnerisch mit ihrem Privatvermögen"
+    },
+    {
+     "t": "Der Geschäftsführer haftet persönlich für alle Verbindlichkeiten"
+    },
+    {
+     "t": "Niemand – Gläubiger tragen das volle Risiko"
+    }
+   ],
+   "e": "Mindeststammkapital 25.000 € (§ 5 GmbHG), Geschäftsführung durch den bestellten Geschäftsführer. Der Geschäftsführer haftet persönlich nur bei Pflichtverletzungen, etwa verspätetem Insolvenzantrag."
+  },
+  {
+   "f": 2,
+   "sub": "Betriebsorganisation",
+   "t": "mc",
+   "q": "Welcher Nachteil ist typisch für die Matrixorganisation?",
+   "o": [
+    {
+     "t": "Mitarbeiter haben mehrere Vorgesetzte – das erzeugt Konfliktpotenzial, widersprüchliche Weisungen, hohen Abstimmungsaufwand und längere Entscheidungswege",
+     "ok": 1
+    },
+    {
+     "t": "Die Geschäftsleitung wird mit allen Entscheidungen belastet"
+    },
+    {
+     "t": "Spezialisten können nicht eingesetzt werden"
+    },
+    {
+     "t": "Es gibt keine Teamarbeit zwischen den Bereichen"
+    }
+   ],
+   "e": "Die Matrixorganisation ist zweidimensional: funktionale Abteilungen (Einkauf, Produktion, Vertrieb, Verwaltung) werden von Querschnittseinheiten (Produkte, Projekte, Regionen oder Personal und IT) überlagert. Vorteile: Entlastung der Leitung, Teamarbeit, Nutzung von Spezialisten, kurze Kommunikationswege."
+  },
+  {
+   "f": 2,
+   "sub": "Personalplanung",
+   "t": "calc",
+   "q": "Die Umrüstung einer Anlage erfordert 600 Montagestunden; Störzeitfaktor 1,03, tägliche Arbeitszeit 8 Stunden, 10 Arbeitstage, Anwesenheitsfaktor 0,87. Wie viele Mitarbeiter werden benötigt (zwei Nachkommastellen)?",
+   "ans": 8.88,
+   "unit": "Mitarbeiter",
+   "e": "Personalbedarf = 600 · 1,03 / (8 · 10 · 0,87) = 618 / 69,6 = 8,88 – also neun Mitarbeiter. Stehen nur acht Facharbeiter zur Verfügung, reicht das Personal nicht; ein Zeitgrad über 100 % würde den Bedarf senken, weil der Kapazitätsbestand steigt."
+  },
+  {
+   "f": 2,
+   "sub": "Personalplanung",
+   "t": "calc",
+   "q": "Ein Zusatzbedarf von 69,5 Stunden soll durch Mehrarbeit gedeckt werden: 8 Stunden täglich, 10 Arbeitstage, Anwesenheitsfaktor 0,87. Wie viele Stunden Mehrarbeit sind je Mitarbeiter und Tag nötig (eine Nachkommastelle)?",
+   "ans": 1.0,
+   "unit": "Std.",
+   "e": "Mehrarbeit = 69,5 / (8 · 10 · 0,87) = 69,5 / 69,6 = 1,0 Std. je Mitarbeiter und Tag. Die Formel bezieht den Zusatzbedarf auf die produktiv verfügbaren Mitarbeitertage."
+  },
+  {
+   "f": 2,
+   "sub": "Betriebsorganisation",
+   "t": "mc",
+   "q": "Welche Phasen umfasst der Organisationszyklus, mit dem in der Planungsphase die optimale Lösung gesucht wird?",
+   "o": [
+    {
+     "t": "Situationsanalyse, Organisationsanalyse, Zielformulierung, Lösungssuche und Bewertung",
+     "ok": 1
+    },
+    {
+     "t": "Forming, Storming, Norming und Performing"
+    },
+    {
+     "t": "Einkauf, Produktion, Vertrieb und Verwaltung"
+    },
+    {
+     "t": "Abschreibung, Zinsen, Miete und Wagnisse"
+    }
+   ],
+   "e": "Gründe für Organisationswandel: personenbezogen (Wechsel in der Geschäftsführung), intern (Übernahme eines Unternehmens) und extern (Wertewandel, Technik, Markt). Ansätze der Organisationsentwicklung: Top-down (von der Spitze nach unten) und Bottom-up (von der Basis nach oben). Auch der Managementregelkreis oder PDCA beschreiben den Zyklus."
+  },
+  {
+   "f": 2,
+   "sub": "Kostenrechnung",
+   "t": "calc",
+   "q": "Betriebsabrechnungsbogen: Die Hilfskostenstelle Fuhrpark hat 8.400 € primäre Gemeinkosten und fuhr 6.000 km. Die Fertigung B nahm 500 km in Anspruch. Welcher Betrag wird auf Fertigung B umgelegt?",
+   "ans": 700,
+   "unit": "€",
+   "e": "Umlageschlüssel = 8.400 / 6.000 = 1,40 €/km; Umlage Fertigung B = 500 · 1,40 = 700 €. Die innerbetriebliche Leistungsverrechnung verteilt die Kosten der Hilfskostenstellen nach Leistungseinheiten (km, Stunden, Prozent) auf die empfangenden Stellen."
+  },
+  {
+   "f": 2,
+   "sub": "Kostenrechnung",
+   "t": "calc",
+   "q": "Nach der Umlage betragen die Istgemeinkosten der Fertigung A 151.200 € bei Fertigungslöhnen von 48.000 €. Wie hoch ist der Istzuschlagsatz in Prozent?",
+   "ans": 315,
+   "unit": "%",
+   "e": "Zuschlagsatz = 151.200 / 48.000 · 100 = 315 %. Für Fertigung B: 169.200 / 72.000 = 235 %; Material: 50.000 / 240.000 = 20,83 %; Verwaltung und Vertrieb: 182.600 / 730.400 (Herstellkosten) = 25 %."
+  },
+  {
+   "f": 2,
+   "sub": "Kostenrechnung",
+   "t": "calc",
+   "q": "Materialkosten 290.000 €, Fertigungskosten A 199.200 €, Fertigungskosten B 241.200 €; Gemeinkosten für Verwaltung und Vertrieb 182.600 €. Wie hoch ist der Verwaltungs- und Vertriebszuschlagsatz in Prozent?",
+   "ans": 25,
+   "unit": "%",
+   "e": "Herstellkosten = 290.000 + 199.200 + 241.200 = 730.400 €; Zuschlag = 182.600 / 730.400 = 25 %. Bezugsbasis der Verwaltungs- und Vertriebsgemeinkosten sind die Herstellkosten des Umsatzes."
+  },
+  {
+   "f": 2,
+   "sub": "Controlling",
+   "t": "calc",
+   "q": "Vier Produkte bei voller Auslastung: Deckungsbeiträge A 45.504 €, B 58.630 €, C 62.134 €, D –22.134 €; Fixkosten 150.000 €. Wie hoch ist das Betriebsergebnis, wenn Produkt D eingestellt wird?",
+   "ans": 16268,
+   "unit": "€",
+   "e": "Ohne D: DB = 45.504 + 58.630 + 62.134 = 166.268 €; Betriebsergebnis = 166.268 – 150.000 = 16.268 € statt –5.866 € mit D. Ein Produkt mit negativem Stückdeckungsbeitrag (p < kv) verschlechtert das Ergebnis mit jedem verkauften Stück."
+  },
+  {
+   "f": 2,
+   "sub": "Kostenrechnung",
+   "t": "calc",
+   "q": "Äquivalenzziffernkalkulation im Walzwerk: 1.500 t Blech 0,4 mm (Ziffer 1,40), 1.000 t 0,6 mm (1,25), 1.800 t 0,8 mm (1,05), 2.100 t 1,0 mm (1,00); Gesamtfertigungskosten 3.670.000 €. Wie hoch sind die Fertigungskosten je Tonne des 0,4-mm-Blechs?",
+   "ans": 700,
+   "unit": "€/t",
+   "e": "Recheneinheiten: 2.100 + 1.250 + 1.890 + 2.100 = 7.340; Kosten je Recheneinheit = 3.670.000 / 7.340 = 500 €; 0,4 mm: 500 · 1,40 = 700 €/t (0,6 mm: 625 €/t, 0,8 mm: 525 €/t, 1,0 mm: 500 €/t)."
+  },
+  {
+   "f": 3,
+   "sub": "Kommunikation",
+   "t": "mc",
+   "q": "Nach Schichtwechseln kommt es zu Störungen, weil die Übergabe mangelhaft ist. Welche Maßnahme stellt das ab?",
+   "o": [
+    {
+     "t": "Eine strukturierte Übergabe mit Schichtbuch oder Checkliste, eine überlappende Anwesenheit der Verantwortlichen beider Schichten und eine Auditierung der Übergabe",
+     "ok": 1
+    },
+    {
+     "t": "Die Schichten sollen sich nicht mehr begegnen, um Diskussionen zu vermeiden"
+    },
+    {
+     "t": "Übergaben werden nur noch mündlich und ohne Protokoll durchgeführt"
+    },
+    {
+     "t": "Der Meister übernimmt alle Informationen allein aus dem Gedächtnis"
+    }
+   ],
+   "e": "Zu kommunizieren sind besondere Vorfälle (Unfälle, Beinaheunfälle, Maschinenausfälle), Änderungen der Abläufe und Qualitätsprobleme. Fehler bei der Übergabe führen zu Unfällen, Produktionsausfällen und Nacharbeit."
+  },
+  {
+   "f": 3,
+   "sub": "Projektmanagement",
+   "t": "mc",
+   "q": "Für ein IT-Projekt wurde der Aufwand grob als Summe von Stunden je Tätigkeit geschätzt. Welche Schwachstelle hat eine solche Überschlagsrechnung?",
+   "o": [
+    {
+     "t": "Sie ignoriert Qualifikationsunterschiede, Fehlzeiten, Abhängigkeiten und Parallelität der Vorgänge sowie organisatorische Tätigkeiten wie Abstimmung und Dokumentation",
+     "ok": 1
+    },
+    {
+     "t": "Sie ist zu genau und deshalb zu aufwendig"
+    },
+    {
+     "t": "Sie berücksichtigt bereits alle Risiken des Projekts"
+    },
+    {
+     "t": "Sie kann nur von der Geschäftsleitung erstellt werden"
+    }
+   ],
+   "e": "Weitere Planungsschritte: Ablaufplanung (Vorgänger und Nachfolger verknüpfen), Terminplanung im Netzplan (früheste und späteste Zeitpunkte), Ressourcenplanung (Mitarbeiter zuordnen) und Kostenplanung auf Basis der Ressourcen."
+  },
+  {
+   "f": 3,
+   "sub": "Statistik",
+   "t": "calc",
+   "q": "Eine Pilotanlage hat eine Fehlerquote von 24 %; davon entfallen 8 Prozentpunkte auf mangelnde Dokumentation. Welchen Anteil an der Gesamtzahl der Fehler hat diese Ursache in Prozent (eine Nachkommastelle)?",
+   "ans": 33.3,
+   "unit": "%",
+   "e": "Anteil = 8 / 24 = 33,3 %. Bei Fehlerkosten von 50.000 € entfallen darauf 16.666,67 €. Die Anteile lassen sich als Kreisdiagramm oder – nach Größe sortiert – als Pareto-Diagramm darstellen."
+  },
+  {
+   "f": 3,
+   "sub": "Präsentation",
+   "t": "mc",
+   "q": "Sie unterweisen fünf Arbeitsvorbereiter im Büro und 30 Schweißer verschiedener Nationalitäten zur Arbeitssicherheit. Was gehört zur inhaltlichen Vorbereitung?",
+   "o": [
+    {
+     "t": "Informationen zu Tätigkeiten, Qualifikationen und Sprachen der Mitarbeiter sowie zu den Gefährdungsbeurteilungen beider Bereiche sammeln, Grafiken und Videos aufbereiten und den Zeitbedarf einschließlich Fragerunde festlegen",
+     "ok": 1
+    },
+    {
+     "t": "Eine identische Präsentation für beide Gruppen, um Zeit zu sparen"
+    },
+    {
+     "t": "Nur die gesetzlichen Texte vorlesen"
+    },
+    {
+     "t": "Die Unterweisung an die Berufsgenossenschaft delegieren"
+    }
+   ],
+   "e": "Ziele der Sicherheitsunterweisung: die Mitarbeiter für die Gefährdungen ihres Arbeitsplatzes sensibilisieren und die gesetzliche Pflicht zur jährlichen Unterweisung erfüllen (§ 12 ArbSchG). Bei sprachlich gemischten Gruppen helfen Piktogramme, Vorführungen und mehrsprachige Unterlagen."
+  },
+  {
+   "f": 3,
+   "sub": "EDV",
+   "t": "mc",
+   "q": "Das Qualitätsmanagementhandbuch soll künftig nur noch im Intranet bereitgestellt werden. Welches Risiko birgt diese Lösung?",
+   "o": [
+    {
+     "t": "Mitarbeiter drucken oder speichern lokale Kopien und übersehen Aktualisierungen; wenig IT-affine Mitarbeiter scheuen den Zugang, und in der Produktion muss der Zugriff erst sichergestellt werden",
+     "ok": 1
+    },
+    {
+     "t": "Änderungen am Handbuch werden langsamer verteilt als auf Papier"
+    },
+    {
+     "t": "Der Papierverbrauch steigt"
+    },
+    {
+     "t": "Formulare können nicht mehr zentral gepflegt werden"
+    }
+   ],
+   "e": "Vorteile: gleicher Informationsstand für alle, sofortige unternehmensweite Aktualisierung, zentral gepflegte Formulare, Einsparung von Papier und Druckkosten. Weitere Intranet-Anwendungen: Vorschlagswesen, Arbeitssicherheitsinformationen, interne Stellenausschreibungen, Betriebsratsinformationen."
+  },
+  {
+   "f": 3,
+   "sub": "Arbeitsmethodik",
+   "t": "calc",
+   "q": "ABC-Analyse der Umsätze: Der Gesamtumsatz beträgt 1.198.680 €, die Erzeugnisgruppe F erzielt 540.200 €. Welchen Umsatzanteil in Prozent hat F (zwei Nachkommastellen)?",
+   "ans": 45.07,
+   "unit": "%",
+   "e": "Anteil = 540.200 / 1.198.680 · 100 = 45,07 %. Zusammen mit D (20,05 %) und G (13,36 %) erreichen die drei A-Gruppen 78,48 % des Umsatzes. Schlussfolgerung: Marktpotenzial und Kundenbindung für F, D und G analysieren; C-Produkte eventuell zukaufen."
+  },
+  {
+   "f": 3,
+   "sub": "Arbeitsmethodik",
+   "t": "mc",
+   "q": "Wofür lässt sich die ABC-Analyse außer zur Umsatzklassifizierung von Erzeugnissen einsetzen?",
+   "o": [
+    {
+     "t": "Zur Ermittlung der kostenintensivsten Einkaufsmaterialien, von Ladenhütern im Lager, der umsatzstärksten Kunden oder der Fehler mit den höchsten Kosten",
+     "ok": 1
+    },
+    {
+     "t": "Nur zur Bewertung von Mitarbeitern"
+    },
+    {
+     "t": "Zur Berechnung von Abschreibungen"
+    },
+    {
+     "t": "Zur Bestimmung der Kündigungsfristen"
+    }
+   ],
+   "e": "Die ABC-Analyse ordnet Objekte nach ihrem Wert- oder Mengenanteil und lenkt den Aufwand auf die wenigen wichtigen Positionen (Pareto-Prinzip: rund 20 % der Positionen machen 80 % des Werts aus)."
+  },
+  {
+   "f": 4,
+   "sub": "Berufsausbildung",
+   "t": "mc",
+   "q": "Wie kann ein Meister Einstellung und Verhalten seiner Auszubildenden beeinflussen?",
+   "o": [
+    {
+     "t": "Durch die Vorbildfunktion: Arbeits- und Pausenzeiten selbst einhalten, Arbeitsschutzregeln vorleben und nur verlangen, was er selbst zeigen kann – ohne die Messlatte für Lernende zu hoch zu legen",
+     "ok": 1
+    },
+    {
+     "t": "Durch möglichst strenge Strafen bei jedem Fehler"
+    },
+    {
+     "t": "Indem er den Auszubildenden nur Hilfsarbeiten zuweist"
+    },
+    {
+     "t": "Durch Lob ohne jede Kritik"
+    }
+   ],
+   "e": "Auszubildende orientieren sich stark am Verhalten ihrer Ausbilder. Konsequentes, faires und transparentes Handeln prägt ihre Einstellung nachhaltiger als Anweisungen."
+  },
+  {
+   "f": 4,
+   "sub": "Führungsstile",
+   "t": "mc",
+   "q": "Ein neuer Meister löst einen autoritären Vorgänger ab und führt kooperativ. Welche Unterschiede erklärt er seinen Mitarbeitern zu Recht?",
+   "o": [
+    {
+     "t": "Kooperativ: ständiger Kontakt, vertrauensvolles Klima, Selbstkontrolle und hohe Motivation durch Wertschätzung; autoritär: Distanz, Misstrauen, Fremdkontrolle und Motivation nur über Druck",
+     "ok": 1
+    },
+    {
+     "t": "Kooperativ heißt, dass der Meister keine Entscheidungen mehr trifft"
+    },
+    {
+     "t": "Autoritär bedeutet, dass die Mitarbeiter alles selbst entscheiden"
+    },
+    {
+     "t": "Beide Stile unterscheiden sich nur im Tonfall"
+    }
+   ],
+   "e": "Nachteile des kooperativen Stils: Gefahr der Kumpanei und des Autoritätsverlusts, höherer Zeitaufwand für Abstimmungen. Mitarbeiter, die jahrelang autoritär geführt wurden, brauchen Zeit und Anleitung, um Verantwortung zu übernehmen."
+  },
+  {
+   "f": 4,
+   "sub": "Führungsmethoden",
+   "t": "mc",
+   "q": "Welche Aufgaben sollte ein Meister nicht delegieren?",
+   "o": [
+    {
+     "t": "Zielvereinbarungen, Stellenbesetzung und Einstellungen, Kompetenzabgrenzungen, Beurteilungen, Mitarbeitergespräche und die Kontrolle der Mitarbeiter",
+     "ok": 1
+    },
+    {
+     "t": "Routinearbeiten und Auswertungen"
+    },
+    {
+     "t": "Die Bestellung von Verbrauchsmaterial"
+    },
+    {
+     "t": "Fachaufgaben, für die Mitarbeiter Spezialkenntnisse haben"
+    }
+   ],
+   "e": "Gründe für Delegation: eigene Entlastung für Planungsaufgaben, Motivation und Selbstverwirklichung der Mitarbeiter, Nutzung ihrer Spezialkenntnisse. Typische Fehler: willkürliches Eingreifen, unbegründetes Zurücknehmen der Aufgabe, Überforderung. „Rückdelegierung“ bedeutet, dass Mitarbeiter übertragene Aufgaben an den Vorgesetzten zurückzugeben versuchen."
+  },
+  {
+   "f": 4,
+   "sub": "Personalentwicklung",
+   "t": "mc",
+   "q": "Zwei Mitarbeiter ohne Berufsabschluss wollen ihn nachholen. Wie kann der Meister sie unterstützen?",
+   "o": [
+    {
+     "t": "Durch Entgegenkommen beim Arbeitseinsatz, Lernpatenschaften im Team, Hinweise auf Abendschule oder Externenprüfung mit Anrechnung der Berufserfahrung und gemeinsame Lösungen mit der Agentur für Arbeit",
+     "ok": 1
+    },
+    {
+     "t": "Gar nicht – Weiterbildung ist Privatsache"
+    },
+    {
+     "t": "Indem er ihnen mehr Überstunden zuweist, damit sie das Schulgeld verdienen"
+    },
+    {
+     "t": "Durch eine Versetzung in eine andere Abteilung"
+    }
+   ],
+   "e": "Nach § 45 Absatz 2 BBiG können Berufserfahrene mit dem Anderthalbfachen der Ausbildungszeit zur Abschlussprüfung zugelassen werden (Externenprüfung); die Agentur für Arbeit fördert Nachqualifizierung."
+  },
+  {
+   "f": 4,
+   "sub": "Konflikte",
+   "t": "mc",
+   "q": "Ein Mitarbeiter einer anderen Abteilung beschwert sich bei Ihnen über seinen eigenen Meister. Wie handeln Sie?",
+   "o": [
+    {
+     "t": "Ihn bitten, die Beschwerde direkt bei seinem Meister vorzutragen, weil Sie nicht zuständig sind – und gegebenenfalls Hilfe zur Vermittlung anbieten",
+     "ok": 1
+    },
+    {
+     "t": "Die Beschwerde sofort an die Geschäftsleitung weiterleiten"
+    },
+    {
+     "t": "Den Kollegen zur Rede stellen, ohne dessen Sicht zu hören"
+    },
+    {
+     "t": "Die Beschwerde ignorieren, weil sie nicht Ihren Bereich betrifft"
+    }
+   ],
+   "e": "Strukturiertes Vorgehen für den zuständigen Meister: Anhören (ernst nehmen, ausreden lassen, nicht sofort Stellung nehmen), Prüfen (Ursachen und Zusammenhänge klären, andere Beteiligte hören), Handeln (Abhilfe vorschlagen oder Gründe erklären), Nachfassen (Umsetzung kontrollieren)."
+  },
+  {
+   "f": 4,
+   "sub": "Motivation",
+   "t": "mc",
+   "q": "Wie unterscheiden sich Eustress und Disstress?",
+   "o": [
+    {
+     "t": "Eustress ist positiver Stress durch Vorfreude oder Herausforderung, der motiviert und anspornt; Disstress entsteht durch Über- oder Unterforderung, ist unangenehm und macht auf Dauer krank",
+     "ok": 1
+    },
+    {
+     "t": "Eustress betrifft nur Führungskräfte, Disstress nur Mitarbeiter"
+    },
+    {
+     "t": "Disstress ist kurzfristig, Eustress immer chronisch"
+    },
+    {
+     "t": "Beide Begriffe bezeichnen dieselbe körperliche Reaktion"
+    }
+   ],
+   "e": "Gegenmaßnahmen im Betrieb: Ursachen erforschen (Über-/Unterforderung, private oder betriebliche Gründe), stressauslösende Faktoren abstellen (Zeitmanagement, Arbeitsabläufe prüfen) und durch Beobachtung und Gespräche kontrollieren."
+  },
+  {
+   "f": 4,
+   "sub": "Personalentwicklung",
+   "t": "mc",
+   "q": "Warum ist für eine Führungskraft eine Weiterbildung im Sozial- und Führungsverhalten sinnvoll?",
+   "o": [
+    {
+     "t": "Weil Gesprächsführung, Zeitmanagement, Stressbewältigung und Persönlichkeitsentwicklung die Wirksamkeit der Führung bestimmen – Fachkompetenz allein macht keinen guten Meister",
+     "ok": 1
+    },
+    {
+     "t": "Weil Fachwissen für Führungskräfte unwichtig ist"
+    },
+    {
+     "t": "Weil Sozialkompetenz angeboren ist und nur bestätigt werden muss"
+    },
+    {
+     "t": "Weil das Betriebsverfassungsgesetz Führungsseminare vorschreibt"
+    }
+   ],
+   "e": "Fachkompetenz wird durch REFA-Ausbildung, Projekt-, Qualitätsmanagement und Arbeitsorganisation ausgebaut. Die Reihenfolge der Weiterbildungen sollte sich an den eigenen Stärken und Schwächen und den betrieblichen Anforderungen orientieren."
+  },
+  {
+   "f": 5,
+   "sub": "Naturwissenschaftliche und technische Grundlagen",
+   "t": "mc",
+   "q": "Die Reaktionen S + O₂ → SO₂, 2 SO₂ + O₂ ⇌ 2 SO₃ und SO₃ + H₂O → H₂SO₄ beschreiben die Herstellung welcher Säure, und um welchen Reaktionstyp handelt es sich bei den ersten beiden Schritten?",
+   "o": [
+    {
+     "t": "Schwefelsäure; die ersten beiden Schritte sind Oxidationen (Aufnahme von Sauerstoff), die exotherm ablaufen",
+     "ok": 1
+    },
+    {
+     "t": "Salzsäure; Reduktionen"
+    },
+    {
+     "t": "Salpetersäure; Neutralisationen"
+    },
+    {
+     "t": "Schwefelsäure; Reduktionen"
+    }
+   ],
+   "e": "Exotherm heißt: Bei der Reaktion wird Energie (Wärme) frei. Die Reaktionsgeschwindigkeit hängt von Temperatur, Druck, Reinheit, Kontaktfläche (Zerteilungsgrad) und der Sauerstoffaffinität der Stoffe ab."
+  },
+  {
+   "f": 5,
+   "sub": "Naturwissenschaftliche und technische Grundlagen",
+   "t": "calc",
+   "q": "Schaltung: R1 liegt in Reihe vor einer Parallelschaltung aus R2 und R3 = 36 Ω. Gesamtspannung 24 V, Gesamtstrom 2 A, an der Parallelschaltung liegen 18 V. Wie groß ist R2 in Ω?",
+   "ans": 12,
+   "unit": "Ω",
+   "e": "I₃ = 18 V / 36 Ω = 0,5 A; I₂ = 2 – 0,5 = 1,5 A; R₂ = 18 V / 1,5 A = 12 Ω. R₁ = (24 – 18) V / 2 A = 3 Ω."
+  },
+  {
+   "f": 5,
+   "sub": "Naturwissenschaftliche und technische Grundlagen",
+   "t": "calc",
+   "q": "In der Schaltung (R1 = 3 Ω in Reihe vor R2 = 12 Ω parallel R3 = 36 Ω, 24 V) wird R1 kurzgeschlossen. Welche Gesamtleistung nimmt die Schaltung dann auf (in W)?",
+   "ans": 64,
+   "unit": "W",
+   "e": "R₂₃ = 12 · 36 / (12 + 36) = 9 Ω; P = U² / R = 24² / 9 = 64 W statt vorher 24 V · 2 A = 48 W. Der kleinere Gesamtwiderstand lässt mehr Strom fließen."
+  },
+  {
+   "f": 5,
+   "sub": "Naturwissenschaftliche und technische Grundlagen",
+   "t": "calc",
+   "q": "Ein Pumpspeicherkraftwerk soll in drei Stunden 18.000 kWh elektrische Arbeit liefern; der Gesamtwirkungsgrad beträgt 85 %. Welche potenzielle Energie muss das Wasser mindestens haben (in kWh, eine Nachkommastelle)?",
+   "ans": 21176.5,
+   "unit": "kWh",
+   "e": "E_pot = E_ab / η = 18.000 / 0,85 = 21.176,5 kWh. Bei 45 m Nutzgefälle entspricht das einer Wassermasse von E / (g · h) = 21.176,5 · 3.600 kJ / (9,81 · 45) ≈ 172.700 t, also rund 959 m³ je Minute."
+  },
+  {
+   "f": 5,
+   "sub": "Naturwissenschaftliche und technische Grundlagen",
+   "t": "calc",
+   "q": "Für die Spitzenlast müssen in drei Stunden 172.693 m³ Wasser durch die Turbine. Welcher Volumenstrom in m³/min ist erforderlich (eine Nachkommastelle)?",
+   "ans": 959.4,
+   "unit": "m³/min",
+   "e": "Q = V / t = 172.693 m³ / 180 min = 959,4 m³/min. Bei Wasser (ρ = 1 t/m³) entspricht das 959,4 t je Minute."
+  },
+  {
+   "f": 5,
+   "sub": "Naturwissenschaftliche und technische Grundlagen",
+   "t": "calc",
+   "q": "Eine Zugstange (Re = 225 N/mm²) wird mit 120 kN belastet; bei schwellender Belastung darf die Zugspannung ein Drittel der Streckgrenze betragen. Welcher Querschnitt ist erforderlich (in mm²)?",
+   "ans": 1600,
+   "unit": "mm²",
+   "e": "σ_zul = 225 / 3 = 75 N/mm²; S = F / σ_zul = 120.000 / 75 = 1.600 mm². Für einen aus Quadrat und Halbkreis zusammengesetzten Querschnitt (S = b² · (1 + π/4)) ergibt sich b = √(1.600 / 1,785) = 29,9 mm."
+  },
+  {
+   "f": 5,
+   "sub": "Naturwissenschaftliche und technische Grundlagen",
+   "t": "calc",
+   "q": "Ein Stahlkörper (500 kg) soll mit konstanter Geschwindigkeit eine Rampe hinabgeschoben werden; Steigung 0,5 m auf 8 m, Gleitreibungszahl 0,12. Rechnen Sie mit sin α = 0,0624 und cos α = 0,998. Welche Schubkraft ist nötig (in N, ganze Zahl; g = 9,81 m/s²)?",
+   "ans": 281,
+   "unit": "N",
+   "e": "Gleichgewicht: F = F_R – F_H = F_G · (μ · cos α – sin α) = 4.905 N · (0,12 · 0,998 – 0,0624) = 4.905 · 0,0574 = 281 N. Die Reibung ist größer als der Hangabtrieb, deshalb muss abwärts geschoben werden."
+  },
+  {
+   "f": 5,
+   "sub": "Naturwissenschaftliche und technische Grundlagen",
+   "t": "calc",
+   "q": "Eine Bauwinde mit 200 mm Seiltrommeldurchmesser dreht mit 192 min⁻¹. Wie lange dauert es, eine Last 25 m hochzuheben (in s, eine Nachkommastelle)?",
+   "ans": 12.4,
+   "unit": "s",
+   "e": "Seilgeschwindigkeit v = d · π · n = 0,2 m · π · 192 / 60 s = 2,01 m/s; t = s / v = 25 / 2,01 = 12,4 s."
+  },
+  {
+   "f": 5,
+   "sub": "Naturwissenschaftliche und technische Grundlagen",
+   "t": "calc",
+   "q": "Stichprobe von 32 Airbag-Auslösezeiten in ms: 27 (1-mal), 28 (2), 29 (6), 30 (10), 31 (8), 32 (3), 33 (1), 34 (1). Wie groß ist der arithmetische Mittelwert (zwei Nachkommastellen)?",
+   "ans": 30.25,
+   "unit": "ms",
+   "e": "x̄ = (27 + 56 + 174 + 300 + 248 + 96 + 33 + 34) / 32 = 968 / 32 = 30,25 ms. Modalwert und Median liegen bei 30 ms, die Spannweite beträgt 34 – 27 = 7 ms, die Standardabweichung 1,459 ms."
+  }
+ ]
+}

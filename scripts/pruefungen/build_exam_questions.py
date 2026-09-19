@@ -31,7 +31,11 @@ REIHENFOLGE = ['kraftverkehr-2021-2026.json', 'imbq-h2025.json',
                'imbq-f2021.json', 'imbq-h2020.json', 'imbq-f2020.json',
                'imbq-h2019.json', 'imbq-f2019.json',
                # Tranche T3 (Heftform „L-ALT“)
-               'imbq-h2018.json', 'imbq-f2018.json']
+               'imbq-h2018.json', 'imbq-f2018.json',
+               # Tranche T4 (Scans H2017 bis H2014), neueste zuerst
+               'imbq-h2017.json', 'imbq-f2017.json', 'imbq-h2016.json',
+               'imbq-f2016.json', 'imbq-h2015.json', 'imbq-f2015.json',
+               'imbq-h2014.json']
 TAX = {
  1: ["Arbeitsrecht","Betriebsverfassung","Sozialversicherung","Umweltrecht","Arbeitsschutz","Vertrags- und Handelsrecht","Produkthaftung/Datenschutz"],
  2: ["Kostenrechnung","Rechnungswesen","Materialwirtschaft","Betriebsorganisation","Volkswirtschaft","Rechtsformen","Finanzierung","Controlling","Marketing"],

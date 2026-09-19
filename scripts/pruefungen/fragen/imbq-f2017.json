@@ -1,0 +1,950 @@
+{
+ "questions": [
+  {
+   "f": 1,
+   "sub": "Arbeitsrecht",
+   "t": "mc",
+   "q": "Ein Maschinenbauunternehmen beschäftigt in den Semesterferien Studenten für volle drei Monate als Aushilfen. Dürfen für diese Arbeitsverhältnisse kürzere als die gesetzlichen Kündigungsfristen vereinbart werden?",
+   "o": [
+    {
+     "t": "Ja – bei vorübergehender Aushilfe darf einzelvertraglich eine kürzere Frist vereinbart werden, solange das Arbeitsverhältnis nicht über drei Monate hinaus fortgesetzt wird (§ 622 Absatz 5 Nr. 1 BGB)",
+     "ok": 1
+    },
+    {
+     "t": "Nein, die Grundkündigungsfrist von vier Wochen ist für jedes Arbeitsverhältnis zwingend"
+    },
+    {
+     "t": "Ja, aber nur mit Zustimmung des Betriebsrats nach § 99 BetrVG"
+    },
+    {
+     "t": "Nur in Betrieben mit höchstens zehn Arbeitnehmern"
+    }
+   ],
+   "e": "§ 622 Absatz 5 Satz 1 Nr. 1 BGB erlaubt bei Einstellung „zur vorübergehenden Aushilfe“ eine kürzere Frist als die Grundfrist von vier Wochen; wird das Arbeitsverhältnis länger als drei Monate fortgesetzt, gelten wieder die gesetzlichen Fristen. Die zweite Ausnahme (Nr. 2) betrifft Kleinbetriebe bis 20 Arbeitnehmer, dort muss die Frist aber mindestens vier Wochen betragen."
+  },
+  {
+   "f": 1,
+   "sub": "Arbeitsrecht",
+   "t": "calc",
+   "q": "Ein Werkstudent arbeitet volle drei Monate in Vollzeit von Montag bis Samstag. Wie viele Werktage gesetzlichen Mindesturlaub erwirbt er nach dem Bundesurlaubsgesetz?",
+   "ans": 6,
+   "unit": "Werktage",
+   "e": "Der gesetzliche Mindesturlaub beträgt 24 Werktage im Jahr (§ 3 Absatz 1 BUrlG). Wer vor Erfüllung der Wartezeit von sechs Monaten ausscheidet, erhält Teilurlaub von einem Zwölftel je vollem Beschäftigungsmonat (§ 5 Absatz 1 Buchstabe b BUrlG): 3 · 24 / 12 = 6 Werktage."
+  },
+  {
+   "f": 1,
+   "sub": "Sozialversicherung",
+   "t": "mc",
+   "q": "Ein seit zwei Wochen beschäftigter Werkstudent rutscht in der Betriebstoilette aus, verletzt sich den Arm und ist eine Woche arbeitsunfähig. Wer trägt die Behandlungskosten und wer sichert sein Einkommen?",
+   "o": [
+    {
+     "t": "Die Krankenkasse zahlt Behandlung und Krankengeld – es ist kein Arbeitsunfall, und der Anspruch auf Entgeltfortzahlung entsteht erst nach vier Wochen Betriebszugehörigkeit",
+     "ok": 1
+    },
+    {
+     "t": "Die Berufsgenossenschaft zahlt Heilbehandlung und Verletztengeld, weil der Unfall im Betrieb passiert ist"
+    },
+    {
+     "t": "Der Arbeitgeber zahlt sechs Wochen Entgeltfortzahlung ab dem ersten Arbeitstag"
+    },
+    {
+     "t": "Der Student trägt die Kosten selbst, weil er nur Aushilfe ist"
+    }
+   ],
+   "e": "Der Toilettengang ist eine eigenwirtschaftliche Tätigkeit ohne hinreichenden betrieblichen Bezug – nur der Weg dorthin und zurück ist versichert. Also kein Arbeitsunfall nach § 8 SGB VII; zuständig ist die Krankenkasse. Entgeltfortzahlung gibt es erst nach vierwöchigem ununterbrochenem Bestehen des Arbeitsverhältnisses (§ 3 Absatz 3 EFZG); davor zahlt die Krankenkasse Krankengeld (§ 44 SGB V)."
+  },
+  {
+   "f": 1,
+   "sub": "Arbeitsrecht",
+   "t": "mc",
+   "q": "Ein Arbeitnehmer war wegen eines Beinbruchs drei Wochen arbeitsunfähig. Sieben Monate später muss dieselbe Verletzung erneut behandelt werden – vier Wochen Arbeitsunfähigkeit. Wie wird sein Einkommen gesichert?",
+   "o": [
+    {
+     "t": "Der Arbeitgeber zahlt erneut Entgeltfortzahlung für die vollen vier Wochen, weil zwischen den Erkrankungen mehr als sechs Monate lagen (§ 3 Absatz 1 Satz 2 Nr. 1 EFZG)",
+     "ok": 1
+    },
+    {
+     "t": "Nur noch drei Wochen Entgeltfortzahlung, weil vom Sechs-Wochen-Anspruch bereits drei Wochen verbraucht sind"
+    },
+    {
+     "t": "Die Krankenkasse zahlt von Anfang an Krankengeld, weil es dieselbe Krankheit ist"
+    },
+    {
+     "t": "Die Unfallversicherung zahlt Verletztengeld"
+    }
+   ],
+   "e": "Bei Fortsetzungserkrankungen entsteht ein neuer Sechs-Wochen-Anspruch, wenn der Arbeitnehmer vor der erneuten Arbeitsunfähigkeit mindestens sechs Monate nicht wegen derselben Krankheit arbeitsunfähig war (Nr. 1) oder seit Beginn der ersten Arbeitsunfähigkeit zwölf Monate abgelaufen sind (Nr. 2)."
+  },
+  {
+   "f": 1,
+   "sub": "Betriebsverfassung",
+   "t": "mc",
+   "q": "Ein tarifgebundenes Unternehmen will mit dem Betriebsrat eine Betriebsvereinbarung über das Entgelt schließen, obwohl das Entgelt bereits im Tarifvertrag geregelt ist. Ist das zulässig?",
+   "o": [
+    {
+     "t": "Nein – tariflich geregelte oder üblicherweise geregelte Arbeitsbedingungen können nicht Gegenstand einer Betriebsvereinbarung sein, es sei denn, der Tarifvertrag enthält eine Öffnungsklausel (§ 77 Absatz 3 BetrVG)",
+     "ok": 1
+    },
+    {
+     "t": "Ja, eine Betriebsvereinbarung geht als speziellere Regelung dem Tarifvertrag vor"
+    },
+    {
+     "t": "Ja, wenn die Betriebsvereinbarung für die Arbeitnehmer günstiger ist"
+    },
+    {
+     "t": "Nur mit Zustimmung der Einigungsstelle"
+    }
+   ],
+   "e": "Die Tarifsperre des § 77 Absatz 3 BetrVG schützt die Tarifautonomie. Ausnahmen: eine Öffnungsklausel im Tarifvertrag (Satz 2) oder ein erzwingbares Mitbestimmungsrecht nach § 87 Absatz 1 BetrVG, das nur bei bestehender tariflicher Regelung entfällt (Eingangssatz des § 87 Absatz 1)."
+  },
+  {
+   "f": 1,
+   "sub": "Betriebsverfassung",
+   "t": "mc",
+   "q": "Welche Formvorschrift gilt für den Abschluss einer Betriebsvereinbarung?",
+   "o": [
+    {
+     "t": "Sie ist von Betriebsrat und Arbeitgeber gemeinsam zu beschließen, schriftlich niederzulegen und von beiden Seiten zu unterzeichnen (§ 77 Absatz 2 BetrVG)",
+     "ok": 1
+    },
+    {
+     "t": "Sie kann formlos, auch mündlich, vereinbart werden"
+    },
+    {
+     "t": "Sie muss notariell beurkundet werden"
+    },
+    {
+     "t": "Sie bedarf der Genehmigung durch die zuständige Gewerkschaft"
+    }
+   ],
+   "e": "§ 77 Absatz 2 BetrVG. Beruht die Betriebsvereinbarung auf einem Spruch der Einigungsstelle, entfällt die Unterzeichnung. Der Arbeitgeber muss die Betriebsvereinbarung außerdem an geeigneter Stelle im Betrieb auslegen. Streitigkeiten zwischen Arbeitgeber und Betriebsrat entscheidet das Arbeitsgericht im Beschlussverfahren."
+  },
+  {
+   "f": 1,
+   "sub": "Arbeitsrecht",
+   "t": "mc",
+   "q": "Herr Stolz hat seine Ausbildung im Betrieb bestanden und wird im Anschluss mit einem auf sechs Monate befristeten schriftlichen Arbeitsvertrag übernommen. Ist die Befristung wirksam?",
+   "o": [
+    {
+     "t": "Ja – die Befristung im Anschluss an eine Ausbildung, um den Übergang in eine Beschäftigung zu erleichtern, ist ein Sachgrund (§ 14 Absatz 1 Nr. 2 TzBfG); die Schriftform ist gewahrt",
+     "ok": 1
+    },
+    {
+     "t": "Nein, nach einer Ausbildung im selben Betrieb ist jede Befristung ausgeschlossen"
+    },
+    {
+     "t": "Nein, weil eine Befristung mindestens zwölf Monate betragen muss"
+    },
+    {
+     "t": "Nur, wenn der Betriebsrat der Befristung zugestimmt hat"
+    }
+   ],
+   "e": "Auch eine sachgrundlose Befristung nach § 14 Absatz 2 TzBfG wäre möglich, denn ein Berufsausbildungsverhältnis ist kein „zuvor bestehendes Arbeitsverhältnis“ mit demselben Arbeitgeber. Die Schriftform des § 14 Absatz 4 TzBfG ist für die Befristungsabrede zwingend; fehlt sie, gilt der Vertrag als unbefristet."
+  },
+  {
+   "f": 1,
+   "sub": "Arbeitsrecht",
+   "t": "mc",
+   "q": "Herr Peters wurde sachgrundlos für zwölf Monate befristet eingestellt. Zum Ende des zwölften Monats wird die Befristung um weitere zwölf Monate „verlängert“ – gleichzeitig werden Gehalt und Arbeitszeit erhöht. Rechtsfolge?",
+   "o": [
+    {
+     "t": "Die zweite Befristung ist unwirksam – wegen der geänderten Vertragsbedingungen liegt keine Verlängerung, sondern ein Neuabschluss vor, der nach § 14 Absatz 2 Satz 2 TzBfG unzulässig ist",
+     "ok": 1
+    },
+    {
+     "t": "Die Verlängerung ist wirksam, weil zwei Jahre und drei Verlängerungen nicht überschritten werden"
+    },
+    {
+     "t": "Die Verlängerung ist wirksam, weil die Änderungen für den Arbeitnehmer günstig sind"
+    },
+    {
+     "t": "Der gesamte Vertrag ist von Anfang an nichtig"
+    }
+   ],
+   "e": "Eine Verlängerung im Sinne von § 14 Absatz 2 Satz 1 TzBfG setzt voraus, dass sie noch während der Laufzeit vereinbart wird und nur die Laufzeit ändert. Werden zugleich andere Arbeitsbedingungen geändert, ist es ein neuer befristeter Vertrag; die Befristung ist unwirksam und das Arbeitsverhältnis gilt als unbefristet (§ 16 TzBfG)."
+  },
+  {
+   "f": 1,
+   "sub": "Arbeitsschutz",
+   "t": "mc",
+   "q": "Ein Anlageningenieur, der seit einem Jahr im Betrieb arbeitet, soll ohne weitere Qualifikation Fachkraft für Arbeitssicherheit werden. Erfüllt er die gesetzlichen Anforderungen?",
+   "o": [
+    {
+     "t": "Nein – neben der Ingenieurausbildung fehlt ihm die sicherheitstechnische Fachkunde (§ 7 ASiG)",
+     "ok": 1
+    },
+    {
+     "t": "Ja, ein Ingenieurabschluss genügt als Nachweis"
+    },
+    {
+     "t": "Ja, wenn der Betriebsrat ihn bestellt"
+    },
+    {
+     "t": "Nein, weil Fachkräfte für Arbeitssicherheit immer externe Dienstleister sein müssen"
+    }
+   ],
+   "e": "§ 7 ASiG: Fachkräfte für Arbeitssicherheit sind Sicherheitsingenieure, -techniker oder -meister mit der erforderlichen sicherheitstechnischen Fachkunde (Ausbildung nach DGUV Vorschrift 2). Ihre Aufgaben nach § 6 ASiG: den Arbeitgeber beraten, Arbeitsstätten begehen, Unfallursachen untersuchen, auf die Einhaltung der Vorschriften hinwirken."
+  },
+  {
+   "f": 1,
+   "sub": "Arbeitsschutz",
+   "t": "mc",
+   "q": "Ab welcher Betriebsgröße muss ein Arbeitsschutzausschuss gebildet werden, und wer gehört ihm an?",
+   "o": [
+    {
+     "t": "Bei mehr als 20 Beschäftigten; Mitglieder sind der Arbeitgeber oder ein Beauftragter, zwei Betriebsratsmitglieder, Betriebsärzte, Fachkräfte für Arbeitssicherheit und Sicherheitsbeauftragte (§ 11 ASiG)",
+     "ok": 1
+    },
+    {
+     "t": "Bei mehr als 100 Beschäftigten; Mitglieder sind nur Arbeitgeber und Betriebsrat"
+    },
+    {
+     "t": "Bei mehr als 5 Beschäftigten; Mitglieder sind alle Meister des Betriebs"
+    },
+    {
+     "t": "Nur in Betrieben mit gefährlichen Anlagen; Mitglieder bestimmt die Berufsgenossenschaft"
+    }
+   ],
+   "e": "Der Ausschuss berät Anliegen des Arbeitsschutzes und der Unfallverhütung und tritt mindestens einmal vierteljährlich zusammen (§ 11 ASiG). Verantwortlich für den Arbeitsschutz bleibt der Arbeitgeber (§ 3 ArbSchG); er kann Pflichten delegieren, behält aber die Kontrollpflicht."
+  },
+  {
+   "f": 1,
+   "sub": "Umweltrecht",
+   "t": "mc",
+   "q": "Wie unterscheiden sich Emissionen und Immissionen im Sinne des Bundes-Immissionsschutzgesetzes?",
+   "o": [
+    {
+     "t": "Emissionen sind die von einer Anlage ausgehenden Luftverunreinigungen, Geräusche, Erschütterungen usw.; Immissionen sind die auf Menschen, Tiere, Pflanzen und Sachen einwirkenden Umwelteinwirkungen",
+     "ok": 1
+    },
+    {
+     "t": "Emissionen sind Abwässer, Immissionen sind Abgase"
+    },
+    {
+     "t": "Emissionen entstehen nur in Kraftwerken, Immissionen nur im Straßenverkehr"
+    },
+    {
+     "t": "Die Begriffe bezeichnen dasselbe – Emission ist der ältere Ausdruck"
+    }
+   ],
+   "e": "§ 3 Absatz 2 und 3 BImSchG. Das Gesetz schützt Menschen, Tiere, Pflanzen, Boden, Wasser, Atmosphäre sowie Kultur- und Sachgüter vor schädlichen Umwelteinwirkungen (§ 1 BImSchG) und regelt dazu Genehmigungspflichten und Grenzwerte für Anlagen."
+  },
+  {
+   "f": 1,
+   "sub": "Umweltrecht",
+   "t": "mc",
+   "q": "Ein Betrieb muss die Kosten für Vermeidung und Beseitigung der von ihm verursachten Umweltbelastungen selbst tragen. Welches Prinzip des Umweltschutzes liegt zugrunde?",
+   "o": [
+    {
+     "t": "Verursacherprinzip",
+     "ok": 1
+    },
+    {
+     "t": "Vorsorgeprinzip"
+    },
+    {
+     "t": "Kooperationsprinzip"
+    },
+    {
+     "t": "Gemeinlastprinzip"
+    }
+   ],
+   "e": "Das Verursacherprinzip rechnet die Kosten dem Verursacher zu. Das Vorsorgeprinzip verlangt, Umweltbelastungen vorausschauend schon unterhalb der Gefahrenschwelle zu vermeiden; das Kooperationsprinzip setzt auf das Zusammenwirken von Staat, Wirtschaft und Gesellschaft. Nach dem Gemeinlastprinzip trägt die Allgemeinheit die Kosten – es ist der Ausnahmefall."
+  },
+  {
+   "f": 1,
+   "sub": "Produkthaftung/Datenschutz",
+   "t": "mc",
+   "q": "Herr Semmler kauft privat eine Bohrmaschine und erhält bei der ersten Benutzung wegen eines Defekts einen Stromschlag. Bekommt er die Bohrmaschine nach dem Produkthaftungsgesetz ersetzt?",
+   "o": [
+    {
+     "t": "Nein – das fehlerhafte Produkt selbst wird nach § 1 ProdHaftG nicht ersetzt, sondern nur der dadurch verursachte Personen- oder Sachschaden an anderen Sachen",
+     "ok": 1
+    },
+    {
+     "t": "Ja, der Hersteller haftet für alle Schäden einschließlich des Produkts"
+    },
+    {
+     "t": "Ja, aber nur innerhalb der zweijährigen Gewährleistungsfrist"
+    },
+    {
+     "t": "Nein, weil das Produkthaftungsgesetz nur gewerbliche Nutzer schützt"
+    }
+   ],
+   "e": "Für die Maschine selbst muss er sich an den Verkäufer halten (Gewährleistung, § 437 BGB). Der Sachschaden an anderen privat genutzten Sachen wird mit einer Selbstbeteiligung von 500 € ersetzt (§ 11 ProdHaftG); die Heilbehandlungskosten und der Verdienstausfall wegen der Körperverletzung sind nach § 8 ProdHaftG vom Hersteller zu ersetzen."
+  },
+  {
+   "f": 1,
+   "sub": "Produkthaftung/Datenschutz",
+   "t": "mc",
+   "q": "Herr Semmler ist nach dem Stromschlag durch die fehlerhafte Bohrmaschine eine Woche arbeitsunfähig. Welche Ansprüche hat sein Arbeitgeber gegen den Hersteller?",
+   "o": [
+    {
+     "t": "Ersatz des während der Entgeltfortzahlung gezahlten Arbeitsentgelts – der Anspruch des Arbeitnehmers auf Ersatz des Verdienstausfalls geht nach § 6 EFZG auf den Arbeitgeber über",
+     "ok": 1
+    },
+    {
+     "t": "Keine – der Arbeitgeber steht in keinem Vertragsverhältnis zum Hersteller"
+    },
+    {
+     "t": "Ersatz des Kaufpreises der Bohrmaschine"
+    },
+    {
+     "t": "Ein Schmerzensgeld für den Ausfall des Mitarbeiters"
+    }
+   ],
+   "e": "Kann der Arbeitnehmer von einem Dritten Schadensersatz wegen seines Verdienstausfalls verlangen, geht dieser Anspruch insoweit auf den Arbeitgeber über, wie er Entgeltfortzahlung geleistet hat (§ 6 Absatz 1 EFZG). Der Arbeitnehmer muss dem Arbeitgeber die nötigen Angaben machen (§ 6 Absatz 2 EFZG)."
+  },
+  {
+   "f": 1,
+   "sub": "Betriebsverfassung",
+   "t": "mc",
+   "q": "Ein Unternehmen zahlt seit zwei Jahren eine freiwillige Jahresprämie und will sie auch in diesem Jahr auszahlen. Wie ist der Betriebsrat zu beteiligen?",
+   "o": [
+    {
+     "t": "Nur bei den Verteilungsgrundsätzen nach § 87 Absatz 1 Nr. 10 BetrVG – ob und mit welchem Gesamtbetrag gezahlt wird, entscheidet der Arbeitgeber allein",
+     "ok": 1
+    },
+    {
+     "t": "Gar nicht, weil es eine freiwillige Leistung ist"
+    },
+    {
+     "t": "Er muss der Zahlung und ihrer Höhe zustimmen"
+    },
+    {
+     "t": "Er entscheidet allein über die Verteilung, der Arbeitgeber hat kein Mitspracherecht"
+    }
+   ],
+   "e": "Bei freiwilligen Leistungen ist der Arbeitgeber in der Entscheidung über das „Ob“, den Dotierungsrahmen und den begünstigten Personenkreis frei; die Verteilung im Rahmen des Budgets unterliegt der Mitbestimmung (betriebliche Lohngestaltung). Damit durch die wiederholte Zahlung kein Anspruch aus betrieblicher Übung entsteht, muss der Arbeitgeber bei jeder Zahlung klar auf die Freiwilligkeit hinweisen."
+  },
+  {
+   "f": 2,
+   "sub": "Rechtsformen",
+   "t": "mc",
+   "q": "Welches Mindeststammkapital ist für eine Unternehmergesellschaft (haftungsbeschränkt) vorgeschrieben, und was gilt für die Gewinnverwendung?",
+   "o": [
+    {
+     "t": "1 € Mindeststammkapital; jährlich müssen 25 % des Jahresüberschusses in eine gesetzliche Rücklage eingestellt werden, bis das Stammkapital von 25.000 € einer GmbH erreicht ist",
+     "ok": 1
+    },
+    {
+     "t": "12.500 €; Gewinne dürfen erst nach fünf Jahren ausgeschüttet werden"
+    },
+    {
+     "t": "25.000 €; die Gewinnverwendung ist frei"
+    },
+    {
+     "t": "50.000 €; 10 % des Gewinns sind als Rücklage zu bilden"
+    }
+   ],
+   "e": "§ 5a GmbHG. Die UG ist eine GmbH-Variante mit geringem Kapital; Sacheinlagen sind bei der Gründung ausgeschlossen, und die Einlage muss voll eingezahlt sein. Zum Vergleich: GmbH 25.000 € (§ 5 GmbHG), AG 50.000 € Grundkapital (§ 7 AktG), OHG und KG ohne Mindestkapital."
+  },
+  {
+   "f": 2,
+   "sub": "Rechtsformen",
+   "t": "mc",
+   "q": "Wer ist bei der Kommanditgesellschaft zur Geschäftsführung befugt, und wie haften die Gesellschafter?",
+   "o": [
+    {
+     "t": "Der Komplementär führt die Geschäfte und haftet unbeschränkt; der Kommanditist haftet nur mit seiner Einlage und ist von der Geschäftsführung ausgeschlossen",
+     "ok": 1
+    },
+    {
+     "t": "Alle Gesellschafter führen die Geschäfte und haften unbeschränkt"
+    },
+    {
+     "t": "Der Kommanditist führt die Geschäfte, der Komplementär haftet nur mit der Einlage"
+    },
+    {
+     "t": "Ein angestellter Geschäftsführer führt die Geschäfte; alle Gesellschafter haften nur mit der Einlage"
+    }
+   ],
+   "e": "§§ 161 ff. HGB (§ 164 HGB: Kommanditisten sind von der Geschäftsführung ausgeschlossen, haben aber ein Widerspruchsrecht bei außergewöhnlichen Geschäften). Bei der OHG führt jeder Gesellschafter die Geschäfte und haftet unbeschränkt; bei der GmbH haften die Gesellschafter nicht persönlich, Geschäftsführer ist ein bestellter Geschäftsführer."
+  },
+  {
+   "f": 2,
+   "sub": "Betriebsorganisation",
+   "t": "calc",
+   "q": "Kapazitätsplanung: 24 Facharbeiter, 20 Arbeitstage, 8 Stunden je Tag, Ausfallzeiten 12 % Urlaub und 3 % Krankheit. Berechnen Sie den Kapazitätsbestand in Stunden.",
+   "ans": 3264,
+   "unit": "Std.",
+   "e": "Kapazitätsbestand = Mitarbeiter · Stunden je Tag · Arbeitstage · Planungsfaktor = 24 · 8 · 20 · 0,85 = 3.264 Std. Der Planungsfaktor 0,85 fasst die Ausfallzeiten von 15 % zusammen."
+  },
+  {
+   "f": 2,
+   "sub": "Betriebsorganisation",
+   "t": "calc",
+   "q": "In einem Monat sind 1.500 Bauteile mit einer Vorgabezeit von 160 Minuten je Bauteil zu fertigen. Wie groß ist der Kapazitätsbedarf in Stunden?",
+   "ans": 4000,
+   "unit": "Std.",
+   "e": "Kapazitätsbedarf = Stückzahl · Vorgabezeit / 60 = 1.500 · 160 min / 60 = 4.000 Std. Bei einem Kapazitätsbestand von 3.264 Std. ergibt sich ein Zusatzbedarf von 736 Std."
+  },
+  {
+   "f": 2,
+   "sub": "Betriebsorganisation",
+   "t": "calc",
+   "q": "Ein Zusatzbedarf von 736 Stunden soll durch Mehrarbeit gedeckt werden: 24 Mitarbeiter, 20 Arbeitstage, Planungsfaktor 0,85 (Ausfallzeiten), Zeitgrad 110 %. Wie viele Stunden Mehrarbeit sind je Mitarbeiter und Tag nötig (zwei Nachkommastellen)?",
+   "ans": 1.64,
+   "unit": "Std./Tag",
+   "e": "Mehrarbeit = Zusatzbedarf / (Mitarbeiter · Tage · Planungsfaktor · Zeitgradfaktor) = 736 / (24 · 20 · 0,85 · 1,1) = 736 / 448,8 = 1,64 Std. je Mitarbeiter und Tag."
+  },
+  {
+   "f": 2,
+   "sub": "Materialwirtschaft",
+   "t": "calc",
+   "q": "Anfangsbestand eines Rohstoffs 22 t; Monatsendbestände Januar bis Juni: 30, 36, 35, 45, 44 und 40 t. Wie groß ist der durchschnittliche Lagerbestand im ersten Halbjahr?",
+   "ans": 36,
+   "unit": "t",
+   "e": "Durchschnittlicher Lagerbestand = (Anfangsbestand + Summe der sechs Monatsendbestände) / 7 = (22 + 30 + 36 + 35 + 45 + 44 + 40) / 7 = 252 / 7 = 36 t."
+  },
+  {
+   "f": 2,
+   "sub": "Materialwirtschaft",
+   "t": "calc",
+   "q": "Anfangsbestand 22 t, Zugänge im Halbjahr 210 t, Endbestand 40 t. Wie hoch war der Materialverbrauch?",
+   "ans": 192,
+   "unit": "t",
+   "e": "Materialverbrauch = Anfangsbestand + Zugänge – Endbestand = 22 + 210 – 40 = 192 t."
+  },
+  {
+   "f": 2,
+   "sub": "Materialwirtschaft",
+   "t": "calc",
+   "q": "Im vergangenen Jahr betrug der Materialverbrauch 420 t bei einem durchschnittlichen Lagerbestand von 45 t. Wie groß war die Lagerumschlagshäufigkeit (zwei Nachkommastellen)?",
+   "ans": 9.33,
+   "unit": "",
+   "e": "Umschlagshäufigkeit = Jahresverbrauch / Ø Lagerbestand = 420 / 45 = 9,33. Die durchschnittliche Lagerdauer wäre 360 / 9,33 ≈ 38,6 Tage."
+  },
+  {
+   "f": 2,
+   "sub": "Materialwirtschaft",
+   "t": "mc",
+   "q": "Welche Auswirkung hat eine sehr hohe Lagerumschlagshäufigkeit typischerweise?",
+   "o": [
+    {
+     "t": "Geringere Kapitalbindungs- und Lagerkosten sowie weniger Veralterungsrisiko – aber höhere Bestellkosten und eine geringere Lieferbereitschaft",
+     "ok": 1
+    },
+    {
+     "t": "Höhere Kapitalbindung, weil ständig nachbestellt werden muss"
+    },
+    {
+     "t": "Steigende Lagerkosten durch häufigere Inventuren"
+    },
+    {
+     "t": "Keine Auswirkungen auf Kosten, nur auf die Lagerfläche"
+    }
+   ],
+   "e": "Hoher Umschlag bedeutet niedrige Bestände: Kapitalbindung, Lagerhaltungskosten und Schwundrisiko sinken. Gegenläufig steigen die bestellfixen Kosten, und bei Lieferverzögerungen droht schneller ein Fehlmengenrisiko in der Fertigung."
+  },
+  {
+   "f": 4,
+   "sub": "Entgelt und Arbeitszeit",
+   "t": "calc",
+   "q": "Für 1.200 Teile ist eine Vorgabezeit von 2.070 Minuten festgelegt. Der Facharbeiter benötigt 30 Stunden. Welchen Zeitgrad in Prozent hat er erreicht?",
+   "ans": 115,
+   "unit": "%",
+   "e": "Zeitgrad = Vorgabezeit / Istzeit · 100 = 34,5 Std. / 30 Std. · 100 = 115 %. Die Vorgabezeit von 2.070 min entspricht 34,5 Stunden."
+  },
+  {
+   "f": 4,
+   "sub": "Entgelt und Arbeitszeit",
+   "t": "calc",
+   "q": "Akkordgrundlohn 16 €/Std., Akkordzuschlag 10 %, erreichter Zeitgrad 115 %. Wie hoch ist der tatsächliche Stundenverdienst des Akkordarbeiters?",
+   "ans": 20.24,
+   "unit": "€/Std.",
+   "e": "Akkordrichtsatz = 16 € · 1,10 = 17,60 €/Std. Stundenverdienst = Akkordrichtsatz · Zeitgradfaktor = 17,60 · 1,15 = 20,24 €/Std."
+  },
+  {
+   "f": 2,
+   "sub": "Kostenrechnung",
+   "t": "calc",
+   "q": "Akkordrichtsatz 17,60 €/Std., Vorgabezeit 34,5 Stunden für 1.200 Teile. Wie hoch sind die Lohnkosten je Stück (drei Nachkommastellen)?",
+   "ans": 0.506,
+   "unit": "€/Stück",
+   "e": "Lohnkosten je Auftrag = 17,60 · 34,5 = 607,20 €; je Stück 607,20 / 1.200 = 0,506 €. Dasselbe Ergebnis liefert der Weg über den Istlohn: 20,24 €/Std. · 30 Std. / 1.200."
+  },
+  {
+   "f": 2,
+   "sub": "Kostenrechnung",
+   "t": "calc",
+   "q": "Maschinenstundensatz: Anschaffungskosten 510.000 €, Wiederbeschaffungswert 561.000 €, Restwert 120.000 €, Nutzungsdauer 6 Jahre. Wie hoch ist die kalkulatorische Abschreibung je Jahr?",
+   "ans": 73500,
+   "unit": "€/Jahr",
+   "e": "Kalkulatorische Abschreibung = (Wiederbeschaffungswert – Restwert) / Nutzungsdauer = (561.000 – 120.000) / 6 = 73.500 €/Jahr. Anders als die bilanzielle Abschreibung wird vom Wiederbeschaffungswert ausgegangen, damit die Substanz erhalten bleibt."
+  },
+  {
+   "f": 2,
+   "sub": "Kostenrechnung",
+   "t": "calc",
+   "q": "Anschaffungskosten 510.000 €, Restwert 120.000 €, kalkulatorischer Zinssatz 6 %. Wie hoch sind die kalkulatorischen Zinsen je Jahr nach der Durchschnittsmethode?",
+   "ans": 18900,
+   "unit": "€/Jahr",
+   "e": "Kalkulatorische Zinsen = (Anschaffungskosten + Restwert) / 2 · Zinssatz = (510.000 + 120.000) / 2 · 0,06 = 315.000 · 0,06 = 18.900 €/Jahr."
+  },
+  {
+   "f": 2,
+   "sub": "Kostenrechnung",
+   "t": "calc",
+   "q": "Die jährlichen Maschinenkosten setzen sich zusammen aus Abschreibung 73.500 €, Zinsen 18.900 €, Raumkosten 2.688 €, Energiekosten 9.450 € und Instandhaltung 40.800 €. Die Laufzeit beträgt 3.000 Stunden. Maschinenstundensatz in €/Std. (zwei Nachkommastellen)?",
+   "ans": 48.45,
+   "unit": "€/Std.",
+   "e": "Summe der Maschinenkosten = 145.338 €/Jahr; Maschinenstundensatz = 145.338 / 3.000 = 48,45 €/Std. Steigt die Laufzeit auf 3.300 Std., wachsen nur die Energiekosten mit (auf 10.395 €): 146.283 / 3.300 = 44,33 €/Std."
+  },
+  {
+   "f": 2,
+   "sub": "Kostenrechnung",
+   "t": "calc",
+   "q": "Deckungsbeitragsrechnung: Fixkosten 1.200.000 €, Stückdeckungsbeitrag 12 €, bei 100 % Beschäftigung 120.000 Stück. Wie hoch ist das Betriebsergebnis bei 80 % Beschäftigung (negatives Ergebnis mit Minuszeichen)?",
+   "ans": -48000,
+   "unit": "€",
+   "e": "Menge bei 80 % = 96.000 Stück; Gesamtdeckungsbeitrag = 96.000 · 12 = 1.152.000 €; Betriebsergebnis = 1.152.000 – 1.200.000 = –48.000 €. Bei 100 % ergeben sich 1.440.000 € Deckungsbeitrag und +240.000 € Betriebsergebnis; die Gewinnschwelle liegt bei 100.000 Stück."
+  },
+  {
+   "f": 2,
+   "sub": "Kostenrechnung",
+   "t": "calc",
+   "q": "Rückwärtskalkulation: Der Listenverkaufspreis beträgt 295,00 €, der Kundenrabatt 16 % und das Skonto 2 %. Wie hoch ist der Barverkaufspreis (zwei Nachkommastellen)?",
+   "ans": 242.84,
+   "unit": "€",
+   "e": "Zielverkaufspreis = 295,00 · (1 – 0,16) = 247,80 €; Barverkaufspreis = 247,80 · (1 – 0,02) = 242,84 €. Rabatt und Skonto werden rückwärts jeweils vom Preis abgezogen, auf den sie sich beziehen – nicht aufgeschlagen."
+  },
+  {
+   "f": 2,
+   "sub": "Kostenrechnung",
+   "t": "calc",
+   "q": "Herstellkosten 142,45 € je Stück, Verwaltungsgemeinkosten 22 %, Vertriebsgemeinkosten 13 % (beide auf die Herstellkosten), Sondereinzelkosten des Vertriebs 2,00 € je Stück. Wie hoch sind die Selbstkosten (zwei Nachkommastellen)?",
+   "ans": 194.31,
+   "unit": "€",
+   "e": "Selbstkosten = 142,45 + 31,34 (22 %) + 18,52 (13 %) + 2,00 = 194,31 €. Bei einem Barverkaufspreis von 242,84 € bleibt ein Gewinn von 48,53 € je Stück, das entspricht einem Gewinnzuschlag von rund 25 % auf die Selbstkosten."
+  },
+  {
+   "f": 3,
+   "sub": "EDV",
+   "t": "mc",
+   "q": "Welche drei Grundanforderungen (Schutzziele) muss die Datensicherheit in einem Betrieb erfüllen?",
+   "o": [
+    {
+     "t": "Vertraulichkeit, Integrität und Verfügbarkeit der Daten",
+     "ok": 1
+    },
+    {
+     "t": "Geschwindigkeit, Kompatibilität und Bedienfreundlichkeit"
+    },
+    {
+     "t": "Aktualität, Vollständigkeit und Lesbarkeit"
+    },
+    {
+     "t": "Verschlüsselung, Komprimierung und Archivierung"
+    }
+   ],
+   "e": "Vertraulichkeit: nur Befugte greifen zu; Integrität: Daten sind vollständig und unverfälscht; Verfügbarkeit: Daten und Systeme stehen bei Bedarf bereit. Organisatorische Maßnahmen dazu sind Zugriffsrechte, Backup-Konzept, Notfallplan, Schulung und Protokollierung."
+  },
+  {
+   "f": 3,
+   "sub": "EDV",
+   "t": "mc",
+   "q": "Nach welchem Grundsatz des Datenschutzrechts dürfen nur so viele personenbezogene Daten erhoben werden, wie für den Zweck erforderlich sind?",
+   "o": [
+    {
+     "t": "Datenminimierung (Datensparsamkeit) nach Artikel 5 Absatz 1 Buchstabe c DSGVO",
+     "ok": 1
+    },
+    {
+     "t": "Datenportabilität nach Artikel 20 DSGVO"
+    },
+    {
+     "t": "Grundsatz der Speicherfreiheit"
+    },
+    {
+     "t": "Meldepflicht nach § 4 BDSG"
+    }
+   ],
+   "e": "Die DSGVO nennt in Artikel 5 die Grundsätze Rechtmäßigkeit, Zweckbindung, Datenminimierung, Richtigkeit, Speicherbegrenzung sowie Integrität und Vertraulichkeit. Die bis 2018 im alten § 3a BDSG geregelte „Datenvermeidung und Datensparsamkeit“ ist darin aufgegangen."
+  },
+  {
+   "f": 3,
+   "sub": "Kreativitätstechniken",
+   "t": "mc",
+   "q": "Welche Hauptursachen bilden üblicherweise die Hauptachsen eines Ursache-Wirkungs-Diagramms (Ishikawa)?",
+   "o": [
+    {
+     "t": "Mensch, Maschine, Methode, Material, Mitwelt (Milieu) und Messung",
+     "ok": 1
+    },
+    {
+     "t": "Kosten, Zeit, Qualität, Menge und Kunde"
+    },
+    {
+     "t": "Planen, Durchführen, Prüfen und Handeln"
+    },
+    {
+     "t": "Stärken, Schwächen, Chancen und Risiken"
+    }
+   ],
+   "e": "Das Fischgrätdiagramm ordnet mögliche Ursachen eines Problems (Wirkung am Kopf) den „M-Achsen“ zu. Vorteile: systematische, visuell nachvollziehbare Ursachensuche im Team; Schwächen: keine Gewichtung der Ursachen, komplexe Wechselwirkungen sind schwer darstellbar. Einsetzbar auch bei Reklamationen, Unfallanalysen oder Prozessverbesserung."
+  },
+  {
+   "f": 3,
+   "sub": "Präsentation",
+   "t": "mc",
+   "q": "Zwei Transportfahrzeuge wurden auf einer Skala von 0 bis 10 nach Spurführung, Reichweite, Preis, Ladekonzept und Nutzlast bewertet. Welche Darstellungsform zeigt beide Profile auf einen Blick?",
+   "o": [
+    {
+     "t": "Ein Netzdiagramm mit fünf Achsen, in dem jedes Fahrzeug als geschlossener Linienzug eingetragen wird",
+     "ok": 1
+    },
+    {
+     "t": "Ein Kreisdiagramm je Fahrzeug"
+    },
+    {
+     "t": "Ein Balkenplan (Gantt-Diagramm)"
+    },
+    {
+     "t": "Ein Histogramm der Preise"
+    }
+   ],
+   "e": "Das Netz- oder Spinnendiagramm eignet sich für mehrdimensionale Bewertungen und Soll-Ist-Vergleiche, etwa Stärken-Schwächen-Profile von Mitarbeitern, Lieferantenbewertungen oder Kundenbewertungen."
+  },
+  {
+   "f": 3,
+   "sub": "Projektmanagement",
+   "t": "mc",
+   "q": "Beim Einrichten einer neuen Fertigungshalle wurden die Vorgänge in einen Balkenplan eingetragen. In welchen Schritten gehen Sie bei einer Risikoanalyse zu diesem Ablaufplan vor?",
+   "o": [
+    {
+     "t": "Risiken identifizieren, nach Eintrittswahrscheinlichkeit und Schadensausmaß bewerten, Gegenmaßnahmen festlegen und die Risiken während des Projekts überwachen",
+     "ok": 1
+    },
+    {
+     "t": "Alle Vorgänge um einen Sicherheitszuschlag von 20 % verlängern"
+    },
+    {
+     "t": "Nur die Risiken des kritischen Pfads betrachten und den Rest ignorieren"
+    },
+    {
+     "t": "Die Risiken erst nach Projektende in einer Nachkalkulation erfassen"
+    }
+   ],
+   "e": "Typische Risiken einer Ablaufplanung: Maschinendefekte, Personalausfall, Lieferverzögerungen, Unfälle bei Aufbau und Inbetriebnahme. Der Balkenplan zeigt Dauer und Lage der Vorgänge, aber – anders als der Netzplan – die Abhängigkeiten nur eingeschränkt."
+  },
+  {
+   "f": 3,
+   "sub": "Kommunikation",
+   "t": "mc",
+   "q": "Welche Aussage über offene und geschlossene Fragen im Mitarbeitergespräch trifft zu?",
+   "o": [
+    {
+     "t": "Offene Fragen (W-Fragen) regen zu ausführlichen Antworten an und liefern Informationen; geschlossene Fragen lassen nur Ja/Nein zu und eignen sich zum Absichern und Abschließen",
+     "ok": 1
+    },
+    {
+     "t": "Geschlossene Fragen liefern mehr Informationen als offene"
+    },
+    {
+     "t": "Offene Fragen sind unhöflich und sollten vermieden werden"
+    },
+    {
+     "t": "Beide Fragearten unterscheiden sich nur in der Länge der Frage"
+    }
+   ],
+   "e": "Ein Gespräch beginnt man meist mit offenen Fragen („Wie sehen Sie …?“) und verengt mit geschlossenen Fragen („Sind Sie einverstanden?“). Suggestiv- und Alternativfragen sind weitere Frageformen, die gezielt, aber sparsam eingesetzt werden sollten."
+  },
+  {
+   "f": 3,
+   "sub": "Kommunikation",
+   "t": "mc",
+   "q": "Welche Regel gilt für konstruktives Feedback nach einer Präsentation?",
+   "o": [
+    {
+     "t": "Konkret und beschreibend auf beobachtbares Verhalten eingehen, Ich-Botschaften verwenden und Positives wie Verbesserungswürdiges ansprechen",
+     "ok": 1
+    },
+    {
+     "t": "Nur die Fehler nennen, damit der Vortragende sich verbessert"
+    },
+    {
+     "t": "Feedback möglichst allgemein halten, um niemanden zu verletzen"
+    },
+    {
+     "t": "Feedback erst Wochen später geben, damit sich die Emotionen gelegt haben"
+    }
+   ],
+   "e": "Feedback sollte zeitnah, konkret, beschreibend statt wertend und umsetzbar sein; der Empfänger hört zu, fragt nach und rechtfertigt sich nicht. Typische Präsentationsrisiken, auf die Feedback zielt: Zeitüberschreitung, Technikausfall, zu viele Folien, fehlender Blickkontakt."
+  },
+  {
+   "f": 3,
+   "sub": "Präsentation",
+   "t": "mc",
+   "q": "Ein Meister weist seine gesamte Abteilung per Vortrag in die neue Arbeitsorganisation (teilautonome Gruppen) ein. Welchen Vorteil hat der Vortrag gegenüber anderen Methoden der Wissensvermittlung?",
+   "o": [
+    {
+     "t": "Ablauf und Inhalt lassen sich genau planen und einhalten, alle Mitarbeiter werden gleichzeitig und zeitsparend informiert",
+     "ok": 1
+    },
+    {
+     "t": "Jeder Mitarbeiter kann den Stoff im eigenen Tempo erarbeiten"
+    },
+    {
+     "t": "Der Vortrag garantiert, dass alle Zuhörer das Gehörte auch anwenden können"
+    },
+    {
+     "t": "Rückfragen sind ausgeschlossen, das spart Vorbereitungszeit"
+    }
+   ],
+   "e": "Nachteile des Vortrags: geringe Aktivierung der Zuhörer, wenig Rückkopplung, Aufmerksamkeit sinkt nach etwa 20 Minuten. Deshalb Medien einsetzen, Beispiele bringen, Fragen zulassen und schriftliche Unterlagen zum Nachlesen verteilen."
+  },
+  {
+   "f": 3,
+   "sub": "Präsentation",
+   "t": "mc",
+   "q": "Wie gliedert sich ein Vortrag, mit dem der Meister eine neue Arbeitsorganisation einführt, sinnvoll?",
+   "o": [
+    {
+     "t": "Einleitung (Begrüßung, Anlass und Thema, Befangenheit nehmen, motivieren) – Hauptteil (Situation darstellen, Organisation erläutern, Beispiele und Argumente, Medien, Unterlagen) – Schluss (Zusammenfassung, Aufforderung zur Zusammenarbeit, Dank)",
+     "ok": 1
+    },
+    {
+     "t": "Zuerst die Zusammenfassung, dann die Begründung, zum Schluss das Thema"
+    },
+    {
+     "t": "Nur ein Hauptteil mit allen Details, Einleitung und Schluss entfallen"
+    },
+    {
+     "t": "Begrüßung, Verabschiedung und dazwischen eine offene Diskussion ohne Leitfaden"
+    }
+   ],
+   "e": "Die Einleitung schafft Aufmerksamkeit und Vertrauen, der Hauptteil trägt die Argumente in logischer Reihenfolge, der Schluss verdichtet die Kernbotschaft und nennt den nächsten Schritt."
+  },
+  {
+   "f": 4,
+   "sub": "Gruppen",
+   "t": "mc",
+   "q": "In welcher Phase der Gruppenentwicklung nach Tuckman treten Rollenkämpfe und Konflikte um Einfluss auf?",
+   "o": [
+    {
+     "t": "Storming",
+     "ok": 1
+    },
+    {
+     "t": "Forming"
+    },
+    {
+     "t": "Norming"
+    },
+    {
+     "t": "Performing"
+    }
+   ],
+   "e": "Forming: Orientierung und Kennenlernen; Storming: Konflikte, Positionskämpfe; Norming: Regeln und Rollen festigen sich; Performing: die Gruppe arbeitet leistungsfähig zusammen. Führungskräfte sollten in der Storming-Phase moderieren, statt die Konflikte zu unterdrücken."
+  },
+  {
+   "f": 4,
+   "sub": "Mitarbeiterbeurteilung",
+   "t": "mc",
+   "q": "In welcher Reihenfolge führt ein Meister ein Beurteilungsgespräch sinnvoll durch?",
+   "o": [
+    {
+     "t": "Freundlich eröffnen – Grund der Beurteilung erklären – Beobachtungen und Beurteilung mitteilen – Mitarbeiter Stellung nehmen lassen – Ergebnisse notieren und beifügen – Kenntnisnahme bestätigen lassen, motivieren und verabschieden",
+     "ok": 1
+    },
+    {
+     "t": "Beurteilung vorlesen – Unterschrift einholen – Gespräch beenden"
+    },
+    {
+     "t": "Mitarbeiter Stellung nehmen lassen – danach die Beurteilung erst schreiben – Grund erklären"
+    },
+    {
+     "t": "Ergebnis der Beurteilung per E-Mail zusenden und auf Rückfragen warten"
+    }
+   ],
+   "e": "Gründe für das Gespräch: Transparenz, Mitteilung des Leistungsstands, Aufzeigen von Entwicklungsmöglichkeiten, Wertschätzung. Nach § 82 Absatz 2 BetrVG kann der Arbeitnehmer verlangen, dass die Beurteilung seiner Leistungen mit ihm erörtert wird, und ein Betriebsratsmitglied hinzuziehen."
+  },
+  {
+   "f": 4,
+   "sub": "Führungsstile",
+   "t": "mc",
+   "q": "Ein Meister bespricht Entscheidungen mit seiner Gruppe, holt Vorschläge ein und entscheidet dann unter Berücksichtigung der Meinungen. Welcher Führungsstil liegt vor?",
+   "o": [
+    {
+     "t": "Kooperativer (partizipativer) Führungsstil",
+     "ok": 1
+    },
+    {
+     "t": "Autoritärer Führungsstil"
+    },
+    {
+     "t": "Laissez-faire-Führungsstil"
+    },
+    {
+     "t": "Patriarchalischer Führungsstil"
+    }
+   ],
+   "e": "Kooperative Führung nutzt das Wissen der Mitarbeiter, erhöht Motivation und Akzeptanz, kostet aber Zeit; die Entscheidungsverantwortung bleibt beim Vorgesetzten. Beim autoritären Stil entscheidet der Vorgesetzte allein, beim Laissez-faire-Stil gibt er keine Richtung vor."
+  },
+  {
+   "f": 4,
+   "sub": "Konflikte",
+   "t": "mc",
+   "q": "Zwei Schichten streiten wiederholt, weil beide dieselbe knappe Werkzeugmaschine gleichzeitig nutzen wollen. Um welche Konfliktursache handelt es sich?",
+   "o": [
+    {
+     "t": "Verteilungskonflikt um eine knappe Ressource",
+     "ok": 1
+    },
+    {
+     "t": "Beziehungskonflikt aufgrund persönlicher Abneigung"
+    },
+    {
+     "t": "Wertekonflikt über die Arbeitsmoral"
+    },
+    {
+     "t": "Rollenkonflikt der Schichtführer"
+    }
+   ],
+   "e": "Konfliktursachen lassen sich in Sach-/Zielkonflikte, Verteilungskonflikte, Beziehungskonflikte, Werte- und Rollenkonflikte einteilen. Verteilungskonflikte löst man über klare Regeln (Belegungsplan, Priorisierung) – nicht über Schuldzuweisungen."
+  },
+  {
+   "f": 4,
+   "sub": "Mitarbeiterbeurteilung",
+   "t": "mc",
+   "q": "Ein Vorgesetzter beurteilt einen Mitarbeiter wegen eines einzigen herausragenden Merkmals – seiner Freundlichkeit – in allen Kriterien positiv. Welcher Beurteilungsfehler liegt vor?",
+   "o": [
+    {
+     "t": "Halo-Effekt (Überstrahlungseffekt)",
+     "ok": 1
+    },
+    {
+     "t": "Tendenz zur Mitte"
+    },
+    {
+     "t": "Kontrastfehler"
+    },
+    {
+     "t": "Recency-Effekt (Nikolaus-Effekt)"
+    }
+   ],
+   "e": "Weitere Fehler: Tendenz zur Milde oder Strenge, Sympathiefehler, Recency-Effekt (nur die letzten Wochen zählen), Kontrastfehler (Vergleich mit dem Vorgänger). Ein gutes Beurteilungsgespräch: vorbereiten, Ziel und Ablauf nennen, Selbsteinschätzung anhören, Beurteilung begründen, Ziele und Fördermaßnahmen vereinbaren, Ergebnis festhalten."
+  },
+  {
+   "f": 5,
+   "sub": "Naturwissenschaftliche und technische Grundlagen",
+   "t": "mc",
+   "q": "Welche Eigenschaft unterscheidet Kohlenstoffmonoxid (CO) von Kohlenstoffdioxid (CO₂)?",
+   "o": [
+    {
+     "t": "CO ist brennbar und sehr giftig (blockiert den Sauerstofftransport im Blut); CO₂ ist nicht brennbar, schwerer als Luft und wirkt erst in hoher Konzentration erstickend",
+     "ok": 1
+    },
+    {
+     "t": "CO ist schwerer als Luft, CO₂ leichter als Luft"
+    },
+    {
+     "t": "CO₂ ist brennbar, CO wirkt als Löschmittel"
+    },
+    {
+     "t": "CO ist rötlich gefärbt, CO₂ farblos"
+    }
+   ],
+   "e": "Beide Gase sind farb- und geruchlos. CO entsteht bei unvollständiger Verbrennung und dient als Reduktionsmittel im Hochofen und zur Methanolsynthese; CO₂ wird als Schutzgas, Löschmittel, Trockeneis und in Getränken genutzt und trägt zum Treibhauseffekt bei."
+  },
+  {
+   "f": 5,
+   "sub": "Naturwissenschaftliche und technische Grundlagen",
+   "t": "calc",
+   "q": "Ein Lastenaufzug hebt seine Höchstlast von 3 t in 20 s um 18 m. Der Wirkungsgrad beträgt 69 %. Welche Leistung muss der Motor abgeben (in kW, zwei Nachkommastellen; g = 9,81 m/s²)?",
+   "ans": 38.39,
+   "unit": "kW",
+   "e": "P = m · g · h / (t · η) = 3.000 kg · 9,81 m/s² · 18 m / (20 s · 0,69) = 529.740 J / 13,8 s = 38.387 W ≈ 38,39 kW. Ohne Wirkungsgrad wären es 26,49 kW."
+  },
+  {
+   "f": 5,
+   "sub": "Naturwissenschaftliche und technische Grundlagen",
+   "t": "calc",
+   "q": "Ein Fahrzeug mit 1,4 t wird von 90 km/h auf 15 km/h abgebremst. Wie groß ist die verrichtete Reibarbeit in kJ (rechnen Sie mit 25 m/s und 4,17 m/s; eine Nachkommastelle)?",
+   "ans": 425.3,
+   "unit": "kJ",
+   "e": "W = m/2 · (v₁² – v₂²) = 700 kg · (625 – 17,39) m²/s² = 425.328 J ≈ 425,3 kJ. Die kinetische Energie wächst quadratisch mit der Geschwindigkeit – deshalb fällt der Rest bei 15 km/h kaum ins Gewicht."
+  },
+  {
+   "f": 5,
+   "sub": "Naturwissenschaftliche und technische Grundlagen",
+   "t": "calc",
+   "q": "Von 425.328 J Bremsarbeit erwärmt die Hälfte die Bremsscheiben; 70 % davon entfallen auf die beiden vorderen Scheiben. Eine vordere Scheibe (2,5 kg, c = 510 J/(kg·K)) erwärmt sich um wie viel Kelvin (eine Nachkommastelle)?",
+   "ans": 58.4,
+   "unit": "K",
+   "e": "Q = 425.328 / 2 · 0,7 / 2 = 74.432 J je vordere Scheibe. ΔT = Q / (m · c) = 74.432 / (2,5 · 510) = 58,4 K."
+  },
+  {
+   "f": 5,
+   "sub": "Naturwissenschaftliche und technische Grundlagen",
+   "t": "calc",
+   "q": "Eine Box verlässt die Packstation mit 90 m/min und gleitet reibungsfrei zunächst 1,6 m nach unten und dann 0,5 m wieder nach oben. Welche Geschwindigkeit hat sie am Ende (in m/s, zwei Nachkommastellen; g = 9,81 m/s²)?",
+   "ans": 4.88,
+   "unit": "m/s",
+   "e": "Energieerhaltung: ½ v_A² + g · h_A = ½ v_B² + g · h_B. Mit v_A = 1,5 m/s und einer Nettohöhendifferenz von 1,1 m: v_B = √(1,5² + 2 · 9,81 · 1,1) = √(2,25 + 21,58) = 4,88 m/s."
+  },
+  {
+   "f": 5,
+   "sub": "Naturwissenschaftliche und technische Grundlagen",
+   "t": "calc",
+   "q": "Bei Arbeiten an einer 24-V-Steuerung fließt Strom von Hand zu Hand. Jeder Arm hat 500 Ω. Wie groß ist die Stromstärke in mA?",
+   "ans": 24,
+   "unit": "mA",
+   "e": "Reihenschaltung beider Arme: R = 500 + 500 = 1.000 Ω; I = U / R = 24 V / 1.000 Ω = 0,024 A = 24 mA."
+  },
+  {
+   "f": 5,
+   "sub": "Naturwissenschaftliche und technische Grundlagen",
+   "t": "calc",
+   "q": "Strom fließt über beide Arme (je 500 Ω, parallel) durch den Rumpf (20 Ω) und über beide Beine (je 800 Ω, parallel) ab. Wie groß ist die Gesamtstromstärke bei 24 V in mA (eine Nachkommastelle)?",
+   "ans": 35.8,
+   "unit": "mA",
+   "e": "R_Arme = 500 / 2 = 250 Ω, R_Beine = 800 / 2 = 400 Ω; Gesamtwiderstand in Reihe: 250 + 20 + 400 = 670 Ω. I = 24 V / 670 Ω = 0,0358 A = 35,8 mA. Bei der maximal zulässigen Berührungsspannung von 120 V DC wären es 179 mA – lebensgefährlich. Feuchte Hände, Hornhaut, Schuhwerk und Bodenbeschaffenheit verändern den realen Widerstand stark."
+  },
+  {
+   "f": 5,
+   "sub": "Naturwissenschaftliche und technische Grundlagen",
+   "t": "mc",
+   "q": "Woran erkennen Sie ein elektrisches Betriebsmittel der Schutzklasse II?",
+   "o": [
+    {
+     "t": "Schutzisolierung (doppeltes Quadrat als Symbol), zweiadrige Anschlussleitung ohne Schutzleiter und Stecker ohne Schutzkontakt",
+     "ok": 1
+    },
+    {
+     "t": "Grün-gelber Schutzleiter und Schutzkontaktstecker"
+    },
+    {
+     "t": "Betrieb mit Schutzkleinspannung unter 50 V AC über einen Sicherheitstransformator"
+    },
+    {
+     "t": "Ein Fehlerstromschutzschalter im Gerät"
+    }
+   ],
+   "e": "Schutzklasse I: Schutzleiteranschluss, dreiadrige Leitung, Schutzkontaktstecker. Schutzklasse II: Schutzisolierung, Gehäuse nicht leitend. Schutzklasse III: Schutzkleinspannung (SELV/PELV, < 50 V AC bzw. < 120 V DC) mit besonderen Steckern, Symbol römisch III im Rhombus."
+  },
+  {
+   "f": 5,
+   "sub": "Naturwissenschaftliche und technische Grundlagen",
+   "t": "mc",
+   "q": "Im Wahrscheinlichkeitsnetz ergibt die Ausgleichsgerade für die Lebensdauer von Beamerlampen einen Mittelwert von 3.600 h und eine Standardabweichung von 170 h. In welchem Bereich liegen bei Normalverteilung etwa 99,7 % der Lampen?",
+   "o": [
+    {
+     "t": "Etwa 3.090 h bis 4.110 h (Mittelwert ± 3 s)",
+     "ok": 1
+    },
+    {
+     "t": "3.430 h bis 3.770 h (± 1 s)"
+    },
+    {
+     "t": "3.260 h bis 3.940 h (± 2 s)"
+    },
+    {
+     "t": "3.600 h bis 4.110 h"
+    }
+   ],
+   "e": "Im Wahrscheinlichkeitsnetz erscheint eine Normalverteilung als Gerade; die Standardabweichung liest man aus dem Abstand zwischen 50 % und 84 % (bzw. 16 %) ab. ± 1 s umfasst 68,3 %, ± 2 s 95,4 %, ± 3 s 99,7 % der Werte. Anteile unter- oder oberhalb einer Grenze (z. B. unter 3.400 h ≈ 11 %) liest man direkt an der Prozentachse ab."
+  }
+ ]
+}
