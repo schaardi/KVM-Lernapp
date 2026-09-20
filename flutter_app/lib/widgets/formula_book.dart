@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import '../constants.dart';
 import '../models.dart';
 import '../services/data_service.dart';
@@ -342,6 +343,8 @@ class _FormulaBookState extends State<FormulaBook> {
           _kleinButton('Beispiel', () => _fuellen(s, _beispiele[s.id])),
           const SizedBox(width: 7),
           _kleinButton('Leeren', () => _fuellen(s, null)),
+          const SizedBox(width: 7),
+          _kleinButton('Kopieren', () => _kopieren(s, out)),
         ]),
         const SizedBox(height: 7),
         Text(hinweis,
@@ -403,6 +406,52 @@ class _FormulaBookState extends State<FormulaBook> {
         ),
       ]),
     );
+  }
+
+  /// Ausgefülltes Schema als Text – so, wie man es in der Prüfung
+  /// untereinander schreiben würde. Ein unberührtes Schema rechnet lauter
+  /// Nullen aus; das ist kein Rechenweg und wird nicht kopiert.
+  String _schemaText(CalcSchema s, SchemaResult? out) {
+    if (out == null) return '';
+    final eigene = s.rows.any((r) {
+      final k = r['k'] as String;
+      return _val('ks|${s.id}|$k|v') != null;
+    });
+    if (!eigene) return '';
+    final zeilen = <String>[s.name];
+    for (final r in s.rows) {
+      final k = r['k'] as String;
+      final v = out.werte[k];
+      if (v == null || !v.isFinite) continue;
+      var satz = '';
+      final t = r['t'] as String;
+      if (t == 'pct' || t == 'ih') {
+        final p = _val('ks|${s.id}|$k|p') ??
+            (r['rd'] is num ? (r['rd'] as num).toDouble() : null);
+        if (p != null) satz = ' (${fmtNum(p, dec: 2)} %)';
+      }
+      final name = r['n'] as String;
+      zeilen.add('$name$satz: ${fmtNum(v, dec: 2)}');
+    }
+    return zeilen.length > 1 ? zeilen.join('\n') : '';
+  }
+
+  /// Der Rechenweg wandert in die Zwischenablage: In der App wird das
+  /// Formelbuch von der Startseite geöffnet, nicht über einer laufenden
+  /// Prüfung – von dort lässt er sich in das Antwortfeld einfügen.
+  void _kopieren(CalcSchema s, SchemaResult? out) {
+    final txt = _schemaText(s, out);
+    final bote = ScaffoldMessenger.maybeOf(context);
+    if (txt.isEmpty) {
+      bote?.showSnackBar(const SnackBar(
+          content: Text('Erst Werte eintragen – dann lässt sich der '
+              'Rechenweg kopieren.')));
+      return;
+    }
+    Clipboard.setData(ClipboardData(text: txt));
+    bote?.showSnackBar(const SnackBar(
+        content: Text('Rechenweg kopiert – im Aufgabenblatt in das '
+            'Antwortfeld einfügen.')));
   }
 
   Widget _kleinButton(String text, VoidCallback onTap) => OutlinedButton(
