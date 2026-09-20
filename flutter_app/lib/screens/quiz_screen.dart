@@ -269,7 +269,7 @@ class _QuizScreenState extends State<QuizScreen> {
             ]),
             const SizedBox(height: 10),
             ..._taskText(),
-            if (_q.tabEffektiv != null) _anlage(_q.tabEffektiv!),
+            for (final t in _q.tabsEffektiv) _anlage(t),
             const SizedBox(height: 16),
             if (_q.type == 'mc') ..._mcOptions(),
             if (_q.type == 'calc') _calcInput(),
@@ -600,10 +600,10 @@ class _QuizScreenState extends State<QuizScreen> {
                       fontWeight: FontWeight.w600,
                       height: 1.5,
                       color: kInk)),
-              if (_q.tabEffektiv != null)
+              for (final t in _q.tabsEffektiv)
                 Padding(
                     padding: const EdgeInsets.only(top: 10),
-                    child: _anlage(_q.tabEffektiv!)),
+                    child: _anlage(t)),
               _bild(_q.bildEffektiv),
             ]),
           ),

@@ -626,6 +626,60 @@ _CONTROLLING_H2017 = {
     ],
 }
 
+_VERTEILUNG_H2020 = {
+    'titel': 'Verteilungsschlüssel zu Aufgabe 5',
+    'kopf': ['Verteilungsschlüssel', 'Gebäude', 'Material', 'Arbeits\u00advorbereitung',
+             'Fertigung 1', 'Fertigung 2', 'Verwaltung und Vertrieb'],
+    'zeilen': [
+        ['Flächenbedarf in m²', '–', '460', '60', '840', '420', '620'],
+        ['Mitarbeiter', '–', '–', '–', '14', '7', '–'],
+    ],
+    'hinweis': 'Die Kostenstelle „Gebäude“ wird nach der Fläche verteilt, die Kostenstelle '
+               '„Arbeitsvorbereitung“ nach der Anzahl der Mitarbeiter.',
+}
+
+_BAB_H2020_L = {
+    'titel': 'Lösung zu Aufgabe 5: ausgefüllter Betriebsabrechnungsbogen (Beträge in Tsd. €)',
+    'kopf': ['Kostenart', 'Summe', 'Gebäude', 'Material', 'Arbeits\u00advorbereitung',
+             'Fertigung 1', 'Fertigung 2', 'Verwaltung und Vertrieb'],
+    'zeilen': [
+        ['Σ Gemeinkosten', '11.450', '2.760', '596', '282', '2.115', '1.378', '4.319'],
+        ['Umlage Gebäude', '', '', '529', '69', '966', '483', '713'],
+        ['Umlage Arbeitsvorbereitung', '', '', '', '', '234', '117', ''],
+        ['Σ Gemeinkosten', '11.450', '', '1.125', '', '3.315', '1.978', '5.032'],
+        ['Zuschlagsbasis', '', '', '12.500', '', '780', '430', '20.128'],
+        ['Gemeinkostenzuschlagssätze', '', '', '9 %', '', '425 %', '460 %', '25 %'],
+    ],
+}
+
+_MASCHINE_H2020 = {
+    'titel': 'Maschinenstundensatzrechnung zu Aufgabe 6 (bisheriger Dreischichtbetrieb)',
+    'kopf': ['Maschine', 'Fräsmaschine'],
+    'zeilen': [
+        ['jährliche Einsatzzeit', '5.000 h'],
+        ['kalkulatorische Abschreibung', '35,00 €/h'],
+        ['kalkulatorische Zinsen', '9,80 €/h'],
+        ['Raumkosten', '1,75 €/h'],
+        ['Energieverbrauch', '6,00 €/h'],
+        ['Instandhaltungskosten', '28,00 €/h'],
+        ['Maschinenstundensatz', '80,55 €/h'],
+    ],
+}
+
+_MASCHINE_H2020_L = {
+    'titel': 'Lösung zu Aufgabe 6 a): Maschinenstundensatz im Zweischichtbetrieb',
+    'kopf': ['Maschine', 'Fräsmaschine'],
+    'zeilen': [
+        ['jährliche Einsatzzeit', '3.500 h'],
+        ['kalkulatorische Abschreibung', '50,00 €/h'],
+        ['kalkulatorische Zinsen', '14,00 €/h'],
+        ['Raumkosten', '2,50 €/h'],
+        ['Energieverbrauch', '6,00 €/h'],
+        ['Instandhaltungskosten', '32,00 €/h'],
+        ['Maschinenstundensatz', '104,50 €/h'],
+    ],
+}
+
 TABELLEN = {
     ('BW', 'h2017', 7, '*'): _CONTROLLING_H2017,
     ('MI', 'h2017', 2, 'b'): _NETZPLAN_H2017,
@@ -657,7 +711,8 @@ TABELLEN = {
     ('BW', 'h2024', 6, 'b'): _KOSTENTABELLE,
     ('BW', 'h2025', 5, 'a'): _GESCHAEFTSFAELLE,
     ('BW', 'f2019', 7, 'a'): _BAB_F2019,
-    ('BW', 'h2020', 5, 'a'): _BAB_H2020,
+    ('BW', 'h2020', 5, 'a'): (_VERTEILUNG_H2020, _BAB_H2020),
+    ('BW', 'h2020', 6, '*'): _MASCHINE_H2020,
     ('RE', 'h2022', 5, 'a'): _SOZIALVERSICHERUNG,
     ('NT', 'f2018', 7, 'a'): _NOTENSTATISTIK,
     ('BW', 'f2023', 7, 'a'): _MASCHINENVARIANTEN,
@@ -665,6 +720,15 @@ TABELLEN = {
     ('BW', 'f2024', 2, '*'): _AUFTRAGSDATEN_F2024,
     ('BW', 'h2025', 6, '*'): _QUARTALSKOSTEN_H2025,
     ('BW', 'h2023', 5, '*'): _BAB_H2023,
+}
+
+
+# Ausgefüllte Lösungstabellen ("so sieht die Anlage nach der Rechnung aus").
+# Sie gehören zur Lösung einer Teilaufgabe und wandern deshalb – anders als
+# ``TABELLEN`` – nie an die Aufgabe: sonst stünde die Lösung über der Frage.
+TABELLEN_L = {
+    ('BW', 'h2020', 5, 'a'): _BAB_H2020_L,
+    ('BW', 'h2020', 6, 'a'): _MASCHINE_H2020_L,
 }
 
 
@@ -685,7 +749,14 @@ def anwenden(schritt, kuerzel, jahrgang, nr, label):
             schritt['bildL'] = BILDER_L[k]
             n += 1
         if k in TABELLEN:
-            schritt['tab'] = TABELLEN[k]
+            t = TABELLEN[k]
+            # Mehrere Anlagen an einer Aufgabe stehen als Tupel in der Tabelle
+            # und werden als Liste weitergereicht (BWL H2020 A5: Verteilungs-
+            # schlüssel und auszufüllender Betriebsabrechnungsbogen).
+            schritt['tab'] = list(t) if isinstance(t, tuple) else t
+            n += 1
+        if k in TABELLEN_L:
+            schritt['tabL'] = TABELLEN_L[k]
             n += 1
     return n
 

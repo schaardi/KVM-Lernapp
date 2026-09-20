@@ -54,7 +54,7 @@ class _AufgabenblattScreenState extends State<AufgabenblattScreen> {
     _results = List<bool?>.filled(_pool.length, null);
     _nummern = widget.fall.aufgaben.map((a) => a.nr).toList();
     for (final q in _pool) {
-      if (AnswerStore.instance.get(q.id).trim().isNotEmpty) _beantwortet.add(q.id);
+      if (_hatAntwort(q)) _beantwortet.add(q.id);
     }
     final start = (widget.startIndex >= 0 && widget.startIndex < _pool.length)
         ? _pool[widget.startIndex]
@@ -72,6 +72,58 @@ class _AufgabenblattScreenState extends State<AufgabenblattScreen> {
   }
 
   List<Question> _teile(int nr) => _pool.where((q) => q.nr == nr).toList();
+
+  /// Speicherschlüssel einer ausfüllbaren Anlage. Er hängt an der ID der ersten
+  /// Teilaufgabe, damit die Eintragungen einen Neustart überdauern.
+  String _tabKey(int nr, int i) {
+    final t = _teile(nr);
+    return '${t.isEmpty ? 'nr$nr' : t.first.id}#t$i';
+  }
+
+  /// Die Lösungstabelle einer Aufgabe steht an der Teilaufgabe und wird erst
+  /// nach dem Aufdecken gezeigt.
+  Anlage? _tabLoesung(int nr, Anlage tab) {
+    for (final q in _teile(nr)) {
+      if (q.tabL != null && _aufgedeckt.contains(q.id) && tab.passtZu(q.tabL)) {
+        return q.tabL;
+      }
+    }
+    return null;
+  }
+
+  /// Eine Anlage zum Ausfüllen gehört der ganzen Aufgabe; als Antwort zählt sie
+  /// bei der ersten Teilaufgabe – sonst bliebe eine Aufgabe, die man ganz in
+  /// den Betriebsabrechnungsbogen schreibt, im Stepper unbeantwortet.
+  bool _hatAntwort(Question q) {
+    if (AnswerStore.instance.get(q.id).trim().isNotEmpty) return true;
+    for (var i = 0; i < q.tabs.length; i++) {
+      if (AnswerStore.instance.tabGefuellt('${q.id}#s$i')) return true;
+    }
+    final teile = _teile(q.nr);
+    if (teile.isEmpty || teile.first.id != q.id) return false;
+    final auf = widget.fall.aufgabeVon(q.nr);
+    for (var i = 0; i < (auf?.tabs.length ?? 0); i++) {
+      if (AnswerStore.instance.tabGefuellt(_tabKey(q.nr, i))) return true;
+    }
+    return false;
+  }
+
+  /// Eintragung in einer Anlage: Der Stepper zeigt die Aufgabe danach als
+  /// beantwortet.
+  void _tabEingabe(int nr) {
+    final teile = _teile(nr);
+    if (teile.isEmpty) return;
+    final q = teile.first;
+    final hat = _hatAntwort(q);
+    if (hat == _beantwortet.contains(q.id)) return;
+    setState(() {
+      if (hat) {
+        _beantwortet.add(q.id);
+      } else {
+        _beantwortet.remove(q.id);
+      }
+    });
+  }
   Aufgabe? get _aufgabe => widget.fall.aufgabeVon(_nr);
   int get _pos => _nummern.indexOf(_nr);
 
@@ -89,7 +141,7 @@ class _AufgabenblattScreenState extends State<AufgabenblattScreen> {
   /// Teilaufgabe ändert (leer ↔ beantwortet).
   void _antwort(Question q, String text) {
     AnswerStore.instance.set(q.id, text);
-    final hat = text.trim().isNotEmpty;
+    final hat = _hatAntwort(q);
     if (hat == _beantwortet.contains(q.id)) return;
     setState(() {
       if (hat) {
@@ -169,6 +221,7 @@ class _AufgabenblattScreenState extends State<AufgabenblattScreen> {
                   vorher: _vorher(q),
                   beantwortet: _beantwortet.contains(q.id),
                   onAntwort: (t) => _antwort(q, t),
+                  onTabEingabe: () => _tabEingabe(q.nr),
                   onAufdecken: () => _aufdecken(q),
                   onPunkte: (p) => _bewerten(q, p),
                   onGewusst: (ok) => _merken(q, ok),
@@ -314,7 +367,12 @@ class _AufgabenblattScreenState extends State<AufgabenblattScreen> {
               style: const TextStyle(fontSize: 14, height: 1.65, color: kInk)),
         ),
       ],
-      if (auf?.tab != null) AnlageTabelle(auf!.tab!),
+      if (auf != null)
+        for (var i = 0; i < auf.tabs.length; i++)
+          AnlageTabelle(auf.tabs[i],
+              speicherKey: _tabKey(auf.nr, i),
+              loesung: _tabLoesung(auf.nr, auf.tabs[i]),
+              onEingabe: () => _tabEingabe(auf.nr)),
       if (auf?.bild != null) AnlageBild(auf!.bild),
       const SizedBox(height: 16),
     ]);
@@ -441,10 +499,23 @@ class _AufgabenblattScreenState extends State<AufgabenblattScreen> {
         ..writeln()
         ..writeln(auf!.sit);
     }
-    if (auf?.tab != null) {
+    for (var i = 0; i < (auf?.tabs.length ?? 0); i++) {
+      final tab = auf!.tabs[i];
       b
         ..writeln()
-        ..writeln(auf!.tab!.asText());
+        ..writeln(tab.asText());
+      final w = AnswerStore.instance.tabWerte(_tabKey(auf.nr, i));
+      if (w.isEmpty) continue;
+      b.writeln('Eigene Eintragungen:');
+      final keys = w.keys.toList()..sort();
+      for (final rc in keys) {
+        final p = rc.split('-');
+        final ri = int.tryParse(p.first) ?? 0, ci = int.tryParse(p.last) ?? 0;
+        final zeile = ri < tab.zeilen.length ? tab.zeilen[ri] : const <String>[];
+        final kopf = tab.kopf;
+        b.writeln('- ${zeile.isNotEmpty ? zeile.first : 'Zeile ${ri + 1}'} / '
+            '${ci < kopf.length ? kopf[ci] : 'Spalte ${ci + 1}'}: ${w[rc]}');
+      }
     }
     b.writeln();
     for (final q in teile) {
@@ -492,6 +563,7 @@ class _TeilKarte extends StatelessWidget {
   final bool? ergebnis;
   final String? vorher;
   final void Function(String) onAntwort;
+  final VoidCallback onTabEingabe;
   final VoidCallback onAufdecken;
   final void Function(int) onPunkte;
   final void Function(bool) onGewusst;
@@ -505,6 +577,7 @@ class _TeilKarte extends StatelessWidget {
     required this.ergebnis,
     required this.vorher,
     required this.onAntwort,
+    required this.onTabEingabe,
     required this.onAufdecken,
     required this.onPunkte,
     required this.onGewusst,
@@ -575,7 +648,11 @@ class _TeilKarte extends StatelessWidget {
         Text(q.q,
             style: const TextStyle(
                 fontSize: 15, height: 1.55, fontWeight: FontWeight.w600, color: kInk)),
-        if (q.tab != null) AnlageTabelle(q.tab!),
+        for (var i = 0; i < q.tabs.length; i++)
+          AnlageTabelle(q.tabs[i],
+              speicherKey: '${q.id}#s$i',
+              loesung: (aufgedeckt && q.tabs[i].passtZu(q.tabL)) ? q.tabL : null,
+              onEingabe: onTabEingabe),
         if (q.bild != null) AnlageBild(q.bild),
         const SizedBox(height: 11),
         if (!aufgedeckt) ..._antwortfeld() else ..._loesung(context),
@@ -653,6 +730,12 @@ class _TeilKarte extends StatelessWidget {
                 fontStyle: eigene.isEmpty ? FontStyle.italic : FontStyle.normal,
                 color: eigene.isEmpty ? kMuted : kInk)),
       ),
+      /// Die ausgefüllte Anlage steht nur dann hier, wenn sie nicht schon oben
+      /// in der Anlage selbst gezeigt wird (dort mit den eigenen Eingaben).
+      if (q.tabL != null &&
+          !q.tabs.any((t) => t.passtZu(q.tabL)) &&
+          !(q.aufgabe?.tabs ?? const <Anlage>[]).any((t) => t.passtZu(q.tabL)))
+        AnlageTabelle(q.tabL!),
       const SizedBox(height: 11),
       Text(
           q.amtlich
