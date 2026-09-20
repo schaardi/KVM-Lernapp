@@ -40,7 +40,7 @@ richtig zu lösen." – und: „Nutze diese ganzen Klausuren für unsere App."
 | **A T3** F2018, H2018 | **fertig** – 10 Prüfungen, 7 Anlagen, neuer `parse_imbq_alt.py`; Bestand jetzt **86 Original-Prüfungen** |
 | **A T4** H2017 … H2014 | **fertig** – 35 Prüfungen aus PDF24-Scans, alle 100/100 beidseitig und gegen die Seitenbilder gesichtet; 46 Abbildungen (davon 23 Lösungszeichnungen) und 26 Tabellenanlagen; neu `ocr_scan.py` (Nachbesserung des Tesseract-Textlayers) und die Rohtext-Korrekturen `ROHTEXT`. Bestand jetzt **121 Original-Prüfungen** (alle 99 Hefte des Archivs, dazu die 22 aus H2024/H2025 und den eigenen Sätzen) |
 | Anlagen zum Ausfüllen | **fertig** – die leeren Felder einer Tabellenanlage sind Eingabefelder (Web und App). Die Eintragungen werden gespeichert, zählen im Stepper als Antwort, gehen in den Prüfauftrag an die KI ein und werden beim Aufdecken gegen die amtliche Lösungstabelle geprüft. Betrifft 14 Aufgaben mit rund 300 Feldern |
-| Rechenweg aus dem Formelbuch | **fertig** – ein ausgefülltes Kalkulationsschema wandert per Schaltfläche in das Antwortfeld der offenen Teilaufgabe (Web); in der App in die Zwischenablage, weil das Formelbuch dort von der Startseite kommt |
+| Formelvorlage im Antwortfeld | **fertig** – Kalkulationsschema und Einzelformel wandern per Schaltfläche als **leere Vorlage** in das Antwortfeld der offenen Teilaufgabe (Web); ausgefüllt wird dort, mit den Zahlen der Aufgabe vor Augen. In der App in die Zwischenablage, weil das Formelbuch dort von der Startseite kommt |
 | **C** Aufgabenserien | offen |
 | Übungsfragen (`PX-`) aus T1 bis T3 | **fertig** – 16 Quellensätze, 788 `PX-`-Fragen (vorher 327). Zu jeder der 64 neuen Prüfungen ein eigener Satz von 25 bis 43 Fragen, Schwerpunkt auf den Rechenwegen der Originallösungen |
 | Übungsfragen (`PX-`) aus T4 | **fertig** – 7 Quellensätze (H2017 bis H2014), 326 neue `PX-`-Fragen (196 Auswahl-, 130 Rechenfragen), je Termin 43 bis 56 über alle fünf Hefte; Bestand jetzt **1.114** `PX-`. Rechtsstand auf heute gezogen (siehe A4a, Nachtrag T4); Dublettenvergleich (Jaccard ≥ 0,65) gegen den ganzen Pool und untereinander vor dem Bau, 0 Treffer im Endstand |
@@ -408,13 +408,17 @@ wieder Werte durcheinander im Text" (Aufgabe 6).
   als Anlage an ihrer Aufgabe (`korrekturen_imbq_h2020.py`). Dazu fehlte die
   Lösung zu A5 ganz – im Heft steht nur „siehe Lösungshinweis zu Aufgabe 5",
   die eigentliche Lösung ist der ausgefüllte Bogen auf der Lösungsseite.
-- **Der Rechenweg aus dem Formelbuch.** Das Formelbuch ist im Web ein Fenster
-  über dem Aufgabenblatt; ein ausgefülltes Kalkulationsschema lässt sich per
-  Schaltfläche an die Antwort der offenen Teilaufgabe anhängen (vorhandener
-  Text bleibt stehen). Ein unberührtes Schema rechnet lauter Nullen aus und
-  wird nicht übernommen. In der App kommt das Formelbuch von der Startseite,
-  nicht über einer laufenden Prüfung – dort geht der Rechenweg in die
-  Zwischenablage.
+- **Die Formelvorlage im Antwortfeld.** Das Formelbuch ist im Web ein Fenster
+  über dem Aufgabenblatt. „In die Antwort" hängt das Schema als **leere
+  Vorlage** an die Antwort der offenen Teilaufgabe an – jede Zeile
+  untereinander, die Prozentsätze schon eingesetzt, die Beträge offen.
+  Ausgefüllt wird im Antwortfeld, denn dort stehen die Zahlen der Aufgabe
+  daneben; der umgekehrte Weg (erst im Formelbuch rechnen, dann übertragen)
+  zwingt dazu, die Aufgabe zu verlassen. Steht im Formelbuch schon ein Betrag,
+  kommen die gerechneten Werte mit. Einzelformeln kommen als Gleichung mit je
+  einer Zeile für ihre Größen und einer für das Ergebnis. Vorhandener Text
+  bleibt stehen. In der App kommt das Formelbuch von der Startseite, nicht über
+  einer laufenden Prüfung – dort geht die Vorlage in die Zwischenablage.
 
 ### A2a – Die Scans (T4): wie sie eingespielt wurden
 
