@@ -385,6 +385,26 @@
   }
 
   .modal{position:fixed;inset:0;z-index:60;display:flex;align-items:center;justify-content:center;padding:16px}
+  /* Formelbuch als Seitenschublane: schmal rechts angedockt, das Aufgabenblatt
+     rutscht daneben, damit die Zahlen der Aufgabe sichtbar bleiben. */
+  #mFormula{align-items:stretch;justify-content:flex-end;padding:0;pointer-events:none}
+  #mFormula .backdrop{display:none}
+  #mFormula .sheet{pointer-events:auto;height:100vh;max-height:none;width:min(420px,45vw);max-width:none;border-radius:14px 0 0 14px;border-right:none;box-shadow:-10px 0 34px rgba(16,42,50,.18)}
+  /* Inhaltsspalte nach links rücken, damit sie nicht unter dem Formelbuch
+     verschwindet: die App zentriert sich zwischen linkem Rand und dem
+     Formelbuch, statt zwischen linkem und rechtem Rand. */
+  /* Inhaltsspalte an den linken Rand kleben, damit sie nicht unter dem
+     Formelbuch verschwindet. Der Rest des Bildschirms gehört jetzt dem
+     seitlichen Formelpanel. */
+  body.has-formel{--fb-w:min(420px,45vw)}
+  body.has-formel .app,body.has-formel footer{margin-left:16px;margin-right:calc(var(--fb-w) + 24px)}
+  body.has-formel #toolbar{right:calc(var(--fb-w) + 14px)}
+  @media (max-width:820px){
+    #mFormula{align-items:flex-end;padding:0}
+    #mFormula .sheet{width:100%;height:min(80vh,720px);max-height:80vh;border-radius:14px 14px 0 0;box-shadow:0 -10px 34px rgba(16,42,50,.24)}
+    body.has-formel .app,body.has-formel footer{margin-right:auto}
+    body.has-formel #toolbar{right:14px}
+  }
   .modal .backdrop{position:absolute;inset:0;background:rgba(16,42,50,.5);backdrop-filter:blur(2px)}
   .sheet{position:relative;background:var(--paper);border:1px solid var(--line);border-radius:14px;box-shadow:var(--shadow);width:100%;max-width:440px;max-height:calc(100vh - 32px);display:flex;flex-direction:column;overflow:hidden}
   .sheet.wide{max-width:720px}
@@ -2469,11 +2489,17 @@ function $(id){return document.getElementById(id);}
 
 /* ---- Modal-Steuerung ---- */
 var openModal=null;
-function open(id){ if(openModal)close(); var m=$(id); if(!m)return; m.hidden=false; openModal=id; document.body.style.overflow="hidden";
+function open(id){ if(openModal)close(); var m=$(id); if(!m)return; m.hidden=false; openModal=id;
+  /* Nur die klassischen Modals sperren den Hintergrund. Das Formelbuch ist
+     eine Seitenschublade – Aufgabenblatt und Formelbuch bleiben gleichzeitig
+     bedienbar, damit die Zahlen der Aufgabe sichtbar bleiben. */
+  if(id==="mFormula"){document.body.classList.add("has-formel");}
+  else{document.body.style.overflow="hidden";}
   if(id==="mPad") padInit();
   if(id==="mFormula"){ fbRender(""); var s=$("fbSearch"); if(s){s.value="";setTimeout(function(){s.focus();},50);} }
 }
-function close(){ if(!openModal)return; var m=$(openModal); if(m)m.hidden=true; openModal=null; document.body.style.overflow=""; }
+function close(){ if(!openModal)return; var m=$(openModal); if(m)m.hidden=true;
+  document.body.classList.remove("has-formel"); openModal=null; document.body.style.overflow=""; }
 /* Schwebender, ziehbarer Taschenrechner – kein Backdrop, Hintergrund bleibt sichtbar */
 var elCalc=$("mCalc"), calcOpen=false, calcPlaced=false;
 function clampCalc(x,y){ var w=elCalc.offsetWidth,h=elCalc.offsetHeight; x=Math.min(Math.max(6,x),Math.max(6,window.innerWidth-w-6)); y=Math.min(Math.max(6,y),Math.max(6,window.innerHeight-h-6)); elCalc.style.left=x+"px"; elCalc.style.top=y+"px"; }
@@ -2654,9 +2680,9 @@ function fbKey(){ return [].slice.call(arguments).join("|"); }
    Zwischenablage – dann ist er wenigstens nicht verloren. */
 function fbUebernahme(hint,textFn){
   var b=document.createElement("button");
-  b.type="button"; b.className="ks-btn ks-take"; b.textContent="In die Antwort";
-  b.title="Das Schema als Vorlage in das Antwortfeld der offenen Teilaufgabe schreiben – "+
-          "ausgefüllt wird dort, mit den Zahlen der Aufgabe vor Augen";
+  b.type="button"; b.className="ks-btn ks-take"; b.textContent="Vorlage ins Antwortfeld";
+  b.title="Das Schema in das Antwortfeld der offenen Teilaufgabe schreiben – "+
+          "das Formelbuch bleibt seitlich offen, die Zahlen der Aufgabe daneben";
   b.addEventListener("click",function(){
     var txt=textFn();
     if(!txt){hint.className="ks-hint ks-warn";hint.textContent="Diese Formel lässt sich nicht als Vorlage übernehmen.";return;}

@@ -59,6 +59,10 @@ PUNKTE = {}
 LABEL = {}
 DATUM = {}
 INTRO = {
+    ('MI', 4): (
+        'In Ihrem Meisterbereich werden Werkstoffprüfungen durchgeführt. Für die '
+        'wöchentliche Arbeitsberatung werden Sie gebeten, die in der Tabelle zu '
+        'dieser Aufgabe angegebenen Werte grafisch darzustellen.'),
     # NTG, Aufgabe 5: "+24 V Vorwiderstand Magnetspule Meldeleuchte 0V" sind
     # die Beschriftungen des Schaltbilds, das jetzt an der Aufgabe hängt.
     ('NT', 5):

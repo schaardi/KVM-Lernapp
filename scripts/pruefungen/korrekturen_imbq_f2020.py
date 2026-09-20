@@ -27,6 +27,13 @@ PUNKTE = {}
 LABEL = {}
 DATUM = {}
 INTRO = {
+    ('MI', 4): (
+        'Ihre Produkte werden aus selbst gefertigten und fremdgefertigten Teilen '
+        'zusammengesetzt. In den Tabellen zu dieser Aufgabe ist die Anzahl der '
+        'selbst gefertigten und der fremdgefertigten Teile dargestellt.'),
+    ('NT', 7): (
+        'Für eine statistische Erhebung über die Belastbarkeit von Aufzügen wurde das '
+        'Gewicht von zehn Personen ermittelt (siehe Tabelle zu dieser Aufgabe).'),
     # NTG, Aufgabe 6: "R1 UEIN R2 ϑ UAUS" sind die Beschriftungen der Schaltung
     # neben der Kennlinie.
     ('NT', 6):

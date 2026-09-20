@@ -30,8 +30,17 @@ FRAGE = {
 PUNKTE = {}
 LABEL = {}
 DATUM = {}
-INTRO = {}
-
-
+INTRO = {
+    ('BW', 6): (
+        'Die Betriebsabrechnung der Industrie AG stellt für den Berichtszeitraum die '
+        'Daten in der Tabelle zu dieser Aufgabe zur Verfügung.'),
+    ('MI', 4): (
+        'In einem großen Unternehmen wurden die Mitarbeiterzahlen, die '
+        'meldepflichtigen Arbeitsunfälle und die Arbeitsstunden erfasst (siehe '
+        'Tabelle zu dieser Aufgabe).\n'
+        'Aus diesen Angaben werden in der Arbeitsschutzstatistik die Kennzahlen\n'
+        '– meldepflichtige Arbeitsunfälle pro 1 Million Arbeitsstunden\n'
+        '– meldepflichtige Arbeitsunfälle pro 1000 Vollbeschäftigte berechnet.'),
+}
 def anwenden(exams):
     return _anwenden(exams, LOESUNG, FRAGE, PUNKTE, LABEL, DATUM, INTRO)

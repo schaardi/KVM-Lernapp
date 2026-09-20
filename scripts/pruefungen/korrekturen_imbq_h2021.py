@@ -33,6 +33,14 @@ DATUM = {
 }
 
 INTRO = {
+    ('MI', 4): (
+        'In Ihrem Unternehmen werden die Lieferanten regelmäßig systematisch bewertet. '
+        'Für das vergangene Quartal haben Sie die Auswertung der Artikel in der '
+        'Tabelle zu dieser Aufgabe erhalten.'),
+    ('NT', 7): (
+        'Aus einem normalverteilten Fertigungsprozess wurden Stichproben entnommen. An '
+        'den Bauteilen wurde für die Oberflächenbearbeitung die maximale Rautiefe '
+        'Rmax ermittelt (siehe Tabelle zu dieser Aufgabe).'),
     # NTG, Aufgabe 3: "Leiterspannung R1 = R2 = R3 = 60 Ω 400 V/50 Hz" ist die
     # Beschriftung der Abbildung, die Bildunterschrift steht ohnehin am Bild.
     ('NT', 3):

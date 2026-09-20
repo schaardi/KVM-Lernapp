@@ -33,5 +33,16 @@ LABEL = {
 }
 
 
+INTRO = {
+    # NTG, Aufgabe 7: Die Messwerte der 15 Stichproben stehen im Heft als
+    # Tabelle und landen sonst als Zahlenkette in der Ausgangslage.
+    ('NT', 7): (
+        'Während eines Kühlprozesses bei der Herstellung von Lebensmitteln wird die '
+        'Kühltemperatur überwacht.\n'
+        'Es liegen die Werte für die Temperaturmessung der letzten 15 Stichproben in '
+        'der Tabelle zu dieser Aufgabe vor.'),
+}
+
+
 def anwenden(exams):
-    return _anwenden(exams, LOESUNG, FRAGE, PUNKTE, LABEL)
+    return _anwenden(exams, LOESUNG, FRAGE, PUNKTE, LABEL, intro=INTRO)

@@ -680,6 +680,151 @@ _MASCHINE_H2020_L = {
     ],
 }
 
+# ---------------------------------------------------------------------------
+# Tabellen, die ``pdftotext`` spaltenweise ausgelesen und als Zahlenkette in
+# Ausgangslage oder Fragetext gehängt hat. Sie stehen jetzt an ihrer Aufgabe;
+# der Text verweist nur noch darauf (INTRO-Korrektur im Terminmodul).
+# ---------------------------------------------------------------------------
+
+_DRUCKFESTIGKEIT_F2018 = {
+    'titel': 'Tabelle zu Aufgabe 4: Druckfestigkeit über der Temperatur',
+    'kopf': ['Temperatur in °C', 'Druckfestigkeit in N/mm²'],
+    'zeilen': [['100', '800'], ['150', '600'], ['200', '520'], ['250', '440'],
+               ['300', '320'], ['350', '280'], ['400', '190'], ['450', '140'],
+               ['500', '100']],
+}
+
+_BAB_H2018_A6 = {
+    'titel': 'Tabelle zu Aufgabe 6: Daten der Betriebsabrechnung',
+    'kopf': ['Kostenart', 'Einheit', 'Materialstelle', 'Fertigung I', 'Fertigung II',
+             'Verwaltung und Vertrieb'],
+    'zeilen': [
+        ['Einzelkosten', '€/Monat', '200.000', '80.000', '60.000', '–'],
+        ['Gemeinkosten', '€/Monat', '20.000', '140.000', '180.000', '102.000'],
+    ],
+}
+
+_ARBEITSSCHUTZ_H2018 = {
+    'titel': 'Tabelle zu Aufgabe 4: Mitarbeiter, Arbeitsunfälle und Arbeitsstunden',
+    'kopf': ['Jahr', 'Mitarbeiter', 'meldepflichtige Arbeitsunfälle', 'Arbeitsstunden'],
+    'zeilen': [['1', '2.500', '76', '4.000.000'], ['2', '2.400', '65', '3.840.000'],
+               ['3', '2.600', '62', '4.160.000'], ['4', '2.700', '61', '4.320.000'],
+               ['5', '2.800', '58', '4.480.000'], ['6', '3.000', '60', '4.800.000']],
+}
+
+_ENERGIE_F2019 = {
+    'titel': 'Tabelle zu Aufgabe 4: Energiepreise und Energieverbrauch',
+    'kopf': ['Jahr', 'mittlerer Energiepreis in Eurocent pro kWh',
+             'Energieverbrauch in MWh'],
+    'zeilen': [['2012', '15,5', '2.750'], ['2013', '16,2', '2.500'],
+               ['2014', '16,9', '2.400'], ['2015', '17,5', '2.200'],
+               ['2016', '18,2', '2.100'], ['2017', '20,6', '2.000']],
+}
+
+_WARENEINGANG_H2019 = {
+    'titel': 'Tabelle zu Aufgabe 4: Gelieferte und verwendbare Teile',
+    'kopf': ['Kalenderwoche', 'gelieferte Teile', 'verwendbare Teile'],
+    'zeilen': [['1', '2.166', '2.090'], ['2', '3.129', '3.025'], ['3', '3.050', '2.975'],
+               ['4', '3.300', '3.225'], ['5', '2.837', '2.750']],
+}
+
+_TEILE_F2020 = ({
+    'titel': 'Tabelle 1 zu Aufgabe 4: Anzahl selbst gefertigter Teile',
+    'kopf': ['Jahr', '2015', '2016', '2017', '2018', '2019'],
+    'zeilen': [['Teile', '4.224', '4.205', '4.201', '4.164', '4.179']],
+}, {
+    'titel': 'Tabelle 2 zu Aufgabe 4: Anzahl fremdgefertigter Teile',
+    'kopf': ['Jahr', '2015', '2016', '2017', '2018', '2019'],
+    'zeilen': [['Teile', '1.071', '1.292', '1.531', '1.697', '1.718']],
+}, {
+    'titel': 'Tabelle 3 zu Aufgabe 4: Gesamtzahl der Teile',
+    'kopf': ['Jahr', '2015', '2016', '2017', '2018', '2019'],
+    'zeilen': [['Plan', '5.295', '5.497', '5.732', '5.861', '5.897']],
+})
+
+_GEWICHTE_F2020 = {
+    'titel': 'Tabelle zu Aufgabe 7: Gewicht von zehn Personen',
+    'kopf': ['Person', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10'],
+    'zeilen': [['Gewicht in kg', '68', '74', '88', '78', '52', '64', '90', '58', '60', '98']],
+}
+
+_LAGERBESTAND_H2020 = {
+    'titel': 'Tabelle zu Aufgabe 2: Lagerbestand der Feinbleche',
+    'kopf': ['Datum', 'Lagerbestand in Tonnen'],
+    'zeilen': [['01.11.2019', '25,0'], ['30.11.2019', '24,0'], ['31.12.2019', '28,0'],
+               ['31.01.2020', '22,0'], ['29.02.2020', '18,0'], ['31.03.2020', '14,0'],
+               ['30.04.2020', '13,0'], ['31.05.2020', '20,0'], ['30.06.2020', '16,0'],
+               ['31.07.2020', '18,0'], ['31.08.2020', '25,0'], ['30.09.2020', '16,0'],
+               ['31.10.2020', '21,0']],
+}
+
+_NOTEN_H2020 = {
+    'titel': 'Tabelle zu Aufgabe 7: Bewertungsübersicht der Schulungsmaßnahme',
+    'kopf': ['Note', '1', '2', '3', '4', '5', '6'],
+    'zeilen': [['Anzahl Teilnehmer', '3', '6', '8', '', '2', '1']],
+    'hinweis': 'Die Anzahl bei der Note 4 fehlt und ist zu berechnen.',
+}
+
+_PRODUKTION_F2021 = {
+    'titel': 'Tabelle zu Aufgabe 4: Betriebsdaten der ersten sechs Kalenderwochen',
+    'kopf': ['Kalenderwoche', 'Gesamte Arbeitszeit für alle Teile in Stunden',
+             'Produzierte Teile', 'Teile ohne Nacharbeit'],
+    'zeilen': [['1', '2.800', '1.000', '900'], ['2', '2.500', '1.200', '1.000'],
+               ['3', '2.600', '1.100', '1.000'], ['4', '2.500', '1.400', '1.200'],
+               ['5', '3.000', '1.600', '1.600'], ['6', '3.000', '1.500', '1.400']],
+}
+
+_LIEFERANTEN_H2021 = {
+    'titel': 'Tabelle zu Aufgabe 4: Lieferungen im 3. Quartal',
+    'kopf': ['Lieferungen im 3. Quartal', 'Lieferant A', 'Lieferant B', 'Lieferant C',
+             'Summen'],
+    'zeilen': [
+        ['Lieferungen gesamt', '262', '310', '238', '810'],
+        ['Lieferung erfolgte vertragsgemäß.', '240', '250', '200', '690'],
+        ['Lieferung entspricht nicht der Vertragsanforderung.', '22', '60', '38', '120'],
+        ['anteilig davon Mehrlieferung', '6', '18', '6', '30'],
+        ['anteilig davon Minderlieferung', '8', '16', '14', '38'],
+        ['anteilig davon falscher Artikel', '8', '26', '18', '52'],
+    ],
+}
+
+_RAUTIEFE_H2021 = {
+    'titel': 'Tabelle zu Aufgabe 7: Maximale Rautiefe der Stichproben',
+    'kopf': ['Stichprobennummer', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10',
+             '11', '12'],
+    'zeilen': [['Rmax in µm', '3,7', '4,0', '3,8', '3,9', '4,1', '3,6', '3,8', '3,9',
+                '3,4', '3,8', '3,5', '3,8']],
+}
+
+_FEHLERQUOTEN_H2022 = {
+    'titel': 'Tabelle zu Aufgabe 4: Lieferungen und fehlerhafte Teile',
+    'kopf': ['Monat', 'Lieferant A: gelieferte Teile', 'Lieferant A: davon fehlerhaft',
+             'Lieferant B: gelieferte Teile', 'Lieferant B: davon fehlerhaft'],
+    'zeilen': [['1', '2.000', '60', '2.000', '50'], ['2', '1.800', '50', '2.300', '55'],
+               ['3', '1.600', '42', '2.600', '60'], ['4', '1.400', '32', '2.800', '62'],
+               ['5', '1.200', '28', '3.000', '64'], ['6', '1.000', '24', '3.200', '66']],
+}
+
+_KUEHLUNG_F2023 = {
+    'titel': 'Tabelle zu Aufgabe 7: Temperaturmessung der letzten 15 Stichproben',
+    'kopf': ['Stichprobe', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11',
+             '12', '13', '14', '15'],
+    'zeilen': [['Temperaturwert in °C', '3,2', '4,0', '3,8', '3,7', '2,9', '3,0', '3,2',
+                '2,6', '2,4', '3,1', '2,2', '2,8', '3,3', '3,2', '3,8']],
+}
+
+_MASSEN_H2023 = {
+    'titel': 'Tabelle zu Aufgabe 7: Masse von zehn Personen',
+    'kopf': ['Person', 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j'],
+    'zeilen': [['Masse in kg', '68', '74', '88', '78', '52', '64', '90', '58', '60', '98']],
+}
+
+_KUNDENBEFRAGUNG_F2024 = {
+    'titel': 'Tabelle zu Aufgabe 4: Bewertung der Kundenfreundlichkeit',
+    'kopf': ['Punkte', 'absolute Häufigkeit'],
+    'zeilen': [['1', '10'], ['2', '18'], ['3', '40'], ['4', '60'], ['5', '50'], ['6', '22']],
+}
+
 TABELLEN = {
     ('BW', 'h2017', 7, '*'): _CONTROLLING_H2017,
     ('MI', 'h2017', 2, 'b'): _NETZPLAN_H2017,
@@ -719,6 +864,22 @@ TABELLEN = {
     ('BW', 'h2018', 4, 'a'): _AUFTRAGSDATEN_H2018,
     ('BW', 'f2024', 2, '*'): _AUFTRAGSDATEN_F2024,
     ('BW', 'h2025', 6, '*'): _QUARTALSKOSTEN_H2025,
+    ('MI', 'f2018', 4, '*'): _DRUCKFESTIGKEIT_F2018,
+    ('BW', 'h2018', 6, '*'): _BAB_H2018_A6,
+    ('MI', 'h2018', 4, '*'): _ARBEITSSCHUTZ_H2018,
+    ('MI', 'f2019', 4, '*'): _ENERGIE_F2019,
+    ('MI', 'h2019', 4, '*'): _WARENEINGANG_H2019,
+    ('MI', 'f2020', 4, '*'): _TEILE_F2020,
+    ('NT', 'f2020', 7, '*'): _GEWICHTE_F2020,
+    ('BW', 'h2020', 2, '*'): _LAGERBESTAND_H2020,
+    ('NT', 'h2020', 7, '*'): _NOTEN_H2020,
+    ('MI', 'f2021', 4, '*'): _PRODUKTION_F2021,
+    ('MI', 'h2021', 4, '*'): _LIEFERANTEN_H2021,
+    ('NT', 'h2021', 7, '*'): _RAUTIEFE_H2021,
+    ('MI', 'h2022', 4, '*'): _FEHLERQUOTEN_H2022,
+    ('NT', 'f2023', 7, '*'): _KUEHLUNG_F2023,
+    ('NT', 'h2023', 7, '*'): _MASSEN_H2023,
+    ('MI', 'f2024', 4, '*'): _KUNDENBEFRAGUNG_F2024,
     ('BW', 'h2023', 5, '*'): _BAB_H2023,
 }
 

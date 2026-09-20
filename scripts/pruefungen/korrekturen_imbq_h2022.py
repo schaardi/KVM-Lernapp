@@ -32,6 +32,10 @@ DATUM = {
 }
 
 INTRO = {
+    ('MI', 4): (
+        'Die beiden Lieferanten A und B beliefern Sie mit Einzelteilen. Der Lieferant B '
+        'wird wegen einer gestiegenen Zahl an fehlerhaften Teilen kritisiert; die '
+        'Lieferungen stehen in der Tabelle zu dieser Aufgabe.'),
     # NTG, Aufgabe 6: "R1 R2 UEIN R3 UAUS 1 kΩ" sind die Beschriftungen des
     # Schaltbilds, das jetzt als Abbildung an der Aufgabe hängt.
     ('NT', 6):
