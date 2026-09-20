@@ -11,9 +11,11 @@ class AnswerStore {
 
   static const _key = 'kvm_open_answers';
   static const _pkey = 'kvm_open_points';
+  static const _tkey = 'kvm_open_tabs';
   SharedPreferences? _prefs;
   Map<String, String> _answers = {};
   Map<String, int> _points = {};
+  Map<String, Map<String, String>> _tabs = {};
 
   Future<void> init() async {
     _prefs = await SharedPreferences.getInstance();
@@ -24,6 +26,18 @@ class AnswerStore {
         _answers = decoded.map((k, v) => MapEntry(k, v.toString()));
       } catch (_) {
         _answers = {};
+      }
+    }
+    final traw = _prefs?.getString(_tkey);
+    if (traw != null && traw.isNotEmpty) {
+      try {
+        final decoded = json.decode(traw) as Map<String, dynamic>;
+        _tabs = decoded.map((k, v) => MapEntry(
+            k,
+            (v as Map<String, dynamic>)
+                .map((a, b) => MapEntry(a, b.toString()))));
+      } catch (_) {
+        _tabs = {};
       }
     }
     final praw = _prefs?.getString(_pkey);
@@ -46,6 +60,28 @@ class AnswerStore {
       _answers[id] = text;
     }
     _prefs?.setString(_key, json.encode(_answers));
+  }
+
+  /// Eintragungen in einer Tabellenanlage: je Anlage ein Objekt
+  /// "Zeile-Spalte" -> Eingabe. Ein Betriebsabrechnungsbogen wird in der
+  /// Prüfung in die Anlage geschrieben, nicht in den Antwortkasten.
+  Map<String, String> tabWerte(String key) => _tabs[key] ?? const {};
+
+  bool tabGefuellt(String key) => (_tabs[key] ?? const {}).isNotEmpty;
+
+  void setTab(String key, String rc, String wert) {
+    final t = Map<String, String>.from(_tabs[key] ?? const {});
+    if (wert.trim().isEmpty) {
+      t.remove(rc);
+    } else {
+      t[rc] = wert;
+    }
+    if (t.isEmpty) {
+      _tabs.remove(key);
+    } else {
+      _tabs[key] = t;
+    }
+    _prefs?.setString(_tkey, json.encode(_tabs));
   }
 
   /// Selbst vergebene Punkte einer offenen Prüfungsaufgabe (null = noch nicht
@@ -106,10 +142,10 @@ class AnswerStore {
       ..writeln('AUFGABE: $kopf')
       ..writeln()
       ..writeln(rest);
-    if (q.tabEffektiv != null) {
+    for (final t in q.tabsEffektiv) {
       b
         ..writeln()
-        ..writeln(q.tabEffektiv!.asText());
+        ..writeln(t.asText());
     }
     // Die Abbildung selbst lässt sich nicht als Text mitgeben – aber der
     // Hinweis darauf verhindert, dass die KI sie stillschweigend übergeht.

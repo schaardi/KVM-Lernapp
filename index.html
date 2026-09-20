@@ -142,6 +142,17 @@
   .qtab thead th:first-child{text-align:left}
   .qtab tbody th{text-align:left;font-weight:600;white-space:normal}
   .qtab-n{font-size:11.5px;color:var(--muted);margin:9px 0 0;line-height:1.45}
+  /* Anlagen zum Ausfüllen: die leeren Felder des Originals sind Eingabefelder. */
+  .qtab-in{width:100%;min-width:74px;box-sizing:border-box;border:1px solid var(--line);
+    border-radius:6px;padding:4px 6px;font:inherit;font-size:12.5px;text-align:right;
+    background:#fff;color:var(--ink)}
+  .qtab-in:focus{outline:2px solid var(--petrol);outline-offset:-1px;background:#f7fcfc}
+  .qtab td:has(.qtab-in),.qtab th:has(.qtab-in){padding:3px 4px}
+  .qtab-soll{font-weight:700}
+  .qtab-eig{display:block;font-size:11px;margin-top:2px}
+  .qtab-eig.ok{color:#127a4b}
+  .qtab-eig.err{color:#b3261e;text-decoration:line-through}
+  .qtab-fuell{font-size:11.5px;color:var(--petrol);margin:9px 0 0;font-weight:600}
   .mode .m-desc{font-size:12.5px;color:var(--muted);margin-top:5px}
   .due-badge{font-family:var(--mono);font-size:12px;font-weight:700;color:#fff;background:#6D5AE6;border-radius:11px;padding:1px 9px;min-width:20px;text-align:center}
   .mode:disabled{opacity:.55;cursor:not-allowed}
@@ -474,6 +485,8 @@
   .ks-btn{border:1px solid var(--line);background:var(--paper);border-radius:8px;padding:6px 11px;font:600 12px var(--body);color:var(--petrol);cursor:pointer}
   .ks-btn:hover{background:var(--petrol-soft)}
   .ks-hint{font-size:11.5px;color:var(--muted);flex:1;min-width:140px;line-height:1.4}
+  .ks-hint.ks-ok{color:var(--petrol-deep);font-weight:600}
+  .ks-take{border-color:var(--petrol);color:var(--petrol-deep);font-weight:700}
   .ks-warn{color:var(--err)}
 
   @media (max-width:560px){
@@ -1385,6 +1398,21 @@ function oaSet(id,txt){
   try{localStorage.setItem(OA_KEY,JSON.stringify(a));}catch(e){}
 }
 
+/* Ausgefüllte Tabellenanlagen. In der echten Prüfung wird ein
+   Betriebsabrechnungsbogen in die Anlage geschrieben, nicht in den
+   Antwortkasten – deshalb sind die leeren Felder hier Eingabefelder. Gespeichert
+   wird je Anlage ein Objekt "Zeile-Spalte" -> Eingabe. */
+var OT_KEY='kvm_open_tabs';
+function otAll(){try{return JSON.parse(localStorage.getItem(OT_KEY)||'{}')||{};}catch(e){return {};}}
+function otGet(key){return otAll()[key]||{};}
+function otAnzahl(key){return Object.keys(otGet(key)).length;}
+function otSet(key,rc,val){
+  var a=otAll(),t=a[key]||{};
+  if(val&&val.trim())t[rc]=val;else delete t[rc];
+  if(Object.keys(t).length)a[key]=t;else delete a[key];
+  try{localStorage.setItem(OT_KEY,JSON.stringify(a));}catch(e){}
+}
+
 /* Selbstbewertung offener Prüfungsaufgaben: erreichte Punkte je Aufgabe. So
    ergibt sich am Ende der Prüfung ein echtes Punkte-Ergebnis. */
 var OP_KEY='kvm_open_points';
@@ -1399,6 +1427,7 @@ function taskMaxPoints(q){
 
 /* Anlage einer Aufgabe als Text – für Zwischenablage und KI-Export. */
 function tabText(tab){
+  if(Array.isArray(tab))return tab.map(tabText).join('\n\n');
   if(!tab)return "";
   var L=[(tab.titel||"Anlage")+":"];
   if(tab.kopf)L.push(tab.kopf.join(" | "));
@@ -1520,17 +1549,74 @@ function aufgabeVon(fall,nr){
    Schritt selbst. Beides wird hier zusammengeführt. */
 function stepBild(q){return (q&&(q.bild||(q._auf&&q._auf.bild)))||null;}
 function stepTab(q){return (q&&(q.tab||(q._auf&&q._auf.tab)))||null;}
-/* Anlage einer Prüfungsaufgabe (Tabelle) als lesbares Element. */
-function tabHTML(tab){
+/* Eine Aufgabe kann mehrere Anlagen tragen (BWL H2020 A5: Verteilungsschlüssel
+   und auszufüllender Betriebsabrechnungsbogen). Im Datenmodell steht dann eine
+   Liste; ältere Einträge tragen die Tabelle direkt. */
+function tabListe(t){return !t?[]:(Array.isArray(t)?t:[t]);}
+function tabLeer(tab){
+  return (tab&&tab.zeilen||[]).some(function(r){
+    return r.some(function(z){return !String(z==null?'':z).trim();});});
+}
+/* Passt eine Lösungstabelle zu dieser Anlage? Nur dann werden die Eingaben
+   darin verglichen – sonst steht sie als eigene Tabelle im Lösungsblock. */
+function tabPasst(tab,sol){
+  if(!tab||!sol||!tabLeer(tab))return false;
+  var a=tab.zeilen||[],b=sol.zeilen||[];
+  return a.length===b.length&&a.every(function(r,i){return r.length===(b[i]||[]).length;});
+}
+/* „1.125“, „1125“ und „1.125 Tsd. €“ sind dieselbe Eingabe; „9 %“ und „9“ auch.
+   Tausenderpunkte ohne Nachkommastellen werden hier ausdrücklich erkannt. */
+function tabZahl(s){
+  var t=(s==null?'':s).toString().replace(/[^0-9.,\-]/g,'');
+  if(t.indexOf(',')>=0&&t.indexOf('.')>=0)t=t.replace(/\./g,'').replace(',','.');
+  else if(t.indexOf(',')>=0)t=t.replace(',','.');
+  else if(/^-?\d{1,3}(\.\d{3})+$/.test(t))t=t.replace(/\./g,'');
+  var v=parseFloat(t);return isFinite(v)?v:NaN;
+}
+function tabNorm(s){return (s==null?'':s).toString().toLowerCase().replace(/[\s.,]|€|%|tsd|std|h$/g,'');}
+function tabGleich(soll,eig){
+  var a=tabZahl(soll),b=tabZahl(eig);
+  if(isFinite(a)&&isFinite(b))return Math.abs(a-b)<=Math.max(0.005,Math.abs(a)*1e-9);
+  var x=tabNorm(soll);return !!x&&x===tabNorm(eig);
+}
+/* Zelle nach dem Aufdecken: amtlicher Wert, darunter die eigene Eingabe. */
+function tabZelleL(soll,eig){
+  var s=(soll==null?'':soll).toString().trim(),e=(eig||'').trim();
+  if(!s)return e?'<span class="qtab-eig">'+esc(e)+'</span>':'';
+  var ok=e&&tabGleich(s,e);
+  return '<span class="qtab-soll">'+esc(s)+'</span>'+
+    (e?('<span class="qtab-eig '+(ok?'ok':'err')+'">'+(ok?'✓ '+esc(e):esc(e))+'</span>'):'');
+}
+/* Anlage einer Prüfungsaufgabe (Tabelle) als lesbares Element.
+   Mit ``opt.key`` werden die leeren Felder zu Eingabefeldern (die Anlage wird
+   im Original ausgefüllt), mit ``opt.sol`` zeigt sie nach dem Aufdecken den
+   amtlichen Wert neben der eigenen Eingabe. */
+function tabHTML(tab,opt){
   if(!tab)return "";
+  opt=opt||{};
+  var key=opt.key||'',sol=opt.sol||null,werte=key?otGet(key):{},fuellbar=false;
   var h='<p class="qtab-t">'+esc(tab.titel||"Anlage")+'</p><div class="qtab-scroll"><table><thead><tr>';
   (tab.kopf||[]).forEach(function(k){h+='<th>'+esc(k)+'</th>';});
   h+='</tr></thead><tbody>';
-  (tab.zeilen||[]).forEach(function(r){
-    h+='<tr>';r.forEach(function(z,i){h+=(i?'<td>':'<th scope="row">')+esc(z)+(i?'</td>':'</th>');});h+='</tr>';
+  (tab.zeilen||[]).forEach(function(r,ri){
+    h+='<tr>';
+    r.forEach(function(z,ci){
+      var auf=ci?'<td>':'<th scope="row">',zu=ci?'</td>':'</th>';
+      var txt=String(z==null?'':z);
+      if(txt.trim()||!key){h+=auf+esc(txt)+zu;return;}
+      var rc=ri+'-'+ci,eig=werte[rc]||'';
+      if(sol){h+=auf+tabZelleL(((sol.zeilen||[])[ri]||[])[ci],eig)+zu;return;}
+      fuellbar=true;
+      var lbl=((tab.zeilen[ri]||[])[0]||('Zeile '+(ri+1)))+', '+((tab.kopf||[])[ci]||('Spalte '+(ci+1)));
+      h+=auf+'<input class="qtab-in" type="text" inputmode="decimal" autocomplete="off" '+
+         'aria-label="'+esc(lbl)+'" data-tk="'+esc(key)+'" data-rc="'+rc+'" value="'+esc(eig)+'">'+zu;
+    });
+    h+='</tr>';
   });
   h+='</tbody></table></div>';
   if(tab.hinweis)h+='<p class="qtab-n">'+esc(tab.hinweis)+'</p>';
+  if(fuellbar)h+='<p class="qtab-fuell">Die leeren Felder kannst du hier ausfüllen – '+
+    'sie werden gespeichert und beim Aufdecken mit der amtlichen Lösung verglichen.</p>';
   return h;
 }
 /* Bildanlagen liegen einmal zentral in window.KVM_ANLAGEN (data/anlagen.js);
@@ -1609,7 +1695,9 @@ function buildOpenChat(q){
     }
   }
 }
-function renderTab(tab){var el=$("qTab");if(!tab){el.hidden=true;el.innerHTML="";return;}el.innerHTML=tabHTML(tab);el.hidden=false;}
+function renderTab(tab){var el=$("qTab");var ts=tabListe(tab);
+  if(!ts.length){el.hidden=true;el.innerHTML="";return;}
+  el.innerHTML=ts.map(function(t){return tabHTML(t);}).join('');el.hidden=false;}
 function esc(s){return String(s==null?"":s).replace(/[&<>"]/g,function(m){
   return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[m];});}
 
@@ -1791,8 +1879,65 @@ function ihkGrade(pct){var p=Math.round(pct),note,label;
 
 function blNummern(){return ((state.fall&&state.fall.aufgaben)||[]).map(function(a){return a.nr;});}
 function blTeile(nr){return state.pool.filter(function(q){return q.nr===nr;});}
+/* Speicherschlüssel einer ausfüllbaren Anlage. Er hängt an der ID der ersten
+   Teilaufgabe, damit die Eingaben eine Sitzung überdauern (Schritt-IDs sind
+   stabil) – die Aufgabennummer allein wäre über Prüfungen hinweg mehrdeutig. */
+function blTabKey(nr,i){var t=blTeile(nr)[0];return (t?t.id:('nr'+nr))+'#t'+i;}
+/* Die Lösungstabelle einer Aufgabe steht an der Teilaufgabe und wird erst
+   nach dem Aufdecken gezeigt. */
+function blTabSol(nr,tab){
+  var teile=blTeile(nr);
+  for(var i=0;i<teile.length;i++){
+    var q=teile[i];
+    if(q.tabL&&blAufgedeckt(q)&&tabPasst(tab,q.tabL))return q.tabL;
+  }
+  return null;
+}
+function blTabGefuellt(nr){
+  var auf=aufgabeVon(state.fall,nr)||{};
+  return tabListe(auf.tab).some(function(t,i){return otAnzahl(blTabKey(nr,i))>0;});
+}
+/* Eine Anlage zum Ausfüllen gehört der ganzen Aufgabe; als Antwort zählt sie
+   bei der ersten Teilaufgabe – sonst bliebe eine Aufgabe, die man vollständig
+   in den Betriebsabrechnungsbogen schreibt, im Stepper unbeantwortet. */
+function blBeantwortet(q){
+  if((oaGet(q.id)||'').trim())return true;
+  if(tabListe(q.tab).some(function(t,i){return otAnzahl(q.id+'#s'+i)>0;}))return true;
+  var teile=blTeile(q.nr);
+  return !!(teile.length&&teile[0].id===q.id&&blTabGefuellt(q.nr));
+}
 function blIdx(q){return state.pool.indexOf(q);}
 function blAufgedeckt(q){return !!state.aufgedeckt[q.id];}
+
+/* Ziel für „In die Antwort übernehmen“ aus dem Formelbuch: die zuletzt
+   angetippte Teilaufgabe der aufgeschlagenen Aufgabe, sonst die erste noch
+   nicht aufgedeckte. Das Formelbuch ist ein Fenster über dem Aufgabenblatt –
+   der Rechenweg soll dort landen, wo gerade gearbeitet wird. */
+function blAntwortZiel(){
+  if($("scrBlatt").hidden||!state.fall)return null;
+  var teile=blTeile(state.blattNr).filter(function(q){return !blAufgedeckt(q);});
+  if(!teile.length)return null;
+  var z=teile.filter(function(q){return q.id===state.blattZiel;})[0];
+  return z||teile[0];
+}
+/* Text an die eigene Antwort anhängen, ohne Vorhandenes zu überschreiben. */
+function blAntwortAnhaengen(txt){
+  var q=blAntwortZiel();
+  if(!q)return null;
+  var alt=(oaGet(q.id)||'').replace(/\s+$/,'');
+  var neu=(alt?alt+'\n\n':'')+txt;
+  oaSet(q.id,neu);
+  var ta=document.querySelector('[data-antwort="'+q.id+'"]');
+  if(ta){
+    ta.value=neu;
+    ta.scrollTop=ta.scrollHeight;
+    var karte=ta.closest('.bl-teil');
+    if(karte)karte.classList.add('done');
+    $("blStepper").innerHTML=blStepperHTML();
+    blBindenStepper();
+  }else renderBlatt();
+  return q;
+}
 
 /* Aufgabe öffnen; optional zu einer bestimmten Teilaufgabe scrollen. */
 function blOeffnen(nr,zuId){
@@ -1809,7 +1954,7 @@ function blStepperHTML(){
   var h='';
   blNummern().forEach(function(nr){
     var teile=blTeile(nr);
-    var beantwortet=teile.filter(function(q){return (oaGet(q.id)||'').trim();}).length;
+    var beantwortet=teile.filter(blBeantwortet).length;
     var offen=teile.filter(blAufgedeckt).length;
     var cls='bl-pill';
     if(offen===teile.length&&teile.length)cls+=' auf';
@@ -1826,7 +1971,9 @@ function blStepperHTML(){
 /* Anlagen der ganzen Aufgabe: Tabellen ausgeklappt, Abbildungen als Kachel. */
 function blAnlagenHTML(auf){
   var h='';
-  if(auf.tab)h+='<div class="msg-tab">'+tabHTML(auf.tab)+'</div>';
+  tabListe(auf.tab).forEach(function(t,i){
+    h+='<div class="msg-tab">'+tabHTML(t,{key:blTabKey(auf.nr,i),sol:blTabSol(auf.nr,t)})+'</div>';
+  });
   if(auf.bild){
     var a=anlageBild(auf.bild);
     if(a)h+='<div class="bl-anlagen"><figure class="bl-thumb" data-bild="'+esc(auf.bild)+'">'+
@@ -1860,6 +2007,13 @@ function blLoesungHTML(q){
   h+='<div class="bl-ltext">'+esc(q.a||q.e||'')+'</div>';
   if(q.vo)h+='<div class="sol-meta">VO-Bezug: '+esc(q.vo)+'</div>';
   h+=bildHTML(q.bildL,'Lösungsskizze der IHK');
+  /* Die ausgefüllte Anlage steht nur dann hier, wenn sie nicht schon oben in
+     der Anlage selbst gezeigt wird (dort mit den eigenen Eingaben daneben). */
+  if(q.tabL){
+    var oben=tabListe(q.tab).some(function(t){return tabPasst(t,q.tabL);})||
+             tabListe((aufgabeVon(state.fall,q.nr)||{}).tab).some(function(t){return tabPasst(t,q.tabL);});
+    if(!oben)h+='<div class="msg-tab">'+tabHTML(q.tabL)+'</div>';
+  }
   if(q.bewertung&&q.bewertung.length)
     h+='<div class="sol-meta">Punkteverteilung: '+esc(q.bewertung.join(' + '))+' Punkte</div>';
   var max=taskMaxPoints(q);
@@ -1882,7 +2036,7 @@ function blLoesungHTML(q){
 }
 
 function blTeilHTML(q){
-  var T=splitTask(q),beantwortet=(oaGet(q.id)||'').trim(),offen=blAufgedeckt(q);
+  var T=splitTask(q),offen=blAufgedeckt(q),beantwortet=blBeantwortet(q);
   var h='<article class="bl-teil'+(offen?' revealed':(beantwortet?' done':''))+'" data-id="'+esc(q.id)+'">';
   h+='<header class="bl-th"><span class="bl-badge">'+esc(q.teil)+'</span>'+
      '<span class="bl-pts">'+q.pts+' '+(q.pts===1?'Punkt':'Punkte')+'</span>';
@@ -1892,7 +2046,10 @@ function blTeilHTML(q){
   h+='</header>';
   h+=blVorherHTML(q);
   h+='<p class="bl-frage">'+esc(T.frage)+'</p>';
-  if(q.tab)h+='<div class="msg-tab">'+tabHTML(q.tab)+'</div>';
+  tabListe(q.tab).forEach(function(t,i){
+    h+='<div class="msg-tab">'+tabHTML(t,{key:q.id+'#s'+i,
+        sol:(q.tabL&&offen&&tabPasst(t,q.tabL))?q.tabL:null})+'</div>';
+  });
   h+=bildHTML(q.bild);
   if(offen){
     h+=blLoesungHTML(q);
@@ -1960,12 +2117,25 @@ function blBinden(){
   });
   var box=$("blAufgabe");
   box.querySelectorAll('[data-antwort]').forEach(function(t){
+    t.onfocus=function(){state.blattZiel=t.dataset.antwort;};
     t.oninput=function(){
       oaSet(t.dataset.antwort,t.value);
       var karte=t.closest('.bl-teil');
       if(karte)karte.classList.toggle('done',!!t.value.trim());
       $("blStepper").innerHTML=blStepperHTML();
       blBindenStepper();
+    };
+  });
+  box.querySelectorAll('.qtab-in').forEach(function(i){
+    i.oninput=function(){
+      otSet(i.dataset.tk,i.dataset.rc,i.value);
+      $("blStepper").innerHTML=blStepperHTML();
+      blBindenStepper();
+      var karte=i.closest('.bl-teil');
+      if(karte){
+        var q=state.pool.filter(function(x){return x.id===karte.dataset.id;})[0];
+        if(q)karte.classList.toggle('done',blBeantwortet(q));
+      }
     };
   });
   box.querySelectorAll('[data-auf]').forEach(function(b){
@@ -2077,6 +2247,15 @@ function blExport(nr){
   L.push('AUFGABE '+nr+(auf.pts?(' · '+auf.pts+' Punkte'):''));
   if(auf.sit){L.push('');L.push(auf.sit);}
   if(auf.tab){L.push('');L.push(tabText(auf.tab));}
+  tabListe(auf.tab).forEach(function(t,i){
+    var w=otGet(blTabKey(auf.nr,i)),ks=Object.keys(w);
+    if(!ks.length)return;
+    L.push('');L.push('Eigene Eintragungen in „'+(t.titel||'Anlage')+'“:');
+    ks.sort().forEach(function(rc){
+      var p=rc.split('-'),z=((t.zeilen||[])[+p[0]]||[])[0]||('Zeile '+(+p[0]+1));
+      L.push('– '+z+' / '+((t.kopf||[])[+p[1]]||('Spalte '+(+p[1]+1)))+': '+w[rc]);
+    });
+  });
   if(auf.bild){var ab=anlageBild(auf.bild);
     if(ab)L.push('','[Zur Aufgabe gehört eine Abbildung: '+(ab.t||'Anlage zur Aufgabe')+']');}
   L.push('');
@@ -2211,6 +2390,12 @@ $("btnCases").addEventListener("click",function(){startRound('cases');});
 window.KVM_startCase=function(id,startIdx){startRound('cases',id,startIdx);};
 /* Welche Teilaufgaben hat der Nutzer schon selbst beantwortet? */
 window.KVM_hasAnswer=function(id){return !!oaGet(id);};
+/* Brücke zum Formelbuch (eigener Skriptblock): einen Rechenweg an die Antwort
+   der offenen Teilaufgabe anhängen. Gibt „Aufgabe 5 a)“ zurück oder null. */
+window.KVM_blattAntwort=function(txt){
+  var q=blAntwortAnhaengen(txt);
+  return q?('Aufgabe '+q.nr+' '+q.teil+')'):null;
+};
 $("btnTraining").addEventListener("click",function(){startRound('train');});
 $("btnMixed").addEventListener("click",function(){startRound('all');});
 $("btnWeak").addEventListener("click",function(){startRound('weak');});
@@ -2463,6 +2648,52 @@ function ksSolve(schema,eingaben,saetze){
 /* ---- Formelbuch ---- */
 var FBVALS={};      /* eingetippte Werte überleben das Neuzeichnen bei der Suche */
 function fbKey(){ return [].slice.call(arguments).join("|"); }
+
+/* „In die Antwort“: den ausgefüllten Rechenweg in das Antwortfeld der offenen
+   Teilaufgabe schreiben. Ohne aufgeschlagene Prüfung geht er in die
+   Zwischenablage – dann ist er wenigstens nicht verloren. */
+function fbUebernahme(hint,textFn){
+  var b=document.createElement("button");
+  b.type="button"; b.className="ks-btn ks-take"; b.textContent="In die Antwort";
+  b.title="Den ausgefüllten Rechenweg in das Antwortfeld der offenen Teilaufgabe schreiben";
+  b.addEventListener("click",function(){
+    var txt=textFn();
+    if(!txt){hint.className="ks-hint ks-warn";hint.textContent="Erst Werte eintragen – dann kann der Rechenweg übernommen werden.";return;}
+    var ziel=window.KVM_blattAntwort?window.KVM_blattAntwort(txt):null;
+    if(ziel){
+      hint.className="ks-hint ks-ok";
+      hint.textContent='Übernommen in die Antwort zu '+ziel+'.';
+      return;
+    }
+    try{navigator.clipboard.writeText(txt);}catch(e){}
+    hint.className="ks-hint";
+    hint.textContent="Keine Prüfung offen – der Rechenweg liegt jetzt in der Zwischenablage.";
+  });
+  return b;
+}
+/* Ausgefülltes Kalkulationsschema als Text – so, wie man es in der Prüfung
+   untereinander schreiben würde. */
+function ksText(s,out){
+  if(!out)return "";
+  /* Ein unberührtes Schema rechnet lauter Nullen aus – das ist kein Rechenweg.
+     Übernommen wird erst, wenn mindestens ein Betrag eingetragen ist. */
+  var eigene=s.rows.some(function(r){return numDE(FBVALS[fbKey("ks",s.id,r.k,"v")])!=null;});
+  if(!eigene)return "";
+  var L=[s.n],hat=false;
+  s.rows.forEach(function(r){
+    var v=out.werte[r.k];
+    if(v==null||!isFinite(v))return;
+    var satz="";
+    if(r.t==="pct"||r.t==="ih"){
+      var p=numDE(FBVALS[fbKey("ks",s.id,r.k,"p")]);
+      if(p==null&&r.rd!=null)p=r.rd;
+      if(p!=null)satz=" ("+fmtDE(p,2)+" %)";
+    }
+    hat=true;
+    L.push(r.n+satz+": "+fmtDE(v,2));
+  });
+  return hat?L.join("\n"):"";
+}
 function fbInput(key,ph,cls){ var i=document.createElement("input");
   i.type="text"; i.inputMode="decimal"; i.className=cls||""; i.placeholder=ph||"";
   if(FBVALS[key]!=null)i.value=FBVALS[key];
@@ -2492,14 +2723,20 @@ function fbFormelKarte(grp,it){
     var rv=document.createElement("span"); rv.className="fb-rv"; res.appendChild(rv);
     card.appendChild(res);
     var way=document.createElement("p"); way.className="fb-way"; card.appendChild(way);
+    var rechnung=null;
+    var foot=document.createElement("div"); foot.className="ks-foot";
+    var hint=document.createElement("span"); hint.className="ks-hint";
+    foot.appendChild(fbUebernahme(hint,function(){return rechnung;}));
+    foot.appendChild(hint); card.appendChild(foot);
     FBUPD.push(function(){
       var vals={},fehlt=false;
       it.v.forEach(function(vr){ var x=numDE(FBVALS[fbKey(grp.g,it.n,vr.k)]); if(x==null)fehlt=true; else vals[vr.k]=x; });
-      if(fehlt){ res.className="fb-res fb-open"; rv.textContent="Werte eintragen"; way.textContent=""; return; }
+      if(fehlt){ rechnung=null; res.className="fb-res fb-open"; rv.textContent="Werte eintragen"; way.textContent=""; return; }
       try{ var y=fxEval(it.f,vals); var dec=(it.dec==null?2:it.dec);
         res.className="fb-res"; rv.textContent=fmtDE(y,dec)+(it.r.u?" "+it.r.u:"");
         way.textContent=fxTrace(it.f,vals)+" = "+fmtDE(y,dec)+(it.r.u?" "+it.r.u:"");
-      }catch(e){ res.className="fb-res fb-open"; rv.textContent="—"; way.textContent=e.message; } });
+        rechnung=it.n+"\n"+it.e+"\n"+way.textContent;
+      }catch(e){ rechnung=null; res.className="fb-res fb-open"; rv.textContent="—"; way.textContent=e.message; } });
   }
   if(it.d){ var nt=document.createElement("p"); nt.className="fb-note"; nt.textContent=it.d; card.appendChild(nt); }
   return card; }
@@ -2527,7 +2764,10 @@ function fbSchemaKarte(s){
   var hint=document.createElement("span"); hint.className="ks-hint";
   var bsp=document.createElement("button"); bsp.type="button"; bsp.className="ks-btn"; bsp.textContent="Beispiel";
   var leer=document.createElement("button"); leer.type="button"; leer.className="ks-btn"; leer.textContent="Leeren";
-  foot.appendChild(bsp); foot.appendChild(leer); foot.appendChild(hint); box.appendChild(foot);
+  var letzte=null;
+  foot.appendChild(bsp); foot.appendChild(leer);
+  foot.appendChild(fbUebernahme(hint,function(){return ksText(s,letzte);}));
+  foot.appendChild(hint); box.appendChild(foot);
   function fuellen(werte){ Object.keys(FBVALS).forEach(function(k){ if(k.indexOf("ks|"+s.id+"|")===0)delete FBVALS[k]; });
     Object.keys(werte||{}).forEach(function(k){ FBVALS["ks|"+s.id+"|"+k]=werte[k]; });
     fbRender($("fbSearch").value); }
@@ -2539,7 +2779,8 @@ function fbSchemaKarte(s){
       var p=numDE(FBVALS[fbKey("ks",s.id,r.k,"p")]); if(p!=null)sae[r.k]=p; });
     var out;
     try{ out=ksSolve(s,ein,sae); }
-    catch(e){ hint.className="ks-hint ks-warn"; hint.textContent=e.message; return; }
+    catch(e){ letzte=null; hint.className="ks-hint ks-warn"; hint.textContent=e.message; return; }
+    letzte=out;
     s.rows.forEach(function(r){ var z=zeilen[r.k], eigen=FBVALS[fbKey("ks",s.id,r.k,"v")]!=null;
       z.v.placeholder=fmtDE(out.werte[r.k],2);
       z.v.className="ks-v"+(eigen?"":" ks-calc");

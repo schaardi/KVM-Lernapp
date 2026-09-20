@@ -39,6 +39,8 @@ richtig zu lösen." – und: „Nutze diese ganzen Klausuren für unsere App."
 | **A T2** F2019 … H2022 | **fertig** – 40 Prüfungen, 36 neue Anlagen; Bestand jetzt **76 Original-Prüfungen** |
 | **A T3** F2018, H2018 | **fertig** – 10 Prüfungen, 7 Anlagen, neuer `parse_imbq_alt.py`; Bestand jetzt **86 Original-Prüfungen** |
 | **A T4** H2017 … H2014 | **fertig** – 35 Prüfungen aus PDF24-Scans, alle 100/100 beidseitig und gegen die Seitenbilder gesichtet; 46 Abbildungen (davon 23 Lösungszeichnungen) und 26 Tabellenanlagen; neu `ocr_scan.py` (Nachbesserung des Tesseract-Textlayers) und die Rohtext-Korrekturen `ROHTEXT`. Bestand jetzt **121 Original-Prüfungen** (alle 99 Hefte des Archivs, dazu die 22 aus H2024/H2025 und den eigenen Sätzen) |
+| Anlagen zum Ausfüllen | **fertig** – die leeren Felder einer Tabellenanlage sind Eingabefelder (Web und App). Die Eintragungen werden gespeichert, zählen im Stepper als Antwort, gehen in den Prüfauftrag an die KI ein und werden beim Aufdecken gegen die amtliche Lösungstabelle geprüft. Betrifft 14 Aufgaben mit rund 300 Feldern |
+| Rechenweg aus dem Formelbuch | **fertig** – ein ausgefülltes Kalkulationsschema wandert per Schaltfläche in das Antwortfeld der offenen Teilaufgabe (Web); in der App in die Zwischenablage, weil das Formelbuch dort von der Startseite kommt |
 | **C** Aufgabenserien | offen |
 | Übungsfragen (`PX-`) aus T1 bis T3 | **fertig** – 16 Quellensätze, 788 `PX-`-Fragen (vorher 327). Zu jeder der 64 neuen Prüfungen ein eigener Satz von 25 bis 43 Fragen, Schwerpunkt auf den Rechenwegen der Originallösungen |
 | Übungsfragen (`PX-`) aus T4 | **fertig** – 7 Quellensätze (H2017 bis H2014), 326 neue `PX-`-Fragen (196 Auswahl-, 130 Rechenfragen), je Termin 43 bis 56 über alle fünf Hefte; Bestand jetzt **1.114** `PX-`. Rechtsstand auf heute gezogen (siehe A4a, Nachtrag T4); Dublettenvergleich (Jaccard ≥ 0,65) gegen den ganzen Pool und untereinander vor dem Bau, 0 Treffer im Endstand |
@@ -67,7 +69,7 @@ Stand nach T4 und den Übungsfragen dazu (in Klammern der Stand vor dieser Sessi
 | Fallaufgaben ohne IHK-Bezug | 15 (`F-`/`R-`/`M-`/`Z-`, je 4–5 Teile, Musterlösungen) | ebd. |
 | Übungsfragen aus Prüfungen (`PX-`) | **1.114** (327) – 127 Kraftverkehr, 987 aus den Basisqualifikationen H2014–H2025; 696 Auswahl-, 418 Rechenfragen | `questions.json`, Quellensätze `scripts/pruefungen/fragen/*.json` |
 | Bildanlagen | **120** (67) als Dateien; 69 an einer Aufgabe, 52 an einer Lösung | `anlagen/`, `flutter_app/assets/anlagen/`, Verzeichnis in `data/anlagen.js` |
-| Tabellenanlagen | **40** (7) als `tab` – an Aufgabe oder Schritt | an Aufgabe oder Schritt |
+| Tabellenanlagen | **42** (7) als `tab` – an Aufgabe oder Schritt; 14 davon haben leere Felder und sind **ausfüllbar**, 2 haben eine amtliche Lösungstabelle (`tabL`) | an Aufgabe oder Schritt |
 | `index.html` | **280 KB** (3,3 MB) – die Inhalte liegen daneben in `data/*.js` | Root |
 
 ### Wie eine Prüfung heute dargestellt wird
@@ -371,6 +373,48 @@ Digests der Scan-Hefte; der Builder hat davon keine verworfen):
   Dabei aufgefallen (nicht geändert): `parseCalcNum` liest „28.800“ ohne
   Komma als 28,8 – Tausenderpunkte ohne Nachkommastellen werden nicht
   erkannt; wer die Zahl so eintippt, bekommt „falsch“.
+
+### A5 – Anlagen zum Ausfüllen und der Weg aus dem Formelbuch
+
+Auslöser waren zwei Meldungen aus der App zur BWL-Prüfung Herbst 2020: „da kann
+ich nichts eintragen" (Aufgabe 5, Betriebsabrechnungsbogen) und „hier sind auch
+wieder Werte durcheinander im Text" (Aufgabe 6).
+
+- **Die Anlage war nur ein Bild zum Lesen.** 14 Aufgaben tragen eine Tabelle
+  mit leeren Feldern („Die leeren Felder sind zu ergänzen"), rund 300 Felder
+  insgesamt – ausfüllen ließ sich keines davon. Jetzt sind die leeren Felder
+  echte Eingabefelder: gespeichert wird je Anlage ein Objekt
+  „Zeile-Spalte" → Eingabe (`kvm_open_tabs`, in der App über `AnswerStore`).
+  Die Eintragungen überdauern den Wechsel zwischen den Aufgaben, zählen im
+  Stepper als Antwort (bei der ersten Teilaufgabe, denn die Anlage gehört der
+  ganzen Aufgabe) und stehen im Prüfauftrag an die KI.
+- **Beim Aufdecken wird verglichen.** Neu ist `tabL`, die ausgefüllte Anlage
+  der amtlichen Lösung. Passt sie nach Zeilen und Spalten zur Anlage, zeigt
+  jede Zelle den amtlichen Wert und darunter die eigene Eingabe – grün mit
+  Haken oder durchgestrichen. Passt sie nicht (BWL H2020 A6: die Anlage zeigt
+  den Dreischicht-, die Lösung den Zweischichtbetrieb), steht sie als eigene
+  Tabelle im Lösungsblock.
+- **Der Vergleich liest, was man in der Prüfung schreibt.** „1.125", „1125"
+  und „1.125 Tsd. €" gelten als dieselbe Zahl, „9 %" und „9" ebenso. Wichtig
+  ist der Tausenderpunkt ohne Nachkommastellen: `parseCalcNum` der Rechenfragen
+  liest „28.800" als 28,8 (siehe A4a) – die Anlagen erkennen ihn.
+- **Eine Aufgabe kann mehrere Anlagen tragen.** `tab` darf jetzt eine Liste
+  sein. BWL H2020 A5 braucht beides: den Verteilungsschlüssel zum Lesen und den
+  Betriebsabrechnungsbogen zum Ausfüllen.
+- **Zwei Tabellen standen als Zahlenkette im Text.** `pdftotext` liest Tabellen
+  spaltenweise; aus dem Verteilungsschlüssel wurde „ArbeitsVerteilung Fertigung
+  Fertigung Verwaltung Gebäude Material vorbereisschlüssel 1 2 und Vertrieb tung
+  Flächenbe 460 60 840 420 620 darf in m² Mitarbeiter 14 7". Beide hängen jetzt
+  als Anlage an ihrer Aufgabe (`korrekturen_imbq_h2020.py`). Dazu fehlte die
+  Lösung zu A5 ganz – im Heft steht nur „siehe Lösungshinweis zu Aufgabe 5",
+  die eigentliche Lösung ist der ausgefüllte Bogen auf der Lösungsseite.
+- **Der Rechenweg aus dem Formelbuch.** Das Formelbuch ist im Web ein Fenster
+  über dem Aufgabenblatt; ein ausgefülltes Kalkulationsschema lässt sich per
+  Schaltfläche an die Antwort der offenen Teilaufgabe anhängen (vorhandener
+  Text bleibt stehen). Ein unberührtes Schema rechnet lauter Nullen aus und
+  wird nicht übernommen. In der App kommt das Formelbuch von der Startseite,
+  nicht über einer laufenden Prüfung – dort geht der Rechenweg in die
+  Zwischenablage.
 
 ### A2a – Die Scans (T4): wie sie eingespielt wurden
 

@@ -30,6 +30,23 @@ class Anlage {
         hinweis: (j['hinweis'] ?? '').toString(),
       );
 
+  /// Hat die Anlage leere Felder? Dann wird sie im Original ausgefüllt und
+  /// bekommt im Aufgabenblatt Eingabefelder.
+  bool get hatLeere =>
+      zeilen.any((r) => r.any((z) => z.trim().isEmpty));
+
+  /// Passt eine Lösungstabelle zu dieser Anlage? Nur dann werden die eigenen
+  /// Eintragungen darin verglichen – sonst steht sie für sich im Lösungsblock.
+  bool passtZu(Anlage? sol) {
+    if (sol == null || !hatLeere || zeilen.length != sol.zeilen.length) {
+      return false;
+    }
+    for (var i = 0; i < zeilen.length; i++) {
+      if (zeilen[i].length != sol.zeilen[i].length) return false;
+    }
+    return true;
+  }
+
   /// Für die Zwischenablage (KI-Export).
   String asText() {
     final out = <String>['$titel:'];
@@ -40,6 +57,21 @@ class Anlage {
     if (hinweis.isNotEmpty) out.add(hinweis);
     return out.join('\n');
   }
+}
+
+/// Anlagen eines Schritts oder einer Aufgabe. Eine Aufgabe kann mehrere
+/// tragen (BWL H2020 A5: Verteilungsschlüssel und auszufüllender
+/// Betriebsabrechnungsbogen) – im JSON steht dann eine Liste, ältere Einträge
+/// tragen die Tabelle direkt.
+List<Anlage> anlagenAus(dynamic j) {
+  if (j is Map<String, dynamic>) return [Anlage.fromJson(j)];
+  if (j is List) {
+    return j
+        .whereType<Map<String, dynamic>>()
+        .map(Anlage.fromJson)
+        .toList();
+  }
+  return const [];
 }
 
 /// Eine Prüfungsaufgabe besteht aus Kopf ("Aufgabe 1 a) · 8 Punkte"), der für
@@ -97,17 +129,16 @@ class Aufgabe {
   final int nr;
   final int pts; // Summe der Punkte aller Teile
   final String sit; // Ausgangslage – steht einmal, nicht je Teil
-  final Anlage? tab;
+  final List<Anlage> tabs;
   final String? bild;
-  const Aufgabe({required this.nr, this.pts = 0, this.sit = '', this.tab, this.bild});
+  const Aufgabe({required this.nr, this.pts = 0, this.sit = '',
+      this.tabs = const [], this.bild});
 
   factory Aufgabe.fromJson(Map<String, dynamic> j) => Aufgabe(
         nr: (j['nr'] as num?)?.toInt() ?? 0,
         pts: (j['pts'] as num?)?.toInt() ?? 0,
         sit: (j['sit'] ?? '').toString(),
-        tab: j['tab'] is Map<String, dynamic>
-            ? Anlage.fromJson(j['tab'] as Map<String, dynamic>)
-            : null,
+        tabs: anlagenAus(j['tab']),
         bild: j['bild']?.toString(),
       );
 }
@@ -123,7 +154,8 @@ class Question {
   final String? a; // Musterantwort (open)
   final double? ans; // Ergebnis (calc)
   final String unit; // Einheit (calc)
-  final Anlage? tab; // Anlage (Tabelle) zur Aufgabe
+  final List<Anlage> tabs; // Anlagen (Tabellen) zur Aufgabe
+  final Anlage? tabL; // ausgefüllte Anlage als Lösung dieser Teilaufgabe
   final String? bild; // Bildanlage zur Aufgabe: Schlüssel in anlagen.json oder Data-URI
   final String? bildL; // Bildanlage zur Lösung (z. B. eine Lösungsskizze)
   final String? vo; // VO-Bezug der amtlichen Lösung (z. B. "§ 5 Absatz 6 Nr. 1")
@@ -151,7 +183,8 @@ class Question {
     this.a,
     this.ans,
     this.unit = '',
-    this.tab,
+    this.tabs = const [],
+    this.tabL,
     this.bild,
     this.bildL,
     this.vo,
@@ -178,8 +211,9 @@ class Question {
         a: j['a']?.toString(),
         ans: (j['ans'] as num?)?.toDouble(),
         unit: (j['unit'] ?? '').toString(),
-        tab: j['tab'] is Map<String, dynamic>
-            ? Anlage.fromJson(j['tab'] as Map<String, dynamic>)
+        tabs: anlagenAus(j['tab']),
+        tabL: j['tabL'] is Map<String, dynamic>
+            ? Anlage.fromJson(j['tabL'] as Map<String, dynamic>)
             : null,
         bild: j['bild']?.toString(),
         bildL: j['bildL']?.toString(),
@@ -198,7 +232,8 @@ class Question {
 
   Question withCase(CaseContext ctx, [Aufgabe? auf]) => Question(
         id: id, f: f, sub: sub, type: type, q: q, o: o, e: e, a: a,
-        ans: ans, unit: unit, tab: tab, bild: bild, bildL: bildL, vo: vo,
+        ans: ans, unit: unit, tabs: tabs, tabL: tabL, bild: bild,
+        bildL: bildL, vo: vo,
         bewertung: bewertung, amtlich: amtlich, nr: nr, teil: teil, pts: pts,
         braucht: braucht, caseCtx: ctx, aufgabe: auf,
       );
@@ -213,8 +248,8 @@ class Question {
   /// Abbildung dieser Teilaufgabe – oder die der ganzen Aufgabe.
   String? get bildEffektiv => bild ?? aufgabe?.bild;
 
-  /// Tabellenanlage dieser Teilaufgabe – oder die der ganzen Aufgabe.
-  Anlage? get tabEffektiv => tab ?? aufgabe?.tab;
+  /// Tabellenanlagen dieser Teilaufgabe – oder die der ganzen Aufgabe.
+  List<Anlage> get tabsEffektiv => tabs.isNotEmpty ? tabs : (aufgabe?.tabs ?? const []);
 }
 
 class CaseContext {

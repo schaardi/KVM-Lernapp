@@ -102,8 +102,8 @@ class PruefungenScreen extends StatelessWidget {
             ? 'AMTLICHER LÖSUNGSHINWEIS (IHK):'
             : 'MUSTERLÖSUNG (zu prüfen):')
         ..writeln(s.a ?? '');
-      if (s.tabEffektiv != null) {
-        b.writeln(s.tabEffektiv!.asText());
+      for (final t in s.tabsEffektiv) {
+        b.writeln(t.asText());
       }
       final anlage = DataService.instance.anlage(s.bildEffektiv);
       if (anlage != null) {
