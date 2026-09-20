@@ -26,6 +26,11 @@ PUNKTE = {}
 LABEL = {}
 DATUM = {}
 INTRO = {
+    ('MI', 4): (
+        'Im Wareneingang werden alle Zukaufteile geprüft. Dabei wird zwischen '
+        'verwendbaren und nicht verwendbaren Teilen unterschieden. Die Zahl der '
+        'verwendbaren Teile wird für jede Kalenderwoche statistisch erhoben (siehe '
+        'Tabelle zu dieser Aufgabe).'),
     # NTG, Aufgabe 4: "Flugrichtung Windrichtung" sind die Beschriftungen der
     # beiden Kompassrosen, nicht Fließtext.
     ('NT', 4):

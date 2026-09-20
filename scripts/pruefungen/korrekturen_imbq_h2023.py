@@ -56,5 +56,15 @@ PUNKTE = {}
 LABEL = {}
 
 
+INTRO = {
+    # NTG, Aufgabe 7: Die Massen der zehn Personen stehen im Heft als Tabelle
+    # und landen sonst als Zahlenkette in der Ausgangslage.
+    ('NT', 7): (
+        'Um die Belastbarkeit von Aufzügen zu überprüfen, wurde mittels einer '
+        'Stichprobe die Masse von zehn Personen erfasst und statistisch ausgewertet '
+        '(siehe Tabelle zu dieser Aufgabe).'),
+}
+
+
 def anwenden(exams):
-    return _anwenden(exams, LOESUNG, FRAGE, PUNKTE, LABEL)
+    return _anwenden(exams, LOESUNG, FRAGE, PUNKTE, LABEL, intro=INTRO)

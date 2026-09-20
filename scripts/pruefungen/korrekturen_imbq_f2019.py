@@ -27,6 +27,10 @@ PUNKTE = {}
 LABEL = {}
 DATUM = {}
 INTRO = {
+    ('MI', 4): (
+        'In einem Unternehmen werden für jedes Jahr die durchschnittlich gezahlten '
+        'Energiepreise pro kWh und der Energieverbrauch erfasst (siehe Tabelle zu '
+        'dieser Aufgabe).'),
     # NTG, Aufgabe 4: Die letzte Zeile ist eine aus dem Satz gefallene Formel –
     # "sinα" stand über dem Bruchstrich, "cosα" darunter.
     ('NT', 4):

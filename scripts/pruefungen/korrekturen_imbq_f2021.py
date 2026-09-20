@@ -51,8 +51,16 @@ FRAGE = {}
 PUNKTE = {}
 LABEL = {}
 DATUM = {}
-INTRO = {}
-
-
+INTRO = {
+    ('MI', 4): (
+        'In Ihrer Produktionslinie wird wöchentlich das Teil T1 in unterschiedlichen '
+        'Stückzahlen hergestellt. Die Geschäftsleitung hat Ihnen für die ersten '
+        'sechs Kalenderwochen zwei messbare Ziele gesetzt:\n'
+        '1. Der Anteil der Teile ohne Nacharbeit soll größer als 90 % sein.\n'
+        '2. Die durchschnittliche Arbeitszeit je Teil soll 2 Stunden nicht '
+        'überschreiten.\n'
+        'Aus der Betriebsdatenerfassung haben Sie die Zahlen in der Tabelle zu '
+        'dieser Aufgabe erhalten.'),
+}
 def anwenden(exams):
     return _anwenden(exams, LOESUNG, FRAGE, PUNKTE, LABEL, DATUM, INTRO)

@@ -25,6 +25,11 @@ LABEL = {}
 
 
 INTRO = {
+    # Methoden, Aufgabe 4: Punkte und absolute Häufigkeit der Kundenbefragung
+    # stehen im Heft als Tabelle.
+    ('MI', 4): (
+        'In einer Kundenbefragung konnten die Befragten die Kundenfreundlichkeit mit '
+        'Punkten bewerten. Die Ergebnisse stehen in der Tabelle zu dieser Aufgabe.'),
     # BWL, Aufgabe 2: Die Auftragstabelle (Produkt, Produktionsmenge, Losgröße,
     # Rüstzeit, Zeit je Einheit) lief als Fließtext in die Ausgangslage. Die
     # Werte hängen jetzt als Tabellenanlage an der Aufgabe.

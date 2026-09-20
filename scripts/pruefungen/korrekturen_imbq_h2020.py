@@ -97,6 +97,23 @@ LABEL = {}
 DATUM = {}
 
 INTRO = {
+    ('BW', 2): (
+        'Neben der Fertigungsorganisation plant die Geschäftsführung der Industrie '
+        'GmbH, auch die Materiallager auf Verbesserungspotenziale zu untersuchen.\n'
+        'Es wurde festgestellt, dass vor allem die Lagerung von Feinblechen aus '
+        'Edelstahl durch eine hohe Anzahl an verschiedenen Formaten in '
+        'unterschiedlichen Blechstärken sowie hohe und stark schwankende '
+        'Lagerbestände gekennzeichnet ist. Die Bestandsführung und Bedarfsermittlung '
+        'erfolgt auf Basis von Sichtprüfungen in den Blechtafelregalen durch den '
+        'Lagermeister.\n'
+        'In einem ersten Schritt soll im Lager exemplarisch anhand einer Materialart '
+        'eine Kennzahlenanalyse durchgeführt werden; die Lagerbestände stehen in der '
+        'Tabelle zu dieser Aufgabe.'),
+    ('NT', 7): (
+        'Die Bewertungsübersicht einer internen Schulungsmaßnahme mit anschließender '
+        'Erfolgskontrolle ergab einen arithmetischen Mittelwert von 3,0. Bei der '
+        'Übermittlung der Daten ist ein Fehler unterlaufen, deshalb ist die Anzahl '
+        'bei der Note 4 leer (siehe Tabelle zu dieser Aufgabe).'),
     # Die Maschinenstundensatzrechnung ist im Heft eine zweispaltige Tabelle und
     # steht sonst als Zahlenkette in der Ausgangslage.
     ('BW', 6): (
