@@ -1,10 +1,10 @@
 # Plan: Altklausuren einspielen, Prüfungen als Aufgabenblatt, Aufgabenserien
 
 Stand 19. 9. 2026. Drei Themen, die zusammengehören, aber getrennt umsetzbar
-sind. **Erledigt** sind Teil B vollständig (B0, B1, B2, B3, B4) und Teil A mit
-allen vier Tranchen T1–T4 (siehe „Was steht" weiter unten); offen sind die
-Übungsfragen (`PX-`) zu den 35 Scan-Prüfungen aus T4 und die Aufgabenserien
-(Teil C).
+sind. **Erledigt** sind Teil B vollständig (B0, B1, B2, B3, B4), Teil A mit
+allen vier Tranchen T1–T4 und die Übungsfragen (`PX-`) zu allen 99
+Archiv-Prüfungen (siehe „Was steht" weiter unten); offen sind die
+Aufgabenserien (Teil C).
 
 - **Teil A** – Das Archiv `Altklausuren.rar` (99 IHK-Prüfungen der
   Industriemeister-Basisqualifikationen, Herbst 2014 bis Frühjahr 2024, alle
@@ -41,6 +41,7 @@ richtig zu lösen." – und: „Nutze diese ganzen Klausuren für unsere App."
 | **A T4** H2017 … H2014 | **fertig** – 35 Prüfungen aus PDF24-Scans, alle 100/100 beidseitig und gegen die Seitenbilder gesichtet; 46 Abbildungen (davon 23 Lösungszeichnungen) und 26 Tabellenanlagen; neu `ocr_scan.py` (Nachbesserung des Tesseract-Textlayers) und die Rohtext-Korrekturen `ROHTEXT`. Bestand jetzt **121 Original-Prüfungen** (alle 99 Hefte des Archivs, dazu die 22 aus H2024/H2025 und den eigenen Sätzen) |
 | **C** Aufgabenserien | offen |
 | Übungsfragen (`PX-`) aus T1 bis T3 | **fertig** – 16 Quellensätze, 788 `PX-`-Fragen (vorher 327). Zu jeder der 64 neuen Prüfungen ein eigener Satz von 25 bis 43 Fragen, Schwerpunkt auf den Rechenwegen der Originallösungen |
+| Übungsfragen (`PX-`) aus T4 | **fertig** – 7 Quellensätze (H2017 bis H2014), 326 neue `PX-`-Fragen (196 Auswahl-, 130 Rechenfragen), je Termin 43 bis 56 über alle fünf Hefte; Bestand jetzt **1.114** `PX-`. Rechtsstand auf heute gezogen (siehe A4a, Nachtrag T4); Dublettenvergleich (Jaccard ≥ 0,65) gegen den ganzen Pool und untereinander vor dem Bau, 0 Treffer im Endstand |
 | Lösungszeichnungen der Methoden-Hefte | **fertig** – sieben der acht Aufgaben „Stellen Sie … in einem Diagramm dar“ aus T2 haben jetzt ihr Lösungsbild (`bildL`). Die achte (F2022 4 b) hat als amtliche Lösung eine Tabelle, keine Zeichnung |
 | Verrutschte Tabellen | **fertig** – sechs Datentabellen, die als Fließtext in Frage oder Ausgangslage standen, hängen als Tabellenanlage an ihrer Aufgabe. `build_amtlich.py` spielt außerdem die Textkorrekturen wieder ein, die seit dem Aufgabenblatt-Umbau ins Leere liefen |
 
@@ -58,15 +59,15 @@ zum ersten Mal im Repository und lässt sich aus den PDFs nachbauen.
 
 ### Bestand in der App
 
-Stand nach T3 (in Klammern der Stand vor dieser Session):
+Stand nach T4 und den Übungsfragen dazu (in Klammern der Stand vor dieser Session):
 
 | Was | Stand | Wo |
 |---|---|---|
-| Startbare Prüfungen (`P-`) | **86** (22) – 13 × Kraftverkehr FT/OK 2021–2026, 73 × Basisqualifikation F2018–H2025, alle mit amtlichen Lösungshinweisen, je 100 Punkte; 582 Aufgaben mit 1.458 Teilaufgaben | `flutter_app/assets/data/cases.json` (1,4 MB), `data/cases.js` |
+| Startbare Prüfungen (`P-`) | **121** (22) – 13 × Kraftverkehr FT/OK 2021–2026, 108 × Basisqualifikation H2014–H2025, alle mit amtlichen Lösungshinweisen, je 100 Punkte; 822 Aufgaben mit 2.030 Teilaufgaben | `flutter_app/assets/data/cases.json` (1,4 MB), `data/cases.js` |
 | Fallaufgaben ohne IHK-Bezug | 15 (`F-`/`R-`/`M-`/`Z-`, je 4–5 Teile, Musterlösungen) | ebd. |
-| Übungsfragen aus Prüfungen (`PX-`) | **788** (327) – 127 Kraftverkehr, 661 aus den Basisqualifikationen F2018–H2025; 498 Auswahl-, 290 Rechenfragen | `questions.json`, Quellensätze `scripts/pruefungen/fragen/*.json` |
-| Bildanlagen | **74** (67) als Dateien; 46 an einer Aufgabe, 29 an einer Lösung | `anlagen/`, `flutter_app/assets/anlagen/`, Verzeichnis in `data/anlagen.js` |
-| Tabellenanlagen | **14** (7) als `tab` – an Aufgabe oder Schritt | an Aufgabe oder Schritt |
+| Übungsfragen aus Prüfungen (`PX-`) | **1.114** (327) – 127 Kraftverkehr, 987 aus den Basisqualifikationen H2014–H2025; 696 Auswahl-, 418 Rechenfragen | `questions.json`, Quellensätze `scripts/pruefungen/fragen/*.json` |
+| Bildanlagen | **120** (67) als Dateien; 69 an einer Aufgabe, 52 an einer Lösung | `anlagen/`, `flutter_app/assets/anlagen/`, Verzeichnis in `data/anlagen.js` |
+| Tabellenanlagen | **40** (7) als `tab` – an Aufgabe oder Schritt | an Aufgabe oder Schritt |
 | `index.html` | **280 KB** (3,3 MB) – die Inhalte liegen daneben in `data/*.js` | Root |
 
 ### Wie eine Prüfung heute dargestellt wird
@@ -297,7 +298,7 @@ A, L = aufgaben(frage, False), aufgaben(loes, True)
   Fließtext in der Ausgangslage. Dafür gibt es die Korrekturtabelle `INTRO`;
   die Zeichnung selbst hängt als Anlage an der Aufgabe.
 
-### A4a – Erfahrungen aus den Übungsfragen (T1 bis T3)
+### A4a – Erfahrungen aus den Übungsfragen (T1 bis T4)
 
 Zu jeder der 64 neuen Prüfungen ist ein Satz `scripts/pruefungen/fragen/imbq-<termin>.json`
 entstanden, gebaut aus dem Digest der amtlichen Lösung (Aufgabe, Teil, Punkte,
@@ -330,6 +331,46 @@ Dubletten und wurden vom Builder verworfen.
   `--validate-assets`, dazu zwei Läufe im Headless-Browser – ein
   Struktur-Check über alle `PX-` und ein Lauf, der neue Rechenfragen in der
   Oberfläche beantwortet und die Musterantwort gegen `checkCalc` prüft.
+
+**Nachtrag T4** (sieben Sätze `imbq-h2017` … `imbq-h2014`, 326 Fragen aus den
+Digests der Scan-Hefte; der Builder hat davon keine verworfen):
+
+- **Der Rechtsstand der Hefte ist alt.** Die Lösungen von 2014 bis 2017
+  zitieren aufgehobenes Recht: § 91 und § 85 SGB IX (heute §§ 174, 168),
+  § 32 und § 35 BDSG (heute § 26 BDSG, Artikel 16 und 17 DSGVO), § 4f BDSG
+  (heute Artikel 37 DSGVO, § 38 BDSG), §§ 4, 8, 9 MuSchG alter Fassung
+  (heute §§ 4, 5, 11, 17), das AÜG vor der Reform 2017 (Höchstdauer 18
+  Monate, Equal Pay nach neun Monaten), Verpackungs- und Batterie**verordnung**
+  (heute VerpackG, BattG), das Kreislaufwirtschafts- und Abfallgesetz (heute
+  KrWG). Jede Frage nennt das heutige Recht und in der Erklärung die alte
+  Fundstelle, damit die amtliche Lösung im Heft nicht widerspricht.
+- **Die IHK wiederholt Aufgaben wörtlich** – auch über Jahre: RE F2015 und
+  F2017 teilen sich die Aufgaben zu Aushilfen, Urlaub, Toilettenunfall und
+  Betriebsvereinbarung; ZI F2017 fragt Schlüsselqualifikation, teilautonome
+  Gruppe und informelle Gruppen so, wie es schon in T1–T3 stand. Der
+  Jaccard-Vergleich (≥ 0,65) fand neun Paare, davon drei wortgleich mit
+  vorhandenen `PX-`, eines inhaltsgleich (Organe der GmbH mit 1.800
+  Beschäftigten), drei nur wortähnlich bei anderem Inhalt (Stab- statt
+  Einliniensystem, situative statt laterale Führung) und eines innerhalb der
+  neuen Sätze (Zeitgrad F2017/H2015). Alle sind vor dem Bau durch andere
+  Aufgaben desselben Hefts ersetzt oder umformuliert; F2015 deckt nur die
+  Aufgaben ab, die F2017 nicht schon hat.
+- **Gerundete Zwischenwerte in den alten Lösungen.** Die Hefte rechnen mit
+  gerundeten Winkeln und Geschwindigkeiten weiter (Kurvenfahrt 59,65 statt
+  59,66 km/h, Aufprall 17,15 statt 17,16 m/s, Rampe 281,2 statt 281,5 N,
+  Seildrähte 179,26 statt 180,2). Wo exakter und gerundeter Rechenweg um mehr
+  als die Toleranz auseinanderliegen, fragt die Übungsfrage in einer Einheit
+  oder Stellenzahl, in der beide Wege dasselbe ergeben (m/s statt km/h,
+  ganze Newton), oder gibt den Zwischenwert vor („rechnen Sie mit
+  sin α = 0,0624“).
+- **`Entgelt und Arbeitszeit`** steht in `TAX` unter Fach 4; der Builder biegt
+  ein `f: 2` stillschweigend um. Die Quellensätze tragen jetzt einheitlich
+  Fach 4, damit Quelle und Ausgabe übereinstimmen.
+- **Abnahme** wie oben, zusätzlich ein Lauf, der jede neue Rechenfrage in den
+  Schreibweisen „1600“, „0.506“ und „0,506“ durch `parseCalcNum` schickt.
+  Dabei aufgefallen (nicht geändert): `parseCalcNum` liest „28.800“ ohne
+  Komma als 28,8 – Tausenderpunkte ohne Nachkommastellen werden nicht
+  erkannt; wer die Zahl so eintippt, bekommt „falsch“.
 
 ### A2a – Die Scans (T4): wie sie eingespielt wurden
 
