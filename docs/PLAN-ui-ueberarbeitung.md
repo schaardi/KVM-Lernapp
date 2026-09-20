@@ -357,6 +357,7 @@ Prüfaufgaben, die alle Fälle abdecken:
 | U5 Startseite und Übersicht | offen |
 | U6 Zugänglichkeit | offen |
 | Vorarbeit: Headless-Treiber im Repo (`tools/headless/`) | **fertig** 20. 9. 2026 |
+| Danach: Prüfung grundlegend (Klausurmodus, Versuche, Korrektur, Verlauf) | eigener Plan `PLAN-pruefung-ueberarbeitung.md`, setzt U1, U2 und U4 voraus |
 
 ## 8. Nicht-Ziele
 
