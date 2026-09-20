@@ -1,0 +1,826 @@
+{
+ "questions": [
+  {
+   "f": 1,
+   "sub": "Sozialversicherung",
+   "t": "mc",
+   "q": "Ein Arbeitnehmer erleidet auf dem direkten Heimweg von der Arbeit unverschuldet einen Unfall (Schulterbruch) und ist zehn Wochen arbeitsunfähig. Wer sichert sein Entgelt?",
+   "o": [
+    {
+     "t": "Der Arbeitgeber zahlt sechs Wochen Entgeltfortzahlung, danach zahlt die gesetzliche Unfallversicherung Verletztengeld – es ist ein Wegeunfall",
+     "ok": 1
+    },
+    {
+     "t": "Die Krankenkasse zahlt ab dem ersten Tag Krankengeld"
+    },
+    {
+     "t": "Der Arbeitgeber zahlt die gesamten zehn Wochen, weil der Unfall unverschuldet war"
+    },
+    {
+     "t": "Die Kfz-Haftpflichtversicherung des Arbeitnehmers zahlt das Entgelt"
+    }
+   ],
+   "e": "Wegeunfälle stehen Arbeitsunfällen gleich (§ 8 Absatz 2 Nr. 1 SGB VII). Nach den sechs Wochen Entgeltfortzahlung (§ 3 EFZG) zahlt die Berufsgenossenschaft Verletztengeld (§ 45 SGB VII) – bei einer gewöhnlichen Krankheit wäre es Krankengeld der Krankenkasse. Klagen gegen den Arbeitgeber gehören vor das Arbeitsgericht, Streit um Kranken- oder Verletztengeld vor das Sozialgericht."
+  },
+  {
+   "f": 1,
+   "sub": "Betriebsverfassung",
+   "t": "mc",
+   "q": "Nach Inventurdifferenzen will der Geschäftsführer Taschenkontrollen einführen und Überwachungskameras installieren. Wie ist der Betriebsrat zu beteiligen?",
+   "o": [
+    {
+     "t": "Beide Maßnahmen sind mitbestimmungspflichtig: Taschenkontrollen nach § 87 Absatz 1 Nr. 1 BetrVG (Ordnung des Betriebs), Kameras nach § 87 Absatz 1 Nr. 6 BetrVG (technische Überwachungseinrichtung)",
+     "ok": 1
+    },
+    {
+     "t": "Der Betriebsrat ist nur zu informieren, weil es um die Aufklärung von Straftaten geht"
+    },
+    {
+     "t": "Nur die Kameras sind mitbestimmungspflichtig, Taschenkontrollen sind Sache des Hausrechts"
+    },
+    {
+     "t": "Der Betriebsrat muss die Maßnahmen selbst anordnen"
+    }
+   ],
+   "e": "Kommt keine Einigung zustande, entscheidet die Einigungsstelle (§ 76 BetrVG): gleich viele Beisitzer von Arbeitgeber und Betriebsrat und ein unparteiischer Vorsitzender, auf den sich beide Seiten einigen müssen. Zusätzlich sind die Anforderungen der DSGVO an eine Videoüberwachung von Beschäftigten (§ 26 BDSG, Verhältnismäßigkeit) zu beachten."
+  },
+  {
+   "f": 1,
+   "sub": "Arbeitsrecht",
+   "t": "mc",
+   "q": "Ein schwerbehinderter Arbeitnehmer wird des Diebstahls überführt und soll außerordentlich gekündigt werden. Was muss der Arbeitgeber zusätzlich beachten?",
+   "o": [
+    {
+     "t": "Er muss innerhalb von zwei Wochen ab Kenntnis des Kündigungsgrundes die Zustimmung des Integrationsamtes beantragen (§ 174 SGB IX)",
+     "ok": 1
+    },
+    {
+     "t": "Er muss die Schwerbehindertenvertretung um Erlaubnis bitten; eine Frist gibt es nicht"
+    },
+    {
+     "t": "Er muss die Kündigung beim Arbeitsgericht genehmigen lassen"
+    },
+    {
+     "t": "Schwerbehinderte können nicht außerordentlich gekündigt werden"
+    }
+   ],
+   "e": "Die Zwei-Wochen-Frist des § 626 Absatz 2 BGB wird durch den fristgerechten Antrag beim Integrationsamt gewahrt; nach dessen Zustimmung muss unverzüglich gekündigt werden. Außerdem ist der Betriebsrat anzuhören (§ 102 BetrVG), die Schwerbehindertenvertretung zu beteiligen (§ 178 Absatz 2 SGB IX – sonst Unwirksamkeit) und die Schriftform des § 623 BGB einzuhalten. Bis 2017 stand die Regelung in § 91 SGB IX."
+  },
+  {
+   "f": 1,
+   "sub": "Arbeitsrecht",
+   "t": "mc",
+   "q": "Wegen schlechter Auftragslage bittet der Arbeitgeber die Mitarbeiter, auf das tarifliche Urlaubs- und Weihnachtsgeld zu verzichten. Ist ein solcher Verzicht des einzelnen Arbeitnehmers wirksam?",
+   "o": [
+    {
+     "t": "Nein – auf entstandene tarifliche Rechte kann nur in einem von den Tarifvertragsparteien gebilligten Vergleich verzichtet werden (§ 4 Absatz 4 TVG)",
+     "ok": 1
+    },
+    {
+     "t": "Ja, wenn der Verzicht schriftlich erklärt wird"
+    },
+    {
+     "t": "Ja, wenn der Betriebsrat zustimmt"
+    },
+    {
+     "t": "Ja, weil das Günstigkeitsprinzip auch Verschlechterungen erlaubt"
+    }
+   ],
+   "e": "Tarifnormen gelten für tarifgebundene Arbeitnehmer unmittelbar und zwingend (§ 4 Absatz 1 TVG). Abweichungen zugunsten der Arbeitnehmer sind zulässig (Günstigkeitsprinzip, § 4 Absatz 3 TVG), ein Verzicht nicht. Auch eine Betriebsvereinbarung kann tarifliche Ansprüche nicht kürzen (§ 77 Absatz 3 BetrVG)."
+  },
+  {
+   "f": 1,
+   "sub": "Betriebsverfassung",
+   "t": "mc",
+   "q": "Der Arbeitgeber will Kurzarbeit einführen und die Wochenarbeitszeit von 40 auf 30 Stunden senken. Wie ist der Betriebsrat zu beteiligen und wer sichert das Einkommen?",
+   "o": [
+    {
+     "t": "Die vorübergehende Verkürzung der Arbeitszeit ist nach § 87 Absatz 1 Nr. 3 BetrVG mitbestimmungspflichtig; der Arbeitgeber zahlt das Entgelt für 30 Stunden, für die ausgefallenen 10 Stunden gibt es Kurzarbeitergeld von der Agentur für Arbeit",
+     "ok": 1
+    },
+    {
+     "t": "Der Arbeitgeber kann Kurzarbeit kraft Direktionsrecht anordnen; der Lohnausfall wird nicht ersetzt"
+    },
+    {
+     "t": "Der Betriebsrat hat nur ein Informationsrecht; die Krankenkasse zahlt den Ausfall"
+    },
+    {
+     "t": "Kurzarbeit ist nur mit Zustimmung jedes einzelnen Arbeitnehmers möglich; die Berufsgenossenschaft zahlt den Ausfall"
+    }
+   ],
+   "e": "Kurzarbeitergeld (§§ 95 ff. SGB III) beträgt 60 % bzw. mit Kind 67 % der Nettoentgeltdifferenz. Ohne Betriebsvereinbarung oder tarifliche Regelung darf der Arbeitgeber Kurzarbeit nicht einseitig anordnen."
+  },
+  {
+   "f": 1,
+   "sub": "Arbeitsrecht",
+   "t": "mc",
+   "q": "Während der Elternzeit von Herrn Müller läuft sein befristeter Arbeitsvertrag aus. Kann er sich dagegen wehren?",
+   "o": [
+    {
+     "t": "Er kann innerhalb von drei Wochen nach dem vereinbarten Ende Klage beim Arbeitsgericht erheben (§ 17 TzBfG) – Erfolgsaussicht hat sie aber nicht, weil der Sonderkündigungsschutz in der Elternzeit nur vor Kündigungen schützt, nicht vor dem Auslaufen einer Befristung",
+     "ok": 1
+    },
+    {
+     "t": "Ja – während der Elternzeit endet kein Arbeitsverhältnis, die Befristung verlängert sich automatisch"
+    },
+    {
+     "t": "Ja, er kann beim Integrationsamt Widerspruch einlegen"
+    },
+    {
+     "t": "Nein, weil befristete Verträge gerichtlich nicht überprüfbar sind"
+    }
+   ],
+   "e": "§ 18 BEEG verbietet nur die Kündigung durch den Arbeitgeber ab der Anmeldung der Elternzeit. Der befristete Vertrag endet mit Fristablauf (§ 15 TzBfG). Die Entfristungsklage nach § 17 TzBfG müsste innerhalb von drei Wochen erhoben werden und hat nur Erfolg, wenn die Befristung selbst unwirksam ist."
+  },
+  {
+   "f": 1,
+   "sub": "Arbeitsschutz",
+   "t": "mc",
+   "q": "Die Frühschicht arbeitet von 6:00 bis 16:00 Uhr. Bis wann muss spätestens die erste Ruhepause beginnen, und wie lang muss sie insgesamt sein?",
+   "o": [
+    {
+     "t": "Spätestens nach sechs Stunden, also um 12:00 Uhr; bei mehr als neun Stunden Arbeitszeit sind insgesamt 45 Minuten Pause vorgeschrieben (§ 4 ArbZG)",
+     "ok": 1
+    },
+    {
+     "t": "Spätestens um 10:00 Uhr; 15 Minuten genügen"
+    },
+    {
+     "t": "Nach acht Stunden; 30 Minuten"
+    },
+    {
+     "t": "Die Pausenlage ist frei; 60 Minuten"
+    }
+   ],
+   "e": "§ 4 ArbZG: mindestens 30 Minuten bei mehr als sechs, 45 Minuten bei mehr als neun Stunden Arbeitszeit, aufteilbar in Abschnitte von mindestens 15 Minuten; länger als sechs Stunden hintereinander darf niemand ohne Pause beschäftigt werden."
+  },
+  {
+   "f": 1,
+   "sub": "Arbeitsschutz",
+   "t": "mc",
+   "q": "Die Spätschicht endet um 1:00 Uhr nachts. Darf ein Mitarbeiter am nächsten Morgen um 6:00 Uhr in der Frühschicht eingesetzt werden?",
+   "o": [
+    {
+     "t": "Nein – zwischen Arbeitsende und Arbeitsbeginn muss eine ununterbrochene Ruhezeit von mindestens elf Stunden liegen (§ 5 Absatz 1 ArbZG)",
+     "ok": 1
+    },
+    {
+     "t": "Ja, wenn er in der Woche insgesamt nicht mehr als 48 Stunden arbeitet"
+    },
+    {
+     "t": "Ja, mit seiner schriftlichen Einwilligung"
+    },
+    {
+     "t": "Nein, weil Schichtwechsel nur wöchentlich erlaubt sind"
+    }
+   ],
+   "e": "Die Ruhezeit darf nur in bestimmten Branchen (Krankenhäuser, Gaststätten, Verkehr, Landwirtschaft) auf zehn Stunden verkürzt werden, wenn ein Ausgleich erfolgt (§ 5 Absatz 2 ArbZG). Der Einsatz wäre frühestens um 12:00 Uhr möglich."
+  },
+  {
+   "f": 1,
+   "sub": "Arbeitsschutz",
+   "t": "mc",
+   "q": "Eine 23-jährige Akkordarbeiterin im Zweischichtbetrieb (Spätschicht bis 1:00 Uhr) teilt ihre Schwangerschaft mit. Welche Einschränkungen gelten nach dem Mutterschutzgesetz?",
+   "o": [
+    {
+     "t": "Keine Nachtarbeit zwischen 20 und 6 Uhr (§ 5 MuSchG), höchstens 8,5 Stunden täglich (§ 4 MuSchG) und keine Akkord- oder getaktete Fließarbeit (§ 11 Absatz 6 MuSchG)",
+     "ok": 1
+    },
+    {
+     "t": "Sie darf weiterarbeiten wie bisher, solange sie sich gesund fühlt"
+    },
+    {
+     "t": "Sie darf nur noch höchstens vier Stunden täglich und gar nicht mehr im Schichtbetrieb arbeiten"
+    },
+    {
+     "t": "Sie muss sofort freigestellt werden und erhält Mutterschaftsgeld"
+    }
+   ],
+   "e": "Nach der Neufassung des MuSchG (2018) gilt: Nachtarbeitsverbot 20–6 Uhr (§ 5, bis 22 Uhr nur mit behördlicher Genehmigung nach § 28), Mehrarbeitsverbot über 8,5 Stunden täglich bzw. 90 Stunden in der Doppelwoche (§ 4), Verbot von Akkord- und getakteter Fließarbeit (§ 11 Absatz 6). In der alten Fassung standen die Regelungen in §§ 8 und 4 MuSchG."
+  },
+  {
+   "f": 1,
+   "sub": "Produkthaftung/Datenschutz",
+   "t": "mc",
+   "q": "In der elektronischen Personalakte einer Mitarbeiterin sind Anschrift, Familienstand, Zahl der unterhaltsberechtigten Kinder, beruflicher Werdegang und die Namen ihrer Eltern gespeichert. Die Kinderzahl ist falsch. Welche Rechte hat sie?",
+   "o": [
+    {
+     "t": "Berichtigung der falschen Kinderzahl (Artikel 16 DSGVO) und Löschung der nicht erforderlichen Elternnamen (Artikel 17 DSGVO); bei der Einsicht in die Personalakte darf sie ein Betriebsratsmitglied hinzuziehen (§ 83 BetrVG)",
+     "ok": 1
+    },
+    {
+     "t": "Sie kann nur Auskunft verlangen, Berichtigung und Löschung sind Sache des Arbeitgebers"
+    },
+    {
+     "t": "Sie kann die Löschung der gesamten Personalakte verlangen"
+    },
+    {
+     "t": "Sie hat keine Rechte, weil der Arbeitgeber Eigentümer der Personalakte ist"
+    }
+   ],
+   "e": "Beschäftigtendaten dürfen verarbeitet werden, soweit das für Begründung, Durchführung oder Beendigung des Arbeitsverhältnisses erforderlich ist (§ 26 BDSG, Artikel 6 Absatz 1 Buchstabe b DSGVO). Anschrift, Familienstand, Kinderzahl (Lohnsteuer) und Werdegang sind erforderlich, die Namen der Eltern ohne Einwilligung nicht. Bis 2018 galten § 35 BDSG (Berichtigung, Löschung) und § 32 BDSG."
+  },
+  {
+   "f": 1,
+   "sub": "Betriebsverfassung",
+   "t": "mc",
+   "q": "Ein nicht freigestelltes Betriebsratsmitglied will während der Arbeitszeit an der wöchentlichen Betriebsratssitzung teilnehmen. Sein Vorgesetzter meint, das sei nicht jede Woche nötig. Wie ist die Rechtslage?",
+   "o": [
+    {
+     "t": "Er ist ohne Minderung des Arbeitsentgelts von der Arbeit zu befreien, soweit die Betriebsratstätigkeit erforderlich ist – die Teilnahme an Sitzungen ist es immer (§ 37 Absatz 2 BetrVG)",
+     "ok": 1
+    },
+    {
+     "t": "Der Vorgesetzte entscheidet nach betrieblichen Belangen, ob er ihn gehen lässt"
+    },
+    {
+     "t": "Er darf gehen, muss die Zeit aber nacharbeiten"
+    },
+    {
+     "t": "Er darf nur teilnehmen, wenn er die Sitzung leitet"
+    }
+   ],
+   "e": "Das Entgelt wird so fortgezahlt, als hätte er gearbeitet (Lohnausfallprinzip). Für Schulungen gilt: erforderliche Schulungen nach § 37 Absatz 6 BetrVG ohne zeitliche Grenze, zusätzlich drei Wochen je Amtszeit (vier Wochen für erstmals gewählte Mitglieder) für anerkannte Bildungsveranstaltungen nach § 37 Absatz 7 BetrVG."
+  },
+  {
+   "f": 1,
+   "sub": "Umweltrecht",
+   "t": "mc",
+   "q": "In einem Fluss werden Giftstoffe gefunden; ob sie von Betrieb A oder Betrieb B stammen, lässt sich nicht klären. Die Gemeinde lässt den Schaden auf ihre Kosten beseitigen. Nach welchem Prinzip wurde gehandelt?",
+   "o": [
+    {
+     "t": "Gemeinlastprinzip – die Allgemeinheit trägt die Kosten, weil kein Verursacher feststellbar ist",
+     "ok": 1
+    },
+    {
+     "t": "Verursacherprinzip"
+    },
+    {
+     "t": "Vorsorgeprinzip"
+    },
+    {
+     "t": "Kooperationsprinzip"
+    }
+   ],
+   "e": "Das Gemeinlastprinzip ist die Ausnahme vom Verursacherprinzip. Weitere Prinzipien: Vorsorgeprinzip (Belastungen frühzeitig vermeiden), Kooperationsprinzip (Staat, Wirtschaft und Gesellschaft wirken zusammen). Nach dem Umweltschadensgesetz und § 89 WHG haftet ein feststellbarer Einleiter verschuldensunabhängig."
+  },
+  {
+   "f": 2,
+   "sub": "Volkswirtschaft",
+   "t": "mc",
+   "q": "Zwei Lebensmitteldiscounter schließen sich zusammen, um ihre Marktmacht zu stärken. Um welche Art von Unternehmenszusammenschluss handelt es sich, und wer prüft die Zulässigkeit?",
+   "o": [
+    {
+     "t": "Horizontaler Zusammenschluss; die Zulässigkeit prüft das Bundeskartellamt nach dem Gesetz gegen Wettbewerbsbeschränkungen (GWB)",
+     "ok": 1
+    },
+    {
+     "t": "Vertikaler Zusammenschluss; die Zulässigkeit prüft die Industrie- und Handelskammer"
+    },
+    {
+     "t": "Diagonaler Zusammenschluss; die Zulässigkeit prüft das Handelsregister"
+    },
+    {
+     "t": "Horizontaler Zusammenschluss; eine Prüfung findet nicht statt"
+    }
+   ],
+   "e": "Horizontal: gleiche Produktionsstufe (Marktmacht, Wettbewerb ausschalten). Vertikal: vor- oder nachgelagerte Stufe, z. B. Maschinenbau und Maschinenhandel (Beschaffung oder Absatz sichern). Diagonal/branchenfremd: Risikostreuung. Große Fusionen prüft ab bestimmten Umsatzschwellen die EU-Kommission."
+  },
+  {
+   "f": 2,
+   "sub": "Betriebsorganisation",
+   "t": "mc",
+   "q": "Ein Waagenhersteller stellt von Werkstattfertigung auf Fließbandfertigung um. Welcher Nachteil ist typisch für die Fließbandfertigung?",
+   "o": [
+    {
+     "t": "Feste Taktung und monotone Arbeit belasten die Mitarbeiter psychisch; Störungen an einer Station legen die ganze Linie still, und die Umstellung auf andere Produkte ist aufwendig",
+     "ok": 1
+    },
+    {
+     "t": "Lange Durchlaufzeiten und hohe Kapitalbindung in Zwischenlagern"
+    },
+    {
+     "t": "Hohe Anlernkosten, weil jeder Mitarbeiter alle Arbeitsgänge beherrschen muss"
+    },
+    {
+     "t": "Geringe Produktivität wegen fehlender Lerneffekte"
+    }
+   ],
+   "e": "Bei der Fließbandfertigung sind die Arbeitssysteme arbeitsgangorientiert verkettet, der Transport erfolgt automatisch und die Arbeitsgänge sind getaktet. Vorteile: hohe Produktivität durch Routine, geringe Anlernzeiten, kurze Durchlaufzeiten, einfache Steuerung. Die Werkstattfertigung ist dagegen flexibel, hat aber lange Transportwege und Wartezeiten."
+  },
+  {
+   "f": 2,
+   "sub": "Betriebsorganisation",
+   "t": "mc",
+   "q": "Die Geschäftsleitung will die funktionsorientierte Produktion nach Sparten (Produktgruppen) gliedern. Welche Auswirkung ist eher negativ?",
+   "o": [
+    {
+     "t": "Doppelte Funktionen in jeder Sparte erhöhen den Personalbedarf, und zwischen den Sparten kann Konkurrenz um Ressourcen entstehen",
+     "ok": 1
+    },
+    {
+     "t": "Die Mitarbeiter verlieren den Gesamtüberblick über das Produkt"
+    },
+    {
+     "t": "Die Identifikation der Mitarbeiter mit ihrem Produkt sinkt"
+    },
+    {
+     "t": "Die Verantwortung für das Produkt wird unklarer"
+    }
+   ],
+   "e": "Positiv an der Spartenorganisation: besserer Gesamtüberblick, stärkere Identifikation mit dem Produkt, mehr Verantwortungsbewusstsein und Teamarbeit, schnellere Marktreaktion. Negativ: Doppelarbeit und Spartenegoismus, Ressourcenkonflikte, höherer Koordinationsaufwand für die Unternehmensleitung."
+  },
+  {
+   "f": 2,
+   "sub": "Materialwirtschaft",
+   "t": "calc",
+   "q": "Anfangsbestand 20.000 Liter Öl; Monatsendbestände Januar bis Juni: 24.000, 32.000, 15.000, 37.000, 42.000 und 40.000 Liter. Wie hoch ist der durchschnittliche Lagerbestand des Halbjahres?",
+   "ans": 30000,
+   "unit": "Liter",
+   "e": "Ø Lagerbestand = (Anfangsbestand + 6 Monatsendbestände) / 7 = 210.000 / 7 = 30.000 Liter."
+  },
+  {
+   "f": 2,
+   "sub": "Materialwirtschaft",
+   "t": "calc",
+   "q": "Anfangsbestand 20.000 Liter, Einkäufe im Halbjahr 240.000 Liter, Endbestand 40.000 Liter, durchschnittlicher Lagerbestand 30.000 Liter. Wie groß ist die Lagerumschlagshäufigkeit im Halbjahr (zwei Nachkommastellen)?",
+   "ans": 7.33,
+   "unit": "",
+   "e": "Verbrauch = 20.000 + 240.000 – 40.000 = 220.000 Liter; Umschlagshäufigkeit = Verbrauch / Ø Lagerbestand = 220.000 / 30.000 = 7,33."
+  },
+  {
+   "f": 4,
+   "sub": "Entgelt und Arbeitszeit",
+   "t": "calc",
+   "q": "Ein Akkordarbeiter erfüllt in einer 40-Stunden-Woche die Vorgabe genau und verdient 552 €. Der Akkordzuschlag beträgt 15 %. Wie hoch ist der Akkordgrundlohn je Stunde?",
+   "ans": 12,
+   "unit": "€/Std.",
+   "e": "Verdienst je Stunde = 552 / 40 = 13,80 € = Akkordrichtsatz (Grundlohn + 15 %). Akkordgrundlohn = 13,80 / 1,15 = 12,00 €/Std."
+  },
+  {
+   "f": 4,
+   "sub": "Entgelt und Arbeitszeit",
+   "t": "calc",
+   "q": "Bei einer Vorgabezeit von 4 Minuten je Stück erfüllt ein Akkordarbeiter in einer 40-Stunden-Woche die Vorgabe genau. Wie viele Stück fertigt er pro Woche?",
+   "ans": 600,
+   "unit": "Stück",
+   "e": "Stückzahl = 40 Std. · 60 min / 4 min je Stück = 600 Stück. Bei Zeitgrad 100 % ist Istzeit gleich Vorgabezeit."
+  },
+  {
+   "f": 4,
+   "sub": "Entgelt und Arbeitszeit",
+   "t": "mc",
+   "q": "Welche Aussage zum Prämienlohn trifft zu?",
+   "o": [
+    {
+     "t": "Zum Grundlohn kommt eine Prämie für messbare Zusatzleistungen wie Qualität, Termintreue, Materialersparnis oder Nutzungsgrad – auch dort einsetzbar, wo die Mengenleistung nicht allein entscheidend ist",
+     "ok": 1
+    },
+    {
+     "t": "Der Lohn hängt ausschließlich von der gefertigten Stückzahl ab"
+    },
+    {
+     "t": "Der Lohn richtet sich nur nach der Anwesenheitszeit und setzt keine Leistungsanreize"
+    },
+    {
+     "t": "Der Prämienlohn ist gesetzlich auf 10 % des Grundlohns begrenzt"
+    }
+   ],
+   "e": "Zeitlohn: einfache Abrechnung, kein Zeitdruck auf die Qualität, aber wenig Leistungsanreiz. Akkordlohn: Mengenanreiz, setzt akkordfähige (messbare, gleichartige) und akkordreife (eingespielte) Arbeit voraus. Prämienlohn: flexibel, aber aufwendige Erfassung der Prämienkriterien."
+  },
+  {
+   "f": 2,
+   "sub": "Kostenrechnung",
+   "t": "calc",
+   "q": "Maschinenstundensatz 19,20 €/Std., Maschinenbelegungszeit 40 Minuten je Stück. Wie hoch sind die Maschinenkosten je Stück?",
+   "ans": 12.8,
+   "unit": "€/Stück",
+   "e": "Maschinenkosten = 19,20 € / 60 min · 40 min = 12,80 €/Stück. Sie treten in der Maschinenstundensatzrechnung neben die Fertigungslöhne und die Restfertigungsgemeinkosten."
+  },
+  {
+   "f": 2,
+   "sub": "Kostenrechnung",
+   "t": "calc",
+   "q": "Zuschlagskalkulation mit Maschinenstundensatz: Materialeinzelkosten 96,00 €, Materialgemeinkosten 15 %, Fertigungslöhne 2,40 €, Restfertigungsgemeinkosten 180 % auf die Löhne, Maschinenkosten 12,80 €, Sondereinzelkosten der Fertigung 2,08 € je Stück. Wie hoch sind die Herstellkosten?",
+   "ans": 132,
+   "unit": "€",
+   "e": "Materialkosten = 96,00 + 14,40 = 110,40 €; Fertigungskosten = 2,40 + 4,32 + 12,80 + 2,08 = 21,60 €; Herstellkosten = 132,00 €. Die Sondereinzelkosten der Fertigung (Spezialvorrichtung 1.040 € auf 500 Stück) gehen direkt in die Fertigungskosten ein."
+  },
+  {
+   "f": 2,
+   "sub": "Kostenrechnung",
+   "t": "calc",
+   "q": "Selbstkosten 152,00 € je Stück, Gewinnzuschlag 15 %, Skonto 2 % und Vertreterprovision 18 % (beide bezogen auf den Zielverkaufspreis), Kundenrabatt 24 %. Wie hoch ist der Listenverkaufspreis (zwei Nachkommastellen)?",
+   "ans": 287.5,
+   "unit": "€",
+   "e": "Barverkaufspreis = 152,00 · 1,15 = 174,80 €; Zielverkaufspreis = 174,80 / (1 – 0,02 – 0,18) = 174,80 / 0,80 = 218,50 €; Listenverkaufspreis = 218,50 / (1 – 0,24) = 287,50 €. Skonto, Provision und Rabatt werden „im Hundert“ gerechnet, weil sie sich auf den jeweils höheren Preis beziehen."
+  },
+  {
+   "f": 2,
+   "sub": "Controlling",
+   "t": "calc",
+   "q": "Bei 60 % Beschäftigung (1.500 Stück) beträgt das Betriebsergebnis –50.000 €; die Gewinnschwelle liegt bei 80 % (2.000 Stück). Der Preis beträgt 195 €. Wie hoch sind die variablen Stückkosten?",
+   "ans": 95,
+   "unit": "€/Stück",
+   "e": "Zwischen 1.500 und 2.000 Stück ändert sich das Ergebnis um 50.000 €, also Stückdeckungsbeitrag db = 50.000 / 500 = 100 €; kv = p – db = 195 – 100 = 95 €. Alternativ über die Kostenfunktion: Kosten bei 60 % = 342.500 €, im Break-even = 390.000 €; kv = 47.500 / 500 = 95 €."
+  },
+  {
+   "f": 2,
+   "sub": "Controlling",
+   "t": "calc",
+   "q": "Stückdeckungsbeitrag 100 €, Gewinnschwelle 2.000 Stück (80 % Beschäftigung). Welches Betriebsergebnis ergibt sich bei 90 % Beschäftigung?",
+   "ans": 25000,
+   "unit": "€",
+   "e": "Fixkosten = db · x(BEP) = 100 · 2.000 = 200.000 €. Bei 90 %: x = 2.250 Stück; Betriebsergebnis = 100 · 2.250 – 200.000 = 25.000 €."
+  },
+  {
+   "f": 2,
+   "sub": "Controlling",
+   "t": "calc",
+   "q": "Die Fixkosten sollen auf 184.000 € monatlich gesenkt werden; die Gewinnschwelle soll dann bei 64 % Beschäftigung liegen (100 % = 2.500 Stück). Welcher Stückdeckungsbeitrag ist dafür nötig?",
+   "ans": 115,
+   "unit": "€/Stück",
+   "e": "x(BEP) = 2.500 · 0,64 = 1.600 Stück; db = Kf / x(BEP) = 184.000 / 1.600 = 115 €. Bei unverändertem Preis müssten die variablen Stückkosten also von 95 € auf 80 € sinken."
+  },
+  {
+   "f": 3,
+   "sub": "Präsentation",
+   "t": "mc",
+   "q": "Sie sollen kurzfristig eine Präsentation zur Arbeitssicherheit in einer neuen Abteilung halten. Welche Schritte gehören zur inhaltlichen Vorbereitung?",
+   "o": [
+    {
+     "t": "Informationen bei erfahrenen Kollegen, der Berufsgenossenschaft und aus Fachquellen einholen, die Inhalte auf die Zielgruppe zuschneiden, einen roten Faden mit Stichpunkten erstellen und die Medien vorab testen",
+     "ok": 1
+    },
+    {
+     "t": "Die Präsentation des Vorjahres unverändert übernehmen"
+    },
+    {
+     "t": "Möglichst viele Folien erstellen, um alle Vorschriften vollständig abzudecken"
+    },
+    {
+     "t": "Auf eine Vorbereitung verzichten und spontan auf Fragen reagieren"
+    }
+   ],
+   "e": "Zur Vorbereitung gehören außerdem Zeitplanung, Raum- und Technikcheck sowie ein Probedurchlauf. Gerade in einer neuen Abteilung sollte man Zielgruppe und Unfallschwerpunkte vorher analysieren."
+  },
+  {
+   "f": 3,
+   "sub": "EDV",
+   "t": "mc",
+   "q": "Die Netzwerktechnik für eine engere Vernetzung mit Kunden und Lieferanten wird in einem gesicherten Raum installiert. Welche organisatorische Maßnahme dient der Datensicherheit?",
+   "o": [
+    {
+     "t": "Zutritt nur für wenige befugte Mitarbeiter, Protokollierung aller Zutritte und Vier-Augen-Prinzip beim Betreten, Beaufsichtigung von Fremdfirmen",
+     "ok": 1
+    },
+    {
+     "t": "Eine schnellere Internetanbindung"
+    },
+    {
+     "t": "Ein größerer Serverraum mit besserer Klimatisierung"
+    },
+    {
+     "t": "Die Abschaffung von Passwörtern zugunsten offener Zugänge"
+    }
+   ],
+   "e": "Organisatorische Maßnahmen ergänzen technische (Firewall, Verschlüsselung, Backup) und bauliche (Zutrittskontrolle, Brandschutz). Vorteile der Vernetzung in der Lieferkette: höhere Flexibilität und Transparenz, kürzere Reaktionszeiten auf Kundenwünsche."
+  },
+  {
+   "f": 3,
+   "sub": "Projektmanagement",
+   "t": "mc",
+   "q": "Was gehört in das Lastenheft für die Vernetzung der Produktionsanlagen mit Kunden und Lieferanten?",
+   "o": [
+    {
+     "t": "Die Anforderungen des Auftraggebers: Datensicherheit, erwartete Datenmengen, Art und Zahl der Clients, Schnittstellen zu internen und externen IT-Systemen sowie Zeitrahmen und Meilensteine",
+     "ok": 1
+    },
+    {
+     "t": "Die technische Umsetzung, die der Auftragnehmer gewählt hat"
+    },
+    {
+     "t": "Der Quellcode der Anwendung"
+    },
+    {
+     "t": "Die Rechnung des Dienstleisters"
+    }
+   ],
+   "e": "Das Lastenheft beschreibt, WAS und WOFÜR etwas zu leisten ist (Sicht des Auftraggebers); das Pflichtenheft des Auftragnehmers beschreibt, WIE und WOMIT die Anforderungen umgesetzt werden."
+  },
+  {
+   "f": 3,
+   "sub": "Arbeitsmethodik",
+   "t": "mc",
+   "q": "Ein IT-Systemhaus soll die Mitarbeiter schulen. In welcher logischen Reihenfolge organisieren Sie die Fortbildung?",
+   "o": [
+    {
+     "t": "Ist-Analyse der Kenntnisse – Soll-Anforderungen im Lastenheft – Auswahl des Anbieters – Durchführung der Schulung – Feedback und Nachbetreuung",
+     "ok": 1
+    },
+    {
+     "t": "Anbieter auswählen – Schulung durchführen – erst danach den Bedarf ermitteln"
+    },
+    {
+     "t": "Schulung durchführen – Ist-Analyse – Lastenheft – Feedback"
+    },
+    {
+     "t": "Feedback einholen – Anbieter auswählen – Schulung – Ist-Analyse"
+    }
+   ],
+   "e": "Anforderungen an den Dienstleister: Qualifikation und Methoden, Verfügbarkeit am gewünschten Ort und Termin, zielgruppengerechte Vermittlung, Dokumentation der Inhalte mit Teilnahmebestätigung, verständliches Material."
+  },
+  {
+   "f": 3,
+   "sub": "Arbeitsmethodik",
+   "t": "calc",
+   "q": "Nutzwertanalyse: Das Kriterium Reichweite ist mit 20 %, Anschaffungskosten mit 25 %, Ladevolumen mit 15 %, Nutzlast mit 30 % und Ladekonzept mit 10 % gewichtet. Fahrzeug A erhält die Punkte 10, 8, 8, 8 und 6. Wie groß ist sein gewichteter Nutzwert (eine Nachkommastelle)?",
+   "ans": 8.2,
+   "unit": "Punkte",
+   "e": "Nutzwert = 0,20 · 10 + 0,25 · 8 + 0,15 · 8 + 0,30 · 8 + 0,10 · 6 = 2,0 + 2,0 + 1,2 + 2,4 + 0,6 = 8,2 Punkte. Die Nutzwertanalyse macht die Auswahl aus mehreren Alternativen systematisch und transparent, hängt aber von der subjektiven Gewichtung ab."
+  },
+  {
+   "f": 3,
+   "sub": "Arbeitsmethodik",
+   "t": "calc",
+   "q": "Strukturstückliste: Erzeugnis E enthält 2 Baugruppen B2 und 2 Baugruppen B3. B2 enthält 2 Teile T1; B3 enthält 2 Baugruppen B6, und B6 enthält 4 Teile T1. Wie viele Teile T1 werden für ein Erzeugnis E benötigt?",
+   "ans": 20,
+   "unit": "Stück",
+   "e": "Über B2: 2 · 2 = 4 T1; über B3: 2 · 2 · 4 = 16 T1; Mengenstückliste E: 20 T1. Die Mengenstückliste fasst alle Teile über sämtliche Fertigungsstufen zusammen, die Strukturstückliste zeigt den Aufbau Stufe für Stufe."
+  },
+  {
+   "f": 3,
+   "sub": "Projektmanagement",
+   "t": "mc",
+   "q": "Welche Tätigkeiten der Projektleitung gehören zur Realisierungsphase eines Projekts?",
+   "o": [
+    {
+     "t": "Vorgänge starten und abschließen, Soll-Ist-Vergleiche durchführen, Meilensteine kontrollieren, Probleme erkennen und lösen",
+     "ok": 1
+    },
+    {
+     "t": "Projektziele festlegen und Stakeholder analysieren"
+    },
+    {
+     "t": "Struktur-, Termin-, Ressourcen- und Kostenplanung"
+    },
+    {
+     "t": "Abschlussbericht schreiben und Erfahrungen sichern"
+    }
+   ],
+   "e": "Definitionsphase: Ziele, Team, Stakeholder. Planungsphase: Projektstrukturplan, Termine, Ressourcen, Kosten. Realisierungsphase: Steuerung und Kontrolle. Abschlussphase: Dokumentation, Abnahme, Lessons Learned. Eine Risikoanalyse vor dem Start bewertet Finanz-, Funktions-, Termin-, Personal- und juristische Risiken."
+  },
+  {
+   "f": 4,
+   "sub": "Führungsmethoden",
+   "t": "mc",
+   "q": "Welches Verhalten einer Führungskraft wirkt als positives Vorbild?",
+   "o": [
+    {
+     "t": "Sie lebt vor, was sie von anderen erwartet – Wort und Tat stimmen überein, sie übernimmt Verantwortung für ihre Mitarbeiter und kann Fehler eingestehen",
+     "ok": 1
+    },
+    {
+     "t": "Sie fordert von den Mitarbeitern Pünktlichkeit, kommt selbst aber regelmäßig zu spät"
+    },
+    {
+     "t": "Sie hält sich aus allen Konflikten heraus, um niemanden zu verärgern"
+    },
+    {
+     "t": "Sie verweist bei jeder Anweisung auf ihre Amtsautorität"
+    }
+   ],
+   "e": "Elternhaus, Schule und Vorgesetzte prägen die Persönlichkeitsentwicklung. Glaubwürdigkeit entsteht durch konsistentes Verhalten; Vorbildwirkung ist die Grundlage persönlicher Autorität."
+  },
+  {
+   "f": 4,
+   "sub": "Konflikte",
+   "t": "mc",
+   "q": "Ein Mitarbeiter meidet jeden Konflikt. Welchen positiven Aspekt von Konflikten können Sie ihm nennen?",
+   "o": [
+    {
+     "t": "Konflikte machen Fehler und Probleme sichtbar, zwingen dazu, Gewohntes zu überdenken, und können zu besseren Lösungen führen",
+     "ok": 1
+    },
+    {
+     "t": "Konflikte sind grundsätzlich schädlich und müssen unterdrückt werden"
+    },
+    {
+     "t": "Konflikte zeigen, dass die Führungskraft versagt hat"
+    },
+    {
+     "t": "Konflikte lösen sich immer von selbst, wenn man sie ignoriert"
+    }
+   ],
+   "e": "Verhaltensweisen für eine tragfähige Lösung: Person und Sache trennen, Wertschätzung zeigen, an der Meinung des anderen interessiert sein, Selbstkritik zulassen, keinen Machtkampf beginnen, gemeinsam Lösungen suchen und diese auch umsetzen."
+  },
+  {
+   "f": 4,
+   "sub": "Motivation",
+   "t": "mc",
+   "q": "Welche Maßnahme gehört zur Gestaltung der Arbeitsorganisation, um Motivation und Leistungsbereitschaft zu fördern?",
+   "o": [
+    {
+     "t": "Job Rotation und Job Enrichment, also der planmäßige Wechsel der Aufgaben und die Anreicherung um planende und kontrollierende Tätigkeiten",
+     "ok": 1
+    },
+    {
+     "t": "Die Verkürzung der Pausen zur Steigerung der Produktivität"
+    },
+    {
+     "t": "Die Abschaffung freiwilliger Sozialleistungen"
+    },
+    {
+     "t": "Der Verzicht auf jede Rückmeldung an die Mitarbeiter"
+    }
+   ],
+   "e": "Weitere Gestaltungsfelder: Arbeitszeit (Gleitzeit, Schichtmodelle), Entgelt (Prämienlohn), Arbeitsumgebung (Lärm, Licht, Klima), ergonomische Arbeitsplatzgestaltung und freiwillige Sozialleistungen. Die Begründung sollte aus Sicht des Betriebs und des Mitarbeiters erfolgen."
+  },
+  {
+   "f": 4,
+   "sub": "Gruppen",
+   "t": "mc",
+   "q": "Mit welchem Kommunikationsproblem müssen Sie als Meister in der Gruppenarbeit rechnen?",
+   "o": [
+    {
+     "t": "Dominante Mitglieder bestimmen das Gespräch, während sich Schwächere verstecken; Cliquenbildung und informelle Führer beeinflussen die Meinungsbildung",
+     "ok": 1
+    },
+    {
+     "t": "Alle Gruppenmitglieder beteiligen sich stets gleichmäßig"
+    },
+    {
+     "t": "Gruppen kommunizieren grundsätzlich schneller als Einzelpersonen"
+    },
+    {
+     "t": "In Gruppen gibt es keine Meinungsvielfalt"
+    }
+   ],
+   "e": "Grundvoraussetzungen wirksamer Kommunikation: Bereitschaft, verständliche Mittel, geeigneter Ort, Zeit und Dauer, vertrauensvolle Atmosphäre, Offenheit, Takt und Vorurteilsfreiheit. Der Meister moderiert, gibt Zurückhaltenden Raum und begrenzt Vielredner."
+  },
+  {
+   "f": 4,
+   "sub": "Mitarbeiterbeurteilung",
+   "t": "mc",
+   "q": "Warum sollte auf jede Mitarbeiterbeurteilung ein Beurteilungsgespräch folgen?",
+   "o": [
+    {
+     "t": "Es schafft Transparenz, teilt den Leistungsstand mit, zeigt Entwicklungsmöglichkeiten auf und vermittelt Wertschätzung – der Mitarbeiter kann Stellung nehmen",
+     "ok": 1
+    },
+    {
+     "t": "Weil das Betriebsverfassungsgesetz ein Gespräch nur bei negativer Beurteilung verlangt"
+    },
+    {
+     "t": "Damit die Beurteilung nachträglich verschärft werden kann"
+    },
+    {
+     "t": "Damit der Betriebsrat die Beurteilung genehmigen kann"
+    }
+   ],
+   "e": "Ablauf: freundlich eröffnen, Anlass erklären, Befangenheit nehmen, Beobachtungen und Beurteilung mitteilen, Mitarbeiter Stellung nehmen lassen, Ergebnisse notieren und der Beurteilung beifügen, Kenntnisnahme bestätigen lassen. Nach § 82 Absatz 2 BetrVG kann der Arbeitnehmer verlangen, dass die Beurteilung seiner Leistungen mit ihm erörtert wird."
+  },
+  {
+   "f": 4,
+   "sub": "Führungsmethoden",
+   "t": "mc",
+   "q": "Auf welche Faktoren stützt sich die Autorität einer Führungskraft?",
+   "o": [
+    {
+     "t": "Auf die Amtsautorität aus der Position, die fachliche Autorität aus Wissen und Können und die persönliche Autorität aus Charakter, Glaubwürdigkeit und Vorbildverhalten",
+     "ok": 1
+    },
+    {
+     "t": "Ausschließlich auf die Weisungsbefugnis aus dem Arbeitsvertrag"
+    },
+    {
+     "t": "Nur auf das Dienstalter im Betrieb"
+    },
+    {
+     "t": "Auf die Fähigkeit, Sanktionen möglichst häufig zu verhängen"
+    }
+   ],
+   "e": "Wird die Führungsautorität untergraben, hilft nur der Ausbau der persönlichen und fachlichen Autorität: konsequent und gerecht handeln, Zusagen einhalten, Erfahrung im Umgang mit schwierigen Situationen sammeln, offen kommunizieren."
+  },
+  {
+   "f": 4,
+   "sub": "Gruppen",
+   "t": "mc",
+   "q": "Welche Beobachtung deutet darauf hin, dass in einer Abteilung eine informelle Gruppe besteht?",
+   "o": [
+    {
+     "t": "Ähnliche Sprache und Ausdrücke, gleiches Verhalten, häufige Kontakte untereinander, eine klare Rollenverteilung und eigene Normen",
+     "ok": 1
+    },
+    {
+     "t": "Die Gruppe ist im Organigramm mit Leiter und Stellvertreter ausgewiesen"
+    },
+    {
+     "t": "Die Mitglieder wurden vom Vorgesetzten zusammengestellt"
+    },
+    {
+     "t": "Die Gruppe hat einen schriftlichen Arbeitsauftrag"
+    }
+   ],
+   "e": "Bei formellen Gruppen sind die Beziehungen durch die Betriebsorganisation festgelegt; informelle Gruppen entstehen aus gemeinsamen Interessen und Neigungen ohne Anordnung. Ihre Meinungsführer können die Führungsarbeit unterstützen oder erschweren."
+  },
+  {
+   "f": 5,
+   "sub": "Naturwissenschaftliche und technische Grundlagen",
+   "t": "mc",
+   "q": "Welche Reaktionsgleichung beschreibt in Worten allgemein die Neutralisation, wie sie bei der Abwasserbehandlung genutzt wird?",
+   "o": [
+    {
+     "t": "Säure + Lauge → Salz + Wasser",
+     "ok": 1
+    },
+    {
+     "t": "Säure + Metall → Salz + Wasserstoff"
+    },
+    {
+     "t": "Base + Wasser → Säure + Sauerstoff"
+    },
+    {
+     "t": "Salz + Wasser → Säure + Lauge"
+    }
+   ],
+   "e": "Beispiel: H₂SO₄ + 2 NaOH → Na₂SO₄ + 2 H₂O (Schwefelsäure und Natronlauge sind die Edukte). Der pH-Wert gibt an, wie stark sauer (< 7) oder basisch (> 7) eine Lösung ist. Methylorange schlägt bereits bei pH etwa 3 bis 4,4 von Rot nach Gelb um und eignet sich deshalb nicht zum Nachweis einer neutralen Lösung (pH 7)."
+  },
+  {
+   "f": 5,
+   "sub": "Naturwissenschaftliche und technische Grundlagen",
+   "t": "calc",
+   "q": "Gemischte Schaltung an 200 V: R1 = 280 Ω liegt in Reihe vor einer Parallelschaltung aus R3 = 300 Ω und der Reihenschaltung R2 = 60 Ω + R4 = 140 Ω. Wie groß ist der Gesamtstrom in A?",
+   "ans": 0.5,
+   "unit": "A",
+   "e": "R24 = 60 + 140 = 200 Ω; R234 = 300 · 200 / (300 + 200) = 120 Ω; Rges = 280 + 120 = 400 Ω; I = 200 V / 400 Ω = 0,5 A."
+  },
+  {
+   "f": 5,
+   "sub": "Naturwissenschaftliche und technische Grundlagen",
+   "t": "calc",
+   "q": "In der Schaltung fließen 0,5 A durch R1 = 280 Ω; die Gesamtspannung beträgt 200 V. Welche Leistung setzt der parallel liegende Widerstand R3 = 300 Ω um (in W)?",
+   "ans": 12,
+   "unit": "W",
+   "e": "U1 = 0,5 A · 280 Ω = 140 V; an der Parallelschaltung liegen U3 = 200 – 140 = 60 V; P3 = U3² / R3 = 60² / 300 = 12 W."
+  },
+  {
+   "f": 5,
+   "sub": "Naturwissenschaftliche und technische Grundlagen",
+   "t": "calc",
+   "q": "Ein Pkw fährt mit 40 km/h; 40 m vor der Ampel schaltet diese auf Gelb (3 s). Nach 0,7 s Reaktionszeit beschleunigt der Fahrer eine Sekunde lang gleichmäßig auf 50 km/h und fährt dann konstant weiter. Welchen Weg legt er in den 3 s zurück (in m, zwei Nachkommastellen)?",
+   "ans": 38.34,
+   "unit": "m",
+   "e": "s1 = 11,11 m/s · 0,7 s = 7,78 m; s2 = ½ · (11,11 + 13,89) m/s · 1 s = 12,5 m; s3 = 13,89 m/s · 1,3 s = 18,06 m; gesamt 38,34 m. Er ist beim Umschalten auf Rot noch 1,66 m vor der Ampel und passiert sie erst in der Rotphase."
+  },
+  {
+   "f": 5,
+   "sub": "Naturwissenschaftliche und technische Grundlagen",
+   "t": "calc",
+   "q": "Eine ungesicherte Kiste (180 kg) steht auf der Ladefläche eines Lkw, Haftreibungszahl 0,20. Bei welcher Geschwindigkeit beginnt sie in einer Kurve mit 140 m Radius zu rutschen (in m/s, zwei Nachkommastellen; g = 9,81 m/s²)?",
+   "ans": 16.57,
+   "unit": "m/s",
+   "e": "Die Haftreibungskraft F_R = m · g · μ = 353,16 N muss die Zentripetalkraft m · v² / r aufbringen: v = √(μ · g · r) = √(0,20 · 9,81 · 140) = 16,57 m/s ≈ 59,7 km/h. Die Masse kürzt sich heraus."
+  },
+  {
+   "f": 5,
+   "sub": "Naturwissenschaftliche und technische Grundlagen",
+   "t": "calc",
+   "q": "Ein Stahltank (60 l bei 20 °C, Längenausdehnungszahl 0,000012 1/K) wird mit 59,5 l Benzin (Volumenausdehnungszahl 0,0011 1/K) gefüllt. Bei welcher Temperatur läuft der Tank über (in °C, eine Nachkommastelle)?",
+   "ans": 27.9,
+   "unit": "°C",
+   "e": "Tankvolumen = Benzinvolumen: 60 · (1 + 3 · 0,000012 · Δϑ) = 59,5 · (1 + 0,0011 · Δϑ). Δϑ = (60 – 59,5) / (59,5 · 0,0011 – 60 · 0,000036) = 0,5 / 0,06329 = 7,9 K; ϑ = 27,9 °C. Die Raumausdehnungszahl des Stahls ist das Dreifache der Längenausdehnungszahl."
+  },
+  {
+   "f": 5,
+   "sub": "Naturwissenschaftliche und technische Grundlagen",
+   "t": "calc",
+   "q": "Ein Dieselmotor verbraucht 985 g Kraftstoff je Minute (Heizwert 42.000 kJ/kg) und gibt 220 kW ab. Wie groß ist sein Wirkungsgrad in Prozent (ganze Zahl)?",
+   "ans": 32,
+   "unit": "%",
+   "e": "Zugeführte Energie je Minute: Q = 0,985 kg · 42.000 kJ/kg = 41.370 kJ. Abgegebene Arbeit: W = 220 kW · 60 s = 13.200 kJ. η = 13.200 / 41.370 = 0,319 ≈ 32 %."
+  },
+  {
+   "f": 5,
+   "sub": "Naturwissenschaftliche und technische Grundlagen",
+   "t": "mc",
+   "q": "Bei Wuchtgewichten (Sollmaß 20 g ± 3 g, einzuhalten von mindestens 99,73 % der Teile) ergibt die Prozessüberwachung x̄ = 20,095 g und s = 1,356 g. Was ist zu tun?",
+   "o": [
+    {
+     "t": "Die Prozesslage ist in Ordnung, aber die Streuung ist zu groß: 6 s = 8,1 g überschreitet die Toleranz von 6 g; die Standardabweichung muss auf höchstens 1 g gesenkt werden",
+     "ok": 1
+    },
+    {
+     "t": "Der Mittelwert muss auf 17 g verschoben werden, die Streuung ist unerheblich"
+    },
+    {
+     "t": "Der Prozess ist fähig, weil der Mittelwert nahe bei 20 g liegt"
+    },
+    {
+     "t": "Die Toleranz muss auf ± 1 g verengt werden"
+    }
+   ],
+   "e": "Bei Normalverteilung liegen 99,73 % der Werte innerhalb x̄ ± 3 s, hier zwischen 16,03 g und 24,16 g. Prozessfähigkeit verlangt 6 s ≤ Toleranz (cp ≥ 1): 6 s ≤ 6 g, also s ≤ 1 g. Die Lage nahe der Toleranzmitte (cpk ≈ cp) muss nicht korrigiert werden."
+  }
+ ]
+}

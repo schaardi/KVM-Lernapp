@@ -1,0 +1,782 @@
+{
+ "questions": [
+  {
+   "f": 1,
+   "sub": "Betriebsverfassung",
+   "t": "mc",
+   "q": "Der Betriebsrat meint, eine Betriebsversammlung im Jahr genüge. Wie viele Betriebsversammlungen schreibt das Betriebsverfassungsgesetz vor, und was kann eine im Betrieb vertretene Gewerkschaft tun, wenn der Betriebsrat sich weigert?",
+   "o": [
+    {
+     "t": "Einmal in jedem Kalendervierteljahr (§ 43 Absatz 1 BetrVG); die Gewerkschaft kann die Einberufung verlangen, wenn im Kalenderhalbjahr keine stattfand (§ 43 Absatz 4), und notfalls beim Arbeitsgericht den Ausschluss von Mitgliedern oder die Auflösung des Betriebsrats wegen grober Pflichtverletzung beantragen (§ 23 Absatz 1 BetrVG)",
+     "ok": 1
+    },
+    {
+     "t": "Einmal jährlich; die Gewerkschaft kann die Versammlung selbst einberufen"
+    },
+    {
+     "t": "Monatlich; die Gewerkschaft kann den Betriebsrat abwählen"
+    },
+    {
+     "t": "Zweimal jährlich; der Arbeitgeber kann den Betriebsrat auflösen"
+    }
+   ],
+   "e": "Streitigkeiten aus dem BetrVG werden vor dem Arbeitsgericht im Beschlussverfahren entschieden (§ 2a ArbGG), bei Eilbedürftigkeit auch per einstweiliger Verfügung. Ein Gewerkschaftsbeauftragter darf auf Antrag eines Viertels der Betriebsratsmitglieder beratend an Betriebsratssitzungen teilnehmen (§ 31 BetrVG)."
+  },
+  {
+   "f": 1,
+   "sub": "Betriebsverfassung",
+   "t": "mc",
+   "q": "Der Arbeitgeber will für die Vollzeitkräfte ohne den Betriebsrat festlegen: Arbeit an sechs Tagen außer sonntags, bis zu zehn Stunden täglich, Mehrarbeit auf ein Arbeitszeitkonto. Darf er das einseitig anordnen?",
+   "o": [
+    {
+     "t": "Nein – Beginn, Ende und Verteilung der täglichen Arbeitszeit auf die Wochentage sowie die vorübergehende Verlängerung der Arbeitszeit unterliegen der Mitbestimmung (§ 87 Absatz 1 Nr. 2 und 3 BetrVG)",
+     "ok": 1
+    },
+    {
+     "t": "Ja, die Lage der Arbeitszeit fällt unter das Direktionsrecht des Arbeitgebers"
+    },
+    {
+     "t": "Ja, solange das Arbeitszeitgesetz eingehalten wird"
+    },
+    {
+     "t": "Nur mit Zustimmung der Gewerkschaft, der Betriebsrat ist nicht zuständig"
+    }
+   ],
+   "e": "Inhaltlich sind die Regelungen zulässig: Sechs Werktage einschließlich Samstag (§§ 3, 9 ArbZG), bis zu zehn Stunden am Tag, wenn innerhalb von sechs Kalendermonaten oder 24 Wochen im Durchschnitt acht Stunden nicht überschritten werden (§ 3 Satz 2 ArbZG); höchstens acht Stunden Mehrarbeit im Monat mit Freizeitausgleich bleiben unter der 48-Stunden-Woche."
+  },
+  {
+   "f": 1,
+   "sub": "Sozialversicherung",
+   "t": "mc",
+   "q": "Herr Drost verunglückt auf der betrieblichen Weihnachtsfeier und ist sieben Wochen arbeitsunfähig; Herr Steiner verunglückt bei der Gartenarbeit und fällt acht Wochen aus. Wer zahlt jeweils nach den sechs Wochen Entgeltfortzahlung?",
+   "o": [
+    {
+     "t": "Für Herrn Drost die Berufsgenossenschaft (Verletztengeld) – die Betriebsfeier ist eine versicherte Gemeinschaftsveranstaltung; für Herrn Steiner die Krankenkasse (Krankengeld)",
+     "ok": 1
+    },
+    {
+     "t": "In beiden Fällen die Krankenkasse"
+    },
+    {
+     "t": "In beiden Fällen die Berufsgenossenschaft"
+    },
+    {
+     "t": "Für Herrn Drost der Arbeitgeber weiter, für Herrn Steiner niemand"
+    }
+   ],
+   "e": "Betriebliche Gemeinschaftsveranstaltungen stehen unter dem Schutz der gesetzlichen Unfallversicherung, wenn sie von der Betriebsleitung getragen werden und allen Beschäftigten offenstehen. Der Gartenunfall ist privat: Krankengeld nach § 44 SGB V. Beiträge des Arbeitgebers zur Sozialversicherung, Urlaubs- und Weihnachtsgeld, vermögenswirksame Leistungen oder betriebliche Altersvorsorge sind Lohnnebenkosten."
+  },
+  {
+   "f": 1,
+   "sub": "Produkthaftung/Datenschutz",
+   "t": "mc",
+   "q": "Der Arbeitgeber hängt die Gehaltserhöhungen zweier Mitarbeiter mit Namen, Grundgehalt und Erhöhung am Schwarzen Brett aus. Ist das zulässig?",
+   "o": [
+    {
+     "t": "Nein – der Aushang verletzt das Persönlichkeitsrecht und den Datenschutz; die Mitarbeiter können Unterlassung verlangen und notfalls einklagen",
+     "ok": 1
+    },
+    {
+     "t": "Ja, weil Gehaltstransparenz gesetzlich vorgeschrieben ist"
+    },
+    {
+     "t": "Ja, wenn der Betriebsrat zugestimmt hat"
+    },
+    {
+     "t": "Ja, weil der Arbeitgeber über die Verwendung der Gehaltsdaten frei entscheiden darf"
+    }
+   ],
+   "e": "Gehaltsdaten sind personenbezogene Daten; ihre Bekanntgabe an Dritte ist ohne Rechtsgrundlage oder Einwilligung unzulässig (Artikel 6 DSGVO, § 26 BDSG). Das Entgelttransparenzgesetz gibt nur einen individuellen Auskunftsanspruch über Vergleichsentgelte, keinen öffentlichen Aushang. Der Betriebsrat selbst hat kein Einsichtsrecht in Personalakten – nur der Arbeitnehmer, der ein Betriebsratsmitglied hinzuziehen kann (§ 83 BetrVG)."
+  },
+  {
+   "f": 1,
+   "sub": "Betriebsverfassung",
+   "t": "mc",
+   "q": "Der neu gewählte Betriebsrat ruft per dienstlicher E-Mail zur Teilnahme an einem Streik auf. Wie ist das zu beurteilen?",
+   "o": [
+    {
+     "t": "Unzulässig – Arbeitgeber und Betriebsrat dürfen keine Maßnahmen des Arbeitskampfes gegeneinander durchführen (§ 74 Absatz 2 BetrVG); Streiks organisieren nur Gewerkschaften",
+     "ok": 1
+    },
+    {
+     "t": "Zulässig, weil der Betriebsrat die Interessen der Belegschaft vertritt"
+    },
+    {
+     "t": "Zulässig, wenn die Mehrheit der Belegschaft zustimmt"
+    },
+    {
+     "t": "Unzulässig nur wegen der Nutzung des dienstlichen E-Mail-Accounts"
+    }
+   ],
+   "e": "Ein rechtmäßiger Streik wird von einer Gewerkschaft geführt, verfolgt ein tariflich regelbares Ziel (Arbeitsbedingungen), verletzt nicht die Friedenspflicht eines laufenden Tarifvertrags und wahrt die Verhältnismäßigkeit (ultima ratio). Betriebsratsmitglieder dürfen als Arbeitnehmer streiken, aber nicht in ihrer Amtsfunktion dazu aufrufen."
+  },
+  {
+   "f": 1,
+   "sub": "Arbeitsrecht",
+   "t": "mc",
+   "q": "Ein bisher nicht tarifgebundenes Unternehmen tritt dem Arbeitgeberverband bei. Welche Auswirkung hat das auf die Arbeitsverhältnisse?",
+   "o": [
+    {
+     "t": "Für Arbeitnehmer, die Mitglied der tarifschließenden Gewerkschaft sind, gelten die Tarifverträge unmittelbar und zwingend; für nicht organisierte Arbeitnehmer ändert sich rechtlich nichts",
+     "ok": 1
+    },
+    {
+     "t": "Alle Arbeitnehmer haben ab sofort Anspruch auf die tariflichen Leistungen"
+    },
+    {
+     "t": "Die Arbeitsverträge werden unwirksam und müssen neu geschlossen werden"
+    },
+    {
+     "t": "Nur die neu eingestellten Arbeitnehmer fallen unter den Tarifvertrag"
+    }
+   ],
+   "e": "Tarifgebunden sind die Mitglieder der Tarifvertragsparteien (§ 3 Absatz 1 TVG); die Normen gelten dann unmittelbar und zwingend (§ 4 Absatz 1 TVG). Nichtorganisierte profitieren nur über eine Bezugnahmeklausel im Arbeitsvertrag, eine Allgemeinverbindlicherklärung (§ 5 TVG) oder freiwillige Gleichbehandlung durch den Arbeitgeber."
+  },
+  {
+   "f": 1,
+   "sub": "Arbeitsrecht",
+   "t": "mc",
+   "q": "Eine konzerneigene Zeitarbeitsfirma verleiht zuvor entlassene Arbeitnehmer dauerhaft zu rund 30 % niedrigeren Löhnen an das Stammunternehmen zurück. Wie ist das nach dem Arbeitnehmerüberlassungsgesetz zu beurteilen?",
+   "o": [
+    {
+     "t": "Unzulässig – Arbeitnehmerüberlassung ist nur vorübergehend erlaubt (Höchstdauer 18 Monate, § 1 Absatz 1b AÜG), und nach neun Monaten gilt Equal Pay (§ 8 Absatz 4 AÜG); zudem verbietet § 8 Absatz 3 AÜG die schlechtere Bezahlung ehemals eigener Beschäftigter in den ersten sechs Monaten",
+     "ok": 1
+    },
+    {
+     "t": "Zulässig, weil konzerninterne Überlassung vom AÜG nicht erfasst wird"
+    },
+    {
+     "t": "Zulässig, wenn der Betriebsrat des Entleihers zustimmt"
+    },
+    {
+     "t": "Unzulässig nur, wenn die Leiharbeitnehmer keinen schriftlichen Vertrag haben"
+    }
+   ],
+   "e": "Seit der AÜG-Reform 2017 gelten die Überlassungshöchstdauer von 18 Monaten und die Gleichstellung beim Entgelt nach neun Monaten; zur Prüfungszeit galt nur das Gebot „vorübergehend“ in § 1 Absatz 1 Satz 2 AÜG. Bei Überschreiten der Höchstdauer entsteht ein Arbeitsverhältnis mit dem Entleiher (§ 10 AÜG)."
+  },
+  {
+   "f": 1,
+   "sub": "Produkthaftung/Datenschutz",
+   "t": "mc",
+   "q": "Ein Hersteller liefert ein einwandfreies Produkt an einen Großhändler. Dort wird es durch unsachgemäße Lagerung schadhaft und verletzt später den Verbraucher Müller. Wer haftet?",
+   "o": [
+    {
+     "t": "Der Großhändler nach § 823 BGB wegen fahrlässiger Verursachung; der Hersteller haftet nicht nach dem Produkthaftungsgesetz, weil der Fehler erst nach dem Inverkehrbringen entstanden ist (§ 1 Absatz 2 Nr. 2 ProdHaftG)",
+     "ok": 1
+    },
+    {
+     "t": "Der Hersteller nach dem Produkthaftungsgesetz, weil er das Produkt in Verkehr gebracht hat"
+    },
+    {
+     "t": "Niemand, weil der Verbraucher das Risiko einer Lagerung nicht überprüfen kann"
+    },
+    {
+     "t": "Der Großhändler nach dem Produkthaftungsgesetz, weil er als Verkäufer wie ein Hersteller haftet"
+    }
+   ],
+   "e": "Das ProdHaftG trifft den Hersteller (und Quasi-Hersteller, Importeur oder bei unbekanntem Hersteller den Lieferanten, § 4). Ein Händler haftet nur bei eigenem Verschulden aus unerlaubter Handlung (§ 823 BGB) oder dem Käufer gegenüber aus dem Kaufvertrag (Gewährleistung)."
+  },
+  {
+   "f": 1,
+   "sub": "Arbeitsrecht",
+   "t": "mc",
+   "q": "Ein langjährig beschäftigter schwerbehinderter Mitarbeiter lehnt eine Vertragsänderung ab; der Arbeitgeber spricht eine Änderungskündigung aus. Welche Vorgaben muss er beachten?",
+   "o": [
+    {
+     "t": "Schriftform (§ 623 BGB), Anhörung des Betriebsrats (§ 102 BetrVG), Kündigungsfrist (§ 622 BGB), soziale Rechtfertigung (§§ 1, 2 KSchG) und vorherige Zustimmung des Integrationsamtes (§ 168 SGB IX)",
+     "ok": 1
+    },
+    {
+     "t": "Nur die Schriftform, weil es keine Beendigungskündigung ist"
+    },
+    {
+     "t": "Nur die Zustimmung des Betriebsrats, eine Frist gilt nicht"
+    },
+    {
+     "t": "Keine besonderen Vorgaben, weil der Arbeitnehmer das Angebot ablehnen kann"
+    }
+   ],
+   "e": "Der Arbeitnehmer kann das Änderungsangebot unter Vorbehalt annehmen und innerhalb von drei Wochen Änderungsschutzklage beim Arbeitsgericht erheben (§§ 2, 4 KSchG). Die Kammer des Arbeitsgerichts besteht aus einem Berufsrichter als Vorsitzendem und zwei ehrenamtlichen Richtern aus den Kreisen der Arbeitnehmer und Arbeitgeber (§ 16 ArbGG). Bis 2017 stand der Zustimmungsvorbehalt in § 85 SGB IX."
+  },
+  {
+   "f": 2,
+   "sub": "Betriebsorganisation",
+   "t": "mc",
+   "q": "Welchen Nachteil hat das Einliniensystem gegenüber einer Matrixorganisation?",
+   "o": [
+    {
+     "t": "Lange Kommunikationswege über alle Hierarchiestufen, Gefahr der Informationsfilterung durch einzelne Instanzen und Neigung zur Bürokratisierung",
+     "ok": 1
+    },
+    {
+     "t": "Unklare Zuständigkeiten, weil jede Stelle mehrere Vorgesetzte hat"
+    },
+    {
+     "t": "Hohes Konfliktpotenzial zwischen Funktions- und Produktmanagern"
+    },
+    {
+     "t": "Die Unternehmensleitung wird von Entscheidungen entlastet"
+    }
+   ],
+   "e": "Vorteile des Einliniensystems: transparente, einfache Beziehungen und eindeutige Weisungs- und Kommunikationswege. Die Matrixorganisation entlastet die Leitung, ist flexibel und nutzt Spezialisten, erzeugt aber Mehrfachunterstellung und Konflikte. Eine GmbH mit mehr als 500 Beschäftigten braucht als Organe neben Geschäftsführer und Gesellschafterversammlung einen Aufsichtsrat (Drittelbeteiligungsgesetz)."
+  },
+  {
+   "f": 2,
+   "sub": "Rechtsformen",
+   "t": "mc",
+   "q": "Wie ist das Stimmrecht in der Gesellschafterversammlung bei KG und GmbH ausgestaltet?",
+   "o": [
+    {
+     "t": "KG: nach Köpfen; GmbH: nach dem Anteil am Stammkapital",
+     "ok": 1
+    },
+    {
+     "t": "KG: nach Kapitalanteil; GmbH: nach Köpfen"
+    },
+    {
+     "t": "In beiden nach Köpfen"
+    },
+    {
+     "t": "In beiden nach Kapitalanteil"
+    }
+   ],
+   "e": "Weitere Unterschiede: Geschäftsführung und Vertretung durch den Komplementär (KG) bzw. den Geschäftsführer (GmbH); Haftung: Komplementär unbeschränkt, Kommanditist mit der Einlage, GmbH-Gesellschafter nur mit dem Gesellschaftsvermögen; Mindestkapital keines (KG) bzw. 25.000 € (GmbH). Ein Gesellschaftsvertrag kann das Stimmrecht abweichend regeln."
+  },
+  {
+   "f": 2,
+   "sub": "Betriebsorganisation",
+   "t": "mc",
+   "q": "Welche Aufgabe haben die Stäbe im Stabliniensystem, und welche Befugnis fehlt ihnen?",
+   "o": [
+    {
+     "t": "Den Linieninstanzen sind Stäbe zugeordnet, die beraten und Entscheidungen vorbereiten, aber keine Weisungsbefugnis gegenüber nachgeordneten Stellen haben",
+     "ok": 1
+    },
+    {
+     "t": "Jede Stelle erhält Weisungen von zwei gleichberechtigten Instanzen"
+    },
+    {
+     "t": "Jede Stelle hat genau einen Vorgesetzten, Stäbe gibt es nicht"
+    },
+    {
+     "t": "Die Stäbe leiten die Fachabteilungen und entscheiden selbstständig"
+    }
+   ],
+   "e": "Einliniensystem: eindeutige Weisungswege, aber lange Kommunikationswege und Informationsfilterung. Zweilinien-/Matrixsystem: Funktions- und Produktmanager weisen gemeinsam an – kurze Wege, hohe Flexibilität, aber Kompetenzkonflikte. Das Stabliniensystem entlastet die Linie, birgt aber die Gefahr informeller Macht der Stäbe."
+  },
+  {
+   "f": 2,
+   "sub": "Materialwirtschaft",
+   "t": "calc",
+   "q": "Jahresbedarf 30.000 Stück, Einstandspreis 37,50 €, Bestellkosten 125 € je Bestellung, Lagerhaltungskostensatz 20 % pro Jahr, kein Sicherheitsbestand. Wie groß ist die optimale Bestellmenge (Andler-Formel)?",
+   "ans": 1000,
+   "unit": "Stück",
+   "e": "x_opt = √(2 · Bestellkosten · Jahresbedarf / (Einstandspreis · Lagerkostensatz)) = √(2 · 125 · 30.000 / (37,50 · 0,2)) = √(7.500.000 / 7,5) = √1.000.000 = 1.000 Stück. Bei 1.000 Stück sind Bestell- und Lagerhaltungskosten gleich groß (je 3.750 €/Jahr)."
+  },
+  {
+   "f": 2,
+   "sub": "Materialwirtschaft",
+   "t": "calc",
+   "q": "Bei einer optimalen Bestellmenge von 1.000 Stück, einem Jahresbedarf von 30.000 Stück und ohne Sicherheitsbestand: Wie groß ist die Lagerumschlagshäufigkeit?",
+   "ans": 60,
+   "unit": "",
+   "e": "Ø Lagerbestand = Bestellmenge / 2 + Sicherheitsbestand = 500 Stück; Umschlagshäufigkeit = 30.000 / 500 = 60. Das Lager wird also im Schnitt alle sechs Tage komplett umgeschlagen."
+  },
+  {
+   "f": 2,
+   "sub": "Materialwirtschaft",
+   "t": "calc",
+   "q": "Bisher wurde mit 500 Stück je Bestellung disponiert (Jahresbedarf 30.000, 125 € je Bestellung, Lagerhaltung 20 % auf 37,50 €). Wie viel Euro je Jahr spart der Wechsel zur optimalen Bestellmenge von 1.000 Stück?",
+   "ans": 1875,
+   "unit": "€/Jahr",
+   "e": "Bei 500 Stück: 60 Bestellungen · 125 € = 7.500 € + Lagerhaltung 250 · 0,2 · 37,50 = 1.875 € → 9.375 €. Bei 1.000 Stück: 30 · 125 = 3.750 € + 500 · 0,2 · 37,50 = 3.750 € → 7.500 €. Ersparnis 1.875 €/Jahr."
+  },
+  {
+   "f": 4,
+   "sub": "Entgelt und Arbeitszeit",
+   "t": "mc",
+   "q": "In welchem Tätigkeitsbereich ist Zeitlohn die sinnvolle Entlohnungsform, und wie lassen sich seine Nachteile abmildern?",
+   "o": [
+    {
+     "t": "Bei Instandhaltung, Kontrolle, Entwicklung oder Führung, wo Dauer und Leistung nicht messbar sind oder besondere Sorgfalt nötig ist; die fehlenden Leistungsanreize gleicht eine Leistungszulage zum Zeitlohn aus",
+     "ok": 1
+    },
+    {
+     "t": "Bei Serienfertigung mit gleichbleibenden, messbaren Arbeitsgängen; Abhilfe durch Akkordzuschlag"
+    },
+    {
+     "t": "Nur bei Auszubildenden; Abhilfe durch Prämien für Anwesenheit"
+    },
+    {
+     "t": "Bei allen Tätigkeiten, weil der Zeitlohn gesetzlich vorgeschrieben ist"
+    }
+   ],
+   "e": "Vorteile des Zeitlohns: einfache Lohnermittlung, kalkulierbares Einkommen, keine Qualitätseinbußen und weniger Unfälle durch Zeitdruck. Nachteile: kein Anreiz zu Mehrleistung, Leistungsunterschiede bleiben unberücksichtigt, das Leistungsrisiko trägt der Betrieb."
+  },
+  {
+   "f": 2,
+   "sub": "Kostenrechnung",
+   "t": "calc",
+   "q": "Bearbeitungszentrum: Wiederbeschaffungswert 921.600 €, Restwert 230.000 €, Nutzungsdauer 7 Jahre; Anschaffungskosten 768.000 €, Zinssatz 6,5 %. Wie hoch sind kalkulatorische Abschreibung und Zinsen zusammen je Jahr?",
+   "ans": 131235,
+   "unit": "€/Jahr",
+   "e": "Abschreibung = (921.600 – 230.000) / 7 = 98.800 €; Zinsen = (768.000 + 230.000) / 2 · 0,065 = 32.435 €; Summe 131.235 €/Jahr."
+  },
+  {
+   "f": 2,
+   "sub": "Kostenrechnung",
+   "t": "calc",
+   "q": "Jährliche Maschinenkosten: Abschreibung 98.800 €, Zinsen 32.435 €, Raumkosten 30 m² · 16,25 €/m² · 12 Monate, Energie 13,5 kW · 0,28 €/kWh · 3.250 h, Instandhaltung 8 % von 768.000 €. Maschinenstundensatz bei 3.250 Stunden Einsatzzeit (zwei Nachkommastellen)?",
+   "ans": 64.86,
+   "unit": "€/h",
+   "e": "Raumkosten 5.850 €, Energie 12.285 €, Instandhaltung 61.440 €; Summe 210.810 €/Jahr. Maschinenstundensatz = 210.810 / 3.250 = 64,86 €/h."
+  },
+  {
+   "f": 2,
+   "sub": "Kostenrechnung",
+   "t": "calc",
+   "q": "Fertigungskosten je Bauteil: Fertigungslohn 21 €/h, Bearbeitungszeit 42 Minuten, Restfertigungsgemeinkosten 90 % auf den Lohn, Maschinenstundensatz 105 €/h, Spezialwerkzeug 1,57 € je Bauteil. Wie hoch sind die Fertigungskosten?",
+   "ans": 103,
+   "unit": "€/Stück",
+   "e": "Fertigungslohn 21 · 42/60 = 14,70 €; Restfertigungsgemeinkosten 13,23 €; Maschinenkosten 105 · 42/60 = 73,50 €; Sondereinzelkosten 1,57 €; Fertigungskosten 103,00 €. Der Gemeinkostenzuschlag gilt nur für den Lohn, die Maschinenkosten kommen separat hinzu."
+  },
+  {
+   "f": 2,
+   "sub": "Controlling",
+   "t": "calc",
+   "q": "Aus dem Kosten-Umsatz-Diagramm: Gewinnschwelle bei 250 Wellen und 25.000 € Umsatz, Fixkosten 15.000 €. Welches Betriebsergebnis ergibt ein Auftrag über 450 Wellen?",
+   "ans": 12000,
+   "unit": "€",
+   "e": "Preis = 25.000 / 250 = 100 €; variable Stückkosten = (25.000 – 15.000) / 250 = 40 €; Stückdeckungsbeitrag 60 €. Bei 450 Stück: Umsatz 45.000 €, variable Kosten 18.000 €, Betriebsergebnis = 45.000 – 18.000 – 15.000 = 12.000 €."
+  },
+  {
+   "f": 2,
+   "sub": "Controlling",
+   "t": "calc",
+   "q": "Preis 100 € je Welle, variable Stückkosten 40 €. Wie groß ist der Gesamtdeckungsbeitrag für 200 Wellen?",
+   "ans": 12000,
+   "unit": "€",
+   "e": "DB = x · (p – kv) = 200 · (100 – 40) = 12.000 €. Bei Fixkosten von 15.000 € läge das Betriebsergebnis bei –3.000 € – 200 Stück liegen unter der Gewinnschwelle von 250."
+  },
+  {
+   "f": 2,
+   "sub": "Kostenrechnung",
+   "t": "calc",
+   "q": "Auftragskalkulation: Fertigungsmaterial 12.000 €, Materialgemeinkosten 10 %, Fertigungslöhne 5.000 €, Fertigungsgemeinkosten 50 %, Spezialwerkzeug 300 €, Verwaltungs- und Vertriebsgemeinkosten 15 % auf die Herstellkosten, Spezialverpackung 350 €. Wie hoch sind die Selbstkosten?",
+   "ans": 24500,
+   "unit": "€",
+   "e": "Materialkosten 13.200 €; Fertigungskosten 5.000 + 2.500 + 300 = 7.800 €; Herstellkosten 21.000 €; + 15 % = 3.150 €; + Sondereinzelkosten des Vertriebs 350 € = Selbstkosten 24.500 €. Mit 25 % Gewinnzuschlag ergibt sich ein Barverkaufspreis von 30.625 €."
+  },
+  {
+   "f": 3,
+   "sub": "EDV",
+   "t": "mc",
+   "q": "Welche technische Lösung zur Datensicherung folgt dem Generationenprinzip?",
+   "o": [
+    {
+     "t": "Tägliche, wöchentliche und monatliche Sicherungen werden auf getrennten Datenträgern aufbewahrt und rotierend überschrieben (Großvater-Vater-Sohn), sodass mehrere Wiederherstellungspunkte verfügbar bleiben",
+     "ok": 1
+    },
+    {
+     "t": "Eine Kopie aller Daten auf derselben Festplatte in einem zweiten Ordner"
+    },
+    {
+     "t": "Der Ausdruck aller wichtigen Dateien auf Papier"
+    },
+    {
+     "t": "Ein Passwortschutz für alle Benutzerkonten"
+    }
+   ],
+   "e": "Datensicherung (Backup, Wiederherstellbarkeit) ist von Datensicherheit (Schutz vor unbefugtem Zugriff) zu unterscheiden. Konzept zur Datensicherheit: Zutrittskontrolle, Zugriffskontrolle, Berechtigungskonzept, Verschlüsselung, Protokollierung. Sicherungsmedien: Bänder, externe Festplatten, Cloud oder externes Rechenzentrum."
+  },
+  {
+   "f": 3,
+   "sub": "EDV",
+   "t": "mc",
+   "q": "Welche Anforderung gehört zur ergonomischen Gestaltung einer Benutzeroberfläche?",
+   "o": [
+    {
+     "t": "Selbsterklärende Bedienelemente, eindeutige Rückmeldungen und die Vermeidung redundanter Eingaben – der Nutzer soll Fehler leicht vermeiden und korrigieren können",
+     "ok": 1
+    },
+    {
+     "t": "Möglichst viele Funktionen auf einem Bildschirm, damit nichts fehlt"
+    },
+    {
+     "t": "Kleine Schrift, um Platz zu sparen"
+    },
+    {
+     "t": "Ein Zwang, jede Eingabe doppelt zu bestätigen"
+    }
+   ],
+   "e": "DIN EN ISO 9241-110 nennt als Grundsätze der Dialoggestaltung: Aufgabenangemessenheit, Selbstbeschreibungsfähigkeit, Erwartungskonformität, Fehlertoleranz, Steuerbarkeit, Individualisierbarkeit und Lernförderlichkeit."
+  },
+  {
+   "f": 3,
+   "sub": "Arbeitsmethodik",
+   "t": "calc",
+   "q": "Paarweiser Vergleich von fünf Kriterien (Preis, Handhabung, Lebensdauer, Kundendienst, laufende Kosten) mit der Bewertung 2 (wichtiger), 1 (gleich) und 0 (weniger wichtig). Das Kriterium Handhabung erreicht 7 Punkte. Welche Gewichtung in Prozent ergibt sich?",
+   "ans": 35,
+   "unit": "%",
+   "e": "Bei fünf Kriterien werden 10 Paare bewertet; je Paar werden 2 Punkte vergeben, also 20 Punkte insgesamt. Gewichtung = 7 / 20 = 35 %. Der paarweise Vergleich liefert die Gewichtungsfaktoren für die anschließende Nutzwertanalyse."
+  },
+  {
+   "f": 3,
+   "sub": "Präsentation",
+   "t": "mc",
+   "q": "Sie planen Sicherheitsunterweisungen für alle Schichten. Welche organisatorischen Gesichtspunkte sind vorab zu klären?",
+   "o": [
+    {
+     "t": "Absprache mit den Meistern der anderen Schichten, Ort und Zeitpunkt, Einladung der Mitarbeiter, Raum mit Ausstattung reservieren, Unterlagen erstellen und die Technik vorher prüfen",
+     "ok": 1
+    },
+    {
+     "t": "Nur der Inhalt der Präsentation – die Organisation übernimmt die Personalabteilung"
+    },
+    {
+     "t": "Die Unterweisung wird spontan in der Pause gehalten, Planung ist unnötig"
+    },
+    {
+     "t": "Ausschließlich die Kostenkalkulation der Veranstaltung"
+    }
+   ],
+   "e": "Unterweisungen nach § 12 ArbSchG und DGUV Vorschrift 1 müssen mindestens jährlich stattfinden und dokumentiert werden (Teilnehmerliste mit Unterschrift)."
+  },
+  {
+   "f": 3,
+   "sub": "Projektmanagement",
+   "t": "mc",
+   "q": "Im Projektbericht zeigt sich: Bis zum 1. Juli lagen die Istkosten unter Plan, seit dem 1. August liegen sie darüber, und die geschätzten Restkosten sind hoch. Welche Schlussfolgerung ist richtig?",
+   "o": [
+    {
+     "t": "Das Projekt wird die geplanten Gesamtkosten voraussichtlich überschreiten – die Projektleitung muss Ursachen analysieren und gegensteuern",
+     "ok": 1
+    },
+    {
+     "t": "Das Projekt liegt im Plan, weil die Kosten anfangs niedriger waren"
+    },
+    {
+     "t": "Die Restkosten sind unerheblich, solange die Istkosten unter dem Gesamtbudget liegen"
+    },
+    {
+     "t": "Der Kostenverlauf lässt keine Aussage über das Projektende zu"
+    }
+   ],
+   "e": "Ein Liniendiagramm mit Plankosten, Istkosten, geplanten Gesamtkosten und geschätzten Restkosten macht die Kostenentwicklung sichtbar. Istkosten plus Restkosten ergeben die erwarteten Gesamtkosten – der Vergleich mit dem Budget ist die zentrale Kennzahl des Kostencontrollings."
+  },
+  {
+   "f": 3,
+   "sub": "Projektmanagement",
+   "t": "mc",
+   "q": "Im Balkenplan hat Vorgang 11 drei Arbeitstage Puffer. Sein Abschluss verzögert sich um fünf Tage. Welche Folge hat das für das Projekt?",
+   "o": [
+    {
+     "t": "Der Puffer wird aufgebraucht, die nachfolgenden Vorgänge verschieben sich um zwei Tage und der Projektabschluss verzögert sich um zwei Tage",
+     "ok": 1
+    },
+    {
+     "t": "Keine, weil Vorgang 11 nicht auf dem kritischen Pfad liegt"
+    },
+    {
+     "t": "Das Projekt verzögert sich um fünf Tage"
+    },
+    {
+     "t": "Die Verzögerung kann durch Verschieben eines kritischen Vorgangs aufgefangen werden"
+    }
+   ],
+   "e": "Der kritische Pfad ist die Kette der Vorgänge ohne Puffer; jede Verzögerung dort wirkt sich voll auf das Projektende aus. Laufen mehrere Vorgänge parallel, muss geprüft werden, ob Mitarbeiter und Betriebsmittel ausreichen (Ressourcenkonflikt)."
+  },
+  {
+   "f": 3,
+   "sub": "Kommunikation",
+   "t": "mc",
+   "q": "Welche Inhalte gehören in einen schriftlichen Fortschrittsbericht an die Geschäftsleitung über ein Projekt zur Reduzierung der Arbeitsunfälle?",
+   "o": [
+    {
+     "t": "Berichtszeitraum, verbrauchtes Budget und Ressourcen, erreichte Leistung gegenüber den Zielen, Termintreue, aufgetretene Probleme und geplante nächste Schritte",
+     "ok": 1
+    },
+    {
+     "t": "Nur die Zahl der Unfälle, alles Weitere interessiert die Geschäftsleitung nicht"
+    },
+    {
+     "t": "Persönliche Eindrücke des Projektleiters ohne Zahlen"
+    },
+    {
+     "t": "Der vollständige Schriftverkehr des Projekts als Anlage"
+    }
+   ],
+   "e": "Vorbereitung: Informationen beschaffen, auf Richtigkeit und Vollständigkeit prüfen, verdichten und aufbereiten (Tabellen, Grafiken). Der Bericht soll kurz, sachlich und entscheidungsorientiert sein – Zusammenfassung an den Anfang."
+  },
+  {
+   "f": 4,
+   "sub": "Personalentwicklung",
+   "t": "mc",
+   "q": "Ein neuer Mitarbeiter hat gerade seine Ausbildung in einem anderen Betrieb abgeschlossen. Wie fördern Sie seine fachlichen und seine sozialen Kompetenzen?",
+   "o": [
+    {
+     "t": "Fachlich durch Unterweisungen, Schulungen und Fachgespräche; sozial vor allem durch das eigene Vorbild, Einbindung ins Team und Feedback",
+     "ok": 1
+    },
+    {
+     "t": "Beides ausschließlich durch externe Seminare"
+    },
+    {
+     "t": "Fachlich durch Kritik, sozial durch Versetzungen"
+    },
+    {
+     "t": "Gar nicht – Kompetenzen sind nach der Ausbildung abgeschlossen"
+    }
+   ],
+   "e": "Soziale Kompetenzen (Teamfähigkeit, Kommunikation, Konfliktfähigkeit) entwickeln sich durch Erfahrung in der Gruppe; die Führungskraft prägt sie durch Vorbild, Anerkennung und konstruktive Kritik."
+  },
+  {
+   "f": 4,
+   "sub": "Gruppen",
+   "t": "mc",
+   "q": "Wie unterscheiden sich Job Rotation und Job Enrichment?",
+   "o": [
+    {
+     "t": "Job Rotation ist der planmäßige Wechsel zwischen gleichwertigen Arbeitsplätzen; Job Enrichment erweitert die Aufgabe um vor- oder nachgelagerte, anspruchsvollere Tätigkeiten wie Planung und Kontrolle",
+     "ok": 1
+    },
+    {
+     "t": "Job Rotation erhöht den Entscheidungsspielraum, Job Enrichment den Arbeitsplatzwechsel"
+    },
+    {
+     "t": "Beide Begriffe bezeichnen dasselbe"
+    },
+    {
+     "t": "Job Rotation gibt es nur in der Ausbildung, Job Enrichment nur bei Führungskräften"
+    }
+   ],
+   "e": "Job Enlargement (Aufgabenerweiterung um gleichartige Tätigkeiten) ist die dritte Form. Merkmale teilautonomer Gruppen: Arbeitsauftrag vom Meister, gewählter Gruppensprecher, eigenständige Umsetzung, Selbstorganisation und Selbstkontrolle der Ergebnisse."
+  },
+  {
+   "f": 4,
+   "sub": "Gruppen",
+   "t": "mc",
+   "q": "Welche Aufgabe behält der Industriemeister, wenn Aufträge in teilautonomen Arbeitsgruppen ausgeführt werden?",
+   "o": [
+    {
+     "t": "Er trägt die Verantwortung für die Gruppe, leitet sie von außen, bleibt Vorgesetzter aller Mitglieder, hält Kontakt zum Gruppensprecher und schlichtet Konflikte, die die Gruppe nicht selbst löst",
+     "ok": 1
+    },
+    {
+     "t": "Er teilt jedem Mitglied täglich die Einzelaufgaben zu"
+    },
+    {
+     "t": "Er hat keine Funktion mehr, die Gruppe ist völlig autonom"
+    },
+    {
+     "t": "Er kontrolliert jedes Arbeitsergebnis persönlich"
+    }
+   ],
+   "e": "Der Meister wird vom Anweiser zum Koordinator und Coach: Ziele vereinbaren, Ressourcen bereitstellen, Schnittstellen zu anderen Bereichen managen, Qualifizierung fördern."
+  },
+  {
+   "f": 4,
+   "sub": "Motivation",
+   "t": "mc",
+   "q": "Ein Mitarbeiter arbeitet gern an kniffligen Störungen, weil ihn das Problem selbst reizt; ein anderer strengt sich an, um die Prämie zu bekommen. Welche Arten der Motivation liegen vor?",
+   "o": [
+    {
+     "t": "Beim ersten intrinsische (primäre) Motivation aus der Tätigkeit selbst, beim zweiten extrinsische (sekundäre) Motivation durch äußere Anreize",
+     "ok": 1
+    },
+    {
+     "t": "Beim ersten extrinsische, beim zweiten intrinsische Motivation"
+    },
+    {
+     "t": "Beide sind extrinsisch motiviert"
+    },
+    {
+     "t": "Beide sind intrinsisch motiviert"
+    }
+   ],
+   "e": "Intrinsische Motivation ist stabiler und fördert Qualität und Kreativität; extrinsische Anreize (Geld, Lob, Aufstieg) wirken schnell, können aber die innere Motivation verdrängen, wenn sie als Kontrolle erlebt werden."
+  },
+  {
+   "f": 4,
+   "sub": "Konflikte",
+   "t": "mc",
+   "q": "Welche Ursache ist typisch für soziale Konflikte in einer Arbeitsgruppe?",
+   "o": [
+    {
+     "t": "Mitglieder fühlen sich ungerecht behandelt, arbeiten gegen die Gruppenziele oder sehen nur ihren eigenen Vorteil – es fehlt das Wir-Gefühl",
+     "ok": 1
+    },
+    {
+     "t": "Alle Mitglieder verfolgen dieselben Ziele"
+    },
+    {
+     "t": "Die Gruppe hat klare, akzeptierte Regeln"
+    },
+    {
+     "t": "Der Meister gibt regelmäßig Feedback"
+    }
+   ],
+   "e": "Einflussmöglichkeiten des Meisters: Prävention durch klare Regeln, Gespräche, Zielvereinbarungen, Anerkennung und Kritik, Intervention und Mediation. Beispiel eines sozialen Konflikts: Streit um unterschiedliche Arbeitszeiten oder die Parkplatzvergabe."
+  },
+  {
+   "f": 4,
+   "sub": "Führungsstile",
+   "t": "mc",
+   "q": "Ein Meister weist in Gefahrensituationen knapp an, bespricht Routinefragen im Team und delegiert an erfahrene Mitarbeiter ganze Aufgaben. Welches Führungskonzept wendet er an?",
+   "o": [
+    {
+     "t": "Situative Führung – Führungsverhalten und Stil richten sich nach der Situation und dem Reifegrad der Mitarbeiter",
+     "ok": 1
+    },
+    {
+     "t": "Laissez-faire-Führung – er lässt die Mitarbeiter gewähren"
+    },
+    {
+     "t": "Autoritäre Führung – er entscheidet grundsätzlich allein"
+    },
+    {
+     "t": "Laterale Führung – er führt ohne Weisungsbefugnis"
+    }
+   ],
+   "e": "Nach Hersey und Blanchard reichen die Stile von Anweisen über Überzeugen und Beteiligen bis Delegieren, je nach Fähigkeit und Bereitschaft des Mitarbeiters."
+  },
+  {
+   "f": 4,
+   "sub": "Mitarbeiterbeurteilung",
+   "t": "mc",
+   "q": "Ein Meister beurteilt den neuen Mitarbeiter unbewusst strenger, weil dessen Vorgänger außergewöhnlich gut war. Welcher Beurteilungsfehler liegt vor?",
+   "o": [
+    {
+     "t": "Kontrastfehler",
+     "ok": 1
+    },
+    {
+     "t": "Mildefehler"
+    },
+    {
+     "t": "Tendenz zur Mitte"
+    },
+    {
+     "t": "Überstrahlungseffekt"
+    }
+   ],
+   "e": "Weitere Beurteilungsfehler: Überstrahlungseffekt (ein Merkmal färbt alles), Milde- oder Strengefehler, Tendenz zur Mitte, Vorurteile und Klischees, Pauschalurteile, Korrekturfehler (Überkompensation eines erkannten Fehlers) und der Recency-Effekt."
+  },
+  {
+   "f": 5,
+   "sub": "Naturwissenschaftliche und technische Grundlagen",
+   "t": "mc",
+   "q": "Zum Korrosionsschutz wird in einem Stahl-Warmwasserspeicher eine Magnesiumelektrode eingeschraubt. Wie wirkt sie?",
+   "o": [
+    {
+     "t": "Als Opferanode: Magnesium ist unedler als Eisen und löst sich in dem kurzgeschlossenen galvanischen Element auf, während der Stahl als Kathode geschützt bleibt",
+     "ok": 1
+    },
+    {
+     "t": "Sie isoliert den Behälter elektrisch vom Wasser"
+    },
+    {
+     "t": "Sie bildet eine Lackschicht auf der Innenwand"
+    },
+    {
+     "t": "Sie ist edler als Eisen und zieht die Korrosion an"
+    }
+   ],
+   "e": "In der Spannungsreihe steht Magnesium (etwa –2,36 V) weit unter Eisen (etwa –0,44 V); die Zellspannung beträgt rund 1,9 V. Der Pluspol ist das edlere Eisen, der Minuspol das Magnesium. Die Anode muss regelmäßig geprüft und ersetzt werden."
+  },
+  {
+   "f": 5,
+   "sub": "Naturwissenschaftliche und technische Grundlagen",
+   "t": "calc",
+   "q": "Eine Halogenlampe (230 V, 1.000 W) wird über eine 50 m lange Verlängerungsleitung betrieben; Hin- und Rückleitung haben je 1,2 Ω. Welcher Strom fließt (in A, zwei Nachkommastellen)?",
+   "ans": 4.16,
+   "unit": "A",
+   "e": "Lampenwiderstand R_L = U² / P = 230² / 1.000 = 52,9 Ω; Gesamtwiderstand 52,9 + 2 · 1,2 = 55,3 Ω; I = 230 / 55,3 = 4,16 A statt 4,35 A bei direktem Anschluss."
+  },
+  {
+   "f": 5,
+   "sub": "Naturwissenschaftliche und technische Grundlagen",
+   "t": "calc",
+   "q": "Durch die Halogenlampe (Widerstand 52,9 Ω) fließen über die Verlängerungsleitung 4,16 A. Welche Leistung nimmt die Lampe jetzt auf (in W, ganze Zahl)?",
+   "ans": 915,
+   "unit": "W",
+   "e": "P = I² · R_L = 4,16² · 52,9 ≈ 915 W statt 1.000 W. Der Spannungsfall auf der Leitung (2 · 1,2 Ω · 4,16 A ≈ 10 V) senkt die Spannung an der Lampe und damit ihre Leistung."
+  },
+  {
+   "f": 5,
+   "sub": "Naturwissenschaftliche und technische Grundlagen",
+   "t": "calc",
+   "q": "3,2 Liter Wasser werden mit einer Erdgasflamme in 4,5 Minuten von 12 °C auf 60 °C erwärmt; der Gasverbrauch beträgt 8 Liter je Minute (Heizwert 35.000 kJ/m³, c = 4,18 kJ/(kg·K)). Gesamtwirkungsgrad in Prozent (ganze Zahl)?",
+   "ans": 51,
+   "unit": "%",
+   "e": "Q_W = 3,2 kg · 4,18 · 48 K = 642 kJ; Q_G = 35.000 kJ/m³ · 0,008 m³/min · 4,5 min = 1.260 kJ; η = 642 / 1.260 = 0,51 = 51 %."
+  },
+  {
+   "f": 5,
+   "sub": "Naturwissenschaftliche und technische Grundlagen",
+   "t": "calc",
+   "q": "Ein Pkw (1,6 t) wird mit einer Seilwinde gleichförmig über eine 6 m lange Rampe gezogen, die 1,2 m Höhe überwindet; die Rollreibungskraft beträgt 250 N. Wie groß ist die Zugkraft im Seil (in N, eine Nachkommastelle; g = 9,81 m/s²)?",
+   "ans": 3389.2,
+   "unit": "N",
+   "e": "sin α = 1,2 / 6 = 0,2; Hangabtriebskraft F_H = m · g · sin α = 1.600 · 9,81 · 0,2 = 3.139,2 N; Zugkraft = F_H + F_R = 3.139,2 + 250 = 3.389,2 N."
+  },
+  {
+   "f": 5,
+   "sub": "Naturwissenschaftliche und technische Grundlagen",
+   "t": "calc",
+   "q": "Ein Sicherheitsventil mit 35 mm Tellerdurchmesser soll bei 6 bar öffnen. Welche Kraft wirkt auf den Ventilteller (in N, ganze Zahl)?",
+   "ans": 577,
+   "unit": "N",
+   "e": "A = d² · π / 4 = 3,5² · π / 4 = 9,62 cm²; p = 6 bar = 60 N/cm²; F = p · A = 577 N."
+  },
+  {
+   "f": 5,
+   "sub": "Naturwissenschaftliche und technische Grundlagen",
+   "t": "calc",
+   "q": "Am Hebel des Sicherheitsventils greift die Ventilkraft 577,2 N im Abstand 80 mm vom Drehpunkt an. In welchem Abstand muss ein Gewichtsstück von 7,5 kg eingestellt werden (in mm, ganze Zahl; g = 9,81 m/s²)?",
+   "ans": 628,
+   "unit": "mm",
+   "e": "Momentengleichgewicht: F_p · 80 mm = m · g · L; L = 577,2 · 80 / (7,5 · 9,81) = 46.176 / 73,575 = 627,6 mm ≈ 628 mm."
+  },
+  {
+   "f": 5,
+   "sub": "Naturwissenschaftliche und technische Grundlagen",
+   "t": "calc",
+   "q": "Ein Kfz fährt mit 50 km/h; 18 m vor ihm taucht ein Hindernis auf. Nach 0,6 s Reaktionszeit bremst der Fahrer gleichmäßig und trifft nach weiteren 1,2 s auf. Auftreffgeschwindigkeit in m/s (eine Nachkommastelle)?",
+   "ans": 2.2,
+   "unit": "m/s",
+   "e": "v₀ = 13,9 m/s; Reaktionsweg s₁ = 13,9 · 0,6 = 8,34 m; Bremsweg s₂ = 18 – 8,34 = 9,66 m; aus s₂ = (v₀ + v_t) / 2 · t folgt v_t = 2 · 9,66 / 1,2 – 13,9 = 2,2 m/s (≈ 8 km/h)."
+  },
+  {
+   "f": 5,
+   "sub": "Naturwissenschaftliche und technische Grundlagen",
+   "t": "calc",
+   "q": "Ein Kfz mit 1.500 kg trifft mit 2,2 m/s auf ein Hindernis. Welche kinetische Energie hat es dabei (in J)?",
+   "ans": 3630,
+   "unit": "J",
+   "e": "E_kin = ½ · m · v² = 0,5 · 1.500 · 2,2² = 3.630 J. Bei den ursprünglichen 13,9 m/s wären es rund 145 kJ – die Bremsung hat 97 % der Energie abgebaut."
+  },
+  {
+   "f": 5,
+   "sub": "Naturwissenschaftliche und technische Grundlagen",
+   "t": "mc",
+   "q": "Ein Gleitlager ist mit Ø 10 +0,005/–0,008 mm toleriert. Die Urwertkarte zeigt x̄ = 10,001 mm und s = 0,002 mm. Welche Empfehlung geben Sie dem Maschinenbediener?",
+   "o": [
+    {
+     "t": "Die Prozesslage ist zum oberen Grenzwert verschoben – x̄ + 3 s = 10,007 mm überschreitet 10,005 mm; die Maschine ist in Richtung Toleranzmitte (9,9985 mm) nachzustellen und das Los auf Ausschuss zu prüfen",
+     "ok": 1
+    },
+    {
+     "t": "Nichts ändern, der Mittelwert liegt innerhalb der Toleranz"
+    },
+    {
+     "t": "Die Toleranz erweitern, weil die Streuung zu groß ist"
+    },
+    {
+     "t": "Die Standardabweichung ist unerheblich, nur der Mittelwert zählt"
+    }
+   ],
+   "e": "Toleranzgrenzen: OGW 10,005 mm, UGW 9,992 mm. Prozessstreuung x̄ ± 3 s reicht von 9,995 bis 10,007 mm. Die Streuung (6 s = 0,012 mm) passt in die Toleranz von 0,013 mm, die Lage aber nicht: Es ist ein Lagefehler, kein Streufehler."
+  }
+ ]
+}

@@ -1,0 +1,795 @@
+{
+ "questions": [
+  {
+   "f": 1,
+   "sub": "Vertrags- und Handelsrecht",
+   "t": "mc",
+   "q": "Während der dreiwöchigen Auslandsreise des Geschäftsführers stellt seine Sekretärin ohne Vollmacht einen Lagerarbeiter ein, der seit einer Woche arbeitet. Ist ein wirksamer Arbeitsvertrag zustande gekommen?",
+   "o": [
+    {
+     "t": "Nein – der Vertrag ist schwebend unwirksam, bis der Geschäftsführer ihn genehmigt (§ 177 BGB); für die bereits geleistete Woche kann der Arbeiter aber Entgelt aus dem faktischen Arbeitsverhältnis verlangen",
+     "ok": 1
+    },
+    {
+     "t": "Ja, weil eine Sekretärin kraft Anscheinsvollmacht Arbeitsverträge schließen darf"
+    },
+    {
+     "t": "Nein, und der Arbeiter hat für die geleistete Arbeit keinen Anspruch auf Lohn"
+    },
+    {
+     "t": "Ja, weil der Betriebsrat der Einstellung nicht widersprochen hat"
+    }
+   ],
+   "e": "Handeln ohne Vertretungsmacht: Der Vertretene kann genehmigen oder die Genehmigung verweigern (§§ 177, 184 BGB); der Vertreter ohne Vertretungsmacht haftet dem Vertragspartner nach § 179 BGB. Gegenüber der Sekretärin kommen Ermahnung, Abmahnung oder Kündigung in Betracht. Vor jeder Einstellung ist der Betriebsrat nach § 99 BetrVG zu unterrichten (Bewerbungsunterlagen vorlegen) und seine Zustimmung einzuholen."
+  },
+  {
+   "f": 1,
+   "sub": "Arbeitsrecht",
+   "t": "mc",
+   "q": "Eine seit zwei Monaten beschäftigte Buchhalterin hatte im Vorstellungsgespräch eine Vorstrafe wegen Betrugs und Unterschlagung verschwiegen. Der Betriebsrat widerspricht der fristlosen Kündigung schriftlich. Wie ist die Rechtslage?",
+   "o": [
+    {
+     "t": "Das Kündigungsschutzgesetz gilt noch nicht (Wartezeit sechs Monate, § 1 Absatz 1 KSchG), und der Widerspruch ist unbeachtlich, weil § 102 Absatz 3 BetrVG ihn nur bei ordentlichen Kündigungen vorsieht",
+     "ok": 1
+    },
+    {
+     "t": "Die Kündigung ist wegen des Widerspruchs unwirksam"
+    },
+    {
+     "t": "Das Kündigungsschutzgesetz gilt ab dem ersten Tag, die Kündigung braucht einen Grund"
+    },
+    {
+     "t": "Der Betriebsrat muss der außerordentlichen Kündigung zustimmen"
+    }
+   ],
+   "e": "Die außerordentliche Kündigung muss innerhalb von zwei Wochen ab Kenntnis des Kündigungsgrundes erklärt werden (§ 626 Absatz 2 BGB). Der Betriebsrat ist anzuhören; Bedenken gegen eine außerordentliche Kündigung muss er innerhalb von drei Tagen mitteilen. Ein Widerspruch mit Weiterbeschäftigungsanspruch (§ 102 Absatz 3 und 5) ist nur bei ordentlichen Kündigungen möglich."
+  },
+  {
+   "f": 1,
+   "sub": "Arbeitsrecht",
+   "t": "mc",
+   "q": "Statt zu kündigen will der Arbeitgeber den Arbeitsvertrag der Buchhalterin wegen der verschwiegenen Vorstrafe (Betrug, Unterschlagung) anfechten. Ist das möglich?",
+   "o": [
+    {
+     "t": "Ja – wegen arglistiger Täuschung nach § 123 BGB, weil die Frage nach einschlägigen Vorstrafen bei einer Vertrauensstellung in der Buchhaltung zulässig war und wahrheitsgemäß beantwortet werden musste; der Betriebsrat ist dabei nicht zu beteiligen",
+     "ok": 1
+    },
+    {
+     "t": "Nein, Fragen nach Vorstrafen sind im Vorstellungsgespräch immer unzulässig"
+    },
+    {
+     "t": "Ja, aber nur mit Zustimmung des Betriebsrats nach § 102 BetrVG"
+    },
+    {
+     "t": "Nein, ein einmal angetretenes Arbeitsverhältnis kann nur gekündigt werden"
+    }
+   ],
+   "e": "Fragen nach Vorstrafen sind zulässig, soweit die Straftat für die Stelle relevant ist (Vermögensdelikte bei Kassen- oder Buchhaltungstätigkeit). Die Anfechtung muss innerhalb eines Jahres ab Entdeckung der Täuschung erklärt werden (§ 124 BGB) und wirkt beim vollzogenen Arbeitsverhältnis nur für die Zukunft. Weil es keine Kündigung ist, greift § 102 BetrVG nicht."
+  },
+  {
+   "f": 1,
+   "sub": "Arbeitsrecht",
+   "t": "mc",
+   "q": "Einen Monat nach Zugang der fristlosen Kündigung erfährt die Arbeitnehmerin, dass sie im dritten Monat schwanger ist, und teilt das sofort mit. Ist die Kündigung wirksam?",
+   "o": [
+    {
+     "t": "Nein – die Kündigung während der Schwangerschaft ist ohne Zustimmung der zuständigen Behörde unzulässig (§ 17 MuSchG); die Zwei-Wochen-Frist für die Mitteilung hat sie unverschuldet versäumt und die Mitteilung unverzüglich nachgeholt",
+     "ok": 1
+    },
+    {
+     "t": "Ja, weil der Arbeitgeber bei Ausspruch der Kündigung nichts von der Schwangerschaft wusste"
+    },
+    {
+     "t": "Ja, weil sie die Schwangerschaft nicht innerhalb von zwei Wochen mitgeteilt hat"
+    },
+    {
+     "t": "Nein, aber nur bei ordentlichen Kündigungen – fristlose Kündigungen sind erlaubt"
+    }
+   ],
+   "e": "Der Sonderkündigungsschutz gilt für jede Kündigung (auch außerordentlich) während der Schwangerschaft und bis vier Monate nach der Entbindung, wenn der Arbeitgeber davon weiß oder innerhalb von zwei Wochen nach Zugang informiert wird; eine unverschuldete Fristversäumung schadet nicht. Bis 2017 stand die Regelung in § 9 MuSchG."
+  },
+  {
+   "f": 1,
+   "sub": "Sozialversicherung",
+   "t": "mc",
+   "q": "Welche Geldleistungen erhält eine schwangere Arbeitnehmerin während der Schutzfristen sechs Wochen vor und acht Wochen nach der Geburt?",
+   "o": [
+    {
+     "t": "Mutterschaftsgeld der Krankenkasse von höchstens 13 € je Kalendertag und einen Arbeitgeberzuschuss in Höhe der Differenz zum bisherigen durchschnittlichen Nettoentgelt",
+     "ok": 1
+    },
+    {
+     "t": "Krankengeld der Krankenkasse in Höhe von 70 % des Bruttoentgelts"
+    },
+    {
+     "t": "Volles Gehalt vom Arbeitgeber und zusätzlich Elterngeld"
+    },
+    {
+     "t": "Nur das Elterngeld vom Staat"
+    }
+   ],
+   "e": "§ 24i SGB V und § 20 MuSchG (früher § 14 MuSchG). Bei einem Beschäftigungsverbot außerhalb der Schutzfristen (z. B. Verbot schwerer körperlicher Arbeit oder Nachtarbeit) zahlt der Arbeitgeber Mutterschutzlohn in Höhe des Durchschnittsverdienstes (§ 18 MuSchG) – die Kosten werden ihm über die Umlage U2 erstattet."
+  },
+  {
+   "f": 1,
+   "sub": "Produkthaftung/Datenschutz",
+   "t": "mc",
+   "q": "Nach einer Stellenausschreibung will der Arbeitgeber die Unterlagen aller abgelehnten Bewerber dauerhaft speichern und das Bewerbungsfoto der neuen Mitarbeiterin auf die Firmenwebsite stellen. Ist das zulässig?",
+   "o": [
+    {
+     "t": "Nein – Unterlagen abgelehnter Bewerber sind nach Abschluss des Verfahrens zu löschen oder zurückzugeben (allenfalls für die Klagefrist nach dem AGG aufzubewahren), und das Foto darf nur mit ausdrücklicher Einwilligung veröffentlicht werden",
+     "ok": 1
+    },
+    {
+     "t": "Ja, Bewerber haben mit der Bewerbung in beides eingewilligt"
+    },
+    {
+     "t": "Ja, wenn die Daten nur intern gespeichert werden"
+    },
+    {
+     "t": "Die Speicherung ist zulässig, nur das Foto nicht"
+    }
+   ],
+   "e": "Datenverarbeitung im Beschäftigungsverhältnis ist nur zulässig, soweit sie für dessen Begründung, Durchführung oder Beendigung erforderlich ist (§ 26 BDSG, Artikel 6 DSGVO; bis 2018 § 32 BDSG) – ohne Einwilligung also z. B. Name, Anschrift, Geburtsdatum, Familienstand. Für Fotos gilt zusätzlich § 22 KUG; die Einwilligung muss freiwillig und widerruflich sein."
+  },
+  {
+   "f": 1,
+   "sub": "Betriebsverfassung",
+   "t": "mc",
+   "q": "In einem Betrieb sind zwei Betriebsratsmitglieder freigestellt. Wer bestimmt die Freigestellten, und wie viele Arbeitnehmer muss der Betrieb dafür mindestens haben?",
+   "o": [
+    {
+     "t": "Der Betriebsrat wählt sie nach Beratung mit dem Arbeitgeber aus seiner Mitte; zwei Freistellungen gibt es ab 501 Arbeitnehmern (§ 38 BetrVG)",
+     "ok": 1
+    },
+    {
+     "t": "Der Arbeitgeber bestimmt sie; ab 200 Arbeitnehmern"
+    },
+    {
+     "t": "Die Belegschaft wählt sie in der Betriebsversammlung; ab 1.000 Arbeitnehmern"
+    },
+    {
+     "t": "Die Gewerkschaft benennt sie; ab 300 Arbeitnehmern"
+    }
+   ],
+   "e": "Staffel des § 38 Absatz 1 BetrVG: 200 bis 500 Arbeitnehmer ein Freigestellter, 501 bis 900 zwei, 901 bis 1.500 drei usw. Freigestellte Mitglieder arbeiten ausschließlich für den Betriebsrat und erhalten ihr Entgelt weiter. In einem Betrieb dieser Größe ist auch ein Arbeitsschutzausschuss zu bilden (mehr als 20 Beschäftigte, § 11 ASiG)."
+  },
+  {
+   "f": 1,
+   "sub": "Arbeitsschutz",
+   "t": "mc",
+   "q": "Ein Vorgesetzter lässt einen frisch ausgebildeten Mitarbeiter ohne Einweisung flüssiges Aluminium transportieren; der Behälter kippt und verletzt einen Kollegen schwer. Gegen welche Pflichten hat der Vorgesetzte verstoßen?",
+   "o": [
+    {
+     "t": "Gegen § 9 ArbSchG (Zugang zu besonders gefährlichen Arbeitsbereichen nur für unterwiesene Beschäftigte) und § 12 ArbSchG (Unterweisung vor Aufnahme der Tätigkeit)",
+     "ok": 1
+    },
+    {
+     "t": "Gegen keine – für den Unfall haftet allein der ungeschickte Mitarbeiter"
+    },
+    {
+     "t": "Gegen das Jugendarbeitsschutzgesetz"
+    },
+    {
+     "t": "Gegen § 3 ArbZG, weil der Transport Überstunden erforderte"
+    }
+   ],
+   "e": "Der Verletzte erhält sechs Wochen Entgeltfortzahlung vom Arbeitgeber und danach Verletztengeld von der Berufsgenossenschaft (Arbeitsunfall). Ansprüche gegen den Arbeitgeber klagt er beim Arbeitsgericht ein, Ansprüche gegen die Berufsgenossenschaft beim Sozialgericht. Der Vorgesetzte kann bei grober Fahrlässigkeit von der Berufsgenossenschaft in Regress genommen werden (§ 110 SGB VII)."
+  },
+  {
+   "f": 1,
+   "sub": "Umweltrecht",
+   "t": "mc",
+   "q": "Wer trägt nach dem Kreislaufwirtschaftsgesetz die Produktverantwortung?",
+   "o": [
+    {
+     "t": "Wer Erzeugnisse entwickelt, herstellt, be- oder verarbeitet oder vertreibt (§ 23 KrWG)",
+     "ok": 1
+    },
+    {
+     "t": "Nur der Endverbraucher, der das Produkt entsorgt"
+    },
+    {
+     "t": "Ausschließlich die öffentlich-rechtlichen Entsorgungsträger"
+    },
+    {
+     "t": "Nur der Hersteller, Händler sind nicht betroffen"
+    }
+   ],
+   "e": "Die Produktverantwortung verlangt abfallarme, reparierbare und verwertbare Produkte sowie Rücknahme- und Verwertungspflichten. Konkretisiert wird sie heute durch eigene Gesetze – Verpackungsgesetz (seit 2019, vorher Verpackungsverordnung), Batteriegesetz (seit 2009, vorher Batterieverordnung) und Elektro- und Elektronikgerätegesetz – sowie durch Verordnungen aufgrund des KrWG, etwa die Altfahrzeug-, Altöl- oder Gewerbeabfallverordnung."
+  },
+  {
+   "f": 2,
+   "sub": "Rechtsformen",
+   "t": "mc",
+   "q": "Wer führt bei OHG, KG, GmbH und AG die Geschäfte?",
+   "o": [
+    {
+     "t": "OHG: jeder Gesellschafter; KG: der Komplementär; GmbH: der Geschäftsführer; AG: der Vorstand",
+     "ok": 1
+    },
+    {
+     "t": "OHG: ein bestellter Geschäftsführer; KG: die Kommanditisten; GmbH: die Gesellschafterversammlung; AG: der Aufsichtsrat"
+    },
+    {
+     "t": "In allen vier Rechtsformen die Gesellschafter gemeinsam"
+    },
+    {
+     "t": "OHG und KG: der Aufsichtsrat; GmbH und AG: die Hauptversammlung"
+    }
+   ],
+   "e": "Haftung: OHG-Gesellschafter und Komplementäre haften unbeschränkt mit dem Privatvermögen, Kommanditisten mit ihrer Einlage; GmbH-Gesellschafter und Aktionäre haften nicht persönlich – Gläubigern haftet nur das Gesellschaftsvermögen. OHG und KG sind Personengesellschaften, GmbH und AG Kapitalgesellschaften."
+  },
+  {
+   "f": 2,
+   "sub": "Betriebsorganisation",
+   "t": "mc",
+   "q": "Wie geht man bei der Gestaltung der Aufbauorganisation vor?",
+   "o": [
+    {
+     "t": "Die Gesamtaufgabe wird in Teilaufgaben zerlegt (Aufgabenanalyse), ähnliche Teilaufgaben werden zu Stellen gebündelt (Aufgabensynthese) und die Stellen zu Gruppen und Abteilungen zusammengefasst",
+     "ok": 1
+    },
+    {
+     "t": "Die Arbeitsprozesse werden zeitlich und räumlich in Arbeitsgänge gegliedert"
+    },
+    {
+     "t": "Man erstellt zuerst einen Netzplan und leitet daraus die Abteilungen ab"
+    },
+    {
+     "t": "Man übernimmt das Organigramm eines vergleichbaren Unternehmens"
+    }
+   ],
+   "e": "Hilfsmittel der Aufbauorganisation: Organigramm, Stellenplan, Stellenbeschreibung. Die Ablauforganisation ordnet die Arbeitsprozesse zeitlich, räumlich und personell; ihre Hilfsmittel sind Balkendiagramm, Netzplan, Projektstrukturplan und Flussdiagramm."
+  },
+  {
+   "f": 2,
+   "sub": "Materialwirtschaft",
+   "t": "mc",
+   "q": "Was kennzeichnet die auftragsbezogene Beschaffung (Einzelbeschaffung im Bedarfsfall)?",
+   "o": [
+    {
+     "t": "Der Einkauf bestellt erst, wenn der konkrete Bedarf – etwa eine Kundenbestellung – vorliegt; Lagerkosten entfallen, aber Lieferzeiten verlängern die Durchlaufzeit",
+     "ok": 1
+    },
+    {
+     "t": "Das Material wird produktionssynchron vom Zulieferer direkt ans Band geliefert"
+    },
+    {
+     "t": "Es wird in großen Mengen auf Vorrat gekauft, um Mengenrabatte zu nutzen"
+    },
+    {
+     "t": "Die Bestellung erfolgt automatisch bei Erreichen des Meldebestands"
+    }
+   ],
+   "e": "Just-in-time-Beschaffung: das Material wird nach dem Produktionsprogramm rechtzeitig bestellt und erst bei Bedarf direkt in die Fertigung geliefert. Vorteile: niedrige Lagerkosten, geringer Flächenbedarf, gute Konditionen durch Rahmenverträge. Nachteile: Stillstandsgefahr bei Lieferverzug, lange Bindung und hohe Abhängigkeit vom Lieferanten."
+  },
+  {
+   "f": 2,
+   "sub": "Betriebsorganisation",
+   "t": "mc",
+   "q": "Welche organisatorischen Hilfsmittel gehören zur Ablauforganisation – und nicht zur Aufbauorganisation?",
+   "o": [
+    {
+     "t": "Balkendiagramm, Netzplan, Projektstrukturplan und Flussdiagramm",
+     "ok": 1
+    },
+    {
+     "t": "Organigramm, Stellenplan und Stellenbeschreibung"
+    },
+    {
+     "t": "Bilanz, Gewinn- und Verlustrechnung und Betriebsabrechnungsbogen"
+    },
+    {
+     "t": "Arbeitsvertrag, Betriebsvereinbarung und Tarifvertrag"
+    }
+   ],
+   "e": "Die Ablauforganisation ordnet die Arbeitsprozesse zeitlich (Reihenfolge, Termine), räumlich (Wege, Layout) und personell; ihre Hilfsmittel bilden Abläufe und Zeiten ab. Die Aufbauorganisation legt Stellen, Abteilungen und Weisungsbeziehungen fest – dafür stehen Organigramm, Stellenplan und Stellenbeschreibung."
+  },
+  {
+   "f": 4,
+   "sub": "Entgelt und Arbeitszeit",
+   "t": "calc",
+   "q": "Ein Akkordauftrag über 1.500 Teile hat eine Vorgabezeit von 1.800 Minuten; der Mitarbeiter braucht 25 Stunden. Akkordgrundlohn 18 €/Std., Akkordzuschlag 10 %. Wie hoch sind die Lohnkosten des Auftrags?",
+   "ans": 594,
+   "unit": "€",
+   "e": "Zeitgrad = 30 Std. / 25 Std. = 120 %; Akkordrichtsatz = 18 · 1,10 = 19,80 €/Std.; Akkordlohn = 19,80 · 1,2 = 23,76 €/Std.; Lohnkosten = 23,76 · 25 = 594 €. Gleiches Ergebnis: Richtsatz · Vorgabezeit = 19,80 · 30. Je Stück sind das 0,396 €."
+  },
+  {
+   "f": 4,
+   "sub": "Entgelt und Arbeitszeit",
+   "t": "mc",
+   "q": "Bei einem Akkordarbeiter mit 18 € Grundlohn und 10 % Akkordzuschlag wird kurzfristig ein Zeitgrad von nur 95 % festgestellt. Welcher Stundenlohn ist zu zahlen?",
+   "o": [
+    {
+     "t": "Der Akkordgrundlohn von 18 €/Std. – er ist als Mindestlohn garantiert",
+     "ok": 1
+    },
+    {
+     "t": "19,80 € · 0,95 = 18,81 €/Std."
+    },
+    {
+     "t": "18 € · 0,95 = 17,10 €/Std."
+    },
+    {
+     "t": "Gar nichts, weil die Vorgabe nicht erreicht wurde"
+    }
+   ],
+   "e": "Beim Akkord ist der Akkordgrundlohn (tariflicher Zeitlohn) die untere Grenze; erst bei einem Zeitgrad über 100 % steigt der Verdienst über den Akkordrichtsatz hinaus. Bei dauerhaft niedrigem Zeitgrad sind Vorgabezeit oder Arbeitsbedingungen zu überprüfen."
+  },
+  {
+   "f": 2,
+   "sub": "Kostenrechnung",
+   "t": "calc",
+   "q": "Betriebsabrechnung: Istgemeinkosten der Fertigung 795.000 €, Fertigungslöhne 550.000 €. Wie hoch ist der Ist-Fertigungsgemeinkostenzuschlagsatz in Prozent (zwei Nachkommastellen)?",
+   "ans": 144.55,
+   "unit": "%",
+   "e": "Zuschlagsatz = Fertigungsgemeinkosten / Fertigungslöhne · 100 = 795.000 / 550.000 · 100 = 144,55 %. Der Materialgemeinkostenzuschlag wäre 125.000 / 750.000 = 16,67 %."
+  },
+  {
+   "f": 2,
+   "sub": "Kostenrechnung",
+   "t": "calc",
+   "q": "Materialeinzelkosten 750.000 €, Materialgemeinkosten 125.000 €, Fertigungslöhne 550.000 €, Fertigungsgemeinkosten 795.000 €, Verwaltungsgemeinkosten 85.000 €. Wie hoch ist der Verwaltungsgemeinkostenzuschlagsatz in Prozent (zwei Nachkommastellen)?",
+   "ans": 3.83,
+   "unit": "%",
+   "e": "Herstellkosten des Umsatzes = 750.000 + 125.000 + 550.000 + 795.000 = 2.220.000 €; Verwaltungszuschlag = 85.000 / 2.220.000 · 100 = 3,83 %. Vertrieb: 80.000 / 2.220.000 = 3,60 %."
+  },
+  {
+   "f": 2,
+   "sub": "Kostenrechnung",
+   "t": "calc",
+   "q": "Angebotskalkulation: Materialeinzelkosten 24.000 € (+ 15 % MGK), Fertigungslöhne 16.000 € (+ 150 % FGK), Verwaltungsgemeinkosten 5 % und Vertriebsgemeinkosten 4 % auf die Herstellkosten. Wie hoch sind die Selbstkosten?",
+   "ans": 73684,
+   "unit": "€",
+   "e": "Herstellkosten = 24.000 + 3.600 + 16.000 + 24.000 = 67.600 €; + 5 % (3.380 €) + 4 % (2.704 €) = Selbstkosten 73.684 €."
+  },
+  {
+   "f": 2,
+   "sub": "Kostenrechnung",
+   "t": "calc",
+   "q": "Selbstkosten 73.684 €, Gewinnzuschlag 10 %, der Kunde erhält 5 % Rabatt. Wie hoch ist der Angebotspreis (netto, zwei Nachkommastellen)?",
+   "ans": 85318.32,
+   "unit": "€",
+   "e": "Barverkaufspreis = 73.684 · 1,10 = 81.052,40 € = 95 % des Angebotspreises; Angebotspreis = 81.052,40 / 0,95 = 85.318,32 €. Der Rabatt wird „im Hundert“ gerechnet."
+  },
+  {
+   "f": 2,
+   "sub": "Controlling",
+   "t": "calc",
+   "q": "Controlling-Daten: August 5.400 Stück bei Gesamtkosten 504.000 €, September 6.750 Stück bei 585.000 €. Wie hoch sind die variablen Stückkosten?",
+   "ans": 60,
+   "unit": "€/Stück",
+   "e": "kv = ΔK / Δx = (585.000 – 504.000) / (6.750 – 5.400) = 81.000 / 1.350 = 60 €/Stück; Fixkosten = 504.000 – 60 · 5.400 = 180.000 €/Monat."
+  },
+  {
+   "f": 2,
+   "sub": "Controlling",
+   "t": "calc",
+   "q": "Fixkosten 180.000 € je Monat, variable Stückkosten 60 €, Verkaufspreis 90 €. Im August entsprachen 5.400 Stück einem Beschäftigungsgrad von 72 %. Bei welchem Beschäftigungsgrad in Prozent liegt die Gewinnschwelle?",
+   "ans": 80,
+   "unit": "%",
+   "e": "Break-even-Menge = 180.000 / (90 – 60) = 6.000 Stück; Kapazität = 5.400 / 0,72 = 7.500 Stück; Beschäftigungsgrad an der Gewinnschwelle = 6.000 / 7.500 = 80 %."
+  },
+  {
+   "f": 2,
+   "sub": "Rechnungswesen",
+   "t": "mc",
+   "q": "Welches Beispiel ist neutraler Aufwand und kein Zweckaufwand?",
+   "o": [
+    {
+     "t": "Eine Spende an eine gemeinnützige Einrichtung oder eine Steuernachzahlung für frühere Jahre",
+     "ok": 1
+    },
+    {
+     "t": "Löhne und Gehälter der Produktion"
+    },
+    {
+     "t": "Der Materialverbrauch der laufenden Fertigung"
+    },
+    {
+     "t": "Die Miete für die Fertigungshalle"
+    }
+   ],
+   "e": "Zweckaufwand dient dem Betriebszweck und geht als Grundkosten in die Kostenrechnung ein; neutraler Aufwand ist betriebsfremd, periodenfremd oder außerordentlich. Kalkulatorische Kosten (Abschreibungen, Zinsen, Wagnisse, Miete, Unternehmerlohn) stehen umgekehrt keinem oder einem anders hohen Aufwand gegenüber."
+  },
+  {
+   "f": 3,
+   "sub": "EDV",
+   "t": "mc",
+   "q": "Nach welchen Kriterien wählt ein Unternehmen den Partner für einen Wartungsvertrag über Hard- und Software aus?",
+   "o": [
+    {
+     "t": "Kurze Reaktionszeit und Verfügbarkeit, nachgewiesene Zuverlässigkeit (Referenzen, Zertifikate) und Fachkompetenz, etwa die Autorisierung durch die Hersteller",
+     "ok": 1
+    },
+    {
+     "t": "Ausschließlich der niedrigste Preis"
+    },
+    {
+     "t": "Die Entfernung zum Firmensitz des Anbieters"
+    },
+    {
+     "t": "Die Zahl der Mitarbeiter des Anbieters"
+    }
+   ],
+   "e": "Pflichten des Systemhauses können sein: Hotline, Fernwartung, Installation und Austausch von Hardware, Schulung, Anpassung der Standardsoftware. Wer auf regelmäßige Updates des Betriebssystems verzichtet, riskiert Sicherheitslücken, unbehobene Fehler und Inkompatibilität mit aktueller Anwendersoftware."
+  },
+  {
+   "f": 3,
+   "sub": "Arbeitsmethodik",
+   "t": "mc",
+   "q": "In einer ABC-Analyse der Einkaufsmaterialien haben drei Materialien einen kumulierten Wertanteil von 79 %. Welche Schlussfolgerung ist richtig?",
+   "o": [
+    {
+     "t": "Diese A-Materialien sind der Hebel für Kostensenkungen – Rabatte verhandeln, Ersatzprodukte prüfen, günstig einkaufen – bevor B- und C-Teile angegangen werden",
+     "ok": 1
+    },
+    {
+     "t": "Die C-Materialien sind wegen ihrer großen Stückzahl zuerst zu optimieren"
+    },
+    {
+     "t": "Alle Materialien sollten mit gleichem Aufwand bewirtschaftet werden"
+    },
+    {
+     "t": "A-Materialien sollten in großen Mengen auf Vorrat gelagert werden, um Bestellkosten zu sparen"
+    }
+   ],
+   "e": "Die vereinfachte ABC-Analyse sortiert die Positionen nach Wertanteil und kumuliert: A-Teile etwa 70–80 % des Wertes, B-Teile 15–20 %, C-Teile 5–10 %. C-Teile werden mit einfachen Verfahren (Kanban, Sammelbestellung) bewirtschaftet."
+  },
+  {
+   "f": 3,
+   "sub": "Präsentation",
+   "t": "mc",
+   "q": "Sie weisen mehrere Mitarbeiter per Präsentation in neue Arbeitsaufgaben ein. Welche mitarbeiterbezogenen Kriterien berücksichtigen Sie bei der Vorbereitung?",
+   "o": [
+    {
+     "t": "Qualifikation, Reifegrad und Motivation der Mitarbeiter, die fachlichen Anforderungen und Sicherheitshinweise der neuen Aufgaben sowie Erfahrungen aus früheren Aufgabenübergaben",
+     "ok": 1
+    },
+    {
+     "t": "Nur die technischen Daten der neuen Anlage"
+    },
+    {
+     "t": "Ausschließlich die Kosten der Präsentation"
+    },
+    {
+     "t": "Die Bewertung der Mitarbeiter durch den Betriebsrat"
+    }
+   ],
+   "e": "Eine zielgruppengerechte Präsentation holt die Zuhörer bei ihrem Kenntnisstand ab, nutzt Beispiele aus ihrem Arbeitsalltag und lässt Raum für Fragen und Übung."
+  },
+  {
+   "f": 3,
+   "sub": "Statistik",
+   "t": "calc",
+   "q": "Bei 80 Füllmengenmessungen liegen 22 Werte in der Klasse 69 bis 70 g. Wie groß ist die relative Häufigkeit dieser Klasse in Prozent (eine Nachkommastelle)?",
+   "ans": 27.5,
+   "unit": "%",
+   "e": "Relative Häufigkeit = absolute Häufigkeit / Gesamtzahl = 22 / 80 = 0,275 = 27,5 %. Die relativen Häufigkeiten aller Klassen summieren sich auf 100 % und werden als Histogramm dargestellt."
+  },
+  {
+   "f": 3,
+   "sub": "Projektmanagement",
+   "t": "mc",
+   "q": "Das überlastete Projektteam will die Fertigung einzelner Prototypenteile an einen externen Auftragnehmer vergeben. Welcher Nachteil ist zu bedenken?",
+   "o": [
+    {
+     "t": "Höherer Koordinationsaufwand, Qualitätsrisiko, mögliche Verzögerungen durch Einarbeitung und die Gefahr, Know-how aus der Hand zu geben",
+     "ok": 1
+    },
+    {
+     "t": "Das Projektteam wird noch stärker belastet"
+    },
+    {
+     "t": "Es können weniger Prototypen gebaut werden"
+    },
+    {
+     "t": "Die Spezialisierung des Auftragnehmers erhöht die Kosten zwangsläufig"
+    }
+   ],
+   "e": "Vorteile der Auslagerung: Entlastung des Teams, mehr Prototypen in gleicher Zeit, Kostenvorteile durch die Spezialisierung des Auftragnehmers. Das Lastenheft für die Ausschreibung enthält Entwicklungsziele, technische Spezifikation, Termine und geforderte Zertifizierungen oder Referenzen."
+  },
+  {
+   "f": 3,
+   "sub": "Kommunikation",
+   "t": "mc",
+   "q": "Ein Jahr nach Einführung einer Intranet-Plattform für Verbesserungsvorschläge will die Geschäftsleitung den Erfolg bewerten. Welche Auswertungsform ist geeignet?",
+   "o": [
+    {
+     "t": "Schriftliche Mitarbeiterbefragung, Berichte der Führungskräfte, Feedback in Betriebs- oder Abteilungsversammlungen und die Auswertung der Zugriffs- und Vorschlagszahlen",
+     "ok": 1
+    },
+    {
+     "t": "Nur die Zahl der eingesparten Euro, alles andere ist nicht messbar"
+    },
+    {
+     "t": "Ein Vergleich mit dem Umsatz des Vorjahres"
+    },
+    {
+     "t": "Die Abschaltung der Plattform, um zu sehen, ob jemand sie vermisst"
+    }
+   ],
+   "e": "Weitere Anwendungen des Intranets: Informationen von Geschäftsleitung und Betriebsrat, FAQ-Listen, Personaleinsatz- und Urlaubsplanung, Fortbildungsangebote, interne Stellenausschreibungen."
+  },
+  {
+   "f": 4,
+   "sub": "Motivation",
+   "t": "mc",
+   "q": "Die Materialversorgung der Fertigungsstraße ist zu langsam: ein Mitarbeiter hat Rückenschmerzen durch Seitwärtsbewegungen, das Material wird zu weit entfernt abgelegt. Welchen Einfluss hat die Arbeitsplatzgestaltung?",
+   "o": [
+    {
+     "t": "Sie ist eine Führungsaufgabe – ergonomische Gestaltung senkt Erkrankungen und Fehlzeiten, steigert Motivation und bestimmt wesentlich die Effektivität der Arbeit",
+     "ok": 1
+    },
+    {
+     "t": "Keinen – die Leistung hängt allein vom Willen der Mitarbeiter ab"
+    },
+    {
+     "t": "Sie ist Sache des Betriebsrats, nicht des Meisters"
+    },
+    {
+     "t": "Sie betrifft nur Büroarbeitsplätze"
+    }
+   ],
+   "e": "Kriterien bei der Einrichtung: ergonomische Anordnung (kurze Wege, keine Zwangshaltung), gute Beleuchtung, ausreichende Belüftung, geringe Lärmbelastung, sichere Verkehrswege und sinnvolle Abfolge der Arbeitsschritte."
+  },
+  {
+   "f": 4,
+   "sub": "Führungsmethoden",
+   "t": "mc",
+   "q": "Warum haben Führungskräfte oft Probleme mit der Kontrolle ihrer Mitarbeiter, und welcher Grundsatz gilt?",
+   "o": [
+    {
+     "t": "Kontrolle kostet Zeit, Meister wollen nicht als Überwacher gelten und jeder Mitarbeiter braucht eine andere Form der Kontrolle; Grundsatz: keine unnötigen Kontrollsysteme, aber bei der Arbeitssicherheit ist regelmäßige Kontrolle Pflicht",
+     "ok": 1
+    },
+    {
+     "t": "Kontrolle ist überflüssig, wenn die Mitarbeiter motiviert sind"
+    },
+    {
+     "t": "Jede Arbeit muss lückenlos überwacht werden, sonst sinkt die Leistung"
+    },
+    {
+     "t": "Kontrolle sollte heimlich erfolgen, damit sie nicht demotiviert"
+    }
+   ],
+   "e": "Kontrolle sollte angekündigt, sachlich und ergebnisorientiert sein und mit Feedback verbunden werden. Selbstkontrolle der Mitarbeiter setzt klare Ziele und Vertrauen voraus."
+  },
+  {
+   "f": 4,
+   "sub": "Gruppen",
+   "t": "mc",
+   "q": "Welches Beispiel ist eine informelle Gruppe im Betrieb?",
+   "o": [
+    {
+     "t": "Eine Fahrgemeinschaft, eine Pausenrunde oder eine private Lerngruppe für die Meisterprüfung",
+     "ok": 1
+    },
+    {
+     "t": "Die Schicht der Endmontage"
+    },
+    {
+     "t": "Der Arbeitsschutzausschuss"
+    },
+    {
+     "t": "Das Projektteam für die neue Anlage"
+    }
+   ],
+   "e": "Informelle Gruppen entstehen spontan neben den formalen Strukturen; Ziele, Normen, Rollen und Status legt die Gruppe selbst fest, soziale Bedürfnisse stehen im Vordergrund. Formelle Gruppen werden von der Organisation eingerichtet und haben einen Arbeitsauftrag."
+  },
+  {
+   "f": 4,
+   "sub": "Gruppen",
+   "t": "mc",
+   "q": "In welcher Phase der Teamentwicklung entsteht erstmals ein Gruppengefühl, werden Konflikte gemeinsam gelöst und Regeln akzeptiert?",
+   "o": [
+    {
+     "t": "Norming (Zusammenschluss)",
+     "ok": 1
+    },
+    {
+     "t": "Forming (Teambildung)"
+    },
+    {
+     "t": "Storming (Auseinandersetzung)"
+    },
+    {
+     "t": "Performing (Leistung)"
+    }
+   ],
+   "e": "Forming: zurückhaltend, Orientierung am Vorgesetzten. Storming: Rollenverteilung, Sympathie und Antipathie, Konkurrenzkämpfe, informelle Gruppen. Norming: Wir-Gefühl, gemeinsame Regeln. Performing: die Gruppe arbeitet selbstständig und leistungsfähig."
+  },
+  {
+   "f": 4,
+   "sub": "Personalplanung",
+   "t": "mc",
+   "q": "Wozu dient eine Qualifikationsmatrix, die für jeden Mitarbeiter den Kenntnisstand je Tätigkeit (z. B. von „sehr gut“ bis „keine Kenntnisse“) ausweist?",
+   "o": [
+    {
+     "t": "Sie zeigt auf einen Blick, wer wen bei ungeplanten Ausfällen vertreten kann, und deckt Qualifizierungslücken für die Personalentwicklung auf",
+     "ok": 1
+    },
+    {
+     "t": "Sie ersetzt die Leistungsbeurteilung und bestimmt die Prämienhöhe"
+    },
+    {
+     "t": "Sie dient nur der Personalabteilung zur Gehaltsfindung"
+    },
+    {
+     "t": "Sie ist ein Instrument des Betriebsrats zur Kontrolle des Meisters"
+    }
+   ],
+   "e": "Die Matrix listet Tätigkeiten gegen Mitarbeiter und bewertet die Kenntnisse in Stufen. Aus ihr lassen sich Vertretungspläne, Job-Rotation und gezielte Schulungen ableiten."
+  },
+  {
+   "f": 4,
+   "sub": "Konflikte",
+   "t": "mc",
+   "q": "Ein Mitarbeiter beschwert sich häufig: die Arbeit sei zu anstrengend, die Maschinen zu laut, Prämien ungerecht verteilt. Wie sollte der Meister grundsätzlich mit Beschwerden umgehen?",
+   "o": [
+    {
+     "t": "Die Beschwerde im Vier-Augen-Gespräch zulassen, sachlich und fair bleiben, Hintergründe aufdecken, den Mitarbeiter an der Lösungssuche beteiligen und berechtigte Ursachen abstellen",
+     "ok": 1
+    },
+    {
+     "t": "Beschwerden ignorieren, damit sie nicht Schule machen"
+    },
+    {
+     "t": "Den Mitarbeiter vor der Gruppe zurechtweisen"
+    },
+    {
+     "t": "Jede Beschwerde sofort an die Geschäftsleitung weiterleiten"
+    }
+   ],
+   "e": "Das Beschwerderecht ist gesetzlich verankert (§§ 84, 85 BetrVG). Vorbeugen lässt sich durch regelmäßige Information, transparente Ziele, Meinungsaustausch und gerechte Verteilungsregeln – Mitarbeiter, die sich ernst genommen fühlen, beschweren sich seltener."
+  },
+  {
+   "f": 4,
+   "sub": "Führungsmethoden",
+   "t": "mc",
+   "q": "Ein Mitarbeiter lässt während der ungeliebten Teamsitzungen regelmäßig entgegen der Regel sein Mobiltelefon eingeschaltet. Was passiert, wenn der Meister nichts unternimmt?",
+   "o": [
+    {
+     "t": "Das Fehlverhalten wird stillschweigend toleriert und wiederholt sich, andere passen sich an, die Autorität des Meisters und die Verbindlichkeit seiner Regeln sinken",
+     "ok": 1
+    },
+    {
+     "t": "Der Mitarbeiter wird sein Verhalten aus Einsicht ändern"
+    },
+    {
+     "t": "Die Gruppe wird den Mitarbeiter von selbst ausschließen"
+    },
+    {
+     "t": "Nichts – Regeln für Teamsitzungen sind unverbindlich"
+    }
+   ],
+   "e": "Kritik ist unangenehm, muss aber zeitnah, unter vier Augen und sachlich erfolgen; sie zeigt, dass Regeln gelten. Soziales Lernen meint das Aneignen ungeschriebener Verhaltensnormen im Arbeitsalltag – etwa Rücksicht, Loyalität und Verantwortung für das eigene Verhalten."
+  },
+  {
+   "f": 4,
+   "sub": "Führungsstile",
+   "t": "mc",
+   "q": "Ein junger Mitarbeiter stört den Arbeitsablauf mit ständig neuen Ideen und Verbesserungsvorschlägen. Wie geht der Meister sinnvoll damit um?",
+   "o": [
+    {
+     "t": "Situativ führen: das Engagement und das aktuelle Fachwissen anerkennen, im Gespräch klarmachen, dass die tägliche Arbeit nicht leiden darf, und die Ideen kanalisieren – etwa in ein Zusatzprojekt oder das Vorschlagswesen",
+     "ok": 1
+    },
+    {
+     "t": "Die Vorschläge grundsätzlich verbieten, weil sie den Ablauf stören"
+    },
+    {
+     "t": "Den Mitarbeiter in eine andere Abteilung versetzen lassen"
+    },
+    {
+     "t": "Alle Ideen sofort umsetzen, um ihn nicht zu demotivieren"
+    }
+   ],
+   "e": "Situative Führung passt Stil und Verhalten an Persönlichkeit, Fähigkeiten, Engagement und Umstände an. Zwei ausgegrenzte Zeitarbeitnehmer im Team integriert man durch Gespräche, Wertschätzung, Einbeziehung in alle Abläufe und gemeinsame Aktivitäten."
+  },
+  {
+   "f": 5,
+   "sub": "Naturwissenschaftliche und technische Grundlagen",
+   "t": "mc",
+   "q": "Welche Aussage zur Reaktion S + O₂ → SO₂ ist richtig?",
+   "o": [
+    {
+     "t": "Schwefel (Atom) reagiert mit Sauerstoff (Molekül) zu Schwefeldioxid (Molekül); es ist eine Oxidation, Sauerstoff wirkt als Oxidationsmittel",
+     "ok": 1
+    },
+    {
+     "t": "Es ist eine Reduktion, weil Schwefel Elektronen aufnimmt"
+    },
+    {
+     "t": "Schwefeldioxid ist ein Element"
+    },
+    {
+     "t": "O₂ ist ein einzelnes Atom"
+    }
+   ],
+   "e": "Oxidationsmittel sind Stoffe, die Sauerstoff leicht abgeben bzw. Elektronen aufnehmen. SO₂ entsteht beim Verbrennen schwefelhaltiger Brennstoffe und ist Ausgangsstoff für Schwefelsäure und saure Niederschläge."
+  },
+  {
+   "f": 5,
+   "sub": "Naturwissenschaftliche und technische Grundlagen",
+   "t": "calc",
+   "q": "Ein Heizgerät für 230 V hat eine Heizwicklung mit 29,4 Ω. Wie groß ist die Heizleistung in kW (eine Nachkommastelle)?",
+   "ans": 1.8,
+   "unit": "kW",
+   "e": "P = U² / R = 230² / 29,4 = 1.799 W ≈ 1,8 kW. Der Strom beträgt 230 / 29,4 = 7,82 A."
+  },
+  {
+   "f": 5,
+   "sub": "Naturwissenschaftliche und technische Grundlagen",
+   "t": "calc",
+   "q": "Über eine Verlängerungsleitung sinkt die Spannung am Heizgerät (29,4 Ω) um 5 % auf 218,5 V. Welche Leistung nimmt das Gerät jetzt auf (in W, ganze Zahl)?",
+   "ans": 1624,
+   "unit": "W",
+   "e": "P = U² / R = 218,5² / 29,4 = 1.624 W; der Strom sinkt auf 218,5 / 29,4 = 7,43 A. Weil die Leistung quadratisch von der Spannung abhängt, kosten 5 % weniger Spannung fast 10 % Leistung. Ursache ist der Spannungsfall am Leitungswiderstand."
+  },
+  {
+   "f": 5,
+   "sub": "Naturwissenschaftliche und technische Grundlagen",
+   "t": "calc",
+   "q": "Eine Lampe hängt in der Mitte eines Stahlseils über einer 30 m breiten Straße; bei 25 °C beträgt der Durchhang 0,66 m. Welche Seillänge muss verlegt werden (in m, drei Nachkommastellen)?",
+   "ans": 30.029,
+   "unit": "m",
+   "e": "Jede Seilhälfte ist die Hypotenuse aus 15 m und 0,66 m: L = 2 · √(15² + 0,66²) = 2 · 15,0145 = 30,029 m."
+  },
+  {
+   "f": 5,
+   "sub": "Naturwissenschaftliche und technische Grundlagen",
+   "t": "calc",
+   "q": "Das 30,029 m lange Stahlseil (Längenausdehnungszahl 0,000012 1/K) kühlt von 25 °C auf –25 °C ab. Wie lang ist es dann (in m, drei Nachkommastellen)?",
+   "ans": 30.011,
+   "unit": "m",
+   "e": "L = L₀ · (1 – α · Δϑ) = 30,029 · (1 – 0,000012 · 50) = 30,029 – 0,018 = 30,011 m. Der Durchhang beträgt dann √(15,0055² – 15²) = 0,406 m – die geforderten 0,35 m werden nicht unterschritten."
+  },
+  {
+   "f": 5,
+   "sub": "Naturwissenschaftliche und technische Grundlagen",
+   "t": "calc",
+   "q": "Ein doppelt wirkender Hydraulikzylinder (Kolbendurchmesser 8 cm) wird mit 12 l/min ausgefahren. Wie groß ist die Ausfahrgeschwindigkeit in dm/min (eine Nachkommastelle)?",
+   "ans": 23.9,
+   "unit": "dm/min",
+   "e": "Kolbenfläche A₁ = π · 0,8² / 4 = 0,503 dm²; v₁ = Q / A₁ = 12 dm³/min / 0,503 dm² = 23,9 dm/min."
+  },
+  {
+   "f": 5,
+   "sub": "Naturwissenschaftliche und technische Grundlagen",
+   "t": "calc",
+   "q": "Beim Einfahren desselben Zylinders (Kolben 8 cm, Kolbenstange 4 cm) wirkt der Volumenstrom von 12 l/min auf die Ringfläche. Einfahrgeschwindigkeit in cm/s (eine Nachkommastelle)?",
+   "ans": 5.3,
+   "unit": "cm/s",
+   "e": "Ringfläche A₂ = π · (0,8² – 0,4²) / 4 = 0,377 dm²; v₂ = 12 / 0,377 = 31,8 dm/min = 5,3 cm/s. Die Einfahrgeschwindigkeit ist um den Faktor 4/3 höher als die Ausfahrgeschwindigkeit (v₁ / v₂ = 0,75)."
+  },
+  {
+   "f": 5,
+   "sub": "Naturwissenschaftliche und technische Grundlagen",
+   "t": "calc",
+   "q": "Ein Werkstattkran hebt 125 kg in 0,3 min um 5,5 m; mechanische und elektrische Verluste betragen 12 %. Welchen Strom nimmt der Drehstrommotor (400 V, cos φ = 0,89) auf (in A, zwei Nachkommastellen; g = 9,81 m/s²)?",
+   "ans": 0.69,
+   "unit": "A",
+   "e": "P_ab = m · g · h / t = 125 · 9,81 · 5,5 / 18 s = 375 W; P_zu = 375 / 0,88 = 426 W; I = P / (√3 · U · cos φ) = 426 / (1,732 · 400 · 0,89) = 0,69 A."
+  },
+  {
+   "f": 5,
+   "sub": "Naturwissenschaftliche und technische Grundlagen",
+   "t": "calc",
+   "q": "Ein Stahlseil aus Drähten mit Re = 580 N/mm² soll mit der Sicherheitszahl 2,7 ausgelegt werden. Wie groß ist die zulässige Zugspannung (in N/mm², eine Nachkommastelle)?",
+   "ans": 214.8,
+   "unit": "N/mm²",
+   "e": "σ_zul = Re / ν = 580 / 2,7 = 214,8 N/mm². Für 35 t Last plus 12 t Wagen auf 15 % Steigung (Hangabtriebskraft ≈ 68 kN) ergibt sich ein Seilquerschnitt von etwa 317 mm²; bei Drähten mit 1,5 mm (1,77 mm²) sind das rund 180 Drähte – Bruchteile werden immer aufgerundet."
+  },
+  {
+   "f": 5,
+   "sub": "Naturwissenschaftliche und technische Grundlagen",
+   "t": "calc",
+   "q": "Zwölf Messwerte der Rautiefe Rmax ergeben in Summe 45,3 µm. Wie groß ist der arithmetische Mittelwert (in µm, drei Nachkommastellen)?",
+   "ans": 3.775,
+   "unit": "µm",
+   "e": "x̄ = Σx / n = 45,3 / 12 = 3,775 µm. Mit der Standardabweichung s = 0,2005 µm liegt die Prozessstreuung (99,73 %) zwischen x̄ – 3 s = 3,173 µm und x̄ + 3 s = 4,377 µm; im Wahrscheinlichkeitsnetz verläuft die Gerade durch diese Punkte bei 0,135 % und 99,87 %."
+  }
+ ]
+}

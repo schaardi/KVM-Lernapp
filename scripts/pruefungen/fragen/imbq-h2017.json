@@ -1,0 +1,712 @@
+{
+ "questions": [
+  {
+   "f": 1,
+   "sub": "Arbeitsrecht",
+   "t": "mc",
+   "q": "Eine Mitarbeiterin mit sechs Jahren Betriebszugehörigkeit will ihre Arbeitszeit von 40 auf 18 Wochenstunden verringern. Der Betrieb hat 200 Beschäftigte. Welche Voraussetzungen nennt das Teilzeit- und Befristungsgesetz für den Anspruch?",
+   "o": [
+    {
+     "t": "Mehr als sechs Monate Betriebszugehörigkeit, in der Regel mehr als 15 Arbeitnehmer im Betrieb und ein Antrag spätestens drei Monate vor dem gewünschten Beginn",
+     "ok": 1
+    },
+    {
+     "t": "Mindestens zwei Jahre Betriebszugehörigkeit und die Zustimmung des Betriebsrats"
+    },
+    {
+     "t": "Ein nachgewiesener familiärer Grund und ein Antrag einen Monat vor Beginn"
+    },
+    {
+     "t": "Nur ein schriftlicher Antrag – Betriebsgröße und Wartezeit spielen keine Rolle"
+    }
+   ],
+   "e": "§ 8 Absatz 1 und 7 TzBfG: Wartezeit von sechs Monaten und Schwellenwert von 15 Arbeitnehmern (Auszubildende zählen nicht mit). Der Antrag muss nach § 8 Absatz 2 TzBfG drei Monate vor Beginn gestellt werden und soll die gewünschte Verteilung angeben. Einen Grund muss der Arbeitnehmer nicht nennen."
+  },
+  {
+   "f": 1,
+   "sub": "Arbeitsrecht",
+   "t": "mc",
+   "q": "Der Arbeitgeber reagiert auf einen ordnungsgemäßen Teilzeitantrag überhaupt nicht. Zwei Tage vor dem gewünschten Beginn weiß die Mitarbeiterin immer noch nichts. Wie ist die Rechtslage?",
+   "o": [
+    {
+     "t": "Die Arbeitszeit verringert sich im beantragten Umfang – der Arbeitgeber hat nicht spätestens einen Monat vor Beginn schriftlich abgelehnt (§ 8 Absatz 5 TzBfG)",
+     "ok": 1
+    },
+    {
+     "t": "Der Antrag gilt als abgelehnt, weil Schweigen keine Zustimmung ist"
+    },
+    {
+     "t": "Die Mitarbeiterin muss den Antrag erneut stellen und drei weitere Monate warten"
+    },
+    {
+     "t": "Der Betriebsrat entscheidet an Stelle des Arbeitgebers"
+    }
+   ],
+   "e": "Nach § 8 Absatz 5 TzBfG muss der Arbeitgeber die Ablehnung spätestens einen Monat vor dem gewünschten Beginn schriftlich (seit 2019 genügt Textform) erklären. Versäumt er das, tritt die Verringerung – und auch die gewünschte Verteilung – kraft Gesetzes ein."
+  },
+  {
+   "f": 1,
+   "sub": "Arbeitsrecht",
+   "t": "mc",
+   "q": "Eine Bewerberin verneint im Vorstellungsgespräch wahrheitswidrig die Frage nach einer Schwangerschaft und wird unbefristet eingestellt. Kann der Arbeitgeber den Vertrag wegen arglistiger Täuschung anfechten?",
+   "o": [
+    {
+     "t": "Nein – die Frage war nach dem AGG unzulässig (Benachteiligung wegen des Geschlechts), deshalb durfte sie falsch beantwortet werden und trägt keine Anfechtung nach § 123 BGB",
+     "ok": 1
+    },
+    {
+     "t": "Ja, jede bewusste Falschantwort im Vorstellungsgespräch berechtigt zur Anfechtung"
+    },
+    {
+     "t": "Ja, aber nur innerhalb der ersten sechs Monate des Arbeitsverhältnisses"
+    },
+    {
+     "t": "Nein, weil eine Anfechtung von Arbeitsverträgen generell ausgeschlossen ist"
+    }
+   ],
+   "e": "Nach §§ 1, 7 AGG darf niemand wegen des Geschlechts benachteiligt werden; § 3 Absatz 1 Satz 2 AGG stellt die ungünstigere Behandlung wegen Schwangerschaft ausdrücklich der Benachteiligung wegen des Geschlechts gleich. Auf eine unzulässige Frage besteht ein „Recht zur Lüge“ – das gilt nach der Rechtsprechung auch für Arbeitsplätze mit Beschäftigungsverboten, dort greift dann vorübergehend das Mutterschutzgesetz."
+  },
+  {
+   "f": 1,
+   "sub": "Betriebsverfassung",
+   "t": "mc",
+   "q": "Ein Arbeitnehmer soll fristlos entlassen werden, weil er des Werkzeugdiebstahls überführt wurde. Wie ist der Betriebsrat zu beteiligen?",
+   "o": [
+    {
+     "t": "Er ist vor Ausspruch der Kündigung anzuhören; Bedenken muss er bei der außerordentlichen Kündigung innerhalb von drei Tagen schriftlich mitteilen (§ 102 BetrVG)",
+     "ok": 1
+    },
+    {
+     "t": "Er muss der fristlosen Kündigung ausdrücklich zustimmen"
+    },
+    {
+     "t": "Er ist erst nach Zugang der Kündigung zu informieren"
+    },
+    {
+     "t": "Er ist nicht zu beteiligen, weil eine Straftat vorliegt"
+    }
+   ],
+   "e": "Ohne Anhörung ist die Kündigung unwirksam (§ 102 Absatz 1 Satz 3 BetrVG). Bei der ordentlichen Kündigung hat der Betriebsrat eine Woche Zeit, bei der außerordentlichen drei Tage. Ein Widerspruchsrecht mit Weiterbeschäftigungsanspruch (§ 102 Absatz 3 und 5) gibt es nur bei der ordentlichen Kündigung."
+  },
+  {
+   "f": 1,
+   "sub": "Betriebsverfassung",
+   "t": "mc",
+   "q": "In einem Betrieb mit über 50 Mitarbeitern sind mehrere Maßnahmen geplant. Bei welcher hat der Betriebsrat KEIN Mitbestimmungsrecht?",
+   "o": [
+    {
+     "t": "Ein Teil der Gewinne wird für den Kauf eines Patents verwendet",
+     "ok": 1
+    },
+    {
+     "t": "Der Urlaubsplan wird künftig zentral von der Personalabteilung aufgestellt"
+    },
+    {
+     "t": "Die Prämien für Verbesserungsvorschläge werden neu festgelegt"
+    },
+    {
+     "t": "Es werden vorübergehend Überstunden angeordnet"
+    }
+   ],
+   "e": "Urlaubsgrundsätze und Urlaubsplan (§ 87 Absatz 1 Nummer 5), das betriebliche Vorschlagswesen (Nummer 12) und die vorübergehende Verlängerung der Arbeitszeit (Nummer 3) sind mitbestimmungspflichtig. Die Gewinnverwendung ist eine rein unternehmerische Entscheidung; unterrichten müsste der Arbeitgeber nur einen Wirtschaftsausschuss, den es erst ab 100 ständigen Arbeitnehmern gibt (§ 106 BetrVG)."
+  },
+  {
+   "f": 1,
+   "sub": "Betriebsverfassung",
+   "t": "mc",
+   "q": "Welche Merkmale kennzeichnen die besondere Rechtsstellung der Betriebsratsmitglieder?",
+   "o": [
+    {
+     "t": "Ehrenamt, Arbeitsentgeltgarantie, Freistellung für die Betriebsratsarbeit, besonderer Kündigungsschutz sowie Benachteiligungs- und Begünstigungsverbot",
+     "ok": 1
+    },
+    {
+     "t": "Eine eigene Vergütung für die Betriebsratstätigkeit und Weisungsfreiheit gegenüber dem Arbeitgeber in allen Fragen"
+    },
+    {
+     "t": "Unkündbarkeit auf Lebenszeit und ein Vetorecht bei Unternehmensentscheidungen"
+    },
+    {
+     "t": "Ein Anspruch auf Beförderung nach Ende der Amtszeit"
+    }
+   ],
+   "e": "Das Ehrenamt und die Entgeltgarantie stehen in § 37 BetrVG, die Freistellungen in § 38, das Benachteiligungs- und Begünstigungsverbot in § 78 BetrVG; der besondere Kündigungsschutz folgt aus § 15 KSchG in Verbindung mit § 103 BetrVG."
+  },
+  {
+   "f": 1,
+   "sub": "Sozialversicherung",
+   "t": "mc",
+   "q": "Ein seit vier Wochen beschäftigter Mitarbeiter verletzt sich bei einem Arbeitsunfall schwer und ist fünf Monate arbeitsunfähig. Wer sichert sein Einkommen?",
+   "o": [
+    {
+     "t": "Sechs Wochen Entgeltfortzahlung durch den Arbeitgeber, danach Verletztengeld der Berufsgenossenschaft in Höhe von 80 % des Regelentgelts",
+     "ok": 1
+    },
+    {
+     "t": "Sechs Wochen Entgeltfortzahlung, danach Krankengeld der Krankenkasse"
+    },
+    {
+     "t": "Vom ersten Tag an Verletztengeld, weil es sich um einen Arbeitsunfall handelt"
+    },
+    {
+     "t": "Nichts – die Wartezeit von vier Wochen für die Entgeltfortzahlung ist gerade erst erfüllt, Verletztengeld gibt es erst nach sechs Monaten Beschäftigung"
+    }
+   ],
+   "e": "Der Anspruch auf Entgeltfortzahlung besteht nach vier Wochen ununterbrochener Beschäftigung (§ 3 Absatz 3 EFZG) für bis zu sechs Wochen. Bei einem Arbeitsunfall zahlt anschließend die gesetzliche Unfallversicherung Verletztengeld (§§ 45, 47 SGB VII) – die Krankenkasse zahlt Krankengeld nur bei sonstigen Erkrankungen."
+  },
+  {
+   "f": 1,
+   "sub": "Umweltrecht",
+   "t": "mc",
+   "q": "Nach welcher Vorschrift werden wassergefährdende Stoffe in Wassergefährdungsklassen eingestuft, und welche Klassen gibt es?",
+   "o": [
+    {
+     "t": "Nach der Verordnung über Anlagen zum Umgang mit wassergefährdenden Stoffen (AwSV) in WGK 1 (schwach), WGK 2 (deutlich) und WGK 3 (stark wassergefährdend)",
+     "ok": 1
+    },
+    {
+     "t": "Nach der Gefahrstoffverordnung in die Klassen A, B und C"
+    },
+    {
+     "t": "Nach dem Kreislaufwirtschaftsgesetz in gefährliche und ungefährliche Stoffe"
+    },
+    {
+     "t": "Nach der Trinkwasserverordnung in fünf Gefährdungsstufen"
+    }
+   ],
+   "e": "Die AwSV (2017) hat die frühere Allgemeine Verwaltungsvorschrift wassergefährdende Stoffe abgelöst und beruht auf § 62 Absatz 4 WHG. Neben den drei Klassen kennt sie die Stufe „allgemein wassergefährdend“, etwa für Gülle und Jauche."
+  },
+  {
+   "f": 1,
+   "sub": "Sozialversicherung",
+   "t": "mc",
+   "q": "Ein Auszubildender fragt, was die Jahresarbeitsentgeltgrenze von der Beitragsbemessungsgrenze unterscheidet. Welche Antwort ist richtig?",
+   "o": [
+    {
+     "t": "Die Jahresarbeitsentgeltgrenze bestimmt, bis zu welchem Einkommen Versicherungspflicht in der gesetzlichen Krankenkasse besteht; die Beitragsbemessungsgrenze deckelt das Entgelt, von dem Beiträge berechnet werden",
+     "ok": 1
+    },
+    {
+     "t": "Beide Grenzen bezeichnen denselben Betrag, einmal pro Jahr und einmal pro Monat"
+    },
+    {
+     "t": "Die Beitragsbemessungsgrenze regelt den Wechsel in die private Krankenversicherung"
+    },
+    {
+     "t": "Die Jahresarbeitsentgeltgrenze gilt nur für Auszubildende"
+    }
+   ],
+   "e": "Wer dauerhaft mehr als die Jahresarbeitsentgeltgrenze verdient, wird versicherungsfrei und kann sich privat versichern (§ 6 SGB V). Entgeltteile oberhalb der Beitragsbemessungs-grenze bleiben beitragsfrei. Beide Werte werden jährlich per Verordnung angepasst."
+  },
+  {
+   "f": 1,
+   "sub": "Produkthaftung/Datenschutz",
+   "t": "mc",
+   "q": "Nach Abschluss eines Bewerbungsverfahrens möchte der Geschäftsführer die Unterlagen aller abgelehnten Bewerber behalten und das Bewerbungsfoto der Eingestellten auf die Internetseite stellen. Was gilt datenschutzrechtlich?",
+   "o": [
+    {
+     "t": "Beides ist nur mit Einwilligung zulässig: Unterlagen abgelehnter Bewerber sind nach Ende des Verfahrens zu löschen oder zurückzugeben, ein Foto darf nur mit Einwilligung der Beschäftigten veröffentlicht werden",
+     "ok": 1
+    },
+    {
+     "t": "Beides ist zulässig, weil die Daten freiwillig übermittelt wurden"
+    },
+    {
+     "t": "Die Unterlagen dürfen unbegrenzt aufbewahrt werden, nur das Foto braucht eine Einwilligung"
+    },
+    {
+     "t": "Das Foto darf ohne Weiteres veröffentlicht werden, nur die Unterlagen sind zu löschen"
+    }
+   ],
+   "e": "Bewerberdaten dürfen nur so lange gespeichert werden, wie es für das Verfahren erforderlich ist (Art. 5 und 17 DSGVO, § 26 BDSG); in der Praxis bis zum Ablauf der Fristen für AGG-Ansprüche. Die Veröffentlichung eines Fotos ist ein eigener Verarbeitungszweck und braucht eine freiwillige, dokumentierte Einwilligung."
+  },
+  {
+   "f": 2,
+   "sub": "Betriebsorganisation",
+   "t": "calc",
+   "q": "Für eine Montagelinie liegen für das nächste Quartal vor: Kapazitätsbedarf 18.000 Fertigungsstunden, Störzeitfaktor 1,05, tägliche Arbeitszeit 8 Stunden, 60 Arbeitstage, Urlaub 12 %, Krankheitsquote 6 %. Berechnen Sie den Personalbedarf in Mitarbeitern (zwei Nachkommastellen).",
+   "ans": 48.02,
+   "unit": "Mitarbeiter",
+   "e": "Personalbedarf = Kapazitätsbedarf · Störzeitfaktor ÷ (Arbeitszeit je Tag · Arbeitstage · Anwesenheitsfaktor) = 18.000 · 1,05 ÷ (8 · 60 · 0,82) = 18.900 ÷ 393,6 = 48,02. Der Anwesenheitsfaktor ist 1 − 0,12 − 0,06 = 0,82; gebraucht werden 48 Mitarbeiter."
+  },
+  {
+   "f": 2,
+   "sub": "Betriebsorganisation",
+   "t": "calc",
+   "q": "Die Geschäftsleitung lehnt Neueinstellungen ab: 44 Mitarbeiter sollen den Zusatzbedarf von 1.581,6 Stunden im Quartal durch Mehrarbeit abdecken. Der Anwesenheitsfaktor beträgt 0,82. Wie viele Mehrarbeitsstunden entfallen im Quartal auf jeden Mitarbeiter (zwei Nachkommastellen)?",
+   "ans": 43.84,
+   "unit": "Std.",
+   "e": "Mehrarbeit je Mitarbeiter = Zusatzbedarf ÷ (Mitarbeiter · Anwesenheitsfaktor) = 1.581,6 ÷ (44 · 0,82) = 1.581,6 ÷ 36,08 = 43,84 Stunden. Der Zusatzbedarf ist die Differenz aus Kapazitätsbedarf 18.900 Stunden (18.000 · 1,05) und Kapazitätsbestand 17.318,4 Stunden (44 · 8 · 60 · 0,82)."
+  },
+  {
+   "f": 2,
+   "sub": "Kostenrechnung",
+   "t": "calc",
+   "q": "Ein Montagewerker montiert 120 Teile. Die Vorgabezeit beträgt 30 Minuten Rüstzeit je Auftrag und 5,75 Minuten je Einheit. Berechnen Sie die Auftragszeit in Stunden.",
+   "ans": 12,
+   "unit": "Stunden",
+   "e": "Auftragszeit T = tr + m · te = 30 min + 120 · 5,75 min = 30 min + 690 min = 720 min = 12 Stunden. Die Rüstzeit fällt einmal je Auftrag an, die Zeit je Einheit für jedes Stück."
+  },
+  {
+   "f": 2,
+   "sub": "Kostenrechnung",
+   "t": "calc",
+   "q": "Der Akkordgrundlohn beträgt 15,50 €/Stunde, der Akkordzuschlag 10 %. Ein Werker erledigt einen Auftrag mit 12 Stunden Vorgabezeit in 10 Stunden. Berechnen Sie seinen tatsächlichen Akkordlohn je Stunde.",
+   "ans": 20.46,
+   "unit": "€/Std.",
+   "e": "Akkordrichtsatz = 15,50 · 1,1 = 17,05 €/Std.; Zeitgrad = 12 ÷ 10 = 120 %. Akkordlohn je Stunde = Akkordrichtsatz · Zeitgradfaktor = 17,05 · 1,2 = 20,46 €/Std. Kontrolle: Fertigungslohnkosten des Auftrags 12 · 17,05 = 204,60 €, geteilt durch 10 Iststunden ergibt ebenfalls 20,46 €/Std."
+  },
+  {
+   "f": 2,
+   "sub": "Kostenrechnung",
+   "t": "calc",
+   "q": "Für ein Produkt gelten: Materialeinzelkosten 56,50 €, Materialgemeinkosten 16 %, Fertigungslohn Zerspanung 3,80 € mit 140 % Restfertigungsgemeinkosten und 7,60 € Maschinenkosten, Fertigungslohn Montage 9,50 € mit 220 % Fertigungsgemeinkosten. Ein Spezialwerkzeug (5.872 €, Standzeit 800 Einheiten) wird als Sondereinzelkosten der Fertigung verrechnet. Berechnen Sie die Herstellkosten je Stück.",
+   "ans": 120,
+   "unit": "€",
+   "e": "Materialkosten: 56,50 + 9,04 = 65,54 €. Fertigungskosten: Zerspanung 3,80 + 5,32 + 7,60, Montage 9,50 + 20,90, Werkzeug 5.872 ÷ 800 = 7,34 € – zusammen 54,46 €. Herstellkosten = 65,54 + 54,46 = 120,00 €."
+  },
+  {
+   "f": 2,
+   "sub": "Kostenrechnung",
+   "t": "calc",
+   "q": "Die Selbstkosten eines Produkts betragen 138,00 €. Kalkuliert wird mit 20 % Gewinn auf die Selbstkosten, 2 % Skonto und 18 % Vertreterprovision (beide auf den Zielverkaufspreis) sowie 25 % Rabatt auf den Listenverkaufspreis. Berechnen Sie den Listenverkaufspreis.",
+   "ans": 276,
+   "unit": "€",
+   "e": "Barverkaufspreis = 138 · 1,2 = 165,60 €. Skonto und Provision werden „im Hundert“ gerechnet: Zielverkaufspreis = 165,60 ÷ (1 − 0,02 − 0,18) = 165,60 ÷ 0,80 = 207,00 €. Listenverkaufspreis = 207,00 ÷ (1 − 0,25) = 276,00 €. Die IHK-Lösung weist die Zuschläge als 4,14 €, 37,26 € und 69,00 € aus."
+  },
+  {
+   "f": 2,
+   "sub": "Kostenrechnung",
+   "t": "calc",
+   "q": "Für einen Neukunden wird einmalig ein Rabatt von 30 % statt 25 % gewährt; Listenverkaufspreis 276,00 €, Skonto 2 % und Vertreterprovision 18 % auf den Zielverkaufspreis sowie Selbstkosten von 138,00 € bleiben unverändert. Welcher prozentuale Gewinn auf die Selbstkosten bleibt bei diesem Auftrag?",
+   "ans": 12,
+   "unit": "%",
+   "e": "Zielverkaufspreis = 276 · (1 − 0,30) = 193,20 €; Barverkaufspreis = 193,20 · (1 − 0,20) = 154,56 €; Gewinn = 154,56 − 138,00 = 16,56 €; 16,56 ÷ 138,00 · 100 = 12 %. Der höhere Rabatt kostet also 8 Prozentpunkte Gewinn."
+  },
+  {
+   "f": 2,
+   "sub": "Controlling",
+   "t": "calc",
+   "q": "Aus dem Controlling liegen vor: September 13.500 Stück mit 1.755.000 € Gesamtkosten, Oktober 10.800 Stück mit 1.512.000 € Gesamtkosten. Berechnen Sie die Fixkosten pro Monat.",
+   "ans": 540000,
+   "unit": "€",
+   "e": "Variable Stückkosten kv = ΔK ÷ Δx = 243.000 € ÷ 2.700 Stück = 90 €/Stück. Fixkosten Kf = K − kv · x = 1.512.000 − 90 · 10.800 = 540.000 €/Monat (mit den Septemberwerten: 1.755.000 − 90 · 13.500 = 540.000 €)."
+  },
+  {
+   "f": 2,
+   "sub": "Controlling",
+   "t": "calc",
+   "q": "Ein Betrieb hat Fixkosten von 540.000 €/Monat, variable Stückkosten von 90 €/Stück und einen Verkaufspreis von 135 €/Stück. Im September wurden 10.800 Stück bei 72 % Beschäftigungsgrad gefertigt. Berechnen Sie den Beschäftigungsgrad an der Gewinnschwelle in Prozent.",
+   "ans": 80,
+   "unit": "%",
+   "e": "Break-even-Menge xBEP = Kf ÷ (p − kv) = 540.000 ÷ (135 − 90) = 12.000 Stück/Monat. Kapazitätsgrenze xmax = 10.800 ÷ 0,72 = 15.000 Stück/Monat. Beschäftigungsgrad an der Gewinnschwelle = 12.000 ÷ 15.000 · 100 = 80 %."
+  },
+  {
+   "f": 2,
+   "sub": "Controlling",
+   "t": "calc",
+   "q": "Fixkosten 540.000 €/Monat, variable Stückkosten 90 €/Stück, Verkaufspreis 135 €/Stück, Kapazitätsgrenze 15.000 Stück/Monat. Berechnen Sie den Stückgewinn an der Kapazitätsgrenze.",
+   "ans": 9,
+   "unit": "€/Stück",
+   "e": "Stückkosten an der Kapazitätsgrenze k = Kf ÷ x + kv = 540.000 ÷ 15.000 + 90 = 36 + 90 = 126 €/Stück. Stückgewinn = p − k = 135 − 126 = 9 €/Stück. Mit steigender Auslastung sinken die fixen Stückkosten (Fixkostendegression)."
+  },
+  {
+   "f": 2,
+   "sub": "Materialwirtschaft",
+   "t": "mc",
+   "q": "Welche Aussage zur Just-in-time-Beschaffung ist richtig?",
+   "o": [
+    {
+     "t": "Die Bestellung wird vor dem Bedarf ausgelöst, geliefert wird fertigungssynchron – das senkt Lagerkosten, bindet aber lange an den Lieferanten und macht Lieferverzögerungen zum Produktionsrisiko",
+     "ok": 1
+    },
+    {
+     "t": "Sie ist die Einzelbeschaffung im Bedarfsfall: bestellt wird erst, wenn eine Kundenbestellung eingegangen ist"
+    },
+    {
+     "t": "Sie setzt hohe Sicherheitsbestände voraus, um Lieferschwankungen abzufangen"
+    },
+    {
+     "t": "Sie eignet sich vor allem für schwankende Produktionsmengen, weil keine Rahmenverträge nötig sind"
+    }
+   ],
+   "e": "Die auftragsbezogene Beschaffung bestellt erst nach Auftreten des Bedarfs. Just in time bedeutet niedrige Bestände und geringen Lagerflächenbedarf, gute Konditionen über Rahmenverträge, aber Abhängigkeit vom Lieferanten und geringe Flexibilität bei Mengenänderungen."
+  },
+  {
+   "f": 2,
+   "sub": "Rechtsformen",
+   "t": "mc",
+   "q": "Wer haftet bei einer GmbH & Co. KG für die Verbindlichkeiten der Gesellschaft?",
+   "o": [
+    {
+     "t": "Die GmbH als Komplementär unbeschränkt – aber nur mit ihrem Gesellschaftsvermögen –, die Kommanditisten nur mit ihrer Einlage",
+     "ok": 1
+    },
+    {
+     "t": "Alle Gesellschafter unbeschränkt mit ihrem Privatvermögen"
+    },
+    {
+     "t": "Niemand persönlich, weil beide Rechtsformen haftungsbeschränkt sind"
+    },
+    {
+     "t": "Die Kommanditisten unbeschränkt, die GmbH nur mit dem Stammkapital"
+    }
+   ],
+   "e": "Vollhafter der KG ist die GmbH; weil deren Gesellschafter nur mit ihrer Kapitaleinlage haften, entsteht praktisch eine Kommanditgesellschaft ohne persönlich unbeschränkt haftende natürliche Person."
+  },
+  {
+   "f": 3,
+   "sub": "EDV",
+   "t": "mc",
+   "q": "Welches Verfahren zählt zur automatischen Erfassung digitaler Daten?",
+   "o": [
+    {
+     "t": "Das Auslesen von RFID-Transpondern an den Ladungsträgern beim Wareneingang",
+     "ok": 1
+    },
+    {
+     "t": "Die Eingabe der Liefermenge über einen Touchscreen"
+    },
+    {
+     "t": "Das Scannen eines Lieferscheins mit einem Handscanner"
+    },
+    {
+     "t": "Die Übernahme einer Bestellnummer über die Tastatur"
+    }
+   ],
+   "e": "Manuell erfasst wird, wenn ein Mensch die Eingabe auslöst (Tastatur, Zeigegerät, Touchscreen, Handscanner, Kartenleser). Automatisch erfasst wird ohne Bedienereingriff: Sensoren, Lichtschranken, elektronische Waagen, fest installierte Barcodescanner, RFID."
+  },
+  {
+   "f": 3,
+   "sub": "EDV",
+   "t": "mc",
+   "q": "Welche beiden Anforderungen muss ein Backup der Betriebsdaten in jedem Fall erfüllen?",
+   "o": [
+    {
+     "t": "Der Datenbestand muss kurzfristig und vollständig wiederherstellbar sein, und die Sicherung muss räumlich getrennt von den Originaldaten aufbewahrt werden",
+     "ok": 1
+    },
+    {
+     "t": "Es muss täglich ausgedruckt und im Meisterbüro abgeheftet werden"
+    },
+    {
+     "t": "Es darf nur vom Hersteller der Software erstellt werden"
+    },
+    {
+     "t": "Es muss auf demselben Server liegen, damit es schnell verfügbar ist"
+    }
+   ],
+   "e": "Ein Backup dient der Verfügbarkeit nach einer Störung. Liegt es im selben Raum oder auf demselben System, geht es bei Brand, Diebstahl oder Systemausfall mit verloren."
+  },
+  {
+   "f": 3,
+   "sub": "Statistik",
+   "t": "calc",
+   "q": "Laut Plan sollen je Monat 1.200 Werkzeuge geprüft werden. Tatsächlich geprüft wurden im Januar 800, Februar 800, März 1.000, April 1.400 und Mai 1.400 Werkzeuge. Um wie viele Werkzeuge liegt der kumulierte Ist-Wert Ende Mai hinter dem kumulierten Soll-Wert zurück?",
+   "ans": 600,
+   "unit": "Werkzeuge",
+   "e": "Kumulierter Soll-Wert Ende Mai: 5 · 1.200 = 6.000. Kumulierter Ist-Wert: 800 + 800 + 1.000 + 1.400 + 1.400 = 5.400. Rückstand: 6.000 − 5.400 = 600 Werkzeuge. Mit 1.800 Prüfungen im Juni werden die 7.200 des Halbjahres genau erreicht."
+  },
+  {
+   "f": 3,
+   "sub": "Projektmanagement",
+   "t": "mc",
+   "q": "Ein Projekt durchläuft Initiierung, Planung, Durchführung und Abschluss. Welche Aufgaben des Auftraggebers gehören in die Phase der Durchführung?",
+   "o": [
+    {
+     "t": "Die Arbeit der Projektleitung kontrollieren, Teilbudgets freigeben und erfüllte Aufgaben abnehmen",
+     "ok": 1
+    },
+    {
+     "t": "Die Ziele setzen, den Projektauftrag formulieren und die Projektleitung auswählen"
+    },
+    {
+     "t": "Den Strukturplan, den Ablaufplan und den Terminplan erstellen"
+    },
+    {
+     "t": "Den Abschlussbericht schreiben und die Projekterfahrungen dokumentieren"
+    }
+   ],
+   "e": "Ziele, Projektauftrag, Projektorganisation und Ressourcen gehören in die Initiierung, die Pläne in die Planungsphase, Abschlussbericht und Erfahrungssicherung in den Abschluss. Während der Durchführung steuert der Auftraggeber über Kontrolle, Budgetfreigaben, Teilabnahmen und das Aushandeln von Änderungsanforderungen."
+  },
+  {
+   "f": 3,
+   "sub": "Präsentation",
+   "t": "mc",
+   "q": "Worauf sollte ein Vortragender bei der Rhetorik einer Präsentation vor Mitarbeitern achten?",
+   "o": [
+    {
+     "t": "Deutlich und in angemessener Lautstärke sprechen, in Hauptsätzen formulieren, ein mittleres Sprechtempo wählen und den Vortrag durch Betonung und Pausen lebendig halten",
+     "ok": 1
+    },
+    {
+     "t": "Möglichst schnell sprechen, damit die Zuhörer nicht abschweifen"
+    },
+    {
+     "t": "Verschachtelte Sätze verwenden, um Fachkompetenz zu zeigen"
+    },
+    {
+     "t": "Den Text wörtlich ablesen, damit nichts vergessen wird"
+    }
+   ],
+   "e": "Verschachtelte Sätze und hohes Tempo erschweren das Verstehen; Ablesen verhindert den Blickkontakt. Die Rhetorik unterstützt die Verständlichkeit – sie ersetzt nicht die inhaltliche Vorbereitung."
+  },
+  {
+   "f": 3,
+   "sub": "Kommunikation",
+   "t": "mc",
+   "q": "Welche Eigenschaften kennzeichnen einen guten technischen Bericht?",
+   "o": [
+    {
+     "t": "Er fasst Vorgänge zur Information des Empfängers zusammen, ist in der Sache eindeutig und konzentriert sich auf das Wesentliche",
+     "ok": 1
+    },
+    {
+     "t": "Er ist möglichst umfangreich und schildert auch Nebensächlichkeiten"
+    },
+    {
+     "t": "Er verzichtet auf Tabellen und Zeichnungen, weil nur Text zählt"
+    },
+    {
+     "t": "Er richtet sich in Sprache und Aufbau nach dem Verfasser, nicht nach dem Leser"
+    }
+   ],
+   "e": "Neben dem Text gehören Diagramme, technische Zeichnungen, Tabellen, Abbildungen und Verzeichnisse zum Bericht. Verständlich wird er durch Prägnanz, Übersichtlichkeit und adressatengerechte Sprache."
+  },
+  {
+   "f": 4,
+   "sub": "Personalentwicklung",
+   "t": "mc",
+   "q": "Was unterscheidet Leistungsfähigkeit von Leistungsbereitschaft?",
+   "o": [
+    {
+     "t": "Leistungsfähigkeit ist das, was ein Mitarbeiter nach Veranlagung, Ausbildung und Gesundheitszustand maximal leisten kann; Leistungsbereitschaft ist der Wille, dieses Können auch auszuschöpfen",
+     "ok": 1
+    },
+    {
+     "t": "Leistungsfähigkeit ist die Tagesform, Leistungsbereitschaft die Qualifikation"
+    },
+    {
+     "t": "Beide Begriffe bezeichnen dasselbe und werden nur in verschiedenen Tarifverträgen unterschiedlich benannt"
+    },
+    {
+     "t": "Leistungsbereitschaft lässt sich durch Schulung, Leistungsfähigkeit durch Motivation steigern"
+    }
+   ],
+   "e": "Die Fähigkeit hängt von Ausbildung, Erfahrung, Entwicklungs- und Gesundheitszustand ab, die Bereitschaft von Motivation und Tagesform. Ein hoch qualifizierter, aber unmotivierter Mitarbeiter bringt seine Leistung nicht – Führung setzt daher an beidem an."
+  },
+  {
+   "f": 4,
+   "sub": "Führungsmethoden",
+   "t": "mc",
+   "q": "Der Meister nimmt situativ verschiedene Rollen ein. Welche Beschreibung passt zur Rolle des Mentors?",
+   "o": [
+    {
+     "t": "Er fordert, fördert und entwickelt seine Mitarbeiter",
+     "ok": 1
+    },
+    {
+     "t": "Er qualifiziert, schult und bildet in konkreten Arbeitstechniken weiter"
+    },
+    {
+     "t": "Er gibt Entscheidungshilfen, ohne selbst zu entscheiden"
+    },
+    {
+     "t": "Er überwacht die Einhaltung von Arbeitsschutz und Arbeitsrecht"
+    }
+   ],
+   "e": "Der Trainer schult, der Berater gibt Entscheidungshilfen, der Interessenvertreter achtet auf Arbeitsschutz und Arbeitsrecht, der Vorgesetzte weist an – und der Mentor begleitet die persönliche und fachliche Entwicklung."
+  },
+  {
+   "f": 4,
+   "sub": "Gruppen",
+   "t": "mc",
+   "q": "Acht Mitarbeiter eines geschlossenen Nachbarbetriebs werden auf die Schichten verteilt. Wodurch entstehen erfahrungsgemäß informelle Beziehungen?",
+   "o": [
+    {
+     "t": "Durch häufige persönliche Kontakte (Fahrgemeinschaften, gleicher Wohnort), gemeinsame Interessen (Verein, Sport) und gleiche Zielvorstellungen (Weiterbildung)",
+     "ok": 1
+    },
+    {
+     "t": "Nur durch Anordnung des Vorgesetzten im Organigramm"
+    },
+    {
+     "t": "Ausschließlich durch gleiche Tätigkeit an derselben Maschine"
+    },
+    {
+     "t": "Durch das Betriebsverfassungsgesetz, das informelle Gruppen vorschreibt"
+    }
+   ],
+   "e": "Informelle Gruppen bilden sich aus Sympathie und gemeinsamen Interessen, nicht durch die Betriebsorganisation. Vorteile: schneller Informationsfluss, Hilfsbereitschaft, Betriebsklima. Nachteile: Abgrenzung, erschwerte Integration, Machtkämpfe zwischen Gruppen."
+  },
+  {
+   "f": 4,
+   "sub": "Berufsausbildung",
+   "t": "mc",
+   "q": "Ein erfahrener Spezialist übernimmt die Betreuung der Auszubildenden. Welche Befugnisse kann ihm der Meister dafür übertragen?",
+   "o": [
+    {
+     "t": "Weisungsbefugnis gegenüber den Auszubildenden, die Steuerung ihrer innerbetrieblichen Einsätze, das Abzeichnen der Ausbildungsnachweise und die Durchführung von Lernzielkontrollen",
+     "ok": 1
+    },
+    {
+     "t": "Die Kündigung von Auszubildenden bei Fehlverhalten"
+    },
+    {
+     "t": "Die Festlegung der Ausbildungsvergütung"
+    },
+    {
+     "t": "Den Abschluss von Ausbildungsverträgen im Namen des Betriebs"
+    }
+   ],
+   "e": "Kündigung, Vergütung und Vertragsabschluss bleiben beim Ausbildenden (§§ 10, 17, 22 BBiG). Übertragbar sind die ausbildungsnahen Aufgaben – der Betreuer wird damit zum Ausbildungsbeauftragten im Sinne des § 28 BBiG."
+  },
+  {
+   "f": 4,
+   "sub": "Mitarbeiterbeurteilung",
+   "t": "mc",
+   "q": "Warum ist eine regelmäßige Leistungsbeurteilung der Mitarbeiter notwendig?",
+   "o": [
+    {
+     "t": "Der Mitarbeiter erhält Rückmeldung und Motivation, beide Seiten sprechen über die gemeinsame Arbeit, und Einsatz sowie Entwicklung lassen sich an den Kompetenzen und Interessen ausrichten",
+     "ok": 1
+    },
+    {
+     "t": "Weil das Arbeitszeitgesetz eine jährliche Beurteilung vorschreibt"
+    },
+    {
+     "t": "Damit der Betriebsrat die Beurteilungen als Grundlage für Kündigungen nutzen kann"
+    },
+    {
+     "t": "Damit alle Mitarbeiter dieselbe Note erhalten und Konflikte vermieden werden"
+    }
+   ],
+   "e": "Die Beurteilung ist Grundlage für Personalgespräche, Personalentwicklung, Entgelt- und Einsatzentscheidungen. Eine gesetzliche Pflicht gibt es nicht; typische Fehler wie Tendenz zur Mitte oder Überstrahlung sind zu vermeiden."
+  },
+  {
+   "f": 4,
+   "sub": "Führungsmethoden",
+   "t": "mc",
+   "q": "Welche Verhaltensregel gilt im Gespräch mit einem schwierigen Mitarbeiter?",
+   "o": [
+    {
+     "t": "Ruhe bewahren, ausreden lassen, aktiv zuhören, klärende Fragen stellen und die Sache kritisieren, nie die Person",
+     "ok": 1
+    },
+    {
+     "t": "Das Gespräch kurz halten und die Maßnahmen ohne Diskussion anordnen"
+    },
+    {
+     "t": "Den Mitarbeiter vor der Gruppe zur Rede stellen, damit alle die Regeln kennen"
+    },
+    {
+     "t": "Persönliche Schwächen offen ansprechen, um den Mitarbeiter wachzurütteln"
+    }
+   ],
+   "e": "Kritik am Verhalten oder am Ergebnis bleibt sachlich und lösungsorientiert; Maßnahmen zur Behebung von Mängeln werden gemeinsam erörtert. Persönliche Angriffe und Bloßstellung erzeugen Widerstand statt Einsicht."
+  },
+  {
+   "f": 5,
+   "sub": "Naturwissenschaftliche und technische Grundlagen",
+   "t": "mc",
+   "q": "Wie entsteht eine Base, und welche Merkmale hat sie?",
+   "o": [
+    {
+     "t": "Sie entsteht z. B. bei der Reaktion eines Metalloxids mit Wasser; Basen sind ätzend, haben einen pH-Wert über 7 und fühlen sich in Wasser gelöst seifig an",
+     "ok": 1
+    },
+    {
+     "t": "Sie entsteht bei der Reaktion eines Nichtmetalloxids mit Wasser und hat einen pH-Wert unter 7"
+    },
+    {
+     "t": "Sie entsteht bei der Verbrennung von Schwefel und färbt Lackmus rot"
+    },
+    {
+     "t": "Sie entsteht bei der Neutralisation und hat immer den pH-Wert 7"
+    }
+   ],
+   "e": "Nichtmetalloxide bilden mit Wasser Säuren (pH < 7), Metalloxide Basen (pH > 7). Bei der Neutralisation heben Säure und Base ihre ätzende Wirkung auf; es entstehen Wasser und ein Salz. Technisch werden Basen z. B. für Seifen, Kalkmörtel und als Ätzmittel genutzt."
+  },
+  {
+   "f": 5,
+   "sub": "Naturwissenschaftliche und technische Grundlagen",
+   "t": "calc",
+   "q": "Ein Wasserkocher mit 230 V/1.600 W verliert beim Erhitzen 15 % der elektrischen Energie. Wie viele Sekunden braucht er, um 1,5 l Wasser von 20 °C zum Sieden zu bringen (c = 4,18 kJ/(kg·K), auf ganze Sekunden gerundet)?",
+   "ans": 369,
+   "unit": "s",
+   "e": "η · P · t = c · m · ΔT → t = c · m · ΔT ÷ (η · P) = 4,18 kJ/(kg·K) · 1,5 kg · 80 K ÷ (0,85 · 1,6 kW) = 501,6 kJ ÷ 1,36 kW = 368,8 s ≈ 369 s, also 6 min 9 s."
+  },
+  {
+   "f": 5,
+   "sub": "Naturwissenschaftliche und technische Grundlagen",
+   "t": "calc",
+   "q": "Ein Glühofen (230 V, maximale Heizleistung 2.760 W) hat drei gleiche Heizspiralen. In Heizstufe II liegt R1 parallel zur Reihenschaltung aus R2 und R3. Berechnen Sie den Widerstand einer Heizspirale in Ohm.",
+   "ans": 28.75,
+   "unit": "Ω",
+   "e": "Gesamtstrom I = P ÷ U = 2.760 ÷ 230 = 12 A. Der Zweig R2 + R3 hat den doppelten Widerstand von R1, führt also den halben Strom: I2 = 4 A, I1 = 8 A. R1 = U ÷ I1 = 230 ÷ 8 = 28,75 Ω; alle drei Spiralen sind gleich."
+  },
+  {
+   "f": 5,
+   "sub": "Naturwissenschaftliche und technische Grundlagen",
+   "t": "calc",
+   "q": "In Heizstufe I werden die drei Heizspiralen (je 28,75 Ω) in Reihe an 230 V betrieben. Berechnen Sie den Strom in Ampere (zwei Nachkommastellen).",
+   "ans": 2.67,
+   "unit": "A",
+   "e": "Rg = 3 · 28,75 = 86,25 Ω; I = U ÷ Rg = 230 ÷ 86,25 = 2,67 A. Die Heizleistung sinkt auf P = U · I ≈ 614 W – weniger als ein Viertel der Stufe II."
+  },
+  {
+   "f": 5,
+   "sub": "Naturwissenschaftliche und technische Grundlagen",
+   "t": "calc",
+   "q": "Eine defekte Heizspirale (28,75 Ω) soll aus Konstantandraht mit 0,25 mm Durchmesser gewickelt werden (ρ = 0,49 Ω·mm²/m). Berechnen Sie die erforderliche Drahtlänge in Metern (zwei Nachkommastellen).",
+   "ans": 2.88,
+   "unit": "m",
+   "e": "R = ρ · L ÷ A → L = R · A ÷ ρ. Querschnitt A = π · d² ÷ 4 = π · 0,25² ÷ 4 = 0,0491 mm². L = 28,75 Ω · 0,0491 mm² ÷ 0,49 Ω·mm²/m = 2,88 m."
+  },
+  {
+   "f": 5,
+   "sub": "Naturwissenschaftliche und technische Grundlagen",
+   "t": "calc",
+   "q": "Ein Lkw mit 40 t Gesamtmasse fährt eine Steigung von 15 % hinauf; die Fahrwiderstandszahl beträgt μ = 0,05, der Luftwiderstand wird vernachlässigt. Berechnen Sie die erforderliche Zugkraft in kN (eine Nachkommastelle).",
+   "ans": 77.6,
+   "unit": "kN",
+   "e": "tan α = 0,15 → α = 8,53°. Hangabtriebskraft FH = m · g · sin α = 40.000 · 9,81 · sin 8,53° ≈ 58,2 kN; Rollwiderstand FR = m · g · cos α · μ ≈ 19,4 kN. Zugkraft Fz = FH + FR ≈ 77,6 kN."
+  },
+  {
+   "f": 5,
+   "sub": "Naturwissenschaftliche und technische Grundlagen",
+   "t": "calc",
+   "q": "Der Lkw hat bei 40 t eine Motorleistung von 15 kW je Tonne. Welche Höchstgeschwindigkeit in km/h erreicht er an der Steigung, wenn die Zugkraft 77,6 kN beträgt (eine Nachkommastelle)?",
+   "ans": 27.8,
+   "unit": "km/h",
+   "e": "P = 15 kW/t · 40 t = 600 kW = 600.000 W. Aus P = F · v folgt v = P ÷ F = 600.000 ÷ 77.600 = 7,73 m/s; mal 3,6 ergibt 27,8 km/h."
+  },
+  {
+   "f": 5,
+   "sub": "Naturwissenschaftliche und technische Grundlagen",
+   "t": "calc",
+   "q": "Eine Leuchte hängt am Ende einer 2,0 m langen waagerechten Stange (Masse 4 kg), die 1,0 m darüber am Mast durch ein Zugseil gehalten wird. Die zulässige Seilkraft beträgt 263,15 N. Welche Masse darf die Leuchte höchstens haben (auf ganze Kilogramm)?",
+   "ans": 10,
+   "unit": "kg",
+   "e": "Seilwinkel: tan α = 1 ÷ 2 → α = 26,57°. Vertikale Seilkraftkomponente Fv = 263,15 · sin 26,57° = 117,7 N. Sie trägt die Leuchte ganz und die Stange zur Hälfte (Momenten-gleichgewicht um das Stangenlager): mL = Fv ÷ g − mSt ÷ 2 = 117,7 ÷ 9,81 − 2 = 9,99 ≈ 10 kg."
+  },
+  {
+   "f": 5,
+   "sub": "Naturwissenschaftliche und technische Grundlagen",
+   "t": "calc",
+   "q": "Ein doppelt wirkender Hydraulikzylinder (Kolbendurchmesser 6 cm, Kolbenstangendurchmesser 3 cm) wird mit 10 l/min beaufschlagt. Berechnen Sie die Ausfahrgeschwindigkeit der Kolbenstange in m/min (zwei Nachkommastellen).",
+   "ans": 3.54,
+   "unit": "m/min",
+   "e": "Kolbenfläche A1 = π · 6² ÷ 4 = 28,27 cm². v1 = Q ÷ A1 = 10.000 cm³/min ÷ 28,27 cm² = 353,7 cm/min = 3,54 m/min. Beim Einfahren wirkt nur die Ringfläche 21,2 cm², die Stange fährt mit 4,72 m/min schneller ein – das Verhältnis ist 0,75 (1 : 1,33)."
+  },
+  {
+   "f": 5,
+   "sub": "Naturwissenschaftliche und technische Grundlagen",
+   "t": "calc",
+   "q": "Eine Stichprobe von 50 Rohren ergab folgende Schichtdicken: 32 µm (1-mal), 33 µm (4), 34 µm (8), 35 µm (12), 36 µm (11), 37 µm (9), 38 µm (4), 39 µm (1). Berechnen Sie den arithmetischen Mittelwert in µm.",
+   "ans": 35.52,
+   "unit": "µm",
+   "e": "x̄ = Σ(xi · ni) ÷ n = (32 + 132 + 272 + 420 + 396 + 333 + 152 + 39) ÷ 50 = 1.776 ÷ 50 = 35,52 µm. Die Toleranz 35 µm ± 7 µm ist damit mittig getroffen; der IHK-Lösungshinweis nennt durch einen Rechenfehler 35,53 µm."
+  }
+ ]
+}

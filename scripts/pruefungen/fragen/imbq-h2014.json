@@ -1,0 +1,716 @@
+{
+ "questions": [
+  {
+   "f": 1,
+   "sub": "Arbeitsschutz",
+   "t": "mc",
+   "q": "Ein Mitarbeiter ist auffällig oft montags und freitags krank. Der Personalleiter bittet den Betriebsarzt, ihn zu untersuchen und die Arbeitsunfähigkeitsbescheinigungen des Hausarztes zu überprüfen. Ist das zulässig?",
+   "o": [
+    {
+     "t": "Nein – Betriebsärzte haben ausdrücklich nicht die Aufgabe, Krankmeldungen auf ihre Berechtigung zu überprüfen (§ 3 Absatz 3 ASiG)",
+     "ok": 1
+    },
+    {
+     "t": "Ja, der Betriebsarzt ist dem Arbeitgeber gegenüber weisungsgebunden"
+    },
+    {
+     "t": "Ja, wenn der Betriebsrat zustimmt"
+    },
+    {
+     "t": "Nein, weil Betriebsärzte überhaupt keine Untersuchungen durchführen dürfen"
+    }
+   ],
+   "e": "Aufgaben des Betriebsarztes (§ 3 ASiG): den Arbeitgeber in Fragen des Gesundheitsschutzes beraten, Arbeitnehmer arbeitsmedizinisch untersuchen und beraten, die Durchführung des Arbeitsschutzes beobachten, Arbeitsstätten begehen. Bei Zweifeln an der Arbeitsunfähigkeit kann der Arbeitgeber über die Krankenkasse eine Begutachtung durch den Medizinischen Dienst verlangen (§ 275 Absatz 1a SGB V)."
+  },
+  {
+   "f": 1,
+   "sub": "Arbeitsrecht",
+   "t": "mc",
+   "q": "Für Verhandlungen mit japanischen Kunden wird eine Stelle mit der Voraussetzung „Japanisch als Muttersprache“ ausgeschrieben. Ist die Formulierung zulässig?",
+   "o": [
+    {
+     "t": "Nein – sie benachteiligt mittelbar wegen der ethnischen Herkunft (§§ 7, 11 AGG); da auch sehr gute Japanischkenntnisse genügen, ist das Merkmal keine wesentliche berufliche Anforderung nach § 8 AGG",
+     "ok": 1
+    },
+    {
+     "t": "Ja, weil Sprachkenntnisse keine geschützten Merkmale des AGG sind"
+    },
+    {
+     "t": "Ja, weil der Arbeitgeber Anforderungen frei festlegen darf"
+    },
+    {
+     "t": "Nein, weil Stellenanzeigen nur in deutscher Sprache verfasst werden dürfen"
+    }
+   ],
+   "e": "Zulässig wäre „verhandlungssichere Japanischkenntnisse“. Abgelehnte Bewerber können bei diskriminierender Ausschreibung Entschädigung nach § 15 AGG verlangen (bis zu drei Monatsgehälter, wenn sie auch ohne Benachteiligung nicht eingestellt worden wären)."
+  },
+  {
+   "f": 1,
+   "sub": "Betriebsverfassung",
+   "t": "mc",
+   "q": "Wie kann der Betriebsrat auf die geplante Einstellung eines Bewerbers reagieren, nachdem der Arbeitgeber ihn nach § 99 BetrVG unterrichtet hat?",
+   "o": [
+    {
+     "t": "Zustimmen, aus den Gründen des § 99 Absatz 2 BetrVG innerhalb einer Woche schriftlich widersprechen oder die Wochenfrist verstreichen lassen – dann gilt die Zustimmung als erteilt",
+     "ok": 1
+    },
+    {
+     "t": "Nur zustimmen – ein Widerspruch ist bei Einstellungen nicht vorgesehen"
+    },
+    {
+     "t": "Die Einstellung eigenständig vornehmen"
+    },
+    {
+     "t": "Den Bewerber zu einem eigenen Vorstellungsgespräch laden und selbst entscheiden"
+    }
+   ],
+   "e": "Verweigert der Betriebsrat die Zustimmung, kann der Arbeitgeber beim Arbeitsgericht die Ersetzung beantragen (§ 99 Absatz 4 BetrVG); in dringenden Fällen darf er vorläufig einstellen (§ 100 BetrVG). Der Arbeitgeber muss dem Betriebsrat Bewerbungsunterlagen vorlegen und Auskunft über die Person geben."
+  },
+  {
+   "f": 1,
+   "sub": "Arbeitsrecht",
+   "t": "mc",
+   "q": "Eine vor drei Jahren gegründete GmbH will einen neuen Mitarbeiter ohne Sachgrund befristet einstellen. Welche Besonderheit gilt?",
+   "o": [
+    {
+     "t": "In den ersten vier Jahren nach der Gründung sind sachgrundlose Befristungen bis zu vier Jahre mit mehrfacher Verlängerung zulässig (§ 14 Absatz 2a TzBfG); die Befristung braucht die Schriftform (§ 14 Absatz 4)",
+     "ok": 1
+    },
+    {
+     "t": "Keine – auch hier gilt die Zwei-Jahres-Grenze mit höchstens drei Verlängerungen"
+    },
+    {
+     "t": "Neu gegründete Unternehmen dürfen überhaupt nicht befristen"
+    },
+    {
+     "t": "Die Befristung ist ohne zeitliche Grenze möglich"
+    }
+   ],
+   "e": "Vor Ablauf der Befristung kann ein befristetes Arbeitsverhältnis nur ordentlich gekündigt werden, wenn das im Arbeitsvertrag oder Tarifvertrag vereinbart ist (§ 15 TzBfG). Die Gründungsregel gilt nicht für Neugründungen im Rahmen von Umstrukturierungen."
+  },
+  {
+   "f": 1,
+   "sub": "Arbeitsschutz",
+   "t": "mc",
+   "q": "Wegen guter Auftragslage wird Mehrarbeit eingeführt. Welche täglichen Höchstarbeitszeiten gelten für einen erwachsenen Mitarbeiter, eine 17-jährige Auszubildende und eine schwangere Mitarbeiterin?",
+   "o": [
+    {
+     "t": "Erwachsene: 8 Stunden, bis 10 Stunden mit Ausgleich in sechs Monaten (§ 3 ArbZG); Jugendliche: höchstens 8 Stunden (§ 8 JArbSchG); Schwangere: höchstens 8,5 Stunden (§ 4 MuSchG)",
+     "ok": 1
+    },
+    {
+     "t": "Für alle drei einheitlich 10 Stunden"
+    },
+    {
+     "t": "Erwachsene 12 Stunden, Jugendliche 8 Stunden, Schwangere 6 Stunden"
+    },
+    {
+     "t": "Erwachsene 8 Stunden, Jugendliche und Schwangere dürfen keine Mehrarbeit leisten – auch nicht innerhalb von 8 Stunden"
+    }
+   ],
+   "e": "Der Betriebsrat hat bei der vorübergehenden Verlängerung der betriebsüblichen Arbeitszeit ein Mitbestimmungsrecht (§ 87 Absatz 1 Nr. 3 BetrVG). Jugendliche dürfen zudem höchstens 40 Stunden in der Woche und an fünf Tagen arbeiten; für Schwangere gilt eine Grenze von 90 Stunden in der Doppelwoche."
+  },
+  {
+   "f": 1,
+   "sub": "Arbeitsrecht",
+   "t": "mc",
+   "q": "Ein Mitarbeiter hat keine Lust zu arbeiten und schickt stattdessen seinen Bruder in den Betrieb. Wie ist das zu beurteilen?",
+   "o": [
+    {
+     "t": "Unzulässig – die Arbeitspflicht ist höchstpersönlich zu erfüllen (§ 613 BGB); der Arbeitgeber kann abmahnen oder wegen Arbeitsverweigerung kündigen",
+     "ok": 1
+    },
+    {
+     "t": "Zulässig, wenn der Bruder die gleiche Qualifikation hat"
+    },
+    {
+     "t": "Zulässig, weil der Arbeitgeber die Arbeitsleistung erhalten hat"
+    },
+    {
+     "t": "Unzulässig nur, wenn der Bruder einen Unfall verursacht"
+    }
+   ],
+   "e": "Der Arbeitnehmer hat unentschuldigt gefehlt; für den Tag besteht kein Lohnanspruch. Der Bruder war ohne Vertrag im Betrieb – haftungs- und versicherungsrechtlich ein Risiko für den Arbeitgeber (Unfallversicherung nur als „Wie-Beschäftigter“ nach § 2 Absatz 2 SGB VII)."
+  },
+  {
+   "f": 1,
+   "sub": "Arbeitsrecht",
+   "t": "mc",
+   "q": "Ein Unternehmen zahlt seit zwei Jahren eine „freiwillige“ Prämie ohne jeden Vorbehalt und will sie erneut zahlen. Was muss es beachten, damit kein Anspruch für die Zukunft entsteht?",
+   "o": [
+    {
+     "t": "Bei jeder Zahlung klar erklären, dass es sich um eine freiwillige Leistung ohne Rechtsanspruch für die Zukunft handelt – nach dreimaliger vorbehaltloser Zahlung entsteht sonst ein Anspruch aus betrieblicher Übung",
+     "ok": 1
+    },
+    {
+     "t": "Nichts – eine Prämie kann jederzeit ersatzlos gestrichen werden"
+    },
+    {
+     "t": "Die Prämie muss in einer Betriebsvereinbarung unbefristet zugesagt werden"
+    },
+    {
+     "t": "Es genügt, die Prämie in der Bilanz als außerordentlichen Aufwand zu buchen"
+    }
+   ],
+   "e": "Ein Freiwilligkeitsvorbehalt muss transparent formuliert sein; eine bloße „Widerrufsklausel“ oder ein widersprüchlicher Vorbehalt im Arbeitsvertrag hilft nach der Rechtsprechung nicht. Der Betriebsrat bestimmt über die Verteilungsgrundsätze mit (§ 87 Absatz 1 Nr. 10 BetrVG), nicht über das Ob und die Höhe."
+  },
+  {
+   "f": 1,
+   "sub": "Umweltrecht",
+   "t": "mc",
+   "q": "Ein Unternehmen senkt seine Luftemissionen freiwillig unter die gesetzlichen Grenzwerte. Welchem Prinzip des Umweltschutzes folgt es?",
+   "o": [
+    {
+     "t": "Vorsorgeprinzip",
+     "ok": 1
+    },
+    {
+     "t": "Verursacherprinzip"
+    },
+    {
+     "t": "Gemeinlastprinzip"
+    },
+    {
+     "t": "Kooperationsprinzip"
+    }
+   ],
+   "e": "Muss das Unternehmen dagegen die Reinigung der Kanalisation nach einem eigenen Unfall bezahlen, ist das Verursacherprinzip; saniert die Gemeinde eine Altlast auf Steuerkosten, weil kein Verursacher feststellbar ist, das Gemeinlastprinzip."
+  },
+  {
+   "f": 1,
+   "sub": "Umweltrecht",
+   "t": "mc",
+   "q": "Welcher betriebliche Umweltbeauftragte genießt besonderen Kündigungsschutz, und wie sieht er aus?",
+   "o": [
+    {
+     "t": "Der Immissionsschutzbeauftragte (ebenso Abfall- und Gewässerschutzbeauftragte): Die Kündigung ist unzulässig, außer aus wichtigem Grund ohne Einhaltung einer Frist – und zwar bis ein Jahr nach Abberufung (§ 58 BImSchG)",
+     "ok": 1
+    },
+    {
+     "t": "Der Sicherheitsbeauftragte – er kann nur mit Zustimmung der Berufsgenossenschaft gekündigt werden"
+    },
+    {
+     "t": "Der Datenschutzbeauftragte – er ist unkündbar"
+    },
+    {
+     "t": "Kein Umweltbeauftragter hat besonderen Kündigungsschutz"
+    }
+   ],
+   "e": "§ 58 Absatz 2 BImSchG gilt über § 60 KrWG für den Betriebsbeauftragten für Abfall und über § 66 WHG für den Gewässerschutzbeauftragten entsprechend. Der Schutz soll die Unabhängigkeit der Beauftragten gegenüber dem Betreiber sichern."
+  },
+  {
+   "f": 1,
+   "sub": "Sozialversicherung",
+   "t": "mc",
+   "q": "Eine Mitarbeiterin verunglückt auf dem Heimweg, nachdem sie einen Umweg gefahren ist, um ihren Sohn aus dem Kindergarten abzuholen. Liegt ein versicherter Wegeunfall vor?",
+   "o": [
+    {
+     "t": "Ja – der Umweg, um Kinder wegen der beruflichen Tätigkeit in fremde Obhut zu bringen oder abzuholen, ist ausdrücklich mitversichert (§ 8 Absatz 2 Nr. 2 Buchstabe a SGB VII)",
+     "ok": 1
+    },
+    {
+     "t": "Nein, jeder Umweg unterbricht den Versicherungsschutz"
+    },
+    {
+     "t": "Nein, nur der Weg zwischen Wohnung und Arbeitsstätte ist versichert"
+    },
+    {
+     "t": "Ja, aber nur, wenn der Umweg kürzer als ein Kilometer ist"
+    }
+   ],
+   "e": "Auch der Umweg für eine Fahrgemeinschaft ist versichert (Buchstabe b). Privat motivierte Umwege – etwa zum Einkaufen – sind es nicht. Bei einem Wegeunfall trägt die Berufsgenossenschaft die Krankenhauskosten; nach sechs Wochen Entgeltfortzahlung zahlt sie Verletztengeld."
+  },
+  {
+   "f": 1,
+   "sub": "Produkthaftung/Datenschutz",
+   "t": "mc",
+   "q": "Wann muss ein Unternehmen einen Datenschutzbeauftragten benennen?",
+   "o": [
+    {
+     "t": "Wenn in der Regel mindestens 20 Personen ständig mit der automatisierten Verarbeitung personenbezogener Daten beschäftigt sind (§ 38 BDSG) oder eine Datenschutz-Folgenabschätzung nötig ist bzw. besondere Datenkategorien verarbeitet werden (Artikel 37 DSGVO)",
+     "ok": 1
+    },
+    {
+     "t": "Erst ab 250 Beschäftigten"
+    },
+    {
+     "t": "Nur, wenn die Aufsichtsbehörde es anordnet"
+    },
+    {
+     "t": "Immer, sobald ein einziger Computer im Betrieb steht"
+    }
+   ],
+   "e": "Die Kontaktdaten sind zu veröffentlichen und der Aufsichtsbehörde mitzuteilen (Artikel 37 Absatz 7 DSGVO). Bis 2018 galt § 4f BDSG: Bestellung schriftlich innerhalb eines Monats bei mehr als neun ständig mit automatisierter Verarbeitung beschäftigten Personen. Der Beauftragte ist weisungsfrei und darf wegen seiner Aufgabe nicht benachteiligt werden."
+  },
+  {
+   "f": 2,
+   "sub": "Rechtsformen",
+   "t": "mc",
+   "q": "Wie wird der Gewinn einer GmbH verteilt, und wer vertritt sie nach außen?",
+   "o": [
+    {
+     "t": "Der Gewinn wird nach dem Verhältnis der Geschäftsanteile verteilt, sofern der Gesellschaftsvertrag nichts anderes bestimmt; nach außen vertritt der Geschäftsführer",
+     "ok": 1
+    },
+    {
+     "t": "Der Gewinn wird nach Köpfen verteilt; nach außen vertritt die Gesellschafterversammlung"
+    },
+    {
+     "t": "Der Gewinn steht dem Geschäftsführer zu; nach außen vertritt der Aufsichtsrat"
+    },
+    {
+     "t": "Der Gewinn wird gleichmäßig auf alle Mitarbeiter verteilt; nach außen vertritt der Betriebsrat"
+    }
+   ],
+   "e": "§ 29 GmbHG (Gewinnverteilung), § 35 GmbHG (Vertretung). Die Gesellschafter haften nur mit ihrer Einlage, die Gesellschaft mit ihrem Vermögen; Mindeststammkapital 25.000 €. Ein Aufsichtsrat ist bei mehr als 500 Arbeitnehmern Pflicht."
+  },
+  {
+   "f": 2,
+   "sub": "Betriebsorganisation",
+   "t": "mc",
+   "q": "Welche Auswirkung hat eine Überorganisation im Unternehmen?",
+   "o": [
+    {
+     "t": "Mangelnde Flexibilität, weil starre Regeln und lange Genehmigungswege eine schnelle Reaktion auf Marktveränderungen verhindern; hoher Verwaltungsaufwand und Bürokratie",
+     "ok": 1
+    },
+    {
+     "t": "Ungeordnete Arbeitsabläufe und Doppelarbeiten"
+    },
+    {
+     "t": "Aufgaben bleiben liegen, weil niemand zuständig ist"
+    },
+    {
+     "t": "Planlose Aufgabenausführung und Streit um Zuständigkeiten"
+    }
+   ],
+   "e": "Die genannten Alternativen sind Folgen einer Unterorganisation: ungeordnete Abläufe, Doppelarbeit, unerledigte Aufgaben, Demotivation, Lieferverzögerungen und Kundenverlust. Ziel ist das organisatorische Optimum zwischen beiden Extremen."
+  },
+  {
+   "f": 2,
+   "sub": "Materialwirtschaft",
+   "t": "calc",
+   "q": "Der Bedarf eines Kaufteils lag bei 288.000 Stück je Jahr; für das nächste Jahr werden 12,5 % Zuwachs erwartet. Sicherheitsbestand 9.000 Stück, Lieferzeit 20 Tage, interne Prüfzeit 2 Tage, 360 Tage je Jahr. Wie hoch ist der Meldebestand?",
+   "ans": 28800,
+   "unit": "Stück",
+   "e": "Jahresbedarf = 288.000 · 1,125 = 324.000 Stück; Tagesverbrauch = 324.000 / 360 = 900 Stück; Meldebestand = 900 · (20 + 2) + 9.000 = 28.800 Stück."
+  },
+  {
+   "f": 2,
+   "sub": "Materialwirtschaft",
+   "t": "calc",
+   "q": "Jahresverbrauch 324.000 Stück, Bestellmenge 27.000 Stück, Sicherheitsbestand 9.000 Stück. Wie viele Tage beträgt die durchschnittliche Lagerdauer (360 Tage je Jahr)?",
+   "ans": 25,
+   "unit": "Tage",
+   "e": "Ø Lagerbestand = 27.000 / 2 + 9.000 = 22.500 Stück; Umschlagshäufigkeit = 324.000 / 22.500 = 14,4; Lagerdauer = 360 / 14,4 = 25 Tage."
+  },
+  {
+   "f": 2,
+   "sub": "Materialwirtschaft",
+   "t": "calc",
+   "q": "Jahresbedarf 324.000 Stück, Einstandspreis 3 €, Bestellkosten 84 € je Vorgang, Lagerhaltungszinssatz 18 %. Wie groß ist die rechnerisch optimale Bestellmenge (ganze Stück)?",
+   "ans": 10040,
+   "unit": "Stück",
+   "e": "x_opt = √(2 · 324.000 · 84 / (3 · 0,18)) = √100.800.000 = 10.040 Stück. Wird in Verpackungseinheiten zu 500 Stück geliefert, bestellt man 10.000 Stück. Der Sicherheitsbestand sichert die Produktionsbereitschaft bei Zusatzaufträgen, erhöhtem Ausschuss oder Lieferverzug."
+  },
+  {
+   "f": 4,
+   "sub": "Entgelt und Arbeitszeit",
+   "t": "calc",
+   "q": "Für 500 Teile gilt eine Vorgabezeit von 975 Minuten bei einem Akkordrichtsatz von 13,60 €/Std.; der Mitarbeiter braucht 780 Minuten. Welchen Akkordlohn je Stunde erzielt er?",
+   "ans": 17,
+   "unit": "€/Std.",
+   "e": "Zeitgrad = 975 / 780 = 125 %; Akkordlohn = 13,60 · 1,25 = 17,00 €/Std. Die Fertigungslohnkosten je Stück bleiben bei 0,442 € – beim Geldakkord ist der Lohn je Stück unabhängig vom Zeitgrad (975 min · 13,60 € / (500 · 60) = 780 min · 17 € / (500 · 60))."
+  },
+  {
+   "f": 2,
+   "sub": "Kostenrechnung",
+   "t": "calc",
+   "q": "Äquivalenzziffernkalkulation für Feinkostbecher (Ziffer nach Gewicht): S 8.900 Stück (1,0), M 6.750 Stück (1,2), L 3.200 Stück (2,2); Gesamtselbstkosten 471.184 €. Wie hoch sind die Selbstkosten je Verpackungseinheit des Typs L (zwei Nachkommastellen)?",
+   "ans": 43.12,
+   "unit": "€",
+   "e": "Recheneinheiten: 8.900 + 8.100 + 7.040 = 24.040; Kosten je Recheneinheit = 471.184 / 24.040 = 19,60 €; Typ L = 2,2 · 19,60 = 43,12 € (S 19,60 €, M 23,52 €). Die Äquivalenzziffernkalkulation eignet sich für Sortenfertigung mit gleichem Verfahren."
+  },
+  {
+   "f": 2,
+   "sub": "Controlling",
+   "t": "calc",
+   "q": "Kapazität 3.000 Motoren je Monat; bei 70 % Auslastung fielen 472.500 € Gesamtkosten an, davon 60 % variabel; das Betriebsergebnis betrug 31.500 €. Wie hoch ist die Break-even-Menge?",
+   "ans": 1800,
+   "unit": "Stück",
+   "e": "x = 2.100 Stück; Kv = 283.500 € → kv = 135 €; Kf = 189.000 €; Umsatz = 472.500 + 31.500 = 504.000 € → p = 240 €; x_BEP = 189.000 / (240 – 135) = 1.800 Stück je Monat."
+  },
+  {
+   "f": 2,
+   "sub": "Controlling",
+   "t": "calc",
+   "q": "Fixkosten 189.000 € je Monat, variable Stückkosten 135 €, Kapazität 3.000 Stück. Wie hoch sind die Stückkosten bei 100 % Beschäftigung?",
+   "ans": 198,
+   "unit": "€/Stück",
+   "e": "k = (189.000 + 3.000 · 135) / 3.000 = 594.000 / 3.000 = 198 €/Stück gegenüber 225 € bei 70 % (472.500 / 2.100). Die Stückkosten sinken mit steigender Auslastung – Fixkostendegression."
+  },
+  {
+   "f": 2,
+   "sub": "Kostenrechnung",
+   "t": "calc",
+   "q": "Betriebsabrechnungsbogen: Materialgemeinkosten 2.839.788 € bei Fertigungsmaterial 22.538.000 €. Wie hoch ist der Materialgemeinkostenzuschlag in Prozent (eine Nachkommastelle)?",
+   "ans": 12.6,
+   "unit": "%",
+   "e": "2.839.788 / 22.538.000 · 100 = 12,6 %. Weitere Zuschläge dieses Bogens: Fertigung A 1.603.674 / 378.225 = 424 %, Fertigung B 3.284.225 / 756.110 = 434,4 %, Verwaltung und Vertrieb 5.495.010 / 31.400.022 (Herstellkosten) = 17,5 %."
+  },
+  {
+   "f": 2,
+   "sub": "Kostenrechnung",
+   "t": "calc",
+   "q": "Herstellkosten 31.400.022 €, Verwaltungs- und Vertriebsgemeinkosten 5.495.010 €, Sondereinzelkosten des Vertriebs 255.800 €, Umsatzerlöse 40.250.000 €. Wie hoch ist das Betriebsergebnis?",
+   "ans": 3099168,
+   "unit": "€",
+   "e": "Selbstkosten = 31.400.022 + 5.495.010 + 255.800 = 37.150.832 €; Betriebsergebnis = 40.250.000 – 37.150.832 = 3.099.168 €."
+  },
+  {
+   "f": 3,
+   "sub": "Präsentation",
+   "t": "mc",
+   "q": "Sie präsentieren dem Betriebsleiter und den Meisterkollegen die Beschaffung klimatisierter Lagerboxen. Welche Punkte gehören in den Hauptteil?",
+   "o": [
+    {
+     "t": "Ist-Analyse, Soll-Zustand, Pro und Kontra der Alternativen, Bewertung, Auswahlvorschlag und Einholen der Entscheidung",
+     "ok": 1
+    },
+    {
+     "t": "Begrüßung, Vorstellung der eigenen Person und Dank an die Teilnehmer"
+    },
+    {
+     "t": "Nur die Preisliste des bevorzugten Lieferanten"
+    },
+    {
+     "t": "Eine Zusammenfassung ohne Bewertung, damit die Zuhörer selbst entscheiden"
+    }
+   ],
+   "e": "Das Besprechungsprotokoll enthält Thema, Datum und Uhrzeit, Teilnehmerliste, Beschlüsse und Aufgaben mit Verantwortlichen und Terminen, Verteiler und Unterschrift des Protokollführers."
+  },
+  {
+   "f": 3,
+   "sub": "Präsentation",
+   "t": "mc",
+   "q": "Für neun Hilfsstoffe sollen die zulässigen Minimal- und Maximaltemperaturen der Lagerung auf einen Blick vergleichbar dargestellt werden. Welches Diagramm eignet sich?",
+   "o": [
+    {
+     "t": "Ein Min-Max-Diagramm (Spannweitendiagramm), bei dem je Hilfsstoff Minimal- und Maximaltemperatur als Punkte eingetragen und durch eine senkrechte Linie verbunden werden",
+     "ok": 1
+    },
+    {
+     "t": "Ein Kreisdiagramm mit neun Sektoren"
+    },
+    {
+     "t": "Ein Liniendiagramm der Temperaturen über der Zeit"
+    },
+    {
+     "t": "Ein Netzdiagramm mit zwei Achsen"
+    }
+   ],
+   "e": "Kreisdiagramme zeigen Anteile eines Ganzen, Liniendiagramme Verläufe über die Zeit, Balken- und Säulendiagramme Vergleiche von Größen. Für Wertebereiche mit Ober- und Untergrenze sind Spannweiten- oder gestapelte Balkendiagramme die richtige Wahl."
+  },
+  {
+   "f": 3,
+   "sub": "EDV",
+   "t": "mc",
+   "q": "Was unterscheidet Lastenheft und Pflichtenheft bei der Beschaffung einer Individualsoftware?",
+   "o": [
+    {
+     "t": "Das Lastenheft formuliert die Anforderungen des Auftraggebers (Benutzeroberfläche, Kompatibilität, Schnittstellen, Datenformate, Auswertungen); das Pflichtenheft des Auftragnehmers beschreibt die Umsetzung mit Endtermin, Meilensteinen, Ansprechpartnern und technischer Realisierung",
+     "ok": 1
+    },
+    {
+     "t": "Beide Dokumente sind identisch, nur der Name unterscheidet sich je nach Branche"
+    },
+    {
+     "t": "Das Pflichtenheft schreibt der Auftraggeber, das Lastenheft der Auftragnehmer"
+    },
+    {
+     "t": "Das Lastenheft enthält den Quellcode, das Pflichtenheft die Rechnung"
+    }
+   ],
+   "e": "Aufgaben der IT-Abteilung bei der Netzwerkwartung: Monitoring der Leistungsdaten, Datensicherung, Firewall und Updates pflegen, defekte Geräte austauschen, Benutzerrechte verwalten."
+  },
+  {
+   "f": 3,
+   "sub": "Projektmanagement",
+   "t": "calc",
+   "q": "Netzplan: Vorgang A (9 Tage) startet bei 0; D (6 Tage) folgt auf A; G (8 Tage) folgt auf D; I (5 Tage) folgt auf G und ist der letzte Vorgang. Alle anderen Pfade sind kürzer. Nach wie vielen Tagen ist das Projekt frühestens beendet?",
+   "ans": 28,
+   "unit": "Tage",
+   "e": "Kritischer Pfad A – D – G – I: 9 + 6 + 8 + 5 = 28 Tage. Vorgänge auf dem kritischen Pfad haben keinen Puffer; Vorgang C (FAZ 9, SAZ 11) hätte zwei Tage Gesamtpuffer."
+  },
+  {
+   "f": 3,
+   "sub": "Projektmanagement",
+   "t": "calc",
+   "q": "Vorgang C beginnt frühestens am Tag 9 (FAZ) und dauert 6 Tage. Sein Nachfolger F muss spätestens am Tag 17 beginnen. Wie viele Tage Gesamtpuffer hat Vorgang C?",
+   "ans": 2,
+   "unit": "Tage",
+   "e": "SEZ(C) = SAZ(F) = 17; SAZ(C) = 17 – 6 = 11; Gesamtpuffer = SAZ – FAZ = 11 – 9 = 2 Tage. Im Balkenplan wird der Puffer als verlängerte, schraffierte Zone hinter dem Balken dargestellt."
+  },
+  {
+   "f": 3,
+   "sub": "Projektmanagement",
+   "t": "mc",
+   "q": "Welche drei Hauptziele bilden das „magische Dreieck“ des Projektmanagements?",
+   "o": [
+    {
+     "t": "Sachziel (Leistung/Qualität), Terminziel und Kostenziel",
+     "ok": 1
+    },
+    {
+     "t": "Umsatz, Gewinn und Rentabilität"
+    },
+    {
+     "t": "Planung, Durchführung und Kontrolle"
+    },
+    {
+     "t": "Mensch, Maschine und Material"
+    }
+   ],
+   "e": "Im Projektauftrag stehen zum Sachziel technische Daten, Qualitätsanforderungen und Schnittstellen; zum Terminziel Start, Ende und Meilensteine; zum Kostenziel Gesamtbudget, Abschnitts- und Ressourcenkosten. Die Projektsteuerung vergleicht laufend Soll und Ist, behebt Abweichungen, prüft Änderungswünsche und plant bei Verzögerungen um."
+  },
+  {
+   "f": 3,
+   "sub": "Kommunikation",
+   "t": "mc",
+   "q": "Nach Abschluss des Projekts sollen alle drei Schichten in der sachgerechten Lagerung der Hilfsstoffe unterwiesen werden. Welche Anforderung gilt für diese Unterweisungen?",
+   "o": [
+    {
+     "t": "Alle Schichten zeitnah und mit gleichem Inhalt unterweisen, sachlich richtig und adressatengerecht formulieren, technische Zusammenhänge visualisieren, den Erfolg kontrollieren und die Unterweisung dokumentieren",
+     "ok": 1
+    },
+    {
+     "t": "Nur die Frühschicht unterweisen – sie informiert die anderen Schichten mündlich"
+    },
+    {
+     "t": "Die Unterweisung per Aushang am Schwarzen Brett ersetzen"
+    },
+    {
+     "t": "Auf eine Erfolgskontrolle verzichten, um die Mitarbeiter nicht zu verunsichern"
+    }
+   ],
+   "e": "Unterweisungen sind nach § 12 ArbSchG vor Aufnahme der Tätigkeit, bei Veränderungen und regelmäßig zu wiederholen; die Dokumentation mit Unterschrift dient dem Nachweis gegenüber der Berufsgenossenschaft."
+  },
+  {
+   "f": 4,
+   "sub": "Kommunikation",
+   "t": "mc",
+   "q": "Um die Ursachen häufiger Maschinenausfälle zu ermitteln, lässt der neue Meister alle Mitarbeiter anonym einen Fragebogen ausfüllen, mit drei Tagen Bearbeitungszeit. Welcher Vorteil spricht für dieses Vorgehen?",
+   "o": [
+    {
+     "t": "Anonymität und Bedenkzeit fördern wahrheitsgemäße, sachliche Antworten ohne Druck durch Vorgesetzte oder Kollegen und ohne emotionale Spontanreaktionen",
+     "ok": 1
+    },
+    {
+     "t": "Der Meister erfährt sofort, wer die Fehler verursacht hat"
+    },
+    {
+     "t": "Die Mitarbeiter müssen nicht nachdenken und antworten schneller"
+    },
+    {
+     "t": "Der Fragebogen ersetzt jede technische Ursachenanalyse"
+    }
+   ],
+   "e": "Nachteile: keine Rückfragen möglich, geringe Rücklaufquote bei fehlendem Vertrauen, Missverständnisse bei unklaren Fragen. Deshalb sollten die Ergebnisse anschließend im Team besprochen werden."
+  },
+  {
+   "f": 4,
+   "sub": "Führungsmethoden",
+   "t": "mc",
+   "q": "Der Stellvertreter hat den neuen Meister nicht über wiederholte Störungen informiert. Welches Ziel verfolgt das Gespräch mit ihm?",
+   "o": [
+    {
+     "t": "Ihm die sofortige Informationspflicht bei besonderen Vorkommnissen verdeutlichen, die Folgen zurückgehaltener Informationen (wirtschaftlicher Schaden, Betriebsklima) aufzeigen und klare Regeln für die Zukunft vereinbaren",
+     "ok": 1
+    },
+    {
+     "t": "Ihn vor der Belegschaft bloßzustellen, damit sich das nicht wiederholt"
+    },
+    {
+     "t": "Ihm die Stellvertretung sofort zu entziehen, ohne seine Gründe zu hören"
+    },
+    {
+     "t": "Die Störungen zu verschweigen, um Unruhe zu vermeiden"
+    }
+   ],
+   "e": "Ein Kritikgespräch findet unter vier Augen statt, benennt das konkrete Verhalten, hört die Sicht des Mitarbeiters an und endet mit einer Vereinbarung. Aktennotizen über Verhalten und Leistung sind Grundlage für Personalgespräche, vermeiden Beurteilungsfehler und zeigen Qualifizierungsbedarf."
+  },
+  {
+   "f": 4,
+   "sub": "Führungsmethoden",
+   "t": "mc",
+   "q": "Welche Aufgaben und Funktionen hat der Meister als Leiter einer Abteilung mit 35 Mitarbeitern und drei Auszubildenden?",
+   "o": [
+    {
+     "t": "Fachliche Leitung kraft Amtsautorität, Verantwortung für Planung, Organisation, Durchführung und Kontrolle, Durchführung der Ausbildung nach Ausbildungsplan sowie Moderator und Ansprechpartner für alle Mitarbeiter",
+     "ok": 1
+    },
+    {
+     "t": "Ausschließlich die Überwachung der Maschinen"
+    },
+    {
+     "t": "Nur die Vertretung der Mitarbeiter gegenüber der Geschäftsleitung"
+    },
+    {
+     "t": "Die Buchführung und die Lohnabrechnung der Abteilung"
+    }
+   ],
+   "e": "Bei gestörten Betriebsabläufen ist zielorientiertes Führen gefragt: kooperativer oder situativer Stil auf der Sachebene, Mitarbeiter in die Problemlösung einbeziehen, klare Prioritäten setzen."
+  },
+  {
+   "f": 4,
+   "sub": "Motivation",
+   "t": "mc",
+   "q": "Welche Faktoren des Betriebsklimas kann der Meister selbst beeinflussen?",
+   "o": [
+    {
+     "t": "Eindeutige Aufgabenverteilung, Vorbildwirkung, situatives Führungsverhalten, nachvollziehbare Arbeitsorganisation, angemessenes Sozialverhalten, persönliche und fachliche Autorität, regelmäßige Personalgespräche und Qualifizierungsangebote",
+     "ok": 1
+    },
+    {
+     "t": "Die Höhe der Tariflöhne und die Konjunktur"
+    },
+    {
+     "t": "Die Rechtsform des Unternehmens"
+    },
+    {
+     "t": "Das Wetter und die Verkehrsanbindung des Betriebs"
+    }
+   ],
+   "e": "Anerkennung setzt der Meister ein, wenn eine Aufgabe gemäß den Vorgaben erfüllt wurde; sachliche Fehlerkorrektur bei nicht ordnungsgemäßer Ausführung; ein Kritikgespräch bei wiederholtem Fehlverhalten oder gravierenden Verstößen."
+  },
+  {
+   "f": 4,
+   "sub": "Gruppen",
+   "t": "mc",
+   "q": "Wie kann der Meister informelle Gruppen für die Umsetzung seiner Aufgaben nutzen?",
+   "o": [
+    {
+     "t": "Informationen über ein Gruppenmitglied streuen – sie verbreiten sich in der Gruppe sehr schnell – und über ein angesehenes Mitglied Motivation in die Gruppe tragen",
+     "ok": 1
+    },
+    {
+     "t": "Die Gruppe auflösen, indem die Mitglieder auf verschiedene Schichten verteilt werden"
+    },
+    {
+     "t": "Informelle Gruppen grundsätzlich ignorieren, weil sie nicht im Organigramm stehen"
+    },
+    {
+     "t": "Der Gruppe offiziell einen Leiter zuweisen, damit sie formell wird"
+    }
+   ],
+   "e": "Informelle Gruppen erkennt man an ähnlicher Sprache, gleichem Verhalten, häufigen Kontakten, klarer Rollenverteilung und eigenen Normen. Gegen ihre Normen zu führen ist mühsam; mit ihnen zu arbeiten erleichtert Veränderungen."
+  },
+  {
+   "f": 4,
+   "sub": "Berufsausbildung",
+   "t": "mc",
+   "q": "Sie wollen verhindern, dass Auszubildende negative Verhaltensweisen älterer Mitarbeiter übernehmen. Welche Maßnahme ist geeignet?",
+   "o": [
+    {
+     "t": "Selbst ausnahmslos korrektes Sozialverhalten zeigen, die Notwendigkeit der Betriebsordnung und der Unfallverhütungsvorschriften erklären, positive Verhaltensmuster fördern und regelmäßig Beurteilungsgespräche führen",
+     "ok": 1
+    },
+    {
+     "t": "Die Auszubildenden vollständig von den anderen Mitarbeitern isolieren"
+    },
+    {
+     "t": "Negative Verhaltensweisen der Mitarbeiter stillschweigend dulden"
+    },
+    {
+     "t": "Die Auszubildenden nur noch in der Berufsschule lernen lassen"
+    }
+   ],
+   "e": "Schlüsselqualifikationen wie Pünktlichkeit, Zuverlässigkeit, Kommunikationsfähigkeit, Toleranz und IT-Kenntnisse sind fach- und berufsübergreifend und die Grundlage für die Entwicklung von Kompetenzen – bei Auszubildenden wie bei erfahrenen Mitarbeitern."
+  },
+  {
+   "f": 5,
+   "sub": "Naturwissenschaftliche und technische Grundlagen",
+   "t": "mc",
+   "q": "Saure und basische Abwässer werden vor dem Einleiten neutralisiert. Woran erkennt man mit einem Indikator, dass die Neutralisation erreicht ist?",
+   "o": [
+    {
+     "t": "Lackmus färbt sich violett (weder rot noch blau); Phenolphthalein wird gerade entfärbt, wenn der basischen Lösung genau so viel Säure zugesetzt wurde – ein pH-Messgerät zeigt 7",
+     "ok": 1
+    },
+    {
+     "t": "Lackmus wird rot und Phenolphthalein tiefrot"
+    },
+    {
+     "t": "Die Lösung beginnt zu schäumen"
+    },
+    {
+     "t": "Methylorange schlägt nach Blau um"
+    }
+   ],
+   "e": "Beispiel: 2 HNO₃ + Ca(OH)₂ → 2 H₂O + Ca(NO₃)₂ – Säure und Lauge heben sich in ihrer Wirkung auf, es entstehen Wasser und ein Salz. Indikatoren haben unterschiedliche Umschlagsbereiche; Methylorange (pH 3 bis 4,4) eignet sich für den Neutralpunkt nicht."
+  },
+  {
+   "f": 5,
+   "sub": "Naturwissenschaftliche und technische Grundlagen",
+   "t": "calc",
+   "q": "Ein temperaturabhängiger Widerstand R1 (bei 130 °C: 200 Ω) und ein Festwiderstand R2 = 1 kΩ liegen in Reihe an 12 V. Welche Spannung fällt bei 130 °C an R2 ab (in V)?",
+   "ans": 10,
+   "unit": "V",
+   "e": "R = 200 + 1.000 = 1.200 Ω; I = 12 / 1.200 = 0,01 A; U₂ = 0,01 · 1.000 = 10 V. Sinkt die Temperatur, steigt der Widerstand des Heißleiters (NTC), der Strom sinkt und U₂ wird kleiner – so arbeitet ein einfacher Temperatursensor als Spannungsteiler."
+  },
+  {
+   "f": 5,
+   "sub": "Naturwissenschaftliche und technische Grundlagen",
+   "t": "calc",
+   "q": "Ein Pkw fährt 100 km mit konstanter Geschwindigkeit und verbraucht 8 Liter Diesel (Dichte 0,83 kg/dm³, Heizwert 42.000 kJ/kg). Der mittlere Fahrwiderstand beträgt 600 N. Gesamtwirkungsgrad in Prozent (eine Nachkommastelle)?",
+   "ans": 21.5,
+   "unit": "%",
+   "e": "W_ab = F · s = 600 N · 100.000 m = 60.000 kJ; Q_zu = 0,83 · 8 · 42.000 = 278.880 kJ; η = 60.000 / 278.880 = 0,215 = 21,5 %."
+  },
+  {
+   "f": 5,
+   "sub": "Naturwissenschaftliche und technische Grundlagen",
+   "t": "calc",
+   "q": "Zwei Flugzeugbauteile werden mit Nieten von 3 mm Durchmesser verbunden und sollen 11 kN übertragen; die zulässige Scherspannung beträgt 120 N/mm². Wie viele Niete sind mindestens nötig (ganze Zahl)?",
+   "ans": 13,
+   "unit": "Niete",
+   "e": "Querschnitt je Niet = π · 3² / 4 = 7,07 mm²; n = F / (τ_zul · S) = 11.000 / (120 · 7,07) = 12,97 → 13 Niete. Bei der Nietberechnung wird immer auf die nächste ganze Zahl aufgerundet."
+  },
+  {
+   "f": 5,
+   "sub": "Naturwissenschaftliche und technische Grundlagen",
+   "t": "calc",
+   "q": "Im Hochregallager wird ein 20 kg schweres Teil in 50 s auf 15 m Höhe gehoben. Welche mechanische Leistung wird dabei erbracht (in W, zwei Nachkommastellen; g = 9,81 m/s²)?",
+   "ans": 58.86,
+   "unit": "W",
+   "e": "E_pot = m · g · h = 20 · 9,81 · 15 = 2.943 J; P = W / t = 2.943 / 50 = 58,86 W."
+  },
+  {
+   "f": 5,
+   "sub": "Naturwissenschaftliche und technische Grundlagen",
+   "t": "calc",
+   "q": "Fällt das Teil aus 15 m Höhe herunter, mit welcher Geschwindigkeit trifft es auf (in m/s, zwei Nachkommastellen; g = 9,81 m/s², ohne Luftwiderstand)?",
+   "ans": 17.16,
+   "unit": "m/s",
+   "e": "Energieerhaltung: m · g · h = ½ · m · v² → v = √(2 · g · h) = √(2 · 9,81 · 15) = √294,3 = 17,16 m/s (rund 62 km/h) – unabhängig von der Masse."
+  },
+  {
+   "f": 5,
+   "sub": "Naturwissenschaftliche und technische Grundlagen",
+   "t": "calc",
+   "q": "Eine Kugel (120 g) trifft mit 1,2 m/s auf eine Druckfeder mit der Federrate 1.600 N/m. Wie groß ist der Bremsweg ohne Reibung (in mm, eine Nachkommastelle)?",
+   "ans": 10.4,
+   "unit": "mm",
+   "e": "E_kin = E_Feder: ½ · m · v² = ½ · R · s² → s = v · √(m / R) = 1,2 · √(0,12 / 1.600) = 0,0104 m = 10,4 mm."
+  },
+  {
+   "f": 5,
+   "sub": "Naturwissenschaftliche und technische Grundlagen",
+   "t": "calc",
+   "q": "Farbstoffampullen (Sollmenge 10 ml, Toleranz +0,5/–0,3 ml): 2 % sind unterfüllt, 5 % überfüllt. Wie viele Ausschussampullen fallen bei einer Tagesproduktion von 15.000 Stück an?",
+   "ans": 1050,
+   "unit": "Stück",
+   "e": "Ausschussanteil 2 % + 5 % = 7 %; 0,07 · 15.000 = 1.050 Ampullen. Im Wahrscheinlichkeitsnetz ergibt sich die Prozesslage x̄ ≈ 10,14 ml und s ≈ 0,22 ml; wird die Lage auf die Toleranzmitte (10,1 ml) eingestellt, sinkt der Ausschuss bei gleicher Streuung auf etwa 2 · 3 % = 6 %."
+  }
+ ]
+}
