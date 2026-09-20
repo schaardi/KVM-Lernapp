@@ -275,6 +275,11 @@ class _FormulaBookState extends State<FormulaBook> {
                   fontFamily: 'monospace', fontSize: 11.5, color: kMuted)),
         ),
       ],
+      const SizedBox(height: 8),
+      Align(
+        alignment: Alignment.centerLeft,
+        child: _kleinButton('Als Vorlage', () => _kopieren(_formelText(group, it))),
+      ),
     ];
   }
 
@@ -344,7 +349,7 @@ class _FormulaBookState extends State<FormulaBook> {
           const SizedBox(width: 7),
           _kleinButton('Leeren', () => _fuellen(s, null)),
           const SizedBox(width: 7),
-          _kleinButton('Kopieren', () => _kopieren(s, out)),
+          _kleinButton('Als Vorlage', () => _kopieren(_schemaText(s, out))),
         ]),
         const SizedBox(height: 7),
         Text(hinweis,
@@ -408,21 +413,19 @@ class _FormulaBookState extends State<FormulaBook> {
     );
   }
 
-  /// Ausgefülltes Schema als Text – so, wie man es in der Prüfung
-  /// untereinander schreiben würde. Ein unberührtes Schema rechnet lauter
-  /// Nullen aus; das ist kein Rechenweg und wird nicht kopiert.
+  /// Kalkulationsschema als Vorlage: jede Zeile untereinander, wie man sie in
+  /// der Prüfung schreibt. Ausgefüllt wird im Antwortfeld – dort stehen die
+  /// Zahlen der Aufgabe daneben. Steht hier schon ein Betrag, kommen die
+  /// gerechneten Werte mit; ein unberührtes Schema rechnet lauter Nullen aus,
+  /// deshalb bleiben die Zeilen dann leer.
   String _schemaText(CalcSchema s, SchemaResult? out) {
-    if (out == null) return '';
     final eigene = s.rows.any((r) {
       final k = r['k'] as String;
       return _val('ks|${s.id}|$k|v') != null;
     });
-    if (!eigene) return '';
     final zeilen = <String>[s.name];
     for (final r in s.rows) {
       final k = r['k'] as String;
-      final v = out.werte[k];
-      if (v == null || !v.isFinite) continue;
       var satz = '';
       final t = r['t'] as String;
       if (t == 'pct' || t == 'ih') {
@@ -430,28 +433,43 @@ class _FormulaBookState extends State<FormulaBook> {
             (r['rd'] is num ? (r['rd'] as num).toDouble() : null);
         if (p != null) satz = ' (${fmtNum(p, dec: 2)} %)';
       }
+      final v = eigene ? out?.werte[k] : null;
+      final wert = (v != null && v.isFinite) ? fmtNum(v, dec: 2) : '';
       final name = r['n'] as String;
-      zeilen.add('$name$satz: ${fmtNum(v, dec: 2)}');
+      zeilen.add('$name$satz: $wert');
     }
-    return zeilen.length > 1 ? zeilen.join('\n') : '';
+    return zeilen.join('\n');
   }
 
-  /// Der Rechenweg wandert in die Zwischenablage: In der App wird das
-  /// Formelbuch von der Startseite geöffnet, nicht über einer laufenden
-  /// Prüfung – von dort lässt er sich in das Antwortfeld einfügen.
-  void _kopieren(CalcSchema s, SchemaResult? out) {
-    final txt = _schemaText(s, out);
+  /// Einzelformel als Vorlage: Gleichung, darunter je eine Zeile für ihre
+  /// Größen und eine für das Ergebnis.
+  String _formelText(String group, FormulaItem it) {
+    final zeilen = <String>[it.name, it.eq];
+    for (final vr in it.vars) {
+      final x = _c('$group|${it.name}|${vr.k}').text.trim();
+      zeilen.add('${vr.n}${vr.u.isEmpty ? '' : ' in ${vr.u}'}: $x');
+    }
+    if (it.resultName.isNotEmpty) {
+      zeilen.add('= ${it.resultName}'
+          '${it.resultUnit.isEmpty ? '' : ' in ${it.resultUnit}'}: ');
+    }
+    return zeilen.join('\n');
+  }
+
+  /// Die Vorlage wandert in die Zwischenablage: In der App wird das Formelbuch
+  /// von der Startseite geöffnet, nicht über einer laufenden Prüfung – von
+  /// dort lässt sie sich in das Antwortfeld einfügen und ausfüllen.
+  void _kopieren(String txt) {
     final bote = ScaffoldMessenger.maybeOf(context);
     if (txt.isEmpty) {
       bote?.showSnackBar(const SnackBar(
-          content: Text('Erst Werte eintragen – dann lässt sich der '
-              'Rechenweg kopieren.')));
+          content: Text('Diese Formel lässt sich nicht als Vorlage kopieren.')));
       return;
     }
     Clipboard.setData(ClipboardData(text: txt));
     bote?.showSnackBar(const SnackBar(
-        content: Text('Rechenweg kopiert – im Aufgabenblatt in das '
-            'Antwortfeld einfügen.')));
+        content: Text('Vorlage kopiert – im Aufgabenblatt in das Antwortfeld '
+            'einfügen und dort ausfüllen.')));
   }
 
   Widget _kleinButton(String text, VoidCallback onTap) => OutlinedButton(

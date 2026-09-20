@@ -2655,44 +2655,55 @@ function fbKey(){ return [].slice.call(arguments).join("|"); }
 function fbUebernahme(hint,textFn){
   var b=document.createElement("button");
   b.type="button"; b.className="ks-btn ks-take"; b.textContent="In die Antwort";
-  b.title="Den ausgefüllten Rechenweg in das Antwortfeld der offenen Teilaufgabe schreiben";
+  b.title="Das Schema als Vorlage in das Antwortfeld der offenen Teilaufgabe schreiben – "+
+          "ausgefüllt wird dort, mit den Zahlen der Aufgabe vor Augen";
   b.addEventListener("click",function(){
     var txt=textFn();
-    if(!txt){hint.className="ks-hint ks-warn";hint.textContent="Erst Werte eintragen – dann kann der Rechenweg übernommen werden.";return;}
+    if(!txt){hint.className="ks-hint ks-warn";hint.textContent="Diese Formel lässt sich nicht als Vorlage übernehmen.";return;}
     var ziel=window.KVM_blattAntwort?window.KVM_blattAntwort(txt):null;
     if(ziel){
       hint.className="ks-hint ks-ok";
-      hint.textContent='Übernommen in die Antwort zu '+ziel+'.';
+      hint.textContent='Als Vorlage in die Antwort zu '+ziel+' übernommen – dort ausfüllen.';
       return;
     }
     try{navigator.clipboard.writeText(txt);}catch(e){}
     hint.className="ks-hint";
-    hint.textContent="Keine Prüfung offen – der Rechenweg liegt jetzt in der Zwischenablage.";
+    hint.textContent="Keine Prüfung offen – die Vorlage liegt jetzt in der Zwischenablage.";
   });
   return b;
 }
-/* Ausgefülltes Kalkulationsschema als Text – so, wie man es in der Prüfung
-   untereinander schreiben würde. */
+/* Kalkulationsschema als Vorlage für das Antwortfeld: jede Zeile des Schemas
+   untereinander, wie man sie in der Prüfung schreibt. Ausgefüllt wird im
+   Antwortfeld – dort stehen die Zahlen der Aufgabe daneben.
+
+   Steht im Formelbuch schon ein Betrag, werden die gerechneten Werte
+   mitgegeben; ein unberührtes Schema rechnet lauter Nullen aus, deshalb
+   bleiben die Zeilen dann leer. */
 function ksText(s,out){
-  if(!out)return "";
-  /* Ein unberührtes Schema rechnet lauter Nullen aus – das ist kein Rechenweg.
-     Übernommen wird erst, wenn mindestens ein Betrag eingetragen ist. */
   var eigene=s.rows.some(function(r){return numDE(FBVALS[fbKey("ks",s.id,r.k,"v")])!=null;});
-  if(!eigene)return "";
-  var L=[s.n],hat=false;
+  var L=[s.n];
   s.rows.forEach(function(r){
-    var v=out.werte[r.k];
-    if(v==null||!isFinite(v))return;
     var satz="";
     if(r.t==="pct"||r.t==="ih"){
       var p=numDE(FBVALS[fbKey("ks",s.id,r.k,"p")]);
       if(p==null&&r.rd!=null)p=r.rd;
       if(p!=null)satz=" ("+fmtDE(p,2)+" %)";
     }
-    hat=true;
-    L.push(r.n+satz+": "+fmtDE(v,2));
+    var v=(eigene&&out)?out.werte[r.k]:null;
+    L.push(r.n+satz+": "+((v!=null&&isFinite(v))?fmtDE(v,2):""));
   });
-  return hat?L.join("\n"):"";
+  return L.join("\n");
+}
+/* Einzelformel als Vorlage: Gleichung, darunter je eine Zeile für ihre
+   Größen und eine für das Ergebnis. */
+function fxText(grp,it){
+  var L=[it.n,it.e];
+  (it.v||[]).forEach(function(vr){
+    var x=FBVALS[fbKey(grp.g,it.n,vr.k)];
+    L.push(vr.n+(vr.u?" in "+vr.u:"")+": "+(x||""));
+  });
+  if(it.r)L.push("= "+it.r.n+(it.r.u?" in "+it.r.u:"")+": ");
+  return L.join("\n");
 }
 function fbInput(key,ph,cls){ var i=document.createElement("input");
   i.type="text"; i.inputMode="decimal"; i.className=cls||""; i.placeholder=ph||"";
@@ -2723,20 +2734,18 @@ function fbFormelKarte(grp,it){
     var rv=document.createElement("span"); rv.className="fb-rv"; res.appendChild(rv);
     card.appendChild(res);
     var way=document.createElement("p"); way.className="fb-way"; card.appendChild(way);
-    var rechnung=null;
     var foot=document.createElement("div"); foot.className="ks-foot";
     var hint=document.createElement("span"); hint.className="ks-hint";
-    foot.appendChild(fbUebernahme(hint,function(){return rechnung;}));
+    foot.appendChild(fbUebernahme(hint,function(){return fxText(grp,it);}));
     foot.appendChild(hint); card.appendChild(foot);
     FBUPD.push(function(){
       var vals={},fehlt=false;
       it.v.forEach(function(vr){ var x=numDE(FBVALS[fbKey(grp.g,it.n,vr.k)]); if(x==null)fehlt=true; else vals[vr.k]=x; });
-      if(fehlt){ rechnung=null; res.className="fb-res fb-open"; rv.textContent="Werte eintragen"; way.textContent=""; return; }
+      if(fehlt){ res.className="fb-res fb-open"; rv.textContent="Werte eintragen"; way.textContent=""; return; }
       try{ var y=fxEval(it.f,vals); var dec=(it.dec==null?2:it.dec);
         res.className="fb-res"; rv.textContent=fmtDE(y,dec)+(it.r.u?" "+it.r.u:"");
         way.textContent=fxTrace(it.f,vals)+" = "+fmtDE(y,dec)+(it.r.u?" "+it.r.u:"");
-        rechnung=it.n+"\n"+it.e+"\n"+way.textContent;
-      }catch(e){ rechnung=null; res.className="fb-res fb-open"; rv.textContent="—"; way.textContent=e.message; } });
+      }catch(e){ res.className="fb-res fb-open"; rv.textContent="—"; way.textContent=e.message; } });
   }
   if(it.d){ var nt=document.createElement("p"); nt.className="fb-note"; nt.textContent=it.d; card.appendChild(nt); }
   return card; }
