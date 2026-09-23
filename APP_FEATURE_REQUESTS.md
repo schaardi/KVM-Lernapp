@@ -1116,39 +1116,39 @@ Großbuchstaben, Buchstabenabstand 1,3, `kMuted`; rechts optional ein Zusatz in 
 ### Referenz Web-Implementierung (`index.html` auf `claude/ui-design-improvement-my0f66`)
 
 **CSS**
-- Startseite: Kommentar „Startseite“ Z. 910
-- Texte: „Aufgabentexte: Tabellen …“ Z. 1147
-- Aufgabenblatt Z. 1179
-- Rechenweg Z. 1308
+- Startseite: Kommentar „Startseite“ Z. 913
+- Texte: „Aufgabentexte: Tabellen …“ Z. 1173
+- Aufgabenblatt Z. 1205
+- Rechenweg Z. 1334
 
 **JS**
 - Renderer:
-  - `rtIstRechnung` Z. 2653
-  - `rtKopf` Z. 2673
-  - `rtTabelle` Z. 2688
-  - `rtHTML` Z. 2711
+  - `rtIstRechnung` Z. 2704
+  - `rtKopf` Z. 2724
+  - `rtTabelle` Z. 2739
+  - `rtHTML` Z. 2762
 - Rechenweg:
-  - `rwTokens` Z. 2777
-  - `rwRechne` Z. 2858
-  - `rwZeileText` Z. 2896
-  - `rwHTML` Z. 2929
-  - `rwBinden` Z. 2942
-- Bewertung: `scoreHTML` Z. 3029
+  - `rwTokens` Z. 2828
+  - `rwRechne` Z. 2909
+  - `rwZeileText` Z. 2947
+  - `rwHTML` Z. 2980
+  - `rwBinden` Z. 2993
+- Bewertung: `scoreHTML` Z. 3080
 - Aufgabenblatt:
-  - `blStepperHTML` Z. 3318
-  - `blFortschrittHTML` Z. 3336
-  - `blLoesungHTML` Z. 3405
-  - `blRechenteil` Z. 3443
-  - `blTeilHTML` Z. 3449
-  - `renderBlatt` Z. 3488
+  - `blStepperHTML` Z. 3369
+  - `blFortschrittHTML` Z. 3387
+  - `blLoesungHTML` Z. 3456
+  - `blRechenteil` Z. 3494
+  - `blTeilHTML` Z. 3500
+  - `renderBlatt` Z. 3539
 - Startseite:
-  - `tagZaehlen` Z. 1825
-  - `renderFachGroup` Z. 1993
-  - `renderHero` Z. 2021
-  - `erfolgeListe` Z. 2141
-  - `renderAktiv` Z. 2182
-  - `renderPruefLast` Z. 2199
-- Prüfungsliste: `items.forEach` in `render()` Z. 6488
+  - `tagZaehlen` Z. 1872
+  - `renderFachGroup` Z. 2040
+  - `renderHero` Z. 2068
+  - `erfolgeListe` Z. 2188
+  - `renderAktiv` Z. 2229
+  - `renderPruefLast` Z. 2246
+- Prüfungsliste: `items.forEach` in `render()` Z. 6668
 
 Zeilennummern: Stand dieses Commits.
 
@@ -1296,18 +1296,18 @@ Serverseitig abgesichert:
 - Austreten führt zurück zum Beitrittsformular. Der Eintrag ist serverseitig gelöscht.
 
 ### Referenz Web-Implementierung (`index.html` auf `claude/ui-design-improvement-my0f66`)
-- **HTML:** `#vgKopf` / `#vgBox`, Z. 1487
-- **CSS:** Kommentar „Vergleich: freiwillige Wochenrangliste“, Z. 1079
+- **HTML:** `#vgKopf` / `#vgBox`, Z. 1518
+- **CSS:** Kommentar „Vergleich: freiwillige Wochenrangliste“, Z. 1105
 - **JS** im Cloud-Block:
 
   | Funktion | Zeile |
   |---|---|
-  | `isoWoche` | 4139 |
-  | `wocheAntworten` | 4146 |
-  | `vgWerte` | 4151 |
-  | `vgMeldenSpaeter` | 4156 |
-  | `vgLaden` | 4163 |
-  | `vgZeigen` | 4293 |
+  | `isoWoche` | 4319 |
+  | `wocheAntworten` | 4326 |
+  | `vgWerte` | 4331 |
+  | `vgMeldenSpaeter` | 4336 |
+  | `vgLaden` | 4343 |
+  | `vgZeigen` | 4473 |
 
 - **SQL:** `docs/supabase-rangliste.sql`. Lokal geprüft mit PGlite: Rechte,
   Rangfolge, Wochenwechsel, zwei Geräte, Namensregeln, Austritt, Kontolöschung.
@@ -1540,27 +1540,27 @@ Der Rechner bearbeitet keinen Text, sondern eine Liste von Zeichen:
 - „4.400“ im Ergebnisfeld zählt als 4400.
 
 ### Referenz Web-Implementierung (`index.html` auf `claude/ui-design-improvement-my0f66`)
-- **HTML:** `#mCalc`, Z. 1661
-- **CSS:** Kommentar „Taschenrechner: Anzeige mit Verlauf …“, Z. 567
+- **HTML:** `#mCalc`, Z. 1708
+- **CSS:** Kommentar „Taschenrechner: Anzeige mit Verlauf …“, Z. 570
 - **JS:**
 
   | Funktion | Zeile |
   |---|---|
-  | `rwTokens` (Kern: Zeichen) | 2777 |
-  | `rwFunktion` (Winkel, Wurzel) | 2815 |
-  | `rwAuswerten` (Kern: Rechnen) | 2833 |
-  | `parseCalcNum` | 3147 |
-  | `calcDock` (Andocken, Ausweichen) | 4415 |
-  | `rkKern` (Zeichenliste → Kern) | 4479 |
-  | `rkAusdruck` (Anzeige, Text) | 4512 |
-  | `rkFunktion` | 4563 |
-  | `rkVorzeichen` | 4573 |
-  | `rkZeit` | 4591 |
-  | `rkGleich` | 4605 |
-  | `rkTaste` | 4619 |
-  | `rkZielVon` / `rkUebernehmen` | 4640 / 4663 |
-  | `FN_TASTEN` / `TASTEN` | 4684 |
-  | `rkZeigen` | 4694 |
+  | `rwTokens` (Kern: Zeichen) | 2828 |
+  | `rwFunktion` (Winkel, Wurzel) | 2866 |
+  | `rwAuswerten` (Kern: Rechnen) | 2884 |
+  | `parseCalcNum` | 3198 |
+  | `calcDock` (Andocken, Ausweichen) | 4595 |
+  | `rkKern` (Zeichenliste → Kern) | 4659 |
+  | `rkAusdruck` (Anzeige, Text) | 4692 |
+  | `rkFunktion` | 4743 |
+  | `rkVorzeichen` | 4753 |
+  | `rkZeit` | 4771 |
+  | `rkGleich` | 4785 |
+  | `rkTaste` | 4799 |
+  | `rkZielVon` / `rkUebernehmen` | 4820 / 4843 |
+  | `FN_TASTEN` / `TASTEN` | 4864 |
+  | `rkZeigen` | 4874 |
 
 Zeilennummern: Stand dieses Commits.
 
@@ -1672,12 +1672,12 @@ Fehler im Formular: „Bitte ein Datum wählen.“ / „Der Termin muss in der Z
 - „Entfernen“ führt zurück zu „Wann ist deine Prüfung?“.
 
 ### Referenz Web-Implementierung (`index.html` auf `claude/ui-design-improvement-my0f66`)
-- **HTML:** `#planBox` in `.hero-main`, Z. 1413
-- **CSS:** Kommentar „Prüfungstermin und Lernplan: eigener Block …“, Z. 962
+- **HTML:** `#planBox` in `.hero-main`, Z. 1439
+- **CSS:** Kommentar „Prüfungstermin und Lernplan: eigener Block …“, Z. 965
 - **JS:**
-  - Block-Kommentar „Prüfungstermin und Lernplan“, Z. 2036
-  - `planRechnen`, Z. 2051
-  - `renderPlan`, Z. 2067 (aufgerufen am Ende von `renderHero`)
+  - Block-Kommentar „Prüfungstermin und Lernplan“, Z. 2083
+  - `planRechnen`, Z. 2098
+  - `renderPlan`, Z. 2114 (aufgerufen am Ende von `renderHero`)
 
 Zeilennummern: Stand dieses Commits.
 
@@ -1779,17 +1779,17 @@ Unter den Knöpfen steht der letzte Durchgang: „Zuletzt unter Prüfungsbedingu
 
 ### Referenz Web-Implementierung (`index.html` auf `claude/ui-design-improvement-my0f66`)
 - **HTML:**
-  - Uhr und „Abgeben“ in `.bl-bar`, Z. 1606
-  - Band `#blEcht`, Z. 1618
-- **CSS:** Kommentar „Prüfung unter Echtbedingungen: Uhr und Abgabe …“, Z. 1290
+  - Uhr und „Abgeben“ in `.bl-bar`, Z. 1637
+  - Band `#blEcht`, Z. 1649
+- **CSS:** Kommentar „Prüfung unter Echtbedingungen: Uhr und Abgabe …“, Z. 1316
 - **JS:**
-  - Block-Kommentar „Prüfung unter Echtbedingungen“, Z. 3680
-  - `echtUhr`, Z. 3711
-  - `echtAbgeben`, Z. 3732
-  - `KVM_startEcht`, Z. 3746
-  - `KVM_echtInfo`, Z. 3760
-  - Ergebnis in `finishRound`, Z. 3939
-  - Prüfungsliste, Z. 6498
+  - Block-Kommentar „Prüfung unter Echtbedingungen“, Z. 3858
+  - `echtUhr`, Z. 3889
+  - `echtAbgeben`, Z. 3910
+  - `KVM_startEcht`, Z. 3924
+  - `KVM_echtInfo`, Z. 3938
+  - Ergebnis in `finishRound`, Z. 4118
+  - Prüfungsliste, Z. 6678
 
 Zeilennummern: Stand dieses Commits.
 
@@ -1871,15 +1871,15 @@ geht auch ohne Konto.
 
 ### Referenz Web-Implementierung (`index.html` auf `claude/ui-design-improvement-my0f66`)
 - **HTML:**
-  - Knopf `#qMelden`, Z. 1561
-  - Dialog `#mMelden`, Z. 1678
-- **CSS:** Kommentar „Fehler melden: unauffälliger Knopf …“, Z. 538
+  - Knopf `#qMelden`, Z. 1592
+  - Dialog `#mMelden`, Z. 1725
+- **CSS:** Kommentar „Fehler melden: unauffälliger Knopf …“, Z. 541
 - **JS:**
-  - `meldenKnopfHTML` (Aufgabenblatt), Z. 3674
-  - Block „Fehler melden“ im Cloud-Teil, Z. 4070
-  - `mdOeffnen`, Z. 4081
-  - Senden, Z. 4107
-  - Bereitschaft, Z. 4121
+  - `meldenKnopfHTML` (Aufgabenblatt), Z. 3852
+  - Block „Fehler melden“ im Cloud-Teil, Z. 4250
+  - `mdOeffnen`, Z. 4261
+  - Senden, Z. 4287
+  - Bereitschaft, Z. 4301
 - **SQL:** `docs/supabase-meldungen.sql`
 
 Zeilennummern: Stand dieses Commits.
@@ -1961,11 +1961,11 @@ stattdessen **„In den Kalender“**:
 - Neustart des Geräts: Die geplanten Erinnerungen bleiben.
 
 ### Referenz Web-Implementierung (`index.html` auf `claude/ui-design-improvement-my0f66`)
-- **HTML:** Zeile „Lern-Erinnerung“ (`#erinnZeit`, `#erinnIcs`), Z. 1539
-- **CSS:** Kommentar „Lern-Erinnerung: Uhrzeit + Kalendereintrag“, Z. 432
+- **HTML:** Zeile „Lern-Erinnerung“ (`#erinnZeit`, `#erinnIcs`), Z. 1570
+- **CSS:** Kommentar „Lern-Erinnerung: Uhrzeit + Kalendereintrag“, Z. 435
 - **JS:**
-  - Block-Kommentar „Lern-Erinnerung (Web)“, Z. 3623
-  - `erIcs`, Z. 3636
+  - Block-Kommentar „Lern-Erinnerung (Web)“, Z. 3801
+  - `erIcs`, Z. 3814
 
 Zeilennummern: Stand dieses Commits.
 
@@ -2070,15 +2070,129 @@ Deutschland. Dafür gibt es eine private Rangliste je Gruppe.
 - Verlassen → zurück zu „Alle“, der Reiter ist weg.
 
 ### Referenz Web-Implementierung (`index.html` auf `claude/ui-design-improvement-my0f66`)
-- **Zustand und Einladungslink** im Vergleichsblock, Z. 4130
-- **CSS:** Kommentar „Lerngruppen: Reiter über der Liste …“, Z. 1119
+- **Zustand und Einladungslink** im Vergleichsblock, Z. 4310
+- **CSS:** Kommentar „Lerngruppen: Reiter über der Liste …“, Z. 1145
 - **JS:**
-  - Block-Kommentar „Lerngruppen: private Rangliste per Code“, Z. 4178
-  - `grLaden`, Z. 4182
-  - `grTabsHTML`, Z. 4205
-  - `grFormHTML`, Z. 4212
-  - `grAnsichtHTML`, Z. 4224
-  - `grBinden`, Z. 4249
+  - Block-Kommentar „Lerngruppen: private Rangliste per Code“, Z. 4358
+  - `grLaden`, Z. 4362
+  - `grTabsHTML`, Z. 4385
+  - `grFormHTML`, Z. 4392
+  - `grAnsichtHTML`, Z. 4404
+  - `grBinden`, Z. 4429
 - **SQL:** `docs/supabase-gruppen.sql`
+
+Zeilennummern: Stand dieses Commits.
+
+---
+
+## FR-011 · Mündliche Prüfung üben (Fachgespräch)
+
+**Status App-Session:** ⏳ offen
+**Web umgesetzt:** ✅ `claude/ui-design-improvement-my0f66` (Commit „Mündlich üben …“)
+**Voraussetzung:** Sprachausgabe/-erkennung der Plattform. Die App hat schon
+`voice_service.dart` für A/B/C/D.
+
+### Ziel / Framing
+Zur Meisterprüfung gehören das situationsbezogene Fachgespräch und die mündliche
+Ergänzungsprüfung. Geübt wird hier das freie Antworten in ganzen Sätzen:
+- Die Frage wird vorgelesen.
+- Man antwortet frei per Sprache.
+- Danach kommen die Musterlösung und die Begriffe daraus, die in der Antwort vorkamen,
+  als Hilfe, nicht als Bewertung.
+- Zum Schluss bewertet man sich selbst.
+
+### Einstieg
+- **Modus-Karte** im Übungsbereich (je Fach, nach der Simulation):
+  - Symbol Mikrofon auf Violett, Tag „Mündlich“, Titel „Fachgespräch üben“
+  - Beschreibung: „10 Fragen aus „<Bereich>“ werden vorgelesen – du antwortest frei per
+    Sprache, danach Musterlösung und Selbstcheck.“
+  - Ohne Spracherkennung „… frei, laut oder in Stichpunkten …“
+  - Unter 3 geeigneten Fragen deaktiviert: „Für diesen Bereich gibt es noch keine passenden
+    Fragen fürs Fachgespräch.“
+- **Fragenpool:** gewählter Bereich (Fach + Themenbereich), dann Gewichtung wie im Training
+  (`weightedPick`), 10 Fragen.
+  - Offene Fragen mit `a` oder `e`.
+  - Auswahlfragen, die allein verständlich sind:
+    - endet auf „?“, höchstens 220 Zeichen, eine richtige Option
+    - nicht passend zu `folgend|Aussage|trifft|richtig|falsch|zutreffend|\bnicht\b|\bkein|Beispiel|welche[rs]? (der|dieser)|Welche Antwort|Was gilt|Wofür steht|Kombination|Reihenfolge|ordnen` (ohne Groß-/Kleinschreibung)
+  - Das sind derzeit 2.353 Auswahl- und 88 offene Fragen.
+
+### Ablauf je Frage (Bildschirm wie das Quiz, eigener Kopf „<Fach> · mündlich“, „Frage 3/10“, Fortschrittspunkte)
+1. **Frage:**
+   - Chip „Fachgespräch“ (Violett), Themenbereich, Fragetext.
+   - Die Frage wird automatisch vorgelesen (de-DE); Link „Nochmal vorlesen“.
+   - Mit Spracherkennung: Hinweis „Antworte frei und vollständig, wie im Fachgespräch vor dem
+     Prüfungsausschuss. Tippe auf „Fertig“, wenn du fertig bist.“ Knöpfe „Antworten“
+     (Mikrofon, primär) und „Ohne Mikrofon“.
+   - Ohne Spracherkennung direkt ein Stichpunkt-Feld und „Lösung zeigen“.
+2. **Zuhören:**
+   - Band „Ich höre zu …“ mit pulsierendem Punkt.
+   - Darunter die Mitschrift live, vorläufige Teile kursiv.
+   - Knopf „Fertig“.
+   - Erkennung: de-DE, fortlaufend, mit Zwischenergebnissen.
+   - Ohne Mikrofonrecht: Hinweis „Kein Zugriff aufs Mikrofon – erlaube es im Browser oder
+     schreib deine Antwort unten.“
+3. **Gehört:**
+   - Die Mitschrift steht in einem Textfeld („bei Hörfehlern einfach korrigieren“).
+   - „Weiter sprechen“ hängt an, „Lösung zeigen“ deckt auf.
+4. **Lösung:**
+   - „Deine Antwort“ (oder „— keine Antwort notiert —“).
+   - Grüner Kasten: „Musterlösung“ (offen) bzw. „Richtige Antwort“ (Auswahl: richtige
+     Option, dann die Erklärung).
+   - Darunter die Begriffe:
+     - Text: „Begriffe aus der Lösung in deiner Antwort: 2 von 5 – ein Hinweis, keine
+       Bewertung.“
+     - Chips: getroffen grün, sonst neutral.
+   - Selbstcheck: „Nicht gewusst“ (rot), „Teilweise“ (Bernstein), „Gewusst“ (grün).
+     - Gewusst → Lernstand richtig.
+     - Nicht gewusst → falsch.
+     - Teilweise → Box bleibt, nur der Lerntag zählt; landet wie „Nicht gewusst“ in
+       „Falsche wiederholen“.
+5. Nach der 10. Frage kommt das bekannte Ergebnis mit Titel „Mündlich üben“ („3 von 10
+   richtig“, Aufschlüsselung nach Themenbereichen).
+
+### Begriffe (Hinweis, keine Bewertung)
+- **Quelle:** bei Auswahlfragen die richtige Option, sonst die Musterlösung.
+- **Wörter:** ab 5 Buchstaben (inkl. Umlaute, Bindestrich).
+  - ohne Füllwörter (Liste im Web-Code `OR_FUELL`), ohne Dopplungen
+  - Großgeschriebene zuerst, höchstens 8
+- **Treffer:**
+  - Wortstamm = kleingeschrieben, Endung `ungen|ung|en|er|es|e|n|s` ab, auf 4–8 Zeichen
+    gekürzt
+  - getroffen, wenn der Stamm in der Antwort vorkommt (klein)
+- **Referenz:**
+  - „Boden, Arbeit und Kapital sind die originären Produktionsfaktoren …“ → Begriffe
+    beginnen mit „Boden“, enthalten „Produktionsfaktoren“, nicht „sind“.
+  - „Produktionsfaktoren“ trifft „die produktionsfaktor boden“.
+
+### App: Technik
+- Sprachausgabe: `flutter_tts` bzw. vorhandener `voice_service.dart`.
+- Erkennung: `speech_to_text` mit `localeId: de_DE`, `listenMode: dictation`,
+  `partialResults: true`. Pausen bis ca. 5 s tolerieren; endet die Sitzung, geht es in den
+  Zustand „Gehört“.
+- Mikrofon-Berechtigung ist schon im Manifest (`RECORD_AUDIO`).
+
+### Abnahme
+- Karte zeigt „10 Fragen aus … werden vorgelesen“. Start → Frage 1/10, Frage wird gelesen.
+- „Antworten“ → „Ich höre zu …“ mit Live-Mitschrift → „Fertig“ → Mitschrift im Feld,
+  korrigierbar.
+- „Lösung zeigen“ → eigene Antwort, Lösung, Begriffe mit Treffern.
+- „Gewusst“ → Frage 2/10, erster Punkt grün.
+- Zehn Fragen später: Ergebnis „Mündlich üben“ mit richtiger Zahl; der Lernstand hat die
+  Antworten.
+- Ohne Spracherkennung: Stichpunkt-Feld statt Mikrofon, sonst gleich.
+
+### Referenz Web-Implementierung (`index.html` auf `claude/ui-design-improvement-my0f66`)
+- **HTML:**
+  - Karte `#btnOral`, Z. 1481
+  - Bildschirm `#scrOral`, Z. 1657
+- **CSS:** Kommentar „Mündlich üben: Frage vorlesen …“, Z. 1034
+- **JS:**
+  - Block-Kommentar „Mündlich üben (Fachgespräch)“, Z. 3674
+  - `orGeeignet`, Z. 3685
+  - `orBegriffe`, Z. 3696
+  - `orHoeren`, Z. 3712
+  - `startOral`, Z. 3727
+  - `orZeigen`, Z. 3748
 
 Zeilennummern: Stand dieses Commits.

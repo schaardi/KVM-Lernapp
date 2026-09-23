@@ -363,6 +363,9 @@
   .btn-ok:hover{background:color-mix(in srgb,var(--ok-soft) 82%,var(--ok))}
   .btn-no{flex:1 1 0;min-height:48px;border:1.5px solid var(--err);background:var(--err-soft);color:var(--err-ink);border-radius:10px;font-size:14.5px;font-weight:600;padding:12px}
   .btn-no:hover{background:color-mix(in srgb,var(--err-soft) 85%,var(--err))}
+  .btn-teil{flex:1 1 0;min-height:48px;border:1.5px solid var(--amber);background:var(--amber-soft);color:var(--amber-ink);border-radius:10px;font-size:14.5px;font-weight:600;padding:12px}
+  .btn-teil:hover{background:color-mix(in srgb,var(--amber-soft) 85%,var(--amber))}
+  .or-ohne{border-color:var(--line-strong);background:var(--paper);color:var(--ink)}
 
   /* RESULT */
   .res-hero{display:flex;align-items:center;gap:18px;padding:22px 18px;border-bottom:1px solid var(--line);background:var(--head-bg);flex-wrap:wrap}
@@ -1027,7 +1030,30 @@
 .m-ic{flex:0 0 40px;height:40px;border-radius:11px;display:grid;place-items:center;color:#fff;box-shadow:0 5px 12px -5px rgba(16,42,50,.45)}
 .m-ic .ic-svg{width:20px;height:20px}
 .m-ic-petrol{background:var(--petrol)}.m-ic-amber{background:var(--amber)}.m-ic-ink{background:var(--tag-ink)}
-.m-ic-deep{background:var(--petrol-deep)}.m-ic-plum{background:var(--plum)}
+.m-ic-deep{background:var(--petrol-deep)}.m-ic-plum{background:var(--plum)}.m-ic-violet{background:var(--violet)}
+/* Mündlich üben: Frage vorlesen, frei antworten, Lösung mit getroffenen Begriffen */
+.mode.oral .m-title .tag{background:var(--violet)}
+body[data-screen="scrOral"] .toolbar{display:none}
+.qtype.oral{color:var(--violet-ink);background:var(--violet-soft)}
+.or-vorlesen{display:inline-flex;align-items:center;gap:7px;margin:10px 0 4px;border:0;background:none;padding:6px 0;font:600 13px var(--body);color:var(--violet-ink);cursor:pointer}
+.or-vorlesen[hidden]{display:none}
+.or-bereich{margin-top:14px}
+.or-hoer{display:flex;align-items:center;gap:10px;padding:12px 14px;border:1px solid var(--violet-line);background:var(--violet-soft);border-radius:12px;font:600 14px var(--body);color:var(--violet-ink)}
+.or-hoer .vs-dot{width:11px;height:11px;border-radius:50%;background:currentColor;animation:vpulse 1s infinite}
+.or-transkript{margin-top:10px;padding:12px 14px;border:1px solid var(--line);border-radius:12px;background:var(--surface);font-size:15px;line-height:1.55;color:var(--ink);min-height:52px}
+.or-transkript i{color:var(--muted)}
+.or-lbl{display:block;margin:0 0 6px;font:700 12px var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.or-bereich textarea{width:100%;min-height:96px;border:1px solid var(--line-strong);border-radius:12px;padding:11px 13px;font:15px/1.5 var(--body);background:var(--paper);color:var(--ink);resize:vertical}
+.or-bereich textarea:focus{outline:none;border-color:var(--violet)}
+.or-hinweis{margin:8px 0 0;font-size:12.5px;line-height:1.5;color:var(--muted)}
+.or-loesung{margin-top:14px;padding:13px 15px;border:1px solid var(--ok-line);background:var(--ok-soft);border-radius:12px}
+.or-loesung .or-lbl{color:var(--ok-ink)}
+.or-begriffe{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px}
+.or-begriffe span{border-radius:999px;padding:4px 10px;font:600 12px var(--body);border:1px solid var(--line-strong);color:var(--muted);background:var(--paper)}
+.or-begriffe span.ja{border-color:var(--ok);color:var(--ok-ink);background:var(--ok-soft)}
+.or-begriffe-t{margin:12px 0 0;font-size:12.5px;color:var(--ink-soft)}
+.or-mic{display:inline-flex;align-items:center;justify-content:center;gap:9px}
+.split.drei{grid-template-columns:repeat(3,minmax(0,1fr))}
 .m-body{flex:1 1 auto;min-width:0;display:block}
 .home .mode .m-title{font-size:18px}
 .home .modes{grid-template-columns:repeat(auto-fit,minmax(min(100%,250px),1fr))}
@@ -1452,6 +1478,11 @@ body[data-screen="scrBlatt"] .app{max-width:920px}
           <span class="m-body"><span class="m-title"><span class="tag">Klausur</span>Prüfungssimulation</span>
           <span class="m-desc" id="simDesc">30 Fragen aus dem ganzen Fach · 60 Minuten · bestanden ab 50 %.</span></span>
         </button>
+        <button class="mode oral" id="btnOral">
+          <span class="m-ic m-ic-violet" aria-hidden="true"><svg class="ic-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a3 3 0 0 0-3 3v6a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3z"/><path d="M19 10v1a7 7 0 0 1-14 0v-1"/><path d="M12 18v4"/></svg></span>
+          <span class="m-body"><span class="m-title"><span class="tag">Mündlich</span>Fachgespräch üben</span>
+          <span class="m-desc" id="oralDesc">10 Fragen werden vorgelesen – du antwortest frei per Sprache, danach Musterlösung und Selbstcheck.</span></span>
+        </button>
       </div>
       <p class="h-sub h-sub-gap">Fachübergreifend</p>
       <div class="modes">
@@ -1619,6 +1650,22 @@ body[data-screen="scrBlatt"] .app{max-width:920px}
       <details class="casectx" id="blCase" hidden></details>
       <div id="blAufgabe"></div>
       <div class="bl-foot" id="blFoot"></div>
+    </div>
+  </div>
+
+  <!-- MÜNDLICH ÜBEN -->
+  <div class="card" id="scrOral" hidden>
+    <div class="quizhead">
+      <button class="iconbtn" id="orQuit" title="Übung beenden" aria-label="Übung beenden">✕</button>
+      <div class="q-meta"><div class="q-fach" id="orFach">–</div><div class="q-count" id="orCount">Frage 1/10</div></div>
+    </div>
+    <div class="protocol" id="orProtocol" aria-hidden="true"></div>
+    <div class="qbody">
+      <div class="qmeta"><span class="qtype oral">Fachgespräch</span><span class="qsub" id="orSub"></span></div>
+      <div class="qtext" id="orText"></div>
+      <button type="button" class="or-vorlesen" id="orVorlesen"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5 6 9H2v6h4l5 4z"/><path d="M15.5 8.5a5 5 0 0 1 0 7M19 5a10 10 0 0 1 0 14"/></svg>Nochmal vorlesen</button>
+      <div class="or-bereich" id="orBereich" aria-live="polite"></div>
+      <div class="qactions" id="orActions"></div>
     </div>
   </div>
 
@@ -2242,6 +2289,10 @@ function updateModeCards(){
   $("btnWeak").disabled=weakN===0;
   var fachN=qForFach(state.fach).length;
   $("simDesc").textContent=Math.min(SIM_LEN,fachN)+" Fragen aus dem ganzen Fach „"+FACH_KURZ[state.fach]+"“ · 60 Minuten · IHK-Notenschlüssel, bestanden ab 50 %.";
+  var orN=qForScope(state.fach,state.sub).filter(orGeeignet).length;
+  $("oralDesc").textContent=orN>=3?(Math.min(OR_LEN,orN)+" Fragen aus „"+scopeLabel()+"“ werden vorgelesen – du antwortest frei"+(OR_SR?" per Sprache":", laut oder in Stichpunkten")+", danach Musterlösung und Selbstcheck."):
+    "Für diesen Bereich gibt es noch keine passenden Fragen fürs Fachgespräch.";
+  $("btnOral").disabled=orN<3;
   updateDueCard();
   renderReadiness();
   var cb=$("btnCases"),cd=$("casesDesc");
@@ -3620,6 +3671,133 @@ function blBindenStepper(){
   });
 }
 
+/* ===== Mündlich üben (Fachgespräch) =====
+   Die Frage wird vorgelesen; geantwortet wird frei per Sprache (Spracherkennung,
+   wo der Browser sie hat – sonst laut oder in Stichpunkten). Danach kommen die
+   Musterlösung und die Begriffe daraus, die in der Antwort vorkamen – als
+   Hilfe, nicht als Bewertung. Den Selbstcheck zählt der Lernstand wie im
+   Training. Geeignet sind offene Fragen und Auswahlfragen, deren Frage allein
+   verständlich ist (kein „Welche Aussage …“). */
+var OR_LEN=10,or={pool:[],idx:0,phase:'frage',text:'',zwischen:'',rec:null,fehler:''};
+var OR_SR=window.SpeechRecognition||window.webkitSpeechRecognition||null;
+var OR_UNGEEIGNET=/folgend|Aussage|trifft|richtig|falsch|zutreffend|\bnicht\b|\bkein|Beispiel|welche[rs]? (der|dieser)|Welche Antwort|Was gilt|Wofür steht|Kombination|Reihenfolge|ordnen/i;
+var OR_FUELL=' aber alle allem allen aller alles also auch auf aus bei beim bzw dabei damit dann dass dem den denen der des die dies diese diesem diesen dieser dieses durch eine einem einen einer eines etwa für gegen hat haben ihre ihren immer indem insbesondere jede jedem jeden jeder jedes kann können mehr mit muss müssen nach noch nur oder ohne sich sind soll sollen sowie über unter usw vom von vor während weil wenn werden wird wurde wurden zum zur zwischen sehr sein seine seiner diesem jeweils einer möglichst bestimmte bestimmten ';
+function orGeeignet(q){
+  if(q.t==='open')return !!(q.a||q.e);
+  if(q.t!=='mc'||!q.o)return false;
+  return !OR_UNGEEIGNET.test(q.q)&&q.q.length<=220&&/\?\s*$/.test(q.q)&&q.o.some(function(o){return o.ok;});
+}
+function orLoesung(q){
+  if(q.t==='open')return q.a||q.e||'';
+  var r=(q.o.filter(function(o){return o.ok;})[0]||{}).t||'';
+  return r+(q.e?'\n\n'+q.e:'');
+}
+/* Schlüsselbegriffe: Wörter ab 5 Buchstaben ohne Füllwörter, Substantive zuerst. */
+function orBegriffe(txt){
+  var seen={},out=[];
+  (String(txt).match(/[A-Za-zÄÖÜäöüß][A-Za-zÄÖÜäöüß-]{4,}/g)||[]).forEach(function(w){
+    var k=w.toLowerCase();if(OR_FUELL.indexOf(' '+k+' ')>=0||seen[k])return;seen[k]=1;out.push(w);});
+  out.sort(function(a,b){return (/^[A-ZÄÖÜ]/.test(b)?1:0)-(/^[A-ZÄÖÜ]/.test(a)?1:0);});
+  return out.slice(0,8);
+}
+function orStamm(w){var k=w.toLowerCase().replace(/(ungen|ung|en|er|es|e|n|s)$/,'');return k.slice(0,Math.min(8,Math.max(4,k.length)));}
+function orGetroffen(w,antwort){return antwort.toLowerCase().indexOf(orStamm(w))>=0;}
+function orSprechen(t){
+  var syn=window.speechSynthesis;if(!syn||typeof window.SpeechSynthesisUtterance!=='function')return;
+  try{syn.cancel();var u=new SpeechSynthesisUtterance(t);u.lang='de-DE';
+    var v=(syn.getVoices()||[]).filter(function(x){return /^de(\b|[-_])/i.test(x.lang);})[0];if(v)u.voice=v;syn.speak(u);}catch(e){}
+}
+function orStopHoeren(){if(or.rec){var r=or.rec;or.rec=null;try{r.stop();}catch(e){}}}
+function orStop(){orStopHoeren();try{if(window.speechSynthesis)window.speechSynthesis.cancel();}catch(e){}}
+function orHoeren(){
+  if(!OR_SR)return;
+  orStop();
+  var r;try{r=new OR_SR();}catch(e){return;}
+  r.lang='de-DE';r.continuous=true;r.interimResults=true;
+  var basis=or.text?or.text+' ':'';
+  r.onresult=function(ev){var fin='',zw='';for(var i=0;i<ev.results.length;i++){var t=ev.results[i][0].transcript;if(ev.results[i].isFinal)fin+=t;else zw+=t;}
+    or.text=(basis+fin).replace(/\s+/g,' ').trim();or.zwischen=zw;var el=$("orLive");if(el)el.innerHTML=orTranskriptHTML();};
+  r.onerror=function(ev){if(ev&&(ev.error==='not-allowed'||ev.error==='service-not-allowed'))or.fehler='Kein Zugriff aufs Mikrofon – erlaube es im Browser oder schreib deine Antwort unten.';};
+  r.onend=function(){if(or.rec===r){or.rec=null;if(or.phase==='hoeren'){or.phase='gehoert';orZeigen();}}};
+  or.rec=r;or.phase='hoeren';or.zwischen='';or.fehler='';
+  try{r.start();}catch(e){or.rec=null;or.phase='gehoert';}
+  orZeigen();
+}
+function orTranskriptHTML(){return (or.text?esc(or.text):'')+(or.zwischen?' <i>'+esc(or.zwischen)+'</i>':'')||'<i>…</i>';}
+function startOral(){
+  var cand=qForScope(state.fach,state.sub).filter(orGeeignet);
+  if(cand.length<3){alert("Für diesen Bereich gibt es noch keine passenden Fragen fürs Fachgespräch.");return;}
+  state.mode='oral';state.pool=shuffle(weightedPick(cand,Math.min(OR_LEN,cand.length)));
+  state.results=[];state.wrong=[];
+  or.idx=0;
+  var p=$("orProtocol");p.innerHTML="";state.pool.forEach(function(_,i){var d=document.createElement("div");d.className="seg";d.id="orSeg"+i;p.appendChild(d);});
+  show("scrOral");orFrage();
+}
+function orFrage(){
+  or.phase='frage';or.text='';or.zwischen='';or.fehler='';
+  var q=state.pool[or.idx];
+  $("orFach").textContent=(FACH_KURZ[q.f]||'')+' · mündlich';
+  $("orCount").textContent='Frage '+(or.idx+1)+'/'+state.pool.length;
+  $("orSub").textContent=q.sub||'';
+  $("orText").textContent=q.q;
+  state.pool.forEach(function(_,i){var d=$("orSeg"+i);if(d)d.className='seg'+(i===or.idx?' cur':(state.results[i]===true?' ok':(state.results[i]===false?' err':'')));});
+  $("orVorlesen").hidden=!window.speechSynthesis;
+  orZeigen();window.scrollTo(0,0);
+  orSprechen(q.q);
+}
+function orZeigen(){
+  var q=state.pool[or.idx],b=$("orBereich"),h='',a='';
+  if(or.phase==='frage'){
+    if(OR_SR){
+      h='<p class="or-hinweis">Antworte frei und vollständig, wie im Fachgespräch vor dem Prüfungsausschuss. Tippe auf „Fertig“, wenn du fertig bist.</p>';
+      a='<button type="button" class="primary or-mic" id="orStart">'+'<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2a3 3 0 0 0-3 3v6a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3z"/><path d="M19 10v1a7 7 0 0 1-14 0v-1"/><path d="M12 18v4"/></svg>Antworten</button>'+
+        '<button type="button" class="btn-no or-ohne" id="orOhne">Ohne Mikrofon</button>';
+    }else{
+      h='<label class="or-lbl" for="orTa">Deine Antwort · Stichpunkte</label><textarea id="orTa" placeholder="Sprich laut und notiere hier Stichpunkte – oder decke direkt auf."></textarea>'+
+        '<p class="or-hinweis">Spracherkennung gibt es in diesem Browser nicht (z. B. in Chrome und Edge schon).</p>';
+      a='<button type="button" class="primary" id="orLoesen">Lösung zeigen</button>';
+    }
+  }else if(or.phase==='hoeren'){
+    h='<div class="or-hoer"><span class="vs-dot"></span>Ich höre zu …</div><div class="or-transkript" id="orLive">'+orTranskriptHTML()+'</div>';
+    a='<button type="button" class="primary" id="orFertig">Fertig</button>';
+  }else if(or.phase==='gehoert'){
+    h='<label class="or-lbl" for="orTa">Deine Antwort'+(OR_SR?' · bei Hörfehlern einfach korrigieren':'')+'</label><textarea id="orTa">'+esc(or.text)+'</textarea>'+
+      (or.fehler?'<p class="or-hinweis" role="alert">'+esc(or.fehler)+'</p>':'');
+    a='<div class="split">'+(OR_SR?'<button type="button" class="btn-no" id="orWeiter">Weiter sprechen</button>':'')+
+      '<button type="button" class="primary" id="orLoesen">Lösung zeigen</button></div>';
+  }else{
+    var loes=orLoesung(q),begr=orBegriffe(q.t==='mc'?(q.o.filter(function(o){return o.ok;})[0]||{}).t||loes:loes),tr=begr.filter(function(w){return orGetroffen(w,or.text);});
+    h='<span class="or-lbl">Deine Antwort</span><div class="or-transkript">'+(or.text?esc(or.text):'<i>— keine Antwort notiert —</i>')+'</div>'+
+      '<div class="or-loesung"><span class="or-lbl">'+(q.t==='open'?'Musterlösung':'Richtige Antwort')+'</span><div class="rt">'+rtHTML(loes)+'</div></div>';
+    if(begr.length){
+      h+='<p class="or-begriffe-t">'+(or.text?('Begriffe aus der Lösung in deiner Antwort: <b>'+tr.length+' von '+begr.length+'</b> – ein Hinweis, keine Bewertung.'):'Darauf kommt es an:')+'</p>'+
+        '<div class="or-begriffe">'+begr.map(function(w){return '<span class="'+(tr.indexOf(w)>=0?'ja':'')+'">'+esc(w)+'</span>';}).join('')+'</div>';
+    }
+    a='<p class="or-hinweis">Wie gut war deine Antwort?</p><div class="split drei">'+
+      '<button type="button" class="btn-no" data-or="0">Nicht gewusst</button>'+
+      '<button type="button" class="btn-teil" data-or="1">Teilweise</button>'+
+      '<button type="button" class="btn-ok" data-or="2">Gewusst</button></div>';
+  }
+  b.innerHTML=h;$("orActions").innerHTML=a;
+  var x;
+  if((x=$("orStart")))x.onclick=orHoeren;
+  if((x=$("orOhne")))x.onclick=function(){or.phase='gehoert';orZeigen();var t=$("orTa");if(t)t.focus();};
+  if((x=$("orFertig")))x.onclick=function(){or.phase='gehoert';orStopHoeren();orZeigen();};
+  if((x=$("orWeiter")))x.onclick=function(){var t=$("orTa");if(t)or.text=t.value.trim();orHoeren();};
+  if((x=$("orLoesen")))x.onclick=function(){var t=$("orTa");if(t)or.text=t.value.trim();orStop();or.phase='loesung';orZeigen();};
+  $("orActions").querySelectorAll('[data-or]').forEach(function(btn){btn.onclick=function(){
+    var v=+btn.getAttribute('data-or'),i=or.idx;
+    state.results[i]=v===2;
+    if(v===2)recordResult(q.id,true);
+    else{state.wrong.push(q);if(v===0)recordResult(q.id,false);else tagZaehlen();}
+    if(or.idx>=state.pool.length-1){orStop();finishRound(false);}
+    else{or.idx++;orFrage();}
+  };});
+}
+$("btnOral").addEventListener("click",startOral);
+$("orQuit").addEventListener("click",function(){orStop();show("scrHome");});
+$("orVorlesen").addEventListener("click",function(){var q=state.pool[or.idx];if(q)orSprechen(q.q);});
+
 /* ===== Lern-Erinnerung (Web) =====
    Ohne eigenen Server gibt es im Browser keine verlässlichen Push-Nachrichten.
    Stattdessen ein täglicher Kalendereintrag (.ics) mit Erinnerung zur gewählten
@@ -3882,6 +4060,7 @@ function finishRound(timeUp){
     :(state.mode==='all')?"Alle Themen"
     :(state.mode==='due')?"Heute fällig"
     :(state.mode==='cases')?(pointBased?"Ergebnis":"Fallaufgabe")
+    :(state.mode==='oral')?"Mündlich üben"
     :"Trainingsrunde";
   if(state.mode==='sim'||pointBased){badge.hidden=false;var pass=pct>=50;badge.className="badge "+(pass?"pass":"fail");badge.textContent=(pass?"Bestanden":"Nicht bestanden")+" · "+ihkGrade(pct).text;}
   else badge.hidden=true;
@@ -3945,7 +4124,8 @@ function finishRound(timeUp){
   show("scrResult");
 }
 
-function show(id){["scrHome","scrQuiz","scrBlatt","scrResult"].forEach(function(s){$(s).hidden=(s!==id);});
+function show(id){["scrHome","scrQuiz","scrBlatt","scrOral","scrResult"].forEach(function(s){$(s).hidden=(s!==id);});
+  if(id!=="scrOral")orStop();
   /* Der aktive Bildschirm steht am <body>: Werkzeugleiste und Fußnote
      blenden sich per CSS nur dort ein, wo sie gebraucht werden. */
   document.body.setAttribute("data-screen",id);
