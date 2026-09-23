@@ -92,7 +92,7 @@ Fehlt das, landet man nach dem Login auf der voreingestellten Site URL (oft
 aus Abschnitt 2.
 
 Tabellen und Funktionen kommen **nicht** über Pages. Sie werden einmal per SQL-Skript
-im Supabase-SQL-Editor angelegt (Abschnitt 1 und 5). Bis dahin blendet die Web-App
+im Supabase-SQL-Editor angelegt (Abschnitte 1, 5 und 6). Bis dahin blendet die Web-App
 die betroffene Funktion aus.
 
 ## So funktioniert der Sync
@@ -130,6 +130,38 @@ Vor dem Freischalten in der **Datenschutzerklärung** und im
 **Play-Datenschutzformular** ergänzen:
 - was geteilt wird: Spitzname und Lernkennzahlen, nur nach Beitritt
 - wofür: Vergleich mit anderen Lernenden
+
+## 6. Fehler melden (optional)
+
+An jeder Frage und Teilaufgabe gibt es einen unauffälligen Knopf **„Fehler?“**. Lernende
+wählen die Art des Fehlers (Text, Lösung, Rechnung, Anlage, Sonstiges) und schreiben
+auf Wunsch dazu, was nicht stimmt. Melden geht auch ohne Konto.
+
+Freigeschaltet wird das mit **einem** SQL-Skript im Supabase-SQL-Editor:
+[`docs/supabase-meldungen.sql`](docs/supabase-meldungen.sql). Es lässt sich gefahrlos
+erneut ausführen. Solange es fehlt, blenden Web-App und App den Knopf aus.
+
+- **Gespeichert** werden:
+  - Fragennummer, Art, Text
+  - ein kurzer Kontext: Modus, Fach, die ersten 160 Zeichen der Frage
+  - nur bei Anmeldung die Konto-ID, keine IP-Adresse
+- **Kein Lesezugriff für Clients:** Geschrieben wird nur über `meldung_senden`; lesen und
+  abhaken lassen sich die Meldungen nur im Dashboard.
+- **Bremse:** höchstens 50 Meldungen je Konto und Tag, insgesamt 300 je Stunde.
+
+**Auswerten** (Dashboard → SQL-Editor; weitere Beispiele am Ende des Skripts):
+```sql
+select id, created_at, frage, art, text, kontext->>'auszug' as auszug
+from public.meldungen where status = 'neu' order by created_at desc;
+
+update public.meldungen set status = 'erledigt' where id in (1, 2, 3);
+```
+Die Fragennummer (z. B. `B-MW-901` oder `P-OK-20221115-s3`) findet sich in
+`data/questions.js` bzw. `data/cases.js` und in den Korrekturdateien unter
+`scripts/pruefungen/`.
+
+In der **Datenschutzerklärung** ergänzen: Meldungen zu Fragen (Inhalt, Kontext und
+bei Anmeldung das Konto), Zweck „Fehler in den Lerninhalten beheben“.
 
 ## Apple-Login später
 Die Auth-Architektur ist anbieter-offen (`AuthService`). „Sign in with Apple"

@@ -528,6 +528,34 @@
   .sheet-head .x{flex:0 0 auto;border:1px solid var(--line-strong);background:var(--paper);border-radius:10px;width:40px;height:40px;font-size:16px;color:var(--muted)}
   .sheet-head .x:hover{border-color:var(--err);color:var(--err-ink)}
   .sheet-body{padding:16px;overflow:auto}
+  /* Fehler melden: unauffälliger Knopf an Frage und Teilaufgabe, erst sichtbar,
+     wenn die Datenbank das Melden kann (body.kann-melden). */
+  .melden-btn{display:none;align-items:center;gap:5px;margin-left:auto;border:0;background:none;padding:4px 2px;min-height:32px;font:600 12px var(--body);color:var(--muted);cursor:pointer}
+  body.kann-melden .melden-btn{display:inline-flex}
+  .melden-btn:hover{color:var(--petrol-ink)}
+  .melden-btn.gemeldet{color:var(--ok-ink)}
+  .md-sheet{max-width:480px}
+  .md-bezug{margin:0 0 14px;padding:9px 12px;border-radius:9px;background:var(--surface);border:1px solid var(--line);font-size:12.5px;line-height:1.45;color:var(--ink-soft)}
+  .md-bezug b{font-family:var(--mono);font-size:11.5px;color:var(--ink)}
+  .md-lbl{display:block;margin:0 0 7px;font:700 13px var(--body);color:var(--ink)}
+  .md-lbl span{font-weight:500;color:var(--muted)}
+  .md-arten{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:15px}
+  .md-arten button{border:1px solid var(--line-strong);background:var(--paper);border-radius:999px;padding:7px 12px;min-height:38px;font:600 12.5px var(--body);color:var(--ink);cursor:pointer}
+  .md-arten button:hover{border-color:var(--petrol)}
+  .md-arten button[aria-checked="true"]{background:var(--petrol);border-color:var(--petrol);color:#fff}
+  #mdText{width:100%;border:1px solid var(--line-strong);border-radius:10px;padding:10px 12px;font:14px/1.45 var(--body);background:var(--paper);color:var(--ink);resize:vertical}
+  #mdText:focus{outline:none;border-color:var(--petrol)}
+  .md-hinweis{margin:8px 0 0;font-size:11.5px;line-height:1.45;color:var(--muted)}
+  .md-status{margin:10px 0 0;min-height:1em;font-size:13px;font-weight:600}
+  .md-status.ok{color:var(--ok-ink)} .md-status.err{color:var(--err-ink)}
+  .md-senden{display:block;width:100%;margin-top:12px;min-height:46px;border:0;border-radius:11px;background:var(--petrol);color:#fff;font:700 14px var(--body);cursor:pointer}
+  .md-senden:hover{background:var(--petrol-deep)}
+  .md-senden:disabled{opacity:.45;cursor:default}
+  /* Handy: kurzer Dialog als Blatt von unten statt Vollbild */
+  @media (max-width:560px){
+    #mMelden{align-items:flex-end}
+    #mMelden .sheet{height:auto;max-height:92vh;border-radius:16px 16px 0 0;padding-bottom:env(safe-area-inset-bottom)}
+  }
 
   /* Taschenrechner: Anzeige mit Verlauf, Funktionsreihe, 5×5-Tastenfeld.
      Auf dem Handy unten angedockt (.dock), sonst schwebend und ziehbar. */
@@ -1497,7 +1525,7 @@ body[data-screen="scrBlatt"] .app{max-width:920px}
     <div class="protocol" id="protocol" aria-hidden="true"></div>
     <div class="qbody">
       <details class="casectx" id="qCase" hidden></details>
-      <div class="qmeta" id="qMeta"><span class="qtype mc" id="qType">Auswahlfrage</span><span class="qsub" id="qSubLabel"></span></div>
+      <div class="qmeta" id="qMeta"><span class="qtype mc" id="qType">Auswahlfrage</span><span class="qsub" id="qSubLabel"></span><button type="button" class="melden-btn" id="qMelden" title="Fehler in dieser Frage melden"><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 21V4h11l-2 4 2 4H5"/></svg><span>Fehler?</span></button></div>
       <div class="voicebar" id="voiceStatus" hidden aria-live="polite"><span class="vs-dot"></span><span class="vs-txt"></span></div>
       <div class="taskbar" id="qHead" hidden><span class="tb-nr" id="qHeadNr"></span><span class="tb-pts" id="qHeadPts"></span><span class="tb-step" id="qHeadStep"></span></div>
       <div class="qsit" id="qSit" hidden></div>
@@ -1610,6 +1638,30 @@ body[data-screen="scrBlatt"] .app{max-width:920px}
     <div class="calc-keys" id="calcKeys">
       <div class="calc-fn" id="calcFn"></div>
       <div class="calc-grid" id="calcGrid"></div>
+    </div>
+  </div>
+</div>
+
+<!-- Fehler melden (sichtbar nur, wenn docs/supabase-meldungen.sql eingerichtet ist) -->
+<div class="modal" id="mMelden" hidden>
+  <div class="backdrop" data-md-zu></div>
+  <div class="sheet md-sheet" role="dialog" aria-modal="true" aria-labelledby="mdTitel">
+    <div class="sheet-head"><h3 id="mdTitel">Fehler melden</h3><button class="x" data-md-zu aria-label="Schließen">✕</button></div>
+    <div class="sheet-body">
+      <p class="md-bezug" id="mdBezug"></p>
+      <p class="md-lbl" id="mdArtLbl">Was stimmt nicht?</p>
+      <div class="md-arten" id="mdArten" role="radiogroup" aria-labelledby="mdArtLbl">
+        <button type="button" role="radio" aria-checked="false" data-art="text">Text unleserlich oder Tippfehler</button>
+        <button type="button" role="radio" aria-checked="false" data-art="loesung">Lösung falsch</button>
+        <button type="button" role="radio" aria-checked="false" data-art="rechnung">Rechnung oder Zahl falsch</button>
+        <button type="button" role="radio" aria-checked="false" data-art="anlage">Tabelle oder Anlage fehlt</button>
+        <button type="button" role="radio" aria-checked="false" data-art="sonstiges">Sonstiges</button>
+      </div>
+      <label class="md-lbl" for="mdText">Beschreibung <span>· optional</span></label>
+      <textarea id="mdText" rows="4" maxlength="1000" placeholder="Was genau stimmt nicht? Gern mit der richtigen Angabe."></textarea>
+      <p class="md-hinweis">Gesendet werden die Fragennummer, deine Angaben und – falls du angemeldet bist – dein Konto für Rückfragen.</p>
+      <p class="md-status" id="mdStatus" role="status" aria-live="polite"></p>
+      <button type="button" class="md-senden" id="mdSenden" disabled>Meldung senden</button>
     </div>
   </div>
 </div>
@@ -2998,6 +3050,7 @@ function renderQuestion(){
   $("qFach").textContent=isPruef?q.sub.replace(/^IHK-Prüfung:\s*/,""):q.f+". "+FACH_KURZ[q.f];
   $("qCount").textContent=(q._case?"Teil "+q._case.i+"/"+q._case.total:"Frage "+(state.idx+1)+"/"+state.pool.length);
   var typeEl=$("qType");
+  meldenKnopf($("qMelden"),q.id);
   if(q.t==='mc'){typeEl.textContent="Auswahlfrage";typeEl.className="qtype mc";}
   else if(q.t==='calc'){typeEl.textContent="Rechenaufgabe";typeEl.className="qtype calc";}
   else{typeEl.textContent="Offene Frage";typeEl.className="qtype open";}
@@ -3369,7 +3422,7 @@ function blTeilHTML(q){
   if(q.braucht&&q.braucht.length)
     h+='<button type="button" class="bl-braucht" data-zu="'+esc(q.braucht[0])+'">baut auf '+
        esc(q.braucht.join('), '))+') auf</button>';
-  h+='</header>';
+  h+=meldenKnopfHTML(q.id)+'</header>';
   h+=blVorherHTML(q);
   h+='<div class="bl-frage rt">'+rtHTML(T.frage)+'</div>';
   tabListe(q.tab).forEach(function(t,i){
@@ -3533,6 +3586,17 @@ function blBindenStepper(){
     b.onclick=function(){blOeffnen(parseInt(b.dataset.nr,10));};
   });
 }
+
+/* ===== Fehler melden: Knöpfe =====
+   Gemeldete Fragen merkt sich das Gerät (kvm_gemeldet), damit der Knopf
+   „Gemeldet ✓“ zeigt. Den Dialog und das Senden übernimmt der Cloud-Block. */
+var MELDEN_FLAG='<svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 21V4h11l-2 4 2 4H5"/></svg>';
+function gemeldet(id){try{return !!(JSON.parse(localStorage.getItem('kvm_gemeldet')||'{}')||{})[id];}catch(e){return false;}}
+function meldenKnopfHTML(id){var g=gemeldet(id);
+  return '<button type="button" class="melden-btn'+(g?' gemeldet':'')+'" data-melden="'+esc(id)+'" title="Fehler in dieser Teilaufgabe melden">'+
+    MELDEN_FLAG+'<span>'+(g?'Gemeldet ✓':'Fehler?')+'</span></button>';}
+function meldenKnopf(b,id){if(!b)return;b.setAttribute('data-melden',id);var g=gemeldet(id);b.classList.toggle('gemeldet',g);
+  b.querySelector('span').textContent=g?'Gemeldet ✓':'Fehler?';}
 
 /* ===== Prüfung unter Echtbedingungen =====
    Mit Uhr über die echte Bearbeitungszeit (Kraftverkehr laut Aufgabe 180 min,
@@ -3924,6 +3988,59 @@ document.addEventListener("keydown",function(ev){
   function signOut(){sb.auth.signOut().then(function(){},function(){});}
   var btn=$("btnCloud"); if(btn)btn.addEventListener("click",function(){if(user){if(confirm("Abmelden? Dein Fortschritt bleibt lokal auf diesem Gerät."))signOut();}else signIn();});
   acc(false,"");
+  /* ===== Fehler melden =====
+     Der Knopf „Fehler?“ erscheint erst, wenn docs/supabase-meldungen.sql
+     eingerichtet ist (meldungen_bereit antwortet). Gesendet wird über
+     meldung_senden – auch ohne Konto. */
+  var md={frage:null,art:null,sendet:false};
+  function mdFrage(id){
+    var Q=window.KVM_QUESTIONS||[];for(var i=0;i<Q.length;i++)if(Q[i].id===id)return Q[i];
+    var C=window.KVM_CASES||[];for(var j=0;j<C.length;j++){var st=C[j].steps||[];for(var k=0;k<st.length;k++)if(st[k].id===id)return st[k];}
+    return null;
+  }
+  function mdAuszug(q){return String((q&&(q.q||q.t))||'').replace(/\s+/g,' ').trim().slice(0,160);}
+  function mdOeffnen(id){
+    md.frage=id;md.art=null;md.sendet=false;
+    var q=mdFrage(id),a=mdAuszug(q);
+    $("mdBezug").innerHTML='<b>'+esc(id)+'</b>'+(a?' · '+esc(a)+(a.length>=160?' …':''):'');
+    $("mdArten").querySelectorAll('[data-art]').forEach(function(b){b.setAttribute('aria-checked','false');});
+    $("mdText").value='';$("mdStatus").textContent='';$("mdStatus").className='md-status';
+    $("mdSenden").disabled=true;$("mdSenden").textContent='Meldung senden';
+    $("mMelden").hidden=false;document.body.style.overflow='hidden';
+    var erst=$("mdArten").querySelector('[data-art]');if(erst)try{erst.focus();}catch(e){}
+  }
+  function mdZu(){$("mMelden").hidden=true;document.body.style.overflow='';}
+  function mdPruefen(){$("mdSenden").disabled=md.sendet||!md.art;}
+  document.addEventListener('click',function(e){
+    var b=e.target.closest&&e.target.closest('[data-melden]');
+    if(b&&document.body.classList.contains('kann-melden')){e.preventDefault();mdOeffnen(b.getAttribute('data-melden'));return;}
+    if(e.target.closest&&e.target.closest('[data-md-zu]'))mdZu();
+  });
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!$("mMelden").hidden)mdZu();});
+  $("mdArten").addEventListener('click',function(e){var b=e.target.closest('[data-art]');if(!b)return;
+    md.art=b.getAttribute('data-art');
+    $("mdArten").querySelectorAll('[data-art]').forEach(function(x){x.setAttribute('aria-checked',x===b?'true':'false');});mdPruefen();});
+  $("mdSenden").addEventListener('click',function(){
+    if(!md.frage||!md.art||md.sendet)return;
+    md.sendet=true;mdPruefen();$("mdSenden").textContent='Wird gesendet …';
+    var q=mdFrage(md.frage),k={modus:document.body.getAttribute('data-screen')||'',auszug:mdAuszug(q)};
+    if(q&&q.f)k.fach=q.f;if(q&&q.sub)k.bereich=String(q.sub).slice(0,80);
+    sb.rpc('meldung_senden',{p_frage:md.frage,p_art:md.art,p_text:$("mdText").value.slice(0,1000),p_kontext:k,p_quelle:'web'}).then(function(r){
+      if(r&&r.error)throw r.error;
+      try{var g=JSON.parse(localStorage.getItem('kvm_gemeldet')||'{}')||{};g[md.frage]=Date.now();localStorage.setItem('kvm_gemeldet',JSON.stringify(g));}catch(x){}
+      document.querySelectorAll('[data-melden]').forEach(function(b){if(b.getAttribute('data-melden')===md.frage){b.classList.add('gemeldet');var sp=b.querySelector('span');if(sp)sp.textContent='Gemeldet ✓';}});
+      $("mdStatus").textContent='Danke! Deine Meldung ist angekommen.';$("mdStatus").className='md-status ok';
+      $("mdSenden").textContent='Gesendet ✓';
+      setTimeout(mdZu,1400);
+    }).catch(function(err){
+      md.sendet=false;mdPruefen();$("mdSenden").textContent='Meldung senden';
+      $("mdStatus").textContent=(err&&/zu viele/.test(err.message||''))?'Gerade gehen zu viele Meldungen ein – bitte später noch einmal.':
+        'Senden hat nicht geklappt. Bist du online? Bitte noch einmal versuchen.';
+      $("mdStatus").className='md-status err';
+    });
+  });
+  sb.rpc('meldungen_bereit').then(function(r){ if(r&&!r.error&&r.data===true)document.body.classList.add('kann-melden'); },function(){});
+
   /* ===== Vergleich mit anderen: freiwillige Wochenrangliste =====
      Nur mit Konto und nur nach Beitritt mit einem Spitznamen. Sichtbar für
      andere sind allein Spitzname, Prüfungsreife, Antworten dieser Woche und
