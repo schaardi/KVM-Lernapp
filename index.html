@@ -1116,6 +1116,24 @@
 .vg-leer{padding:12px;text-align:center;font-size:12.5px;color:var(--muted)}
 .vg-fuss{display:flex;align-items:center;gap:4px 6px;flex-wrap:wrap;margin-top:10px;font-size:12.5px;color:var(--muted)}
 .vg-fuss .vg-ich{margin-right:auto}
+/* Lerngruppen: Reiter über der Liste, Einladung, Formular, Gruppenfuß */
+.vg-tabs{display:flex;gap:6px;overflow-x:auto;scrollbar-width:none;margin:0 0 12px;padding-bottom:2px}
+.vg-tabs::-webkit-scrollbar{display:none}
+.vg-tabs button{flex:none;max-width:220px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;border:1px solid var(--line-strong);background:var(--paper);border-radius:999px;padding:7px 13px;min-height:36px;font:600 12.5px var(--body);color:var(--ink);cursor:pointer}
+.vg-tabs button[aria-selected="true"],.vg-tabs .vg-tab-neu[aria-pressed="true"]{background:var(--petrol);border-color:var(--petrol);color:#fff}
+.vg-tabs .vg-tab-neu{border-style:dashed;color:var(--petrol-ink)}
+.vg-einladung{display:flex;align-items:center;flex-wrap:wrap;gap:8px;margin:0 0 12px;padding:10px 12px;border:1px solid var(--amber-line);background:var(--amber-soft);border-radius:11px;font-size:13px;line-height:1.45;color:var(--ink)}
+.vg-einladung span{flex:1 1 220px}
+.vg-einladung.klein{display:block;font-size:12.5px}
+.vg-code{font-family:var(--mono);letter-spacing:.08em}
+.vg-gform{margin-bottom:6px}
+.vg-gform .vg-form{margin:0 0 12px;align-items:center}
+.vg-glbl{flex-basis:100%;font:700 12.5px var(--body);color:var(--ink)}
+.vg-gfuss{display:flex;align-items:center;flex-wrap:wrap;gap:6px 8px;margin-top:10px;font-size:12.5px;color:var(--muted)}
+.vg-gfuss>span:first-child{margin-right:auto}
+.vg-gfuss b{color:var(--ink)}
+.vg-gmeld{flex-basis:100%;font-size:12px;color:var(--ok-ink)}
+.vg-gmeld:empty{display:none}
 .vg-fuss b{color:var(--ink)}
 
 /* Aktivität: beantwortete Fragen der letzten 14 Tage */
@@ -4108,7 +4126,14 @@ document.addEventListener("keydown",function(ev){
      Lerntage in Folge. Tabelle und Funktionen richtet
      docs/supabase-rangliste.sql ein – fehlen sie, bleibt der Abschnitt
      verborgen und die Seite sieht aus wie vorher. */
-  var vg={verfuegbar:null,stand:null,info:0,laedt:false,zuletzt:0,meldeT:null,bearbeiten:false};
+  var vg={verfuegbar:null,stand:null,info:0,laedt:false,zuletzt:0,meldeT:null,bearbeiten:false,
+          gruppenOk:null,gruppen:[],ansicht:null,gstand:null,gform:null,einladung:null};
+  /* Einladungslink „…#gruppe=K7M2QX“: Code merken (übersteht den Google-Login,
+     der ohne #-Teil zurückkehrt) und aus der Adresse nehmen. */
+  (function(){var m=/[#&]gruppe=([A-Za-z0-9]{6})\b/.exec(location.hash||'');
+    if(m){try{localStorage.setItem('kvm_einladung',m[1].toUpperCase());}catch(e){}
+      try{history.replaceState(null,'',location.pathname+location.search);}catch(e){}}
+    try{vg.einladung=localStorage.getItem('kvm_einladung')||null;}catch(e){}})();
   var VG_NAME=/^[A-Za-zÄÖÜäöüß0-9 _.-]{3,20}$/;
   /* ISO-Kalenderwoche („2026-W39“): die Rangliste beginnt jeden Montag neu. */
   function isoWoche(){
@@ -4146,9 +4171,112 @@ document.addEventListener("keydown",function(ev){
       vg.verfuegbar=true;
       if(user)vg.stand=res.data||null;else vg.info=+res.data||0;
       vgZeigen();
+      if(user)grLaden().then(vgZeigen);
     },function(){vg.laedt=false;vg.verfuegbar=false;vgZeigen();});
   }
   window.KVM_vergleich=function(){vgLaden(false);};
+  /* ===== Lerngruppen: private Rangliste per Code =====
+     Setzt docs/supabase-gruppen.sql voraus; fehlt es, bleibt alles wie in der
+     reinen Wochenrangliste. Nur wer der Rangliste beigetreten ist, sieht
+     Gruppen. */
+  function grLaden(){
+    if(!user||!vg.stand||!vg.stand.dabei)return Promise.resolve();
+    return sb.rpc("gruppen_meine").then(function(r){
+      if(!r||r.error){vg.gruppenOk=false;vg.gruppen=[];return;}
+      vg.gruppenOk=true;vg.gruppen=r.data||[];
+      if(vg.ansicht&&!vg.gruppen.some(function(g){return g.id===vg.ansicht;})){vg.ansicht=null;vg.gstand=null;}
+      if(vg.ansicht)return grStandLaden();
+    },function(){vg.gruppenOk=false;});
+  }
+  function grStandLaden(){
+    return sb.rpc("gruppe_stand",{p_gruppe:vg.ansicht,p_woche:isoWoche()}).then(function(r){
+      vg.gstand=(r&&!r.error)?r.data:null;},function(){vg.gstand=null;});
+  }
+  var GR_FEHLER={P0002:"Keine Gruppe mit diesem Code gefunden.",P0003:"Tritt erst der Rangliste bei.",
+    P0004:"Du bist schon in 5 Gruppen – verlasse zuerst eine.",P0005:"Die Gruppe ist voll (200 Mitglieder).",
+    "23514":"Der Gruppenname braucht 3–40 Zeichen."};
+  function grEinladungHTML(){
+    var c=vg.einladung;
+    if(!c||!vg.gruppenOk||vg.gruppen.some(function(g){return g.code===c;}))return '';
+    return '<div class="vg-einladung"><span>Du wurdest in eine <b>Lerngruppe</b> eingeladen (Code <b class="vg-code">'+esc(c)+'</b>).</span>'+
+      '<button type="button" class="vg-btn solid" data-gr="annehmen">Beitreten</button>'+
+      '<button type="button" class="vg-btn leise" data-gr="ablehnen">Nein danke</button></div>';
+  }
+  function grTabsHTML(){
+    if(!vg.gruppenOk)return '';
+    var h='<div class="vg-tabs" role="tablist" aria-label="Rangliste wählen">'+
+      '<button type="button" role="tab" data-gr-tab="" aria-selected="'+(!vg.ansicht&&!vg.gform)+'">Alle</button>';
+    vg.gruppen.forEach(function(g){h+='<button type="button" role="tab" data-gr-tab="'+esc(g.id)+'" aria-selected="'+(vg.ansicht===g.id&&!vg.gform)+'">'+esc(g.name)+'</button>';});
+    return h+'<button type="button" class="vg-tab-neu" data-gr="neu" aria-pressed="'+(!!vg.gform)+'">+ Gruppe</button></div>';
+  }
+  function grFormHTML(){
+    return '<div class="vg-gform">'+
+      '<form class="vg-form" data-gr-form="code" novalidate><label class="vg-glbl" for="grCode">Mit Code beitreten</label>'+
+        '<input id="grCode" type="text" maxlength="9" autocomplete="off" autocapitalize="characters" spellcheck="false" placeholder="z. B. K7M2QX" value="'+esc(vg.einladung||'')+'">'+
+        '<button type="submit" class="vg-btn solid">Beitreten</button></form>'+
+      '<form class="vg-form" data-gr-form="neu" novalidate><label class="vg-glbl" for="grName">Neue Gruppe gründen</label>'+
+        '<input id="grName" type="text" maxlength="40" autocomplete="off" placeholder="Name, z. B. Meisterkurs Herbst 2026">'+
+        '<button type="submit" class="vg-btn">Gründen</button></form>'+
+      '<p class="vg-fehler" id="grFehler" role="alert"></p>'+
+      '<p class="vg-hinweis">In der Gruppe seht ihr euch gegenseitig mit Spitzname, Antworten dieser Woche und Prüfungsreife – wie in der großen Rangliste. '+
+        'Wer den Code hat, kann beitreten. <button type="button" class="vg-btn leise" data-gr="abbrechen">Abbrechen</button></p></div>';
+  }
+  function grAnsichtHTML(kw){
+    var g=vg.gstand,info=vg.gruppen.filter(function(x){return x.id===vg.ansicht;})[0]||{};
+    if(!g)return '<p class="vg-lead">Gruppe wird geladen …</p>';
+    var h='<p class="h-sub">'+esc(g.name)+' · '+fmtN(g.mitglieder|0)+' Mitglied'+((g.mitglieder|0)===1?'':'er')+' · KW '+kw+'</p>';
+    h+='<ol class="vg-liste"><li class="vg-z kopf" aria-hidden="true"><span>Pl.</span><span>Spitzname</span><span class="vg-a">Antw.</span><span class="vg-r">Reife</span></li>';
+    (g.liste||[]).forEach(function(e){h+=vgZeile(e,e.platz|0);});
+    h+='</ol>';
+    if((g.mitglieder|0)<2)h+='<p class="vg-hinweis">Noch bist du allein in der Gruppe. Lade die anderen aus deinem Kurs mit dem Code ein.</p>';
+    h+='<div class="vg-gfuss"><span>Code <b class="vg-code">'+esc(g.code||info.code||'')+'</b></span>'+
+      '<button type="button" class="vg-btn" data-gr="einladen">Einladen</button>'+
+      '<button type="button" class="vg-btn leise" data-gr="verlassen">Gruppe verlassen</button>'+
+      '<span class="vg-gmeld" id="grMeld" role="status"></span></div>';
+    return h;
+  }
+  function grNach(p,ziel){
+    return p.then(function(r){
+      if(r&&r.error)throw r.error;
+      if(ziel==='beitritt'){try{localStorage.removeItem('kvm_einladung');}catch(e){}vg.einladung=null;}
+      vg.gform=null;vg.ansicht=(r&&r.data&&r.data.id)||null;vg.gstand=null;
+      return grLaden();
+    }).then(vgZeigen,function(err){
+      var fe=$("grFehler")||$("grMeld"),t=GR_FEHLER[(err&&err.code)||'']||"Das hat nicht geklappt – bitte später noch einmal.";
+      if(fe)fe.textContent=t;else alert(t);
+    });
+  }
+  function grBinden(box){
+    box.querySelectorAll('[data-gr-tab]').forEach(function(b){b.onclick=function(){
+      vg.gform=null;vg.ansicht=b.getAttribute('data-gr-tab')||null;vg.gstand=null;vgZeigen();
+      if(vg.ansicht)grStandLaden().then(vgZeigen);};});
+    box.querySelectorAll('[data-gr]').forEach(function(b){b.onclick=function(){
+      var a=b.getAttribute('data-gr');
+      if(a==='neu'){vg.gform=vg.gform?null:'neu';vgZeigen();var i=$("grCode");if(i&&!i.value&&$("grName"))$("grName").focus();else if(i)i.focus();}
+      else if(a==='abbrechen'){vg.gform=null;vgZeigen();}
+      else if(a==='ablehnen'){try{localStorage.removeItem('kvm_einladung');}catch(e){}vg.einladung=null;vgZeigen();}
+      else if(a==='annehmen'){b.disabled=true;grNach(sb.rpc("gruppe_beitreten",{p_code:vg.einladung}),'beitritt');}
+      else if(a==='verlassen'){
+        if(!confirm("Gruppe verlassen? Du kannst später mit dem Code wieder beitreten."))return;
+        b.disabled=true;
+        sb.rpc("gruppe_verlassen",{p_gruppe:vg.ansicht}).then(function(){vg.ansicht=null;vg.gstand=null;return grLaden();}).then(vgZeigen,vgZeigen);
+      }
+      else if(a==='einladen'){
+        var g=vg.gstand||{},url=location.origin+location.pathname+'#gruppe='+g.code,
+            text='Lerngruppe „'+g.name+'“ im Meister-Trainer – lern mit! Code: '+g.code,m=$("grMeld");
+        if(navigator.share){navigator.share({title:'Lerngruppe '+g.name,text:text,url:url}).catch(function(){});}
+        else if(navigator.clipboard){navigator.clipboard.writeText(text+'\n'+url).then(function(){if(m)m.textContent='Einladung kopiert – einfach in euren Chat einfügen.';},
+          function(){if(m)m.textContent='Link: '+url;});}
+        else if(m)m.textContent='Link: '+url;
+      }
+    };});
+    box.querySelectorAll('[data-gr-form]').forEach(function(f){f.onsubmit=function(ev){
+      ev.preventDefault();var art=f.getAttribute('data-gr-form'),fe=$("grFehler"),i=f.querySelector('input'),v=(i.value||'').trim();
+      if(art==='code'){v=v.toUpperCase().replace(/[^A-Z0-9]/g,'');if(v.length!==6){fe.textContent='Der Code hat 6 Zeichen.';return;}
+        fe.textContent='';grNach(sb.rpc("gruppe_beitreten",{p_code:v}),'beitritt');}
+      else{if(v.length<3||v.length>40){fe.textContent=GR_FEHLER["23514"];return;}fe.textContent='';grNach(sb.rpc("gruppe_gruenden",{p_name:v}),'neu');}
+    };});
+  }
   function vgFormHTML(wert){
     return '<form class="vg-form" id="vgForm" novalidate>'+
       '<input id="vgName" type="text" maxlength="20" autocomplete="nickname" spellcheck="false" '+
@@ -4172,6 +4300,7 @@ document.addEventListener("keydown",function(ev){
       h='<p class="vg-lead">Wie stehst du im Vergleich zu anderen? Mit Konto kannst du einer freiwilligen '+
         '<b>Wochenrangliste</b> beitreten und siehst, wo du mit deiner Prüfungsreife stehst.'+
         (vg.info?' <b>'+fmtN(vg.info)+'</b> Lernende sind schon dabei.':'')+'</p>'+
+        (vg.einladung?'<p class="vg-einladung klein">Du wurdest in eine <b>Lerngruppe</b> eingeladen. Melde dich an und mach bei der Rangliste mit – dann kannst du beitreten.</p>':'')+
         '<button type="button" class="vg-btn solid" id="vgLogin">Mit Google anmelden</button>';
     }else if(!st){
       h='<p class="vg-lead">Rangliste wird geladen …</p>';
@@ -4179,7 +4308,9 @@ document.addEventListener("keydown",function(ev){
       if(!st.dabei){
         h='<p class="vg-lead">Vergleiche dich mit anderen Lernenden – freiwillig und nur mit Spitznamen:</p>'+
           '<ul class="rt-list vg-lead"><li><b>Wochenrangliste</b> nach beantworteten Fragen, jeden Montag neu</li>'+
-          '<li>wie viele bei der <b>Prüfungsreife</b> hinter dir liegen</li></ul>';
+          '<li>wie viele bei der <b>Prüfungsreife</b> hinter dir liegen</li>'+
+          '<li>auf Wunsch <b>Lerngruppen</b> mit deinem Kurs – per Code</li></ul>'+
+          (vg.einladung?'<p class="vg-einladung klein">Du wurdest in eine <b>Lerngruppe</b> eingeladen. Nach dem Mitmachen kannst du beitreten.</p>':'');
         if(st.teilnehmende)scope=fmtN(st.teilnehmende)+" dabei";
       }else h='<p class="vg-lead">Neuer Spitzname für die Rangliste:</p>';
       h+=vgFormHTML(vg.bearbeiten?st.name:"")+
@@ -4198,6 +4329,10 @@ document.addEventListener("keydown",function(ev){
           'Diese Woche noch ohne Antwort – ab der ersten bist du in der Wochenliste.')+'</span></div>'+
         '</div>';
       var kw=isoWoche().split("-W")[1];
+      h+=grEinladungHTML()+grTabsHTML();
+      if(vg.gform)h+=grFormHTML();
+      else if(vg.ansicht)h+=grAnsichtHTML(+kw);
+      else{
       h+='<p class="h-sub">Wochenrangliste · KW '+(+kw)+'</p>';
       var L=st.liste||[];
       if(!L.length){
@@ -4211,12 +4346,14 @@ document.addEventListener("keydown",function(ev){
         }
         h+='</ol>';
       }
+      }
       h+='<div class="vg-fuss"><span class="vg-ich">Du bist dabei als <b>'+esc(st.name)+'</b></span>'+
         '<button type="button" class="vg-btn leise" id="vgAendern">Spitzname ändern</button>'+
         '<button type="button" class="vg-btn leise" id="vgRaus">Austreten</button></div>';
     }
     box.innerHTML=h;
     $("vgScope").textContent=scope;
+    grBinden(box);
     var b;
     if((b=$("vgLogin")))b.onclick=signIn;
     if((b=$("vgAendern")))b.onclick=function(){vg.bearbeiten=true;vgZeigen();var i=$("vgName");if(i){i.focus();i.select();}};

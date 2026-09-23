@@ -1117,38 +1117,38 @@ Großbuchstaben, Buchstabenabstand 1,3, `kMuted`; rechts optional ein Zusatz in 
 
 **CSS**
 - Startseite: Kommentar „Startseite“ Z. 910
-- Texte: „Aufgabentexte: Tabellen …“ Z. 1129
-- Aufgabenblatt Z. 1161
-- Rechenweg Z. 1290
+- Texte: „Aufgabentexte: Tabellen …“ Z. 1147
+- Aufgabenblatt Z. 1179
+- Rechenweg Z. 1308
 
 **JS**
 - Renderer:
-  - `rtIstRechnung` Z. 2635
-  - `rtKopf` Z. 2655
-  - `rtTabelle` Z. 2670
-  - `rtHTML` Z. 2693
+  - `rtIstRechnung` Z. 2653
+  - `rtKopf` Z. 2673
+  - `rtTabelle` Z. 2688
+  - `rtHTML` Z. 2711
 - Rechenweg:
-  - `rwTokens` Z. 2759
-  - `rwRechne` Z. 2840
-  - `rwZeileText` Z. 2878
-  - `rwHTML` Z. 2911
-  - `rwBinden` Z. 2924
-- Bewertung: `scoreHTML` Z. 3011
+  - `rwTokens` Z. 2777
+  - `rwRechne` Z. 2858
+  - `rwZeileText` Z. 2896
+  - `rwHTML` Z. 2929
+  - `rwBinden` Z. 2942
+- Bewertung: `scoreHTML` Z. 3029
 - Aufgabenblatt:
-  - `blStepperHTML` Z. 3300
-  - `blFortschrittHTML` Z. 3318
-  - `blLoesungHTML` Z. 3387
-  - `blRechenteil` Z. 3425
-  - `blTeilHTML` Z. 3431
-  - `renderBlatt` Z. 3470
+  - `blStepperHTML` Z. 3318
+  - `blFortschrittHTML` Z. 3336
+  - `blLoesungHTML` Z. 3405
+  - `blRechenteil` Z. 3443
+  - `blTeilHTML` Z. 3449
+  - `renderBlatt` Z. 3488
 - Startseite:
-  - `tagZaehlen` Z. 1807
-  - `renderFachGroup` Z. 1975
-  - `renderHero` Z. 2003
-  - `erfolgeListe` Z. 2123
-  - `renderAktiv` Z. 2164
-  - `renderPruefLast` Z. 2181
-- Prüfungsliste: `items.forEach` in `render()` Z. 6351
+  - `tagZaehlen` Z. 1825
+  - `renderFachGroup` Z. 1993
+  - `renderHero` Z. 2021
+  - `erfolgeListe` Z. 2141
+  - `renderAktiv` Z. 2182
+  - `renderPruefLast` Z. 2199
+- Prüfungsliste: `items.forEach` in `render()` Z. 6488
 
 Zeilennummern: Stand dieses Commits.
 
@@ -1296,18 +1296,18 @@ Serverseitig abgesichert:
 - Austreten führt zurück zum Beitrittsformular. Der Eintrag ist serverseitig gelöscht.
 
 ### Referenz Web-Implementierung (`index.html` auf `claude/ui-design-improvement-my0f66`)
-- **HTML:** `#vgKopf` / `#vgBox`, Z. 1469
+- **HTML:** `#vgKopf` / `#vgBox`, Z. 1487
 - **CSS:** Kommentar „Vergleich: freiwillige Wochenrangliste“, Z. 1079
 - **JS** im Cloud-Block:
 
   | Funktion | Zeile |
   |---|---|
-  | `isoWoche` | 4114 |
-  | `wocheAntworten` | 4121 |
-  | `vgWerte` | 4126 |
-  | `vgMeldenSpaeter` | 4131 |
-  | `vgLaden` | 4138 |
-  | `vgZeigen` | 4165 |
+  | `isoWoche` | 4139 |
+  | `wocheAntworten` | 4146 |
+  | `vgWerte` | 4151 |
+  | `vgMeldenSpaeter` | 4156 |
+  | `vgLaden` | 4163 |
+  | `vgZeigen` | 4293 |
 
 - **SQL:** `docs/supabase-rangliste.sql`. Lokal geprüft mit PGlite: Rechte,
   Rangfolge, Wochenwechsel, zwei Geräte, Namensregeln, Austritt, Kontolöschung.
@@ -1540,27 +1540,27 @@ Der Rechner bearbeitet keinen Text, sondern eine Liste von Zeichen:
 - „4.400“ im Ergebnisfeld zählt als 4400.
 
 ### Referenz Web-Implementierung (`index.html` auf `claude/ui-design-improvement-my0f66`)
-- **HTML:** `#mCalc`, Z. 1643
+- **HTML:** `#mCalc`, Z. 1661
 - **CSS:** Kommentar „Taschenrechner: Anzeige mit Verlauf …“, Z. 567
 - **JS:**
 
   | Funktion | Zeile |
   |---|---|
-  | `rwTokens` (Kern: Zeichen) | 2759 |
-  | `rwFunktion` (Winkel, Wurzel) | 2797 |
-  | `rwAuswerten` (Kern: Rechnen) | 2815 |
-  | `parseCalcNum` | 3129 |
-  | `calcDock` (Andocken, Ausweichen) | 4278 |
-  | `rkKern` (Zeichenliste → Kern) | 4342 |
-  | `rkAusdruck` (Anzeige, Text) | 4375 |
-  | `rkFunktion` | 4426 |
-  | `rkVorzeichen` | 4436 |
-  | `rkZeit` | 4454 |
-  | `rkGleich` | 4468 |
-  | `rkTaste` | 4482 |
-  | `rkZielVon` / `rkUebernehmen` | 4503 / 4526 |
-  | `FN_TASTEN` / `TASTEN` | 4547 |
-  | `rkZeigen` | 4557 |
+  | `rwTokens` (Kern: Zeichen) | 2777 |
+  | `rwFunktion` (Winkel, Wurzel) | 2815 |
+  | `rwAuswerten` (Kern: Rechnen) | 2833 |
+  | `parseCalcNum` | 3147 |
+  | `calcDock` (Andocken, Ausweichen) | 4415 |
+  | `rkKern` (Zeichenliste → Kern) | 4479 |
+  | `rkAusdruck` (Anzeige, Text) | 4512 |
+  | `rkFunktion` | 4563 |
+  | `rkVorzeichen` | 4573 |
+  | `rkZeit` | 4591 |
+  | `rkGleich` | 4605 |
+  | `rkTaste` | 4619 |
+  | `rkZielVon` / `rkUebernehmen` | 4640 / 4663 |
+  | `FN_TASTEN` / `TASTEN` | 4684 |
+  | `rkZeigen` | 4694 |
 
 Zeilennummern: Stand dieses Commits.
 
@@ -1672,12 +1672,12 @@ Fehler im Formular: „Bitte ein Datum wählen.“ / „Der Termin muss in der Z
 - „Entfernen“ führt zurück zu „Wann ist deine Prüfung?“.
 
 ### Referenz Web-Implementierung (`index.html` auf `claude/ui-design-improvement-my0f66`)
-- **HTML:** `#planBox` in `.hero-main`, Z. 1395
+- **HTML:** `#planBox` in `.hero-main`, Z. 1413
 - **CSS:** Kommentar „Prüfungstermin und Lernplan: eigener Block …“, Z. 962
 - **JS:**
-  - Block-Kommentar „Prüfungstermin und Lernplan“, Z. 2018
-  - `planRechnen`, Z. 2033
-  - `renderPlan`, Z. 2049 (aufgerufen am Ende von `renderHero`)
+  - Block-Kommentar „Prüfungstermin und Lernplan“, Z. 2036
+  - `planRechnen`, Z. 2051
+  - `renderPlan`, Z. 2067 (aufgerufen am Ende von `renderHero`)
 
 Zeilennummern: Stand dieses Commits.
 
@@ -1779,17 +1779,17 @@ Unter den Knöpfen steht der letzte Durchgang: „Zuletzt unter Prüfungsbedingu
 
 ### Referenz Web-Implementierung (`index.html` auf `claude/ui-design-improvement-my0f66`)
 - **HTML:**
-  - Uhr und „Abgeben“ in `.bl-bar`, Z. 1588
-  - Band `#blEcht`, Z. 1600
-- **CSS:** Kommentar „Prüfung unter Echtbedingungen: Uhr und Abgabe …“, Z. 1272
+  - Uhr und „Abgeben“ in `.bl-bar`, Z. 1606
+  - Band `#blEcht`, Z. 1618
+- **CSS:** Kommentar „Prüfung unter Echtbedingungen: Uhr und Abgabe …“, Z. 1290
 - **JS:**
-  - Block-Kommentar „Prüfung unter Echtbedingungen“, Z. 3662
-  - `echtUhr`, Z. 3693
-  - `echtAbgeben`, Z. 3714
-  - `KVM_startEcht`, Z. 3728
-  - `KVM_echtInfo`, Z. 3742
-  - Ergebnis in `finishRound`, Z. 3921
-  - Prüfungsliste, Z. 6361
+  - Block-Kommentar „Prüfung unter Echtbedingungen“, Z. 3680
+  - `echtUhr`, Z. 3711
+  - `echtAbgeben`, Z. 3732
+  - `KVM_startEcht`, Z. 3746
+  - `KVM_echtInfo`, Z. 3760
+  - Ergebnis in `finishRound`, Z. 3939
+  - Prüfungsliste, Z. 6498
 
 Zeilennummern: Stand dieses Commits.
 
@@ -1871,15 +1871,15 @@ geht auch ohne Konto.
 
 ### Referenz Web-Implementierung (`index.html` auf `claude/ui-design-improvement-my0f66`)
 - **HTML:**
-  - Knopf `#qMelden`, Z. 1543
-  - Dialog `#mMelden`, Z. 1660
+  - Knopf `#qMelden`, Z. 1561
+  - Dialog `#mMelden`, Z. 1678
 - **CSS:** Kommentar „Fehler melden: unauffälliger Knopf …“, Z. 538
 - **JS:**
-  - `meldenKnopfHTML` (Aufgabenblatt), Z. 3656
-  - Block „Fehler melden“ im Cloud-Teil, Z. 4052
-  - `mdOeffnen`, Z. 4063
-  - Senden, Z. 4089
-  - Bereitschaft, Z. 4103
+  - `meldenKnopfHTML` (Aufgabenblatt), Z. 3674
+  - Block „Fehler melden“ im Cloud-Teil, Z. 4070
+  - `mdOeffnen`, Z. 4081
+  - Senden, Z. 4107
+  - Bereitschaft, Z. 4121
 - **SQL:** `docs/supabase-meldungen.sql`
 
 Zeilennummern: Stand dieses Commits.
@@ -1961,10 +1961,124 @@ stattdessen **„In den Kalender“**:
 - Neustart des Geräts: Die geplanten Erinnerungen bleiben.
 
 ### Referenz Web-Implementierung (`index.html` auf `claude/ui-design-improvement-my0f66`)
-- **HTML:** Zeile „Lern-Erinnerung“ (`#erinnZeit`, `#erinnIcs`), Z. 1521
+- **HTML:** Zeile „Lern-Erinnerung“ (`#erinnZeit`, `#erinnIcs`), Z. 1539
 - **CSS:** Kommentar „Lern-Erinnerung: Uhrzeit + Kalendereintrag“, Z. 432
 - **JS:**
-  - Block-Kommentar „Lern-Erinnerung (Web)“, Z. 3605
-  - `erIcs`, Z. 3618
+  - Block-Kommentar „Lern-Erinnerung (Web)“, Z. 3623
+  - `erIcs`, Z. 3636
+
+Zeilennummern: Stand dieses Commits.
+
+---
+
+## FR-010 · Lerngruppen mit Einladungscode
+
+**Status App-Session:** ⏳ offen
+**Web umgesetzt:** ✅ `claude/ui-design-improvement-my0f66` (Commit „Lerngruppen …“)
+**Voraussetzungen:**
+- FR-004 (Wochenrangliste) umgesetzt
+- einmalig `docs/supabase-gruppen.sql` **nach** `docs/supabase-rangliste.sql` (siehe
+  `SUPABASE_SETUP.md`, Abschnitt 7)
+
+Fehlt das Skript, sieht die Rangliste aus wie bisher.
+
+### Ziel / Framing
+Lernende eines Meisterkurses wollen sich untereinander vergleichen, nicht mit ganz
+Deutschland. Dafür gibt es eine private Rangliste je Gruppe.
+- Beitritt per 6-stelligem Code oder Einladungslink.
+- Sichtbar ist dasselbe wie in der großen Rangliste.
+- Später denkbar: eine Übersicht für Lehrkräfte bzw. ein Angebot an Bildungsträger.
+
+### Datenbank (RPCs, alle nur für `authenticated`)
+| RPC | Ergebnis |
+|---|---|
+| `gruppe_gruenden(p_name)` | `{id, code, name}`. Der Name wird getrimmt, Leerraum zusammengezogen, 3–40 Zeichen. |
+| `gruppe_beitreten(p_code)` | `{id, code, name}`. Groß-/Kleinschreibung und Leerzeichen egal; schon Mitglied → dieselbe Antwort. |
+| `gruppe_verlassen(p_gruppe)` | – |
+| `gruppen_meine()` | `[{id, code, name, mitglieder, leitung}]`, in Beitrittsreihenfolge |
+| `gruppe_stand(p_gruppe, p_woche)` | `{id, name, code, leitung, mitglieder, liste:[{platz, name, antworten, reife, serie, ich}]}`, nur für Mitglieder, sonst `null` |
+
+- **In `gruppe_stand`:**
+  - Alle Mitglieder stehen in der Liste, auch ohne Antworten.
+  - Antworten aus einer anderen Woche zählen 0.
+  - Rang nach Antworten, bei Gleichstand der Name.
+- **Fehlercodes → Text:**
+
+  | Code | Text |
+  |---|---|
+  | `P0002` | „Keine Gruppe mit diesem Code gefunden.“ |
+  | `P0003` | „Tritt erst der Rangliste bei.“ |
+  | `P0004` | „Du bist schon in 5 Gruppen – verlasse zuerst eine.“ |
+  | `P0005` | „Die Gruppe ist voll (200 Mitglieder).“ |
+  | `23514` | „Der Gruppenname braucht 3–40 Zeichen.“ |
+  | sonst | „Das hat nicht geklappt – bitte später noch einmal.“ |
+
+- **Serverseitig:**
+  - Codes aus `ABCDEFGHJKLMNPQRSTUVWXYZ23456789`
+  - falsche Codes kosten 0,5 s
+  - höchstens 5 Gruppen je Person, 200 Mitglieder je Gruppe
+  - Aufräumen per Trigger (Rangliste verlassen oder Konto gelöscht → raus aus allen Gruppen;
+    leere Gruppe weg; neue Leitung)
+- Lokal mit PGlite geprüft, 20 Fälle.
+
+### UI (im Vergleichsabschnitt, nur mit Rangliste und Skript)
+- **Reiter über der Liste** (waagerecht scrollbar, Pillenform):
+  - „Alle“ (die große Wochenrangliste), dann je Gruppe ihr Name, zuletzt „+ Gruppe“
+    (gestrichelt)
+  - gewählt: petrol gefüllt
+- **Gruppenansicht:**
+  - Überschrift „Meisterkurs IHK Köln · 4 Mitglieder · KW 39“, darunter die Liste wie in
+    FR-004 (Medaillen, eigene Zeile markiert).
+  - Allein in der Gruppe: „Noch bist du allein in der Gruppe. Lade die anderen aus deinem Kurs
+    mit dem Code ein.“
+  - Fuß: „Code **ABCDEF**“ (Mono, gesperrt), Knopf „Einladen“, leiser Knopf „Gruppe verlassen“
+    (Nachfrage: „Gruppe verlassen? Du kannst später mit dem Code wieder beitreten.“).
+- **„Einladen“:**
+  - Teilen-Dialog des Systems: Titel „Lerngruppe <Name>“, Text „Lerngruppe „<Name>“ im
+    Meister-Trainer – lern mit! Code: <Code>“, Link `<Web-Adresse>#gruppe=<Code>`.
+  - Ohne Teilen-Dialog in die Zwischenablage, mit der Rückmeldung „Einladung kopiert –
+    einfach in euren Chat einfügen.“
+- **„+ Gruppe“:** zwei kleine Formulare untereinander:
+  - „Mit Code beitreten“: Feld, Großbuchstaben, vorbelegt mit einer offenen Einladung;
+    Knopf „Beitreten“
+  - „Neue Gruppe gründen“: Feld mit Platzhalter „Name, z. B. Meisterkurs Herbst 2026“;
+    Knopf „Gründen“
+  - darunter Fehlerzeile, Hinweis und „Abbrechen“
+  - Nach Erfolg ist die neue Gruppe gewählt.
+- **Einladungslink:**
+  - Beim Start `#gruppe=<6 Zeichen>` aus der Adresse lesen, groß schreiben und in
+    **`kvm_einladung`** merken. Der Google-Login kehrt ohne `#` zurück, deshalb der Speicher.
+  - Dann den `#`-Teil entfernen (`history.replaceState`).
+  - App: Deep Link `…/#gruppe=` bzw. App-Link, sonst manuelle Eingabe.
+  - **Abgemeldet:** Hinweis „Du wurdest in eine Lerngruppe eingeladen. Melde dich an und mach
+    bei der Rangliste mit – dann kannst du beitreten.“
+  - **Angemeldet, nicht in der Rangliste:** Hinweis „… Nach dem Mitmachen kannst du beitreten.“
+  - **In der Rangliste:** Band (Bernstein) „Du wurdest in eine Lerngruppe eingeladen
+    (Code ABCDEF).“ mit „Beitreten“ und „Nein danke“. Beides löscht `kvm_einladung`.
+- Die Einführung vor dem Beitritt zur Rangliste nennt als dritten Punkt „auf Wunsch
+  Lerngruppen mit deinem Kurs – per Code“.
+
+### Abnahme
+- Ohne Skript: keine Reiter, die Rangliste wie bisher.
+- „+ Gruppe“ → Name „ab“ → Fehlertext.
+- Gründen mit „ Meisterkurs Herbst 2026 “: Reiter „Meisterkurs Herbst 2026“ gewählt,
+  „1 Mitglied“, Code sichtbar.
+- „Einladen“ teilt bzw. kopiert Text und Link mit dem Code.
+- Link `#gruppe=abcdef` öffnen: Band mit Code ABCDEF → „Beitreten“ → Reiter der Gruppe,
+  Liste sortiert, Einladung gelöscht.
+- Falscher Code → „Keine Gruppe mit diesem Code gefunden.“
+- Verlassen → zurück zu „Alle“, der Reiter ist weg.
+
+### Referenz Web-Implementierung (`index.html` auf `claude/ui-design-improvement-my0f66`)
+- **Zustand und Einladungslink** im Vergleichsblock, Z. 4130
+- **CSS:** Kommentar „Lerngruppen: Reiter über der Liste …“, Z. 1119
+- **JS:**
+  - Block-Kommentar „Lerngruppen: private Rangliste per Code“, Z. 4178
+  - `grLaden`, Z. 4182
+  - `grTabsHTML`, Z. 4205
+  - `grFormHTML`, Z. 4212
+  - `grAnsichtHTML`, Z. 4224
+  - `grBinden`, Z. 4249
+- **SQL:** `docs/supabase-gruppen.sql`
 
 Zeilennummern: Stand dieses Commits.
