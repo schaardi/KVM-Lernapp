@@ -31,6 +31,8 @@ create table if not exists public.gruppen_mitglieder (
   primary key (gruppe, user_id)
 );
 create index if not exists gruppen_mitglieder_user_idx on public.gruppen_mitglieder (user_id);
+-- Fremdschlüssel auf auth.users: beim Löschen eines Kontos ohne Tabellen-Scan.
+create index if not exists gruppen_owner_idx on public.gruppen (owner);
 
 alter table public.gruppen enable row level security;
 alter table public.gruppen_mitglieder enable row level security;

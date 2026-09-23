@@ -29,6 +29,9 @@ create table if not exists public.meldungen (
 
 create index if not exists meldungen_status_idx on public.meldungen (status, created_at desc);
 create index if not exists meldungen_frage_idx  on public.meldungen (frage);
+-- Fremdschlüssel und Bremse: Meldungen eines Kontos und der letzten Stunde schnell finden.
+create index if not exists meldungen_user_idx   on public.meldungen (user_id, created_at);
+create index if not exists meldungen_zeit_idx   on public.meldungen (created_at);
 
 -- Kein direkter Zugriff: RLS an, keine Policies, Rechte entzogen.
 alter table public.meldungen enable row level security;
