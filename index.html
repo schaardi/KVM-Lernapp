@@ -1161,6 +1161,95 @@ body[data-screen="scrOral"] .toolbar{display:none}
 .vg-gmeld{flex-basis:100%;font-size:12px;color:var(--ok-ink)}
 .vg-gmeld:empty{display:none}
 .vg-fuss b{color:var(--ink)}
+/* Namen in Rangliste, Gruppe und Freundesliste öffnen das Profil */
+.vg-link{display:block;width:100%;min-width:0;border:0;background:none;padding:0;text-align:left;font:inherit;font-weight:600;color:var(--ink);cursor:pointer;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.vg-link:hover{color:var(--petrol-ink);text-decoration:underline}
+.vg-btn.gefahr{color:var(--err-ink);border-color:var(--err-line)}
+.vg-btn.gefahr:hover{background:var(--err-soft);border-color:var(--err)}
+
+/* Lernende: Nutzerübersicht, Freunde und Profile (#mLeute) – und die
+   Verwaltung für Admins (#mAdmin), die dieselben Bausteine nutzt */
+.lt-badge{display:inline-grid;place-items:center;min-width:18px;height:18px;padding:0 5px;margin-left:6px;border-radius:9px;background:var(--amber);color:#fff;font:700 11px/1 var(--mono);vertical-align:1px}
+.lt-liste{list-style:none;margin:0 0 16px;padding:0;border:1px solid var(--line);border-radius:12px;overflow:hidden}
+.lt-z{display:flex;flex-wrap:wrap;align-items:center;gap:0 6px;padding:4px 10px 4px 4px;border-top:1px solid var(--line-soft)}
+.lt-z:first-child{border-top:0}
+.lt-person{flex:1 1 210px;min-width:0;display:flex;align-items:center;gap:11px;border:0;background:none;padding:7px 8px;border-radius:10px;text-align:left;color:var(--ink);cursor:pointer;font:inherit}
+.lt-person:hover{background:var(--surface)}
+.lt-av{flex:0 0 38px;width:38px;height:38px;border-radius:50%;display:grid;place-items:center;background:hsl(var(--av-h,190) 40% 40%);color:#fff;font:700 13.5px/1 var(--body);letter-spacing:.02em}
+.lt-av.gross{flex-basis:64px;width:64px;height:64px;font-size:22px}
+.lt-pt{min-width:0;display:flex;flex-direction:column;gap:2px}
+.lt-pt b{font-size:14px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.lt-pt span{font-size:12px;color:var(--muted);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.lt-akt{flex:none;display:flex;align-items:center;gap:4px;margin-left:auto;padding:0 0 2px}
+.lt-status{font:600 12px var(--body);color:var(--muted);padding:0 4px}
+.lt-status.ok{color:var(--ok-ink)}
+.lt-chip{display:inline-block;border-radius:999px;padding:2px 8px;font:700 10px/1.5 var(--mono);letter-spacing:.05em;text-transform:uppercase;background:var(--surface-2);color:var(--muted)}
+.lt-chip.admin{background:var(--plum-soft);color:var(--plum-ink)}
+.lt-chip.sperre{background:var(--err-soft);color:var(--err-ink)}
+.lt-leer{padding:18px 16px;border:1px dashed var(--line-strong);border-radius:12px;text-align:center;font-size:13px;line-height:1.5;color:var(--muted);margin:0 0 16px}
+.lt-leer p{margin:0 0 10px}
+.lt-leer p:last-child{margin:0}
+.lt-suche{margin:0 0 12px}
+.lt-anzahl{margin:0 0 8px;font-size:12px;color:var(--muted)}
+.lt-mehr{display:block;margin:-6px auto 16px}
+.lt-meld{margin:0 0 12px;padding:9px 12px;border-radius:10px;background:var(--err-soft);color:var(--err-ink);font-size:12.5px;font-weight:600}
+.lt-meld.ok{background:var(--ok-soft);color:var(--ok-ink)}
+.lt-zurueck{display:inline-flex;align-items:center;gap:4px;border:0;background:none;color:var(--petrol-ink);font:700 13px var(--body);padding:4px 0;min-height:36px;cursor:pointer;margin:0 0 6px}
+.lt-kopf{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin:0 0 16px}
+.lt-kopf-t{flex:1 1 180px;min-width:0}
+.lt-kopf h4{margin:0;font:700 24px/1.15 var(--disp);color:var(--ink);overflow-wrap:anywhere}
+.lt-kopf p{margin:4px 0 0;font-size:12.5px;line-height:1.4;color:var(--muted);overflow-wrap:anywhere}
+.lt-kopf-akt{display:flex;gap:6px;flex-wrap:wrap;align-items:center}
+.lt-kpis{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;margin:0 0 18px}
+.lt-kpi{border:1px solid var(--line);border-radius:12px;background:var(--surface);padding:11px 12px}
+.lt-kpi b{display:block;font:700 23px/1 var(--disp);color:var(--petrol-ink-deep)}
+.lt-kpi span{display:block;margin-top:5px;font-size:11.5px;line-height:1.35;color:var(--muted)}
+@media (max-width:560px){.lt-kpis{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.lt-faecher{display:grid;gap:10px;margin:0 0 18px}
+.lt-fach{display:grid;grid-template-columns:150px minmax(0,1fr) 46px;align-items:center;gap:3px 10px}
+.lt-fn{display:flex;align-items:center;gap:7px;min-width:0;font:600 13px var(--body);color:var(--ink)}
+.lt-fn i{flex:none;width:9px;height:9px;border-radius:50%}
+.lt-fbar{height:8px;border-radius:4px;background:var(--track);overflow:hidden}
+.lt-fbar i{display:block;height:100%;border-radius:4px}
+.lt-fw{font:700 12.5px var(--mono);text-align:right;color:var(--ink)}
+.lt-fm{grid-column:2 / 4;font-size:11px;color:var(--muted)}
+@media (max-width:560px){.lt-fach{grid-template-columns:minmax(0,1fr) auto;gap:4px 10px}.lt-fbar{grid-column:1 / -1;grid-row:2}.lt-fm{grid-column:1 / -1}}
+/* Reiter in den Dialogen brechen um, statt seitlich abgeschnitten zu werden */
+.sheet-body .vg-tabs{flex-wrap:wrap;overflow:visible}
+@media (max-width:560px){.lt-lang{display:none}}
+.lt-aktiv{height:86px;margin:0 0 18px}
+.lt-schloss{display:flex;gap:12px;align-items:flex-start;padding:14px;border:1px solid var(--line);border-radius:12px;background:var(--surface);font-size:13px;line-height:1.5;color:var(--ink-soft);margin:0 0 14px}
+.lt-schloss svg{flex:none;color:var(--muted);margin-top:2px}
+.lt-schloss p{margin:0 0 8px}
+.lt-hinweis-admin{margin:0 0 14px;padding:8px 11px;border:1px solid var(--plum-line);border-radius:10px;background:var(--plum-soft);color:var(--plum-ink);font-size:12px;line-height:1.45}
+.lt-sicht{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;margin:0 0 8px}
+.lt-sicht .theme-lbl{font-weight:700}
+/* Verwaltung */
+.ad-kpis{display:grid;grid-template-columns:repeat(auto-fill,minmax(138px,1fr));gap:8px;margin:0 0 18px}
+.ad-log{list-style:none;margin:0 0 8px;padding:0;border:1px solid var(--line);border-radius:12px;overflow:hidden}
+.ad-log li{display:flex;gap:4px 10px;flex-wrap:wrap;align-items:baseline;padding:8px 12px;border-top:1px solid var(--line-soft);font-size:12.5px;line-height:1.45}
+.ad-log li:first-child{border-top:0}
+.ad-log time{font:600 11px var(--mono);color:var(--muted)}
+.ad-log span{color:var(--muted);overflow-wrap:anywhere}
+.ad-dl{display:grid;grid-template-columns:max-content minmax(0,1fr);gap:6px 14px;margin:0 0 18px;font-size:13px;line-height:1.4}
+.ad-dl dt{color:var(--muted)}
+.ad-dl dd{margin:0;color:var(--ink);overflow-wrap:anywhere}
+.ad-id{font:500 11.5px var(--mono)}
+.ad-akt{display:flex;gap:8px;flex-wrap:wrap;margin:4px 0 8px}
+.ad-tags{display:flex;gap:6px;flex-wrap:wrap;margin:0 0 18px}
+.ad-tag{border:1px solid var(--line);border-radius:999px;padding:4px 10px;font-size:12.5px;color:var(--ink);background:var(--paper)}
+.ad-tag span{color:var(--muted)}
+.ad-m{border:1px solid var(--line);border-radius:12px;padding:12px 14px;margin:0 0 10px;background:var(--paper)}
+.ad-m header{display:flex;gap:6px 8px;flex-wrap:wrap;align-items:baseline;margin:0 0 6px}
+.ad-frage{font:700 12.5px var(--mono);color:var(--ink);overflow-wrap:anywhere}
+.ad-art{font:600 11.5px var(--body);color:var(--amber-ink);background:var(--amber-soft);border-radius:999px;padding:1px 8px}
+.ad-zeit{margin-left:auto;font:600 11px var(--mono);color:var(--muted)}
+.ad-text{margin:0 0 6px;font-size:13.5px;line-height:1.5;color:var(--ink);white-space:pre-wrap;overflow-wrap:anywhere}
+.ad-text.leer{color:var(--muted);font-style:italic}
+.ad-auszug{margin:0 0 6px;padding-left:9px;border-left:3px solid var(--line-strong);font-size:12px;line-height:1.45;color:var(--ink-soft);overflow-wrap:anywhere}
+.ad-meta{margin:0 0 8px;font-size:11.5px;line-height:1.5;color:var(--muted)}
+.ad-meta .vg-link{display:inline;width:auto;color:var(--petrol-ink)}
+.ad-filter{display:flex;flex-wrap:wrap;width:fit-content;max-width:100%;margin:0 0 12px}
 
 /* Aktivität: beantwortete Fragen der letzten 14 Tage */
 .aktiv{display:grid;grid-template-columns:repeat(14,minmax(0,1fr));gap:5px;align-items:end;height:104px;margin-top:4px}
@@ -1556,6 +1645,11 @@ body[data-screen="scrBlatt"] .app{max-width:920px}
         <span class="ti-ic ti-blue"><svg class="ic-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 17.6A4 4 0 0 0 18 10h-1.3A7 7 0 1 0 5 16.7"/><path d="M12 12v9M8.5 15.5 12 12l3.5 3.5"/></svg></span>
         <span class="ti-txt"><span class="ti-t" id="cloudBtnLabel">Mit Google anmelden &amp; sichern</span><span class="ti-d" id="cloudHint">Ohne Anmeldung bleibt dein Fortschritt nur auf diesem Gerät.</span></span>
       </button>
+      <!-- Nur für Admins sichtbar (docs/supabase-profile.sql, Tabelle admins) -->
+      <button class="tile tile-cloud" id="btnAdmin" hidden>
+        <span class="ti-ic ti-plum"><svg class="ic-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 4 6v6c0 4.4 3.4 8.3 8 9 4.6-.7 8-4.6 8-9V6z"/><path d="m9 12 2 2 4-4"/></svg></span>
+        <span class="ti-txt"><span class="ti-t">Verwaltung</span><span class="ti-d">Konten, Lernstände, Meldungen und Gruppen – nur für Admins</span></span>
+      </button>
       <div class="theme-row">
         <span class="theme-lbl" id="themeLbl">Darstellung</span>
         <div class="seg-ctl" id="themeCtl" role="radiogroup" aria-labelledby="themeLbl">
@@ -1743,6 +1837,24 @@ body[data-screen="scrBlatt"] .app{max-width:920px}
       <p class="md-status" id="mdStatus" role="status" aria-live="polite"></p>
       <button type="button" class="md-senden" id="mdSenden" disabled>Meldung senden</button>
     </div>
+  </div>
+</div>
+
+<!-- Lernende: Nutzerübersicht, Freunde und Profile (nur mit docs/supabase-profile.sql) -->
+<div class="modal" id="mLeute" hidden>
+  <div class="backdrop" data-lt-zu></div>
+  <div class="sheet wide" role="dialog" aria-modal="true" aria-labelledby="ltTitel">
+    <div class="sheet-head"><h3 id="ltTitel">Lernende</h3><button class="x" data-lt-zu aria-label="Schließen">✕</button></div>
+    <div class="sheet-body" id="ltBody"></div>
+  </div>
+</div>
+
+<!-- Verwaltung für Admins -->
+<div class="modal" id="mAdmin" hidden>
+  <div class="backdrop" data-ad-zu></div>
+  <div class="sheet wide" role="dialog" aria-modal="true" aria-labelledby="adTitel">
+    <div class="sheet-head"><h3 id="adTitel">Verwaltung</h3><button class="x" data-ad-zu aria-label="Schließen">✕</button></div>
+    <div class="sheet-body" id="adBody"></div>
   </div>
 </div>
 
@@ -4307,7 +4419,8 @@ document.addEventListener("keydown",function(ev){
      docs/supabase-rangliste.sql ein – fehlen sie, bleibt der Abschnitt
      verborgen und die Seite sieht aus wie vorher. */
   var vg={verfuegbar:null,stand:null,info:0,laedt:false,zuletzt:0,meldeT:null,bearbeiten:false,
-          gruppenOk:null,gruppen:[],ansicht:null,gstand:null,gform:null,einladung:null};
+          gruppenOk:null,gruppen:[],ansicht:null,gstand:null,gform:null,einladung:null,
+          leuteOk:null,fstand:null,profilGemeldet:false};
   /* Einladungslink „…#gruppe=K7M2QX“: Code merken (übersteht den Google-Login,
      der ohne #-Teil zurückkehrt) und aus der Adresse nehmen. */
   (function(){var m=/[#&]gruppe=([A-Za-z0-9]{6})\b/.exec(location.hash||'');
@@ -4337,7 +4450,7 @@ document.addEventListener("keydown",function(ev){
     if(!user||!vg.stand||!vg.stand.dabei)return;
     clearTimeout(vg.meldeT);
     vg.meldeT=setTimeout(function(){
-      sb.rpc("rangliste_melden",vgWerte(vg.stand.name)).then(function(){vg.zuletzt=0;},function(){});
+      sb.rpc("rangliste_melden",vgWerte(vg.stand.name)).then(function(){vg.zuletzt=0;profilMelden();},function(){});
     },4000);
   }
   function vgLaden(erzwingen){
@@ -4351,7 +4464,7 @@ document.addEventListener("keydown",function(ev){
       vg.verfuegbar=true;
       if(user)vg.stand=res.data||null;else vg.info=+res.data||0;
       vgZeigen();
-      if(user)grLaden().then(vgZeigen);
+      if(user)Promise.all([grLaden(),ltStandLaden()]).then(vgZeigen);
     },function(){vg.laedt=false;vg.verfuegbar=false;vgZeigen();});
   }
   window.KVM_vergleich=function(){vgLaden(false);};
@@ -4364,8 +4477,9 @@ document.addEventListener("keydown",function(ev){
     return sb.rpc("gruppen_meine").then(function(r){
       if(!r||r.error){vg.gruppenOk=false;vg.gruppen=[];return;}
       vg.gruppenOk=true;vg.gruppen=r.data||[];
-      if(vg.ansicht&&!vg.gruppen.some(function(g){return g.id===vg.ansicht;})){vg.ansicht=null;vg.gstand=null;}
-      if(vg.ansicht)return grStandLaden();
+      var gr=vg.ansicht&&vg.ansicht!=='freunde';
+      if(gr&&!vg.gruppen.some(function(g){return g.id===vg.ansicht;})){vg.ansicht=null;vg.gstand=null;gr=false;}
+      if(gr)return grStandLaden();
     },function(){vg.gruppenOk=false;});
   }
   function grStandLaden(){
@@ -4382,10 +4496,13 @@ document.addEventListener("keydown",function(ev){
       '<button type="button" class="vg-btn solid" data-gr="annehmen">Beitreten</button>'+
       '<button type="button" class="vg-btn leise" data-gr="ablehnen">Nein danke</button></div>';
   }
+  /* Reiter über der Liste: Alle · Freunde · eigene Gruppen · + Gruppe */
   function grTabsHTML(){
-    if(!vg.gruppenOk)return '';
+    if(!vg.gruppenOk&&!vg.leuteOk)return '';
     var h='<div class="vg-tabs" role="tablist" aria-label="Rangliste wählen">'+
       '<button type="button" role="tab" data-gr-tab="" aria-selected="'+(!vg.ansicht&&!vg.gform)+'">Alle</button>';
+    if(vg.leuteOk)h+='<button type="button" role="tab" data-gr-tab="freunde" aria-selected="'+(vg.ansicht==='freunde'&&!vg.gform)+'">Freunde</button>';
+    if(!vg.gruppenOk)return h+'</div>';
     vg.gruppen.forEach(function(g){h+='<button type="button" role="tab" data-gr-tab="'+esc(g.id)+'" aria-selected="'+(vg.ansicht===g.id&&!vg.gform)+'">'+esc(g.name)+'</button>';});
     return h+'<button type="button" class="vg-tab-neu" data-gr="neu" aria-pressed="'+(!!vg.gform)+'">+ Gruppe</button></div>';
   }
@@ -4429,7 +4546,10 @@ document.addEventListener("keydown",function(ev){
   function grBinden(box){
     box.querySelectorAll('[data-gr-tab]').forEach(function(b){b.onclick=function(){
       vg.gform=null;vg.ansicht=b.getAttribute('data-gr-tab')||null;vg.gstand=null;vgZeigen();
-      if(vg.ansicht)grStandLaden().then(vgZeigen);};});
+      if(vg.ansicht==='freunde')ltStandLaden().then(vgZeigen);
+      else if(vg.ansicht)grStandLaden().then(vgZeigen);};});
+    box.querySelectorAll('[data-lt]').forEach(function(b){b.onclick=function(){ltOeffnen(b.getAttribute('data-lt'));};});
+    box.querySelectorAll('[data-profil]').forEach(function(b){b.onclick=function(){ltOeffnen(null,{name:b.getAttribute('data-profil')});};});
     box.querySelectorAll('[data-gr]').forEach(function(b){b.onclick=function(){
       var a=b.getAttribute('data-gr');
       if(a==='neu'){vg.gform=vg.gform?null:'neu';vgZeigen();var i=$("grCode");if(i&&!i.value&&$("grName"))$("grName").focus();else if(i)i.focus();}
@@ -4466,8 +4586,12 @@ document.addEventListener("keydown",function(ev){
       '</form><p class="vg-fehler" id="vgFehler" role="alert"></p>';
   }
   function vgZeile(e,platz){
+    /* Mit Profilen führt der Name zum Profil der Person. */
+    var klick=vg.leuteOk&&vg.stand&&vg.stand.dabei&&!e.ich&&e.name;
     return '<li class="vg-z'+(e.ich?' ich':'')+'" data-platz="'+platz+'"><span class="vg-p">'+platz+'</span>'+
-      '<span class="vg-n">'+esc(e.name)+'</span><span class="vg-a">'+fmtN(e.antworten|0)+'</span>'+
+      (klick?'<button type="button" class="vg-n vg-link" data-profil="'+esc(e.name)+'" title="Profil ansehen">'+esc(e.name)+'</button>':
+        '<span class="vg-n">'+esc(e.name)+'</span>')+
+      '<span class="vg-a">'+fmtN(e.antworten|0)+'</span>'+
       '<span class="vg-r">'+(e.reife|0)+' %</span></li>';
   }
   function vgZeigen(){
@@ -4489,13 +4613,15 @@ document.addEventListener("keydown",function(ev){
         h='<p class="vg-lead">Vergleiche dich mit anderen Lernenden – freiwillig und nur mit Spitznamen:</p>'+
           '<ul class="rt-list vg-lead"><li><b>Wochenrangliste</b> nach beantworteten Fragen, jeden Montag neu</li>'+
           '<li>wie viele bei der <b>Prüfungsreife</b> hinter dir liegen</li>'+
-          '<li>auf Wunsch <b>Lerngruppen</b> mit deinem Kurs – per Code</li></ul>'+
+          '<li>auf Wunsch <b>Lerngruppen</b> mit deinem Kurs – per Code</li>'+
+          (vg.leuteOk?'<li><b>Freunde</b> finden und ihren Lernstand je Fach sehen – und sie deinen</li>':'')+'</ul>'+
           (vg.einladung?'<p class="vg-einladung klein">Du wurdest in eine <b>Lerngruppe</b> eingeladen. Nach dem Mitmachen kannst du beitreten.</p>':'');
         if(st.teilnehmende)scope=fmtN(st.teilnehmende)+" dabei";
       }else h='<p class="vg-lead">Neuer Spitzname für die Rangliste:</p>';
       h+=vgFormHTML(vg.bearbeiten?st.name:"")+
         '<p class="vg-hinweis">Sichtbar für andere sind nur dein Spitzname, deine Prüfungsreife, deine Antworten dieser Woche '+
-        'und deine Lerntage in Folge. Austreten geht jederzeit – dein Eintrag wird dann gelöscht.</p>';
+        'und deine Lerntage in Folge.'+(vg.leuteOk?' Deinen Lernstand je Fach sehen nur deine Freunde – das kannst du im Profil ändern.':'')+
+        ' Austreten geht jederzeit – dein Eintrag'+(vg.leuteOk?' samt Profil und Freundschaften':'')+' wird dann gelöscht.</p>';
     }else{
       var andere=Math.max(0,(st.teilnehmende|0)-1);
       var vor=andere?Math.round((st.reife_vor|0)/andere*100):0;
@@ -4509,8 +4635,9 @@ document.addEventListener("keydown",function(ev){
           'Diese Woche noch ohne Antwort – ab der ersten bist du in der Wochenliste.')+'</span></div>'+
         '</div>';
       var kw=isoWoche().split("-W")[1];
-      h+=grEinladungHTML()+grTabsHTML();
+      h+=grEinladungHTML()+frAnfragenHTML()+grTabsHTML();
       if(vg.gform)h+=grFormHTML();
+      else if(vg.ansicht==='freunde')h+=frAnsichtHTML(+kw);
       else if(vg.ansicht)h+=grAnsichtHTML(+kw);
       else{
       h+='<p class="h-sub">Wochenrangliste · KW '+(+kw)+'</p>';
@@ -4528,6 +4655,7 @@ document.addEventListener("keydown",function(ev){
       }
       }
       h+='<div class="vg-fuss"><span class="vg-ich">Du bist dabei als <b>'+esc(st.name)+'</b></span>'+
+        (vg.leuteOk?'<button type="button" class="vg-btn" data-lt="">Lernende &amp; Freunde</button>':'')+
         '<button type="button" class="vg-btn leise" id="vgAendern">Spitzname ändern</button>'+
         '<button type="button" class="vg-btn leise" id="vgRaus">Austreten</button></div>';
     }
@@ -4539,7 +4667,7 @@ document.addEventListener("keydown",function(ev){
     if((b=$("vgAendern")))b.onclick=function(){vg.bearbeiten=true;vgZeigen();var i=$("vgName");if(i){i.focus();i.select();}};
     if((b=$("vgAbbruch")))b.onclick=function(){vg.bearbeiten=false;vgZeigen();};
     if((b=$("vgRaus")))b.onclick=function(){
-      if(!confirm("Aus der Rangliste austreten? Dein Eintrag wird gelöscht."))return;
+      if(!confirm("Aus der Rangliste austreten? Dein Eintrag wird gelöscht"+(vg.leuteOk?" – samt Profil und Freundschaften.":".")))return;
       b.disabled=true;
       sb.rpc("rangliste_austreten").then(function(){vgLaden(true);},function(){b.disabled=false;});
     };
@@ -4553,14 +4681,569 @@ document.addEventListener("keydown",function(ev){
         ok.disabled=false;
         if(res&&res.error){
           fe.textContent=res.error.code==="23505"?"Dieser Spitzname ist schon vergeben.":
-            (res.error.code==="23514"?"3–20 Zeichen: Buchstaben, Ziffern, Leerzeichen, _ . -":"Das hat nicht geklappt – bitte später noch einmal.");
+            (res.error.code==="23514"?"3–20 Zeichen: Buchstaben, Ziffern, Leerzeichen, _ . -":
+            (res.error.code==="P0006"?"Dein Konto ist für Rangliste, Gruppen und Freunde gesperrt.":"Das hat nicht geklappt – bitte später noch einmal."));
           return;
         }
         vg.bearbeiten=false;vgLaden(true);
       },function(){ok.disabled=false;fe.textContent="Keine Verbindung – bitte später noch einmal.";});
     };
   }
-  sb.auth.onAuthStateChange(function(_e,session){user=session?session.user:null;if(user){acc(true,nameOf(user));if(syncedFor!==user.id){syncedFor=user.id;pull().then(push);}}else{acc(false,"");syncedFor=null;pulledOk=false;}
+  /* ===== Lernende: Nutzerübersicht, Freunde und Profile =====
+     Setzt docs/supabase-profile.sql voraus; fehlt es, bleibt alles wie oben.
+     Ein Profil hat, wer der Rangliste beigetreten ist. Den Lernstand je Fach
+     sehen nur Freunde – außer die Person zeigt ihn allen. */
+  var lt={tab:'freunde',suche:'',seite:0,liste:null,gesamt:0,laedt:false,sucheT:null,profil:null,profilLaedt:false,meld:'',meldOk:false};
+  var LT_FEHLER={P0002:"Diese Person ist nicht mehr dabei.",P0003:"Tritt erst der Rangliste bei.",
+    P0004:"Du hast gerade sehr viele offene Anfragen – warte, bis einige beantwortet sind.","22023":"Das geht leider nicht."};
+  var SCHLOSS_SVG='<svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>';
+  function ltStandLaden(){
+    if(!user)return Promise.resolve();
+    return sb.rpc("freunde_stand",{p_woche:isoWoche()}).then(function(r){
+      if(!r||r.error){vg.leuteOk=false;vg.fstand=null;if(vg.ansicht==='freunde')vg.ansicht=null;return;}
+      vg.leuteOk=true;vg.fstand=r.data||null;
+      if(vg.fstand)['anfragen','gesendet','freunde'].forEach(function(k){vg.fstand[k]=(vg.fstand[k]||[]).filter(Boolean);});
+      if(vg.fstand&&!vg.profilGemeldet){vg.profilGemeldet=true;profilMelden();}
+    },function(){vg.leuteOk=false;if(vg.ansicht==='freunde')vg.ansicht=null;});
+  }
+  /* Lernstand im Detail fürs Profil: Reife je Fach, Aktivität der letzten
+     14 Tage, Lerntage und Prüfungen unter Echtbedingungen. Die Datenbank
+     säubert und begrenzt alles noch einmal. */
+  function profilDetails(){
+    var f={};
+    activeFacher().forEach(function(x){
+      var qs=qForFach(x),m=0,g=0;
+      qs.forEach(function(q){var p=progress[q.id];if(p&&p.seen>0){g++;if(p.box>=MASTER_BOX)m++;}});
+      f[x]={r:Math.round((fachReife(x)||0)*100),m:m,g:g,n:qs.length};
+    });
+    var t=tageAll(),heute=todayIdx(),t14=[],tage=0,best=0,ev=echtVerlauf();
+    for(var d=heute-13;d<=heute;d++)t14.push(t[d]|0);
+    Object.keys(t).forEach(function(k){if((t[k]|0)>0)tage++;});
+    ev.forEach(function(e){if(e&&e.max>0)best=Math.max(best,Math.round((+e.pkt||0)/e.max*100));});
+    var o={f:f,t14:t14,tage:tage};
+    if(ev.length)o.echt={n:ev.length,best:best};
+    return o;
+  }
+  function profilMelden(){
+    if(!user||!vg.leuteOk||!vg.stand||!vg.stand.dabei)return;
+    sb.rpc("profil_melden",{p_details:profilDetails()}).then(function(){},function(){});
+  }
+  function frAnfragenHTML(){
+    var a=(vg.leuteOk&&vg.fstand&&vg.fstand.anfragen)||[];
+    if(!a.length)return '';
+    return '<div class="vg-einladung"><span>'+(a.length===1?'<b>'+esc(a[0].name)+'</b> möchte mit dir befreundet sein.':
+      '<b>'+a.length+'</b> Freundschaftsanfragen warten auf dich.')+'</span>'+
+      '<button type="button" class="vg-btn solid" data-lt="freunde">Ansehen</button></div>';
+  }
+  /* Reiter „Freunde“ auf der Startseite: du und deine Freunde nach Antworten dieser Woche */
+  function frAnsichtHTML(kw){
+    var fs=vg.fstand,st=vg.stand;
+    if(!fs)return '<p class="vg-lead">Freunde werden geladen …</p>';
+    var L=(fs.freunde||[]).map(function(k){return {name:k.name,antworten:k.antworten|0,reife:k.reife|0};});
+    L.push({name:st.name,antworten:Math.max(wocheAntworten(),st.meine_antworten|0),reife:Math.round(overallReife()*100),ich:true});
+    L.sort(function(a,b){return b.antworten-a.antworten||(a.name.toLowerCase()<b.name.toLowerCase()?-1:1);});
+    var pl=0,vor=null;L.forEach(function(e,i){if(e.antworten!==vor){pl=i+1;vor=e.antworten;}e.platz=pl;});
+    var h='<p class="h-sub">Du und deine Freunde · KW '+kw+'</p>'+
+      '<ol class="vg-liste"><li class="vg-z kopf" aria-hidden="true"><span>Pl.</span><span>Spitzname</span><span class="vg-a">Antw.</span><span class="vg-r">Reife</span></li>';
+    L.forEach(function(e){h+=vgZeile(e,e.platz);});
+    h+='</ol>';
+    if(L.length<2)h+='<p class="vg-hinweis">Noch keine Freunde. <button type="button" class="vg-btn leise" data-lt="alle">Lernende finden</button></p>';
+    return h;
+  }
+  function datumKurz(iso){var d=iso?new Date(iso):null;return d&&!isNaN(d)?d.toLocaleDateString('de-DE',{day:'2-digit',month:'2-digit',year:'numeric'}):'–';}
+  function datumZeit(iso){var d=iso?new Date(iso):null;return d&&!isNaN(d)?d.toLocaleString('de-DE',{day:'2-digit',month:'2-digit',year:'numeric',hour:'2-digit',minute:'2-digit'}):'–';}
+  function monatJahr(iso){var d=iso?new Date(iso):null;return d&&!isNaN(d)?d.toLocaleDateString('de-DE',{month:'long',year:'numeric'}):'';}
+  function vorZeit(iso){
+    var t=iso?new Date(iso).getTime():NaN;if(isNaN(t))return 'nie';
+    var m=Math.round((Date.now()-t)/60000);if(m<2)return 'gerade eben';if(m<60)return 'vor '+m+' Min.';
+    var h=Math.round(m/60);if(h<24)return 'vor '+h+' Std.';
+    var d=Math.round(h/24);return d<31?'vor '+d+(d===1?' Tag':' Tagen'):datumKurz(iso);
+  }
+  function tagIdx(iso){var t=new Date(iso).getTime();return isNaN(t)?todayIdx():Math.floor((t-new Date(t).getTimezoneOffset()*60000)/86400000);}
+  /* Rundes Kürzel mit Farbe aus dem Namen – Profilbilder gibt es bewusst nicht. */
+  function avatarHTML(name,gross){
+    var s=String(name||'?').trim()||'?',w=s.split(/[\s_.@-]+/).filter(Boolean),
+        ini=((w.length>1?w[0].charAt(0)+w[1].charAt(0):s.slice(0,2))||'?').toUpperCase(),hue=0;
+    for(var i=0;i<s.length;i++)hue=(hue*31+s.charCodeAt(i))%360;
+    return '<span class="lt-av'+(gross?' gross':'')+'" style="--av-h:'+hue+'" aria-hidden="true">'+esc(ini)+'</span>';
+  }
+  function ltKpi(w,t){return '<div class="lt-kpi"><b>'+w+'</b><span>'+t+'</span></div>';}
+  /* Lernstand im Detail: Reife je Fach, Aktivität, Lerntage, Echtbedingungen.
+     am = Zeitpunkt der Meldung; die 14 Tage rücken bis heute nach. */
+  function lernstandHTML(d,name,am){
+    d=d||{};var h='',f=d.f||{},keys=[1,2,3,4,5].filter(function(x){return f[x]&&typeof f[x]==='object';});
+    if(keys.length){
+      h+='<p class="h-sub">Prüfungsreife je Fach</p><div class="lt-faecher">';
+      keys.forEach(function(x){var e=f[x],r=Math.max(0,Math.min(100,Math.round(+e.r||0)));
+        h+='<div class="lt-fach"><span class="lt-fn"><i style="background:'+FACH_COLORS[x]+'"></i>'+esc(FACH_KURZ[x])+'</span>'+
+          '<span class="lt-fbar" role="img" aria-label="'+esc(FACH_KURZ[x])+': '+r+' Prozent"><i style="width:'+r+'%;background:'+FACH_COLORS[x]+'"></i></span>'+
+          '<span class="lt-fw">'+r+' %</span><span class="lt-fm">'+fmtN(e.m|0)+' von '+fmtN(e.n|0)+' gemeistert · '+fmtN(e.g|0)+' gesehen</span></div>';});
+      h+='</div>';
+    }
+    var t=Array.isArray(d.t14)?d.t14.slice(-14):[];
+    if(t.length){
+      var weg=am?Math.max(0,Math.min(t.length,todayIdx()-tagIdx(am))):0;
+      t=t.slice(weg);for(var z=0;z<weg;z++)t.push(0);
+      var mx=1,sum=0,tg=0,n=t.length;t.forEach(function(v){v=v|0;if(v>mx)mx=v;sum+=v;if(v)tg++;});
+      h+='<p class="h-sub">Aktivität · 14 Tage <span class="h-scope">'+(sum?fmtN(sum)+' Antworten · '+tg+' Tag'+(tg===1?'':'e'):'keine Antworten')+'</span></p>'+
+        '<div class="aktiv lt-aktiv" role="img" aria-label="Aktivität der letzten 14 Tage: '+sum+' Antworten an '+tg+' Tagen">';
+      t.forEach(function(v,i){v=v|0;var j=n-1-i,dt=new Date(Date.now()-j*864e5);
+        h+='<div class="ak'+(v?' voll':'')+(j===0?' heute':'')+'" title="'+(j===0?'Heute':dt.toLocaleDateString('de-DE',{weekday:'long',day:'numeric',month:'numeric'}))+': '+v+' Antwort'+(v===1?'':'en')+'">'+
+          '<i style="height:'+(v?Math.max(6,Math.round(v/mx*62)):3)+'px"></i><span>'+WTAG[dt.getDay()]+'</span></div>';});
+      h+='</div>';
+    }
+    var k=[];
+    if(d.tage!=null)k.push(ltKpi(fmtN(d.tage|0),'Lerntage in 120 Tagen'));
+    if(d.echt&&(d.echt.n|0))k.push(ltKpi(fmtN(d.echt.n|0),'Prüfungen unter Echtbedingungen'),ltKpi((d.echt.best|0)+' %','bestes Ergebnis dabei'));
+    if(k.length)h+='<div class="lt-kpis">'+k.join('')+'</div>';
+    if(!h)h='<p class="vg-hinweis">Noch keine Details – sie erscheinen, sobald '+(name?esc(name):'die Person')+' wieder in der Web-App lernt.</p>';
+    return h;
+  }
+  function ltZahlenText(k){
+    return (k.reife|0)+' % prüfungsreif · '+fmtN(k.antworten|0)+' Antw. diese Woche'+((k.serie|0)?' · '+(k.serie|0)+' Tage in Folge':'');
+  }
+  /* Knöpfe je nach Beziehung. art: 'kurz' (Liste), 'lang' (Profil, gesendete Anfragen), 'ohne' */
+  function ltAktionHTML(k,art){
+    if(art==='ohne')return '';
+    var p=' data-pid="'+esc(k.pid)+'" data-name="'+esc(k.name)+'"',lang=art==='lang';
+    if(k.bez==='ich')return '<span class="lt-status">Das bist du</span>';
+    if(k.bez==='freund')return '<span class="lt-status ok">✓ Befreundet</span>'+(lang?'<button type="button" class="vg-btn leise" data-fr="entfernen"'+p+'>Freundschaft beenden</button>':'');
+    if(k.bez==='angefragt')return '<span class="lt-status">Angefragt</span>'+(lang?'<button type="button" class="vg-btn leise" data-fr="zurueck"'+p+'>Zurückziehen</button>':'');
+    if(k.bez==='anfrage')return '<button type="button" class="vg-btn solid" data-fr="annehmen"'+p+'>Annehmen</button>'+
+      '<button type="button" class="vg-btn leise" data-fr="ablehnen"'+p+'>Ablehnen</button>';
+    return '<button type="button" class="vg-btn" data-fr="anfragen"'+p+'>'+(lang?'Freundschaft anfragen':'Anfragen')+'</button>';
+  }
+  function ltZeileHTML(k,art){
+    return '<li class="lt-z"><button type="button" class="lt-person" data-lt-pid="'+esc(k.pid)+'" title="Profil ansehen">'+avatarHTML(k.name)+
+      '<span class="lt-pt"><b>'+esc(k.name)+'</b><span>'+ltZahlenText(k)+'</span></span></button>'+
+      '<span class="lt-akt">'+ltAktionHTML(k,art)+'</span></li>';
+  }
+  function ltMeldHTML(){return lt.meld?'<p class="lt-meld'+(lt.meldOk?' ok':'')+'" role="status">'+esc(lt.meld)+'</p>':'';}
+  function ltTabHTML(id,label){return '<button type="button" role="tab" data-lt-tab="'+id+'" aria-selected="'+(lt.tab===id)+'">'+label+'</button>';}
+  function ltFreundeHTML(){
+    var fs=vg.fstand;
+    if(!fs)return '<p class="vg-lead">Wird geladen …</p>';
+    var h='',a=fs.anfragen||[],f=fs.freunde||[],g=fs.gesendet||[];
+    if(a.length){h+='<p class="h-sub">Anfragen an dich</p><ul class="lt-liste">';a.forEach(function(k){h+=ltZeileHTML(k,'kurz');});h+='</ul>';}
+    h+='<p class="h-sub">Deine Freunde'+(f.length?' <span class="h-scope">'+f.length+'</span>':'')+'</p>';
+    if(f.length){h+='<ul class="lt-liste">';f.forEach(function(k){h+=ltZeileHTML(k,'ohne');});h+='</ul>';}
+    else h+='<div class="lt-leer"><p>Noch keine Freunde. Such Lernende aus deinem Kurs und schick eine Anfrage – befreundet seht ihr gegenseitig euren Lernstand je Fach.</p>'+
+      '<p><button type="button" class="vg-btn solid" data-lt-tab="alle">Lernende finden</button></p></div>';
+    if(g.length){h+='<p class="h-sub">Gesendete Anfragen</p><ul class="lt-liste">';g.forEach(function(k){h+=ltZeileHTML(k,'lang');});h+='</ul>';}
+    return h;
+  }
+  function ltListeHTML(){
+    if(!lt.liste)return '<p class="vg-lead">Wird geladen …</p>';
+    if(!lt.liste.length)return '<div class="lt-leer"><p>'+(lt.suche?'Niemand mit „'+esc(lt.suche)+'“ im Spitznamen.':'Außer dir ist noch niemand dabei – lade andere aus deinem Kurs ein!')+'</p></div>';
+    var h='<p class="lt-anzahl">'+fmtN(lt.gesamt)+(lt.gesamt===1?' Person':' Personen')+(lt.suche?' gefunden':' in der Rangliste')+' · aktivste dieser Woche zuerst</p><ul class="lt-liste">';
+    lt.liste.forEach(function(k){h+=ltZeileHTML(k,'kurz');});
+    h+='</ul>';
+    if(lt.liste.length<lt.gesamt)h+='<button type="button" class="vg-btn lt-mehr" data-lt-mehr'+(lt.laedt?' disabled':'')+'>Mehr anzeigen</button>';
+    return h;
+  }
+  function ltAlleHTML(){
+    return '<form class="vg-form lt-suche" id="ltSucheForm" role="search" novalidate><input id="ltSuche" type="search" maxlength="20" autocomplete="off" spellcheck="false" '+
+      'placeholder="Spitzname suchen …" aria-label="Lernende nach Spitzname suchen" value="'+esc(lt.suche)+'"></form><div id="ltListe">'+ltListeHTML()+'</div>';
+  }
+  function ltMeinHTML(){
+    var ich=(vg.fstand&&vg.fstand.ich)||{},s=ich.sichtbarkeit||'freunde';
+    return '<p class="vg-lead">Alle Teilnehmenden sehen deinen Spitznamen, deine Prüfungsreife, deine Antworten dieser Woche und deine Lerntage in Folge – wie in der Rangliste.</p>'+
+      '<div class="lt-sicht"><span class="theme-lbl" id="ltSichtLbl">Lernstand je Fach zeigen</span>'+
+      '<div class="seg-ctl" role="radiogroup" aria-labelledby="ltSichtLbl">'+
+        '<button type="button" role="radio" data-sicht="freunde" aria-checked="'+(s==='freunde')+'">Nur Freunden</button>'+
+        '<button type="button" role="radio" data-sicht="alle" aria-checked="'+(s==='alle')+'">Allen Lernenden</button></div></div>'+
+      '<p class="vg-hinweis">Zum Lernstand je Fach gehören Prüfungsreife und gemeisterte Fragen je Fach, deine Aktivität der letzten 14 Tage und Prüfungen unter Echtbedingungen. '+
+        'Admins der App können zur Betreuung und Moderation alle Angaben sehen.</p>'+
+      (ich.pid?'<p><button type="button" class="vg-btn" data-lt-pid="'+esc(ich.pid)+'">Mein Profil ansehen</button></p>':'');
+  }
+  function ltProfilHTML(){
+    var h='<button type="button" class="lt-zurueck" data-lt-zurueck>‹ Zurück</button>'+ltMeldHTML();
+    if(lt.profilLaedt)return h+'<p class="vg-lead">Profil wird geladen …</p>';
+    var p=lt.profil;
+    if(!p||p.fehler)return h+'<p class="vg-lead">Dieses Profil gibt es nicht mehr – vielleicht ist die Person ausgetreten oder hat ihren Spitznamen geändert.</p>';
+    var unter=[];
+    if(p.seit)unter.push('dabei seit '+monatJahr(p.seit));
+    if(p.bez==='ich')unter.push(p.sichtbarkeit==='alle'?'Lernstand für alle sichtbar':'Lernstand nur für Freunde sichtbar');
+    h+='<div class="lt-kopf">'+avatarHTML(p.name,true)+'<div class="lt-kopf-t"><h4>'+esc(p.name)+'</h4>'+(unter.length?'<p>'+esc(unter.join(' · '))+'</p>':'')+'</div>'+
+      '<div class="lt-kopf-akt">'+ltAktionHTML(p,'lang')+'</div></div>';
+    h+='<div class="lt-kpis">'+ltKpi((p.reife|0)+' %','prüfungsreif')+ltKpi(fmtN(p.antworten|0),'Antworten diese Woche')+ltKpi(fmtN(p.serie|0),'Tage in Folge')+
+      (p.sichtbar&&p.gemeistert!=null?ltKpi(fmtN(p.gemeistert|0),'Fragen gemeistert'):'')+'</div>';
+    if(p.admin_sicht)h+='<p class="lt-hinweis-admin">Als Admin siehst du auch den Lernstand, den '+esc(p.name)+' nur Freunden zeigt.</p>';
+    if(p.sichtbar)h+=lernstandHTML(p.details,p.name,p.details_am);
+    else h+='<div class="lt-schloss">'+SCHLOSS_SVG+'<div><p>Den Lernstand je Fach zeigt '+esc(p.name)+' nur Freunden.</p>'+
+      '<p>'+(p.bez==='angefragt'?'Deine Anfrage ist unterwegs.':(p.bez==='anfrage'?'Nimm die Anfrage an, dann seht ihr ihn gegenseitig.':'Schick eine Anfrage – befreundet seht ihr ihn gegenseitig.'))+'</p></div></div>';
+    return h;
+  }
+  function ltZeigen(){
+    var b=$("ltBody");if(!b||$("mLeute").hidden)return;
+    var h;
+    if(lt.profil||lt.profilLaedt)h=ltProfilHTML();
+    else{
+      var na=((vg.fstand&&vg.fstand.anfragen)||[]).length;
+      h='<div class="vg-tabs" role="tablist" aria-label="Ansicht wählen">'+
+        ltTabHTML('freunde','Freunde'+(na?'<span class="lt-badge">'+na+'</span>':''))+ltTabHTML('alle','Alle<span class="lt-lang"> Lernenden</span>')+ltTabHTML('profil','Mein Profil')+'</div>'+ltMeldHTML();
+      h+=lt.tab==='alle'?ltAlleHTML():(lt.tab==='profil'?ltMeinHTML():ltFreundeHTML());
+    }
+    var fokus=document.activeElement&&document.activeElement.id==='ltSuche';
+    b.innerHTML=h;ltBinden(b);
+    var i=$("ltSuche");if(fokus&&i){i.focus();try{i.setSelectionRange(i.value.length,i.value.length);}catch(e){}}
+  }
+  function ltListeZeigen(){var c=$("ltListe");if(!c){ltZeigen();return;}c.innerHTML=ltListeHTML();ltBinden(c);}
+  function ltBinden(b){
+    b.querySelectorAll('[data-lt-tab]').forEach(function(x){x.onclick=function(){
+      lt.tab=x.getAttribute('data-lt-tab');lt.meld='';lt.profil=null;lt.profilLaedt=false;ltZeigen();
+      if(lt.tab==='alle')ltSuchen();else ltStandLaden().then(ltZeigen);};});
+    b.querySelectorAll('[data-lt-pid]').forEach(function(x){x.onclick=function(){ltProfil({pid:x.getAttribute('data-lt-pid')});};});
+    b.querySelectorAll('[data-lt-zurueck]').forEach(function(x){x.onclick=function(){lt.profil=null;lt.profilLaedt=false;lt.meld='';ltZeigen();};});
+    b.querySelectorAll('[data-fr]').forEach(function(x){x.onclick=function(){frAktion(x);};});
+    b.querySelectorAll('[data-sicht]').forEach(function(x){x.onclick=function(){ltSichtbarkeit(x.getAttribute('data-sicht'));};});
+    var m=b.querySelector('[data-lt-mehr]');if(m)m.onclick=function(){m.disabled=true;ltSuchen(true);};
+    var i=$("ltSuche"),f=$("ltSucheForm");
+    if(f)f.onsubmit=function(e){e.preventDefault();clearTimeout(lt.sucheT);lt.suche=i.value.trim();ltSuchen();};
+    if(i)i.oninput=function(){clearTimeout(lt.sucheT);lt.sucheT=setTimeout(function(){var v=i.value.trim();if(v!==lt.suche){lt.suche=v;ltSuchen();}},300);};
+  }
+  function ltSuchen(mehr){
+    var seite=mehr?lt.seite+1:0,suche=lt.suche;
+    lt.laedt=true;
+    sb.rpc("leute_suche",{p_suche:suche,p_seite:seite,p_woche:isoWoche()}).then(function(r){
+      if(suche!==lt.suche)return;
+      lt.laedt=false;
+      if(!r||r.error){lt.meldOk=false;lt.meld=LT_FEHLER[(r&&r.error&&r.error.code)||'']||'Die Liste lässt sich gerade nicht laden.';lt.liste=lt.liste||[];ltZeigen();return;}
+      var d=r.data||{};lt.seite=seite;lt.gesamt=d.gesamt|0;
+      lt.liste=(mehr&&lt.liste?lt.liste:[]).concat((d.liste||[]).filter(Boolean));
+      ltListeZeigen();
+    },function(){lt.laedt=false;lt.liste=lt.liste||[];ltListeZeigen();});
+  }
+  function ltProfil(q){
+    lt.profil=null;lt.profilLaedt=true;lt.meld='';ltZeigen();
+    var b=$("ltBody");if(b)b.scrollTop=0;
+    sb.rpc("profil_ansehen",{p_pid:q.pid||null,p_name:q.name||null,p_woche:isoWoche()}).then(function(r){
+      lt.profilLaedt=false;lt.profil=(r&&!r.error&&r.data)?r.data:{fehler:true};ltZeigen();
+    },function(){lt.profilLaedt=false;lt.profil={fehler:true};ltZeigen();});
+  }
+  function frAktion(x){
+    var art=x.getAttribute('data-fr'),pid=x.getAttribute('data-pid'),name=x.getAttribute('data-name')||'';
+    if(art==='entfernen'&&!confirm('Freundschaft mit '+name+' beenden? Ihr seht dann den Lernstand je Fach des anderen nicht mehr.'))return;
+    var p=art==='anfragen'?sb.rpc("freund_anfragen",{p_pid:pid}):
+          (art==='annehmen'||art==='ablehnen')?sb.rpc("freund_antworten",{p_pid:pid,p_annehmen:art==='annehmen'}):
+          sb.rpc("freund_entfernen",{p_pid:pid});
+    x.disabled=true;lt.meld='';
+    p.then(function(r){
+      if(r&&r.error)throw r.error;
+      var bez=art==='anfragen'?((r&&r.data)||'angefragt'):(art==='annehmen'?'freund':null);
+      if(lt.liste)lt.liste.forEach(function(k){if(k.pid===pid)k.bez=bez;});
+      lt.meldOk=true;
+      lt.meld=(art==='annehmen'||bez==='freund')?'Ihr seid jetzt befreundet.':(art==='anfragen'?'Anfrage an '+name+' gesendet.':'');
+      var neu=lt.profil&&lt.profil.pid===pid?sb.rpc("profil_ansehen",{p_pid:pid,p_name:null,p_woche:isoWoche()}).then(function(r2){if(r2&&!r2.error&&r2.data)lt.profil=r2.data;},function(){}):null;
+      return Promise.all([ltStandLaden(),neu]);
+    }).then(function(){ltZeigen();vgZeigen();},function(err){
+      x.disabled=false;lt.meldOk=false;
+      lt.meld=LT_FEHLER[(err&&err.code)||'']||'Das hat nicht geklappt – bitte später noch einmal.';ltZeigen();
+    });
+  }
+  function ltSichtbarkeit(s){
+    var ich=vg.fstand&&vg.fstand.ich;if(!ich||ich.sichtbarkeit===s)return;
+    var alt=ich.sichtbarkeit;ich.sichtbarkeit=s;lt.meld='';ltZeigen();
+    sb.rpc("profil_sichtbarkeit",{p_wert:s}).then(function(r){
+      if(r&&r.error)throw r.error;
+      lt.meldOk=true;lt.meld=s==='alle'?'Alle Lernenden sehen jetzt deinen Lernstand je Fach.':'Deinen Lernstand je Fach sehen jetzt nur noch Freunde.';ltZeigen();
+    }).catch(function(){ich.sichtbarkeit=alt;lt.meldOk=false;lt.meld='Speichern hat nicht geklappt – bitte später noch einmal.';ltZeigen();});
+  }
+  function ltOeffnen(tab,q){
+    if(!user||!vg.leuteOk)return;
+    var fs=vg.fstand||{};
+    lt.tab=tab||(((fs.anfragen||[]).length||(fs.freunde||[]).length)?'freunde':'alle');
+    lt.meld='';lt.profil=null;lt.profilLaedt=false;
+    $("mLeute").hidden=false;document.body.style.overflow='hidden';
+    ltZeigen();
+    ltStandLaden().then(ltZeigen);
+    if(lt.tab==='alle')ltSuchen();
+    if(q)ltProfil(q);
+    profilMelden();
+    var f=$("ltBody").querySelector('button');if(f)try{f.focus();}catch(e){}
+  }
+  function ltZu(){$("mLeute").hidden=true;document.body.style.overflow='';vgZeigen();}
+
+  /* ===== Verwaltung (nur Admins) =====
+     Die Datenbank prüft bei jedem Aufruf, ob ein Admin angemeldet ist – die
+     Oberfläche blendet nur den Einstieg ein. */
+  var ad={an:false,tab:'uebersicht',ue:null,suche:'',seite:0,liste:null,gesamt:0,laedt:false,sucheT:null,
+          nutzer:null,nutzerId:null,nutzerLaedt:false,mstatus:'neu',mseite:0,ml:null,gseite:0,gl:null,meld:'',meldOk:false};
+  var AD_AKTION={aus_rangliste:'Aus der Rangliste genommen',sperren:'Gesperrt',entsperren:'Entsperrt',konto_loeschen:'Konto gelöscht',
+    gruppe_loeschen:'Gruppe gelöscht',meldung_erledigt:'Meldung erledigt',meldung_abgelehnt:'Meldung abgelehnt',meldung_neu:'Meldung wieder geöffnet'};
+  var MD_ART={text:'Text/Tippfehler',loesung:'Lösung falsch',rechnung:'Rechnung/Zahl falsch',anlage:'Tabelle/Anlage fehlt',sonstiges:'Sonstiges'};
+  var MODUS={scrQuiz:'Quiz',scrBlatt:'Prüfung',scrOral:'Mündlich',scrResult:'Ergebnis',scrHome:'Startseite'};
+  function adPruefen(){
+    if(!user){ad.an=false;adKnopf();return;}
+    sb.rpc("ist_admin").then(function(r){ad.an=!!(r&&!r.error&&r.data===true);adKnopf();},function(){ad.an=false;adKnopf();});
+  }
+  function adKnopf(){var b=$("btnAdmin");if(b)b.hidden=!ad.an;if(!ad.an&&!$("mAdmin").hidden)adZu();}
+  function adOeffnen(){
+    if(!ad.an)return;
+    ad.meld='';ad.nutzer=null;ad.nutzerLaedt=false;
+    $("mAdmin").hidden=false;document.body.style.overflow='hidden';
+    adZeigen();adLaden();
+    var f=$("adBody").querySelector('button');if(f)try{f.focus();}catch(e){}
+  }
+  function adZu(){$("mAdmin").hidden=true;document.body.style.overflow='';}
+  function adRpc(name,args){return sb.rpc(name,args||{}).then(function(r){if(r&&r.error)throw r.error;return r?r.data:null;});}
+  function adFehler(err){ad.meldOk=false;ad.meld=(err&&err.code==='42501')?'Keine Admin-Rechte (mehr) – bitte neu anmelden.':'Laden hat nicht geklappt – bitte später noch einmal.';}
+  function adLaden(mehr){
+    var t=ad.tab;
+    if(t==='nutzer')return adNutzerSuchen(mehr);
+    if(t==='meldungen'){var s=mehr?ad.mseite+1:0,st=ad.mstatus;ad.laedt=true;
+      return adRpc("admin_meldungen",{p_status:st,p_seite:s}).then(function(d){
+        if(st!==ad.mstatus)return;ad.laedt=false;ad.mseite=s;
+        if(!d)ad.ml={fehlt:true};else{d.liste=(mehr&&ad.ml&&ad.ml.liste?ad.ml.liste:[]).concat(d.liste||[]);ad.ml=d;}
+        adZeigen();},function(e){ad.laedt=false;adFehler(e);adZeigen();});}
+    if(t==='gruppen'){var g=mehr?ad.gseite+1:0;ad.laedt=true;
+      return adRpc("admin_gruppen",{p_seite:g}).then(function(d){ad.laedt=false;ad.gseite=g;
+        if(!d)ad.gl={fehlt:true};else{d.liste=(mehr&&ad.gl&&ad.gl.liste?ad.gl.liste:[]).concat(d.liste||[]);ad.gl=d;}
+        adZeigen();},function(e){ad.laedt=false;adFehler(e);adZeigen();});}
+    return adRpc("admin_uebersicht").then(function(d){ad.ue=d;adZeigen();},function(e){adFehler(e);adZeigen();});
+  }
+  function adNutzerSuchen(mehr){
+    var s=mehr?ad.seite+1:0,q=ad.suche;ad.laedt=true;
+    return adRpc("admin_nutzer_liste",{p_suche:q,p_seite:s}).then(function(d){
+      if(q!==ad.suche)return;ad.laedt=false;ad.seite=s;ad.gesamt=(d&&d.gesamt)|0;
+      ad.liste=(mehr&&ad.liste?ad.liste:[]).concat((d&&d.liste)||[]);adListeZeigen();
+    },function(e){ad.laedt=false;adFehler(e);adZeigen();});
+  }
+  function adNutzerLaden(id,behalten){
+    ad.nutzer=null;ad.nutzerLaedt=true;ad.nutzerId=id;if(!behalten)ad.meld='';adZeigen();
+    var b=$("adBody");if(b)b.scrollTop=0;
+    return adRpc("admin_nutzer",{p_user:id}).then(function(d){if(ad.nutzerId!==id)return;ad.nutzerLaedt=false;ad.nutzer=d||{fehler:true};adZeigen();},
+      function(e){ad.nutzerLaedt=false;ad.nutzer={fehler:true};if(!e||e.code!=='P0002')adFehler(e);adZeigen();});
+  }
+  /* Lernstand aus den gesicherten Rohdaten ({id:{s,c,w,b,l,d}}) – gleiche Rechnung wie auf der Startseite */
+  function lernstandAus(data){
+    var f={},m=0,g=0,n=0,acc=0;
+    [1,2,3,4,5].forEach(function(x){
+      var qs=qForFach(x);if(!qs.length)return;
+      var fm=0,fg=0,s=0;
+      qs.forEach(function(q){var p=data[q.id];if(!p||typeof p!=='object')return;var b=p.b|0;
+        s+=Math.max(0,Math.min(MASTER_BOX,b))/MASTER_BOX;if((p.s|0)>0)fg++;if(b>=MASTER_BOX)fm++;});
+      f[x]={r:Math.round(s/qs.length*100),m:fm,g:fg,n:qs.length};
+      m+=fm;g+=fg;n+=qs.length;acc+=s;
+    });
+    return {f:f,reife:n?Math.round(acc/n*100):0,gemeistert:m,gesehen:g,gesamt:n};
+  }
+  function dlz(k,v){return '<dt>'+esc(k)+'</dt><dd>'+esc(v==null||v===''?'–':v)+'</dd>';}
+  function adTab(id,l){return '<button type="button" role="tab" data-ad-tab="'+id+'" aria-selected="'+(ad.tab===id)+'">'+l+'</button>';}
+  function adMeldHTML(){return ad.meld?'<p class="lt-meld'+(ad.meldOk?' ok':'')+'" role="status">'+esc(ad.meld)+'</p>':'';}
+  function adUebersichtHTML(){
+    var u=ad.ue;if(!u)return '<p class="vg-lead">Wird geladen …</p>';
+    var h='<div class="ad-kpis">'+ltKpi(fmtN(u.konten|0),'Konten'+((u.neu_7|0)?' · '+fmtN(u.neu_7|0)+' neu in 7 Tagen':''))+
+      ltKpi(fmtN(u.aktiv_7|0),'aktiv in den letzten 7 Tagen')+ltKpi(fmtN(u.rangliste|0),'in der Rangliste')+
+      ltKpi(fmtN(u.freundschaften|0),'Freundschaften')+
+      (u.gruppen!=null?ltKpi(fmtN(u.gruppen|0),'Lerngruppen'):'')+
+      (u.meldungen_neu!=null?ltKpi(fmtN(u.meldungen_neu|0),'offene Meldungen'):'')+
+      ltKpi(fmtN(u.gesperrt|0),'gesperrt')+'</div>';
+    var P=u.protokoll||[];
+    h+='<p class="h-sub">Letzte Verwaltungsaktionen</p>';
+    if(!P.length)return h+'<div class="lt-leer"><p>Noch keine Aktionen.</p></div>';
+    h+='<ul class="ad-log">';
+    P.forEach(function(l){var d=l.details||{};
+      h+='<li><time>'+esc(datumZeit(l.zeit))+'</time><b>'+esc(AD_AKTION[l.aktion]||l.aktion)+'</b><span>'+
+        esc([d.email,d.name,d.grund?'Grund: '+d.grund:'',d.meldung?'Meldung #'+d.meldung:'',l.admin?'durch '+l.admin:''].filter(Boolean).join(' · '))+'</span></li>';});
+    return h+'</ul>';
+  }
+  function adListeHTML(){
+    if(!ad.liste)return '<p class="vg-lead">Wird geladen …</p>';
+    if(!ad.liste.length)return '<div class="lt-leer"><p>Kein Konto gefunden.</p></div>';
+    var h='<p class="lt-anzahl">'+fmtN(ad.gesamt)+(ad.gesamt===1?' Konto':' Konten')+' · zuletzt aktive zuerst</p><ul class="lt-liste">';
+    ad.liste.forEach(function(u){
+      var titel=u.name||u.email||'(ohne Namen)',info=[u.name?u.email:'',u.spitzname?'„'+u.spitzname+'“':'','zuletzt '+vorZeit(u.zuletzt)].filter(Boolean).join(' · ');
+      h+='<li class="lt-z"><button type="button" class="lt-person" data-ad-user="'+esc(u.id)+'">'+avatarHTML(titel)+
+        '<span class="lt-pt"><b>'+esc(titel)+'</b><span>'+esc(info)+'</span></span></button><span class="lt-akt">'+
+        (u.reife!=null?'<span class="lt-status">'+(u.reife|0)+' %</span>':'')+
+        (u.admin?'<span class="lt-chip admin">Admin</span>':'')+(u.gesperrt?'<span class="lt-chip sperre">Gesperrt</span>':'')+'</span></li>';
+    });
+    h+='</ul>';
+    if(ad.liste.length<ad.gesamt)h+='<button type="button" class="vg-btn lt-mehr" data-ad-mehr'+(ad.laedt?' disabled':'')+'>Mehr anzeigen</button>';
+    return h;
+  }
+  function adNutzerTabHTML(){
+    return '<form class="vg-form lt-suche" id="adSucheForm" role="search" novalidate><input id="adSuche" type="search" autocomplete="off" spellcheck="false" '+
+      'placeholder="E-Mail, Name oder Spitzname …" aria-label="Konten suchen" value="'+esc(ad.suche)+'"></form><div id="adListe">'+adListeHTML()+'</div>';
+  }
+  function adListeZeigen(){var c=$("adListe");if(!c){adZeigen();return;}c.innerHTML=adListeHTML();adBinden(c);}
+  function adMeldungHTML(m,imKonto){
+    var k=m.kontext||{},meta=[],st=m.status||'neu',id=+m.id||0;
+    if(k.fach)meta.push(FACH_KURZ[k.fach]||('Fach '+k.fach));
+    if(k.bereich)meta.push(k.bereich);
+    if(k.modus)meta.push(MODUS[k.modus]||k.modus);
+    if(m.quelle)meta.push(m.quelle==='app'?'App':'Web');
+    var von=m.user_id?'<button type="button" class="vg-link" data-ad-user="'+esc(m.user_id)+'">'+esc(m.spitzname||m.email||'Konto')+'</button>':'anonym';
+    return '<article class="ad-m"><header><span class="ad-frage">'+esc(m.frage)+'</span><span class="ad-art">'+esc(MD_ART[m.art]||m.art)+'</span>'+
+      (st!=='neu'?'<span class="lt-chip">'+esc(st)+'</span>':'')+'<span class="ad-zeit">'+esc(datumZeit(m.created_at||m.zeit))+'</span></header>'+
+      '<p class="ad-text'+(m.text?'':' leer')+'">'+esc(m.text||'ohne Beschreibung')+'</p>'+
+      (k.auszug?'<p class="ad-auszug">'+esc(k.auszug)+'</p>':'')+
+      ((meta.length||!imKonto)?'<p class="ad-meta">'+esc(meta.join(' · '))+(imKonto?'':(meta.length?' · ':'')+'von '+von)+'</p>':'')+
+      '<div class="ad-akt">'+(st==='neu'?'<button type="button" class="vg-btn solid" data-ad-m="erledigt" data-id="'+id+'">Erledigt</button>'+
+        '<button type="button" class="vg-btn" data-ad-m="abgelehnt" data-id="'+id+'">Ablehnen</button>':
+        '<button type="button" class="vg-btn leise" data-ad-m="neu" data-id="'+id+'">Wieder öffnen</button>')+'</div></article>';
+  }
+  function adMeldungenHTML(){
+    var d=ad.ml,z=(d&&d.zaehler)||{};
+    var h='<div class="seg-ctl ad-filter" role="radiogroup" aria-label="Status der Meldungen">'+
+      ['neu','erledigt','abgelehnt','alle'].map(function(s){var n=s==='alle'?0:(z[s]|0);
+        return '<button type="button" role="radio" data-ad-status="'+s+'" aria-checked="'+(ad.mstatus===s)+'">'+
+          {neu:'Neu',erledigt:'Erledigt',abgelehnt:'Abgelehnt',alle:'Alle'}[s]+(n?' ('+fmtN(n)+')':'')+'</button>';}).join('')+'</div>';
+    if(!d)return h+'<p class="vg-lead">Wird geladen …</p>';
+    if(d.fehlt)return h+'<div class="lt-leer"><p>Meldungen sind nicht eingerichtet (docs/supabase-meldungen.sql).</p></div>';
+    var L=d.liste||[];
+    if(!L.length)return h+'<div class="lt-leer"><p>'+(ad.mstatus==='neu'?'Keine offenen Meldungen.':'Keine Meldungen.')+'</p></div>';
+    L.forEach(function(m){h+=adMeldungHTML(m,false);});
+    if(L.length<(d.gesamt|0))h+='<button type="button" class="vg-btn lt-mehr" data-ad-mehr'+(ad.laedt?' disabled':'')+'>Mehr anzeigen</button>';
+    return h;
+  }
+  function adGruppenHTML(){
+    var d=ad.gl;if(!d)return '<p class="vg-lead">Wird geladen …</p>';
+    if(d.fehlt)return '<div class="lt-leer"><p>Lerngruppen sind nicht eingerichtet (docs/supabase-gruppen.sql).</p></div>';
+    var L=d.liste||[];if(!L.length)return '<div class="lt-leer"><p>Noch keine Lerngruppen.</p></div>';
+    var h='<p class="lt-anzahl">'+fmtN(d.gesamt|0)+' Gruppe'+((d.gesamt|0)===1?'':'n')+' · neueste zuerst</p><ul class="lt-liste">';
+    L.forEach(function(g){var n=g.mitglieder|0;
+      h+='<li class="lt-z"><span class="lt-person" style="cursor:default">'+avatarHTML(g.name)+'<span class="lt-pt"><b>'+esc(g.name)+'</b><span>'+
+        esc(fmtN(n)+' Mitglied'+(n===1?'':'er')+' · Code '+g.code+' · Leitung: '+(g.leitung||g.leitung_email||'–')+' · seit '+datumKurz(g.erstellt))+
+        '</span></span></span><span class="lt-akt"><button type="button" class="vg-btn leise" data-ad-gruppe="'+esc(g.id)+'" data-name="'+esc(g.name)+'">Löschen</button></span></li>';});
+    h+='</ul>';
+    if(L.length<(d.gesamt|0))h+='<button type="button" class="vg-btn lt-mehr" data-ad-mehr'+(ad.laedt?' disabled':'')+'>Mehr anzeigen</button>';
+    return h;
+  }
+  function adNutzerHTML(){
+    var h='<button type="button" class="lt-zurueck" data-ad-zurueck>‹ Zurück</button>'+adMeldHTML();
+    if(ad.nutzerLaedt&&!ad.nutzer)return h+'<p class="vg-lead">Wird geladen …</p>';
+    var n=ad.nutzer;if(!n||n.fehler)return h+'<p class="vg-lead">Dieses Konto gibt es nicht mehr.</p>';
+    var titel=n.name||n.email||'(ohne Namen)',an=n.anbieter||'';
+    h+='<div class="lt-kopf">'+avatarHTML(titel,true)+'<div class="lt-kopf-t"><h4>'+esc(titel)+'</h4><p>'+esc(n.email||'')+'</p></div>'+
+      '<div class="lt-kopf-akt">'+(n.admin?'<span class="lt-chip admin">Admin</span>':'')+(n.gesperrt?'<span class="lt-chip sperre">Gesperrt</span>':'')+'</div></div>';
+    h+='<dl class="ad-dl">'+dlz('Anmeldung über',an?an.charAt(0).toUpperCase()+an.slice(1):'')+dlz('Registriert',datumZeit(n.erstellt))+
+      dlz('Letzte Anmeldung',n.anmeldung?datumZeit(n.anmeldung)+' ('+vorZeit(n.anmeldung)+')':'')+
+      dlz('Lernstand gesichert',n.progress&&n.progress.aktualisiert?datumZeit(n.progress.aktualisiert)+' ('+vorZeit(n.progress.aktualisiert)+')':'nie')+
+      (n.gesperrt?dlz('Gesperrt seit',datumZeit(n.gesperrt.seit)+(n.gesperrt.grund?' – '+n.gesperrt.grund:'')):'')+
+      '<dt>Konto-ID</dt><dd class="ad-id">'+esc(n.id)+'</dd></dl>';
+    h+='<p class="h-sub">Lernstand</p>';
+    var data=n.progress&&n.progress.data;
+    if(data&&typeof data==='object'&&Object.keys(data).length){
+      var ls=lernstandAus(data);
+      h+='<div class="lt-kpis">'+ltKpi(ls.reife+' %','prüfungsreif (alle Fächer)')+ltKpi(fmtN(ls.gemeistert),'gemeistert')+
+        ltKpi(fmtN(ls.gesehen),'gesehen')+ltKpi(fmtN(ls.gesamt-ls.gesehen),'offen')+'</div>'+lernstandHTML({f:ls.f});
+    }else h+='<div class="lt-leer"><p>Kein gesicherter Lernstand – die Person lernt nur auf ihrem Gerät oder hat noch nicht angefangen.</p></div>';
+    h+='<p class="h-sub">Rangliste, Profil und Freunde</p>';
+    if(n.rangliste){
+      var r=n.rangliste,pr=n.profil||{},dt=pr.details||{};
+      h+='<dl class="ad-dl">'+dlz('Spitzname',r.name)+dlz('Gemeldete Prüfungsreife',(r.reife|0)+' %')+
+        dlz('Antworten',fmtN(r.antworten|0)+' in KW '+String(r.woche||'').replace(/^\d{4}-W/,''))+dlz('Tage in Folge',fmtN(r.serie|0))+
+        dlz('Lernstand je Fach sichtbar für',pr.sichtbarkeit==='alle'?'alle Lernenden':'Freunde')+dlz('Dabei seit',pr.seit?datumKurz(pr.seit):'')+'</dl>';
+      if(dt.t14||dt.echt||dt.tage!=null)h+=lernstandHTML({t14:dt.t14,tage:dt.tage,echt:dt.echt},r.name,pr.details_am);
+    }else h+='<p class="vg-hinweis" style="margin:0 0 14px">Nicht in der Rangliste – kein Profil, keine Freunde, keine Gruppen.</p>';
+    var F=n.freunde||[];
+    if(F.length){h+='<p class="h-sub">Freunde</p><div class="ad-tags">';F.forEach(function(f){
+      h+='<span class="ad-tag">'+esc(f.name)+' <span>· '+(f.status==='freunde'?'befreundet':(f.status==='offen'?(f.richtung==='gesendet'?'angefragt':'fragt an'):'abgelehnt'))+'</span></span>';});h+='</div>';}
+    var G=n.gruppen||[];
+    if(G.length){h+='<p class="h-sub">Lerngruppen</p><div class="ad-tags">';G.forEach(function(g){
+      h+='<span class="ad-tag">'+esc(g.name)+' <span>· '+esc(g.code)+(g.leitung?' · Leitung':'')+'</span></span>';});h+='</div>';}
+    var M=n.meldungen||[];
+    h+='<p class="h-sub">Meldungen <span class="h-scope">'+M.length+'</span></p>';
+    if(M.length)M.forEach(function(m){h+=adMeldungHTML(m,true);});
+    else h+='<p class="vg-hinweis" style="margin:0 0 14px">Keine Meldungen von diesem Konto.</p>';
+    h+='<p class="h-sub">Verwalten</p><div class="ad-akt">'+(n.rangliste?'<button type="button" class="vg-btn" data-ad-akt="raus">Aus der Rangliste nehmen</button>':'')+
+      (n.admin?'':(n.gesperrt?'<button type="button" class="vg-btn" data-ad-akt="entsperren">Entsperren</button>':'<button type="button" class="vg-btn" data-ad-akt="sperren">Sperren …</button>')+
+        '<button type="button" class="vg-btn gefahr" data-ad-akt="loeschen">Konto löschen …</button>')+'</div>'+
+      '<p class="vg-hinweis">'+(n.admin?'Admin-Konten lassen sich hier nicht sperren oder löschen. ':'')+
+        'Sperren nimmt die Person aus Rangliste, Freunden und Gruppen und verhindert einen neuen Beitritt – Lernen und Sichern gehen weiter. '+
+        'Löschen entfernt das Konto samt Lernstand endgültig. Jede Aktion steht im Protokoll.</p>';
+    return h;
+  }
+  function adZeigen(){
+    var b=$("adBody");if(!b||$("mAdmin").hidden)return;
+    var h;
+    if(ad.nutzer||ad.nutzerLaedt)h=adNutzerHTML();
+    else{
+      var mn=(ad.ml&&ad.ml.zaehler)?(ad.ml.zaehler.neu|0):(ad.ue?(ad.ue.meldungen_neu|0):0);
+      h='<div class="vg-tabs" role="tablist" aria-label="Bereich wählen">'+adTab('uebersicht','Übersicht')+adTab('nutzer','Nutzer')+
+        adTab('meldungen','Meldungen'+(mn?'<span class="lt-badge">'+mn+'</span>':''))+adTab('gruppen','Gruppen')+'</div>'+adMeldHTML();
+      h+=ad.tab==='nutzer'?adNutzerTabHTML():(ad.tab==='meldungen'?adMeldungenHTML():(ad.tab==='gruppen'?adGruppenHTML():adUebersichtHTML()));
+    }
+    var fokus=document.activeElement&&document.activeElement.id==='adSuche';
+    b.innerHTML=h;adBinden(b);
+    var i=$("adSuche");if(fokus&&i){i.focus();try{i.setSelectionRange(i.value.length,i.value.length);}catch(e){}}
+  }
+  function adBinden(b){
+    b.querySelectorAll('[data-ad-tab]').forEach(function(x){x.onclick=function(){ad.tab=x.getAttribute('data-ad-tab');ad.meld='';adZeigen();adLaden();};});
+    b.querySelectorAll('[data-ad-user]').forEach(function(x){x.onclick=function(){adNutzerLaden(x.getAttribute('data-ad-user'));};});
+    b.querySelectorAll('[data-ad-zurueck]').forEach(function(x){x.onclick=function(){ad.nutzer=null;ad.nutzerLaedt=false;ad.nutzerId=null;ad.meld='';adZeigen();adLaden();};});
+    b.querySelectorAll('[data-ad-akt]').forEach(function(x){x.onclick=function(){adAktion(x);};});
+    b.querySelectorAll('[data-ad-m]').forEach(function(x){x.onclick=function(){adMeldungStatus(x);};});
+    b.querySelectorAll('[data-ad-status]').forEach(function(x){x.onclick=function(){ad.mstatus=x.getAttribute('data-ad-status');ad.ml=null;ad.meld='';adZeigen();adLaden();};});
+    b.querySelectorAll('[data-ad-gruppe]').forEach(function(x){x.onclick=function(){adGruppeLoeschen(x);};});
+    var m=b.querySelector('[data-ad-mehr]');if(m)m.onclick=function(){m.disabled=true;adLaden(true);};
+    var i=$("adSuche"),f=$("adSucheForm");
+    if(f)f.onsubmit=function(e){e.preventDefault();clearTimeout(ad.sucheT);ad.suche=i.value.trim();adNutzerSuchen();};
+    if(i)i.oninput=function(){clearTimeout(ad.sucheT);ad.sucheT=setTimeout(function(){var v=i.value.trim();if(v!==ad.suche){ad.suche=v;adNutzerSuchen();}},300);};
+  }
+  function adAktion(x){
+    var n=ad.nutzer;if(!n||!n.id)return;
+    var a=x.getAttribute('data-ad-akt'),name=n.name||n.email||'dieses Konto',p=null;
+    if(a==='raus'){
+      if(!confirm(name+' aus der Rangliste nehmen?\n\nProfil, Freundschaften und Gruppen gehen verloren. Ein neuer Beitritt bleibt möglich.'))return;
+      p=adRpc("admin_aus_rangliste",{p_user:n.id});
+    }else if(a==='sperren'){
+      var g=prompt('Sperrgrund für '+name+' (nur für Admins sichtbar, optional):','');if(g===null)return;
+      p=adRpc("admin_sperren",{p_user:n.id,p_grund:g});
+    }else if(a==='entsperren')p=adRpc("admin_entsperren",{p_user:n.id});
+    else if(a==='loeschen'){
+      var e=prompt('Konto von '+name+' endgültig löschen – mit Lernstand, Profil, Freundschaften und Gruppen-Mitgliedschaften.\n\nZur Bestätigung die E-Mail-Adresse eingeben:\n'+(n.email||''),'');
+      if(e===null)return;
+      if(e.trim().toLowerCase()!==String(n.email||'').toLowerCase()){ad.meldOk=false;ad.meld='Die E-Mail stimmt nicht – nichts gelöscht.';adZeigen();return;}
+      p=adRpc("admin_konto_loeschen",{p_user:n.id,p_email:e.trim()});
+    }
+    if(!p)return;
+    x.disabled=true;
+    p.then(function(){
+      ad.meldOk=true;ad.meld={raus:'Aus der Rangliste genommen.',sperren:'Gesperrt.',entsperren:'Entsperrt.',loeschen:'Konto gelöscht.'}[a];
+      ad.liste=null;ad.ue=null;vgLaden(true);
+      if(a==='loeschen'){ad.nutzer=null;ad.nutzerId=null;ad.tab='nutzer';adZeigen();return adLaden();}
+      return adNutzerLaden(n.id,true);
+    }).catch(function(err){x.disabled=false;ad.meldOk=false;ad.meld='Nicht möglich: '+((err&&err.message)||'unbekannter Fehler');adZeigen();});
+  }
+  function adMeldungStatus(x){
+    var id=+x.getAttribute('data-id'),s=x.getAttribute('data-ad-m');x.disabled=true;
+    adRpc("admin_meldung_status",{p_id:id,p_status:s}).then(function(){
+      if(ad.nutzer&&ad.nutzer.id)return adNutzerLaden(ad.nutzer.id,true);
+      return adLaden();
+    }).catch(function(e){x.disabled=false;adFehler(e);adZeigen();});
+  }
+  function adGruppeLoeschen(x){
+    var name=x.getAttribute('data-name')||'';
+    if(!confirm('Lerngruppe „'+name+'“ löschen? Alle Mitglieder verlieren die Gruppe.'))return;
+    x.disabled=true;
+    adRpc("admin_gruppe_loeschen",{p_gruppe:x.getAttribute('data-ad-gruppe')}).then(function(){
+      ad.meldOk=true;ad.meld='Gruppe „'+name+'“ gelöscht.';vgLaden(true);return adLaden();
+    }).catch(function(e){x.disabled=false;adFehler(e);adZeigen();});
+  }
+  document.addEventListener('click',function(e){
+    if(!e.target.closest)return;
+    if(e.target.closest('[data-lt-zu]'))ltZu();
+    else if(e.target.closest('[data-ad-zu]'))adZu();
+  });
+  document.addEventListener('keydown',function(e){
+    if(e.key!=='Escape')return;
+    if(!$("mLeute").hidden)ltZu();else if(!$("mAdmin").hidden)adZu();
+  });
+  if($("btnAdmin"))$("btnAdmin").addEventListener('click',adOeffnen);
+
+  sb.auth.onAuthStateChange(function(_e,session){
+    var vorher=user&&user.id;
+    user=session?session.user:null;if(user){acc(true,nameOf(user));if(syncedFor!==user.id){syncedFor=user.id;pull().then(push);}}else{acc(false,"");syncedFor=null;pulledOk=false;}
+    /* Anderes Konto (oder abgemeldet): Freunde, Profil und Verwaltung neu laden */
+    if((user&&user.id)!==vorher){
+      vg.fstand=null;vg.profilGemeldet=false;lt.liste=null;lt.profil=null;
+      ad.an=false;ad.ue=null;ad.liste=null;ad.nutzer=null;ad.nutzerId=null;ad.ml=null;ad.gl=null;
+      if(!$("mLeute").hidden)ltZu();
+      adKnopf();adPruefen();
+    }
     vg.stand=null;vg.bearbeiten=false;vgLaden(true);});
 })();
 })();
