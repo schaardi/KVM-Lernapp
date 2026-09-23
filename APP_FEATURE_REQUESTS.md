@@ -636,3 +636,515 @@ kommen als `TextTheme`-Einträge bzw. Konstanten dazu.
 - Ringfarbe in `finishRound` Z. 2508, `show()` setzt `data-screen` (Z. 2574)
 - `theme()` Z. 2619, `calcKnopf` Z. 2714, `weich()` Z. 2892
 - `BEREICH_KURZ` Z. 4377
+
+---
+
+## FR-003 · Prüfungen neu: strukturierte Texte, Rechenweg, Aufgabenblatt, Startseite mit Lernstand
+
+**Status App-Session:** ⏳ offen
+**Web umgesetzt:** ✅ `claude/ui-design-improvement-my0f66` (Commit „Prüfungen überarbeitet …“)
+**Priorität:** sehr hoch für A (ohne A zeigt die App nach dem nächsten Sync „a | b“-Rohtext),
+hoch für B und C, mittel für D, mittel bis hoch für E.
+**Baut auf FR-002 auf.** Wo sich beide widersprechen, gilt FR-003:
+- Der Untertitel der Startseite endet **ohne** „· Fahrschul-Prinzip“ (ersetzt FR-002 B.1).
+- Die „Heute“-Karte aus FR-002 B.2 geht in der Lernstand-Karte (E.2) auf.
+
+### Ziel / Framing
+Rückmeldung aus der Nutzung: Tabellen kamen als unverständlicher Fließtext an, Anlagen
+zum Ausfüllen fehlten, Rechenaufgaben im Textfeld waren mühsam, das Aufgabenblatt wirkte
+unaufgeräumt, die Startseite zu flach. Die Web-App löst das so:
+
+1. **Daten** (kommen per Sync, nichts zu tun außer A): Tabellen stehen im Text als
+   Zeilen „a | b | c“, Formeln und Rechenschritte auf eigenen Zeilen, Brüche linear
+   („Zähler ÷ Nenner“). Neu sind acht ausfüllbare Anlagen mit Lösungstabelle (`tab` +
+   `tabL`) und rund 100 rechnerisch belegte Korrekturen von OCR-Rechenzeichen.
+2. **Text-Renderer** macht daraus echte Tabellen, Listen und Rechenblöcke (A).
+3. **Rechenweg** statt Textfeld für Rechenaufgaben: Zeile für Zeile, Ergebnis sofort (B).
+4. **Aufgabenblatt** wie ein Prüfungsbogen, mit mitlaufender Aufgabenleiste,
+   Bearbeitungsstand und klarer Lösungsansicht (C).
+5. **Prüfungsliste** mit Fortschritt je Prüfung und „Weiter bei Aufgabe …“ (D).
+6. **Startseite** in eigenen Karten: Lernstand-Ring mit Ampel, Lernweg durch die Fächer,
+   Erfolge, Aktivität – angelehnt an „Fahren Lernen“ (E).
+
+Empfohlene Reihenfolge: A → C → B → D → E. Jedes Paket ist einzeln abnehmbar.
+
+---
+
+### A · Prüfungstexte strukturiert darstellen (klein bis mittel, sehr hoher Nutzen)
+
+**Wo:** überall, wo heute Prüfungstext als `Text(...)` steht:
+- `aufgabenblatt_screen.dart`: Ausgangssituation `_ausgangslage` (Z. 332), Ausgangslage
+  der Aufgabe in `_aufgabenkopf` (Z. 366), Frage in `_TeilKarte` (Z. 648),
+  Lösungshinweis (Z. 750)
+- `quiz_screen.dart`: `t.sit` (Z. 362 und 593), Fragetext von Fallaufgaben, Lösung in der Chat-Blase
+
+**Neues Widget `PruefText(String text)`**. Es liefert eine `Column` aus Blöcken. Der Text
+wird zeilenweise gelesen (`\n`); die Regeln greifen in dieser Reihenfolge:
+
+1. **Leerzeile** → größerer Abstand vor dem nächsten Block (Web: 1,05 em statt 0,6 em).
+2. **Tabellenzeile:** enthält „ | “, beginnt mit „| “ oder endet mit „ |“
+   (`/\s\|\s|^\|\s|\s\|$/`). Aufeinanderfolgende Tabellenzeilen bilden eine Tabelle.
+   - Zellen: `zeile.split('|').map(trim)`. **Leere Zellen bleiben erhalten**, sie halten die Spalte.
+   - Spaltenzahl = längste Zeile. Kürzere Zeilen werden **hinter der ersten Zelle** mit
+     leeren Zellen aufgefüllt (der Wert rutscht so in die letzte Spalte).
+   - **Einzelne Zeile mit einer Zelle > 60 Zeichen:** keine Tabelle, sondern Absatz mit
+     „ · “ zwischen den Zellen.
+   - **Zahlzelle:** `/^[−–+-]?\s?\(?\s?\d/` und höchstens 32 Zeichen.
+   - **Kopfzeile.** Die Tabelle braucht mindestens 2 Zeilen, und die erste Zeile mindestens
+     2 nichtleere Zellen. Dann gilt die erste Regel, die zutrifft:
+     1. **Eckfeld leer**, alle anderen Zellen der ersten Zeile gefüllt → Kopf. Das gilt auch für
+        Zahlen und Skalen, z. B. „ | 2019 | 2020“ oder „ | ++ | + | 0 | −“.
+     2. Eine Zelle der ersten Zeile ist eine Zahlzelle → kein Kopf.
+     3. **Formular** (mindestens 3 Spalten): In allen späteren Zeilen ist nur die erste Spalte
+        beschriftet. Die übrigen Zellen sind leer oder Ankreuzkästchen `☐ □ ○ ◯` → Kopf.
+        Beispiele: Checkliste, Qualifikationsmatrix.
+     4. Mindestens 3 Spalten, und eine spätere Zeile hat ab Spalte 2 eine Zahlzelle → Kopf.
+     5. 2 Spalten, mindestens 3 Zeilen, und alle Werte der zweiten Spalte sind Zahlzellen → Kopf.
+   - **Ankreuzkästchen** (`☐` usw.) stehen mittig in `kMuted`.
+   - **Spaltenausrichtung:** Eine Spalte ab der zweiten ist rechtsbündig, wenn mindestens
+     60 % ihrer gefüllten Zellen Zahlzellen sind. Diese Zellen brechen nicht um. Ausnahme:
+     2-spaltige Listen auf dem Handy dürfen umbrechen.
+   - **2 Spalten ohne Kopf** = Werteliste („Strecke | 10 km“):
+     - Beschriftung in `kInkSoft`
+     - Wert w600
+   - **Optik:**
+     - Rahmen `kLine`, Radius 10.
+     - Kopf auf `kSurface2`, Schrift `kPetrolDeep`, w700.
+     - Jede zweite Zeile auf `kSurface`.
+     - Zellabstand 6 × 11.
+     - Ziffern mit `FontFeature.tabularFigures()`.
+     - Breite nach Inhalt (höchstens volle Breite). Zu breite Tabellen scrollen waagerecht
+       (`SingleChildScrollView(scrollDirection: Axis.horizontal)`).
+3. **Aufzählung:** `/^\s*(?:[–•▪■◦]|-(?=\s))\s+/`. Aufeinanderfolgende Zeilen bilden eine
+   Liste mit Punkt in `kPetrol`. Das Zeichen selbst entfällt.
+4. **Rechenzeile:** enthält „=“ oder „⇒“, ist höchstens 240 Zeichen lang und hat nach
+   Entfernen von Klammerinhalten höchstens 5 kleingeschriebene Wörter mit mindestens
+   4 Buchstaben (`/(?:^|[\s„])[a-zäöüß]{4,}/`).
+   - Aufeinanderfolgende Rechenzeilen bilden einen **Rechenblock**:
+     - Fläche `kSurface`, linker Rand 3 dp in `kPetrolLine`, Radius 0/9/9/0
+     - Ziffern tabellarisch
+   - **Ergebnis hervorheben.** Der Text hinter dem **letzten** „=“ wird w700 in
+     `kPetrolDeep` gesetzt, wenn alle folgenden Bedingungen gelten:
+     - Er beginnt mit einer Zahl.
+     - Er endet vor Komma + Leerzeichen, Semikolon, Klammer oder Zeilenende. Ein Komma
+       zwischen Ziffern (Dezimalkomma) gilt nicht als Ende.
+     - Er ist höchstens 40 Zeichen lang.
+     - Er enthält **kein** Rechenzeichen mit Leerzeichen davor und danach
+       (`/\s[+−–·÷×:\/-]\s/`). Dann ist es noch eine Rechnung, kein Ergebnis.
+4a. **Hinweis:** `/^(?:Hinweise?(?:\s+(?:für|an|zur|zum)\s+[^:]{2,40})?|Achtung|Beachte|Merke)\s*:\s*/`.
+    - Kasten auf `kAmberSoft` mit linkem Rand in `kAmber`.
+    - Das Präfix („Hinweis für den Korrektor:“) steht fett in `kAmberInk`.
+5. **Beschriftung:** Zeile ohne „=“ und ohne „|“, 2–90 Zeichen, endet auf „:“ → w600.
+6. Alles andere ist ein Absatz.
+
+**Inline, in jedem Block:** Punkteangaben in Klammern (`/\((?=[^()]*\bPunkte?\b)[^()]{1,160}\)/`)
+werden zur kleinen Marke ohne Klammern:
+- Mono 0,74 em
+- Schrift `kGoldInk` auf `kGoldSoft`, Rahmen `kGoldLine`
+- Radius 6, Umsetzung als `WidgetSpan`
+
+**Testfälle** (aus `assets/data/cases.json`)
+
+| Text | Erwartung |
+|---|---|
+| `P-OK-20221115`, Aufgabe 3, `sit` | Absatz. Dann drei Wertelisten, je mit einer fetten Beschriftung davor (die zweite mit 3 Zeilen). Kein „|“ sichtbar. |
+| `P-MI-20200505`, Aufgabe 2, `sit` | Tabelle mit Kopf „Nr. \| Vorgang \| Dauer in Tagen \| Vorgänger“ und 9 Zeilen. |
+| `P-OK-20231121-s10`, `a` | Rechenblock (2 Zeilen, Ergebnis „10%“ fett). Dann Beschriftung „Maßnahmen:“, Liste mit 4 Punkten und die Punkte-Marke. |
+| `P-BW-20230504-s0`, `a` | Liste, Absatz, Rechenblock. „BE = 3.000.000 € ÷ 75 · 85 − 3.000.000 €“ **ohne** Hervorhebung, „BE = 400.000 €“ **mit**. |
+| `P-OK-20221115-s3`, `a` | Tabelle mit leerem Eckfeld → Kopfzeile „… aus Sicht der Mitarbeiter \| …“. |
+| `P-OK-20211116-s0`, `a` | Checkliste als Formular mit Kopf „Prüfpunkt \| Ja \| Nein \| Nicht zutreffend \| Maßnahme \| Termin/verantwortlich“, 21 Zeilen. Danach „Datum:“ und „Unterschrift:“ als Beschriftungen. |
+| `P-OK-20251112-s12`, `a` | Bewertungsbogen mit Kopf „ \| ++ \| + \| 0 \| − \| − −“ und mittigen ☐. |
+| `P-OK-20260507-s6`, `a` | Kostenvergleich mit Kopf „Kosten pro Jahr \| Diesel-Lkw \| Batterie-Lkw“, 6 Zeilen, Rechnungen in den Zellen. |
+
+**Abnahme**
+- In keinem Prüfungstext steht nach dem Rendern ein „ | “.
+- Ein Durchlauf über alle 121 Prüfungen verliert kein Zeichen außer den
+  Aufzählungszeichen. Web-Prüfung: 5.003 Texte, 169 Tabellen (30 mit Kopf),
+  732 Rechenblöcke, 1.799 Listen, 0 Verluste.
+
+---
+
+### B · Rechenweg statt Textfeld (mittel, hoher Nutzen)
+
+**Idee:** Eine Rechenaufgabe wird wie auf dem Prüfungsbogen Zeile für Zeile gelöst:
+Bezeichnung, Rechnung, Ergebnis. Jede Zeile rechnet sofort. Ergebnisse früherer Zeilen
+lassen sich antippen und einsetzen.
+
+**Speicher:**
+- `SharedPreferences`, Schlüssel **`kvm_open_calc`** (wie Web)
+- JSON `{ "<stepId>": [ {"l": "Bezeichnung", "f": "Rechnung", "u": "Einheit"}, … ] }`
+- Zeilen ohne `l` und ohne `f` werden nicht gespeichert.
+- Neu in `answer_store.dart`: `calc(id)`, `setCalc(id, rows)`, `hatCalc(id)`. `hatCalc`
+  ist wahr, wenn eine Zeile eine nichtleere Rechnung hat.
+
+**Rechner `rechne(String)`**
+- Kein `eval`. Rekursiver Abstieg mit dieser Rangfolge:
+  1. Summe
+  2. Produkt
+  3. Vorzeichen
+  4. Potenz `^`
+  5. nachgestelltes `%`, `²`, `³`
+  6. Zahl, `(…)` oder `√x`
+- Zeichen:
+  - Zahlen deutsch oder englisch:
+    - Enthält die Zahl ein Komma: Punkte sind Tausenderpunkte.
+    - Sonst ist `1.234.567` ein Tausenderformat.
+    - Sonst ist der Punkt ein Dezimalpunkt.
+  - Plus `+`.
+  - Minus `- − –`.
+  - Mal `* · × ⋅ ∙`, außerdem `x` zwischen Zahl bzw. `)` und Zahl, `(` oder `√`.
+  - Geteilt `/ ÷ :`.
+- Hinter einem `=` wird nicht weitergelesen.
+- Einheiten werden überlesen:
+  - erst Einheitenbrüche wie `km/h`, `€/kWh`
+  - dann Buchstabenfolgen einschließlich `€ $ °`
+- Ergebnis nicht endlich oder Ausdruck unvollständig → ungültig. Anzeige „Rechnung prüfen“ in `kErrInk`.
+
+**Referenzwerte** (müssen exakt so herauskommen, Web-Stand):
+
+| Eingabe | Einheit | Ergebnis | Zeile als Text |
+|---|---|---|---|
+| `4.400 ÷ 22` | | 200 | `4.400 ÷ 22 = 200` |
+| `30.250 · 6 %` | | 1.815 | `30.250 · 6 % = 1.815` |
+| `√(2·7000·120÷(12·0,14))` | | 1.000 | `√(2 · 7.000 · 120 ÷ (12 · 0,14)) = 1.000` |
+| `1.5+1` | | 2,5 | `1,5 + 1 = 2,5` |
+| `1.500+1` | | 1.501 | `1.500 + 1 = 1.501` |
+| `(20+6+4)·2` | | 60 | |
+| `5²` / `2^3` | | 25 / 8 | |
+| `10 km/h · 2` | | 20 | `10 · 2 = 20` |
+| `3 x 4` | | 12 | `3 · 4 = 12` |
+| `-5+2` | | −3 | `−5 + 2 = −3` |
+| `99.600 / 3.000` | `€` | 33,20 | `99.600 ÷ 3.000 = 33,20 €` |
+| `12,5 %` | | 0,125 | |
+| `4400/0` | | ungültig | `4400/0` (unverändert) |
+
+**Formatierung**
+- `de_DE`, höchstens 4 Nachkommastellen, negatives Vorzeichen als „−“ (U+2212).
+- Enthält die Einheit „€“ und das Ergebnis Cent: genau 2 Nachkommastellen.
+- Die Rechnung für den Text wird neu gesetzt:
+  - Zahlen mit Tausenderpunkt, die eingegebenen Nachkommastellen bleiben.
+  - Rechenzeichen mit Leerzeichen: „ + “, „ − “, „ · “, „ ÷ “.
+  - Vorzeichen, `^`, `²`, `√` und Klammern ohne Leerzeichen.
+  - Prozent als „ %“.
+
+**Zeile als Text:**
+- Aufbau: `Bezeichnung: Rechnung = Ergebnis Einheit`. Die Bezeichnung endet immer auf
+  genau einen Doppelpunkt.
+- Ist die Rechnung nur eine Zahl: `Bezeichnung: Ergebnis Einheit`.
+- Beispiel: `Kosten je Auftrag: 4.400 ÷ 22 = 200 €`.
+
+**Ganze Antwort (`antwortText`):**
+- Aufbau: Rechenweg-Zeilen, Leerzeile, Freitext.
+- Verwendet in:
+  - „Deine Antwort“ nach dem Aufdecken
+  - KI-Export (`AnswerStore.exportTask`, `_kopieren` Z. 466)
+  - der Prüfung „beantwortet“
+
+**Wann offen?**
+- Der Rechenweg steht sofort offen, wenn beides gilt:
+  - Die Frage verlangt eine Rechnung: `/\b(berechn|errechn|ermittel|kalkulier|rechnerisch|Rechenweg)/i`.
+  - Der Lösungshinweis hat eine Zeile mit Ziffer, „=“ und Rechenzeichen.
+  - Das trifft auf 435 von 2.030 Teilaufgaben zu.
+- Sonst gibt es unter dem Textfeld den Knopf „Rechenweg“, der ihn einblendet.
+- Hat eine Teilaufgabe gespeicherte Zeilen, ist er immer offen.
+- Ist er offen, heißt das Textfeld „Erläuterung · optional“ und ist kleiner (min. 64 statt 92).
+
+**UI je Zeile** (Web `.rw-row`)
+- Handy:
+  - Zeile 1: „Z1“, Bezeichnung (Unterstrich-Feld), ✕
+  - Zeile 2: Rechnung in voller Breite, Mono 15 w600
+  - Zeile 3: Einheit (76 dp) links, Ergebnis rechts („= 20 min“, Mono 15 w700 `kPetrolDeep`)
+- Ab 640 dp:
+  - Zeile 1: Bezeichnung
+  - Zeile 2: Rechnung | Ergebnis | Einheit (72) | ✕
+- Tastatur der Rechnung: `TextInputType.numberWithOptions(decimal: true, signed: true)`.
+- Enter bzw. „Weiter“ springt in die nächste Zeile oder legt eine neue an.
+- **Tastenleiste**, sichtbar solange ein Feld des Rechenwegs den Fokus hat:
+  - `+ − · ÷ ( ) % x² √(`
+  - danach je frühere Zeile mit gültigem Ergebnis ein Knopf „Z1 = 1.815“, der
+    den Wert (ohne Einheit) einsetzt
+  - Folgt der Wert direkt auf eine Ziffer, wird „ · “ davor gesetzt.
+  - Eingefügt wird an der Schreibmarke.
+  - Die Knöpfe dürfen den Fokus nicht aus dem Feld nehmen (`FocusNode` behalten,
+    `canRequestFocus:false` an den Tasten).
+- Unter den Zeilen: „+ Zeile“ (gestrichelter Rahmen). Eine leere letzte Zeile wird
+  genutzt statt eine neue anzuhängen.
+- ✕ löscht die Zeile. Die letzte Zeile wird nur geleert.
+- Eine Teilaufgabe mit Rechenweg zählt als **beantwortet** (Stepper, Fortschritt, Liste).
+
+**Abnahme:** Die Referenzwerte stimmen. Ein Rechenweg übersteht einen Neustart. Nach
+dem Aufdecken steht er als Rechenblock unter „Deine Antwort“, Ergebnisse fett. Im
+KI-Export steht er vor dem Freitext.
+
+---
+
+### C · Aufgabenblatt neu (mittel, hoher Nutzen)
+
+Bezug: `aufgabenblatt_screen.dart`. Web: `renderBlatt`, `blTeilHTML`, `blLoesungHTML`.
+
+1. **Mitlaufende Leiste oben** (ersetzt Kopf Z. 192–200 und `_stepper` Z. 239).
+   - Umsetzung: `SliverPersistentHeader(pinned: true)` bzw. ein fixer Kopf über dem Scrollbereich.
+   - Inhalt: ✕, dann die Aufgaben-Pillen (waagerecht scrollbar; die aktuelle wird in
+     die Mitte gescrollt).
+   - **Pille** 42 × 42, Radius 11:
+     - Nummer w700 14, darunter „24 P“ (Mono 9)
+     - Statuspunkt 7 dp oben rechts:
+       - Amber = teilweise bearbeitet
+       - Grün = alle Teile bearbeitet
+       - Petrol = alle aufgedeckt (dazu Fläche `kPetrolSoft`)
+     - Aktuelle Pille: gefüllt `kPetrol`, weiße Schrift, Schatten, Statuspunkt mit weißem Ring
+   - Darunter der Balken (5 dp) mit zwei Anteilen:
+     - aufgedeckt `kPetrol`
+     - bearbeitet, aber nicht aufgedeckt `kOk`
+   - Rechts daneben Text „**7**/17 Teile · **23** P“. Der Punkteteil erscheint erst
+     nach der ersten Bewertung.
+   - Bei nur einer Aufgabe (Fallaufgaben) keine Pillen.
+2. **Kopf der Aufgabe**
+   - Eyebrow „FACH · DATUM“ (Mono 10,5, `kPetrol`), z. B.
+     „BETRIEBSWIRTSCHAFTLICHES HANDELN · 4. MAI 2023“. Das Datum ist der Titelteil nach „– “.
+   - Titel „AUFGABE 6“: Display 30–40, w700, groß geschrieben.
+   - Chips:
+     - „17 Punkte“ (petrol)
+     - „3 Teilaufgaben“
+     - „x von n bearbeitet“ (grün mit ✓, wenn vollständig)
+     - „Deine Punkte: p / max“ (gold), sobald bewertet
+3. **Ausgangssituation der Prüfung** (einklappbar) nur, wenn `context` **nicht** mit
+   „In dieser Prüfung hat jede Aufgabe ihre eigene Ausgangssituation“ beginnt. Das
+   betrifft die Basisqualifikationen: Dort ist der Text nur ein Hinweis.
+   - Tag „AUSGANGSSITUATION“ (petrol)
+   - Titel „Gilt für alle Aufgaben dieser Prüfung“
+   - Knopf „Lesen ▾“
+   - Inhalt über `PruefText`
+4. **Ausgangslage der Aufgabe**
+   - Kasten `kSurface` mit Rahmen, Radius 12
+   - Label „AUSGANGSLAGE“ (Mono 10, `kMuted`)
+   - darunter `PruefText(sit)`, dann die Anlagen (Tabellen und Bilder wie bisher)
+5. **Teilaufgabe als eigene Karte**
+   - Karte: Radius 14, Schatten `0 8 22 -12 rgba(16,42,50,.18)`.
+   - **Linker Statusstreifen** 4 dp: grau offen, grün bearbeitet, petrol aufgedeckt.
+   - Kopf:
+     - Buchstabe im Kreis (32 dp, Display 17). Grund `kInk`, bearbeitet `kOk`, aufgedeckt `kPetrol`.
+     - Daneben „Teilaufgabe a)“ (12,5, `kMuted`), Punkte-Pill (Mono 11, `kPetrolSoft`)
+       und ggf. „baut auf a) auf“ (gold)
+   - Frage: `PruefText`, Grundschrift w600 15,5. Tabellen darin w400.
+   - Antwortbereich: Rechenweg (B), Textfeld und die Knöpfe „👁 Lösung zu a) aufdecken“
+     (gefüllt petrol) und ggf. „Rechenweg“.
+6. **Nach dem Aufdecken:** zwei Blöcke mit Kopfzeile (Mono 10,5 groß):
+   - **„DEINE ANTWORT“**:
+     - Rechenweg als Rechenblock, dann Freitext
+     - leer: „— leer abgegeben —“ kursiv
+   - **„AMTLICHE LÖSUNGSHINWEISE · IHK“**:
+     - Kopf auf `kPetrolSoft`, Rahmen `kPetrolLine`
+     - Inhalt über `PruefText`, dann Lösungsbild und Lösungstabelle wie bisher
+     - Fußzeile „VO-Bezug: … · Punkteverteilung: …“ (11,5, `kMuted`)
+7. **Selbstbewertung** (Kasten `kSurface`)
+   - Kopf „DEINE PUNKTE“, rechts „6 von 10“ bzw. „noch nicht bewertet“.
+   - **Bis 12 Punkte:** durchgehende Knopfleiste mit n+1 gleich breiten Knöpfen (höchstens
+     60 dp je Knopf), Höhe 40.
+     - gewählt: gefüllt petrol
+     - kleinere Werte: `kPetrolSoft` (wirkt wie ein Füllstand)
+   - **Über 12 Punkte:** `Slider` 0…max (Teilstriche), darunter „0 · max/2 · max“.
+   - Ersetzt die umbrechenden Einzelknöpfe (`_punkteKnopf` Z. 823). Auf dem Handy
+     stand die „10“ sonst allein in der zweiten Reihe.
+8. **Einstieg:** Wird eine Aufgabe an ihrer **ersten** Teilaufgabe geöffnet, bleibt die
+   Seite oben (Ausgangslage sichtbar). Nur bei späteren Teilen wird zu ihnen gescrollt.
+9. **Handy:** Solange im Aufgabenblatt ein Eingabefeld den Fokus hat, ist das
+   Werkzeug-Dock (FR-002 C) ausgeblendet. Über der Tastatur stehen dann Eingabe und
+   Tastenleiste.
+
+**Abnahme:** Handy 390 × 844.
+- `P-OK-20221115`, Aufgabe 3: Ausgangslage mit drei Tabellen; a) mit offenem Rechenweg;
+  nach dem Aufdecken beide Blöcke; die 11 Punkteknöpfe in einer Reihe.
+- `P-MI-20200505`, Aufgabe 2: Die Netzplan-Anlage ist ausfüllbar (FAZ/FEZ/SAZ/SEZ/Puffer).
+  Nach dem Aufdecken stehen die amtlichen Werte neben den eigenen.
+
+---
+
+### D · Prüfungsliste (klein bis mittel)
+
+Bezug: `pruefungen_screen.dart` `_kachel` (Z. 199). Web: `render()` im Prüfungs-Modul.
+
+**Karte je Prüfung** (Radius 14, leichter Schatten)
+- **Kürzel-Kachel** 40 × 40, Radius 11, weiße Display-Schrift. Das Kürzel kommt aus der ID
+  (`P-XX-…`):
+  - RE `kPetrol`
+  - BW `kAmber`
+  - MI `kOk`
+  - ZI `kBlue`
+  - NT `kViolet` (#6D5AE6)
+  - FT und OK `kPlum`
+- Daneben Bereich (w700 15) und darunter „7. Mai 2026 · 5 Aufgaben · 13 Teile“.
+- Rechts Pill „100 P“.
+
+**Fortschritt** (nur wenn begonnen)
+- Balken 6 dp als Verlauf petrol → grün.
+- Text „**6**/18 Teile · **18** P“. Teile gelten als bearbeitet mit Text **oder** Rechenweg.
+
+**Hauptknopf**
+- „Weiter bei Aufgabe N →“ springt zur ersten unbearbeiteten Teilaufgabe.
+- Alles bearbeitet: „Prüfung öffnen“. Nichts bearbeitet: „Prüfung starten“.
+
+**Zweitknopf** „Für KI kopieren“.
+
+**Einleitung:** „**121 Original-Prüfungen** mit amtlichen Lösungshinweisen: Aufgaben wie
+auf dem Prüfungsbogen lösen – mit Rechenweg und ausfüllbaren Anlagen –, dann die Lösung
+aufdecken und dir selbst Punkte geben.“
+
+---
+
+### E · Startseite mit Lernstand, Lernweg und Erfolgen (mittel bis groß)
+
+Bezug: `home_screen.dart` `build` (Z. 130). Web: `#scrHome`, CSS „Startseite“, JS
+`renderHero`, `renderFachGroup`, `erfolgeList`, `renderAktiv`, `renderPruefLast`.
+
+**Grundsatz:** eigene Karten auf `kBg` statt einer langen Liste. Karten: `kPaper`, Rahmen
+`kLine`, Radius 16, Schatten wie FR-002. Über jeder Karte ein Gruppentitel: Mono 11,
+Großbuchstaben, Buchstabenabstand 1,3, `kMuted`; rechts optional ein Zusatz in `kPetrol`.
+
+**Reihenfolge**
+
+1. **Kopf** ohne Karte:
+   - Eyebrow „MEISTER-TRAINER · IHK-PRÜFUNGSVORBEREITUNG“
+   - Titel „MEISTER FÜR KRAFTVERKEHR“ (Display 28–46)
+   - Untertitel „**3.666 Wissensfragen** · 4 Basisqualifikationen + 1 Fachrichtung ·
+     **121** Original-IHK-Prüfungen“ (**ohne** „Fahrschul-Prinzip“)
+2. **Lernstand-Karte (Hero)**
+   - Karte:
+     - Verlauf wie FR-002 B, Radius 20, Schatten `0 22 44 -22 rgba(8,79,88,.75)`
+     - zwei weiche Lichtkreise: Weiß 16 % oben rechts, Amber 30 % unten links
+   - **Ring** 120 dp (Handy 96):
+     - Spur Weiß 16 %, Strich 10, runde Enden
+     - Füllung = Prüfungsreife (`overallReife`)
+     - Strichfarbe nach Ampel: rot #FF9B85, gelb #FFD28F, grün #8FE3AA; ohne Fortschritt Weiß 50 %
+     - In der Mitte „15 %“ (Display 31/25) und „PRÜFUNGSREIF“ (Mono 9)
+   - **Ampel**:
+     - Punkt 10 dp: rot #E8604A, gelb #F3B53C, grün #46C46F
+     - Schwellen: unter 35 % „Grundlagen aufbauen“, unter 70 % „auf gutem Weg“,
+       ab 70 % „prüfungsreif“, ohne gesehene Frage „noch nicht begonnen“
+     - Kicker „PRÜFUNGSREIFE · {Status}“. Ohne Fortschritt: „Willkommen – leg los“.
+   - Titel, Beschreibung und „Jetzt lernen →“ wie FR-002 B.2. Auf dem Handy volle Breite unter Ring und Titel.
+   - **Vier Kennzahlen**: gemeistert, gesehen, offen, **Tage in Folge**. Darunter der Fortschrittsbalken.
+   - **Lerntage** (neu):
+     - Speicher: Schlüssel `kvm_tage`, `{ "<Tagesindex>": Anzahl }`
+     - Tagesindex = `floor((jetzt − Zeitzonenversatz) / 86 400 000)`
+     - Jede beantwortete Frage zählt +1 (in `recordResult`). Einträge älter als 120 Tage entfallen.
+     - Serie: aufeinanderfolgende Tage bis heute. Ist heute noch nichts gelernt, zählt bis gestern.
+3. **„DEIN LERNWEG“** – die fünf Fächer als Stationen.
+   - Zwischen den Fachnummern (Kreis 40 dp in Fachfarbe, Ring 4 dp in Kartenfarbe)
+     läuft eine gestrichelte senkrechte Linie (`kLineStrong`, 6 an / 5 aus).
+   - Je Station:
+     - Name (w600 14,5)
+     - Zeile „● {Ampel-Text} · 107/662 gemeistert“, bei Kraftverkehr zusätzlich „FACHRICHTUNG“-Tag
+     - Minibalken 5 dp in der Fachfarbe
+     - rechts „24 %“ (Mono 14 w700)
+   - Gewählte Station: Fläche `kPetrolSoft`, Rahmen `kPetrolLine`. Der Schalter für die
+     Fachrichtung bleibt (FR-001).
+   - Hinweis: Im Web waren die Minibalken bisher unsichtbar (fehlendes `display:block`).
+     In der App prüfen, dass sie sichtbar sind.
+4. **„ÜBEN“** (Zusatz: „Im gewählten Fach · Recht – alle Bereiche“)
+   - Themenbereich-Chips. Auf dem Handy **eine waagerecht wischbare Zeile** statt mehrerer Reihen.
+   - Moduskarten mit Symbolkachel 40 dp links. Kachelfarben:
+     - Training `kPetrol`, Buch-Symbol
+     - Schwächen `kAmber`, Zielscheibe
+     - Simulation #33474E, Stoppuhr
+     - Alle Themen `kPetrolDeep`, Mischen
+     - Fallaufgaben `kPlum`, Koffer
+5. **„PRÜFEN“**
+   - Dunkle Karte:
+     - Verlauf 135° #1C3A42 → #10262C, Radius 18
+     - Amber-Lichtkreis oben rechts
+   - Inhalt:
+     - Symbolkachel 48 dp als Amber-Verlauf
+     - „ORIGINAL-IHK-PRÜFUNGEN“ (Display 21)
+     - Zeile „121 Prüfungen mit amtlichen Lösungshinweisen · Rechenweg und ausfüllbare Anlagen“
+   - Darunter, getrennt durch eine Linie in Weiß 12 %, **„ZULETZT GEÖFFNET“**:
+     - Fach · Datum und Fortschrittsbalken
+     - weißer Knopf „Weiter bei Aufgabe N →“
+   - Speicher: Schlüssel `kvm_letzte_pruefung` = `{id, nr}`, gesetzt bei jedem Öffnen einer Aufgabe.
+6. **„ERFOLGE“** (Zusatz „5 von 10“)
+   - Medaillen 54 dp:
+     - verdient: radialer Goldverlauf #FBD88A → #E3A032 → #B96C06, Symbol weiß
+     - offen: `kSurface2` mit Rahmen, Symbol `kPh`, darunter ein Fortschrittsbalken
+   - Handy: waagerecht wischbar. Ab 560 dp: 5 Spalten.
+   - Erfolge werden **aus dem Lernstand berechnet**, nicht gespeichert:
+
+     | Titel | Bedingung |
+     |---|---|
+     | Erste Schritte | 10 Antworten (Summe `seen`) |
+     | Am Ball | 250 Antworten |
+     | Vielleser | 1.000 Fragen gesehen |
+     | Sattelfest | 100 Fragen gemeistert |
+     | Meisterlich | 1.000 Fragen gemeistert |
+     | Dranbleiben | 3 Lerntage in Folge |
+     | Wochenserie | 7 Lerntage in Folge |
+     | Fachprofi | ein Fach mit Reife ≥ 70 % |
+     | Prüfungsluft | erste Teilaufgabe einer Original-Prüfung bewertet |
+     | Bestanden | ≥ 50 selbst vergebene Punkte in einer Original-Prüfung |
+7. **„NACHSCHLAGEN“**: Formelbuch, Kostenwesen, ADR als Kacheln (Tablet 3 Spalten).
+8. **„STATISTIK“** (rechts „Zurücksetzen“)
+   - Radar und Legende wie bisher
+   - **Aktivität · 14 Tage**:
+     - 14 Säulen aus `kvm_tage`, Höhe relativ zum Maximum (mindestens 6 dp)
+     - leere Tage als 3-dp-Strich
+     - gefüllte Säulen als Verlauf `kPetrol` → `kPetrolDeep`
+     - Wochentag-Kürzel darunter; heute in `kPetrol` fett
+     - rechts im Titel „272 Antworten · 9 Tage“
+9. **„KONTO & DARSTELLUNG“**: Anmelden/Sichern und die Darstellungswahl (FR-002 I).
+
+**Abnahme**
+- Handy 390 × 844: Ring, Ampel, „Jetzt lernen“ und die Kennzahlen sind ohne Scrollen sichtbar.
+- Kraftverkehr abwählen ändert Ring und Lernweg.
+- Nach einer beantworteten Frage steht „Tage in Folge“ auf 1 und die heutige Säule ist gefüllt.
+- Nach dem Öffnen einer Prüfung erscheint „Zuletzt geöffnet“.
+
+---
+
+### Datenvertrag
+- `cases.json`: keine neuen Felder. `tab`/`tabL` sind aus FR-001 bekannt. Neu sind nur
+  weitere Einträge.
+- **Neue lokale Schlüssel:** `kvm_open_calc`, `kvm_tage`, `kvm_letzte_pruefung`.
+  Sie sind nur lokal und laufen, wie `kvm_open_answers`, nicht über den Cloud-Sync.
+
+### Bewusst NICHT übernehmen (nur Web)
+- `position: sticky` / `overflow: clip`. In Flutter übernimmt das ein Sliver-Kopf.
+- `:has()`-Regel für das Dock. In Flutter über `MediaQuery.viewInsets.bottom > 0`
+  bzw. den Fokus lösen.
+
+### Referenz Web-Implementierung (`index.html` auf `claude/ui-design-improvement-my0f66`)
+
+**CSS**
+- Startseite: Kommentar „Startseite“ Z. 823
+- Texte: „Aufgabentexte: Tabellen …“ Z. 973
+- Aufgabenblatt Z. 1005
+- Rechenweg Z. 1123
+
+**JS**
+- Renderer:
+  - `rtIstRechnung` Z. 2327
+  - `rtKopf` Z. 2347
+  - `rtTabelle` Z. 2362
+  - `rtHTML` Z. 2385
+- Rechenweg:
+  - `rwTokens` Z. 2447
+  - `rwRechne` Z. 2473
+  - `rwZeileText` Z. 2525
+  - `rwHTML` Z. 2558
+  - `rwBinden` Z. 2571
+- Bewertung: `scoreHTML` Z. 2658
+- Aufgabenblatt:
+  - `blStepperHTML` Z. 2945
+  - `blFortschrittHTML` Z. 2963
+  - `blLoesungHTML` Z. 3032
+  - `blRechenteil` Z. 3070
+  - `blTeilHTML` Z. 3076
+  - `renderBlatt` Z. 3115
+- Startseite:
+  - `tagZaehlen` Z. 1592
+  - `renderFachGroup` Z. 1760
+  - `renderHero` Z. 1788
+  - `erfolgeListe` Z. 1816
+  - `renderAktiv` Z. 1857
+  - `renderPruefLast` Z. 1874
+- Prüfungsliste: `items.forEach` in `render()` Z. 5373
+
+Zeilennummern: Stand dieses Commits.
