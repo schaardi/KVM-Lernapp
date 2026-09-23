@@ -388,6 +388,12 @@ LOESUNG = {
      "notwendige Reduzierung der Standardabweichung von s ≤ 1 g.",
 }
 FRAGE = {
+    # Das Liter-Zeichen „l“ las die OCR als senkrechten Strich.
+    ('NT', 5, 'a'):
+     "Ein Benzintank aus Stahl mit einem Volumen von 60 l bei 20 °C wird mit "
+     "59,5 l Benzin gefüllt.\n"
+     "Durch Sonneneinstrahlung kommt es zur Erhöhung der Temperatur. Berechnen "
+     "Sie, bei welcher Temperatur der Tank überläuft.",
     ('RE', 1, 'a'):
      "Begründen Sie, wer für die Fehlzeiten\n– in 2014 und\n– in 2015\n"
      "jeweils das Entgelt von Herrn Dürr sichert.",

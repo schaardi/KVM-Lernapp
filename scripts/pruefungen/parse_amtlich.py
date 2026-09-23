@@ -12,6 +12,9 @@ Ausgabe: exams.json – je Teilaufgabe zusätzlich loesung/vo/bewertung.
 """
 import re, json, sys, os
 
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import layout_struktur as LS
+
 # ── Regexe ────────────────────────────────────────────────────────────────
 PAGE   = re.compile(r'^=== Seite (\d+) ===\s*$')
 HEADER = re.compile(r'Handlungsspezifische Qualifikation.*?(?:Aufgabenstellung|Situationsaufgabe)\s*(\d+)', re.I)
@@ -40,8 +43,23 @@ def clean(line):
     # OCR-Aufzählungszeichen → Gedankenstrich
     l = re.sub(r'^\s*[=■]\s*_?\s*(?=[A-ZÄÖÜa-zäöü0-9])', '– ', l)
     l = re.sub(r'^\s*m\s+(?=[A-ZÄÖÜ])', '– ', l)
+    l = re.sub(r'^\s*(?:m|sw|u)\s*_\s*(?=\w)', '– ', l)        # "m _Nutzungszeit"
+    # weitere Lesarten des Aufzählungszeichens am Zeilenanfang ("sw 4 Lkws",
+    # "s 16 Gliederzüge", "w Durch …", "u Wichtig:") – nicht vor "=" (Formel)
+    l = re.sub(r'^\s*(?:sw|m|w|s|u)\s+(?=[A-Za-zÄÖÜäöü0-9„(](?!\s*=))', '– ', l)
+    l = ocr_striche(l)
+    # "13,2 /100 km": das l der Einheit l/100 km fehlt
+    l = re.sub(r'(\d)\s+/100\s?km', r'\1 l/100 km', l)
     l = re.sub(r'\s{2,}', ' ', l)
     return l.strip()
+
+def ocr_striche(l):
+    """Senkrechte Striche der OCR: meist ein gelesenes „l“ (Liter), sonst
+    Tabellenlinien oder Kastenränder. Beides darf nicht stehen bleiben – ein
+    „|“ trennt im gebauten Text Tabellenzellen (siehe layout_struktur.py)."""
+    l = re.sub(r'/\s?\|(?=[\s,.;)]|$)', '/l', l)              # "1,45 €/|", "0,90 €/ |)"
+    l = re.sub(r'(\d)\s?\|(?=\s*(?:[-–·:]\s*\d|Diesel|Benzin|$))', r'\1 l', l)  # "30 | - 1,30 €"
+    return re.sub(r'\s*\|\s*', ' ', l)
 
 def load(path):
     """→ Liste (seite, zeile), Seitenmarker und reine Seitenzahlen entfernt."""
@@ -54,19 +72,74 @@ def load(path):
         l = clean(raw)
         if re.fullmatch(r'\d{1,3}', l or ''):   # Seitenzahl-Zeile
             continue
-        out.append((page, l))
-    return out
+        # Aufzählungszeichen mitten in der Zeile: die OCR hat zwei Punkte
+        # zusammengezogen ("… vor: sw Laufleistung", "… Zurrmitteln m _Nachsicherung")
+        teile = re.split(r'\s(?=(?:m\s_|sw\s)\s*[A-ZÄÖÜ])', l)
+        # Zwei Zeilen eines Rechenschemas, die die OCR zusammengezogen hat
+        # ("… = 19.600 daN — Reibkraft 24.500 daN : 0,2 = 4.900 daN")
+        getrennt = []
+        for teil in teile:
+            m = re.search(r'\s(?=[—–]\s?[A-ZÄÖÜ][a-zäöü]+\s.*=)', teil)
+            if m and '=' in teil[:m.start()]:
+                getrennt += [teil[:m.start()], teil[m.end():]]
+            else:
+                getrennt.append(teil)
+        for teil in getrennt:
+            out.append((page, clean(teil) if teil is not l else teil))
+    # Datenlisten ("Anschaffungskosten (netto) 43.000 €") als Tabelle setzen
+    neu = LS.wertlisten([l for _, l in out], strukturzeile)
+    return [(p, n) for (p, _), n in zip(out, neu)]
+
+def strukturzeile(l):
+    """Zeilen, an denen der Parser Prüfungen, Aufgaben und Teile erkennt."""
+    return bool(PUNKTE.match(l) or AUFG.match(l) or LOES.match(l) or VO.match(l)
+                or HEADER.search(l) or SAISON.match(l) or DATUM_ANY.search(l)
+                or BEREICH.search(l) or BEREICH_BARE.match(l) or ANZAHL.search(l))
 
 def join_para(lines):
-    """Zeilen zu Absätzen; Silbentrennung am Zeilenende auflösen; Bullets trennen."""
+    """Zeilen zu Absätzen; Silbentrennung am Zeilenende auflösen; Bullets trennen.
+    Tabellenzeilen ("a | b") und Rechenzeilen ("x = …") stehen für sich."""
     out, buf = [], ''
+    zeile = punkt = False
     for l in lines:
         if not l:
             if buf: out.append(buf.strip()); buf = ''
+            zeile = punkt = False
             continue
+        if LS.PUNKTE_ANM.match(l) and zeile and not buf:
+            out[-1] = out[-1] + ' ' + l
+            continue
+        fortsetzung = bool(buf) and buf.rstrip()[-1:] not in '.:;!?' \
+            and not re.search(r'\(\s*\d+\s*Punkte?\s*\)$', buf) \
+            and l[:1].islower() and '|' not in l
+        # Umgebrochene Rechnung: an die Zeile davor hängen
+        if zeile and not buf and LS.rechen_fortsetzung(out[-1], l):
+            out[-1] = LS.zeile_sauber(out[-1] + ' ' + l)
+            continue
+        if buf and LS.rechen_fortsetzung(buf, l):
+            out.append(LS.zeile_sauber(buf + ' ' + l)); buf = ''
+            zeile = True
+            continue
+        if LS.ist_zeile(l) and not fortsetzung:
+            if buf: out.append(buf.strip()); buf = ''
+            out.append(LS.zeile_sauber(l))
+            zeile = True
+            continue
+        zeile = False
+        # Der Hinweis an den Korrektor ist ein eigener Absatz.
+        if re.match(r'Hinweise? für den Korrektor', l):
+            if buf: out.append(buf.strip())
+            buf = l; punkt = False; continue
         if l.startswith('– '):
             if buf: out.append(buf.strip()); buf = ''
-            out.append(l); continue
+            buf = l; punkt = True
+            continue
+        # Ein Aufzählungspunkt, den die OCR umbricht, geht weiter, wenn er
+        # mitten im Satz endet ("… und einer" / "Sattellast von 10t").
+        if punkt and buf and not (buf.endswith((',', '-')) or LS.SATZ_ENDE.search(buf)
+                                  or l[:1].islower()):
+            out.append(buf.strip()); buf = ''
+        punkt = punkt and bool(buf)
         if buf.endswith('-') and not buf.endswith('--'):
             buf = buf[:-1] + l
         else:

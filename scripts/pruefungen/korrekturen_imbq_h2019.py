@@ -8,6 +8,10 @@ Aufbau und Regeln: ``korrekturen_basis.py``.
 from korrekturen_basis import anwenden as _anwenden
 
 LOESUNG = {
+# Dreispaltige Tabelle, im Textlayer über die Spalten hinweg gelesen.
+('NT', 6, 'a'):
+ 'Gemeinsame Vorteile, z. B.:\n– kostenlose Energiequellen\n– dezentrale, autarke Energiegewinnung\n– emissionsarme Energiegewinnung\n– Reduzierung der CO₂-Konzentration\nSpezifische Nachteile, z. B.:\nSolarenergieanlagen | hohe Investitionskosten; Sonneneinstrahlung nötig; geringer Wirkungsgrad; Veränderung der Kulturlandschaft\nWindenergieanlagen | Stromtransport ggf. über lange Leitungswege; Überprägung der gewachsenen Kulturlandschaft; Unstetigkeit des Windes; Störung der Flora und Fauna, des Tourismus; Recycling\nWasserkraftanlagen | wartungsintensiv; hohe Investitionskosten; Veränderung der Landschaft; Störungen des Wasserhaushaltes',
+
     # MIKP, Aufgabe 4 b): "Stellen Sie in einem Kombinationsdiagramm
     # (Verbunddiagramm) mit zwei Größenachsen …"
     ('MI', 4, 'b'):

@@ -11,6 +11,10 @@ hängt. Beide Tabellen stehen jetzt als Anlage an ihrer Aufgabe
 from korrekturen_basis import anwenden as _anwenden
 
 LOESUNG = {
+# Der Lösungshinweis steht im Heft auf einer eigenen Seite hinter der letzten Aufgabe.
+('MI', 2, 'a'):
+ 'Lösungshinweis zu Aufgabe 2 (paarweiser Vergleich):\n | Preis | Volumen | Service | Reinigungsaufwand | laufende Kosten | Punkte | Gewichtungsfaktoren in %\nPreis | – | 0 | 0 | 2 | 0 | 2 | 10\nVolumen | 2 | – | 2 | 1 | 2 | 7 | 35\nService | 2 | 0 | – | 2 | 2 | 6 | 30\nReinigungsaufwand | 0 | 1 | 0 | – | 1 | 2 | 10\nlaufende Kosten | 2 | 0 | 0 | 1 | – | 3 | 15',
+
     # Im Aufgabenheft steht als Lösung nur der Verweis „siehe Lösungshinweis zu
     # Aufgabe 5“ – die eigentliche Lösung ist der ausgefüllte
     # Betriebsabrechnungsbogen auf der Lösungsseite. Er steht als

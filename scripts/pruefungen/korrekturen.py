@@ -32,59 +32,105 @@ import sys
 # Angewandt auf die Ausgangssituation und auf jede Teilaufgabe.
 # --------------------------------------------------------------------------- #
 TEXTE = {
+    # ---------------------------------------------------------------- 15.11.2022
+    'P-OK-20221115': [
+        # Die Daten der Anlage 3 gehören in die Ausgangslage der Aufgabe 3 –
+        # alle drei Teile rechnen damit (zuvor standen sie nur hinter 3 c).
+        ('Von der (stillgelegten) Bahnverbindung liegen folgende Daten vor (siehe hierzu Anlage 3).',
+         'Von der (stillgelegten) Bahnverbindung liegen folgende Daten vor (Anlage 3):\n'
+         'Anzahl Bahnhöfe | 4\n'
+         'Verkehrsaufkommen in der HVZ zwischen 05:30 Uhr und 09:29 Uhr | 520 Personen\n'
+         'Betriebsleistung (ohne Leerkilometer) | 7,67 Mio. Nutzplatzkilometer/Jahr\n'
+         'Strecke | 10 km\n'
+         'Für den Betrieb mit den Schnellbussen wird seitens des Aufgabenträgers Folgendes geplant:\n'
+         'Reisegeschwindigkeit | 30 km/h\n'
+         'Wendezeit an beiden Endpunkten | jeweils 4 min\n'
+         'Aufenthalt je Haltestelle (auch Endpunkte) | 1 min\n'
+         'Daten der Überland-Omnibusse aus dem unternehmenseigenen Fuhrpark:\n'
+         'Sitzplätze | 65\n'
+         'Kraftstoffverbrauch | 46 l/100 km\n'
+         'Nutzungszeit | 10 Jahre'),
+        ('gesamten externen CO;-Kosten', 'gesamten externen CO₂-Kosten'),
+        ('(Faktoren: 2,64 kg CO;/l Diesel und 4 Cent/kg CO)',
+         '(Faktoren: 2,64 kg CO₂/l Diesel und 4 Cent/kg CO₂)'),
+    ],
+    # ---------------------------------------------------------------- 20.11.2023
+    # Die Kennzeichnung des Aufbaus (EN 12642-XL) ist im Original eine kleine
+    # Tabelle; die OCR las sie Zeile für Zeile ohne Spalten.
+    'P-FT-20231120': [
+        ('EN 12642-XL P (27000 kg)\nVehicle body in compliance (Pis the value) with\n'
+         'Loading height up to 200 mm 800 mm max. height\n'
+         'Front wall 18000 daN 15000 daN 13500 daN\n'
+         'Rear wall —_ _ 8100 daN\n'
+         'Side walls _ 10800 daN 10800 daN\n'
+         'Number of laths per section\n'
+         'XL 0 aluminium / wood\n'
+         'Beverages 0 aluminium / wood\n'
+         'Daimler 9.5 (pallet stop necessary) 0 aluminium / wood',
+         'EN 12642-XL, P (27000 kg) – Vehicle body in compliance with EN 12642-XL (P is the value):\n'
+         'Loading height | up to 200 mm | 800 mm | max. height\n'
+         'Front wall | 18000 daN | 15000 daN | 13500 daN\n'
+         'Rear wall | – | – | 8100 daN\n'
+         'Side walls | – | 10800 daN | 10800 daN\n'
+         'Number of laths per section (aluminium / wood):\n'
+         'XL | 0\n'
+         'Beverages | 0\n'
+         'Daimler 9.5 (pallet stop necessary) | 0'),
+    ],
+    # ---------------------------------------------------------------- 07.05.2025
+    'P-FT-20250507': [
+        # Formel und Messprotokoll kamen als Zeichensalat an. Die Formel ist aus
+        # dem Lösungshinweis übernommen (die dort eingesetzten Werte ergeben
+        # 2.364 daN); das Messprotokoll ist ein Diagramm, das nicht als Bild
+        # vorliegt – die abzulesenden Werte stehen daher in der Ausgangslage.
+        ('(Winkel a = 70°, u = 0,4)', '(Winkel α = 70°, μ = 0,4)'),
+        ('– Formel Niederzurren:\nVDI: F,= #8. ut\np- sina\n'
+         'Im Rahmen der Unfalluntersuchung wurde folgendes Messprotokoll der Bremsverzögerung des Lkws erstellt.\n'
+         'o] Q Ki ag 7 r rl N max. Verzögerung E wo- ee e—\nN =\n'
+         'S i gs 0-4 “ 4 E en 4 Ä a N 7 Zeit in DD un vun u an m pt Sokunden oO = N Schwell- BremsHauer + zeit PH\n'
+         'Stillstand Fhz',
+         '– Formel Niederzurren (VDI 2700):\nFV = (cx,y − μ · cz) · FG ÷ (k · μ · sin α)'),
+        ('Hierzu nutzen Sie das Gutachten der Unfallaufnahme.',
+         'Hierzu nutzen Sie das Gutachten der Unfallaufnahme. Im Rahmen der Unfalluntersuchung '
+         'wurde ein Messprotokoll der Bremsverzögerung des Lkws erstellt (Diagramm: Verzögerung '
+         'über der Zeit in Sekunden, mit Schwellzeit, Bremsdauer und Stillstand des Fahrzeugs).\n'
+         'Hinweis: Das Diagramm liegt in dieser Fassung nicht als Bild vor. Abzulesen sind eine '
+         'maximale Verzögerung von 0,6 g und eine Einwirkdauer von ca. 0,4 Sekunden.'),
+        ('unter Berücksichtigung von g = 10,0 mis?.', 'unter Berücksichtigung von g = 10,0 m/s².'),
+    ],
     # ---------------------------------------------------------------- 20.11.2023
     # Die Kalkulationstabelle des Reisebusses zerfiel in zwei Blöcke: erst alle
     # zwanzig Beschriftungen, dann alle zwanzig Werte. So ist die Aufgabe nicht
     # lösbar; die Zuordnung steht jetzt als Tabellenanlage an der Aufgabe.
     'P-FT-20231120': [
-        ('Wiederbeschaffungskosten kalkulierter Restwert\nWert des Reifensatzes Nutzungszeit\nKalkulationszins\nFahrleistung pro Jahr\nVerbrauch Dieselkraftstoff (1,50 €/ I) AdBlue (0,90 €/ |)\nSchmierstoffe\nMaut\nmautpflichtige km pro Jahr\nLebensdauer eines Reifensatzes\nReparatur und Wartungskosten pro Jahr\nSteuern und Versicherungen pro Jahr\nNettolohn Fahrer je Monat\nLohnnebenkosten\nPersonaleinsatzfaktor\nSpesen pro Jahr und Fahrzeug\nGemeinkostenumlage gemäß Betriebsabrechnungsbogen (BAB) je Fahrzeug\nkalkuliertes Einzelwagnis je Fahrzeug\nHinweis: sw Die Entwertung ist mit 60 % zu berücksichtigen.\n380.000 € 95.000 € 3.200 €\n5 Jahre 4%\n115.000 km\n37 /100 km\n0,4 1/1100 km 3,50 €/1.000 km 17,3 Cent/km 92.000 km 130.000 km\n5.400 €\n7.500 €\n2.400 €\n25%\n1,3\n1.250 €\n7.000 € 1.500 €\n',
+        ('Wiederbeschaffungskosten kalkulierter Restwert\nWert des Reifensatzes Nutzungszeit\nKalkulationszins\nFahrleistung pro Jahr\nVerbrauch Dieselkraftstoff (1,50 €/ I) AdBlue (0,90 €/l)\nSchmierstoffe\nMaut\nmautpflichtige km pro Jahr\nLebensdauer eines Reifensatzes\nReparatur und Wartungskosten pro Jahr\nSteuern und Versicherungen pro Jahr\nNettolohn Fahrer je Monat\nLohnnebenkosten\nPersonaleinsatzfaktor\nSpesen pro Jahr und Fahrzeug\nGemeinkostenumlage gemäß Betriebsabrechnungsbogen (BAB) je Fahrzeug\nkalkuliertes Einzelwagnis je Fahrzeug\nHinweis:\n– Die Entwertung ist mit 60 % zu berücksichtigen.\n380.000 € 95.000 € 3.200 €\n5 Jahre 4%\n115.000 km\n37 l/100 km\n0,4 1/1100 km 3,50 €/1.000 km 17,3 Cent/km 92.000 km 130.000 km\n5.400 €\n7.500 €\n2.400 €\n25%\n1,3\n1.250 €\n7.000 € 1.500 €\n',
          'Die Kalkulationsdaten des Fahrzeugs stehen in der Tabelle zu dieser Aufgabe.\n'),
     ],
     # ---------------------------------------------------------------- 12.11.2025
     'P-OK-20251112': [
-        # Die Daten beider Buslinien liefen zu einem einzigen Absatz zusammen.
-        ('Linie 910:\n'
-         'Anzahl Busse: 2 Plätze je 15-m-Bus: 50 Laufleistung je Fahrzeug im Jahr: '
-         '67.000 km Anteil Leerkilometer: 3% Linie 920:\n'
-         'Plätze je 12-m- Bus: 45 durchschnittliche Wagenkilometer je Arbeitsstunde: '
-         '18 km/h Bruttoarbeitsstunden je Fahrdienst im Jahr: 2.200 h Urlaub im Jahr: '
-         '225 h Fehlzeiten: 10% erforderliches Fahrpersonal: 5,1 Mitarbeiter '
-         'Anteil Leerkilometer: 4.000 km',
-         'Linie 910:\n'
-         '– Anzahl Busse: 2\n'
-         '– Plätze je 15-m-Bus: 50\n'
-         '– Laufleistung je Fahrzeug im Jahr: 67.000 km\n'
-         '– Anteil Leerkilometer: 3 %\n'
-         'Linie 920:\n'
-         '– Plätze je 12-m-Bus: 45\n'
-         '– durchschnittliche Wagenkilometer je Arbeitsstunde: 18 km/h\n'
-         '– Bruttoarbeitsstunden je Fahrdienst im Jahr: 2.200 h\n'
-         '– Urlaub im Jahr: 225 h\n'
-         '– Fehlzeiten: 10 %\n'
-         '– erforderliches Fahrpersonal: 5,1 Mitarbeiter\n'
-         '– Anteil Leerkilometer: 4.000 km'),
+        # Die Daten beider Buslinien setzt der Parser als Tabelle; übrig bleibt
+        # ein Trennfehler der OCR.
+        ('Plätze je 12-m- Bus:', 'Plätze je 12-m-Bus:'),
     ],
     # ---------------------------------------------------------------- 11.11.2025
     'P-FT-20251111': [
         # Dieselben OCR-Reste in der Fahrzeugliste.
-        ('Der Fuhrpark umfasst folgende Fahrzeuge: m zehn Überlandbusse\nm zweiReisebusse\nm sieben Sattelkraftfahrzeuge\n– fünf Gliederzüge',
+        ('Der Fuhrpark umfasst folgende Fahrzeuge:\n– zehn Überlandbusse\n– zweiReisebusse\n– sieben Sattelkraftfahrzeuge\n– fünf Gliederzüge',
          'Der Fuhrpark umfasst folgende Fahrzeuge:\n– zehn Überlandbusse\n– zwei Reisebusse\n– sieben Sattelkraftfahrzeuge\n– fünf Gliederzüge'),
 
         # Aufzählungszeichen ("m") und ein Zeilenumbruch mitten in der Angabe.
-        ('– Sattelkraftfahrzeug bestehend aus\nm einer Zweiachs-Sattelzugmaschine mit einer zGM von 18 t, einem Leergewicht von 8 t und einer Sattellast von 10t\n– einem Dreiachs-Sattelauflieger (Curtainsider) mit einer zGM von 36 t, einem Leergewicht von 7 t,\neiner Aufliegelast von 10 t mit einer Länge von 13,60 m',
+        ('– Sattelkraftfahrzeug bestehend aus\n– einer Zweiachs-Sattelzugmaschine mit einer zGM von 18 t, einem Leergewicht von 8 t und einer Sattellast von 10t\n– einem Dreiachs-Sattelauflieger (Curtainsider) mit einer zGM von 36 t, einem Leergewicht von 7 t, einer Aufliegelast von 10 t mit einer Länge von 13,60 m',
          '– Sattelkraftfahrzeug bestehend aus\n  – einer Zweiachs-Sattelzugmaschine mit einer zGM von 18 t, einem Leergewicht von 8 t und einer Sattellast von 10 t\n  – einem Dreiachs-Sattelauflieger (Curtainsider) mit einer zGM von 36 t, einem Leergewicht von 7 t, einer Aufliegelast von 10 t und einer Länge von 13,60 m'),
         # zZGM gibt es nicht; beim Auflieger ist die zulässige Gesamtmasse gemeint.
         ('– Sattelauflieger nach DIN 12642 in Code-L-Ausführung',
          '– Sattelauflieger nach DIN EN 12642 in Code-L-Ausführung'),
-        ('verteilt auf 16 Europaletten mit einem\nGewicht von 1.000 kg/Palette',
-         'verteilt auf 16 Europaletten mit einem Gewicht von 1.000 kg/Palette'),
         # Das Diagramm der Anlage ist als Bild nicht lesbar; die OCR lieferte nur
         # Achsenbeschriftung und Striche. Statt des Trümmerfelds steht jetzt eine
         # Beschreibung, aus der sich die Aufgabe lösen lässt.
         # Aus dem Lastverteilungsplan hat die OCR nur Achsenfragmente gelesen
         # ("Ladefläche (m) 2m 4m … ARE | E | ET. u"). Die Zeichnung selbst hängt
         # als Bild an der Aufgabe (BILDER).
-        ('m _Nachfolgender Lastverteilungsplan liegt Ihnen vom Sattelauflieger vor:\nLadefläche (m) 2m 4m 6m 8m 10m 12m 28\nARE | E | ET. u\n10t\nst\nLast (t)',
+        ('– Nachfolgender Lastverteilungsplan liegt Ihnen vom Sattelauflieger vor:\nLadefläche (m) 2m 4m 6m 8m 10m 12m 28\nARE E ET. u\n10t\nst\nLast (t)',
          '– Nachfolgender Lastverteilungsplan des Sattelaufliegers liegt Ihnen vor (siehe Abbildung):'),
         ('eines AssessmentCenters (AC)', 'eines Assessment-Centers (AC)'),
     ],
@@ -95,14 +141,19 @@ TEXTE = {
 
         # Die Fahrzeugliste trägt OCR-Reste der Aufzählungszeichen ("m", "sw")
         # und zusammengelaufene Angaben ("4Llkws,zGM 12t").
-        ('Der Fuhrpark besteht aus folgenden Fahrzeugen: m 20 Transporter, z6M 3,5 t\nm 4Llkws,zGM 12t\nsw 40 Sattelkraftfahrzeuge, zGM 40t\nm 16 Gliederzüge, zGM 40 t als Kühlfahrzeuge',
+        ('Der Fuhrpark besteht aus folgenden Fahrzeugen:\n– 20 Transporter, z6M 3,5 t\n– 4Llkws,zGM 12t\n– 40 Sattelkraftfahrzeuge, zGM 40t\n– 16 Gliederzüge, zGM 40 t als Kühlfahrzeuge',
          'Der Fuhrpark besteht aus folgenden Fahrzeugen:\n– 20 Transporter, zGM 3,5 t\n– 4 Lkws, zGM 12 t\n– 40 Sattelkraftfahrzeuge, zGM 40 t\n– 16 Gliederzüge, zGM 40 t, als Kühlfahrzeuge'),
         ('nach DIN ISO EN 9001:2015 zertifiziert', 'nach DIN EN ISO 9001:2015 zertifiziert'),
         ('der NutzwertanaIyse durch.', 'der Nutzwertanalyse durch.'),
         ('auf Grundlage des $ 3 der', 'auf Grundlage des § 3 der'),
         # Die Kalkulationsdaten liefen als ein einziger Absatz in die Aufgabe;
         # die Werte hängen jetzt als Tabellenanlage daran (TABELLEN).
-        ('Nachfolgende Daten stehen Ihnen zur Verfügung:\nKaufpreis 270.000 € Jahreslaufleistung 96.000 km Nutzungszeit 10 Jahre Kraftstoffverbrauch 35 /100 km Kraftstoffkosten 1,20 €/| jährliche Einsatztage 240 Abschreibung wird zu 40 % den variablen Kosten zugerechnet Kapitalverzinsung 5% Reparaturkosten 3.600 €/Jahr fester Fahrerlohn einschließlich Nebenkosten 57.600 €/Jahr Unternehmerlohn 4.000 €/Jahr Unternehmerrisiko 3.000 €/Jahr Kfz-Steuer 2.800 €/Jahr Kfz-Versicherung 10.200 €/Jahr',
+        ('Nachfolgende Daten stehen Ihnen zur Verfügung:\nKaufpreis | 270.000 €\nJahreslaufleistung | 96.000 km\n'
+         'Nutzungszeit | 10 Jahre\nKraftstoffverbrauch | 35 l/100 km\nKraftstoffkosten | 1,20 €/l\n'
+         'jährliche Einsatztage | 240\nAbschreibung wird zu 40 % den variablen Kosten zugerechnet\n'
+         'Kapitalverzinsung | 5%\nReparaturkosten | 3.600 €/Jahr\n'
+         'fester Fahrerlohn einschließlich Nebenkosten | 57.600 €/Jahr\nUnternehmerlohn | 4.000 €/Jahr\n'
+         'Unternehmerrisiko | 3.000 €/Jahr\nKfz-Steuer | 2.800 €/Jahr\nKfz-Versicherung | 10.200 €/Jahr',
          'Die Kalkulationsdaten des Fahrzeugs stehen in der Tabelle zu dieser Aufgabe.'),
         ('Berechnen Sie jeweils auf zwei Stellen nach dem Komma gerundet\n\n'
          'die variablen Kosten in €/km,',
@@ -126,6 +177,14 @@ TEXTE = {
 ABSCHNEIDEN = {
     # Anlage 2 gehört zu Aufgabe 1 a) und wird dort als Tabelle eingesetzt.
     'P-OK-20250508-s2': '\nAnlage 2 zu Aufgabe 1 a)',
+    # Das leere Formular „Gründe für ein Mitarbeiterjahresgespräch“ (Anlage 2)
+    # hing als Zeichensalat an der letzten Teilaufgabe; es steht jetzt als
+    # ausfüllbare Tabelle bei 2 a) bzw. 5 a).
+    'P-OK-20221115-s5': '\nAnlage 2 zu Aufgabe 2 a)',
+    'P-FT-20250507-s13': '\nAnlage 2 zu Aufgabe 5 a)',
+    # Die Daten der Anlage 3 standen nur bei 3 c) – gebraucht werden sie in
+    # allen drei Teilen; sie stehen jetzt in der Ausgangslage der Aufgabe.
+    'P-OK-20221115-s8': '\nAnlage 3 zu Aufgabe 3',
 }
 
 # --------------------------------------------------------------------------- #
@@ -154,7 +213,45 @@ _LKW_KALKULATION = {
     ],
 }
 
+# Anlage 2 der Prüfungen vom 15.11.2022 (Aufgabe 2 a) und 7.5.2025
+# (Aufgabe 5 a): ein leeres Formular, drei Gründe je Sichtweise.
+_GESPRAECH_KOPF = ['', '… aus Sicht der Mitarbeiter', '… aus Sicht der Führungskräfte',
+                   '… aus Sicht des Unternehmens']
+_GESPRAECH = {
+    'titel': 'Anlage 2: Gründe für ein Mitarbeiterjahresgespräch …',
+    'kopf': _GESPRAECH_KOPF,
+    'zeilen': [['1.', '', '', ''], ['2.', '', '', ''], ['3.', '', '', '']],
+}
+
+
+def _gespraech_loesung(dritter_grund):
+    return {
+        'titel': 'Lösungshinweis: Gründe für ein Mitarbeiterjahresgespräch …, z. B.',
+        'kopf': _GESPRAECH_KOPF,
+        'zeilen': [
+            ['1.', 'Feedback des Mitarbeiters an den Vorgesetzten',
+             'Verbesserung der Arbeitsqualität', 'Wertschätzung der Mitarbeiter'],
+            ['2.', 'Austausch über gegenseitige Erwartungen',
+             'Aufgabenerfüllung für die Zukunft optimieren',
+             'Förderung der Motivation der Mitarbeiter'],
+            ['3.', dritter_grund, 'verstärkte Wahrnehmung der Führungskompetenz',
+             'Optimierung der Kommunikation'],
+        ],
+    }
+
+
+def _als_text(tab, einleitung):
+    """Eine Lösungstabelle zusätzlich als lesbarer Text (Zeilen "a | b | c")."""
+    zeilen = [' | '.join(tab['kopf'])] + [' | '.join(z) for z in tab['zeilen']]
+    return einleitung + '\n' + '\n'.join(zeilen)
+
+
+_GESPRAECH_L22 = _gespraech_loesung('Identifikation von etwaigem Entwicklungsbedarf')
+_GESPRAECH_L25 = _gespraech_loesung('Identifikation von evtl. Entwicklungsbedarf')
+
 TABELLEN = {
+    'P-OK-20221115-s3': _GESPRAECH,
+    'P-FT-20250507-s11': _GESPRAECH,
     'P-OK-20250508-s8': _LKW_KALKULATION,
     'P-OK-20250508-s9': _LKW_KALKULATION,
     'P-OK-20250508-s10': _LKW_KALKULATION,
@@ -216,6 +313,13 @@ TABELLEN = {
 # nicht als Tabelle abbilden. Sie werden als JPEG in der Aufgabe eingebettet
 # (data-URI) und in App und Web-App direkt angezeigt.
 # --------------------------------------------------------------------------- #
+# Lösungen, die im Original als ausgefüllte Anlage stehen – die Web-App
+# vergleicht sie Zelle für Zelle mit dem ausgefüllten Formular.
+TABELLEN_L = {
+    'P-OK-20221115-s3': _GESPRAECH_L22,
+    'P-FT-20250507-s11': _GESPRAECH_L25,
+}
+
 BILDER = {
     'P-FT-20251111-s3': 'P-FT-20251111-s3.jpg',  # Lastverteilungsplan Sattelauflieger
 }
@@ -226,17 +330,92 @@ _ANLAGEN = os.path.join(os.path.dirname(__file__), 'anlagen')
 # Korrekturen an den Musterlösungen: {Teilaufgaben-ID: [(alt, neu), ...]}
 # --------------------------------------------------------------------------- #
 LOESUNGEN = {
-    # Bezugsgröße war falsch: 281.400 € ÷ 6.499.000 Platz-km sind 4,33 Cent je
-    # Nutzplatzkilometer – nicht je 1.000 Nutzplatzkilometer.
-    'P-OK-20251112-s13': [
-        ('Bezogen auf die Leistungseinheit kostet Linie 910 rund 4,33 Cent und '
-         'Linie 920 rund 4,44 Cent je 1.000 Nutzplatzkilometer – Linie 910 arbeitet '
-         'damit geringfügig günstiger.',
-         'Bezogen auf die Leistungseinheit kostet Linie 910 rund 4,33 Cent je '
-         'Nutzplatzkilometer (281.400,00 € ÷ 6.499.000 Platz-km) und Linie 920 rund '
-         '4,44 Cent je Nutzplatzkilometer (318.190,28 € ÷ 7.162.852,50 Platz-km) – '
-         'Linie 910 arbeitet damit geringfügig günstiger.'),
+    # Die frühere Korrektur zu P-OK-20251112-s13 ("je 1.000 Nutzplatzkilometer")
+    # betraf die nicht amtliche Musterlösung; der amtliche Lösungshinweis
+    # enthält den Satz nicht mehr.
+    #
+    # Wortformeln: Die OCR las den Bruchstrich der Vorlage als "+". Die
+    # Zahlenrechnungen darunter korrigiert rechenzeichen.py; die Formeln in
+    # Worten lassen sich nicht nachrechnen und stehen deshalb hier.
+    # "46 l/100 km" kam als "461/100 km", das Liter-Zeichen als Strich, der
+    # verschwand; die Rechnung selbst geht auf (124.000 · 0,46 = 57.040;
+    # 57.040 · 2,64 · 0,04 · 10 = 60.234,24).
+    'P-OK-20221115-s8': [
+        ('124.000 km : 461/100 km = 57.040 l', '124.000 km · 46 l/100 km = 57.040 l'),
+        ('57.040 2,64 kg/l - 0,04 €/kg - 10 = 60.234,24 €',
+         '57.040 l · 2,64 kg/l · 0,04 €/kg · 10 = 60.234,24 €'),
     ],
+    'P-OK-20231121-s4': [
+        ('24 + 10 + 24 +2 = 60', '24 + 10 + 24 + 2 = 60'),
+        ('Umlauf + Takt: 60 ÷60', 'Umlauf ÷ Takt: 60 ÷ 60'),
+        ('Hinweis für den Korrektur:', 'Hinweis für den Korrektor:'),
+    ],
+    'P-OK-20231121-s8': [
+        ('= Transportkosten + Anzahl Aufträge', '= Transportkosten ÷ Anzahl Aufträge'),
+    ],
+    'P-OK-20231121-s9': [
+        ('Auslastungsgrad der Transportmittel\n– tatsächliche Betriebsstunden + mögliche Betriebsstunden',
+         'Auslastungsgrad der Transportmittel = tatsächliche Betriebsstunden ÷ mögliche Betriebsstunden'),
+        ('· 100 =80 %', '· 100 = 80 %'),
+    ],
+    'P-OK-20231121-s10': [
+        ('pro Woche + Zahl der Aufträge', 'pro Woche ÷ Zahl der Aufträge'),
+        ('‚Abweichung', 'Abweichung'),
+        ('Maßnahmen:\nFahrverhalten prüfen\nBehaviour-Based-Safety-Schulung (BBS-Einführung) '
+         'Ladungssicherungsmaßnahmen prüfen\nWarenumschlagsprozess prüfen',
+         'Maßnahmen:\n– Fahrverhalten prüfen\n– Behaviour-Based-Safety-Schulung (BBS-Einführung)\n'
+         '– Ladungssicherungsmaßnahmen prüfen\n– Warenumschlagsprozess prüfen'),
+    ],
+    'P-OK-20231121-s11': [
+        ('Transporte + Anzahl Transporte', 'Transporte ÷ Anzahl Transporte'),
+        ('· 100=95 %', '· 100 = 95 %'),
+        ('‚Abweichung', 'Abweichung'),
+    ],
+}
+
+
+# --------------------------------------------------------------------------- #
+# Musterlösungen, die neu gesetzt werden: {Teilaufgaben-ID: Text}
+# Die OCR las die dreispaltige Lösungstabelle zeilenweise über alle Spalten
+# hinweg; der Text war nicht mehr zuzuordnen.
+# --------------------------------------------------------------------------- #
+LOESUNG_TEXT = {
+    'P-OK-20221115-s3': _als_text(_GESPRAECH_L22, 'Gründe für ein Mitarbeiterjahresgespräch, z. B.:'),
+    'P-FT-20250507-s11': _als_text(_GESPRAECH_L25, 'Gründe für ein Mitarbeiterjahresgespräch, z. B.:'),
+    # Formel und Werte der Mindestvorspannkraft (VDI 2700) statt OCR-Resten
+    'P-FT-20250507-s3':
+        'Formel Niederzurren (VDI 2700):\n'
+        'FV = (cx,y − μ · cz) · FG ÷ (k · μ · sin α)\n'
+        'Einzusetzende Zahlenwerte: FG = 4.000 daN; k = 1,8; cx,y = 0,8; μ = 0,4; '
+        'cz = 1,0; sin α = 0,94\n'
+        'FV = 2.364 daN (4 Punkte)\n'
+        'Hinweis für den Korrektor: Die Berechnung mit k = 1,5 ist ebenfalls zu bewerten.\n'
+        'Beurteilung: Die durch den Fahrer des Lkws genutzten Zurrgurte ermöglichen keine '
+        'ausreichende Sicherung der Ladung. (2 Punkte)',
+    # Lagerkennzahlen und Andler-Formel: Brüche und Wurzel waren in der OCR
+    # zerfallen (Seite 179). In der Vorlage steht "360 Stück ÷ 10" – gemeint
+    # sind 360 Tage.
+    'P-FT-20251111-s7':
+        'durchschnittlicher Lagerbestand = (Anfangsbestand + Endbestand) ÷ 2\n'
+        'durchschnittlicher Lagerbestand: (820 Stück + 580 Stück) ÷ 2 = 700 Stück\n'
+        'Jahresverbrauch: 820 Stück + (6 · 710 Stück) + (4 · 625 Stück) − 580 Stück = 7.000 Stück\n'
+        'Lagerumschlagshäufigkeit: 7.000 Stück ÷ 700 Stück = 10\n'
+        'durchschnittliche Lagerdauer: 360 Tage ÷ 10 = 36 Tage',
+    'P-FT-20251111-s8':
+        'xopt = √(2 · kB · xges ÷ (EP · iL))\n'
+        'xopt = √(2 · 7.000 Stück · 120 ÷ (12 · 0,14)) = 1.000 Stück',
+    # Die Grafik unter dem Korrektor-Hinweis (Verleiher, Entleiher,
+    # Leiharbeitnehmer) kam als unlesbarer Zeichensalat an; der Hinweis sagt
+    # selbst, dass sie nicht gefordert ist.
+    'P-FT-20230515-s12':
+        'Z.B.:\n'
+        '– Der Arbeitnehmer schließt einen Arbeitsvertrag mit dem Personaldienstleister ab.\n'
+        '– Der Personaldienstleister schließt einen Arbeitnehmerüberlassungsvertrag mit dem '
+        'Auftraggeber ab.\n'
+        '– Der Leiharbeitnehmer hat das Verpflichtungsverhältnis aus dem Arbeits- und '
+        'Arbeitnehmerüberlassungsvertrag gegenüber dem Auftraggeber.\n'
+        'Hinweis für den Korrektor: Eine grafische Darstellung ist vom Prüfungsteilnehmer '
+        'nicht gefordert.',
 }
 
 
