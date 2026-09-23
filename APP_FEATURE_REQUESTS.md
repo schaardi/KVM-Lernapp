@@ -1116,39 +1116,39 @@ Großbuchstaben, Buchstabenabstand 1,3, `kMuted`; rechts optional ein Zusatz in 
 ### Referenz Web-Implementierung (`index.html` auf `claude/ui-design-improvement-my0f66`)
 
 **CSS**
-- Startseite: Kommentar „Startseite“ Z. 913
-- Texte: „Aufgabentexte: Tabellen …“ Z. 1262
-- Aufgabenblatt Z. 1294
-- Rechenweg Z. 1423
+- Startseite: Kommentar „Startseite“ Z. 915
+- Texte: „Aufgabentexte: Tabellen …“ Z. 1264
+- Aufgabenblatt Z. 1296
+- Rechenweg Z. 1425
 
 **JS**
 - Renderer:
-  - `rtIstRechnung` Z. 2816
-  - `rtKopf` Z. 2836
-  - `rtTabelle` Z. 2851
-  - `rtHTML` Z. 2874
+  - `rtIstRechnung` Z. 2850
+  - `rtKopf` Z. 2870
+  - `rtTabelle` Z. 2885
+  - `rtHTML` Z. 2908
 - Rechenweg:
-  - `rwTokens` Z. 2940
-  - `rwRechne` Z. 3021
-  - `rwZeileText` Z. 3059
-  - `rwHTML` Z. 3092
-  - `rwBinden` Z. 3105
-- Bewertung: `scoreHTML` Z. 3192
+  - `rwTokens` Z. 2974
+  - `rwRechne` Z. 3055
+  - `rwZeileText` Z. 3093
+  - `rwHTML` Z. 3126
+  - `rwBinden` Z. 3139
+- Bewertung: `scoreHTML` Z. 3226
 - Aufgabenblatt:
-  - `blStepperHTML` Z. 3481
-  - `blFortschrittHTML` Z. 3499
-  - `blLoesungHTML` Z. 3568
-  - `blRechenteil` Z. 3606
-  - `blTeilHTML` Z. 3612
-  - `renderBlatt` Z. 3651
+  - `blStepperHTML` Z. 3515
+  - `blFortschrittHTML` Z. 3533
+  - `blLoesungHTML` Z. 3602
+  - `blRechenteil` Z. 3934
+  - `blTeilHTML` Z. 3941
+  - `renderBlatt` Z. 3981
 - Startseite:
-  - `tagZaehlen` Z. 1984
-  - `renderFachGroup` Z. 2152
-  - `renderHero` Z. 2180
-  - `erfolgeListe` Z. 2300
-  - `renderAktiv` Z. 2341
-  - `renderPruefLast` Z. 2358
-- Prüfungsliste: `items.forEach` in `render()` Z. 7351
+  - `tagZaehlen` Z. 2017
+  - `renderFachGroup` Z. 2185
+  - `renderHero` Z. 2213
+  - `erfolgeListe` Z. 2333
+  - `renderAktiv` Z. 2374
+  - `renderPruefLast` Z. 2391
+- Prüfungsliste: `items.forEach` in `render()` Z. 7684
 
 Zeilennummern: Stand dieses Commits.
 
@@ -1296,18 +1296,18 @@ Serverseitig abgesichert:
 - Austreten führt zurück zum Beitrittsformular. Der Eintrag ist serverseitig gelöscht.
 
 ### Referenz Web-Implementierung (`index.html` auf `claude/ui-design-improvement-my0f66`)
-- **HTML:** `#vgKopf` / `#vgBox`, Z. 1607
-- **CSS:** Kommentar „Vergleich: freiwillige Wochenrangliste“, Z. 1105
+- **HTML:** `#vgKopf` / `#vgBox`, Z. 1640
+- **CSS:** Kommentar „Vergleich: freiwillige Wochenrangliste“, Z. 1107
 - **JS** im Cloud-Block:
 
   | Funktion | Zeile |
   |---|---|
-  | `isoWoche` | 4432 |
-  | `wocheAntworten` | 4439 |
-  | `vgWerte` | 4444 |
-  | `vgMeldenSpaeter` | 4449 |
-  | `vgLaden` | 4456 |
-  | `vgZeigen` | 4597 |
+  | `isoWoche` | 4765 |
+  | `wocheAntworten` | 4772 |
+  | `vgWerte` | 4777 |
+  | `vgMeldenSpaeter` | 4782 |
+  | `vgLaden` | 4789 |
+  | `vgZeigen` | 4930 |
 
 - **SQL:** `docs/supabase-rangliste.sql`. Lokal geprüft mit PGlite: Rechte,
   Rangfolge, Wochenwechsel, zwei Geräte, Namensregeln, Austritt, Kontolöschung.
@@ -1540,27 +1540,27 @@ Der Rechner bearbeitet keinen Text, sondern eine Liste von Zeichen:
 - „4.400“ im Ergebnisfeld zählt als 4400.
 
 ### Referenz Web-Implementierung (`index.html` auf `claude/ui-design-improvement-my0f66`)
-- **HTML:** `#mCalc`, Z. 1802
+- **HTML:** `#mCalc`, Z. 1835
 - **CSS:** Kommentar „Taschenrechner: Anzeige mit Verlauf …“, Z. 570
 - **JS:**
 
   | Funktion | Zeile |
   |---|---|
-  | `rwTokens` (Kern: Zeichen) | 2940 |
-  | `rwFunktion` (Winkel, Wurzel) | 2978 |
-  | `rwAuswerten` (Kern: Rechnen) | 2996 |
-  | `parseCalcNum` | 3310 |
-  | `calcDock` (Andocken, Ausweichen) | 5278 |
-  | `rkKern` (Zeichenliste → Kern) | 5342 |
-  | `rkAusdruck` (Anzeige, Text) | 5375 |
-  | `rkFunktion` | 5426 |
-  | `rkVorzeichen` | 5436 |
-  | `rkZeit` | 5454 |
-  | `rkGleich` | 5468 |
-  | `rkTaste` | 5482 |
-  | `rkZielVon` / `rkUebernehmen` | 5503 / 5526 |
-  | `FN_TASTEN` / `TASTEN` | 5547 |
-  | `rkZeigen` | 5557 |
+  | `rwTokens` (Kern: Zeichen) | 2974 |
+  | `rwFunktion` (Winkel, Wurzel) | 3012 |
+  | `rwAuswerten` (Kern: Rechnen) | 3030 |
+  | `parseCalcNum` | 3344 |
+  | `calcDock` (Andocken, Ausweichen) | 5611 |
+  | `rkKern` (Zeichenliste → Kern) | 5675 |
+  | `rkAusdruck` (Anzeige, Text) | 5708 |
+  | `rkFunktion` | 5759 |
+  | `rkVorzeichen` | 5769 |
+  | `rkZeit` | 5787 |
+  | `rkGleich` | 5801 |
+  | `rkTaste` | 5815 |
+  | `rkZielVon` / `rkUebernehmen` | 5836 / 5859 |
+  | `FN_TASTEN` / `TASTEN` | 5880 |
+  | `rkZeigen` | 5890 |
 
 Zeilennummern: Stand dieses Commits.
 
@@ -1672,12 +1672,12 @@ Fehler im Formular: „Bitte ein Datum wählen.“ / „Der Termin muss in der Z
 - „Entfernen“ führt zurück zu „Wann ist deine Prüfung?“.
 
 ### Referenz Web-Implementierung (`index.html` auf `claude/ui-design-improvement-my0f66`)
-- **HTML:** `#planBox` in `.hero-main`, Z. 1528
-- **CSS:** Kommentar „Prüfungstermin und Lernplan: eigener Block …“, Z. 965
+- **HTML:** `#planBox` in `.hero-main`, Z. 1561
+- **CSS:** Kommentar „Prüfungstermin und Lernplan: eigener Block …“, Z. 967
 - **JS:**
-  - Block-Kommentar „Prüfungstermin und Lernplan“, Z. 2195
-  - `planRechnen`, Z. 2210
-  - `renderPlan`, Z. 2226 (aufgerufen am Ende von `renderHero`)
+  - Block-Kommentar „Prüfungstermin und Lernplan“, Z. 2228
+  - `planRechnen`, Z. 2243
+  - `renderPlan`, Z. 2259 (aufgerufen am Ende von `renderHero`)
 
 Zeilennummern: Stand dieses Commits.
 
@@ -1779,17 +1779,17 @@ Unter den Knöpfen steht der letzte Durchgang: „Zuletzt unter Prüfungsbedingu
 
 ### Referenz Web-Implementierung (`index.html` auf `claude/ui-design-improvement-my0f66`)
 - **HTML:**
-  - Uhr und „Abgeben“ in `.bl-bar`, Z. 1731
-  - Band `#blEcht`, Z. 1743
-- **CSS:** Kommentar „Prüfung unter Echtbedingungen: Uhr und Abgabe …“, Z. 1405
+  - Uhr und „Abgeben“ in `.bl-bar`, Z. 1764
+  - Band `#blEcht`, Z. 1776
+- **CSS:** Kommentar „Prüfung unter Echtbedingungen: Uhr und Abgabe …“, Z. 1407
 - **JS:**
-  - Block-Kommentar „Prüfung unter Echtbedingungen“, Z. 3970
-  - `echtUhr`, Z. 4001
-  - `echtAbgeben`, Z. 4022
-  - `KVM_startEcht`, Z. 4036
-  - `KVM_echtInfo`, Z. 4050
-  - Ergebnis in `finishRound`, Z. 4230
-  - Prüfungsliste, Z. 7361
+  - Block-Kommentar „Prüfung unter Echtbedingungen“, Z. 4302
+  - `echtUhr`, Z. 4334
+  - `echtAbgeben`, Z. 4355
+  - `KVM_startEcht`, Z. 4369
+  - `KVM_echtInfo`, Z. 4383
+  - Ergebnis in `finishRound`, Z. 4563
+  - Prüfungsliste, Z. 7694
 
 Zeilennummern: Stand dieses Commits.
 
@@ -1871,15 +1871,15 @@ geht auch ohne Konto.
 
 ### Referenz Web-Implementierung (`index.html` auf `claude/ui-design-improvement-my0f66`)
 - **HTML:**
-  - Knopf `#qMelden`, Z. 1686
-  - Dialog `#mMelden`, Z. 1819
+  - Knopf `#qMelden`, Z. 1719
+  - Dialog `#mMelden`, Z. 1852
 - **CSS:** Kommentar „Fehler melden: unauffälliger Knopf …“, Z. 541
 - **JS:**
-  - `meldenKnopfHTML` (Aufgabenblatt), Z. 3964
-  - Block „Fehler melden“ im Cloud-Teil, Z. 4362
-  - `mdOeffnen`, Z. 4373
-  - Senden, Z. 4399
-  - Bereitschaft, Z. 4413
+  - `meldenKnopfHTML` (Aufgabenblatt), Z. 4296
+  - Block „Fehler melden“ im Cloud-Teil, Z. 4695
+  - `mdOeffnen`, Z. 4706
+  - Senden, Z. 4732
+  - Bereitschaft, Z. 4746
 - **SQL:** `docs/supabase-meldungen.sql`
 
 Zeilennummern: Stand dieses Commits.
@@ -1961,11 +1961,11 @@ stattdessen **„In den Kalender“**:
 - Neustart des Geräts: Die geplanten Erinnerungen bleiben.
 
 ### Referenz Web-Implementierung (`index.html` auf `claude/ui-design-improvement-my0f66`)
-- **HTML:** Zeile „Lern-Erinnerung“ (`#erinnZeit`, `#erinnIcs`), Z. 1664
+- **HTML:** Zeile „Lern-Erinnerung“ (`#erinnZeit`, `#erinnIcs`), Z. 1697
 - **CSS:** Kommentar „Lern-Erinnerung: Uhrzeit + Kalendereintrag“, Z. 435
 - **JS:**
-  - Block-Kommentar „Lern-Erinnerung (Web)“, Z. 3913
-  - `erIcs`, Z. 3926
+  - Block-Kommentar „Lern-Erinnerung (Web)“, Z. 4245
+  - `erIcs`, Z. 4258
 
 Zeilennummern: Stand dieses Commits.
 
@@ -2070,15 +2070,15 @@ Deutschland. Dafür gibt es eine private Rangliste je Gruppe.
 - Verlassen → zurück zu „Alle“, der Reiter ist weg.
 
 ### Referenz Web-Implementierung (`index.html` auf `claude/ui-design-improvement-my0f66`)
-- **Zustand und Einladungslink** im Vergleichsblock, Z. 4422
-- **CSS:** Kommentar „Lerngruppen: Reiter über der Liste …“, Z. 1145
+- **Zustand und Einladungslink** im Vergleichsblock, Z. 4755
+- **CSS:** Kommentar „Lerngruppen: Reiter über der Liste …“, Z. 1147
 - **JS:**
-  - Block-Kommentar „Lerngruppen: private Rangliste per Code“, Z. 4471
-  - `grLaden`, Z. 4475
-  - `grTabsHTML`, Z. 4500
-  - `grFormHTML`, Z. 4509
-  - `grAnsichtHTML`, Z. 4521
-  - `grBinden`, Z. 4546
+  - Block-Kommentar „Lerngruppen: private Rangliste per Code“, Z. 4804
+  - `grLaden`, Z. 4808
+  - `grTabsHTML`, Z. 4833
+  - `grFormHTML`, Z. 4842
+  - `grAnsichtHTML`, Z. 4854
+  - `grBinden`, Z. 4879
 - **SQL:** `docs/supabase-gruppen.sql`
 
 Zeilennummern: Stand dieses Commits.
@@ -2184,16 +2184,16 @@ Ergänzungsprüfung. Geübt wird hier das freie Antworten in ganzen Sätzen:
 
 ### Referenz Web-Implementierung (`index.html` auf `claude/ui-design-improvement-my0f66`)
 - **HTML:**
-  - Karte `#btnOral`, Z. 1570
-  - Bildschirm `#scrOral`, Z. 1751
-- **CSS:** Kommentar „Mündlich üben: Frage vorlesen …“, Z. 1034
+  - Karte `#btnOral`, Z. 1603
+  - Bildschirm `#scrOral`, Z. 1784
+- **CSS:** Kommentar „Mündlich üben: Frage vorlesen …“, Z. 1036
 - **JS:**
-  - Block-Kommentar „Mündlich üben (Fachgespräch)“, Z. 3786
-  - `orGeeignet`, Z. 3797
-  - `orBegriffe`, Z. 3808
-  - `orHoeren`, Z. 3824
-  - `startOral`, Z. 3839
-  - `orZeigen`, Z. 3860
+  - Block-Kommentar „Mündlich üben (Fachgespräch)“, Z. 4118
+  - `orGeeignet`, Z. 4129
+  - `orBegriffe`, Z. 4140
+  - `orHoeren`, Z. 4156
+  - `startOral`, Z. 4171
+  - `orZeigen`, Z. 4192
 
 Zeilennummern: Stand dieses Commits.
 
@@ -2340,24 +2340,158 @@ Fehlt das Skript, sieht die Rangliste aus wie bisher.
 
 ### Referenz Web-Implementierung (`index.html` auf `claude/ui-design-improvement-my0f66`)
 - **HTML:**
-  - Kachel `#btnAdmin` (nur Web), Z. 1649
-  - Dialog `#mLeute`, Z. 1844
-  - Dialog `#mAdmin` (nur Web), Z. 1853
+  - Kachel `#btnAdmin` (nur Web), Z. 1682
+  - Dialog `#mLeute`, Z. 1877
+  - Dialog `#mAdmin` (nur Web), Z. 1886
 - **CSS:**
-  - Kommentar „Namen in Rangliste, Gruppe und Freundesliste öffnen das Profil“, Z. 1164
-  - Kommentar „Lernende: Nutzerübersicht, Freunde und Profile …“, Z. 1170
+  - Kommentar „Namen in Rangliste, Gruppe und Freundesliste öffnen das Profil“, Z. 1166
+  - Kommentar „Lernende: Nutzerübersicht, Freunde und Profile …“, Z. 1172
 - **JS:**
-  - Block-Kommentar „Lernende: Nutzerübersicht, Freunde und Profile“, Z. 4692
-  - `ltStandLaden`, Z. 4700
-  - `profilDetails`, Z. 4712
-  - `frAnsichtHTML`, Z. 4739
-  - `avatarHTML`, Z. 4764
-  - `lernstandHTML`, Z. 4773
-  - `ltProfilHTML`, Z. 4859
-  - `ltZeigen`, Z. 4877
-  - `frAktion`, Z. 4924
-  - `ltOeffnen`, Z. 4952
-  - Block-Kommentar „Verwaltung (nur Admins)“ (nur Web), Z. 4967
+  - Block-Kommentar „Lernende: Nutzerübersicht, Freunde und Profile“, Z. 5025
+  - `ltStandLaden`, Z. 5033
+  - `profilDetails`, Z. 5045
+  - `frAnsichtHTML`, Z. 5072
+  - `avatarHTML`, Z. 5097
+  - `lernstandHTML`, Z. 5106
+  - `ltProfilHTML`, Z. 5192
+  - `ltZeigen`, Z. 5210
+  - `frAktion`, Z. 5257
+  - `ltOeffnen`, Z. 5285
+  - Block-Kommentar „Verwaltung (nur Admins)“ (nur Web), Z. 5300
 - **SQL:** `docs/supabase-profile.sql`
+
+Zeilennummern: Stand dieses Commits.
+
+---
+
+## FR-013 · Zeichenaufgaben: Skizze je Teilaufgabe
+
+**Status App-Session:** ⏳ offen
+**Web umgesetzt:** ✅ `claude/ui-design-improvement-my0f66` (Commit „Skizze für Zeichenaufgaben …“)
+**Anlass:** zwei Meldungen über „Fehler?“ zur Methoden-Prüfung vom 06.11.2024:
+- Aufgabe 2 a): „Erstellen Sie … ein Flussdiagramm.“
+- Aufgabe 4 b): „Stellen Sie … in einem Diagramm dar.“
+
+Beide Meldungen sagen dasselbe: Eine Zeichnung lässt sich im Textfeld nicht beantworten.
+
+### Ziel / Framing
+Rund 60 der gut 2000 Prüfungs-Teilaufgaben verlangen eine Zeichnung:
+- Flussdiagramm, Säulen-/Balken-/Liniendiagramm, Ursache-Wirkungs-Diagramm
+- Netz- und Balkenplan, Organigramm, Erzeugnisstruktur
+- v-t-Diagramm, Normalverteilung, Wahrscheinlichkeitsnetz, Schaltungsskizze
+
+In der Prüfung wird das auf Papier gezeichnet. Die App gibt dafür eine **Skizze je
+Teilaufgabe**:
+- Sie wird gespeichert und zählt als Antwort.
+- Nach dem Aufdecken steht sie direkt über der amtlichen Lösungsskizze (`bildL`), zum
+  Vergleichen.
+
+### Erkennung (wie Web `skZeichenteil`)
+Eine Teilaufgabe ist eine Zeichenaufgabe, wenn ihr Fragetext (`q`) eine Aufforderung zum
+Zeichnen enthält. Groß-/Kleinschreibung egal, `…` = beliebiger Text ohne Satzende:
+- „zeichnen Sie“ oder „skizzieren Sie“
+- „zeichnerisch“, „grafisch“ oder „graphisch“
+- „stellen/tragen Sie … in/im/als/auf … <Objekt>“
+- „erstellen/entwerfen/ergänzen/vervollständigen/vergleichen Sie … <Objekt>“
+- „kennzeichnen Sie … im/in … <Objekt>“
+
+<Objekt> ist eines von: Flussdiagramm, Programmablaufplan, Struktogramm, Diagramm (auch
+in Säulendiagramm usw.), Schaubild, Histogramm, Organigramm, Netzplan, Balkenplan, Gantt,
+Erzeugnisstruktur, Wahrscheinlichkeitsnetz, Wahrscheinlichkeitsgerade, Portfolio, Matrix,
+Kurve, Gerade, Normalverteilung.
+
+„Nennen Sie vier Diagrammarten“ oder „Beschreiben Sie Vorteile von Flussdiagrammen“ fallen
+damit heraus. Die genauen Regeln stehen in `SK_RE` / `SK_OBJ` (Web).
+
+### Verhalten im Aufgabenblatt
+- **Zeichenaufgabe:**
+  - Die Skizze ist gleich offen.
+  - Das Textfeld darunter heißt „Erläuterung · optional“, Platzhalter „Erläuterung zur
+    Skizze, z. B. gewählte Diagrammart …“.
+- **Jede andere Teilaufgabe:** neben „Rechenweg“ ein Knopf „Skizze“, der sie aufklappt.
+- **Kopf:** „Skizze · wie auf dem Lösungsblatt · wird gespeichert“
+- **Werkzeuge:**
+  - Stift (Freihand), Linie, Pfeil, Rechteck, Raute, Oval, Text, Radierer
+  - Farben Schwarz `#17272E`, Petrol `#0C6C78`, Rot `#C0472F`, Blau `#3f6fb5`
+  - Zurück (Rückgängig, bis 60 Schritte), Leeren (mit Nachfrage), Groß/Fertig (Vollbild)
+- **Raster:**
+  - Linien, Pfeile und Formen rasten auf ein halbes Karo ein (12,5 Einheiten).
+  - Formen sind leicht in ihrer Farbe gefüllt (10 %), mit 3 Einheiten Strichstärke.
+- **Text:**
+  - In eine Form tippen → Beschriftung, mittig und umbrochen.
+  - Auf einen Text tippen → ändern; leer = löschen.
+  - Sonst → freier Text an der Stelle.
+- **Format:**
+  - „Quer“ 1000 × 625 oder „Hoch“ 1000 × 1250
+  - „Hoch“ ist voreingestellt, wenn der Fragetext „Flussdiagramm“, „Programmablaufplan“
+    oder „Struktogramm“ nennt.
+- **Hintergrund:**
+  - Karopapier (Karo 25 Einheiten)
+  - oder „Auf der Anlage“, wenn die Teilaufgabe bzw. ihre Aufgabe eine Bild-Anlage hat
+  - „Auf der Anlage“ ist voreingestellt, wenn der Fragetext „Anlage“ nennt, etwa beim
+    Wahrscheinlichkeitsnetz.
+  - Die Fläche nimmt dann das Seitenverhältnis des Bildes an. Die Formatwahl ist dann
+    ausgeblendet.
+- **Handy:**
+  - Werkzeuge nur als Symbol, alle acht in einer Zeile
+  - Die Fläche nutzt fast die ganze Breite.
+  - Darunter ein breiter Knopf „Groß zeichnen“.
+  - Zeichnen per Finger; die Fläche scrollt dabei nicht.
+- Die Skizze zählt als Antwort: Die Karte ist „bearbeitet“, Leiste und Fortschritt zählen
+  sie.
+- **Nach dem Aufdecken:**
+  - Unter „Deine Antwort“ steht die Skizze als Bild; Antippen vergrößert sie.
+  - Darunter folgt die amtliche Lösung mit `bildL`.
+- **Prüfung unter Echtbedingungen:** Beim Start wird die Skizze mit den anderen Antworten
+  geleert.
+- **„Von Claude prüfen lassen“:** Die Skizze erscheint als Zeile „[Eigene Skizze: 1 Rechteck,
+  1 Raute, 1 Oval, 1 Pfeil … · Beschriftungen: „Beginn“, …]“.
+
+### Datenmodell (wie Web, Schlüssel `kvm_open_sketch`)
+`{ <Teilaufgaben-ID>: { v: 1, bg: 'karo'|'anlage', fmt: 'quer'|'hoch', els: [...] } }`,
+Koordinaten in einem festen Raum von 1000 Einheiten Breite.
+
+| `t` | Element | Felder |
+|---|---|---|
+| `p` | Freihand | `pts: [x0, y0, x1, y1, …]` (ganze Zahlen) |
+| `l` / `a` | Linie / Pfeil | `x1, y1, x2, y2` |
+| `r` / `d` / `o` | Rechteck / Raute / Oval | `x, y, w, h`, optional `txt` |
+| `x` | Text | `x, y` (linke Mitte), `txt` |
+
+Dazu je Element `c` ∈ `k|p|r|b` (Farbe) und `s` (Strichstärke, 3). Leere Skizzen werden
+nicht gespeichert.
+
+### Nachtrag zu FR-008 (Fehler melden)
+Offene Fragen im Quiz (Chat-Ansicht) blenden den Fragekopf aus, und mit ihm den Knopf
+„Fehler?“. Der Knopf steht jetzt in der Kopfzeile der Prüfer-Nachricht („PRÜFER … Fehler?“).
+Bitte in der App ebenso: Jede Frage muss sich melden lassen, auch offene.
+
+### Abnahme
+- Prüfung Methoden 06.11.2024, Aufgabe 2 a):
+  - Skizze offen, „Hoch“ voreingestellt
+  - Oval „Beginn“ → Pfeil → Rechteck → Raute zeichnen und beschriften
+  - nach Neustart unverändert
+  - „Lösung aufdecken“: eigene Skizze über der IHK-Lösungsskizze
+- Aufgabe 2 b) (Textaufgabe): Skizze zu, Knopf „Skizze“ klappt sie auf.
+- Wahrscheinlichkeitsnetz (NT 12.11.2014, Aufgabe mit „Anlage 1“): Hintergrund „Auf der
+  Anlage“, Seitenverhältnis wie das Bild; „Karo“ schaltet um.
+- Radierer entfernt einen Strich, „Zurück“ holt ihn wieder.
+- Prüfung unter Echtbedingungen starten → Skizzen der Prüfung sind leer.
+- Offene Frage im Quiz: Knopf „Fehler?“ in der Prüfer-Kopfzeile öffnet den Melde-Dialog mit
+  ihrer Nummer.
+
+### Referenz Web-Implementierung (`index.html` auf `claude/ui-design-improvement-my0f66`)
+- **CSS:** Kommentar „Skizze: Zeichenfläche für Zeichenaufgaben …“, Z. 1457
+- **JS:**
+  - Block-Kommentar „Skizze: Zeichenfläche für Zeichenaufgaben“, Z. 3639
+  - `skZeichenteil`, Z. 3674
+  - `skElement`, Z. 3698
+  - `skMalen`, Z. 3724
+  - `skTreffer`, Z. 3742
+  - `skHTML`, Z. 3763
+  - `skStart`, Z. 3801
+  - `skZeigenBinden`, Z. 3916
+  - Einbau in `blTeilHTML`, Z. 3961
+  - Melde-Knopf in `buildOpenChat`, Z. 2792
 
 Zeilennummern: Stand dieses Commits.
