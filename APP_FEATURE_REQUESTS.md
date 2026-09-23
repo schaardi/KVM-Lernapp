@@ -690,13 +690,17 @@ wird zeilenweise gelesen (`\n`); die Regeln greifen in dieser Reihenfolge:
    - **Einzelne Zeile mit einer Zelle > 60 Zeichen:** keine Tabelle, sondern Absatz mit
      „ · “ zwischen den Zellen.
    - **Zahlzelle:** `/^[−–+-]?\s?\(?\s?\d/` und höchstens 32 Zeichen.
-   - **Kopfzeile**, wenn alle folgenden Bedingungen gelten:
-     - Die Tabelle hat mindestens 2 Zeilen.
-     - Die erste Zeile hat mindestens 2 nichtleere Zellen, und keine davon ist eine Zahlzelle.
-     - Dazu eine von drei Bedingungen:
-       - Das Eckfeld ist leer und alle anderen Zellen sind gefüllt.
-       - Oder: mindestens 3 Spalten, und irgendeine spätere Zeile hat ab Spalte 2 eine Zahlzelle.
-       - Oder: 2 Spalten, mindestens 3 Zeilen, und alle Werte der zweiten Spalte sind Zahlzellen.
+   - **Kopfzeile.** Die Tabelle braucht mindestens 2 Zeilen, und die erste Zeile mindestens
+     2 nichtleere Zellen. Dann gilt die erste Regel, die zutrifft:
+     1. **Eckfeld leer**, alle anderen Zellen der ersten Zeile gefüllt → Kopf. Das gilt auch für
+        Zahlen und Skalen, z. B. „ | 2019 | 2020“ oder „ | ++ | + | 0 | −“.
+     2. Eine Zelle der ersten Zeile ist eine Zahlzelle → kein Kopf.
+     3. **Formular** (mindestens 3 Spalten): In allen späteren Zeilen ist nur die erste Spalte
+        beschriftet. Die übrigen Zellen sind leer oder Ankreuzkästchen `☐ □ ○ ◯` → Kopf.
+        Beispiele: Checkliste, Qualifikationsmatrix.
+     4. Mindestens 3 Spalten, und eine spätere Zeile hat ab Spalte 2 eine Zahlzelle → Kopf.
+     5. 2 Spalten, mindestens 3 Zeilen, und alle Werte der zweiten Spalte sind Zahlzellen → Kopf.
+   - **Ankreuzkästchen** (`☐` usw.) stehen mittig in `kMuted`.
    - **Spaltenausrichtung:** Eine Spalte ab der zweiten ist rechtsbündig, wenn mindestens
      60 % ihrer gefüllten Zellen Zahlzellen sind. Diese Zellen brechen nicht um. Ausnahme:
      2-spaltige Listen auf dem Handy dürfen umbrechen.
@@ -748,12 +752,15 @@ werden zur kleinen Marke ohne Klammern:
 | `P-OK-20231121-s10`, `a` | Rechenblock (2 Zeilen, Ergebnis „10%“ fett). Dann Beschriftung „Maßnahmen:“, Liste mit 4 Punkten und die Punkte-Marke. |
 | `P-BW-20230504-s0`, `a` | Liste, Absatz, Rechenblock. „BE = 3.000.000 € ÷ 75 · 85 − 3.000.000 €“ **ohne** Hervorhebung, „BE = 400.000 €“ **mit**. |
 | `P-OK-20221115-s3`, `a` | Tabelle mit leerem Eckfeld → Kopfzeile „… aus Sicht der Mitarbeiter \| …“. |
+| `P-OK-20211116-s0`, `a` | Checkliste als Formular mit Kopf „Prüfpunkt \| Ja \| Nein \| Nicht zutreffend \| Maßnahme \| Termin/verantwortlich“, 21 Zeilen. Danach „Datum:“ und „Unterschrift:“ als Beschriftungen. |
+| `P-OK-20251112-s12`, `a` | Bewertungsbogen mit Kopf „ \| ++ \| + \| 0 \| − \| − −“ und mittigen ☐. |
+| `P-OK-20260507-s6`, `a` | Kostenvergleich mit Kopf „Kosten pro Jahr \| Diesel-Lkw \| Batterie-Lkw“, 6 Zeilen, Rechnungen in den Zellen. |
 
 **Abnahme**
 - In keinem Prüfungstext steht nach dem Rendern ein „ | “.
 - Ein Durchlauf über alle 121 Prüfungen verliert kein Zeichen außer den
-  Aufzählungszeichen. Web-Prüfung: 5.003 Texte, 169 Tabellen, 787 Rechenblöcke,
-  1.800 Listen, 0 Verluste.
+  Aufzählungszeichen. Web-Prüfung: 5.003 Texte, 169 Tabellen (30 mit Kopf),
+  732 Rechenblöcke, 1.799 Listen, 0 Verluste.
 
 ---
 
@@ -1108,36 +1115,36 @@ Großbuchstaben, Buchstabenabstand 1,3, `kMuted`; rechts optional ein Zusatz in 
 **CSS**
 - Startseite: Kommentar „Startseite“ Z. 823
 - Texte: „Aufgabentexte: Tabellen …“ Z. 973
-- Aufgabenblatt Z. 1004
-- Rechenweg Z. 1122
+- Aufgabenblatt Z. 1005
+- Rechenweg Z. 1123
 
 **JS**
 - Renderer:
-  - `rtIstRechnung` Z. 2326
-  - `rtKopf` Z. 2346
-  - `rtTabelle` Z. 2356
-  - `rtHTML` Z. 2377
+  - `rtIstRechnung` Z. 2327
+  - `rtKopf` Z. 2347
+  - `rtTabelle` Z. 2362
+  - `rtHTML` Z. 2385
 - Rechenweg:
-  - `rwTokens` Z. 2439
-  - `rwRechne` Z. 2465
-  - `rwZeileText` Z. 2517
-  - `rwHTML` Z. 2550
-  - `rwBinden` Z. 2563
-- Bewertung: `scoreHTML` Z. 2650
+  - `rwTokens` Z. 2447
+  - `rwRechne` Z. 2473
+  - `rwZeileText` Z. 2525
+  - `rwHTML` Z. 2558
+  - `rwBinden` Z. 2571
+- Bewertung: `scoreHTML` Z. 2658
 - Aufgabenblatt:
-  - `blStepperHTML` Z. 2937
-  - `blFortschrittHTML` Z. 2955
-  - `blLoesungHTML` Z. 3024
-  - `blRechenteil` Z. 3062
-  - `blTeilHTML` Z. 3068
-  - `renderBlatt` Z. 3107
+  - `blStepperHTML` Z. 2945
+  - `blFortschrittHTML` Z. 2963
+  - `blLoesungHTML` Z. 3032
+  - `blRechenteil` Z. 3070
+  - `blTeilHTML` Z. 3076
+  - `renderBlatt` Z. 3115
 - Startseite:
-  - `tagZaehlen` Z. 1591
-  - `renderFachGroup` Z. 1759
-  - `renderHero` Z. 1787
-  - `erfolgeListe` Z. 1815
-  - `renderAktiv` Z. 1856
-  - `renderPruefLast` Z. 1873
-- Prüfungsliste: `items.forEach` in `render()` Z. 5365
+  - `tagZaehlen` Z. 1592
+  - `renderFachGroup` Z. 1760
+  - `renderHero` Z. 1788
+  - `erfolgeListe` Z. 1816
+  - `renderAktiv` Z. 1857
+  - `renderPruefLast` Z. 1874
+- Prüfungsliste: `items.forEach` in `render()` Z. 5373
 
 Zeilennummern: Stand dieses Commits.
