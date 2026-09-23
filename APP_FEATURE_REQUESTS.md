@@ -799,6 +799,9 @@ lassen sich antippen und einsetzen.
   - erst Einheitenbrüche wie `km/h`, `€/kWh`
   - dann Buchstabenfolgen einschließlich `€ $ °`
 - Ergebnis nicht endlich oder Ausdruck unvollständig → ungültig. Anzeige „Rechnung prüfen“ in `kErrInk`.
+- **Erweitert in FR-005 A:** Prozent wie auf dem Tischrechner (`200 + 19 %` = 238), π,
+  sin/cos/tan in Grad samt Umkehrung, Zeit (`6 h 45 min`), Mal vor π/√/Funktion/`(` darf fehlen.
+  Rechner und Rechenweg teilen sich diesen Kern.
 
 **Referenzwerte** (müssen exakt so herauskommen, Web-Stand):
 
@@ -1113,39 +1116,39 @@ Großbuchstaben, Buchstabenabstand 1,3, `kMuted`; rechts optional ein Zusatz in 
 ### Referenz Web-Implementierung (`index.html` auf `claude/ui-design-improvement-my0f66`)
 
 **CSS**
-- Startseite: Kommentar „Startseite“ Z. 823
-- Texte: „Aufgabentexte: Tabellen …“ Z. 1015
-- Aufgabenblatt Z. 1047
-- Rechenweg Z. 1165
+- Startseite: Kommentar „Startseite“ Z. 875
+- Texte: „Aufgabentexte: Tabellen …“ Z. 1067
+- Aufgabenblatt Z. 1099
+- Rechenweg Z. 1217
 
 **JS**
 - Renderer:
-  - `rtIstRechnung` Z. 2375
-  - `rtKopf` Z. 2395
-  - `rtTabelle` Z. 2410
-  - `rtHTML` Z. 2433
+  - `rtIstRechnung` Z. 2434
+  - `rtKopf` Z. 2454
+  - `rtTabelle` Z. 2469
+  - `rtHTML` Z. 2492
 - Rechenweg:
-  - `rwTokens` Z. 2495
-  - `rwRechne` Z. 2521
-  - `rwZeileText` Z. 2573
-  - `rwHTML` Z. 2606
-  - `rwBinden` Z. 2619
-- Bewertung: `scoreHTML` Z. 2706
+  - `rwTokens` Z. 2558
+  - `rwRechne` Z. 2639
+  - `rwZeileText` Z. 2677
+  - `rwHTML` Z. 2710
+  - `rwBinden` Z. 2723
+- Bewertung: `scoreHTML` Z. 2810
 - Aufgabenblatt:
-  - `blStepperHTML` Z. 2993
-  - `blFortschrittHTML` Z. 3011
-  - `blLoesungHTML` Z. 3080
-  - `blRechenteil` Z. 3118
-  - `blTeilHTML` Z. 3124
-  - `renderBlatt` Z. 3163
+  - `blStepperHTML` Z. 3098
+  - `blFortschrittHTML` Z. 3116
+  - `blLoesungHTML` Z. 3185
+  - `blRechenteil` Z. 3223
+  - `blTeilHTML` Z. 3229
+  - `renderBlatt` Z. 3268
 - Startseite:
-  - `tagZaehlen` Z. 1639
-  - `renderFachGroup` Z. 1807
-  - `renderHero` Z. 1835
-  - `erfolgeListe` Z. 1863
-  - `renderAktiv` Z. 1904
-  - `renderPruefLast` Z. 1921
-- Prüfungsliste: `items.forEach` in `render()` Z. 5563
+  - `tagZaehlen` Z. 1698
+  - `renderFachGroup` Z. 1866
+  - `renderHero` Z. 1894
+  - `erfolgeListe` Z. 1922
+  - `renderAktiv` Z. 1963
+  - `renderPruefLast` Z. 1980
+- Prüfungsliste: `items.forEach` in `render()` Z. 5939
 
 Zeilennummern: Stand dieses Commits.
 
@@ -1293,18 +1296,270 @@ Serverseitig abgesichert:
 - Austreten führt zurück zum Beitrittsformular. Der Eintrag ist serverseitig gelöscht.
 
 ### Referenz Web-Implementierung (`index.html` auf `claude/ui-design-improvement-my0f66`)
-- **HTML:** `#vgKopf` / `#vgBox`, Z. 1343
-- **CSS:** Kommentar „Vergleich: freiwillige Wochenrangliste“, Z. 965
+- **HTML:** `#vgKopf` / `#vgBox`, Z. 1395
+- **CSS:** Kommentar „Vergleich: freiwillige Wochenrangliste“, Z. 1017
 - **JS** im Cloud-Block:
 
   | Funktion | Zeile |
   |---|---|
-  | `isoWoche` | 3594 |
-  | `wocheAntworten` | 3601 |
-  | `vgWerte` | 3606 |
-  | `vgMeldenSpaeter` | 3611 |
-  | `vgLaden` | 3618 |
-  | `vgZeigen` | 3645 |
+  | `isoWoche` | 3702 |
+  | `wocheAntworten` | 3709 |
+  | `vgWerte` | 3714 |
+  | `vgMeldenSpaeter` | 3719 |
+  | `vgLaden` | 3726 |
+  | `vgZeigen` | 3753 |
 
 - **SQL:** `docs/supabase-rangliste.sql`. Lokal geprüft mit PGlite: Rechte,
   Rangfolge, Wochenwechsel, zwei Geräte, Namensregeln, Austritt, Kontolöschung.
+
+---
+
+## FR-005 · Taschenrechner: rechnet wie ein Prüfungsrechner, mit Verlauf und „Übernehmen“
+
+**Status App-Session:** ⏳ offen
+**Web umgesetzt:** ✅ `claude/ui-design-improvement-my0f66` (Commit „Taschenrechner …“)
+**Priorität:** hoch. Der Rechner hängt an 801 Rechenfragen und an jeder Prüfung.
+
+### Ziel / Framing
+Der alte Rechner (Web und `widgets/calculator.dart`) konnte nur Grundrechenarten und hatte Fallen:
+- `200 + 19 %` ergab 200,19 statt 238.
+- √ und ± wirkten auf die ganze Rechnung statt auf die letzte Zahl.
+- Nach „=“ hing eine neue Ziffer am Ergebnis dran (aus „12“ wurde „125“).
+- Es fehlten π, Potenzen und Winkel. Die Fragen brauchen sie: π in 16 Fragen,
+  sin/cos in 21, dazu Andler- und Barwertformel.
+- Es gab keinen Verlauf; Ergebnisse musste man abtippen.
+- In der App fehlten sogar Komma, % und √, und der Punkt war das Dezimalzeichen.
+
+Neu ist ein Rechner, der wie ein zugelassener Prüfungsrechner rechnet, deutsche Zahlen
+zeigt, sich die letzten Rechnungen merkt und das Ergebnis mit einem Tipp ins
+Antwortfeld setzt.
+
+### A) Rechenkern (gemeinsam mit dem Rechenweg aus FR-003)
+Rechner und Rechenweg benutzen **einen** Kern `rechne()`. Gegenüber FR-003 kommt dazu:
+- **Prozent wie auf dem Tischrechner:** Steht rechts von `+` oder `−` nur ein
+  Prozentsatz (Zahl oder Klammer, direkt gefolgt von `%`), ist er ein Anteil des
+  Werts davor: `a + b %` = a · (1 + b/100). Sonst gilt `b %` = b/100.
+- **π** (auch `pi`).
+- **sin, cos, tan in Grad**, dazu die Umkehrung `sin⁻¹ cos⁻¹ tan⁻¹` (auch `arcsin`
+  usw.; Ergebnis in Grad).
+  - Die Funktion wirkt auf den nächsten Faktor: `sin 30°` oder `sin(30)`.
+  - `tan 90` ist ungültig. Werte mit |x| < 10⁻¹² werden 0.
+- **Zeit:** `6 h 45` bzw. `6 h 45 min` = 6,75 Stunden. Minuten 0–59, sonst ungültig.
+  `45 min` allein bleibt 45 (die Einheit wird überlesen).
+- **Das Mal darf fehlen** vor π, √, einer Funktion und `(`: `2π`, `2√9`, `2(3+4)`.
+- `rechne()` nimmt Text oder schon zerlegte Zeichen. Der Rechner reicht Zahlen so
+  in voller Genauigkeit durch, ohne Umweg über Text.
+
+**Referenzwerte** (Web-Stand; Format wie im Rechenweg, höchstens 4 Nachkommastellen):
+
+| Eingabe | Ergebnis |
+|---|---|
+| `200 + 19 %` | 238 |
+| `238 − 16 %` | 199,92 |
+| `1.000 − 10 % − 2 %` | 882 |
+| `200 × 19 %` / `38 ÷ 19 %` | 38 / 200 |
+| `200 + 3 · 10 %` | 200,3 |
+| `(200 + 19 %) · 2` | 476 |
+| `2π` | 6,2832 |
+| `(60² − 50²) · π ÷ 4` | 863,938 |
+| `2√9` / `2(3+4)` | 6 / 14 |
+| `9,81 · sin 30°` | 4,905 |
+| `tan⁻¹ 0,15` | 8,5308 |
+| `arcsin 2` / `tan 90` | ungültig |
+| `12.100 ÷ 1,1^2` | 10.000 |
+| `-2²` / `(−2)²` | −4 / 4 |
+| `10 h − 6 h 45 min` | 3,25 |
+| `5 h 75` | ungültig |
+| `12 h · 30 €/h` | 360 |
+
+Zeile als Text im Rechenweg:
+- `10 h − 6 h 45 min` mit Einheit `h` ergibt `10 − 6 h 45 min = 3,25 h`.
+- `cos 30° · 2500` mit Einheit `daN` ergibt `cos 30° · 2.500 = 2.165,0635 daN`.
+- `sin⁻¹(0,5)` ergibt `sin⁻¹(0,5) = 30`.
+
+Die Referenzwerte aus FR-003 gelten unverändert weiter.
+
+### B) Eingabe als Zeichenliste
+Der Rechner bearbeitet keinen Text, sondern eine Liste von Zeichen:
+
+| Zeichen | Inhalt |
+|---|---|
+| Zahl | getippte Ziffern („12,5“) oder fester Wert (Ergebnis, Verlaufseintrag) |
+| Zeit | Stunden, Minuten (bis zu 2 Ziffern) |
+| π | |
+| Rechenzeichen | `+ − × ÷ ^`; ein Vorzeichen-Minus ist markiert |
+| Klammer | auf / zu |
+| Funktion | `√ sin cos tan sin⁻¹ cos⁻¹ tan⁻¹`, öffnet eine Klammer |
+| `%`, `²` | nachgestellt |
+
+„Zahl-Ende“ heißt: Zahl, Zeit, π, `)`, `%` oder `²`.
+
+**Tasten:**
+- **Ziffer:**
+  - Hängt an die gerade getippte Zahl an (höchstens 15 Ziffern; eine „0“ wird ersetzt).
+  - Nach einer Zeit ergänzt sie die Minuten.
+  - Nach einem anderen Zahl-Ende oder einem festen Wert kommt erst ein `×`.
+- **Komma:** nur einmal je Zahl; ohne Zahl davor „0,“.
+- **Rechenzeichen:**
+  - Ersetzt ein direkt davor stehendes Rechenzeichen.
+  - `−` nach `× ÷ ^ (`, nach einer Funktion oder am Anfang ist ein Vorzeichen.
+- **`%`, `x²`:** nur hinter einem Zahl-Ende.
+- **`(`:** nach einem Zahl-Ende kommt erst ein `×`.
+- **`)`:** nur wenn eine Klammer offen ist und davor ein Zahl-Ende steht. Offene
+  Klammern schließt der Rechner selbst; die Anzeige zeigt sie blass.
+- **√, sin, cos, tan:**
+  - Nach „=“ wirken sie auf das Ergebnis.
+  - Hinter einem Zahl-Ende wirken sie auf den letzten Operanden (Zahl oder Klammer
+    samt `%`/`²`): „16 √“ = 4, „5 + 9 √“ = 8.
+  - Sonst beginnen sie eine Funktion: „√(“.
+- **`inv`:** schaltet sin/cos/tan für den nächsten Druck auf die Umkehrung.
+- **`±`:**
+  - Wechselt das Vorzeichen der letzten Zahl.
+  - Nach `+` oder `−` mit Klammer: „5 − 9 ±“ wird „5 − (−9)“ = 14.
+  - Ein zweites `±` hebt das auf.
+- **`h min`:** macht aus der gerade getippten ganzen Zahl die Stunden; die nächsten
+  zwei Ziffern sind Minuten. „1 0 h min − 6 h min 4 5“ ergibt „10 h 00 min − 6 h 45 min“.
+- **`⌫`:** löscht die letzte Ziffer bzw. das ganze letzte Zeichen (eine Funktion
+  samt Klammer). Nach „=“ wirkt es wie C.
+- **`C`:** löscht die Rechnung; der Verlauf bleibt.
+- **`=`:**
+  - Zeigt das Ergebnis; die Rechnung wandert in den Verlauf.
+  - Danach beginnen Ziffer, `(` und π eine neue Rechnung.
+  - Rechenzeichen, `%` und `²` rechnen mit dem Ergebnis weiter.
+
+**Fehler** (statt des Ergebnisses; die Rechnung bleibt stehen, die Anzeige wackelt kurz):
+- Die Rechnung endet offen („5 +“): „Rechnung unvollständig“.
+- ÷ 0, √ aus einer negativen Zahl, tan 90°, sin⁻¹ 2: „Nicht definiert“.
+- Minuten über 59: „Minuten gehen nur bis 59“.
+
+**Referenz-Tastenfolgen:**
+
+| Tasten | Anzeige |
+|---|---|
+| `2 0 0 + 1 9 % =` | 238 |
+| `1 0 0 0 − 1 0 % − 2 % =` | 882 |
+| `1 6 √ =` / `√ 1 6 =` | 4 / 4 |
+| `5 + 9 √ =` | 8 |
+| `2 π =` | 6,28318530718 |
+| `3 0 sin =` | 0,5 |
+| `inv tan 1 =` | 45 |
+| `1 0 h·min − 6 h·min 4 5 =` | 3,25, Zeitfeld „3 h 15 min“ |
+| `5 − 9 ± =` | 14 |
+| `1 2 + 3 = × 2 =` | 30 |
+| `1 2 + 3 = 7` | 7 (neue Rechnung) |
+| `5 + =` | „Rechnung unvollständig“ |
+
+### C) Anzeige
+- Dunkles Anzeigefeld wie bisher (`#0F1E23`).
+- **Verlauf** oben im Feld:
+  - die letzten 25 Rechnungen als „Rechnung = Ergebnis“, die neueste unten
+  - 3 Zeilen hoch (Handy: 2), scrollbar
+  - Antippen setzt das Ergebnis als festen Wert ein; „Verlauf leeren“ steht ganz oben.
+- **Rechnung:**
+  - Zahlen mit Tausenderpunkt, Rechenzeichen mit Leerzeichen, „ %“.
+  - Zeit als „6 h 45 min“, **nie** „6:45“, denn im Rechenweg ist `:` ein Geteilt-Zeichen.
+  - Fehlende Klammern blass. Nach „=“ steht dort „Rechnung =“.
+- **Ergebnis:**
+  - Live während des Tippens. Ist die Rechnung gerade unvollständig, bleibt der letzte
+    gültige Wert blass stehen.
+  - Format `de_DE`: bis zu 12 gültige Stellen, ganze Zahlen bis 10¹⁵ vollständig,
+    Minus als „−“ (U+2212).
+- **Zeitfeld** links neben dem Ergebnis, sobald eine Zeit in der Rechnung steckt:
+  „3 h 15 min“ (Minuten gerundet).
+- **Speicher:** `SharedPreferences` **`kvm_rechner`** (Web: localStorage, gleicher Schlüssel):
+  ```json
+  {"T": [Zeichen …], "v": [{"a": "4.400 ÷ 22", "v": 200, "z": false}],
+   "fr": true, "l": "4.400 ÷ 22", "mini": false}
+  ```
+  `v` = Verlauf, `fr` = gerade „=“ gedrückt, `l` = letzte Rechnung, `mini` = eingeklappt.
+
+### D) Übernehmen
+- Der Knopf „↩ Übernehmen <Ziel>“ steht unter der Anzeige. Er ist nur sichtbar, wenn
+  es ein Ziel und ein gültiges Ergebnis gibt.
+- Ziel ist das zuletzt fokussierte Antwortfeld. Ohne Fokus ist es das Ergebnisfeld der
+  Rechenfrage.
+
+| Ziel | Beschriftung | eingesetzt wird |
+|---|---|---|
+| Ergebnisfeld der Rechenfrage | „ins Ergebnisfeld“ | Wert ohne Tausenderpunkt („1234,5“), ersetzt den Inhalt |
+| leere Rechenweg-Zeile | „Rechnung in den Rechenweg · Z2“ | die ganze Rechnung („4.400 ÷ 22“); der Rechenweg rechnet sie nach |
+| Rechenweg-Zeile mit Inhalt | „in den Rechenweg · Z2“ | Wert mit Tausenderpunkt an der Cursorstelle |
+| Textantwort | „in deine Antwort“ | Wert mit Tausenderpunkt an der Cursorstelle |
+| Anlagen-Tabelle / Formelbuch | „in die Tabelle“ / „ins Formelbuch“ | Wert ohne Tausenderpunkt |
+
+- Vor dem Wert steht ein Leerzeichen, wenn davor weder Leerraum noch „(“ steht.
+- Danach leuchtet das Zielfeld kurz auf und wird über den Rechner gescrollt. Die
+  Änderung wird wie eine Eingabe gespeichert.
+- **Flutter:** Der öffnende Screen gibt dem Rechner einen Callback
+  `onUebernehmen(String wert, String rechnung)` und die Zielbeschreibung mit.
+  - Quiz: Ergebnisfeld der Rechenfrage.
+  - Aufgabenblatt: aktives Rechenweg- oder Textfeld (FR-003).
+
+### E) Aufbau und Layout
+- **Kopf:** Rechner-Symbol, „Taschenrechner“, Einklappen (⌄), ✕.
+  - Einklappen blendet die Tasten aus; Antippen der Anzeige klappt wieder auf.
+- **Funktionsreihe:** `inv sin cos tan π h min`, 6 gleich breite Tasten, 34 hoch, Mono 13.
+  Ist `inv` aktiv, ist die Taste petrol gefüllt und die Tasten heißen sin⁻¹, cos⁻¹, tan⁻¹.
+- **Tastenfeld** 5 × 5, 46 hoch, Abstand 6:
+  ```
+  C   (   )   %   ⌫
+  7   8   9   ÷   √
+  4   5   6   ×   x²
+  1   2   3   −   xʸ
+  0   ,   ±   +   =
+  ```
+  - C und ⌫ in `kAmberInk`.
+  - Rechenzeichen in Petrol auf `kSurface2`; √, x², xʸ in Petrol.
+  - „=“ petrol gefüllt.
+- **Handy:**
+  - Unten angedockt über die volle Breite, Ecken oben 16, Tasten 42 hoch, Verlauf 2 Zeilen.
+  - Höhe etwa 60 % des Bildschirms.
+  - Die Aufgabe darüber bleibt lesbar und scrollbar: in Flutter
+    `Scaffold.showBottomSheet` oder ein Overlay, **kein** modales Bottom-Sheet.
+- **Tablet/breit:**
+  - Schwebendes Fenster, 324 breit, oben rechts, ziehbar.
+  - Der Inhalt weicht nach links aus, solange das Fenster nicht verschoben wurde.
+- **Hardware-Tastatur** (optional): Ziffern, `+ - * / : x ^ % ( ) , .`, Enter und `=`,
+  ⌫, Entf/`c`, `p` (π), `h` (Zeit).
+
+### F) Ergebnisfeld liest Tausenderpunkte
+- `quiz_screen.dart` `_parseNum` liest „4.400“ als 4,4.
+- Auf `parseDe` aus `calc_kit.dart` umstellen. Das liest „4.400“ = 4400, „1.5“ = 1,5
+  und „1.234,5“ richtig.
+- Zusätzlich „−“ (U+2212) als Minus akzeptieren. Web: `parseCalcNum`.
+
+### Abnahme
+- Alle Referenzwerte aus A und B stimmen.
+- Rechenfrage: Rechner öffnen, `12345 ÷ 10 =`, „Übernehmen ins Ergebnisfeld“. Das Feld
+  zeigt „1234,5“, und „Antwort prüfen“ ist aktiv.
+- Aufgabenblatt: leere Rechenweg-Zeile antippen, `4400 ÷ 22 =`, Übernehmen. Die Zeile
+  zeigt „4.400 ÷ 22“ mit „= 200“ und ist gespeichert.
+- Handy: Die Frage bleibt über dem Rechner lesbar. Nach dem Übernehmen ist das Feld
+  sichtbar.
+- Der Verlauf übersteht einen Neustart.
+- „4.400“ im Ergebnisfeld zählt als 4400.
+
+### Referenz Web-Implementierung (`index.html` auf `claude/ui-design-improvement-my0f66`)
+- **HTML:** `#mCalc`, Z. 1558
+- **CSS:** Kommentar „Taschenrechner: Anzeige mit Verlauf …“, Z. 532
+- **JS:**
+
+  | Funktion | Zeile |
+  |---|---|
+  | `rwTokens` (Kern: Zeichen) | 2558 |
+  | `rwFunktion` (Winkel, Wurzel) | 2596 |
+  | `rwAuswerten` (Kern: Rechnen) | 2614 |
+  | `parseCalcNum` | 2927 |
+  | `calcDock` (Andocken, Ausweichen) | 3866 |
+  | `rkKern` (Zeichenliste → Kern) | 3930 |
+  | `rkAusdruck` (Anzeige, Text) | 3963 |
+  | `rkFunktion` | 4014 |
+  | `rkVorzeichen` | 4024 |
+  | `rkZeit` | 4042 |
+  | `rkGleich` | 4056 |
+  | `rkTaste` | 4070 |
+  | `rkZielVon` / `rkUebernehmen` | 4091 / 4114 |
+  | `FN_TASTEN` / `TASTEN` | 4135 |
+  | `rkZeigen` | 4145 |
+
+Zeilennummern: Stand dieses Commits.

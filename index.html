@@ -529,20 +529,72 @@
   .sheet-head .x:hover{border-color:var(--err);color:var(--err-ink)}
   .sheet-body{padding:16px;overflow:auto}
 
-  /* Taschenrechner */
-  .calc-disp{background:#0f1e23;color:#eafaff;border:1px solid var(--line);border-radius:10px;padding:12px 14px;text-align:right;font-family:var(--mono);margin-bottom:12px;min-height:74px;display:flex;flex-direction:column;justify-content:flex-end;gap:4px}
-  .calc-disp .expr{font-size:14px;color:#8fb6bd;min-height:18px;word-break:break-all}
-  .calc-disp .res{font-size:30px;font-weight:600;word-break:break-all}
-  .calc-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
-  .calc-grid button{border:1px solid var(--line-strong);background:var(--paper);border-radius:10px;padding:15px 0;font-size:19px;font-weight:600;color:var(--ink);transition:background .12s,border-color .12s}
+  /* Taschenrechner: Anzeige mit Verlauf, Funktionsreihe, 5×5-Tastenfeld.
+     Auf dem Handy unten angedockt (.dock), sonst schwebend und ziehbar. */
+  .floatwin.calc{width:324px}
+  .fw-acts{display:flex;align-items:center;gap:6px}
+  .fw-mini{display:grid;place-items:center;border:1px solid var(--line-strong);background:var(--paper);border-radius:8px;width:34px;height:34px;color:var(--muted);cursor:pointer;padding:0}
+  .fw-mini:hover{border-color:var(--petrol);color:var(--petrol-ink)}
+  .fw-mini svg{transition:transform .15s}
+  .calc.mini .fw-mini svg{transform:rotate(180deg)}
+  .calc.mini .calc-keys{display:none}
+  .calc .fw-body{padding:12px}
+  .calc-disp{background:#0f1e23;color:#eafaff;border:1px solid var(--line);border-radius:10px;padding:8px 12px 9px;text-align:right;font-family:var(--mono);display:flex;flex-direction:column;gap:2px}
+  .calc.mini .calc-disp{cursor:pointer}
+  .calc-tape{max-height:64px;overflow-y:auto;display:flex;flex-direction:column;align-items:stretch;margin:0 -8px 3px;padding:0 4px 4px;border-bottom:1px dashed rgba(143,182,189,.3);scrollbar-width:thin}
+  .calc-tape button{display:flex;justify-content:flex-end;gap:.5ch;width:100%;border:0;background:none;border-radius:5px;padding:1px 4px;font:500 12px/18px var(--mono);color:#8fb6bd;cursor:pointer;text-align:right}
+  .calc-tape button:hover,.calc-tape button:focus-visible{background:rgba(143,182,189,.16);color:#eafaff}
+  .calc-tape .t-a{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+  .calc-tape .t-v{flex:none;font-weight:700;color:#cfeef2}
+  .calc-tape .tape-clear{justify-content:flex-start;font:600 11px var(--body);color:#8fb6bd;opacity:.8}
+  .calc-disp .expr{font-size:14px;color:#8fb6bd;min-height:20px;line-height:1.4;word-break:break-word}
+  .calc-disp .expr .rk-geist{opacity:.38}
+  .calc-disp .res{display:flex;align-items:center;justify-content:flex-end;gap:10px;min-height:36px}
+  .calc-disp output{font-size:28px;font-weight:600;line-height:1.2;word-break:break-all}
+  .calc-disp output.stale{opacity:.4}
+  .calc-disp output.err{font:600 14px var(--body);color:#ffb4a3}
+  .res-zeit{margin-right:auto;flex:none;font:600 12px var(--mono);color:#0f1e23;background:#9fe0c9;border-radius:6px;padding:2px 7px;white-space:nowrap}
+  .calc-disp.shake{animation:cshake .28s}
+  @keyframes cshake{25%{transform:translateX(-5px)}75%{transform:translateX(5px)}}
+  .calc-take{display:flex;align-items:center;justify-content:center;gap:7px;width:100%;margin-top:8px;min-height:40px;border:1px solid var(--petrol-line);background:var(--petrol-soft);color:var(--petrol-ink-deep);border-radius:10px;font:600 13px var(--body);cursor:pointer;padding:4px 10px}
+  .calc-take:hover{border-color:var(--petrol)}
+  .calc-take span{font-weight:500;color:var(--petrol-ink)}
+  .calc-keys{margin-top:10px}
+  .calc-fn{display:grid;grid-template-columns:repeat(6,1fr);gap:6px;margin-bottom:6px}
+  .calc-fn button{border:1px solid var(--line);background:var(--surface);border-radius:8px;min-height:34px;padding:0;font:600 13px var(--mono);color:var(--petrol-ink-deep);white-space:nowrap}
+  .calc-fn button:hover{border-color:var(--petrol)}
+  .calc-fn button.on{background:var(--petrol);border-color:var(--petrol);color:#fff}
+  .calc-fn button[data-k="zeit"]{font-size:11.5px;letter-spacing:-.02em}
+  .calc-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:6px}
+  .calc-grid button{border:1px solid var(--line-strong);background:var(--paper);border-radius:10px;min-height:46px;padding:0;font-size:18px;font-weight:600;color:var(--ink);transition:background .12s,border-color .12s}
   .calc-grid button:hover{background:var(--surface-2);border-color:var(--petrol)}
-  .calc-grid button:active{background:var(--petrol-soft)}
+  .calc-grid button:active,.calc-fn button:active{background:var(--petrol-soft)}
   .calc-grid .op{color:var(--petrol-ink-deep);background:var(--surface-2)}
-  .calc-grid .eq{background:var(--petrol);color:#fff;border-color:var(--petrol)}
-  .calc-grid .eq:hover{background:var(--petrol-deep)}
-  .calc-grid .fn{color:var(--amber);font-size:16px}
-  .calc-grid .span2{grid-column:span 2}
-  .calc-hint{font-size:11px;color:var(--muted);margin:10px 2px 0}
+  .calc-grid .fx{color:var(--petrol-ink-deep);font-size:16px}
+  .calc-grid .del{color:var(--amber-ink)}
+  .calc-grid .eq{background:var(--petrol);color:#fff;border-color:var(--petrol);font-size:22px}
+  .calc-grid .eq:hover{background:var(--petrol-deep);border-color:var(--petrol-deep)}
+  .calc-grid sup{font-size:.6em;margin-left:1px}
+  /* Übernommenes Ergebnis kurz im Zielfeld aufleuchten lassen */
+  .calc-flash{animation:cflash 1.4s ease-out}
+  @keyframes cflash{0%{box-shadow:0 0 0 3px var(--petrol)}100%{box-shadow:0 0 0 3px transparent}}
+  /* Handy: unten angedockt, volle Breite; die Seite bekommt unten so viel
+     Platz, dass sich die Aufgabe über dem Rechner fertig scrollen lässt. */
+  .floatwin.calc.dock{left:0!important;right:0;top:auto!important;bottom:0;width:auto;max-width:none;border-radius:16px 16px 0 0;border-bottom:0;padding-bottom:env(safe-area-inset-bottom);box-shadow:0 -10px 30px rgba(16,42,50,.2)}
+  .calc.dock .fw-head{cursor:default;padding:6px 12px}
+  .calc.dock .fw-body{padding:8px 10px 10px}
+  .calc.dock .calc-tape{max-height:44px}
+  .calc.dock .calc-take{min-height:36px;margin-top:6px}
+  .calc.dock .calc-keys{margin-top:8px}
+  .calc.dock .calc-fn{gap:5px;margin-bottom:5px}
+  .calc.dock .calc-fn button{min-height:32px}
+  .calc.dock .calc-grid{gap:5px}
+  .calc.dock .calc-grid button{min-height:42px}
+  body.calc-dock[data-screen="scrQuiz"],body.calc-dock[data-screen="scrBlatt"]{padding-bottom:calc(var(--calc-h,440px) + 16px)}
+  /* Breiter Bildschirm: Die Inhaltsspalte rückt links neben den Rechner, solange
+     er an seinem Platz oben rechts steht (wie beim Formelbuch). */
+  body.has-calc:not(.has-formel) .app,body.has-calc:not(.has-formel) footer{margin-left:auto;margin-right:calc(var(--calc-w,324px) + 40px)}
+  html:has(body.calc-dock){scroll-padding-bottom:calc(var(--calc-h,440px) + 16px)}
 
   /* schwebender, ziehbarer Taschenrechner (ohne Hintergrund-Abdunklung) */
   .floatwin{position:fixed;z-index:70;left:16px;top:72px;width:300px;max-width:calc(100vw - 20px);background:var(--paper);color:var(--ink);border:1px solid var(--line-strong);border-radius:14px;box-shadow:var(--shadow-lg);overflow:hidden;user-select:none;-webkit-user-select:none}
@@ -1504,12 +1556,19 @@ body[data-screen="scrBlatt"] .app{max-width:920px}
 </div>
 
 <!-- Taschenrechner -->
-<div class="floatwin" id="mCalc" hidden role="dialog" aria-label="Taschenrechner">
-  <div class="fw-head" id="calcDrag"><span class="fw-title"><svg class="ic-svg ic-sm ic-petrol" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-3px"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M8 7h8"/><path d="M8 12h.01M12 12h.01M16 12h.01M8 16h.01M12 16h.01M16 16h.01"/></svg> Taschenrechner</span><button class="x" data-close aria-label="Schließen">✕</button></div>
+<div class="floatwin calc" id="mCalc" hidden role="dialog" aria-label="Taschenrechner">
+  <div class="fw-head" id="calcDrag" title="Tastatur: Ziffern, + − * / ^ % ( ), Enter = Ergebnis, ⌫, p = π, h = Stunden und Minuten"><span class="fw-title"><svg class="ic-svg ic-sm ic-petrol" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-3px"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M8 7h8"/><path d="M8 12h.01M12 12h.01M16 12h.01M8 16h.01M12 16h.01M16 16h.01"/></svg> Taschenrechner</span><span class="fw-acts"><button type="button" class="fw-mini" id="calcMin" aria-label="Tasten einklappen" aria-expanded="true" title="Einklappen"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></button><button class="x" data-close aria-label="Schließen">✕</button></span></div>
   <div class="fw-body">
-    <div class="calc-disp"><div class="expr" id="calcExpr"></div><div class="res" id="calcRes">0</div></div>
-    <div class="calc-grid" id="calcGrid"></div>
-    <p class="calc-hint">Frei verschiebbar – am Titelbalken ziehen. Der Hintergrund bleibt sichtbar. Tastatur: Ziffern, + − * / ( ) , Enter =, ⌫.</p>
+    <div class="calc-disp" id="calcDisp">
+      <div class="calc-tape" id="calcTape" hidden></div>
+      <div class="expr" id="calcExpr"></div>
+      <div class="res"><span class="res-zeit" id="calcZeit" hidden></span><output id="calcRes" aria-live="polite">0</output></div>
+    </div>
+    <button type="button" class="calc-take" id="calcTake" hidden></button>
+    <div class="calc-keys" id="calcKeys">
+      <div class="calc-fn" id="calcFn"></div>
+      <div class="calc-grid" id="calcGrid"></div>
+    </div>
   </div>
 </div>
 
@@ -2489,40 +2548,80 @@ function rwZahl(t){
   if(/^\d{1,3}(\.\d{3})+$/.test(t))return parseFloat(t.replace(/\./g,''));
   return parseFloat(t);
 }
-/* Rechnung in Zeichen zerlegen: Zahlen, + − · × * ÷ / : ^ ( ) % ² ³ √ und „x“
-   als Mal zwischen Zahlen. Einheiten in der Rechnung („km/h“, „€“) werden
-   überlesen; hinter einem „=“ steht schon das Ergebnis. */
+/* Rechnung in Zeichen zerlegen: Zahlen, + − · × * ÷ / : ^ ( ) % ² ³ √, π,
+   sin/cos/tan in Grad samt Umkehrung („sin⁻¹“, „arcsin“), Zeitangaben
+   („6 h 45“ = 6,75 Stunden) und „x“ als Mal zwischen Zahlen. Vor π, √ und
+   „(“ darf das Mal fehlen („2π“). Einheiten in der Rechnung („km/h“, „€“)
+   werden überlesen; hinter einem „=“ steht schon das Ergebnis.
+   Taschenrechner und Rechenweg rechnen mit denselben Zeichen. */
+var RW_FN={sin:'sin',cos:'cos',tan:'tan',arcsin:'asin',arccos:'acos',arctan:'atan'};
 function rwTokens(s){
   s=String(s||'').replace(/[A-Za-zÄÖÜäöüß€$°]+\s*\/\s*[A-Za-zÄÖÜäöüß€$°]+/g,' ');
   var t=[],i=0,m;
+  function mal(){var v=t[t.length-1];if(v&&(v.n!=null||v.p===')'||v.pc||v.pw))t.push({o:'*'});}
   while(i<s.length){
     var c=s.charAt(i),rest=s.slice(i),vor=t[t.length-1];
     if(/\s/.test(c)){i++;continue;}
+    if((m=/^(\d+)\s*h\s*(\d{1,2})(?![\d.,])(?:\s*min\b)?/.exec(rest))){
+      if(+m[2]>59)return null;
+      t.push({n:+m[1]+m[2]/60,raw:m[0],zeit:[+m[1],+m[2]]});i+=m[0].length;continue;}
     if((m=/^(?:\d[\d.]*(?:,\d+)?|,\d+)/.exec(rest))){t.push({n:rwZahl(m[0]),raw:m[0]});i+=m[0].length;continue;}
-    if(/[xX]/.test(c)&&vor&&(vor.n!=null||vor.p===')')&&/^[xX]\s*[\d(√]/.test(rest)){t.push({o:'*'});i++;continue;}
-    if((m=/^[A-Za-zÄÖÜäöüß€$°]+/.exec(rest))){i+=m[0].length;continue;}
+    if(/[xX]/.test(c)&&vor&&(vor.n!=null||vor.p===')')&&/^[xX]\s*[\d(√π]/.test(rest)){t.push({o:'*'});i++;continue;}
+    if((m=/^(sin|cos|tan)\s*⁻¹/i.exec(rest))){mal();t.push({f:'a'+m[1].toLowerCase()});i+=m[0].length;continue;}
+    if((m=/^[A-Za-zÄÖÜäöüß€$°]+/.exec(rest))){
+      var w=m[0].toLowerCase();
+      if(w==='pi'){mal();t.push({n:Math.PI,raw:'π'});}
+      else if(RW_FN[w]){mal();t.push({f:RW_FN[w]});}
+      i+=m[0].length;continue;}
     if(c==='=')break;
-    if(c==='+')t.push({o:'+'});
+    if(c==='π'){mal();t.push({n:Math.PI,raw:'π'});}
+    else if(c==='+')t.push({o:'+'});
     else if('-−–'.indexOf(c)>=0)t.push({o:'-'});
     else if('*·×⋅∙'.indexOf(c)>=0)t.push({o:'*'});
     else if('/÷:'.indexOf(c)>=0)t.push({o:'/'});
     else if(c==='^')t.push({o:'^'});
-    else if(c==='('||c===')')t.push({p:c});
+    else if(c==='('){mal();t.push({p:c});}
+    else if(c===')')t.push({p:c});
     else if(c==='%')t.push({pc:1});
     else if(c==='²')t.push({pw:2});
     else if(c==='³')t.push({pw:3});
-    else if(c==='√')t.push({f:1});
+    else if(c==='√'){mal();t.push({f:'sqrt'});}
     else return null;
     i++;
   }
   return t;
 }
-/* Rechnet ohne eval: Punkt vor Strich, Klammern, Potenz, Wurzel, Prozent. */
-function rwRechne(s){
-  var t=rwTokens(s),i=0;
+/* Winkelfunktionen rechnen in Grad, wie in den Prüfungen („cos 30°“). */
+var RW_GRAD=Math.PI/180;
+function rwFunktion(f,x){
+  function glatt(v){return Math.abs(v)<1e-12?0:v;}
+  switch(f){
+    case 'sqrt':return Math.sqrt(x);
+    case 'sin':return glatt(Math.sin(x*RW_GRAD));
+    case 'cos':return glatt(Math.cos(x*RW_GRAD));
+    case 'tan':return Math.abs((((x-90)%180)+180)%180)<1e-9?NaN:glatt(Math.tan(x*RW_GRAD));
+    case 'asin':return Math.asin(x)/RW_GRAD;
+    case 'acos':return Math.acos(x)/RW_GRAD;
+    case 'atan':return Math.atan(x)/RW_GRAD;
+  }
+  return NaN;
+}
+/* Rechnet ohne eval: Punkt vor Strich, Klammern, Potenz, Wurzel, Winkel,
+   Prozent. Prozent wie auf dem Tischrechner: Steht rechts von Plus oder
+   Minus nur ein Prozentsatz, ist er ein Anteil des Werts davor –
+   „200 + 19 %“ = 238, „1.000 − 10 % − 2 %“ = 882. Sonst ist 19 % = 0,19
+   („30.250 · 6 %“ = 1.815). Nimmt Text oder schon zerlegte Zeichen. */
+function rwAuswerten(t){
+  var i=0;
   if(!t||!t.length)return NaN;
   function k(){return t[i];}
-  function summe(){var v=produkt();while(k()&&(k().o==='+'||k().o==='-')){var o=t[i++].o,w=produkt();v=o==='+'?v+w:v-w;}return v;}
+  function zu(a){for(var j=a,d=0;j<t.length;j++){if(t[j].p==='(')d++;else if(t[j].p===')'&&--d===0)return j;}return -1;}
+  function nurProzent(a,b){
+    if(b-a<2||!t[b-1].pc)return false;
+    if(b-a===2)return t[a].n!=null;
+    return t[a].p==='('&&zu(a)===b-2;
+  }
+  function summe(){var v=produkt();while(k()&&(k().o==='+'||k().o==='-')){var o=t[i++].o,a=i,w=produkt();if(nurProzent(a,i))w=v*w;v=o==='+'?v+w:v-w;}return v;}
   function produkt(){var v=vorzeichen();while(k()&&(k().o==='*'||k().o==='/')){var o=t[i++].o,w=vorzeichen();v=o==='*'?v*w:v/w;}return v;}
   function vorzeichen(){var x=k();if(x&&(x.o==='-'||x.o==='+')){i++;var v=vorzeichen();return x.o==='-'?-v:v;}return potenz();}
   function potenz(){var v=nachsatz();if(k()&&k().o==='^'){i++;v=Math.pow(v,vorzeichen());}return v;}
@@ -2531,12 +2630,14 @@ function rwRechne(s){
     var x=t[i++];
     if(!x)throw 0;
     if(x.n!=null)return x.n;
-    if(x.f)return Math.sqrt(nachsatz());
+    if(x.f)return rwFunktion(x.f,nachsatz());
     if(x.p==='('){var v=summe();if(!k()||k().p!==')')throw 0;i++;return v;}
     throw 0;
   }
   try{var v=summe();return (i===t.length&&isFinite(v))?v:NaN;}catch(e){return NaN;}
 }
+function rwRechne(s){return rwAuswerten(rwTokens(s));}
+window.KVM_rechnen={auswerten:rwAuswerten,rechne:rwRechne,zahl:rwZahl};
 /* Ergebnis auf Deutsch; bei Euro mit Cent, sobald Cent anfallen. */
 function rwFmt(v,u){
   if(!isFinite(v))return '';
@@ -2554,8 +2655,11 @@ function rwZahlText(raw){
 function rwSchoen(s){
   var t=rwTokens(s);if(!t)return String(s||'').trim();
   var o='',vor=null;
-  t.forEach(function(x){
-    if(x.n!=null)o+=rwZahlText(x.raw);
+  t.forEach(function(x,j){
+    if(x.zeit)o+=x.zeit[0]+' h '+(x.zeit[1]<10?'0':'')+x.zeit[1]+' min';
+    else if(x.raw==='π')o+='π';
+    else if(x.n!=null)o+=rwZahlText(x.raw)+(vor&&/^(sin|cos|tan)$/.test(vor.f||'')?'°':'');
+    else if(x.f&&x.f!=='sqrt')o+=(x.f.charAt(0)==='a'?x.f.slice(1)+'⁻¹':x.f)+((t[j+1]||{}).p==='('?'':' ');
     else if(x.o){
       var unaer=(x.o==='-'||x.o==='+')&&(!vor||vor.o||vor.p==='('||vor.f);
       if(unaer)o+=(x.o==='-'?'−':'+');
@@ -2573,7 +2677,7 @@ function rwSchoen(s){
 function rwZeileText(r){
   var l=String(r.l||'').trim(),f=String(r.f||'').trim(),u=String(r.u||'').trim();
   if(!f)return l;
-  var v=rwRechne(f),rechnet=/[-+−–·*×xX÷\/:^%²³√(]/.test(f.replace(/^\s*[−–-]/,''));
+  var v=rwRechne(f),rechnet=/[-+−–·*×xX÷\/:^%²³√(π]|sin|cos|tan|\d\s*h\s*\d/i.test(f.replace(/^\s*[−–-]/,''));
   var erg=isFinite(v)?rwFmt(v,u)+(u?' '+u:''):'';
   var s=erg?(rechnet?rwSchoen(f)+' = '+erg:erg):f;
   return l?l.replace(/\s*:?$/,':')+' '+s:s;
@@ -2819,7 +2923,8 @@ function renderQuestion(){
   }
   if(window.KVMvoice)window.KVMvoice.onQuestion(q);
 }
-function parseCalcNum(s){s=(""+s).trim().replace(/[^0-9.,\-]/g,"");if(s.indexOf(",")>=0&&s.indexOf(".")>=0){s=s.replace(/\./g,"").replace(",",".");}else if(s.indexOf(",")>=0){s=s.replace(",",".");}var v=parseFloat(s);return isFinite(v)?v:NaN;}
+/* „1.234,5“, „1234,5“, „4.400“ (Tausenderpunkt), „1.5“ und „−3“ werden richtig gelesen. */
+function parseCalcNum(s){s=(""+s).trim().replace(/[−–]/g,"-").replace(/[^0-9.,\-]/g,"");if(s.indexOf(",")>=0){s=s.replace(/\./g,"").replace(",",".");}else if(/^-?\d{1,3}(\.\d{3})+$/.test(s)){s=s.replace(/\./g,"");}var v=parseFloat(s);return isFinite(v)?v:NaN;}
 function fmtCalc(x){var r=Math.round(x*1e6)/1e6;var s=""+r;if(s.indexOf(".")>=0)s=s.replace(/0+$/,"").replace(/\.$/,"");return s.replace(".",",");}
 function renderCalc(q){
   var inp=$("qCalcInput");inp.value="";inp.disabled=false;$("qCalcUnit").textContent=q.unit||"";
@@ -3537,6 +3642,9 @@ $("btnReset").addEventListener("click",function(){
 /* (Lernstand-Code-/QR-Übertragung entfernt – Sicherung läuft über Konto-Login) */
 document.addEventListener("keydown",function(ev){
   if($("scrQuiz").hidden)return;var q=state.pool[state.idx];if(!q)return;
+  /* Bei offenem Taschenrechner gehören Ziffern und Enter ihm – sonst wählte
+     „12 + 3 ↵“ nebenbei Antwort 1, 2, 3 und prüfte sie. */
+  var rk=document.getElementById("mCalc");if(rk&&!rk.hidden)return;
   if(state.answered){if(ev.key==="Enter"||ev.key===" "){ev.preventDefault();var n=$("btnNext");if(n)n.click();}return;}
   if(q.t==='mc'){var k=parseInt(ev.key,10);if(k>=1&&k<=(state.shuffledOpts[state.idx].length)){var btns=$("qOpts").querySelectorAll(".opt");if(btns[k-1])btns[k-1].click();}
     /* preventDefault: sonst löst derselbe Tastendruck nach dem Prüfen auch
@@ -3751,14 +3859,32 @@ function close(){ if(!openModal)return; var m=$(openModal); if(m)m.hidden=true;
 var elCalc=$("mCalc"), calcOpen=false, calcPlaced=false;
 function clampCalc(x,y){ var w=elCalc.offsetWidth,h=elCalc.offsetHeight; x=Math.min(Math.max(6,x),Math.max(6,window.innerWidth-w-6)); y=Math.min(Math.max(6,y),Math.max(6,window.innerHeight-h-6)); elCalc.style.left=x+"px"; elCalc.style.top=y+"px"; }
 function calcKnopf(){ var b=$("tbCalc"); if(b){ b.classList.toggle("on",calcOpen); b.setAttribute("aria-pressed",calcOpen?"true":"false"); } }
-function openCalc(){ elCalc.hidden=false; calcOpen=true; if(!calcPlaced){ var w=elCalc.offsetWidth||300;
+/* Auf dem Handy dockt der Rechner unten an; die Seite bekommt darunter Platz.
+   Auf breiten Bildschirmen weicht die Inhaltsspalte nach links aus, bis der
+   Rechner verschoben wird. */
+var mqDock=window.matchMedia?window.matchMedia("(max-width:560px)"):null, calcMoved=false;
+function calcDock(){ var d=!!(mqDock&&mqDock.matches),root=document.documentElement; elCalc.classList.toggle("dock",d);
+  document.body.classList.toggle("calc-dock",d&&calcOpen);
+  if(d&&calcOpen)root.style.setProperty("--calc-h",elCalc.offsetHeight+"px");
+  var weich=calcOpen&&!d&&!calcMoved&&window.innerWidth>=1100;
+  document.body.classList.toggle("has-calc",weich);
+  if(weich)root.style.setProperty("--calc-w",elCalc.offsetWidth+"px"); }
+if(mqDock){ if(mqDock.addEventListener)mqDock.addEventListener("change",calcDock); else if(mqDock.addListener)mqDock.addListener(calcDock); }
+window.addEventListener("resize",function(){ if(!calcOpen)return;
+  if(!elCalc.classList.contains("dock")&&!calcMoved){ var r=elCalc.getBoundingClientRect(); clampCalc(window.innerWidth-r.width-16,r.top); }
+  calcDock(); });
+function openCalc(){ elCalc.hidden=false; calcOpen=true; calcDock(); rkZeigen();
+  if(!calcPlaced&&!elCalc.classList.contains("dock")){ var w=elCalc.offsetWidth||324;
     /* Ist das Formelbuch als Seitenschublade offen, landet der Rechner links davon statt darüber. */
     var fb=document.body.classList.contains("has-formel")&&window.innerWidth>820?((document.querySelector("#mFormula .sheet")||{}).offsetWidth||0):0;
-    clampCalc(window.innerWidth-fb-w-16,72); calcPlaced=true; } calcKnopf(); }
-function closeCalc(){ elCalc.hidden=true; calcOpen=false; calcKnopf(); }
+    clampCalc(window.innerWidth-fb-w-16,72); calcPlaced=true; } calcDock(); calcKnopf(); }
+function closeCalc(){ elCalc.hidden=true; calcOpen=false; calcDock(); calcKnopf(); }
 window.KVMopenCalc=openCalc;
+/* Außerhalb von Übung und Aufgabenblatt gibt es nichts zu rechnen. */
+if(window.MutationObserver)new MutationObserver(function(){ var sc=document.body.getAttribute("data-screen");
+  if(calcOpen&&sc!=="scrQuiz"&&sc!=="scrBlatt")closeCalc(); }).observe(document.body,{attributes:true,attributeFilter:["data-screen"]});
 (function calcDrag(){ var head=$("calcDrag"),drag=false,ox=0,oy=0;
-  head.addEventListener("pointerdown",function(e){ if(e.target.hasAttribute&&e.target.hasAttribute("data-close"))return; drag=true; try{head.setPointerCapture(e.pointerId);}catch(_){} var r=elCalc.getBoundingClientRect(); ox=e.clientX-r.left; oy=e.clientY-r.top; e.preventDefault(); });
+  head.addEventListener("pointerdown",function(e){ if(e.target.closest&&e.target.closest("button"))return; if(elCalc.classList.contains("dock"))return; drag=true; if(!calcMoved){calcMoved=true;calcDock();} try{head.setPointerCapture(e.pointerId);}catch(_){} var r=elCalc.getBoundingClientRect(); ox=e.clientX-r.left; oy=e.clientY-r.top; e.preventDefault(); });
   head.addEventListener("pointermove",function(e){ if(drag)clampCalc(e.clientX-ox,e.clientY-oy); });
   function stop(){drag=false;}
   head.addEventListener("pointerup",stop); head.addEventListener("pointercancel",stop);
@@ -3772,42 +3898,292 @@ $("tbFormula").addEventListener("click",function(){open("mFormula");});
 /* Auf der Startseite gibt es keine Werkzeugleiste – das Formelbuch ist dort eine Kachel. */
 if($("btnFormelHome"))$("btnFormelHome").addEventListener("click",function(){open("mFormula");});
 
-/* ---- Taschenrechner ---- */
-var expr="";
-function pretty(s){return s.replace(/\*/g,"×").replace(/\//g,"÷").replace(/-/g,"−").replace(/\./g,",");}
-function fmt(x){ if(!isFinite(x))return "Fehler"; var r=Math.round((x+Number.EPSILON)*1e10)/1e10; var s=(""+r); if(s.indexOf(".")>=0)s=s.replace(/0+$/,"").replace(/\.$/,""); return s.replace(".",","); }
-function tokenize(s){var t=[],i=0;while(i<s.length){var c=s[i];if(c===" "){i++;continue;}if(c>="0"&&c<="9"||c==="."){var j=i;while(j<s.length&&((s[j]>="0"&&s[j]<="9")||s[j]===".")){j++;}t.push({t:"num",v:parseFloat(s.slice(i,j))});i=j;continue;}if("+-*/()%".indexOf(c)>=0){t.push({t:"op",v:c});i++;continue;}throw new Error("bad");}return t;}
-function calcEval(s){var tk=tokenize(s),p=0;
-  function peek(){return tk[p];}
-  function eat(v){if(tk[p]&&tk[p].v===v){p++;return true;}return false;}
-  function E(){var x=T();while(peek()&&(peek().v==="+"||peek().v==="-")){var o=tk[p++].v;var y=T();x=o==="+"?x+y:x-y;}return x;}
-  function T(){var x=F();while(peek()&&(peek().v==="*"||peek().v==="/")){var o=tk[p++].v;var y=F();x=o==="*"?x*y:x/y;}return x;}
-  function F(){var x=U();while(peek()&&peek().v==="%"){p++;x=x/100;}return x;}
-  function U(){if(peek()&&(peek().v==="-"||peek().v==="+")){var o=tk[p++].v;var v=U();return o==="-"?-v:v;}return P();}
-  function P(){var k=peek();if(!k)throw new Error("end");if(k.t==="num"){p++;return k.v;}if(k.v==="("){p++;var v=E();if(!eat(")"))throw new Error(")");return v;}throw new Error("x");}
-  var r=E();if(p<tk.length)throw new Error("trail");return r;}
-function calcRender(){ $("calcExpr").textContent=pretty(expr); var r; try{ r= expr? fmt(calcEval(expr)) : "0"; }catch(e){ r=$("calcRes").textContent; } $("calcRes").textContent=r; }
-function calcInput(v){ expr+=v; calcRender(); }
-function calcAction(a){ if(a==="clear"){expr="";} else if(a==="back"){expr=expr.slice(0,-1);} else if(a==="eq"){ try{var val=calcEval(expr); expr=(""+ (Math.round((val+Number.EPSILON)*1e10)/1e10)); }catch(e){ $("calcRes").textContent="Fehler"; return; } } calcRender(); }
-var keys=[
-  {l:"C",a:"clear",c:"fn"},{l:"(",v:"("},{l:")",v:")"},{l:"⌫",a:"back",c:"fn"},
-  {l:"7",v:"7"},{l:"8",v:"8"},{l:"9",v:"9"},{l:"÷",v:"/",c:"op"},
-  {l:"4",v:"4"},{l:"5",v:"5"},{l:"6",v:"6"},{l:"×",v:"*",c:"op"},
-  {l:"1",v:"1"},{l:"2",v:"2"},{l:"3",v:"3"},{l:"−",v:"-",c:"op"},
-  {l:"0",v:"0"},{l:",",v:"."},{l:"%",v:"%",c:"op"},{l:"+",v:"+",c:"op"},
-  {l:"=",a:"eq",c:"eq span2"},{l:"±",a:"neg"},{l:"√",a:"sqrt"}
-];
-(function buildCalc(){ var g=$("calcGrid"); keys.forEach(function(k){ var b=document.createElement("button"); b.textContent=k.l; if(k.c)b.className=k.c;
-  b.addEventListener("click",function(){ if(k.v!=null)calcInput(k.v); else if(k.a==="neg"){ try{var val=calcEval(expr||"0");expr=""+(-val);calcRender();}catch(e){} } else if(k.a==="sqrt"){ try{var val=calcEval(expr||"0");expr=""+Math.sqrt(val);calcRender();}catch(e){} } else calcAction(k.a); });
-  g.appendChild(b); }); })();
-document.addEventListener("keydown",function(e){ if(!calcOpen)return;
-  var a=document.activeElement; if(a&&a!==document.body&&!(elCalc.contains(a))&&/^(INPUT|TEXTAREA|SELECT)$/.test(a.tagName))return;
-  var k=e.key;
-  if(k>="0"&&k<="9"||"+-*/()%".indexOf(k)>=0){calcInput(k);e.preventDefault();}
-  else if(k==="."||k===","){calcInput(".");e.preventDefault();}
-  else if(k==="Enter"||k==="="){calcAction("eq");e.preventDefault();}
-  else if(k==="Backspace"){calcAction("back");e.preventDefault();}
-  else if(k==="Delete"||k==="c"||k==="C"){calcAction("clear");e.preventDefault();}
+/* ---- Taschenrechner ----
+   Rechnet mit demselben Kern wie der Rechenweg (window.KVM_rechnen): Punkt vor
+   Strich, Klammern, Prozent wie auf dem Tischrechner („200 + 19 %“ = 238), x²,
+   xʸ, √, π, sin/cos/tan in Grad samt Umkehrung und Stunden mit Minuten.
+   Die Eingabe ist eine Zeichenliste – so wirken ⌫, ± und √ auf ganze Zahlen
+   und Klammern, und nach „=“ beginnt eine Ziffer eine neue Rechnung, während
+   ein Rechenzeichen mit dem Ergebnis weiterrechnet. Jedes Ergebnis landet im
+   Verlauf; „Übernehmen“ setzt es ins zuletzt benutzte Antwortfeld. */
+var RK_KEY="kvm_rechner", RK_OPS={"+":"+","−":"-","×":"*","÷":"/","^":"^"},
+    RK_FN={"√":"sqrt","sin":"sin","cos":"cos","tan":"tan","sin⁻¹":"asin","cos⁻¹":"acos","tan⁻¹":"atan"};
+var T=[],frisch=false,letzte="",verlauf=[],inv=false,mini=false,fehler="",zuletzt=null,ziel=null;
+function rkEsc(x){return String(x).replace(/[&<>"]/g,function(m){return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[m];});}
+(function rkLaden(){ try{ var d=JSON.parse(localStorage.getItem(RK_KEY)||"{}")||{};
+  if(Array.isArray(d.T))T=d.T; if(Array.isArray(d.v))verlauf=d.v.slice(-25);
+  frisch=!!d.fr&&T.length===1; letzte=frisch?String(d.l||""):""; mini=!!d.mini; }catch(e){} })();
+function rkSpeichern(){ try{ localStorage.setItem(RK_KEY,JSON.stringify({T:T,v:verlauf,fr:frisch,l:letzte,mini:mini})); }catch(e){} }
+
+function rkLast(){return T[T.length-1];}
+function rkEnde(x){return !!x&&(x.t==="n"||x.t==="z"||x.t==="k"||x.t===")"||x.t==="%"||x.t==="²");}
+function rkOffen(){var d=0;T.forEach(function(x){if(x.t==="("||x.t==="f")d++;else if(x.t===")")d--;});return d;}
+/* Anfang des letzten Operanden: Zahl, π, Zeit oder Klammer/Funktion samt % und ² */
+function rkOperand(){
+  var j=T.length-1;
+  while(j>=0&&(T[j].t==="%"||T[j].t==="²"))j--;
+  if(j<0)return -1;
+  if(T[j].t===")"){for(var d=0;j>=0;j--){if(T[j].t===")")d++;else if((T[j].t==="("||T[j].t==="f")&&--d===0)return j;}return -1;}
+  return (T[j].t==="n"||T[j].t==="z"||T[j].t==="k")?j:-1;
+}
+function rkZahl(x){ if(x.v!=null)return x.v; var K=window.KVM_rechnen; return K?K.zahl(x.s):parseFloat(x.s.replace(",",".")); }
+function rkKern(){
+  var k=[];
+  T.forEach(function(x){
+    if(x.t==="n")k.push({n:rkZahl(x)});
+    else if(x.t==="z")k.push(+(x.m||0)>59?{}:{n:(+x.h)+(+(x.m||0))/60});
+    else if(x.t==="k")k.push({n:Math.PI});
+    else if(x.t==="o")k.push({o:RK_OPS[x.s]});
+    else if(x.t==="("||x.t===")")k.push({p:x.t});
+    else if(x.t==="f"){k.push({f:RK_FN[x.s]});k.push({p:"("});}
+    else if(x.t==="%")k.push({pc:1});
+    else if(x.t==="²")k.push({pw:2});
+  });
+  for(var d=rkOffen();d>0;d--)k.push({p:")"});
+  return k;
+}
+function rkWert(){ if(frisch)return T[0]?rkZahl(T[0]):NaN; if(!T.length||!window.KVM_rechnen)return NaN; return window.KVM_rechnen.auswerten(rkKern()); }
+function rkHatZeit(){return T.some(function(x){return x.t==="z"||(x.t==="n"&&x.z);});}
+
+/* Zahlen deutsch: Tausenderpunkt, Komma, bis zu 12 gültige Stellen, „−“. */
+function rkFmt(v,ohnePunkte){
+  if(!isFinite(v))return "–";
+  if(Math.abs(v)<1e-12)v=0;
+  var o=Number.isInteger(v)&&Math.abs(v)<1e15?{maximumFractionDigits:0}:{maximumSignificantDigits:12};
+  o.useGrouping=!ohnePunkte;
+  return v.toLocaleString("de-DE",o).replace(/^-/,"−");
+}
+function rkFmtZeit(v){ var neg=v<0,h,m; v=Math.abs(v); h=Math.floor(v+1e-9); m=Math.round((v-h)*60); if(m===60){h++;m=0;}
+  return (neg?"−":"")+h+" h "+(m<10?"0":"")+m+" min"; }
+function rkZahlText(x){ if(x.v!=null)return rkFmt(x.v);
+  var p=x.s.split(","),g=p[0].replace(/\B(?=(\d{3})+(?!\d))/g,"."); return p.length>1?g+","+p[1]:g; }
+/* Rechnung als HTML (Anzeige, fehlende Klammern blass) oder als Text in der
+   Schreibweise des Rechenwegs („6 h 45 min“, nie „6:45“ – der Doppelpunkt ist
+   dort ein Geteilt-Zeichen). */
+function rkAusdruck(html){
+  var h="",geist=function(t){return html?'<span class="rk-geist">'+t+'</span>':t;};
+  T.forEach(function(x,j){
+    var vor=T[j-1];
+    if(x.t==="n")h+=rkEsc(rkZahlText(x));
+    else if(x.t==="z")h+=rkEsc(x.h)+" h "+(x.m===""?geist("00"):rkEsc(html?x.m:(x.m.length<2?"0":"")+x.m))+" min";
+    else if(x.t==="k")h+="π";
+    else if(x.t==="o")h+=x.u?"−":(x.s==="^"?"^":" "+x.s+" ");
+    else if(x.t==="("||x.t===")")h+=x.t;
+    else if(x.t==="f")h+=rkEsc(x.s)+"(";
+    else if(x.t==="%")h+=" %";
+    else if(x.t==="²")h+="²";
+  });
+  var d=rkOffen(); if(d>0)h+=geist(new Array(d+1).join(")"));
+  return h.replace(/^\s+|\s+$/g,"");
+}
+
+/* ---- Tasten ---- */
+function rkNeu(){T=[];frisch=false;letzte="";}
+function rkWeiter(){frisch=false;letzte="";}
+function rkMal(){if(rkEnde(rkLast()))T.push({t:"o",s:"×"});}
+function rkZiffer(d){
+  if(frisch)rkNeu();
+  var x=rkLast();
+  if(x&&x.t==="n"&&x.v==null){ if(x.s==="0")x.s=d; else if(x.s.replace(/\D/g,"").length<15)x.s+=d; }
+  else if(x&&x.t==="z"){ if(x.m.length<2)x.m+=d; }
+  else{ rkMal(); T.push({t:"n",s:d}); }
+}
+function rkKomma(){
+  if(frisch)rkNeu();
+  var x=rkLast();
+  if(x&&x.t==="n"&&x.v==null){ if(x.s.indexOf(",")<0)x.s+=","; }
+  else if(!(x&&x.t==="z")){ rkMal(); T.push({t:"n",s:"0,"}); }
+}
+function rkOperator(s){
+  if(frisch)rkWeiter();
+  var x=rkLast();
+  if(!x||x.t==="("||x.t==="f"){ if(s==="−")T.push({t:"o",s:"−",u:true}); return; }
+  if(x.t==="o"){
+    if(x.u){T.pop();rkOperator(s);return;}
+    if(s==="−"&&(x.s==="×"||x.s==="÷"||x.s==="^")){T.push({t:"o",s:"−",u:true});return;}
+    x.s=s; return;
+  }
+  T.push({t:"o",s:s});
+}
+function rkNachsatz(s){ if(frisch)rkWeiter(); var x=rkLast(); if(!rkEnde(x)||(s==="%"&&x.t==="%"))return; T.push({t:s}); }
+function rkKlammerAuf(){ if(frisch)rkNeu(); rkMal(); T.push({t:"("}); }
+function rkKlammerZu(){ if(!frisch&&rkOffen()>0&&rkEnde(rkLast()))T.push({t:")"}); }
+function rkPi(){ if(frisch)rkNeu(); rkMal(); T.push({t:"k"}); }
+/* √, sin …: nach „=“ auf das Ergebnis, hinter einer Zahl oder Klammer auf
+   diese (wie beim einfachen Rechner), sonst als Anfang „√(“. */
+function rkFunktion(name){
+  if(frisch){rkWeiter();T=[{t:"f",s:name}].concat(T,[{t:")"}]);return;}
+  if(rkEnde(rkLast())){
+    var a=rkOperand(); if(a<0)return;
+    if(T[a].t==="("&&rkLast().t===")"){T[a]={t:"f",s:name};return;}
+    T.splice(a,0,{t:"f",s:name});T.push({t:")"});return;
+  }
+  T.push({t:"f",s:name});
+}
+/* ± wechselt das Vorzeichen der letzten Zahl; „5 − 9“ wird „5 − (−9)“. */
+function rkVorzeichen(){
+  if(frisch){ var r=-rkZahl(T[0]); T=[{t:"n",v:r,z:T[0].z}]; rkWeiter(); return; }
+  var x=rkLast();
+  if(!rkEnde(x)){
+    if(x&&x.t==="o"&&x.u)T.pop();
+    else if(x&&x.t==="o"&&(x.s==="+"||x.s==="−"))T.push({t:"("},{t:"o",s:"−",u:true});
+    else T.push({t:"o",s:"−",u:true});
+    return;
+  }
+  var a=rkOperand(),e=T.length-1; if(a<0)return;
+  if(a===e&&T[a].t==="n"&&T[a].v!=null){T[a]={t:"n",v:-T[a].v,z:T[a].z};return;}
+  if(T[a].t==="("&&T[a+1]&&T[a+1].u&&T[e].t===")"){T.pop();T.splice(a,2);return;}
+  var vor=T[a-1];
+  if(vor&&vor.t==="o"&&vor.u){T.splice(a-1,1);return;}
+  if(!vor||vor.t==="("||vor.t==="f"||(vor.s!=="+"&&vor.s!=="−")){T.splice(a,0,{t:"o",s:"−",u:true});return;}
+  T.splice(a,0,{t:"("},{t:"o",s:"−",u:true});T.push({t:")"});
+}
+/* „h min“: aus „6“ wird „6 h __ min“, die nächsten zwei Ziffern sind Minuten. */
+function rkZeit(){
+  if(frisch)rkNeu();
+  var x=rkLast();
+  if(x&&x.t==="n"&&x.v==null&&/^\d+$/.test(x.s)){T[T.length-1]={t:"z",h:x.s,m:""};return;}
+  if(rkEnde(x))return;
+  T.push({t:"z",h:"0",m:""});
+}
+function rkZurueck(){
+  if(frisch){rkNeu();return;}
+  var x=rkLast(); if(!x)return;
+  if(x.t==="n"&&x.v==null){x.s=x.s.slice(0,-1);if(!x.s)T.pop();return;}
+  if(x.t==="z"){if(x.m)x.m=x.m.slice(0,-1);else T[T.length-1]={t:"n",s:x.h};return;}
+  T.pop();
+}
+function rkGleich(){
+  if(frisch||!T.length)return;
+  var v=rkWert();
+  if(!isFinite(v)){
+    fehler=T.some(function(x){return x.t==="z"&&+(x.m||0)>59;})?"Minuten gehen nur bis 59":
+      (rkEnde(rkLast())?"Nicht definiert":"Rechnung unvollständig");
+    var d=$("calcDisp"); d.classList.remove("shake"); void d.offsetWidth; d.classList.add("shake");
+    return;
+  }
+  var text=rkAusdruck(false),z=rkHatZeit();
+  if(!(T.length===1&&T[0].t==="n")){ verlauf.push({a:text,v:v,z:z}); if(verlauf.length>25)verlauf=verlauf.slice(-25); }
+  letzte=text; T=[{t:"n",v:v,z:z}]; frisch=true;
+}
+function rkEinsetzen(v,z){ if(frisch)rkNeu(); rkMal(); T.push({t:"n",v:v,z:z}); }
+function rkTaste(k){
+  fehler="";
+  if(/^\d$/.test(k))rkZiffer(k);
+  else if(k===",")rkKomma();
+  else if(RK_OPS[k])rkOperator(k);
+  else if(k==="%"||k==="²")rkNachsatz(k);
+  else if(k==="(")rkKlammerAuf();
+  else if(k===")")rkKlammerZu();
+  else if(k==="π")rkPi();
+  else if(k==="√")rkFunktion("√");
+  else if(k==="sin"||k==="cos"||k==="tan"){rkFunktion(k+(inv?"⁻¹":""));inv=false;}
+  else if(k==="inv")inv=!inv;
+  else if(k==="zeit")rkZeit();
+  else if(k==="±")rkVorzeichen();
+  else if(k==="⌫")rkZurueck();
+  else if(k==="C"){rkNeu();zuletzt=null;}
+  else if(k==="=")rkGleich();
+  rkZeigen();
+}
+
+/* ---- Übernehmen: ins zuletzt benutzte Antwortfeld ---- */
+function rkZielVon(el){
+  if(!el||!el.matches||elCalc.contains(el))return null;
+  if(el.matches(".rw-l,.rw-u")){var r=el.closest(".rw-row");return r?r.querySelector(".rw-f"):null;}
+  return el.matches('textarea,input[inputmode="decimal"]')?el:null;
+}
+function rkZielOk(el){return !!el&&el.isConnected&&!el.disabled&&!el.readOnly&&el.getClientRects().length>0;}
+function rkZiel(){ if(rkZielOk(ziel))return ziel; var q=$("qCalcInput"); return rkZielOk(q)?q:null; }
+function rkLeer(el){return !String(el.value||"").trim();}
+function rkZielText(el){
+  if(el.id==="qCalcInput")return "ins Ergebnisfeld";
+  if(el.classList.contains("rw-f")){var r=el.closest(".rw-row"),n=r?[].indexOf.call(r.parentNode.children,r)+1:0;
+    return (rkLeer(el)?"Rechnung in den Rechenweg":"in den Rechenweg")+(n?" · Z"+n:"");}
+  if(el.classList.contains("qtab-in"))return "in die Tabelle";
+  if(el.closest("#mFormula"))return "ins Formelbuch";
+  if(el.tagName==="TEXTAREA")return "in deine Antwort";
+  return "ins Feld";
+}
+document.addEventListener("focusin",function(e){ var z=rkZielVon(e.target); if(z){ziel=z; if(calcOpen)rkTake();} });
+function rkTake(){
+  var b=$("calcTake"),z=rkZiel(),v=rkWert(),an=!!z&&isFinite(v)&&!fehler&&T.length>0;
+  b.hidden=!an; if(!an)return;
+  b.innerHTML='<svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 14 4 9l5-5"/><path d="M4 9h11a5 5 0 0 1 0 10h-3"/></svg>Übernehmen <span>'+rkEsc(rkZielText(z))+'</span>';
+}
+function rkUebernehmen(){
+  var z=rkZiel(),v=rkWert(); if(!z||!isFinite(v))return;
+  var s;
+  if(z.classList.contains("rw-f")&&rkLeer(z))s=frisch?letzte||rkFmt(v):rkAusdruck(false);  /* ganze Rechnung, der Rechenweg rechnet sie nach */
+  else if(z.tagName==="TEXTAREA"||z.classList.contains("rw-f"))s=rkFmt(v);
+  else s=rkFmt(v,true).replace("−","-");
+  if(z.id==="qCalcInput")z.value=s;
+  else{
+    var val=z.value,a=z.selectionStart,b=z.selectionEnd; if(a==null){a=b=val.length;}
+    var vor=val.slice(0,a); if(vor&&!/[\s(]$/.test(vor))s=" "+s;
+    z.value=vor+s+val.slice(b); try{z.setSelectionRange(vor.length+s.length,vor.length+s.length);}catch(e){}
+  }
+  z.dispatchEvent(new Event("input",{bubbles:true}));
+  z.classList.remove("calc-flash"); void z.offsetWidth; z.classList.add("calc-flash");
+  /* Zielfeld sichtbar machen – auf dem Handy oberhalb des angedockten Rechners */
+  var r=z.getBoundingClientRect(),unten=window.innerHeight-(elCalc.classList.contains("dock")?elCalc.offsetHeight:0)-12;
+  if(r.bottom>unten)window.scrollBy({top:r.bottom-unten,behavior:"smooth"}); else if(r.top<8)window.scrollBy({top:r.top-60,behavior:"smooth"});
+  rkTake();
+}
+
+/* ---- Anzeige ---- */
+var FN_TASTEN=[["inv","inv","Umkehrfunktion: sin⁻¹, cos⁻¹, tan⁻¹"],["sin","sin","Sinus (Grad)"],["cos","cos","Kosinus (Grad)"],["tan","tan","Tangens (Grad)"],["π","π","Pi"],["zeit","h min","Stunden und Minuten, z. B. 6 h 45 min"]];
+var TASTEN=[["C","C","del","Alles löschen"],["(","("],[")",")"],["%","%","op","Prozent"],["⌫","⌫","del","Letzte Eingabe löschen"],
+  ["7"],["8"],["9"],["÷","÷","op","geteilt durch"],["√","√","fx","Wurzel"],
+  ["4"],["5"],["6"],["×","×","op","mal"],["²","x<sup>2</sup>","fx","Quadrat"],
+  ["1"],["2"],["3"],["−","−","op","minus"],["^","x<sup>y</sup>","fx","hoch"],
+  ["0"],[",",",","","Komma"],["±","±","","Vorzeichen wechseln"],["+","+","op","plus"],["=","=","eq","Ergebnis"]];
+function rkTastenBauen(box,liste){ liste.forEach(function(k){ var b=document.createElement("button"); b.type="button"; b.dataset.k=k[0];
+    b.innerHTML=k[1]||k[0]; if(k[2])b.className=k[2]; if(k[3]){b.setAttribute("aria-label",k[3]);b.title=k[3];}
+    b.addEventListener("click",function(){rkTaste(k[0]);}); box.appendChild(b); }); }
+rkTastenBauen($("calcFn"),FN_TASTEN); rkTastenBauen($("calcGrid"),TASTEN);
+function rkZeigen(){
+  var ex=$("calcExpr"),out=$("calcRes"),zb=$("calcZeit"),v=rkWert();
+  ex.innerHTML=frisch?rkEsc(letzte?letzte+" =":""):rkAusdruck(true);
+  out.className="";
+  if(fehler){out.textContent=fehler;out.className="err";}
+  else if(!T.length){out.textContent="0";}
+  else if(isFinite(v)){out.textContent=rkFmt(v);zuletzt=v;}
+  else{out.textContent=zuletzt!=null?rkFmt(zuletzt):"0";out.className="stale";}
+  var mitZeit=!fehler&&isFinite(v)&&rkHatZeit(); zb.hidden=!mitZeit; if(mitZeit)zb.textContent=rkFmtZeit(v);
+  var tp=$("calcTape");
+  if(!verlauf.length){tp.hidden=true;tp.innerHTML="";}
+  else{ tp.hidden=false;
+    tp.innerHTML='<button type="button" class="tape-clear" data-leeren>Verlauf leeren</button>'+verlauf.map(function(e,i){
+      var w=rkFmt(e.v)+(e.z?" ("+rkFmtZeit(e.v)+")":"");
+      return '<button type="button" data-i="'+i+'" title="Ergebnis einsetzen" aria-label="'+rkEsc(e.a+" = "+w)+' einsetzen"><span class="t-a">'+rkEsc(e.a)+'</span><span class="t-v">= '+rkEsc(w)+'</span></button>';}).join("");
+    tp.scrollTop=tp.scrollHeight; }
+  $("calcFn").querySelectorAll("button").forEach(function(b){var k=b.dataset.k;
+    if(k==="inv"){b.classList.toggle("on",inv);b.setAttribute("aria-pressed",inv?"true":"false");}
+    else if(k==="sin"||k==="cos"||k==="tan")b.textContent=k+(inv?"⁻¹":""); });
+  elCalc.classList.toggle("mini",mini); $("calcMin").setAttribute("aria-expanded",mini?"false":"true");
+  $("calcMin").setAttribute("aria-label",mini?"Tasten ausklappen":"Tasten einklappen"); $("calcMin").title=mini?"Ausklappen":"Einklappen";
+  rkTake(); rkSpeichern(); if(calcOpen)calcDock();
+}
+$("calcTape").addEventListener("click",function(e){ var b=e.target.closest("button"); if(!b)return;
+  if(b.hasAttribute("data-leeren")){verlauf=[];}
+  else{var en=verlauf[+b.dataset.i]; if(en){fehler="";rkEinsetzen(en.v,en.z);}}
+  rkZeigen(); });
+$("calcTake").addEventListener("click",rkUebernehmen);
+$("calcMin").addEventListener("click",function(){mini=!mini;rkZeigen();});
+$("calcDisp").addEventListener("click",function(e){ if(mini&&!e.target.closest("button")){mini=false;rkZeigen();} });
+document.addEventListener("keydown",function(e){ if(!calcOpen||e.ctrlKey||e.metaKey||e.altKey)return;
+  var a=document.activeElement;
+  if(a&&a!==document.body&&!elCalc.contains(a)){
+    if(/^(INPUT|TEXTAREA|SELECT)$/.test(a.tagName)||a.isContentEditable)return;
+    /* Enter auf einem Knopf der Seite („Antwort prüfen“) löst den Knopf aus */
+    if(e.key==="Enter"&&/^(BUTTON|A|SUMMARY)$/.test(a.tagName))return;
+  }
+  var m={"+":"+","-":"−","*":"×","x":"×","/":"÷",":":"÷","^":"^","%":"%","(":"(",")":")",",":",",".":",","Enter":"=","=":"=",
+         "Backspace":"⌫","Delete":"C","c":"C","C":"C","p":"π","h":"zeit"}[e.key];
+  if(!m&&/^\d$/.test(e.key))m=e.key;
+  if(!m)return;
+  e.preventDefault(); rkTaste(m);
 });
 
 /* ---- Rechenblatt ---- */
