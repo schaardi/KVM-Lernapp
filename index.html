@@ -962,6 +962,48 @@
 .eb-p{width:72%;height:4px;border-radius:2px;background:var(--track);overflow:hidden;margin-top:1px}
 .eb-p i{display:block;height:100%;background:var(--amber);border-radius:2px}
 
+/* Vergleich: freiwillige Wochenrangliste */
+.vg-lead{margin:0 0 12px;font-size:13.5px;line-height:1.55;color:var(--ink-soft)}
+.vg-lead b{color:var(--ink)}
+.vg-btn{border:1px solid var(--line-strong);background:var(--paper);border-radius:10px;padding:9px 14px;min-height:42px;font:700 13px var(--body);color:var(--petrol-ink);cursor:pointer}
+.vg-btn:hover{border-color:var(--petrol);background:var(--petrol-soft)}
+.vg-btn.solid{background:var(--petrol);border-color:var(--petrol);color:#fff}
+.vg-btn.solid:hover{background:var(--petrol-deep)}
+.vg-btn.leise{border-color:transparent;background:transparent;color:var(--muted);padding:6px 8px;min-height:34px;font-weight:600}
+.vg-btn.leise:hover{color:var(--petrol-ink);background:var(--surface)}
+.vg-btn:disabled{opacity:.6;cursor:default}
+.vg-form{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0 6px}
+.vg-form input{flex:1 1 200px;min-width:0;border:1px solid var(--line-strong);border-radius:10px;padding:10px 12px;font:500 14px var(--body);background:var(--paper);color:var(--ink)}
+.vg-form input:focus{outline:0;border-color:var(--petrol);box-shadow:0 0 0 3px var(--petrol-soft)}
+.vg-hinweis{font-size:11.5px;line-height:1.5;color:var(--muted);margin:6px 0 0}
+.vg-fehler{font-size:12.5px;color:var(--err-ink);margin:6px 0 0;font-weight:600}
+.vg-fehler:empty{display:none}
+.vg-top{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-bottom:14px}
+.vg-kpi{border:1px solid var(--line);border-radius:12px;background:var(--surface);padding:12px 13px}
+.vg-kpi b{display:block;font:700 27px/1 var(--disp);color:var(--petrol-ink-deep)}
+.vg-kpi span{display:block;font-size:11.5px;line-height:1.4;color:var(--muted);margin-top:5px}
+.vg-bar{height:5px;border-radius:3px;background:var(--track);overflow:hidden;margin-top:9px}
+.vg-bar i{display:block;height:100%;border-radius:3px;background:linear-gradient(90deg,var(--petrol),var(--ok))}
+.vg-liste{list-style:none;margin:0;padding:0;border:1px solid var(--line);border-radius:12px;overflow:hidden}
+.vg-z{display:grid;grid-template-columns:30px minmax(0,1fr) 64px 48px;align-items:center;gap:8px;padding:8px 12px;border-top:1px solid var(--line-soft);font-size:13.5px}
+.vg-z:first-child{border-top:0}
+.vg-z.kopf{background:var(--surface-2);font:600 10px/1.2 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted);padding:7px 12px}
+.vg-p{display:inline-grid;place-items:center;width:26px;height:26px;border-radius:50%;font:700 12px var(--mono);color:var(--muted)}
+.vg-z[data-platz="1"] .vg-p{background:radial-gradient(circle at 35% 30%,#FBD88A,#E3A032 60%,#B96C06);color:#fff}
+.vg-z[data-platz="2"] .vg-p{background:radial-gradient(circle at 35% 30%,#F1F4F5,#B8C3C7 60%,#8A979C);color:#fff}
+.vg-z[data-platz="3"] .vg-p{background:radial-gradient(circle at 35% 30%,#F3C9A0,#C98A52 60%,#9A5E2C);color:#fff}
+.vg-n{font-weight:600;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:var(--ink)}
+.vg-a{font:700 13px var(--mono);color:var(--ink);text-align:right}
+.vg-r{font:600 11.5px var(--mono);color:var(--muted);text-align:right}
+.vg-z.kopf .vg-a,.vg-z.kopf .vg-r{font:inherit;color:inherit}
+.vg-z.ich{background:var(--petrol-soft)}
+.vg-z.ich .vg-n::after{content:" · du";font-weight:500;color:var(--petrol-ink)}
+.vg-luecke{padding:0 12px;text-align:center;color:var(--muted);border-top:1px solid var(--line-soft);line-height:1.6}
+.vg-leer{padding:12px;text-align:center;font-size:12.5px;color:var(--muted)}
+.vg-fuss{display:flex;align-items:center;gap:4px 6px;flex-wrap:wrap;margin-top:10px;font-size:12.5px;color:var(--muted)}
+.vg-fuss .vg-ich{margin-right:auto}
+.vg-fuss b{color:var(--ink)}
+
 /* Aktivität: beantwortete Fragen der letzten 14 Tage */
 .aktiv{display:grid;grid-template-columns:repeat(14,minmax(0,1fr));gap:5px;align-items:end;height:104px;margin-top:4px}
 .ak{display:flex;flex-direction:column;align-items:center;justify-content:flex-end;gap:5px;height:100%;min-width:0}
@@ -1294,6 +1336,11 @@ body[data-screen="scrBlatt"] .app{max-width:920px}
 
     <h2 class="h-group">Erfolge <span class="h-scope" id="erfolgeN"></span></h2>
     <section class="hcard"><div class="erfolge" id="erfolgeList"></div></section>
+
+    <!-- Vergleich mit anderen: freiwillige Wochenrangliste (nur mit Konto).
+         Erscheint erst, wenn die Datenbank dafür eingerichtet ist. -->
+    <h2 class="h-group" id="vgKopf" hidden>Vergleich <span class="h-scope" id="vgScope"></span></h2>
+    <section class="hcard" id="vgBox" hidden></section>
 
     <h2 class="h-group">Nachschlagen</h2>
     <section class="hcard">
@@ -1886,7 +1933,8 @@ function renderPruefLast(){
   box.hidden=false;
   $("btnPruefWeiter").onclick=function(){startRound('cases',c.id,idx);};
 }
-function renderHomeExtras(){renderHero();renderErfolge();renderAktiv();renderPruefLast();}
+function renderHomeExtras(){renderHero();renderErfolge();renderAktiv();renderPruefLast();
+  if(window.KVM_vergleich)window.KVM_vergleich();}
 
 function renderSubChips(){
   var wrap=$("subChips"); wrap.innerHTML=""; var subs=subsOfFach(state.fach);
@@ -3529,12 +3577,154 @@ document.addEventListener("keydown",function(ev){
   function push(){if(!user)return;var data=payload();if(!pulledOk&&!Object.keys(data).length)return;sb.from("progress").upsert({user_id:user.id,data:data,updated_at:new Date().toISOString()}).then(function(){},function(){});}
   function schedulePush(){if(!user)return;clearTimeout(pushT);pushT=setTimeout(push,1500);}
   function pull(){if(!user)return Promise.resolve();return sb.from("progress").select("data").eq("user_id",user.id).maybeSingle().then(function(res){pulledOk=true;var d=res&&res.data&&res.data.data;if(d&&typeof d==="object"){mergeFromCode({d:d});for(var id in d){if(d[id]&&d[id].d!=null&&progress[id]&&progress[id].due==null)progress[id].due=d[id].d;}saveProgress();refresh();}},function(){});}
-  var _save=saveProgress; saveProgress=function(){_save.apply(this,arguments);schedulePush();};
+  var _save=saveProgress; saveProgress=function(){_save.apply(this,arguments);schedulePush();vgMeldenSpaeter();};
   function signIn(){sb.auth.signInWithOAuth({provider:"google",options:{redirectTo:location.href.split("#")[0]}}).then(function(){},function(){});}
   function signOut(){sb.auth.signOut().then(function(){},function(){});}
   var btn=$("btnCloud"); if(btn)btn.addEventListener("click",function(){if(user){if(confirm("Abmelden? Dein Fortschritt bleibt lokal auf diesem Gerät."))signOut();}else signIn();});
   acc(false,"");
-  sb.auth.onAuthStateChange(function(_e,session){user=session?session.user:null;if(user){acc(true,nameOf(user));if(syncedFor!==user.id){syncedFor=user.id;pull().then(push);}}else{acc(false,"");syncedFor=null;pulledOk=false;}});
+  /* ===== Vergleich mit anderen: freiwillige Wochenrangliste =====
+     Nur mit Konto und nur nach Beitritt mit einem Spitznamen. Sichtbar für
+     andere sind allein Spitzname, Prüfungsreife, Antworten dieser Woche und
+     Lerntage in Folge. Tabelle und Funktionen richtet
+     docs/supabase-rangliste.sql ein – fehlen sie, bleibt der Abschnitt
+     verborgen und die Seite sieht aus wie vorher. */
+  var vg={verfuegbar:null,stand:null,info:0,laedt:false,zuletzt:0,meldeT:null,bearbeiten:false};
+  var VG_NAME=/^[A-Za-zÄÖÜäöüß0-9 _.-]{3,20}$/;
+  /* ISO-Kalenderwoche („2026-W39“): die Rangliste beginnt jeden Montag neu. */
+  function isoWoche(){
+    var d=new Date();d.setHours(0,0,0,0);
+    d.setDate(d.getDate()+3-((d.getDay()+6)%7));
+    var j=d.getFullYear(),w1=new Date(j,0,4);
+    var kw=1+Math.round(((d-w1)/864e5-3+((w1.getDay()+6)%7))/7);
+    return j+"-W"+(kw<10?"0":"")+kw;
+  }
+  function wocheAntworten(){
+    var t=tageAll(),heute=todayIdx(),mo=(new Date().getDay()+6)%7,n=0;
+    for(var d=heute-mo;d<=heute;d++)n+=(t[d]|0);
+    return n;
+  }
+  function vgWerte(name){
+    var gem=0;ALL.forEach(function(q){var p=progress[q.id];if(p&&p.box>=MASTER_BOX)gem++;});
+    return {p_name:name,p_reife:Math.round(overallReife()*100),p_gemeistert:gem,
+            p_woche:isoWoche(),p_antworten:wocheAntworten(),p_serie:serie()};
+  }
+  function vgMeldenSpaeter(){
+    if(!user||!vg.stand||!vg.stand.dabei)return;
+    clearTimeout(vg.meldeT);
+    vg.meldeT=setTimeout(function(){
+      sb.rpc("rangliste_melden",vgWerte(vg.stand.name)).then(function(){vg.zuletzt=0;},function(){});
+    },4000);
+  }
+  function vgLaden(erzwingen){
+    if(vg.laedt)return;
+    if(!erzwingen&&vg.verfuegbar!==null&&Date.now()-vg.zuletzt<30000){vgZeigen();return;}
+    vg.laedt=true;
+    var p=user?sb.rpc("rangliste_stand",{p_woche:isoWoche()}):sb.rpc("rangliste_info");
+    p.then(function(res){
+      vg.laedt=false;vg.zuletzt=Date.now();
+      if(!res||res.error){vg.verfuegbar=false;vgZeigen();return;}
+      vg.verfuegbar=true;
+      if(user)vg.stand=res.data||null;else vg.info=+res.data||0;
+      vgZeigen();
+    },function(){vg.laedt=false;vg.verfuegbar=false;vgZeigen();});
+  }
+  window.KVM_vergleich=function(){vgLaden(false);};
+  function vgFormHTML(wert){
+    return '<form class="vg-form" id="vgForm" novalidate>'+
+      '<input id="vgName" type="text" maxlength="20" autocomplete="nickname" spellcheck="false" '+
+      'placeholder="Spitzname, z. B. Lkw_Profi" aria-label="Spitzname für die Rangliste" value="'+esc(wert||"")+'">'+
+      '<button type="submit" class="vg-btn solid" id="vgOk">'+(vg.stand&&vg.stand.dabei?"Speichern":"Mitmachen")+'</button>'+
+      (vg.stand&&vg.stand.dabei?'<button type="button" class="vg-btn leise" id="vgAbbruch">Abbrechen</button>':'')+
+      '</form><p class="vg-fehler" id="vgFehler" role="alert"></p>';
+  }
+  function vgZeile(e,platz){
+    return '<li class="vg-z'+(e.ich?' ich':'')+'" data-platz="'+platz+'"><span class="vg-p">'+platz+'</span>'+
+      '<span class="vg-n">'+esc(e.name)+'</span><span class="vg-a">'+fmtN(e.antworten|0)+'</span>'+
+      '<span class="vg-r">'+(e.reife|0)+' %</span></li>';
+  }
+  function vgZeigen(){
+    var box=$("vgBox"),kopf=$("vgKopf");if(!box||!kopf)return;
+    var an=vg.verfuegbar===true;
+    box.hidden=kopf.hidden=!an;
+    if(!an)return;
+    var h="",scope="",st=vg.stand;
+    if(!user){
+      h='<p class="vg-lead">Wie stehst du im Vergleich zu anderen? Mit Konto kannst du einer freiwilligen '+
+        '<b>Wochenrangliste</b> beitreten und siehst, wo du mit deiner Prüfungsreife stehst.'+
+        (vg.info?' <b>'+fmtN(vg.info)+'</b> Lernende sind schon dabei.':'')+'</p>'+
+        '<button type="button" class="vg-btn solid" id="vgLogin">Mit Google anmelden</button>';
+    }else if(!st){
+      h='<p class="vg-lead">Rangliste wird geladen …</p>';
+    }else if(!st.dabei||vg.bearbeiten){
+      if(!st.dabei){
+        h='<p class="vg-lead">Vergleiche dich mit anderen Lernenden – freiwillig und nur mit Spitznamen:</p>'+
+          '<ul class="rt-list vg-lead"><li><b>Wochenrangliste</b> nach beantworteten Fragen, jeden Montag neu</li>'+
+          '<li>wie viele bei der <b>Prüfungsreife</b> hinter dir liegen</li></ul>';
+        if(st.teilnehmende)scope=fmtN(st.teilnehmende)+" dabei";
+      }else h='<p class="vg-lead">Neuer Spitzname für die Rangliste:</p>';
+      h+=vgFormHTML(vg.bearbeiten?st.name:"")+
+        '<p class="vg-hinweis">Sichtbar für andere sind nur dein Spitzname, deine Prüfungsreife, deine Antworten dieser Woche '+
+        'und deine Lerntage in Folge. Austreten geht jederzeit – dein Eintrag wird dann gelöscht.</p>';
+    }else{
+      var andere=Math.max(0,(st.teilnehmende|0)-1);
+      var vor=andere?Math.round((st.reife_vor|0)/andere*100):0;
+      scope=fmtN(st.teilnehmende|0)+" dabei";
+      h='<div class="vg-top">'+
+        '<div class="vg-kpi"><b>'+(andere?vor+" %":"–")+'</b><span>'+(!andere?'Noch bist du allein – lade andere ein, dann gibt es einen Vergleich.':
+          (vor?'der anderen liegen bei der Prüfungsreife hinter dir':'Noch liegen alle vor dir – jede gemeisterte Frage bringt dich nach vorn.'))+'</span>'+
+          (andere?'<div class="vg-bar" aria-hidden="true"><i style="width:'+vor+'%"></i></div>':'')+'</div>'+
+        '<div class="vg-kpi"><b>'+(st.mein_platz?st.mein_platz+".":"–")+'</b><span>'+(st.mein_platz?
+          ('Platz diese Woche von '+fmtN(st.woche_teilnehmende|0)+' · '+fmtN(st.meine_antworten|0)+' Antworten'):
+          'Diese Woche noch ohne Antwort – ab der ersten bist du in der Wochenliste.')+'</span></div>'+
+        '</div>';
+      var kw=isoWoche().split("-W")[1];
+      h+='<p class="h-sub">Wochenrangliste · KW '+(+kw)+'</p>';
+      var L=st.liste||[];
+      if(!L.length){
+        h+='<div class="vg-liste"><p class="vg-leer">Diese Woche hat noch niemand geantwortet. Fang an!</p></div>';
+      }else{
+        h+='<ol class="vg-liste"><li class="vg-z kopf" aria-hidden="true"><span>Pl.</span><span>Spitzname</span><span class="vg-a">Antw.</span><span class="vg-r">Reife</span></li>';
+        L.forEach(function(e){h+=vgZeile(e,e.platz|0);});
+        if(st.mein_platz&&!L.some(function(e){return e.ich;})){
+          h+='<li class="vg-luecke" aria-hidden="true">⋯</li>'+
+            vgZeile({name:st.name,antworten:st.meine_antworten,reife:Math.round(overallReife()*100),ich:true},st.mein_platz|0);
+        }
+        h+='</ol>';
+      }
+      h+='<div class="vg-fuss"><span class="vg-ich">Du bist dabei als <b>'+esc(st.name)+'</b></span>'+
+        '<button type="button" class="vg-btn leise" id="vgAendern">Spitzname ändern</button>'+
+        '<button type="button" class="vg-btn leise" id="vgRaus">Austreten</button></div>';
+    }
+    box.innerHTML=h;
+    $("vgScope").textContent=scope;
+    var b;
+    if((b=$("vgLogin")))b.onclick=signIn;
+    if((b=$("vgAendern")))b.onclick=function(){vg.bearbeiten=true;vgZeigen();var i=$("vgName");if(i){i.focus();i.select();}};
+    if((b=$("vgAbbruch")))b.onclick=function(){vg.bearbeiten=false;vgZeigen();};
+    if((b=$("vgRaus")))b.onclick=function(){
+      if(!confirm("Aus der Rangliste austreten? Dein Eintrag wird gelöscht."))return;
+      b.disabled=true;
+      sb.rpc("rangliste_austreten").then(function(){vgLaden(true);},function(){b.disabled=false;});
+    };
+    var f=$("vgForm");
+    if(f)f.onsubmit=function(ev){
+      ev.preventDefault();
+      var name=($("vgName").value||"").trim().replace(/\s+/g," "),fe=$("vgFehler"),ok=$("vgOk");
+      if(!VG_NAME.test(name)){fe.textContent="3–20 Zeichen: Buchstaben, Ziffern, Leerzeichen, _ . -";return;}
+      ok.disabled=true;fe.textContent="";
+      sb.rpc("rangliste_melden",vgWerte(name)).then(function(res){
+        ok.disabled=false;
+        if(res&&res.error){
+          fe.textContent=res.error.code==="23505"?"Dieser Spitzname ist schon vergeben.":
+            (res.error.code==="23514"?"3–20 Zeichen: Buchstaben, Ziffern, Leerzeichen, _ . -":"Das hat nicht geklappt – bitte später noch einmal.");
+          return;
+        }
+        vg.bearbeiten=false;vgLaden(true);
+      },function(){ok.disabled=false;fe.textContent="Keine Verbindung – bitte später noch einmal.";});
+    };
+  }
+  sb.auth.onAuthStateChange(function(_e,session){user=session?session.user:null;if(user){acc(true,nameOf(user));if(syncedFor!==user.id){syncedFor=user.id;pull().then(push);}}else{acc(false,"");syncedFor=null;pulledOk=false;}
+    vg.stand=null;vg.bearbeiten=false;vgLaden(true);});
 })();
 })();
 </script>
