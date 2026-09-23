@@ -1119,36 +1119,36 @@ Großbuchstaben, Buchstabenabstand 1,3, `kMuted`; rechts optional ein Zusatz in 
 - Startseite: Kommentar „Startseite“ Z. 875
 - Texte: „Aufgabentexte: Tabellen …“ Z. 1094
 - Aufgabenblatt Z. 1126
-- Rechenweg Z. 1244
+- Rechenweg Z. 1255
 
 **JS**
 - Renderer:
-  - `rtIstRechnung` Z. 2554
-  - `rtKopf` Z. 2574
-  - `rtTabelle` Z. 2589
-  - `rtHTML` Z. 2612
+  - `rtIstRechnung` Z. 2568
+  - `rtKopf` Z. 2588
+  - `rtTabelle` Z. 2603
+  - `rtHTML` Z. 2626
 - Rechenweg:
-  - `rwTokens` Z. 2678
-  - `rwRechne` Z. 2759
-  - `rwZeileText` Z. 2797
-  - `rwHTML` Z. 2830
-  - `rwBinden` Z. 2843
-- Bewertung: `scoreHTML` Z. 2930
+  - `rwTokens` Z. 2692
+  - `rwRechne` Z. 2773
+  - `rwZeileText` Z. 2811
+  - `rwHTML` Z. 2844
+  - `rwBinden` Z. 2857
+- Bewertung: `scoreHTML` Z. 2944
 - Aufgabenblatt:
-  - `blStepperHTML` Z. 3218
-  - `blFortschrittHTML` Z. 3236
-  - `blLoesungHTML` Z. 3305
-  - `blRechenteil` Z. 3343
-  - `blTeilHTML` Z. 3349
-  - `renderBlatt` Z. 3388
+  - `blStepperHTML` Z. 3232
+  - `blFortschrittHTML` Z. 3250
+  - `blLoesungHTML` Z. 3319
+  - `blRechenteil` Z. 3357
+  - `blTeilHTML` Z. 3363
+  - `renderBlatt` Z. 3402
 - Startseite:
-  - `tagZaehlen` Z. 1726
-  - `renderFachGroup` Z. 1894
-  - `renderHero` Z. 1922
-  - `erfolgeListe` Z. 2042
-  - `renderAktiv` Z. 2083
-  - `renderPruefLast` Z. 2100
-- Prüfungsliste: `items.forEach` in `render()` Z. 6059
+  - `tagZaehlen` Z. 1740
+  - `renderFachGroup` Z. 1908
+  - `renderHero` Z. 1936
+  - `erfolgeListe` Z. 2056
+  - `renderAktiv` Z. 2097
+  - `renderPruefLast` Z. 2114
+- Prüfungsliste: `items.forEach` in `render()` Z. 6173
 
 Zeilennummern: Stand dieses Commits.
 
@@ -1296,18 +1296,18 @@ Serverseitig abgesichert:
 - Austreten führt zurück zum Beitrittsformular. Der Eintrag ist serverseitig gelöscht.
 
 ### Referenz Web-Implementierung (`index.html` auf `claude/ui-design-improvement-my0f66`)
-- **HTML:** `#vgKopf` / `#vgBox`, Z. 1423
+- **HTML:** `#vgKopf` / `#vgBox`, Z. 1434
 - **CSS:** Kommentar „Vergleich: freiwillige Wochenrangliste“, Z. 1044
 - **JS** im Cloud-Block:
 
   | Funktion | Zeile |
   |---|---|
-  | `isoWoche` | 3822 |
-  | `wocheAntworten` | 3829 |
-  | `vgWerte` | 3834 |
-  | `vgMeldenSpaeter` | 3839 |
-  | `vgLaden` | 3846 |
-  | `vgZeigen` | 3873 |
+  | `isoWoche` | 3936 |
+  | `wocheAntworten` | 3943 |
+  | `vgWerte` | 3948 |
+  | `vgMeldenSpaeter` | 3953 |
+  | `vgLaden` | 3960 |
+  | `vgZeigen` | 3987 |
 
 - **SQL:** `docs/supabase-rangliste.sql`. Lokal geprüft mit PGlite: Rechte,
   Rangfolge, Wochenwechsel, zwei Geräte, Namensregeln, Austritt, Kontolöschung.
@@ -1540,27 +1540,27 @@ Der Rechner bearbeitet keinen Text, sondern eine Liste von Zeichen:
 - „4.400“ im Ergebnisfeld zählt als 4400.
 
 ### Referenz Web-Implementierung (`index.html` auf `claude/ui-design-improvement-my0f66`)
-- **HTML:** `#mCalc`, Z. 1586
+- **HTML:** `#mCalc`, Z. 1600
 - **CSS:** Kommentar „Taschenrechner: Anzeige mit Verlauf …“, Z. 532
 - **JS:**
 
   | Funktion | Zeile |
   |---|---|
-  | `rwTokens` (Kern: Zeichen) | 2678 |
-  | `rwFunktion` (Winkel, Wurzel) | 2716 |
-  | `rwAuswerten` (Kern: Rechnen) | 2734 |
-  | `parseCalcNum` | 3047 |
-  | `calcDock` (Andocken, Ausweichen) | 3986 |
-  | `rkKern` (Zeichenliste → Kern) | 4050 |
-  | `rkAusdruck` (Anzeige, Text) | 4083 |
-  | `rkFunktion` | 4134 |
-  | `rkVorzeichen` | 4144 |
-  | `rkZeit` | 4162 |
-  | `rkGleich` | 4176 |
-  | `rkTaste` | 4190 |
-  | `rkZielVon` / `rkUebernehmen` | 4211 / 4234 |
-  | `FN_TASTEN` / `TASTEN` | 4255 |
-  | `rkZeigen` | 4265 |
+  | `rwTokens` (Kern: Zeichen) | 2692 |
+  | `rwFunktion` (Winkel, Wurzel) | 2730 |
+  | `rwAuswerten` (Kern: Rechnen) | 2748 |
+  | `parseCalcNum` | 3061 |
+  | `calcDock` (Andocken, Ausweichen) | 4100 |
+  | `rkKern` (Zeichenliste → Kern) | 4164 |
+  | `rkAusdruck` (Anzeige, Text) | 4197 |
+  | `rkFunktion` | 4248 |
+  | `rkVorzeichen` | 4258 |
+  | `rkZeit` | 4276 |
+  | `rkGleich` | 4290 |
+  | `rkTaste` | 4304 |
+  | `rkZielVon` / `rkUebernehmen` | 4325 / 4348 |
+  | `FN_TASTEN` / `TASTEN` | 4369 |
+  | `rkZeigen` | 4379 |
 
 Zeilennummern: Stand dieses Commits.
 
@@ -1672,11 +1672,123 @@ Fehler im Formular: „Bitte ein Datum wählen.“ / „Der Termin muss in der Z
 - „Entfernen“ führt zurück zu „Wann ist deine Prüfung?“.
 
 ### Referenz Web-Implementierung (`index.html` auf `claude/ui-design-improvement-my0f66`)
-- **HTML:** `#planBox` in `.hero-main`, Z. 1349
+- **HTML:** `#planBox` in `.hero-main`, Z. 1360
 - **CSS:** Kommentar „Prüfungstermin und Lernplan: eigener Block …“, Z. 927
 - **JS:**
-  - Block-Kommentar „Prüfungstermin und Lernplan“, Z. 1937
-  - `planRechnen`, Z. 1952
-  - `renderPlan`, Z. 1968 (aufgerufen am Ende von `renderHero`)
+  - Block-Kommentar „Prüfungstermin und Lernplan“, Z. 1951
+  - `planRechnen`, Z. 1966
+  - `renderPlan`, Z. 1982 (aufgerufen am Ende von `renderHero`)
+
+Zeilennummern: Stand dieses Commits.
+
+---
+
+## FR-007 · Prüfung unter Echtbedingungen
+
+**Status App-Session:** ⏳ offen
+**Web umgesetzt:** ✅ `claude/ui-design-improvement-my0f66` (Commit „Prüfung unter Echtbedingungen …“)
+**Voraussetzung:** Aufgabenblatt aus FR-003.
+
+### Ziel / Framing
+Eine Original-Prüfung am Stück schreiben, wie bei der IHK:
+- mit Uhr über die echte Bearbeitungszeit
+- ohne Blick in die Lösungen
+- danach Selbstbewertung, Note und Bearbeitungszeit
+
+Die bisherige Simulation nutzt Übungsfragen. Die echte schriftliche Prüfung besteht aber
+aus Situationsaufgaben.
+
+### Bearbeitungszeit
+- Steht im Text der Ausgangssituation „Bearbeitungszeit N Minuten“, gilt N.
+  Kraftverkehr (`P-OK`, `P-FT`): 180.
+- Sonst Basisqualifikationen: 90 Minuten, `P-NT-…` (Naturwissenschaften): 60 Minuten.
+
+### Speicher
+- **`kvm_echt`**: `{"id": "P-NT-20150429", "start": <ms>, "min": 60, "ende": <ms>|fehlt, "zeitUm": true|fehlt}`
+  - Es gibt immer nur einen Durchgang.
+  - Die Uhr rechnet ab `start`. Sie läuft also weiter, wenn man die Prüfung verlässt
+    oder die App neu startet, wie in der echten Prüfung.
+- **`kvm_echt_verlauf`**: Liste (höchstens 40) von
+  `{"id", "tag", "min", "dauer": <ms>, "pkt", "max", "note"}`. `tag` wie in `kvm_tage`.
+
+### Start (Prüfungsliste)
+- Neuer Knopf je Prüfung: Uhr-Symbol + „Unter Prüfungsbedingungen · 90 min“.
+- Läuft für diese Prüfung schon ein Durchgang, geht es dort weiter.
+- Läuft ein Durchgang einer anderen Prüfung, fragt die App: „Es läuft noch eine andere
+  Prüfung unter Prüfungsbedingungen. Diesen Durchgang beenden und die neue Prüfung starten?“
+- Gibt es zu dieser Prüfung gespeicherte Antworten, Rechenwege, Tabelleneinträge oder
+  Punkte, fragt die App: „Für diese Prüfung sind schon Antworten gespeichert. Unter
+  Prüfungsbedingungen startest du mit leeren Blättern – die bisherigen Antworten und Punkte
+  dieser Prüfung werden gelöscht.“ Bei Ja werden sie gelöscht.
+  - Tabelleneinträge sind alle Schlüssel, die mit `<stepId>#` beginnen.
+- Danach wird `kvm_echt` gesetzt und das Aufgabenblatt bei Aufgabe 1 geöffnet.
+
+### Während der Prüfung
+- **Leiste oben:**
+  - Uhr (Mono, Pillenform wie der Simulations-Timer): `1:29:45`, unter einer Stunde `29:45`.
+  - Ab 10 Minuten Restzeit rot (`.low`).
+  - Daneben der Knopf „Abgeben“ (petrol).
+- **Band unter dem Kopf:** „Unter Prüfungsbedingungen: 1 h 30 min Bearbeitungszeit,
+  Lösungen erst nach der Abgabe. Die Uhr läuft weiter, auch wenn du die Prüfung verlässt.“
+- **Gesperrt:**
+  - „Lösung aufdecken“ je Teilaufgabe und „Alle Lösungen aufdecken“ im Fuß
+  - Zwischenergebnisse aus früheren Teilen (gibt es ohnehin erst nach dem Aufdecken)
+- Auf der letzten Aufgabe heißt der Hauptknopf „Abgeben“ statt „Zum Ergebnis →“.
+- Rechner, Rechenblatt und Formelbuch bleiben nutzbar.
+- **Verlassen (✕):** Nachfrage „Prüfung verlassen? Die Uhr läuft weiter – wie in der
+  echten Prüfung. Über die Prüfungsliste geht es weiter.“
+
+### Abgabe
+- **Von Hand:** „Jetzt abgeben?“, bei leeren Teilen mit „N Teilaufgaben sind noch leer.“,
+  dazu „Danach siehst du die Lösungen und bewertest dich selbst.“
+- **Automatisch**, wenn die Uhr 0 erreicht, auch beim Wiederöffnen nach Ablauf. Dann wird
+  `zeitUm` gesetzt.
+- **Danach:**
+  - `ende` = min(jetzt, start + min).
+  - Alle Teilaufgaben sind aufgedeckt, und es geht zurück zu Aufgabe 1.
+  - Die Uhr zeigt die Bearbeitungszeit („1 h 12 min“); „Abgeben“ verschwindet.
+- **Band (grün):**
+  - „Abgegeben nach 1 h 12 min.“ bzw. „Zeit abgelaufen – deine Antworten sind abgegeben.“
+  - dazu: „Sieh dir jetzt die Lösungen an und vergib dir je Teilaufgabe Punkte. Danach
+    „Zum Ergebnis“ – mit Note und Bearbeitungszeit.“
+- **Ergebnis:**
+  - Die Zeile bekommt „ · Bearbeitungszeit 1 h 12 min von 1 h 30 min“, bei Ablauf mit
+    „ (Zeit abgelaufen)“.
+  - Ein Eintrag geht nach `kvm_echt_verlauf`, danach wird `kvm_echt` gelöscht.
+
+### Prüfungsliste
+| Zustand | Hauptknopf |
+|---|---|
+| Durchgang läuft | Uhr + „Läuft · noch 45 min – weiter →“ (nach Ablauf: „Zeit abgelaufen – auswerten →“) |
+| abgegeben, noch nicht ausgewertet | „Abgegeben – jetzt auswerten →“ |
+| sonst | wie bisher + „Unter Prüfungsbedingungen · N min“ |
+
+Unter den Knöpfen steht der letzte Durchgang: „Zuletzt unter Prüfungsbedingungen: 64 von
+100 P · Note 3 · 2 h 37 min · am 4. Sept.“
+
+### Abnahme
+- NT-Prüfung unter Prüfungsbedingungen starten:
+  - Die Uhr zeigt `1:00:00` bzw. `59:xx`.
+  - Es gibt keine Aufdecken-Knöpfe.
+- Antwort schreiben, verlassen, über die Liste fortsetzen: Antwort und Uhr sind noch da.
+- `start` 61 Minuten zurückstellen:
+  - Die Prüfung wird automatisch abgegeben („Zeit abgelaufen“), die Lösungen sind offen.
+  - Das Ergebnis zeigt „Bearbeitungszeit 1 h von 1 h (Zeit abgelaufen)“.
+- Neuer Durchgang mit gespeicherten Antworten: Nachfrage, danach leere Blätter.
+- Normales Öffnen der Prüfung: keine Uhr, Aufdecken wie bisher.
+
+### Referenz Web-Implementierung (`index.html` auf `claude/ui-design-improvement-my0f66`)
+- **HTML:**
+  - Uhr und „Abgeben“ in `.bl-bar`, Z. 1545
+  - Band `#blEcht`, Z. 1557
+- **CSS:** Kommentar „Prüfung unter Echtbedingungen: Uhr und Abgabe …“, Z. 1237
+- **JS:**
+  - Block-Kommentar „Prüfung unter Echtbedingungen“, Z. 3537
+  - `echtUhr`, Z. 3568
+  - `echtAbgeben`, Z. 3589
+  - `KVM_startEcht`, Z. 3603
+  - `KVM_echtInfo`, Z. 3617
+  - Ergebnis in `finishRound`, Z. 3796
+  - Prüfungsliste, Z. 6183
 
 Zeilennummern: Stand dieses Commits.

@@ -1234,6 +1234,17 @@ body[data-screen="scrBlatt"] .app{max-width:920px}
 .oas-scale{display:flex;justify-content:space-between;font:600 10.5px var(--mono);color:var(--muted);margin-top:2px}
 .oas-hint{margin-top:8px;font-size:11.5px;color:var(--muted);line-height:1.45}
 
+/* Prüfung unter Echtbedingungen: Uhr und Abgabe in der Leiste, Hinweisband */
+.bl-uhr{flex:none;font-size:13px;padding:6px 9px}
+.bl-abgabe{flex:none;border:0;border-radius:9px;background:var(--petrol);color:#fff;font:700 13px var(--body);min-height:36px;padding:0 13px;cursor:pointer}
+.bl-abgabe:hover{background:var(--petrol-deep)}
+.bl-echt{display:flex;gap:10px;align-items:flex-start;margin:0 0 14px;padding:10px 13px;border:1px solid var(--petrol-line);background:var(--petrol-soft);border-radius:11px;font-size:13px;line-height:1.5;color:var(--ink)}
+.bl-echt.fertig{border-color:var(--ok-line);background:var(--ok-soft)}
+.bl-echt svg{flex:none;margin-top:2px;color:var(--petrol-ink)}
+.bl-echt b{color:var(--petrol-ink-deep)}
+.pr-btn.echt{display:inline-flex;align-items:center;gap:6px}
+.pr-echt{margin:9px 0 0;font-size:12px;color:var(--muted)}
+.pr-echt b{color:var(--ink)}
 .bl-foot{display:flex;gap:9px;align-items:center;margin-top:18px;padding-top:15px;border-top:1px solid var(--line);flex-wrap:wrap}
 .bl-nav{border:1px solid var(--line-strong);background:var(--paper);border-radius:10px;padding:10px 15px;min-height:44px;font:700 13px var(--body);color:var(--petrol-ink);cursor:pointer}
 .bl-nav:hover{background:var(--petrol-soft)}
@@ -1531,6 +1542,8 @@ body[data-screen="scrBlatt"] .app{max-width:920px}
       <div class="bl-bar">
         <button class="iconbtn" id="blQuit" title="Prüfung verlassen" aria-label="Prüfung verlassen">✕</button>
         <div class="bl-stepper" id="blStepper" role="tablist" aria-label="Aufgaben dieser Prüfung"></div>
+        <span class="timer bl-uhr" id="blUhr" role="timer" aria-label="Verbleibende Zeit" hidden></span>
+        <button type="button" class="bl-abgabe" id="blAbgabe" hidden>Abgeben</button>
       </div>
       <div class="bl-prog" id="blProg"></div>
     </div>
@@ -1541,6 +1554,7 @@ body[data-screen="scrBlatt"] .app{max-width:920px}
         <div class="bl-chips" id="blChips"></div>
       </header>
       <p class="bl-hinweis" id="blHinweis" hidden></p>
+      <div class="bl-echt" id="blEcht" hidden></div>
       <details class="casectx" id="blCase" hidden></details>
       <div id="blAufgabe"></div>
       <div class="bl-foot" id="blFoot"></div>
@@ -3371,8 +3385,8 @@ function blTeilHTML(q){
        '<label class="aw-lbl" for="bla-'+id+'">'+(rw?'Erläuterung · optional':'Deine Antwort · wie in der Prüfung')+'</label>'+
        '<textarea class="cc-input'+(rw?' klein':'')+'" id="bla-'+id+'" rows="3" data-antwort="'+id+'" '+
        'placeholder="'+(rw?'Begründung, Beurteilung oder Antwortsatz …':'Antwort schreiben …')+'">'+esc(oaGet(q.id))+'</textarea>'+
-       '<div class="bl-abar"><button type="button" class="bl-reveal" data-auf="'+id+'">'+IC_AUGE+
-       'Lösung'+(teil?' zu '+teil+')':'')+' aufdecken</button>'+
+       '<div class="bl-abar">'+(echtLaeuft()?'':'<button type="button" class="bl-reveal" data-auf="'+id+'">'+IC_AUGE+
+       'Lösung'+(teil?' zu '+teil+')':'')+' aufdecken</button>')+
        (rw?'':'<button type="button" class="aw-tool" data-rwauf="'+id+'">'+IC_RECHNEN+'Rechenweg</button>')+
        '</div></div>';
   }
@@ -3387,6 +3401,9 @@ function blHatAusgangslage(fall){
 }
 function renderBlatt(){
   var fall=state.fall,nrs=blNummern(),nr=state.blattNr;
+  var echt=echtAktiv();
+  if(echt&&echt.ende)state.pool.forEach(function(q){state.aufgedeckt[q.id]=true;});
+  echtBand(echt);
   var auf=aufgabeVon(fall,nr)||{},teile=blTeile(nr),pos=nrs.indexOf(nr);
   var pruef=/^P-/.test(fall.id||'');
   var datum=(/–\s*([^–]+)$/.exec(fall.title||'')||[])[1]||fall.termin||'';
@@ -3423,20 +3440,21 @@ function renderBlatt(){
   teile.forEach(function(q){h+=blTeilHTML(q);});
   $("blAufgabe").innerHTML=h;
 
-  var offen=teile.filter(blAufgedeckt).length;
+  var offen=teile.filter(blAufgedeckt).length,laeuft=echtLaeuft();
   var f='';
   if(pos>0)f+='<button type="button" class="bl-nav" id="blPrev">← Aufgabe '+nrs[pos-1]+'</button>';
-  if(offen<teile.length)
-    f+='<button type="button" class="bl-nav" id="blAlle">Alle Lösungen aufdecken</button>';
-  else
-    f+='<button type="button" class="bl-nav" id="blExport">Von Claude prüfen lassen</button>';
+  /* Unter Prüfungsbedingungen gibt es vor der Abgabe nichts aufzudecken. */
+  if(!laeuft)f+=offen<teile.length?'<button type="button" class="bl-nav" id="blAlle">Alle Lösungen aufdecken</button>':
+    '<button type="button" class="bl-nav" id="blExport">Von Claude prüfen lassen</button>';
   f+='<button type="button" class="bl-nav primary" id="blNext">'+
-     (pos>=nrs.length-1?'Zum Ergebnis →':('Aufgabe '+nrs[pos+1]+' →'))+'</button>';
+     (pos>=nrs.length-1?(laeuft?'Abgeben':'Zum Ergebnis →'):('Aufgabe '+nrs[pos+1]+' →'))+'</button>';
   $("blFoot").innerHTML=f;
   blBinden();
   /* Die aktuelle Aufgabe in der Leiste sichtbar halten (viele Aufgaben). */
   var cur=st.querySelector('.cur');
   if(cur)st.scrollLeft=Math.max(0,cur.offsetLeft-st.clientWidth/2+cur.offsetWidth/2);
+  echtUhr();
+  if(laeuft&&!echtTimer)echtTimer=setInterval(echtUhr,1000);
 }
 
 function blBinden(){
@@ -3502,7 +3520,7 @@ function blBinden(){
   var nrs=blNummern(),pos=nrs.indexOf(state.blattNr);
   if(pv)pv.onclick=function(){if(pos>0)blOeffnen(nrs[pos-1]);};
   if(nx)nx.onclick=function(){
-    if(pos>=nrs.length-1){finishRound(false);}else{blOeffnen(nrs[pos+1]);}
+    if(pos>=nrs.length-1){if(echtLaeuft())echtAbgebenFragen();else finishRound(false);}else{blOeffnen(nrs[pos+1]);}
   };
   if(al)al.onclick=function(){
     blTeile(state.blattNr).forEach(function(q){state.aufgedeckt[q.id]=true;});
@@ -3515,6 +3533,94 @@ function blBindenStepper(){
     b.onclick=function(){blOeffnen(parseInt(b.dataset.nr,10));};
   });
 }
+
+/* ===== Prüfung unter Echtbedingungen =====
+   Mit Uhr über die echte Bearbeitungszeit (Kraftverkehr laut Aufgabe 180 min,
+   Basisqualifikationen 90 min, NT 60 min); Lösungen gibt es erst nach der
+   Abgabe. Der Durchgang steht in kvm_echt ({id,start,min,ende}). Die Uhr
+   rechnet ab der Startzeit – sie läuft also weiter, wenn man die Prüfung
+   verlässt oder neu lädt, wie in der echten Prüfung. Ist die Zeit um, gilt die
+   Prüfung als abgegeben. Ergebnisse stehen in kvm_echt_verlauf. */
+var ECHT_KEY='kvm_echt',ECHT_VERLAUF='kvm_echt_verlauf',echtTimer=null;
+function echtGet(){try{var d=JSON.parse(localStorage.getItem(ECHT_KEY)||'null');return (d&&d.id&&d.start&&d.min)?d:null;}catch(e){return null;}}
+function echtSet(d){try{if(d)localStorage.setItem(ECHT_KEY,JSON.stringify(d));else localStorage.removeItem(ECHT_KEY);}catch(e){}}
+function echtMinuten(fall){var m=/Bearbeitungszeit\s+(\d+)\s*Minuten/.exec(fall.context||'');return m?+m[1]:(/^P-NT-/.test(fall.id)?60:90);}
+function echtAktiv(){var e=echtGet();return (e&&state.mode==='cases'&&state.fall&&state.fall.id===e.id)?e:null;}
+function echtLaeuft(){var e=echtAktiv();return !!(e&&!e.ende);}
+function uhrText(ms){var s=Math.max(0,Math.ceil(ms/1000)),h=Math.floor(s/3600),m=Math.floor(s%3600/60),x=s%60;
+  return (h?h+':'+(m<10?'0':''):'')+m+':'+(x<10?'0':'')+x;}
+function dauerText(ms){var m=Math.max(0,Math.round(ms/60000)),h=Math.floor(m/60);m%=60;return h?(h+' h'+(m?' '+m+' min':'')):(m+' min');}
+function echtVerlauf(){try{var v=JSON.parse(localStorage.getItem(ECHT_VERLAUF)||'[]');return Array.isArray(v)?v:[];}catch(e){return [];}}
+function echtMerken(e,pkt,max,note){
+  var v=echtVerlauf();v.push({id:e.id,tag:todayIdx(),min:e.min,dauer:e.ende-e.start,pkt:pkt,max:max,note:note});
+  try{localStorage.setItem(ECHT_VERLAUF,JSON.stringify(v.slice(-40)));}catch(x){}
+}
+/* Antworten, Rechenwege, Tabellen und Punkte einer Prüfung leeren – der
+   Durchgang beginnt wie in der Prüfung mit leeren Blättern. */
+function echtHatAntworten(ids){var ot=otAll();return ids.some(function(i){
+  return oaGet(i)||rwHat(i)||opGet(i)!=null||Object.keys(ot).some(function(k){return k.indexOf(i+'#')===0;});});}
+function echtLeeren(ids){
+  var oa=oaAll(),op=opAll(),ot=otAll(),rw=rwAll();
+  ids.forEach(function(i){delete oa[i];delete op[i];delete rw[i];Object.keys(ot).forEach(function(k){if(k.indexOf(i+'#')===0)delete ot[k];});});
+  try{localStorage.setItem(OA_KEY,JSON.stringify(oa));localStorage.setItem(OP_KEY,JSON.stringify(op));
+      localStorage.setItem(OT_KEY,JSON.stringify(ot));localStorage.setItem(RW_KEY,JSON.stringify(rw));}catch(e){}
+}
+function echtUhr(){
+  var el=$("blUhr"),ab=$("blAbgabe"),e=echtAktiv();
+  if(!e||$("scrBlatt").hidden){el.hidden=true;ab.hidden=true;if(!e){clearInterval(echtTimer);echtTimer=null;}return;}
+  el.hidden=false;
+  if(e.ende){el.textContent=dauerText(e.ende-e.start);el.classList.remove('low');el.setAttribute('aria-label','Bearbeitungszeit');ab.hidden=true;
+    clearInterval(echtTimer);echtTimer=null;return;}
+  var rest=e.start+e.min*60000-Date.now();
+  if(rest<=0){echtAbgeben(true);return;}
+  el.textContent=uhrText(rest);el.classList.toggle('low',rest<=10*60000);ab.hidden=false;
+}
+function echtBand(e){
+  var b=$("blEcht");if(!b)return;
+  if(!e){b.hidden=true;return;}
+  var ic='<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l2 2M9 2h6"/></svg>';
+  b.hidden=false;b.classList.toggle('fertig',!!e.ende);
+  b.innerHTML=ic+'<span>'+(e.ende?
+    ((e.zeitUm?'<b>Zeit abgelaufen</b> – deine Antworten sind abgegeben. ':'<b>Abgegeben</b> nach '+esc(dauerText(e.ende-e.start))+'. ')+
+     'Sieh dir jetzt die Lösungen an und vergib dir je Teilaufgabe Punkte. Danach „Zum Ergebnis“ – mit Note und Bearbeitungszeit.'):
+    ('<b>Unter Prüfungsbedingungen:</b> '+esc(dauerText(e.min*60000))+' Bearbeitungszeit, Lösungen erst nach der Abgabe. '+
+     'Die Uhr läuft weiter, auch wenn du die Prüfung verlässt.'))+'</span>';
+}
+function echtAbgeben(zeitUm){
+  var e=echtAktiv();if(!e||e.ende)return;
+  e.ende=Math.min(Date.now(),e.start+e.min*60000);e.zeitUm=!!zeitUm;echtSet(e);
+  clearInterval(echtTimer);echtTimer=null;
+  blOeffnen(blNummern()[0]);
+}
+function echtAbgebenFragen(){
+  var leer=state.pool.filter(function(q){return !blBeantwortet(q);}).length;
+  if(!confirm('Jetzt abgeben?'+(leer?'\n\n'+leer+' Teilaufgabe'+(leer===1?' ist':'n sind')+' noch leer.':'')+
+    '\n\nDanach siehst du die Lösungen und bewertest dich selbst.'))return;
+  echtAbgeben(false);
+}
+$("blAbgabe").addEventListener("click",echtAbgebenFragen);
+/* Schnittstelle für die Prüfungsliste */
+window.KVM_startEcht=function(id){
+  var c=CASES.filter(function(x){return x.id===id;})[0];if(!c)return false;
+  var lauf=echtGet();
+  if(lauf&&lauf.id===id){window.KVM_startCase(id,0);return true;}
+  if(lauf&&!lauf.ende&&!confirm('Es läuft noch eine andere Prüfung unter Prüfungsbedingungen. Diesen Durchgang beenden und die neue Prüfung starten?'))return false;
+  var ids=(c.steps||[]).map(function(x){return x.id;});
+  if(echtHatAntworten(ids)){
+    if(!confirm('Für diese Prüfung sind schon Antworten gespeichert.\n\nUnter Prüfungsbedingungen startest du mit leeren Blättern – die bisherigen Antworten und Punkte dieser Prüfung werden gelöscht.'))return false;
+    echtLeeren(ids);
+  }
+  echtSet({id:id,start:Date.now(),min:echtMinuten(c)});
+  window.KVM_startCase(id,0);
+  return true;
+};
+window.KVM_echtInfo=function(id){
+  var e=echtGet(),v=echtVerlauf().filter(function(x){return x.id===id;});
+  var c=CASES.filter(function(x){return x.id===id;})[0];
+  return {min:c?echtMinuten(c):90,laeuft:!!(e&&e.id===id&&!e.ende),abgegeben:!!(e&&e.id===id&&e.ende),
+    rest:(e&&e.id===id&&!e.ende)?e.start+e.min*60000-Date.now():null,letzte:v.length?v[v.length-1]:null};
+};
+window.KVM_dauerText=dauerText;
 
 /* Aufdecken zählt als bearbeitet: ohne eigene Punkte gilt die Teilaufgabe
    am Ende als 0 von n – wie in der Prüfung eine leer abgegebene Aufgabe. */
@@ -3685,6 +3791,12 @@ function finishRound(timeUp){
       });
     }
   }
+  var echt=echtAktiv();
+  if(echt&&echt.ende&&pointBased){
+    echtMerken(echt,achieved,possible,ihkGrade(pct).note);
+    $("resLine").innerHTML+=" · Bearbeitungszeit "+dauerText(echt.ende-echt.start)+" von "+dauerText(echt.min*60000)+(echt.zeitUm?" (Zeit abgelaufen)":"");
+    echtSet(null);
+  }
   var wu=[];state.wrong.forEach(function(q){if(wu.indexOf(q)<0)wu.push(q);});state.wrong=wu;
   $("btnRetryWrong").hidden=state.wrong.length===0;$("wrongCount").textContent=state.wrong.length;
   show("scrResult");
@@ -3720,7 +3832,9 @@ $("btnMixed").addEventListener("click",function(){startRound('all');});
 $("btnWeak").addEventListener("click",function(){startRound('weak');});
 $("btnSim").addEventListener("click",function(){startRound('sim');});
 $("btnQuit").addEventListener("click",function(){clearInterval(state.timerId);show("scrHome");});
-$("blQuit").addEventListener("click",function(){clearInterval(state.timerId);show("scrHome");});
+$("blQuit").addEventListener("click",function(){
+  if(echtLaeuft()&&!confirm("Prüfung verlassen?\n\nDie Uhr läuft weiter – wie in der echten Prüfung. Über die Prüfungsliste geht es weiter."))return;
+  clearInterval(state.timerId);clearInterval(echtTimer);echtTimer=null;show("scrHome");});
 /* Lightbox: Schließen über ✕, Esc (vom <dialog> selbst), Tippen neben das Bild. */
 $("lbX").addEventListener("click",function(){$("lightbox").close();});
 $("lbIn").addEventListener("click",function(){lbSkala(lbScale*1.5);});
@@ -6066,6 +6180,17 @@ function render(){
       if(bearbeitet&&bearbeitet<steps.length)for(var i=0;i<steps.length;i++)if(!fertig(steps[i])){weiter=i;break;}
       var kurz=(/^P-([A-Z]+)-/.exec(x.c.id)||[])[1]||'';
       var pct=steps.length?Math.round(bearbeitet/steps.length*100):0;
+      var ei=window.KVM_echtInfo?window.KVM_echtInfo(x.c.id):null,dauer=window.KVM_dauerText||function(ms){return Math.round(ms/60000)+' min';};
+      var uhr='<svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l2 2M9 2h6"/></svg>';
+      var start=ei&&ei.laeuft?'<button class="pr-btn solid echt" data-start="'+esc(x.c.id)+'">'+uhr+
+          (ei.rest>0?'Läuft · noch '+esc(dauer(ei.rest))+' – weiter':'Zeit abgelaufen – auswerten')+' →</button>':
+        ei&&ei.abgegeben?'<button class="pr-btn solid" data-start="'+esc(x.c.id)+'">Abgegeben – jetzt auswerten →</button>':
+        '<button class="pr-btn solid" data-start="'+esc(x.c.id)+'"'+(weiter>=0?' data-step="'+weiter+'"':'')+'>'
+        +(weiter>=0?'Weiter bei Aufgabe '+esc(steps[weiter].nr)+' →':(bearbeitet?'Prüfung öffnen':'Prüfung starten'))+'</button>'
+        +'<button class="pr-btn echt" data-echt="'+esc(x.c.id)+'" title="Mit Uhr über die echte Bearbeitungszeit, Lösungen erst nach der Abgabe">'+uhr+
+          'Unter Prüfungsbedingungen · '+(ei?ei.min:90)+' min</button>';
+      var letzte=ei&&ei.letzte?'<p class="pr-echt">Zuletzt unter Prüfungsbedingungen: <b>'+ei.letzte.pkt+' von '+ei.letzte.max+' P</b> · Note '+ei.letzte.note+
+        ' · '+esc(dauer(ei.letzte.dauer))+' · am '+esc(new Date(ei.letzte.tag*86400000).toLocaleDateString('de-DE',{day:'numeric',month:'short',timeZone:'UTC'}))+'</p>':'';
       h+='<div class="pr-item">'
         +'<div class="pr-top"><span class="pr-ic pr-'+esc(kurz.toLowerCase())+'" aria-hidden="true">'+esc(kurz)+'</span>'
         +'<div class="pr-tt"><div class="pr-date">'+esc(x.bereich)+'</div>'
@@ -6073,11 +6198,9 @@ function render(){
         +'<span class="pr-badge">'+(x.punkte?esc(x.punkte)+' P':'Prüfung')+'</span></div>'
         +(bearbeitet||bew?'<div class="pr-prog"><span class="pr-bar" aria-hidden="true"><i style="width:'+pct+'%"></i></span>'
           +'<span class="pr-pt"><b>'+bearbeitet+'</b>/'+steps.length+' Teile'+(bew?' · <b>'+pkt+'</b> P':'')+'</span></div>':'')
-        +'<div class="pr-actions">'
-        +'<button class="pr-btn solid" data-start="'+esc(x.c.id)+'"'+(weiter>=0?' data-step="'+weiter+'"':'')+'>'
-        +(weiter>=0?'Weiter bei Aufgabe '+esc(steps[weiter].nr)+' →':(bearbeitet?'Prüfung öffnen':'Prüfung starten'))+'</button>'
+        +'<div class="pr-actions">'+start
         +'<button class="pr-btn" data-copy="'+esc(x.c.id)+'">Für KI kopieren</button>'
-        +'</div>'
+        +'</div>'+letzte
         +'<details class="pr-steps"><summary>Einzelne Aufgabe öffnen</summary><div class="pr-aufg">'
         + aufgaben.map(function(a){
             var erste=-1,chips='';
@@ -6117,6 +6240,11 @@ function render(){
       close();
       if(typeof window.KVM_startCase==='function')
         window.KVM_startCase(id,isFinite(step)?step:0);
+    });
+  });
+  list.querySelectorAll('[data-echt]').forEach(function(b){
+    b.addEventListener('click',function(){
+      if(typeof window.KVM_startEcht==='function'&&window.KVM_startEcht(b.getAttribute('data-echt')))close();
     });
   });
   list.querySelectorAll('[data-copy]').forEach(function(b){
