@@ -1116,39 +1116,39 @@ Großbuchstaben, Buchstabenabstand 1,3, `kMuted`; rechts optional ein Zusatz in 
 ### Referenz Web-Implementierung (`index.html` auf `claude/ui-design-improvement-my0f66`)
 
 **CSS**
-- Startseite: Kommentar „Startseite“ Z. 875
-- Texte: „Aufgabentexte: Tabellen …“ Z. 1094
-- Aufgabenblatt Z. 1126
-- Rechenweg Z. 1255
+- Startseite: Kommentar „Startseite“ Z. 903
+- Texte: „Aufgabentexte: Tabellen …“ Z. 1122
+- Aufgabenblatt Z. 1154
+- Rechenweg Z. 1283
 
 **JS**
 - Renderer:
-  - `rtIstRechnung` Z. 2568
-  - `rtKopf` Z. 2588
-  - `rtTabelle` Z. 2603
-  - `rtHTML` Z. 2626
+  - `rtIstRechnung` Z. 2620
+  - `rtKopf` Z. 2640
+  - `rtTabelle` Z. 2655
+  - `rtHTML` Z. 2678
 - Rechenweg:
-  - `rwTokens` Z. 2692
-  - `rwRechne` Z. 2773
-  - `rwZeileText` Z. 2811
-  - `rwHTML` Z. 2844
-  - `rwBinden` Z. 2857
-- Bewertung: `scoreHTML` Z. 2944
+  - `rwTokens` Z. 2744
+  - `rwRechne` Z. 2825
+  - `rwZeileText` Z. 2863
+  - `rwHTML` Z. 2896
+  - `rwBinden` Z. 2909
+- Bewertung: `scoreHTML` Z. 2996
 - Aufgabenblatt:
-  - `blStepperHTML` Z. 3232
-  - `blFortschrittHTML` Z. 3250
-  - `blLoesungHTML` Z. 3319
-  - `blRechenteil` Z. 3357
-  - `blTeilHTML` Z. 3363
-  - `renderBlatt` Z. 3402
+  - `blStepperHTML` Z. 3285
+  - `blFortschrittHTML` Z. 3303
+  - `blLoesungHTML` Z. 3372
+  - `blRechenteil` Z. 3410
+  - `blTeilHTML` Z. 3416
+  - `renderBlatt` Z. 3455
 - Startseite:
-  - `tagZaehlen` Z. 1740
-  - `renderFachGroup` Z. 1908
-  - `renderHero` Z. 1936
-  - `erfolgeListe` Z. 2056
-  - `renderAktiv` Z. 2097
-  - `renderPruefLast` Z. 2114
-- Prüfungsliste: `items.forEach` in `render()` Z. 6173
+  - `tagZaehlen` Z. 1792
+  - `renderFachGroup` Z. 1960
+  - `renderHero` Z. 1988
+  - `erfolgeListe` Z. 2108
+  - `renderAktiv` Z. 2149
+  - `renderPruefLast` Z. 2166
+- Prüfungsliste: `items.forEach` in `render()` Z. 6290
 
 Zeilennummern: Stand dieses Commits.
 
@@ -1296,18 +1296,18 @@ Serverseitig abgesichert:
 - Austreten führt zurück zum Beitrittsformular. Der Eintrag ist serverseitig gelöscht.
 
 ### Referenz Web-Implementierung (`index.html` auf `claude/ui-design-improvement-my0f66`)
-- **HTML:** `#vgKopf` / `#vgBox`, Z. 1434
-- **CSS:** Kommentar „Vergleich: freiwillige Wochenrangliste“, Z. 1044
+- **HTML:** `#vgKopf` / `#vgBox`, Z. 1462
+- **CSS:** Kommentar „Vergleich: freiwillige Wochenrangliste“, Z. 1072
 - **JS** im Cloud-Block:
 
   | Funktion | Zeile |
   |---|---|
-  | `isoWoche` | 3936 |
-  | `wocheAntworten` | 3943 |
-  | `vgWerte` | 3948 |
-  | `vgMeldenSpaeter` | 3953 |
-  | `vgLaden` | 3960 |
-  | `vgZeigen` | 3987 |
+  | `isoWoche` | 4053 |
+  | `wocheAntworten` | 4060 |
+  | `vgWerte` | 4065 |
+  | `vgMeldenSpaeter` | 4070 |
+  | `vgLaden` | 4077 |
+  | `vgZeigen` | 4104 |
 
 - **SQL:** `docs/supabase-rangliste.sql`. Lokal geprüft mit PGlite: Rechte,
   Rangfolge, Wochenwechsel, zwei Geräte, Namensregeln, Austritt, Kontolöschung.
@@ -1540,27 +1540,27 @@ Der Rechner bearbeitet keinen Text, sondern eine Liste von Zeichen:
 - „4.400“ im Ergebnisfeld zählt als 4400.
 
 ### Referenz Web-Implementierung (`index.html` auf `claude/ui-design-improvement-my0f66`)
-- **HTML:** `#mCalc`, Z. 1600
-- **CSS:** Kommentar „Taschenrechner: Anzeige mit Verlauf …“, Z. 532
+- **HTML:** `#mCalc`, Z. 1628
+- **CSS:** Kommentar „Taschenrechner: Anzeige mit Verlauf …“, Z. 560
 - **JS:**
 
   | Funktion | Zeile |
   |---|---|
-  | `rwTokens` (Kern: Zeichen) | 2692 |
-  | `rwFunktion` (Winkel, Wurzel) | 2730 |
-  | `rwAuswerten` (Kern: Rechnen) | 2748 |
-  | `parseCalcNum` | 3061 |
-  | `calcDock` (Andocken, Ausweichen) | 4100 |
-  | `rkKern` (Zeichenliste → Kern) | 4164 |
-  | `rkAusdruck` (Anzeige, Text) | 4197 |
-  | `rkFunktion` | 4248 |
-  | `rkVorzeichen` | 4258 |
-  | `rkZeit` | 4276 |
-  | `rkGleich` | 4290 |
-  | `rkTaste` | 4304 |
-  | `rkZielVon` / `rkUebernehmen` | 4325 / 4348 |
-  | `FN_TASTEN` / `TASTEN` | 4369 |
-  | `rkZeigen` | 4379 |
+  | `rwTokens` (Kern: Zeichen) | 2744 |
+  | `rwFunktion` (Winkel, Wurzel) | 2782 |
+  | `rwAuswerten` (Kern: Rechnen) | 2800 |
+  | `parseCalcNum` | 3114 |
+  | `calcDock` (Andocken, Ausweichen) | 4217 |
+  | `rkKern` (Zeichenliste → Kern) | 4281 |
+  | `rkAusdruck` (Anzeige, Text) | 4314 |
+  | `rkFunktion` | 4365 |
+  | `rkVorzeichen` | 4375 |
+  | `rkZeit` | 4393 |
+  | `rkGleich` | 4407 |
+  | `rkTaste` | 4421 |
+  | `rkZielVon` / `rkUebernehmen` | 4442 / 4465 |
+  | `FN_TASTEN` / `TASTEN` | 4486 |
+  | `rkZeigen` | 4496 |
 
 Zeilennummern: Stand dieses Commits.
 
@@ -1672,12 +1672,12 @@ Fehler im Formular: „Bitte ein Datum wählen.“ / „Der Termin muss in der Z
 - „Entfernen“ führt zurück zu „Wann ist deine Prüfung?“.
 
 ### Referenz Web-Implementierung (`index.html` auf `claude/ui-design-improvement-my0f66`)
-- **HTML:** `#planBox` in `.hero-main`, Z. 1360
-- **CSS:** Kommentar „Prüfungstermin und Lernplan: eigener Block …“, Z. 927
+- **HTML:** `#planBox` in `.hero-main`, Z. 1388
+- **CSS:** Kommentar „Prüfungstermin und Lernplan: eigener Block …“, Z. 955
 - **JS:**
-  - Block-Kommentar „Prüfungstermin und Lernplan“, Z. 1951
-  - `planRechnen`, Z. 1966
-  - `renderPlan`, Z. 1982 (aufgerufen am Ende von `renderHero`)
+  - Block-Kommentar „Prüfungstermin und Lernplan“, Z. 2003
+  - `planRechnen`, Z. 2018
+  - `renderPlan`, Z. 2034 (aufgerufen am Ende von `renderHero`)
 
 Zeilennummern: Stand dieses Commits.
 
@@ -1779,16 +1779,107 @@ Unter den Knöpfen steht der letzte Durchgang: „Zuletzt unter Prüfungsbedingu
 
 ### Referenz Web-Implementierung (`index.html` auf `claude/ui-design-improvement-my0f66`)
 - **HTML:**
-  - Uhr und „Abgeben“ in `.bl-bar`, Z. 1545
-  - Band `#blEcht`, Z. 1557
-- **CSS:** Kommentar „Prüfung unter Echtbedingungen: Uhr und Abgabe …“, Z. 1237
+  - Uhr und „Abgeben“ in `.bl-bar`, Z. 1573
+  - Band `#blEcht`, Z. 1585
+- **CSS:** Kommentar „Prüfung unter Echtbedingungen: Uhr und Abgabe …“, Z. 1265
 - **JS:**
-  - Block-Kommentar „Prüfung unter Echtbedingungen“, Z. 3537
-  - `echtUhr`, Z. 3568
-  - `echtAbgeben`, Z. 3589
-  - `KVM_startEcht`, Z. 3603
-  - `KVM_echtInfo`, Z. 3617
-  - Ergebnis in `finishRound`, Z. 3796
-  - Prüfungsliste, Z. 6183
+  - Block-Kommentar „Prüfung unter Echtbedingungen“, Z. 3601
+  - `echtUhr`, Z. 3632
+  - `echtAbgeben`, Z. 3653
+  - `KVM_startEcht`, Z. 3667
+  - `KVM_echtInfo`, Z. 3681
+  - Ergebnis in `finishRound`, Z. 3860
+  - Prüfungsliste, Z. 6300
+
+Zeilennummern: Stand dieses Commits.
+
+---
+
+## FR-008 · Fehler melden
+
+**Status App-Session:** ⏳ offen
+**Web umgesetzt:** ✅ `claude/ui-design-improvement-my0f66` (Commit „Fehler melden …“)
+**Voraussetzung:** einmalig `docs/supabase-meldungen.sql` im Supabase-SQL-Editor
+(siehe `SUPABASE_SETUP.md`, Abschnitt 6). Fehlt das Skript, zeigen Web und App keinen Knopf.
+
+### Ziel / Framing
+Viele Texte stammen per OCR aus PDFs. Lernende finden Fehler schneller als jede
+Prüfroutine. Ein unauffälliger Knopf an jeder Frage macht aus ihnen Mitprüfende. Melden
+geht auch ohne Konto.
+
+### Datenbank (Skript `docs/supabase-meldungen.sql`)
+- **Tabelle `meldungen`:** `id`, `frage` (≤ 80), `art` (siehe unten), `text` (≤ 1.000),
+  `kontext` (jsonb, ≤ 2 kB), `quelle` (`web` | `app`), `user_id` (nur bei Anmeldung),
+  `status` (`neu` | `erledigt` | `abgelehnt`), `created_at`.
+- **Kein Client-Zugriff auf die Tabelle.** Es gibt zwei RPCs, beide für `anon` und
+  `authenticated`:
+  - `meldungen_bereit()` → `true`. Nur zum Prüfen, ob Melden eingerichtet ist.
+  - `meldung_senden(p_frage, p_art, p_text, p_kontext, p_quelle)`.
+- **Bremse:** 50 je Konto und Tag, 300 je Stunde insgesamt. Überschreitung:
+  Fehlermeldung mit „zu viele Meldungen“.
+- Lokal mit PGlite geprüft (17 Fälle): Rechte, Kürzen, Art-Prüfung, Kontextgröße,
+  Bremse, Kontolöschung (Meldung bleibt ohne Konto).
+
+### Knopf
+- **Quiz:** in der Metazeile rechts (neben Fragetyp und Themenbereich).
+- **Aufgabenblatt:** im Kopf jeder Teilaufgabe rechts.
+- **Aussehen:** Fähnchen 13 + „Fehler?“, 12 w600 in `kMuted`, ohne Rahmen.
+  - Schon gemeldet: „Gemeldet ✓“ in `kOkInk`.
+  - Gemerkt wird das in `SharedPreferences` **`kvm_gemeldet`** = `{"<id>": <ms>}`.
+- Sichtbar erst, wenn `meldungen_bereit()` beim Start `true` liefert.
+
+### Dialog
+- **Handy:** Blatt von unten, Höhe nach Inhalt. **Breit:** Dialog mit 480 Breite.
+- **Titel** „Fehler melden“. Darunter ein Bezugskasten: Nummer in Mono, dann „ · “ und die
+  ersten 160 Zeichen der Frage (dahinter „ …“, wenn gekürzt).
+- **„Was stimmt nicht?“:** fünf Auswahl-Chips (Radiogruppe, gewählt = petrol gefüllt):
+
+  | Chip | `art` |
+  |---|---|
+  | Text unleserlich oder Tippfehler | `text` |
+  | Lösung falsch | `loesung` |
+  | Rechnung oder Zahl falsch | `rechnung` |
+  | Tabelle oder Anlage fehlt | `anlage` |
+  | Sonstiges | `sonstiges` |
+
+- **„Beschreibung · optional“:** Textfeld, höchstens 1.000 Zeichen, Platzhalter „Was genau
+  stimmt nicht? Gern mit der richtigen Angabe.“
+- **Hinweis:** „Gesendet werden die Fragennummer, deine Angaben und – falls du angemeldet
+  bist – dein Konto für Rückfragen.“
+- **„Meldung senden“:** erst aktiv, wenn eine Art gewählt ist. Beim Senden „Wird gesendet …“.
+- **Erfolg:**
+  - „Danke! Deine Meldung ist angekommen.“ (grün), Knopf „Gesendet ✓“
+  - nach 1,4 s schließt der Dialog
+  - alle Knöpfe dieser Frage zeigen „Gemeldet ✓“
+- **Fehler:**
+  - bei der Bremse: „Gerade gehen zu viele Meldungen ein – bitte später noch einmal.“
+  - sonst: „Senden hat nicht geklappt. Bist du online? Bitte noch einmal versuchen.“
+  - der Knopf ist wieder aktiv
+- **Kontext (`p_kontext`):**
+  - `{"modus": <Bildschirm>, "fach": <f>, "bereich": <sub, ≤ 80>, "auszug": <160 Zeichen>}`
+  - App: `modus` = `quiz` | `blatt`, `p_quelle` = `app`
+
+### Abnahme
+- Ohne Skript ist kein Knopf zu sehen.
+- Mit Skript, Quiz:
+  - „Fehler?“ öffnet den Dialog mit Nummer und Auszug.
+  - Ohne Art lässt sich nichts senden.
+  - Mit Art und Text kommt eine Zeile in `meldungen` an, der Knopf zeigt „Gemeldet ✓“.
+- Aufgabenblatt: Jede Teilaufgabe hat einen Knopf; der Dialog zeigt die Nummer der
+  Teilaufgabe.
+- Nach 51 Meldungen desselben Kontos an einem Tag erscheint der Hinweis zur Bremse.
+
+### Referenz Web-Implementierung (`index.html` auf `claude/ui-design-improvement-my0f66`)
+- **HTML:**
+  - Knopf `#qMelden`, Z. 1528
+  - Dialog `#mMelden`, Z. 1645
+- **CSS:** Kommentar „Fehler melden: unauffälliger Knopf …“, Z. 531
+- **JS:**
+  - `meldenKnopfHTML` (Aufgabenblatt), Z. 3595
+  - Block „Fehler melden“ im Cloud-Teil, Z. 3991
+  - `mdOeffnen`, Z. 4002
+  - Senden, Z. 4028
+  - Bereitschaft, Z. 4042
+- **SQL:** `docs/supabase-meldungen.sql`
 
 Zeilennummern: Stand dieses Commits.
