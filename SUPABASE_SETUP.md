@@ -92,7 +92,7 @@ Fehlt das, landet man nach dem Login auf der voreingestellten Site URL (oft
 aus Abschnitt 2.
 
 Tabellen und Funktionen kommen **nicht** über Pages. Sie werden einmal per SQL-Skript
-im Supabase-SQL-Editor angelegt (Abschnitte 1, 5, 6 und 7). Bis dahin blendet die Web-App
+im Supabase-SQL-Editor angelegt (Abschnitte 1 und 5 bis 8). Bis dahin blendet die Web-App
 die betroffene Funktion aus.
 
 ## So funktioniert der Sync
@@ -188,6 +188,68 @@ Rangliste keine Gruppen-Reiter.
 
 In der **Datenschutzerklärung** zur Rangliste ergänzen: In Lerngruppen sehen die
 Mitglieder dieselben Angaben wie in der Rangliste, dazu den Gruppennamen.
+
+## 8. Profile, Freunde und Verwaltung (optional)
+
+Aufbauend auf der Wochenrangliste (Abschnitt 5):
+- **Nutzerübersicht:** alle, die der Rangliste beigetreten sind, mit Suche nach Spitzname
+- **Freunde:** Anfrage und Annahme
+- **Profile:** Befreundete sehen gegenseitig den **Lernstand je Fach**
+- **Verwaltung für Admins:** Konten, Lernstände, Meldungen und Gruppen einsehen und verwalten
+
+Freigeschaltet wird das mit [`docs/supabase-profile.sql`](docs/supabase-profile.sql),
+**nach** `docs/supabase-rangliste.sql` auszuführen. Lerngruppen (Abschnitt 7) und
+Meldungen (Abschnitt 6) sind keine Voraussetzung; ohne sie bleiben die Admin-Reiter
+dafür leer. Solange das Skript fehlt, sieht die Rangliste aus wie bisher.
+
+**Profile und Freunde**
+- **Opt-in:** Ein Profil hat nur, wer der Rangliste beigetreten ist.
+- **Für alle Teilnehmenden sichtbar** ist nur, was auch die Rangliste zeigt: Spitzname,
+  Prüfungsreife, Antworten dieser Woche, Lerntage in Folge.
+- **Nur für Freunde** (einstellbar auf „alle“):
+  - Prüfungsreife und gemeisterte Fragen je Fach
+  - Aktivität der letzten 14 Tage
+  - Lerntage
+  - Prüfungen unter Echtbedingungen
+- **Freundschaft** braucht Anfrage und Annahme. Abgelehnt wird still; wer abgelehnt wurde,
+  kann nicht erneut drängeln. Höchstens 30 offene Anfragen und 50 neue am Tag.
+- **Keine Konto-ID nach außen:** Profile haben eine eigene, zufällige Kennung.
+- **Aufräumen:** Wer die Rangliste verlässt oder sein Konto löscht, verliert Profil und
+  Freundschaften.
+
+**Verwaltung**
+- Admins stehen in der Tabelle `admins`. Eintragen (einmal, im SQL-Editor – das Google-Konto
+  muss sich vorher einmal angemeldet haben):
+  ```sql
+  insert into public.admins (user_id)
+  select id from auth.users where lower(email) = lower('name@example.com')
+  on conflict do nothing;
+  ```
+- In der Web-App erscheint dann unter **Konto & Einstellungen** die Kachel **Verwaltung**.
+  Die Datenbank prüft bei jedem Aufruf, ob wirklich ein Admin angemeldet ist.
+- Reiter und Möglichkeiten:
+  - **Übersicht:** Kennzahlen und die letzten Verwaltungsaktionen
+  - **Nutzer:** alle Konten mit Suche (E-Mail, Name, Spitzname). Je Konto: Anmeldedaten,
+    Lernstand je Fach, Rangliste, Profil, Freunde, Gruppen und Meldungen.
+  - **Aktionen je Konto:**
+    - aus der Rangliste nehmen
+    - sperren (raus aus Rangliste, Freunden und Gruppen, kein neuer Beitritt; Lernen und
+      Sichern gehen weiter)
+    - entsperren
+    - Konto endgültig löschen (mit der E-Mail als Bestätigung)
+    - Admin-Konten sind von Sperren und Löschen ausgenommen.
+  - **Meldungen:** lesen, erledigen, ablehnen, wieder öffnen
+  - **Gruppen:** ansehen, löschen
+- Jede Verwaltungsaktion steht in `admin_protokoll` (wer, was, wann, welches Konto).
+- Das Admin-Konto ist ein Google-Konto: mit **Zwei-Faktor-Anmeldung** schützen, denn es kann
+  alle Daten sehen und Konten löschen.
+
+In der **Datenschutzerklärung** ergänzen:
+- **Profile und Freunde:** was Freunde bzw. alle Teilnehmenden sehen (siehe oben) und dass
+  man die Sichtbarkeit selbst wählt
+- **Verwaltung:** Admins können zur Betreuung, Moderation und für Löschanfragen alle
+  gespeicherten Angaben einsehen (Konto, Lernstand, Profil, Freunde, Gruppen, Meldungen).
+  Sperren und Löschungen werden protokolliert.
 
 ## Apple-Login später
 Die Auth-Architektur ist anbieter-offen (`AuthService`). „Sign in with Apple"
