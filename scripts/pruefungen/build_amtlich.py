@@ -18,11 +18,9 @@ sys.path.insert(0, os.path.join(ROOT, 'tools'))
 import parse_amtlich as pa
 import webdaten as W          # Inhalte der Web-App in data/*.js
 import aufgaben_modell as AM  # Aufgabenblatt-Format
-try:
-    from korrekturen import BILDER, TABELLEN, TEXTE, ABSCHNEIDEN, _ANLAGEN
-except Exception:
-    BILDER, TABELLEN, TEXTE, ABSCHNEIDEN = {}, {}, {}, {}
-    _ANLAGEN = os.path.join(HERE, 'anlagen')
+import rechenzeichen as RZ    # verwechselte Rechenzeichen der OCR
+from korrekturen import (BILDER, TABELLEN, TABELLEN_L, TEXTE, ABSCHNEIDEN,
+                         LOESUNGEN, LOESUNG_TEXT, _ANLAGEN)
 import base64
 
 BEREICH_FACH = {'FT': 5, 'OK': 4}
@@ -129,6 +127,14 @@ def apply_texte(cases):
                 s['q'] = s['q'].split(marke)[0].rstrip(); n += 1
             elif marke:
                 offen.append('%s: Abschnitt %r' % (s['id'], marke[:40]))
+            # Musterlösungen: einzelne Stellen (alt → neu) oder ganz neu gesetzt
+            for alt, neu in LOESUNGEN.get(s['id'], []):
+                if alt in s['a']:
+                    s['a'] = s['a'].replace(alt, neu); n += 1
+                else:
+                    offen.append('%s: Lösung %r' % (s['id'], alt[:40]))
+            if s['id'] in LOESUNG_TEXT:
+                s['a'] = LOESUNG_TEXT[s['id']]; n += 1
     return n, offen
 
 
@@ -139,6 +145,8 @@ def apply_media(cases):
         for s in c['steps']:
             if s['id'] in TABELLEN:
                 s['tab'] = TABELLEN[s['id']]; n += 1
+            if s['id'] in TABELLEN_L:
+                s['tabL'] = TABELLEN_L[s['id']]; n += 1
             if s['id'] in BILDER:
                 pfad = os.path.join(_ANLAGEN, BILDER[s['id']])
                 if os.path.exists(pfad):
@@ -170,6 +178,19 @@ def main():
     q, s = pa.parse(src)
     pa.pair(q, s)
     cases = build_cases(q)
+    ids = {st['id'] for c in cases for st in c['steps']}
+    for tabelle in (TABELLEN, TABELLEN_L, BILDER, LOESUNGEN, LOESUNG_TEXT, ABSCHNEIDEN):
+        fremd = sorted(set(tabelle) - ids)
+        assert not fremd, 'Korrektur für unbekannte Teilaufgabe: %s' % fremd
+    # Rechenzeichen, die die OCR verwechselt hat ("30.250 : 6 % = 1.815"),
+    # rechnerisch belegt zurücksetzen – siehe rechenzeichen.py. Das geschieht
+    # vor den Handkorrekturen, damit sich LOESUNGEN auf den bereinigten Text
+    # beziehen.
+    rz = 0
+    for c in cases:
+        for st in c['steps']:
+            st['a'], k = RZ.text(st['a'])
+            rz += k
     txt, offen = apply_texte(cases)
     med = apply_media(cases)
     # Punkte-Invariante hart prüfen
@@ -202,6 +223,7 @@ def main():
         for o in offen:
             print('    ' + o)
     print('  Medien eingespielt: %d' % med)
+    print('  Rechenzeichen rechnerisch korrigiert: %d' % rz)
     print('  App  cases.json: %d andere + %d Prüfungen' % (a_o, a_n))
     print('  Web  KVM_CASES : %d andere + %d Prüfungen' % (w_o, w_n))
 

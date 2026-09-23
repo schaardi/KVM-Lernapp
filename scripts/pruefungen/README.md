@@ -188,3 +188,39 @@ zu welcher Teilaufgabe gehört, steht in `anlagen_imbq.py`
 (`BILDER`, `BILDER_L`, `TABELLEN`); `build_anlagen.py` schreibt Dateien und
 Verzeichnis nach Web und App und bricht ab, sobald eine Abbildung ohne
 Bildunterschrift bliebe.
+
+## Tabellen, Formeln und Rechenzeichen aus dem Layout (`layout_struktur.py`, `rechenzeichen.py`)
+
+Die Web-App und die App stellen Prüfungstexte strukturiert dar (Tabellen, Rechenblöcke,
+Listen). Dafür schreiben die Parser den Text in einer festen Form:
+
+- **Tabellenzeilen** als `a | b | c`. Leere Zellen bleiben stehen, sie halten die Spalte.
+- **Formeln und Rechenschritte** auf eigener Zeile.
+- **Brüche linear** als „Zähler ÷ Nenner“, mit Klammern, wo nötig. Einheitenbrüche
+  bleiben stehen („m/s²“, „N/mm²“).
+
+Zuständig ist `layout_struktur.py`. Es arbeitet auf dem `pdftotext -layout`-Text
+(Basisqualifikationen 2018–2025) und dem OCR-Text (Kraftverkehr, ältere Scans):
+
+- `brueche()` erkennt zwei- und dreizeilige Brüche an ihren Spaltengrenzen.
+  - Mehrdeutige oder verschachtelte Brüche werden nur gemeldet.
+  - Einträge in `korrekturen_formeln.py` (`FORMELN`: Hauptzeile → Ersatz) haben Vorrang.
+- `tabellen()` findet Tabellen über durchgehende Leerraum-Spalten („Flüsse“).
+  - Kopfzeilen dürfen mehrzeilig sein, zweizeilige Zeilenbeschriftungen werden zusammengeführt.
+  - Seitenumbrüche und Wasserzeichen unterbrechen eine Tabelle nicht.
+- `wertlisten()` macht aus „Beschriftung   Wert“-Folgen zweispaltige Tabellen.
+
+`rechenzeichen.py` korrigiert in den Kraftverkehr-Lösungen OCR-Rechenzeichen **nur,
+wenn die Rechnung es belegt**:
+
+- Für jede Stelle `links = Ergebnis` werden die möglichen Lesarten durchgerechnet:
+  - „-“ oder „:“ kann „·“ bedeuten
+  - „+“ kann „÷“ bedeuten
+  - „>“ zwischen zwei Rechnungen ist „⇒“
+- Geht die wörtliche Lesart auf, bleibt alles, wie es ist.
+- Sonst gilt die eindeutige Lesart mit den wenigsten Änderungen.
+- Stand: 103 Korrekturen. `build_amtlich.py` meldet die Zahl.
+- Bericht: `python3 scripts/pruefungen/rechenzeichen.py`.
+
+Handkorrekturen einzelner Lösungen (`LOESUNGEN` in `korrekturen.py`) beziehen sich auf den
+Text **nach** dieser Korrektur.

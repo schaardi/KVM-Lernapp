@@ -7,6 +7,15 @@ nur als Zeichnung steht. Aufbau und Regeln: ``korrekturen_basis.py``.
 from korrekturen_basis import anwenden as _anwenden
 
 LOESUNG = {
+    # Verschachtelte Brüche und Einheitenbrüche aus dem Layout von Hand
+    # ausgeschrieben (linear: „Zähler ÷ Nenner“) und nachgerechnet.
+    ('NT', 4, 'a'):
+     "a1 = v ÷ t1 → t1 = v ÷ a1 = 0,8 m/s ÷ 0,2 m/s² = 4 s\n"
+     "v = s ÷ t2 → t2 = s ÷ v = 30 m ÷ 0,8 m/s = 37,5 s\n"
+     "a2 = v ÷ t3 → t3 = v ÷ a2 = 0,8 m/s ÷ 0,1 m/s² = 8 s (alternativ: t3 = 2 · t1)\n"
+     "tges = t1 + t2 + t3 = 4 s + 37,5 s + 8 s = 49,5 s",
+    ('NT', 7, 'a'):
+     "x̄ = (200 N + 205 N + 205 N + 195 N + 210 N + 190 N + 190 N + 210 N + 200 N + 195 N) ÷ 10 = 200 N",
     # NTG, Aufgabe 6 d): "Skizzieren Sie die erforderliche Schaltung." Die
     # amtliche Lösung ist allein das Schaltbild auf Seite 13; der Text hier
     # beschreibt es, das Bild selbst hängt als Lösungsanlage daran

@@ -7,6 +7,21 @@ nur als Zeichnung steht. Aufbau und Regeln: ``korrekturen_basis.py``.
 from korrekturen_basis import anwenden as _anwenden
 
 LOESUNG = {
+    # Verschachtelte Brüche und Einheitenbrüche aus dem Layout von Hand
+    # ausgeschrieben (linear: „Zähler ÷ Nenner“) und nachgerechnet.
+    ('BW', 2, 'a'):
+     "Personalbedarf = 12.750 h · 1,03 ÷ (8 h/(Tag · MA) · 38 Tage · 0,8) = 54 MA\n"
+     "Der Personalbedarf beträgt 54 Mitarbeiter.",
+    ('NT', 2, 'b'):
+     "Qh = Qw\n"
+     "Qw = cw · mw · ΔT\n"
+     "mw = Qw ÷ (cw · ΔT)\n"
+     "Qw = 3.003 kJ/h\n"
+     "V̇ = Qw ÷ (cw · ρw · (TA − TE))\n"
+     "V̇ = 3.003 kJ/h ÷ (4,18 kJ/(kg · K) · 1 kg/l · (25 − 21) K)\n"
+     "V̇ = 179,6 kg/h · 1 l/kg\n"
+     "V̇ = 179,6 l/h ÷ 60 min/h\n"
+     "V̇ = 2,99 l/min",
     # NTG, Aufgabe 7 c): "Tragen Sie aufgrund des Mittelwertes und der
     # Standardabweichung die Gerade der Summenhäufigkeit in das
     # Wahrscheinlichkeitsnetz (Anlage 1) ein."

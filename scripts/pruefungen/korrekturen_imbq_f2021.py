@@ -8,6 +8,23 @@ Aufbau und Regeln: ``korrekturen_basis.py``.
 from korrekturen_basis import anwenden as _anwenden
 
 LOESUNG = {
+    # Verschachtelte Brüche und Einheitenbrüche aus dem Layout von Hand
+    # ausgeschrieben (linear: „Zähler ÷ Nenner“) und nachgerechnet.
+    ('NT', 2, 'b'):
+     "Δl = l0 · α · Δϑ\n"
+     "Δϑ = Δl ÷ (l0 · α)\n"
+     "= 0,015 m ÷ (25 m · 0,000012 1/°C)\n"
+     "Δϑ = 50 °C\n"
+     "ϑ = 50 °C + 5 °C\n"
+     "ϑ = 55 °C\n"
+     "oder alternative Berechnung über Dreisatz:\n"
+     "30 % ÷ 100 % = 15 °C ÷ Δϑ\n"
+     "Δϑ = 50 °C\n"
+     "ϑ = 50 °C + 5 °C\n"
+     "ϑ = 55 °C",
+    ('NT', 5, 'a'):
+     "I = P ÷ U = 55 W ÷ 12 V = 4,58 A\n"
+     "R = U ÷ I = 12 V ÷ 4,58 A = 2,62 Ω",
     # MIKP, Aufgabe 2 a): "Stellen Sie diese Einordnung grafisch dar."
     ('MI', 2, 'a'):
      "Eisenhower-Matrix (Zeichnung): ein Quadrat, senkrechte Achse "

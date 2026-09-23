@@ -9,7 +9,26 @@ Filtermuster fassen kann, ohne echten Text mitzunehmen. Aufbau und Regeln:
 """
 from korrekturen_basis import anwenden as _anwenden
 
-LOESUNG = {}
+LOESUNG = {
+    # Verschachtelte Brüche und Einheitenbrüche aus dem Layout von Hand
+    # ausgeschrieben (linear: „Zähler ÷ Nenner“) und nachgerechnet.
+    ('NT', 5, 'a'):
+     "S = U · t\n"
+     "t = 2 mm\n"
+     "U = 2 · 15 mm + √((15 mm)² + (20 mm)²) + 5 mm + 2 · π · 15 mm · 110° ÷ 360°\n"
+     "U = 88,80 mm\n"
+     "S = U · t\n"
+     "S = 88,80 mm · 2 mm\n"
+     "S = 177,60 mm²",
+    ('NT', 5, 'b'):
+     "τaB max = 210 N/mm²\n"
+     "F = S · τaB max\n"
+     "F = 177,60 mm² · 210 N/mm² = 37.296 N\n"
+     "F = 37,296 kN",
+    ('NT', 6, 'd'):
+     "P = UK² ÷ R\n"
+     "P = (226,06 V)² ÷ 20,91 V/A = 2.443,96 W",
+}
 FRAGE = {
     # BWL, Aufgabe 4 a): Die Auftragstabelle (Produkt, Menge, Losgröße,
     # Rüstzeit, Zeit je Einheit) lief als Fließtext in die Aufgabe. Die Werte

@@ -825,6 +825,225 @@ _KUNDENBEFRAGUNG_F2024 = {
     'zeilen': [['1', '10'], ['2', '18'], ['3', '40'], ['4', '60'], ['5', '50'], ['6', '22']],
 }
 
+
+# ---------------------------------------------------- Anlagen zum Ausfüllen
+# Formulare, die im Heft als leere Anlage beiliegen. Leere Zellen werden in der
+# Web-App zu Eingabefeldern; die zugehörige Lösungstabelle (TABELLEN_L) hat
+# dieselbe Form, so lässt sich Zelle für Zelle vergleichen. Wo das Formular
+# selbst im Textlayer fehlt (Hefte der Bauform L-I enthalten nur die
+# Lösungen), ist es aus der Lösungstabelle zurückgebaut: gleiche Zeilen und
+# Spalten, die zu ermittelnden Werte leer.
+
+# ZiB F2015, Aufgabe 2 a: Führungsstile anhand von vier Kriterien
+_FUEHRUNGSSTILE_F2015 = {
+    'titel': 'Anlage 1 zu Aufgabe 2 a): Kooperativer und autoritärer Führungsstil',
+    'kopf': ['Kriterium', 'Kooperativer Führungsstil', 'Autoritärer Führungsstil'],
+    'zeilen': [['', '', ''], ['', '', ''], ['', '', ''], ['', '', '']],
+}
+_FUEHRUNGSSTILE_F2015_L = {
+    'titel': 'Lösungshinweis: Führungsstile, z. B.',
+    'kopf': ['Kriterium', 'Kooperativer Führungsstil', 'Autoritärer Führungsstil'],
+    'zeilen': [
+        ['Beziehung Mitarbeiter – Vorgesetzter', 'Kontakt wird ständig gehalten.',
+         'Distanz ist zu erwarten.'],
+        ['Betriebsklima', 'vertrauensvoll', 'Misstrauen kann von beiden Seiten ausgehen.'],
+        ['Selbstkontrolle', 'wird ständig praktiziert', 'wird ausgeschlossen'],
+        ['Motivation', 'Die Mitarbeiter fühlen sich wertgeschätzt und werden so eine '
+         'höhere Motivation haben.', 'Die Motivation wird wahrscheinlich geringer sein.'],
+    ],
+}
+
+# MIKP F2020, Aufgabe 2 a: der begonnene Netzplan der Anlage 1 als Tabelle.
+# Werte aus dem Lösungsnetzplan (Vorgangsknoten FAZ | Dauer | FEZ und
+# SAZ | Puffer | SEZ, Zählung ab Tag 0).
+_NETZPLAN_F2020_KOPF = ['Vorgang', 'Vorgänger', 'Dauer in Tagen', 'FAZ', 'FEZ',
+                        'SAZ', 'SEZ', 'Puffer']
+_NETZPLAN_F2020_WERTE = [
+    ('A', 'Start', '1', '0', '1', '0', '1', '0'),
+    ('B', 'Start', '2', '0', '2', '5', '7', '5'),
+    ('C', 'A', '2', '1', '3', '1', '3', '0'),
+    ('D', 'B, C', '3', '3', '6', '7', '10', '4'),
+    ('E', 'C', '4', '3', '7', '3', '7', '0'),
+    ('F', 'D', '3', '6', '9', '10', '13', '4'),
+    ('G', 'E', '2', '7', '9', '7', '9', '0'),
+    ('H', 'G', '4', '9', '13', '9', '13', '0'),
+    ('I', 'G', '3', '9', '12', '10', '13', '1'),
+]
+_NETZPLAN_F2020 = {
+    'titel': 'Anlage 1 zu Aufgabe 2 a): Netzplan als Tabelle',
+    'kopf': _NETZPLAN_F2020_KOPF,
+    'zeilen': [list(w[:3]) + [''] * 5 for w in _NETZPLAN_F2020_WERTE],
+    'hinweis': 'Im Heft ist die Anlage ein begonnener Netzplan mit Vorgangsknoten '
+               '(FAZ | Dauer | FEZ, darunter SAZ | Puffer | SEZ). Tragen Sie die Werte '
+               'je Vorgang ein und notieren Sie den kritischen Pfad.',
+}
+_NETZPLAN_F2020_L = {
+    'titel': 'Lösungshinweis: Netzplan (kritischer Pfad Start – A – C – E – G – H – Ziel, '
+             'Projektdauer 13 Tage)',
+    'kopf': _NETZPLAN_F2020_KOPF,
+    'zeilen': [list(w) for w in _NETZPLAN_F2020_WERTE],
+}
+
+# MIKP F2022, Aufgabe 2 b: Ursache-Wirkungs-Diagramm „Zu hohe Abfallkosten“.
+# Das Diagramm der Anlage liegt nicht vor; das Arbeitsblatt fragt dieselben
+# Angaben ab (Achsen = Hauptursachen, je zwei Ursachen).
+_ISHIKAWA_F2022_KOPF = ['Hauptursache (Achse)', 'Ursache', 'Ursache']
+_ISHIKAWA_F2022 = {
+    'titel': 'Anlage 1 zu Aufgabe 2 b): Ursache-Wirkungs-Diagramm „Zu hohe Abfallkosten“',
+    'kopf': _ISHIKAWA_F2022_KOPF,
+    'zeilen': [['', '', ''] for _ in range(5)],
+    'hinweis': 'Das Diagramm der Anlage liegt in dieser Fassung nicht vor. Tragen Sie je '
+               'Achse (Hauptursache) zwei problembezogene Ursachen ein.',
+}
+_ISHIKAWA_F2022_L = {
+    'titel': 'Lösungshinweis: Ursache-Wirkungs-Diagramm, z. B.',
+    'kopf': _ISHIKAWA_F2022_KOPF,
+    'zeilen': [
+        ['Mensch', 'fehlende Motivation', 'fehlende Kompetenz'],
+        ['Management', 'fehlende Kontrolle', 'fehlende Investitionen in umweltgerechte Technik'],
+        ['Maschine / Technik', 'veraltete Technik', 'schlecht gewartete Technik'],
+        ['Material', 'zu viel Verschnitt', 'zu geringer Recyclinganteil'],
+        ['Methode', 'keine systematischen Kontrollen', 'veraltete Technologie'],
+    ],
+}
+
+# MIKP F2023, Aufgabe 2 b: paarweiser Vergleich (Anlage 1) – die Aussagen
+# stehen im Heft auf der Anlage selbst.
+_PV_F2023_KRIT = ['Servicequalität', 'Verfügbarkeit', 'Reaktionszeit', 'Funktionsumfang',
+                  'laufende Kosten']
+_PV_F2023_KOPF = [''] + _PV_F2023_KRIT + ['Summe der Punkte', 'Gewichtungsfaktoren in %']
+_PV_F2023_WERTE = [
+    ['–', '2', '1', '2', '0', '5', '25'],
+    ['0', '–', '2', '1', '0', '3', '15'],
+    ['1', '0', '–', '2', '0', '3', '15'],
+    ['0', '1', '0', '–', '1', '2', '10'],
+    ['2', '2', '2', '1', '–', '7', '35'],
+]
+_PV_F2023 = {
+    'titel': 'Anlage 1 zu Aufgabe 2 b): paarweiser Vergleich',
+    'kopf': _PV_F2023_KOPF,
+    'zeilen': [[k] + ['–' if w == '–' else '' for w in werte]
+               for k, werte in zip(_PV_F2023_KRIT, _PV_F2023_WERTE)] +
+              [['Summen', '', '', '', '', '', '', '']],
+    'hinweis': 'Vergeben Sie 2 Punkte bzw. 0 Punkte, wenn ein Kriterium wichtiger als das '
+               'andere ist, bei gleicher Wichtigkeit jeweils 1 Punkt.\n'
+               '– Die Servicequalität ist wichtiger als die Verfügbarkeit.\n'
+               '– Die Servicequalität ist gleich wichtig wie die Reaktionszeit.\n'
+               '– Die Servicequalität ist wichtiger als der Funktionsumfang.\n'
+               '– Die Servicequalität ist weniger wichtig als die laufenden Kosten.\n'
+               '– Die Verfügbarkeit ist wichtiger als die Reaktionszeit.\n'
+               '– Die Verfügbarkeit ist gleich wichtig wie der Funktionsumfang.\n'
+               '– Die Verfügbarkeit ist weniger wichtig als die laufenden Kosten.\n'
+               '– Die Reaktionszeit ist wichtiger als der Funktionsumfang.\n'
+               '– Die Reaktionszeit ist weniger wichtig als die laufenden Kosten.\n'
+               '– Der Funktionsumfang und die laufenden Kosten sind gleich wichtig.',
+}
+_PV_F2023_L = {
+    'titel': 'Lösungshinweis: paarweiser Vergleich',
+    'kopf': _PV_F2023_KOPF,
+    'zeilen': [[k] + werte for k, werte in zip(_PV_F2023_KRIT, _PV_F2023_WERTE)] +
+              [['Summen', '', '', '', '', '', '20', '100']],
+}
+
+# MIKP F2023, Aufgabe 2 c: Tabelle zur Vergabe der Bewertungspunkte (Anlage 2)
+_NUTZWERT_F2023_KOPF = ['Punkte', 'Servicequalität', 'Verfügbarkeit in Prozent',
+                        'Reaktionszeit in Stunden',
+                        'Funktionsumfang (Anzahl nützlicher Zusatzfunktionen)',
+                        'laufende Kosten in Euro pro Tag']
+_NUTZWERT_F2023_ZEILEN = [
+    ['10', 'gerade noch akzeptabel', '90', '10', '6'],
+    ['20', 'ausreichend', '92', '8', '8'],
+    ['30', 'befriedigend', '94', '6', '10'],
+    ['40', 'gut', '96', '4', '12'],
+    ['50', 'sehr gut', '98', '3', '14'],
+    ['60', 'ausgezeichnet', '100', '2', '16'],
+]
+_NUTZWERT_F2023 = {
+    'titel': 'Anlage 2 zu Aufgabe 2 c): Tabelle zur Vergabe der Bewertungspunkte',
+    'kopf': _NUTZWERT_F2023_KOPF,
+    'zeilen': [z + [''] for z in _NUTZWERT_F2023_ZEILEN],
+    'hinweis': 'Aus mehreren Angeboten ergibt sich eine Spanne der laufenden Kosten zwischen '
+               '2.400 € pro Tag und 3.000 € pro Tag.',
+}
+_NUTZWERT_F2023_L = {
+    'titel': 'Lösungshinweis: Bewertungspunkte der laufenden Kosten',
+    'kopf': _NUTZWERT_F2023_KOPF,
+    'zeilen': [z + [k] for z, k in zip(_NUTZWERT_F2023_ZEILEN,
+                                        ['3.000', '2.880', '2.760', '2.640', '2.520', '2.400'])],
+}
+
+# NTG H2019, Aufgabe 6 a: Vor- und Nachteile der Energieanlagen (Anlage 1)
+_ENERGIE_H2019_KOPF = ['Energieanlagen', 'Vorteile / Nachteile, z. B.']
+_ENERGIE_H2019 = {
+    'titel': 'Anlage 1 zu Aufgabe 6 a): Energieanlagen',
+    'kopf': _ENERGIE_H2019_KOPF,
+    'zeilen': [['gemeinsame Vorteile (alle drei)', ''],
+               ['Solarenergieanlagen: spezifische Nachteile', ''],
+               ['Windenergieanlagen: spezifische Nachteile', ''],
+               ['Wasserkraftanlagen: spezifische Nachteile', '']],
+}
+_ENERGIE_H2019_L = {
+    'titel': 'Lösungshinweis: Energieanlagen, z. B.',
+    'kopf': _ENERGIE_H2019_KOPF,
+    'zeilen': [
+        ['gemeinsame Vorteile (alle drei)', 'kostenlose Energiequellen; dezentrale, autarke '
+         'Energiegewinnung; emissionsarme Energiegewinnung; Reduzierung der CO₂-Konzentration'],
+        ['Solarenergieanlagen: spezifische Nachteile', 'hohe Investitionskosten; '
+         'Sonneneinstrahlung nötig; geringer Wirkungsgrad; Veränderung der Kulturlandschaft'],
+        ['Windenergieanlagen: spezifische Nachteile', 'Stromtransport ggf. über lange '
+         'Leitungswege; Überprägung der gewachsenen Kulturlandschaft; Unstetigkeit des Windes; '
+         'Störung der Flora und Fauna, des Tourismus; Recycling'],
+        ['Wasserkraftanlagen: spezifische Nachteile', 'wartungsintensiv; hohe '
+         'Investitionskosten; Veränderung der Landschaft; Störungen des Wasserhaushaltes'],
+    ],
+}
+
+# MIKP H2020, Aufgabe 2 a: paarweiser Vergleich (Anlage 1). Die Lösung steht
+# im Heft auf einer eigenen Seite hinter der letzten Aufgabe ("Lösungshinweis
+# zu Aufgabe 2").
+_PV_H2020_KRIT = ['Preis', 'Volumen', 'Service', 'Reinigungsaufwand', 'laufende Kosten']
+_PV_H2020_KOPF = [''] + _PV_H2020_KRIT + ['Punkte', 'Gewichtungsfaktoren in %']
+_PV_H2020_WERTE = [
+    ['–', '0', '0', '2', '0', '2', '10'],
+    ['2', '–', '2', '1', '2', '7', '35'],
+    ['2', '0', '–', '2', '2', '6', '30'],
+    ['0', '1', '0', '–', '1', '2', '10'],
+    ['2', '0', '0', '1', '–', '3', '15'],
+]
+_PV_H2020 = {
+    'titel': 'Anlage 1 zu Aufgabe 2 a): paarweiser Vergleich',
+    'kopf': _PV_H2020_KOPF,
+    'zeilen': [[k] + ['–' if w == '–' else '' for w in werte]
+               for k, werte in zip(_PV_H2020_KRIT, _PV_H2020_WERTE)],
+}
+_PV_H2020_L = {
+    'titel': 'Lösungshinweis zu Aufgabe 2: paarweiser Vergleich',
+    'kopf': _PV_H2020_KOPF,
+    'zeilen': [[k] + werte for k, werte in zip(_PV_H2020_KRIT, _PV_H2020_WERTE)],
+}
+
+# BWL H2022, Aufgabe 7 a: Umlage der Hilfskostenstellen (Anlage 1)
+_UMLAGE_H2022_KOPF = ['Umlage', 'Grundstücke und Gebäude', 'Sozialbereich', 'Betriebsbüro',
+                      'Werkstatt I', 'Werkstatt II']
+_UMLAGE_H2022_PRIMAER = ['primäre GK', '20.000 €', '2.160 €', '8.600 €', '56.000 €', '84.000 €']
+_UMLAGE_H2022_WERTE = [
+    ['Grundstücke und Gebäude', '–', '2.400 €', '2.400 €', '4.800 €', '10.400 €'],
+    ['Sozialbereich', '–', '–', '960 €', '1.680 €', '1.920 €'],
+    ['Betriebsbüro', '–', '–', '–', '3.588 €', '8.372 €'],
+    ['Summe', '–', '–', '–', '66.068 €', '104.692 €'],
+]
+_UMLAGE_H2022 = {
+    'titel': 'Anlage 1 zu Aufgabe 7 a): Umlage der Hilfskostenstellen',
+    'kopf': _UMLAGE_H2022_KOPF,
+    'zeilen': [_UMLAGE_H2022_PRIMAER] +
+              [[z[0]] + [w if w == '–' else '' for w in z[1:]] for z in _UMLAGE_H2022_WERTE],
+}
+_UMLAGE_H2022_L = {
+    'titel': 'Lösungshinweis: Umlage der Hilfskostenstellen',
+    'kopf': _UMLAGE_H2022_KOPF,
+    'zeilen': [_UMLAGE_H2022_PRIMAER] + _UMLAGE_H2022_WERTE,
+}
+
 TABELLEN = {
     ('BW', 'h2017', 7, '*'): _CONTROLLING_H2017,
     ('MI', 'h2017', 2, 'b'): _NETZPLAN_H2017,
@@ -881,6 +1100,15 @@ TABELLEN = {
     ('NT', 'h2023', 7, '*'): _MASSEN_H2023,
     ('MI', 'f2024', 4, '*'): _KUNDENBEFRAGUNG_F2024,
     ('BW', 'h2023', 5, '*'): _BAB_H2023,
+    # Anlagen zum Ausfüllen (siehe oben)
+    ('ZI', 'f2015', 2, 'a'): _FUEHRUNGSSTILE_F2015,
+    ('MI', 'f2020', 2, 'a'): _NETZPLAN_F2020,
+    ('MI', 'f2022', 2, 'b'): _ISHIKAWA_F2022,
+    ('MI', 'f2023', 2, 'b'): _PV_F2023,
+    ('MI', 'f2023', 2, 'c'): _NUTZWERT_F2023,
+    ('NT', 'h2019', 6, 'a'): _ENERGIE_H2019,
+    ('MI', 'h2020', 2, 'a'): _PV_H2020,
+    ('BW', 'h2022', 7, 'a'): _UMLAGE_H2022,
 }
 
 
@@ -890,6 +1118,14 @@ TABELLEN = {
 TABELLEN_L = {
     ('BW', 'h2020', 5, 'a'): _BAB_H2020_L,
     ('BW', 'h2020', 6, 'a'): _MASCHINE_H2020_L,
+    ('ZI', 'f2015', 2, 'a'): _FUEHRUNGSSTILE_F2015_L,
+    ('MI', 'f2020', 2, 'a'): _NETZPLAN_F2020_L,
+    ('MI', 'f2022', 2, 'b'): _ISHIKAWA_F2022_L,
+    ('MI', 'f2023', 2, 'b'): _PV_F2023_L,
+    ('MI', 'f2023', 2, 'c'): _NUTZWERT_F2023_L,
+    ('NT', 'h2019', 6, 'a'): _ENERGIE_H2019_L,
+    ('MI', 'h2020', 2, 'a'): _PV_H2020_L,
+    ('BW', 'h2022', 7, 'a'): _UMLAGE_H2022_L,
 }
 
 

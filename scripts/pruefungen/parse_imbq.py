@@ -19,6 +19,8 @@ groß vor (``D Mögliche Punktzahl: 3``).
 import json, os, re, sys
 
 HERE = os.path.dirname(os.path.abspath(__file__))
+sys.path.insert(0, HERE)
+import layout_struktur as LS
 
 # Datei -> (Kürzel, Bezeichnung der Basisqualifikation, App-Fach)
 RECHT  = ('01-recht.txt',          'RE', 'Rechtsbewusstes Handeln', 1)
@@ -263,6 +265,10 @@ def load(path, bezeichnung, ocr=False, scan=False, rohtext=()):
     if scan:
         import ocr_scan
         raw_lines = ocr_scan.zeilen(raw_lines)
+    elif not ocr:
+        # Textlayer aus dem PDF: Spalten sind noch da. Brüche und Tabellen
+        # jetzt retten – clean() presst jede Zeile auf einfache Leerzeichen.
+        raw_lines = struktur(raw_lines, path, bezeichnung)
     out = []
     for raw in raw_lines:
         if PAGE.match(raw):
@@ -286,12 +292,73 @@ def load(path, bezeichnung, ocr=False, scan=False, rohtext=()):
         if scan and _aehnlich(l, bezeichnung):
             continue
         out.append(l)
-    return out
+    # Datenlisten ("Anschaffungskosten (netto) 43.000 €") – auch in den Scans
+    return LS.wertlisten(out, strukturzeile)
+
+
+def _deko(s):
+    """Seitendeko, die keinen Bruch und keine Tabellenzeile bilden kann. Blanke
+    Zahlen zählen hier nicht dazu: in Formeln sind sie Nenner ("… ÷ 2")."""
+    return bool(s) and bool(JUNK.match(s)) and not re.fullmatch(r'\d{1,3}', s)
+
+
+def strukturzeile(s):
+    """Zeilen, an denen der Parser Aufgaben, Teile und Lösungen erkennt. Sie
+    dürfen nicht zu Tabellenzeilen werden."""
+    s = s.strip()
+    return bool(PUNKTE.match(s) or AUFG.match(s) or LOES_A.match(s)
+                or LOES_TL.match(s) or VO.match(s) or ANLAGE.match(s)
+                or ANLAGE_L.match(s) or BADGE_OHNE_ZAHL.match(s)
+                or DATUM.search(s) or re.match(r'L[öo]sungshinweise\b', s)
+                or re.match(r'^[a-hA-H]\s+M[öo]gliche', s))
+
+
+def struktur(raw_lines, path, bezeichnung=''):
+    """Symbolschrift übersetzen, Brüche linearisieren, Tabellen setzen – auf
+    den Rohzeilen mit ihren Spalten (siehe layout_struktur.py)."""
+    import korrekturen_formeln as KF
+    rel = os.path.relpath(path, os.path.join(HERE, 'quellen')).replace(os.sep, '/')
+    def deko(s):
+        # Der Heft-Titel steht als Kopfzeile auf jeder Seite.
+        return _deko(s) or (bool(bezeichnung) and s.lower() == bezeichnung.lower())
+    z = [LS.symbole(l, SYMBOL) for l in raw_lines]
+    z, _, _ = LS.brueche(z, deko, KF.FORMELN.get(rel), rel, strukturzeile)
+    z, _ = LS.tabellen(z, deko, strukturzeile)
+    return z
 
 def join_para(lines):
     """Absätze bilden, Silbentrennung am Zeilenende auflösen, Listen trennen."""
     out, buf = [], ''
+    zeile = False          # letzter Absatz ist eine Tabellen-/Rechenzeile
     for l in lines:
+        # Tabellenzeilen ("a | b") und Rechenzeilen ("x = …") stehen für sich;
+        # eine Punkte-Klammer darunter gehört noch zu ihnen.
+        if LS.PUNKTE_ANM.match(l) and zeile and not buf:
+            out[-1] = out[-1] + ' ' + l
+            continue
+        # Ein Satz, der in der Zeile davor begonnen hat und klein weitergeht
+        # ("… die durchschnittliche Fahrgeschwindigkeit" / "beträgt v = 32 m/min."),
+        # bleibt ein Satz.
+        fortsetzung = bool(buf) and buf.rstrip()[-1:] not in '.:;!?' \
+            and not re.search(r'\(\s*\d+\s*Punkte?\s*\)$', buf) \
+            and l[:1].islower() and '|' not in l
+        if zeile and not buf and LS.rechen_fortsetzung(out[-1], l):
+            out[-1] = LS.zeile_sauber(out[-1] + ' ' + l)
+            continue
+        if buf and LS.rechen_fortsetzung(buf, l):
+            out.append(LS.zeile_sauber(buf + ' ' + l)); buf = ''
+            zeile = True
+            continue
+        if LS.ist_zeile(l) and not fortsetzung:
+            if buf: out.append(buf.strip()); buf = ''
+            out.append(LS.zeile_sauber(l))
+            zeile = True
+            continue
+        zeile = False
+        # Der Hinweis an den Korrektor ist ein eigener Absatz.
+        if re.match(r'Hinweise? für den Korrektor', l):
+            if buf: out.append(buf.strip())
+            buf = l; continue
         if l.startswith('– '):
             if buf: out.append(buf.strip()); buf = ''
             # Trennstrich am Ende: die Fortsetzung gehört noch zum Punkt
@@ -300,8 +367,12 @@ def join_para(lines):
             else:
                 out.append(l)
             continue
-        # „1. Z. B.:“, „2. Zweckaufwand“ nach Satzende: eigener Absatz
-        if re.match(r'^\d{1,2}\.\s+\S', l) and (not buf or buf.rstrip()[-1:] in '.:;!?'):
+        # „1. Z. B.:“, „2. Zweckaufwand“ nach Satzende: eigener Absatz – ebenso
+        # der nächste Punkt einer Aufzählung ("1. … festlegen" / "2. Beteiligte …")
+        mn = re.match(r'^(\d{1,2})\.\s+\S', l)
+        mb = re.match(r'^(\d{1,2})\.\s', buf) if buf else None
+        if mn and (not buf or buf.rstrip()[-1:] in '.:;!?'
+                   or (mb and int(mn.group(1)) == int(mb.group(1)) + 1)):
             if buf: out.append(buf.strip())
             buf = l; continue
         if buf.endswith('--'):          # Artefakt dieser Quelle

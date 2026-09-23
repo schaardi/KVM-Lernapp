@@ -7,7 +7,52 @@ genau 100 Punkte, das Lösungsheft bliebe sonst bei 103 bzw. 102.
 """
 from korrekturen_basis import anwenden as _anwenden
 
-LOESUNG = {}
+LOESUNG = {
+    # Verschachtelte Brüche und Einheitenbrüche aus dem Layout von Hand
+    # ausgeschrieben (linear: „Zähler ÷ Nenner“) und nachgerechnet.
+    ('BW', 2, 'a'):
+     "Kapazitätsbedarf = TA + TB + TC + TD\n"
+     "TA = 8 · 180 min + 4.000 St. · 25 min = 101.440 min\n"
+     "+ TB = 5 · 152 min + 2.500 St. · 44 min = 110.760 min\n"
+     "+ TC = 3 · 75 min + 900 St. · 30 min = 27.225 min\n"
+     "+ TD = 1 · 275 min + 500 St. · 75 min = 37.775 min\n"
+     "= Kapazitätsbedarf 277.200 min/Monat\n"
+     "= 4.620 h/Monat (8 Punkte)\n"
+     "Kapazitätsbestand pro Mitarbeiter = 8 h/Tag · 20 Tage/Monat · 0,802\n"
+     "= 128,32 h/Monat (3 Punkte)\n"
+     "Personalbedarf = 4.620 h/Monat ÷ 128,32 h/(MA · Monat) = 36,00 Mitarbeiter (3 Punkte)",
+    ('NT', 2, 'b'):
+     "tan α = 10 % ÷ 100 %\n"
+     "α = tan⁻¹(10 % ÷ 100 %)\n"
+     "= 5,71°\n"
+     "Die kinetische Energie wurde vollständig in die potenzielle Energie umgewandelt, somit gilt der Ansatz:\n"
+     "Epot = Ekin\n"
+     "Epot = m · g · h\n"
+     "h = Epot ÷ (m · g)\n"
+     "= 468.750 J ÷ (1.500 kg · 9,81 m/s²)\n"
+     "h = 31,86 m\n"
+     "Berechnung der Strecke s:\n"
+     "sin α = h ÷ s\n"
+     "s = h ÷ sin α\n"
+     "= 31,86 m ÷ sin 5,71°\n"
+     "s = 320,22 m",
+    ('NT', 4, 'a'):
+     "– Berechnung der Gewichtskraft der Lampe\n"
+     "Fg = m · g\n"
+     "Fg = 10 kg · 9,81 m/s²\n"
+     "Fg = 98,1 N\n"
+     "– Winkelberechnung\n"
+     "tan α = a ÷ b\n"
+     "α = tan⁻¹(a ÷ b)\n"
+     "α = tan⁻¹(2 m ÷ 10 m)\n"
+     "α = 11,31°\n"
+     "– Seilkraft\n"
+     "FSeil = a ÷ sin α\n"
+     "FSeil = 49,05 N ÷ sin 11,31°\n"
+     "FSeil = 250,11 N",
+    ('NT', 6, 'b'):
+     "RBetrieb = U ÷ I = 230 V ÷ 8,696 A = 26,45 Ω",
+}
 FRAGE = {}
 
 PUNKTE = {

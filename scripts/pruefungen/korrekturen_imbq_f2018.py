@@ -8,6 +8,36 @@ landet dadurch beim Teil davor. Aufbau und Regeln: ``korrekturen_basis.py``.
 from korrekturen_basis import anwenden as _anwenden
 
 LOESUNG = {
+    # Verschachtelte Brüche und Einheitenbrüche aus dem Layout von Hand
+    # ausgeschrieben (linear: „Zähler ÷ Nenner“) und nachgerechnet.
+    ('BW', 4, 'a'):
+     "– Stückgeld = Bruttolohn ÷ Leistungsmenge\n"
+     "Stückgeld = 23,40 €/h ÷ 13 Stück/h = 1,80 €/Stück (2 Punkte)\n"
+     "– Akkordgrundlohn\n"
+     "Akkordrichtsatz = Stückgeld · Normalleistung = 1,80 €/Stück · 10 Stück/h = 18,00 €/h\n"
+     "Akkordgrundlohn pro Stunde = Akkordrichtsatz − Akkordzuschlag\n"
+     "Akkordgrundlohn pro Stunde = 18,00 €/h − 18,00 €/h ÷ 112,5 % · 12,5 % = 16 €/h (4 Punkte)\n"
+     "– Stundenverdienst bei acht Stück:\n"
+     "Stundenverdienst (Bruttolohn) = Leistungsmenge · Stückgeld\n"
+     "= 8 Stück/h · 1,80 €/Stück = 14,40 €/h\n"
+     "Da der Verdienst unterhalb des garantierten Akkordgrundlohnes liegt, ist diese Rechnung irrelevant. Der Facharbeiter erhält in diesem Fall 16,00 € pro Stunde. (3 Punkte)",
+    ('NT', 5, 'c'):
+     "P = I² · R\n"
+     "R = P ÷ I² = 480 mV · A ÷ (20 mA)² = 1200 V/A = 1200 Ω\n"
+     "IMagnetspule = PMagnetspule ÷ U = 480 mV · A ÷ 24 V = 20 mA",
+    ('NT', 7, 'a'):
+     "Beispielrechnung für 2013:\n"
+     "x̄ = (0 + 18 + 18 + 32 + 0 + 12) ÷ 25 = 80 ÷ 25 = 3,20\n"
+     "Gesamtmittelwert:\n"
+     "x̄ = (3,20 + 3,17 + 2,90 + 2,83 + 3,17) ÷ 5 = 3,05\n"
+     "zuzüglich der anderen Tabellenwerte\n"
+     "Jahrgang | Note 1 | Note 2 | Note 3 | Note 4 | Note 5 | Note 6 | Anzahl der Einzelwerte | Σ xi | x̄\n"
+     "2013 | 0 | 9 | 6 | 8 | 0 | 2 | 25 | 80 | 3,20\n"
+     "2014 | 2 | 5 | 7 | 7 | 3 | 0 | 24 | 76 | 3,17\n"
+     "2015 | 1 | 8 | 3 | 8 | 0 | 0 | 20 | 58 | 2,90\n"
+     "2016 | 3 | 6 | 6 | 8 | 0 | 0 | 23 | 65 | 2,83\n"
+     "2017 | 1 | 6 | 8 | 6 | 3 | 0 | 24 | 76 | 3,17\n"
+     "Summen | 7 | 34 | 30 | 37 | 6 | 2 | 116 | XXX | 3,05",
     # MIKP, Aufgabe 4 a): "Stellen Sie die Daten in einem Diagramm dar und
     # zeichnen Sie eine Ausgleichsgerade ein." Die amtliche Lösung ist allein
     # das Diagramm; das Bild hängt als Lösungsanlage daran.
