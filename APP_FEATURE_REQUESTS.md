@@ -1117,38 +1117,38 @@ Großbuchstaben, Buchstabenabstand 1,3, `kMuted`; rechts optional ein Zusatz in 
 
 **CSS**
 - Startseite: Kommentar „Startseite“ Z. 913
-- Texte: „Aufgabentexte: Tabellen …“ Z. 1173
-- Aufgabenblatt Z. 1205
-- Rechenweg Z. 1334
+- Texte: „Aufgabentexte: Tabellen …“ Z. 1262
+- Aufgabenblatt Z. 1294
+- Rechenweg Z. 1423
 
 **JS**
 - Renderer:
-  - `rtIstRechnung` Z. 2704
-  - `rtKopf` Z. 2724
-  - `rtTabelle` Z. 2739
-  - `rtHTML` Z. 2762
+  - `rtIstRechnung` Z. 2816
+  - `rtKopf` Z. 2836
+  - `rtTabelle` Z. 2851
+  - `rtHTML` Z. 2874
 - Rechenweg:
-  - `rwTokens` Z. 2828
-  - `rwRechne` Z. 2909
-  - `rwZeileText` Z. 2947
-  - `rwHTML` Z. 2980
-  - `rwBinden` Z. 2993
-- Bewertung: `scoreHTML` Z. 3080
+  - `rwTokens` Z. 2940
+  - `rwRechne` Z. 3021
+  - `rwZeileText` Z. 3059
+  - `rwHTML` Z. 3092
+  - `rwBinden` Z. 3105
+- Bewertung: `scoreHTML` Z. 3192
 - Aufgabenblatt:
-  - `blStepperHTML` Z. 3369
-  - `blFortschrittHTML` Z. 3387
-  - `blLoesungHTML` Z. 3456
-  - `blRechenteil` Z. 3494
-  - `blTeilHTML` Z. 3500
-  - `renderBlatt` Z. 3539
+  - `blStepperHTML` Z. 3481
+  - `blFortschrittHTML` Z. 3499
+  - `blLoesungHTML` Z. 3568
+  - `blRechenteil` Z. 3606
+  - `blTeilHTML` Z. 3612
+  - `renderBlatt` Z. 3651
 - Startseite:
-  - `tagZaehlen` Z. 1872
-  - `renderFachGroup` Z. 2040
-  - `renderHero` Z. 2068
-  - `erfolgeListe` Z. 2188
-  - `renderAktiv` Z. 2229
-  - `renderPruefLast` Z. 2246
-- Prüfungsliste: `items.forEach` in `render()` Z. 6668
+  - `tagZaehlen` Z. 1984
+  - `renderFachGroup` Z. 2152
+  - `renderHero` Z. 2180
+  - `erfolgeListe` Z. 2300
+  - `renderAktiv` Z. 2341
+  - `renderPruefLast` Z. 2358
+- Prüfungsliste: `items.forEach` in `render()` Z. 7351
 
 Zeilennummern: Stand dieses Commits.
 
@@ -1296,18 +1296,18 @@ Serverseitig abgesichert:
 - Austreten führt zurück zum Beitrittsformular. Der Eintrag ist serverseitig gelöscht.
 
 ### Referenz Web-Implementierung (`index.html` auf `claude/ui-design-improvement-my0f66`)
-- **HTML:** `#vgKopf` / `#vgBox`, Z. 1518
+- **HTML:** `#vgKopf` / `#vgBox`, Z. 1607
 - **CSS:** Kommentar „Vergleich: freiwillige Wochenrangliste“, Z. 1105
 - **JS** im Cloud-Block:
 
   | Funktion | Zeile |
   |---|---|
-  | `isoWoche` | 4319 |
-  | `wocheAntworten` | 4326 |
-  | `vgWerte` | 4331 |
-  | `vgMeldenSpaeter` | 4336 |
-  | `vgLaden` | 4343 |
-  | `vgZeigen` | 4473 |
+  | `isoWoche` | 4432 |
+  | `wocheAntworten` | 4439 |
+  | `vgWerte` | 4444 |
+  | `vgMeldenSpaeter` | 4449 |
+  | `vgLaden` | 4456 |
+  | `vgZeigen` | 4597 |
 
 - **SQL:** `docs/supabase-rangliste.sql`. Lokal geprüft mit PGlite: Rechte,
   Rangfolge, Wochenwechsel, zwei Geräte, Namensregeln, Austritt, Kontolöschung.
@@ -1540,27 +1540,27 @@ Der Rechner bearbeitet keinen Text, sondern eine Liste von Zeichen:
 - „4.400“ im Ergebnisfeld zählt als 4400.
 
 ### Referenz Web-Implementierung (`index.html` auf `claude/ui-design-improvement-my0f66`)
-- **HTML:** `#mCalc`, Z. 1708
+- **HTML:** `#mCalc`, Z. 1802
 - **CSS:** Kommentar „Taschenrechner: Anzeige mit Verlauf …“, Z. 570
 - **JS:**
 
   | Funktion | Zeile |
   |---|---|
-  | `rwTokens` (Kern: Zeichen) | 2828 |
-  | `rwFunktion` (Winkel, Wurzel) | 2866 |
-  | `rwAuswerten` (Kern: Rechnen) | 2884 |
-  | `parseCalcNum` | 3198 |
-  | `calcDock` (Andocken, Ausweichen) | 4595 |
-  | `rkKern` (Zeichenliste → Kern) | 4659 |
-  | `rkAusdruck` (Anzeige, Text) | 4692 |
-  | `rkFunktion` | 4743 |
-  | `rkVorzeichen` | 4753 |
-  | `rkZeit` | 4771 |
-  | `rkGleich` | 4785 |
-  | `rkTaste` | 4799 |
-  | `rkZielVon` / `rkUebernehmen` | 4820 / 4843 |
-  | `FN_TASTEN` / `TASTEN` | 4864 |
-  | `rkZeigen` | 4874 |
+  | `rwTokens` (Kern: Zeichen) | 2940 |
+  | `rwFunktion` (Winkel, Wurzel) | 2978 |
+  | `rwAuswerten` (Kern: Rechnen) | 2996 |
+  | `parseCalcNum` | 3310 |
+  | `calcDock` (Andocken, Ausweichen) | 5278 |
+  | `rkKern` (Zeichenliste → Kern) | 5342 |
+  | `rkAusdruck` (Anzeige, Text) | 5375 |
+  | `rkFunktion` | 5426 |
+  | `rkVorzeichen` | 5436 |
+  | `rkZeit` | 5454 |
+  | `rkGleich` | 5468 |
+  | `rkTaste` | 5482 |
+  | `rkZielVon` / `rkUebernehmen` | 5503 / 5526 |
+  | `FN_TASTEN` / `TASTEN` | 5547 |
+  | `rkZeigen` | 5557 |
 
 Zeilennummern: Stand dieses Commits.
 
@@ -1672,12 +1672,12 @@ Fehler im Formular: „Bitte ein Datum wählen.“ / „Der Termin muss in der Z
 - „Entfernen“ führt zurück zu „Wann ist deine Prüfung?“.
 
 ### Referenz Web-Implementierung (`index.html` auf `claude/ui-design-improvement-my0f66`)
-- **HTML:** `#planBox` in `.hero-main`, Z. 1439
+- **HTML:** `#planBox` in `.hero-main`, Z. 1528
 - **CSS:** Kommentar „Prüfungstermin und Lernplan: eigener Block …“, Z. 965
 - **JS:**
-  - Block-Kommentar „Prüfungstermin und Lernplan“, Z. 2083
-  - `planRechnen`, Z. 2098
-  - `renderPlan`, Z. 2114 (aufgerufen am Ende von `renderHero`)
+  - Block-Kommentar „Prüfungstermin und Lernplan“, Z. 2195
+  - `planRechnen`, Z. 2210
+  - `renderPlan`, Z. 2226 (aufgerufen am Ende von `renderHero`)
 
 Zeilennummern: Stand dieses Commits.
 
@@ -1779,17 +1779,17 @@ Unter den Knöpfen steht der letzte Durchgang: „Zuletzt unter Prüfungsbedingu
 
 ### Referenz Web-Implementierung (`index.html` auf `claude/ui-design-improvement-my0f66`)
 - **HTML:**
-  - Uhr und „Abgeben“ in `.bl-bar`, Z. 1637
-  - Band `#blEcht`, Z. 1649
-- **CSS:** Kommentar „Prüfung unter Echtbedingungen: Uhr und Abgabe …“, Z. 1316
+  - Uhr und „Abgeben“ in `.bl-bar`, Z. 1731
+  - Band `#blEcht`, Z. 1743
+- **CSS:** Kommentar „Prüfung unter Echtbedingungen: Uhr und Abgabe …“, Z. 1405
 - **JS:**
-  - Block-Kommentar „Prüfung unter Echtbedingungen“, Z. 3858
-  - `echtUhr`, Z. 3889
-  - `echtAbgeben`, Z. 3910
-  - `KVM_startEcht`, Z. 3924
-  - `KVM_echtInfo`, Z. 3938
-  - Ergebnis in `finishRound`, Z. 4118
-  - Prüfungsliste, Z. 6678
+  - Block-Kommentar „Prüfung unter Echtbedingungen“, Z. 3970
+  - `echtUhr`, Z. 4001
+  - `echtAbgeben`, Z. 4022
+  - `KVM_startEcht`, Z. 4036
+  - `KVM_echtInfo`, Z. 4050
+  - Ergebnis in `finishRound`, Z. 4230
+  - Prüfungsliste, Z. 7361
 
 Zeilennummern: Stand dieses Commits.
 
@@ -1871,15 +1871,15 @@ geht auch ohne Konto.
 
 ### Referenz Web-Implementierung (`index.html` auf `claude/ui-design-improvement-my0f66`)
 - **HTML:**
-  - Knopf `#qMelden`, Z. 1592
-  - Dialog `#mMelden`, Z. 1725
+  - Knopf `#qMelden`, Z. 1686
+  - Dialog `#mMelden`, Z. 1819
 - **CSS:** Kommentar „Fehler melden: unauffälliger Knopf …“, Z. 541
 - **JS:**
-  - `meldenKnopfHTML` (Aufgabenblatt), Z. 3852
-  - Block „Fehler melden“ im Cloud-Teil, Z. 4250
-  - `mdOeffnen`, Z. 4261
-  - Senden, Z. 4287
-  - Bereitschaft, Z. 4301
+  - `meldenKnopfHTML` (Aufgabenblatt), Z. 3964
+  - Block „Fehler melden“ im Cloud-Teil, Z. 4362
+  - `mdOeffnen`, Z. 4373
+  - Senden, Z. 4399
+  - Bereitschaft, Z. 4413
 - **SQL:** `docs/supabase-meldungen.sql`
 
 Zeilennummern: Stand dieses Commits.
@@ -1961,11 +1961,11 @@ stattdessen **„In den Kalender“**:
 - Neustart des Geräts: Die geplanten Erinnerungen bleiben.
 
 ### Referenz Web-Implementierung (`index.html` auf `claude/ui-design-improvement-my0f66`)
-- **HTML:** Zeile „Lern-Erinnerung“ (`#erinnZeit`, `#erinnIcs`), Z. 1570
+- **HTML:** Zeile „Lern-Erinnerung“ (`#erinnZeit`, `#erinnIcs`), Z. 1664
 - **CSS:** Kommentar „Lern-Erinnerung: Uhrzeit + Kalendereintrag“, Z. 435
 - **JS:**
-  - Block-Kommentar „Lern-Erinnerung (Web)“, Z. 3801
-  - `erIcs`, Z. 3814
+  - Block-Kommentar „Lern-Erinnerung (Web)“, Z. 3913
+  - `erIcs`, Z. 3926
 
 Zeilennummern: Stand dieses Commits.
 
@@ -2070,15 +2070,15 @@ Deutschland. Dafür gibt es eine private Rangliste je Gruppe.
 - Verlassen → zurück zu „Alle“, der Reiter ist weg.
 
 ### Referenz Web-Implementierung (`index.html` auf `claude/ui-design-improvement-my0f66`)
-- **Zustand und Einladungslink** im Vergleichsblock, Z. 4310
+- **Zustand und Einladungslink** im Vergleichsblock, Z. 4422
 - **CSS:** Kommentar „Lerngruppen: Reiter über der Liste …“, Z. 1145
 - **JS:**
-  - Block-Kommentar „Lerngruppen: private Rangliste per Code“, Z. 4358
-  - `grLaden`, Z. 4362
-  - `grTabsHTML`, Z. 4385
-  - `grFormHTML`, Z. 4392
-  - `grAnsichtHTML`, Z. 4404
-  - `grBinden`, Z. 4429
+  - Block-Kommentar „Lerngruppen: private Rangliste per Code“, Z. 4471
+  - `grLaden`, Z. 4475
+  - `grTabsHTML`, Z. 4500
+  - `grFormHTML`, Z. 4509
+  - `grAnsichtHTML`, Z. 4521
+  - `grBinden`, Z. 4546
 - **SQL:** `docs/supabase-gruppen.sql`
 
 Zeilennummern: Stand dieses Commits.
@@ -2184,15 +2184,180 @@ Ergänzungsprüfung. Geübt wird hier das freie Antworten in ganzen Sätzen:
 
 ### Referenz Web-Implementierung (`index.html` auf `claude/ui-design-improvement-my0f66`)
 - **HTML:**
-  - Karte `#btnOral`, Z. 1481
-  - Bildschirm `#scrOral`, Z. 1657
+  - Karte `#btnOral`, Z. 1570
+  - Bildschirm `#scrOral`, Z. 1751
 - **CSS:** Kommentar „Mündlich üben: Frage vorlesen …“, Z. 1034
 - **JS:**
-  - Block-Kommentar „Mündlich üben (Fachgespräch)“, Z. 3674
-  - `orGeeignet`, Z. 3685
-  - `orBegriffe`, Z. 3696
-  - `orHoeren`, Z. 3712
-  - `startOral`, Z. 3727
-  - `orZeigen`, Z. 3748
+  - Block-Kommentar „Mündlich üben (Fachgespräch)“, Z. 3786
+  - `orGeeignet`, Z. 3797
+  - `orBegriffe`, Z. 3808
+  - `orHoeren`, Z. 3824
+  - `startOral`, Z. 3839
+  - `orZeigen`, Z. 3860
+
+Zeilennummern: Stand dieses Commits.
+
+---
+
+## FR-012 · Profile, Freunde und Nutzerübersicht
+
+**Status App-Session:** ⏳ offen
+**Web umgesetzt:** ✅ `claude/ui-design-improvement-my0f66` (Commit „Profile, Freunde, Verwaltung …“)
+**Voraussetzungen:**
+- FR-004 (Wochenrangliste) umgesetzt
+- einmalig `docs/supabase-profile.sql` **nach** `docs/supabase-rangliste.sql` (siehe
+  `SUPABASE_SETUP.md`, Abschnitt 8)
+
+Fehlt das Skript, sieht die Rangliste aus wie bisher.
+
+### Ziel / Framing
+- Lernende sehen, wer noch mitlernt, und können sich befreunden.
+- Befreundete sehen gegenseitig ihren **Lernstand je Fach**.
+- **Datenschutz:**
+  - Ein Profil hat nur, wer der Rangliste beigetreten ist (Spitzname).
+  - Für alle Teilnehmenden sichtbar ist nur, was die Rangliste ohnehin zeigt:
+    Spitzname, Prüfungsreife, Antworten dieser Woche, Lerntage in Folge.
+  - Den Lernstand je Fach sehen **standardmäßig nur Freunde**; wer mag, stellt auf „alle“.
+  - Die Konto-ID verlässt die Datenbank nicht. Öffentliche Kennung ist `pid`.
+- Die **Verwaltung für Admins gibt es nur in der Web-App** – in der App nicht nachbauen.
+  Einzige Berührung: der Fehlercode `P0006` beim Beitritt zur Rangliste (unten).
+
+### Datenbank (RPCs, alle nur für `authenticated`)
+| RPC | Ergebnis |
+|---|---|
+| `profil_melden(p_details)` | – (Details siehe unten; der Server säubert und begrenzt sie) |
+| `profil_sichtbarkeit(p_wert)` | – ; `'freunde'` (Standard) oder `'alle'` |
+| `freunde_stand(p_woche)` | `{ich:{pid, name, sichtbarkeit}, anfragen:[Karte], gesendet:[Karte], freunde:[Karte]}`; `null`, wenn nicht in der Rangliste |
+| `leute_suche(p_suche, p_seite, p_woche)` | `{gesamt, seite, liste:[Karte]}`: alle anderen, aktivste der Woche zuerst, 30 je Seite, Suche im Spitznamen |
+| `profil_ansehen(p_pid, p_name, p_woche)` | `{pid, name, reife, serie, antworten, bez, sichtbarkeit, sichtbar, admin_sicht, seit, gemeistert, details, details_am}` – über `pid` oder Spitzname |
+| `freund_anfragen(p_pid)` | `'angefragt'` oder `'freund'` (die andere Person hatte schon angefragt) |
+| `freund_antworten(p_pid, p_annehmen)` | `'freund'` oder `null` (still abgelehnt) |
+| `freund_entfernen(p_pid)` | – (Freundschaft beenden oder eigene Anfrage zurückziehen) |
+
+- **Karte:** `{pid, name, reife, serie, antworten, bez}`, `bez` ∈ `'ich'`, `'freund'`,
+  `'angefragt'` (eigene Anfrage), `'anfrage'` (Anfrage an mich), `null`.
+- **`profil_ansehen`:** `seit`, `gemeistert`, `details` und `details_am` kommen nur, wenn
+  `sichtbar` ist (man selbst, befreundet, Sichtbarkeit „alle“ oder Admin).
+- **Details** (`p_details`), in der App aus dem Lernstand gerechnet wie Web `profilDetails`:
+  - `f`: je aktivem Fach `{r, m, g, n}` = Reife in %, gemeistert (Box ≥ 3), gesehen, Fragen
+  - `t14`: Antworten je Tag, die letzten 14 Tage, ältester zuerst
+  - `tage`: Lerntage in den letzten 120 Tagen
+  - `echt`: `{n, best}` = Prüfungen unter Echtbedingungen und bestes Ergebnis in %
+    (nur, wenn es welche gibt)
+- **Wann melden:** einmal nach dem Laden (sobald `freunde_stand` antwortet), beim Öffnen
+  der Übersicht und nach jedem `rangliste_melden` (entprellt wie dort).
+- **Fehlercodes → Text:**
+
+  | Code | Text |
+  |---|---|
+  | `P0002` | „Diese Person ist nicht mehr dabei.“ |
+  | `P0003` | „Tritt erst der Rangliste bei.“ |
+  | `P0004` | „Du hast gerade sehr viele offene Anfragen – warte, bis einige beantwortet sind.“ |
+  | `22023` | „Das geht leider nicht.“ |
+  | `P0006` (bei `rangliste_melden`) | „Dein Konto ist für Rangliste, Gruppen und Freunde gesperrt.“ |
+  | sonst | „Das hat nicht geklappt – bitte später noch einmal.“ |
+
+- **Serverseitig:**
+  - Abgelehnt wird still: Die anfragende Person sieht weiter „Angefragt“, eine erneute
+    Anfrage wird nicht zugestellt.
+  - höchstens 30 offene Anfragen und 50 neue am Tag
+  - Rangliste verlassen oder Konto löschen → Profil und Freundschaften weg
+- Lokal mit PGlite geprüft, 90 Fälle (inklusive Verwaltung).
+
+### UI
+- **Vergleichsabschnitt (Startseite), nur in der Rangliste:**
+  - Reiter „Freunde“ zwischen „Alle“ und den Gruppen: „Du und deine Freunde · KW 39“, Liste wie
+    in FR-004, eigene Zeile markiert. Ohne Freunde: „Noch keine Freunde.“ und „Lernende finden“.
+  - Offene Anfragen als Band (Bernstein) über den Reitern: „**Cora** möchte mit dir befreundet
+    sein.“ bzw. „**3** Freundschaftsanfragen warten auf dich.“, Knopf „Ansehen“.
+  - Im Fuß ein Knopf „Lernende & Freunde“.
+  - Namen in Rangliste, Gruppe und Freundesliste sind antippbar und öffnen das Profil.
+  - Einführung vor dem Beitritt: vierter Punkt „**Freunde** finden und ihren Lernstand je Fach
+    sehen – und sie deinen“. Hinweis darunter ergänzt: „Deinen Lernstand je Fach sehen nur deine
+    Freunde – das kannst du im Profil ändern.“ und „… dein Eintrag samt Profil und
+    Freundschaften wird dann gelöscht.“
+- **Dialog „Lernende“** mit Reitern „Freunde“ (mit Zähler offener Anfragen), „Alle
+  Lernenden“ (Handy: „Alle“) und „Mein Profil“. Geöffnet wird „Freunde“, wenn es Freunde oder
+  Anfragen gibt, sonst „Alle“.
+  - **Freunde:**
+    - „Anfragen an dich“ mit „Annehmen“ / „Ablehnen“
+    - „Deine Freunde · n“
+    - „Gesendete Anfragen“ mit „Angefragt“ / „Zurückziehen“
+    - ohne Freunde ein Leerkasten mit „Lernende finden“
+  - **Alle:**
+    - Suchfeld „Spitzname suchen …“ (300 ms entprellt)
+    - Zeile „5 Personen in der Rangliste · aktivste dieser Woche zuerst“
+    - Liste, „Mehr anzeigen“
+  - **Zeile:**
+    - rundes Kürzel, Name, darunter „64 % prüfungsreif · 312 Antw. diese Woche · 5 Tage in Folge“
+    - rechts je nach Beziehung „Anfragen“, „Angefragt“, „✓ Befreundet“ oder „Annehmen“ /
+      „Ablehnen“
+    - reicht der Platz nicht, rutschen die Knöpfe unter den Namen
+  - **Mein Profil:**
+    - Text zu dem, was alle sehen
+    - Umschalter „Lernstand je Fach zeigen: Nur Freunden | Allen Lernenden“
+    - Hinweis „… Admins der App können zur Betreuung und Moderation alle Angaben sehen.“
+    - Knopf „Mein Profil ansehen“
+  - **Profil:**
+    - „‹ Zurück“, großes Kürzel, Name, darunter „dabei seit September 2026“
+    - Beim eigenen Profil zusätzlich „Lernstand nur für Freunde sichtbar“ bzw. „für alle
+      sichtbar“.
+    - Knöpfe je Beziehung: „Freundschaft anfragen“, „Angefragt“ + „Zurückziehen“, „Annehmen“ +
+      „Ablehnen“, „✓ Befreundet“ + „Freundschaft beenden“ (mit Nachfrage)
+    - Kacheln: prüfungsreif, Antworten diese Woche, Tage in Folge, bei Sichtbarkeit
+      „Fragen gemeistert“
+    - **Sichtbar:**
+      - „Prüfungsreife je Fach“: Balken in der Fachfarbe, rechts %, darunter
+        „150 von 260 gemeistert · 200 gesehen“; auf dem Handy Name/Prozent, Balken, Zahlen
+        untereinander
+      - „Aktivität · 14 Tage“ wie auf der Startseite. Die Tage rücken ab `details_am` bis heute
+        nach; fehlende Tage zählen 0.
+      - Kacheln „Lerntage in 120 Tagen“, „Prüfungen unter Echtbedingungen“, „bestes Ergebnis
+        dabei“
+    - **Nicht sichtbar:** Kasten mit Schloss „Den Lernstand je Fach zeigt <Name> nur Freunden.“
+      und je nach Beziehung „Schick eine Anfrage – befreundet seht ihr ihn gegenseitig.“ bzw.
+      „Deine Anfrage ist unterwegs.“
+- **Kürzel:**
+  - zwei Buchstaben: Anfangsbuchstaben der ersten beiden Wörter (getrennt an Leerzeichen,
+    `_`, `.`, `-`), sonst die ersten zwei Zeichen
+  - Farbton `h = (h·31 + Zeichencode) mod 360` über den Namen, Farbe `hsl(h 40% 40%)`
+  - Keine Profilbilder.
+- Rückmeldungen als Zeile über dem Inhalt: „Anfrage an <Name> gesendet.“, „Ihr seid jetzt
+  befreundet.“, „Alle Lernenden sehen jetzt deinen Lernstand je Fach.“ bzw. „Deinen Lernstand
+  je Fach sehen jetzt nur noch Freunde.“
+
+### Abnahme
+- Ohne Skript: kein Reiter „Freunde“, kein Knopf „Lernende & Freunde“, Namen nicht antippbar.
+- Anfrage von Cora: Band auf der Startseite → „Ansehen“ → „Annehmen“ → Cora unter „Deine
+  Freunde“, Zähler und Band weg.
+- „Alle“: Suche „lkw“ findet „Lkw-Profi“ → „Anfragen“ → „Angefragt“.
+- Profil von jemandem mit Sichtbarkeit „freunde“ ohne Freundschaft: Grundwerte, Schloss-Kasten,
+  keine Fächer.
+- Profil mit Sichtbarkeit „alle“: Fächerbalken, 14 Balken Aktivität, Kacheln.
+- „Freundschaft beenden“ → Details verschwinden.
+- „Mein Profil“ → „Allen Lernenden“ → `profil_sichtbarkeit('alle')`.
+- Beitritt mit gesperrtem Konto → Text zu `P0006`.
+
+### Referenz Web-Implementierung (`index.html` auf `claude/ui-design-improvement-my0f66`)
+- **HTML:**
+  - Kachel `#btnAdmin` (nur Web), Z. 1649
+  - Dialog `#mLeute`, Z. 1844
+  - Dialog `#mAdmin` (nur Web), Z. 1853
+- **CSS:**
+  - Kommentar „Namen in Rangliste, Gruppe und Freundesliste öffnen das Profil“, Z. 1164
+  - Kommentar „Lernende: Nutzerübersicht, Freunde und Profile …“, Z. 1170
+- **JS:**
+  - Block-Kommentar „Lernende: Nutzerübersicht, Freunde und Profile“, Z. 4692
+  - `ltStandLaden`, Z. 4700
+  - `profilDetails`, Z. 4712
+  - `frAnsichtHTML`, Z. 4739
+  - `avatarHTML`, Z. 4764
+  - `lernstandHTML`, Z. 4773
+  - `ltProfilHTML`, Z. 4859
+  - `ltZeigen`, Z. 4877
+  - `frAktion`, Z. 4924
+  - `ltOeffnen`, Z. 4952
+  - Block-Kommentar „Verwaltung (nur Admins)“ (nur Web), Z. 4967
+- **SQL:** `docs/supabase-profile.sql`
 
 Zeilennummern: Stand dieses Commits.
