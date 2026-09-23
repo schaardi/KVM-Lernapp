@@ -82,6 +82,35 @@ Tabelle oben als Secrets anlegen. Beim nächsten Build werden sie per
 - Danach: jede Änderung wird entprellt automatisch hochgeladen.
 - Offline bleibt alles lokal erhalten und wird beim nächsten Login abgeglichen.
 
+## 5. Vergleich mit anderen Lernenden (optional)
+
+Web-App und App können angemeldeten Nutzerinnen und Nutzern eine **freiwillige
+Wochenrangliste** zeigen. Man tritt mit einem selbst gewählten Spitznamen bei und
+sieht zwei Dinge:
+- die Top 10 der Woche nach beantworteten Fragen, mit dem eigenen Platz
+- wie viele Teilnehmende bei der Prüfungsreife hinter einem liegen
+
+Freigeschaltet wird das mit **einem** SQL-Skript im Supabase-SQL-Editor:
+[`docs/supabase-rangliste.sql`](docs/supabase-rangliste.sql). Es lässt sich
+gefahrlos erneut ausführen. Solange es fehlt, blenden Web-App und App den
+Vergleich einfach aus.
+
+Datenschutz, eingebaut:
+- **Opt-in:** Ohne ausdrücklichen Beitritt wird nichts geteilt.
+- **Nur Kennzahlen:** Andere sehen Spitzname, Prüfungsreife in %, Antworten dieser
+  Woche und Lerntage in Folge. Keine E-Mail, kein Klarname, keine Nutzer-ID.
+- **Kein Direktzugriff:** Die Tabelle `rangliste` ist für Clients gesperrt.
+  Lesen und Schreiben laufen über vier Funktionen (`rangliste_melden`,
+  `rangliste_stand`, `rangliste_austreten`, `rangliste_info`).
+- **Plausibel begrenzt:** Die Funktionen deckeln die gemeldeten Werte.
+- **Austreten löscht den Eintrag.** Wer sein Konto löscht, verliert ihn ebenfalls
+  (`on delete cascade`).
+
+Vor dem Freischalten in der **Datenschutzerklärung** und im
+**Play-Datenschutzformular** ergänzen:
+- was geteilt wird: Spitzname und Lernkennzahlen, nur nach Beitritt
+- wofür: Vergleich mit anderen Lernenden
+
 ## Apple-Login später
 Die Auth-Architektur ist anbieter-offen (`AuthService`). „Sign in with Apple"
 lässt sich analog ergänzen (Supabase-Provider Apple + `sign_in_with_apple`),

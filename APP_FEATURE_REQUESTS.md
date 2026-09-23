@@ -1114,37 +1114,197 @@ Großbuchstaben, Buchstabenabstand 1,3, `kMuted`; rechts optional ein Zusatz in 
 
 **CSS**
 - Startseite: Kommentar „Startseite“ Z. 823
-- Texte: „Aufgabentexte: Tabellen …“ Z. 973
-- Aufgabenblatt Z. 1005
-- Rechenweg Z. 1123
+- Texte: „Aufgabentexte: Tabellen …“ Z. 1015
+- Aufgabenblatt Z. 1047
+- Rechenweg Z. 1165
 
 **JS**
 - Renderer:
-  - `rtIstRechnung` Z. 2327
-  - `rtKopf` Z. 2347
-  - `rtTabelle` Z. 2362
-  - `rtHTML` Z. 2385
+  - `rtIstRechnung` Z. 2375
+  - `rtKopf` Z. 2395
+  - `rtTabelle` Z. 2410
+  - `rtHTML` Z. 2433
 - Rechenweg:
-  - `rwTokens` Z. 2447
-  - `rwRechne` Z. 2473
-  - `rwZeileText` Z. 2525
-  - `rwHTML` Z. 2558
-  - `rwBinden` Z. 2571
-- Bewertung: `scoreHTML` Z. 2658
+  - `rwTokens` Z. 2495
+  - `rwRechne` Z. 2521
+  - `rwZeileText` Z. 2573
+  - `rwHTML` Z. 2606
+  - `rwBinden` Z. 2619
+- Bewertung: `scoreHTML` Z. 2706
 - Aufgabenblatt:
-  - `blStepperHTML` Z. 2945
-  - `blFortschrittHTML` Z. 2963
-  - `blLoesungHTML` Z. 3032
-  - `blRechenteil` Z. 3070
-  - `blTeilHTML` Z. 3076
-  - `renderBlatt` Z. 3115
+  - `blStepperHTML` Z. 2993
+  - `blFortschrittHTML` Z. 3011
+  - `blLoesungHTML` Z. 3080
+  - `blRechenteil` Z. 3118
+  - `blTeilHTML` Z. 3124
+  - `renderBlatt` Z. 3163
 - Startseite:
-  - `tagZaehlen` Z. 1592
-  - `renderFachGroup` Z. 1760
-  - `renderHero` Z. 1788
-  - `erfolgeListe` Z. 1816
-  - `renderAktiv` Z. 1857
-  - `renderPruefLast` Z. 1874
-- Prüfungsliste: `items.forEach` in `render()` Z. 5373
+  - `tagZaehlen` Z. 1639
+  - `renderFachGroup` Z. 1807
+  - `renderHero` Z. 1835
+  - `erfolgeListe` Z. 1863
+  - `renderAktiv` Z. 1904
+  - `renderPruefLast` Z. 1921
+- Prüfungsliste: `items.forEach` in `render()` Z. 5563
 
 Zeilennummern: Stand dieses Commits.
+
+---
+
+## FR-004 · Vergleich mit anderen: freiwillige Wochenrangliste
+
+**Status App-Session:** ⏳ offen
+**Web umgesetzt:** ✅ `claude/ui-design-improvement-my0f66` (Commit „Vergleich mit anderen …“)
+**Voraussetzungen:**
+- Supabase-Login (wie beim Sync)
+- einmalig `docs/supabase-rangliste.sql` im Supabase-SQL-Editor (siehe
+  `SUPABASE_SETUP.md`, Abschnitt 5)
+
+Fehlt das Skript, zeigen Web und App den Abschnitt nicht. Es gibt dann weder
+Fehlermeldung noch leere Karte.
+
+**Priorität:** mittel, nach FR-003 E (Startseite).
+
+### Ziel / Framing
+Lernende wollen sehen, wo sie im Vergleich zu anderen stehen. Umgesetzt ist das
+datensparsam und nur auf Wunsch:
+- **Opt-in:** Man tritt mit einem selbst gewählten Spitznamen bei.
+- **Geteilt werden nur:** Spitzname, Prüfungsreife in %, Antworten dieser Woche
+  und Lerntage in Folge.
+- **Zwei Vergleiche:**
+  - eine **Wochenrangliste** nach beantworteten Fragen, jeden Montag neu und damit
+    auch für Neue gewinnbar
+  - der Anteil der anderen, die bei der **Prüfungsreife** hinter einem liegen
+- **Austreten löscht den Eintrag.**
+
+### Server (fertig, nur zur Info)
+Die Tabelle `public.rangliste` ist für Clients gesperrt. Alles läuft über vier
+RPCs:
+
+| RPC | Rolle | Zweck |
+|---|---|---|
+| `rangliste_info()` → Zahl | anon, authenticated | Teilnehmende gesamt, für den Hinweis vor dem Login |
+| `rangliste_stand(p_woche)` → JSON | authenticated | eigener Stand und Top 10 der Woche |
+| `rangliste_melden(p_name, p_reife, p_gemeistert, p_woche, p_antworten, p_serie)` | authenticated | beitreten, Werte melden, Spitzname ändern |
+| `rangliste_austreten()` | authenticated | Eintrag löschen |
+
+Die Antwort von `rangliste_stand` enthält diese Felder:
+
+| Feld | Inhalt |
+|---|---|
+| `dabei` | ob man beigetreten ist |
+| `name` | eigener Spitzname |
+| `teilnehmende` | Teilnehmende gesamt |
+| `reife_vor` | wie viele eine niedrigere Prüfungsreife haben |
+| `woche_teilnehmende` | Teilnehmende mit Antworten in dieser Woche |
+| `mein_platz` | eigener Platz; `null` ohne Antwort diese Woche |
+| `meine_antworten` | eigene Antworten diese Woche |
+| `liste` | Top 10: `platz`, `name`, `antworten`, `reife`, `serie`, `ich` |
+
+Gleiche Antwortzahl ergibt denselben Platz. Beispiel: `rangliste_stand('2026-W39')`.
+
+Serverseitig abgesichert:
+- Die Werte werden begrenzt.
+- Spitznamen sind eindeutig (Groß-/Kleinschreibung zählt nicht) und dürfen nur
+  `^[A-Za-zÄÖÜäöüß0-9 _.-]{3,20}$` enthalten.
+- Antworten derselben Woche werden nie kleiner. Bei zwei Geräten gilt der
+  höhere Stand.
+
+### App (Flutter)
+1. **`RanglisteService`** (neu, `lib/services/rangliste_service.dart`)
+   - nutzt `Supabase.instance.client.rpc(...)`
+   - `Future<int?> info()`
+   - `Future<RanglisteStand?> stand()`
+   - `Future<String?> melden(String name)`: gibt einen Fehlertext zurück oder `null`
+   - `Future<void> austreten()`
+   - Jede Exception bzw. jeder PostgREST-Fehler bei `info`/`stand` bedeutet
+     „nicht verfügbar“: Der Abschnitt bleibt verborgen.
+2. **Werte zum Melden** (identisch zum Web, `vgWerte`)
+
+   | Parameter | Wert |
+   |---|---|
+   | `p_reife` | `round(overallReife * 100)`, also der Wert im Lernstand-Ring |
+   | `p_gemeistert` | Anzahl Fragen mit Box ≥ 3 |
+   | `p_woche` | ISO-Woche als `JJJJ-Www` |
+   | `p_antworten` | Summe von `kvm_tage` (FR-003 E) von Montag bis heute |
+   | `p_serie` | Lerntage in Folge |
+
+   ISO-Woche in Dart:
+   ```dart
+   String isoWoche(DateTime t) {
+     // UTC-Daten: keine Sommerzeit-Sprünge in der Tagesdifferenz
+     final d = DateTime.utc(t.year, t.month, t.day)
+         .add(Duration(days: 3 - ((t.weekday + 6) % 7)));   // Donnerstag
+     final w1 = DateTime.utc(d.year, 1, 4);
+     final kw = 1 + ((d.difference(w1).inDays - 3 + ((w1.weekday + 6) % 7)) / 7).round();
+     return '${d.year}-W${kw.toString().padLeft(2, '0')}';
+   }
+   ```
+   `DateTime.weekday` beginnt bei Montag = 1. Die Formel oben ist darauf abgestimmt.
+   Testwerte:
+   - 2026-09-23 → `2026-W39`
+   - 2027-01-01 → `2026-W53`
+   - 2024-12-30 → `2025-W01`
+3. **Melden:** entprellt 4 s nach jeder gespeicherten Antwort, dort, wo auch der
+   Sync angestoßen wird. Nur wenn `dabei == true`.
+4. **Startseite:** Abschnitt „VERGLEICH“ nach „ERFOLGE“, gleiche Karte wie die übrigen.
+   - **Abgemeldet:**
+     - Text „Wie stehst du im Vergleich zu anderen? Mit Konto kannst du einer
+       freiwilligen **Wochenrangliste** beitreten …“
+     - bei `info > 0` zusätzlich „**n** Lernende sind schon dabei.“
+     - Knopf „Mit Google anmelden“ (wie im Account-Sheet)
+   - **Angemeldet, nicht dabei:**
+     - zwei Punkte als Liste (Wochenrangliste · Prüfungsreife)
+     - Textfeld „Spitzname, z. B. Lkw_Profi“ (max. 20) und Knopf „Mitmachen“
+     - darunter der Hinweis: „Sichtbar für andere sind nur dein Spitzname, deine
+       Prüfungsreife, deine Antworten dieser Woche und deine Lerntage in Folge.
+       Austreten geht jederzeit – dein Eintrag wird dann gelöscht.“
+     - Fehlertexte:
+       - `23505` → „Dieser Spitzname ist schon vergeben.“
+       - `23514` oder Prüfung vorab → „3–20 Zeichen: Buchstaben, Ziffern, Leerzeichen, _ . -“
+       - sonst → „Das hat nicht geklappt – bitte später noch einmal.“
+   - **Dabei:**
+     - Zwei Kennzahl-Kacheln:
+       - „**x %** der anderen liegen bei der Prüfungsreife hinter dir“, mit Balken.
+         Bei 0 %: „Noch liegen alle vor dir – jede gemeisterte Frage bringt dich
+         nach vorn.“ Allein: „Noch bist du allein …“
+       - „**7.** Platz diese Woche von n · m Antworten“. Ohne Antwort diese Woche:
+         „Diese Woche noch ohne Antwort – ab der ersten bist du in der Wochenliste.“
+     - Liste „WOCHENRANGLISTE · KW 39“ mit Kopfzeile Pl. · Spitzname · Antw. · Reife:
+       - Plätze 1–3 als Medaille (Gold/Silber/Bronze, Verläufe wie im Web)
+       - eigene Zeile auf `kPetrolSoft` mit „· du“
+       - Ist man nicht in den Top 10: „⋯“ und darunter die eigene Zeile
+     - Fußzeile „Du bist dabei als **Name**“ mit den Textknöpfen „Spitzname ändern“
+       und „Austreten“ (mit Rückfrage)
+   - Laden höchstens alle 30 s. Nach Login/Logout sofort.
+5. **Datenschutz:** Vor der Freischaltung die Datenschutzerklärung und das
+   Play-Datenschutzformular ergänzen: Spitzname und Lernkennzahlen, nur nach
+   Beitritt, Zweck „Vergleich“.
+
+### Abnahme
+- Ohne SQL-Skript ist kein Vergleichsabschnitt zu sehen, und es gibt keinen Fehler.
+- Abgemeldet: Hinweis mit Teilnehmerzahl. Der Knopf startet den Google-Login.
+- Beitritt:
+  - Ein zu kurzer Name wird abgelehnt.
+  - Ein vergebener Name (auch in anderer Schreibweise) ergibt „schon vergeben“.
+  - Danach erscheint die Liste mit der eigenen Zeile.
+- Nach 10 beantworteten Fragen steigt „Antw.“ in der eigenen Zeile nach spätestens
+  4 s + Neuladen.
+- Austreten führt zurück zum Beitrittsformular. Der Eintrag ist serverseitig gelöscht.
+
+### Referenz Web-Implementierung (`index.html` auf `claude/ui-design-improvement-my0f66`)
+- **HTML:** `#vgKopf` / `#vgBox`, Z. 1343
+- **CSS:** Kommentar „Vergleich: freiwillige Wochenrangliste“, Z. 965
+- **JS** im Cloud-Block:
+
+  | Funktion | Zeile |
+  |---|---|
+  | `isoWoche` | 3594 |
+  | `wocheAntworten` | 3601 |
+  | `vgWerte` | 3606 |
+  | `vgMeldenSpaeter` | 3611 |
+  | `vgLaden` | 3618 |
+  | `vgZeigen` | 3645 |
+
+- **SQL:** `docs/supabase-rangliste.sql`. Lokal geprüft mit PGlite: Rechte,
+  Rangfolge, Wochenwechsel, zwei Geräte, Namensregeln, Austritt, Kontolöschung.
