@@ -8,6 +8,39 @@ Aufbau und Regeln: ``korrekturen_basis.py``.
 from korrekturen_basis import anwenden as _anwenden
 
 LOESUNG = {
+    # Verschachtelte Brüche und Einheitenbrüche aus dem Layout von Hand
+    # ausgeschrieben (linear: „Zähler ÷ Nenner“) und nachgerechnet.
+    ('NT', 3, 'a'):
+     "ΔV1 = V0 · αV · ΔT\n"
+     "ΔV2 = π · (D² − d²) ÷ 4 · Δh\n"
+     "ΔV1 = ΔV2\n"
+     "V0 · αV · ΔT = π · (D² − d²) ÷ 4 · Δh\n"
+     "Δh = V0 · αV · ΔT ÷ (π · (D² − d²) ÷ 4)\n"
+     "Δh = 1.500 dm³ · 0,00021 1/K · 75 K ÷ (π · ((10 dm)² − (3 dm)²) ÷ 4)\n"
+     "Δh = 0,33 dm = 33 mm",
+    ('NT', 3, 'b'):
+     "Q1 = mWasser · c · ΔT\n"
+     "Q2 = VErdgas · Hi\n"
+     "Q1 = η · Q2\n"
+     "mWasser · c · ΔT = η · VErdgas · Hi\n"
+     "VErdgas = m · c · ΔT ÷ (η · Hi)\n"
+     "VErdgas = 1.500 kg · 4,18 kJ/(kg · K) · 75 K ÷ (0,6 · 35.000 kJ/m³)\n"
+     "VErdgas = 22,4 m³",
+    ('NT', 5, 'b'):
+     "Verbraucher 1:\n"
+     "R = U ÷ I = 10 V ÷ 0,5 A = 20 Ω\n"
+     "P = U² ÷ R = (12 V)² ÷ 20 Ω = 7,2 W\n"
+     "Verbraucher 2:\n"
+     "R = U ÷ I = 14 V ÷ 0,5 A = 28 Ω\n"
+     "P = U² ÷ R = (12 V)² ÷ 28 Ω = 5,1 W",
+    ('NT', 6, 'b'):
+     "P = W ÷ t\n"
+     "P · t = W\n"
+     "P · t = m · g · h\n"
+     "m = P · t ÷ (g · h)\n"
+     "m = 5.035 W · 10 s ÷ (9,81 m/s² · 5,45 m)\n"
+     "m = 50.350 Ws ÷ 53,4645 m²/s² = 941,75 kg\n"
+     "ρ = m ÷ V → V = m ÷ ρ = 941,75 kg ÷ 1,15 kg/dm³ = 818,9 dm³",
     # MIKP, Aufgabe 2 a): "Stellen Sie den im folgenden Text beschriebenen
     # Vorgang in einem Flussdiagramm dar."
     ('MI', 2, 'a'):

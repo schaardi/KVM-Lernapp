@@ -11,6 +11,53 @@ hängt. Beide Tabellen stehen jetzt als Anlage an ihrer Aufgabe
 from korrekturen_basis import anwenden as _anwenden
 
 LOESUNG = {
+    # Verschachtelte Brüche und Einheitenbrüche aus dem Layout von Hand
+    # ausgeschrieben (linear: „Zähler ÷ Nenner“) und nachgerechnet.
+    ('NT', 2, 'a'):
+     "kippen:\n"
+     "∑MP = 0\n"
+     "∑MP = FN · l1 − FH · l2\n"
+     "∑MP = FG · cos α · l1 − FG · sin α · l2 | : FG\n"
+     "sin α · l1 = cos α · l2\n"
+     "l1 ÷ l2 = sin α ÷ cos α = tan α\n"
+     "tan α = 0,9 m ÷ 0,75 m → α = 50,2°\n"
+     "nach hinten rutschen:\n"
+     "FH = FR\n"
+     "FG · sin α = FN · μ\n"
+     "FG · sin α = FG · cos α · μ\n"
+     "sin α ÷ cos α = tan α = μ = 1,1\n"
+     "→ α = 47,7°\n"
+     "Begründung: Die Zugmaschine rutscht bei einem Neigungswinkel von 47,7°, somit wird der errechnete Kippwinkel von 50,2° nicht erreicht.",
+    ('NT', 4, 'b'):
+     "Q = 60 m³/s\n"
+     "Q = 60.000 dm³/s\n"
+     "Pzu = FG · h ÷ t\n"
+     "Pzu = m · g · h ÷ t\n"
+     "Pzu = V · ρ · g · h ÷ t\n"
+     "Pzu = 60.000 dm³ · 1 kg/dm³ · 9,81 m/s² · 125 m ÷ 1 s\n"
+     "Pzu = 73.575.000 W\n"
+     "Pzu = 73,58 MW\n"
+     "η = Pab ÷ Pzu\n"
+     "Pab = η · Pzu\n"
+     "Pab = 0,83 · 73.575.000 W\n"
+     "Pab = 61.067.250 W\n"
+     "Pab = 61,07 MW",
+    ('NT', 5, 'a'):
+     "Stoffwerte: Hi = 43.000 kJ/kg und ρ = 0,83 kg/dm³\n"
+     "Q = m · c · ΔT\n"
+     "Q = 2.500 kg · 4,18 kJ/(kg · K) · 72 K\n"
+     "Q = 752.400 kJ (3 Punkte)\n"
+     "Q = Hi · m\n"
+     "m = Q ÷ Hi\n"
+     "m = 752.400 kJ ÷ 43.000 kJ/kg\n"
+     "m = 17,5 kg (3 Punkte)\n"
+     "η = mab ÷ mzu\n"
+     "mzu = mab ÷ η\n"
+     "mzu = 17,5 kg ÷ 0,7\n"
+     "mzu = 25 kg (3 Punkte)\n"
+     "V = m ÷ ρ\n"
+     "V = 25 kg ÷ 0,83 kg/dm³\n"
+     "V = 30,12 l (3 Punkte)",
 # Der Lösungshinweis steht im Heft auf einer eigenen Seite hinter der letzten Aufgabe.
 ('MI', 2, 'a'):
  'Lösungshinweis zu Aufgabe 2 (paarweiser Vergleich):\n | Preis | Volumen | Service | Reinigungsaufwand | laufende Kosten | Punkte | Gewichtungsfaktoren in %\nPreis | – | 0 | 0 | 2 | 0 | 2 | 10\nVolumen | 2 | – | 2 | 1 | 2 | 7 | 35\nService | 2 | 0 | – | 2 | 2 | 6 | 30\nReinigungsaufwand | 0 | 1 | 0 | – | 1 | 2 | 10\nlaufende Kosten | 2 | 0 | 0 | 1 | – | 3 | 15',

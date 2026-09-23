@@ -12,6 +12,16 @@ neu. Aufbau und Regeln: ``korrekturen_basis.py``.
 from korrekturen_basis import anwenden as _anwenden
 
 LOESUNG = {
+    # Verschachtelte Brüche und Einheitenbrüche aus dem Layout von Hand
+    # ausgeschrieben (linear: „Zähler ÷ Nenner“) und nachgerechnet.
+    ('RE', 7, 'b'):
+     "Z. B.:\n"
+     "– Name\n"
+     "– Anschrift\n"
+     "– Familienstand\n"
+     "– Geburtsdatum\n"
+     "Hinweis für den Korrektor: Andere sinnvolle Nennungen sind ebenfalls als richtig zu bewerten.\n"
+     "Rechtsgrundlage: § 32 BDSG",
     # ---- Betriebswirtschaftliches Handeln
     ('BW', 1, 'a'):
      "– Mindestgründungskapital: 25.000 €\n"

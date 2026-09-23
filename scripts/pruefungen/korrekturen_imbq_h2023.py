@@ -11,6 +11,38 @@ Die Datei bleibt bestehen, damit jeder Termin seine Korrekturstelle hat.
 from korrekturen_basis import anwenden as _anwenden
 
 LOESUNG = {
+    # Verschachtelte Brüche und Einheitenbrüche aus dem Layout von Hand
+    # ausgeschrieben (linear: „Zähler ÷ Nenner“) und nachgerechnet.
+    ('BW', 4, 'a'):
+     "Stückgeld = Akkordrichtsatz ÷ Normalleistung = 20 €/h · 1,125 ÷ 5 Stück/h = 4,50 €/Stück\n"
+     "Normalleistung = 60 min/h ÷ 12 min/Stück = 5 Stück/h\n"
+     "Istleistung (Istmenge) = 27 €/h ÷ 4,50 €/Stück = 6 Stück/h\n"
+     "Stückzahl pro Woche = 6 Stück/h · 40 h/Woche = 240 Stück/Woche",
+    ('NT', 4, 'a'):
+     "R34 = R3 + R4\n"
+     "= 100 Ω + 200 Ω\n"
+     "R34 = 300 Ω\n"
+     "I34 = U ÷ R34\n"
+     "= 24 V ÷ 300 Ω\n"
+     "= 0,08 A\n"
+     "U3 = I34 · R3\n"
+     "= 0,08 A · 100 Ω\n"
+     "= 8 V\n"
+     "U3 = U1 = 8 V\n"
+     "R1 = U1 · R2 ÷ U2\n"
+     "= 8 V · 300 Ω ÷ 16 V\n"
+     "R1 = 150 Ω",
+    ('NT', 5, 'a'):
+     "A = d² · π ÷ 4\n"
+     "A = (0,3 mm)² · π ÷ 4\n"
+     "A = 0,071 mm²\n"
+     "R20 = ρ · L ÷ A\n"
+     "R20 = 0,0179 Ω · mm²/m · 100 m ÷ 0,071 mm²\n"
+     "R20 = 25,21 Ω\n"
+     "R90 = R20 · (1 + αR · ΔT) = 25,21 Ω · (1 + 0,0039 1/K · 70 K) = 32,1 Ω\n"
+     "I20 = U ÷ R20 = 24 V ÷ 25,21 Ω = 0,95 A\n"
+     "I90 = U ÷ R90 = 24 V ÷ 32,1 Ω = 0,75 A\n"
+     "ΔI = I20 − I90 = 0,95 A − 0,75 A = 0,2 A",
     # BWL, Aufgabe 5: Das Heft verweist für beide Teile nur auf die
     # "Lösungshinweise zu Anlage 1" – den ausgefüllten Betriebsabrechnungsbogen
     # auf einer eigenen Seite. Ohne ihn steht in der App keine Lösung.

@@ -330,6 +330,16 @@ _ANLAGEN = os.path.join(os.path.dirname(__file__), 'anlagen')
 # Korrekturen an den Musterlösungen: {Teilaufgaben-ID: [(alt, neu), ...]}
 # --------------------------------------------------------------------------- #
 LOESUNGEN = {
+    # Tabellenzeile: „-“ als Mal (5.500 € · 12 Monate = 66.000 €)
+    'P-OK-20210518-s1': [
+        ('(5.500 € - 12 Monate)', '(5.500 € · 12 Monate)'),
+    ],
+    # „Anhänge I und I B“ – die römischen Einsen las die OCR als Striche
+    'P-FT-20251111-s1': [
+        ('„Lenkzeit“ die Dauer der Lenktätigkeit, aufgezeichnet entweder: — vollautomatisch oder halbautomatisch durch Kontrollgeräte im Sinne der Anhänge und B der Verordnung (EWG) Nr. 3821/85, oder — von Hand gemäß den Anforderungen des Artikels 16 Absatz 2 der Verordnung (EWG) Nr. 3821/85\n(3 Punkte) Arbeitszeit, z. B.:',
+         '„Lenkzeit“: die Dauer der Lenktätigkeit, aufgezeichnet entweder\n– vollautomatisch oder halbautomatisch durch Kontrollgeräte im Sinne der Anhänge I und I B der Verordnung (EWG) Nr. 3821/85 oder\n– von Hand gemäß den Anforderungen des Artikels 16 Absatz 2 der Verordnung (EWG) Nr. 3821/85 (3 Punkte)\nArbeitszeit, z. B.:'),
+        ('– Abfahrtskontrolle\n=\nReinigung', '– Abfahrtskontrolle\n– Reinigung'),
+    ],
     # Die frühere Korrektur zu P-OK-20251112-s13 ("je 1.000 Nutzplatzkilometer")
     # betraf die nicht amtliche Musterlösung; der amtliche Lösungshinweis
     # enthält den Satz nicht mehr.
@@ -380,6 +390,37 @@ LOESUNGEN = {
 # hinweg; der Text war nicht mehr zuzuordnen.
 # --------------------------------------------------------------------------- #
 LOESUNG_TEXT = {
+    # Zerfallene Tabellen, Formulare und Brüche – aus den Seitenbildern bzw. der
+    # OCR neu geschrieben und nachgerechnet (Checkliste S. 37, Formulare S. 184,
+    # Kostenvergleich S. 202, Lastverteilung S. 177, Überholvorgang S. 76).
+    'P-OK-20211116-s0':
+        'Checkliste, z. B.:\nPrüfpunkt | Ja | Nein | Nicht zutreffend | Maßnahme | Termin/verantwortlich\nPrüfungen durch den Benutzer |  |  |  |  |\n1. Gibt es Schäden am Fahrzeug (Rahmen, Batteriekasten, Karosserie)? |  |  |  |  |\n2. Ist der Ölstand am Antrieb in Ordnung? |  |  |  |  |\n3. Ist der Kühlwasserstand in Ordnung? |  |  |  |  |\n4. Ist die Batterie in einwandfreiem Zustand und ausreichend gefüllt? |  |  |  |  |\n5. Ist das Fahrerschutzdach ohne Schäden, auch an den Befestigungen? |  |  |  |  |\n6. Ist die Griffigkeit der Pedale ausreichend? |  |  |  |  |\n7. Ist die Innenbeleuchtung (sofern erforderlich) funktionsfähig? |  |  |  |  |\n8. Ist die Beleuchtung (Blinker, Bremslicht) in Ordnung? |  |  |  |  |\n9. Ist die Hupe funktionsfähig? |  |  |  |  |\n10. Sind die Sicherheitseinrichtungen in Ordnung (z. B. Sperre gegen Weiterfahrt bei Regal- und Kommissionierstaplern bei Anwesenheit eines Fußgängers in Schmalgängen)? |  |  |  |  |\n11. Sind die Räder bzw. Reifen in Ordnung (Schäden, Fremdkörper im Profil, Profiltiefe – besonders bei Außeneinsatz)? |  |  |  |  |\n12. Sind Deichsel und Lenkung frei von Rissen und Verformungen? |  |  |  |  |\n13. Ist das Lenkspiel maximal zwei Finger breit? |  |  |  |  |\n14. Sind Stellteile frei von Schäden (Risse, Verformungen)? |  |  |  |  |\n15. Sind Betriebs- und Feststellbremse in ordnungsgemäßem Zustand? |  |  |  |  |\n16. Findet an der Hydraulik keine Absenkung in Nullstellung statt? |  |  |  |  |\n17. Sind die Hydraulikleitungen in einwandfreiem Zustand? |  |  |  |  |\n18. Sind die Gabelzinken nicht verbogen, haben sie keine Risse, sind sie nicht zu stark abgeschliffen und ist die Befestigung in Ordnung? |  |  |  |  |\n19. Prüfung Flurförderzeug gemäß DGUV-Vorschrift 68? |  |  |  |  |\n20. Ist das Traglastdiagramm angebracht? |  |  |  |  |\nDatum:\nUnterschrift:\n(18 Punkte für die Prüfpunkte und 2 Punkte für die praxistaugliche Checkliste, insgesamt max. 20 Punkte)',
+    'P-OK-20251112-s11':
+        'Die Qualifikationsmatrix ist ein Instrument, das in einer Tabelle die Qualifikationsanforderungen der Arbeitsaufgabe und die vorhandenen Qualifikationen der Mitarbeiter darstellt. Z. B.:\nTätigkeit/Arbeiten | MA 1 | MA 2 | MA 3 | MA 4 | MA 5 | MA 6\nFahrzeugannahme |  |  |  |  |  |\nVorbereitung HU |  |  |  |  |  |\nDurchführung AU |  |  |  |  |  |\nFahrzeugelektrik (HV) |  |  |  |  |  |\nKarosseriearbeiten |  |  |  |  |  |\nÖlwechsel |  |  |  |  |  |\nReifenwechsel |  |  |  |  |  |\nusw. |  |  |  |  |  |\nEine angemessene Bewertung der einzelnen Qualifikationen der Mitarbeiter muss in die einzelnen Zellen eingefügt werden (z. B. ja/nein, +/− etc.).\nHinweis für den Korrektor: Auch andere fachlich richtige Antworten können entsprechend gewertet werden.',
+    'P-OK-20251112-s12':
+        'Z. B.:\nBewertungsbogen\nSchulung Modul … (nach Berufskraftfahrer-Qualifikationsgesetz – BKrFQG)\n| ++ | + | 0 | − | − −\nDer Methodenmix trug zum besseren Verständnis der Seminarinhalte bei. | ☐ | ☐ | ☐ | ☐ | ☐\nDie Inhalte der Schulung wurden verständlich vermittelt. | ☐ | ☐ | ☐ | ☐ | ☐\nDie Stoffmenge war für die Zeitdauer des Seminars angemessen. | ☐ | ☐ | ☐ | ☐ | ☐\nDie Zeit für Fragen und Diskussionen war angemessen. | ☐ | ☐ | ☐ | ☐ | ☐\nHat der Inhalt der Schulung das vermittelt, was Sie erwartet haben? | ☐ | ☐ | ☐ | ☐ | ☐\nHat die Schulung die Themen abgedeckt, die Sie erwartet haben? | ☐ | ☐ | ☐ | ☐ | ☐\nWie zufrieden waren Sie mit der Zeitverteilung und den verschiedenen Themen? | ☐ | ☐ | ☐ | ☐ | ☐\nGab es genügend Praxisbeispiele? | ☐ | ☐ | ☐ | ☐ | ☐\nDas vermittelte Wissen kann in der Praxis angewendet werden. | ☐ | ☐ | ☐ | ☐ | ☐\nHat der Referent die Themen gut vermittelt? | ☐ | ☐ | ☐ | ☐ | ☐\nWie beurteilen Sie den Zustand der praktischen Ausbildungsgeräte (z. B. Fahrzeug, Stapler)? | ☐ | ☐ | ☐ | ☐ | ☐\nWaren die Seminarunterlagen informativ und hilfreich? | ☐ | ☐ | ☐ | ☐ | ☐\nHinweis für den Korrektor: Auch andere plausible Bewertungskriterien sind entsprechend zu bewerten.',
+    'P-OK-20211116-s6':
+        'Maßnahmen bezüglich der Verpackung (ADR), z. B.:\n– Schutz gegen Kurzschluss\n– Maßnahmen zur Minimierung der Auswirkungen von Erschütterungen oder Vibrationen\n– Batterie einzeln in flüssigkeitsdichte Innenverpackung\n– jede Innenverpackung mit ausreichender Menge nicht brennbarem und nicht leitendem Wärmedämmstoff umgeben\n– UN-geprüfte Außenverpackung der Verpackungsgruppe II\nMaßnahmen bezüglich der Kennzeichnung/Dokumente, z. B.:\n– Kennzeichnung „Defekte Lithium-Ionen-Batterie“\n– Gefahrensymbol Klasse 9\n– Transportgenehmigung der zuständigen Behörde als Begleitdokument\n– im Beförderungspapier vermerken: „Beförderung vereinbart gemäß den Bedingungen des Abschnitts 1.5.1 des ADR“',
+    'P-OK-20211116-s8':
+        'Personalentwicklungsmaßnahmen für ältere Mitarbeiter, z. B.:\nTechnische Veränderung der Arbeitsbedingungen:\n– ergonomische Maßnahmen\n– Verringerung der körperlichen Belastung\nGestaltung der Arbeitszeit:\n– Altersteilzeitarbeit\n– Teilzeit mit Abfindungsausgleich\n– Jobsharing\nSonstige Gestaltung der Vertragsbedingungen:\n– Versetzung\n– Änderungskündigung\n– vorzeitige Beendigung des Arbeitsvertrags\n– individuelle Vertragsgestaltung\n– Zahlung der Betriebsrente i. V. m. vorzeitigem Altersruhegeld\nWeitgehend altersbeständig sind z. B.:\n– der Wissensumfang\n– die Konzentrationsfähigkeit\n– die sprachlichen Kenntnisse\n– die Widerstandsfähigkeit bei normaler Belastung\n– die Fähigkeit, Alltagsprobleme zu lösen\nMit dem Alter wachsen in der Regel z. B.:\n– die Arbeits- und Berufserfahrung\n– die Urteilsfähigkeit\n– die Sozialkompetenz\n– Verantwortungsbewusstsein und Zuverlässigkeit\n– Ausgeglichenheit und Kontinuität\n– das Streben nach Sicherheit',
+    'P-OK-20210518-s2':
+        'geschätzte Wiederbeschaffungskosten (49.700 €) − Wiederverkauf (3.500 €) − Reifenkosten (2.200 €) = 44.000 € (1 Punkt)\n50 % von 44.000 € verteilt auf 5 Jahre | 4.400,00 €\nTreibstoffkosten (13,2 l · 1,21 € ÷ 100 km · 95.000 km) | 15.173,40 €\nReifenkosten (2.200 € ÷ 85.000 km · 95.000 km) | 2.458,82 €\nSchmierstoffe | 550,00 €\nWartung | 2.200,00 €\nGesamt | 24.782,22 €\n(je Nennung 1 Punkt)\nKilometersatz: 24.782,22 € ÷ 95.000 km = 0,26 €',
+    'P-FT-20230515-s0':
+        't = s ÷ (v2 − v1)\n= (16,5 m + 50 m + 16,5 m + 50 m) ÷ (24,44 m/s − 23,88 m/s)\n= 237,5 s\n= 3,96 min',
+    'P-FT-20230515-s1':
+        's = v2 · t\n= 24,44 m/s · 241,82 s\n= 5.910,08 m\n= 5,91 km',
+    'P-FT-20230515-s2':
+        't = s ÷ (v2 − v1)\n= 133 m ÷ (80 km/h − 70 km/h)\n= 133 m ÷ (22,22 m/s − 19,44 m/s)\n= 47,84 s',
+    'P-FT-20231120-s13':
+        'Kabsolut = KSoll − KIst = 2.200 h/Mo − 1.940,4 h/Mo = 259,6 h/Monat\nKprozentual = Kabsolut ÷ KIst · 100 % = 259,6 h/Mo ÷ 1.940,4 h/Mo · 100 % = 13,38 %\noder:\nKprozentual = Kabsolut ÷ KSoll · 100 % = 259,6 h/Mo ÷ 2.200 h/Mo · 100 % = 11,80 %',
+    'P-FT-20231120-s14':
+        'Mehrarbeit = 259,6 h/Mo · 60 min/h ÷ (21 Arbeitstage · 15 MA · 0,88) = 56,19 min',
+    'P-FT-20251111-s4':
+        'Berechnung:\nSres = ((m1 · S1) + (m2 · S2) + (m3 · S3) + …) ÷ (m1 + m2 + m3 + …)\nSres = ((1.000 · 0,4) + (1.000 · 1,20) + (1.000 · 2,00) + …) ÷ (1.000 + 1.000 + 1.000 + …)\nSres = (400 + 1.200 + 2.000 + 2.800 + 3.600 + 4.400 + 5.200 + 6.000 + 6.800 + 7.600 + 8.400 + 9.200 + 10.000 + 10.800 + 11.600 + 12.400) ÷ 16.000 ⇒ 102.400 ÷ 16.000 = 6,40 m\nSres = Gesamtschwerpunkt (m)\nm = Gewicht des jeweiligen Ladegutes (kg)\nS = Schwerpunkt des jeweiligen Ladegutes zur Stirnwand (m) (6 Punkte)\nBegründung:\nDer Gesamtschwerpunkt des Ladungsgewichts von 16.000 kg liegt bei 6,40 m und erfüllt somit die Schwerpunktlage nach Lastverteilungsplan. (2 Punkte)',
+    'P-OK-20260507-s6':
+        'Kosten pro Jahr | Diesel-Lkw | Batterie-Lkw\nAbschreibung | 120.000 € ÷ 8 a = 15.000 €/a | 320.400 € · 50 % = 160.200 € → 160.200 € ÷ 8 a = 20.025 €/a\nVerzinsung des Kaufpreises | (120.000 € ÷ 2) · 3 % = 1.800 €/a | (160.200 € ÷ 2) · 3 % = 2.403 €/a\nKraftstoff- bzw. Energiekosten | (70.000 km ÷ 100 km) · 1,65 €/l · 27 l = 31.185 €/a | 70.000 km · 0,24 €/kWh · 1,5 kWh/km = 25.200 €/a\nAbschreibung Ladestation (anteilig für 1 Lkw) |  | 80.000 € · 50 % = 40.000 € → 40.000 € ÷ 20 a = 2.000 €/a\nVerzinsung Ladestation (anteilig für 1 Lkw) |  | (40.000 € ÷ 2) · 3 % = 600 €/a\nSumme | 47.985 €/a | 50.228 €/a',
+    'P-OK-20260507-s7':
+        'Kostendifferenz: 50.228 €/a − 47.985 €/a = 2.243 €/a\nneue Nutzungszeit: 160.200 € ÷ (20.025 €/a − 2.243 €/a) = 9 Jahre',
     'P-OK-20221115-s3': _als_text(_GESPRAECH_L22, 'Gründe für ein Mitarbeiterjahresgespräch, z. B.:'),
     'P-FT-20250507-s11': _als_text(_GESPRAECH_L25, 'Gründe für ein Mitarbeiterjahresgespräch, z. B.:'),
     # Formel und Werte der Mindestvorspannkraft (VDI 2700) statt OCR-Resten
