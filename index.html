@@ -924,6 +924,33 @@
 .hero-cta:active{transform:translateY(1px)}
 .hero-cta:disabled{opacity:.55;cursor:default}
 .hero :focus-visible{outline-color:#fff}
+/* Prüfungstermin und Lernplan: eigener Block in der Heute-Karte – auf breiten
+   Bildschirmen als dritte Spalte, sonst unter „Jetzt lernen“. */
+.hero-main{grid-template-areas:"ring head" "ring body" "plan plan"}
+@media (min-width:900px){
+  .hero-main{grid-template-columns:120px minmax(0,1fr) minmax(250px,320px);grid-template-areas:"ring head plan" "ring body plan"}
+  .hero .plan{margin-top:0;align-self:center}
+}
+.plan{grid-area:plan;margin-top:14px;padding:12px 14px 13px;border-radius:14px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.17);color:#fff}
+.plan-kopf{display:flex;align-items:baseline;flex-wrap:wrap;column-gap:8px;row-gap:2px}
+.plan-tage{font:700 23px/1.05 var(--disp);text-transform:uppercase;letter-spacing:.01em}
+.plan-t{font:700 16px/1.2 var(--disp);text-transform:uppercase;letter-spacing:.02em;margin:0}
+.plan-datum{font-size:12px;color:rgba(255,255,255,.8)}
+.plan-edit{margin-left:auto;background:none;border:0;color:rgba(255,255,255,.88);font:600 12px var(--body);text-decoration:underline;text-underline-offset:3px;cursor:pointer;padding:4px 0}
+.plan-ziel{display:flex;align-items:center;gap:9px;margin-top:10px;font-size:12px;color:rgba(255,255,255,.86)}
+.plan-ziel b{font:700 14px var(--mono);color:#fff;white-space:nowrap}
+.plan-bar{flex:1;min-width:60px;height:7px;border-radius:4px;background:rgba(255,255,255,.18);overflow:hidden}
+.plan-bar i{display:block;height:100%;border-radius:4px;background:#8FE3AA}
+.plan-status{display:flex;gap:8px;align-items:flex-start;margin:9px 0 0;font-size:12px;line-height:1.45;color:rgba(255,255,255,.9)}
+.plan-status .ampel{margin-top:3px}
+.plan-txt{margin:5px 0 10px;font-size:12.5px;line-height:1.45;color:rgba(255,255,255,.86)}
+.plan-btn{min-height:38px;border-radius:10px;border:1px solid rgba(255,255,255,.35);background:rgba(255,255,255,.12);color:#fff;font:600 13px var(--body);padding:0 14px;cursor:pointer}
+.plan-btn:hover{background:rgba(255,255,255,.2)}
+.plan-btn.haupt{background:var(--cta-bg);color:var(--cta-ink);border-color:transparent}
+.plan-btn.haupt:hover{background:var(--cta-hover)}
+.plan-form{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-top:9px}
+.plan-form input{min-height:38px;border-radius:10px;border:1px solid rgba(255,255,255,.4);background:#fff;color:#12262c;font:600 14px var(--body);padding:0 10px;color-scheme:light}
+.plan-fehler{flex-basis:100%;margin:2px 0 0;font-size:12px;color:#FFD2C7}
 .hero-stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;margin-top:18px;padding-top:13px;border-top:1px solid rgba(255,255,255,.18)}
 .hs b{display:block;font:700 23px/1 var(--disp);color:#fff}
 .hs span{display:block;font-size:11px;line-height:1.25;color:rgba(255,255,255,.76);margin-top:4px}
@@ -931,7 +958,7 @@
 .hero .prog-bar .fill{background:linear-gradient(90deg,#FFD28F,var(--amber))}
 @media (max-width:520px){
   .hero{padding:18px 16px 15px}
-  .hero-main{grid-template-columns:96px minmax(0,1fr);grid-template-areas:"ring head" "body body";column-gap:16px}
+  .hero-main{grid-template-columns:96px minmax(0,1fr);grid-template-areas:"ring head" "body body" "plan plan";column-gap:16px}
   .hero-ring{width:96px;height:96px}
   .hero-pct b{font-size:25px}
   .hero-pct span{font-size:8px}
@@ -1319,6 +1346,7 @@ body[data-screen="scrBlatt"] .app{max-width:920px}
           <p class="hero-desc" id="dueDesc">Verteiltes Lernen: genau die Fragen, die laut Leitner-System heute zur Wiederholung anstehen.</p>
           <button class="hero-cta" id="btnDue">Jetzt lernen <svg class="ic-svg ic-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
         </div>
+        <div class="plan" id="planBox" aria-live="polite"></div>
       </div>
       <div class="hero-stats" role="group" aria-label="Dein Stand">
         <div class="hs"><b id="pMastered">0</b><span>gemeistert</span></div>
@@ -1904,7 +1932,99 @@ function renderHero(){
   var a=$("heroAmpel");if(a)a.className="ampel "+amp;
   var st=$("heroStatus");if(st)st.textContent=seen?("Prüfungsreife · "+AMPEL_TEXT[amp]):"Willkommen – leg los";
   if($("pStreak"))$("pStreak").textContent=fmtN(serie());
+  renderPlan();
 }
+/* ===== Prüfungstermin und Lernplan =====
+   Ziel ist die Ampel „prüfungsreif“ (70 % Prüfungsreife) bis zum Tag vor der
+   Prüfung. Dafür fehlen je Frage so viele richtige Antworten, wie ihr bis Box 3
+   fehlen; die eigene Trefferquote rechnet die falschen dazu. Das Tagesziel wird
+   einmal am Tag festgelegt – sonst schrumpfte es beim Lernen – und neu
+   gerechnet, wenn sich Termin oder Fächerwahl ändern. Die Prognose nimmt das
+   Tempo der letzten sieben Tage. */
+var PT_KEY='kvm_pruefung', PLAN_ZIEL=0.7, planOffen=false, planFehler='';
+function ptGet(){try{var d=JSON.parse(localStorage.getItem(PT_KEY)||'null');return (d&&/^\d{4}-\d{2}-\d{2}$/.test(d.datum))?d:null;}catch(e){return null;}}
+function ptSpeichern(d){try{if(d)localStorage.setItem(PT_KEY,JSON.stringify(d));else localStorage.removeItem(PT_KEY);}catch(e){}}
+function tagVon(datum){var p=datum.split('-');return Math.floor(Date.UTC(+p[0],+p[1]-1,+p[2])/86400000);}
+function datumVon(tag,lang){var d=new Date(tag*86400000),o=lang?{weekday:'short',day:'numeric',month:'short',year:'numeric'}:{day:'numeric',month:'short'};
+  if(!lang&&d.getUTCFullYear()!==new Date().getFullYear())o.year='numeric';
+  o.timeZone='UTC';return d.toLocaleDateString('de-DE',o);}
+function isoVon(tag){return new Date(tag*86400000).toISOString().slice(0,10);}
+function planRechnen(){
+  var t=ptGet();if(!t)return null;
+  var heute=todayIdx(),pruefung=tagVon(t.datum),tage=pruefung-heute;
+  var aq=activeQuestions(),n=aq.length,summe=0,c=0,w=0;
+  aq.forEach(function(q){var p=progress[q.id];if(p)summe+=Math.min(p.box|0,MASTER_BOX);});
+  for(var id in progress){var p=progress[id];if(p){c+=p.correct|0;w+=p.wrong|0;}}
+  var quote=(c+w)>=30?Math.max(0.5,Math.min(0.95,c/(c+w))):0.75;
+  var noetig=Math.max(0,Math.ceil(PLAN_ZIEL*MASTER_BOX*n-summe));
+  var tg=tageAll(),woche=0;for(var k=1;k<=7;k++)woche+=tg[heute-k]||0;
+  if(t.tag!==heute||t.n!==n){
+    t.tag=heute;t.n=n;t.ziel=tage>0?(noetig>0?Math.ceil(noetig/quote/tage):dueCount()):0;ptSpeichern(t);
+  }
+  var tempo=woche/7;
+  return {pruefung:pruefung,tage:tage,noetig:noetig,ziel:t.ziel,geschafft:tg[heute]||0,tempo:tempo,
+    prognose:(noetig>0&&tempo>=1)?heute+Math.ceil(noetig/(tempo*quote)):null};
+}
+function renderPlan(){
+  var box=$("planBox");if(!box)return;
+  var t=ptGet(),h='';
+  if(planOffen){
+    var heute=isoVon(todayIdx());
+    h='<p class="plan-t">Prüfungstermin</p><div class="plan-form">'+
+      '<input type="date" id="planDatum" min="'+heute+'" value="'+(t?t.datum:'')+'" aria-label="Datum deiner Prüfung">'+
+      '<button type="button" class="plan-btn haupt" data-plan="speichern">Speichern</button>'+
+      (t?'<button type="button" class="plan-btn" data-plan="entfernen">Entfernen</button>':'')+
+      '<button type="button" class="plan-btn" data-plan="abbrechen">Abbrechen</button>'+
+      (planFehler?'<p class="plan-fehler" role="alert">'+esc(planFehler)+'</p>':'')+'</div>';
+  }else if(!t){
+    h='<p class="plan-t">Wann ist deine Prüfung?</p>'+
+      '<p class="plan-txt">Trag den Termin ein – die App rechnet dir ein Tagesziel bis zur Prüfungsreife aus.</p>'+
+      '<button type="button" class="plan-btn" data-plan="bearbeiten">Termin eintragen</button>';
+  }else{
+    var p=planRechnen(),am=datumVon(p.pruefung,true);
+    if(p.tage<0){
+      h='<p class="plan-t">Prüfung vorbei</p><p class="plan-txt">Deine Prüfung war am '+esc(am)+'. Steht ein neuer Termin an?</p>'+
+        '<button type="button" class="plan-btn" data-plan="bearbeiten">Neuen Termin eintragen</button>';
+    }else if(p.tage===0){
+      h='<div class="plan-kopf"><span class="plan-tage">Heute ist Prüfung</span><button type="button" class="plan-edit" data-plan="bearbeiten">ändern</button></div>'+
+        '<p class="plan-txt">Viel Erfolg! Kurz vorher helfen die fälligen Fragen mehr als neuer Stoff.</p>';
+    }else{
+      h='<div class="plan-kopf"><span class="plan-tage">'+(p.tage===1?'Morgen ist Prüfung':'Noch '+fmtN(p.tage)+' Tage')+'</span>'+
+        '<span class="plan-datum">'+(p.tage===1?esc(am):'bis zur Prüfung am '+esc(am))+'</span>'+
+        '<button type="button" class="plan-edit" data-plan="bearbeiten" aria-label="Prüfungstermin ändern">ändern</button></div>';
+      var z=p.ziel,g=p.geschafft;
+      if(z>0)h+='<div class="plan-ziel"><span>Heute</span><b>'+fmtN(Math.min(g,99999))+' / '+fmtN(z)+'</b>'+
+        '<span class="plan-bar" aria-hidden="true"><i style="width:'+Math.min(100,Math.round(g/z*100))+'%"></i></span><span>Fragen</span></div>';
+      var amp,txt;
+      if(p.noetig===0){amp='gruen';txt=z>0?'Ziel erreicht: '+Math.round(PLAN_ZIEL*100)+' % prüfungsreif. Halte den Stand mit den fälligen Fragen.':
+        'Ziel erreicht: '+Math.round(PLAN_ZIEL*100)+' % prüfungsreif. Heute ist nichts fällig – probier eine Original-Prüfung.';}
+      else if(z>0&&g>=z){amp='gruen';txt='Tagesziel geschafft – stark! Morgen geht es weiter.';}
+      else if(p.prognose!=null){
+        var tempo=fmtN(Math.round(p.tempo));
+        if(p.prognose<p.pruefung){amp='gruen';txt='Im Plan: Mit Ø '+tempo+' Fragen am Tag bist du am '+esc(datumVon(p.prognose))+' prüfungsreif ('+Math.round(PLAN_ZIEL*100)+' %).';}
+        else{amp=z>120?'rot':'gelb';txt='Rückstand: Mit Ø '+tempo+' Fragen am Tag wärst du erst am '+esc(datumVon(p.prognose))+' prüfungsreif. Mit dem Tagesziel klappt es bis zur Prüfung.';}
+      }else{amp=z<=60?'gruen':(z<=120?'gelb':'rot');
+        txt=(z<=60?'Gut machbar':(z<=120?'Sportlich':'Sehr knapp'))+': Mit '+fmtN(z)+' Fragen am Tag bist du bis zur Prüfung zu '+Math.round(PLAN_ZIEL*100)+' % prüfungsreif.';}
+      if(p.noetig>0&&z>150)txt+=' Setz Schwerpunkte, z. B. mit „Schwächen üben“.';
+      h+='<p class="plan-status"><span class="ampel '+amp+'" aria-hidden="true"></span><span>'+txt+'</span></p>';
+    }
+  }
+  box.innerHTML=h;
+}
+$("planBox").addEventListener("click",function(e){
+  var b=e.target.closest("[data-plan]");if(!b)return;var a=b.getAttribute("data-plan");
+  if(a==="bearbeiten"){planOffen=true;planFehler='';renderPlan();var i=$("planDatum");if(i)try{i.focus();}catch(x){}return;}
+  if(a==="abbrechen"){planOffen=false;planFehler='';}
+  else if(a==="entfernen"){ptSpeichern(null);planOffen=false;planFehler='';}
+  else if(a==="speichern"){
+    var v=($("planDatum")||{}).value||'';
+    if(!/^\d{4}-\d{2}-\d{2}$/.test(v)){planFehler='Bitte ein Datum wählen.';renderPlan();return;}
+    if(tagVon(v)<=todayIdx()){planFehler='Der Termin muss in der Zukunft liegen.';renderPlan();return;}
+    ptSpeichern({datum:v});planOffen=false;planFehler='';
+  }
+  renderPlan();
+});
+$("planBox").addEventListener("keydown",function(e){if(e.key==="Enter"&&e.target.id==="planDatum"){e.preventDefault();var s=$("planBox").querySelector('[data-plan="speichern"]');if(s)s.click();}});
 /* Erfolge ergeben sich aus dem Lernstand – nichts muss eigens gespeichert
    werden, sie gehen also auch mit Sync und Zurücksetzen mit. */
 var ERF_IC={
