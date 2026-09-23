@@ -128,25 +128,7 @@
   .h-label .reset:hover{border-color:var(--err);color:var(--err-ink)}
   .h-sub-gap{margin-top:14px}
 
-  /* Heute-Karte: die erste Aktion des Lerntags, direkt unter dem Kopf */
-  .today{background:var(--hero-bg);color:#fff;padding:18px 18px 16px}
-  .today-top{display:flex;flex-direction:column;gap:14px}
-  @media (min-width:600px){.today-top{flex-direction:row;align-items:center;justify-content:space-between;gap:22px}}
-  .today-kicker{font-family:var(--mono);font-size:10.5px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.74);margin:0 0 5px}
-  .today-title{font-family:var(--disp);font-weight:700;text-transform:uppercase;font-size:clamp(26px,6.6vw,32px);line-height:1;letter-spacing:.01em;margin:0;color:#fff}
-  .today-desc{font-size:13px;line-height:1.5;color:rgba(255,255,255,.84);margin:7px 0 0;max-width:52ch}
-  .today-cta{display:inline-flex;align-items:center;justify-content:center;gap:8px;flex:0 0 auto;min-height:48px;border:0;border-radius:11px;background:var(--cta-bg);color:var(--cta-ink);font-size:15.5px;font-weight:700;padding:12px 22px;box-shadow:0 2px 0 rgba(0,0,0,.14);transition:background .15s,transform .1s}
-  .today-cta:hover{background:var(--cta-hover)}
-  .today-cta:active{transform:translateY(1px)}
-  .today-cta:disabled{opacity:.55;cursor:default}
-  .today :focus-visible{outline-color:#fff}
-  .today-stats{display:flex;flex-wrap:wrap;gap:6px 22px;margin-top:16px;padding-top:12px;border-top:1px solid rgba(255,255,255,.18)}
-  .ts{display:flex;align-items:baseline;gap:6px}
-  .ts-n{font-family:var(--disp);font-weight:700;font-size:23px;line-height:1;color:#fff}
-  .ts-l{font-size:12px;color:rgba(255,255,255,.76)}
   .prog-bar{height:9px;border-radius:5px;background:var(--track);overflow:hidden;margin-top:12px}
-  .today .prog-bar{height:7px;margin-top:10px;background:rgba(255,255,255,.2)}
-  .today .prog-bar .fill{background:linear-gradient(90deg,#FFD28F,var(--amber))}
   .prog-bar .fill{height:100%;background:linear-gradient(90deg,var(--petrol),var(--amber));border-radius:5px;transition:width .5s}
   .prog-note{font-size:11px;color:var(--muted);margin-top:7px;text-align:center}
   #zusatzNote{text-align:left;line-height:1.5;margin-top:9px}
@@ -740,12 +722,23 @@
 .pr-group{font-family:var(--disp);font-size:14px;letter-spacing:.4px;text-transform:uppercase;
   color:var(--petrol-ink-deep);font-weight:700;margin:16px 0 8px;padding:4px 0;min-height:32px;display:flex;align-items:center;gap:6px}
 .pr-group:first-child{margin-top:0}
-.pr-item{border:1px solid var(--line);border-radius:12px;background:var(--paper);padding:13px 14px;margin-bottom:9px}
-.pr-top{display:flex;align-items:baseline;gap:8px;flex-wrap:wrap}
-.pr-date{font-weight:800;font-size:15px;color:var(--ink)}
-.pr-badge{font-size:10.5px;font-weight:800;letter-spacing:.3px;padding:2px 7px;border-radius:5px;
-  background:var(--petrol-soft);color:var(--petrol-ink-deep)}
-.pr-meta{font-size:12px;color:var(--muted);margin-top:4px}
+.pr-item{border:1px solid var(--line);border-radius:14px;background:var(--paper);padding:13px 14px 12px;margin-bottom:10px;
+  box-shadow:0 1px 2px rgba(16,42,50,.04),0 8px 18px -12px rgba(16,42,50,.22)}
+.pr-top{display:flex;align-items:flex-start;gap:11px}
+.pr-ic{flex:0 0 40px;height:40px;border-radius:11px;display:grid;place-items:center;color:#fff;
+  font:700 14px/1 var(--disp);letter-spacing:.05em;background:var(--muted)}
+.pr-ic.pr-re{background:var(--petrol)}.pr-ic.pr-bw{background:var(--amber)}.pr-ic.pr-mi{background:var(--ok)}
+.pr-ic.pr-zi{background:var(--blue)}.pr-ic.pr-nt{background:var(--violet)}.pr-ic.pr-ft,.pr-ic.pr-ok{background:var(--plum)}
+.pr-tt{flex:1 1 auto;min-width:0}
+.pr-date{font-weight:700;font-size:15px;line-height:1.3;color:var(--ink)}
+.pr-badge{flex:0 0 auto;font:700 11px/1.3 var(--mono);padding:3px 8px;border-radius:20px;
+  background:var(--petrol-soft);color:var(--petrol-ink-deep);border:1px solid var(--petrol-line)}
+.pr-meta{font-size:12px;color:var(--muted);margin-top:3px}
+.pr-prog{display:flex;align-items:center;gap:9px;margin-top:11px}
+.pr-bar{flex:1 1 auto;height:6px;border-radius:3px;background:var(--track);overflow:hidden}
+.pr-bar i{display:block;height:100%;border-radius:3px;background:linear-gradient(90deg,var(--petrol),var(--ok))}
+.pr-pt{font:600 11px var(--mono);color:var(--muted);white-space:nowrap}
+.pr-pt b{color:var(--ink)}
 .pr-actions{display:flex;gap:8px;margin-top:11px;flex-wrap:wrap}
 .pr-btn{border:1px solid var(--line);background:var(--paper);border-radius:9px;padding:10px 14px;min-height:42px;
   font:700 12.5px var(--body);color:var(--petrol-ink);cursor:pointer}
@@ -826,66 +819,344 @@
 .msg-img{margin:10px 0 0;padding:0}
 .msg-img img{max-width:100%;height:auto;display:block;border:1px solid var(--line);border-radius:10px;background:#fff}
 .msg-img figcaption{font-size:11.5px;color:var(--muted);margin-top:5px;text-align:center;line-height:1.4}
-/* ===== Aufgabenblatt: eine Aufgabe mit allen Teilaufgaben a–x ===== */
-.bl-stepper{display:flex;gap:6px;flex-wrap:wrap;padding:0 0 12px;border-bottom:1px solid var(--line);margin-bottom:14px}
-.bl-pill{min-width:40px;min-height:40px;border:1px solid var(--line);background:var(--paper);border-radius:10px;
-  padding:6px 10px;font:700 13px var(--body);color:var(--muted);cursor:pointer;position:relative}
-.bl-pill:hover{border-color:var(--petrol)}
-.bl-pill.teil{border-color:var(--gold-line);background:var(--gold-soft);color:var(--ink)}
-.bl-pill.voll{border-color:var(--ok-line);background:var(--ok-soft);color:var(--ink)}
-.bl-pill.auf{border-color:var(--petrol);background:var(--petrol-soft);color:var(--petrol-ink-deep)}
-.bl-pill.cur{background:var(--petrol);border-color:var(--petrol);color:#fff}
-.bl-hinweis{margin:0 0 12px;padding:8px 11px;border-left:3px solid var(--amber);
-  background:rgba(214,158,46,.10);border-radius:0 8px 8px 0;font-size:12.5px;color:var(--ink-soft)}
-.bl-akopf{margin:0 0 14px}
-.bl-atitel{display:flex;align-items:baseline;gap:9px;flex-wrap:wrap;margin-bottom:8px}
-.bl-anr{font:800 16px var(--body);color:var(--ink)}
-.bl-apts{font-family:var(--mono);font-size:11.5px;color:var(--petrol-ink-deep);
-  background:var(--petrol-soft);border-radius:5px;padding:2px 7px}
-.bl-sit{white-space:pre-wrap;font-size:14px;line-height:1.65;color:var(--ink);
-  border-left:2px solid var(--line-strong);padding-left:11px;margin:0 0 12px}
+
+/* ===== Startseite =====
+   Eigene Karten auf ruhigem Grund statt einer langen Karte mit Trennlinien:
+   oben der Lernstand (Ring mit Ampel) mit der Aufgabe des Tages, darunter
+   Lernweg, Üben, Prüfen, Erfolge, Nachschlagen, Statistik, Konto. */
+.home>.mast{background:none;padding:4px 4px 16px}
+.home .mast h1{font-size:clamp(28px,7.4vw,46px);line-height:.95}
+.home .mast .sub{font-size:13px;margin-top:9px}
+.h-group{display:flex;align-items:center;justify-content:space-between;gap:10px;margin:24px 6px 10px;
+  font:600 11px/1.2 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.h-group .h-scope{font:600 12px/1.3 var(--body);letter-spacing:0;text-transform:none;color:var(--petrol-ink);text-align:right}
+.h-sub .h-scope{font:600 11.5px/1.3 var(--body);letter-spacing:0;text-transform:none;color:var(--petrol-ink)}
+.home #subSection{margin-bottom:14px}
+@media (max-width:560px){
+  /* Themenbereiche als eine wischbare Zeile statt sechs Reihen Chips */
+  .home .chips{flex-wrap:nowrap;overflow-x:auto;margin:0 -16px;padding:0 16px 2px;scrollbar-width:none}
+  .home .chips::-webkit-scrollbar{display:none}
+  .home .chip{flex:0 0 auto}
+}
+.h-group .reset{font-family:var(--body);text-transform:none;letter-spacing:0;color:var(--muted);border:1px solid var(--line-strong);background:var(--paper);border-radius:7px;padding:5px 10px;font-size:11px}
+.h-group .reset:hover{border-color:var(--err);color:var(--err-ink)}
+.hcard{background:var(--paper);border:1px solid var(--line);border-radius:16px;box-shadow:var(--shadow);padding:16px}
+.hcard .h-sub:first-child{margin-top:0}
+
+.hero{position:relative;overflow:hidden;isolation:isolate;border-radius:20px;background:var(--hero-bg);color:#fff;padding:20px 18px 16px;
+  box-shadow:0 22px 44px -22px rgba(8,79,88,.75),0 2px 6px rgba(8,79,88,.22)}
+.hero::before{content:"";position:absolute;z-index:-1;right:-70px;top:-90px;width:280px;height:280px;border-radius:50%;
+  background:radial-gradient(circle,rgba(255,255,255,.16),rgba(255,255,255,0) 68%)}
+.hero::after{content:"";position:absolute;z-index:-1;left:-60px;bottom:-110px;width:260px;height:220px;border-radius:50%;
+  background:radial-gradient(circle,rgba(217,130,10,.30),rgba(217,130,10,0) 70%)}
+.hero-main{display:grid;grid-template-columns:120px minmax(0,1fr);grid-template-areas:"ring head" "ring body";column-gap:20px;align-items:center}
+.hero-ring{grid-area:ring;position:relative;width:120px;height:120px}
+.hero-ring svg{width:100%;height:100%;transform:rotate(-90deg);display:block}
+.hr-bg{fill:none;stroke:rgba(255,255,255,.16);stroke-width:10}
+.hr-fg{fill:none;stroke:var(--amp,#FFD28F);stroke-width:10;stroke-linecap:round;transition:stroke-dashoffset .9s ease,stroke .3s}
+.hero-pct{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;line-height:1}
+.hero-pct b{font:700 31px/1 var(--disp);color:#fff}
+.hero-pct span{font:600 9px/1 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.76);margin-top:5px}
+.hero-head{grid-area:head;align-self:end}
+.hero-body{grid-area:body;align-self:start}
+.hero-kicker{display:flex;align-items:center;gap:8px;font:600 10.5px/1.2 var(--mono);letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.86);margin:0 0 6px}
+.ampel{display:inline-block;flex:0 0 auto;width:10px;height:10px;border-radius:50%;background:#E8604A;box-shadow:0 0 0 3px rgba(255,255,255,.2)}
+.ampel.gelb{background:#F3B53C}
+.ampel.gruen{background:#46C46F}
+.ampel.aus{background:rgba(255,255,255,.45)}
+.hero-title{font-family:var(--disp);font-weight:700;text-transform:uppercase;font-size:clamp(25px,6.4vw,32px);line-height:1;letter-spacing:.01em;margin:0;color:#fff}
+.hero-desc{font-size:13px;line-height:1.5;color:rgba(255,255,255,.86);margin:8px 0 13px;max-width:52ch}
+.hero-cta{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:46px;border:0;border-radius:12px;background:var(--cta-bg);color:var(--cta-ink);
+  font-size:15px;font-weight:700;padding:11px 20px;box-shadow:0 8px 18px -8px rgba(0,0,0,.45),0 2px 0 rgba(0,0,0,.12);transition:background .15s,transform .1s}
+.hero-cta:hover{background:var(--cta-hover)}
+.hero-cta:active{transform:translateY(1px)}
+.hero-cta:disabled{opacity:.55;cursor:default}
+.hero :focus-visible{outline-color:#fff}
+.hero-stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;margin-top:18px;padding-top:13px;border-top:1px solid rgba(255,255,255,.18)}
+.hs b{display:block;font:700 23px/1 var(--disp);color:#fff}
+.hs span{display:block;font-size:11px;line-height:1.25;color:rgba(255,255,255,.76);margin-top:4px}
+.hero .prog-bar{height:6px;margin-top:13px;background:rgba(255,255,255,.18)}
+.hero .prog-bar .fill{background:linear-gradient(90deg,#FFD28F,var(--amber))}
+@media (max-width:520px){
+  .hero{padding:18px 16px 15px}
+  .hero-main{grid-template-columns:96px minmax(0,1fr);grid-template-areas:"ring head" "body body";column-gap:16px}
+  .hero-ring{width:96px;height:96px}
+  .hero-pct b{font-size:25px}
+  .hero-pct span{font-size:8px}
+  .hero-body{margin-top:4px}
+  .hero-cta{width:100%}
+  .hs b{font-size:20px}
+}
+
+/* Lernweg: die Fächer als Stationen an einer Linie */
+.weg{position:relative}
+.weg::before{content:"";position:absolute;left:28px;top:30px;bottom:30px;width:2px;
+  background:repeating-linear-gradient(to bottom,var(--line-strong) 0 6px,transparent 6px 11px)}
+.weg .fach{position:relative;display:flex;align-items:center;gap:13px;width:100%;min-height:66px;text-align:left;
+  border:1px solid transparent;background:transparent;border-radius:13px;padding:10px 12px 10px 9px;margin:0 0 3px;color:var(--ink)}
+@media (hover:hover){.weg .fach:not(:disabled):hover{background:var(--surface);border-color:var(--line)}}
+.weg .fach.active{background:var(--petrol-soft);border-color:var(--petrol-line)}
+.weg .fnum{position:relative;z-index:1;width:40px;height:40px;line-height:40px;border-radius:50%;font-size:20px;flex:0 0 40px;
+  box-shadow:0 0 0 4px var(--paper),0 4px 10px -3px rgba(16,42,50,.35)}
+.weg .fach.active .fnum{box-shadow:0 0 0 4px var(--petrol-soft),0 4px 10px -3px rgba(16,42,50,.35)}
+.weg .fach.fach-off{background:transparent;opacity:.62}
+.weg .fname{font-size:14.5px}
+.weg .fsub{margin-top:3px}
+.weg .fsub .ampel{width:8px;height:8px;box-shadow:none;margin-right:5px;vertical-align:.5px}
+.weg .minibar{display:block;height:5px;margin-top:7px}
+.weg .minibar .mf{display:block}
+.weg .fpct{flex:0 0 auto;font:700 14px var(--mono);color:var(--ink);min-width:44px;text-align:right}
+.weg .fach-off .fpct{color:var(--muted)}
+
+/* Üben: Kacheln mit Symbol */
+.home .mode{display:flex;align-items:flex-start;gap:12px;padding:14px 34px 14px 13px;border-radius:13px}
+.m-ic{flex:0 0 40px;height:40px;border-radius:11px;display:grid;place-items:center;color:#fff;box-shadow:0 5px 12px -5px rgba(16,42,50,.45)}
+.m-ic .ic-svg{width:20px;height:20px}
+.m-ic-petrol{background:var(--petrol)}.m-ic-amber{background:var(--amber)}.m-ic-ink{background:var(--tag-ink)}
+.m-ic-deep{background:var(--petrol-deep)}.m-ic-plum{background:var(--plum)}
+.m-body{flex:1 1 auto;min-width:0;display:block}
+.home .mode .m-title{font-size:18px}
+.home .modes{grid-template-columns:repeat(auto-fit,minmax(min(100%,250px),1fr))}
+
+/* Prüfen: dunkle Karte mit Tiefe, darunter die zuletzt geöffnete Prüfung */
+.exam-card{position:relative;overflow:hidden;border-radius:18px;color:#fff;
+  background:linear-gradient(135deg,#1C3A42 0%,#10262C 100%);box-shadow:0 20px 40px -22px rgba(10,30,36,.8),0 2px 6px rgba(10,30,36,.25)}
+.exam-card::before{content:"";position:absolute;right:-40px;top:-60px;width:200px;height:200px;border-radius:50%;
+  background:radial-gradient(circle,rgba(217,130,10,.28),rgba(217,130,10,0) 70%);pointer-events:none}
+.exam-main{position:relative;display:flex;align-items:center;gap:14px;width:100%;border:0;background:transparent;color:inherit;text-align:left;padding:17px 16px 16px}
+.exam-ic{flex:0 0 48px;height:48px;border-radius:14px;display:grid;place-items:center;background:linear-gradient(145deg,#F2A93B,#C9740A);color:#fff;
+  box-shadow:0 8px 16px -6px rgba(217,130,10,.7)}
+.exam-ic .ic-svg{width:24px;height:24px}
+.exam-txt{flex:1 1 auto;min-width:0}
+.exam-t{display:block;font-family:var(--disp);font-weight:700;text-transform:uppercase;font-size:21px;letter-spacing:.02em;line-height:1.05}
+.exam-d{display:block;font-size:12.5px;line-height:1.4;color:rgba(255,255,255,.76);margin-top:4px}
+.exam-go{flex:0 0 auto;opacity:.75;transition:transform .15s}
+@media (hover:hover){.exam-main:hover .exam-go{transform:translateX(3px);opacity:1}}
+.exam-main:focus-visible{outline:2px solid #fff;outline-offset:-4px}
+.exam-last{position:relative;display:flex;align-items:center;gap:12px;flex-wrap:wrap;border-top:1px solid rgba(255,255,255,.12);padding:12px 16px 15px}
+.el-txt{flex:1 1 210px;min-width:0}
+.el-k{display:block;font:600 9.5px/1.2 var(--mono);letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.6)}
+.el-t{display:block;font-size:13px;font-weight:600;color:#fff;margin-top:3px}
+.el-bar{height:5px;border-radius:3px;background:rgba(255,255,255,.14);overflow:hidden;margin-top:8px}
+.el-bar i{display:block;height:100%;border-radius:3px;background:linear-gradient(90deg,#FFD28F,var(--amber))}
+.el-go{flex:0 0 auto;border:0;border-radius:11px;background:#fff;color:#0A4B53;font:700 13px var(--body);padding:10px 15px;min-height:42px;cursor:pointer}
+.el-go:hover{background:#EEF7F8}
+.el-go:focus-visible{outline:2px solid #fff;outline-offset:2px}
+
+/* Erfolge: Medaillen – verdiente golden, offene mit Fortschritt */
+.erfolge{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:8px}
+@media (min-width:800px){.home .tiles{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media (max-width:560px){
+  .erfolge{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:8px;margin:0 -16px;padding:2px 16px 4px;scrollbar-width:none}
+  .erfolge::-webkit-scrollbar{display:none}
+  .eb{flex:0 0 104px;scroll-snap-align:start}
+}
+.eb{display:flex;flex-direction:column;align-items:center;text-align:center;gap:6px;padding:10px 6px 9px;border-radius:13px;background:var(--surface);border:1px solid var(--line-soft)}
+.eb-med{position:relative;width:54px;height:54px;border-radius:50%;display:grid;place-items:center;color:#fff;
+  background:radial-gradient(circle at 35% 30%,#FBD88A,#E3A032 55%,#B96C06);box-shadow:0 7px 14px -6px rgba(185,108,6,.85),inset 0 -3px 0 rgba(0,0,0,.14)}
+.eb-med svg{width:25px;height:25px}
+.eb.zu .eb-med{background:var(--surface-2);color:var(--ph);box-shadow:inset 0 0 0 2px var(--line)}
+.eb-t{font:700 12px/1.2 var(--body);color:var(--ink)}
+.eb-d{font-size:10.5px;line-height:1.3;color:var(--muted)}
+.eb.zu .eb-t{color:var(--ink-soft)}
+.eb-p{width:72%;height:4px;border-radius:2px;background:var(--track);overflow:hidden;margin-top:1px}
+.eb-p i{display:block;height:100%;background:var(--amber);border-radius:2px}
+
+/* Aktivität: beantwortete Fragen der letzten 14 Tage */
+.aktiv{display:grid;grid-template-columns:repeat(14,minmax(0,1fr));gap:5px;align-items:end;height:104px;margin-top:4px}
+.ak{display:flex;flex-direction:column;align-items:center;justify-content:flex-end;gap:5px;height:100%;min-width:0}
+.ak i{display:block;width:100%;max-width:22px;min-height:3px;border-radius:5px 5px 2px 2px;background:var(--petrol-line)}
+.ak.voll i{background:linear-gradient(180deg,var(--petrol),var(--petrol-deep))}
+.ak.heute span{color:var(--petrol-ink);font-weight:700}
+.ak span{font:600 9.5px/1 var(--mono);color:var(--muted)}
+
+/* ===== Aufgabentexte: Tabellen, Listen, Rechenzeilen =====
+   Die Prüfungstexte liegen als Klartext vor – Tabellenzeilen als „a | b“,
+   Rechenwege Zeile für Zeile, Aufzählungen mit „–“. rtHTML() macht daraus
+   echte Tabellen, Listen und abgesetzte Rechenblöcke (siehe Skript). */
+.rt{white-space:normal}
+.rt>*{margin:0}
+.rt>*+*{margin-top:.6em}
+.rt>.rt-gap{margin-top:1.05em}
+.rt-lbl{font-weight:600;color:var(--ink)}
+.rt-list{padding:0;list-style:none}
+.rt-list li{position:relative;padding-left:1.15em}
+.rt-list li+li{margin-top:.28em}
+.rt-list li::before{content:"";position:absolute;left:.18em;top:.62em;width:.36em;height:.36em;border-radius:50%;background:var(--petrol)}
+.rt-tbl{width:-webkit-fit-content;width:fit-content;min-width:min(100%,280px);max-width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch;border:1px solid var(--line);border-radius:10px;background:var(--paper);font-weight:400}
+.rt-tbl table{border-collapse:collapse;width:100%;font-size:.92em;line-height:1.45;font-variant-numeric:tabular-nums}
+.rt-tbl th,.rt-tbl td{padding:6px 11px;text-align:left;vertical-align:top;border-top:1px solid var(--line-soft)}
+.rt-tbl tbody tr:first-child>*{border-top:0}
+.rt-tbl thead th{background:var(--surface-2);color:var(--petrol-ink-deep);font-size:.9em;font-weight:700;border-bottom:1px solid var(--line);vertical-align:bottom}
+.rt-tbl tbody tr:nth-child(even){background:var(--surface)}
+.rt-tbl .num{text-align:right;white-space:nowrap}
+.rt-tbl.kv td:first-child{color:var(--ink-soft)}
+.rt-tbl.kv td+td{font-weight:600;color:var(--ink)}
+@media (max-width:560px){.rt-tbl.kv .num{white-space:normal;text-align:left;min-width:7ch}}
+.rt-calc{border-left:3px solid var(--petrol-line);background:var(--surface);border-radius:0 9px 9px 0;padding:7px 12px;font-variant-numeric:tabular-nums;overflow-x:auto}
+.rt-fx+.rt-fx{margin-top:4px}
+.rt-res{font-weight:700;color:var(--petrol-ink-deep)}
+.rt-pts{display:inline-block;font:600 .74em/1.4 var(--mono);letter-spacing:.01em;color:var(--gold-ink);background:var(--gold-soft);border:1px solid var(--gold-line);border-radius:6px;padding:0 6px;vertical-align:.08em}
+.rt-note{font-size:.94em;line-height:1.55;color:var(--ink-soft);background:var(--amber-soft);border-left:3px solid var(--amber);border-radius:0 9px 9px 0;padding:7px 12px}
+.rt-note b{color:var(--amber-ink)}
+.rt-sep{color:var(--muted);padding:0 .15em}
+
+/* ===== Aufgabenblatt: eine Aufgabe mit allen Teilaufgaben a–x =====
+   Aufgebaut wie ein Prüfungsbogen: oben eine mitlaufende Leiste mit den
+   Aufgaben der Prüfung und dem Bearbeitungsstand, darunter die Aufgabe mit
+   Ausgangslage und Anlagen und die Teilaufgaben als eigene Blätter.
+   overflow:clip statt hidden – sonst klebt die Leiste nicht. */
+#scrBlatt{overflow:hidden;overflow:clip}
+body[data-screen="scrBlatt"] .app{max-width:920px}
+.bl-top{position:sticky;top:0;z-index:8;background:var(--paper);border-bottom:1px solid var(--line);box-shadow:0 6px 16px -12px rgba(16,42,50,.35)}
+.bl-bar{display:flex;align-items:center;gap:10px;padding:9px 12px 7px}
+.bl-stepper{display:flex;gap:5px;flex:1 1 auto;min-width:0;overflow-x:auto;scrollbar-width:none;padding:3px 2px}
+.bl-stepper::-webkit-scrollbar{display:none}
+.bl-pill{position:relative;flex:0 0 auto;min-width:42px;height:42px;border:1px solid var(--line-strong);background:var(--paper);border-radius:11px;padding:0 9px;font:700 14px/1 var(--body);color:var(--ink-soft);cursor:pointer;display:inline-flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;transition:border-color .15s,background .15s,box-shadow .15s}
+.bl-pill small{font:600 9px/1 var(--mono);color:var(--muted)}
+@media (hover:hover){.bl-pill:hover{border-color:var(--petrol)}}
+.bl-pill::after{content:"";position:absolute;top:4px;right:4px;width:7px;height:7px;border-radius:50%}
+.bl-pill.teil::after{background:var(--amber)}
+.bl-pill.voll::after{background:var(--ok)}
+.bl-pill.auf{background:var(--petrol-soft);border-color:var(--petrol-line);color:var(--petrol-ink-deep)}
+.bl-pill.auf::after{background:var(--petrol)}
+.bl-pill.cur{background:var(--petrol);border-color:var(--petrol);color:#fff;box-shadow:0 4px 12px -2px rgba(12,108,120,.45)}
+.bl-pill.cur small{color:rgba(255,255,255,.82)}
+.bl-pill.cur::after{box-shadow:0 0 0 1.5px #fff}
+.bl-prog{display:flex;align-items:center;gap:10px;padding:0 14px 9px}
+.bl-prog-bar{flex:1 1 auto;display:flex;height:5px;border-radius:3px;background:var(--track);overflow:hidden}
+.bl-prog-bar i{display:block;height:100%;transition:width .3s}
+.bl-prog-bar .pa{background:var(--petrol)}
+.bl-prog-bar .pb{background:var(--ok)}
+.bl-prog-t{font:600 11px var(--mono);color:var(--muted);white-space:nowrap}
+.bl-prog-t b{color:var(--ink)}
+
+.bl-kopf{margin:2px 0 16px}
+.bl-eyebrow{font:600 10.5px/1.4 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--petrol-ink);margin:0 0 6px}
+.bl-anr{display:block;margin:0;font-family:var(--disp);font-weight:700;text-transform:uppercase;font-size:clamp(30px,7.4vw,40px);line-height:.95;letter-spacing:.01em;color:var(--ink)}
+.bl-chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:11px}
+.bl-chip{display:inline-flex;align-items:center;gap:5px;font:600 11.5px/1.2 var(--body);color:var(--ink-soft);background:var(--surface-2);border:1px solid var(--line);border-radius:20px;padding:5px 11px}
+.bl-chip.pts{color:var(--petrol-ink-deep);background:var(--petrol-soft);border-color:var(--petrol-line)}
+.bl-chip.ok{color:var(--ok-ink);background:var(--ok-soft);border-color:var(--ok-line)}
+.bl-chip.gold{color:var(--gold-ink);background:var(--gold-soft);border-color:var(--gold-line)}
+.bl-hinweis{margin:0 0 14px;padding:9px 12px;border-left:3px solid var(--amber);background:var(--amber-soft);border-radius:0 9px 9px 0;font-size:12.5px;line-height:1.5;color:var(--ink-soft)}
+/* Ausgangssituation der ganzen Prüfung (Kraftverkehr): einmal lesen, dann zu */
+#blCase{border:1px solid var(--line);background:var(--surface);border-radius:12px;margin:0 0 16px}
+#blCase>.cc-head{font-size:14px;padding:11px 13px}
+#blCase .cc-tag{background:var(--petrol)}
+#blCase .cc-more{color:var(--petrol-ink);border-color:var(--petrol-line)}
+#blCase .cc-ctx{border-top-color:var(--line);font-size:14px}
+.bl-sit{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:13px 15px 15px;margin:0 0 16px;font-size:14.5px;line-height:1.62;color:var(--ink)}
+.bl-slbl{font:600 10px/1 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin:0 0 10px!important}
 .bl-anlagen{display:flex;gap:9px;flex-wrap:wrap;margin:0 0 14px}
-.bl-thumb{border:1px solid var(--line);border-radius:10px;background:var(--paper);padding:5px;
-  cursor:zoom-in;max-width:190px;display:flex;flex-direction:column;gap:4px}
+.bl-thumb{border:1px solid var(--line);border-radius:10px;background:var(--paper);padding:5px;cursor:zoom-in;max-width:190px;display:flex;flex-direction:column;gap:4px;margin:0}
 .bl-thumb:hover{border-color:var(--petrol)}
 .bl-thumb img{width:100%;height:auto;display:block;border-radius:6px}
 .bl-thumb figcaption{font-size:10.5px;line-height:1.35;color:var(--muted);text-align:center}
-.bl-teil{border:1px solid var(--line);border-radius:13px;background:var(--paper);
-  padding:13px 14px;margin:0 0 11px}
-.bl-teil.done{border-color:var(--ok-line)}
-.bl-teil.revealed{border-color:var(--petrol);box-shadow:0 0 0 2px var(--petrol-soft)}
-.bl-th{display:flex;align-items:center;gap:9px;flex-wrap:wrap;margin-bottom:8px}
-.bl-badge{display:inline-flex;align-items:center;justify-content:center;min-width:26px;height:26px;
-  border-radius:8px;background:var(--steel);font:800 13px var(--body);color:var(--ink)}
+.bl-akopf .msg-tab{margin:0 0 16px}
+
+/* Teilaufgabe als eigenes Blatt; die Randmarke zeigt den Stand */
+.bl-teil{position:relative;border:1px solid var(--line);border-radius:14px;background:var(--paper);box-shadow:0 1px 2px rgba(16,42,50,.05),0 8px 22px -12px rgba(16,42,50,.18);padding:15px 16px 16px 18px;margin:0 0 14px}
+.bl-teil::before{content:"";position:absolute;left:-1px;top:16px;bottom:16px;width:4px;border-radius:0 4px 4px 0;background:var(--line-strong)}
+.bl-teil.done::before{background:var(--ok)}
+.bl-teil.revealed::before{background:var(--petrol)}
+.bl-th{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:10px}
+.bl-badge{display:inline-grid;place-items:center;width:32px;height:32px;border-radius:50%;background:var(--ink);color:var(--paper);font:700 17px/1 var(--disp);flex:0 0 auto}
+.bl-teil.done .bl-badge{background:var(--ok);color:#fff}
 .bl-teil.revealed .bl-badge{background:var(--petrol);color:#fff}
-.bl-pts{font-family:var(--mono);font-size:11px;color:var(--muted)}
-.bl-braucht{margin-left:auto;border:1px solid var(--gold-line);background:var(--gold-soft);border-radius:999px;
-  padding:4px 11px;font:600 11px var(--body);color:var(--gold-ink);cursor:pointer}
-.bl-frage{margin:0 0 10px;font:600 15px/1.55 var(--body);color:var(--ink);white-space:pre-wrap}
-.bl-vorher{margin:0 0 10px;padding:7px 10px;border-radius:8px;background:var(--steel);
-  font-size:12.5px;line-height:1.5;color:var(--ink-soft)}
+.bl-tname{font:600 12.5px var(--body);color:var(--muted)}
+.bl-pts{font:700 11px/1.3 var(--mono);color:var(--petrol-ink-deep);background:var(--petrol-soft);border:1px solid var(--petrol-line);border-radius:20px;padding:2px 9px}
+.bl-stat{margin-left:auto;font:600 11px var(--body);color:var(--ok-ink)}
+.bl-braucht{margin-left:auto;border:1px solid var(--gold-line);background:var(--gold-soft);border-radius:999px;padding:4px 11px;font:600 11px var(--body);color:var(--gold-ink);cursor:pointer}
+.bl-braucht+.bl-stat{margin-left:0}
+.bl-frage{margin:0 0 12px;font:600 15.5px/1.55 var(--body);color:var(--ink)}
+.bl-vorher{margin:0 0 10px;padding:8px 11px;border-radius:9px;background:var(--surface-2);font-size:12.5px;line-height:1.5;color:var(--ink-soft);white-space:pre-wrap}
 .bl-vorher b{color:var(--ink)}
-.bl-antwort{margin-top:4px}
-.bl-teil .cc-input{min-height:74px}
-.bl-abar{display:flex;align-items:center;gap:9px;margin-top:9px;flex-wrap:wrap}
-.bl-reveal{border:0;border-radius:10px;background:var(--petrol);color:#fff;
-  font:700 13px var(--body);padding:10px 16px;min-height:42px;cursor:pointer}
+.bl-antwort{margin-top:8px}
+.aw-lbl{display:flex;align-items:center;gap:8px;font:600 10px/1.2 var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin:0 0 7px}
+.bl-teil .cc-input{min-height:92px}
+.bl-teil .cc-input.klein{min-height:64px}
+.bl-abar{display:flex;align-items:center;gap:9px;margin-top:11px;flex-wrap:wrap}
+.bl-reveal{display:inline-flex;align-items:center;gap:7px;border:0;border-radius:10px;background:var(--petrol);color:#fff;font:700 13px var(--body);padding:10px 16px;min-height:42px;cursor:pointer;box-shadow:0 2px 0 rgba(8,79,88,.35)}
 .bl-reveal:hover{background:var(--petrol-deep)}
-.bl-loesung{margin-top:11px;border-top:1px solid var(--line);padding-top:11px}
-.bl-lhead{font:700 11px var(--body);letter-spacing:.06em;text-transform:uppercase;
-  color:var(--petrol-ink-deep);margin-bottom:6px}
-.bl-ltext{white-space:pre-wrap;font-size:13.5px;line-height:1.6;color:var(--ink)}
-.bl-meine{margin:0 0 9px;padding:8px 10px;border-radius:8px;background:var(--steel);
-  font-size:13px;line-height:1.55;color:var(--ink);white-space:pre-wrap}
+.aw-tool{display:inline-flex;align-items:center;gap:6px;min-height:40px;border:1px solid var(--line-strong);background:var(--paper);border-radius:10px;padding:8px 12px;font:600 12.5px var(--body);color:var(--petrol-ink);cursor:pointer}
+.aw-tool:hover{border-color:var(--petrol);background:var(--petrol-soft)}
+.aw-saved{margin-left:auto;font-size:11.5px;color:var(--ok-ink);font-weight:600}
+
+/* Aufgedeckt: eigene Antwort, Lösung, Selbstbewertung */
+.bl-loesung{margin-top:12px;display:grid;gap:12px}
+.bl-lblock{border:1px solid var(--line);border-radius:12px;overflow:hidden}
+.bl-lhead{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin:0;padding:8px 12px;font:700 10.5px/1.3 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted);background:var(--surface);border-bottom:1px solid var(--line)}
+.bl-lhead .bl-vo{margin-left:auto;text-transform:none;letter-spacing:0;font-weight:600;color:var(--amber-ink)}
+.bl-lblock.sol{border-color:var(--petrol-line)}
+.bl-lblock.sol .bl-lhead{color:var(--petrol-ink-deep);background:var(--petrol-soft);border-bottom-color:var(--petrol-line)}
+.bl-ltext{padding:11px 13px 13px;font-size:14px;line-height:1.6;color:var(--ink)}
+.bl-meine{padding:11px 13px 13px;font-size:13.5px;line-height:1.55;color:var(--ink-soft);white-space:pre-wrap}
 .bl-meine.leer{color:var(--muted);font-style:italic}
-.bl-foot{display:flex;gap:9px;align-items:center;margin-top:16px;padding-top:14px;
-  border-top:1px solid var(--line);flex-wrap:wrap}
-.bl-nav{border:1px solid var(--line);background:var(--paper);border-radius:10px;
-  padding:10px 15px;min-height:44px;font:700 13px var(--body);color:var(--petrol-ink);cursor:pointer}
+.bl-meine .rt-calc{white-space:normal;margin-bottom:8px}
+.bl-ltext>.msg-img,.bl-ltext>.msg-tab{margin-top:10px}
+.bl-lfoot{padding:0 13px 11px;font-size:11.5px;color:var(--muted)}
+
+/* Selbstbewertung: Punkte als durchgehende Leiste */
+.oa-score{align-self:stretch;border:1px solid var(--line);border-radius:12px;background:var(--surface);padding:11px 12px 12px}
+.oas-top{display:flex;align-items:baseline;justify-content:space-between;gap:10px;margin-bottom:9px}
+.oas-lbl{font:600 10px var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.oas-val{font:700 13px var(--mono);color:var(--ink)}
+.oas-val.leer{color:var(--muted);font-weight:600}
+.oas-btns{display:grid;grid-template-columns:repeat(var(--n,6),minmax(0,1fr));gap:4px;max-width:calc(var(--n,6) * 60px)}
+.oas-p{min-width:0;height:40px;border:1px solid var(--line-strong);background:var(--paper);border-radius:8px;padding:0;font:700 13.5px var(--body);color:var(--ink);cursor:pointer;transition:background .12s,border-color .12s}
+@media (hover:hover){.oas-p:hover{border-color:var(--petrol);background:var(--petrol-soft)}}
+.oas-p.sel{background:var(--petrol);border-color:var(--petrol);color:#fff}
+.oas-p.in{background:var(--petrol-soft);border-color:var(--petrol-line);color:var(--petrol-ink-deep)}
+.oas-range{width:100%;accent-color:var(--petrol);height:30px;margin:0}
+.oas-scale{display:flex;justify-content:space-between;font:600 10.5px var(--mono);color:var(--muted);margin-top:2px}
+.oas-hint{margin-top:8px;font-size:11.5px;color:var(--muted);line-height:1.45}
+
+.bl-foot{display:flex;gap:9px;align-items:center;margin-top:18px;padding-top:15px;border-top:1px solid var(--line);flex-wrap:wrap}
+.bl-nav{border:1px solid var(--line-strong);background:var(--paper);border-radius:10px;padding:10px 15px;min-height:44px;font:700 13px var(--body);color:var(--petrol-ink);cursor:pointer}
 .bl-nav:hover{background:var(--petrol-soft)}
-.bl-nav.primary{border:0;background:var(--petrol);color:#fff;margin-left:auto;min-height:48px}
+.bl-nav.primary{border:0;background:var(--petrol);color:#fff;margin-left:auto;min-height:48px;padding:12px 20px;box-shadow:0 2px 0 rgba(8,79,88,.35)}
 .bl-nav.primary:hover{background:var(--petrol-deep)}
 .bl-nav:disabled{opacity:.4;cursor:default}
+
+/* Rechenweg: Zeile für Zeile rechnen, das Ergebnis steht sofort daneben */
+.rw{border:1px solid var(--petrol-line);border-radius:12px;background:var(--surface);padding:10px 10px 9px;margin:0 0 10px}
+.rw-head{display:flex;align-items:center;gap:8px;margin:0 2px 9px;font:700 10px/1.2 var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--petrol-ink)}
+.rw-head span{margin-left:auto;text-transform:none;letter-spacing:0;font:500 11px var(--body);color:var(--muted);text-align:right}
+.rw-row{display:grid;grid-template-columns:24px 76px minmax(0,1fr) 30px;grid-template-areas:"nr l l x" "nr f f f" "nr u r r";gap:6px 7px;align-items:center;background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:7px 6px 7px 7px;margin-bottom:6px}
+.rw-nr{grid-area:nr;align-self:start;margin-top:6px;font:700 10px/1 var(--mono);color:var(--muted);text-align:center}
+.rw-l{grid-area:l;min-width:0;border:0;border-bottom:1px dashed var(--line-strong);background:transparent;font:500 13px var(--body);color:var(--ink);padding:4px 2px;border-radius:0;outline:0}
+.rw-l:focus{border-bottom-color:var(--petrol)}
+.rw-l::placeholder,.rw-f::placeholder,.rw-u::placeholder{color:var(--ph);font-weight:500}
+.rw-f{grid-area:f;min-width:0;width:100%;border:1px solid var(--line-strong);border-radius:8px;background:var(--paper);padding:8px 10px;font:600 15px var(--mono);color:var(--ink);outline:0}
+.rw-f:focus{border-color:var(--petrol);box-shadow:0 0 0 3px var(--petrol-soft)}
+.rw-u{grid-area:u;min-width:0;width:100%;border:1px solid var(--line);border-radius:8px;background:var(--paper);padding:8px 7px;font:500 13px var(--body);color:var(--ink);outline:0}
+.rw-u:focus{border-color:var(--petrol)}
+.rw-eq{grid-area:r;justify-self:end;font:700 15px var(--mono);color:var(--petrol-ink-deep);white-space:nowrap;padding:0 4px}
+.rw-eq.leer{color:var(--ph);font-weight:600}
+.rw-eq.err{color:var(--err-ink);font:600 12px var(--body)}
+.rw-x{grid-area:x;align-self:start;border:0;background:transparent;color:var(--muted);width:30px;height:30px;border-radius:8px;font-size:14px;cursor:pointer}
+.rw-x:hover{background:var(--err-soft);color:var(--err-ink)}
+@media (min-width:640px){
+  .rw-row{grid-template-columns:24px minmax(0,1fr) auto 72px 30px;grid-template-areas:"nr l l l x" "nr f r u x"}
+  .rw-eq{justify-self:start;min-width:70px}
+}
+.rw-keys{display:flex;flex-wrap:wrap;gap:5px;margin:2px 0 7px}
+.rw-k{min-width:40px;height:38px;border:1px solid var(--line-strong);background:var(--paper);border-radius:8px;font:700 15px var(--mono);color:var(--petrol-ink-deep);cursor:pointer;padding:0 8px}
+.rw-k:active{background:var(--petrol-soft)}
+.rw-ref{height:38px;border:1px dashed var(--petrol-line);background:var(--petrol-soft);color:var(--petrol-ink-deep);border-radius:8px;padding:0 10px;font:600 12px var(--mono);cursor:pointer}
+.rw-foot{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.rw-add{display:inline-flex;align-items:center;gap:6px;min-height:36px;border:1px dashed var(--petrol);background:transparent;border-radius:9px;padding:6px 12px;font:700 12.5px var(--body);color:var(--petrol-ink);cursor:pointer}
+.rw-add:hover{background:var(--petrol-soft)}
+.rw-tip{font-size:11px;color:var(--muted);flex:1 1 180px;line-height:1.4}
+@media (max-width:639px){.rw-tip{display:none}}
+.rw-refs{display:contents}
+/* Handy: Beim Schreiben im Aufgabenblatt räumt das Werkzeug-Dock den Platz
+   über der Bildschirmtastatur – dort stehen Rechenweg-Tasten und Eingabe. */
+@media (max-width:560px){
+  body[data-screen="scrBlatt"]:has(.bl-teil input:focus,.bl-teil textarea:focus) .toolbar{display:none}
+}
+@media (min-width:640px){.rw-eu{display:none}}
 /* Lightbox: Typenschilder und Schaltpläne sind sonst nicht zu entziffern. */
 .lb{border:0;padding:0;background:transparent;max-width:100vw;max-height:100vh;width:100%;height:100%}
 .lb::backdrop{background:rgba(12,24,28,.92)}
@@ -902,16 +1173,13 @@
 @media(max-width:520px){
   .bl-thumb{max-width:calc(50% - 5px)}
   .bl-nav.primary{margin-left:0;width:100%;order:3}
+  .bl-teil{padding:14px 12px 14px 14px}
+  .bl-sit{padding:12px 12px 13px;font-size:14px}
+  .bl-ltext,.bl-meine{padding:10px 11px 11px}
+  .rw{padding:8px 7px 8px}
 }
 .msg-tab{margin-top:10px}
 .msg-actions{align-self:stretch;display:flex;gap:8px;flex-wrap:wrap;margin-top:2px}
-.oa-score{align-self:stretch;margin-top:4px;border:1px solid var(--line);border-radius:14px;background:var(--paper);padding:12px 13px}
-.oas-lbl{font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:9px}
-.oas-btns{display:flex;flex-wrap:wrap;gap:7px}
-.oas-p{min-width:42px;min-height:42px;border:1px solid var(--line-strong);background:var(--paper);border-radius:9px;padding:8px 10px;font:700 14px var(--body);color:var(--ink);cursor:pointer}
-.oas-p:hover{border-color:var(--petrol);background:var(--petrol-soft)}
-.oas-p.sel{background:var(--petrol);border-color:var(--petrol);color:#fff}
-.oas-hint{margin-top:9px;font-size:12px;color:var(--muted)}
 .chat-compose{margin-top:14px;border-top:1px solid var(--line);padding-top:13px}
 .cc-lbl{display:block;font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:7px}
 .cc-input{width:100%;box-sizing:border-box;border:1px solid var(--line);border-radius:12px;background:var(--paper);padding:12px 13px;font:400 14px/1.6 var(--body);color:var(--ink);resize:vertical;min-height:92px}
@@ -931,82 +1199,104 @@
 <body>
 <div class="app">
 
-  <!-- HOME -->
-  <div class="card" id="scrHome">
-    <div class="mast">
+  <!-- HOME: eigene Karten auf ruhigem Grund – oben der Lernstand mit der
+       Aufgabe des Tages, darunter Lernweg, Üben, Prüfen, Erfolge. -->
+  <div class="home" id="scrHome">
+    <header class="mast">
       <p class="eyebrow">Meister-Trainer · IHK-Prüfungsvorbereitung</p>
-      <h1>Meister für<br>Kraftverkehr</h1>
+      <h1>Meister für Kraftverkehr</h1>
       <p class="sub" id="homeSub"></p>
-    </div>
+    </header>
 
-    <!-- Heute: die eine Aktion, mit der ein Lerntag beginnt – ganz oben statt
-         unter Statistik und Radar. -->
-    <section class="today" aria-labelledby="todayTitle">
-      <div class="today-top">
-        <div class="today-txt">
-          <p class="today-kicker">Heute · Leitner-Wiederholung</p>
-          <h2 class="today-title" id="todayTitle">Heute fällig</h2>
-          <p class="today-desc" id="dueDesc">Verteiltes Lernen: genau die Fragen, die laut Leitner-System heute zur Wiederholung anstehen.</p>
+    <!-- Lernstand: Prüfungsreife als Ring mit Ampel, daneben die eine Aktion
+         des Tages (Leitner-Wiederholung). -->
+    <section class="hero" aria-labelledby="todayTitle">
+      <div class="hero-main">
+        <div class="hero-ring" aria-hidden="true">
+          <svg viewBox="0 0 120 120"><circle class="hr-bg" cx="60" cy="60" r="51"/><circle class="hr-fg" id="heroRing" cx="60" cy="60" r="51" stroke-dasharray="320.4" stroke-dashoffset="320.4"/></svg>
+          <div class="hero-pct"><b id="heroPct">0 %</b><span>prüfungsreif</span></div>
         </div>
-        <button class="today-cta" id="btnDue">Jetzt lernen <svg class="ic-svg ic-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+        <div class="hero-head">
+          <p class="hero-kicker"><span class="ampel" id="heroAmpel"></span><span id="heroStatus">Noch am Anfang</span></p>
+          <h2 class="hero-title" id="todayTitle">Heute fällig</h2>
+        </div>
+        <div class="hero-body">
+          <p class="hero-desc" id="dueDesc">Verteiltes Lernen: genau die Fragen, die laut Leitner-System heute zur Wiederholung anstehen.</p>
+          <button class="hero-cta" id="btnDue">Jetzt lernen <svg class="ic-svg ic-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+        </div>
       </div>
-      <div class="today-stats" role="group" aria-label="Dein Stand">
-        <div class="ts"><span class="ts-n" id="pMastered">0</span><span class="ts-l">gemeistert</span></div>
-        <div class="ts"><span class="ts-n" id="pSeen">0</span><span class="ts-l">gesehen</span></div>
-        <div class="ts"><span class="ts-n" id="pOpen">0</span><span class="ts-l">offen</span></div>
+      <div class="hero-stats" role="group" aria-label="Dein Stand">
+        <div class="hs"><b id="pMastered">0</b><span>gemeistert</span></div>
+        <div class="hs"><b id="pSeen">0</b><span>gesehen</span></div>
+        <div class="hs"><b id="pOpen">0</b><span>offen</span></div>
+        <div class="hs"><b id="pStreak">0</b><span>Tage in Folge</span></div>
       </div>
-      <div class="prog-bar"><div class="fill" id="pFill" style="width:0%"></div></div>
+      <div class="prog-bar" aria-hidden="true"><div class="fill" id="pFill" style="width:0%"></div></div>
     </section>
 
-    <div class="home-section">
-      <p class="h-label">Fach wählen <span class="fixtag">4 fix + 1 wählbar</span></p>
-      <div class="fach-grid" id="fachGridBase"></div>
-      <p class="h-sub h-sub-gap">Fachrichtung <span class="opttag">abwählbar</span></p>
-      <div class="fach-grid" id="fachGridZusatz"></div>
-      <p class="prog-note" id="zusatzNote">Die vier Basisqualifikationen sind immer aktiv. Die Fachrichtung (Kraftverkehr) kannst du über den Schalter dazunehmen oder abwählen – sie zählt dann bei „Alle Themen“, Fortschritt und Prüfungsreife mit.</p>
+    <h2 class="h-group">Dein Lernweg <span class="fixtag">4 fix + 1 wählbar</span></h2>
+    <section class="hcard">
+      <div class="weg">
+        <div id="fachGridBase"></div>
+        <div id="fachGridZusatz"></div>
+      </div>
+      <p class="prog-note" id="zusatzNote">Die vier Basisqualifikationen sind immer dabei. Die Fachrichtung Kraftverkehr schaltest du mit dem Schalter zu oder ab – sie zählt dann bei „Alle Themen“, Fortschritt und Prüfungsreife mit.</p>
+    </section>
+
+    <h2 class="h-group">Üben <span class="h-scope" id="scopeHint">Im gewählten Fach</span></h2>
+    <section class="hcard">
       <div id="subSection">
-        <p class="h-sub h-sub-gap">Themenbereich</p>
+        <p class="h-sub">Themenbereich</p>
         <div class="chips" id="subChips"></div>
       </div>
-    </div>
-
-    <div class="home-section">
-      <p class="h-label">Üben</p>
-      <p class="h-sub" id="scopeHint">Im gewählten Fach</p>
       <div class="modes">
         <button class="mode" id="btnTraining">
-          <span class="m-title"><span class="tag">Training</span><span id="trainScope">Alle Bereiche</span></span>
-          <span class="m-desc" id="trainDesc">20 Fragen mit sofortiger Auswertung und Erklärung. Neue Fragen werden bevorzugt.</span>
+          <span class="m-ic m-ic-petrol" aria-hidden="true"><svg class="ic-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg></span>
+          <span class="m-body"><span class="m-title"><span class="tag">Training</span><span id="trainScope">Alle Bereiche</span></span>
+          <span class="m-desc" id="trainDesc">20 Fragen mit sofortiger Auswertung und Erklärung. Neue Fragen werden bevorzugt.</span></span>
         </button>
         <button class="mode weak" id="btnWeak">
-          <span class="m-title"><span class="tag">Fokus</span>Schwächen üben</span>
-          <span class="m-desc" id="weakDesc">Gezielt die Fragen, die du noch nicht kannst oder zuletzt falsch hattest.</span>
+          <span class="m-ic m-ic-amber" aria-hidden="true"><svg class="ic-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.5"/></svg></span>
+          <span class="m-body"><span class="m-title"><span class="tag">Fokus</span>Schwächen üben</span>
+          <span class="m-desc" id="weakDesc">Gezielt die Fragen, die du noch nicht kannst oder zuletzt falsch hattest.</span></span>
         </button>
         <button class="mode sim" id="btnSim">
-          <span class="m-title"><span class="tag">Klausur</span>Prüfungssimulation</span>
-          <span class="m-desc" id="simDesc">30 Fragen aus dem ganzen Fach · 60 Minuten · bestanden ab 50 %.</span>
+          <span class="m-ic m-ic-ink" aria-hidden="true"><svg class="ic-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l2.5 2.5M9.5 2h5"/></svg></span>
+          <span class="m-body"><span class="m-title"><span class="tag">Klausur</span>Prüfungssimulation</span>
+          <span class="m-desc" id="simDesc">30 Fragen aus dem ganzen Fach · 60 Minuten · bestanden ab 50 %.</span></span>
         </button>
       </div>
       <p class="h-sub h-sub-gap">Fachübergreifend</p>
       <div class="modes">
         <button class="mode mixed" id="btnMixed">
-          <span class="m-title"><span class="tag">Alle Fächer</span>Alle Themen üben</span>
-          <span class="m-desc" id="mixedDesc">20 gemischte Fragen quer durch alle Fächer und Themenbereiche.</span>
+          <span class="m-ic m-ic-deep" aria-hidden="true"><svg class="ic-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M16 3h5v5M4 20 21 3M21 16v5h-5M15 15l6 6M4 4l5 5"/></svg></span>
+          <span class="m-body"><span class="m-title"><span class="tag">Alle Fächer</span>Alle Themen üben</span>
+          <span class="m-desc" id="mixedDesc">20 gemischte Fragen quer durch alle Fächer und Themenbereiche.</span></span>
         </button>
         <button class="mode cases" id="btnCases">
-          <span class="m-title"><span class="tag">Fall</span>Fallaufgaben</span>
-          <span class="m-desc" id="casesDesc">Handlungssituation mit mehreren verketteten Teilaufgaben – wie im echten IHK-Prüfungsformat.</span>
+          <span class="m-ic m-ic-plum" aria-hidden="true"><svg class="ic-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2M3 13h18"/></svg></span>
+          <span class="m-body"><span class="m-title"><span class="tag">Fall</span>Fallaufgaben</span>
+          <span class="m-desc" id="casesDesc">Handlungssituation mit mehreren verketteten Teilaufgaben – wie im echten IHK-Prüfungsformat.</span></span>
         </button>
       </div>
-    </div>
+    </section>
 
-    <div class="home-section">
-      <p class="h-label">Nachschlagen &amp; Prüfen</p>
+    <h2 class="h-group">Prüfen</h2>
+    <section class="exam-card">
+      <button class="exam-main" id="btnPruef">
+        <span class="exam-ic" aria-hidden="true"><svg class="ic-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M9 13h6M9 17h4"/></svg></span>
+        <span class="exam-txt"><span class="exam-t">Original-IHK-Prüfungen</span><span class="exam-d" id="pruefTileDesc">Echte IHK-Prüfungen mit amtlichen Lösungshinweisen</span></span>
+        <span class="exam-go" aria-hidden="true"><svg class="ic-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></span>
+      </button>
+      <div class="exam-last" id="pruefLast" hidden></div>
+    </section>
+
+    <h2 class="h-group">Erfolge <span class="h-scope" id="erfolgeN"></span></h2>
+    <section class="hcard"><div class="erfolge" id="erfolgeList"></div></section>
+
+    <h2 class="h-group">Nachschlagen</h2>
+    <section class="hcard">
       <div class="tiles">
-        <button class="tile" id="btnPruef">
-          <span class="ti-ic ti-plum"><svg class="ic-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M9 13h6M9 17h4"/></svg></span>
-          <span class="ti-txt"><span class="ti-t">Original-IHK-Prüfungen</span><span class="ti-d" id="pruefTileDesc">Echte IHK-Prüfungen mit amtlichen Lösungshinweisen</span></span>
-        </button>
         <button class="tile" id="btnFormelHome">
           <span class="ti-ic ti-ok"><svg class="ic-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/><path d="M9 7h7"/></svg></span>
           <span class="ti-txt"><span class="ti-t">Formelbuch</span><span class="ti-d">Formeln und Kalkulationsschemata zum Ausrechnen</span></span>
@@ -1020,19 +1310,25 @@
           <span class="ti-txt"><span class="ti-t">Gefahrgut-Symbole (ADR)</span><span class="ti-d">15 Klassen, Quiz und Warntafel-Decoder</span></span>
         </button>
       </div>
-    </div>
+    </section>
 
-    <div class="home-section">
-      <p class="h-label">Dein Stand <button class="reset" id="btnReset">Zurücksetzen</button></p>
+    <h2 class="h-group">Statistik <button class="reset" id="btnReset">Zurücksetzen</button></h2>
+    <section class="hcard">
       <div id="readySection">
-        <p class="h-sub">Prüfungsreife <span class="ready-overall" id="readyOverall">0 %</span></p>
+        <p class="h-sub">Prüfungsreife je Fach <span class="ready-overall" id="readyOverall">0 %</span></p>
         <div class="ready-wrap">
           <div class="ready-chart" id="readyChart" aria-hidden="true"></div>
           <div class="ready-legend" id="readyLegend"></div>
         </div>
         <p class="prog-note" id="readyNote"></p>
       </div>
+      <p class="h-sub h-sub-gap">Aktivität · 14 Tage <span class="h-scope" id="aktivSumme"></span></p>
+      <div class="aktiv" id="aktivChart"></div>
       <p class="prog-note" id="pNote"></p>
+    </section>
+
+    <h2 class="h-group">Konto &amp; Darstellung</h2>
+    <section class="hcard">
       <button class="tile tile-cloud" id="btnCloud">
         <span class="ti-ic ti-blue"><svg class="ic-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 17.6A4 4 0 0 0 18 10h-1.3A7 7 0 1 0 5 16.7"/><path d="M12 12v9M8.5 15.5 12 12l3.5 3.5"/></svg></span>
         <span class="ti-txt"><span class="ti-t" id="cloudBtnLabel">Mit Google anmelden &amp; sichern</span><span class="ti-d" id="cloudHint">Ohne Anmeldung bleibt dein Fortschritt nur auf diesem Gerät.</span></span>
@@ -1045,7 +1341,7 @@
           <button type="button" role="radio" data-theme-set="dark" aria-checked="false">Dunkel</button>
         </div>
       </div>
-    </div>
+    </section>
   </div>
 
   <!-- QUIZ -->
@@ -1065,8 +1361,8 @@
       <div class="qmeta" id="qMeta"><span class="qtype mc" id="qType">Auswahlfrage</span><span class="qsub" id="qSubLabel"></span></div>
       <div class="voicebar" id="voiceStatus" hidden aria-live="polite"><span class="vs-dot"></span><span class="vs-txt"></span></div>
       <div class="taskbar" id="qHead" hidden><span class="tb-nr" id="qHeadNr"></span><span class="tb-pts" id="qHeadPts"></span><span class="tb-step" id="qHeadStep"></span></div>
-      <p class="qsit" id="qSit" hidden></p>
-      <p class="qtext" id="qText"></p>
+      <div class="qsit" id="qSit" hidden></div>
+      <div class="qtext" id="qText"></div>
       <div class="qtab" id="qTab" hidden></div>
       <div class="opts" id="qOpts"></div>
       <div class="openbox chat-mode" id="qOpen" hidden>
@@ -1102,15 +1398,20 @@
 
   <!-- AUFGABENBLATT (Original-Prüfungen: eine Aufgabe mit allen Teilaufgaben) -->
   <div class="card" id="scrBlatt" hidden>
-    <div class="quizhead">
-      <button class="iconbtn" id="blQuit" title="Prüfung verlassen" aria-label="Prüfung verlassen">✕</button>
-      <div class="q-meta">
-        <div class="q-fach" id="blFach">–</div>
-        <div class="q-count" id="blCount">Aufgabe 1 von 7</div>
+    <!-- Mitlaufende Leiste: Aufgaben der Prüfung und Bearbeitungsstand -->
+    <div class="bl-top">
+      <div class="bl-bar">
+        <button class="iconbtn" id="blQuit" title="Prüfung verlassen" aria-label="Prüfung verlassen">✕</button>
+        <div class="bl-stepper" id="blStepper" role="tablist" aria-label="Aufgaben dieser Prüfung"></div>
       </div>
+      <div class="bl-prog" id="blProg"></div>
     </div>
     <div class="qbody">
-      <div class="bl-stepper" id="blStepper" role="tablist" aria-label="Aufgaben dieser Prüfung"></div>
+      <header class="bl-kopf">
+        <p class="bl-eyebrow" id="blFach">–</p>
+        <h2 class="bl-anr" id="blCount">Aufgabe 1</h2>
+        <div class="bl-chips" id="blChips"></div>
+      </header>
       <p class="bl-hinweis" id="blHinweis" hidden></p>
       <details class="casectx" id="blCase" hidden></details>
       <div id="blAufgabe"></div>
@@ -1283,7 +1584,19 @@ function pget(id){return progress[id]||{seen:0,correct:0,wrong:0,box:0};}
 /* Spaced Repetition: Wiederholungsintervall (Tage) je Leitner-Box 0..5 */
 var SR_INTERVALS=[1,2,4,9,17,33];
 function todayIdx(){return Math.floor((Date.now()-new Date().getTimezoneOffset()*60000)/86400000);}
-function recordResult(id,correct){var p=pget(id);p.seen++;if(correct){p.correct++;p.box=Math.min(MAX_BOX,p.box+1);}else{p.wrong++;p.box=0;}p.last=correct?1:0;p.due=todayIdx()+SR_INTERVALS[Math.min(p.box,5)];progress[id]=p;saveProgress();}
+/* Lerntage: je Tag die Zahl beantworteter Fragen – für Serie und
+   Aktivitätsdiagramm. Es bleiben die letzten 120 Tage. */
+var TAGE_KEY='kvm_tage';
+function tageAll(){try{var t=JSON.parse(localStorage.getItem(TAGE_KEY)||'{}');return (t&&typeof t==='object')?t:{};}catch(e){return {};}}
+function tagZaehlen(){
+  var t=tageAll(),d=todayIdx();t[d]=(t[d]||0)+1;
+  Object.keys(t).forEach(function(k){if(+k<d-120)delete t[k];});
+  try{localStorage.setItem(TAGE_KEY,JSON.stringify(t));}catch(e){}
+}
+/* Lerntage in Folge bis heute – ist heute noch nichts gelernt, zählt die
+   Serie bis gestern weiter. */
+function serie(){var t=tageAll(),d=todayIdx(),n=0;if(!t[d])d--;while(t[d]){n++;d--;}return n;}
+function recordResult(id,correct){tagZaehlen();var p=pget(id);p.seen++;if(correct){p.correct++;p.box=Math.min(MAX_BOX,p.box+1);}else{p.wrong++;p.box=0;}p.last=correct?1:0;p.due=todayIdx()+SR_INTERVALS[Math.min(p.box,5)];progress[id]=p;saveProgress();}
 /* fällig = schon einmal gesehen und Wiederholungstermin erreicht (Alt-Datensätze ohne due gelten als fällig) */
 function isDue(id){var p=progress[id];if(!p||!p.seen)return false;var d=(p.due==null)?0:p.due;return d<=todayIdx();}
 function dueList(){return ALL.filter(function(q){return isFachActive(q.f)&&isDue(q.id);});}
@@ -1404,6 +1717,7 @@ function renderProgress(){
   var storageOn=true;try{localStorage.setItem('__t','1');localStorage.removeItem('__t');}catch(e){storageOn=false;}
   $("pNote").textContent=storageOn?"„Gemeistert“ heißt: diese Frage mehrmals in Folge richtig beantwortet. Dein Fortschritt wird auf diesem Gerät gespeichert.":
     "Hinweis: In dieser Vorschau ist die dauerhafte Speicherung inaktiv. Auf einer echten Webseite oder lokal im Browser geöffnet merkt sich die App deinen Fortschritt.";
+  renderHomeExtras();
 }
 
 /* ===== Prüfungsreife-Radar (#6) ===== */
@@ -1431,7 +1745,7 @@ function renderReadiness(){
   else if(ov>=55)note="Solide Basis. Konzentriere dich auf die Fächer mit der geringsten Reife (kleinste Zacken im Netz).";
   else if(ov>=25)note="Guter Anfang. Regelmäßiges Wiederholen („Heute fällig“) bringt die Reife am schnellsten nach oben.";
   else note="Noch am Anfang – jede Runde zählt. Ziel: alle Zacken möglichst weit nach außen.";
-  $("readyNote").textContent="Reife = Anteil gemeisterter Fragen je Fach (gewichtet). "+note;
+  $("readyNote").textContent="Reife = Anteil gemeisterter Fragen je Fach, gewichtet nach Leitner-Box. "+note;
 }
 
 function renderFachGrid(){
@@ -1439,6 +1753,9 @@ function renderFachGrid(){
   renderFachGroup($("fachGridBase"), BASE_FACHER, false);
   renderFachGroup($("fachGridZusatz"), ZUSATZ_FACHER, true);
 }
+/* Ampel der Prüfungsreife: rot unter 35 %, gelb bis 70 %, darüber grün. */
+function ampel(r){return r==null?'aus':(r>=0.7?'gruen':(r>=0.35?'gelb':'rot'));}
+var AMPEL_TEXT={aus:'noch nicht begonnen',rot:'Grundlagen aufbauen',gelb:'auf gutem Weg',gruen:'prüfungsreif'};
 function renderFachGroup(grid, fachs, isZusatz){
   if(!grid)return; grid.innerHTML="";
   fachs.forEach(function(f){
@@ -1446,13 +1763,15 @@ function renderFachGroup(grid, fachs, isZusatz){
     var active=isFachActive(f);
     var b=document.createElement("button"); b.className="fach"+(state.fach===f?" active":"")+(isZusatz&&!active?" fach-off":"");
     if(n===0)b.disabled=true;
-    var mastered=0;qForFach(f).forEach(function(q){var p=progress[q.id];if(p&&p.box>=MASTER_BOX)mastered++;});
-    var pct=n?Math.round(mastered/n*100):0;
+    var mastered=0,seen=0;qForFach(f).forEach(function(q){var p=progress[q.id];if(p&&p.seen>0){seen++;if(p.box>=MASTER_BOX)mastered++;}});
+    var r=n?fachReife(f):null,pct=r==null?0:Math.round(r*100),amp=seen?ampel(r):'aus';
     var toggle=isZusatz?'<span class="fach-toggle'+(active?" on":"")+'" role="switch" tabindex="0" aria-checked="'+active+'" aria-label="Fachrichtung '+FACH_KURZ[f]+' an/aus"></span>':'';
+    b.setAttribute("aria-pressed",state.fach===f?"true":"false");
     b.innerHTML='<span class="fnum" style="background:'+FACH_COLORS[f]+';color:#fff">'+f+'</span><span class="fmeta"><span class="fname">'+FACH[f]+'</span>'+
-      '<span class="fsub">'+(n?FACH_KURZ[f]+' · '+mastered+'/'+n+' gemeistert':'in Vorbereitung')+'</span>'+
-      (n?'<span class="minibar"><span class="mf" style="width:'+pct+'%"></span></span>':'')+
-      '</span>'+toggle+'<span class="fcount">'+(n?n:'–')+'</span>';
+      '<span class="fsub">'+(n?('<span class="ampel '+amp+'" aria-hidden="true"></span>'+AMPEL_TEXT[amp]+' · '+fmtN(mastered)+'/'+fmtN(n)+' gemeistert'+
+        (isZusatz?' · <span class="opttag">Fachrichtung</span>':'')):'in Vorbereitung')+'</span>'+
+      (n?'<span class="minibar"><span class="mf" style="width:'+pct+'%;background:'+FACH_COLORS[f]+'"></span></span>':'')+
+      '</span>'+toggle+'<span class="fpct">'+(n?pct+' %':'–')+'</span>';
     if(isZusatz){var tg=b.querySelector('.fach-toggle');
       if(tg){tg.addEventListener("click",function(ev){ev.stopPropagation();toggleZusatz(f);});
         tg.addEventListener("keydown",function(ev){if(ev.key===" "||ev.key==="Enter"){ev.preventDefault();ev.stopPropagation();toggleZusatz(f);}});}}
@@ -1463,6 +1782,110 @@ function renderFachGroup(grid, fachs, isZusatz){
     grid.appendChild(b);
   });
 }
+
+/* ===== Startseite: Lernstand, Erfolge, Aktivität, letzte Prüfung ===== */
+function renderHero(){
+  var aq=activeQuestions(),seen=0;
+  aq.forEach(function(q){var p=progress[q.id];if(p&&p.seen>0)seen++;});
+  var r=overallReife(),pct=Math.round(r*100),amp=seen?ampel(r):'aus';
+  var ring=$("heroRing");
+  if(ring){
+    var C=320.4;ring.style.strokeDashoffset=C*(1-Math.max(0,Math.min(1,r)));
+    ring.style.setProperty('--amp',{aus:'rgba(255,255,255,.5)',rot:'#FF9B85',gelb:'#FFD28F',gruen:'#8FE3AA'}[amp]);
+  }
+  if($("heroPct"))$("heroPct").textContent=pct+" %";
+  var a=$("heroAmpel");if(a)a.className="ampel "+amp;
+  var st=$("heroStatus");if(st)st.textContent=seen?("Prüfungsreife · "+AMPEL_TEXT[amp]):"Willkommen – leg los";
+  if($("pStreak"))$("pStreak").textContent=fmtN(serie());
+}
+/* Erfolge ergeben sich aus dem Lernstand – nichts muss eigens gespeichert
+   werden, sie gehen also auch mit Sync und Zurücksetzen mit. */
+var ERF_IC={
+  schritt:'<path d="M5 19c2-5 5-8 9-9M14 10l-1-4 4 1M5 5h.01M19 19h.01"/>',
+  blitz:'<path d="M13 2 4 14h7l-1 8 9-12h-7z"/>',
+  buch:'<path d="M2 4h7a3 3 0 0 1 3 3v13a2 2 0 0 0-2-2H2zM22 4h-7a3 3 0 0 0-3 3v13a2 2 0 0 1 2-2h8z"/>',
+  haken:'<circle cx="12" cy="12" r="9"/><path d="m8 12 3 3 5-6"/>',
+  stern:'<path d="m12 3 2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9z"/>',
+  flamme:'<path d="M12 22a7 7 0 0 0 7-7c0-4-3-6-4-9-1 2-2 3-4 3 0-2-1-4-2-5-1 4-4 6-4 11a7 7 0 0 0 7 7z"/>',
+  kalender:'<rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4M9 15l2 2 4-4"/>',
+  ziel:'<circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.5"/>',
+  papier:'<path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M9 14l2 2 4-4"/>',
+  pokal:'<path d="M8 21h8M12 17v4M7 4h10v5a5 5 0 0 1-10 0zM17 5h3v2a3 3 0 0 1-3 3M7 5H4v2a3 3 0 0 0 3 3"/>'
+};
+function erfolgeListe(){
+  var seen=0,mastered=0;
+  ALL.forEach(function(q){var p=progress[q.id];if(p&&p.seen>0){seen+=1;if(p.box>=MASTER_BOX)mastered++;}});
+  var beantwortet=0;for(var id in progress){if(progress.hasOwnProperty(id))beantwortet+=(progress[id].seen|0);}
+  var best=0;[1,2,3,4,5].forEach(function(f){var r=fachReife(f);if(r!=null&&r>best)best=r;});
+  /* Original-Prüfungen: bewertete Teilaufgaben und die beste Prüfung */
+  var pts=opAll(),bewertet=0,besteP=0;
+  CASES.forEach(function(c){
+    if(!/^P-/.test(c.id))return;
+    var sum=0;
+    c.steps.forEach(function(st){if(st.id in pts){bewertet++;sum+=pts[st.id]|0;}});
+    if(sum>besteP)besteP=sum;
+  });
+  var s=serie();
+  return [
+    {ic:'schritt',t:'Erste Schritte',d:'10 Fragen beantwortet',v:beantwortet,z:10},
+    {ic:'blitz',t:'Am Ball',d:'250 Antworten gegeben',v:beantwortet,z:250},
+    {ic:'buch',t:'Vielleser',d:'1.000 Fragen gesehen',v:seen,z:1000},
+    {ic:'haken',t:'Sattelfest',d:'100 Fragen gemeistert',v:mastered,z:100},
+    {ic:'stern',t:'Meisterlich',d:'1.000 Fragen gemeistert',v:mastered,z:1000},
+    {ic:'flamme',t:'Dranbleiben',d:'3 Lerntage in Folge',v:s,z:3},
+    {ic:'kalender',t:'Wochenserie',d:'7 Lerntage in Folge',v:s,z:7},
+    {ic:'ziel',t:'Fachprofi',d:'ein Fach auf Grün',v:Math.round(best*100),z:70},
+    {ic:'papier',t:'Prüfungsluft',d:'erste Prüfungsaufgabe bewertet',v:bewertet,z:1},
+    {ic:'pokal',t:'Bestanden',d:'50 Punkte in einer Original-Prüfung',v:besteP,z:50}
+  ];
+}
+function renderErfolge(){
+  var box=$("erfolgeList");if(!box)return;
+  var L=erfolgeListe(),n=0;
+  box.innerHTML=L.map(function(e){
+    var ok=e.v>=e.z;if(ok)n++;
+    var p=Math.max(0,Math.min(100,Math.round(e.v/e.z*100)));
+    return '<div class="eb'+(ok?'':' zu')+'" title="'+esc(e.d)+(ok?' – geschafft':' – '+fmtN(Math.min(e.v,e.z))+' von '+fmtN(e.z))+'">'+
+      '<span class="eb-med"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">'+ERF_IC[e.ic]+'</svg></span>'+
+      '<span class="eb-t">'+esc(e.t)+'</span><span class="eb-d">'+esc(e.d)+'</span>'+
+      (ok?'':'<span class="eb-p" aria-hidden="true"><i style="width:'+p+'%"></i></span>')+'</div>';
+  }).join('');
+  var z=$("erfolgeN");if(z)z.textContent=n+' von '+L.length;
+}
+var WTAG=['So','Mo','Di','Mi','Do','Fr','Sa'];
+function renderAktiv(){
+  var box=$("aktivChart");if(!box)return;
+  var t=tageAll(),heute=todayIdx(),max=1,sum=0,tage=0,h='';
+  for(var i=13;i>=0;i--){var v=t[heute-i]|0;if(v>max)max=v;sum+=v;if(v)tage++;}
+  for(var j=13;j>=0;j--){
+    var d=heute-j,v=t[d]|0,dt=new Date(Date.now()-j*86400000);
+    h+='<div class="ak'+(v?' voll':'')+(j===0?' heute':'')+'" title="'+(j===0?'Heute':dt.toLocaleDateString('de-DE',{weekday:'long',day:'numeric',month:'numeric'}))+': '+v+' Antwort'+(v===1?'':'en')+'">'+
+       '<i style="height:'+(v?Math.max(6,Math.round(v/max*78)):3)+'px"></i><span>'+WTAG[dt.getDay()]+'</span></div>';
+  }
+  box.innerHTML=h;
+  box.setAttribute('aria-label','Aktivität der letzten 14 Tage: '+sum+' Antworten an '+tage+' Tagen');
+  box.setAttribute('role','img');
+  var s=$("aktivSumme");if(s)s.textContent=sum?(fmtN(sum)+' Antworten · '+tage+' Tag'+(tage===1?'':'e')):'';
+}
+/* Zuletzt geöffnete Original-Prüfung – direkt dort weitermachen */
+var LETZTE_KEY='kvm_letzte_pruefung';
+function letztePruefungMerken(id,nr){try{localStorage.setItem(LETZTE_KEY,JSON.stringify({id:id,nr:nr}));}catch(e){}}
+function renderPruefLast(){
+  var box=$("pruefLast");if(!box)return;
+  var l=null;try{l=JSON.parse(localStorage.getItem(LETZTE_KEY)||'null');}catch(e){}
+  var c=l&&CASES.filter(function(x){return x.id===l.id;})[0];
+  if(!c){box.hidden=true;return;}
+  var steps=c.steps||[],fertig=steps.filter(function(st){return oaGet(st.id)||rwHat(st.id);}).length;
+  var idx=0;steps.some(function(st,i){if(st.nr===l.nr){idx=i;return true;}return false;});
+  var datum=(/–\s*([^–]+)$/.exec(c.title||'')||[])[1]||c.termin||'';
+  box.innerHTML='<div class="el-txt"><span class="el-k">Zuletzt geöffnet</span>'+
+    '<span class="el-t">'+esc((c.sub||'').replace(/^IHK-Prüfung:\s*/,''))+(datum?' · '+esc(datum):'')+'</span>'+
+    '<div class="el-bar" aria-hidden="true"><i style="width:'+(steps.length?Math.round(fertig/steps.length*100):0)+'%"></i></div></div>'+
+    '<button type="button" class="el-go" id="btnPruefWeiter">Weiter bei Aufgabe '+esc(l.nr)+' →</button>';
+  box.hidden=false;
+  $("btnPruefWeiter").onclick=function(){startRound('cases',c.id,idx);};
+}
+function renderHomeExtras(){renderHero();renderErfolge();renderAktiv();renderPruefLast();}
 
 function renderSubChips(){
   var wrap=$("subChips"); wrap.innerHTML=""; var subs=subsOfFach(state.fach);
@@ -1571,7 +1994,10 @@ function startRound(mode,caseId,startIdx){
     var start=state.pool[state.idx];
     state.blattNr=(start&&start.nr)||state.fall.aufgaben[0].nr;
     show("scrBlatt");
-    blOeffnen(state.blattNr,start?start.id:null);
+    /* Zu einer Teilaufgabe springen nur, wenn es nicht die erste ihrer Aufgabe
+       ist – sonst bleiben Ausgangslage und Anlagen oben im Blick. */
+    var erste=start&&blTeile(start.nr)[0];
+    blOeffnen(state.blattNr,(start&&erste&&erste.id!==start.id)?start.id:null);
     return;
   }
   buildProtocol();show("scrQuiz");renderQuestion();
@@ -1642,7 +2068,7 @@ function taskVolltext(q){
   return L.join('\n\n');
 }
 function oaExportText(q){
-  var eigene=(oaGet(q.id)||'').trim();
+  var eigene=antwortText(q.id);
   var teile=taskVolltext(q).split('\n\n');
   var kopf=teile[0]||'';
   var rest=teile.slice(1).join('\n\n');
@@ -1846,8 +2272,8 @@ function buildOpenChat(q){
     if(q._case)h+='<span class="mt-step">Teil '+q._case.i+'/'+q._case.total+'</span>';
     h+='</div>';
   }
-  if(T.sit)h+='<div class="msg-sit">'+esc(T.sit)+'</div>';
-  h+='<div class="msg-q">'+esc(T.frage)+'</div>';
+  if(T.sit)h+='<div class="msg-sit rt">'+rtHTML(T.sit)+'</div>';
+  h+='<div class="msg-q rt">'+rtHTML(T.frage)+'</div>';
   var tb=stepTab(q);
   if(tb)h+='<div class="msg-tab">'+tabHTML(tb)+'</div>';
   h+=bildHTML(stepBild(q));
@@ -1856,7 +2282,7 @@ function buildOpenChat(q){
     var ans=(oaGet(q.id)||"").trim();
     h+='<div class="msg out"><div class="msg-role">Deine Antwort</div>'+
        (ans?esc(ans):'<span class="msg-empty">— leer abgegeben —</span>')+'</div>';
-    var solBody=esc(q.a||q.e||"");
+    var solBody='<div class="rt">'+rtHTML(q.a||q.e||"")+'</div>';
     if(q.vo)solBody+='<div class="sol-meta">VO-Bezug: '+esc(q.vo)+'</div>';
     solBody+=bildHTML(q.bildL,'Lösungsskizze der IHK');
     if(q.bewertung&&q.bewertung.length)solBody+='<div class="sol-meta">Punkteverteilung: '+esc(q.bewertung.join(' + '))+' Punkte</div>';
@@ -1864,28 +2290,12 @@ function buildOpenChat(q){
        solBody+'</div>';
     h+='<div class="msg-actions"><button type="button" class="cc-icon wide" id="oaExport">'+
        'Diese Aufgabe von Claude prüfen lassen</button></div>';
-    var max=taskMaxPoints(q);
-    if(max>0){
-      var cur=opGet(q.id);
-      h+='<div class="oa-score" id="oaScore"><div class="oas-lbl">Wie viele Punkte hättest du bekommen?</div><div class="oas-btns">';
-      for(var p=0;p<=max;p++)h+='<button type="button" class="oas-p'+(cur===p?' sel':'')+'" data-p="'+p+'">'+p+'</button>';
-      h+='</div><div class="oas-hint" id="oasHint">'+(cur!=null?('Bewertet: '+cur+' von '+max+' Punkten'):('Vergib dir 0–'+max+' Punkte – so zählt die Aufgabe am Ende zum Gesamtergebnis.'))+'</div></div>';
-    }
+    h+=scoreHTML(q);
   }
   $("oaChat").innerHTML=h;
   if(state.revealed){
     $("oaExport").onclick=function(){oaCopy(oaExportText(q),$("oaExport"));};
-    var sc=$("oaScore");
-    if(sc){var mx=taskMaxPoints(q);
-      sc.querySelectorAll(".oas-p").forEach(function(b){
-        b.onclick=function(){var pt=parseInt(b.dataset.p,10);opSet(q.id,pt);
-          sc.querySelectorAll(".oas-p").forEach(function(x){x.classList.remove("sel");});
-          b.classList.add("sel");
-          $("oasHint").textContent='Bewertet: '+pt+' von '+mx+' Punkten';
-          var nb=$("btnScoreNext");if(nb)nb.disabled=false;
-        };
-      });
-    }
+    scoreBinden($("oaChat"),function(){var nb=$("btnScoreNext");if(nb)nb.disabled=false;});
   }
 }
 function renderTab(tab){var el=$("qTab");var ts=tabListe(tab);
@@ -1894,6 +2304,385 @@ function renderTab(tab){var el=$("qTab");var ts=tabListe(tab);
 function esc(s){return String(s==null?"":s).replace(/[&<>"]/g,function(m){
   return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[m];});}
 
+/* ===== Aufgabentexte strukturiert darstellen =====
+   Die Prüfungstexte liegen als Klartext vor: Tabellenzeilen als „a | b | c“
+   (leere Zellen halten ihre Spalte), jede Rechnung auf eigener Zeile,
+   Aufzählungen mit „–“. rtHTML() macht daraus echte Tabellen, Listen und
+   abgesetzte Rechenblöcke; alles andere bleibt Absatz für Absatz stehen. Die
+   native App setzt dieselben Regeln um (APP_FEATURE_REQUESTS.md, FR-003). */
+function rtIstZeile(l){return /\s\|\s|^\|\s|\s\|$/.test(l);}
+function rtZellen(l){return l.split('|').map(function(z){return z.trim();});}
+function rtIstZahl(z){return z.length<=32&&/^[−–+-]?\s?\(?\s?\d/.test(z);}
+var RT_LI=/^\s*(?:[–•▪■◦]|-(?=\s))\s+/;
+var RT_NOTE=/^(?:Hinweise?(?:\s+(?:für|an|zur|zum)\s+[^:]{2,40})?|Achtung|Beachte|Merke)\s*:\s*/;
+var RT_PTS=/\((?=[^()]*\bPunkte?\b)[^()]{1,160}\)/g;
+/* Punkteangaben im Text („(2 Punkte)“) werden zur kleinen Marke. */
+function rtInline(s){
+  return esc(s).replace(RT_PTS,function(m){return '<span class="rt-pts">'+m.slice(1,-1)+'</span>';});
+}
+/* Rechenzeile: hat ein Gleichheitszeichen (oder ⇒) und ist kein Satz – ein
+   Satz hat viele längere kleingeschriebene Wörter. Klammerzusätze („auf
+   240 min aufgerundet“) zählen nicht mit, Einheiten wie „min“ auch nicht. */
+function rtIstRechnung(l){
+  if(!/[=⇒]/.test(l)||l.length>240)return false;
+  return (l.replace(/\([^()]*\)/g,' ').match(/(?:^|[\s„])[a-zäöüß]{4,}/g)||[]).length<=5;
+}
+/* Das Ergebnis hinter dem letzten „=“ fällt beim Überfliegen sofort ins Auge:
+   Zahl samt Einheit, bis zu Komma, Semikolon oder Klammer. */
+function rtRechnung(l){
+  var i=l.lastIndexOf('=');
+  if(i>0){
+    var rest=l.slice(i+1),m=/^\s*([−–+-]?\s?\d(?:[^=();,]|,(?=\d))*)/.exec(rest);
+    /* Steht hinter dem letzten „=“ noch eine Rechnung, ist es kein Ergebnis. */
+    if(m&&m[1].trim().length<=40&&!/\s[+−–·÷×:\/-]\s/.test(m[1]))
+      return '<div class="rt-fx">'+rtInline(l.slice(0,i+1))+' <b class="rt-res">'+esc(m[1].trim())+'</b>'+
+        rtInline(rest.slice(m[0].length).replace(/^\s*(?=[(])/,' '))+'</div>';
+  }
+  return '<div class="rt-fx">'+rtInline(l)+'</div>';
+}
+/* Kopfzeile: nur Beschriftungen, darunter Zahlen. Zweispaltige Listen
+   („Strecke | 10 km“) haben keinen Kopf – außer alle Werte darunter sind
+   Zahlen und der Kopf keine. */
+function rtKopf(rows,n){
+  if(rows.length<2)return false;
+  var k=rows[0].filter(function(z){return z;});
+  if(k.length<2||k.some(rtIstZahl))return false;
+  /* leeres Eckfeld über der Beschriftungsspalte: die Zeile trägt Spaltenköpfe */
+  if(!rows[0][0]&&k.length===n-1)return true;
+  var rest=rows.slice(1);
+  if(n>=3)return rest.some(function(r){return r.slice(1).some(rtIstZahl);});
+  return rows.length>=3&&rest.every(function(r){return rtIstZahl(r[1]||'');});
+}
+function rtTabelle(rows){
+  var n=0;rows.forEach(function(r){if(r.length>n)n=r.length;});
+  /* Kurze Zeilen hinter der Beschriftung auffüllen: der Wert bleibt so in der
+     letzten Spalte, wo die übrigen Werte stehen. */
+  rows=rows.map(function(r){
+    if(r.length>=n)return r;
+    var p=[r[0]];for(var k=r.length;k<n;k++)p.push('');
+    return p.concat(r.slice(1));
+  });
+  var kopf=rtKopf(rows,n),body=kopf?rows.slice(1):rows,num=[];
+  for(var c=0;c<n;c++){
+    var g=0,z=0;
+    body.forEach(function(r){if(r[c]){g++;if(rtIstZahl(r[c]))z++;}});
+    num.push(c>0&&g>0&&z>=g*0.6);
+  }
+  function zelle(tag,z,c){return '<'+tag+(num[c]?' class="num"':'')+'>'+rtInline(z)+'</'+tag+'>';}
+  var h='<table>';
+  if(kopf)h+='<thead><tr>'+rows[0].map(function(z,c){return zelle('th',z,c);}).join('')+'</tr></thead>';
+  h+='<tbody>'+body.map(function(r){return '<tr>'+r.map(function(z,c){return zelle('td',z,c);}).join('')+'</tr>';}).join('')+'</tbody></table>';
+  return {html:h,kv:!kopf&&n===2};
+}
+function rtHTML(text){
+  var L=String(text==null?'':text).replace(/\r/g,'').split('\n'),B=[],gap=false,i=0;
+  function add(tag,cls,inner){
+    var c=((cls||'')+(gap?' rt-gap':'')).trim();
+    B.push('<'+tag+(c?' class="'+c+'"':'')+'>'+inner+'</'+tag+'>');gap=false;
+  }
+  while(i<L.length){
+    var l=L[i],m;
+    if(!l.trim()){gap=B.length>0;i++;continue;}
+    if(rtIstZeile(l)){
+      var rows=[];
+      while(i<L.length&&rtIstZeile(L[i])){rows.push(rtZellen(L[i]));i++;}
+      /* Eine einzelne Zeile mit langen Zellen ist Fließtext mit Trennstrich. */
+      if(rows.length===1&&rows[0].some(function(z){return z.length>60;})){
+        add('p','',rows[0].filter(function(z){return z;}).map(rtInline).join(' <span class="rt-sep">·</span> '));continue;}
+      var t=rtTabelle(rows);
+      add('div','rt-tbl'+(t.kv?' kv':''),t.html);continue;
+    }
+    if(RT_LI.test(l)){
+      var li='';
+      while(i<L.length&&RT_LI.test(L[i])){li+='<li>'+rtInline(L[i].replace(RT_LI,''))+'</li>';i++;}
+      add('ul','rt-list',li);continue;
+    }
+    if(rtIstRechnung(l)){
+      var fx='';
+      while(i<L.length&&L[i].trim()&&!rtIstZeile(L[i])&&!RT_LI.test(L[i])&&rtIstRechnung(L[i])){fx+=rtRechnung(L[i]);i++;}
+      add('div','rt-calc',fx);continue;
+    }
+    if((m=RT_NOTE.exec(l))){add('p','rt-note','<b>'+esc(m[0].trim())+'</b> '+rtInline(l.slice(m[0].length)));i++;continue;}
+    if(/^[^=|]{2,90}:\s*$/.test(l)){add('p','rt-lbl',rtInline(l.trim()));i++;continue;}
+    add('p','',rtInline(l));i++;
+  }
+  return B.join('');
+}
+window.KVM_rt=rtHTML;
+
+/* ===== Rechenweg =====
+   Rechenaufgaben löst man in der Prüfung Zeile für Zeile: Bezeichnung,
+   Rechnung, Ergebnis. Genau so ist der Rechenweg aufgebaut – jede Zeile
+   rechnet sofort, Ergebnisse früherer Zeilen lassen sich antippen und
+   weiterverwenden. Gespeichert wird je Teilaufgabe eine Liste
+   {l: Bezeichnung, f: Rechnung, u: Einheit}; als Text geht er in den
+   Lösungsvergleich und den KI-Export ein. */
+var RW_KEY='kvm_open_calc';
+function rwAll(){try{return JSON.parse(localStorage.getItem(RW_KEY)||'{}')||{};}catch(e){return {};}}
+function rwGet(id){var r=rwAll()[id];return Array.isArray(r)?r:[];}
+function rwSet(id,rows){
+  var a=rwAll(),keep=(rows||[]).filter(function(r){return r&&(String(r.l||'').trim()||String(r.f||'').trim());});
+  if(keep.length)a[id]=keep;else delete a[id];
+  try{localStorage.setItem(RW_KEY,JSON.stringify(a));}catch(e){}
+}
+function rwHat(id){return rwGet(id).some(function(r){return String(r.f||'').trim();});}
+/* „1.234,5“, „1234.5“ und „4.400“ (Tausenderpunkt) werden richtig gelesen. */
+function rwZahl(t){
+  t=t.replace(/^,/,'0,');
+  if(t.indexOf(',')>=0)return parseFloat(t.replace(/\./g,'').replace(',','.'));
+  if(/^\d{1,3}(\.\d{3})+$/.test(t))return parseFloat(t.replace(/\./g,''));
+  return parseFloat(t);
+}
+/* Rechnung in Zeichen zerlegen: Zahlen, + − · × * ÷ / : ^ ( ) % ² ³ √ und „x“
+   als Mal zwischen Zahlen. Einheiten in der Rechnung („km/h“, „€“) werden
+   überlesen; hinter einem „=“ steht schon das Ergebnis. */
+function rwTokens(s){
+  s=String(s||'').replace(/[A-Za-zÄÖÜäöüß€$°]+\s*\/\s*[A-Za-zÄÖÜäöüß€$°]+/g,' ');
+  var t=[],i=0,m;
+  while(i<s.length){
+    var c=s.charAt(i),rest=s.slice(i),vor=t[t.length-1];
+    if(/\s/.test(c)){i++;continue;}
+    if((m=/^(?:\d[\d.]*(?:,\d+)?|,\d+)/.exec(rest))){t.push({n:rwZahl(m[0]),raw:m[0]});i+=m[0].length;continue;}
+    if(/[xX]/.test(c)&&vor&&(vor.n!=null||vor.p===')')&&/^[xX]\s*[\d(√]/.test(rest)){t.push({o:'*'});i++;continue;}
+    if((m=/^[A-Za-zÄÖÜäöüß€$°]+/.exec(rest))){i+=m[0].length;continue;}
+    if(c==='=')break;
+    if(c==='+')t.push({o:'+'});
+    else if('-−–'.indexOf(c)>=0)t.push({o:'-'});
+    else if('*·×⋅∙'.indexOf(c)>=0)t.push({o:'*'});
+    else if('/÷:'.indexOf(c)>=0)t.push({o:'/'});
+    else if(c==='^')t.push({o:'^'});
+    else if(c==='('||c===')')t.push({p:c});
+    else if(c==='%')t.push({pc:1});
+    else if(c==='²')t.push({pw:2});
+    else if(c==='³')t.push({pw:3});
+    else if(c==='√')t.push({f:1});
+    else return null;
+    i++;
+  }
+  return t;
+}
+/* Rechnet ohne eval: Punkt vor Strich, Klammern, Potenz, Wurzel, Prozent. */
+function rwRechne(s){
+  var t=rwTokens(s),i=0;
+  if(!t||!t.length)return NaN;
+  function k(){return t[i];}
+  function summe(){var v=produkt();while(k()&&(k().o==='+'||k().o==='-')){var o=t[i++].o,w=produkt();v=o==='+'?v+w:v-w;}return v;}
+  function produkt(){var v=vorzeichen();while(k()&&(k().o==='*'||k().o==='/')){var o=t[i++].o,w=vorzeichen();v=o==='*'?v*w:v/w;}return v;}
+  function vorzeichen(){var x=k();if(x&&(x.o==='-'||x.o==='+')){i++;var v=vorzeichen();return x.o==='-'?-v:v;}return potenz();}
+  function potenz(){var v=nachsatz();if(k()&&k().o==='^'){i++;v=Math.pow(v,vorzeichen());}return v;}
+  function nachsatz(){var v=grund();for(;;){var x=k();if(x&&x.pc){i++;v=v/100;}else if(x&&x.pw){i++;v=Math.pow(v,x.pw);}else return v;}}
+  function grund(){
+    var x=t[i++];
+    if(!x)throw 0;
+    if(x.n!=null)return x.n;
+    if(x.f)return Math.sqrt(nachsatz());
+    if(x.p==='('){var v=summe();if(!k()||k().p!==')')throw 0;i++;return v;}
+    throw 0;
+  }
+  try{var v=summe();return (i===t.length&&isFinite(v))?v:NaN;}catch(e){return NaN;}
+}
+/* Ergebnis auf Deutsch; bei Euro mit Cent, sobald Cent anfallen. */
+function rwFmt(v,u){
+  if(!isFinite(v))return '';
+  var r=Math.round(v*1e6)/1e6;
+  var cent=/€/.test(u||'')&&Math.round(r*100)!==Math.round(r)*100;
+  return r.toLocaleString('de-DE',cent?{minimumFractionDigits:2,maximumFractionDigits:2}:{maximumFractionDigits:4}).replace(/^-/,'−');
+}
+function rwZahlText(raw){
+  var v=rwZahl(raw);if(!isFinite(v))return raw;
+  var m=/,(\d+)$/.exec(raw)||(!/^\d{1,3}(\.\d{3})+$/.test(raw)&&/\.(\d+)$/.exec(raw));
+  var d=m?m[1].length:0;
+  return v.toLocaleString('de-DE',{minimumFractionDigits:d,maximumFractionDigits:d});
+}
+/* Rechnung so, wie sie auf dem Prüfungsbogen stünde: „4.400 ÷ 22“. */
+function rwSchoen(s){
+  var t=rwTokens(s);if(!t)return String(s||'').trim();
+  var o='',vor=null;
+  t.forEach(function(x){
+    if(x.n!=null)o+=rwZahlText(x.raw);
+    else if(x.o){
+      var unaer=(x.o==='-'||x.o==='+')&&(!vor||vor.o||vor.p==='('||vor.f);
+      if(unaer)o+=(x.o==='-'?'−':'+');
+      else if(x.o==='^')o+='^';
+      else o+=' '+{'+':'+','-':'−','*':'·','/':'÷'}[x.o]+' ';
+    }
+    else if(x.p)o+=x.p;
+    else if(x.pc)o+=' %';
+    else if(x.pw)o+=(x.pw===2?'²':'³');
+    else if(x.f)o+='√';
+    vor=x;
+  });
+  return o.replace(/\s+/g,' ').replace(/\( /g,'(').replace(/ \)/g,')').trim();
+}
+function rwZeileText(r){
+  var l=String(r.l||'').trim(),f=String(r.f||'').trim(),u=String(r.u||'').trim();
+  if(!f)return l;
+  var v=rwRechne(f),rechnet=/[-+−–·*×xX÷\/:^%²³√(]/.test(f.replace(/^\s*[−–-]/,''));
+  var erg=isFinite(v)?rwFmt(v,u)+(u?' '+u:''):'';
+  var s=erg?(rechnet?rwSchoen(f)+' = '+erg:erg):f;
+  return l?l.replace(/\s*:?$/,':')+' '+s:s;
+}
+function rwText(id){return rwGet(id).map(rwZeileText).filter(function(x){return x;}).join('\n');}
+/* Die ganze eigene Antwort einer Teilaufgabe: Rechenweg und Text. */
+function antwortText(id){
+  return [rwText(id),(oaGet(id)||'').trim()].filter(function(x){return x;}).join('\n\n');
+}
+function rwAnzeigeHTML(id){
+  var z=rwGet(id).map(rwZeileText).filter(function(x){return x;});
+  return z.length?'<div class="rt-calc">'+z.map(rtRechnung).join('')+'</div>':'';
+}
+function rwZeileHTML(r,i){
+  r=r||{};
+  var f=String(r.f||''),u=String(r.u||''),v=rwRechne(f),n=i+1;
+  var erg=!f.trim()?'<output class="rw-eq leer">= …</output>':
+    (isFinite(v)?'<output class="rw-eq">= '+esc(rwFmt(v,u))+(u?'<span class="rw-eu"> '+esc(u)+'</span>':'')+'</output>':
+     '<output class="rw-eq err">Rechnung prüfen</output>');
+  return '<div class="rw-row">'+
+    '<span class="rw-nr">Z'+n+'</span>'+
+    '<input class="rw-l" type="text" autocomplete="off" enterkeyhint="next" placeholder="Bezeichnung, z. B. Fixkosten" aria-label="Zeile '+n+': Bezeichnung" value="'+esc(r.l||'')+'">'+
+    '<input class="rw-f" type="text" inputmode="decimal" autocomplete="off" spellcheck="false" enterkeyhint="enter" placeholder="Rechnung, z. B. 4.400 ÷ 22" aria-label="Zeile '+n+': Rechnung" value="'+esc(f)+'">'+
+    erg+
+    '<input class="rw-u" type="text" autocomplete="off" placeholder="Einheit" aria-label="Zeile '+n+': Einheit" value="'+esc(u)+'">'+
+    '<button type="button" class="rw-x" aria-label="Zeile '+n+' löschen" title="Zeile löschen">✕</button>'+
+  '</div>';
+}
+var RW_TASTEN=[['+','+'],['−','−'],['·','·'],['÷','÷'],['(','('],[')',')'],['%',' %'],['x²','²'],['√','√(']];
+function rwHTML(id,sichtbar){
+  var rows=rwGet(id);if(!rows.length)rows=[{}];
+  return '<div class="rw" data-rw="'+esc(id)+'"'+(sichtbar?'':' hidden')+'>'+
+    '<div class="rw-head">Rechenweg<span>rechnet sofort mit</span></div>'+
+    '<div class="rw-rows">'+rows.map(rwZeileHTML).join('')+'</div>'+
+    '<div class="rw-keys" hidden>'+RW_TASTEN.map(function(x){
+      return '<button type="button" class="rw-k" tabindex="-1" data-ins="'+esc(x[1])+'">'+x[0]+'</button>';}).join('')+
+      '<span class="rw-refs"></span></div>'+
+    '<div class="rw-foot"><button type="button" class="rw-add">+ Zeile</button>'+
+    '<span class="rw-tip">Enter springt in die nächste Zeile. Ergebnisse früherer Zeilen (Z1, Z2 …) über die Leiste einsetzen.</span></div>'+
+  '</div>';
+}
+/* Bindet alle Rechenwege in ``box``. ``nachher(id)`` meldet jede Änderung. */
+function rwBinden(box,nachher){
+  box.querySelectorAll('.rw[data-rw]').forEach(function(rw){
+    var id=rw.dataset.rw,liste=rw.querySelector('.rw-rows'),tasten=rw.querySelector('.rw-keys'),
+        refs=rw.querySelector('.rw-refs'),letzt=null;
+    function zeilen(){return [].slice.call(liste.querySelectorAll('.rw-row'));}
+    function lesen(){return zeilen().map(function(z){
+      return {l:z.querySelector('.rw-l').value,f:z.querySelector('.rw-f').value,u:z.querySelector('.rw-u').value};});}
+    function speichern(){rwSet(id,lesen());if(nachher)nachher(id);}
+    function ergebnis(z){
+      var d=document.createElement('div');
+      d.innerHTML=rwZeileHTML({f:z.querySelector('.rw-f').value,u:z.querySelector('.rw-u').value},0);
+      z.querySelector('.rw-eq').replaceWith(d.querySelector('.rw-eq'));
+    }
+    /* Ergebnisse der Zeilen über der aktiven als Einsetz-Knöpfe */
+    function refsNeu(){
+      var akt=letzt?letzt.closest('.rw-row'):null,h='';
+      zeilen().some(function(z,i){
+        if(z===akt)return true;
+        var v=rwRechne(z.querySelector('.rw-f').value);
+        if(isFinite(v)){var t=rwFmt(v,'');h+='<button type="button" class="rw-ref" tabindex="-1" data-ins="'+esc(t)+'">Z'+(i+1)+' = '+esc(t)+'</button>';}
+        return false;
+      });
+      refs.innerHTML=h;
+    }
+    function nummern(){zeilen().forEach(function(z,i){
+      z.querySelector('.rw-nr').textContent='Z'+(i+1);
+      z.querySelector('.rw-l').setAttribute('aria-label','Zeile '+(i+1)+': Bezeichnung');
+      z.querySelector('.rw-f').setAttribute('aria-label','Zeile '+(i+1)+': Rechnung');
+      z.querySelector('.rw-u').setAttribute('aria-label','Zeile '+(i+1)+': Einheit');
+      z.querySelector('.rw-x').setAttribute('aria-label','Zeile '+(i+1)+' löschen');});}
+    function neueZeile(nach){
+      var d=document.createElement('div');d.innerHTML=rwZeileHTML({},0);
+      var z=d.firstChild;
+      if(nach&&nach.nextSibling)liste.insertBefore(z,nach.nextSibling);else liste.appendChild(z);
+      nummern();zeileBinden(z);z.querySelector('.rw-f').focus();
+      return z;
+    }
+    function zeileBinden(z){
+      z.querySelectorAll('input').forEach(function(inp){
+        inp.addEventListener('input',function(){if(!inp.classList.contains('rw-l'))ergebnis(z);speichern();refsNeu();});
+        inp.addEventListener('focus',function(){
+          if(inp.classList.contains('rw-f'))letzt=inp;
+          tasten.hidden=false;refsNeu();});
+      });
+      z.querySelector('.rw-l').addEventListener('keydown',function(e){
+        if(e.key==='Enter'){e.preventDefault();z.querySelector('.rw-f').focus();}});
+      z.querySelector('.rw-f').addEventListener('keydown',function(e){
+        if(e.key!=='Enter')return;
+        e.preventDefault();
+        var n=z.nextElementSibling;
+        if(n)n.querySelector('.rw-f').focus();else neueZeile(z);
+      });
+      z.querySelector('.rw-x').addEventListener('click',function(){
+        if(zeilen().length<=1){z.querySelectorAll('input').forEach(function(i){i.value='';});ergebnis(z);}
+        else{if(letzt&&z.contains(letzt))letzt=null;z.remove();nummern();}
+        speichern();refsNeu();
+      });
+    }
+    zeilen().forEach(zeileBinden);
+    rw.querySelector('.rw-add').addEventListener('click',function(){
+      var z=zeilen(),l=z[z.length-1];
+      /* Eine leere letzte Zeile wird genutzt statt eine weitere anzuhängen. */
+      if(l&&!l.querySelector('.rw-f').value.trim()&&!l.querySelector('.rw-l').value.trim())l.querySelector('.rw-f').focus();
+      else neueZeile(null);
+    });
+    /* Die Tasten nehmen dem Feld den Fokus nicht – die Bildschirmtastatur
+       bleibt offen, eingefügt wird an der Schreibmarke. */
+    tasten.addEventListener('pointerdown',function(e){if(e.target.closest('button'))e.preventDefault();});
+    tasten.addEventListener('mousedown',function(e){if(e.target.closest('button'))e.preventDefault();});
+    tasten.addEventListener('click',function(e){
+      var b=e.target.closest('button');if(!b)return;
+      var inp=(letzt&&liste.contains(letzt))?letzt:liste.querySelector('.rw-f');if(!inp)return;
+      var a=inp.selectionStart==null?inp.value.length:inp.selectionStart,
+          en=inp.selectionEnd==null?a:inp.selectionEnd,txt=b.dataset.ins;
+      if(b.classList.contains('rw-ref')&&a>0&&/[\d,]$/.test(inp.value.slice(0,a)))txt=' · '+txt;
+      inp.setRangeText(txt,a,en,'end');
+      inp.dispatchEvent(new Event('input',{bubbles:true}));
+      inp.focus();
+    });
+    rw.addEventListener('focusout',function(){
+      setTimeout(function(){if(!rw.contains(document.activeElement))tasten.hidden=true;},150);
+    });
+  });
+}
+
+/* Selbstbewertung einer Teilaufgabe: bis 12 Punkte eine durchgehende
+   Knopfleiste (passt auch aufs Handy), darüber ein Schieberegler. */
+function scoreHTML(q){
+  var max=taskMaxPoints(q);if(!max)return '';
+  var cur=opGet(q.id),h='<div class="oa-score" data-score="'+esc(q.id)+'">'+
+    '<div class="oas-top"><span class="oas-lbl">Deine Punkte</span>'+
+    '<span class="oas-val'+(cur==null?' leer':'')+'">'+(cur==null?'noch nicht bewertet':(cur+' von '+max))+'</span></div>';
+  if(max<=12){
+    h+='<div class="oas-btns" style="--n:'+(max+1)+'" role="group" aria-label="Punkte vergeben">';
+    for(var p=0;p<=max;p++)h+='<button type="button" class="oas-p'+(cur===p?' sel':(cur!=null&&p<cur?' in':''))+
+      '" data-p="'+p+'" aria-label="'+p+' von '+max+' Punkten">'+p+'</button>';
+    h+='</div>';
+  }else{
+    h+='<input type="range" class="oas-range" min="0" max="'+max+'" step="1" value="'+(cur==null?0:cur)+'" aria-label="Punkte von 0 bis '+max+'">'+
+       '<div class="oas-scale"><span>0</span><span>'+Math.round(max/2)+'</span><span>'+max+'</span></div>';
+  }
+  h+='<div class="oas-hint">'+(cur!=null?'Zählt so im Gesamtergebnis – ändern jederzeit möglich.':
+     ('Vergleiche mit dem Lösungshinweis und vergib dir 0–'+max+' Punkte.'))+'</div></div>';
+  return h;
+}
+/* Bindet die Bewertung; ``fertig(q, punkte, max)`` meldet die Wahl. */
+function scoreBinden(box,fertig){
+  box.querySelectorAll('[data-score]').forEach(function(sc){
+    var id=sc.dataset.score,q=state.pool.filter(function(x){return x.id===id;})[0];if(!q)return;
+    var mx=taskMaxPoints(q),val=sc.querySelector('.oas-val'),hint=sc.querySelector('.oas-hint');
+    function zeigen(pt){val.textContent=pt+' von '+mx;val.classList.remove('leer');}
+    function setzen(pt){
+      opSet(id,pt);zeigen(pt);
+      sc.querySelectorAll('.oas-p').forEach(function(b){var p=+b.dataset.p;b.classList.toggle('sel',p===pt);b.classList.toggle('in',p<pt);});
+      if(hint)hint.textContent='Zählt so im Gesamtergebnis – ändern jederzeit möglich.';
+      if(fertig)fertig(q,pt,mx);
+    }
+    sc.querySelectorAll('.oas-p').forEach(function(b){b.onclick=function(){setzen(parseInt(b.dataset.p,10));};});
+    var r=sc.querySelector('.oas-range');
+    if(r){r.oninput=function(){zeigen(r.value);};r.onchange=function(){setzen(parseInt(r.value,10));};}
+  });
+}
+
 function renderQuestion(){
   var q=state.pool[state.idx];state.answered=false;state.revealed=false;
   var caseEl=$("qCase"),isPruef=q._case&&/^P-/.test(q.id||"");
@@ -1901,9 +2690,9 @@ function renderQuestion(){
     caseEl.hidden=false;
     caseEl.open=state.ctxOpen;
     caseEl.innerHTML='<summary class="cc-head"><span class="cc-tag">'+(isPruef?"IHK-Prüfung":"Fallaufgabe")+
-      '</span><span class="cc-title"></span><span class="cc-more">Ausgangssituation</span></summary><p class="cc-ctx"></p>';
+      '</span><span class="cc-title"></span><span class="cc-more">Ausgangssituation</span></summary><div class="cc-ctx rt"></div>';
     caseEl.querySelector(".cc-title").textContent=q._case.title;
-    caseEl.querySelector(".cc-ctx").textContent=q._case.context;
+    caseEl.querySelector(".cc-ctx").innerHTML=rtHTML(q._case.context);
     /* Programmatisches Auf-/Zuklappen löst ebenfalls ein toggle-Ereignis aus –
        nur eine echte Abweichung stammt vom Nutzer und wird gemerkt. */
     caseEl.ontoggle=function(){
@@ -1927,10 +2716,14 @@ function renderQuestion(){
     $("qHeadPts").textContent=T.pts;
     $("qHeadStep").textContent=q._case?"Teil "+q._case.i+" von "+q._case.total:"";
   }
-  $("qSit").hidden=!T.sit;$("qSit").textContent=T.sit;
+  /* Texte aus Fallaufgaben tragen Tabellen und Rechenwege – sie laufen durch
+     rtHTML; Wissensfragen bleiben reiner Text. */
+  var reich=!!q._case;
+  function setzeText(el,t){el.classList.toggle("rt",reich);if(reich)el.innerHTML=rtHTML(t);else el.textContent=t;}
+  $("qSit").hidden=!T.sit;setzeText($("qSit"),T.sit);
   /* hidden zurücksetzen: der Chat-Modus offener Aufgaben blendet den Fragetext
      aus – sonst bliebe er bei der nächsten Auswahlfrage unsichtbar. */
-  $("qText").hidden=false;$("qText").textContent=T.frage;
+  $("qText").hidden=false;setzeText($("qText"),T.frage);
   renderTab(stepTab(q));
   state.pool.forEach(function(_,i){var s=$("seg"+i);s.className="seg"+(i===state.idx?" cur":(state.results[i]===true?" ok":(state.results[i]===false?" err":"")));});
 
@@ -2094,7 +2887,7 @@ function blTabGefuellt(nr){
    bei der ersten Teilaufgabe – sonst bliebe eine Aufgabe, die man vollständig
    in den Betriebsabrechnungsbogen schreibt, im Stepper unbeantwortet. */
 function blBeantwortet(q){
-  if((oaGet(q.id)||'').trim())return true;
+  if((oaGet(q.id)||'').trim()||rwHat(q.id))return true;
   if(tabListe(q.tab).some(function(t,i){return otAnzahl(q.id+'#s'+i)>0;}))return true;
   var teile=blTeile(q.nr);
   return !!(teile.length&&teile[0].id===q.id&&blTabGefuellt(q.nr));
@@ -2124,10 +2917,7 @@ function blAntwortAnhaengen(txt){
   if(ta){
     ta.value=neu;
     ta.scrollTop=ta.scrollHeight;
-    var karte=ta.closest('.bl-teil');
-    if(karte)karte.classList.add('done');
-    $("blStepper").innerHTML=blStepperHTML();
-    blBindenStepper();
+    blNachEingabe(q.id);
   }else renderBlatt();
   return q;
 }
@@ -2135,6 +2925,7 @@ function blAntwortAnhaengen(txt){
 /* Aufgabe öffnen; optional zu einer bestimmten Teilaufgabe scrollen. */
 function blOeffnen(nr,zuId){
   state.blattNr=nr;
+  if(state.fall&&/^P-/.test(state.fall.id||''))letztePruefungMerken(state.fall.id,nr);
   renderBlatt();
   if(zuId){
     var el=document.querySelector('.bl-teil[data-id="'+zuId+'"]');
@@ -2146,19 +2937,58 @@ function blOeffnen(nr,zuId){
 function blStepperHTML(){
   var h='';
   blNummern().forEach(function(nr){
-    var teile=blTeile(nr);
-    var beantwortet=teile.filter(blBeantwortet).length;
-    var offen=teile.filter(blAufgedeckt).length;
-    var cls='bl-pill';
-    if(offen===teile.length&&teile.length)cls+=' auf';
-    else if(beantwortet===teile.length&&teile.length)cls+=' voll';
-    else if(beantwortet)cls+=' teil';
-    if(nr===state.blattNr)cls+=' cur';
-    h+='<button type="button" class="'+cls+'" data-nr="'+nr+'" role="tab"'+
-       (nr===state.blattNr?' aria-selected="true"':'')+
-       ' title="Aufgabe '+nr+' · '+teile.length+' Teile">'+nr+'</button>';
+    var teile=blTeile(nr),auf=aufgabeVon(state.fall,nr)||{};
+    var beantwortet=teile.filter(blBeantwortet).length,offen=teile.filter(blAufgedeckt).length;
+    var cls='bl-pill',stand='noch offen',cur=nr===state.blattNr;
+    if(offen===teile.length&&teile.length){cls+=' auf';stand='Lösungen aufgedeckt';}
+    else if(beantwortet===teile.length&&teile.length){cls+=' voll';stand='alle Teile bearbeitet';}
+    else if(beantwortet||offen){cls+=' teil';stand=Math.max(beantwortet,offen)+' von '+teile.length+' Teilen bearbeitet';}
+    if(cur)cls+=' cur';
+    h+='<button type="button" class="'+cls+'" data-nr="'+nr+'" role="tab" aria-selected="'+cur+'"'+
+       ' aria-label="Aufgabe '+nr+(auf.pts?', '+auf.pts+' Punkte':'')+', '+stand+'">'+nr+
+       (auf.pts?'<small>'+auf.pts+' P</small>':'')+'</button>';
   });
   return h;
+}
+/* Bearbeitungsstand der ganzen Prüfung: aufgedeckt (petrol) und bearbeitet,
+   aber noch nicht aufgedeckt (grün); dazu die bisher vergebenen Punkte. */
+function blFortschrittHTML(){
+  var el=$("blProg");if(!el)return;
+  var n=state.pool.length,auf=0,bea=0,pkt=0,bew=0;
+  state.pool.forEach(function(q){
+    if(blAufgedeckt(q))auf++;else if(blBeantwortet(q))bea++;
+    var p=opGet(q.id);if(p!=null){pkt+=p;bew++;}
+  });
+  el.innerHTML='<div class="bl-prog-bar" aria-hidden="true"><i class="pa" style="width:'+(n?auf/n*100:0)+'%"></i>'+
+    '<i class="pb" style="width:'+(n?bea/n*100:0)+'%"></i></div>'+
+    '<span class="bl-prog-t"><b>'+(auf+bea)+'</b>/'+n+' Teile'+(bew?' · <b>'+pkt+'</b> P':'')+'</span>';
+}
+function blChipsHTML(nr){
+  var auf=aufgabeVon(state.fall,nr)||{},teile=blTeile(nr),n=teile.length;
+  var bea=teile.filter(function(q){return blBeantwortet(q)||blAufgedeckt(q);}).length;
+  var h='';
+  if(auf.pts)h+='<span class="bl-chip pts">'+auf.pts+' Punkte</span>';
+  h+='<span class="bl-chip">'+n+' Teilaufgabe'+(n===1?'':'n')+'</span>';
+  h+='<span class="bl-chip'+(bea===n&&n?' ok':'')+'">'+(bea===n&&n?'✓ ':'')+bea+' von '+n+' bearbeitet</span>';
+  var bew=teile.filter(function(q){return opGet(q.id)!=null;});
+  if(bew.length){
+    var p=0;bew.forEach(function(q){p+=opGet(q.id);});
+    h+='<span class="bl-chip gold">Deine Punkte: '+p+' / '+(auf.pts||teile.reduce(function(s,q){return s+taskMaxPoints(q);},0))+'</span>';
+  }
+  return h;
+}
+/* Leiste, Fortschritt und Aufgabenkopf nach einer Eingabe auffrischen. */
+function blKopfNeu(){
+  $("blStepper").innerHTML=blStepperHTML();
+  blBindenStepper();
+  blFortschrittHTML();
+  var ch=$("blChips");if(ch)ch.innerHTML=blChipsHTML(state.blattNr);
+}
+function blNachEingabe(id){
+  var q=state.pool.filter(function(x){return x.id===id;})[0];
+  var karte=document.querySelector('.bl-teil[data-id="'+id+'"]');
+  if(q&&karte&&!blAufgedeckt(q))karte.classList.toggle('done',blBeantwortet(q));
+  blKopfNeu();
 }
 
 /* Anlagen der ganzen Aufgabe: Tabellen ausgeklappt, Abbildungen als Kachel. */
@@ -2192,13 +3022,14 @@ function blVorherHTML(q){
 }
 
 function blLoesungHTML(q){
-  var eigene=(oaGet(q.id)||'').trim();
+  var tx=(oaGet(q.id)||'').trim(),rw=rwAnzeigeHTML(q.id);
   var h='<div class="bl-loesung">';
-  h+='<p class="bl-lhead">Deine Antwort</p>';
-  h+='<div class="bl-meine'+(eigene?'':' leer')+'">'+(eigene?esc(eigene):'— leer abgegeben —')+'</div>';
-  h+='<p class="bl-lhead">'+(q.amtlich?'Amtliche Lösungshinweise · IHK':'Musterlösung · nicht amtlich')+'</p>';
-  h+='<div class="bl-ltext">'+esc(q.a||q.e||'')+'</div>';
-  if(q.vo)h+='<div class="sol-meta">VO-Bezug: '+esc(q.vo)+'</div>';
+  h+='<section class="bl-lblock"><p class="bl-lhead">Deine Antwort</p>'+
+     ((rw||tx)?'<div class="bl-meine">'+rw+esc(tx)+'</div>':'<div class="bl-meine leer">— leer abgegeben —</div>')+
+     '</section>';
+  h+='<section class="bl-lblock sol"><p class="bl-lhead">'+
+     (q.amtlich?'Amtliche Lösungshinweise · IHK':'Musterlösung · nicht amtlich')+'</p>';
+  h+='<div class="bl-ltext rt">'+rtHTML(q.a||q.e||'');
   h+=bildHTML(q.bildL,'Lösungsskizze der IHK');
   /* Die ausgefüllte Anlage steht nur dann hier, wenn sie nicht schon oben in
      der Anlage selbst gezeigt wird (dort mit den eigenen Eingaben daneben). */
@@ -2207,20 +3038,18 @@ function blLoesungHTML(q){
              tabListe((aufgabeVon(state.fall,q.nr)||{}).tab).some(function(t){return tabPasst(t,q.tabL);});
     if(!oben)h+='<div class="msg-tab">'+tabHTML(q.tabL)+'</div>';
   }
-  if(q.bewertung&&q.bewertung.length)
-    h+='<div class="sol-meta">Punkteverteilung: '+esc(q.bewertung.join(' + '))+' Punkte</div>';
-  var max=taskMaxPoints(q);
-  if(max>0){
-    var cur=opGet(q.id);
-    h+='<div class="oa-score" data-score="'+esc(q.id)+'"><div class="oas-lbl">Wie viele Punkte hättest du bekommen?</div><div class="oas-btns">';
-    for(var pp=0;pp<=max;pp++)h+='<button type="button" class="oas-p'+(cur===pp?' sel':'')+'" data-p="'+pp+'">'+pp+'</button>';
-    h+='</div><div class="oas-hint">'+(cur!=null?('Bewertet: '+cur+' von '+max+' Punkten'):
-        ('Vergib dir 0–'+max+' Punkte – so zählt die Aufgabe am Ende zum Gesamtergebnis.'))+'</div></div>';
-  }else{
+  h+='</div>';
+  var fuss=[];
+  if(q.vo)fuss.push('VO-Bezug: '+q.vo);
+  if(q.bewertung&&q.bewertung.length)fuss.push('Punkteverteilung: '+q.bewertung.join(' + ')+' Punkte');
+  if(fuss.length)h+='<div class="bl-lfoot">'+esc(fuss.join(' · '))+'</div>';
+  h+='</section>';
+  if(taskMaxPoints(q)>0)h+=scoreHTML(q);
+  else{
     /* Fallaufgaben ohne IHK-Punkte: die Selbsteinschätzung zählt fürs Ergebnis
        und für den Lernfortschritt. */
-    var i=blIdx(q),bew=state.results[i];
-    h+='<div class="oa-score" data-gewusst="'+esc(q.id)+'"><div class="oas-lbl">Konntest du die Aufgabe?</div>'+
+    var bew=state.results[blIdx(q)];
+    h+='<div class="oa-score" data-gewusst="'+esc(q.id)+'"><div class="oas-top"><span class="oas-lbl">Konntest du die Aufgabe?</span></div>'+
        '<div class="split"><button type="button" class="btn-no'+(bew===false?' sel':'')+'" data-ok="0">Nicht gewusst</button>'+
        '<button type="button" class="btn-ok'+(bew===true?' sel':'')+'" data-ok="1">Gewusst</button></div></div>';
   }
@@ -2228,17 +3057,26 @@ function blLoesungHTML(q){
   return h;
 }
 
+/* Rechenaufgabe: verlangt eine Berechnung, und der Lösungshinweis rechnet.
+   Dort steht der Rechenweg gleich offen; sonst ist er einen Tipp entfernt. */
+function blRechenteil(q){
+  return /\b(berechn|errechn|ermittel|kalkulier|rechnerisch|Rechenweg)/i.test(q.q||'')&&
+    (q.a||'').split('\n').some(function(l){return /\d/.test(l)&&/=/.test(l)&&/[+\-−–·÷×:\/]/.test(l);});
+}
+var IC_RECHNEN='<svg class="ic-svg ic-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M8 7h8M8 12h.01M12 12h.01M16 12h.01M8 16h.01M12 16h.01M16 16h.01"/></svg>';
+var IC_AUGE='<svg class="ic-svg ic-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg>';
 function blTeilHTML(q){
-  var T=splitTask(q),offen=blAufgedeckt(q),beantwortet=blBeantwortet(q);
-  var h='<article class="bl-teil'+(offen?' revealed':(beantwortet?' done':''))+'" data-id="'+esc(q.id)+'">';
-  h+='<header class="bl-th"><span class="bl-badge">'+esc(q.teil)+'</span>'+
-     '<span class="bl-pts">'+q.pts+' '+(q.pts===1?'Punkt':'Punkte')+'</span>';
+  var T=splitTask(q),offen=blAufgedeckt(q),beantwortet=blBeantwortet(q),id=esc(q.id),teil=esc(q.teil||'');
+  var h='<article class="bl-teil'+(offen?' revealed':(beantwortet?' done':''))+'" data-id="'+id+'">';
+  h+='<header class="bl-th">'+(teil?'<span class="bl-badge" aria-hidden="true">'+teil+'</span>'+
+     '<span class="bl-tname">Teilaufgabe '+teil+')</span>':'');
+  if(q.pts)h+='<span class="bl-pts">'+q.pts+' '+(q.pts===1?'Punkt':'Punkte')+'</span>';
   if(q.braucht&&q.braucht.length)
     h+='<button type="button" class="bl-braucht" data-zu="'+esc(q.braucht[0])+'">baut auf '+
        esc(q.braucht.join('), '))+') auf</button>';
   h+='</header>';
   h+=blVorherHTML(q);
-  h+='<p class="bl-frage">'+esc(T.frage)+'</p>';
+  h+='<div class="bl-frage rt">'+rtHTML(T.frage)+'</div>';
   tabListe(q.tab).forEach(function(t,i){
     h+='<div class="msg-tab">'+tabHTML(t,{key:q.id+'#s'+i,
         sol:(q.tabL&&offen&&tabPasst(t,q.tabL))?q.tabL:null})+'</div>';
@@ -2247,47 +3085,60 @@ function blTeilHTML(q){
   if(offen){
     h+=blLoesungHTML(q);
   }else{
-    h+='<div class="bl-antwort">'+
-       '<label class="cc-lbl" for="bla-'+esc(q.id)+'">Deine Antwort · wie in der Prüfung</label>'+
-       '<textarea class="cc-input" id="bla-'+esc(q.id)+'" rows="3" data-antwort="'+esc(q.id)+'" '+
-       'placeholder="Antwort schreiben …">'+esc(oaGet(q.id))+'</textarea>'+
-       '<div class="bl-abar"><button type="button" class="bl-reveal" data-auf="'+esc(q.id)+'">'+
-       'Lösung zu '+esc(q.teil)+') aufdecken</button></div></div>';
+    var rw=blRechenteil(q)||rwGet(q.id).length>0;
+    h+='<div class="bl-antwort">'+rwHTML(q.id,rw)+
+       '<label class="aw-lbl" for="bla-'+id+'">'+(rw?'Erläuterung · optional':'Deine Antwort · wie in der Prüfung')+'</label>'+
+       '<textarea class="cc-input'+(rw?' klein':'')+'" id="bla-'+id+'" rows="3" data-antwort="'+id+'" '+
+       'placeholder="'+(rw?'Begründung, Beurteilung oder Antwortsatz …':'Antwort schreiben …')+'">'+esc(oaGet(q.id))+'</textarea>'+
+       '<div class="bl-abar"><button type="button" class="bl-reveal" data-auf="'+id+'">'+IC_AUGE+
+       'Lösung'+(teil?' zu '+teil+')':'')+' aufdecken</button>'+
+       (rw?'':'<button type="button" class="aw-tool" data-rwauf="'+id+'">'+IC_RECHNEN+'Rechenweg</button>')+
+       '</div></div>';
   }
   h+='</article>';
   return h;
 }
 
+/* Die allgemeine Ausgangssituation der Basisqualifikationen sagt nur, dass
+   jede Aufgabe ihre eigene hat – sie wird nicht als Karte gezeigt. */
+function blHatAusgangslage(fall){
+  return !!fall.context&&!/^In dieser Prüfung hat jede Aufgabe ihre eigene Ausgangssituation/.test(fall.context);
+}
 function renderBlatt(){
   var fall=state.fall,nrs=blNummern(),nr=state.blattNr;
   var auf=aufgabeVon(fall,nr)||{},teile=blTeile(nr),pos=nrs.indexOf(nr);
-  $("blFach").textContent=(fall.sub||'').replace(/^IHK-Prüfung:\s*/,'');
-  $("blCount").textContent='Aufgabe '+nr+' von '+nrs.length+(auf.pts?(' · '+auf.pts+' Punkte'):'');
-  $("blStepper").innerHTML=blStepperHTML();
+  var pruef=/^P-/.test(fall.id||'');
+  var datum=(/–\s*([^–]+)$/.exec(fall.title||'')||[])[1]||fall.termin||'';
+  var fach=(fall.sub||'').replace(/^IHK-Prüfung:\s*/,'');
+  $("blFach").textContent=pruef?(fach+(datum?' · '+datum:'')):('Fallaufgabe · '+fach);
+  $("blCount").textContent=(pruef||nrs.length>1)?('Aufgabe '+nr):(fall.title||'Fallaufgabe');
+  $("blChips").innerHTML=blChipsHTML(nr);
+  var st=$("blStepper");
+  st.hidden=nrs.length<2;
+  st.innerHTML=blStepperHTML();
+  blFortschrittHTML();
 
   var hin=$("blHinweis");
   hin.hidden=!fall.hinweis;
   if(fall.hinweis)hin.textContent=fall.hinweis;
 
   var ctx=$("blCase");
-  ctx.hidden=!fall.context;
-  if(fall.context){
+  ctx.hidden=!blHatAusgangslage(fall);
+  if(!ctx.hidden){
     ctx.open=state.ctxOpen;
-    ctx.innerHTML='<summary class="cc-head"><span class="cc-tag">IHK-Prüfung</span>'+
-      '<span class="cc-title"></span><span class="cc-more">Ausgangssituation</span></summary><p class="cc-ctx"></p>';
-    ctx.querySelector(".cc-title").textContent=fall.title||'';
-    ctx.querySelector(".cc-ctx").textContent=fall.context;
+    ctx.innerHTML='<summary class="cc-head"><span class="cc-tag">'+(pruef?'Ausgangssituation':'Fall')+'</span>'+
+      '<span class="cc-title"></span><span class="cc-more">'+(pruef?'Lesen':'Ausgangslage')+'</span></summary><div class="cc-ctx rt"></div>';
+    ctx.querySelector(".cc-title").textContent=pruef?'Gilt für alle Aufgaben dieser Prüfung':(fall.title||'');
+    ctx.querySelector(".cc-ctx").innerHTML=rtHTML(fall.context);
     ctx.ontoggle=function(){
       if(ctx.open===state.ctxOpen)return;
       state.ctxOpen=ctx.open;state.ctxTouched=true;
     };
   }
 
-  var h='<div class="bl-akopf"><div class="bl-atitel"><span class="bl-anr">Aufgabe '+nr+'</span>';
-  if(auf.pts)h+='<span class="bl-apts">'+auf.pts+' Punkte</span>';
-  h+='<span class="bl-pts">'+teile.length+' Teilaufgabe'+(teile.length===1?'':'n')+'</span></div>';
-  if(auf.sit)h+='<div class="bl-sit">'+esc(auf.sit)+'</div>';
-  h+=blAnlagenHTML(auf)+'</div>';
+  var h='';
+  if(auf.sit)h+='<div class="bl-sit rt"><p class="bl-slbl">Ausgangslage</p>'+rtHTML(auf.sit)+'</div>';
+  h+='<div class="bl-akopf">'+blAnlagenHTML(auf)+'</div>';
   teile.forEach(function(q){h+=blTeilHTML(q);});
   $("blAufgabe").innerHTML=h;
 
@@ -2295,40 +3146,41 @@ function renderBlatt(){
   var f='';
   if(pos>0)f+='<button type="button" class="bl-nav" id="blPrev">← Aufgabe '+nrs[pos-1]+'</button>';
   if(offen<teile.length)
-    f+='<button type="button" class="bl-nav" id="blAlle">Alle Lösungen dieser Aufgabe aufdecken</button>';
+    f+='<button type="button" class="bl-nav" id="blAlle">Alle Lösungen aufdecken</button>';
   else
-    f+='<button type="button" class="bl-nav" id="blExport">Diese Aufgabe von Claude prüfen lassen</button>';
+    f+='<button type="button" class="bl-nav" id="blExport">Von Claude prüfen lassen</button>';
   f+='<button type="button" class="bl-nav primary" id="blNext">'+
      (pos>=nrs.length-1?'Zum Ergebnis →':('Aufgabe '+nrs[pos+1]+' →'))+'</button>';
   $("blFoot").innerHTML=f;
   blBinden();
+  /* Die aktuelle Aufgabe in der Leiste sichtbar halten (viele Aufgaben). */
+  var cur=st.querySelector('.cur');
+  if(cur)st.scrollLeft=Math.max(0,cur.offsetLeft-st.clientWidth/2+cur.offsetWidth/2);
 }
 
 function blBinden(){
-  $("blStepper").querySelectorAll('.bl-pill').forEach(function(b){
-    b.onclick=function(){blOeffnen(parseInt(b.dataset.nr,10));};
-  });
+  blBindenStepper();
   var box=$("blAufgabe");
   box.querySelectorAll('[data-antwort]').forEach(function(t){
     t.onfocus=function(){state.blattZiel=t.dataset.antwort;};
-    t.oninput=function(){
-      oaSet(t.dataset.antwort,t.value);
-      var karte=t.closest('.bl-teil');
-      if(karte)karte.classList.toggle('done',!!t.value.trim());
-      $("blStepper").innerHTML=blStepperHTML();
-      blBindenStepper();
+    t.oninput=function(){oaSet(t.dataset.antwort,t.value);blNachEingabe(t.dataset.antwort);};
+  });
+  rwBinden(box,function(id){state.blattZiel=id;blNachEingabe(id);});
+  box.querySelectorAll('[data-rwauf]').forEach(function(b){
+    b.onclick=function(){
+      var karte=b.closest('.bl-teil'),rw=karte&&karte.querySelector('.rw');
+      if(!rw)return;
+      rw.hidden=false;b.remove();
+      var lbl=karte.querySelector('.aw-lbl');if(lbl)lbl.textContent='Erläuterung · optional';
+      var ta=karte.querySelector('[data-antwort]');if(ta)ta.classList.add('klein');
+      var f=rw.querySelector('.rw-f');if(f)f.focus();
     };
   });
   box.querySelectorAll('.qtab-in').forEach(function(i){
     i.oninput=function(){
       otSet(i.dataset.tk,i.dataset.rc,i.value);
-      $("blStepper").innerHTML=blStepperHTML();
-      blBindenStepper();
       var karte=i.closest('.bl-teil');
-      if(karte){
-        var q=state.pool.filter(function(x){return x.id===karte.dataset.id;})[0];
-        if(q)karte.classList.toggle('done',blBeantwortet(q));
-      }
+      if(karte)blNachEingabe(karte.dataset.id);else blKopfNeu();
     };
   });
   box.querySelectorAll('[data-auf]').forEach(function(b){
@@ -2364,21 +3216,7 @@ function blBinden(){
       };
     });
   });
-  box.querySelectorAll('[data-score]').forEach(function(sc){
-    var id=sc.dataset.score;
-    var q=state.pool.filter(function(x){return x.id===id;})[0];if(!q)return;
-    var mx=taskMaxPoints(q);
-    sc.querySelectorAll('.oas-p').forEach(function(b){
-      b.onclick=function(){
-        var pt=parseInt(b.dataset.p,10);
-        opSet(id,pt);
-        sc.querySelectorAll('.oas-p').forEach(function(x){x.classList.remove('sel');});
-        b.classList.add('sel');
-        sc.querySelector('.oas-hint').textContent='Bewertet: '+pt+' von '+mx+' Punkten';
-        blFortschritt(q,pt,mx);
-      };
-    });
-  });
+  scoreBinden(box,function(q,pt,mx){blFortschritt(q,pt,mx);blKopfNeu();});
   var pv=$("blPrev"),nx=$("blNext"),al=$("blAlle"),ex=$("blExport");
   var nrs=blNummern(),pos=nrs.indexOf(state.blattNr);
   if(pv)pv.onclick=function(){if(pos>0)blOeffnen(nrs[pos-1]);};
@@ -2462,7 +3300,7 @@ function blExport(nr){
       if(b)L.push('','[Zur Teilaufgabe gehört eine Abbildung: '+(b.t||'Anlage')+']');}
     L.push('');
     L.push('MEINE ANTWORT:');
-    L.push((oaGet(q.id)||'').trim()||'— leer abgegeben —');
+    L.push(antwortText(q.id)||'— leer abgegeben —');
     L.push('');
     L.push(q.amtlich?'AMTLICHER LÖSUNGSHINWEIS (IHK):':'MUSTERLÖSUNG (zu prüfen):');
     L.push(q.a||q.e||'');
@@ -2587,7 +3425,9 @@ $("btnCases").addEventListener("click",function(){startRound('cases');});
    die außerhalb dieser Kapselung liegt). */
 window.KVM_startCase=function(id,startIdx){startRound('cases',id,startIdx);};
 /* Welche Teilaufgaben hat der Nutzer schon selbst beantwortet? */
-window.KVM_hasAnswer=function(id){return !!oaGet(id);};
+window.KVM_hasAnswer=function(id){return !!(oaGet(id)||rwHat(id));};
+/* Selbst vergebene Punkte einer Teilaufgabe (null = noch nicht bewertet). */
+window.KVM_punkte=function(id){return opGet(id);};
 /* Brücke zum Formelbuch (eigener Skriptblock): einen Rechenweg an die Antwort
    der offenen Teilaufgabe anhängen. Gibt „Aufgabe 5 a)“ zurück oder null. */
 window.KVM_blattAntwort=function(txt){
@@ -2655,7 +3495,8 @@ document.addEventListener("keydown",function(ev){
   var zusatzN=ZUSATZ_FACHER.filter(function(f){return (fachCountsCache[f]||0)>0;}).length;
   var pruefN=CASES.filter(function(c){return /^P-/.test(c.id);}).length;
   $("homeSub").innerHTML="<b>"+fmtN(total)+" Wissensfragen</b> · 4 Basisqualifikationen + "+zusatzN+" Fachrichtung"+(zusatzN===1?"":"en")+
-    (pruefN?" · "+fmtN(pruefN)+" Original-IHK-Prüfungen":"")+" · Fahrschul-Prinzip";
+    (pruefN?" · <b>"+fmtN(pruefN)+"</b> Original-IHK-Prüfungen":"");
+  if(pruefN&&$("pruefTileDesc"))$("pruefTileDesc").textContent=fmtN(pruefN)+" Prüfungen mit amtlichen Lösungshinweisen · Rechenweg und ausfüllbare Anlagen";
   $("footerNote").innerHTML="Übungsfragen eigenständig formuliert, orientiert am DIHK-Rahmenplan und an Krause/Krause (Kiehl). Rechtsstände und veränderliche Werte (z. B. Beiträge) Stand 2025, ohne Gewähr.";
   // Standard-Fach: erste aktive Basisqualifikation
   state.fach=1;
@@ -4499,10 +5340,9 @@ function render(){
   bereiche.sort(function(a,b){return bereichRang(a)-bereichRang(b)||(a<b?-1:a>b?1:0);});
   var sichtbar=info.filter(function(x){return !filterBereich||x.bereich===filterBereich;});
 
-  var h='<p class="pr-lead">'+alle.length+' Prüfung'+(alle.length===1?'':'en')+' verfügbar. '
-      +'Jede enthält die vollständige Ausgangssituation und alle Aufgaben mit ihren '
-      +'Teilaufgaben und der offiziellen Punktzahl. Du beantwortest jede Teilaufgabe '
-      +'selbst und deckst danach die amtlichen Lösungshinweise auf.</p>';
+  var h='<p class="pr-lead"><b>'+alle.length+' Original-Prüfungen</b> mit amtlichen Lösungshinweisen: '
+      +'Aufgaben wie auf dem Prüfungsbogen lösen – mit Rechenweg und ausfüllbaren Anlagen –, '
+      +'dann die Lösung aufdecken und dir selbst Punkte geben.</p>';
   h+='<div class="pr-filter" role="group" aria-label="Nach Prüfungsbereich filtern">'+
      '<button class="pr-chip'+(filterBereich?'':' sel')+'" data-fach="" aria-pressed="'+(filterBereich?'false':'true')+'">Alle <span class="pr-n">'+info.length+'</span></button>';
   bereiche.forEach(function(b){
@@ -4523,27 +5363,34 @@ function render(){
     h+='<details class="pr-termin"'+(offen?' open':'')+'><summary class="pr-group">'+esc(key)+
        ' <span class="pr-anz">'+items.length+'</span></summary>';
     items.forEach(function(x){
-      var bearbeitet=x.c.steps.filter(function(s){
-        return window.KVM_hasAnswer&&window.KVM_hasAnswer(s.id);}).length;
-      var aufgaben=x.c.aufgaben||[];
+      var steps=x.c.steps||[],aufgaben=x.c.aufgaben||[];
+      var fertig=function(s){return !!(window.KVM_hasAnswer&&window.KVM_hasAnswer(s.id));};
+      var bearbeitet=steps.filter(fertig).length,pkt=0,bew=0;
+      steps.forEach(function(s){var p=window.KVM_punkte?window.KVM_punkte(s.id):null;if(p!=null){pkt+=p;bew++;}});
+      /* Weiter an der ersten noch offenen Teilaufgabe */
+      var weiter=-1;
+      if(bearbeitet&&bearbeitet<steps.length)for(var i=0;i<steps.length;i++)if(!fertig(steps[i])){weiter=i;break;}
+      var kurz=(/^P-([A-Z]+)-/.exec(x.c.id)||[])[1]||'';
+      var pct=steps.length?Math.round(bearbeitet/steps.length*100):0;
       h+='<div class="pr-item">'
-        +'<div class="pr-top"><span class="pr-date">'+esc(x.bereich)+'</span>'
-        +'<span class="pr-badge">'+(x.punkte?esc(x.punkte)+' Punkte':'Prüfung')+'</span></div>'
-        +'<div class="pr-meta">'+esc(x.datum)+' · '+aufgaben.length+' Aufgaben mit '
-        +x.c.steps.length+' Teilaufgaben · 180 Minuten'
-        +(bearbeitet?' · <b>'+bearbeitet+' bearbeitet</b>':'')+'</div>'
+        +'<div class="pr-top"><span class="pr-ic pr-'+esc(kurz.toLowerCase())+'" aria-hidden="true">'+esc(kurz)+'</span>'
+        +'<div class="pr-tt"><div class="pr-date">'+esc(x.bereich)+'</div>'
+        +'<div class="pr-meta">'+esc(x.datum)+' · '+aufgaben.length+' Aufgaben · '+steps.length+' Teile</div></div>'
+        +'<span class="pr-badge">'+(x.punkte?esc(x.punkte)+' P':'Prüfung')+'</span></div>'
+        +(bearbeitet||bew?'<div class="pr-prog"><span class="pr-bar" aria-hidden="true"><i style="width:'+pct+'%"></i></span>'
+          +'<span class="pr-pt"><b>'+bearbeitet+'</b>/'+steps.length+' Teile'+(bew?' · <b>'+pkt+'</b> P':'')+'</span></div>':'')
         +'<div class="pr-actions">'
-        +'<button class="pr-btn solid" data-start="'+esc(x.c.id)+'">Prüfung starten</button>'
-        +'<button class="pr-btn" data-copy="'+esc(x.c.id)+'">Für KI-Prüfung kopieren</button>'
+        +'<button class="pr-btn solid" data-start="'+esc(x.c.id)+'"'+(weiter>=0?' data-step="'+weiter+'"':'')+'>'
+        +(weiter>=0?'Weiter bei Aufgabe '+esc(steps[weiter].nr)+' →':(bearbeitet?'Prüfung öffnen':'Prüfung starten'))+'</button>'
+        +'<button class="pr-btn" data-copy="'+esc(x.c.id)+'">Für KI kopieren</button>'
         +'</div>'
         +'<details class="pr-steps"><summary>Einzelne Aufgabe öffnen</summary><div class="pr-aufg">'
         + aufgaben.map(function(a){
             var erste=-1,chips='';
-            x.c.steps.forEach(function(s,i){
+            steps.forEach(function(s,i){
               if(s.nr!==a.nr)return;
               if(erste<0)erste=i;
-              var fertig=window.KVM_hasAnswer&&window.KVM_hasAnswer(s.id);
-              chips+='<span class="pa-t'+(fertig?' done':'')+'">'+esc(s.teil)+'</span>';
+              chips+='<span class="pa-t'+(fertig(s)?' done':'')+'">'+esc(s.teil)+'</span>';
             });
             return '<button class="pr-a" data-start="'+esc(x.c.id)+'" data-step="'+erste+'">'
               +'<span class="pa-nr">Aufgabe '+a.nr+'</span>'
@@ -4557,10 +5404,9 @@ function render(){
   });
   if(!sichtbar.length)h+='<p class="pr-lead">Für dieses Fach ist noch keine Prüfung hinterlegt.</p>';
   h+='<div class="pr-hint"><b>Zu den Lösungen:</b> Hinterlegt sind die amtlichen '
-    +'Lösungshinweise der IHK zur jeweiligen Prüfung, samt VO-Bezug und – wo angegeben – '
-    +'der Punkteverteilung. Mit „Für KI-Prüfung kopieren“ erhältst du die komplette '
-    +'Prüfung samt Lösungshinweisen als Text; füge ihn in eine KI deiner Wahl ein, '
-    +'um deine eigene Antwort bewerten zu lassen.</div>';
+    +'Lösungshinweise der IHK samt VO-Bezug und – wo angegeben – Punkteverteilung. '
+    +'„Für KI kopieren“ liefert die ganze Prüfung als Text, etwa um eigene Antworten '
+    +'von einer KI bewerten zu lassen.</div>';
   list.innerHTML=h;
 
   list.querySelectorAll('[data-fach]').forEach(function(b){
