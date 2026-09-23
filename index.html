@@ -990,6 +990,7 @@
 .rt-tbl thead th{background:var(--surface-2);color:var(--petrol-ink-deep);font-size:.9em;font-weight:700;border-bottom:1px solid var(--line);vertical-align:bottom}
 .rt-tbl tbody tr:nth-child(even){background:var(--surface)}
 .rt-tbl .num{text-align:right;white-space:nowrap}
+.rt-tbl td.box{text-align:center;color:var(--muted)}
 .rt-tbl.kv td:first-child{color:var(--ink-soft)}
 .rt-tbl.kv td+td{font-weight:600;color:var(--ink)}
 @media (max-width:560px){.rt-tbl.kv .num{white-space:normal;text-align:left;min-width:7ch}}
@@ -2346,10 +2347,15 @@ function rtRechnung(l){
 function rtKopf(rows,n){
   if(rows.length<2)return false;
   var k=rows[0].filter(function(z){return z;});
-  if(k.length<2||k.some(rtIstZahl))return false;
-  /* leeres Eckfeld über der Beschriftungsspalte: die Zeile trägt Spaltenköpfe */
+  if(k.length<2)return false;
+  /* leeres Eckfeld über der Beschriftungsspalte: die Zeile trägt Spaltenköpfe
+     (auch Jahreszahlen oder eine Skala „++ | + | 0 | −“) */
   if(!rows[0][0]&&k.length===n-1)return true;
+  if(k.some(rtIstZahl))return false;
   var rest=rows.slice(1);
+  /* Formular zum Ausfüllen: darunter ist nur die erste Spalte beschriftet,
+     die übrigen Felder sind leer oder Ankreuzkästchen (Checkliste, Matrix) */
+  if(n>=3&&rest.every(function(r){return r.slice(1).every(function(z){return !z||/^[☐□○◯]$/.test(z);});}))return true;
   if(n>=3)return rest.some(function(r){return r.slice(1).some(rtIstZahl);});
   return rows.length>=3&&rest.every(function(r){return rtIstZahl(r[1]||'');});
 }
@@ -2368,7 +2374,9 @@ function rtTabelle(rows){
     body.forEach(function(r){if(r[c]){g++;if(rtIstZahl(r[c]))z++;}});
     num.push(c>0&&g>0&&z>=g*0.6);
   }
-  function zelle(tag,z,c){return '<'+tag+(num[c]?' class="num"':'')+'>'+rtInline(z)+'</'+tag+'>';}
+  function zelle(tag,z,c){
+    var cls=num[c]?'num':(/^[☐□○◯]$/.test(z)?'box':'');
+    return '<'+tag+(cls?' class="'+cls+'"':'')+'>'+rtInline(z)+'</'+tag+'>';}
   var h='<table>';
   if(kopf)h+='<thead><tr>'+rows[0].map(function(z,c){return zelle('th',z,c);}).join('')+'</tr></thead>';
   h+='<tbody>'+body.map(function(r){return '<tr>'+r.map(function(z,c){return zelle('td',z,c);}).join('')+'</tr>';}).join('')+'</tbody></table>';
