@@ -92,7 +92,7 @@ Fehlt das, landet man nach dem Login auf der voreingestellten Site URL (oft
 aus Abschnitt 2.
 
 Tabellen und Funktionen kommen **nicht** über Pages. Sie werden einmal per SQL-Skript
-im Supabase-SQL-Editor angelegt (Abschnitte 1, 5 und 6). Bis dahin blendet die Web-App
+im Supabase-SQL-Editor angelegt (Abschnitte 1, 5, 6 und 7). Bis dahin blendet die Web-App
 die betroffene Funktion aus.
 
 ## So funktioniert der Sync
@@ -162,6 +162,32 @@ Die Fragennummer (z. B. `B-MW-901` oder `P-OK-20221115-s3`) findet sich in
 
 In der **Datenschutzerklärung** ergänzen: Meldungen zu Fragen (Inhalt, Kontext und
 bei Anmeldung das Konto), Zweck „Fehler in den Lerninhalten beheben“.
+
+## 7. Lerngruppen (optional)
+
+Aufbauend auf der Wochenrangliste (Abschnitt 5) können Lernende **private Gruppen**
+gründen, etwa für ihren Meisterkurs. Beigetreten wird mit einem 6-stelligen Code oder
+einem Einladungslink (`…/#gruppe=K7M2QX`). In der Gruppe sehen sich die Mitglieder
+gegenseitig wie in der Rangliste: Spitzname, Antworten dieser Woche, Prüfungsreife.
+
+Freigeschaltet wird das mit [`docs/supabase-gruppen.sql`](docs/supabase-gruppen.sql),
+**nach** `docs/supabase-rangliste.sql` auszuführen. Solange es fehlt, zeigt die
+Rangliste keine Gruppen-Reiter.
+
+- **Voraussetzung:** Nur wer der Rangliste beigetreten ist, kann gründen oder beitreten.
+- **Grenzen:** höchstens 5 Gruppen je Person und 200 Mitglieder je Gruppe.
+- **Codes:** ohne 0/O/1/I. Falsche Codes kosten eine halbe Sekunde, damit sich Codes nicht
+  durchprobieren lassen.
+- **Aufräumen:**
+  - Wer die Rangliste verlässt oder sein Konto löscht, verlässt alle Gruppen.
+  - Die letzte Person nimmt die Gruppe mit.
+  - Geht die Gründerin, übernimmt das dienstälteste Mitglied.
+- **Kein Direktzugriff:** Tabellen `gruppen` und `gruppen_mitglieder` sind gesperrt. Es gibt
+  fünf Funktionen: `gruppe_gruenden`, `gruppe_beitreten`, `gruppe_verlassen`,
+  `gruppen_meine`, `gruppe_stand`.
+
+In der **Datenschutzerklärung** zur Rangliste ergänzen: In Lerngruppen sehen die
+Mitglieder dieselben Angaben wie in der Rangliste, dazu den Gruppennamen.
 
 ## Apple-Login später
 Die Auth-Architektur ist anbieter-offen (`AuthService`). „Sign in with Apple"
