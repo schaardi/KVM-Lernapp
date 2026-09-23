@@ -1117,38 +1117,38 @@ Großbuchstaben, Buchstabenabstand 1,3, `kMuted`; rechts optional ein Zusatz in 
 
 **CSS**
 - Startseite: Kommentar „Startseite“ Z. 875
-- Texte: „Aufgabentexte: Tabellen …“ Z. 1067
-- Aufgabenblatt Z. 1099
-- Rechenweg Z. 1217
+- Texte: „Aufgabentexte: Tabellen …“ Z. 1094
+- Aufgabenblatt Z. 1126
+- Rechenweg Z. 1244
 
 **JS**
 - Renderer:
-  - `rtIstRechnung` Z. 2434
-  - `rtKopf` Z. 2454
-  - `rtTabelle` Z. 2469
-  - `rtHTML` Z. 2492
+  - `rtIstRechnung` Z. 2554
+  - `rtKopf` Z. 2574
+  - `rtTabelle` Z. 2589
+  - `rtHTML` Z. 2612
 - Rechenweg:
-  - `rwTokens` Z. 2558
-  - `rwRechne` Z. 2639
-  - `rwZeileText` Z. 2677
-  - `rwHTML` Z. 2710
-  - `rwBinden` Z. 2723
-- Bewertung: `scoreHTML` Z. 2810
+  - `rwTokens` Z. 2678
+  - `rwRechne` Z. 2759
+  - `rwZeileText` Z. 2797
+  - `rwHTML` Z. 2830
+  - `rwBinden` Z. 2843
+- Bewertung: `scoreHTML` Z. 2930
 - Aufgabenblatt:
-  - `blStepperHTML` Z. 3098
-  - `blFortschrittHTML` Z. 3116
-  - `blLoesungHTML` Z. 3185
-  - `blRechenteil` Z. 3223
-  - `blTeilHTML` Z. 3229
-  - `renderBlatt` Z. 3268
+  - `blStepperHTML` Z. 3218
+  - `blFortschrittHTML` Z. 3236
+  - `blLoesungHTML` Z. 3305
+  - `blRechenteil` Z. 3343
+  - `blTeilHTML` Z. 3349
+  - `renderBlatt` Z. 3388
 - Startseite:
-  - `tagZaehlen` Z. 1698
-  - `renderFachGroup` Z. 1866
-  - `renderHero` Z. 1894
-  - `erfolgeListe` Z. 1922
-  - `renderAktiv` Z. 1963
-  - `renderPruefLast` Z. 1980
-- Prüfungsliste: `items.forEach` in `render()` Z. 5939
+  - `tagZaehlen` Z. 1726
+  - `renderFachGroup` Z. 1894
+  - `renderHero` Z. 1922
+  - `erfolgeListe` Z. 2042
+  - `renderAktiv` Z. 2083
+  - `renderPruefLast` Z. 2100
+- Prüfungsliste: `items.forEach` in `render()` Z. 6059
 
 Zeilennummern: Stand dieses Commits.
 
@@ -1296,18 +1296,18 @@ Serverseitig abgesichert:
 - Austreten führt zurück zum Beitrittsformular. Der Eintrag ist serverseitig gelöscht.
 
 ### Referenz Web-Implementierung (`index.html` auf `claude/ui-design-improvement-my0f66`)
-- **HTML:** `#vgKopf` / `#vgBox`, Z. 1395
-- **CSS:** Kommentar „Vergleich: freiwillige Wochenrangliste“, Z. 1017
+- **HTML:** `#vgKopf` / `#vgBox`, Z. 1423
+- **CSS:** Kommentar „Vergleich: freiwillige Wochenrangliste“, Z. 1044
 - **JS** im Cloud-Block:
 
   | Funktion | Zeile |
   |---|---|
-  | `isoWoche` | 3702 |
-  | `wocheAntworten` | 3709 |
-  | `vgWerte` | 3714 |
-  | `vgMeldenSpaeter` | 3719 |
-  | `vgLaden` | 3726 |
-  | `vgZeigen` | 3753 |
+  | `isoWoche` | 3822 |
+  | `wocheAntworten` | 3829 |
+  | `vgWerte` | 3834 |
+  | `vgMeldenSpaeter` | 3839 |
+  | `vgLaden` | 3846 |
+  | `vgZeigen` | 3873 |
 
 - **SQL:** `docs/supabase-rangliste.sql`. Lokal geprüft mit PGlite: Rechte,
   Rangfolge, Wochenwechsel, zwei Geräte, Namensregeln, Austritt, Kontolöschung.
@@ -1540,26 +1540,143 @@ Der Rechner bearbeitet keinen Text, sondern eine Liste von Zeichen:
 - „4.400“ im Ergebnisfeld zählt als 4400.
 
 ### Referenz Web-Implementierung (`index.html` auf `claude/ui-design-improvement-my0f66`)
-- **HTML:** `#mCalc`, Z. 1558
+- **HTML:** `#mCalc`, Z. 1586
 - **CSS:** Kommentar „Taschenrechner: Anzeige mit Verlauf …“, Z. 532
 - **JS:**
 
   | Funktion | Zeile |
   |---|---|
-  | `rwTokens` (Kern: Zeichen) | 2558 |
-  | `rwFunktion` (Winkel, Wurzel) | 2596 |
-  | `rwAuswerten` (Kern: Rechnen) | 2614 |
-  | `parseCalcNum` | 2927 |
-  | `calcDock` (Andocken, Ausweichen) | 3866 |
-  | `rkKern` (Zeichenliste → Kern) | 3930 |
-  | `rkAusdruck` (Anzeige, Text) | 3963 |
-  | `rkFunktion` | 4014 |
-  | `rkVorzeichen` | 4024 |
-  | `rkZeit` | 4042 |
-  | `rkGleich` | 4056 |
-  | `rkTaste` | 4070 |
-  | `rkZielVon` / `rkUebernehmen` | 4091 / 4114 |
-  | `FN_TASTEN` / `TASTEN` | 4135 |
-  | `rkZeigen` | 4145 |
+  | `rwTokens` (Kern: Zeichen) | 2678 |
+  | `rwFunktion` (Winkel, Wurzel) | 2716 |
+  | `rwAuswerten` (Kern: Rechnen) | 2734 |
+  | `parseCalcNum` | 3047 |
+  | `calcDock` (Andocken, Ausweichen) | 3986 |
+  | `rkKern` (Zeichenliste → Kern) | 4050 |
+  | `rkAusdruck` (Anzeige, Text) | 4083 |
+  | `rkFunktion` | 4134 |
+  | `rkVorzeichen` | 4144 |
+  | `rkZeit` | 4162 |
+  | `rkGleich` | 4176 |
+  | `rkTaste` | 4190 |
+  | `rkZielVon` / `rkUebernehmen` | 4211 / 4234 |
+  | `FN_TASTEN` / `TASTEN` | 4255 |
+  | `rkZeigen` | 4265 |
+
+Zeilennummern: Stand dieses Commits.
+
+---
+
+## FR-006 · Prüfungstermin und Lernplan
+
+**Status App-Session:** ⏳ offen
+**Web umgesetzt:** ✅ `claude/ui-design-improvement-my0f66` (Commit „Prüfungstermin und Lernplan …“)
+**Priorität:** hoch. Das Tagesziel ist der tägliche Anlass zum Lernen.
+
+### Ziel / Framing
+Lernende tragen ihren IHK-Termin ein. Die Heute-Karte zeigt dann:
+- wie viele Tage bleiben
+- wie viele Fragen heute dran sind
+- ob man bei seinem Tempo rechtzeitig prüfungsreif wird
+
+**Ziel des Plans** ist die Ampel „prüfungsreif“, also 70 % Prüfungsreife wie im Ring
+(`ampel()`), erreicht bis zum Tag vor der Prüfung.
+
+### Speicher
+`SharedPreferences` **`kvm_pruefung`** (Web: localStorage, gleicher Schlüssel):
+```json
+{"datum": "2026-11-04", "tag": 20719, "n": 3666, "ziel": 245}
+```
+- `datum`: Prüfungstag (ISO).
+- `tag`: Tagindex, an dem `ziel` festgelegt wurde. Gleiche Zählung wie `kvm_tage`:
+  `floor((jetzt − Zeitzonenversatz) / 86 400 000)`.
+- `n`: Zahl der aktiven Fragen bei der Festlegung.
+- `ziel`: Tagesziel (Fragen).
+
+Der Termin bleibt auf dem Gerät und wird (noch) nicht synchronisiert. Ein Sonderschlüssel
+in `progress.data` würde den Merge beider Clients stören.
+
+### Rechnung
+Mit N = aktive Fragen, box = Leitner-Box, `MASTER_BOX` = 3:
+- `noetig` = max(0, ⌈0,7 · 3 · N − Σ min(box, 3)⌉). Das sind die richtigen Antworten
+  bis 70 %.
+- `quote`:
+  - Trefferquote richtig ÷ (richtig + falsch) über den ganzen Lernstand, begrenzt auf 0,5–0,95
+  - unter 30 Antworten: 0,75
+- `tage` = Prüfungstag − heute. Heute zählt als Lerntag, der Prüfungstag nicht.
+- `ziel` = ⌈noetig ÷ quote ÷ tage⌉.
+  - Ist `noetig` = 0: die Zahl der heute fälligen Fragen.
+  - Bei `tage` ≤ 0: 0.
+  - **Einmal je Tag festlegen:** neu nur, wenn `tag` ≠ heute oder `n` sich geändert hat
+    (Fächerwahl), oder wenn der Termin neu gespeichert wird. Sonst schrumpfte das Ziel
+    beim Lernen.
+- `geschafft` = Antworten heute (`kvm_tage[heute]`).
+- `tempo` = Antworten der letzten 7 Tage ohne heute ÷ 7.
+- `prognose` = heute + ⌈noetig ÷ (tempo · quote)⌉, nur wenn `noetig` > 0 und `tempo` ≥ 1.
+
+**Referenzfall:** N = 3.666, kein Fortschritt, 42 Tage → `noetig` = 7.699, `ziel` =
+⌈7.699 ÷ 0,75 ÷ 42⌉ = **245**.
+
+### Anzeige (Block in der Heute-Karte)
+- **Platz:**
+  - breit (≥ 900): dritte Spalte der Karte, 250–320 breit
+  - sonst: unter „Jetzt lernen“
+- **Aussehen:** Fläche weiß 8 %, Rand weiß 17 %, Radius 14, Innenabstand 12/14.
+
+**Zustände:**
+
+| Zustand | Inhalt |
+|---|---|
+| kein Termin | „Wann ist deine Prüfung?“ · „Trag den Termin ein – die App rechnet dir ein Tagesziel bis zur Prüfungsreife aus.“ · Knopf „Termin eintragen“ |
+| Formular | „Prüfungstermin“ · Datumsauswahl (frühestens morgen) · „Speichern“ (hell) · „Entfernen“ (nur mit Termin) · „Abbrechen“ |
+| vorbei | „Prüfung vorbei“ · „Deine Prüfung war am Mi., 4. Nov. 2026. Steht ein neuer Termin an?“ · „Neuen Termin eintragen“ |
+| heute | „Heute ist Prüfung“ · „Viel Erfolg! Kurz vorher helfen die fälligen Fragen mehr als neuer Stoff.“ |
+| morgen / N Tage | Kopf, Tageszielzeile und Statuszeile (siehe unten) |
+
+Fehler im Formular: „Bitte ein Datum wählen.“ / „Der Termin muss in der Zukunft liegen.“
+
+**Kopf:**
+- „Noch 42 Tage“ (Barlow Condensed 23, Versalien) + „bis zur Prüfung am Mi., 4. Nov. 2026“
+- bei 1 Tag: „Morgen ist Prüfung“ + Datum
+- rechts der Link „ändern“
+
+**Tageszielzeile:** „Heute“ · „20 / 142“ (Mono) · Balken (grün `#8FE3AA` auf weiß 18 %) ·
+„Fragen“. Nur bei `ziel` > 0.
+
+**Statuszeile:** Ampel-Punkt + Text. Es gilt die erste passende Regel:
+1. `noetig` = 0:
+   - Ampel grün
+   - „Ziel erreicht: 70 % prüfungsreif. Halte den Stand mit den fälligen Fragen.“
+   - Ist nichts fällig: „… Heute ist nichts fällig – probier eine Original-Prüfung.“
+2. `geschafft` ≥ `ziel`: grün, „Tagesziel geschafft – stark! Morgen geht es weiter.“
+3. Prognose vor dem Prüfungstag: grün, „Im Plan: Mit Ø 64 Fragen am Tag bist du am 28. Okt.
+   prüfungsreif (70 %).“
+4. Prognose am oder nach dem Prüfungstag:
+   - Ampel rot bei `ziel` > 120, sonst gelb
+   - „Rückstand: Mit Ø 29 Fragen am Tag wärst du erst am 15. Apr. 2027 prüfungsreif. Mit
+     dem Tagesziel klappt es bis zur Prüfung.“
+5. Ohne Tempo, eingestuft nach `ziel`:
+   - bis 60: grün, „Gut machbar“
+   - bis 120: gelb, „Sportlich“
+   - darüber: rot, „Sehr knapp“
+   - Text: „…: Mit 245 Fragen am Tag bist du bis zur Prüfung zu 70 % prüfungsreif.“
+- Zusatz bei `noetig` > 0 und `ziel` > 150: „Setz Schwerpunkte, z. B. mit „Schwächen üben“.“
+- Datumsformat:
+  - kurz „28. Okt.“, mit Jahr, wenn es nicht das laufende ist
+  - lang „Mi., 4. Nov. 2026“
+
+### Abnahme
+- Termin in 42 Tagen ohne Fortschritt: „Noch 42 Tage“, „Heute 0 / 245“ (bei 3.666 Fragen).
+- Drei Antworten später: „Heute 3 / 245“. Das Ziel bleibt.
+- Mit Ø 400 Antworten in den letzten 7 Tagen erscheint „Im Plan …“, mit Ø 20 „Rückstand …“.
+- Morgen, heute und ein vergangener Termin zeigen den jeweiligen Zustand.
+- „Entfernen“ führt zurück zu „Wann ist deine Prüfung?“.
+
+### Referenz Web-Implementierung (`index.html` auf `claude/ui-design-improvement-my0f66`)
+- **HTML:** `#planBox` in `.hero-main`, Z. 1349
+- **CSS:** Kommentar „Prüfungstermin und Lernplan: eigener Block …“, Z. 927
+- **JS:**
+  - Block-Kommentar „Prüfungstermin und Lernplan“, Z. 1937
+  - `planRechnen`, Z. 1952
+  - `renderPlan`, Z. 1968 (aufgerufen am Ende von `renderHero`)
 
 Zeilennummern: Stand dieses Commits.
