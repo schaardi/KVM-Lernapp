@@ -363,6 +363,9 @@
   .btn-ok:hover{background:color-mix(in srgb,var(--ok-soft) 82%,var(--ok))}
   .btn-no{flex:1 1 0;min-height:48px;border:1.5px solid var(--err);background:var(--err-soft);color:var(--err-ink);border-radius:10px;font-size:14.5px;font-weight:600;padding:12px}
   .btn-no:hover{background:color-mix(in srgb,var(--err-soft) 85%,var(--err))}
+  .btn-teil{flex:1 1 0;min-height:48px;border:1.5px solid var(--amber);background:var(--amber-soft);color:var(--amber-ink);border-radius:10px;font-size:14.5px;font-weight:600;padding:12px}
+  .btn-teil:hover{background:color-mix(in srgb,var(--amber-soft) 85%,var(--amber))}
+  .or-ohne{border-color:var(--line-strong);background:var(--paper);color:var(--ink)}
 
   /* RESULT */
   .res-hero{display:flex;align-items:center;gap:18px;padding:22px 18px;border-bottom:1px solid var(--line);background:var(--head-bg);flex-wrap:wrap}
@@ -429,6 +432,13 @@
 
   /* Darstellung (Automatisch / Hell / Dunkel) */
   .theme-row{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;margin-top:14px}
+  /* Lern-Erinnerung: Uhrzeit + Kalendereintrag (.ics) */
+  .erinn-row{padding-top:14px;border-top:1px solid var(--line-soft)}
+  .erinn-ctl{display:flex;align-items:center;gap:8px}
+  .erinn-ctl input{min-height:40px;border:1px solid var(--line-strong);border-radius:10px;padding:0 10px;font:600 14px var(--body);background:var(--paper);color:var(--ink)}
+  .erinn-btn{min-height:40px;border:1px solid var(--petrol-line);background:var(--petrol-soft);color:var(--petrol-ink-deep);border-radius:10px;padding:0 13px;font:600 13px var(--body);cursor:pointer}
+  .erinn-btn:hover{border-color:var(--petrol)}
+  .erinn-hint{flex-basis:100%;margin:0;font-size:11.5px;line-height:1.45;color:var(--muted)}
   .theme-lbl{font-family:var(--mono);font-size:10px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
   .seg-ctl{display:inline-flex;gap:3px;padding:3px;border:1px solid var(--line);border-radius:10px;background:var(--surface)}
   .seg-ctl button{border:0;background:transparent;color:var(--muted);border-radius:7px;padding:7px 12px;min-height:36px;font-size:12.5px;font-weight:600}
@@ -528,21 +538,101 @@
   .sheet-head .x{flex:0 0 auto;border:1px solid var(--line-strong);background:var(--paper);border-radius:10px;width:40px;height:40px;font-size:16px;color:var(--muted)}
   .sheet-head .x:hover{border-color:var(--err);color:var(--err-ink)}
   .sheet-body{padding:16px;overflow:auto}
+  /* Fehler melden: unauffälliger Knopf an Frage und Teilaufgabe, erst sichtbar,
+     wenn die Datenbank das Melden kann (body.kann-melden). */
+  .melden-btn{display:none;align-items:center;gap:5px;margin-left:auto;border:0;background:none;padding:4px 2px;min-height:32px;font:600 12px var(--body);color:var(--muted);cursor:pointer}
+  body.kann-melden .melden-btn{display:inline-flex}
+  .melden-btn:hover{color:var(--petrol-ink)}
+  .melden-btn.gemeldet{color:var(--ok-ink)}
+  .md-sheet{max-width:480px}
+  .md-bezug{margin:0 0 14px;padding:9px 12px;border-radius:9px;background:var(--surface);border:1px solid var(--line);font-size:12.5px;line-height:1.45;color:var(--ink-soft)}
+  .md-bezug b{font-family:var(--mono);font-size:11.5px;color:var(--ink)}
+  .md-lbl{display:block;margin:0 0 7px;font:700 13px var(--body);color:var(--ink)}
+  .md-lbl span{font-weight:500;color:var(--muted)}
+  .md-arten{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:15px}
+  .md-arten button{border:1px solid var(--line-strong);background:var(--paper);border-radius:999px;padding:7px 12px;min-height:38px;font:600 12.5px var(--body);color:var(--ink);cursor:pointer}
+  .md-arten button:hover{border-color:var(--petrol)}
+  .md-arten button[aria-checked="true"]{background:var(--petrol);border-color:var(--petrol);color:#fff}
+  #mdText{width:100%;border:1px solid var(--line-strong);border-radius:10px;padding:10px 12px;font:14px/1.45 var(--body);background:var(--paper);color:var(--ink);resize:vertical}
+  #mdText:focus{outline:none;border-color:var(--petrol)}
+  .md-hinweis{margin:8px 0 0;font-size:11.5px;line-height:1.45;color:var(--muted)}
+  .md-status{margin:10px 0 0;min-height:1em;font-size:13px;font-weight:600}
+  .md-status.ok{color:var(--ok-ink)} .md-status.err{color:var(--err-ink)}
+  .md-senden{display:block;width:100%;margin-top:12px;min-height:46px;border:0;border-radius:11px;background:var(--petrol);color:#fff;font:700 14px var(--body);cursor:pointer}
+  .md-senden:hover{background:var(--petrol-deep)}
+  .md-senden:disabled{opacity:.45;cursor:default}
+  /* Handy: kurzer Dialog als Blatt von unten statt Vollbild */
+  @media (max-width:560px){
+    #mMelden{align-items:flex-end}
+    #mMelden .sheet{height:auto;max-height:92vh;border-radius:16px 16px 0 0;padding-bottom:env(safe-area-inset-bottom)}
+  }
 
-  /* Taschenrechner */
-  .calc-disp{background:#0f1e23;color:#eafaff;border:1px solid var(--line);border-radius:10px;padding:12px 14px;text-align:right;font-family:var(--mono);margin-bottom:12px;min-height:74px;display:flex;flex-direction:column;justify-content:flex-end;gap:4px}
-  .calc-disp .expr{font-size:14px;color:#8fb6bd;min-height:18px;word-break:break-all}
-  .calc-disp .res{font-size:30px;font-weight:600;word-break:break-all}
-  .calc-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
-  .calc-grid button{border:1px solid var(--line-strong);background:var(--paper);border-radius:10px;padding:15px 0;font-size:19px;font-weight:600;color:var(--ink);transition:background .12s,border-color .12s}
+  /* Taschenrechner: Anzeige mit Verlauf, Funktionsreihe, 5×5-Tastenfeld.
+     Auf dem Handy unten angedockt (.dock), sonst schwebend und ziehbar. */
+  .floatwin.calc{width:324px}
+  .fw-acts{display:flex;align-items:center;gap:6px}
+  .fw-mini{display:grid;place-items:center;border:1px solid var(--line-strong);background:var(--paper);border-radius:8px;width:34px;height:34px;color:var(--muted);cursor:pointer;padding:0}
+  .fw-mini:hover{border-color:var(--petrol);color:var(--petrol-ink)}
+  .fw-mini svg{transition:transform .15s}
+  .calc.mini .fw-mini svg{transform:rotate(180deg)}
+  .calc.mini .calc-keys{display:none}
+  .calc .fw-body{padding:12px}
+  .calc-disp{background:#0f1e23;color:#eafaff;border:1px solid var(--line);border-radius:10px;padding:8px 12px 9px;text-align:right;font-family:var(--mono);display:flex;flex-direction:column;gap:2px}
+  .calc.mini .calc-disp{cursor:pointer}
+  .calc-tape{max-height:64px;overflow-y:auto;display:flex;flex-direction:column;align-items:stretch;margin:0 -8px 3px;padding:0 4px 4px;border-bottom:1px dashed rgba(143,182,189,.3);scrollbar-width:thin}
+  .calc-tape button{display:flex;justify-content:flex-end;gap:.5ch;width:100%;border:0;background:none;border-radius:5px;padding:1px 4px;font:500 12px/18px var(--mono);color:#8fb6bd;cursor:pointer;text-align:right}
+  .calc-tape button:hover,.calc-tape button:focus-visible{background:rgba(143,182,189,.16);color:#eafaff}
+  .calc-tape .t-a{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+  .calc-tape .t-v{flex:none;font-weight:700;color:#cfeef2}
+  .calc-tape .tape-clear{justify-content:flex-start;font:600 11px var(--body);color:#8fb6bd;opacity:.8}
+  .calc-disp .expr{font-size:14px;color:#8fb6bd;min-height:20px;line-height:1.4;word-break:break-word}
+  .calc-disp .expr .rk-geist{opacity:.38}
+  .calc-disp .res{display:flex;align-items:center;justify-content:flex-end;gap:10px;min-height:36px}
+  .calc-disp output{font-size:28px;font-weight:600;line-height:1.2;word-break:break-all}
+  .calc-disp output.stale{opacity:.4}
+  .calc-disp output.err{font:600 14px var(--body);color:#ffb4a3}
+  .res-zeit{margin-right:auto;flex:none;font:600 12px var(--mono);color:#0f1e23;background:#9fe0c9;border-radius:6px;padding:2px 7px;white-space:nowrap}
+  .calc-disp.shake{animation:cshake .28s}
+  @keyframes cshake{25%{transform:translateX(-5px)}75%{transform:translateX(5px)}}
+  .calc-take{display:flex;align-items:center;justify-content:center;gap:7px;width:100%;margin-top:8px;min-height:40px;border:1px solid var(--petrol-line);background:var(--petrol-soft);color:var(--petrol-ink-deep);border-radius:10px;font:600 13px var(--body);cursor:pointer;padding:4px 10px}
+  .calc-take:hover{border-color:var(--petrol)}
+  .calc-take span{font-weight:500;color:var(--petrol-ink)}
+  .calc-keys{margin-top:10px}
+  .calc-fn{display:grid;grid-template-columns:repeat(6,1fr);gap:6px;margin-bottom:6px}
+  .calc-fn button{border:1px solid var(--line);background:var(--surface);border-radius:8px;min-height:34px;padding:0;font:600 13px var(--mono);color:var(--petrol-ink-deep);white-space:nowrap}
+  .calc-fn button:hover{border-color:var(--petrol)}
+  .calc-fn button.on{background:var(--petrol);border-color:var(--petrol);color:#fff}
+  .calc-fn button[data-k="zeit"]{font-size:11.5px;letter-spacing:-.02em}
+  .calc-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:6px}
+  .calc-grid button{border:1px solid var(--line-strong);background:var(--paper);border-radius:10px;min-height:46px;padding:0;font-size:18px;font-weight:600;color:var(--ink);transition:background .12s,border-color .12s}
   .calc-grid button:hover{background:var(--surface-2);border-color:var(--petrol)}
-  .calc-grid button:active{background:var(--petrol-soft)}
+  .calc-grid button:active,.calc-fn button:active{background:var(--petrol-soft)}
   .calc-grid .op{color:var(--petrol-ink-deep);background:var(--surface-2)}
-  .calc-grid .eq{background:var(--petrol);color:#fff;border-color:var(--petrol)}
-  .calc-grid .eq:hover{background:var(--petrol-deep)}
-  .calc-grid .fn{color:var(--amber);font-size:16px}
-  .calc-grid .span2{grid-column:span 2}
-  .calc-hint{font-size:11px;color:var(--muted);margin:10px 2px 0}
+  .calc-grid .fx{color:var(--petrol-ink-deep);font-size:16px}
+  .calc-grid .del{color:var(--amber-ink)}
+  .calc-grid .eq{background:var(--petrol);color:#fff;border-color:var(--petrol);font-size:22px}
+  .calc-grid .eq:hover{background:var(--petrol-deep);border-color:var(--petrol-deep)}
+  .calc-grid sup{font-size:.6em;margin-left:1px}
+  /* Übernommenes Ergebnis kurz im Zielfeld aufleuchten lassen */
+  .calc-flash{animation:cflash 1.4s ease-out}
+  @keyframes cflash{0%{box-shadow:0 0 0 3px var(--petrol)}100%{box-shadow:0 0 0 3px transparent}}
+  /* Handy: unten angedockt, volle Breite; die Seite bekommt unten so viel
+     Platz, dass sich die Aufgabe über dem Rechner fertig scrollen lässt. */
+  .floatwin.calc.dock{left:0!important;right:0;top:auto!important;bottom:0;width:auto;max-width:none;border-radius:16px 16px 0 0;border-bottom:0;padding-bottom:env(safe-area-inset-bottom);box-shadow:0 -10px 30px rgba(16,42,50,.2)}
+  .calc.dock .fw-head{cursor:default;padding:6px 12px}
+  .calc.dock .fw-body{padding:8px 10px 10px}
+  .calc.dock .calc-tape{max-height:44px}
+  .calc.dock .calc-take{min-height:36px;margin-top:6px}
+  .calc.dock .calc-keys{margin-top:8px}
+  .calc.dock .calc-fn{gap:5px;margin-bottom:5px}
+  .calc.dock .calc-fn button{min-height:32px}
+  .calc.dock .calc-grid{gap:5px}
+  .calc.dock .calc-grid button{min-height:42px}
+  body.calc-dock[data-screen="scrQuiz"],body.calc-dock[data-screen="scrBlatt"]{padding-bottom:calc(var(--calc-h,440px) + 16px)}
+  /* Breiter Bildschirm: Die Inhaltsspalte rückt links neben den Rechner, solange
+     er an seinem Platz oben rechts steht (wie beim Formelbuch). */
+  body.has-calc:not(.has-formel) .app,body.has-calc:not(.has-formel) footer{margin-left:auto;margin-right:calc(var(--calc-w,324px) + 40px)}
+  html:has(body.calc-dock){scroll-padding-bottom:calc(var(--calc-h,440px) + 16px)}
 
   /* schwebender, ziehbarer Taschenrechner (ohne Hintergrund-Abdunklung) */
   .floatwin{position:fixed;z-index:70;left:16px;top:72px;width:300px;max-width:calc(100vw - 20px);background:var(--paper);color:var(--ink);border:1px solid var(--line-strong);border-radius:14px;box-shadow:var(--shadow-lg);overflow:hidden;user-select:none;-webkit-user-select:none}
@@ -872,6 +962,33 @@
 .hero-cta:active{transform:translateY(1px)}
 .hero-cta:disabled{opacity:.55;cursor:default}
 .hero :focus-visible{outline-color:#fff}
+/* Prüfungstermin und Lernplan: eigener Block in der Heute-Karte – auf breiten
+   Bildschirmen als dritte Spalte, sonst unter „Jetzt lernen“. */
+.hero-main{grid-template-areas:"ring head" "ring body" "plan plan"}
+@media (min-width:900px){
+  .hero-main{grid-template-columns:120px minmax(0,1fr) minmax(250px,320px);grid-template-areas:"ring head plan" "ring body plan"}
+  .hero .plan{margin-top:0;align-self:center}
+}
+.plan{grid-area:plan;margin-top:14px;padding:12px 14px 13px;border-radius:14px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.17);color:#fff}
+.plan-kopf{display:flex;align-items:baseline;flex-wrap:wrap;column-gap:8px;row-gap:2px}
+.plan-tage{font:700 23px/1.05 var(--disp);text-transform:uppercase;letter-spacing:.01em}
+.plan-t{font:700 16px/1.2 var(--disp);text-transform:uppercase;letter-spacing:.02em;margin:0}
+.plan-datum{font-size:12px;color:rgba(255,255,255,.8)}
+.plan-edit{margin-left:auto;background:none;border:0;color:rgba(255,255,255,.88);font:600 12px var(--body);text-decoration:underline;text-underline-offset:3px;cursor:pointer;padding:4px 0}
+.plan-ziel{display:flex;align-items:center;gap:9px;margin-top:10px;font-size:12px;color:rgba(255,255,255,.86)}
+.plan-ziel b{font:700 14px var(--mono);color:#fff;white-space:nowrap}
+.plan-bar{flex:1;min-width:60px;height:7px;border-radius:4px;background:rgba(255,255,255,.18);overflow:hidden}
+.plan-bar i{display:block;height:100%;border-radius:4px;background:#8FE3AA}
+.plan-status{display:flex;gap:8px;align-items:flex-start;margin:9px 0 0;font-size:12px;line-height:1.45;color:rgba(255,255,255,.9)}
+.plan-status .ampel{margin-top:3px}
+.plan-txt{margin:5px 0 10px;font-size:12.5px;line-height:1.45;color:rgba(255,255,255,.86)}
+.plan-btn{min-height:38px;border-radius:10px;border:1px solid rgba(255,255,255,.35);background:rgba(255,255,255,.12);color:#fff;font:600 13px var(--body);padding:0 14px;cursor:pointer}
+.plan-btn:hover{background:rgba(255,255,255,.2)}
+.plan-btn.haupt{background:var(--cta-bg);color:var(--cta-ink);border-color:transparent}
+.plan-btn.haupt:hover{background:var(--cta-hover)}
+.plan-form{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-top:9px}
+.plan-form input{min-height:38px;border-radius:10px;border:1px solid rgba(255,255,255,.4);background:#fff;color:#12262c;font:600 14px var(--body);padding:0 10px;color-scheme:light}
+.plan-fehler{flex-basis:100%;margin:2px 0 0;font-size:12px;color:#FFD2C7}
 .hero-stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;margin-top:18px;padding-top:13px;border-top:1px solid rgba(255,255,255,.18)}
 .hs b{display:block;font:700 23px/1 var(--disp);color:#fff}
 .hs span{display:block;font-size:11px;line-height:1.25;color:rgba(255,255,255,.76);margin-top:4px}
@@ -879,7 +996,7 @@
 .hero .prog-bar .fill{background:linear-gradient(90deg,#FFD28F,var(--amber))}
 @media (max-width:520px){
   .hero{padding:18px 16px 15px}
-  .hero-main{grid-template-columns:96px minmax(0,1fr);grid-template-areas:"ring head" "body body";column-gap:16px}
+  .hero-main{grid-template-columns:96px minmax(0,1fr);grid-template-areas:"ring head" "body body" "plan plan";column-gap:16px}
   .hero-ring{width:96px;height:96px}
   .hero-pct b{font-size:25px}
   .hero-pct span{font-size:8px}
@@ -913,7 +1030,30 @@
 .m-ic{flex:0 0 40px;height:40px;border-radius:11px;display:grid;place-items:center;color:#fff;box-shadow:0 5px 12px -5px rgba(16,42,50,.45)}
 .m-ic .ic-svg{width:20px;height:20px}
 .m-ic-petrol{background:var(--petrol)}.m-ic-amber{background:var(--amber)}.m-ic-ink{background:var(--tag-ink)}
-.m-ic-deep{background:var(--petrol-deep)}.m-ic-plum{background:var(--plum)}
+.m-ic-deep{background:var(--petrol-deep)}.m-ic-plum{background:var(--plum)}.m-ic-violet{background:var(--violet)}
+/* Mündlich üben: Frage vorlesen, frei antworten, Lösung mit getroffenen Begriffen */
+.mode.oral .m-title .tag{background:var(--violet)}
+body[data-screen="scrOral"] .toolbar{display:none}
+.qtype.oral{color:var(--violet-ink);background:var(--violet-soft)}
+.or-vorlesen{display:inline-flex;align-items:center;gap:7px;margin:10px 0 4px;border:0;background:none;padding:6px 0;font:600 13px var(--body);color:var(--violet-ink);cursor:pointer}
+.or-vorlesen[hidden]{display:none}
+.or-bereich{margin-top:14px}
+.or-hoer{display:flex;align-items:center;gap:10px;padding:12px 14px;border:1px solid var(--violet-line);background:var(--violet-soft);border-radius:12px;font:600 14px var(--body);color:var(--violet-ink)}
+.or-hoer .vs-dot{width:11px;height:11px;border-radius:50%;background:currentColor;animation:vpulse 1s infinite}
+.or-transkript{margin-top:10px;padding:12px 14px;border:1px solid var(--line);border-radius:12px;background:var(--surface);font-size:15px;line-height:1.55;color:var(--ink);min-height:52px}
+.or-transkript i{color:var(--muted)}
+.or-lbl{display:block;margin:0 0 6px;font:700 12px var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.or-bereich textarea{width:100%;min-height:96px;border:1px solid var(--line-strong);border-radius:12px;padding:11px 13px;font:15px/1.5 var(--body);background:var(--paper);color:var(--ink);resize:vertical}
+.or-bereich textarea:focus{outline:none;border-color:var(--violet)}
+.or-hinweis{margin:8px 0 0;font-size:12.5px;line-height:1.5;color:var(--muted)}
+.or-loesung{margin-top:14px;padding:13px 15px;border:1px solid var(--ok-line);background:var(--ok-soft);border-radius:12px}
+.or-loesung .or-lbl{color:var(--ok-ink)}
+.or-begriffe{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px}
+.or-begriffe span{border-radius:999px;padding:4px 10px;font:600 12px var(--body);border:1px solid var(--line-strong);color:var(--muted);background:var(--paper)}
+.or-begriffe span.ja{border-color:var(--ok);color:var(--ok-ink);background:var(--ok-soft)}
+.or-begriffe-t{margin:12px 0 0;font-size:12.5px;color:var(--ink-soft)}
+.or-mic{display:inline-flex;align-items:center;justify-content:center;gap:9px}
+.split.drei{grid-template-columns:repeat(3,minmax(0,1fr))}
 .m-body{flex:1 1 auto;min-width:0;display:block}
 .home .mode .m-title{font-size:18px}
 .home .modes{grid-template-columns:repeat(auto-fit,minmax(min(100%,250px),1fr))}
@@ -1002,6 +1142,24 @@
 .vg-leer{padding:12px;text-align:center;font-size:12.5px;color:var(--muted)}
 .vg-fuss{display:flex;align-items:center;gap:4px 6px;flex-wrap:wrap;margin-top:10px;font-size:12.5px;color:var(--muted)}
 .vg-fuss .vg-ich{margin-right:auto}
+/* Lerngruppen: Reiter über der Liste, Einladung, Formular, Gruppenfuß */
+.vg-tabs{display:flex;gap:6px;overflow-x:auto;scrollbar-width:none;margin:0 0 12px;padding-bottom:2px}
+.vg-tabs::-webkit-scrollbar{display:none}
+.vg-tabs button{flex:none;max-width:220px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;border:1px solid var(--line-strong);background:var(--paper);border-radius:999px;padding:7px 13px;min-height:36px;font:600 12.5px var(--body);color:var(--ink);cursor:pointer}
+.vg-tabs button[aria-selected="true"],.vg-tabs .vg-tab-neu[aria-pressed="true"]{background:var(--petrol);border-color:var(--petrol);color:#fff}
+.vg-tabs .vg-tab-neu{border-style:dashed;color:var(--petrol-ink)}
+.vg-einladung{display:flex;align-items:center;flex-wrap:wrap;gap:8px;margin:0 0 12px;padding:10px 12px;border:1px solid var(--amber-line);background:var(--amber-soft);border-radius:11px;font-size:13px;line-height:1.45;color:var(--ink)}
+.vg-einladung span{flex:1 1 220px}
+.vg-einladung.klein{display:block;font-size:12.5px}
+.vg-code{font-family:var(--mono);letter-spacing:.08em}
+.vg-gform{margin-bottom:6px}
+.vg-gform .vg-form{margin:0 0 12px;align-items:center}
+.vg-glbl{flex-basis:100%;font:700 12.5px var(--body);color:var(--ink)}
+.vg-gfuss{display:flex;align-items:center;flex-wrap:wrap;gap:6px 8px;margin-top:10px;font-size:12.5px;color:var(--muted)}
+.vg-gfuss>span:first-child{margin-right:auto}
+.vg-gfuss b{color:var(--ink)}
+.vg-gmeld{flex-basis:100%;font-size:12px;color:var(--ok-ink)}
+.vg-gmeld:empty{display:none}
 .vg-fuss b{color:var(--ink)}
 
 /* Aktivität: beantwortete Fragen der letzten 14 Tage */
@@ -1155,6 +1313,17 @@ body[data-screen="scrBlatt"] .app{max-width:920px}
 .oas-scale{display:flex;justify-content:space-between;font:600 10.5px var(--mono);color:var(--muted);margin-top:2px}
 .oas-hint{margin-top:8px;font-size:11.5px;color:var(--muted);line-height:1.45}
 
+/* Prüfung unter Echtbedingungen: Uhr und Abgabe in der Leiste, Hinweisband */
+.bl-uhr{flex:none;font-size:13px;padding:6px 9px}
+.bl-abgabe{flex:none;border:0;border-radius:9px;background:var(--petrol);color:#fff;font:700 13px var(--body);min-height:36px;padding:0 13px;cursor:pointer}
+.bl-abgabe:hover{background:var(--petrol-deep)}
+.bl-echt{display:flex;gap:10px;align-items:flex-start;margin:0 0 14px;padding:10px 13px;border:1px solid var(--petrol-line);background:var(--petrol-soft);border-radius:11px;font-size:13px;line-height:1.5;color:var(--ink)}
+.bl-echt.fertig{border-color:var(--ok-line);background:var(--ok-soft)}
+.bl-echt svg{flex:none;margin-top:2px;color:var(--petrol-ink)}
+.bl-echt b{color:var(--petrol-ink-deep)}
+.pr-btn.echt{display:inline-flex;align-items:center;gap:6px}
+.pr-echt{margin:9px 0 0;font-size:12px;color:var(--muted)}
+.pr-echt b{color:var(--ink)}
 .bl-foot{display:flex;gap:9px;align-items:center;margin-top:18px;padding-top:15px;border-top:1px solid var(--line);flex-wrap:wrap}
 .bl-nav{border:1px solid var(--line-strong);background:var(--paper);border-radius:10px;padding:10px 15px;min-height:44px;font:700 13px var(--body);color:var(--petrol-ink);cursor:pointer}
 .bl-nav:hover{background:var(--petrol-soft)}
@@ -1267,6 +1436,7 @@ body[data-screen="scrBlatt"] .app{max-width:920px}
           <p class="hero-desc" id="dueDesc">Verteiltes Lernen: genau die Fragen, die laut Leitner-System heute zur Wiederholung anstehen.</p>
           <button class="hero-cta" id="btnDue">Jetzt lernen <svg class="ic-svg ic-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
         </div>
+        <div class="plan" id="planBox" aria-live="polite"></div>
       </div>
       <div class="hero-stats" role="group" aria-label="Dein Stand">
         <div class="hs"><b id="pMastered">0</b><span>gemeistert</span></div>
@@ -1307,6 +1477,11 @@ body[data-screen="scrBlatt"] .app{max-width:920px}
           <span class="m-ic m-ic-ink" aria-hidden="true"><svg class="ic-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l2.5 2.5M9.5 2h5"/></svg></span>
           <span class="m-body"><span class="m-title"><span class="tag">Klausur</span>Prüfungssimulation</span>
           <span class="m-desc" id="simDesc">30 Fragen aus dem ganzen Fach · 60 Minuten · bestanden ab 50 %.</span></span>
+        </button>
+        <button class="mode oral" id="btnOral">
+          <span class="m-ic m-ic-violet" aria-hidden="true"><svg class="ic-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a3 3 0 0 0-3 3v6a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3z"/><path d="M19 10v1a7 7 0 0 1-14 0v-1"/><path d="M12 18v4"/></svg></span>
+          <span class="m-body"><span class="m-title"><span class="tag">Mündlich</span>Fachgespräch üben</span>
+          <span class="m-desc" id="oralDesc">10 Fragen werden vorgelesen – du antwortest frei per Sprache, danach Musterlösung und Selbstcheck.</span></span>
         </button>
       </div>
       <p class="h-sub h-sub-gap">Fachübergreifend</p>
@@ -1375,7 +1550,7 @@ body[data-screen="scrBlatt"] .app{max-width:920px}
       <p class="prog-note" id="pNote"></p>
     </section>
 
-    <h2 class="h-group">Konto &amp; Darstellung</h2>
+    <h2 class="h-group">Konto &amp; Einstellungen</h2>
     <section class="hcard">
       <button class="tile tile-cloud" id="btnCloud">
         <span class="ti-ic ti-blue"><svg class="ic-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 17.6A4 4 0 0 0 18 10h-1.3A7 7 0 1 0 5 16.7"/><path d="M12 12v9M8.5 15.5 12 12l3.5 3.5"/></svg></span>
@@ -1388,6 +1563,14 @@ body[data-screen="scrBlatt"] .app{max-width:920px}
           <button type="button" role="radio" data-theme-set="light" aria-checked="false">Hell</button>
           <button type="button" role="radio" data-theme-set="dark" aria-checked="false">Dunkel</button>
         </div>
+      </div>
+      <div class="theme-row erinn-row">
+        <span class="theme-lbl" id="erinnLbl">Lern-Erinnerung</span>
+        <div class="erinn-ctl">
+          <input type="time" id="erinnZeit" value="19:00" step="300" aria-label="Uhrzeit der täglichen Lern-Erinnerung">
+          <button type="button" class="erinn-btn" id="erinnIcs">In den Kalender</button>
+        </div>
+        <p class="erinn-hint" id="erinnHint">Täglich zur gewählten Uhrzeit als Kalendereintrag mit Erinnerung – bis zum Tag vor deiner Prüfung, wenn du einen Termin eingetragen hast.</p>
       </div>
     </section>
   </div>
@@ -1406,7 +1589,7 @@ body[data-screen="scrBlatt"] .app{max-width:920px}
     <div class="protocol" id="protocol" aria-hidden="true"></div>
     <div class="qbody">
       <details class="casectx" id="qCase" hidden></details>
-      <div class="qmeta" id="qMeta"><span class="qtype mc" id="qType">Auswahlfrage</span><span class="qsub" id="qSubLabel"></span></div>
+      <div class="qmeta" id="qMeta"><span class="qtype mc" id="qType">Auswahlfrage</span><span class="qsub" id="qSubLabel"></span><button type="button" class="melden-btn" id="qMelden" title="Fehler in dieser Frage melden"><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 21V4h11l-2 4 2 4H5"/></svg><span>Fehler?</span></button></div>
       <div class="voicebar" id="voiceStatus" hidden aria-live="polite"><span class="vs-dot"></span><span class="vs-txt"></span></div>
       <div class="taskbar" id="qHead" hidden><span class="tb-nr" id="qHeadNr"></span><span class="tb-pts" id="qHeadPts"></span><span class="tb-step" id="qHeadStep"></span></div>
       <div class="qsit" id="qSit" hidden></div>
@@ -1451,6 +1634,8 @@ body[data-screen="scrBlatt"] .app{max-width:920px}
       <div class="bl-bar">
         <button class="iconbtn" id="blQuit" title="Prüfung verlassen" aria-label="Prüfung verlassen">✕</button>
         <div class="bl-stepper" id="blStepper" role="tablist" aria-label="Aufgaben dieser Prüfung"></div>
+        <span class="timer bl-uhr" id="blUhr" role="timer" aria-label="Verbleibende Zeit" hidden></span>
+        <button type="button" class="bl-abgabe" id="blAbgabe" hidden>Abgeben</button>
       </div>
       <div class="bl-prog" id="blProg"></div>
     </div>
@@ -1461,9 +1646,26 @@ body[data-screen="scrBlatt"] .app{max-width:920px}
         <div class="bl-chips" id="blChips"></div>
       </header>
       <p class="bl-hinweis" id="blHinweis" hidden></p>
+      <div class="bl-echt" id="blEcht" hidden></div>
       <details class="casectx" id="blCase" hidden></details>
       <div id="blAufgabe"></div>
       <div class="bl-foot" id="blFoot"></div>
+    </div>
+  </div>
+
+  <!-- MÜNDLICH ÜBEN -->
+  <div class="card" id="scrOral" hidden>
+    <div class="quizhead">
+      <button class="iconbtn" id="orQuit" title="Übung beenden" aria-label="Übung beenden">✕</button>
+      <div class="q-meta"><div class="q-fach" id="orFach">–</div><div class="q-count" id="orCount">Frage 1/10</div></div>
+    </div>
+    <div class="protocol" id="orProtocol" aria-hidden="true"></div>
+    <div class="qbody">
+      <div class="qmeta"><span class="qtype oral">Fachgespräch</span><span class="qsub" id="orSub"></span></div>
+      <div class="qtext" id="orText"></div>
+      <button type="button" class="or-vorlesen" id="orVorlesen"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5 6 9H2v6h4l5 4z"/><path d="M15.5 8.5a5 5 0 0 1 0 7M19 5a10 10 0 0 1 0 14"/></svg>Nochmal vorlesen</button>
+      <div class="or-bereich" id="orBereich" aria-live="polite"></div>
+      <div class="qactions" id="orActions"></div>
     </div>
   </div>
 
@@ -1504,12 +1706,43 @@ body[data-screen="scrBlatt"] .app{max-width:920px}
 </div>
 
 <!-- Taschenrechner -->
-<div class="floatwin" id="mCalc" hidden role="dialog" aria-label="Taschenrechner">
-  <div class="fw-head" id="calcDrag"><span class="fw-title"><svg class="ic-svg ic-sm ic-petrol" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-3px"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M8 7h8"/><path d="M8 12h.01M12 12h.01M16 12h.01M8 16h.01M12 16h.01M16 16h.01"/></svg> Taschenrechner</span><button class="x" data-close aria-label="Schließen">✕</button></div>
+<div class="floatwin calc" id="mCalc" hidden role="dialog" aria-label="Taschenrechner">
+  <div class="fw-head" id="calcDrag" title="Tastatur: Ziffern, + − * / ^ % ( ), Enter = Ergebnis, ⌫, p = π, h = Stunden und Minuten"><span class="fw-title"><svg class="ic-svg ic-sm ic-petrol" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-3px"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M8 7h8"/><path d="M8 12h.01M12 12h.01M16 12h.01M8 16h.01M12 16h.01M16 16h.01"/></svg> Taschenrechner</span><span class="fw-acts"><button type="button" class="fw-mini" id="calcMin" aria-label="Tasten einklappen" aria-expanded="true" title="Einklappen"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></button><button class="x" data-close aria-label="Schließen">✕</button></span></div>
   <div class="fw-body">
-    <div class="calc-disp"><div class="expr" id="calcExpr"></div><div class="res" id="calcRes">0</div></div>
-    <div class="calc-grid" id="calcGrid"></div>
-    <p class="calc-hint">Frei verschiebbar – am Titelbalken ziehen. Der Hintergrund bleibt sichtbar. Tastatur: Ziffern, + − * / ( ) , Enter =, ⌫.</p>
+    <div class="calc-disp" id="calcDisp">
+      <div class="calc-tape" id="calcTape" hidden></div>
+      <div class="expr" id="calcExpr"></div>
+      <div class="res"><span class="res-zeit" id="calcZeit" hidden></span><output id="calcRes" aria-live="polite">0</output></div>
+    </div>
+    <button type="button" class="calc-take" id="calcTake" hidden></button>
+    <div class="calc-keys" id="calcKeys">
+      <div class="calc-fn" id="calcFn"></div>
+      <div class="calc-grid" id="calcGrid"></div>
+    </div>
+  </div>
+</div>
+
+<!-- Fehler melden (sichtbar nur, wenn docs/supabase-meldungen.sql eingerichtet ist) -->
+<div class="modal" id="mMelden" hidden>
+  <div class="backdrop" data-md-zu></div>
+  <div class="sheet md-sheet" role="dialog" aria-modal="true" aria-labelledby="mdTitel">
+    <div class="sheet-head"><h3 id="mdTitel">Fehler melden</h3><button class="x" data-md-zu aria-label="Schließen">✕</button></div>
+    <div class="sheet-body">
+      <p class="md-bezug" id="mdBezug"></p>
+      <p class="md-lbl" id="mdArtLbl">Was stimmt nicht?</p>
+      <div class="md-arten" id="mdArten" role="radiogroup" aria-labelledby="mdArtLbl">
+        <button type="button" role="radio" aria-checked="false" data-art="text">Text unleserlich oder Tippfehler</button>
+        <button type="button" role="radio" aria-checked="false" data-art="loesung">Lösung falsch</button>
+        <button type="button" role="radio" aria-checked="false" data-art="rechnung">Rechnung oder Zahl falsch</button>
+        <button type="button" role="radio" aria-checked="false" data-art="anlage">Tabelle oder Anlage fehlt</button>
+        <button type="button" role="radio" aria-checked="false" data-art="sonstiges">Sonstiges</button>
+      </div>
+      <label class="md-lbl" for="mdText">Beschreibung <span>· optional</span></label>
+      <textarea id="mdText" rows="4" maxlength="1000" placeholder="Was genau stimmt nicht? Gern mit der richtigen Angabe."></textarea>
+      <p class="md-hinweis">Gesendet werden die Fragennummer, deine Angaben und – falls du angemeldet bist – dein Konto für Rückfragen.</p>
+      <p class="md-status" id="mdStatus" role="status" aria-live="polite"></p>
+      <button type="button" class="md-senden" id="mdSenden" disabled>Meldung senden</button>
+    </div>
   </div>
 </div>
 
@@ -1845,7 +2078,99 @@ function renderHero(){
   var a=$("heroAmpel");if(a)a.className="ampel "+amp;
   var st=$("heroStatus");if(st)st.textContent=seen?("Prüfungsreife · "+AMPEL_TEXT[amp]):"Willkommen – leg los";
   if($("pStreak"))$("pStreak").textContent=fmtN(serie());
+  renderPlan();
 }
+/* ===== Prüfungstermin und Lernplan =====
+   Ziel ist die Ampel „prüfungsreif“ (70 % Prüfungsreife) bis zum Tag vor der
+   Prüfung. Dafür fehlen je Frage so viele richtige Antworten, wie ihr bis Box 3
+   fehlen; die eigene Trefferquote rechnet die falschen dazu. Das Tagesziel wird
+   einmal am Tag festgelegt – sonst schrumpfte es beim Lernen – und neu
+   gerechnet, wenn sich Termin oder Fächerwahl ändern. Die Prognose nimmt das
+   Tempo der letzten sieben Tage. */
+var PT_KEY='kvm_pruefung', PLAN_ZIEL=0.7, planOffen=false, planFehler='';
+function ptGet(){try{var d=JSON.parse(localStorage.getItem(PT_KEY)||'null');return (d&&/^\d{4}-\d{2}-\d{2}$/.test(d.datum))?d:null;}catch(e){return null;}}
+function ptSpeichern(d){try{if(d)localStorage.setItem(PT_KEY,JSON.stringify(d));else localStorage.removeItem(PT_KEY);}catch(e){}}
+function tagVon(datum){var p=datum.split('-');return Math.floor(Date.UTC(+p[0],+p[1]-1,+p[2])/86400000);}
+function datumVon(tag,lang){var d=new Date(tag*86400000),o=lang?{weekday:'short',day:'numeric',month:'short',year:'numeric'}:{day:'numeric',month:'short'};
+  if(!lang&&d.getUTCFullYear()!==new Date().getFullYear())o.year='numeric';
+  o.timeZone='UTC';return d.toLocaleDateString('de-DE',o);}
+function isoVon(tag){return new Date(tag*86400000).toISOString().slice(0,10);}
+function planRechnen(){
+  var t=ptGet();if(!t)return null;
+  var heute=todayIdx(),pruefung=tagVon(t.datum),tage=pruefung-heute;
+  var aq=activeQuestions(),n=aq.length,summe=0,c=0,w=0;
+  aq.forEach(function(q){var p=progress[q.id];if(p)summe+=Math.min(p.box|0,MASTER_BOX);});
+  for(var id in progress){var p=progress[id];if(p){c+=p.correct|0;w+=p.wrong|0;}}
+  var quote=(c+w)>=30?Math.max(0.5,Math.min(0.95,c/(c+w))):0.75;
+  var noetig=Math.max(0,Math.ceil(PLAN_ZIEL*MASTER_BOX*n-summe));
+  var tg=tageAll(),woche=0;for(var k=1;k<=7;k++)woche+=tg[heute-k]||0;
+  if(t.tag!==heute||t.n!==n){
+    t.tag=heute;t.n=n;t.ziel=tage>0?(noetig>0?Math.ceil(noetig/quote/tage):dueCount()):0;ptSpeichern(t);
+  }
+  var tempo=woche/7;
+  return {pruefung:pruefung,tage:tage,noetig:noetig,ziel:t.ziel,geschafft:tg[heute]||0,tempo:tempo,
+    prognose:(noetig>0&&tempo>=1)?heute+Math.ceil(noetig/(tempo*quote)):null};
+}
+function renderPlan(){
+  var box=$("planBox");if(!box)return;
+  var t=ptGet(),h='';
+  if(planOffen){
+    var heute=isoVon(todayIdx());
+    h='<p class="plan-t">Prüfungstermin</p><div class="plan-form">'+
+      '<input type="date" id="planDatum" min="'+heute+'" value="'+(t?t.datum:'')+'" aria-label="Datum deiner Prüfung">'+
+      '<button type="button" class="plan-btn haupt" data-plan="speichern">Speichern</button>'+
+      (t?'<button type="button" class="plan-btn" data-plan="entfernen">Entfernen</button>':'')+
+      '<button type="button" class="plan-btn" data-plan="abbrechen">Abbrechen</button>'+
+      (planFehler?'<p class="plan-fehler" role="alert">'+esc(planFehler)+'</p>':'')+'</div>';
+  }else if(!t){
+    h='<p class="plan-t">Wann ist deine Prüfung?</p>'+
+      '<p class="plan-txt">Trag den Termin ein – die App rechnet dir ein Tagesziel bis zur Prüfungsreife aus.</p>'+
+      '<button type="button" class="plan-btn" data-plan="bearbeiten">Termin eintragen</button>';
+  }else{
+    var p=planRechnen(),am=datumVon(p.pruefung,true);
+    if(p.tage<0){
+      h='<p class="plan-t">Prüfung vorbei</p><p class="plan-txt">Deine Prüfung war am '+esc(am)+'. Steht ein neuer Termin an?</p>'+
+        '<button type="button" class="plan-btn" data-plan="bearbeiten">Neuen Termin eintragen</button>';
+    }else if(p.tage===0){
+      h='<div class="plan-kopf"><span class="plan-tage">Heute ist Prüfung</span><button type="button" class="plan-edit" data-plan="bearbeiten">ändern</button></div>'+
+        '<p class="plan-txt">Viel Erfolg! Kurz vorher helfen die fälligen Fragen mehr als neuer Stoff.</p>';
+    }else{
+      h='<div class="plan-kopf"><span class="plan-tage">'+(p.tage===1?'Morgen ist Prüfung':'Noch '+fmtN(p.tage)+' Tage')+'</span>'+
+        '<span class="plan-datum">'+(p.tage===1?esc(am):'bis zur Prüfung am '+esc(am))+'</span>'+
+        '<button type="button" class="plan-edit" data-plan="bearbeiten" aria-label="Prüfungstermin ändern">ändern</button></div>';
+      var z=p.ziel,g=p.geschafft;
+      if(z>0)h+='<div class="plan-ziel"><span>Heute</span><b>'+fmtN(Math.min(g,99999))+' / '+fmtN(z)+'</b>'+
+        '<span class="plan-bar" aria-hidden="true"><i style="width:'+Math.min(100,Math.round(g/z*100))+'%"></i></span><span>Fragen</span></div>';
+      var amp,txt;
+      if(p.noetig===0){amp='gruen';txt=z>0?'Ziel erreicht: '+Math.round(PLAN_ZIEL*100)+' % prüfungsreif. Halte den Stand mit den fälligen Fragen.':
+        'Ziel erreicht: '+Math.round(PLAN_ZIEL*100)+' % prüfungsreif. Heute ist nichts fällig – probier eine Original-Prüfung.';}
+      else if(z>0&&g>=z){amp='gruen';txt='Tagesziel geschafft – stark! Morgen geht es weiter.';}
+      else if(p.prognose!=null){
+        var tempo=fmtN(Math.round(p.tempo));
+        if(p.prognose<p.pruefung){amp='gruen';txt='Im Plan: Mit Ø '+tempo+' Fragen am Tag bist du am '+esc(datumVon(p.prognose))+' prüfungsreif ('+Math.round(PLAN_ZIEL*100)+' %).';}
+        else{amp=z>120?'rot':'gelb';txt='Rückstand: Mit Ø '+tempo+' Fragen am Tag wärst du erst am '+esc(datumVon(p.prognose))+' prüfungsreif. Mit dem Tagesziel klappt es bis zur Prüfung.';}
+      }else{amp=z<=60?'gruen':(z<=120?'gelb':'rot');
+        txt=(z<=60?'Gut machbar':(z<=120?'Sportlich':'Sehr knapp'))+': Mit '+fmtN(z)+' Fragen am Tag bist du bis zur Prüfung zu '+Math.round(PLAN_ZIEL*100)+' % prüfungsreif.';}
+      if(p.noetig>0&&z>150)txt+=' Setz Schwerpunkte, z. B. mit „Schwächen üben“.';
+      h+='<p class="plan-status"><span class="ampel '+amp+'" aria-hidden="true"></span><span>'+txt+'</span></p>';
+    }
+  }
+  box.innerHTML=h;
+}
+$("planBox").addEventListener("click",function(e){
+  var b=e.target.closest("[data-plan]");if(!b)return;var a=b.getAttribute("data-plan");
+  if(a==="bearbeiten"){planOffen=true;planFehler='';renderPlan();var i=$("planDatum");if(i)try{i.focus();}catch(x){}return;}
+  if(a==="abbrechen"){planOffen=false;planFehler='';}
+  else if(a==="entfernen"){ptSpeichern(null);planOffen=false;planFehler='';}
+  else if(a==="speichern"){
+    var v=($("planDatum")||{}).value||'';
+    if(!/^\d{4}-\d{2}-\d{2}$/.test(v)){planFehler='Bitte ein Datum wählen.';renderPlan();return;}
+    if(tagVon(v)<=todayIdx()){planFehler='Der Termin muss in der Zukunft liegen.';renderPlan();return;}
+    ptSpeichern({datum:v});planOffen=false;planFehler='';
+  }
+  renderPlan();
+});
+$("planBox").addEventListener("keydown",function(e){if(e.key==="Enter"&&e.target.id==="planDatum"){e.preventDefault();var s=$("planBox").querySelector('[data-plan="speichern"]');if(s)s.click();}});
 /* Erfolge ergeben sich aus dem Lernstand – nichts muss eigens gespeichert
    werden, sie gehen also auch mit Sync und Zurücksetzen mit. */
 var ERF_IC={
@@ -1964,6 +2289,10 @@ function updateModeCards(){
   $("btnWeak").disabled=weakN===0;
   var fachN=qForFach(state.fach).length;
   $("simDesc").textContent=Math.min(SIM_LEN,fachN)+" Fragen aus dem ganzen Fach „"+FACH_KURZ[state.fach]+"“ · 60 Minuten · IHK-Notenschlüssel, bestanden ab 50 %.";
+  var orN=qForScope(state.fach,state.sub).filter(orGeeignet).length;
+  $("oralDesc").textContent=orN>=3?(Math.min(OR_LEN,orN)+" Fragen aus „"+scopeLabel()+"“ werden vorgelesen – du antwortest frei"+(OR_SR?" per Sprache":", laut oder in Stichpunkten")+", danach Musterlösung und Selbstcheck."):
+    "Für diesen Bereich gibt es noch keine passenden Fragen fürs Fachgespräch.";
+  $("btnOral").disabled=orN<3;
   updateDueCard();
   renderReadiness();
   var cb=$("btnCases"),cd=$("casesDesc");
@@ -2489,40 +2818,80 @@ function rwZahl(t){
   if(/^\d{1,3}(\.\d{3})+$/.test(t))return parseFloat(t.replace(/\./g,''));
   return parseFloat(t);
 }
-/* Rechnung in Zeichen zerlegen: Zahlen, + − · × * ÷ / : ^ ( ) % ² ³ √ und „x“
-   als Mal zwischen Zahlen. Einheiten in der Rechnung („km/h“, „€“) werden
-   überlesen; hinter einem „=“ steht schon das Ergebnis. */
+/* Rechnung in Zeichen zerlegen: Zahlen, + − · × * ÷ / : ^ ( ) % ² ³ √, π,
+   sin/cos/tan in Grad samt Umkehrung („sin⁻¹“, „arcsin“), Zeitangaben
+   („6 h 45“ = 6,75 Stunden) und „x“ als Mal zwischen Zahlen. Vor π, √ und
+   „(“ darf das Mal fehlen („2π“). Einheiten in der Rechnung („km/h“, „€“)
+   werden überlesen; hinter einem „=“ steht schon das Ergebnis.
+   Taschenrechner und Rechenweg rechnen mit denselben Zeichen. */
+var RW_FN={sin:'sin',cos:'cos',tan:'tan',arcsin:'asin',arccos:'acos',arctan:'atan'};
 function rwTokens(s){
   s=String(s||'').replace(/[A-Za-zÄÖÜäöüß€$°]+\s*\/\s*[A-Za-zÄÖÜäöüß€$°]+/g,' ');
   var t=[],i=0,m;
+  function mal(){var v=t[t.length-1];if(v&&(v.n!=null||v.p===')'||v.pc||v.pw))t.push({o:'*'});}
   while(i<s.length){
     var c=s.charAt(i),rest=s.slice(i),vor=t[t.length-1];
     if(/\s/.test(c)){i++;continue;}
+    if((m=/^(\d+)\s*h\s*(\d{1,2})(?![\d.,])(?:\s*min\b)?/.exec(rest))){
+      if(+m[2]>59)return null;
+      t.push({n:+m[1]+m[2]/60,raw:m[0],zeit:[+m[1],+m[2]]});i+=m[0].length;continue;}
     if((m=/^(?:\d[\d.]*(?:,\d+)?|,\d+)/.exec(rest))){t.push({n:rwZahl(m[0]),raw:m[0]});i+=m[0].length;continue;}
-    if(/[xX]/.test(c)&&vor&&(vor.n!=null||vor.p===')')&&/^[xX]\s*[\d(√]/.test(rest)){t.push({o:'*'});i++;continue;}
-    if((m=/^[A-Za-zÄÖÜäöüß€$°]+/.exec(rest))){i+=m[0].length;continue;}
+    if(/[xX]/.test(c)&&vor&&(vor.n!=null||vor.p===')')&&/^[xX]\s*[\d(√π]/.test(rest)){t.push({o:'*'});i++;continue;}
+    if((m=/^(sin|cos|tan)\s*⁻¹/i.exec(rest))){mal();t.push({f:'a'+m[1].toLowerCase()});i+=m[0].length;continue;}
+    if((m=/^[A-Za-zÄÖÜäöüß€$°]+/.exec(rest))){
+      var w=m[0].toLowerCase();
+      if(w==='pi'){mal();t.push({n:Math.PI,raw:'π'});}
+      else if(RW_FN[w]){mal();t.push({f:RW_FN[w]});}
+      i+=m[0].length;continue;}
     if(c==='=')break;
-    if(c==='+')t.push({o:'+'});
+    if(c==='π'){mal();t.push({n:Math.PI,raw:'π'});}
+    else if(c==='+')t.push({o:'+'});
     else if('-−–'.indexOf(c)>=0)t.push({o:'-'});
     else if('*·×⋅∙'.indexOf(c)>=0)t.push({o:'*'});
     else if('/÷:'.indexOf(c)>=0)t.push({o:'/'});
     else if(c==='^')t.push({o:'^'});
-    else if(c==='('||c===')')t.push({p:c});
+    else if(c==='('){mal();t.push({p:c});}
+    else if(c===')')t.push({p:c});
     else if(c==='%')t.push({pc:1});
     else if(c==='²')t.push({pw:2});
     else if(c==='³')t.push({pw:3});
-    else if(c==='√')t.push({f:1});
+    else if(c==='√'){mal();t.push({f:'sqrt'});}
     else return null;
     i++;
   }
   return t;
 }
-/* Rechnet ohne eval: Punkt vor Strich, Klammern, Potenz, Wurzel, Prozent. */
-function rwRechne(s){
-  var t=rwTokens(s),i=0;
+/* Winkelfunktionen rechnen in Grad, wie in den Prüfungen („cos 30°“). */
+var RW_GRAD=Math.PI/180;
+function rwFunktion(f,x){
+  function glatt(v){return Math.abs(v)<1e-12?0:v;}
+  switch(f){
+    case 'sqrt':return Math.sqrt(x);
+    case 'sin':return glatt(Math.sin(x*RW_GRAD));
+    case 'cos':return glatt(Math.cos(x*RW_GRAD));
+    case 'tan':return Math.abs((((x-90)%180)+180)%180)<1e-9?NaN:glatt(Math.tan(x*RW_GRAD));
+    case 'asin':return Math.asin(x)/RW_GRAD;
+    case 'acos':return Math.acos(x)/RW_GRAD;
+    case 'atan':return Math.atan(x)/RW_GRAD;
+  }
+  return NaN;
+}
+/* Rechnet ohne eval: Punkt vor Strich, Klammern, Potenz, Wurzel, Winkel,
+   Prozent. Prozent wie auf dem Tischrechner: Steht rechts von Plus oder
+   Minus nur ein Prozentsatz, ist er ein Anteil des Werts davor –
+   „200 + 19 %“ = 238, „1.000 − 10 % − 2 %“ = 882. Sonst ist 19 % = 0,19
+   („30.250 · 6 %“ = 1.815). Nimmt Text oder schon zerlegte Zeichen. */
+function rwAuswerten(t){
+  var i=0;
   if(!t||!t.length)return NaN;
   function k(){return t[i];}
-  function summe(){var v=produkt();while(k()&&(k().o==='+'||k().o==='-')){var o=t[i++].o,w=produkt();v=o==='+'?v+w:v-w;}return v;}
+  function zu(a){for(var j=a,d=0;j<t.length;j++){if(t[j].p==='(')d++;else if(t[j].p===')'&&--d===0)return j;}return -1;}
+  function nurProzent(a,b){
+    if(b-a<2||!t[b-1].pc)return false;
+    if(b-a===2)return t[a].n!=null;
+    return t[a].p==='('&&zu(a)===b-2;
+  }
+  function summe(){var v=produkt();while(k()&&(k().o==='+'||k().o==='-')){var o=t[i++].o,a=i,w=produkt();if(nurProzent(a,i))w=v*w;v=o==='+'?v+w:v-w;}return v;}
   function produkt(){var v=vorzeichen();while(k()&&(k().o==='*'||k().o==='/')){var o=t[i++].o,w=vorzeichen();v=o==='*'?v*w:v/w;}return v;}
   function vorzeichen(){var x=k();if(x&&(x.o==='-'||x.o==='+')){i++;var v=vorzeichen();return x.o==='-'?-v:v;}return potenz();}
   function potenz(){var v=nachsatz();if(k()&&k().o==='^'){i++;v=Math.pow(v,vorzeichen());}return v;}
@@ -2531,12 +2900,14 @@ function rwRechne(s){
     var x=t[i++];
     if(!x)throw 0;
     if(x.n!=null)return x.n;
-    if(x.f)return Math.sqrt(nachsatz());
+    if(x.f)return rwFunktion(x.f,nachsatz());
     if(x.p==='('){var v=summe();if(!k()||k().p!==')')throw 0;i++;return v;}
     throw 0;
   }
   try{var v=summe();return (i===t.length&&isFinite(v))?v:NaN;}catch(e){return NaN;}
 }
+function rwRechne(s){return rwAuswerten(rwTokens(s));}
+window.KVM_rechnen={auswerten:rwAuswerten,rechne:rwRechne,zahl:rwZahl};
 /* Ergebnis auf Deutsch; bei Euro mit Cent, sobald Cent anfallen. */
 function rwFmt(v,u){
   if(!isFinite(v))return '';
@@ -2554,8 +2925,11 @@ function rwZahlText(raw){
 function rwSchoen(s){
   var t=rwTokens(s);if(!t)return String(s||'').trim();
   var o='',vor=null;
-  t.forEach(function(x){
-    if(x.n!=null)o+=rwZahlText(x.raw);
+  t.forEach(function(x,j){
+    if(x.zeit)o+=x.zeit[0]+' h '+(x.zeit[1]<10?'0':'')+x.zeit[1]+' min';
+    else if(x.raw==='π')o+='π';
+    else if(x.n!=null)o+=rwZahlText(x.raw)+(vor&&/^(sin|cos|tan)$/.test(vor.f||'')?'°':'');
+    else if(x.f&&x.f!=='sqrt')o+=(x.f.charAt(0)==='a'?x.f.slice(1)+'⁻¹':x.f)+((t[j+1]||{}).p==='('?'':' ');
     else if(x.o){
       var unaer=(x.o==='-'||x.o==='+')&&(!vor||vor.o||vor.p==='('||vor.f);
       if(unaer)o+=(x.o==='-'?'−':'+');
@@ -2573,7 +2947,7 @@ function rwSchoen(s){
 function rwZeileText(r){
   var l=String(r.l||'').trim(),f=String(r.f||'').trim(),u=String(r.u||'').trim();
   if(!f)return l;
-  var v=rwRechne(f),rechnet=/[-+−–·*×xX÷\/:^%²³√(]/.test(f.replace(/^\s*[−–-]/,''));
+  var v=rwRechne(f),rechnet=/[-+−–·*×xX÷\/:^%²³√(π]|sin|cos|tan|\d\s*h\s*\d/i.test(f.replace(/^\s*[−–-]/,''));
   var erg=isFinite(v)?rwFmt(v,u)+(u?' '+u:''):'';
   var s=erg?(rechnet?rwSchoen(f)+' = '+erg:erg):f;
   return l?l.replace(/\s*:?$/,':')+' '+s:s;
@@ -2760,6 +3134,7 @@ function renderQuestion(){
   $("qFach").textContent=isPruef?q.sub.replace(/^IHK-Prüfung:\s*/,""):q.f+". "+FACH_KURZ[q.f];
   $("qCount").textContent=(q._case?"Teil "+q._case.i+"/"+q._case.total:"Frage "+(state.idx+1)+"/"+state.pool.length);
   var typeEl=$("qType");
+  meldenKnopf($("qMelden"),q.id);
   if(q.t==='mc'){typeEl.textContent="Auswahlfrage";typeEl.className="qtype mc";}
   else if(q.t==='calc'){typeEl.textContent="Rechenaufgabe";typeEl.className="qtype calc";}
   else{typeEl.textContent="Offene Frage";typeEl.className="qtype open";}
@@ -2819,7 +3194,8 @@ function renderQuestion(){
   }
   if(window.KVMvoice)window.KVMvoice.onQuestion(q);
 }
-function parseCalcNum(s){s=(""+s).trim().replace(/[^0-9.,\-]/g,"");if(s.indexOf(",")>=0&&s.indexOf(".")>=0){s=s.replace(/\./g,"").replace(",",".");}else if(s.indexOf(",")>=0){s=s.replace(",",".");}var v=parseFloat(s);return isFinite(v)?v:NaN;}
+/* „1.234,5“, „1234,5“, „4.400“ (Tausenderpunkt), „1.5“ und „−3“ werden richtig gelesen. */
+function parseCalcNum(s){s=(""+s).trim().replace(/[−–]/g,"-").replace(/[^0-9.,\-]/g,"");if(s.indexOf(",")>=0){s=s.replace(/\./g,"").replace(",",".");}else if(/^-?\d{1,3}(\.\d{3})+$/.test(s)){s=s.replace(/\./g,"");}var v=parseFloat(s);return isFinite(v)?v:NaN;}
 function fmtCalc(x){var r=Math.round(x*1e6)/1e6;var s=""+r;if(s.indexOf(".")>=0)s=s.replace(/0+$/,"").replace(/\.$/,"");return s.replace(".",",");}
 function renderCalc(q){
   var inp=$("qCalcInput");inp.value="";inp.disabled=false;$("qCalcUnit").textContent=q.unit||"";
@@ -3130,7 +3506,7 @@ function blTeilHTML(q){
   if(q.braucht&&q.braucht.length)
     h+='<button type="button" class="bl-braucht" data-zu="'+esc(q.braucht[0])+'">baut auf '+
        esc(q.braucht.join('), '))+') auf</button>';
-  h+='</header>';
+  h+=meldenKnopfHTML(q.id)+'</header>';
   h+=blVorherHTML(q);
   h+='<div class="bl-frage rt">'+rtHTML(T.frage)+'</div>';
   tabListe(q.tab).forEach(function(t,i){
@@ -3146,8 +3522,8 @@ function blTeilHTML(q){
        '<label class="aw-lbl" for="bla-'+id+'">'+(rw?'Erläuterung · optional':'Deine Antwort · wie in der Prüfung')+'</label>'+
        '<textarea class="cc-input'+(rw?' klein':'')+'" id="bla-'+id+'" rows="3" data-antwort="'+id+'" '+
        'placeholder="'+(rw?'Begründung, Beurteilung oder Antwortsatz …':'Antwort schreiben …')+'">'+esc(oaGet(q.id))+'</textarea>'+
-       '<div class="bl-abar"><button type="button" class="bl-reveal" data-auf="'+id+'">'+IC_AUGE+
-       'Lösung'+(teil?' zu '+teil+')':'')+' aufdecken</button>'+
+       '<div class="bl-abar">'+(echtLaeuft()?'':'<button type="button" class="bl-reveal" data-auf="'+id+'">'+IC_AUGE+
+       'Lösung'+(teil?' zu '+teil+')':'')+' aufdecken</button>')+
        (rw?'':'<button type="button" class="aw-tool" data-rwauf="'+id+'">'+IC_RECHNEN+'Rechenweg</button>')+
        '</div></div>';
   }
@@ -3162,6 +3538,9 @@ function blHatAusgangslage(fall){
 }
 function renderBlatt(){
   var fall=state.fall,nrs=blNummern(),nr=state.blattNr;
+  var echt=echtAktiv();
+  if(echt&&echt.ende)state.pool.forEach(function(q){state.aufgedeckt[q.id]=true;});
+  echtBand(echt);
   var auf=aufgabeVon(fall,nr)||{},teile=blTeile(nr),pos=nrs.indexOf(nr);
   var pruef=/^P-/.test(fall.id||'');
   var datum=(/–\s*([^–]+)$/.exec(fall.title||'')||[])[1]||fall.termin||'';
@@ -3198,20 +3577,21 @@ function renderBlatt(){
   teile.forEach(function(q){h+=blTeilHTML(q);});
   $("blAufgabe").innerHTML=h;
 
-  var offen=teile.filter(blAufgedeckt).length;
+  var offen=teile.filter(blAufgedeckt).length,laeuft=echtLaeuft();
   var f='';
   if(pos>0)f+='<button type="button" class="bl-nav" id="blPrev">← Aufgabe '+nrs[pos-1]+'</button>';
-  if(offen<teile.length)
-    f+='<button type="button" class="bl-nav" id="blAlle">Alle Lösungen aufdecken</button>';
-  else
-    f+='<button type="button" class="bl-nav" id="blExport">Von Claude prüfen lassen</button>';
+  /* Unter Prüfungsbedingungen gibt es vor der Abgabe nichts aufzudecken. */
+  if(!laeuft)f+=offen<teile.length?'<button type="button" class="bl-nav" id="blAlle">Alle Lösungen aufdecken</button>':
+    '<button type="button" class="bl-nav" id="blExport">Von Claude prüfen lassen</button>';
   f+='<button type="button" class="bl-nav primary" id="blNext">'+
-     (pos>=nrs.length-1?'Zum Ergebnis →':('Aufgabe '+nrs[pos+1]+' →'))+'</button>';
+     (pos>=nrs.length-1?(laeuft?'Abgeben':'Zum Ergebnis →'):('Aufgabe '+nrs[pos+1]+' →'))+'</button>';
   $("blFoot").innerHTML=f;
   blBinden();
   /* Die aktuelle Aufgabe in der Leiste sichtbar halten (viele Aufgaben). */
   var cur=st.querySelector('.cur');
   if(cur)st.scrollLeft=Math.max(0,cur.offsetLeft-st.clientWidth/2+cur.offsetWidth/2);
+  echtUhr();
+  if(laeuft&&!echtTimer)echtTimer=setInterval(echtUhr,1000);
 }
 
 function blBinden(){
@@ -3277,7 +3657,7 @@ function blBinden(){
   var nrs=blNummern(),pos=nrs.indexOf(state.blattNr);
   if(pv)pv.onclick=function(){if(pos>0)blOeffnen(nrs[pos-1]);};
   if(nx)nx.onclick=function(){
-    if(pos>=nrs.length-1){finishRound(false);}else{blOeffnen(nrs[pos+1]);}
+    if(pos>=nrs.length-1){if(echtLaeuft())echtAbgebenFragen();else finishRound(false);}else{blOeffnen(nrs[pos+1]);}
   };
   if(al)al.onclick=function(){
     blTeile(state.blattNr).forEach(function(q){state.aufgedeckt[q.id]=true;});
@@ -3290,6 +3670,278 @@ function blBindenStepper(){
     b.onclick=function(){blOeffnen(parseInt(b.dataset.nr,10));};
   });
 }
+
+/* ===== Mündlich üben (Fachgespräch) =====
+   Die Frage wird vorgelesen; geantwortet wird frei per Sprache (Spracherkennung,
+   wo der Browser sie hat – sonst laut oder in Stichpunkten). Danach kommen die
+   Musterlösung und die Begriffe daraus, die in der Antwort vorkamen – als
+   Hilfe, nicht als Bewertung. Den Selbstcheck zählt der Lernstand wie im
+   Training. Geeignet sind offene Fragen und Auswahlfragen, deren Frage allein
+   verständlich ist (kein „Welche Aussage …“). */
+var OR_LEN=10,or={pool:[],idx:0,phase:'frage',text:'',zwischen:'',rec:null,fehler:''};
+var OR_SR=window.SpeechRecognition||window.webkitSpeechRecognition||null;
+var OR_UNGEEIGNET=/folgend|Aussage|trifft|richtig|falsch|zutreffend|\bnicht\b|\bkein|Beispiel|welche[rs]? (der|dieser)|Welche Antwort|Was gilt|Wofür steht|Kombination|Reihenfolge|ordnen/i;
+var OR_FUELL=' aber alle allem allen aller alles also auch auf aus bei beim bzw dabei damit dann dass dem den denen der des die dies diese diesem diesen dieser dieses durch eine einem einen einer eines etwa für gegen hat haben ihre ihren immer indem insbesondere jede jedem jeden jeder jedes kann können mehr mit muss müssen nach noch nur oder ohne sich sind soll sollen sowie über unter usw vom von vor während weil wenn werden wird wurde wurden zum zur zwischen sehr sein seine seiner diesem jeweils einer möglichst bestimmte bestimmten ';
+function orGeeignet(q){
+  if(q.t==='open')return !!(q.a||q.e);
+  if(q.t!=='mc'||!q.o)return false;
+  return !OR_UNGEEIGNET.test(q.q)&&q.q.length<=220&&/\?\s*$/.test(q.q)&&q.o.some(function(o){return o.ok;});
+}
+function orLoesung(q){
+  if(q.t==='open')return q.a||q.e||'';
+  var r=(q.o.filter(function(o){return o.ok;})[0]||{}).t||'';
+  return r+(q.e?'\n\n'+q.e:'');
+}
+/* Schlüsselbegriffe: Wörter ab 5 Buchstaben ohne Füllwörter, Substantive zuerst. */
+function orBegriffe(txt){
+  var seen={},out=[];
+  (String(txt).match(/[A-Za-zÄÖÜäöüß][A-Za-zÄÖÜäöüß-]{4,}/g)||[]).forEach(function(w){
+    var k=w.toLowerCase();if(OR_FUELL.indexOf(' '+k+' ')>=0||seen[k])return;seen[k]=1;out.push(w);});
+  out.sort(function(a,b){return (/^[A-ZÄÖÜ]/.test(b)?1:0)-(/^[A-ZÄÖÜ]/.test(a)?1:0);});
+  return out.slice(0,8);
+}
+function orStamm(w){var k=w.toLowerCase().replace(/(ungen|ung|en|er|es|e|n|s)$/,'');return k.slice(0,Math.min(8,Math.max(4,k.length)));}
+function orGetroffen(w,antwort){return antwort.toLowerCase().indexOf(orStamm(w))>=0;}
+function orSprechen(t){
+  var syn=window.speechSynthesis;if(!syn||typeof window.SpeechSynthesisUtterance!=='function')return;
+  try{syn.cancel();var u=new SpeechSynthesisUtterance(t);u.lang='de-DE';
+    var v=(syn.getVoices()||[]).filter(function(x){return /^de(\b|[-_])/i.test(x.lang);})[0];if(v)u.voice=v;syn.speak(u);}catch(e){}
+}
+function orStopHoeren(){if(or.rec){var r=or.rec;or.rec=null;try{r.stop();}catch(e){}}}
+function orStop(){orStopHoeren();try{if(window.speechSynthesis)window.speechSynthesis.cancel();}catch(e){}}
+function orHoeren(){
+  if(!OR_SR)return;
+  orStop();
+  var r;try{r=new OR_SR();}catch(e){return;}
+  r.lang='de-DE';r.continuous=true;r.interimResults=true;
+  var basis=or.text?or.text+' ':'';
+  r.onresult=function(ev){var fin='',zw='';for(var i=0;i<ev.results.length;i++){var t=ev.results[i][0].transcript;if(ev.results[i].isFinal)fin+=t;else zw+=t;}
+    or.text=(basis+fin).replace(/\s+/g,' ').trim();or.zwischen=zw;var el=$("orLive");if(el)el.innerHTML=orTranskriptHTML();};
+  r.onerror=function(ev){if(ev&&(ev.error==='not-allowed'||ev.error==='service-not-allowed'))or.fehler='Kein Zugriff aufs Mikrofon – erlaube es im Browser oder schreib deine Antwort unten.';};
+  r.onend=function(){if(or.rec===r){or.rec=null;if(or.phase==='hoeren'){or.phase='gehoert';orZeigen();}}};
+  or.rec=r;or.phase='hoeren';or.zwischen='';or.fehler='';
+  try{r.start();}catch(e){or.rec=null;or.phase='gehoert';}
+  orZeigen();
+}
+function orTranskriptHTML(){return (or.text?esc(or.text):'')+(or.zwischen?' <i>'+esc(or.zwischen)+'</i>':'')||'<i>…</i>';}
+function startOral(){
+  var cand=qForScope(state.fach,state.sub).filter(orGeeignet);
+  if(cand.length<3){alert("Für diesen Bereich gibt es noch keine passenden Fragen fürs Fachgespräch.");return;}
+  state.mode='oral';state.pool=shuffle(weightedPick(cand,Math.min(OR_LEN,cand.length)));
+  state.results=[];state.wrong=[];
+  or.idx=0;
+  var p=$("orProtocol");p.innerHTML="";state.pool.forEach(function(_,i){var d=document.createElement("div");d.className="seg";d.id="orSeg"+i;p.appendChild(d);});
+  show("scrOral");orFrage();
+}
+function orFrage(){
+  or.phase='frage';or.text='';or.zwischen='';or.fehler='';
+  var q=state.pool[or.idx];
+  $("orFach").textContent=(FACH_KURZ[q.f]||'')+' · mündlich';
+  $("orCount").textContent='Frage '+(or.idx+1)+'/'+state.pool.length;
+  $("orSub").textContent=q.sub||'';
+  $("orText").textContent=q.q;
+  state.pool.forEach(function(_,i){var d=$("orSeg"+i);if(d)d.className='seg'+(i===or.idx?' cur':(state.results[i]===true?' ok':(state.results[i]===false?' err':'')));});
+  $("orVorlesen").hidden=!window.speechSynthesis;
+  orZeigen();window.scrollTo(0,0);
+  orSprechen(q.q);
+}
+function orZeigen(){
+  var q=state.pool[or.idx],b=$("orBereich"),h='',a='';
+  if(or.phase==='frage'){
+    if(OR_SR){
+      h='<p class="or-hinweis">Antworte frei und vollständig, wie im Fachgespräch vor dem Prüfungsausschuss. Tippe auf „Fertig“, wenn du fertig bist.</p>';
+      a='<button type="button" class="primary or-mic" id="orStart">'+'<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2a3 3 0 0 0-3 3v6a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3z"/><path d="M19 10v1a7 7 0 0 1-14 0v-1"/><path d="M12 18v4"/></svg>Antworten</button>'+
+        '<button type="button" class="btn-no or-ohne" id="orOhne">Ohne Mikrofon</button>';
+    }else{
+      h='<label class="or-lbl" for="orTa">Deine Antwort · Stichpunkte</label><textarea id="orTa" placeholder="Sprich laut und notiere hier Stichpunkte – oder decke direkt auf."></textarea>'+
+        '<p class="or-hinweis">Spracherkennung gibt es in diesem Browser nicht (z. B. in Chrome und Edge schon).</p>';
+      a='<button type="button" class="primary" id="orLoesen">Lösung zeigen</button>';
+    }
+  }else if(or.phase==='hoeren'){
+    h='<div class="or-hoer"><span class="vs-dot"></span>Ich höre zu …</div><div class="or-transkript" id="orLive">'+orTranskriptHTML()+'</div>';
+    a='<button type="button" class="primary" id="orFertig">Fertig</button>';
+  }else if(or.phase==='gehoert'){
+    h='<label class="or-lbl" for="orTa">Deine Antwort'+(OR_SR?' · bei Hörfehlern einfach korrigieren':'')+'</label><textarea id="orTa">'+esc(or.text)+'</textarea>'+
+      (or.fehler?'<p class="or-hinweis" role="alert">'+esc(or.fehler)+'</p>':'');
+    a='<div class="split">'+(OR_SR?'<button type="button" class="btn-no" id="orWeiter">Weiter sprechen</button>':'')+
+      '<button type="button" class="primary" id="orLoesen">Lösung zeigen</button></div>';
+  }else{
+    var loes=orLoesung(q),begr=orBegriffe(q.t==='mc'?(q.o.filter(function(o){return o.ok;})[0]||{}).t||loes:loes),tr=begr.filter(function(w){return orGetroffen(w,or.text);});
+    h='<span class="or-lbl">Deine Antwort</span><div class="or-transkript">'+(or.text?esc(or.text):'<i>— keine Antwort notiert —</i>')+'</div>'+
+      '<div class="or-loesung"><span class="or-lbl">'+(q.t==='open'?'Musterlösung':'Richtige Antwort')+'</span><div class="rt">'+rtHTML(loes)+'</div></div>';
+    if(begr.length){
+      h+='<p class="or-begriffe-t">'+(or.text?('Begriffe aus der Lösung in deiner Antwort: <b>'+tr.length+' von '+begr.length+'</b> – ein Hinweis, keine Bewertung.'):'Darauf kommt es an:')+'</p>'+
+        '<div class="or-begriffe">'+begr.map(function(w){return '<span class="'+(tr.indexOf(w)>=0?'ja':'')+'">'+esc(w)+'</span>';}).join('')+'</div>';
+    }
+    a='<p class="or-hinweis">Wie gut war deine Antwort?</p><div class="split drei">'+
+      '<button type="button" class="btn-no" data-or="0">Nicht gewusst</button>'+
+      '<button type="button" class="btn-teil" data-or="1">Teilweise</button>'+
+      '<button type="button" class="btn-ok" data-or="2">Gewusst</button></div>';
+  }
+  b.innerHTML=h;$("orActions").innerHTML=a;
+  var x;
+  if((x=$("orStart")))x.onclick=orHoeren;
+  if((x=$("orOhne")))x.onclick=function(){or.phase='gehoert';orZeigen();var t=$("orTa");if(t)t.focus();};
+  if((x=$("orFertig")))x.onclick=function(){or.phase='gehoert';orStopHoeren();orZeigen();};
+  if((x=$("orWeiter")))x.onclick=function(){var t=$("orTa");if(t)or.text=t.value.trim();orHoeren();};
+  if((x=$("orLoesen")))x.onclick=function(){var t=$("orTa");if(t)or.text=t.value.trim();orStop();or.phase='loesung';orZeigen();};
+  $("orActions").querySelectorAll('[data-or]').forEach(function(btn){btn.onclick=function(){
+    var v=+btn.getAttribute('data-or'),i=or.idx;
+    state.results[i]=v===2;
+    if(v===2)recordResult(q.id,true);
+    else{state.wrong.push(q);if(v===0)recordResult(q.id,false);else tagZaehlen();}
+    if(or.idx>=state.pool.length-1){orStop();finishRound(false);}
+    else{or.idx++;orFrage();}
+  };});
+}
+$("btnOral").addEventListener("click",startOral);
+$("orQuit").addEventListener("click",function(){orStop();show("scrHome");});
+$("orVorlesen").addEventListener("click",function(){var q=state.pool[or.idx];if(q)orSprechen(q.q);});
+
+/* ===== Lern-Erinnerung (Web) =====
+   Ohne eigenen Server gibt es im Browser keine verlässlichen Push-Nachrichten.
+   Stattdessen ein täglicher Kalendereintrag (.ics) mit Erinnerung zur gewählten
+   Uhrzeit – in „schwebender“ Ortszeit, damit jeder Kalender ihn in seiner
+   Zeitzone zeigt; mit Prüfungstermin endet er am Tag davor. Die Uhrzeit teilt
+   sich den Schlüssel kvm_erinnerung mit der App (FR-009). */
+var ER_KEY='kvm_erinnerung';
+function erGet(){try{var d=JSON.parse(localStorage.getItem(ER_KEY)||'null');return (d&&/^\d{2}:\d{2}$/.test(d.zeit))?d:{zeit:'19:00'};}catch(e){return {zeit:'19:00'};}}
+function erSet(d){try{localStorage.setItem(ER_KEY,JSON.stringify(d));}catch(e){}}
+function icsText(t){return String(t).replace(/\\/g,'\\\\').replace(/;/g,'\\;').replace(/,/g,'\\,').replace(/\n/g,'\\n');}
+/* Zeilen über 75 Byte falten (RFC 5545); gezählt in UTF-8-Bytes. */
+function icsFalten(z){var out=[],cur='',n=0;for(var i=0;i<z.length;i++){var ch=z.charAt(i),b=unescape(encodeURIComponent(ch)).length;
+  if(n+b>(out.length?74:75)){out.push(cur);cur='';n=0;}cur+=ch;n+=b;}out.push(cur);return out.join('\r\n ');}
+function erIcs(zeit,jetzt){
+  jetzt=jetzt||new Date();
+  var p2=function(x){return (x<10?'0':'')+x;},hm=zeit.split(':');
+  var start=new Date(jetzt.getFullYear(),jetzt.getMonth(),jetzt.getDate(),+hm[0],+hm[1]);
+  if(start<=jetzt)start.setDate(start.getDate()+1);
+  var tag=function(d){return d.getFullYear()+p2(d.getMonth()+1)+p2(d.getDate());};
+  var regel='FREQ=DAILY',pt=ptGet();
+  if(pt){var q=pt.datum.split('-'),bis=new Date(+q[0],+q[1]-1,+q[2]-1);if(bis>=new Date(start.getFullYear(),start.getMonth(),start.getDate()))regel+=';UNTIL='+tag(bis)+'T235959';}
+  var url=location.href.split('#')[0];
+  var L=['BEGIN:VCALENDAR','VERSION:2.0','PRODID:-//Meister-Trainer//Lern-Erinnerung//DE','CALSCALE:GREGORIAN','METHOD:PUBLISH',
+    'BEGIN:VEVENT','UID:lernen-'+jetzt.getTime()+'@meister-trainer',
+    'DTSTAMP:'+jetzt.toISOString().replace(/[-:]/g,'').replace(/\.\d+/,''),
+    'DTSTART:'+tag(start)+'T'+p2(+hm[0])+p2(+hm[1])+'00','DURATION:PT20M','RRULE:'+regel,
+    'SUMMARY:'+icsText('Lernen für die Meisterprüfung'),
+    'DESCRIPTION:'+icsText('Ein paar Minuten reichen: die fälligen Fragen und dein Tagesziel. '+url),
+    'URL:'+url,
+    'BEGIN:VALARM','ACTION:DISPLAY','DESCRIPTION:'+icsText('Zeit zum Lernen'),'TRIGGER:PT0M','END:VALARM',
+    'END:VEVENT','END:VCALENDAR'];
+  return L.map(icsFalten).join('\r\n')+'\r\n';
+}
+(function(){
+  var ein=$("erinnZeit"),knopf=$("erinnIcs");if(!ein||!knopf)return;
+  ein.value=erGet().zeit;
+  ein.addEventListener('change',function(){if(/^\d{2}:\d{2}$/.test(ein.value))erSet({zeit:ein.value});});
+  knopf.addEventListener('click',function(){
+    var z=/^\d{2}:\d{2}$/.test(ein.value)?ein.value:'19:00';erSet({zeit:z});
+    var blob=new Blob([erIcs(z)],{type:'text/calendar;charset=utf-8'}),u=URL.createObjectURL(blob),a=document.createElement('a');
+    a.href=u;a.download='lern-erinnerung.ics';document.body.appendChild(a);a.click();a.remove();
+    setTimeout(function(){URL.revokeObjectURL(u);},4000);
+    $("erinnHint").textContent='Kalendereintrag erstellt: täglich um '+z+' Uhr. Öffne die Datei, um ihn in deinen Kalender zu übernehmen.';
+  });
+})();
+
+/* ===== Fehler melden: Knöpfe =====
+   Gemeldete Fragen merkt sich das Gerät (kvm_gemeldet), damit der Knopf
+   „Gemeldet ✓“ zeigt. Den Dialog und das Senden übernimmt der Cloud-Block. */
+var MELDEN_FLAG='<svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 21V4h11l-2 4 2 4H5"/></svg>';
+function gemeldet(id){try{return !!(JSON.parse(localStorage.getItem('kvm_gemeldet')||'{}')||{})[id];}catch(e){return false;}}
+function meldenKnopfHTML(id){var g=gemeldet(id);
+  return '<button type="button" class="melden-btn'+(g?' gemeldet':'')+'" data-melden="'+esc(id)+'" title="Fehler in dieser Teilaufgabe melden">'+
+    MELDEN_FLAG+'<span>'+(g?'Gemeldet ✓':'Fehler?')+'</span></button>';}
+function meldenKnopf(b,id){if(!b)return;b.setAttribute('data-melden',id);var g=gemeldet(id);b.classList.toggle('gemeldet',g);
+  b.querySelector('span').textContent=g?'Gemeldet ✓':'Fehler?';}
+
+/* ===== Prüfung unter Echtbedingungen =====
+   Mit Uhr über die echte Bearbeitungszeit (Kraftverkehr laut Aufgabe 180 min,
+   Basisqualifikationen 90 min, NT 60 min); Lösungen gibt es erst nach der
+   Abgabe. Der Durchgang steht in kvm_echt ({id,start,min,ende}). Die Uhr
+   rechnet ab der Startzeit – sie läuft also weiter, wenn man die Prüfung
+   verlässt oder neu lädt, wie in der echten Prüfung. Ist die Zeit um, gilt die
+   Prüfung als abgegeben. Ergebnisse stehen in kvm_echt_verlauf. */
+var ECHT_KEY='kvm_echt',ECHT_VERLAUF='kvm_echt_verlauf',echtTimer=null;
+function echtGet(){try{var d=JSON.parse(localStorage.getItem(ECHT_KEY)||'null');return (d&&d.id&&d.start&&d.min)?d:null;}catch(e){return null;}}
+function echtSet(d){try{if(d)localStorage.setItem(ECHT_KEY,JSON.stringify(d));else localStorage.removeItem(ECHT_KEY);}catch(e){}}
+function echtMinuten(fall){var m=/Bearbeitungszeit\s+(\d+)\s*Minuten/.exec(fall.context||'');return m?+m[1]:(/^P-NT-/.test(fall.id)?60:90);}
+function echtAktiv(){var e=echtGet();return (e&&state.mode==='cases'&&state.fall&&state.fall.id===e.id)?e:null;}
+function echtLaeuft(){var e=echtAktiv();return !!(e&&!e.ende);}
+function uhrText(ms){var s=Math.max(0,Math.ceil(ms/1000)),h=Math.floor(s/3600),m=Math.floor(s%3600/60),x=s%60;
+  return (h?h+':'+(m<10?'0':''):'')+m+':'+(x<10?'0':'')+x;}
+function dauerText(ms){var m=Math.max(0,Math.round(ms/60000)),h=Math.floor(m/60);m%=60;return h?(h+' h'+(m?' '+m+' min':'')):(m+' min');}
+function echtVerlauf(){try{var v=JSON.parse(localStorage.getItem(ECHT_VERLAUF)||'[]');return Array.isArray(v)?v:[];}catch(e){return [];}}
+function echtMerken(e,pkt,max,note){
+  var v=echtVerlauf();v.push({id:e.id,tag:todayIdx(),min:e.min,dauer:e.ende-e.start,pkt:pkt,max:max,note:note});
+  try{localStorage.setItem(ECHT_VERLAUF,JSON.stringify(v.slice(-40)));}catch(x){}
+}
+/* Antworten, Rechenwege, Tabellen und Punkte einer Prüfung leeren – der
+   Durchgang beginnt wie in der Prüfung mit leeren Blättern. */
+function echtHatAntworten(ids){var ot=otAll();return ids.some(function(i){
+  return oaGet(i)||rwHat(i)||opGet(i)!=null||Object.keys(ot).some(function(k){return k.indexOf(i+'#')===0;});});}
+function echtLeeren(ids){
+  var oa=oaAll(),op=opAll(),ot=otAll(),rw=rwAll();
+  ids.forEach(function(i){delete oa[i];delete op[i];delete rw[i];Object.keys(ot).forEach(function(k){if(k.indexOf(i+'#')===0)delete ot[k];});});
+  try{localStorage.setItem(OA_KEY,JSON.stringify(oa));localStorage.setItem(OP_KEY,JSON.stringify(op));
+      localStorage.setItem(OT_KEY,JSON.stringify(ot));localStorage.setItem(RW_KEY,JSON.stringify(rw));}catch(e){}
+}
+function echtUhr(){
+  var el=$("blUhr"),ab=$("blAbgabe"),e=echtAktiv();
+  if(!e||$("scrBlatt").hidden){el.hidden=true;ab.hidden=true;if(!e){clearInterval(echtTimer);echtTimer=null;}return;}
+  el.hidden=false;
+  if(e.ende){el.textContent=dauerText(e.ende-e.start);el.classList.remove('low');el.setAttribute('aria-label','Bearbeitungszeit');ab.hidden=true;
+    clearInterval(echtTimer);echtTimer=null;return;}
+  var rest=e.start+e.min*60000-Date.now();
+  if(rest<=0){echtAbgeben(true);return;}
+  el.textContent=uhrText(rest);el.classList.toggle('low',rest<=10*60000);ab.hidden=false;
+}
+function echtBand(e){
+  var b=$("blEcht");if(!b)return;
+  if(!e){b.hidden=true;return;}
+  var ic='<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l2 2M9 2h6"/></svg>';
+  b.hidden=false;b.classList.toggle('fertig',!!e.ende);
+  b.innerHTML=ic+'<span>'+(e.ende?
+    ((e.zeitUm?'<b>Zeit abgelaufen</b> – deine Antworten sind abgegeben. ':'<b>Abgegeben</b> nach '+esc(dauerText(e.ende-e.start))+'. ')+
+     'Sieh dir jetzt die Lösungen an und vergib dir je Teilaufgabe Punkte. Danach „Zum Ergebnis“ – mit Note und Bearbeitungszeit.'):
+    ('<b>Unter Prüfungsbedingungen:</b> '+esc(dauerText(e.min*60000))+' Bearbeitungszeit, Lösungen erst nach der Abgabe. '+
+     'Die Uhr läuft weiter, auch wenn du die Prüfung verlässt.'))+'</span>';
+}
+function echtAbgeben(zeitUm){
+  var e=echtAktiv();if(!e||e.ende)return;
+  e.ende=Math.min(Date.now(),e.start+e.min*60000);e.zeitUm=!!zeitUm;echtSet(e);
+  clearInterval(echtTimer);echtTimer=null;
+  blOeffnen(blNummern()[0]);
+}
+function echtAbgebenFragen(){
+  var leer=state.pool.filter(function(q){return !blBeantwortet(q);}).length;
+  if(!confirm('Jetzt abgeben?'+(leer?'\n\n'+leer+' Teilaufgabe'+(leer===1?' ist':'n sind')+' noch leer.':'')+
+    '\n\nDanach siehst du die Lösungen und bewertest dich selbst.'))return;
+  echtAbgeben(false);
+}
+$("blAbgabe").addEventListener("click",echtAbgebenFragen);
+/* Schnittstelle für die Prüfungsliste */
+window.KVM_startEcht=function(id){
+  var c=CASES.filter(function(x){return x.id===id;})[0];if(!c)return false;
+  var lauf=echtGet();
+  if(lauf&&lauf.id===id){window.KVM_startCase(id,0);return true;}
+  if(lauf&&!lauf.ende&&!confirm('Es läuft noch eine andere Prüfung unter Prüfungsbedingungen. Diesen Durchgang beenden und die neue Prüfung starten?'))return false;
+  var ids=(c.steps||[]).map(function(x){return x.id;});
+  if(echtHatAntworten(ids)){
+    if(!confirm('Für diese Prüfung sind schon Antworten gespeichert.\n\nUnter Prüfungsbedingungen startest du mit leeren Blättern – die bisherigen Antworten und Punkte dieser Prüfung werden gelöscht.'))return false;
+    echtLeeren(ids);
+  }
+  echtSet({id:id,start:Date.now(),min:echtMinuten(c)});
+  window.KVM_startCase(id,0);
+  return true;
+};
+window.KVM_echtInfo=function(id){
+  var e=echtGet(),v=echtVerlauf().filter(function(x){return x.id===id;});
+  var c=CASES.filter(function(x){return x.id===id;})[0];
+  return {min:c?echtMinuten(c):90,laeuft:!!(e&&e.id===id&&!e.ende),abgegeben:!!(e&&e.id===id&&e.ende),
+    rest:(e&&e.id===id&&!e.ende)?e.start+e.min*60000-Date.now():null,letzte:v.length?v[v.length-1]:null};
+};
+window.KVM_dauerText=dauerText;
 
 /* Aufdecken zählt als bearbeitet: ohne eigene Punkte gilt die Teilaufgabe
    am Ende als 0 von n – wie in der Prüfung eine leer abgegebene Aufgabe. */
@@ -3408,6 +4060,7 @@ function finishRound(timeUp){
     :(state.mode==='all')?"Alle Themen"
     :(state.mode==='due')?"Heute fällig"
     :(state.mode==='cases')?(pointBased?"Ergebnis":"Fallaufgabe")
+    :(state.mode==='oral')?"Mündlich üben"
     :"Trainingsrunde";
   if(state.mode==='sim'||pointBased){badge.hidden=false;var pass=pct>=50;badge.className="badge "+(pass?"pass":"fail");badge.textContent=(pass?"Bestanden":"Nicht bestanden")+" · "+ihkGrade(pct).text;}
   else badge.hidden=true;
@@ -3460,12 +4113,19 @@ function finishRound(timeUp){
       });
     }
   }
+  var echt=echtAktiv();
+  if(echt&&echt.ende&&pointBased){
+    echtMerken(echt,achieved,possible,ihkGrade(pct).note);
+    $("resLine").innerHTML+=" · Bearbeitungszeit "+dauerText(echt.ende-echt.start)+" von "+dauerText(echt.min*60000)+(echt.zeitUm?" (Zeit abgelaufen)":"");
+    echtSet(null);
+  }
   var wu=[];state.wrong.forEach(function(q){if(wu.indexOf(q)<0)wu.push(q);});state.wrong=wu;
   $("btnRetryWrong").hidden=state.wrong.length===0;$("wrongCount").textContent=state.wrong.length;
   show("scrResult");
 }
 
-function show(id){["scrHome","scrQuiz","scrBlatt","scrResult"].forEach(function(s){$(s).hidden=(s!==id);});
+function show(id){["scrHome","scrQuiz","scrBlatt","scrOral","scrResult"].forEach(function(s){$(s).hidden=(s!==id);});
+  if(id!=="scrOral")orStop();
   /* Der aktive Bildschirm steht am <body>: Werkzeugleiste und Fußnote
      blenden sich per CSS nur dort ein, wo sie gebraucht werden. */
   document.body.setAttribute("data-screen",id);
@@ -3495,7 +4155,9 @@ $("btnMixed").addEventListener("click",function(){startRound('all');});
 $("btnWeak").addEventListener("click",function(){startRound('weak');});
 $("btnSim").addEventListener("click",function(){startRound('sim');});
 $("btnQuit").addEventListener("click",function(){clearInterval(state.timerId);show("scrHome");});
-$("blQuit").addEventListener("click",function(){clearInterval(state.timerId);show("scrHome");});
+$("blQuit").addEventListener("click",function(){
+  if(echtLaeuft()&&!confirm("Prüfung verlassen?\n\nDie Uhr läuft weiter – wie in der echten Prüfung. Über die Prüfungsliste geht es weiter."))return;
+  clearInterval(state.timerId);clearInterval(echtTimer);echtTimer=null;show("scrHome");});
 /* Lightbox: Schließen über ✕, Esc (vom <dialog> selbst), Tippen neben das Bild. */
 $("lbX").addEventListener("click",function(){$("lightbox").close();});
 $("lbIn").addEventListener("click",function(){lbSkala(lbScale*1.5);});
@@ -3537,6 +4199,9 @@ $("btnReset").addEventListener("click",function(){
 /* (Lernstand-Code-/QR-Übertragung entfernt – Sicherung läuft über Konto-Login) */
 document.addEventListener("keydown",function(ev){
   if($("scrQuiz").hidden)return;var q=state.pool[state.idx];if(!q)return;
+  /* Bei offenem Taschenrechner gehören Ziffern und Enter ihm – sonst wählte
+     „12 + 3 ↵“ nebenbei Antwort 1, 2, 3 und prüfte sie. */
+  var rk=document.getElementById("mCalc");if(rk&&!rk.hidden)return;
   if(state.answered){if(ev.key==="Enter"||ev.key===" "){ev.preventDefault();var n=$("btnNext");if(n)n.click();}return;}
   if(q.t==='mc'){var k=parseInt(ev.key,10);if(k>=1&&k<=(state.shuffledOpts[state.idx].length)){var btns=$("qOpts").querySelectorAll(".opt");if(btns[k-1])btns[k-1].click();}
     /* preventDefault: sonst löst derselbe Tastendruck nach dem Prüfen auch
@@ -3582,13 +4247,73 @@ document.addEventListener("keydown",function(ev){
   function signOut(){sb.auth.signOut().then(function(){},function(){});}
   var btn=$("btnCloud"); if(btn)btn.addEventListener("click",function(){if(user){if(confirm("Abmelden? Dein Fortschritt bleibt lokal auf diesem Gerät."))signOut();}else signIn();});
   acc(false,"");
+  /* ===== Fehler melden =====
+     Der Knopf „Fehler?“ erscheint erst, wenn docs/supabase-meldungen.sql
+     eingerichtet ist (meldungen_bereit antwortet). Gesendet wird über
+     meldung_senden – auch ohne Konto. */
+  var md={frage:null,art:null,sendet:false};
+  function mdFrage(id){
+    var Q=window.KVM_QUESTIONS||[];for(var i=0;i<Q.length;i++)if(Q[i].id===id)return Q[i];
+    var C=window.KVM_CASES||[];for(var j=0;j<C.length;j++){var st=C[j].steps||[];for(var k=0;k<st.length;k++)if(st[k].id===id)return st[k];}
+    return null;
+  }
+  function mdAuszug(q){return String((q&&(q.q||q.t))||'').replace(/\s+/g,' ').trim().slice(0,160);}
+  function mdOeffnen(id){
+    md.frage=id;md.art=null;md.sendet=false;
+    var q=mdFrage(id),a=mdAuszug(q);
+    $("mdBezug").innerHTML='<b>'+esc(id)+'</b>'+(a?' · '+esc(a)+(a.length>=160?' …':''):'');
+    $("mdArten").querySelectorAll('[data-art]').forEach(function(b){b.setAttribute('aria-checked','false');});
+    $("mdText").value='';$("mdStatus").textContent='';$("mdStatus").className='md-status';
+    $("mdSenden").disabled=true;$("mdSenden").textContent='Meldung senden';
+    $("mMelden").hidden=false;document.body.style.overflow='hidden';
+    var erst=$("mdArten").querySelector('[data-art]');if(erst)try{erst.focus();}catch(e){}
+  }
+  function mdZu(){$("mMelden").hidden=true;document.body.style.overflow='';}
+  function mdPruefen(){$("mdSenden").disabled=md.sendet||!md.art;}
+  document.addEventListener('click',function(e){
+    var b=e.target.closest&&e.target.closest('[data-melden]');
+    if(b&&document.body.classList.contains('kann-melden')){e.preventDefault();mdOeffnen(b.getAttribute('data-melden'));return;}
+    if(e.target.closest&&e.target.closest('[data-md-zu]'))mdZu();
+  });
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!$("mMelden").hidden)mdZu();});
+  $("mdArten").addEventListener('click',function(e){var b=e.target.closest('[data-art]');if(!b)return;
+    md.art=b.getAttribute('data-art');
+    $("mdArten").querySelectorAll('[data-art]').forEach(function(x){x.setAttribute('aria-checked',x===b?'true':'false');});mdPruefen();});
+  $("mdSenden").addEventListener('click',function(){
+    if(!md.frage||!md.art||md.sendet)return;
+    md.sendet=true;mdPruefen();$("mdSenden").textContent='Wird gesendet …';
+    var q=mdFrage(md.frage),k={modus:document.body.getAttribute('data-screen')||'',auszug:mdAuszug(q)};
+    if(q&&q.f)k.fach=q.f;if(q&&q.sub)k.bereich=String(q.sub).slice(0,80);
+    sb.rpc('meldung_senden',{p_frage:md.frage,p_art:md.art,p_text:$("mdText").value.slice(0,1000),p_kontext:k,p_quelle:'web'}).then(function(r){
+      if(r&&r.error)throw r.error;
+      try{var g=JSON.parse(localStorage.getItem('kvm_gemeldet')||'{}')||{};g[md.frage]=Date.now();localStorage.setItem('kvm_gemeldet',JSON.stringify(g));}catch(x){}
+      document.querySelectorAll('[data-melden]').forEach(function(b){if(b.getAttribute('data-melden')===md.frage){b.classList.add('gemeldet');var sp=b.querySelector('span');if(sp)sp.textContent='Gemeldet ✓';}});
+      $("mdStatus").textContent='Danke! Deine Meldung ist angekommen.';$("mdStatus").className='md-status ok';
+      $("mdSenden").textContent='Gesendet ✓';
+      setTimeout(mdZu,1400);
+    }).catch(function(err){
+      md.sendet=false;mdPruefen();$("mdSenden").textContent='Meldung senden';
+      $("mdStatus").textContent=(err&&/zu viele/.test(err.message||''))?'Gerade gehen zu viele Meldungen ein – bitte später noch einmal.':
+        'Senden hat nicht geklappt. Bist du online? Bitte noch einmal versuchen.';
+      $("mdStatus").className='md-status err';
+    });
+  });
+  sb.rpc('meldungen_bereit').then(function(r){ if(r&&!r.error&&r.data===true)document.body.classList.add('kann-melden'); },function(){});
+
   /* ===== Vergleich mit anderen: freiwillige Wochenrangliste =====
      Nur mit Konto und nur nach Beitritt mit einem Spitznamen. Sichtbar für
      andere sind allein Spitzname, Prüfungsreife, Antworten dieser Woche und
      Lerntage in Folge. Tabelle und Funktionen richtet
      docs/supabase-rangliste.sql ein – fehlen sie, bleibt der Abschnitt
      verborgen und die Seite sieht aus wie vorher. */
-  var vg={verfuegbar:null,stand:null,info:0,laedt:false,zuletzt:0,meldeT:null,bearbeiten:false};
+  var vg={verfuegbar:null,stand:null,info:0,laedt:false,zuletzt:0,meldeT:null,bearbeiten:false,
+          gruppenOk:null,gruppen:[],ansicht:null,gstand:null,gform:null,einladung:null};
+  /* Einladungslink „…#gruppe=K7M2QX“: Code merken (übersteht den Google-Login,
+     der ohne #-Teil zurückkehrt) und aus der Adresse nehmen. */
+  (function(){var m=/[#&]gruppe=([A-Za-z0-9]{6})\b/.exec(location.hash||'');
+    if(m){try{localStorage.setItem('kvm_einladung',m[1].toUpperCase());}catch(e){}
+      try{history.replaceState(null,'',location.pathname+location.search);}catch(e){}}
+    try{vg.einladung=localStorage.getItem('kvm_einladung')||null;}catch(e){}})();
   var VG_NAME=/^[A-Za-zÄÖÜäöüß0-9 _.-]{3,20}$/;
   /* ISO-Kalenderwoche („2026-W39“): die Rangliste beginnt jeden Montag neu. */
   function isoWoche(){
@@ -3626,9 +4351,112 @@ document.addEventListener("keydown",function(ev){
       vg.verfuegbar=true;
       if(user)vg.stand=res.data||null;else vg.info=+res.data||0;
       vgZeigen();
+      if(user)grLaden().then(vgZeigen);
     },function(){vg.laedt=false;vg.verfuegbar=false;vgZeigen();});
   }
   window.KVM_vergleich=function(){vgLaden(false);};
+  /* ===== Lerngruppen: private Rangliste per Code =====
+     Setzt docs/supabase-gruppen.sql voraus; fehlt es, bleibt alles wie in der
+     reinen Wochenrangliste. Nur wer der Rangliste beigetreten ist, sieht
+     Gruppen. */
+  function grLaden(){
+    if(!user||!vg.stand||!vg.stand.dabei)return Promise.resolve();
+    return sb.rpc("gruppen_meine").then(function(r){
+      if(!r||r.error){vg.gruppenOk=false;vg.gruppen=[];return;}
+      vg.gruppenOk=true;vg.gruppen=r.data||[];
+      if(vg.ansicht&&!vg.gruppen.some(function(g){return g.id===vg.ansicht;})){vg.ansicht=null;vg.gstand=null;}
+      if(vg.ansicht)return grStandLaden();
+    },function(){vg.gruppenOk=false;});
+  }
+  function grStandLaden(){
+    return sb.rpc("gruppe_stand",{p_gruppe:vg.ansicht,p_woche:isoWoche()}).then(function(r){
+      vg.gstand=(r&&!r.error)?r.data:null;},function(){vg.gstand=null;});
+  }
+  var GR_FEHLER={P0002:"Keine Gruppe mit diesem Code gefunden.",P0003:"Tritt erst der Rangliste bei.",
+    P0004:"Du bist schon in 5 Gruppen – verlasse zuerst eine.",P0005:"Die Gruppe ist voll (200 Mitglieder).",
+    "23514":"Der Gruppenname braucht 3–40 Zeichen."};
+  function grEinladungHTML(){
+    var c=vg.einladung;
+    if(!c||!vg.gruppenOk||vg.gruppen.some(function(g){return g.code===c;}))return '';
+    return '<div class="vg-einladung"><span>Du wurdest in eine <b>Lerngruppe</b> eingeladen (Code <b class="vg-code">'+esc(c)+'</b>).</span>'+
+      '<button type="button" class="vg-btn solid" data-gr="annehmen">Beitreten</button>'+
+      '<button type="button" class="vg-btn leise" data-gr="ablehnen">Nein danke</button></div>';
+  }
+  function grTabsHTML(){
+    if(!vg.gruppenOk)return '';
+    var h='<div class="vg-tabs" role="tablist" aria-label="Rangliste wählen">'+
+      '<button type="button" role="tab" data-gr-tab="" aria-selected="'+(!vg.ansicht&&!vg.gform)+'">Alle</button>';
+    vg.gruppen.forEach(function(g){h+='<button type="button" role="tab" data-gr-tab="'+esc(g.id)+'" aria-selected="'+(vg.ansicht===g.id&&!vg.gform)+'">'+esc(g.name)+'</button>';});
+    return h+'<button type="button" class="vg-tab-neu" data-gr="neu" aria-pressed="'+(!!vg.gform)+'">+ Gruppe</button></div>';
+  }
+  function grFormHTML(){
+    return '<div class="vg-gform">'+
+      '<form class="vg-form" data-gr-form="code" novalidate><label class="vg-glbl" for="grCode">Mit Code beitreten</label>'+
+        '<input id="grCode" type="text" maxlength="9" autocomplete="off" autocapitalize="characters" spellcheck="false" placeholder="z. B. K7M2QX" value="'+esc(vg.einladung||'')+'">'+
+        '<button type="submit" class="vg-btn solid">Beitreten</button></form>'+
+      '<form class="vg-form" data-gr-form="neu" novalidate><label class="vg-glbl" for="grName">Neue Gruppe gründen</label>'+
+        '<input id="grName" type="text" maxlength="40" autocomplete="off" placeholder="Name, z. B. Meisterkurs Herbst 2026">'+
+        '<button type="submit" class="vg-btn">Gründen</button></form>'+
+      '<p class="vg-fehler" id="grFehler" role="alert"></p>'+
+      '<p class="vg-hinweis">In der Gruppe seht ihr euch gegenseitig mit Spitzname, Antworten dieser Woche und Prüfungsreife – wie in der großen Rangliste. '+
+        'Wer den Code hat, kann beitreten. <button type="button" class="vg-btn leise" data-gr="abbrechen">Abbrechen</button></p></div>';
+  }
+  function grAnsichtHTML(kw){
+    var g=vg.gstand,info=vg.gruppen.filter(function(x){return x.id===vg.ansicht;})[0]||{};
+    if(!g)return '<p class="vg-lead">Gruppe wird geladen …</p>';
+    var h='<p class="h-sub">'+esc(g.name)+' · '+fmtN(g.mitglieder|0)+' Mitglied'+((g.mitglieder|0)===1?'':'er')+' · KW '+kw+'</p>';
+    h+='<ol class="vg-liste"><li class="vg-z kopf" aria-hidden="true"><span>Pl.</span><span>Spitzname</span><span class="vg-a">Antw.</span><span class="vg-r">Reife</span></li>';
+    (g.liste||[]).forEach(function(e){h+=vgZeile(e,e.platz|0);});
+    h+='</ol>';
+    if((g.mitglieder|0)<2)h+='<p class="vg-hinweis">Noch bist du allein in der Gruppe. Lade die anderen aus deinem Kurs mit dem Code ein.</p>';
+    h+='<div class="vg-gfuss"><span>Code <b class="vg-code">'+esc(g.code||info.code||'')+'</b></span>'+
+      '<button type="button" class="vg-btn" data-gr="einladen">Einladen</button>'+
+      '<button type="button" class="vg-btn leise" data-gr="verlassen">Gruppe verlassen</button>'+
+      '<span class="vg-gmeld" id="grMeld" role="status"></span></div>';
+    return h;
+  }
+  function grNach(p,ziel){
+    return p.then(function(r){
+      if(r&&r.error)throw r.error;
+      if(ziel==='beitritt'){try{localStorage.removeItem('kvm_einladung');}catch(e){}vg.einladung=null;}
+      vg.gform=null;vg.ansicht=(r&&r.data&&r.data.id)||null;vg.gstand=null;
+      return grLaden();
+    }).then(vgZeigen,function(err){
+      var fe=$("grFehler")||$("grMeld"),t=GR_FEHLER[(err&&err.code)||'']||"Das hat nicht geklappt – bitte später noch einmal.";
+      if(fe)fe.textContent=t;else alert(t);
+    });
+  }
+  function grBinden(box){
+    box.querySelectorAll('[data-gr-tab]').forEach(function(b){b.onclick=function(){
+      vg.gform=null;vg.ansicht=b.getAttribute('data-gr-tab')||null;vg.gstand=null;vgZeigen();
+      if(vg.ansicht)grStandLaden().then(vgZeigen);};});
+    box.querySelectorAll('[data-gr]').forEach(function(b){b.onclick=function(){
+      var a=b.getAttribute('data-gr');
+      if(a==='neu'){vg.gform=vg.gform?null:'neu';vgZeigen();var i=$("grCode");if(i&&!i.value&&$("grName"))$("grName").focus();else if(i)i.focus();}
+      else if(a==='abbrechen'){vg.gform=null;vgZeigen();}
+      else if(a==='ablehnen'){try{localStorage.removeItem('kvm_einladung');}catch(e){}vg.einladung=null;vgZeigen();}
+      else if(a==='annehmen'){b.disabled=true;grNach(sb.rpc("gruppe_beitreten",{p_code:vg.einladung}),'beitritt');}
+      else if(a==='verlassen'){
+        if(!confirm("Gruppe verlassen? Du kannst später mit dem Code wieder beitreten."))return;
+        b.disabled=true;
+        sb.rpc("gruppe_verlassen",{p_gruppe:vg.ansicht}).then(function(){vg.ansicht=null;vg.gstand=null;return grLaden();}).then(vgZeigen,vgZeigen);
+      }
+      else if(a==='einladen'){
+        var g=vg.gstand||{},url=location.origin+location.pathname+'#gruppe='+g.code,
+            text='Lerngruppe „'+g.name+'“ im Meister-Trainer – lern mit! Code: '+g.code,m=$("grMeld");
+        if(navigator.share){navigator.share({title:'Lerngruppe '+g.name,text:text,url:url}).catch(function(){});}
+        else if(navigator.clipboard){navigator.clipboard.writeText(text+'\n'+url).then(function(){if(m)m.textContent='Einladung kopiert – einfach in euren Chat einfügen.';},
+          function(){if(m)m.textContent='Link: '+url;});}
+        else if(m)m.textContent='Link: '+url;
+      }
+    };});
+    box.querySelectorAll('[data-gr-form]').forEach(function(f){f.onsubmit=function(ev){
+      ev.preventDefault();var art=f.getAttribute('data-gr-form'),fe=$("grFehler"),i=f.querySelector('input'),v=(i.value||'').trim();
+      if(art==='code'){v=v.toUpperCase().replace(/[^A-Z0-9]/g,'');if(v.length!==6){fe.textContent='Der Code hat 6 Zeichen.';return;}
+        fe.textContent='';grNach(sb.rpc("gruppe_beitreten",{p_code:v}),'beitritt');}
+      else{if(v.length<3||v.length>40){fe.textContent=GR_FEHLER["23514"];return;}fe.textContent='';grNach(sb.rpc("gruppe_gruenden",{p_name:v}),'neu');}
+    };});
+  }
   function vgFormHTML(wert){
     return '<form class="vg-form" id="vgForm" novalidate>'+
       '<input id="vgName" type="text" maxlength="20" autocomplete="nickname" spellcheck="false" '+
@@ -3652,6 +4480,7 @@ document.addEventListener("keydown",function(ev){
       h='<p class="vg-lead">Wie stehst du im Vergleich zu anderen? Mit Konto kannst du einer freiwilligen '+
         '<b>Wochenrangliste</b> beitreten und siehst, wo du mit deiner Prüfungsreife stehst.'+
         (vg.info?' <b>'+fmtN(vg.info)+'</b> Lernende sind schon dabei.':'')+'</p>'+
+        (vg.einladung?'<p class="vg-einladung klein">Du wurdest in eine <b>Lerngruppe</b> eingeladen. Melde dich an und mach bei der Rangliste mit – dann kannst du beitreten.</p>':'')+
         '<button type="button" class="vg-btn solid" id="vgLogin">Mit Google anmelden</button>';
     }else if(!st){
       h='<p class="vg-lead">Rangliste wird geladen …</p>';
@@ -3659,7 +4488,9 @@ document.addEventListener("keydown",function(ev){
       if(!st.dabei){
         h='<p class="vg-lead">Vergleiche dich mit anderen Lernenden – freiwillig und nur mit Spitznamen:</p>'+
           '<ul class="rt-list vg-lead"><li><b>Wochenrangliste</b> nach beantworteten Fragen, jeden Montag neu</li>'+
-          '<li>wie viele bei der <b>Prüfungsreife</b> hinter dir liegen</li></ul>';
+          '<li>wie viele bei der <b>Prüfungsreife</b> hinter dir liegen</li>'+
+          '<li>auf Wunsch <b>Lerngruppen</b> mit deinem Kurs – per Code</li></ul>'+
+          (vg.einladung?'<p class="vg-einladung klein">Du wurdest in eine <b>Lerngruppe</b> eingeladen. Nach dem Mitmachen kannst du beitreten.</p>':'');
         if(st.teilnehmende)scope=fmtN(st.teilnehmende)+" dabei";
       }else h='<p class="vg-lead">Neuer Spitzname für die Rangliste:</p>';
       h+=vgFormHTML(vg.bearbeiten?st.name:"")+
@@ -3678,6 +4509,10 @@ document.addEventListener("keydown",function(ev){
           'Diese Woche noch ohne Antwort – ab der ersten bist du in der Wochenliste.')+'</span></div>'+
         '</div>';
       var kw=isoWoche().split("-W")[1];
+      h+=grEinladungHTML()+grTabsHTML();
+      if(vg.gform)h+=grFormHTML();
+      else if(vg.ansicht)h+=grAnsichtHTML(+kw);
+      else{
       h+='<p class="h-sub">Wochenrangliste · KW '+(+kw)+'</p>';
       var L=st.liste||[];
       if(!L.length){
@@ -3691,12 +4526,14 @@ document.addEventListener("keydown",function(ev){
         }
         h+='</ol>';
       }
+      }
       h+='<div class="vg-fuss"><span class="vg-ich">Du bist dabei als <b>'+esc(st.name)+'</b></span>'+
         '<button type="button" class="vg-btn leise" id="vgAendern">Spitzname ändern</button>'+
         '<button type="button" class="vg-btn leise" id="vgRaus">Austreten</button></div>';
     }
     box.innerHTML=h;
     $("vgScope").textContent=scope;
+    grBinden(box);
     var b;
     if((b=$("vgLogin")))b.onclick=signIn;
     if((b=$("vgAendern")))b.onclick=function(){vg.bearbeiten=true;vgZeigen();var i=$("vgName");if(i){i.focus();i.select();}};
@@ -3751,14 +4588,32 @@ function close(){ if(!openModal)return; var m=$(openModal); if(m)m.hidden=true;
 var elCalc=$("mCalc"), calcOpen=false, calcPlaced=false;
 function clampCalc(x,y){ var w=elCalc.offsetWidth,h=elCalc.offsetHeight; x=Math.min(Math.max(6,x),Math.max(6,window.innerWidth-w-6)); y=Math.min(Math.max(6,y),Math.max(6,window.innerHeight-h-6)); elCalc.style.left=x+"px"; elCalc.style.top=y+"px"; }
 function calcKnopf(){ var b=$("tbCalc"); if(b){ b.classList.toggle("on",calcOpen); b.setAttribute("aria-pressed",calcOpen?"true":"false"); } }
-function openCalc(){ elCalc.hidden=false; calcOpen=true; if(!calcPlaced){ var w=elCalc.offsetWidth||300;
+/* Auf dem Handy dockt der Rechner unten an; die Seite bekommt darunter Platz.
+   Auf breiten Bildschirmen weicht die Inhaltsspalte nach links aus, bis der
+   Rechner verschoben wird. */
+var mqDock=window.matchMedia?window.matchMedia("(max-width:560px)"):null, calcMoved=false;
+function calcDock(){ var d=!!(mqDock&&mqDock.matches),root=document.documentElement; elCalc.classList.toggle("dock",d);
+  document.body.classList.toggle("calc-dock",d&&calcOpen);
+  if(d&&calcOpen)root.style.setProperty("--calc-h",elCalc.offsetHeight+"px");
+  var weich=calcOpen&&!d&&!calcMoved&&window.innerWidth>=1100;
+  document.body.classList.toggle("has-calc",weich);
+  if(weich)root.style.setProperty("--calc-w",elCalc.offsetWidth+"px"); }
+if(mqDock){ if(mqDock.addEventListener)mqDock.addEventListener("change",calcDock); else if(mqDock.addListener)mqDock.addListener(calcDock); }
+window.addEventListener("resize",function(){ if(!calcOpen)return;
+  if(!elCalc.classList.contains("dock")&&!calcMoved){ var r=elCalc.getBoundingClientRect(); clampCalc(window.innerWidth-r.width-16,r.top); }
+  calcDock(); });
+function openCalc(){ elCalc.hidden=false; calcOpen=true; calcDock(); rkZeigen();
+  if(!calcPlaced&&!elCalc.classList.contains("dock")){ var w=elCalc.offsetWidth||324;
     /* Ist das Formelbuch als Seitenschublade offen, landet der Rechner links davon statt darüber. */
     var fb=document.body.classList.contains("has-formel")&&window.innerWidth>820?((document.querySelector("#mFormula .sheet")||{}).offsetWidth||0):0;
-    clampCalc(window.innerWidth-fb-w-16,72); calcPlaced=true; } calcKnopf(); }
-function closeCalc(){ elCalc.hidden=true; calcOpen=false; calcKnopf(); }
+    clampCalc(window.innerWidth-fb-w-16,72); calcPlaced=true; } calcDock(); calcKnopf(); }
+function closeCalc(){ elCalc.hidden=true; calcOpen=false; calcDock(); calcKnopf(); }
 window.KVMopenCalc=openCalc;
+/* Außerhalb von Übung und Aufgabenblatt gibt es nichts zu rechnen. */
+if(window.MutationObserver)new MutationObserver(function(){ var sc=document.body.getAttribute("data-screen");
+  if(calcOpen&&sc!=="scrQuiz"&&sc!=="scrBlatt")closeCalc(); }).observe(document.body,{attributes:true,attributeFilter:["data-screen"]});
 (function calcDrag(){ var head=$("calcDrag"),drag=false,ox=0,oy=0;
-  head.addEventListener("pointerdown",function(e){ if(e.target.hasAttribute&&e.target.hasAttribute("data-close"))return; drag=true; try{head.setPointerCapture(e.pointerId);}catch(_){} var r=elCalc.getBoundingClientRect(); ox=e.clientX-r.left; oy=e.clientY-r.top; e.preventDefault(); });
+  head.addEventListener("pointerdown",function(e){ if(e.target.closest&&e.target.closest("button"))return; if(elCalc.classList.contains("dock"))return; drag=true; if(!calcMoved){calcMoved=true;calcDock();} try{head.setPointerCapture(e.pointerId);}catch(_){} var r=elCalc.getBoundingClientRect(); ox=e.clientX-r.left; oy=e.clientY-r.top; e.preventDefault(); });
   head.addEventListener("pointermove",function(e){ if(drag)clampCalc(e.clientX-ox,e.clientY-oy); });
   function stop(){drag=false;}
   head.addEventListener("pointerup",stop); head.addEventListener("pointercancel",stop);
@@ -3772,42 +4627,292 @@ $("tbFormula").addEventListener("click",function(){open("mFormula");});
 /* Auf der Startseite gibt es keine Werkzeugleiste – das Formelbuch ist dort eine Kachel. */
 if($("btnFormelHome"))$("btnFormelHome").addEventListener("click",function(){open("mFormula");});
 
-/* ---- Taschenrechner ---- */
-var expr="";
-function pretty(s){return s.replace(/\*/g,"×").replace(/\//g,"÷").replace(/-/g,"−").replace(/\./g,",");}
-function fmt(x){ if(!isFinite(x))return "Fehler"; var r=Math.round((x+Number.EPSILON)*1e10)/1e10; var s=(""+r); if(s.indexOf(".")>=0)s=s.replace(/0+$/,"").replace(/\.$/,""); return s.replace(".",","); }
-function tokenize(s){var t=[],i=0;while(i<s.length){var c=s[i];if(c===" "){i++;continue;}if(c>="0"&&c<="9"||c==="."){var j=i;while(j<s.length&&((s[j]>="0"&&s[j]<="9")||s[j]===".")){j++;}t.push({t:"num",v:parseFloat(s.slice(i,j))});i=j;continue;}if("+-*/()%".indexOf(c)>=0){t.push({t:"op",v:c});i++;continue;}throw new Error("bad");}return t;}
-function calcEval(s){var tk=tokenize(s),p=0;
-  function peek(){return tk[p];}
-  function eat(v){if(tk[p]&&tk[p].v===v){p++;return true;}return false;}
-  function E(){var x=T();while(peek()&&(peek().v==="+"||peek().v==="-")){var o=tk[p++].v;var y=T();x=o==="+"?x+y:x-y;}return x;}
-  function T(){var x=F();while(peek()&&(peek().v==="*"||peek().v==="/")){var o=tk[p++].v;var y=F();x=o==="*"?x*y:x/y;}return x;}
-  function F(){var x=U();while(peek()&&peek().v==="%"){p++;x=x/100;}return x;}
-  function U(){if(peek()&&(peek().v==="-"||peek().v==="+")){var o=tk[p++].v;var v=U();return o==="-"?-v:v;}return P();}
-  function P(){var k=peek();if(!k)throw new Error("end");if(k.t==="num"){p++;return k.v;}if(k.v==="("){p++;var v=E();if(!eat(")"))throw new Error(")");return v;}throw new Error("x");}
-  var r=E();if(p<tk.length)throw new Error("trail");return r;}
-function calcRender(){ $("calcExpr").textContent=pretty(expr); var r; try{ r= expr? fmt(calcEval(expr)) : "0"; }catch(e){ r=$("calcRes").textContent; } $("calcRes").textContent=r; }
-function calcInput(v){ expr+=v; calcRender(); }
-function calcAction(a){ if(a==="clear"){expr="";} else if(a==="back"){expr=expr.slice(0,-1);} else if(a==="eq"){ try{var val=calcEval(expr); expr=(""+ (Math.round((val+Number.EPSILON)*1e10)/1e10)); }catch(e){ $("calcRes").textContent="Fehler"; return; } } calcRender(); }
-var keys=[
-  {l:"C",a:"clear",c:"fn"},{l:"(",v:"("},{l:")",v:")"},{l:"⌫",a:"back",c:"fn"},
-  {l:"7",v:"7"},{l:"8",v:"8"},{l:"9",v:"9"},{l:"÷",v:"/",c:"op"},
-  {l:"4",v:"4"},{l:"5",v:"5"},{l:"6",v:"6"},{l:"×",v:"*",c:"op"},
-  {l:"1",v:"1"},{l:"2",v:"2"},{l:"3",v:"3"},{l:"−",v:"-",c:"op"},
-  {l:"0",v:"0"},{l:",",v:"."},{l:"%",v:"%",c:"op"},{l:"+",v:"+",c:"op"},
-  {l:"=",a:"eq",c:"eq span2"},{l:"±",a:"neg"},{l:"√",a:"sqrt"}
-];
-(function buildCalc(){ var g=$("calcGrid"); keys.forEach(function(k){ var b=document.createElement("button"); b.textContent=k.l; if(k.c)b.className=k.c;
-  b.addEventListener("click",function(){ if(k.v!=null)calcInput(k.v); else if(k.a==="neg"){ try{var val=calcEval(expr||"0");expr=""+(-val);calcRender();}catch(e){} } else if(k.a==="sqrt"){ try{var val=calcEval(expr||"0");expr=""+Math.sqrt(val);calcRender();}catch(e){} } else calcAction(k.a); });
-  g.appendChild(b); }); })();
-document.addEventListener("keydown",function(e){ if(!calcOpen)return;
-  var a=document.activeElement; if(a&&a!==document.body&&!(elCalc.contains(a))&&/^(INPUT|TEXTAREA|SELECT)$/.test(a.tagName))return;
-  var k=e.key;
-  if(k>="0"&&k<="9"||"+-*/()%".indexOf(k)>=0){calcInput(k);e.preventDefault();}
-  else if(k==="."||k===","){calcInput(".");e.preventDefault();}
-  else if(k==="Enter"||k==="="){calcAction("eq");e.preventDefault();}
-  else if(k==="Backspace"){calcAction("back");e.preventDefault();}
-  else if(k==="Delete"||k==="c"||k==="C"){calcAction("clear");e.preventDefault();}
+/* ---- Taschenrechner ----
+   Rechnet mit demselben Kern wie der Rechenweg (window.KVM_rechnen): Punkt vor
+   Strich, Klammern, Prozent wie auf dem Tischrechner („200 + 19 %“ = 238), x²,
+   xʸ, √, π, sin/cos/tan in Grad samt Umkehrung und Stunden mit Minuten.
+   Die Eingabe ist eine Zeichenliste – so wirken ⌫, ± und √ auf ganze Zahlen
+   und Klammern, und nach „=“ beginnt eine Ziffer eine neue Rechnung, während
+   ein Rechenzeichen mit dem Ergebnis weiterrechnet. Jedes Ergebnis landet im
+   Verlauf; „Übernehmen“ setzt es ins zuletzt benutzte Antwortfeld. */
+var RK_KEY="kvm_rechner", RK_OPS={"+":"+","−":"-","×":"*","÷":"/","^":"^"},
+    RK_FN={"√":"sqrt","sin":"sin","cos":"cos","tan":"tan","sin⁻¹":"asin","cos⁻¹":"acos","tan⁻¹":"atan"};
+var T=[],frisch=false,letzte="",verlauf=[],inv=false,mini=false,fehler="",zuletzt=null,ziel=null;
+function rkEsc(x){return String(x).replace(/[&<>"]/g,function(m){return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[m];});}
+(function rkLaden(){ try{ var d=JSON.parse(localStorage.getItem(RK_KEY)||"{}")||{};
+  if(Array.isArray(d.T))T=d.T; if(Array.isArray(d.v))verlauf=d.v.slice(-25);
+  frisch=!!d.fr&&T.length===1; letzte=frisch?String(d.l||""):""; mini=!!d.mini; }catch(e){} })();
+function rkSpeichern(){ try{ localStorage.setItem(RK_KEY,JSON.stringify({T:T,v:verlauf,fr:frisch,l:letzte,mini:mini})); }catch(e){} }
+
+function rkLast(){return T[T.length-1];}
+function rkEnde(x){return !!x&&(x.t==="n"||x.t==="z"||x.t==="k"||x.t===")"||x.t==="%"||x.t==="²");}
+function rkOffen(){var d=0;T.forEach(function(x){if(x.t==="("||x.t==="f")d++;else if(x.t===")")d--;});return d;}
+/* Anfang des letzten Operanden: Zahl, π, Zeit oder Klammer/Funktion samt % und ² */
+function rkOperand(){
+  var j=T.length-1;
+  while(j>=0&&(T[j].t==="%"||T[j].t==="²"))j--;
+  if(j<0)return -1;
+  if(T[j].t===")"){for(var d=0;j>=0;j--){if(T[j].t===")")d++;else if((T[j].t==="("||T[j].t==="f")&&--d===0)return j;}return -1;}
+  return (T[j].t==="n"||T[j].t==="z"||T[j].t==="k")?j:-1;
+}
+function rkZahl(x){ if(x.v!=null)return x.v; var K=window.KVM_rechnen; return K?K.zahl(x.s):parseFloat(x.s.replace(",",".")); }
+function rkKern(){
+  var k=[];
+  T.forEach(function(x){
+    if(x.t==="n")k.push({n:rkZahl(x)});
+    else if(x.t==="z")k.push(+(x.m||0)>59?{}:{n:(+x.h)+(+(x.m||0))/60});
+    else if(x.t==="k")k.push({n:Math.PI});
+    else if(x.t==="o")k.push({o:RK_OPS[x.s]});
+    else if(x.t==="("||x.t===")")k.push({p:x.t});
+    else if(x.t==="f"){k.push({f:RK_FN[x.s]});k.push({p:"("});}
+    else if(x.t==="%")k.push({pc:1});
+    else if(x.t==="²")k.push({pw:2});
+  });
+  for(var d=rkOffen();d>0;d--)k.push({p:")"});
+  return k;
+}
+function rkWert(){ if(frisch)return T[0]?rkZahl(T[0]):NaN; if(!T.length||!window.KVM_rechnen)return NaN; return window.KVM_rechnen.auswerten(rkKern()); }
+function rkHatZeit(){return T.some(function(x){return x.t==="z"||(x.t==="n"&&x.z);});}
+
+/* Zahlen deutsch: Tausenderpunkt, Komma, bis zu 12 gültige Stellen, „−“. */
+function rkFmt(v,ohnePunkte){
+  if(!isFinite(v))return "–";
+  if(Math.abs(v)<1e-12)v=0;
+  var o=Number.isInteger(v)&&Math.abs(v)<1e15?{maximumFractionDigits:0}:{maximumSignificantDigits:12};
+  o.useGrouping=!ohnePunkte;
+  return v.toLocaleString("de-DE",o).replace(/^-/,"−");
+}
+function rkFmtZeit(v){ var neg=v<0,h,m; v=Math.abs(v); h=Math.floor(v+1e-9); m=Math.round((v-h)*60); if(m===60){h++;m=0;}
+  return (neg?"−":"")+h+" h "+(m<10?"0":"")+m+" min"; }
+function rkZahlText(x){ if(x.v!=null)return rkFmt(x.v);
+  var p=x.s.split(","),g=p[0].replace(/\B(?=(\d{3})+(?!\d))/g,"."); return p.length>1?g+","+p[1]:g; }
+/* Rechnung als HTML (Anzeige, fehlende Klammern blass) oder als Text in der
+   Schreibweise des Rechenwegs („6 h 45 min“, nie „6:45“ – der Doppelpunkt ist
+   dort ein Geteilt-Zeichen). */
+function rkAusdruck(html){
+  var h="",geist=function(t){return html?'<span class="rk-geist">'+t+'</span>':t;};
+  T.forEach(function(x,j){
+    var vor=T[j-1];
+    if(x.t==="n")h+=rkEsc(rkZahlText(x));
+    else if(x.t==="z")h+=rkEsc(x.h)+" h "+(x.m===""?geist("00"):rkEsc(html?x.m:(x.m.length<2?"0":"")+x.m))+" min";
+    else if(x.t==="k")h+="π";
+    else if(x.t==="o")h+=x.u?"−":(x.s==="^"?"^":" "+x.s+" ");
+    else if(x.t==="("||x.t===")")h+=x.t;
+    else if(x.t==="f")h+=rkEsc(x.s)+"(";
+    else if(x.t==="%")h+=" %";
+    else if(x.t==="²")h+="²";
+  });
+  var d=rkOffen(); if(d>0)h+=geist(new Array(d+1).join(")"));
+  return h.replace(/^\s+|\s+$/g,"");
+}
+
+/* ---- Tasten ---- */
+function rkNeu(){T=[];frisch=false;letzte="";}
+function rkWeiter(){frisch=false;letzte="";}
+function rkMal(){if(rkEnde(rkLast()))T.push({t:"o",s:"×"});}
+function rkZiffer(d){
+  if(frisch)rkNeu();
+  var x=rkLast();
+  if(x&&x.t==="n"&&x.v==null){ if(x.s==="0")x.s=d; else if(x.s.replace(/\D/g,"").length<15)x.s+=d; }
+  else if(x&&x.t==="z"){ if(x.m.length<2)x.m+=d; }
+  else{ rkMal(); T.push({t:"n",s:d}); }
+}
+function rkKomma(){
+  if(frisch)rkNeu();
+  var x=rkLast();
+  if(x&&x.t==="n"&&x.v==null){ if(x.s.indexOf(",")<0)x.s+=","; }
+  else if(!(x&&x.t==="z")){ rkMal(); T.push({t:"n",s:"0,"}); }
+}
+function rkOperator(s){
+  if(frisch)rkWeiter();
+  var x=rkLast();
+  if(!x||x.t==="("||x.t==="f"){ if(s==="−")T.push({t:"o",s:"−",u:true}); return; }
+  if(x.t==="o"){
+    if(x.u){T.pop();rkOperator(s);return;}
+    if(s==="−"&&(x.s==="×"||x.s==="÷"||x.s==="^")){T.push({t:"o",s:"−",u:true});return;}
+    x.s=s; return;
+  }
+  T.push({t:"o",s:s});
+}
+function rkNachsatz(s){ if(frisch)rkWeiter(); var x=rkLast(); if(!rkEnde(x)||(s==="%"&&x.t==="%"))return; T.push({t:s}); }
+function rkKlammerAuf(){ if(frisch)rkNeu(); rkMal(); T.push({t:"("}); }
+function rkKlammerZu(){ if(!frisch&&rkOffen()>0&&rkEnde(rkLast()))T.push({t:")"}); }
+function rkPi(){ if(frisch)rkNeu(); rkMal(); T.push({t:"k"}); }
+/* √, sin …: nach „=“ auf das Ergebnis, hinter einer Zahl oder Klammer auf
+   diese (wie beim einfachen Rechner), sonst als Anfang „√(“. */
+function rkFunktion(name){
+  if(frisch){rkWeiter();T=[{t:"f",s:name}].concat(T,[{t:")"}]);return;}
+  if(rkEnde(rkLast())){
+    var a=rkOperand(); if(a<0)return;
+    if(T[a].t==="("&&rkLast().t===")"){T[a]={t:"f",s:name};return;}
+    T.splice(a,0,{t:"f",s:name});T.push({t:")"});return;
+  }
+  T.push({t:"f",s:name});
+}
+/* ± wechselt das Vorzeichen der letzten Zahl; „5 − 9“ wird „5 − (−9)“. */
+function rkVorzeichen(){
+  if(frisch){ var r=-rkZahl(T[0]); T=[{t:"n",v:r,z:T[0].z}]; rkWeiter(); return; }
+  var x=rkLast();
+  if(!rkEnde(x)){
+    if(x&&x.t==="o"&&x.u)T.pop();
+    else if(x&&x.t==="o"&&(x.s==="+"||x.s==="−"))T.push({t:"("},{t:"o",s:"−",u:true});
+    else T.push({t:"o",s:"−",u:true});
+    return;
+  }
+  var a=rkOperand(),e=T.length-1; if(a<0)return;
+  if(a===e&&T[a].t==="n"&&T[a].v!=null){T[a]={t:"n",v:-T[a].v,z:T[a].z};return;}
+  if(T[a].t==="("&&T[a+1]&&T[a+1].u&&T[e].t===")"){T.pop();T.splice(a,2);return;}
+  var vor=T[a-1];
+  if(vor&&vor.t==="o"&&vor.u){T.splice(a-1,1);return;}
+  if(!vor||vor.t==="("||vor.t==="f"||(vor.s!=="+"&&vor.s!=="−")){T.splice(a,0,{t:"o",s:"−",u:true});return;}
+  T.splice(a,0,{t:"("},{t:"o",s:"−",u:true});T.push({t:")"});
+}
+/* „h min“: aus „6“ wird „6 h __ min“, die nächsten zwei Ziffern sind Minuten. */
+function rkZeit(){
+  if(frisch)rkNeu();
+  var x=rkLast();
+  if(x&&x.t==="n"&&x.v==null&&/^\d+$/.test(x.s)){T[T.length-1]={t:"z",h:x.s,m:""};return;}
+  if(rkEnde(x))return;
+  T.push({t:"z",h:"0",m:""});
+}
+function rkZurueck(){
+  if(frisch){rkNeu();return;}
+  var x=rkLast(); if(!x)return;
+  if(x.t==="n"&&x.v==null){x.s=x.s.slice(0,-1);if(!x.s)T.pop();return;}
+  if(x.t==="z"){if(x.m)x.m=x.m.slice(0,-1);else T[T.length-1]={t:"n",s:x.h};return;}
+  T.pop();
+}
+function rkGleich(){
+  if(frisch||!T.length)return;
+  var v=rkWert();
+  if(!isFinite(v)){
+    fehler=T.some(function(x){return x.t==="z"&&+(x.m||0)>59;})?"Minuten gehen nur bis 59":
+      (rkEnde(rkLast())?"Nicht definiert":"Rechnung unvollständig");
+    var d=$("calcDisp"); d.classList.remove("shake"); void d.offsetWidth; d.classList.add("shake");
+    return;
+  }
+  var text=rkAusdruck(false),z=rkHatZeit();
+  if(!(T.length===1&&T[0].t==="n")){ verlauf.push({a:text,v:v,z:z}); if(verlauf.length>25)verlauf=verlauf.slice(-25); }
+  letzte=text; T=[{t:"n",v:v,z:z}]; frisch=true;
+}
+function rkEinsetzen(v,z){ if(frisch)rkNeu(); rkMal(); T.push({t:"n",v:v,z:z}); }
+function rkTaste(k){
+  fehler="";
+  if(/^\d$/.test(k))rkZiffer(k);
+  else if(k===",")rkKomma();
+  else if(RK_OPS[k])rkOperator(k);
+  else if(k==="%"||k==="²")rkNachsatz(k);
+  else if(k==="(")rkKlammerAuf();
+  else if(k===")")rkKlammerZu();
+  else if(k==="π")rkPi();
+  else if(k==="√")rkFunktion("√");
+  else if(k==="sin"||k==="cos"||k==="tan"){rkFunktion(k+(inv?"⁻¹":""));inv=false;}
+  else if(k==="inv")inv=!inv;
+  else if(k==="zeit")rkZeit();
+  else if(k==="±")rkVorzeichen();
+  else if(k==="⌫")rkZurueck();
+  else if(k==="C"){rkNeu();zuletzt=null;}
+  else if(k==="=")rkGleich();
+  rkZeigen();
+}
+
+/* ---- Übernehmen: ins zuletzt benutzte Antwortfeld ---- */
+function rkZielVon(el){
+  if(!el||!el.matches||elCalc.contains(el))return null;
+  if(el.matches(".rw-l,.rw-u")){var r=el.closest(".rw-row");return r?r.querySelector(".rw-f"):null;}
+  return el.matches('textarea,input[inputmode="decimal"]')?el:null;
+}
+function rkZielOk(el){return !!el&&el.isConnected&&!el.disabled&&!el.readOnly&&el.getClientRects().length>0;}
+function rkZiel(){ if(rkZielOk(ziel))return ziel; var q=$("qCalcInput"); return rkZielOk(q)?q:null; }
+function rkLeer(el){return !String(el.value||"").trim();}
+function rkZielText(el){
+  if(el.id==="qCalcInput")return "ins Ergebnisfeld";
+  if(el.classList.contains("rw-f")){var r=el.closest(".rw-row"),n=r?[].indexOf.call(r.parentNode.children,r)+1:0;
+    return (rkLeer(el)?"Rechnung in den Rechenweg":"in den Rechenweg")+(n?" · Z"+n:"");}
+  if(el.classList.contains("qtab-in"))return "in die Tabelle";
+  if(el.closest("#mFormula"))return "ins Formelbuch";
+  if(el.tagName==="TEXTAREA")return "in deine Antwort";
+  return "ins Feld";
+}
+document.addEventListener("focusin",function(e){ var z=rkZielVon(e.target); if(z){ziel=z; if(calcOpen)rkTake();} });
+function rkTake(){
+  var b=$("calcTake"),z=rkZiel(),v=rkWert(),an=!!z&&isFinite(v)&&!fehler&&T.length>0;
+  b.hidden=!an; if(!an)return;
+  b.innerHTML='<svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 14 4 9l5-5"/><path d="M4 9h11a5 5 0 0 1 0 10h-3"/></svg>Übernehmen <span>'+rkEsc(rkZielText(z))+'</span>';
+}
+function rkUebernehmen(){
+  var z=rkZiel(),v=rkWert(); if(!z||!isFinite(v))return;
+  var s;
+  if(z.classList.contains("rw-f")&&rkLeer(z))s=frisch?letzte||rkFmt(v):rkAusdruck(false);  /* ganze Rechnung, der Rechenweg rechnet sie nach */
+  else if(z.tagName==="TEXTAREA"||z.classList.contains("rw-f"))s=rkFmt(v);
+  else s=rkFmt(v,true).replace("−","-");
+  if(z.id==="qCalcInput")z.value=s;
+  else{
+    var val=z.value,a=z.selectionStart,b=z.selectionEnd; if(a==null){a=b=val.length;}
+    var vor=val.slice(0,a); if(vor&&!/[\s(]$/.test(vor))s=" "+s;
+    z.value=vor+s+val.slice(b); try{z.setSelectionRange(vor.length+s.length,vor.length+s.length);}catch(e){}
+  }
+  z.dispatchEvent(new Event("input",{bubbles:true}));
+  z.classList.remove("calc-flash"); void z.offsetWidth; z.classList.add("calc-flash");
+  /* Zielfeld sichtbar machen – auf dem Handy oberhalb des angedockten Rechners */
+  var r=z.getBoundingClientRect(),unten=window.innerHeight-(elCalc.classList.contains("dock")?elCalc.offsetHeight:0)-12;
+  if(r.bottom>unten)window.scrollBy({top:r.bottom-unten,behavior:"smooth"}); else if(r.top<8)window.scrollBy({top:r.top-60,behavior:"smooth"});
+  rkTake();
+}
+
+/* ---- Anzeige ---- */
+var FN_TASTEN=[["inv","inv","Umkehrfunktion: sin⁻¹, cos⁻¹, tan⁻¹"],["sin","sin","Sinus (Grad)"],["cos","cos","Kosinus (Grad)"],["tan","tan","Tangens (Grad)"],["π","π","Pi"],["zeit","h min","Stunden und Minuten, z. B. 6 h 45 min"]];
+var TASTEN=[["C","C","del","Alles löschen"],["(","("],[")",")"],["%","%","op","Prozent"],["⌫","⌫","del","Letzte Eingabe löschen"],
+  ["7"],["8"],["9"],["÷","÷","op","geteilt durch"],["√","√","fx","Wurzel"],
+  ["4"],["5"],["6"],["×","×","op","mal"],["²","x<sup>2</sup>","fx","Quadrat"],
+  ["1"],["2"],["3"],["−","−","op","minus"],["^","x<sup>y</sup>","fx","hoch"],
+  ["0"],[",",",","","Komma"],["±","±","","Vorzeichen wechseln"],["+","+","op","plus"],["=","=","eq","Ergebnis"]];
+function rkTastenBauen(box,liste){ liste.forEach(function(k){ var b=document.createElement("button"); b.type="button"; b.dataset.k=k[0];
+    b.innerHTML=k[1]||k[0]; if(k[2])b.className=k[2]; if(k[3]){b.setAttribute("aria-label",k[3]);b.title=k[3];}
+    b.addEventListener("click",function(){rkTaste(k[0]);}); box.appendChild(b); }); }
+rkTastenBauen($("calcFn"),FN_TASTEN); rkTastenBauen($("calcGrid"),TASTEN);
+function rkZeigen(){
+  var ex=$("calcExpr"),out=$("calcRes"),zb=$("calcZeit"),v=rkWert();
+  ex.innerHTML=frisch?rkEsc(letzte?letzte+" =":""):rkAusdruck(true);
+  out.className="";
+  if(fehler){out.textContent=fehler;out.className="err";}
+  else if(!T.length){out.textContent="0";}
+  else if(isFinite(v)){out.textContent=rkFmt(v);zuletzt=v;}
+  else{out.textContent=zuletzt!=null?rkFmt(zuletzt):"0";out.className="stale";}
+  var mitZeit=!fehler&&isFinite(v)&&rkHatZeit(); zb.hidden=!mitZeit; if(mitZeit)zb.textContent=rkFmtZeit(v);
+  var tp=$("calcTape");
+  if(!verlauf.length){tp.hidden=true;tp.innerHTML="";}
+  else{ tp.hidden=false;
+    tp.innerHTML='<button type="button" class="tape-clear" data-leeren>Verlauf leeren</button>'+verlauf.map(function(e,i){
+      var w=rkFmt(e.v)+(e.z?" ("+rkFmtZeit(e.v)+")":"");
+      return '<button type="button" data-i="'+i+'" title="Ergebnis einsetzen" aria-label="'+rkEsc(e.a+" = "+w)+' einsetzen"><span class="t-a">'+rkEsc(e.a)+'</span><span class="t-v">= '+rkEsc(w)+'</span></button>';}).join("");
+    tp.scrollTop=tp.scrollHeight; }
+  $("calcFn").querySelectorAll("button").forEach(function(b){var k=b.dataset.k;
+    if(k==="inv"){b.classList.toggle("on",inv);b.setAttribute("aria-pressed",inv?"true":"false");}
+    else if(k==="sin"||k==="cos"||k==="tan")b.textContent=k+(inv?"⁻¹":""); });
+  elCalc.classList.toggle("mini",mini); $("calcMin").setAttribute("aria-expanded",mini?"false":"true");
+  $("calcMin").setAttribute("aria-label",mini?"Tasten ausklappen":"Tasten einklappen"); $("calcMin").title=mini?"Ausklappen":"Einklappen";
+  rkTake(); rkSpeichern(); if(calcOpen)calcDock();
+}
+$("calcTape").addEventListener("click",function(e){ var b=e.target.closest("button"); if(!b)return;
+  if(b.hasAttribute("data-leeren")){verlauf=[];}
+  else{var en=verlauf[+b.dataset.i]; if(en){fehler="";rkEinsetzen(en.v,en.z);}}
+  rkZeigen(); });
+$("calcTake").addEventListener("click",rkUebernehmen);
+$("calcMin").addEventListener("click",function(){mini=!mini;rkZeigen();});
+$("calcDisp").addEventListener("click",function(e){ if(mini&&!e.target.closest("button")){mini=false;rkZeigen();} });
+document.addEventListener("keydown",function(e){ if(!calcOpen||e.ctrlKey||e.metaKey||e.altKey)return;
+  var a=document.activeElement;
+  if(a&&a!==document.body&&!elCalc.contains(a)){
+    if(/^(INPUT|TEXTAREA|SELECT)$/.test(a.tagName)||a.isContentEditable)return;
+    /* Enter auf einem Knopf der Seite („Antwort prüfen“) löst den Knopf aus */
+    if(e.key==="Enter"&&/^(BUTTON|A|SUMMARY)$/.test(a.tagName))return;
+  }
+  var m={"+":"+","-":"−","*":"×","x":"×","/":"÷",":":"÷","^":"^","%":"%","(":"(",")":")",",":",",".":",","Enter":"=","=":"=",
+         "Backspace":"⌫","Delete":"C","c":"C","C":"C","p":"π","h":"zeit"}[e.key];
+  if(!m&&/^\d$/.test(e.key))m=e.key;
+  if(!m)return;
+  e.preventDefault(); rkTaste(m);
 });
 
 /* ---- Rechenblatt ---- */
@@ -5570,6 +6675,17 @@ function render(){
       if(bearbeitet&&bearbeitet<steps.length)for(var i=0;i<steps.length;i++)if(!fertig(steps[i])){weiter=i;break;}
       var kurz=(/^P-([A-Z]+)-/.exec(x.c.id)||[])[1]||'';
       var pct=steps.length?Math.round(bearbeitet/steps.length*100):0;
+      var ei=window.KVM_echtInfo?window.KVM_echtInfo(x.c.id):null,dauer=window.KVM_dauerText||function(ms){return Math.round(ms/60000)+' min';};
+      var uhr='<svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l2 2M9 2h6"/></svg>';
+      var start=ei&&ei.laeuft?'<button class="pr-btn solid echt" data-start="'+esc(x.c.id)+'">'+uhr+
+          (ei.rest>0?'Läuft · noch '+esc(dauer(ei.rest))+' – weiter':'Zeit abgelaufen – auswerten')+' →</button>':
+        ei&&ei.abgegeben?'<button class="pr-btn solid" data-start="'+esc(x.c.id)+'">Abgegeben – jetzt auswerten →</button>':
+        '<button class="pr-btn solid" data-start="'+esc(x.c.id)+'"'+(weiter>=0?' data-step="'+weiter+'"':'')+'>'
+        +(weiter>=0?'Weiter bei Aufgabe '+esc(steps[weiter].nr)+' →':(bearbeitet?'Prüfung öffnen':'Prüfung starten'))+'</button>'
+        +'<button class="pr-btn echt" data-echt="'+esc(x.c.id)+'" title="Mit Uhr über die echte Bearbeitungszeit, Lösungen erst nach der Abgabe">'+uhr+
+          'Unter Prüfungsbedingungen · '+(ei?ei.min:90)+' min</button>';
+      var letzte=ei&&ei.letzte?'<p class="pr-echt">Zuletzt unter Prüfungsbedingungen: <b>'+ei.letzte.pkt+' von '+ei.letzte.max+' P</b> · Note '+ei.letzte.note+
+        ' · '+esc(dauer(ei.letzte.dauer))+' · am '+esc(new Date(ei.letzte.tag*86400000).toLocaleDateString('de-DE',{day:'numeric',month:'short',timeZone:'UTC'}))+'</p>':'';
       h+='<div class="pr-item">'
         +'<div class="pr-top"><span class="pr-ic pr-'+esc(kurz.toLowerCase())+'" aria-hidden="true">'+esc(kurz)+'</span>'
         +'<div class="pr-tt"><div class="pr-date">'+esc(x.bereich)+'</div>'
@@ -5577,11 +6693,9 @@ function render(){
         +'<span class="pr-badge">'+(x.punkte?esc(x.punkte)+' P':'Prüfung')+'</span></div>'
         +(bearbeitet||bew?'<div class="pr-prog"><span class="pr-bar" aria-hidden="true"><i style="width:'+pct+'%"></i></span>'
           +'<span class="pr-pt"><b>'+bearbeitet+'</b>/'+steps.length+' Teile'+(bew?' · <b>'+pkt+'</b> P':'')+'</span></div>':'')
-        +'<div class="pr-actions">'
-        +'<button class="pr-btn solid" data-start="'+esc(x.c.id)+'"'+(weiter>=0?' data-step="'+weiter+'"':'')+'>'
-        +(weiter>=0?'Weiter bei Aufgabe '+esc(steps[weiter].nr)+' →':(bearbeitet?'Prüfung öffnen':'Prüfung starten'))+'</button>'
+        +'<div class="pr-actions">'+start
         +'<button class="pr-btn" data-copy="'+esc(x.c.id)+'">Für KI kopieren</button>'
-        +'</div>'
+        +'</div>'+letzte
         +'<details class="pr-steps"><summary>Einzelne Aufgabe öffnen</summary><div class="pr-aufg">'
         + aufgaben.map(function(a){
             var erste=-1,chips='';
@@ -5621,6 +6735,11 @@ function render(){
       close();
       if(typeof window.KVM_startCase==='function')
         window.KVM_startCase(id,isFinite(step)?step:0);
+    });
+  });
+  list.querySelectorAll('[data-echt]').forEach(function(b){
+    b.addEventListener('click',function(){
+      if(typeof window.KVM_startEcht==='function'&&window.KVM_startEcht(b.getAttribute('data-echt')))close();
     });
   });
   list.querySelectorAll('[data-copy]').forEach(function(b){

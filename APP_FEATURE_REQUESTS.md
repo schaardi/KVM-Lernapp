@@ -799,6 +799,9 @@ lassen sich antippen und einsetzen.
   - erst Einheitenbrüche wie `km/h`, `€/kWh`
   - dann Buchstabenfolgen einschließlich `€ $ °`
 - Ergebnis nicht endlich oder Ausdruck unvollständig → ungültig. Anzeige „Rechnung prüfen“ in `kErrInk`.
+- **Erweitert in FR-005 A:** Prozent wie auf dem Tischrechner (`200 + 19 %` = 238), π,
+  sin/cos/tan in Grad samt Umkehrung, Zeit (`6 h 45 min`), Mal vor π/√/Funktion/`(` darf fehlen.
+  Rechner und Rechenweg teilen sich diesen Kern.
 
 **Referenzwerte** (müssen exakt so herauskommen, Web-Stand):
 
@@ -1113,39 +1116,39 @@ Großbuchstaben, Buchstabenabstand 1,3, `kMuted`; rechts optional ein Zusatz in 
 ### Referenz Web-Implementierung (`index.html` auf `claude/ui-design-improvement-my0f66`)
 
 **CSS**
-- Startseite: Kommentar „Startseite“ Z. 823
-- Texte: „Aufgabentexte: Tabellen …“ Z. 1015
-- Aufgabenblatt Z. 1047
-- Rechenweg Z. 1165
+- Startseite: Kommentar „Startseite“ Z. 913
+- Texte: „Aufgabentexte: Tabellen …“ Z. 1173
+- Aufgabenblatt Z. 1205
+- Rechenweg Z. 1334
 
 **JS**
 - Renderer:
-  - `rtIstRechnung` Z. 2375
-  - `rtKopf` Z. 2395
-  - `rtTabelle` Z. 2410
-  - `rtHTML` Z. 2433
+  - `rtIstRechnung` Z. 2704
+  - `rtKopf` Z. 2724
+  - `rtTabelle` Z. 2739
+  - `rtHTML` Z. 2762
 - Rechenweg:
-  - `rwTokens` Z. 2495
-  - `rwRechne` Z. 2521
-  - `rwZeileText` Z. 2573
-  - `rwHTML` Z. 2606
-  - `rwBinden` Z. 2619
-- Bewertung: `scoreHTML` Z. 2706
+  - `rwTokens` Z. 2828
+  - `rwRechne` Z. 2909
+  - `rwZeileText` Z. 2947
+  - `rwHTML` Z. 2980
+  - `rwBinden` Z. 2993
+- Bewertung: `scoreHTML` Z. 3080
 - Aufgabenblatt:
-  - `blStepperHTML` Z. 2993
-  - `blFortschrittHTML` Z. 3011
-  - `blLoesungHTML` Z. 3080
-  - `blRechenteil` Z. 3118
-  - `blTeilHTML` Z. 3124
-  - `renderBlatt` Z. 3163
+  - `blStepperHTML` Z. 3369
+  - `blFortschrittHTML` Z. 3387
+  - `blLoesungHTML` Z. 3456
+  - `blRechenteil` Z. 3494
+  - `blTeilHTML` Z. 3500
+  - `renderBlatt` Z. 3539
 - Startseite:
-  - `tagZaehlen` Z. 1639
-  - `renderFachGroup` Z. 1807
-  - `renderHero` Z. 1835
-  - `erfolgeListe` Z. 1863
-  - `renderAktiv` Z. 1904
-  - `renderPruefLast` Z. 1921
-- Prüfungsliste: `items.forEach` in `render()` Z. 5563
+  - `tagZaehlen` Z. 1872
+  - `renderFachGroup` Z. 2040
+  - `renderHero` Z. 2068
+  - `erfolgeListe` Z. 2188
+  - `renderAktiv` Z. 2229
+  - `renderPruefLast` Z. 2246
+- Prüfungsliste: `items.forEach` in `render()` Z. 6668
 
 Zeilennummern: Stand dieses Commits.
 
@@ -1293,18 +1296,903 @@ Serverseitig abgesichert:
 - Austreten führt zurück zum Beitrittsformular. Der Eintrag ist serverseitig gelöscht.
 
 ### Referenz Web-Implementierung (`index.html` auf `claude/ui-design-improvement-my0f66`)
-- **HTML:** `#vgKopf` / `#vgBox`, Z. 1343
-- **CSS:** Kommentar „Vergleich: freiwillige Wochenrangliste“, Z. 965
+- **HTML:** `#vgKopf` / `#vgBox`, Z. 1518
+- **CSS:** Kommentar „Vergleich: freiwillige Wochenrangliste“, Z. 1105
 - **JS** im Cloud-Block:
 
   | Funktion | Zeile |
   |---|---|
-  | `isoWoche` | 3594 |
-  | `wocheAntworten` | 3601 |
-  | `vgWerte` | 3606 |
-  | `vgMeldenSpaeter` | 3611 |
-  | `vgLaden` | 3618 |
-  | `vgZeigen` | 3645 |
+  | `isoWoche` | 4319 |
+  | `wocheAntworten` | 4326 |
+  | `vgWerte` | 4331 |
+  | `vgMeldenSpaeter` | 4336 |
+  | `vgLaden` | 4343 |
+  | `vgZeigen` | 4473 |
 
 - **SQL:** `docs/supabase-rangliste.sql`. Lokal geprüft mit PGlite: Rechte,
   Rangfolge, Wochenwechsel, zwei Geräte, Namensregeln, Austritt, Kontolöschung.
+
+---
+
+## FR-005 · Taschenrechner: rechnet wie ein Prüfungsrechner, mit Verlauf und „Übernehmen“
+
+**Status App-Session:** ⏳ offen
+**Web umgesetzt:** ✅ `claude/ui-design-improvement-my0f66` (Commit „Taschenrechner …“)
+**Priorität:** hoch. Der Rechner hängt an 801 Rechenfragen und an jeder Prüfung.
+
+### Ziel / Framing
+Der alte Rechner (Web und `widgets/calculator.dart`) konnte nur Grundrechenarten und hatte Fallen:
+- `200 + 19 %` ergab 200,19 statt 238.
+- √ und ± wirkten auf die ganze Rechnung statt auf die letzte Zahl.
+- Nach „=“ hing eine neue Ziffer am Ergebnis dran (aus „12“ wurde „125“).
+- Es fehlten π, Potenzen und Winkel. Die Fragen brauchen sie: π in 16 Fragen,
+  sin/cos in 21, dazu Andler- und Barwertformel.
+- Es gab keinen Verlauf; Ergebnisse musste man abtippen.
+- In der App fehlten sogar Komma, % und √, und der Punkt war das Dezimalzeichen.
+
+Neu ist ein Rechner, der wie ein zugelassener Prüfungsrechner rechnet, deutsche Zahlen
+zeigt, sich die letzten Rechnungen merkt und das Ergebnis mit einem Tipp ins
+Antwortfeld setzt.
+
+### A) Rechenkern (gemeinsam mit dem Rechenweg aus FR-003)
+Rechner und Rechenweg benutzen **einen** Kern `rechne()`. Gegenüber FR-003 kommt dazu:
+- **Prozent wie auf dem Tischrechner:** Steht rechts von `+` oder `−` nur ein
+  Prozentsatz (Zahl oder Klammer, direkt gefolgt von `%`), ist er ein Anteil des
+  Werts davor: `a + b %` = a · (1 + b/100). Sonst gilt `b %` = b/100.
+- **π** (auch `pi`).
+- **sin, cos, tan in Grad**, dazu die Umkehrung `sin⁻¹ cos⁻¹ tan⁻¹` (auch `arcsin`
+  usw.; Ergebnis in Grad).
+  - Die Funktion wirkt auf den nächsten Faktor: `sin 30°` oder `sin(30)`.
+  - `tan 90` ist ungültig. Werte mit |x| < 10⁻¹² werden 0.
+- **Zeit:** `6 h 45` bzw. `6 h 45 min` = 6,75 Stunden. Minuten 0–59, sonst ungültig.
+  `45 min` allein bleibt 45 (die Einheit wird überlesen).
+- **Das Mal darf fehlen** vor π, √, einer Funktion und `(`: `2π`, `2√9`, `2(3+4)`.
+- `rechne()` nimmt Text oder schon zerlegte Zeichen. Der Rechner reicht Zahlen so
+  in voller Genauigkeit durch, ohne Umweg über Text.
+
+**Referenzwerte** (Web-Stand; Format wie im Rechenweg, höchstens 4 Nachkommastellen):
+
+| Eingabe | Ergebnis |
+|---|---|
+| `200 + 19 %` | 238 |
+| `238 − 16 %` | 199,92 |
+| `1.000 − 10 % − 2 %` | 882 |
+| `200 × 19 %` / `38 ÷ 19 %` | 38 / 200 |
+| `200 + 3 · 10 %` | 200,3 |
+| `(200 + 19 %) · 2` | 476 |
+| `2π` | 6,2832 |
+| `(60² − 50²) · π ÷ 4` | 863,938 |
+| `2√9` / `2(3+4)` | 6 / 14 |
+| `9,81 · sin 30°` | 4,905 |
+| `tan⁻¹ 0,15` | 8,5308 |
+| `arcsin 2` / `tan 90` | ungültig |
+| `12.100 ÷ 1,1^2` | 10.000 |
+| `-2²` / `(−2)²` | −4 / 4 |
+| `10 h − 6 h 45 min` | 3,25 |
+| `5 h 75` | ungültig |
+| `12 h · 30 €/h` | 360 |
+
+Zeile als Text im Rechenweg:
+- `10 h − 6 h 45 min` mit Einheit `h` ergibt `10 − 6 h 45 min = 3,25 h`.
+- `cos 30° · 2500` mit Einheit `daN` ergibt `cos 30° · 2.500 = 2.165,0635 daN`.
+- `sin⁻¹(0,5)` ergibt `sin⁻¹(0,5) = 30`.
+
+Die Referenzwerte aus FR-003 gelten unverändert weiter.
+
+### B) Eingabe als Zeichenliste
+Der Rechner bearbeitet keinen Text, sondern eine Liste von Zeichen:
+
+| Zeichen | Inhalt |
+|---|---|
+| Zahl | getippte Ziffern („12,5“) oder fester Wert (Ergebnis, Verlaufseintrag) |
+| Zeit | Stunden, Minuten (bis zu 2 Ziffern) |
+| π | |
+| Rechenzeichen | `+ − × ÷ ^`; ein Vorzeichen-Minus ist markiert |
+| Klammer | auf / zu |
+| Funktion | `√ sin cos tan sin⁻¹ cos⁻¹ tan⁻¹`, öffnet eine Klammer |
+| `%`, `²` | nachgestellt |
+
+„Zahl-Ende“ heißt: Zahl, Zeit, π, `)`, `%` oder `²`.
+
+**Tasten:**
+- **Ziffer:**
+  - Hängt an die gerade getippte Zahl an (höchstens 15 Ziffern; eine „0“ wird ersetzt).
+  - Nach einer Zeit ergänzt sie die Minuten.
+  - Nach einem anderen Zahl-Ende oder einem festen Wert kommt erst ein `×`.
+- **Komma:** nur einmal je Zahl; ohne Zahl davor „0,“.
+- **Rechenzeichen:**
+  - Ersetzt ein direkt davor stehendes Rechenzeichen.
+  - `−` nach `× ÷ ^ (`, nach einer Funktion oder am Anfang ist ein Vorzeichen.
+- **`%`, `x²`:** nur hinter einem Zahl-Ende.
+- **`(`:** nach einem Zahl-Ende kommt erst ein `×`.
+- **`)`:** nur wenn eine Klammer offen ist und davor ein Zahl-Ende steht. Offene
+  Klammern schließt der Rechner selbst; die Anzeige zeigt sie blass.
+- **√, sin, cos, tan:**
+  - Nach „=“ wirken sie auf das Ergebnis.
+  - Hinter einem Zahl-Ende wirken sie auf den letzten Operanden (Zahl oder Klammer
+    samt `%`/`²`): „16 √“ = 4, „5 + 9 √“ = 8.
+  - Sonst beginnen sie eine Funktion: „√(“.
+- **`inv`:** schaltet sin/cos/tan für den nächsten Druck auf die Umkehrung.
+- **`±`:**
+  - Wechselt das Vorzeichen der letzten Zahl.
+  - Nach `+` oder `−` mit Klammer: „5 − 9 ±“ wird „5 − (−9)“ = 14.
+  - Ein zweites `±` hebt das auf.
+- **`h min`:** macht aus der gerade getippten ganzen Zahl die Stunden; die nächsten
+  zwei Ziffern sind Minuten. „1 0 h min − 6 h min 4 5“ ergibt „10 h 00 min − 6 h 45 min“.
+- **`⌫`:** löscht die letzte Ziffer bzw. das ganze letzte Zeichen (eine Funktion
+  samt Klammer). Nach „=“ wirkt es wie C.
+- **`C`:** löscht die Rechnung; der Verlauf bleibt.
+- **`=`:**
+  - Zeigt das Ergebnis; die Rechnung wandert in den Verlauf.
+  - Danach beginnen Ziffer, `(` und π eine neue Rechnung.
+  - Rechenzeichen, `%` und `²` rechnen mit dem Ergebnis weiter.
+
+**Fehler** (statt des Ergebnisses; die Rechnung bleibt stehen, die Anzeige wackelt kurz):
+- Die Rechnung endet offen („5 +“): „Rechnung unvollständig“.
+- ÷ 0, √ aus einer negativen Zahl, tan 90°, sin⁻¹ 2: „Nicht definiert“.
+- Minuten über 59: „Minuten gehen nur bis 59“.
+
+**Referenz-Tastenfolgen:**
+
+| Tasten | Anzeige |
+|---|---|
+| `2 0 0 + 1 9 % =` | 238 |
+| `1 0 0 0 − 1 0 % − 2 % =` | 882 |
+| `1 6 √ =` / `√ 1 6 =` | 4 / 4 |
+| `5 + 9 √ =` | 8 |
+| `2 π =` | 6,28318530718 |
+| `3 0 sin =` | 0,5 |
+| `inv tan 1 =` | 45 |
+| `1 0 h·min − 6 h·min 4 5 =` | 3,25, Zeitfeld „3 h 15 min“ |
+| `5 − 9 ± =` | 14 |
+| `1 2 + 3 = × 2 =` | 30 |
+| `1 2 + 3 = 7` | 7 (neue Rechnung) |
+| `5 + =` | „Rechnung unvollständig“ |
+
+### C) Anzeige
+- Dunkles Anzeigefeld wie bisher (`#0F1E23`).
+- **Verlauf** oben im Feld:
+  - die letzten 25 Rechnungen als „Rechnung = Ergebnis“, die neueste unten
+  - 3 Zeilen hoch (Handy: 2), scrollbar
+  - Antippen setzt das Ergebnis als festen Wert ein; „Verlauf leeren“ steht ganz oben.
+- **Rechnung:**
+  - Zahlen mit Tausenderpunkt, Rechenzeichen mit Leerzeichen, „ %“.
+  - Zeit als „6 h 45 min“, **nie** „6:45“, denn im Rechenweg ist `:` ein Geteilt-Zeichen.
+  - Fehlende Klammern blass. Nach „=“ steht dort „Rechnung =“.
+- **Ergebnis:**
+  - Live während des Tippens. Ist die Rechnung gerade unvollständig, bleibt der letzte
+    gültige Wert blass stehen.
+  - Format `de_DE`: bis zu 12 gültige Stellen, ganze Zahlen bis 10¹⁵ vollständig,
+    Minus als „−“ (U+2212).
+- **Zeitfeld** links neben dem Ergebnis, sobald eine Zeit in der Rechnung steckt:
+  „3 h 15 min“ (Minuten gerundet).
+- **Speicher:** `SharedPreferences` **`kvm_rechner`** (Web: localStorage, gleicher Schlüssel):
+  ```json
+  {"T": [Zeichen …], "v": [{"a": "4.400 ÷ 22", "v": 200, "z": false}],
+   "fr": true, "l": "4.400 ÷ 22", "mini": false}
+  ```
+  `v` = Verlauf, `fr` = gerade „=“ gedrückt, `l` = letzte Rechnung, `mini` = eingeklappt.
+
+### D) Übernehmen
+- Der Knopf „↩ Übernehmen <Ziel>“ steht unter der Anzeige. Er ist nur sichtbar, wenn
+  es ein Ziel und ein gültiges Ergebnis gibt.
+- Ziel ist das zuletzt fokussierte Antwortfeld. Ohne Fokus ist es das Ergebnisfeld der
+  Rechenfrage.
+
+| Ziel | Beschriftung | eingesetzt wird |
+|---|---|---|
+| Ergebnisfeld der Rechenfrage | „ins Ergebnisfeld“ | Wert ohne Tausenderpunkt („1234,5“), ersetzt den Inhalt |
+| leere Rechenweg-Zeile | „Rechnung in den Rechenweg · Z2“ | die ganze Rechnung („4.400 ÷ 22“); der Rechenweg rechnet sie nach |
+| Rechenweg-Zeile mit Inhalt | „in den Rechenweg · Z2“ | Wert mit Tausenderpunkt an der Cursorstelle |
+| Textantwort | „in deine Antwort“ | Wert mit Tausenderpunkt an der Cursorstelle |
+| Anlagen-Tabelle / Formelbuch | „in die Tabelle“ / „ins Formelbuch“ | Wert ohne Tausenderpunkt |
+
+- Vor dem Wert steht ein Leerzeichen, wenn davor weder Leerraum noch „(“ steht.
+- Danach leuchtet das Zielfeld kurz auf und wird über den Rechner gescrollt. Die
+  Änderung wird wie eine Eingabe gespeichert.
+- **Flutter:** Der öffnende Screen gibt dem Rechner einen Callback
+  `onUebernehmen(String wert, String rechnung)` und die Zielbeschreibung mit.
+  - Quiz: Ergebnisfeld der Rechenfrage.
+  - Aufgabenblatt: aktives Rechenweg- oder Textfeld (FR-003).
+
+### E) Aufbau und Layout
+- **Kopf:** Rechner-Symbol, „Taschenrechner“, Einklappen (⌄), ✕.
+  - Einklappen blendet die Tasten aus; Antippen der Anzeige klappt wieder auf.
+- **Funktionsreihe:** `inv sin cos tan π h min`, 6 gleich breite Tasten, 34 hoch, Mono 13.
+  Ist `inv` aktiv, ist die Taste petrol gefüllt und die Tasten heißen sin⁻¹, cos⁻¹, tan⁻¹.
+- **Tastenfeld** 5 × 5, 46 hoch, Abstand 6:
+  ```
+  C   (   )   %   ⌫
+  7   8   9   ÷   √
+  4   5   6   ×   x²
+  1   2   3   −   xʸ
+  0   ,   ±   +   =
+  ```
+  - C und ⌫ in `kAmberInk`.
+  - Rechenzeichen in Petrol auf `kSurface2`; √, x², xʸ in Petrol.
+  - „=“ petrol gefüllt.
+- **Handy:**
+  - Unten angedockt über die volle Breite, Ecken oben 16, Tasten 42 hoch, Verlauf 2 Zeilen.
+  - Höhe etwa 60 % des Bildschirms.
+  - Die Aufgabe darüber bleibt lesbar und scrollbar: in Flutter
+    `Scaffold.showBottomSheet` oder ein Overlay, **kein** modales Bottom-Sheet.
+- **Tablet/breit:**
+  - Schwebendes Fenster, 324 breit, oben rechts, ziehbar.
+  - Der Inhalt weicht nach links aus, solange das Fenster nicht verschoben wurde.
+- **Hardware-Tastatur** (optional): Ziffern, `+ - * / : x ^ % ( ) , .`, Enter und `=`,
+  ⌫, Entf/`c`, `p` (π), `h` (Zeit).
+
+### F) Ergebnisfeld liest Tausenderpunkte
+- `quiz_screen.dart` `_parseNum` liest „4.400“ als 4,4.
+- Auf `parseDe` aus `calc_kit.dart` umstellen. Das liest „4.400“ = 4400, „1.5“ = 1,5
+  und „1.234,5“ richtig.
+- Zusätzlich „−“ (U+2212) als Minus akzeptieren. Web: `parseCalcNum`.
+
+### Abnahme
+- Alle Referenzwerte aus A und B stimmen.
+- Rechenfrage: Rechner öffnen, `12345 ÷ 10 =`, „Übernehmen ins Ergebnisfeld“. Das Feld
+  zeigt „1234,5“, und „Antwort prüfen“ ist aktiv.
+- Aufgabenblatt: leere Rechenweg-Zeile antippen, `4400 ÷ 22 =`, Übernehmen. Die Zeile
+  zeigt „4.400 ÷ 22“ mit „= 200“ und ist gespeichert.
+- Handy: Die Frage bleibt über dem Rechner lesbar. Nach dem Übernehmen ist das Feld
+  sichtbar.
+- Der Verlauf übersteht einen Neustart.
+- „4.400“ im Ergebnisfeld zählt als 4400.
+
+### Referenz Web-Implementierung (`index.html` auf `claude/ui-design-improvement-my0f66`)
+- **HTML:** `#mCalc`, Z. 1708
+- **CSS:** Kommentar „Taschenrechner: Anzeige mit Verlauf …“, Z. 570
+- **JS:**
+
+  | Funktion | Zeile |
+  |---|---|
+  | `rwTokens` (Kern: Zeichen) | 2828 |
+  | `rwFunktion` (Winkel, Wurzel) | 2866 |
+  | `rwAuswerten` (Kern: Rechnen) | 2884 |
+  | `parseCalcNum` | 3198 |
+  | `calcDock` (Andocken, Ausweichen) | 4595 |
+  | `rkKern` (Zeichenliste → Kern) | 4659 |
+  | `rkAusdruck` (Anzeige, Text) | 4692 |
+  | `rkFunktion` | 4743 |
+  | `rkVorzeichen` | 4753 |
+  | `rkZeit` | 4771 |
+  | `rkGleich` | 4785 |
+  | `rkTaste` | 4799 |
+  | `rkZielVon` / `rkUebernehmen` | 4820 / 4843 |
+  | `FN_TASTEN` / `TASTEN` | 4864 |
+  | `rkZeigen` | 4874 |
+
+Zeilennummern: Stand dieses Commits.
+
+---
+
+## FR-006 · Prüfungstermin und Lernplan
+
+**Status App-Session:** ⏳ offen
+**Web umgesetzt:** ✅ `claude/ui-design-improvement-my0f66` (Commit „Prüfungstermin und Lernplan …“)
+**Priorität:** hoch. Das Tagesziel ist der tägliche Anlass zum Lernen.
+
+### Ziel / Framing
+Lernende tragen ihren IHK-Termin ein. Die Heute-Karte zeigt dann:
+- wie viele Tage bleiben
+- wie viele Fragen heute dran sind
+- ob man bei seinem Tempo rechtzeitig prüfungsreif wird
+
+**Ziel des Plans** ist die Ampel „prüfungsreif“, also 70 % Prüfungsreife wie im Ring
+(`ampel()`), erreicht bis zum Tag vor der Prüfung.
+
+### Speicher
+`SharedPreferences` **`kvm_pruefung`** (Web: localStorage, gleicher Schlüssel):
+```json
+{"datum": "2026-11-04", "tag": 20719, "n": 3666, "ziel": 245}
+```
+- `datum`: Prüfungstag (ISO).
+- `tag`: Tagindex, an dem `ziel` festgelegt wurde. Gleiche Zählung wie `kvm_tage`:
+  `floor((jetzt − Zeitzonenversatz) / 86 400 000)`.
+- `n`: Zahl der aktiven Fragen bei der Festlegung.
+- `ziel`: Tagesziel (Fragen).
+
+Der Termin bleibt auf dem Gerät und wird (noch) nicht synchronisiert. Ein Sonderschlüssel
+in `progress.data` würde den Merge beider Clients stören.
+
+### Rechnung
+Mit N = aktive Fragen, box = Leitner-Box, `MASTER_BOX` = 3:
+- `noetig` = max(0, ⌈0,7 · 3 · N − Σ min(box, 3)⌉). Das sind die richtigen Antworten
+  bis 70 %.
+- `quote`:
+  - Trefferquote richtig ÷ (richtig + falsch) über den ganzen Lernstand, begrenzt auf 0,5–0,95
+  - unter 30 Antworten: 0,75
+- `tage` = Prüfungstag − heute. Heute zählt als Lerntag, der Prüfungstag nicht.
+- `ziel` = ⌈noetig ÷ quote ÷ tage⌉.
+  - Ist `noetig` = 0: die Zahl der heute fälligen Fragen.
+  - Bei `tage` ≤ 0: 0.
+  - **Einmal je Tag festlegen:** neu nur, wenn `tag` ≠ heute oder `n` sich geändert hat
+    (Fächerwahl), oder wenn der Termin neu gespeichert wird. Sonst schrumpfte das Ziel
+    beim Lernen.
+- `geschafft` = Antworten heute (`kvm_tage[heute]`).
+- `tempo` = Antworten der letzten 7 Tage ohne heute ÷ 7.
+- `prognose` = heute + ⌈noetig ÷ (tempo · quote)⌉, nur wenn `noetig` > 0 und `tempo` ≥ 1.
+
+**Referenzfall:** N = 3.666, kein Fortschritt, 42 Tage → `noetig` = 7.699, `ziel` =
+⌈7.699 ÷ 0,75 ÷ 42⌉ = **245**.
+
+### Anzeige (Block in der Heute-Karte)
+- **Platz:**
+  - breit (≥ 900): dritte Spalte der Karte, 250–320 breit
+  - sonst: unter „Jetzt lernen“
+- **Aussehen:** Fläche weiß 8 %, Rand weiß 17 %, Radius 14, Innenabstand 12/14.
+
+**Zustände:**
+
+| Zustand | Inhalt |
+|---|---|
+| kein Termin | „Wann ist deine Prüfung?“ · „Trag den Termin ein – die App rechnet dir ein Tagesziel bis zur Prüfungsreife aus.“ · Knopf „Termin eintragen“ |
+| Formular | „Prüfungstermin“ · Datumsauswahl (frühestens morgen) · „Speichern“ (hell) · „Entfernen“ (nur mit Termin) · „Abbrechen“ |
+| vorbei | „Prüfung vorbei“ · „Deine Prüfung war am Mi., 4. Nov. 2026. Steht ein neuer Termin an?“ · „Neuen Termin eintragen“ |
+| heute | „Heute ist Prüfung“ · „Viel Erfolg! Kurz vorher helfen die fälligen Fragen mehr als neuer Stoff.“ |
+| morgen / N Tage | Kopf, Tageszielzeile und Statuszeile (siehe unten) |
+
+Fehler im Formular: „Bitte ein Datum wählen.“ / „Der Termin muss in der Zukunft liegen.“
+
+**Kopf:**
+- „Noch 42 Tage“ (Barlow Condensed 23, Versalien) + „bis zur Prüfung am Mi., 4. Nov. 2026“
+- bei 1 Tag: „Morgen ist Prüfung“ + Datum
+- rechts der Link „ändern“
+
+**Tageszielzeile:** „Heute“ · „20 / 142“ (Mono) · Balken (grün `#8FE3AA` auf weiß 18 %) ·
+„Fragen“. Nur bei `ziel` > 0.
+
+**Statuszeile:** Ampel-Punkt + Text. Es gilt die erste passende Regel:
+1. `noetig` = 0:
+   - Ampel grün
+   - „Ziel erreicht: 70 % prüfungsreif. Halte den Stand mit den fälligen Fragen.“
+   - Ist nichts fällig: „… Heute ist nichts fällig – probier eine Original-Prüfung.“
+2. `geschafft` ≥ `ziel`: grün, „Tagesziel geschafft – stark! Morgen geht es weiter.“
+3. Prognose vor dem Prüfungstag: grün, „Im Plan: Mit Ø 64 Fragen am Tag bist du am 28. Okt.
+   prüfungsreif (70 %).“
+4. Prognose am oder nach dem Prüfungstag:
+   - Ampel rot bei `ziel` > 120, sonst gelb
+   - „Rückstand: Mit Ø 29 Fragen am Tag wärst du erst am 15. Apr. 2027 prüfungsreif. Mit
+     dem Tagesziel klappt es bis zur Prüfung.“
+5. Ohne Tempo, eingestuft nach `ziel`:
+   - bis 60: grün, „Gut machbar“
+   - bis 120: gelb, „Sportlich“
+   - darüber: rot, „Sehr knapp“
+   - Text: „…: Mit 245 Fragen am Tag bist du bis zur Prüfung zu 70 % prüfungsreif.“
+- Zusatz bei `noetig` > 0 und `ziel` > 150: „Setz Schwerpunkte, z. B. mit „Schwächen üben“.“
+- Datumsformat:
+  - kurz „28. Okt.“, mit Jahr, wenn es nicht das laufende ist
+  - lang „Mi., 4. Nov. 2026“
+
+### Abnahme
+- Termin in 42 Tagen ohne Fortschritt: „Noch 42 Tage“, „Heute 0 / 245“ (bei 3.666 Fragen).
+- Drei Antworten später: „Heute 3 / 245“. Das Ziel bleibt.
+- Mit Ø 400 Antworten in den letzten 7 Tagen erscheint „Im Plan …“, mit Ø 20 „Rückstand …“.
+- Morgen, heute und ein vergangener Termin zeigen den jeweiligen Zustand.
+- „Entfernen“ führt zurück zu „Wann ist deine Prüfung?“.
+
+### Referenz Web-Implementierung (`index.html` auf `claude/ui-design-improvement-my0f66`)
+- **HTML:** `#planBox` in `.hero-main`, Z. 1439
+- **CSS:** Kommentar „Prüfungstermin und Lernplan: eigener Block …“, Z. 965
+- **JS:**
+  - Block-Kommentar „Prüfungstermin und Lernplan“, Z. 2083
+  - `planRechnen`, Z. 2098
+  - `renderPlan`, Z. 2114 (aufgerufen am Ende von `renderHero`)
+
+Zeilennummern: Stand dieses Commits.
+
+---
+
+## FR-007 · Prüfung unter Echtbedingungen
+
+**Status App-Session:** ⏳ offen
+**Web umgesetzt:** ✅ `claude/ui-design-improvement-my0f66` (Commit „Prüfung unter Echtbedingungen …“)
+**Voraussetzung:** Aufgabenblatt aus FR-003.
+
+### Ziel / Framing
+Eine Original-Prüfung am Stück schreiben, wie bei der IHK:
+- mit Uhr über die echte Bearbeitungszeit
+- ohne Blick in die Lösungen
+- danach Selbstbewertung, Note und Bearbeitungszeit
+
+Die bisherige Simulation nutzt Übungsfragen. Die echte schriftliche Prüfung besteht aber
+aus Situationsaufgaben.
+
+### Bearbeitungszeit
+- Steht im Text der Ausgangssituation „Bearbeitungszeit N Minuten“, gilt N.
+  Kraftverkehr (`P-OK`, `P-FT`): 180.
+- Sonst Basisqualifikationen: 90 Minuten, `P-NT-…` (Naturwissenschaften): 60 Minuten.
+
+### Speicher
+- **`kvm_echt`**: `{"id": "P-NT-20150429", "start": <ms>, "min": 60, "ende": <ms>|fehlt, "zeitUm": true|fehlt}`
+  - Es gibt immer nur einen Durchgang.
+  - Die Uhr rechnet ab `start`. Sie läuft also weiter, wenn man die Prüfung verlässt
+    oder die App neu startet, wie in der echten Prüfung.
+- **`kvm_echt_verlauf`**: Liste (höchstens 40) von
+  `{"id", "tag", "min", "dauer": <ms>, "pkt", "max", "note"}`. `tag` wie in `kvm_tage`.
+
+### Start (Prüfungsliste)
+- Neuer Knopf je Prüfung: Uhr-Symbol + „Unter Prüfungsbedingungen · 90 min“.
+- Läuft für diese Prüfung schon ein Durchgang, geht es dort weiter.
+- Läuft ein Durchgang einer anderen Prüfung, fragt die App: „Es läuft noch eine andere
+  Prüfung unter Prüfungsbedingungen. Diesen Durchgang beenden und die neue Prüfung starten?“
+- Gibt es zu dieser Prüfung gespeicherte Antworten, Rechenwege, Tabelleneinträge oder
+  Punkte, fragt die App: „Für diese Prüfung sind schon Antworten gespeichert. Unter
+  Prüfungsbedingungen startest du mit leeren Blättern – die bisherigen Antworten und Punkte
+  dieser Prüfung werden gelöscht.“ Bei Ja werden sie gelöscht.
+  - Tabelleneinträge sind alle Schlüssel, die mit `<stepId>#` beginnen.
+- Danach wird `kvm_echt` gesetzt und das Aufgabenblatt bei Aufgabe 1 geöffnet.
+
+### Während der Prüfung
+- **Leiste oben:**
+  - Uhr (Mono, Pillenform wie der Simulations-Timer): `1:29:45`, unter einer Stunde `29:45`.
+  - Ab 10 Minuten Restzeit rot (`.low`).
+  - Daneben der Knopf „Abgeben“ (petrol).
+- **Band unter dem Kopf:** „Unter Prüfungsbedingungen: 1 h 30 min Bearbeitungszeit,
+  Lösungen erst nach der Abgabe. Die Uhr läuft weiter, auch wenn du die Prüfung verlässt.“
+- **Gesperrt:**
+  - „Lösung aufdecken“ je Teilaufgabe und „Alle Lösungen aufdecken“ im Fuß
+  - Zwischenergebnisse aus früheren Teilen (gibt es ohnehin erst nach dem Aufdecken)
+- Auf der letzten Aufgabe heißt der Hauptknopf „Abgeben“ statt „Zum Ergebnis →“.
+- Rechner, Rechenblatt und Formelbuch bleiben nutzbar.
+- **Verlassen (✕):** Nachfrage „Prüfung verlassen? Die Uhr läuft weiter – wie in der
+  echten Prüfung. Über die Prüfungsliste geht es weiter.“
+
+### Abgabe
+- **Von Hand:** „Jetzt abgeben?“, bei leeren Teilen mit „N Teilaufgaben sind noch leer.“,
+  dazu „Danach siehst du die Lösungen und bewertest dich selbst.“
+- **Automatisch**, wenn die Uhr 0 erreicht, auch beim Wiederöffnen nach Ablauf. Dann wird
+  `zeitUm` gesetzt.
+- **Danach:**
+  - `ende` = min(jetzt, start + min).
+  - Alle Teilaufgaben sind aufgedeckt, und es geht zurück zu Aufgabe 1.
+  - Die Uhr zeigt die Bearbeitungszeit („1 h 12 min“); „Abgeben“ verschwindet.
+- **Band (grün):**
+  - „Abgegeben nach 1 h 12 min.“ bzw. „Zeit abgelaufen – deine Antworten sind abgegeben.“
+  - dazu: „Sieh dir jetzt die Lösungen an und vergib dir je Teilaufgabe Punkte. Danach
+    „Zum Ergebnis“ – mit Note und Bearbeitungszeit.“
+- **Ergebnis:**
+  - Die Zeile bekommt „ · Bearbeitungszeit 1 h 12 min von 1 h 30 min“, bei Ablauf mit
+    „ (Zeit abgelaufen)“.
+  - Ein Eintrag geht nach `kvm_echt_verlauf`, danach wird `kvm_echt` gelöscht.
+
+### Prüfungsliste
+| Zustand | Hauptknopf |
+|---|---|
+| Durchgang läuft | Uhr + „Läuft · noch 45 min – weiter →“ (nach Ablauf: „Zeit abgelaufen – auswerten →“) |
+| abgegeben, noch nicht ausgewertet | „Abgegeben – jetzt auswerten →“ |
+| sonst | wie bisher + „Unter Prüfungsbedingungen · N min“ |
+
+Unter den Knöpfen steht der letzte Durchgang: „Zuletzt unter Prüfungsbedingungen: 64 von
+100 P · Note 3 · 2 h 37 min · am 4. Sept.“
+
+### Abnahme
+- NT-Prüfung unter Prüfungsbedingungen starten:
+  - Die Uhr zeigt `1:00:00` bzw. `59:xx`.
+  - Es gibt keine Aufdecken-Knöpfe.
+- Antwort schreiben, verlassen, über die Liste fortsetzen: Antwort und Uhr sind noch da.
+- `start` 61 Minuten zurückstellen:
+  - Die Prüfung wird automatisch abgegeben („Zeit abgelaufen“), die Lösungen sind offen.
+  - Das Ergebnis zeigt „Bearbeitungszeit 1 h von 1 h (Zeit abgelaufen)“.
+- Neuer Durchgang mit gespeicherten Antworten: Nachfrage, danach leere Blätter.
+- Normales Öffnen der Prüfung: keine Uhr, Aufdecken wie bisher.
+
+### Referenz Web-Implementierung (`index.html` auf `claude/ui-design-improvement-my0f66`)
+- **HTML:**
+  - Uhr und „Abgeben“ in `.bl-bar`, Z. 1637
+  - Band `#blEcht`, Z. 1649
+- **CSS:** Kommentar „Prüfung unter Echtbedingungen: Uhr und Abgabe …“, Z. 1316
+- **JS:**
+  - Block-Kommentar „Prüfung unter Echtbedingungen“, Z. 3858
+  - `echtUhr`, Z. 3889
+  - `echtAbgeben`, Z. 3910
+  - `KVM_startEcht`, Z. 3924
+  - `KVM_echtInfo`, Z. 3938
+  - Ergebnis in `finishRound`, Z. 4118
+  - Prüfungsliste, Z. 6678
+
+Zeilennummern: Stand dieses Commits.
+
+---
+
+## FR-008 · Fehler melden
+
+**Status App-Session:** ⏳ offen
+**Web umgesetzt:** ✅ `claude/ui-design-improvement-my0f66` (Commit „Fehler melden …“)
+**Voraussetzung:** einmalig `docs/supabase-meldungen.sql` im Supabase-SQL-Editor
+(siehe `SUPABASE_SETUP.md`, Abschnitt 6). Fehlt das Skript, zeigen Web und App keinen Knopf.
+
+### Ziel / Framing
+Viele Texte stammen per OCR aus PDFs. Lernende finden Fehler schneller als jede
+Prüfroutine. Ein unauffälliger Knopf an jeder Frage macht aus ihnen Mitprüfende. Melden
+geht auch ohne Konto.
+
+### Datenbank (Skript `docs/supabase-meldungen.sql`)
+- **Tabelle `meldungen`:** `id`, `frage` (≤ 80), `art` (siehe unten), `text` (≤ 1.000),
+  `kontext` (jsonb, ≤ 2 kB), `quelle` (`web` | `app`), `user_id` (nur bei Anmeldung),
+  `status` (`neu` | `erledigt` | `abgelehnt`), `created_at`.
+- **Kein Client-Zugriff auf die Tabelle.** Es gibt zwei RPCs, beide für `anon` und
+  `authenticated`:
+  - `meldungen_bereit()` → `true`. Nur zum Prüfen, ob Melden eingerichtet ist.
+  - `meldung_senden(p_frage, p_art, p_text, p_kontext, p_quelle)`.
+- **Bremse:** 50 je Konto und Tag, 300 je Stunde insgesamt. Überschreitung:
+  Fehlermeldung mit „zu viele Meldungen“.
+- Lokal mit PGlite geprüft (17 Fälle): Rechte, Kürzen, Art-Prüfung, Kontextgröße,
+  Bremse, Kontolöschung (Meldung bleibt ohne Konto).
+
+### Knopf
+- **Quiz:** in der Metazeile rechts (neben Fragetyp und Themenbereich).
+- **Aufgabenblatt:** im Kopf jeder Teilaufgabe rechts.
+- **Aussehen:** Fähnchen 13 + „Fehler?“, 12 w600 in `kMuted`, ohne Rahmen.
+  - Schon gemeldet: „Gemeldet ✓“ in `kOkInk`.
+  - Gemerkt wird das in `SharedPreferences` **`kvm_gemeldet`** = `{"<id>": <ms>}`.
+- Sichtbar erst, wenn `meldungen_bereit()` beim Start `true` liefert.
+
+### Dialog
+- **Handy:** Blatt von unten, Höhe nach Inhalt. **Breit:** Dialog mit 480 Breite.
+- **Titel** „Fehler melden“. Darunter ein Bezugskasten: Nummer in Mono, dann „ · “ und die
+  ersten 160 Zeichen der Frage (dahinter „ …“, wenn gekürzt).
+- **„Was stimmt nicht?“:** fünf Auswahl-Chips (Radiogruppe, gewählt = petrol gefüllt):
+
+  | Chip | `art` |
+  |---|---|
+  | Text unleserlich oder Tippfehler | `text` |
+  | Lösung falsch | `loesung` |
+  | Rechnung oder Zahl falsch | `rechnung` |
+  | Tabelle oder Anlage fehlt | `anlage` |
+  | Sonstiges | `sonstiges` |
+
+- **„Beschreibung · optional“:** Textfeld, höchstens 1.000 Zeichen, Platzhalter „Was genau
+  stimmt nicht? Gern mit der richtigen Angabe.“
+- **Hinweis:** „Gesendet werden die Fragennummer, deine Angaben und – falls du angemeldet
+  bist – dein Konto für Rückfragen.“
+- **„Meldung senden“:** erst aktiv, wenn eine Art gewählt ist. Beim Senden „Wird gesendet …“.
+- **Erfolg:**
+  - „Danke! Deine Meldung ist angekommen.“ (grün), Knopf „Gesendet ✓“
+  - nach 1,4 s schließt der Dialog
+  - alle Knöpfe dieser Frage zeigen „Gemeldet ✓“
+- **Fehler:**
+  - bei der Bremse: „Gerade gehen zu viele Meldungen ein – bitte später noch einmal.“
+  - sonst: „Senden hat nicht geklappt. Bist du online? Bitte noch einmal versuchen.“
+  - der Knopf ist wieder aktiv
+- **Kontext (`p_kontext`):**
+  - `{"modus": <Bildschirm>, "fach": <f>, "bereich": <sub, ≤ 80>, "auszug": <160 Zeichen>}`
+  - App: `modus` = `quiz` | `blatt`, `p_quelle` = `app`
+
+### Abnahme
+- Ohne Skript ist kein Knopf zu sehen.
+- Mit Skript, Quiz:
+  - „Fehler?“ öffnet den Dialog mit Nummer und Auszug.
+  - Ohne Art lässt sich nichts senden.
+  - Mit Art und Text kommt eine Zeile in `meldungen` an, der Knopf zeigt „Gemeldet ✓“.
+- Aufgabenblatt: Jede Teilaufgabe hat einen Knopf; der Dialog zeigt die Nummer der
+  Teilaufgabe.
+- Nach 51 Meldungen desselben Kontos an einem Tag erscheint der Hinweis zur Bremse.
+
+### Referenz Web-Implementierung (`index.html` auf `claude/ui-design-improvement-my0f66`)
+- **HTML:**
+  - Knopf `#qMelden`, Z. 1592
+  - Dialog `#mMelden`, Z. 1725
+- **CSS:** Kommentar „Fehler melden: unauffälliger Knopf …“, Z. 541
+- **JS:**
+  - `meldenKnopfHTML` (Aufgabenblatt), Z. 3852
+  - Block „Fehler melden“ im Cloud-Teil, Z. 4250
+  - `mdOeffnen`, Z. 4261
+  - Senden, Z. 4287
+  - Bereitschaft, Z. 4301
+- **SQL:** `docs/supabase-meldungen.sql`
+
+Zeilennummern: Stand dieses Commits.
+
+---
+
+## FR-009 · Lern-Erinnerung
+
+**Status App-Session:** ⏳ offen
+**Web umgesetzt:** ✅ als Kalendereintrag (Commit „Lern-Erinnerung …“). Die Push-Mitteilung
+gibt es nur in der App.
+**Priorität:** mittel. Sie hält die Serie („Tage in Folge“) am Leben.
+
+### Ziel / Framing
+Eine tägliche Mitteilung zur selbst gewählten Uhrzeit, damit die Lernserie nicht reißt.
+- Gelernt wurde heute schon: keine Mitteilung.
+- Kein Server nötig, alles läuft als lokale Mitteilung auf dem Gerät.
+
+### App: Einstellungen
+- **Wo:** in „Konto & Einstellungen“ (Web: gleicher Abschnitt) eine Zeile
+  „Lern-Erinnerung“ mit Schalter und Uhrzeit (Standard 19:00, Schritte 5 min).
+- **Speicher:** `SharedPreferences` **`kvm_erinnerung`** = `{"an": true, "zeit": "19:00"}`.
+  Web nutzt denselben Schlüssel nur für die Uhrzeit.
+- **Einschalten:**
+  - Unter Android 13+ Berechtigung `POST_NOTIFICATIONS` anfragen.
+  - Bei Ablehnung bleibt der Schalter aus. Hinweis: „Mitteilungen sind für die App
+    ausgeschaltet – in den Systemeinstellungen erlauben.“
+- **Ausschalten** entfernt alle geplanten Erinnerungen.
+
+### App: Technik
+- **Pakete:** `flutter_local_notifications`, `timezone`, `flutter_timezone` (lokale Zeitzone).
+- **Android-Manifest:**
+  - `POST_NOTIFICATIONS`, `RECEIVE_BOOT_COMPLETED`
+  - die Receiver von `flutter_local_notifications` (`ScheduledNotificationReceiver`,
+    `ScheduledNotificationBootReceiver`)
+  - **Keine exakten Alarme:** `AndroidScheduleMode.inexactAllowWhileIdle`. Eine Viertelstunde
+    Spielraum ist in Ordnung.
+- **Kanal:** `lernen`, Name „Lern-Erinnerung“, Wichtigkeit Standard.
+- **Planen statt Wiederholen:** Es gibt keine tägliche Wiederholung, denn die könnte „heute
+  schon gelernt“ nicht berücksichtigen. Stattdessen werden die nächsten 7 Tage einzeln geplant
+  (IDs 7001–7007):
+  - **Tag 0 = heute:** nur wenn heute noch nichts beantwortet wurde (`kvm_tage[heute]` fehlt)
+    und die Uhrzeit noch nicht vorbei ist.
+  - **Tage 1–6:** immer, außer nach dem Prüfungstermin (FR-006).
+- **Neu planen:** beim App-Start, beim Zurückkehren in den Vordergrund, nach der ersten
+  beantworteten Frage des Tages und nach jeder Änderung der Einstellung. Jeweils vorher alle
+  IDs 7001–7007 löschen.
+- Antippen öffnet die Startseite.
+
+### App: Texte
+- **Titel:** „Zeit zum Lernen“
+- **Text für heute** (erste passende Zeile):
+  1. Lernplan aktiv (FR-006) und Tagesziel > 0: „Heute dran: 58 Fragen bis zur Prüfung am 4. Nov.“
+  2. Serie ≥ 2: „Deine Serie: 6 Tage – ein paar Fragen, und sie hält.“
+  3. Fällige Fragen > 0: „12 Fragen sind heute fällig – 10 Minuten reichen.“
+  4. Sonst: „Ein paar Fragen zwischendurch halten dein Wissen frisch.“
+- **Text für die Folgetage** (beim Planen unbekannt, deshalb allgemein): „Kurz reinschauen: Die
+  fälligen Fragen warten, und deine Serie hält.“
+
+### Web: Kalendereintrag
+Ohne Server gibt es im Browser keine verlässlichen Push-Mitteilungen. Die Web-App bietet
+stattdessen **„In den Kalender“**:
+- Eine `.ics`-Datei mit einem täglichen Termin (20 min) zur gewählten Uhrzeit und einer
+  Erinnerung zum Beginn (`VALARM`, `TRIGGER:PT0M`).
+- **Zeiten:** schwebende Ortszeit, ohne Zeitzone. So zeigt jeder Kalender den Termin in
+  seiner Zone.
+  - Beginn: heute, wenn die Uhrzeit noch kommt, sonst morgen.
+  - Mit Prüfungstermin endet die Reihe am Tag davor (`UNTIL=…T235959`), sofern das nach dem
+    Beginn liegt.
+- **Format:** Zeilen mit CRLF und auf 75 Byte gefaltet, Text maskiert (`\\ \; \, \n`).
+- **Dateiname:** `lern-erinnerung.ics`. Danach steht unter der Zeile: „Kalendereintrag
+  erstellt: täglich um 07:30 Uhr. Öffne die Datei, um ihn in deinen Kalender zu übernehmen.“
+
+### Abnahme (App)
+- Einschalten, Zeit auf in zwei Minuten stellen: Die Mitteilung kommt.
+- Eine Frage beantworten, Zeit wieder auf in zwei Minuten stellen: keine Mitteilung heute,
+  aber für morgen geplant.
+- Ausschalten: keine geplanten Mitteilungen mehr (`pendingNotificationRequests` leer).
+- Neustart des Geräts: Die geplanten Erinnerungen bleiben.
+
+### Referenz Web-Implementierung (`index.html` auf `claude/ui-design-improvement-my0f66`)
+- **HTML:** Zeile „Lern-Erinnerung“ (`#erinnZeit`, `#erinnIcs`), Z. 1570
+- **CSS:** Kommentar „Lern-Erinnerung: Uhrzeit + Kalendereintrag“, Z. 435
+- **JS:**
+  - Block-Kommentar „Lern-Erinnerung (Web)“, Z. 3801
+  - `erIcs`, Z. 3814
+
+Zeilennummern: Stand dieses Commits.
+
+---
+
+## FR-010 · Lerngruppen mit Einladungscode
+
+**Status App-Session:** ⏳ offen
+**Web umgesetzt:** ✅ `claude/ui-design-improvement-my0f66` (Commit „Lerngruppen …“)
+**Voraussetzungen:**
+- FR-004 (Wochenrangliste) umgesetzt
+- einmalig `docs/supabase-gruppen.sql` **nach** `docs/supabase-rangliste.sql` (siehe
+  `SUPABASE_SETUP.md`, Abschnitt 7)
+
+Fehlt das Skript, sieht die Rangliste aus wie bisher.
+
+### Ziel / Framing
+Lernende eines Meisterkurses wollen sich untereinander vergleichen, nicht mit ganz
+Deutschland. Dafür gibt es eine private Rangliste je Gruppe.
+- Beitritt per 6-stelligem Code oder Einladungslink.
+- Sichtbar ist dasselbe wie in der großen Rangliste.
+- Später denkbar: eine Übersicht für Lehrkräfte bzw. ein Angebot an Bildungsträger.
+
+### Datenbank (RPCs, alle nur für `authenticated`)
+| RPC | Ergebnis |
+|---|---|
+| `gruppe_gruenden(p_name)` | `{id, code, name}`. Der Name wird getrimmt, Leerraum zusammengezogen, 3–40 Zeichen. |
+| `gruppe_beitreten(p_code)` | `{id, code, name}`. Groß-/Kleinschreibung und Leerzeichen egal; schon Mitglied → dieselbe Antwort. |
+| `gruppe_verlassen(p_gruppe)` | – |
+| `gruppen_meine()` | `[{id, code, name, mitglieder, leitung}]`, in Beitrittsreihenfolge |
+| `gruppe_stand(p_gruppe, p_woche)` | `{id, name, code, leitung, mitglieder, liste:[{platz, name, antworten, reife, serie, ich}]}`, nur für Mitglieder, sonst `null` |
+
+- **In `gruppe_stand`:**
+  - Alle Mitglieder stehen in der Liste, auch ohne Antworten.
+  - Antworten aus einer anderen Woche zählen 0.
+  - Rang nach Antworten, bei Gleichstand der Name.
+- **Fehlercodes → Text:**
+
+  | Code | Text |
+  |---|---|
+  | `P0002` | „Keine Gruppe mit diesem Code gefunden.“ |
+  | `P0003` | „Tritt erst der Rangliste bei.“ |
+  | `P0004` | „Du bist schon in 5 Gruppen – verlasse zuerst eine.“ |
+  | `P0005` | „Die Gruppe ist voll (200 Mitglieder).“ |
+  | `23514` | „Der Gruppenname braucht 3–40 Zeichen.“ |
+  | sonst | „Das hat nicht geklappt – bitte später noch einmal.“ |
+
+- **Serverseitig:**
+  - Codes aus `ABCDEFGHJKLMNPQRSTUVWXYZ23456789`
+  - falsche Codes kosten 0,5 s
+  - höchstens 5 Gruppen je Person, 200 Mitglieder je Gruppe
+  - Aufräumen per Trigger (Rangliste verlassen oder Konto gelöscht → raus aus allen Gruppen;
+    leere Gruppe weg; neue Leitung)
+- Lokal mit PGlite geprüft, 20 Fälle.
+
+### UI (im Vergleichsabschnitt, nur mit Rangliste und Skript)
+- **Reiter über der Liste** (waagerecht scrollbar, Pillenform):
+  - „Alle“ (die große Wochenrangliste), dann je Gruppe ihr Name, zuletzt „+ Gruppe“
+    (gestrichelt)
+  - gewählt: petrol gefüllt
+- **Gruppenansicht:**
+  - Überschrift „Meisterkurs IHK Köln · 4 Mitglieder · KW 39“, darunter die Liste wie in
+    FR-004 (Medaillen, eigene Zeile markiert).
+  - Allein in der Gruppe: „Noch bist du allein in der Gruppe. Lade die anderen aus deinem Kurs
+    mit dem Code ein.“
+  - Fuß: „Code **ABCDEF**“ (Mono, gesperrt), Knopf „Einladen“, leiser Knopf „Gruppe verlassen“
+    (Nachfrage: „Gruppe verlassen? Du kannst später mit dem Code wieder beitreten.“).
+- **„Einladen“:**
+  - Teilen-Dialog des Systems: Titel „Lerngruppe <Name>“, Text „Lerngruppe „<Name>“ im
+    Meister-Trainer – lern mit! Code: <Code>“, Link `<Web-Adresse>#gruppe=<Code>`.
+  - Ohne Teilen-Dialog in die Zwischenablage, mit der Rückmeldung „Einladung kopiert –
+    einfach in euren Chat einfügen.“
+- **„+ Gruppe“:** zwei kleine Formulare untereinander:
+  - „Mit Code beitreten“: Feld, Großbuchstaben, vorbelegt mit einer offenen Einladung;
+    Knopf „Beitreten“
+  - „Neue Gruppe gründen“: Feld mit Platzhalter „Name, z. B. Meisterkurs Herbst 2026“;
+    Knopf „Gründen“
+  - darunter Fehlerzeile, Hinweis und „Abbrechen“
+  - Nach Erfolg ist die neue Gruppe gewählt.
+- **Einladungslink:**
+  - Beim Start `#gruppe=<6 Zeichen>` aus der Adresse lesen, groß schreiben und in
+    **`kvm_einladung`** merken. Der Google-Login kehrt ohne `#` zurück, deshalb der Speicher.
+  - Dann den `#`-Teil entfernen (`history.replaceState`).
+  - App: Deep Link `…/#gruppe=` bzw. App-Link, sonst manuelle Eingabe.
+  - **Abgemeldet:** Hinweis „Du wurdest in eine Lerngruppe eingeladen. Melde dich an und mach
+    bei der Rangliste mit – dann kannst du beitreten.“
+  - **Angemeldet, nicht in der Rangliste:** Hinweis „… Nach dem Mitmachen kannst du beitreten.“
+  - **In der Rangliste:** Band (Bernstein) „Du wurdest in eine Lerngruppe eingeladen
+    (Code ABCDEF).“ mit „Beitreten“ und „Nein danke“. Beides löscht `kvm_einladung`.
+- Die Einführung vor dem Beitritt zur Rangliste nennt als dritten Punkt „auf Wunsch
+  Lerngruppen mit deinem Kurs – per Code“.
+
+### Abnahme
+- Ohne Skript: keine Reiter, die Rangliste wie bisher.
+- „+ Gruppe“ → Name „ab“ → Fehlertext.
+- Gründen mit „ Meisterkurs Herbst 2026 “: Reiter „Meisterkurs Herbst 2026“ gewählt,
+  „1 Mitglied“, Code sichtbar.
+- „Einladen“ teilt bzw. kopiert Text und Link mit dem Code.
+- Link `#gruppe=abcdef` öffnen: Band mit Code ABCDEF → „Beitreten“ → Reiter der Gruppe,
+  Liste sortiert, Einladung gelöscht.
+- Falscher Code → „Keine Gruppe mit diesem Code gefunden.“
+- Verlassen → zurück zu „Alle“, der Reiter ist weg.
+
+### Referenz Web-Implementierung (`index.html` auf `claude/ui-design-improvement-my0f66`)
+- **Zustand und Einladungslink** im Vergleichsblock, Z. 4310
+- **CSS:** Kommentar „Lerngruppen: Reiter über der Liste …“, Z. 1145
+- **JS:**
+  - Block-Kommentar „Lerngruppen: private Rangliste per Code“, Z. 4358
+  - `grLaden`, Z. 4362
+  - `grTabsHTML`, Z. 4385
+  - `grFormHTML`, Z. 4392
+  - `grAnsichtHTML`, Z. 4404
+  - `grBinden`, Z. 4429
+- **SQL:** `docs/supabase-gruppen.sql`
+
+Zeilennummern: Stand dieses Commits.
+
+---
+
+## FR-011 · Mündliche Prüfung üben (Fachgespräch)
+
+**Status App-Session:** ⏳ offen
+**Web umgesetzt:** ✅ `claude/ui-design-improvement-my0f66` (Commit „Mündlich üben …“)
+**Voraussetzung:** Sprachausgabe/-erkennung der Plattform. Die App hat schon
+`voice_service.dart` für A/B/C/D.
+
+### Ziel / Framing
+Zur Meisterprüfung gehören das situationsbezogene Fachgespräch und die mündliche
+Ergänzungsprüfung. Geübt wird hier das freie Antworten in ganzen Sätzen:
+- Die Frage wird vorgelesen.
+- Man antwortet frei per Sprache.
+- Danach kommen die Musterlösung und die Begriffe daraus, die in der Antwort vorkamen,
+  als Hilfe, nicht als Bewertung.
+- Zum Schluss bewertet man sich selbst.
+
+### Einstieg
+- **Modus-Karte** im Übungsbereich (je Fach, nach der Simulation):
+  - Symbol Mikrofon auf Violett, Tag „Mündlich“, Titel „Fachgespräch üben“
+  - Beschreibung: „10 Fragen aus „<Bereich>“ werden vorgelesen – du antwortest frei per
+    Sprache, danach Musterlösung und Selbstcheck.“
+  - Ohne Spracherkennung „… frei, laut oder in Stichpunkten …“
+  - Unter 3 geeigneten Fragen deaktiviert: „Für diesen Bereich gibt es noch keine passenden
+    Fragen fürs Fachgespräch.“
+- **Fragenpool:** gewählter Bereich (Fach + Themenbereich), dann Gewichtung wie im Training
+  (`weightedPick`), 10 Fragen.
+  - Offene Fragen mit `a` oder `e`.
+  - Auswahlfragen, die allein verständlich sind:
+    - endet auf „?“, höchstens 220 Zeichen, eine richtige Option
+    - nicht passend zu `folgend|Aussage|trifft|richtig|falsch|zutreffend|\bnicht\b|\bkein|Beispiel|welche[rs]? (der|dieser)|Welche Antwort|Was gilt|Wofür steht|Kombination|Reihenfolge|ordnen` (ohne Groß-/Kleinschreibung)
+  - Das sind derzeit 2.353 Auswahl- und 88 offene Fragen.
+
+### Ablauf je Frage (Bildschirm wie das Quiz, eigener Kopf „<Fach> · mündlich“, „Frage 3/10“, Fortschrittspunkte)
+1. **Frage:**
+   - Chip „Fachgespräch“ (Violett), Themenbereich, Fragetext.
+   - Die Frage wird automatisch vorgelesen (de-DE); Link „Nochmal vorlesen“.
+   - Mit Spracherkennung: Hinweis „Antworte frei und vollständig, wie im Fachgespräch vor dem
+     Prüfungsausschuss. Tippe auf „Fertig“, wenn du fertig bist.“ Knöpfe „Antworten“
+     (Mikrofon, primär) und „Ohne Mikrofon“.
+   - Ohne Spracherkennung direkt ein Stichpunkt-Feld und „Lösung zeigen“.
+2. **Zuhören:**
+   - Band „Ich höre zu …“ mit pulsierendem Punkt.
+   - Darunter die Mitschrift live, vorläufige Teile kursiv.
+   - Knopf „Fertig“.
+   - Erkennung: de-DE, fortlaufend, mit Zwischenergebnissen.
+   - Ohne Mikrofonrecht: Hinweis „Kein Zugriff aufs Mikrofon – erlaube es im Browser oder
+     schreib deine Antwort unten.“
+3. **Gehört:**
+   - Die Mitschrift steht in einem Textfeld („bei Hörfehlern einfach korrigieren“).
+   - „Weiter sprechen“ hängt an, „Lösung zeigen“ deckt auf.
+4. **Lösung:**
+   - „Deine Antwort“ (oder „— keine Antwort notiert —“).
+   - Grüner Kasten: „Musterlösung“ (offen) bzw. „Richtige Antwort“ (Auswahl: richtige
+     Option, dann die Erklärung).
+   - Darunter die Begriffe:
+     - Text: „Begriffe aus der Lösung in deiner Antwort: 2 von 5 – ein Hinweis, keine
+       Bewertung.“
+     - Chips: getroffen grün, sonst neutral.
+   - Selbstcheck: „Nicht gewusst“ (rot), „Teilweise“ (Bernstein), „Gewusst“ (grün).
+     - Gewusst → Lernstand richtig.
+     - Nicht gewusst → falsch.
+     - Teilweise → Box bleibt, nur der Lerntag zählt; landet wie „Nicht gewusst“ in
+       „Falsche wiederholen“.
+5. Nach der 10. Frage kommt das bekannte Ergebnis mit Titel „Mündlich üben“ („3 von 10
+   richtig“, Aufschlüsselung nach Themenbereichen).
+
+### Begriffe (Hinweis, keine Bewertung)
+- **Quelle:** bei Auswahlfragen die richtige Option, sonst die Musterlösung.
+- **Wörter:** ab 5 Buchstaben (inkl. Umlaute, Bindestrich).
+  - ohne Füllwörter (Liste im Web-Code `OR_FUELL`), ohne Dopplungen
+  - Großgeschriebene zuerst, höchstens 8
+- **Treffer:**
+  - Wortstamm = kleingeschrieben, Endung `ungen|ung|en|er|es|e|n|s` ab, auf 4–8 Zeichen
+    gekürzt
+  - getroffen, wenn der Stamm in der Antwort vorkommt (klein)
+- **Referenz:**
+  - „Boden, Arbeit und Kapital sind die originären Produktionsfaktoren …“ → Begriffe
+    beginnen mit „Boden“, enthalten „Produktionsfaktoren“, nicht „sind“.
+  - „Produktionsfaktoren“ trifft „die produktionsfaktor boden“.
+
+### App: Technik
+- Sprachausgabe: `flutter_tts` bzw. vorhandener `voice_service.dart`.
+- Erkennung: `speech_to_text` mit `localeId: de_DE`, `listenMode: dictation`,
+  `partialResults: true`. Pausen bis ca. 5 s tolerieren; endet die Sitzung, geht es in den
+  Zustand „Gehört“.
+- Mikrofon-Berechtigung ist schon im Manifest (`RECORD_AUDIO`).
+
+### Abnahme
+- Karte zeigt „10 Fragen aus … werden vorgelesen“. Start → Frage 1/10, Frage wird gelesen.
+- „Antworten“ → „Ich höre zu …“ mit Live-Mitschrift → „Fertig“ → Mitschrift im Feld,
+  korrigierbar.
+- „Lösung zeigen“ → eigene Antwort, Lösung, Begriffe mit Treffern.
+- „Gewusst“ → Frage 2/10, erster Punkt grün.
+- Zehn Fragen später: Ergebnis „Mündlich üben“ mit richtiger Zahl; der Lernstand hat die
+  Antworten.
+- Ohne Spracherkennung: Stichpunkt-Feld statt Mikrofon, sonst gleich.
+
+### Referenz Web-Implementierung (`index.html` auf `claude/ui-design-improvement-my0f66`)
+- **HTML:**
+  - Karte `#btnOral`, Z. 1481
+  - Bildschirm `#scrOral`, Z. 1657
+- **CSS:** Kommentar „Mündlich üben: Frage vorlesen …“, Z. 1034
+- **JS:**
+  - Block-Kommentar „Mündlich üben (Fachgespräch)“, Z. 3674
+  - `orGeeignet`, Z. 3685
+  - `orBegriffe`, Z. 3696
+  - `orHoeren`, Z. 3712
+  - `startOral`, Z. 3727
+  - `orZeigen`, Z. 3748
+
+Zeilennummern: Stand dieses Commits.
