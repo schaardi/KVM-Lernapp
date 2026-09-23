@@ -75,6 +75,26 @@ Tabelle oben als Secrets anlegen. Beim nächsten Build werden sie per
 - In der App: Kategorie-Auswahl → Konto-Symbol oben rechts → **Mit Google anmelden**.
   Der Fortschritt wird beim Anmelden zusammengeführt und danach automatisch gesichert.
 
+## Web-App (z. B. auf GitHub Pages)
+Die Web-App (`index.html`) braucht keinen eigenen Server. Pages liefert nur die
+Dateien aus; der Browser spricht direkt mit Supabase. Projekt-URL und `anon`-Schlüssel
+stehen in `index.html` (Block „Cloud-Login + Sync“). Der Schlüssel ist öffentlich
+gedacht, geschützt wird über RLS.
+
+Damit der Google-Login zur Seite zurückführt, **einmal** in Supabase →
+*Authentication → URL Configuration* eintragen:
+- **Site URL:** die Pages-Adresse, z. B. `https://<name>.github.io/KVM-Lernapp/`
+- **Redirect URLs:** dieselbe Adresse mit `**` am Ende, z. B.
+  `https://<name>.github.io/KVM-Lernapp/**`
+
+Fehlt das, landet man nach dem Login auf der voreingestellten Site URL (oft
+`localhost`). In der Google Cloud bleibt als Redirect-URI nur die Supabase-Callback-URL
+aus Abschnitt 2.
+
+Tabellen und Funktionen kommen **nicht** über Pages. Sie werden einmal per SQL-Skript
+im Supabase-SQL-Editor angelegt (Abschnitt 1 und 5). Bis dahin blendet die Web-App
+die betroffene Funktion aus.
+
 ## So funktioniert der Sync
 - Beim Anmelden: Cloud-Stand laden → mit lokalem **zusammenführen** (je Frage
   gewinnt der weiter fortgeschrittene Datensatz: höhere Leitner-Box, dann mehr
