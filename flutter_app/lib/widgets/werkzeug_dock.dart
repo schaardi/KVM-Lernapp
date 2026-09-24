@@ -49,7 +49,12 @@ class _WerkzeugDockState extends State<WerkzeugDock> {
 
   final _portal = OverlayPortalController();
   bool _rechnerOffen = false;
+
+  /// Ausdrücklich an `oeffneRechner` übergebenes Ziel. Sonst gilt immer das
+  /// aktuelle `widget.onUebernehmen` – das Quiz baut das Dock für jede Frage
+  /// mit neuem Callback.
   void Function(String text)? _ziel;
+  void Function(String text)? get _uebernehmen => _ziel ?? widget.onUebernehmen;
   Completer<void>? _zu;
   Offset? _pos;
   bool _verschoben = false;
@@ -66,10 +71,13 @@ class _WerkzeugDockState extends State<WerkzeugDock> {
     final zu = _zu;
     _zu = null;
     zu?.complete();
-    if (_rechnerOffen) {
-      // Nach dem Abbau – Zuhörer dürfen hier nicht mehr bauen.
-      WidgetsBinding.instance.addPostFrameCallback((_) => rechnerAusweichen.value = 0);
-    }
+    final offen = _rechnerOffen;
+    // Nach dem Abbau – Zuhörer dürfen hier nicht mehr bauen. Die Beschriftung
+    // des Ziels gehört zur Seite, die jetzt geht.
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      if (offen) rechnerAusweichen.value = 0;
+      rechnerZiel.value = null;
+    });
     super.dispose();
   }
 
@@ -126,7 +134,9 @@ class _WerkzeugDockState extends State<WerkzeugDock> {
     _ausweichen();
   }
 
-  static Offset _startPos(Size size, EdgeInsets rand) => Offset(size.width - 324 - 16, rand.top + 72);
+  /// Oben rechts; auf niedrigen Bildschirmen (Querformat) weiter oben.
+  static Offset _startPos(Size size, EdgeInsets rand) =>
+      Offset(size.width - 324 - 16, rand.top + (size.height - 520).clamp(6.0, 72.0));
 
   @override
   Widget build(BuildContext context) {
@@ -157,7 +167,7 @@ class _WerkzeugDockState extends State<WerkzeugDock> {
             top: false,
             child: CalculatorSheet(
               stil: RechnerStil.angedockt,
-              onUebernehmen: _ziel,
+              onUebernehmen: _uebernehmen,
               onSchliessen: _rechnerSchliessen,
             ),
           ),
@@ -197,7 +207,7 @@ class _WerkzeugDockState extends State<WerkzeugDock> {
                 color: kPaper,
                 child: CalculatorSheet(
                   stil: RechnerStil.schwebend,
-                  onUebernehmen: _ziel,
+                  onUebernehmen: _uebernehmen,
                   onSchliessen: _rechnerSchliessen,
                   onZiehen: _ziehen,
                 ),
@@ -217,7 +227,7 @@ class _WerkzeugDockState extends State<WerkzeugDock> {
         tooltip: 'Taschenrechner',
         an: _rechnerOffen,
         breit: breit,
-        onTap: () => _rechnerOffen ? _rechnerSchliessen() : _rechnerOeffnen(widget.onUebernehmen),
+        onTap: () => _rechnerOffen ? _rechnerSchliessen() : _rechnerOeffnen(null),
       ),
       _knopf(
         icon: Icons.edit_outlined,
@@ -337,7 +347,7 @@ class _WerkzeugDockState extends State<WerkzeugDock> {
 /// Rechner geschlossen wird.
 Future<void> oeffneRechner(BuildContext context, {void Function(String text)? onUebernehmen}) {
   final dock = _WerkzeugDockState._fuer(context);
-  if (dock != null) return dock._rechnerOeffnen(onUebernehmen ?? dock.widget.onUebernehmen);
+  if (dock != null) return dock._rechnerOeffnen(onUebernehmen);
   return _rechnerOhneDock(context, onUebernehmen);
 }
 

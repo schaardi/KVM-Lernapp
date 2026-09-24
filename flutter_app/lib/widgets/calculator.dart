@@ -570,11 +570,15 @@ class _Tastenfeld extends StatelessWidget {
       var taste = dock ? 42.0 : 46.0;
       var fn = dock ? 32.0 : 34.0;
       final noetig = fn + 5 * taste + 5 * abstand;
+      var zuKnapp = false;
       if (box.maxHeight.isFinite && box.maxHeight < noetig) {
-        // Wenig Platz (z. B. kleines Blatt): Tasten niedriger, nie unter die Hälfte.
-        final f = ((box.maxHeight - 5 * abstand) / (fn + 5 * taste)).clamp(0.5, 1.0);
-        taste *= f;
-        fn *= f;
+        // Wenig Platz (z. B. kleines Blatt): Tasten niedriger, nie unter die
+        // Hälfte – reicht auch das nicht, lässt sich das Tastenfeld scrollen.
+        final f = (box.maxHeight - 5 * abstand) / (fn + 5 * taste);
+        zuKnapp = f < 0.5;
+        final g = f.clamp(0.5, 1.0);
+        taste *= g;
+        fn *= g;
       }
       final reihen = <Widget>[
         SizedBox(height: fn, child: _reihe([for (final k in _fn) _fnTaste(k.$1, k.$2)], abstand)),
@@ -585,7 +589,8 @@ class _Tastenfeld extends StatelessWidget {
           ..add(SizedBox(
               height: taste, child: _reihe([for (final k in r) _taste(k.$1, k.$2, k.$3)], abstand)));
       }
-      return Column(mainAxisSize: MainAxisSize.min, children: reihen);
+      final feld = Column(mainAxisSize: MainAxisSize.min, children: reihen);
+      return zuKnapp ? SingleChildScrollView(child: feld) : feld;
     });
   }
 
