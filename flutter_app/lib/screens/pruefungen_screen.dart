@@ -11,6 +11,29 @@ import 'aufgabenblatt_screen.dart';
 class PruefungenScreen extends StatelessWidget {
   const PruefungenScreen({super.key});
 
+  @override
+  Widget build(BuildContext context) {
+    final n = DataService.instance.cases.where((c) => c.id.startsWith('P-')).length;
+    return Scaffold(
+      appBar: AppBar(
+        title: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+          Text('Original-IHK-Prüfungen',
+              style: TextStyle(fontSize: 16, fontWeight: FontWeight.w800, color: kInk)),
+          Text('$n Prüfung${n == 1 ? '' : 'en'} verfügbar',
+              style: TextStyle(fontSize: 11.5, color: kMuted)),
+        ]),
+      ),
+      body: const SafeArea(child: PruefungenListe()),
+    );
+  }
+}
+
+/// Die Liste selbst – als Seite „Prüfungen“ (mit Seitentitel als [kopf]) und
+/// im eigenen Bildschirm [PruefungenScreen].
+class PruefungenListe extends StatelessWidget {
+  final Widget? kopf;
+  const PruefungenListe({super.key, this.kopf});
+
   static const _monate = {
     'Januar': 1, 'Februar': 2, 'März': 3, 'April': 4, 'Mai': 5, 'Juni': 6,
     'Juli': 7, 'August': 8, 'September': 9, 'Oktober': 10, 'November': 11,
@@ -141,22 +164,10 @@ class PruefungenScreen extends StatelessWidget {
     // Termine bereits durch die Sortierung von `alle` chronologisch (neueste zuerst).
     final termine = gruppen.keys.toList();
 
-    return Scaffold(
-      appBar: AppBar(
-        backgroundColor: kPaper,
-        title: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-          const Text('Original-IHK-Prüfungen',
-              style: TextStyle(
-                  fontSize: 16, fontWeight: FontWeight.w800, color: kInk)),
-          Text('${alle.length} Prüfung${alle.length == 1 ? '' : 'en'} verfügbar',
-              style: const TextStyle(fontSize: 11.5, color: kMuted)),
-        ]),
-      ),
-      body: SafeArea(
-        child: alle.isEmpty
-            ? const Center(
+    return alle.isEmpty
+            ? Center(
                 child: Padding(
-                  padding: EdgeInsets.all(28),
+                  padding: const EdgeInsets.all(28),
                   child: Text(
                     'Es sind noch keine Original-Prüfungen hinterlegt.',
                     textAlign: TextAlign.center,
@@ -165,9 +176,10 @@ class PruefungenScreen extends StatelessWidget {
                 ),
               )
             : ListView(
-                padding: const EdgeInsets.fromLTRB(16, 14, 16, 32),
+                padding: EdgeInsets.fromLTRB(16, kopf == null ? 14 : 8, 16, 32),
                 children: [
-                  const Text(
+                  if (kopf != null) kopf!,
+                  Text(
                     'Echte Prüfungsaufgaben aus dem Handlungsspezifischen Teil. '
                     'Jede enthält die vollständige Ausgangssituation und alle '
                     'Teilaufgaben mit ihrer offiziellen Punktzahl. Formuliere '
@@ -180,7 +192,7 @@ class PruefungenScreen extends StatelessWidget {
                     Padding(
                       padding: const EdgeInsets.only(bottom: 8),
                       child: Text(t.toUpperCase(),
-                          style: const TextStyle(
+                          style: TextStyle(
                               fontSize: 12,
                               fontWeight: FontWeight.w800,
                               letterSpacing: 0.4,
@@ -191,9 +203,7 @@ class PruefungenScreen extends StatelessWidget {
                   ],
                   _hinweis(),
                 ],
-              ),
-      ),
-    );
+              );
   }
 
   Widget _kachel(BuildContext context, CaseStudy c) {
@@ -211,7 +221,7 @@ class PruefungenScreen extends StatelessWidget {
         Row(crossAxisAlignment: CrossAxisAlignment.center, children: [
           Expanded(
             child: Text(_bereich(c),
-                style: const TextStyle(
+                style: TextStyle(
                     fontSize: 15.5, fontWeight: FontWeight.w800, color: kInk)),
           ),
           if (punkte != null)
@@ -220,7 +230,7 @@ class PruefungenScreen extends StatelessWidget {
               decoration: BoxDecoration(
                   color: kPetrolSoft, borderRadius: BorderRadius.circular(6)),
               child: Text('$punkte Punkte',
-                  style: const TextStyle(
+                  style: TextStyle(
                       fontSize: 11,
                       fontWeight: FontWeight.w800,
                       color: kPetrolDeep)),
@@ -230,7 +240,7 @@ class PruefungenScreen extends StatelessWidget {
         Text(
             '${_datum(c)} · ${c.aufgaben.length} Aufgaben mit '
             '${c.steps.length} Teilaufgaben · 180 Minuten',
-            style: const TextStyle(fontSize: 12, color: kMuted)),
+            style: TextStyle(fontSize: 12, color: kMuted)),
         if (c.aufgaben.isNotEmpty) ...[
           const SizedBox(height: 9),
           _aufgabenListe(context, c),
@@ -261,7 +271,7 @@ class PruefungenScreen extends StatelessWidget {
               },
               style: OutlinedButton.styleFrom(
                   foregroundColor: kPetrol,
-                  side: const BorderSide(color: kLine),
+                  side: BorderSide(color: kLine),
                   padding: const EdgeInsets.symmetric(vertical: 12)),
               child: const Text('Für KI kopieren',
                   style: TextStyle(fontWeight: FontWeight.w700, fontSize: 13)),
@@ -294,11 +304,11 @@ class PruefungenScreen extends StatelessWidget {
             ),
             child: Row(mainAxisSize: MainAxisSize.min, children: [
               Text('Aufgabe ${a.nr}',
-                  style: const TextStyle(
+                  style: TextStyle(
                       fontSize: 11.5, fontWeight: FontWeight.w700, color: kInk)),
               const SizedBox(width: 6),
               Text('${a.pts} P.',
-                  style: const TextStyle(fontSize: 10.5, color: kMuted)),
+                  style: TextStyle(fontSize: 10.5, color: kMuted)),
               const SizedBox(width: 6),
               for (final s in c.steps.where((s) => s.nr == a.nr))
                 Padding(
@@ -334,9 +344,9 @@ class PruefungenScreen extends StatelessWidget {
       decoration: BoxDecoration(
         color: kAmber.withValues(alpha: 0.10),
         borderRadius: BorderRadius.circular(kRadiusSm),
-        border: const Border(left: BorderSide(color: kAmber, width: 3)),
+        border: Border(left: BorderSide(color: kAmber, width: 3)),
       ),
-      child: const Text(
+      child: Text(
         'Zu den Lösungen: Hinterlegt sind die amtlichen Lösungshinweise der IHK '
         'zur jeweiligen Prüfung, samt VO-Bezug und – wo angegeben – der '
         'Punkteverteilung. Mit „Für KI kopieren" erhältst du die komplette '

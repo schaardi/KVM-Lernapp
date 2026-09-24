@@ -224,12 +224,12 @@ class _QuizScreenState extends State<QuizScreen> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text('${_q.f}. ${kFachKurz[_q.f]}',
-                style: const TextStyle(fontSize: 12, color: kPetrol, fontWeight: FontWeight.w700)),
+                style: TextStyle(fontSize: 12, color: kPetrol, fontWeight: FontWeight.w700)),
             Text(
               _q.caseCtx != null
                   ? 'Teil ${_q.caseCtx!.step}/${_q.caseCtx!.total}'
                   : 'Frage ${_idx + 1}/${widget.pool.length}',
-              style: const TextStyle(fontSize: 13, color: kInk),
+              style: TextStyle(fontSize: 13, color: kInk),
             ),
           ],
         ),
@@ -265,7 +265,7 @@ class _QuizScreenState extends State<QuizScreen> {
             Row(children: [
               _typeTag(),
               const SizedBox(width: 8),
-              Expanded(child: Text(_q.sub, style: const TextStyle(color: kMuted, fontSize: 12))),
+              Expanded(child: Text(_q.sub, style: TextStyle(color: kMuted, fontSize: 12))),
             ]),
             const SizedBox(height: 10),
             ..._taskText(),
@@ -323,10 +323,10 @@ class _QuizScreenState extends State<QuizScreen> {
             child: const Text('FALLAUFGABE', style: TextStyle(color: Colors.white, fontSize: 10, fontWeight: FontWeight.w700)),
           ),
           const SizedBox(width: 8),
-          Expanded(child: Text(c.title, style: const TextStyle(fontWeight: FontWeight.w700, color: kInk))),
+          Expanded(child: Text(c.title, style: TextStyle(fontWeight: FontWeight.w700, color: kInk))),
         ]),
         const SizedBox(height: 6),
-        Text(c.context, style: const TextStyle(fontSize: 14, height: 1.5, color: kInk)),
+        Text(c.context, style: TextStyle(fontSize: 14, height: 1.5, color: kInk)),
       ]),
     );
   }
@@ -336,31 +336,31 @@ class _QuizScreenState extends State<QuizScreen> {
   List<Widget> _taskText() {
     final t = TaskParts.of(_q);
     final frage = Text(t.frage,
-        style: const TextStyle(fontSize: 19, fontWeight: FontWeight.w600, height: 1.3, color: kInk));
+        style: TextStyle(fontSize: 19, fontWeight: FontWeight.w600, height: 1.3, color: kInk));
     if (t.nr.isEmpty) return [frage];
     return [
       Row(children: [
         Expanded(
           child: Text(t.nr,
-              style: const TextStyle(fontSize: 20, fontWeight: FontWeight.w800, color: kInk)),
+              style: TextStyle(fontSize: 20, fontWeight: FontWeight.w800, color: kInk)),
         ),
         Container(
           padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 3),
           decoration: BoxDecoration(
               color: kPetrolSoft, borderRadius: BorderRadius.circular(20)),
           child: Text(t.pts,
-              style: const TextStyle(fontSize: 11, fontWeight: FontWeight.w700, color: kPetrolDeep)),
+              style: TextStyle(fontSize: 11, fontWeight: FontWeight.w700, color: kPetrolDeep)),
         ),
       ]),
-      const Divider(height: 18, color: kLine),
+      Divider(height: 18, color: kLine),
       if (t.sit.isNotEmpty)
         Container(
           margin: const EdgeInsets.only(bottom: 12),
           padding: const EdgeInsets.only(left: 12),
-          decoration: const BoxDecoration(
+          decoration: BoxDecoration(
               border: Border(left: BorderSide(color: kLine, width: 3))),
           child: Text(t.sit,
-              style: const TextStyle(fontSize: 14, height: 1.6, color: kMuted)),
+              style: TextStyle(fontSize: 14, height: 1.6, color: kMuted)),
         ),
       frage,
     ];
@@ -393,7 +393,7 @@ class _QuizScreenState extends State<QuizScreen> {
       ),
       child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
         Text(a.titel.toUpperCase(),
-            style: const TextStyle(
+            style: TextStyle(
                 fontSize: 10.5, fontWeight: FontWeight.w700, letterSpacing: .8, color: kPetrol)),
         const SizedBox(height: 9),
         SingleChildScrollView(
@@ -412,7 +412,7 @@ class _QuizScreenState extends State<QuizScreen> {
         ),
         if (a.hinweis.isNotEmpty) ...[
           const SizedBox(height: 9),
-          Text(a.hinweis, style: const TextStyle(fontSize: 11.5, height: 1.45, color: kMuted)),
+          Text(a.hinweis, style: TextStyle(fontSize: 11.5, height: 1.45, color: kMuted)),
         ],
       ]),
     );
@@ -471,19 +471,19 @@ class _QuizScreenState extends State<QuizScreen> {
                   padding: const EdgeInsets.symmetric(horizontal: 7, vertical: 2),
                   decoration: BoxDecoration(
                       border: Border.all(color: kLine), borderRadius: BorderRadius.circular(6)),
-                  child: Text(letters[i], style: const TextStyle(fontFamily: 'monospace', fontWeight: FontWeight.w600, fontSize: 12, color: kMuted)),
+                  child: Text(letters[i], style: TextStyle(fontFamily: 'IBMPlexMono', fontWeight: FontWeight.w600, fontSize: 12, color: kMuted)),
                 ),
                 const SizedBox(width: 11),
-                Expanded(child: Text(o.t, style: const TextStyle(fontSize: 14.5, color: kInk))),
+                Expanded(child: Text(o.t, style: TextStyle(fontSize: 14.5, color: kInk))),
               ]),
               if (_answered && !o.ok && o.w != null)
                 Padding(
                   padding: const EdgeInsets.only(top: 6, left: 6),
                   child: Container(
                     padding: const EdgeInsets.only(left: 10),
-                    decoration: const BoxDecoration(
+                    decoration: BoxDecoration(
                         border: Border(left: BorderSide(color: kErr, width: 2))),
-                    child: Text(o.w!, style: const TextStyle(fontSize: 12, color: kMuted, height: 1.4)),
+                    child: Text(o.w!, style: TextStyle(fontSize: 12, color: kMuted, height: 1.4)),
                   ),
                 ),
             ]),
@@ -510,7 +510,7 @@ class _QuizScreenState extends State<QuizScreen> {
       ),
       if (_q.unit.isNotEmpty) ...[
         const SizedBox(width: 8),
-        Text(_q.unit, style: const TextStyle(fontWeight: FontWeight.w700, color: kMuted)),
+        Text(_q.unit, style: TextStyle(fontWeight: FontWeight.w700, color: kMuted)),
       ],
     ]);
   }
@@ -560,7 +560,7 @@ class _QuizScreenState extends State<QuizScreen> {
                     crossAxisAlignment: WrapCrossAlignment.center,
                     children: [
                       Text(t.nr,
-                          style: const TextStyle(
+                          style: TextStyle(
                               fontSize: 17,
                               fontWeight: FontWeight.w800,
                               color: kInk)),
@@ -571,7 +571,7 @@ class _QuizScreenState extends State<QuizScreen> {
                             color: kPetrolSoft,
                             borderRadius: BorderRadius.circular(5)),
                         child: Text(t.pts,
-                            style: const TextStyle(
+                            style: TextStyle(
                                 fontSize: 10.5,
                                 fontWeight: FontWeight.w700,
                                 color: kPetrolDeep)),
@@ -579,7 +579,7 @@ class _QuizScreenState extends State<QuizScreen> {
                       if (_q.caseCtx != null)
                         Text('Teil ${_q.caseCtx!.step}/${_q.caseCtx!.total}',
                             style:
-                                const TextStyle(fontSize: 10, color: kMuted)),
+                                TextStyle(fontSize: 10, color: kMuted)),
                     ],
                   ),
                 ),
@@ -591,11 +591,11 @@ class _QuizScreenState extends State<QuizScreen> {
                       border: Border(
                           left: BorderSide(color: Color(0xFFB7C3C7), width: 2))),
                   child: Text(t.sit,
-                      style: const TextStyle(
+                      style: TextStyle(
                           fontSize: 13, height: 1.55, color: kMuted)),
                 ),
               Text(t.frage,
-                  style: const TextStyle(
+                  style: TextStyle(
                       fontSize: 15,
                       fontWeight: FontWeight.w600,
                       height: 1.5,
@@ -618,9 +618,9 @@ class _QuizScreenState extends State<QuizScreen> {
             constraints: BoxConstraints(maxWidth: w * 0.92),
             child: Container(
               padding: const EdgeInsets.all(13),
-              decoration: const BoxDecoration(
+              decoration: BoxDecoration(
                 color: kPetrol,
-                borderRadius: BorderRadius.only(
+                borderRadius: const BorderRadius.only(
                     topLeft: Radius.circular(16),
                     topRight: Radius.circular(16),
                     bottomLeft: Radius.circular(16),
@@ -661,7 +661,7 @@ class _QuizScreenState extends State<QuizScreen> {
                     const Color(0xFF7A4A00)),
                 const SizedBox(height: 7),
                 Text(_q.a ?? _q.e,
-                    style: const TextStyle(
+                    style: TextStyle(
                         height: 1.55, color: kInk, fontSize: 14)),
                 _bild(_q.bildL, fallbackTitel: 'Lösungsskizze der IHK'),
                 if (_q.vo != null && _q.vo!.isNotEmpty)
@@ -694,7 +694,7 @@ class _QuizScreenState extends State<QuizScreen> {
             onPressed: _exportAufgabe,
             style: OutlinedButton.styleFrom(
                 foregroundColor: kPetrol,
-                side: const BorderSide(color: kLine),
+                side: BorderSide(color: kLine),
                 padding: const EdgeInsets.symmetric(vertical: 12)),
             icon: const Icon(Icons.content_copy, size: 16),
             label: const Text('Diese Aufgabe von Claude prüfen lassen',
@@ -726,7 +726,7 @@ class _QuizScreenState extends State<QuizScreen> {
         borderRadius: BorderRadius.circular(14),
       ),
       child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-        const Text('Wie viele Punkte hättest du bekommen?',
+        Text('Wie viele Punkte hättest du bekommen?',
             style: TextStyle(
                 fontSize: 12.5, fontWeight: FontWeight.w700, color: kInk)),
         const SizedBox(height: 11),
@@ -739,7 +739,7 @@ class _QuizScreenState extends State<QuizScreen> {
               ? 'Bewertet: $cur von $max Punkten'
               : 'Vergib dir 0–$max Punkte – so zählt die Aufgabe am Ende '
                   'zum Gesamtergebnis.',
-          style: const TextStyle(fontSize: 12, color: kMuted, height: 1.4),
+          style: TextStyle(fontSize: 12, color: kMuted, height: 1.4),
         ),
       ]),
     );
@@ -776,7 +776,7 @@ class _QuizScreenState extends State<QuizScreen> {
 
   Widget _composer() {
     return Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-      const Divider(height: 1, color: kLine),
+      Divider(height: 1, color: kLine),
       const SizedBox(height: 12),
       _msgRole('Deine Antwort · wie in der Prüfung', kMuted),
       const SizedBox(height: 8),
@@ -785,23 +785,23 @@ class _QuizScreenState extends State<QuizScreen> {
         maxLines: null,
         minLines: 4,
         keyboardType: TextInputType.multiline,
-        style: const TextStyle(fontSize: 14, height: 1.6, color: kInk),
+        style: TextStyle(fontSize: 14, height: 1.6, color: kInk),
         onChanged: (v) => AnswerStore.instance.set(_q.id, v),
         decoration: InputDecoration(
           hintText: 'Antwort schreiben …',
-          hintStyle: const TextStyle(color: kMuted),
+          hintStyle: TextStyle(color: kMuted),
           filled: true,
           fillColor: kPaper,
           contentPadding: const EdgeInsets.all(12),
           border: OutlineInputBorder(
               borderRadius: BorderRadius.circular(12),
-              borderSide: const BorderSide(color: kLine)),
+              borderSide: BorderSide(color: kLine)),
           enabledBorder: OutlineInputBorder(
               borderRadius: BorderRadius.circular(12),
-              borderSide: const BorderSide(color: kLine)),
+              borderSide: BorderSide(color: kLine)),
           focusedBorder: OutlineInputBorder(
               borderRadius: BorderRadius.circular(12),
-              borderSide: const BorderSide(color: kPetrol, width: 1.6)),
+              borderSide: BorderSide(color: kPetrol, width: 1.6)),
         ),
       ),
       const SizedBox(height: 10),
@@ -815,7 +815,7 @@ class _QuizScreenState extends State<QuizScreen> {
             OutlinedButton.icon(
               onPressed: _openRechner,
               style: OutlinedButton.styleFrom(
-                  foregroundColor: kPetrol, side: const BorderSide(color: kLine)),
+                  foregroundColor: kPetrol, side: BorderSide(color: kLine)),
               icon: const Icon(Icons.calculate_outlined, size: 17),
               label: const Text('Rechner',
                   style: TextStyle(fontWeight: FontWeight.w700, fontSize: 12.5)),
@@ -823,7 +823,7 @@ class _QuizScreenState extends State<QuizScreen> {
             OutlinedButton.icon(
               onPressed: _openRechenblatt,
               style: OutlinedButton.styleFrom(
-                  foregroundColor: kPetrol, side: const BorderSide(color: kLine)),
+                  foregroundColor: kPetrol, side: BorderSide(color: kLine)),
               icon: const Icon(Icons.edit_outlined, size: 16),
               label: const Text('Rechenblatt',
                   style: TextStyle(fontWeight: FontWeight.w700, fontSize: 12.5)),
@@ -860,9 +860,9 @@ class _QuizScreenState extends State<QuizScreen> {
               EdgeInsets.only(bottom: MediaQuery.of(context).viewInsets.bottom),
           child: SizedBox(
             height: MediaQuery.of(context).size.height * 0.7,
-            child: const Column(children: [
+            child: Column(children: [
               Padding(
-                padding: EdgeInsets.fromLTRB(16, 12, 16, 4),
+                padding: const EdgeInsets.fromLTRB(16, 12, 16, 4),
                 child: Row(children: [
                   Text('Rechenblatt',
                       style: TextStyle(
@@ -871,7 +871,7 @@ class _QuizScreenState extends State<QuizScreen> {
                           color: kInk)),
                 ]),
               ),
-              Expanded(child: DrawingPad()),
+              const Expanded(child: DrawingPad()),
             ]),
           ),
         ),
@@ -919,11 +919,11 @@ class _QuizScreenState extends State<QuizScreen> {
         const SizedBox(height: 6),
         if (_q.type == 'calc')
           Text('Lösung: ${_fmtNum(_q.ans ?? 0)} ${_q.unit}',
-              style: const TextStyle(fontWeight: FontWeight.w700, color: kInk)),
+              style: TextStyle(fontWeight: FontWeight.w700, color: kInk)),
         if (_q.e.isNotEmpty)
           Padding(
             padding: const EdgeInsets.only(top: 4),
-            child: Text(_q.e, style: const TextStyle(height: 1.45, color: kInk)),
+            child: Text(_q.e, style: TextStyle(height: 1.45, color: kInk)),
           ),
       ]),
     );

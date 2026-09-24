@@ -85,12 +85,12 @@ class ResultScreen extends StatelessWidget {
                       color: pass ? kOk : kAmber,
                     ),
                   ),
-                  Text('$pct %', style: const TextStyle(fontSize: 26, fontWeight: FontWeight.w800, color: kInk)),
+                  Text('$pct %', style: TextStyle(fontSize: 26, fontWeight: FontWeight.w800, color: kInk)),
                 ]),
               ),
             ),
             const SizedBox(height: 12),
-            Center(child: Text(title, style: const TextStyle(fontSize: 22, fontWeight: FontWeight.w800, color: kInk))),
+            Center(child: Text(title, style: TextStyle(fontSize: 22, fontWeight: FontWeight.w800, color: kInk))),
             if (showBadge)
               Center(
                 child: Padding(
@@ -113,7 +113,7 @@ class ResultScreen extends StatelessWidget {
                 pointBased
                     ? '$achieved von $possible Punkten${timeUp ? " · Zeit abgelaufen" : ""} · $right von $total Aufgaben'
                     : '$right von $total richtig${timeUp ? " · Zeit abgelaufen" : ""}${isSim ? " · $pct von 100 Punkten (IHK)" : ""}',
-                style: const TextStyle(color: kMuted),
+                style: TextStyle(color: kMuted),
               ),
             ),
             const SizedBox(height: 22),
@@ -129,8 +129,8 @@ class ResultScreen extends StatelessWidget {
                   boxShadow: kSoftShadow,
                 ),
                 child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-                  const Padding(
-                    padding: EdgeInsets.only(bottom: 12, left: 2),
+                  Padding(
+                    padding: const EdgeInsets.only(bottom: 12, left: 2),
                     child: Text('Nach Themenbereich',
                         style: TextStyle(fontWeight: FontWeight.w800, fontSize: 15, color: kInk)),
                   ),
@@ -203,8 +203,8 @@ class ResultScreen extends StatelessWidget {
       padding: const EdgeInsets.only(bottom: 12),
       child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
         Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
-          Expanded(child: Text(sub, style: const TextStyle(fontWeight: FontWeight.w600, color: kInk))),
-          Text(numTxt, style: const TextStyle(color: kMuted, fontSize: 13)),
+          Expanded(child: Text(sub, style: TextStyle(fontWeight: FontWeight.w600, color: kInk))),
+          Text(numTxt, style: TextStyle(color: kMuted, fontSize: 13)),
         ]),
         const SizedBox(height: 4),
         ClipRRect(
@@ -235,10 +235,10 @@ class ResultScreen extends StatelessWidget {
           Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
             Expanded(
                 child: Text(nr.isEmpty ? 'Aufgabe' : nr,
-                    style: const TextStyle(
+                    style: TextStyle(
                         fontWeight: FontWeight.w600, color: kInk))),
             Text('$got/$max P',
-                style: const TextStyle(color: kMuted, fontSize: 13)),
+                style: TextStyle(color: kMuted, fontSize: 13)),
           ]),
           const SizedBox(height: 4),
           ClipRRect(
@@ -262,8 +262,8 @@ class ResultScreen extends StatelessWidget {
         boxShadow: kSoftShadow,
       ),
       child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-        const Padding(
-          padding: EdgeInsets.only(bottom: 12, left: 2),
+        Padding(
+          padding: const EdgeInsets.only(bottom: 12, left: 2),
           child: Text('Deine Punkte je Aufgabe',
               style: TextStyle(
                   fontWeight: FontWeight.w800, fontSize: 15, color: kInk)),

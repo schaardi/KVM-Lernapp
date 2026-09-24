@@ -318,7 +318,7 @@ class _KalkKostenCalcState extends State<KalkKostenCalc> {
               '= ${_mss.isNaN ? '–' : '${fmtNum(_mss)} €/h'}',
         ]),
 
-        const InfoBox(
+        InfoBox(
           color: kErr,
           icon: Icons.warning_amber_rounded,
           title: 'Prüfungsfalle',

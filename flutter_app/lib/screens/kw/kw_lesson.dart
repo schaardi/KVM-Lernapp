@@ -14,10 +14,10 @@ class KwLessonScreen extends StatelessWidget {
         backgroundColor: kPaper,
         title: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
           Text(chapter.title,
-              style: const TextStyle(
+              style: TextStyle(
                   fontSize: 16, fontWeight: FontWeight.w800, color: kInk)),
           Text('${chapter.sections.length} Abschnitte',
-              style: const TextStyle(fontSize: 11.5, color: kMuted)),
+              style: TextStyle(fontSize: 11.5, color: kMuted)),
         ]),
       ),
       body: SafeArea(
@@ -57,7 +57,7 @@ class KwLessonScreen extends StatelessWidget {
           const SizedBox(width: 10),
           Expanded(
             child: Text(s.title,
-                style: const TextStyle(
+                style: TextStyle(
                     fontSize: 17,
                     fontWeight: FontWeight.w800,
                     height: 1.25,
@@ -67,7 +67,7 @@ class KwLessonScreen extends StatelessWidget {
         if (s.body.isNotEmpty) ...[
           const SizedBox(height: 12),
           Text(s.body,
-              style: const TextStyle(fontSize: 14.5, height: 1.6, color: kInkSoft)),
+              style: TextStyle(fontSize: 14.5, height: 1.6, color: kInkSoft)),
         ],
         if (s.bullets.isNotEmpty) ...[
           const SizedBox(height: 12),
@@ -85,7 +85,7 @@ class KwLessonScreen extends StatelessWidget {
                 ),
                 Expanded(
                   child: Text(b,
-                      style: const TextStyle(
+                      style: TextStyle(
                           fontSize: 13.5, height: 1.5, color: kInkSoft)),
                 ),
               ]),
@@ -103,8 +103,8 @@ class KwLessonScreen extends StatelessWidget {
             ),
             child: Text(
               s.scheme.join('\n'),
-              style: const TextStyle(
-                  fontFamily: 'monospace',
+              style: TextStyle(
+                  fontFamily: 'IBMPlexMono',
                   fontSize: 12.5,
                   height: 1.65,
                   color: kInk),
@@ -123,14 +123,14 @@ class KwLessonScreen extends StatelessWidget {
               ),
               child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
                 Text(f.name,
-                    style: const TextStyle(
+                    style: TextStyle(
                         fontSize: 11.5,
                         fontWeight: FontWeight.w800,
                         color: kPetrolDeep,
                         letterSpacing: 0.2)),
                 const SizedBox(height: 4),
                 Text(f.formula,
-                    style: const TextStyle(
+                    style: TextStyle(
                         fontSize: 14.5,
                         fontWeight: FontWeight.w700,
                         height: 1.4,
@@ -138,7 +138,7 @@ class KwLessonScreen extends StatelessWidget {
                 if (f.note != null) ...[
                   const SizedBox(height: 4),
                   Text(f.note!,
-                      style: const TextStyle(
+                      style: TextStyle(
                           fontSize: 12, color: kMuted, height: 1.4)),
                 ],
               ]),
@@ -179,7 +179,7 @@ class KwLessonScreen extends StatelessWidget {
                     fontSize: 12.5, fontWeight: FontWeight.w800, color: color)),
             const SizedBox(height: 3),
             Text(text,
-                style: const TextStyle(
+                style: TextStyle(
                     fontSize: 13.5, height: 1.5, color: kInkSoft)),
           ]),
         ),
@@ -208,17 +208,17 @@ class KwLessonScreen extends StatelessWidget {
         ]),
         const SizedBox(height: 8),
         Text(e.task,
-            style: const TextStyle(
+            style: TextStyle(
                 fontSize: 13.5, height: 1.5, color: kInk, fontWeight: FontWeight.w600)),
         const SizedBox(height: 10),
         for (final s in e.steps)
           Padding(
             padding: const EdgeInsets.only(bottom: 5),
             child: Row(crossAxisAlignment: CrossAxisAlignment.start, children: [
-              const Text('→ ', style: TextStyle(color: kMuted, fontSize: 13)),
+              Text('→ ', style: TextStyle(color: kMuted, fontSize: 13)),
               Expanded(
                 child: Text(s,
-                    style: const TextStyle(
+                    style: TextStyle(
                         fontSize: 13, height: 1.5, color: kInkSoft)),
               ),
             ]),
@@ -232,7 +232,7 @@ class KwLessonScreen extends StatelessWidget {
             borderRadius: BorderRadius.circular(9),
           ),
           child: Text(e.result,
-              style: const TextStyle(
+              style: TextStyle(
                   fontSize: 13.5, fontWeight: FontWeight.w800, color: kOk)),
         ),
       ]),

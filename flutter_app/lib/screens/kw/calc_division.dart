@@ -203,14 +203,14 @@ class _DivisionCalcState extends State<DivisionCalc> {
                 child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      const Row(children: [
+                      Row(children: [
                         SizedBox(width: 110, child: Text('Sorte',
                             style: TextStyle(
                                 fontSize: 12,
                                 fontWeight: FontWeight.w800,
                                 color: kMuted))),
                         SizedBox(width: 96, child: Padding(
-                          padding: EdgeInsets.only(left: 6),
+                          padding: const EdgeInsets.only(left: 6),
                           child: Text('Menge',
                               style: TextStyle(
                                   fontSize: 12,
@@ -218,7 +218,7 @@ class _DivisionCalcState extends State<DivisionCalc> {
                                   color: kMuted)),
                         )),
                         SizedBox(width: 78, child: Padding(
-                          padding: EdgeInsets.only(left: 6),
+                          padding: const EdgeInsets.only(left: 6),
                           child: Text('ÄZ',
                               style: TextStyle(
                                   fontSize: 12,
@@ -226,16 +226,16 @@ class _DivisionCalcState extends State<DivisionCalc> {
                                   color: kMuted)),
                         )),
                         SizedBox(width: 96, child: Padding(
-                          padding: EdgeInsets.only(left: 6),
+                          padding: const EdgeInsets.only(left: 6),
                           child: Text('Rechn.-Einh.',
                               style: TextStyle(
                                   fontSize: 12,
                                   fontWeight: FontWeight.w800,
                                   color: kPetrolDeep)),
                         )),
-                        SizedBox(width: 34),
+                        const SizedBox(width: 34),
                       ]),
-                      const Divider(height: 10, color: kLine),
+                      Divider(height: 10, color: kLine),
                       for (var i = 0; i < _sorten.length; i++)
                         Padding(
                           padding: const EdgeInsets.symmetric(vertical: 3),
@@ -244,7 +244,7 @@ class _DivisionCalcState extends State<DivisionCalc> {
                               width: 110,
                               child: TextField(
                                 controller: _sorten[i].name,
-                                style: const TextStyle(fontSize: 13, color: kInk),
+                                style: TextStyle(fontSize: 13, color: kInk),
                                 decoration: const InputDecoration(
                                   isDense: true,
                                   border: InputBorder.none,
@@ -273,7 +273,7 @@ class _DivisionCalcState extends State<DivisionCalc> {
                                 padding: const EdgeInsets.only(left: 6),
                                 child: Text(fmtNum(_re(_sorten[i]), dec: 0),
                                     textAlign: TextAlign.right,
-                                    style: const TextStyle(
+                                    style: TextStyle(
                                         fontSize: 13.5,
                                         fontWeight: FontWeight.w700,
                                         color: kPetrolDeep)),
@@ -288,7 +288,7 @@ class _DivisionCalcState extends State<DivisionCalc> {
                                           s.dispose();
                                         })
                                     : null,
-                                icon: const Icon(Icons.remove_circle_outline,
+                                icon: Icon(Icons.remove_circle_outline,
                                     size: 18, color: kMuted),
                               ),
                             ),
@@ -359,7 +359,7 @@ class _DivisionCalcState extends State<DivisionCalc> {
                         '${_kEinstufig.isNaN ? '–' : fmtEur(_kEinstufig)}',
                   ])),
 
-        const InfoBox(
+        InfoBox(
           color: kAmber,
           icon: Icons.tips_and_updates_outlined,
           title: 'Wann welches Verfahren?',
