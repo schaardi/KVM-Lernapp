@@ -53,10 +53,14 @@ class _LoginScreenState extends State<LoginScreen> {
                 ),
               ),
               const SizedBox(height: 22),
-              Text('Industriemeister Trainer',
+              Text('Meister-Trainer',
                   textAlign: TextAlign.center,
                   style: TextStyle(fontSize: 24, fontWeight: FontWeight.w800, color: kInk, height: 1.15)),
-              const SizedBox(height: 8),
+              const SizedBox(height: 4),
+              Text('Kraftverkehr & Basisqualifikationen',
+                  textAlign: TextAlign.center,
+                  style: TextStyle(fontSize: 14, fontWeight: FontWeight.w600, color: kPetrolInk)),
+              const SizedBox(height: 12),
               Text(
                 'Melde dich an, damit dein Lernfortschritt auf allen deinen Geräten '
                 'verfügbar ist und gesichert bleibt.',

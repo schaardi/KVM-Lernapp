@@ -602,8 +602,15 @@ class _FormulaBookState extends State<FormulaBook> {
       return;
     }
     Clipboard.setData(ClipboardData(text: txt));
-    setState(() => _meldung[karte] =
-        ('Keine Prüfung offen – die Vorlage liegt jetzt in der Zwischenablage.', _HinweisArt.normal));
+    // Mit Ziel, das gerade nichts nehmen kann (Ergebnisfeld einer
+    // Rechenfrage, keine Teilaufgabe mehr offen), passt „Keine Prüfung
+    // offen“ nicht.
+    setState(() => _meldung[karte] = (
+          ziel == null
+              ? 'Keine Prüfung offen – die Vorlage liegt jetzt in der Zwischenablage.'
+              : 'Hier passt keine Vorlage hinein – sie liegt jetzt in der Zwischenablage.',
+          _HinweisArt.normal
+        ));
   }
 
   Widget _vorlageButton(VoidCallback onTap) => OutlinedButton(

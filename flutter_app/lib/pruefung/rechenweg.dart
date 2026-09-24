@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import '../constants.dart';
 import '../services/answer_store.dart';
-import 'rechenweg_kern.dart';
+import '../services/rechenkern.dart';
 import '../widgets/ui.dart';
 import 'pruef_ui.dart';
 
@@ -239,7 +239,7 @@ class _RechenwegFeldState extends State<RechenwegFeld> {
     }
     return Text.rich(
       TextSpan(children: [
-        TextSpan(text: '= ${rwFmt(v, u)}'),
+        TextSpan(text: '= ${fmtErgebnis(v, u)}'),
         if (u.isNotEmpty && !breit) TextSpan(text: ' $u', style: TextStyle(fontSize: 13, color: kPetrolInk)),
       ]),
       maxLines: 1,
@@ -387,7 +387,7 @@ class _RechenwegFeldState extends State<RechenwegFeld> {
     final bezuege = <(int, String)>[];
     for (var i = 0; i < akt && i < _zeilen.length; i++) {
       final v = rechne(_zeilen[i].f.text);
-      if (v.isFinite) bezuege.add((i + 1, rwFmt(v)));
+      if (v.isFinite) bezuege.add((i + 1, fmtErgebnis(v)));
     }
     Widget taste(String label, VoidCallback onTap, {bool bezug = false}) => Material(
           color: bezug ? kPetrolSoft : kPaper,

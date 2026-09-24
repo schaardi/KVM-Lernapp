@@ -2,6 +2,7 @@ import 'dart:async';
 import 'package:flutter/services.dart';
 import 'package:flutter/material.dart';
 import '../constants.dart';
+import '../pruefung/pruef_text.dart';
 import '../features/melden.dart';
 import '../lernen/uebernahme.dart';
 import '../models.dart';
@@ -455,7 +456,10 @@ class _QuizScreenState extends State<QuizScreen> {
   /// verschwimmt bei den Original-Prüfungen alles zu einem fetten Textblock.
   List<Widget> _taskText() {
     final t = TaskParts.of(_q);
-    final frage = Text(t.frage, style: TextStyle(fontSize: 16.5, fontWeight: FontWeight.w600, height: 1.45, color: kInk));
+    // Prüfungstexte strukturiert wie im Aufgabenblatt (FR-003 A): Listen,
+    // Tabellen und Rechenkästen statt eines einzigen Textblocks.
+    final frage =
+        PruefText(t.frage, stil: TextStyle(fontSize: 16.5, fontWeight: FontWeight.w600, height: 1.45, color: kInk));
     if (t.nr.isEmpty) return [frage];
     return [
       Row(children: [
@@ -476,7 +480,7 @@ class _QuizScreenState extends State<QuizScreen> {
           margin: const EdgeInsets.only(bottom: 12),
           padding: const EdgeInsets.only(left: 12),
           decoration: BoxDecoration(border: Border(left: BorderSide(color: kLineStrong, width: 3))),
-          child: Text(t.sit, style: TextStyle(fontSize: 14, height: 1.6, color: kMuted)),
+          child: PruefText(t.sit, stil: TextStyle(fontSize: 14, height: 1.6, color: kMuted)),
         ),
       frage,
     ];
@@ -744,9 +748,10 @@ class _QuizScreenState extends State<QuizScreen> {
                   margin: const EdgeInsets.only(bottom: 9),
                   padding: const EdgeInsets.only(left: 10),
                   decoration: BoxDecoration(border: Border(left: BorderSide(color: kLineStrong, width: 2))),
-                  child: Text(t.sit, style: TextStyle(fontSize: 13, height: 1.55, color: kMuted)),
+                  child: PruefText(t.sit, stil: TextStyle(fontSize: 13, height: 1.55, color: kMuted)),
                 ),
-              Text(t.frage, style: TextStyle(fontSize: 15, fontWeight: FontWeight.w600, height: 1.5, color: kInk)),
+              PruefText(t.frage,
+                  stil: TextStyle(fontSize: 15, fontWeight: FontWeight.w600, height: 1.5, color: kInk)),
               for (final t in _q.tabsEffektiv) Padding(padding: const EdgeInsets.only(top: 10), child: _anlage(t)),
               _bild(_q.bildEffektiv),
             ]),
@@ -799,7 +804,7 @@ class _QuizScreenState extends State<QuizScreen> {
               child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
                 _msgRole(_q.amtlich ? 'Amtliche Lösungshinweise · IHK' : 'Musterlösung · nicht amtlich', kAmberInk),
                 const SizedBox(height: 7),
-                Text(_q.a ?? _q.e, style: TextStyle(height: 1.55, color: kInk, fontSize: 14)),
+                PruefText(_q.a ?? _q.e, stil: TextStyle(height: 1.55, color: kInk, fontSize: 14)),
                 _bild(_q.bildL, fallbackTitel: 'Lösungsskizze der IHK'),
                 if (_q.vo != null && _q.vo!.isNotEmpty)
                   Padding(

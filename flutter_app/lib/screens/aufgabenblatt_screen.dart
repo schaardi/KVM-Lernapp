@@ -17,6 +17,7 @@ import '../services/round_builder.dart';
 import '../widgets/anlage_bild.dart';
 import '../widgets/anlage_tabelle.dart';
 import '../widgets/ui.dart';
+import '../werkzeuge/rechner_modell.dart';
 import '../widgets/werkzeug_dock.dart';
 import 'result_screen.dart';
 
@@ -312,6 +313,7 @@ class _AufgabenblattScreenState extends State<AufgabenblattScreen> {
   /// ob dort die ganze Rechnung hingehört.
   void _feldAktiv(AktivesFeld? f) {
     _aktiv = f;
+    rechnerZiel.value = f?.ziel;
   }
 
   String _bezug(Question q) => 'Aufgabe ${q.nr} ${q.teil})';
@@ -330,7 +332,10 @@ class _AufgabenblattScreenState extends State<AufgabenblattScreen> {
     final gueltig = a != null &&
         (a.teilId == null || (!_aufgedeckt.contains(a.teilId) && _teile(_nr).any((q) => q.id == a.teilId)));
     if (!vorlage && gueltig) {
-      a.einsetzen(t);
+      // In eine leere Rechenweg-Zeile gehört die ganze Rechnung, damit der
+      // Rechenweg sie nachrechnet (Web `rkUebernehmen`).
+      final rechnung = a.leereRechnung ? RechnerModell.instance.rechnungText : '';
+      a.einsetzen(rechnung.isNotEmpty ? rechnung : t);
       final q = _pool.where((x) => x.id == a.teilId);
       return q.isEmpty ? 'Aufgabe $_nr' : _bezug(q.first);
     }
