@@ -42,7 +42,7 @@ class KontoSeite extends StatelessWidget {
               child: Text(
                 'Übungsfragen eigenständig formuliert, orientiert am DIHK-Rahmenplan und an '
                 'Krause/Krause (Kiehl). Rechtsstände und veränderliche Werte (z. B. Beiträge) '
-                'Stand 2025, ohne Gewähr.',
+                'Stand 2026, ohne Gewähr.',
                 textAlign: TextAlign.center,
                 style: TextStyle(fontSize: 12, height: 1.5, color: kMuted),
               ),
