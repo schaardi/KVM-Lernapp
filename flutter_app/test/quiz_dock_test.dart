@@ -157,7 +157,7 @@ void main() {
       expect(ziel(tester)('Zeile 1\nZeile 2'), isNull);
       await vorlageAusDemFormelbuch(tester);
       expect(ablage, startsWith('Zuschlagskalkulation (Industrie)'));
-      expect(find.text('Keine Prüfung offen – die Vorlage liegt jetzt in der Zwischenablage.'), findsOneWidget);
+      expect(find.text('Hier passt keine Vorlage hinein – sie liegt jetzt in der Zwischenablage.'), findsOneWidget);
       expect(find.widgetWithText(TextField, 'Zuschlagskalkulation (Industrie)'), findsNothing);
     });
 

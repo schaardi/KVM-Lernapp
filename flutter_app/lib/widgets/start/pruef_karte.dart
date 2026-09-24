@@ -93,7 +93,7 @@ class PruefKarte extends StatelessWidget {
                 final fall = stand == null ? null : fallMitId(stand.id);
                 if (stand == null || fall == null) return const SizedBox.shrink();
                 final steps = fall.steps;
-                final fertig = steps.where((s) => AnswerStore.instance.get(s.id).trim().isNotEmpty).length;
+                final fertig = steps.where((s) => AnswerStore.instance.hatAntwort(s.id)).length;
                 final datum = RegExp(r'–\s*([^–]+)$').firstMatch(fall.title)?.group(1)?.trim() ?? fall.termin;
                 final name = fall.sub.replaceFirst(RegExp(r'^IHK-Prüfung:\s*'), '');
                 return Column(crossAxisAlignment: CrossAxisAlignment.stretch, children: [

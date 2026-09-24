@@ -3,7 +3,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 import '../models.dart';
 import '../pruefung/skizze_daten.dart';
 import 'data_service.dart';
-import '../pruefung/rechenweg_kern.dart';
+import 'rechenkern.dart';
 
 /// Speichert die selbst formulierten Antworten zu offenen Aufgaben, damit sie
 /// beim Blättern und nach einem Neustart erhalten bleiben – dazu Rechenwege,
@@ -165,7 +165,7 @@ class AnswerStore {
 
   /// Der Rechenweg als Text, Zeile für Zeile („Kosten: 4.400 ÷ 22 = 200 €“).
   String calcText(String id) => (_calc[id] ?? const [])
-      .map((r) => rwZeileText(r['l'] ?? '', r['f'] ?? '', r['u'] ?? ''))
+      .map((r) => zeileText(l: r['l'] ?? '', f: r['f'] ?? '', u: r['u'] ?? ''))
       .where((z) => z.isNotEmpty)
       .join('\n');
 

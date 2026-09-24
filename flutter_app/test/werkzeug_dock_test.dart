@@ -369,7 +369,7 @@ void main() {
     await tester.tap(find.text('Vorlage ins Antwortfeld').first);
     await tester.pump();
     expect(ablage, startsWith('Zuschlagskalkulation (Industrie)'));
-    expect(find.text('Keine Prüfung offen – die Vorlage liegt jetzt in der Zwischenablage.'), findsOneWidget);
+    expect(find.text('Hier passt keine Vorlage hinein – sie liegt jetzt in der Zwischenablage.'), findsOneWidget);
   });
 
   testWidgets('Neue Frage, neuer Callback: Übernehmen geht an das aktuelle Antwortfeld', (tester) async {
