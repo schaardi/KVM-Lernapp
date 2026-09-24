@@ -4,6 +4,10 @@ import '../widgets/ui.dart';
 
 /// Gemeinsame Bausteine von Aufgabenblatt, Prüfungsliste und Ergebnis.
 
+/// Art eines Zielfelds für „Übernehmen“ (FR-005 D): bestimmt Beschriftung
+/// und Zahlformat.
+enum FeldArt { antwort, rechenweg, tabelle }
+
 /// Das zuletzt fokussierte Eingabefeld im Aufgabenblatt – Ziel für
 /// „Übernehmen“ aus Rechner und Formelbuch (FR-002 C, FR-005 D).
 /// [gespeichert] sichert eine Änderung von außen und rechnet neu.
@@ -13,22 +17,132 @@ class AktivesFeld {
 
   /// Teilaufgabe, zu der das Feld gehört (für die Rückmeldung „Aufgabe 1 a)“).
   final String? teilId;
-  const AktivesFeld(this.controller, this.gespeichert, {this.teilId});
+  final FeldArt art;
+
+  /// Zeile im Rechenweg (1 = „Z1“).
+  final int? zeile;
+  const AktivesFeld(this.controller, this.gespeichert, {this.teilId, this.art = FeldArt.antwort, this.zeile});
+
+  /// Dasselbe Feld, einer Teilaufgabe zugeordnet.
+  AktivesFeld fuer(String? teil) => AktivesFeld(controller, gespeichert, teilId: teil, art: art, zeile: zeile);
+
+  /// Beschriftung des Rechner-Knopfs „Übernehmen <Ziel>“ wie im Web
+  /// (`rkZielText`).
+  String get ziel => switch (art) {
+        FeldArt.rechenweg =>
+          '${leereRechnung ? 'Rechnung in den Rechenweg' : 'in den Rechenweg'}${zeile != null ? ' · Z$zeile' : ''}',
+        FeldArt.tabelle => 'in die Tabelle',
+        FeldArt.antwort => 'in deine Antwort',
+      };
+
+  /// Leere Rechenweg-Zeile: Dort gehört die ganze Rechnung hin („4.400 ÷ 22“),
+  /// nicht nur das Ergebnis – der Rechenweg rechnet sie nach.
+  bool get leereRechnung => art == FeldArt.rechenweg && controller.text.trim().isEmpty;
 
   /// Text an der Schreibmarke einsetzen; davor ein Leerzeichen, wenn dort
-  /// weder Leerraum noch „(“ steht.
+  /// weder Leerraum noch „(“ steht. In Tabellen ohne Tausenderpunkt und mit
+  /// einfachem Minus. Danach leuchtet das Feld kurz auf.
   void einsetzen(String text) {
+    if (art == FeldArt.tabelle) text = tabellenWert(text);
     final v = controller.value;
-    final sel = v.selection.isValid
-        ? v.selection
-        : TextSelection.collapsed(offset: v.text.length);
+    final sel = v.selection.isValid ? v.selection : TextSelection.collapsed(offset: v.text.length);
     final vor = v.text.substring(0, sel.start);
     final t = (vor.isNotEmpty && !RegExp(r'[\s(]$').hasMatch(vor)) ? ' $text' : text;
     controller.value = v.replaced(sel, t).copyWith(
-      selection: TextSelection.collapsed(offset: sel.start + t.length),
-    );
+          selection: TextSelection.collapsed(offset: sel.start + t.length),
+        );
     gespeichert();
+    aufleuchten(controller);
   }
+}
+
+/// Zahl für eine Tabellenzelle: „1.234,5“ → „1234,5“, „−3“ → „-3“ (Web
+/// `rkFmt(v, true)`).
+String tabellenWert(String text) {
+  final t = text.trim().replaceAll('−', '-');
+  return RegExp(r'^-?\d{1,3}(\.\d{3})+(,\d+)?$').hasMatch(t) ? t.replaceAll('.', '') : t;
+}
+
+/// Feld, das nach „Übernehmen“ kurz aufleuchten soll (Web `calc-flash`).
+final ValueNotifier<TextEditingController?> aufleuchtenFeld = ValueNotifier(null);
+
+void aufleuchten(TextEditingController c) {
+  aufleuchtenFeld.value = null;
+  aufleuchtenFeld.value = c;
+}
+
+/// Ring um ein Eingabefeld, der nach „Übernehmen“ 1,4 s lang ausblendet; das
+/// Feld rückt dabei in den sichtbaren Bereich – auf dem Handy über den unten
+/// angedockten Rechner.
+class Aufleuchten extends StatefulWidget {
+  final TextEditingController controller;
+  final double radius;
+  final Widget child;
+  const Aufleuchten({super.key, required this.controller, this.radius = 10, required this.child});
+
+  @override
+  State<Aufleuchten> createState() => _AufleuchtenState();
+}
+
+class _AufleuchtenState extends State<Aufleuchten> with SingleTickerProviderStateMixin {
+  late final AnimationController _a = AnimationController(vsync: this, duration: const Duration(milliseconds: 1400));
+
+  @override
+  void initState() {
+    super.initState();
+    aufleuchtenFeld.addListener(_pruefen);
+  }
+
+  @override
+  void dispose() {
+    aufleuchtenFeld.removeListener(_pruefen);
+    _a.dispose();
+    super.dispose();
+  }
+
+  void _pruefen() {
+    if (aufleuchtenFeld.value != widget.controller || !mounted) return;
+    _a.forward(from: 0);
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      if (mounted) _insBild();
+    });
+  }
+
+  void _insBild() {
+    final box = context.findRenderObject() as RenderBox?;
+    // Die senkrechte Seite, nicht der waagerechte Scroller einer Tabelle.
+    var s = Scrollable.maybeOf(context);
+    while (s != null && s.position.axis == Axis.horizontal) {
+      s = Scrollable.maybeOf(s.context);
+    }
+    final sicht = s?.context.findRenderObject() as RenderBox?;
+    if (box == null || sicht == null || !box.attached || !sicht.attached) return;
+    final oben = box.localToGlobal(Offset.zero, ancestor: sicht).dy;
+    final handy = MediaQuery.sizeOf(context).width < 640;
+    final grenze = sicht.size.height * (handy ? 0.4 : 1) - 12;
+    if (oben < 8 || oben + box.size.height > grenze) {
+      Scrollable.ensureVisible(context,
+          alignment: handy ? 0.12 : 0.4, duration: const Duration(milliseconds: 250), curve: Curves.easeOut);
+    }
+  }
+
+  @override
+  Widget build(BuildContext context) => AnimatedBuilder(
+        animation: _a,
+        builder: (context, kind) {
+          final t = Curves.easeOut.transform(_a.value);
+          final an = _a.isAnimating && t < 1;
+          return DecoratedBox(
+            position: DecorationPosition.foreground,
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(widget.radius),
+              boxShadow: an ? [BoxShadow(color: kPetrol.withValues(alpha: 1 - t), spreadRadius: 3)] : null,
+            ),
+            child: kind,
+          );
+        },
+        child: widget.child,
+      );
 }
 
 /// Nachfrage wie `confirm()` im Web: Titel, Text, Bestätigen/Abbrechen.
@@ -98,8 +212,8 @@ class Pille extends StatelessWidget {
 }
 
 /// Kopfzeile eines Blocks in Mono-Großbuchstaben („DEINE ANTWORT“).
-Text kopfLabel(String text, {Color? farbe, double groesse = 10.5}) => Text(text.toUpperCase(),
-    style: monoStyle(groesse, color: farbe ?? kMuted, weight: FontWeight.w700, spacing: 0.9));
+Text kopfLabel(String text, {Color? farbe, double groesse = 10.5}) =>
+    Text(text.toUpperCase(), style: monoStyle(groesse, color: farbe ?? kMuted, weight: FontWeight.w700, spacing: 0.9));
 
 /// Selbstbewertung einer Teilaufgabe (FR-003 C.7, Web `scoreHTML`): bis 12
 /// Punkte eine durchgehende Knopfleiste, darüber ein Schieberegler.

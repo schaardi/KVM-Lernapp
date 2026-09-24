@@ -13,6 +13,7 @@ import 'package:kvm_trainer/services/lerntage_service.dart';
 import 'package:kvm_trainer/services/letzte_pruefung.dart';
 import 'package:kvm_trainer/services/progress_service.dart';
 import 'package:kvm_trainer/services/selection_service.dart';
+import 'package:kvm_trainer/widgets/anlage_tabelle.dart';
 import 'package:kvm_trainer/widgets/werkzeug_dock.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -160,6 +161,29 @@ void main() {
     expect(Echtbedingungen.instance.lauf, isNull);
   });
 
+  testWidgets('FR-014: laufende Prüfungsbedingungen über „Neu starten“ abbrechen – Uhr weg', (tester) async {
+    await _laden(tester);
+    final nt = _fall('P-NT-20150429');
+    PruefErgebnisse.instance.echtStarten(nt);
+    AnswerStore.instance.set('P-NT-20150429-s0', 'Schwefelsäure');
+    final kennung = PruefErgebnisse.instance.lauf(nt.id);
+
+    await _zeigen(tester, const Scaffold(body: PruefungenListe()));
+    await _tippen(tester, find.text('Naturwiss. & Technik').last);
+    await tester.scrollUntilVisible(find.textContaining('Läuft · noch'), 300, scrollable: find.byType(Scrollable).first);
+    await _tippen(tester, find.text('Neu starten'));
+    expect(find.textContaining('Der laufende Durchgang unter Prüfungsbedingungen wird abgebrochen.'), findsOneWidget);
+    await _tippen(tester, find.text('Neu starten').last);
+
+    expect(Echtbedingungen.instance.lauf, isNull);
+    expect(find.text('AUFGABE 1'), findsOneWidget);
+    expect(find.text('Abgeben'), findsNothing);
+    expect(find.textContaining(RegExp(r'^\d+:\d\d(:\d\d)?$')), findsNothing);
+    expect(find.text('Lösung zu a) aufdecken'), findsOneWidget);
+    expect(AnswerStore.instance.get('P-NT-20150429-s0'), '');
+    expect(PruefErgebnisse.instance.lauf(nt.id), isNot(kennung));
+  });
+
   testWidgets('FR-013: Zeichenaufgabe mit offener Skizze, andere Teile auf Knopfdruck', (tester) async {
     await _laden(tester);
     final mi = _fall('P-MI-20241106');
@@ -205,14 +229,52 @@ void main() {
     expect(sichtbar(), isTrue);
   });
 
+  // Übernehmen gibt die Teilaufgabe zurück („Aufgabe 3 a)“), damit der Hinweis
+  // des Formelbuchs sie nennt; ohne Ziel null.
+  Future<String?> uebernehmen(WidgetTester tester, String text) async {
+    final Function f = tester.widget<WerkzeugDock>(find.byType(WerkzeugDock)).onUebernehmen!;
+    final ziel = f(text) as String?;
+    await tester.pump();
+    return ziel;
+  }
+
   testWidgets('Werkzeug-Dock: Vorlage landet in der Antwort der offenen Teilaufgabe', (tester) async {
     await _laden(tester);
     final ok = _fall('P-OK-20221115');
     await _zeigen(tester, AufgabenblattScreen(fall: ok, startIndex: 6));
-    final dock = tester.widget<WerkzeugDock>(find.byType(WerkzeugDock));
-    dock.onUebernehmen!('Kosten je km:\nWert = …');
-    await tester.pump();
+    expect(await uebernehmen(tester, 'Kosten je km:\nWert = …'), 'Aufgabe 3 a)');
     expect(AnswerStore.instance.get('P-OK-20221115-s6'), 'Kosten je km:\nWert = …');
-    expect(find.text('Als Vorlage in die Antwort zu Aufgabe 3 a) übernommen – dort ausfüllen.'), findsOneWidget);
+    expect(await uebernehmen(tester, 'Zweite Vorlage:\nx = …'), 'Aufgabe 3 a)');
+    expect(AnswerStore.instance.get('P-OK-20221115-s6'), 'Kosten je km:\nWert = …\n\nZweite Vorlage:\nx = …');
+    expect(find.byType(SnackBar), findsNothing);
+  });
+
+  testWidgets('Werkzeug-Dock: Rechner-Wert an der Schreibmarke, in Tabellen ohne Tausenderpunkt', (tester) async {
+    await _laden(tester);
+    final ok = _fall('P-OK-20221115');
+    await _zeigen(tester, AufgabenblattScreen(fall: ok, startIndex: 6));
+    final rechnung = find.widgetWithText(TextField, 'Rechnung, z. B. 4.400 ÷ 22').first;
+    await tester.ensureVisible(rechnung);
+    await tester.tap(rechnung);
+    await tester.pump();
+    expect(await uebernehmen(tester, '1.815'), 'Aufgabe 3 a)');
+    expect(AnswerStore.instance.calc('P-OK-20221115-s6').single['f'], '1.815');
+    expect(find.text('= 1.815'), findsOneWidget);
+    await tester.pump(const Duration(milliseconds: 1500));
+
+    final mi = _fall('P-MI-20200505');
+    await _zeigen(tester, AufgabenblattScreen(fall: mi, startIndex: 4));
+    final zelle = find.descendant(of: find.byType(AnlageTabelle), matching: find.byType(TextField)).first;
+    await tester.ensureVisible(zelle);
+    await tester.tap(zelle);
+    await tester.pump();
+    expect(await uebernehmen(tester, '1.234,5'), 'Aufgabe 2 a)');
+    expect(AnswerStore.instance.tabWerte('P-MI-20200505-s4#s0')['0-3'], '1234,5');
+    await tester.pump(const Duration(milliseconds: 1500));
+
+    // Alle Teile aufgedeckt: kein Ziel.
+    await _zeigen(tester, AufgabenblattScreen(fall: ok, startIndex: 6));
+    await _tippen(tester, find.text('Alle Lösungen aufdecken'));
+    expect(await uebernehmen(tester, 'Vorlage:\nx'), isNull);
   });
 }

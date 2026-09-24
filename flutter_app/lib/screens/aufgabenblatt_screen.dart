@@ -183,7 +183,7 @@ class _AufgabenblattScreenState extends State<AufgabenblattScreen> {
         n.addListener(() {
           if (!n.hasFocus) return;
           _ziel = q.id;
-          _aktiv = AktivesFeld(_controller(q), () => _antwort(q, _controller(q).text), teilId: q.id);
+          _feldAktiv(AktivesFeld(_controller(q), () => _antwort(q, _controller(q).text), teilId: q.id));
         });
         return n;
       });
@@ -204,7 +204,7 @@ class _AufgabenblattScreenState extends State<AufgabenblattScreen> {
     setState(() {
       _nr = nr;
       if (!_ctxBeruehrt) _ctxOffen = false;
-      _aktiv = null;
+      _feldAktiv(null);
       _rwFokus = null;
     });
     LetztePruefung.instance.merken(widget.fall.id, nr);
@@ -306,33 +306,43 @@ class _AufgabenblattScreenState extends State<AufgabenblattScreen> {
     return teile.first;
   }
 
-  void _uebernehmen(String text) {
+  /// Zuletzt benutztes Eingabefeld – Ziel für „Übernehmen“ aus dem Rechner
+  /// (FR-005 D). [AktivesFeld.ziel] ist die Beschriftung des Rechner-Knopfs
+  /// („Rechnung in den Rechenweg · Z2“), [AktivesFeld.leereRechnung] sagt,
+  /// ob dort die ganze Rechnung hingehört.
+  void _feldAktiv(AktivesFeld? f) {
+    _aktiv = f;
+  }
+
+  String _bezug(Question q) => 'Aufgabe ${q.nr} ${q.teil})';
+
+  /// Übernehmen aus Rechner und Formelbuch (FR-002 C, FR-005 D): Eine
+  /// mehrzeilige Vorlage aus dem Formelbuch kommt an die Antwort der
+  /// Teilaufgabe (Web `blAntwortAnhaengen`), ein Wert aus dem Rechner an die
+  /// Schreibmarke des zuletzt benutzten Felds. Gibt die Teilaufgabe zurück
+  /// („Aufgabe 1 a)“), damit der Hinweis sie nennt – `null` ohne Ziel, dann
+  /// geht der Text in die Zwischenablage.
+  String? _uebernehmen(String text) {
     final t = text.trim();
-    if (t.isEmpty) return;
+    if (t.isEmpty) return null;
     final vorlage = t.contains('\n');
     final a = _aktiv;
     final gueltig = a != null &&
         (a.teilId == null || (!_aufgedeckt.contains(a.teilId) && _teile(_nr).any((q) => q.id == a.teilId)));
     if (!vorlage && gueltig) {
       a.einsetzen(t);
-      return;
+      final q = _pool.where((x) => x.id == a.teilId);
+      return q.isEmpty ? 'Aufgabe $_nr' : _bezug(q.first);
     }
     final q = _antwortZiel();
-    final bote = ScaffoldMessenger.of(context);
-    if (q == null) {
-      bote.showSnackBar(const SnackBar(content: Text('Alle Teilaufgaben dieser Aufgabe sind schon aufgedeckt.')));
-      return;
-    }
+    if (q == null) return null;
     final c = _controller(q);
     final alt = c.text.replaceFirst(RegExp(r'\s+$'), '');
     final neu = alt.isEmpty ? t : (vorlage ? '$alt\n\n$t' : '$alt $t');
     c.value = TextEditingValue(text: neu, selection: TextSelection.collapsed(offset: neu.length));
     _antwort(q, neu);
-    final ziel = 'Aufgabe ${q.nr} ${q.teil})';
-    bote.showSnackBar(SnackBar(
-        content: Text(vorlage
-            ? 'Als Vorlage in die Antwort zu $ziel übernommen – dort ausfüllen.'
-            : 'In die Antwort zu $ziel übernommen.')));
+    aufleuchten(c);
+    return _bezug(q);
   }
 
   // ─────────────────────────── Aufbau ───────────────────────────
@@ -790,7 +800,7 @@ class _AufgabenblattScreenState extends State<AufgabenblattScreen> {
             onEingabe: () {
               if (erste != null) _aenderung(erste);
             },
-            onFokus: (f) => _aktiv = AktivesFeld(f.controller, f.gespeichert, teilId: erste?.id),
+            onFokus: (f) => _feldAktiv(f.fuer(erste?.id)),
           ),
         ),
       if (auf.bild != null) Padding(padding: const EdgeInsets.only(bottom: 16), child: AnlageBild(auf.bild)),
@@ -831,7 +841,7 @@ class _AufgabenblattScreenState extends State<AufgabenblattScreen> {
         controller: _controller(q),
         fokus: _knoten(q),
         anlageRef: _skizzenAnlage(q),
-        bezug: 'Aufgabe ${q.nr} ${q.teil})',
+        bezug: _bezug(q),
         onAntwort: (t) => _antwort(q, t),
         onAenderung: () => _aenderung(q),
         onAufdecken: () => _aufdecken(q),
@@ -848,7 +858,7 @@ class _AufgabenblattScreenState extends State<AufgabenblattScreen> {
         },
         onFokus: (f) {
           _ziel = q.id;
-          _aktiv = f;
+          _feldAktiv(f.teilId == null ? f.fuer(q.id) : f);
         },
       ),
     );

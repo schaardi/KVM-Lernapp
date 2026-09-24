@@ -45,7 +45,17 @@ class _Zeile {
   }
 }
 
-const _tasten = [('+', '+'), ('−', '−'), ('·', '·'), ('÷', '÷'), ('(', '('), (')', ')'), ('%', ' %'), ('x²', '²'), ('√', '√(')];
+const _tasten = [
+  ('+', '+'),
+  ('−', '−'),
+  ('·', '·'),
+  ('÷', '÷'),
+  ('(', '('),
+  (')', ')'),
+  ('%', ' %'),
+  ('x²', '²'),
+  ('√', '√(')
+];
 
 class _RechenwegFeldState extends State<RechenwegFeld> {
   final _zeilen = <_Zeile>[];
@@ -75,18 +85,21 @@ class _RechenwegFeldState extends State<RechenwegFeld> {
     z.l.text = l;
     z.f.text = f;
     z.u.text = u;
-    void fokus(TextEditingController c, FocusNode n, {bool rechnung = false}) {
+    // Ziel für „Übernehmen“ ist immer die Rechnung der Zeile – auch aus
+    // Bezeichnung und Einheit heraus (Web `rkZielVon`).
+    void fokus(FocusNode n, {bool rechnung = false}) {
       n.addListener(() {
         if (!n.hasFocus) return;
         if (rechnung) _letzt = z;
-        widget.onFokus?.call(AktivesFeld(c, () => _geaendert(neuRechnen: true), teilId: widget.id));
+        widget.onFokus?.call(AktivesFeld(z.f, () => _geaendert(neuRechnen: true),
+            teilId: widget.id, art: FeldArt.rechenweg, zeile: _zeilen.indexOf(z) + 1));
         if (mounted) setState(() {});
       });
     }
 
-    fokus(z.l, z.lf);
-    fokus(z.f, z.ff, rechnung: true);
-    fokus(z.u, z.uf);
+    fokus(z.lf);
+    fokus(z.ff, rechnung: true);
+    fokus(z.uf);
     return z;
   }
 
@@ -257,17 +270,21 @@ class _RechenwegFeldState extends State<RechenwegFeld> {
     );
     final rechnung = Semantics(
       label: 'Zeile $n: Rechnung',
-      child: TextField(
+      child: Aufleuchten(
         controller: z.f,
-        focusNode: z.ff,
-        autocorrect: false,
-        enableSuggestions: false,
-        keyboardType: const TextInputType.numberWithOptions(decimal: true, signed: true),
-        textInputAction: TextInputAction.next,
-        onSubmitted: (_) => _weiter(z),
-        onChanged: (_) => _geaendert(neuRechnen: true),
-        style: monoStyle(15, color: kInk, weight: FontWeight.w600, spacing: 0),
-        decoration: _feld('Rechnung, z. B. 4.400 ÷ 22', stark: true),
+        radius: 8,
+        child: TextField(
+          controller: z.f,
+          focusNode: z.ff,
+          autocorrect: false,
+          enableSuggestions: false,
+          keyboardType: const TextInputType.numberWithOptions(decimal: true, signed: true),
+          textInputAction: TextInputAction.next,
+          onSubmitted: (_) => _weiter(z),
+          onChanged: (_) => _geaendert(neuRechnen: true),
+          style: monoStyle(15, color: kInk, weight: FontWeight.w600, spacing: 0),
+          decoration: _feld('Rechnung, z. B. 4.400 ÷ 22', stark: true),
+        ),
       ),
     );
     final einheit = Semantics(
@@ -296,7 +313,8 @@ class _RechenwegFeldState extends State<RechenwegFeld> {
       width: 24,
       child: Padding(
         padding: const EdgeInsets.only(top: 8),
-        child: Text('Z$n', textAlign: TextAlign.center, style: monoStyle(10, color: kMuted, weight: FontWeight.w700, spacing: 0)),
+        child: Text('Z$n',
+            textAlign: TextAlign.center, style: monoStyle(10, color: kMuted, weight: FontWeight.w700, spacing: 0)),
       ),
     );
 
@@ -358,8 +376,8 @@ class _RechenwegFeldState extends State<RechenwegFeld> {
         contentPadding: EdgeInsets.symmetric(horizontal: stark ? 10 : 7, vertical: 9),
         enabledBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(8), borderSide: BorderSide(color: stark ? kLineStrong : kLine)),
-        focusedBorder:
-            OutlineInputBorder(borderRadius: BorderRadius.circular(8), borderSide: BorderSide(color: kPetrol, width: 1.6)),
+        focusedBorder: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(8), borderSide: BorderSide(color: kPetrol, width: 1.6)),
         border: OutlineInputBorder(borderRadius: BorderRadius.circular(8)),
       );
 
@@ -386,7 +404,8 @@ class _RechenwegFeldState extends State<RechenwegFeld> {
               padding: const EdgeInsets.symmetric(horizontal: 8),
               alignment: Alignment.center,
               child: Text(label,
-                  style: monoStyle(bezug ? 12 : 15, color: kPetrolInkDeep, weight: bezug ? FontWeight.w600 : FontWeight.w700, spacing: 0)),
+                  style: monoStyle(bezug ? 12 : 15,
+                      color: kPetrolInkDeep, weight: bezug ? FontWeight.w600 : FontWeight.w700, spacing: 0)),
             ),
           ),
         );

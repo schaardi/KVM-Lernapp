@@ -188,7 +188,7 @@ class TeilKarte extends StatelessWidget {
               ),
           ]),
         ),
-        MeldenKnopf(frageId: q.id, bezug: bezug, kontext: const {'modus': 'scrBlatt'}, kompakt: true),
+        MeldenKnopf(frageId: q.id, bezug: bezug, kontext: const {'modus': 'blatt'}, kompakt: true),
       ]),
     );
   }
@@ -210,7 +210,10 @@ class TeilKarte extends StatelessWidget {
         padding: const EdgeInsets.only(bottom: 7),
         child: kopfLabel(klein ? 'Erläuterung · optional' : 'Deine Antwort · wie in der Prüfung', groesse: 10),
       ),
-      TextField(
+      Aufleuchten(
+        controller: controller,
+        radius: 12,
+        child: TextField(
         controller: controller,
         focusNode: fokus,
         maxLines: null,
@@ -231,6 +234,7 @@ class TeilKarte extends StatelessWidget {
               OutlineInputBorder(borderRadius: BorderRadius.circular(12), borderSide: BorderSide(color: kLineStrong)),
           focusedBorder:
               OutlineInputBorder(borderRadius: BorderRadius.circular(12), borderSide: BorderSide(color: kPetrol, width: 1.6)),
+        ),
         ),
       ),
       const SizedBox(height: 11),
