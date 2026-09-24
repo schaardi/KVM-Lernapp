@@ -26,13 +26,31 @@ aus GitHub-Secrets):
    alter table public.progress enable row level security;
 
    create policy "own progress read"   on public.progress
-     for select using (auth.uid() = user_id);
+     for select to authenticated
+     using ((select auth.uid()) = user_id);
    create policy "own progress insert" on public.progress
-     for insert with check (auth.uid() = user_id);
+     for insert to authenticated
+     with check ((select auth.uid()) = user_id);
    create policy "own progress update" on public.progress
-     for update using (auth.uid() = user_id) with check (auth.uid() = user_id);
+     for update to authenticated
+     using ((select auth.uid()) = user_id) with check ((select auth.uid()) = user_id);
    ```
-   Damit sieht/ändert jeder nur seinen eigenen Fortschritt.
+   Damit sieht und ändert jede Person nur ihren eigenen Fortschritt.
+   - `(select auth.uid())` wertet die Anmeldung einmal je Abfrage aus statt für jede Zeile.
+     Das empfiehlt der Supabase-Advisor („Auth RLS Initialization Plan“).
+   - `to authenticated` beschränkt die Regeln auf angemeldete Konten.
+
+   Wer die Regeln noch in der älteren Fassung (`auth.uid() = user_id`, ohne Rolle) angelegt
+   hat, zieht sie so nach, ohne dass die Tabelle zwischendurch ohne Regeln ist:
+   ```sql
+   alter policy "own progress read" on public.progress
+     to authenticated using ((select auth.uid()) = user_id);
+   alter policy "own progress insert" on public.progress
+     to authenticated with check ((select auth.uid()) = user_id);
+   alter policy "own progress update" on public.progress
+     to authenticated
+     using ((select auth.uid()) = user_id) with check ((select auth.uid()) = user_id);
+   ```
 
 ## 2. Google-Login einrichten
 1. **Google Cloud Console** → *APIs & Dienste → Anmeldedaten*:
