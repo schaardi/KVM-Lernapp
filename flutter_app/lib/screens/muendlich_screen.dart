@@ -88,6 +88,7 @@ class _MuendlichScreenState extends State<MuendlichScreen> {
   bool _nachtrag = false; // späte Ergebnisse dürfen das Feld noch füllen
   String? _fehler;
   String _antwort = '';
+  int _aufnahme = 0; // zählt die Aufnahmen; spätere Rückrufe früherer zählen nicht
   late final List<bool?> _results;
   final List<Question> _wrong = [];
 
@@ -116,6 +117,7 @@ class _MuendlichScreenState extends State<MuendlichScreen> {
 
   // ---- Zuhören ----
   Future<void> _hoeren() async {
+    final nr = ++_aufnahme;
     _basis = _ctrl.text.trim();
     _sitzung = '';
     _endgueltig = false;
@@ -126,7 +128,7 @@ class _MuendlichScreenState extends State<MuendlichScreen> {
     });
     final ok = await _voice.diktatStarten(
       onText: (text, endgueltig) {
-        if (!mounted) return;
+        if (!mounted || nr != _aufnahme) return;
         setState(() {
           _sitzung = text;
           _endgueltig = endgueltig;
@@ -135,14 +137,14 @@ class _MuendlichScreenState extends State<MuendlichScreen> {
         if (_phase == _Phase.gehoert && _nachtrag) _feldSetzen(_gesamt());
       },
       onEnde: () {
-        if (mounted && _phase == _Phase.hoeren) _zuGehoert();
+        if (mounted && nr == _aufnahme && _phase == _Phase.hoeren) _zuGehoert();
       },
       onFehler: (f) {
-        if (!mounted) return;
+        if (!mounted || nr != _aufnahme) return;
         if (f.contains('permission') || f.contains('not-allowed')) setState(() => _fehler = kKeinMikrofon);
       },
     );
-    if (!ok && mounted && _phase == _Phase.hoeren) _zuGehoert();
+    if (!ok && mounted && nr == _aufnahme && _phase == _Phase.hoeren) _zuGehoert();
   }
 
   void _feldSetzen(String t) {
@@ -204,6 +206,7 @@ class _MuendlichScreenState extends State<MuendlichScreen> {
     }
     setState(() {
       _idx++;
+      _aufnahme++;
       _phase = _Phase.frage;
       _basis = '';
       _sitzung = '';
