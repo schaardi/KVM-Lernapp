@@ -3,22 +3,20 @@ import '../constants.dart';
 
 // ─────────────────────────── Zahlen: parsen & formatieren ───────────────────
 
-/// Deutsche Eingaben robust lesen: „1.234,56", „1234,56", „1234.56", „ 12 ".
+/// Deutsche Eingaben robust lesen: „1.234,56", „1234,56", „1234.56", „ 12 ",
+/// „−12,5" (Minus aus dem Rechner, U+2212). Wie `parseCalcNum` im Web.
 double? parseDe(String s) {
-  var t = s.trim();
+  var t = s.trim().replaceAll(RegExp('[−–]'), '-');
   if (t.isEmpty) return null;
   t = t.replaceAll(RegExp(r'[^0-9,.\-]'), '');
   if (t.isEmpty || t == '-') return null;
   if (t.contains(',')) {
     // Komma ist das Dezimaltrennzeichen, Punkte sind Tausenderpunkte.
     t = t.replaceAll('.', '').replaceAll(',', '.');
-  } else if (t.contains('.')) {
-    // Punkte sind Tausendertrenner, wenn alle Gruppen dahinter genau drei
-    // Ziffern haben („40.000" = vierzigtausend); sonst ist es ein
+  } else if (RegExp(r'^-?\d{1,3}(\.\d{3})+$').hasMatch(t)) {
+    // Tausenderpunkte („40.000" = vierzigtausend); sonst ist der Punkt ein
     // Dezimalpunkt („1.5").
-    final parts = t.split('.');
-    final thousands = parts.skip(1).every((p) => p.length == 3);
-    if (thousands) t = parts.join();
+    t = t.replaceAll('.', '');
   }
   return double.tryParse(t);
 }

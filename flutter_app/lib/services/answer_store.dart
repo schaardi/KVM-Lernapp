@@ -1,10 +1,14 @@
 import 'dart:convert';
 import 'package:shared_preferences/shared_preferences.dart';
 import '../models.dart';
+import '../pruefung/skizze_daten.dart';
 import 'data_service.dart';
+import '../pruefung/rechenweg_kern.dart';
 
 /// Speichert die selbst formulierten Antworten zu offenen Aufgaben, damit sie
-/// beim Blättern und nach einem Neustart erhalten bleiben.
+/// beim Blättern und nach einem Neustart erhalten bleiben – dazu Rechenwege,
+/// Skizzen, Eintragungen in Anlagen und die selbst vergebenen Punkte. Die
+/// Schlüssel sind dieselben wie im Web (`kvm_open_*`).
 class AnswerStore {
   AnswerStore._();
   static final AnswerStore instance = AnswerStore._();
@@ -12,13 +16,22 @@ class AnswerStore {
   static const _key = 'kvm_open_answers';
   static const _pkey = 'kvm_open_points';
   static const _tkey = 'kvm_open_tabs';
+  static const _ckey = 'kvm_open_calc';
+  static const _skey = 'kvm_open_sketch';
   SharedPreferences? _prefs;
   Map<String, String> _answers = {};
   Map<String, int> _points = {};
   Map<String, Map<String, String>> _tabs = {};
+  Map<String, List<Map<String, String>>> _calc = {};
+  Map<String, Map<String, dynamic>> _skizzen = {};
 
   Future<void> init() async {
     _prefs = await SharedPreferences.getInstance();
+    _answers = {};
+    _points = {};
+    _tabs = {};
+    _calc = {};
+    _skizzen = {};
     final raw = _prefs?.getString(_key);
     if (raw != null && raw.isNotEmpty) {
       try {
@@ -47,6 +60,36 @@ class AnswerStore {
         _points = decoded.map((k, v) => MapEntry(k, (v as num).toInt()));
       } catch (_) {
         _points = {};
+      }
+    }
+    final craw = _prefs?.getString(_ckey);
+    if (craw != null && craw.isNotEmpty) {
+      try {
+        final decoded = json.decode(craw) as Map<String, dynamic>;
+        decoded.forEach((k, v) {
+          if (v is! List) return;
+          _calc[k] = [
+            for (final r in v.whereType<Map>())
+              {
+                'l': (r['l'] ?? '').toString(),
+                'f': (r['f'] ?? '').toString(),
+                'u': (r['u'] ?? '').toString(),
+              }
+          ];
+        });
+      } catch (_) {
+        _calc = {};
+      }
+    }
+    final sraw = _prefs?.getString(_skey);
+    if (sraw != null && sraw.isNotEmpty) {
+      try {
+        final decoded = json.decode(sraw) as Map<String, dynamic>;
+        decoded.forEach((k, v) {
+          if (v is Map && v['els'] is List) _skizzen[k] = Map<String, dynamic>.from(v);
+        });
+      } catch (_) {
+        _skizzen = {};
       }
     }
   }
@@ -97,10 +140,127 @@ class AnswerStore {
     _prefs?.setString(_pkey, json.encode(_points));
   }
 
+  // ─────────────────── Rechenweg (FR-003 B, `kvm_open_calc`) ───────────────────
+
+  /// Die Zeilen des Rechenwegs: `{l: Bezeichnung, f: Rechnung, u: Einheit}`.
+  List<Map<String, String>> calc(String id) => [for (final r in _calc[id] ?? const []) Map.of(r)];
+
+  /// Zeilen ohne Bezeichnung und ohne Rechnung werden nicht gespeichert.
+  void setCalc(String id, List<Map<String, String>> rows) {
+    final keep = [
+      for (final r in rows)
+        if ((r['l'] ?? '').trim().isNotEmpty || (r['f'] ?? '').trim().isNotEmpty)
+          {'l': r['l'] ?? '', 'f': r['f'] ?? '', 'u': r['u'] ?? ''}
+    ];
+    if (keep.isEmpty) {
+      _calc.remove(id);
+    } else {
+      _calc[id] = keep;
+    }
+    _prefs?.setString(_ckey, json.encode(_calc));
+  }
+
+  /// Wahr, sobald eine Zeile eine Rechnung hat.
+  bool hatCalc(String id) => (_calc[id] ?? const []).any((r) => (r['f'] ?? '').trim().isNotEmpty);
+
+  /// Der Rechenweg als Text, Zeile für Zeile („Kosten: 4.400 ÷ 22 = 200 €“).
+  String calcText(String id) => (_calc[id] ?? const [])
+      .map((r) => rwZeileText(r['l'] ?? '', r['f'] ?? '', r['u'] ?? ''))
+      .where((z) => z.isNotEmpty)
+      .join('\n');
+
+  // ─────────────────── Skizze (FR-013, `kvm_open_sketch`) ───────────────────
+
+  /// `{v: 1, bg: 'karo'|'anlage', fmt: 'quer'|'hoch', els: [...]}` oder null.
+  Map<String, dynamic>? skizze(String id) {
+    final d = _skizzen[id];
+    if (d == null) return null;
+    return {
+      ...d,
+      'els': [for (final e in (d['els'] as List).whereType<Map>()) Map<String, dynamic>.from(e)],
+    };
+  }
+
+  /// Leere Skizzen werden nicht gespeichert.
+  void setSkizze(String id, {required String bg, required String fmt, required List<Map<String, dynamic>> els}) {
+    if (els.isEmpty) {
+      _skizzen.remove(id);
+    } else {
+      _skizzen[id] = {'v': 1, 'bg': bg, 'fmt': fmt, 'els': els};
+    }
+    _prefs?.setString(_skey, json.encode(_skizzen));
+  }
+
+  bool hatSkizze(String id) => ((_skizzen[id]?['els'] as List?) ?? const []).isNotEmpty;
+
+  // ─────────────────── Gesamtstand einer Teilaufgabe ───────────────────
+
+  /// Beantwortet heißt in der Prüfungsliste: Text oder Rechenweg (Web
+  /// `KVM_hasAnswer`).
+  bool hatAntwort(String id) => get(id).trim().isNotEmpty || hatCalc(id);
+
+  /// Die ganze eigene Antwort einer Teilaufgabe: Skizze, Rechenweg und Text
+  /// (Web `antwortText`) – für „Deine Antwort“, den KI-Export und die Abgabe.
+  String antwortText(String id) =>
+      [skText(_skizzen[id]), calcText(id), get(id).trim()].where((x) => x.isNotEmpty).join('\n\n');
+
+  /// Gibt es zu dieser Teilaufgabe Antworten, Rechenwege, Skizzen, Tabellen
+  /// oder Punkte? Tabelleneinträge sind alle Schlüssel, die mit `<id>#`
+  /// beginnen.
+  bool hatStand(String id) =>
+      get(id).trim().isNotEmpty ||
+      hatCalc(id) ||
+      hatSkizze(id) ||
+      _points.containsKey(id) ||
+      _tabs.keys.any((k) => k.startsWith('$id#'));
+
+  /// Leert Antworten, Punkte, Rechenwege, Skizzen und Tabellen der
+  /// Teilaufgaben – eine Prüfung beginnt so mit leeren Blättern.
+  void leeren(Iterable<String> ids) {
+    final alle = ids.toSet();
+    for (final i in alle) {
+      _answers.remove(i);
+      _points.remove(i);
+      _calc.remove(i);
+      _skizzen.remove(i);
+    }
+    _tabs.removeWhere((k, _) => alle.any((i) => k.startsWith('$i#')));
+    _prefs?.setString(_key, json.encode(_answers));
+    _prefs?.setString(_pkey, json.encode(_points));
+    _prefs?.setString(_tkey, json.encode(_tabs));
+    _prefs?.setString(_ckey, json.encode(_calc));
+    _prefs?.setString(_skey, json.encode(_skizzen));
+  }
+
+  /// Welche Prüfungen haben Antworten, Rechenwege, Skizzen, Tabellen oder
+  /// Punkte? Ein Durchlauf über die Speicher statt je Teilaufgabe –
+  /// Teilaufgaben heißen „<Prüfung>-s<n>“ (Web `KVM_pruefMitStand`).
+  Set<String> pruefungenMitStand() {
+    final ids = <String>{};
+    final re = RegExp(r'^(P-[A-Z]+-\d+)-s\d+');
+    void nimm(String k) {
+      final m = re.firstMatch(k);
+      if (m != null) ids.add(m.group(1)!);
+    }
+
+    _answers.forEach((k, v) {
+      if (v.trim().isNotEmpty) nimm(k);
+    });
+    _calc.forEach((k, v) {
+      if (v.any((r) => (r['f'] ?? '').trim().isNotEmpty)) nimm(k);
+    });
+    _skizzen.forEach((k, v) {
+      if (((v['els'] as List?) ?? const []).isNotEmpty) nimm(k);
+    });
+    _points.keys.forEach(nimm);
+    _tabs.keys.forEach(nimm);
+    return ids;
+  }
+
   /// Eine einzelne Teilaufgabe samt eigener Antwort als Prüfauftrag – wortgleich
   /// zur Web-Fassung, damit beide Wege dasselbe Ergebnis liefern.
   static String exportTask(Question q) {
-    final eigene = AnswerStore.instance.get(q.id).trim();
+    final eigene = AnswerStore.instance.antwortText(q.id);
     final teile = TaskParts.of(q).volltext.split('\n\n');
     final kopf = teile.isNotEmpty ? teile.first : '';
     final rest = teile.skip(1).join('\n\n');
@@ -123,7 +283,7 @@ class AnswerStore {
       ..writeln('4. Prüfe zusätzlich die Musterlösung selbst auf Richtigkeit '
           'und Aktualität (u. a. ArbSchG, ArbZG, StVO, StVZO, BetrVG, DGUV, '
           'VO (EG) 561/2006, VO (EU) 165/2014, BKrFQG, BetrSichV, '
-          'DIN EN ISO 9001; die Behörde heißt heute BALM).')
+          'DIN EN ISO 9001; Behörde heißt heute BALM).')
       ..writeln('Bei Rechenaufgaben: rechne eigenständig nach und zeige deinen '
           'Rechenweg.')
       ..writeln()
@@ -151,8 +311,10 @@ class AnswerStore {
     // Hinweis darauf verhindert, dass die KI sie stillschweigend übergeht.
     final anlage = DataService.instance.anlage(q.bildEffektiv);
     if (anlage != null) {
-      b.writeln('[Zur Aufgabe gehört eine Abbildung: '
-          '${anlage.titel.isNotEmpty ? anlage.titel : 'Anlage zur Aufgabe'}]');
+      b
+        ..writeln()
+        ..writeln('[Zur Aufgabe gehört eine Abbildung: '
+            '${anlage.titel.isNotEmpty ? anlage.titel : 'Anlage zur Aufgabe'}]');
     }
     b
       ..writeln()
@@ -166,7 +328,9 @@ class AnswerStore {
           : 'MUSTERLÖSUNG (nicht amtlich, bitte ebenfalls prüfen):')
       ..writeln(q.a ?? '(keine hinterlegt)');
     if (q.vo != null && q.vo!.isNotEmpty) {
-      b.writeln('VO-Bezug: ${q.vo}');
+      b
+        ..writeln()
+        ..writeln('VO-Bezug: ${q.vo}');
     }
     if (q.bewertung.isNotEmpty) {
       b.writeln('Punkteverteilung: ${q.bewertung.join(' + ')} Punkte');
