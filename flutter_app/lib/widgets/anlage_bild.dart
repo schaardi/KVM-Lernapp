@@ -36,9 +36,11 @@ class AnlageBild extends StatelessWidget {
             borderRadius: BorderRadius.circular(10),
             child: ClipRRect(
               borderRadius: BorderRadius.circular(10),
+              // Scans und Anlagen bleiben hell – auch im Dunkelmodus sind sie
+              // Papier (FR-002 I).
               child: Container(
                 decoration: BoxDecoration(
-                    color: kPaper,
+                    color: Colors.white,
                     border: Border.all(color: kLine),
                     borderRadius: BorderRadius.circular(10)),
                 child: bild,
@@ -107,7 +109,7 @@ class _Vollbild extends StatelessWidget {
             child: InteractiveViewer(
               minScale: 1,
               maxScale: 6,
-              child: Center(child: bild),
+              child: Center(child: ColoredBox(color: Colors.white, child: bild)),
             ),
           ),
           Positioned(

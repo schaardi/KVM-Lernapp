@@ -1,22 +1,33 @@
+import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 import '../constants.dart';
 import '../models.dart';
-import '../services/letzte_pruefung.dart';
+import '../pruefung/echt.dart';
+import '../pruefung/pruef_text.dart';
+import '../pruefung/pruef_ui.dart';
+import '../pruefung/skizze_daten.dart';
+import '../pruefung/teil_karte.dart';
 import '../services/answer_store.dart';
+import '../services/data_service.dart';
+import '../services/letzte_pruefung.dart';
 import '../services/progress_service.dart';
 import '../services/round_builder.dart';
 import '../widgets/anlage_bild.dart';
 import '../widgets/anlage_tabelle.dart';
+import '../widgets/ui.dart';
+import '../widgets/werkzeug_dock.dart';
 import 'result_screen.dart';
 
-/// Eine Original-IHK-Prüfung als Aufgabenblatt.
+/// Eine Original-IHK-Prüfung als Aufgabenblatt (FR-003 C).
 ///
 /// Gezeigt wird immer eine **ganze Aufgabe**: ihre Ausgangslage, ihre Anlagen
 /// und alle Teilaufgaben a–x untereinander – so, wie das Blatt in der Prüfung
 /// vor einem liegt. Wer a) beantwortet, sieht damit auch, was b) und c)
-/// verlangen; daran hängt, wie ausführlich die Antwort ausfallen muss.
+/// verlangen; daran hängt, wie ausführlich die Antwort ausfallen muss. Oben
+/// läuft eine Leiste mit den Aufgaben der Prüfung und dem Bearbeitungsstand
+/// mit, unter Prüfungsbedingungen (FR-007) dazu die Uhr.
 ///
 /// Der `QuizScreen` bleibt für Auswahl-, Rechen- und offene Einzelfragen
 /// zuständig. Beide schreiben in denselben [AnswerStore], die Schritt-IDs sind
@@ -39,14 +50,36 @@ class _AufgabenblattScreenState extends State<AufgabenblattScreen> {
   late int _nr;
 
   final _aufgedeckt = <String>{};
-  /// Teilaufgaben mit einer eigenen Antwort – hält den Stepper aktuell, ohne
-  /// bei jedem Tastendruck die ganze Liste neu zu bauen.
-  final _beantwortet = <String>{};
+
+  /// Bearbeitete Teilaufgaben – hält Leiste und Karten aktuell, ohne bei jedem
+  /// Tastendruck das ganze Blatt neu zu bauen.
+  final _bearbeitet = <String>{};
   final _ctrl = <String, TextEditingController>{};
+  final _fokus = <String, FocusNode>{};
   late final List<bool?> _results;
   final _wrong = <Question>[];
   final _scroll = ScrollController();
-  bool _ctxOffen = true;
+  final _karten = <String, GlobalKey>{};
+  final _pillen = <int, GlobalKey>{};
+
+  /// Ausgangssituation: offen beim Start (an der ersten Teilaufgabe), beim
+  /// Wechsel zu – es sei denn, man hat sie selbst aufgeklappt (FR-002 G).
+  late bool _ctxOffen;
+  bool _ctxBeruehrt = false;
+
+  final _rwOffen = <String>{};
+  final _skOffen = <String>{};
+  String? _rwFokus;
+
+  /// Zuletzt angetippte Teilaufgabe – Ziel für Vorlagen aus dem Formelbuch.
+  String? _ziel;
+
+  /// Zuletzt fokussiertes Eingabefeld – Ziel für „Übernehmen“ aus dem Rechner.
+  AktivesFeld? _aktiv;
+
+  bool get _pruef => widget.fall.id.startsWith('P-');
+  EchtLauf? get _echt => Echtbedingungen.instance.von(widget.fall.id);
+  bool get _laeuft => Echtbedingungen.instance.laeuft(widget.fall.id);
 
   @override
   void initState() {
@@ -55,13 +88,27 @@ class _AufgabenblattScreenState extends State<AufgabenblattScreen> {
     _results = List<bool?>.filled(_pool.length, null);
     _nummern = widget.fall.aufgaben.map((a) => a.nr).toList();
     for (final q in _pool) {
-      if (_hatAntwort(q)) _beantwortet.add(q.id);
+      if (_hatAntwort(q)) _bearbeitet.add(q.id);
     }
-    final start = (widget.startIndex >= 0 && widget.startIndex < _pool.length)
-        ? _pool[widget.startIndex]
-        : null;
+    final start = (widget.startIndex >= 0 && widget.startIndex < _pool.length) ? _pool[widget.startIndex] : null;
     _nr = start?.nr ?? (_nummern.isNotEmpty ? _nummern.first : 0);
-    LetztePruefung.instance.merken(widget.fall.id, _nr);
+    _ctxOffen = widget.startIndex <= 0;
+    // Nach der Abgabe sind alle Lösungen offen.
+    if (_echt?.abgegeben ?? false) _aufgedeckt.addAll(_pool.map((q) => q.id));
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      // „Zuletzt geöffnet“ erst nach dem Aufbau merken – die Startseite hört
+      // darauf und darf nicht mitten im Bauen neu zeichnen.
+      LetztePruefung.instance.merken(widget.fall.id, _nr);
+      if (!mounted) return;
+      // Einstieg: an der ersten Teilaufgabe bleibt die Seite oben
+      // (Ausgangslage sichtbar); nur zu späteren Teilen wird gescrollt.
+      final teile = _teile(_nr);
+      if (start != null && teile.isNotEmpty && teile.first.id != start.id) _zeige(start.id);
+      _pilleZeigen();
+      // Beim Wiederöffnen nach Ablauf gilt die Prüfung als abgegeben.
+      final e = _echt;
+      if (e != null && !e.abgegeben && e.rest() <= 0) _abgeben(zeitUm: true);
+    });
   }
 
   @override
@@ -69,11 +116,16 @@ class _AufgabenblattScreenState extends State<AufgabenblattScreen> {
     for (final c in _ctrl.values) {
       c.dispose();
     }
+    for (final n in _fokus.values) {
+      n.dispose();
+    }
     _scroll.dispose();
     super.dispose();
   }
 
   List<Question> _teile(int nr) => _pool.where((q) => q.nr == nr).toList();
+  Aufgabe? get _aufgabe => widget.fall.aufgabeVon(_nr);
+  int get _pos => _nummern.indexOf(_nr);
 
   /// Speicherschlüssel einer ausfüllbaren Anlage. Er hängt an der ID der ersten
   /// Teilaufgabe, damit die Eintragungen einen Neustart überdauern.
@@ -86,74 +138,94 @@ class _AufgabenblattScreenState extends State<AufgabenblattScreen> {
   /// nach dem Aufdecken gezeigt.
   Anlage? _tabLoesung(int nr, Anlage tab) {
     for (final q in _teile(nr)) {
-      if (q.tabL != null && _aufgedeckt.contains(q.id) && tab.passtZu(q.tabL)) {
-        return q.tabL;
-      }
+      if (q.tabL != null && _aufgedeckt.contains(q.id) && tab.passtZu(q.tabL)) return q.tabL;
     }
     return null;
   }
 
+  /// Bearbeitet: Text, Rechenweg, Skizze oder Eintragungen in einer Anlage.
   /// Eine Anlage zum Ausfüllen gehört der ganzen Aufgabe; als Antwort zählt sie
   /// bei der ersten Teilaufgabe – sonst bliebe eine Aufgabe, die man ganz in
-  /// den Betriebsabrechnungsbogen schreibt, im Stepper unbeantwortet.
+  /// den Betriebsabrechnungsbogen schreibt, unbearbeitet.
   bool _hatAntwort(Question q) {
-    if (AnswerStore.instance.get(q.id).trim().isNotEmpty) return true;
+    final s = AnswerStore.instance;
+    if (s.get(q.id).trim().isNotEmpty || s.hatCalc(q.id) || s.hatSkizze(q.id)) return true;
     for (var i = 0; i < q.tabs.length; i++) {
-      if (AnswerStore.instance.tabGefuellt('${q.id}#s$i')) return true;
+      if (s.tabGefuellt('${q.id}#s$i')) return true;
     }
     final teile = _teile(q.nr);
     if (teile.isEmpty || teile.first.id != q.id) return false;
     final auf = widget.fall.aufgabeVon(q.nr);
     for (var i = 0; i < (auf?.tabs.length ?? 0); i++) {
-      if (AnswerStore.instance.tabGefuellt(_tabKey(q.nr, i))) return true;
+      if (s.tabGefuellt(_tabKey(q.nr, i))) return true;
     }
     return false;
   }
 
-  /// Eintragung in einer Anlage: Der Stepper zeigt die Aufgabe danach als
-  /// beantwortet.
-  void _tabEingabe(int nr) {
-    final teile = _teile(nr);
-    if (teile.isEmpty) return;
-    final q = teile.first;
+  /// Neu gezeichnet wird nur, wenn sich der Stand der Teilaufgabe ändert.
+  void _standPruefen(Question q) {
     final hat = _hatAntwort(q);
-    if (hat == _beantwortet.contains(q.id)) return;
+    if (hat == _bearbeitet.contains(q.id)) return;
     setState(() {
       if (hat) {
-        _beantwortet.add(q.id);
+        _bearbeitet.add(q.id);
       } else {
-        _beantwortet.remove(q.id);
+        _bearbeitet.remove(q.id);
       }
     });
   }
-  Aufgabe? get _aufgabe => widget.fall.aufgabeVon(_nr);
-  int get _pos => _nummern.indexOf(_nr);
 
-  TextEditingController _controller(Question q) => _ctrl.putIfAbsent(
-      q.id, () => TextEditingController(text: AnswerStore.instance.get(q.id)));
+  TextEditingController _controller(Question q) =>
+      _ctrl.putIfAbsent(q.id, () => TextEditingController(text: AnswerStore.instance.get(q.id)));
+
+  FocusNode _knoten(Question q) => _fokus.putIfAbsent(q.id, () {
+        final n = FocusNode();
+        n.addListener(() {
+          if (!n.hasFocus) return;
+          _ziel = q.id;
+          _aktiv = AktivesFeld(_controller(q), () => _antwort(q, _controller(q).text), teilId: q.id);
+        });
+        return n;
+      });
+
+  void _antwort(Question q, String text) {
+    AnswerStore.instance.set(q.id, text);
+    _ziel = q.id;
+    _standPruefen(q);
+  }
+
+  void _aenderung(Question q) {
+    _ziel = q.id;
+    _standPruefen(q);
+  }
 
   void _wechsle(int nr) {
-    setState(() => _nr = nr);
+    FocusManager.instance.primaryFocus?.unfocus();
+    setState(() {
+      _nr = nr;
+      if (!_ctxBeruehrt) _ctxOffen = false;
+      _aktiv = null;
+      _rwFokus = null;
+    });
     LetztePruefung.instance.merken(widget.fall.id, nr);
     if (_scroll.hasClients) _scroll.jumpTo(0);
+    WidgetsBinding.instance.addPostFrameCallback((_) => _pilleZeigen());
+  }
+
+  /// Die aktuelle Aufgabe in der Leiste sichtbar halten (viele Aufgaben).
+  void _pilleZeigen() {
+    final c = _pillen[_nr]?.currentContext;
+    if (c != null) Scrollable.ensureVisible(c, alignment: 0.5, duration: const Duration(milliseconds: 200));
+  }
+
+  void _zeige(String id, {bool weich = false}) {
+    final c = _karten[id]?.currentContext;
+    if (c != null) {
+      Scrollable.ensureVisible(c, alignment: 0.5, duration: weich ? const Duration(milliseconds: 300) : Duration.zero);
+    }
   }
 
   void _aufdecken(Question q) => setState(() => _aufgedeckt.add(q.id));
-
-  /// Antwort sichern; neu gezeichnet wird nur, wenn sich der Zustand der
-  /// Teilaufgabe ändert (leer ↔ beantwortet).
-  void _antwort(Question q, String text) {
-    AnswerStore.instance.set(q.id, text);
-    final hat = _hatAntwort(q);
-    if (hat == _beantwortet.contains(q.id)) return;
-    setState(() {
-      if (hat) {
-        _beantwortet.add(q.id);
-      } else {
-        _beantwortet.remove(q.id);
-      }
-    });
-  }
 
   /// Selbstbewertung: zählt fürs Ergebnis und für den Lernfortschritt.
   void _bewerten(Question q, int punkte) {
@@ -172,213 +244,557 @@ class _AufgabenblattScreenState extends State<AufgabenblattScreen> {
   }
 
   void _zumErgebnis() {
+    final e = _echt;
     Navigator.of(context).pushReplacement(MaterialPageRoute(
       builder: (_) => ResultScreen(
         mode: RoundMode.cases,
         pool: _pool,
         results: _results,
         wrong: _wrong,
+        fall: widget.fall,
+        echt: (e != null && e.abgegeben) ? e : null,
       ),
     ));
   }
 
-  // ---------------------------------------------------------------- Aufbau
+  // ─────────────── Prüfung unter Echtbedingungen (FR-007) ───────────────
+
+  void _abgeben({bool zeitUm = false}) {
+    if (!_laeuft) return;
+    Echtbedingungen.instance.abgeben(widget.fall.id, zeitUm: zeitUm);
+    setState(() => _aufgedeckt.addAll(_pool.map((q) => q.id)));
+    if (_nummern.isNotEmpty) _wechsle(_nummern.first);
+  }
+
+  Future<void> _abgebenFragen() async {
+    final leer = _pool.where((q) => !_hatAntwort(q)).length;
+    final ok = await nachfragen(
+      context,
+      titel: 'Jetzt abgeben?',
+      text: '${leer > 0 ? '$leer Teilaufgabe${leer == 1 ? ' ist' : 'n sind'} noch leer.\n\n' : ''}'
+          'Danach siehst du die Lösungen und bewertest dich selbst.',
+      ja: 'Abgeben',
+    );
+    if (ok && mounted) _abgeben();
+  }
+
+  Future<bool> _verlassenErlaubt() async {
+    if (!_laeuft) return true;
+    return nachfragen(
+      context,
+      titel: 'Prüfung verlassen?',
+      text: 'Die Uhr läuft weiter – wie in der echten Prüfung. Über die Prüfungsliste geht es weiter.',
+      ja: 'Verlassen',
+    );
+  }
+
+  Future<void> _verlassen() async {
+    if (await _verlassenErlaubt() && mounted) Navigator.of(context).pop();
+  }
+
+  // ─────────────── Werkzeug-Dock: Übernehmen (FR-002 C, FR-005 D) ───────────────
+
+  /// Ziel für eine Vorlage aus dem Formelbuch: die zuletzt angetippte
+  /// Teilaufgabe der aufgeschlagenen Aufgabe, sonst die erste noch nicht
+  /// aufgedeckte.
+  Question? _antwortZiel() {
+    final teile = _teile(_nr).where((q) => !_aufgedeckt.contains(q.id)).toList();
+    if (teile.isEmpty) return null;
+    for (final q in teile) {
+      if (q.id == _ziel) return q;
+    }
+    return teile.first;
+  }
+
+  void _uebernehmen(String text) {
+    final t = text.trim();
+    if (t.isEmpty) return;
+    final vorlage = t.contains('\n');
+    final a = _aktiv;
+    final gueltig = a != null &&
+        (a.teilId == null || (!_aufgedeckt.contains(a.teilId) && _teile(_nr).any((q) => q.id == a.teilId)));
+    if (!vorlage && gueltig) {
+      a.einsetzen(t);
+      return;
+    }
+    final q = _antwortZiel();
+    final bote = ScaffoldMessenger.of(context);
+    if (q == null) {
+      bote.showSnackBar(const SnackBar(content: Text('Alle Teilaufgaben dieser Aufgabe sind schon aufgedeckt.')));
+      return;
+    }
+    final c = _controller(q);
+    final alt = c.text.replaceFirst(RegExp(r'\s+$'), '');
+    final neu = alt.isEmpty ? t : (vorlage ? '$alt\n\n$t' : '$alt $t');
+    c.value = TextEditingValue(text: neu, selection: TextSelection.collapsed(offset: neu.length));
+    _antwort(q, neu);
+    final ziel = 'Aufgabe ${q.nr} ${q.teil})';
+    bote.showSnackBar(SnackBar(
+        content: Text(vorlage
+            ? 'Als Vorlage in die Antwort zu $ziel übernommen – dort ausfüllen.'
+            : 'In die Antwort zu $ziel übernommen.')));
+  }
+
+  // ─────────────────────────── Aufbau ───────────────────────────
 
   @override
   Widget build(BuildContext context) {
     final auf = _aufgabe;
     final teile = _teile(_nr);
-    return Scaffold(
-      appBar: AppBar(
-        backgroundColor: kPaper,
-        title: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-          Text(widget.fall.sub.replaceFirst('IHK-Prüfung: ', ''),
-              maxLines: 1,
-              overflow: TextOverflow.ellipsis,
-              style: TextStyle(
-                  fontSize: 13.5, fontWeight: FontWeight.w800, color: kInk)),
-          Text(
-            'Aufgabe $_nr von ${_nummern.length}'
-            '${(auf?.pts ?? 0) > 0 ? ' · ${auf!.pts} Punkte' : ''}',
-            style: TextStyle(fontSize: 11.5, color: kMuted),
-          ),
-        ]),
-      ),
-      body: SafeArea(
-        child: Column(children: [
-          _stepper(),
-          Expanded(
-            child: ListView(
-              controller: _scroll,
-              padding: const EdgeInsets.fromLTRB(16, 12, 16, 28),
-              children: [
-                if (widget.fall.hinweis.isNotEmpty) _hinweis(),
-                if (widget.fall.context.isNotEmpty) _ausgangslage(),
-                _aufgabenkopf(auf, teile.length),
-                for (final q in teile) _TeilKarte(
-                  key: ValueKey(q.id),
-                  frage: q,
-                  controller: _controller(q),
-                  aufgedeckt: _aufgedeckt.contains(q.id),
-                  ergebnis: _results[_pool.indexOf(q)],
-                  vorher: _vorher(q),
-                  beantwortet: _beantwortet.contains(q.id),
-                  onAntwort: (t) => _antwort(q, t),
-                  onTabEingabe: () => _tabEingabe(q.nr),
-                  onAufdecken: () => _aufdecken(q),
-                  onPunkte: (p) => _bewerten(q, p),
-                  onGewusst: (ok) => _merken(q, ok),
+    final tastatur = MediaQuery.viewInsetsOf(context).bottom > 0;
+    final breite = MediaQuery.sizeOf(context).width;
+    final rand = breite <= 520 ? 12.0 : 16.0;
+    return PopScope(
+      canPop: !_laeuft,
+      onPopInvokedWithResult: (didPop, _) async {
+        if (didPop) return;
+        if (await _verlassenErlaubt() && context.mounted) Navigator.of(context).pop();
+      },
+      child: Scaffold(
+        backgroundColor: kBg,
+        body: SafeArea(
+          bottom: false,
+          child: Column(children: [
+            _leiste(),
+            Expanded(
+              child: SingleChildScrollView(
+                controller: _scroll,
+                padding: EdgeInsets.fromLTRB(rand, 14, rand, 28),
+                child: Center(
+                  child: ConstrainedBox(
+                    constraints: const BoxConstraints(maxWidth: 880),
+                    child: Column(crossAxisAlignment: CrossAxisAlignment.stretch, children: [
+                      _kopf(auf, teile),
+                      if (widget.fall.hinweis.isNotEmpty) _hinweis(widget.fall.hinweis),
+                      if (_echt != null) _echtBand(_echt!),
+                      if (_hatAusgangssituation) _ausgangssituation(),
+                      if ((auf?.sit ?? '').isNotEmpty) _ausgangslage(auf!.sit, breite),
+                      if (auf != null) ..._anlagen(auf),
+                      for (final q in teile) _teilKarte(q),
+                      _fuss(teile, breite),
+                    ]),
+                  ),
                 ),
-                const SizedBox(height: 8),
-                _fussleiste(teile),
-              ],
+              ),
             ),
-          ),
-        ]),
+          ]),
+        ),
+        // Beim Schreiben räumt das Dock den Platz über der Tastatur (FR-003 C.9).
+        bottomNavigationBar: tastatur ? null : WerkzeugDock(onUebernehmen: _uebernehmen),
       ),
     );
   }
 
-  Widget _stepper() {
+  /// Die allgemeine Ausgangssituation der Basisqualifikationen sagt nur, dass
+  /// jede Aufgabe ihre eigene hat – sie wird nicht als Karte gezeigt.
+  bool get _hatAusgangssituation =>
+      widget.fall.context.isNotEmpty &&
+      !widget.fall.context.startsWith('In dieser Prüfung hat jede Aufgabe ihre eigene Ausgangssituation');
+
+  Widget _leiste() {
+    final e = _echt;
+    final n = _pool.length;
+    var auf = 0, bea = 0, pkt = 0, bew = 0;
+    for (final q in _pool) {
+      if (_aufgedeckt.contains(q.id)) {
+        auf++;
+      } else if (_bearbeitet.contains(q.id)) {
+        bea++;
+      }
+      final p = AnswerStore.instance.points(q.id);
+      if (p != null) {
+        pkt += p;
+        bew++;
+      }
+    }
+    final zahl = monoStyle(11, color: kMuted, weight: FontWeight.w600, spacing: 0);
+    final fett = TextStyle(color: kInk, fontWeight: FontWeight.w700);
     return Container(
-      width: double.infinity,
-      padding: const EdgeInsets.fromLTRB(12, 8, 12, 10),
       decoration: BoxDecoration(
         color: kPaper,
         border: Border(bottom: BorderSide(color: kLine)),
+        boxShadow: [BoxShadow(color: const Color(0xFF102A32).withValues(alpha: 0.12), blurRadius: 16, spreadRadius: -12, offset: const Offset(0, 6))],
       ),
-      child: Wrap(spacing: 6, runSpacing: 6, children: [
-        for (final nr in _nummern) _pille(nr),
+      child: Column(children: [
+        Padding(
+          padding: const EdgeInsets.fromLTRB(4, 6, 12, 5),
+          child: Row(children: [
+            IconButton(
+              tooltip: 'Prüfung verlassen',
+              onPressed: _verlassen,
+              icon: Icon(Icons.close, color: kInkSoft),
+            ),
+            Expanded(
+              child: _nummern.length < 2
+                  ? const SizedBox(height: 42)
+                  : SingleChildScrollView(
+                      scrollDirection: Axis.horizontal,
+                      padding: const EdgeInsets.symmetric(horizontal: 2, vertical: 3),
+                      child: Row(children: [
+                        for (var i = 0; i < _nummern.length; i++) ...[
+                          if (i > 0) const SizedBox(width: 5),
+                          _pille(_nummern[i]),
+                        ],
+                      ]),
+                    ),
+            ),
+            if (e != null) ...[
+              const SizedBox(width: 8),
+              _Uhr(lauf: e, onAblauf: () => _abgeben(zeitUm: true)),
+            ],
+            if (e != null && !e.abgegeben) ...[
+              const SizedBox(width: 8),
+              FilledButton(
+                onPressed: _abgebenFragen,
+                style: FilledButton.styleFrom(
+                  minimumSize: const Size(0, 36),
+                  padding: const EdgeInsets.symmetric(horizontal: 13),
+                  shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(9)),
+                  textStyle: const TextStyle(fontFamily: 'Inter', fontSize: 13, fontWeight: FontWeight.w700),
+                ),
+                child: const Text('Abgeben'),
+              ),
+            ],
+          ]),
+        ),
+        Padding(
+          padding: const EdgeInsets.fromLTRB(14, 0, 14, 9),
+          child: Row(children: [
+            Expanded(
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(3),
+                child: SizedBox(
+                  height: 5,
+                  child: ColoredBox(
+                    color: kTrack,
+                    child: Row(children: [
+                      if (auf > 0) Expanded(flex: auf, child: ColoredBox(color: kPetrol)),
+                      if (bea > 0) Expanded(flex: bea, child: ColoredBox(color: kOk)),
+                      if (n - auf - bea > 0) Spacer(flex: n - auf - bea),
+                    ]),
+                  ),
+                ),
+              ),
+            ),
+            const SizedBox(width: 10),
+            Text.rich(
+              TextSpan(style: zahl, children: [
+                TextSpan(text: '${auf + bea}', style: fett),
+                TextSpan(text: '/$n Teile'),
+                if (bew > 0) ...[const TextSpan(text: ' · '), TextSpan(text: '$pkt', style: fett), const TextSpan(text: ' P')],
+              ]),
+            ),
+          ]),
+        ),
       ]),
     );
   }
 
   Widget _pille(int nr) {
     final teile = _teile(nr);
-    final beantwortet = teile.where((q) => _beantwortet.contains(q.id)).length;
+    final auf = widget.fall.aufgabeVon(nr);
+    final beantwortet = teile.where((q) => _bearbeitet.contains(q.id)).length;
     final offen = teile.where((q) => _aufgedeckt.contains(q.id)).length;
-    final aktiv = nr == _nr;
-
-    Color rand = kLine, grund = kPaper, schrift = kMuted;
+    final cur = nr == _nr;
+    String stand = 'noch offen';
+    Color? punkt;
+    var grund = kPaper, rand = kLineStrong, schrift = kInkSoft, klein = kMuted;
     if (offen == teile.length && teile.isNotEmpty) {
-      rand = kPetrol;
+      stand = 'Lösungen aufgedeckt';
+      punkt = kPetrol;
       grund = kPetrolSoft;
-      schrift = kPetrolDeep;
+      rand = kPetrolLine;
+      schrift = kPetrolInkDeep;
     } else if (beantwortet == teile.length && teile.isNotEmpty) {
-      rand = const Color(0xFFB9DCC5);
-      grund = const Color(0xFFE4F2E9);
-      schrift = kInk;
-    } else if (beantwortet > 0) {
-      rand = const Color(0xFFD9C79A);
-      grund = const Color(0xFFFDF8EC);
-      schrift = kInk;
+      stand = 'alle Teile bearbeitet';
+      punkt = kOk;
+    } else if (beantwortet > 0 || offen > 0) {
+      stand = '${beantwortet > offen ? beantwortet : offen} von ${teile.length} Teilen bearbeitet';
+      punkt = kAmber;
     }
-    if (aktiv) {
-      rand = kPetrol;
+    if (cur) {
       grund = kPetrol;
+      rand = kPetrol;
       schrift = Colors.white;
+      klein = Colors.white.withValues(alpha: 0.82);
     }
-
-    return InkWell(
-      onTap: () => _wechsle(nr),
-      borderRadius: BorderRadius.circular(9),
-      child: Container(
-        constraints: const BoxConstraints(minWidth: 36),
-        padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 7),
-        alignment: Alignment.center,
-        decoration: BoxDecoration(
-          color: grund,
-          border: Border.all(color: rand),
-          borderRadius: BorderRadius.circular(9),
+    final pts = auf?.pts ?? 0;
+    return Semantics(
+      key: _pillen.putIfAbsent(nr, GlobalKey.new),
+      button: true,
+      selected: cur,
+      label: 'Aufgabe $nr${pts > 0 ? ', $pts Punkte' : ''}, $stand',
+      excludeSemantics: true,
+      child: Stack(children: [
+        Container(
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(11),
+            boxShadow: cur
+                ? [BoxShadow(color: kPetrol.withValues(alpha: 0.45), blurRadius: 12, spreadRadius: -2, offset: const Offset(0, 4))]
+                : null,
+          ),
+          child: Material(
+            color: grund,
+            shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(11), side: BorderSide(color: rand)),
+            child: InkWell(
+              borderRadius: BorderRadius.circular(11),
+              onTap: () => _wechsle(nr),
+              child: Container(
+                constraints: const BoxConstraints(minWidth: 42, minHeight: 42),
+                padding: const EdgeInsets.symmetric(horizontal: 9),
+                alignment: Alignment.center,
+                child: Column(mainAxisSize: MainAxisSize.min, children: [
+                  Text('$nr', style: TextStyle(fontSize: 14, fontWeight: FontWeight.w700, height: 1, color: schrift)),
+                  if (pts > 0) ...[
+                    const SizedBox(height: 3),
+                    Text('$pts P',
+                        style: monoStyle(9, color: klein, weight: FontWeight.w600, spacing: 0).copyWith(height: 1)),
+                  ],
+                ]),
+              ),
+            ),
+          ),
         ),
-        child: Text('$nr',
-            style: TextStyle(
-                fontSize: 12.5, fontWeight: FontWeight.w700, color: schrift)),
-      ),
+        if (punkt != null)
+          Positioned(
+            top: 4,
+            right: 4,
+            child: IgnorePointer(
+              child: Container(
+                width: 7,
+                height: 7,
+                decoration: BoxDecoration(
+                  color: punkt,
+                  shape: BoxShape.circle,
+                  border: cur ? Border.all(color: Colors.white, width: 1.5) : null,
+                ),
+              ),
+            ),
+          ),
+      ]),
     );
   }
 
-  Widget _hinweis() => Container(
-        margin: const EdgeInsets.only(bottom: 12),
-        padding: const EdgeInsets.fromLTRB(11, 8, 11, 8),
-        decoration: BoxDecoration(
-          color: kAmber.withValues(alpha: 0.10),
-          borderRadius: BorderRadius.circular(kRadiusSm),
-          border: Border(left: BorderSide(color: kAmber, width: 3)),
-        ),
-        child: Text(widget.fall.hinweis,
-            style: TextStyle(fontSize: 12.5, height: 1.5, color: kInkSoft)),
-      );
+  Widget _kopf(Aufgabe? auf, List<Question> teile) {
+    final f = widget.fall;
+    final datum = RegExp(r'–\s*([^–]+)$').firstMatch(f.title)?.group(1)?.trim() ?? f.termin;
+    final fach = f.sub.replaceFirst(RegExp(r'^IHK-Prüfung:\s*'), '');
+    final eyebrow = _pruef ? '$fach${datum.isNotEmpty ? ' · $datum' : ''}' : 'Fallaufgabe · $fach';
+    final titel = (_pruef || _nummern.length > 1) ? 'Aufgabe $_nr' : (f.title.isEmpty ? 'Fallaufgabe' : f.title);
+    final n = teile.length;
+    final bea = teile.where((q) => _bearbeitet.contains(q.id) || _aufgedeckt.contains(q.id)).length;
+    final bewertet = teile.where((q) => AnswerStore.instance.points(q.id) != null).toList();
+    final w = MediaQuery.sizeOf(context).width;
 
-  Widget _ausgangslage() => Theme(
-        data: Theme.of(context).copyWith(dividerColor: Colors.transparent),
-        child: Container(
-          margin: const EdgeInsets.only(bottom: 14),
+    Widget chip(String t, {Color? grund, Color? randF, Color? schrift}) => Container(
+          padding: const EdgeInsets.symmetric(horizontal: 11, vertical: 5),
           decoration: BoxDecoration(
-            color: const Color(0xFFFBF2F8),
-            border: Border.all(color: const Color(0xFFE6C9DE)),
-            borderRadius: BorderRadius.circular(kRadius),
+            color: grund ?? kSurface2,
+            border: Border.all(color: randF ?? kLine),
+            borderRadius: BorderRadius.circular(20),
           ),
-          child: ExpansionTile(
-            initiallyExpanded: _ctxOffen,
-            onExpansionChanged: (v) => _ctxOffen = v,
-            tilePadding: const EdgeInsets.symmetric(horizontal: 12),
-            childrenPadding: const EdgeInsets.fromLTRB(12, 0, 12, 12),
-            title: Text(widget.fall.title,
-                style: TextStyle(
-                    fontSize: 13, fontWeight: FontWeight.w700, color: kInk)),
-            subtitle: Text('Ausgangssituation zu allen Aufgaben',
-                style: TextStyle(fontSize: 11, color: kMuted)),
-            children: [
-              Align(
-                alignment: Alignment.centerLeft,
-                child: Text(widget.fall.context,
-                    style: TextStyle(fontSize: 13.5, height: 1.6, color: kInk)),
-              ),
-            ],
-          ),
-        ),
-      );
+          child: Text(t, style: TextStyle(fontSize: 11.5, fontWeight: FontWeight.w600, height: 1.2, color: schrift ?? kInkSoft)),
+        );
 
-  Widget _aufgabenkopf(Aufgabe? auf, int anzahlTeile) {
-    return Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-      Row(crossAxisAlignment: CrossAxisAlignment.center, children: [
-        Text('Aufgabe $_nr',
-            style: TextStyle(
-                fontSize: 17, fontWeight: FontWeight.w800, color: kInk)),
-        const SizedBox(width: 9),
-        if ((auf?.pts ?? 0) > 0)
-          Container(
-            padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 3),
-            decoration: BoxDecoration(
-                color: kPetrolSoft, borderRadius: BorderRadius.circular(6)),
-            child: Text('${auf!.pts} Punkte',
-                style: TextStyle(
-                    fontSize: 11, fontWeight: FontWeight.w800, color: kPetrolDeep)),
-          ),
-        const Spacer(),
-        Text('$anzahlTeile Teilaufgabe${anzahlTeile == 1 ? '' : 'n'}',
-            style: TextStyle(fontSize: 11.5, color: kMuted)),
+    return Padding(
+      padding: const EdgeInsets.fromLTRB(0, 2, 0, 16),
+      child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+        Text(eyebrow.toUpperCase(), style: monoStyle(10.5, color: kPetrolInk, spacing: 1.2).copyWith(height: 1.4)),
+        const SizedBox(height: 6),
+        Text(titel.toUpperCase(), style: dispStyle((w * 0.074).clamp(30.0, 40.0), height: 0.95)),
+        const SizedBox(height: 11),
+        Wrap(spacing: 6, runSpacing: 6, children: [
+          if ((auf?.pts ?? 0) > 0) chip('${auf!.pts} Punkte', grund: kPetrolSoft, randF: kPetrolLine, schrift: kPetrolInkDeep),
+          chip('$n Teilaufgabe${n == 1 ? '' : 'n'}'),
+          if (bea == n && n > 0)
+            chip('✓ $bea von $n bearbeitet', grund: kOkSoft, randF: kOkLine, schrift: kOkInk)
+          else
+            chip('$bea von $n bearbeitet'),
+          if (bewertet.isNotEmpty)
+            chip(
+              'Deine Punkte: ${bewertet.fold<int>(0, (s, q) => s + (AnswerStore.instance.points(q.id) ?? 0))} / '
+              '${(auf?.pts ?? 0) > 0 ? auf!.pts : teile.fold<int>(0, (s, q) => s + q.maxPoints)}',
+              grund: kGoldSoft,
+              randF: kGoldLine,
+              schrift: kGoldInk,
+            ),
+        ]),
       ]),
-      if ((auf?.sit ?? '').isNotEmpty) ...[
-        const SizedBox(height: 9),
-        Container(
-          padding: const EdgeInsets.only(left: 11),
-          decoration: BoxDecoration(
-              border: Border(left: BorderSide(color: kLine, width: 2))),
-          child: Text(auf!.sit,
-              style: TextStyle(fontSize: 14, height: 1.65, color: kInk)),
+    );
+  }
+
+  Widget _hinweis(String text) => Container(
+        margin: const EdgeInsets.only(bottom: 14),
+        padding: const EdgeInsets.fromLTRB(12, 9, 12, 9),
+        decoration: BoxDecoration(
+          color: kAmberSoft,
+          border: Border(left: BorderSide(color: kAmber, width: 3)),
+          borderRadius: const BorderRadius.horizontal(right: Radius.circular(9)),
         ),
-      ],
-      if (auf != null)
-        for (var i = 0; i < auf.tabs.length; i++)
-          AnlageTabelle(auf.tabs[i],
-              speicherKey: _tabKey(auf.nr, i),
-              loesung: _tabLoesung(auf.nr, auf.tabs[i]),
-              onEingabe: () => _tabEingabe(auf.nr)),
-      if (auf?.bild != null) AnlageBild(auf!.bild),
-      const SizedBox(height: 16),
-    ]);
+        child: Text(text, style: TextStyle(fontSize: 12.5, height: 1.5, color: kInkSoft)),
+      );
+
+  Widget _echtBand(EchtLauf e) {
+    final fertig = e.abgegeben;
+    final fett = TextStyle(fontWeight: FontWeight.w700, color: kPetrolInkDeep);
+    return Container(
+      margin: const EdgeInsets.only(bottom: 14),
+      padding: const EdgeInsets.fromLTRB(13, 10, 13, 10),
+      decoration: BoxDecoration(
+        color: fertig ? kOkSoft : kPetrolSoft,
+        border: Border.all(color: fertig ? kOkLine : kPetrolLine),
+        borderRadius: BorderRadius.circular(11),
+      ),
+      child: Row(crossAxisAlignment: CrossAxisAlignment.start, children: [
+        Padding(
+          padding: const EdgeInsets.only(top: 2),
+          child: Icon(Icons.timer_outlined, size: 18, color: kPetrolInk),
+        ),
+        const SizedBox(width: 10),
+        Expanded(
+          child: Text.rich(
+            TextSpan(style: TextStyle(fontSize: 13, height: 1.5, color: kInk), children: [
+              if (fertig) ...[
+                if (e.zeitUm) ...[
+                  TextSpan(text: 'Zeit abgelaufen', style: fett),
+                  const TextSpan(text: ' – deine Antworten sind abgegeben. '),
+                ] else ...[
+                  TextSpan(text: 'Abgegeben', style: fett),
+                  TextSpan(text: ' nach ${dauerText(e.dauer)}. '),
+                ],
+                const TextSpan(
+                    text: 'Sieh dir jetzt die Lösungen an und vergib dir je Teilaufgabe Punkte. Danach „Zum Ergebnis“ '
+                        '– mit Note und Bearbeitungszeit.'),
+              ] else ...[
+                TextSpan(text: 'Unter Prüfungsbedingungen:', style: fett),
+                TextSpan(
+                    text: ' ${dauerText(e.min * 60000)} Bearbeitungszeit, Lösungen erst nach der Abgabe. '
+                        'Die Uhr läuft weiter, auch wenn du die Prüfung verlässt.'),
+              ],
+            ]),
+          ),
+        ),
+      ]),
+    );
+  }
+
+  /// Ausgangssituation der ganzen Prüfung – einmal lesen, dann zu.
+  Widget _ausgangssituation() {
+    final f = widget.fall;
+    return Container(
+      margin: const EdgeInsets.only(bottom: 16),
+      clipBehavior: Clip.antiAlias,
+      decoration: BoxDecoration(
+        color: kSurface,
+        border: Border.all(color: kLine),
+        borderRadius: BorderRadius.circular(12),
+      ),
+      child: Column(crossAxisAlignment: CrossAxisAlignment.stretch, children: [
+        Semantics(
+          button: true,
+          expanded: _ctxOffen,
+          child: InkWell(
+            onTap: () => setState(() {
+              _ctxOffen = !_ctxOffen;
+              _ctxBeruehrt = true;
+            }),
+            child: Padding(
+              padding: const EdgeInsets.fromLTRB(13, 11, 13, 11),
+              child: LayoutBuilder(builder: (context, c) {
+                final tag = Container(
+                  padding: const EdgeInsets.symmetric(horizontal: 7, vertical: 2),
+                  decoration: BoxDecoration(color: kPetrol, borderRadius: BorderRadius.circular(4)),
+                  child: Text(_pruef ? 'AUSGANGSSITUATION' : 'FALL',
+                      style: monoStyle(10, color: Colors.white, weight: FontWeight.w600, spacing: 0.8)),
+                );
+                final titel = Text((_pruef ? 'Gilt für alle Aufgaben dieser Prüfung' : f.title).toUpperCase(),
+                    style: dispStyle(14, height: 1.15));
+                final mehr = Container(
+                  padding: const EdgeInsets.fromLTRB(10, 3, 6, 3),
+                  decoration: BoxDecoration(
+                    color: kPaper,
+                    border: Border.all(color: kPetrolLine),
+                    borderRadius: BorderRadius.circular(20),
+                  ),
+                  child: Row(mainAxisSize: MainAxisSize.min, children: [
+                    Text(_pruef ? 'LESEN' : 'AUSGANGSLAGE',
+                        style: monoStyle(10, color: kPetrolInk, weight: FontWeight.w600, spacing: 0.6)),
+                    Icon(_ctxOffen ? Icons.expand_less : Icons.expand_more, size: 16, color: kPetrolInk),
+                  ]),
+                );
+                // Schmal: der Titel rutscht unter das Etikett (Web `flex-wrap`).
+                if (c.maxWidth < 420) {
+                  return Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+                    tag,
+                    const SizedBox(height: 7),
+                    Row(children: [Expanded(child: titel), const SizedBox(width: 9), mehr]),
+                  ]);
+                }
+                return Row(children: [
+                  tag,
+                  const SizedBox(width: 9),
+                  Expanded(child: titel),
+                  const SizedBox(width: 9),
+                  mehr,
+                ]);
+              }),
+            ),
+          ),
+        ),
+        AnimatedSize(
+          duration: const Duration(milliseconds: 180),
+          alignment: Alignment.topCenter,
+          child: _ctxOffen
+              ? Container(
+                  decoration: BoxDecoration(border: Border(top: BorderSide(color: kLine))),
+                  padding: const EdgeInsets.fromLTRB(13, 11, 13, 13),
+                  child: PruefText(f.context, stil: TextStyle(fontSize: 14, height: 1.55, color: kInk)),
+                )
+              : const SizedBox(width: double.infinity),
+        ),
+      ]),
+    );
+  }
+
+  Widget _ausgangslage(String sit, double breite) {
+    final handy = breite <= 520;
+    return Container(
+      margin: const EdgeInsets.only(bottom: 16),
+      padding: EdgeInsets.fromLTRB(handy ? 12 : 15, 13, handy ? 12 : 15, handy ? 13 : 15),
+      decoration: BoxDecoration(
+        color: kSurface,
+        border: Border.all(color: kLine),
+        borderRadius: BorderRadius.circular(12),
+      ),
+      child: Column(crossAxisAlignment: CrossAxisAlignment.stretch, children: [
+        Text('AUSGANGSLAGE', style: monoStyle(10, color: kMuted, spacing: 1.2)),
+        const SizedBox(height: 10),
+        PruefText(sit, stil: TextStyle(fontSize: handy ? 14 : 14.5, height: 1.62, color: kInk)),
+      ]),
+    );
+  }
+
+  /// Anlagen der ganzen Aufgabe: Tabellen zum Ausfüllen und Abbildungen.
+  List<Widget> _anlagen(Aufgabe auf) {
+    final teile = _teile(auf.nr);
+    final erste = teile.isEmpty ? null : teile.first;
+    return [
+      for (var i = 0; i < auf.tabs.length; i++)
+        Padding(
+          padding: const EdgeInsets.only(bottom: 16),
+          child: AnlageTabelle(
+            auf.tabs[i],
+            key: ValueKey('${_tabKey(auf.nr, i)}-${_tabLoesung(auf.nr, auf.tabs[i]) != null}'),
+            speicherKey: _tabKey(auf.nr, i),
+            loesung: _tabLoesung(auf.nr, auf.tabs[i]),
+            onEingabe: () {
+              if (erste != null) _aenderung(erste);
+            },
+            onFokus: (f) => _aktiv = AktivesFeld(f.controller, f.gespeichert, teilId: erste?.id),
+          ),
+        ),
+      if (auf.bild != null) Padding(padding: const EdgeInsets.only(bottom: 16), child: AnlageBild(auf.bild)),
+    ];
   }
 
   /// Zwischenergebnis einer früheren Teilaufgabe – nur wenn sie aufgedeckt ist.
@@ -390,456 +806,256 @@ class _AufgabenblattScreenState extends State<AufgabenblattScreen> {
     for (final lab in q.braucht) {
       final v = teile.where((x) => x.teil == lab);
       if (v.isEmpty || !_aufgedeckt.contains(v.first.id)) continue;
-      final zeilen = (v.first.a ?? '')
-          .split('\n')
-          .where((z) => z.trim().isNotEmpty)
-          .take(2)
-          .join('\n');
+      final zeilen = (v.first.a ?? '').split('\n').where((z) => z.trim().isNotEmpty).take(2).join('\n');
       if (zeilen.isNotEmpty) stuecke.add('Zwischenergebnis aus $lab)\n$zeilen');
     }
     return stuecke.isEmpty ? null : stuecke.join('\n\n');
   }
 
-  Widget _fussleiste(List<Question> teile) {
-    final alleOffen = teile.every((q) => _aufgedeckt.contains(q.id));
-    final letzte = _pos >= _nummern.length - 1;
-    return Column(children: [
-      if (!alleOffen)
-        SizedBox(
-          width: double.infinity,
-          child: OutlinedButton(
-            onPressed: () => setState(
-                () => _aufgedeckt.addAll(teile.map((q) => q.id))),
-            style: OutlinedButton.styleFrom(
-                foregroundColor: kPetrol,
-                side: BorderSide(color: kLine),
-                padding: const EdgeInsets.symmetric(vertical: 12)),
-            child: const Text('Alle Lösungen dieser Aufgabe aufdecken',
-                style: TextStyle(fontWeight: FontWeight.w700, fontSize: 12.5)),
-          ),
-        )
-      else
-        SizedBox(
-          width: double.infinity,
-          child: OutlinedButton.icon(
-            onPressed: () => _kopieren(teile),
-            icon: const Icon(Icons.content_copy, size: 15),
-            style: OutlinedButton.styleFrom(
-                foregroundColor: kPetrol,
-                side: BorderSide(color: kLine),
-                padding: const EdgeInsets.symmetric(vertical: 12)),
-            label: const Text('Diese Aufgabe von einer KI prüfen lassen',
-                style: TextStyle(fontWeight: FontWeight.w700, fontSize: 12.5)),
-          ),
-        ),
-      const SizedBox(height: 9),
-      Row(children: [
-        if (_pos > 0)
-          Expanded(
-            child: OutlinedButton(
-              onPressed: () => _wechsle(_nummern[_pos - 1]),
-              style: OutlinedButton.styleFrom(
-                  foregroundColor: kPetrol,
-                  side: BorderSide(color: kLine),
-                  padding: const EdgeInsets.symmetric(vertical: 13)),
-              child: Text('← Aufgabe ${_nummern[_pos - 1]}',
-                  style: const TextStyle(
-                      fontWeight: FontWeight.w700, fontSize: 12.5)),
-            ),
-          ),
-        if (_pos > 0) const SizedBox(width: 9),
-        Expanded(
-          child: FilledButton(
-            onPressed: () =>
-                letzte ? _zumErgebnis() : _wechsle(_nummern[_pos + 1]),
-            style: FilledButton.styleFrom(
-                backgroundColor: kPetrol,
-                padding: const EdgeInsets.symmetric(vertical: 13)),
-            child: Text(
-                letzte ? 'Zum Ergebnis →' : 'Aufgabe ${_nummern[_pos + 1]} →',
-                style: const TextStyle(fontWeight: FontWeight.w700, fontSize: 12.5)),
-          ),
-        ),
-      ]),
-    ]);
-  }
-
-  /// Die ganze Aufgabe als Prüfauftrag – mit allen Teilen, damit die KI den
-  /// Zusammenhang sieht, auf den die Teilaufgaben aufbauen.
-  Future<void> _kopieren(List<Question> teile) async {
-    final auf = _aufgabe;
-    final amtlich = teile.any((q) => q.amtlich);
-    final b = StringBuffer()
-      ..writeln('PRÜFAUFTRAG – Aufgabe $_nr einer Original-IHK-Prüfung')
-      ..writeln()
-      ..writeln('Unten stehen eine vollständige Prüfungsaufgabe mit allen '
-          'Teilaufgaben, MEINE eigenen Antworten und '
-          '${amtlich ? 'die AMTLICHEN Lösungshinweise der IHK.' : 'Musterlösungen, die NICHT von der IHK stammen.'}')
-      ..writeln()
-      ..writeln('Bewerte je Teilaufgabe MEINE Antwort:')
-      ..writeln('1. Wie viele der jeweils möglichen Punkte würdest du vergeben? '
-          'Begründe kurz.')
-      ..writeln('2. Was fehlt zur vollen Punktzahl? Nenne die fehlenden '
-          'Elemente konkret.')
-      ..writeln('3. Welche fachlichen Fehler enthält meine Antwort (falsche '
-          'Aussage, falsche Rechnung, veraltete Rechtsgrundlage)?')
-      ..writeln('Bei Rechenaufgaben: rechne eigenständig nach und zeige deinen '
-          'Rechenweg.')
-      ..writeln()
-      ..writeln('==============================')
-      ..writeln(widget.fall.title)
-      ..writeln('==============================')
-      ..writeln();
-    if (widget.fall.context.isNotEmpty) {
-      b
-        ..writeln('AUSGANGSSITUATION')
-        ..writeln(widget.fall.context)
-        ..writeln();
-    }
-    b.writeln('AUFGABE $_nr${(auf?.pts ?? 0) > 0 ? ' · ${auf!.pts} Punkte' : ''}');
-    if ((auf?.sit ?? '').isNotEmpty) {
-      b
-        ..writeln()
-        ..writeln(auf!.sit);
-    }
-    for (var i = 0; i < (auf?.tabs.length ?? 0); i++) {
-      final tab = auf!.tabs[i];
-      b
-        ..writeln()
-        ..writeln(tab.asText());
-      final w = AnswerStore.instance.tabWerte(_tabKey(auf.nr, i));
-      if (w.isEmpty) continue;
-      b.writeln('Eigene Eintragungen:');
-      final keys = w.keys.toList()..sort();
-      for (final rc in keys) {
-        final p = rc.split('-');
-        final ri = int.tryParse(p.first) ?? 0, ci = int.tryParse(p.last) ?? 0;
-        final zeile = ri < tab.zeilen.length ? tab.zeilen[ri] : const <String>[];
-        final kopf = tab.kopf;
-        b.writeln('- ${zeile.isNotEmpty ? zeile.first : 'Zeile ${ri + 1}'} / '
-            '${ci < kopf.length ? kopf[ci] : 'Spalte ${ci + 1}'}: ${w[rc]}');
-      }
-    }
-    b.writeln();
-    for (final q in teile) {
-      b
-        ..writeln('------------------------------')
-        ..writeln('${q.teil}) · ${q.pts} ${q.pts == 1 ? 'Punkt' : 'Punkte'}')
-        ..writeln()
-        ..writeln(q.q)
-        ..writeln()
-        ..writeln('MEINE ANTWORT:')
-        ..writeln(AnswerStore.instance.get(q.id).trim().isEmpty
-            ? '— leer abgegeben —'
-            : AnswerStore.instance.get(q.id).trim())
-        ..writeln()
-        ..writeln(q.amtlich
-            ? 'AMTLICHER LÖSUNGSHINWEIS (IHK):'
-            : 'MUSTERLÖSUNG (zu prüfen):')
-        ..writeln(q.a ?? q.e);
-      if ((q.vo ?? '').isNotEmpty) b.writeln('VO-Bezug: ${q.vo}');
-      if (q.bewertung.isNotEmpty) {
-        b.writeln('Punkteverteilung: ${q.bewertung.join(' + ')} Punkte');
-      }
-      b.writeln();
-    }
-    b
-      ..writeln('==============================')
-      ..writeln('Nenne abschließend die Gesamtpunktzahl, die du für Aufgabe '
-          '$_nr vergeben würdest.');
-
-    await Clipboard.setData(ClipboardData(text: b.toString()));
-    if (!mounted) return;
-    ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
-        content: Text('Aufgabe mit deinen Antworten kopiert – jetzt in eine '
-            'KI einfügen.')));
-  }
-}
-
-/// Eine Teilaufgabe a–x: Fragestellung, eigenes Antwortfeld und – nach dem
-/// Aufdecken – der amtliche Lösungshinweis samt Selbstbewertung.
-class _TeilKarte extends StatelessWidget {
-  final Question frage;
-  final TextEditingController controller;
-  final bool aufgedeckt;
-  final bool beantwortet;
-  final bool? ergebnis;
-  final String? vorher;
-  final void Function(String) onAntwort;
-  final VoidCallback onTabEingabe;
-  final VoidCallback onAufdecken;
-  final void Function(int) onPunkte;
-  final void Function(bool) onGewusst;
-
-  const _TeilKarte({
-    super.key,
-    required this.frage,
-    required this.controller,
-    required this.aufgedeckt,
-    required this.beantwortet,
-    required this.ergebnis,
-    required this.vorher,
-    required this.onAntwort,
-    required this.onTabEingabe,
-    required this.onAufdecken,
-    required this.onPunkte,
-    required this.onGewusst,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    final q = frage;
-    return Container(
-      margin: const EdgeInsets.only(bottom: 11),
-      padding: const EdgeInsets.fromLTRB(14, 13, 14, 14),
-      decoration: BoxDecoration(
-        color: kPaper,
-        borderRadius: BorderRadius.circular(kRadius),
-        border: Border.all(
-            color: aufgedeckt
-                ? kPetrol
-                : (beantwortet ? const Color(0xFFB9DCC5) : kLine)),
-        boxShadow: kSoftShadow,
+  Widget _teilKarte(Question q) {
+    final rw = istRechenteil(q) || AnswerStore.instance.calc(q.id).isNotEmpty || _rwOffen.contains(q.id);
+    final sk = skZeichenteil(q.q) || AnswerStore.instance.hatSkizze(q.id) || _skOffen.contains(q.id);
+    return KeyedSubtree(
+      key: _karten.putIfAbsent(q.id, GlobalKey.new),
+      child: TeilKarte(
+        key: ValueKey('teil-${q.id}'),
+        frage: q,
+        aufgedeckt: _aufgedeckt.contains(q.id),
+        bearbeitet: _bearbeitet.contains(q.id),
+        ergebnis: _results[_pool.indexOf(q)],
+        vorher: _vorher(q),
+        echtLaeuft: _laeuft,
+        rechenweg: rw,
+        skizze: sk,
+        rechenwegFokus: _rwFokus == q.id,
+        controller: _controller(q),
+        fokus: _knoten(q),
+        anlageRef: _skizzenAnlage(q),
+        bezug: 'Aufgabe ${q.nr} ${q.teil})',
+        onAntwort: (t) => _antwort(q, t),
+        onAenderung: () => _aenderung(q),
+        onAufdecken: () => _aufdecken(q),
+        onPunkte: (p) => _bewerten(q, p),
+        onGewusst: (ok) => _merken(q, ok),
+        onRechenweg: () => setState(() {
+          _rwOffen.add(q.id);
+          _rwFokus = q.id;
+        }),
+        onSkizze: () => setState(() => _skOffen.add(q.id)),
+        onBraucht: (lab) {
+          final ziel = _teile(q.nr).where((x) => x.teil == lab);
+          if (ziel.isNotEmpty) _zeige(ziel.first.id, weich: true);
+        },
+        onFokus: (f) {
+          _ziel = q.id;
+          _aktiv = f;
+        },
       ),
-      child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-        Row(children: [
-          Container(
-            width: 26,
-            height: 26,
-            alignment: Alignment.center,
-            decoration: BoxDecoration(
-                color: aufgedeckt ? kPetrol : kBgTint,
-                borderRadius: BorderRadius.circular(8)),
-            child: Text(q.teil,
-                style: TextStyle(
-                    fontSize: 13,
-                    fontWeight: FontWeight.w800,
-                    color: aufgedeckt ? Colors.white : kInk)),
-          ),
-          const SizedBox(width: 9),
-          Text('${q.pts} ${q.pts == 1 ? 'Punkt' : 'Punkte'}',
-              style: TextStyle(fontSize: 11, color: kMuted)),
-          if (q.braucht.isNotEmpty) ...[
-            const Spacer(),
-            Container(
-              padding: const EdgeInsets.symmetric(horizontal: 9, vertical: 3),
-              decoration: BoxDecoration(
-                  color: const Color(0xFFFDF8EC),
-                  border: Border.all(color: const Color(0xFFD9C79A)),
-                  borderRadius: BorderRadius.circular(999)),
-              child: Text('baut auf ${q.braucht.join('), ')}) auf',
-                  style: const TextStyle(
-                      fontSize: 10.5,
-                      fontWeight: FontWeight.w600,
-                      color: Color(0xFF8A6D1F))),
-            ),
-          ],
-        ]),
-        if (vorher != null) ...[
-          const SizedBox(height: 9),
-          Container(
-            width: double.infinity,
-            padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 7),
-            decoration: BoxDecoration(
-                color: kBgTint, borderRadius: BorderRadius.circular(8)),
-            child: Text(vorher!,
-                style: TextStyle(
-                    fontSize: 12.5, height: 1.5, color: kInkSoft)),
-          ),
-        ],
-        const SizedBox(height: 9),
-        Text(q.q,
-            style: TextStyle(
-                fontSize: 15, height: 1.55, fontWeight: FontWeight.w600, color: kInk)),
-        for (var i = 0; i < q.tabs.length; i++)
-          AnlageTabelle(q.tabs[i],
-              speicherKey: '${q.id}#s$i',
-              loesung: (aufgedeckt && q.tabs[i].passtZu(q.tabL)) ? q.tabL : null,
-              onEingabe: onTabEingabe),
-        if (q.bild != null) AnlageBild(q.bild),
-        const SizedBox(height: 11),
-        if (!aufgedeckt) ..._antwortfeld() else ..._loesung(context),
-      ]),
     );
   }
 
-  List<Widget> _antwortfeld() => [
-        Text('DEINE ANTWORT · WIE IN DER PRÜFUNG',
-            style: TextStyle(
-                fontSize: 10,
-                letterSpacing: .8,
-                fontWeight: FontWeight.w700,
-                color: kMuted)),
-        const SizedBox(height: 6),
-        TextField(
-          controller: controller,
-          maxLines: null,
-          minLines: 3,
-          keyboardType: TextInputType.multiline,
-          textCapitalization: TextCapitalization.sentences,
-          onChanged: onAntwort,
-          decoration: InputDecoration(
-            hintText: 'Antwort schreiben …',
-            filled: true,
-            fillColor: kPaper,
-            contentPadding: const EdgeInsets.symmetric(horizontal: 12, vertical: 11),
-            border: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(12),
-                borderSide: BorderSide(color: kLine)),
-            enabledBorder: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(12),
-                borderSide: BorderSide(color: kLine)),
-            focusedBorder: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(12),
-                borderSide: BorderSide(color: kPetrol)),
-          ),
-        ),
-        const SizedBox(height: 9),
-        SizedBox(
-          width: double.infinity,
-          child: FilledButton(
-            onPressed: onAufdecken,
-            style: FilledButton.styleFrom(
-                backgroundColor: kPetrol,
-                padding: const EdgeInsets.symmetric(vertical: 11)),
-            child: Text('Lösung zu ${frage.teil}) aufdecken',
-                style: const TextStyle(fontWeight: FontWeight.w700, fontSize: 12.5)),
-          ),
-        ),
-      ];
+  /// Bild-Anlage für „Auf der Anlage“ – nur, wenn es sie als Bild gibt.
+  String? _skizzenAnlage(Question q) {
+    final ref = q.bildEffektiv;
+    return DataService.instance.anlage(ref) == null ? null : ref;
+  }
 
-  List<Widget> _loesung(BuildContext context) {
-    final q = frage;
-    final eigene = AnswerStore.instance.get(q.id).trim();
-    final max = q.maxPoints;
-    return [
-      Divider(color: kLine, height: 18),
-      Text('DEINE ANTWORT',
-          style: TextStyle(
-              fontSize: 10,
-              letterSpacing: .8,
-              fontWeight: FontWeight.w700,
-              color: kPetrolDeep)),
-      const SizedBox(height: 5),
-      Container(
-        width: double.infinity,
-        padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 8),
-        decoration:
-            BoxDecoration(color: kBgTint, borderRadius: BorderRadius.circular(8)),
-        child: Text(eigene.isEmpty ? '— leer abgegeben —' : eigene,
-            style: TextStyle(
-                fontSize: 13,
-                height: 1.55,
-                fontStyle: eigene.isEmpty ? FontStyle.italic : FontStyle.normal,
-                color: eigene.isEmpty ? kMuted : kInk)),
+  Widget _fuss(List<Question> teile, double breite) {
+    final alleOffen = teile.every((q) => _aufgedeckt.contains(q.id));
+    final letzte = _pos >= _nummern.length - 1;
+    final laeuft = _laeuft;
+    final handy = breite <= 520;
+    final stil = OutlinedButton.styleFrom(
+      foregroundColor: kPetrolInk,
+      side: BorderSide(color: kLineStrong),
+      minimumSize: const Size(0, 44),
+      padding: const EdgeInsets.symmetric(horizontal: 15),
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+      textStyle: const TextStyle(fontFamily: 'Inter', fontSize: 13, fontWeight: FontWeight.w700),
+    );
+    final neben = <Widget>[
+      if (_pos > 0)
+        OutlinedButton(onPressed: () => _wechsle(_nummern[_pos - 1]), style: stil, child: Text('← Aufgabe ${_nummern[_pos - 1]}')),
+      // Unter Prüfungsbedingungen gibt es vor der Abgabe nichts aufzudecken.
+      if (!laeuft)
+        alleOffen
+            ? OutlinedButton(onPressed: () => _kopieren(teile), style: stil, child: const Text('Von einer KI prüfen lassen'))
+            : OutlinedButton(
+                onPressed: () => setState(() => _aufgedeckt.addAll(teile.map((q) => q.id))),
+                style: stil,
+                child: const Text('Alle Lösungen aufdecken'),
+              ),
+    ];
+    final haupt = FilledButton(
+      onPressed: () {
+        if (letzte) {
+          laeuft ? _abgebenFragen() : _zumErgebnis();
+        } else {
+          _wechsle(_nummern[_pos + 1]);
+        }
+      },
+      style: FilledButton.styleFrom(
+        minimumSize: const Size(0, 48),
+        padding: const EdgeInsets.symmetric(horizontal: 20),
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+        textStyle: const TextStyle(fontFamily: 'Inter', fontSize: 13.5, fontWeight: FontWeight.w700),
       ),
-      /// Die ausgefüllte Anlage steht nur dann hier, wenn sie nicht schon oben
-      /// in der Anlage selbst gezeigt wird (dort mit den eigenen Eingaben).
-      if (q.tabL != null &&
-          !q.tabs.any((t) => t.passtZu(q.tabL)) &&
-          !(q.aufgabe?.tabs ?? const <Anlage>[]).any((t) => t.passtZu(q.tabL)))
-        AnlageTabelle(q.tabL!),
-      const SizedBox(height: 11),
-      Text(
-          q.amtlich
-              ? 'AMTLICHE LÖSUNGSHINWEISE · IHK'
-              : 'MUSTERLÖSUNG · NICHT AMTLICH',
-          style: TextStyle(
-              fontSize: 10,
-              letterSpacing: .8,
-              fontWeight: FontWeight.w700,
-              color: kPetrolDeep)),
-      const SizedBox(height: 5),
-      Text(q.a ?? q.e,
-          style: TextStyle(fontSize: 13.5, height: 1.6, color: kInk)),
-      if ((q.vo ?? '').isNotEmpty) ...[
-        const SizedBox(height: 7),
-        Text('VO-Bezug: ${q.vo}',
-            style: TextStyle(fontSize: 11.5, color: kMuted)),
-      ],
-      if (q.bildL != null) AnlageBild(q.bildL, fallbackTitel: 'Lösungsskizze der IHK'),
-      if (q.bewertung.isNotEmpty) ...[
-        const SizedBox(height: 7),
-        Text('Punkteverteilung: ${q.bewertung.join(' + ')} Punkte',
-            style: TextStyle(fontSize: 11.5, color: kMuted)),
-      ],
-      const SizedBox(height: 12),
-      if (max > 0) ..._punkteWahl(max) else ..._gewusstWahl(),
-    ];
+      child: Text(letzte ? (laeuft ? 'Abgeben' : 'Zum Ergebnis →') : 'Aufgabe ${_nummern[_pos + 1]} →'),
+    );
+    return Container(
+      margin: const EdgeInsets.only(top: 4),
+      padding: const EdgeInsets.only(top: 15),
+      decoration: BoxDecoration(border: Border(top: BorderSide(color: kLine))),
+      child: handy
+          ? Column(crossAxisAlignment: CrossAxisAlignment.stretch, children: [
+              if (neben.isNotEmpty) ...[
+                Wrap(spacing: 9, runSpacing: 9, children: neben),
+                const SizedBox(height: 9),
+              ],
+              haupt,
+            ])
+          : Row(children: [
+              for (final b in neben) ...[b, const SizedBox(width: 9)],
+              const Spacer(),
+              haupt,
+            ]),
+    );
   }
 
-  List<Widget> _punkteWahl(int max) {
-    final cur = AnswerStore.instance.points(frage.id);
-    return [
-      Text('Wie viele Punkte hättest du bekommen?',
-          style: TextStyle(fontSize: 12, color: kMuted)),
-      const SizedBox(height: 7),
-      Wrap(spacing: 6, runSpacing: 6, children: [
-        for (var p = 0; p <= max; p++)
-          _punkteKnopf('$p', cur == p, () => onPunkte(p)),
-      ]),
-      const SizedBox(height: 6),
-      Text(
-          cur != null
-              ? 'Bewertet: $cur von $max Punkten'
-              : 'Vergib dir 0–$max Punkte – so zählt die Aufgabe am Ende zum '
-                  'Gesamtergebnis.',
-          style: TextStyle(fontSize: 11.5, color: kMuted)),
+  /// Die ganze Aufgabe als Prüfauftrag – mit allen Teilen, damit die KI den
+  /// Zusammenhang sieht, auf den die Teilaufgaben aufbauen (Web `blExport`).
+  Future<void> _kopieren(List<Question> teile) async {
+    final f = widget.fall;
+    final auf = _aufgabe;
+    final amtlich = teile.any((q) => q.amtlich);
+    final l = <String>[
+      'PRÜFAUFTRAG – Aufgabe $_nr einer Original-IHK-Prüfung',
+      '',
+      'Unten stehen eine vollständige Prüfungsaufgabe mit allen Teilaufgaben, MEINE eigenen Antworten und '
+          '${amtlich ? 'die AMTLICHEN Lösungshinweise der IHK.' : 'Musterlösungen, die NICHT von der IHK stammen.'}',
+      '',
+      'Bewerte je Teilaufgabe MEINE Antwort:',
+      '1. Wie viele der jeweils möglichen Punkte würdest du vergeben? Begründe kurz.',
+      '2. Was fehlt zur vollen Punktzahl? Nenne die fehlenden Elemente konkret.',
+      '3. Welche fachlichen Fehler enthält meine Antwort (falsche Aussage, falsche Rechnung, veraltete Rechtsgrundlage)?',
+      'Bei Rechenaufgaben: rechne eigenständig nach und zeige deinen Rechenweg.',
+      '',
+      '==============================',
+      f.title,
+      '==============================',
+      '',
     ];
+    if (f.context.isNotEmpty) l.addAll(['AUSGANGSSITUATION', f.context, '']);
+    l.add('AUFGABE $_nr${(auf?.pts ?? 0) > 0 ? ' · ${auf!.pts} Punkte' : ''}');
+    if ((auf?.sit ?? '').isNotEmpty) l.addAll(['', auf!.sit]);
+    if (auf != null && auf.tabs.isNotEmpty) l.addAll(['', auf.tabs.map((t) => t.asText()).join('\n\n')]);
+    for (var i = 0; i < (auf?.tabs.length ?? 0); i++) {
+      final t = auf!.tabs[i];
+      final w = AnswerStore.instance.tabWerte(_tabKey(auf.nr, i));
+      if (w.isEmpty) continue;
+      l.addAll(['', 'Eigene Eintragungen in „${t.titel.isEmpty ? 'Anlage' : t.titel}“:']);
+      for (final rc in w.keys.toList()..sort()) {
+        final p = rc.split('-');
+        final ri = int.tryParse(p.first) ?? 0, ci = int.tryParse(p.last) ?? 0;
+        final zeile = ri < t.zeilen.length ? t.zeilen[ri] : const <String>[];
+        final z = zeile.isNotEmpty && zeile.first.isNotEmpty ? zeile.first : 'Zeile ${ri + 1}';
+        final k = ci < t.kopf.length && t.kopf[ci].isNotEmpty ? t.kopf[ci] : 'Spalte ${ci + 1}';
+        l.add('– $z / $k: ${w[rc]}');
+      }
+    }
+    final ab = DataService.instance.anlage(auf?.bild);
+    if (ab != null) l.addAll(['', '[Zur Aufgabe gehört eine Abbildung: ${ab.titel.isNotEmpty ? ab.titel : 'Anlage zur Aufgabe'}]']);
+    l.add('');
+    for (final q in teile) {
+      l.addAll(['------------------------------', '${q.teil}) · ${q.pts} ${q.pts == 1 ? 'Punkt' : 'Punkte'}', '', q.q]);
+      if (q.tabs.isNotEmpty) l.addAll(['', q.tabs.map((t) => t.asText()).join('\n\n')]);
+      final b = DataService.instance.anlage(q.bild);
+      if (b != null) l.addAll(['', '[Zur Teilaufgabe gehört eine Abbildung: ${b.titel.isNotEmpty ? b.titel : 'Anlage'}]']);
+      final eigene = AnswerStore.instance.antwortText(q.id);
+      l.addAll([
+        '',
+        'MEINE ANTWORT:',
+        eigene.isEmpty ? '— leer abgegeben —' : eigene,
+        '',
+        q.amtlich ? 'AMTLICHER LÖSUNGSHINWEIS (IHK):' : 'MUSTERLÖSUNG (zu prüfen):',
+        q.a ?? q.e,
+      ]);
+      if ((q.vo ?? '').isNotEmpty) l.add('VO-Bezug: ${q.vo}');
+      if (q.bewertung.isNotEmpty) l.add('Punkteverteilung: ${q.bewertung.join(' + ')} Punkte');
+      l.add('');
+    }
+    l.addAll(['==============================', 'Nenne abschließend die Gesamtpunktzahl, die du für Aufgabe $_nr vergeben würdest.']);
+
+    await Clipboard.setData(ClipboardData(text: l.join('\n')));
+    if (!mounted) return;
+    ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(content: Text('Aufgabe mit deinen Antworten kopiert – jetzt in eine KI einfügen.')));
+  }
+}
+
+/// Uhr unter Prüfungsbedingungen: Restzeit „1:29:45“, ab 10 Minuten rot; nach
+/// der Abgabe die Bearbeitungszeit („1 h 12 min“).
+class _Uhr extends StatefulWidget {
+  final EchtLauf lauf;
+  final VoidCallback onAblauf;
+  const _Uhr({required this.lauf, required this.onAblauf});
+
+  @override
+  State<_Uhr> createState() => _UhrState();
+}
+
+class _UhrState extends State<_Uhr> {
+  Timer? _takt;
+
+  @override
+  void initState() {
+    super.initState();
+    _starten();
   }
 
-  List<Widget> _gewusstWahl() => [
-        Text('Konntest du die Aufgabe?',
-            style: TextStyle(fontSize: 12, color: kMuted)),
-        const SizedBox(height: 7),
-        Row(children: [
-          Expanded(
-            child: OutlinedButton(
-              onPressed: () => onGewusst(false),
-              style: OutlinedButton.styleFrom(
-                  foregroundColor: kErr,
-                  backgroundColor:
-                      ergebnis == false ? kErr.withValues(alpha: .12) : null,
-                  side: BorderSide(color: kErr, width: ergebnis == false ? 2 : 1),
-                  padding: const EdgeInsets.symmetric(vertical: 11)),
-              child: const Text('Nicht gewusst',
-                  style: TextStyle(fontWeight: FontWeight.w600, fontSize: 13)),
-            ),
-          ),
-          const SizedBox(width: 9),
-          Expanded(
-            child: OutlinedButton(
-              onPressed: () => onGewusst(true),
-              style: OutlinedButton.styleFrom(
-                  foregroundColor: kOk,
-                  backgroundColor:
-                      ergebnis == true ? kOk.withValues(alpha: .12) : null,
-                  side: BorderSide(color: kOk, width: ergebnis == true ? 2 : 1),
-                  padding: const EdgeInsets.symmetric(vertical: 11)),
-              child: const Text('Gewusst',
-                  style: TextStyle(fontWeight: FontWeight.w600, fontSize: 13)),
-            ),
-          ),
-        ]),
-      ];
+  @override
+  void didUpdateWidget(covariant _Uhr alt) {
+    super.didUpdateWidget(alt);
+    if (alt.lauf.abgegeben != widget.lauf.abgegeben || alt.lauf.start != widget.lauf.start) _starten();
+  }
 
-  Widget _punkteKnopf(String text, bool gewaehlt, VoidCallback onTap) => InkWell(
-        onTap: onTap,
-        borderRadius: BorderRadius.circular(8),
-        child: Container(
-          constraints: const BoxConstraints(minWidth: 38),
-          padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 9),
-          alignment: Alignment.center,
-          decoration: BoxDecoration(
-            color: gewaehlt ? kPetrol : kPaper,
-            border: Border.all(color: gewaehlt ? kPetrol : kLine),
-            borderRadius: BorderRadius.circular(8),
-          ),
-          child: Text(text,
-              style: TextStyle(
-                  fontSize: 13,
-                  fontWeight: FontWeight.w700,
-                  color: gewaehlt ? Colors.white : kInk)),
+  void _starten() {
+    _takt?.cancel();
+    if (widget.lauf.abgegeben) return;
+    _takt = Timer.periodic(const Duration(seconds: 1), (_) {
+      if (!mounted) return;
+      if (widget.lauf.rest() <= 0) {
+        _takt?.cancel();
+        widget.onAblauf();
+      } else {
+        setState(() {});
+      }
+    });
+  }
+
+  @override
+  void dispose() {
+    _takt?.cancel();
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final e = widget.lauf;
+    final rest = e.rest();
+    final knapp = !e.abgegeben && rest <= 10 * 60000;
+    return Semantics(
+      label: e.abgegeben ? 'Bearbeitungszeit' : 'Verbleibende Zeit',
+      child: Container(
+        padding: const EdgeInsets.symmetric(horizontal: 9, vertical: 6),
+        decoration: BoxDecoration(
+          color: knapp ? kErrSoft : kPetrolSoft,
+          border: Border.all(color: knapp ? kErrLine : kPetrolLine),
+          borderRadius: BorderRadius.circular(8),
         ),
-      );
+        child: Text(e.abgegeben ? dauerText(e.dauer) : uhrText(rest),
+            style: monoStyle(13, color: knapp ? kErrInk : kPetrolInkDeep, weight: FontWeight.w600, spacing: 0)),
+      ),
+    );
+  }
 }
