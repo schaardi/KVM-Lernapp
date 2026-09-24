@@ -4,6 +4,7 @@ import '../../constants.dart';
 import '../../services/auth_service.dart';
 import '../../services/premium_service.dart';
 import '../../theme/theme_controller.dart';
+import '../../version.dart';
 import '../../widgets/konto/erinnerung_block.dart';
 import '../../widgets/premium_sheet.dart';
 import '../../widgets/ui.dart';
@@ -45,6 +46,11 @@ class KontoSeite extends StatelessWidget {
                 textAlign: TextAlign.center,
                 style: TextStyle(fontSize: 12, height: 1.5, color: kMuted),
               ),
+            ),
+            Padding(
+              padding: const EdgeInsets.only(top: 10),
+              child: Text('Version $kAppVersion',
+                  textAlign: TextAlign.center, style: monoStyle(10.5, spacing: 0.4)),
             ),
           ]),
         ),

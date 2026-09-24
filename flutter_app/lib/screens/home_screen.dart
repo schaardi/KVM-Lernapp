@@ -2,7 +2,6 @@
 // bewusst ohne `const`.
 // ignore_for_file: prefer_const_constructors
 import 'package:flutter/material.dart';
-import 'package:supabase_flutter/supabase_flutter.dart';
 import '../config.dart';
 import '../constants.dart';
 import '../services/app_state.dart';
@@ -80,17 +79,11 @@ class _HomeScreenState extends State<HomeScreen> {
     _neu();
   }
 
-  /// Gibt es die Rangliste (docs/supabase-rangliste.sql)? Sonst entfällt der
-  /// Reiter „Vergleich“.
-  Future<void> _vergleichPruefen() async {
+  /// Ohne Anmeldung/Supabase gibt es keine Rangliste – dann entfällt der
+  /// Reiter „Vergleich“. Sonst meldet der Vergleich-Dienst nach dem ersten
+  /// Laden, ob es die Rangliste gibt (docs/supabase-rangliste.sql).
+  void _vergleichPruefen() {
     if (!Config.authEnabled || !AuthService.instance.ready) {
-      _st.vergleichVerfuegbar.value = false;
-      return;
-    }
-    try {
-      await Supabase.instance.client.rpc('rangliste_info');
-      _st.vergleichVerfuegbar.value = true;
-    } catch (_) {
       _st.vergleichVerfuegbar.value = false;
     }
   }
