@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Symbol der Lern-Erinnerung in der Statusleiste: aufgeschlagenes Buch,
+     einfarbig weiß (Android färbt es selbst ein). -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp"
+    android:height="24dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24">
+    <path
+        android:fillColor="#FFFFFFFF"
+        android:pathData="M3,5.5C5.5,4.8 8.5,5 11,6.5L11,19.5C8.5,18 5.5,17.8 3,18.5Z" />
+    <path
+        android:fillColor="#FFFFFFFF"
+        android:pathData="M13,6.5C15.5,5 18.5,4.8 21,5.5L21,18.5C18.5,17.8 15.5,18 13,19.5Z" />
+</vector>

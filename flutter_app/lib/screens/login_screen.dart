@@ -53,11 +53,11 @@ class _LoginScreenState extends State<LoginScreen> {
                 ),
               ),
               const SizedBox(height: 22),
-              const Text('Industriemeister Trainer',
+              Text('Industriemeister Trainer',
                   textAlign: TextAlign.center,
                   style: TextStyle(fontSize: 24, fontWeight: FontWeight.w800, color: kInk, height: 1.15)),
               const SizedBox(height: 8),
-              const Text(
+              Text(
                 'Melde dich an, damit dein Lernfortschritt auf allen deinen Geräten '
                 'verfügbar ist und gesichert bleibt.',
                 textAlign: TextAlign.center,
@@ -68,10 +68,14 @@ class _LoginScreenState extends State<LoginScreen> {
                 width: double.infinity,
                 child: FilledButton.icon(
                   onPressed: _busy ? null : _signIn,
+                  // Dunkle Fläche im hellen Modus, helle im dunklen – die Schrift
+                  // nimmt jeweils die Gegenfarbe (Seitenfarbe).
                   style: FilledButton.styleFrom(
-                      backgroundColor: kInk, padding: const EdgeInsets.symmetric(vertical: 16)),
+                      backgroundColor: kInk,
+                      foregroundColor: kBg,
+                      padding: const EdgeInsets.symmetric(vertical: 16)),
                   icon: _busy
-                      ? const SizedBox(width: 20, height: 20, child: CircularProgressIndicator(strokeWidth: 2, color: Colors.white))
+                      ? SizedBox(width: 20, height: 20, child: CircularProgressIndicator(strokeWidth: 2, color: kBg))
                       : const Icon(Icons.g_mobiledata, size: 28),
                   label: Text(_busy ? 'Anmelden …' : 'Mit Google anmelden',
                       style: const TextStyle(fontSize: 15, fontWeight: FontWeight.w700)),
@@ -80,10 +84,10 @@ class _LoginScreenState extends State<LoginScreen> {
               if (_error != null) ...[
                 const SizedBox(height: 14),
                 Text(_error!, textAlign: TextAlign.center,
-                    style: const TextStyle(color: kErr, fontSize: 13)),
+                    style: TextStyle(color: kErr, fontSize: 13)),
               ],
               const SizedBox(height: 24),
-              const Text('Anmeldung erforderlich',
+              Text('Anmeldung erforderlich',
                   style: TextStyle(color: kMuted, fontSize: 11.5, fontWeight: FontWeight.w600)),
             ]),
           ),

@@ -315,7 +315,7 @@ class _TeilkostenCalcState extends State<TeilkostenCalc> {
           'Relativer DB = DB je Stück ÷ Engpassverbrauch je Stück',
         ]),
 
-        const InfoBox(
+        InfoBox(
           color: kErr,
           icon: Icons.warning_amber_rounded,
           title: 'Prüfungsfalle',

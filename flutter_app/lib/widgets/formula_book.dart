@@ -1,3 +1,4 @@
+import 'dart:math' as math;
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import '../constants.dart';
@@ -9,8 +10,15 @@ import 'calc_kit.dart';
 /// Durchsuchbares Formelbuch: Kalkulationsschemas zum Ausfüllen und Formeln,
 /// die mit eigenen Zahlen rechnen. Inhalte und Rechenwege stammen aus
 /// assets/data/formulas.json – dieselbe Quelle wie in der Web-App.
+///
+/// [onVorlage] nimmt eine Vorlage für das Antwortfeld der offenen
+/// Teilaufgabe entgegen (FR-002 C.4). Gibt der Callback als
+/// `String? Function(String)` das Ziel zurück („Aufgabe 1 a)“), steht es im
+/// Hinweis. Ohne Callback (Startseite) landet die Vorlage in der
+/// Zwischenablage.
 class FormulaBook extends StatefulWidget {
-  const FormulaBook({super.key});
+  final void Function(String text)? onVorlage;
+  const FormulaBook({super.key, this.onVorlage});
   @override
   State<FormulaBook> createState() => _FormulaBookState();
 }
@@ -40,9 +48,78 @@ String _fmtKurz(double x) {
   return s;
 }
 
+/// Weiche Trennstellen (U+00AD) an den Fugen typischer Kostenbegriffe
+/// (FR-002 H, Web `weich()`): „Fertigungs·gemein·kosten“ bricht auf schmalen
+/// Handys mit Bindestrich statt mitten im Wort. Nur fürs Anzeigen – Vorlagen
+/// und Zwischenablage nutzen den Originaltext.
+final RegExp _fuge = RegExp(r'(Material|Fertigungs|Verwaltungs|Vertriebs|Sonder|einzel|'
+    r'gemein|Herstell|Selbst|Listen|verkaufs|Bezugs|Einstands|Kunden)(?=[a-zäöüß]{4,})');
+String weich(String s) => s.replaceAllMapped(_fuge, (m) => '${m[1]}­');
+
+enum _HinweisArt { normal, ok, warnung }
+
+/// Zahlenfeld im Kalkulationsschema – wie `NumField`, aber mit wählbarem
+/// Innenabstand: Im 58 breiten Prozentfeld muss „210 %“ Platz haben.
+class _Zahlfeld extends StatelessWidget {
+  final TextEditingController controller;
+  final VoidCallback onChanged;
+  final String? suffix;
+  final String hint;
+  final Color? hintColor;
+  final double width;
+  final double innen;
+  const _Zahlfeld({
+    required this.controller,
+    required this.onChanged,
+    required this.hint,
+    required this.width,
+    this.suffix,
+    this.hintColor,
+    this.innen = 8,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    final rand = OutlineInputBorder(
+      borderRadius: BorderRadius.circular(8),
+      borderSide: BorderSide(color: kLine),
+    );
+    return SizedBox(
+      width: width,
+      child: TextField(
+        controller: controller,
+        onChanged: (_) => onChanged(),
+        textAlign: TextAlign.right,
+        keyboardType: const TextInputType.numberWithOptions(decimal: true, signed: true),
+        style: TextStyle(fontSize: 13.5, fontWeight: FontWeight.w600, color: kInk),
+        decoration: InputDecoration(
+          isDense: true,
+          hintText: hint,
+          hintStyle: TextStyle(color: hintColor ?? kMuted, fontWeight: FontWeight.w400),
+          suffixText: suffix,
+          suffixStyle: TextStyle(fontSize: 11.5, color: kMuted),
+          contentPadding: EdgeInsets.symmetric(horizontal: innen, vertical: 8),
+          filled: true,
+          fillColor: kBgTint.withValues(alpha: 0.55),
+          border: rand,
+          enabledBorder: rand,
+          focusedBorder: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(8),
+            borderSide: BorderSide(color: kPetrol, width: 1.6),
+          ),
+        ),
+      ),
+    );
+  }
+}
+
 class _FormulaBookState extends State<FormulaBook> {
   String _q = '';
   final Map<String, TextEditingController> _ctl = {};
+
+  /// Rückmeldung nach „Vorlage ins Antwortfeld“ je Karte – bis zur nächsten
+  /// Eingabe (wie im Web, wo der Hinweis dann neu berechnet wird).
+  final Map<String, (String, _HinweisArt)> _meldung = {};
 
   @override
   void dispose() {
@@ -56,6 +133,8 @@ class _FormulaBookState extends State<FormulaBook> {
       _ctl.putIfAbsent(key, () => TextEditingController(text: initial ?? ''));
 
   double? _val(String key) => parseDe(_c(key).text);
+
+  void _eingabe() => setState(_meldung.clear);
 
   @override
   Widget build(BuildContext context) {
@@ -82,8 +161,8 @@ class _FormulaBookState extends State<FormulaBook> {
           searching: q.isNotEmpty));
     }
     if (tiles.isEmpty) {
-      tiles.add(const Padding(
-        padding: EdgeInsets.only(top: 24),
+      tiles.add(Padding(
+        padding: const EdgeInsets.only(top: 24),
         child: Text('Keine Formel gefunden.',
             textAlign: TextAlign.center,
             style: TextStyle(color: kMuted, fontSize: 14)),
@@ -93,10 +172,10 @@ class _FormulaBookState extends State<FormulaBook> {
     return Column(
       children: [
         Padding(
-          padding: const EdgeInsets.all(14),
+          padding: const EdgeInsets.fromLTRB(14, 14, 14, 10),
           child: TextField(
             decoration: InputDecoration(
-              hintText: 'Formel suchen (z. B. Selbstkosten, Akkord, Zins) …',
+              hintText: 'Formel suchen (z. B. Deckungsbeitrag, Bestellmenge, Zins) …',
               prefixIcon: const Icon(Icons.search),
               border: OutlineInputBorder(borderRadius: BorderRadius.circular(10)),
               isDense: true,
@@ -133,19 +212,19 @@ class _FormulaBookState extends State<FormulaBook> {
           title: Row(children: [
             Expanded(
               child: Text(group.toUpperCase(),
-                  style: const TextStyle(
+                  style: TextStyle(
                       fontSize: 11.5,
                       letterSpacing: 0.8,
                       fontWeight: FontWeight.w800,
-                      color: kPetrolDeep)),
+                      color: kPetrolInkDeep)),
             ),
             Container(
               padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 2),
               decoration: BoxDecoration(
                   color: kPetrolSoft, borderRadius: BorderRadius.circular(10)),
               child: Text('${items.length + schemas.length}',
-                  style: const TextStyle(
-                      fontSize: 11, fontWeight: FontWeight.w700, color: kPetrolDeep)),
+                  style: TextStyle(
+                      fontSize: 11, fontWeight: FontWeight.w700, color: kPetrolInkDeep)),
             ),
           ]),
           children: [
@@ -172,7 +251,7 @@ class _FormulaBookState extends State<FormulaBook> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(it.name,
-              style: const TextStyle(fontWeight: FontWeight.w700, color: kInk)),
+              style: TextStyle(fontWeight: FontWeight.w700, color: kInk)),
           const SizedBox(height: 5),
           Container(
             width: double.infinity,
@@ -180,14 +259,14 @@ class _FormulaBookState extends State<FormulaBook> {
             decoration: BoxDecoration(
                 color: kPetrolSoft, borderRadius: BorderRadius.circular(6)),
             child: Text(it.eq,
-                style: const TextStyle(
-                    fontFamily: 'monospace', color: kPetrolDeep)),
+                style: TextStyle(
+                    fontFamily: 'IBMPlexMono', color: kPetrolInkDeep)),
           ),
           if (it.computable) ..._rechner(group, it),
           if (it.note != null) ...[
             const SizedBox(height: 5),
             Text(it.note!,
-                style: const TextStyle(fontSize: 12, color: kMuted)),
+                style: TextStyle(fontSize: 12, color: kMuted)),
           ],
         ],
       ),
@@ -227,25 +306,32 @@ class _FormulaBookState extends State<FormulaBook> {
       }
     }
 
+    final karte = 'f|$group|${it.name}';
     return [
       const SizedBox(height: 8),
       for (final vr in it.vars)
         Padding(
           padding: const EdgeInsets.only(bottom: 6),
-          child: Row(children: [
-            Expanded(
-              child: Text(vr.n,
-                  style: const TextStyle(fontSize: 12, color: kMuted)),
-            ),
-            const SizedBox(width: 8),
-            NumField(
-              controller: _c('$group|${it.name}|${vr.k}'),
-              onChanged: () => setState(() {}),
-              suffix: vr.u.isEmpty ? null : vr.u,
-              hint: '—',
-              width: 124,
-            ),
-          ]),
+          // Auf schmalen Handys (360 dp) darf das Feld nicht aus der Karte
+          // ragen: höchstens 124 breit, sonst so viel, wie neben der
+          // Beschriftung Platz ist (FR-002 H.3).
+          child: LayoutBuilder(builder: (context, box) {
+            final feld = math.min(124.0, math.max(72.0, (box.maxWidth - 8) * 0.55));
+            return Row(children: [
+              Expanded(
+                child: Text(vr.n,
+                    style: TextStyle(fontSize: 12, color: kMuted)),
+              ),
+              const SizedBox(width: 8),
+              NumField(
+                controller: _c('$group|${it.name}|${vr.k}'),
+                onChanged: _eingabe,
+                suffix: vr.u.isEmpty ? null : vr.u,
+                hint: '—',
+                width: feld,
+              ),
+            ]);
+          }),
         ),
       Container(
         width: double.infinity,
@@ -255,15 +341,15 @@ class _FormulaBookState extends State<FormulaBook> {
         child: Row(children: [
           Expanded(
             child: Text('= ${it.resultName}',
-                style: const TextStyle(
-                    fontSize: 12, fontWeight: FontWeight.w600, color: kPetrolDeep)),
+                style: TextStyle(
+                    fontSize: 12, fontWeight: FontWeight.w600, color: kPetrolInkDeep)),
           ),
           Text(ergebnis,
               style: TextStyle(
-                  fontFamily: 'monospace',
+                  fontFamily: 'IBMPlexMono',
                   fontSize: fehlt ? 12.5 : 16,
                   fontWeight: fehlt ? FontWeight.w600 : FontWeight.w800,
-                  color: fehlt ? kMuted : kPetrolDeep)),
+                  color: fehlt ? kMuted : kPetrolInkDeep)),
         ]),
       ),
       if (weg.isNotEmpty) ...[
@@ -271,15 +357,14 @@ class _FormulaBookState extends State<FormulaBook> {
         SingleChildScrollView(
           scrollDirection: Axis.horizontal,
           child: Text(weg,
-              style: const TextStyle(
-                  fontFamily: 'monospace', fontSize: 11.5, color: kMuted)),
+              style: TextStyle(
+                  fontFamily: 'IBMPlexMono', fontSize: 11.5, color: kMuted)),
         ),
       ],
       const SizedBox(height: 8),
-      Align(
-        alignment: Alignment.centerLeft,
-        child: _kleinButton('Als Vorlage', () => _kopieren(_formelText(group, it))),
-      ),
+      _fuss(karte, [
+        _vorlageButton(() => _vorlage(karte, _formelText(group, it))),
+      ], null),
     ];
   }
 
@@ -325,6 +410,7 @@ class _FormulaBookState extends State<FormulaBook> {
       }
     }
 
+    final karte = 'ks|${s.id}';
     return Container(
       width: double.infinity,
       margin: const EdgeInsets.only(bottom: 10),
@@ -336,27 +422,23 @@ class _FormulaBookState extends State<FormulaBook> {
       ),
       child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
         Text(s.name,
-            style: const TextStyle(
+            style: TextStyle(
                 fontWeight: FontWeight.w800, fontSize: 14.5, color: kInk)),
         const SizedBox(height: 3),
         Text(s.note,
-            style: const TextStyle(fontSize: 12, height: 1.45, color: kMuted)),
+            style: TextStyle(fontSize: 12, height: 1.45, color: kMuted)),
         const SizedBox(height: 9),
         for (final r in s.rows) _schemaRow(s, r, out),
         const SizedBox(height: 9),
-        Row(children: [
-          _kleinButton('Beispiel', () => _fuellen(s, _beispiele[s.id])),
-          const SizedBox(width: 7),
-          _kleinButton('Leeren', () => _fuellen(s, null)),
-          const SizedBox(width: 7),
-          _kleinButton('Als Vorlage', () => _kopieren(_schemaText(s, out))),
-        ]),
-        const SizedBox(height: 7),
-        Text(hinweis,
-            style: TextStyle(
-                fontSize: 11.5,
-                height: 1.4,
-                color: warnt ? kErr : kMuted)),
+        _fuss(
+          karte,
+          [
+            _kleinButton('Beispiel', () => _fuellen(s, _beispiele[s.id])),
+            _kleinButton('Leeren', () => _fuellen(s, null)),
+            _vorlageButton(() => _vorlage(karte, _schemaText(s, out))),
+          ],
+          (hinweis, warnt ? _HinweisArt.warnung : _HinweisArt.normal),
+        ),
       ]),
     );
   }
@@ -367,50 +449,84 @@ class _FormulaBookState extends State<FormulaBook> {
     final istSumme = t == 'sum';
     final istUnbekannt = out?.unbekannt == k;
     final berechnet = out == null ? null : out.werte[k];
+    // Schmale Handys (FR-002 H.1): Prozentfeld 58 statt 70, Wertfeld 92 statt
+    // 104, Abstand 5; die Beschriftung bricht um.
+    final schmal = MediaQuery.sizeOf(context).width < 400;
+    final pBreite = schmal ? 58.0 : 70.0;
+    final vBreite = schmal ? 92.0 : 104.0;
+    final abstand = schmal ? 5.0 : 6.0;
 
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 5, vertical: 3),
       margin: const EdgeInsets.only(bottom: 2),
       decoration: BoxDecoration(
         color: istUnbekannt
-            ? kAmber.withValues(alpha: 0.14)
+            ? kAmberSoft
             : (istSumme ? kBgTint.withValues(alpha: 0.5) : null),
         borderRadius: BorderRadius.circular(6),
       ),
       child: Row(children: [
         Expanded(
-          child: Text(r['n'].toString(),
+          child: Text(weich(r['n'].toString()),
               style: TextStyle(
                   fontSize: 12.5,
                   height: 1.25,
                   fontWeight: istSumme ? FontWeight.w700 : FontWeight.w400,
                   color: kInk)),
         ),
-        const SizedBox(width: 6),
+        // Auf schmalen Handys nutzt eine Zeile ohne Satz die Prozentspalte für
+        // die Beschriftung („= Zieleinkaufspreis“ in einer Zeile).
+        if (!schmal || t == 'pct' || t == 'ih') ...[
+        SizedBox(width: abstand),
         SizedBox(
-          width: 70,
+          width: pBreite,
           child: (t == 'pct' || t == 'ih')
-              ? NumField(
+              ? _Zahlfeld(
                   controller: _c('ks|${s.id}|$k|p'),
-                  onChanged: () => setState(() {}),
+                  onChanged: _eingabe,
                   suffix: '%',
                   hint: '${(r['rd'] as num?)?.toInt() ?? 0}',
-                  width: 70,
+                  width: pBreite,
+                  innen: schmal ? 5 : 8,
                 )
               : const SizedBox.shrink(),
         ),
-        const SizedBox(width: 6),
-        NumField(
+        ],
+        SizedBox(width: abstand),
+        _Zahlfeld(
           controller: _c('ks|${s.id}|$k|v'),
-          onChanged: () => setState(() {}),
+          onChanged: _eingabe,
           // Solange das Feld leer ist, steht im Hinweis der errechnete Betrag –
           // in Petrol, damit er sich von einer bloßen Vorbelegung abhebt.
           hint: berechnet == null ? '' : fmtNum(berechnet),
-          hintColor: kPetrolDeep,
-          width: 104,
+          hintColor: kPetrolInkDeep,
+          width: vBreite,
+          innen: schmal ? 6 : 8,
         ),
       ]),
     );
+  }
+
+  /// Knöpfe und Hinweis unter einer Karte (Web `.ks-foot`). Nach „Vorlage ins
+  /// Antwortfeld“ steht dort die Rückmeldung.
+  Widget _fuss(String karte, List<Widget> knoepfe, (String, _HinweisArt)? hinweis) {
+    final zeige = _meldung[karte] ?? hinweis;
+    return Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+      Wrap(spacing: 7, runSpacing: 7, children: knoepfe),
+      if (zeige != null) ...[
+        const SizedBox(height: 7),
+        Text(zeige.$1,
+            style: TextStyle(
+                fontSize: 11.5,
+                height: 1.4,
+                fontWeight: zeige.$2 == _HinweisArt.ok ? FontWeight.w600 : FontWeight.w400,
+                color: switch (zeige.$2) {
+                  _HinweisArt.ok => kPetrolInkDeep,
+                  _HinweisArt.warnung => kErrInk,
+                  _HinweisArt.normal => kMuted,
+                })),
+      ],
+    ]);
   }
 
   /// Kalkulationsschema als Vorlage: jede Zeile untereinander, wie man sie in
@@ -456,37 +572,69 @@ class _FormulaBookState extends State<FormulaBook> {
     return zeilen.join('\n');
   }
 
-  /// Die Vorlage wandert in die Zwischenablage: In der App wird das Formelbuch
-  /// von der Startseite geöffnet, nicht über einer laufenden Prüfung – von
-  /// dort lässt sie sich in das Antwortfeld einfügen und ausfüllen.
-  void _kopieren(String txt) {
-    final bote = ScaffoldMessenger.maybeOf(context);
+  /// „Vorlage ins Antwortfeld“ (Web `fbUebernahme`): mit offenem Antwortfeld
+  /// (Quiz, Aufgabenblatt) dorthin, sonst – etwa von der Startseite aus – in
+  /// die Zwischenablage.
+  void _vorlage(String karte, String txt) {
     if (txt.isEmpty) {
-      bote?.showSnackBar(const SnackBar(
-          content: Text('Diese Formel lässt sich nicht als Vorlage kopieren.')));
+      setState(() => _meldung[karte] =
+          ('Diese Formel lässt sich nicht als Vorlage übernehmen.', _HinweisArt.warnung));
+      return;
+    }
+    final ziel = widget.onVorlage;
+    if (ziel is String? Function(String)) {
+      // Wie Web `KVM_blattAntwort`: Rückgabe = Ziel („Aufgabe 1 a)“), null =
+      // gerade keine Teilaufgabe offen → Zwischenablage.
+      final name = ziel(txt)?.trim();
+      if (name != null) {
+        setState(() => _meldung[karte] = (
+              name.isEmpty
+                  ? 'Als Vorlage in deine Antwort übernommen – dort ausfüllen.'
+                  : 'Als Vorlage in die Antwort zu $name übernommen – dort ausfüllen.',
+              _HinweisArt.ok
+            ));
+        return;
+      }
+    } else if (ziel != null) {
+      ziel(txt);
+      setState(() =>
+          _meldung[karte] = ('Als Vorlage in deine Antwort übernommen – dort ausfüllen.', _HinweisArt.ok));
       return;
     }
     Clipboard.setData(ClipboardData(text: txt));
-    bote?.showSnackBar(const SnackBar(
-        content: Text('Vorlage kopiert – im Aufgabenblatt in das Antwortfeld '
-            'einfügen und dort ausfüllen.')));
+    setState(() => _meldung[karte] =
+        ('Keine Prüfung offen – die Vorlage liegt jetzt in der Zwischenablage.', _HinweisArt.normal));
   }
+
+  Widget _vorlageButton(VoidCallback onTap) => OutlinedButton(
+        onPressed: onTap,
+        style: OutlinedButton.styleFrom(
+          foregroundColor: kPetrolInkDeep,
+          side: BorderSide(color: kPetrol),
+          padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
+          minimumSize: const Size(0, 34),
+          tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+          textStyle: const TextStyle(fontFamily: 'Inter', fontWeight: FontWeight.w700, fontSize: 12),
+        ),
+        child: const Text('Vorlage ins Antwortfeld'),
+      );
 
   Widget _kleinButton(String text, VoidCallback onTap) => OutlinedButton(
         onPressed: onTap,
         style: OutlinedButton.styleFrom(
-          foregroundColor: kPetrol,
-          side: const BorderSide(color: kLine),
+          foregroundColor: kPetrolInk,
+          side: BorderSide(color: kLine),
           padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
-          minimumSize: Size.zero,
+          minimumSize: const Size(0, 34),
           tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+          textStyle: const TextStyle(fontFamily: 'Inter', fontWeight: FontWeight.w600, fontSize: 12),
         ),
-        child: Text(text,
-            style: const TextStyle(fontWeight: FontWeight.w700, fontSize: 12)),
+        child: Text(text),
       );
 
   void _fuellen(CalcSchema s, Map<String, String>? werte) {
     setState(() {
+      _meldung.clear();
       for (final r in s.rows) {
         final k = r['k'] as String;
         _c('ks|${s.id}|$k|v').text = werte?['$k|v'] ?? '';
