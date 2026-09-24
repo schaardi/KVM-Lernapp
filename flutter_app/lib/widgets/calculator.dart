@@ -170,7 +170,7 @@ class _CalculatorSheetState extends State<CalculatorSheet> {
                     backgroundColor: k == '=' ? kPetrol : Colors.white,
                     foregroundColor: k == '=' ? Colors.white : kInk,
                     elevation: 0,
-                    side: const BorderSide(color: kLine),
+                    side: BorderSide(color: kLine),
                   ),
                   child: Text(k, style: const TextStyle(fontSize: 18)),
                 ),

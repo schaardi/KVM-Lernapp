@@ -53,11 +53,11 @@ class _LoginScreenState extends State<LoginScreen> {
                 ),
               ),
               const SizedBox(height: 22),
-              const Text('Industriemeister Trainer',
+              Text('Industriemeister Trainer',
                   textAlign: TextAlign.center,
                   style: TextStyle(fontSize: 24, fontWeight: FontWeight.w800, color: kInk, height: 1.15)),
               const SizedBox(height: 8),
-              const Text(
+              Text(
                 'Melde dich an, damit dein Lernfortschritt auf allen deinen Geräten '
                 'verfügbar ist und gesichert bleibt.',
                 textAlign: TextAlign.center,
@@ -80,10 +80,10 @@ class _LoginScreenState extends State<LoginScreen> {
               if (_error != null) ...[
                 const SizedBox(height: 14),
                 Text(_error!, textAlign: TextAlign.center,
-                    style: const TextStyle(color: kErr, fontSize: 13)),
+                    style: TextStyle(color: kErr, fontSize: 13)),
               ],
               const SizedBox(height: 24),
-              const Text('Anmeldung erforderlich',
+              Text('Anmeldung erforderlich',
                   style: TextStyle(color: kMuted, fontSize: 11.5, fontWeight: FontWeight.w600)),
             ]),
           ),

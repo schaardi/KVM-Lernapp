@@ -62,14 +62,14 @@ class _AccountSheetState extends State<_AccountSheet> {
                 decoration: BoxDecoration(color: kLine, borderRadius: BorderRadius.circular(2))),
           ),
           const SizedBox(height: 16),
-          const Text('Konto & Synchronisierung',
+          Text('Konto & Synchronisierung',
               style: TextStyle(fontSize: 18, fontWeight: FontWeight.w800, color: kInk)),
           const SizedBox(height: 6),
           Text(
             signedIn
                 ? 'Dein Lernfortschritt wird geräteübergreifend gesichert.'
                 : 'Melde dich an, damit dein Lernfortschritt auf allen Geräten verfügbar ist.',
-            style: const TextStyle(color: kMuted, height: 1.35),
+            style: TextStyle(color: kMuted, height: 1.35),
           ),
           const SizedBox(height: 18),
 
@@ -81,15 +81,15 @@ class _AccountSheetState extends State<_AccountSheet> {
                 borderRadius: BorderRadius.circular(kRadiusSm),
               ),
               child: Row(children: [
-                const Icon(Icons.cloud_done_outlined, color: kOk),
+                Icon(Icons.cloud_done_outlined, color: kOk),
                 const SizedBox(width: 12),
                 Expanded(
                   child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
                     Text(auth.displayName ?? auth.email ?? 'Angemeldet',
-                        style: const TextStyle(fontWeight: FontWeight.w700, color: kInk)),
+                        style: TextStyle(fontWeight: FontWeight.w700, color: kInk)),
                     if (auth.email != null && auth.displayName != null)
-                      Text(auth.email!, style: const TextStyle(fontSize: 12, color: kMuted)),
-                    const Text('Fortschritt wird synchronisiert',
+                      Text(auth.email!, style: TextStyle(fontSize: 12, color: kMuted)),
+                    Text('Fortschritt wird synchronisiert',
                         style: TextStyle(fontSize: 12, color: kOk, fontWeight: FontWeight.w600)),
                   ]),
                 ),
@@ -121,7 +121,7 @@ class _AccountSheetState extends State<_AccountSheet> {
             ),
             if (_error != null) ...[
               const SizedBox(height: 10),
-              Text(_error!, style: const TextStyle(color: kErr, fontSize: 13)),
+              Text(_error!, style: TextStyle(color: kErr, fontSize: 13)),
             ],
           ],
         ]),

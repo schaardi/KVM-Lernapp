@@ -76,7 +76,7 @@ class _AnlageTabelleState extends State<AnlageTabelle> {
           child: TextField(
             controller: _controller(rc),
             textAlign: TextAlign.right,
-            style: const TextStyle(fontSize: 12.5, color: kInk),
+            style: TextStyle(fontSize: 12.5, color: kInk),
             keyboardType:
                 const TextInputType.numberWithOptions(decimal: true, signed: true),
             decoration: InputDecoration(
@@ -85,7 +85,7 @@ class _AnlageTabelleState extends State<AnlageTabelle> {
                   const EdgeInsets.symmetric(horizontal: 6, vertical: 7),
               border: OutlineInputBorder(borderRadius: BorderRadius.circular(6)),
               hintText: '–',
-              hintStyle: const TextStyle(fontSize: 12.5, color: kMuted),
+              hintStyle: TextStyle(fontSize: 12.5, color: kMuted),
             ),
             onChanged: (v) {
               AnswerStore.instance.setTab(widget.speicherKey!, rc, v);
@@ -101,13 +101,13 @@ class _AnlageTabelleState extends State<AnlageTabelle> {
     if (s.isEmpty) {
       return Text(e,
           textAlign: TextAlign.right,
-          style: const TextStyle(fontSize: 12, color: kMuted));
+          style: TextStyle(fontSize: 12, color: kMuted));
     }
     final ok = e.isNotEmpty && anlageGleich(s, e);
     return Column(crossAxisAlignment: CrossAxisAlignment.end, children: [
       Text(s,
           textAlign: TextAlign.right,
-          style: const TextStyle(
+          style: TextStyle(
               fontSize: 13, fontWeight: FontWeight.w700, color: kInk)),
       if (e.isNotEmpty)
         Text(ok ? '✓ $e' : e,
@@ -170,7 +170,7 @@ class _AnlageTabelleState extends State<AnlageTabelle> {
       ),
       child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
         Text(a.titel.toUpperCase(),
-            style: const TextStyle(
+            style: TextStyle(
                 fontSize: 10.5,
                 fontWeight: FontWeight.w700,
                 letterSpacing: .8,
@@ -195,11 +195,11 @@ class _AnlageTabelleState extends State<AnlageTabelle> {
         if (a.hinweis.isNotEmpty) ...[
           const SizedBox(height: 9),
           Text(a.hinweis,
-              style: const TextStyle(fontSize: 11.5, height: 1.45, color: kMuted)),
+              style: TextStyle(fontSize: 11.5, height: 1.45, color: kMuted)),
         ],
         if (_ausfuellbar) ...[
           const SizedBox(height: 9),
-          const Text(
+          Text(
               'Die leeren Felder kannst du hier ausfüllen – sie werden '
               'gespeichert und beim Aufdecken mit der amtlichen Lösung verglichen.',
               style: TextStyle(

@@ -51,10 +51,10 @@ class AnlageBild extends StatelessWidget {
           Flexible(
             child: Text(titel,
                 textAlign: TextAlign.center,
-                style: const TextStyle(fontSize: 11.5, height: 1.4, color: kMuted)),
+                style: TextStyle(fontSize: 11.5, height: 1.4, color: kMuted)),
           ),
           const SizedBox(width: 5),
-          const Icon(Icons.zoom_in, size: 13, color: kMuted),
+          Icon(Icons.zoom_in, size: 13, color: kMuted),
         ]),
       ]),
     );

@@ -57,8 +57,11 @@ class _RadarPainter extends CustomPainter {
         text: TextSpan(
           text: '${facher[i]}',
           style: TextStyle(
-            color: kFachColor[facher[i]],
-            fontWeight: FontWeight.w700,
+            fontFamily: 'IBMPlexMono',
+            color: kPalette.isDark
+                ? Color.lerp(kFachColor[facher[i]], Colors.white, 0.4)
+                : kFachColor[facher[i]],
+            fontWeight: FontWeight.w600,
             fontSize: 14,
           ),
         ),
