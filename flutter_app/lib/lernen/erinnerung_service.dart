@@ -136,6 +136,9 @@ class ErinnerungService extends ChangeNotifier {
     final heute = LerntageService.heute();
     final gelernt = LerntageService.instance.anTag(heute) > 0;
     final g = _geplantFuer;
-    if (g == null || g.tag != heute || g.gelernt != gelernt) neuPlanen();
+    if (g != null && g.tag == heute && g.gelernt == gelernt) return;
+    // Schon vormerken – mehrere Antworten kurz hintereinander planen nur einmal.
+    _geplantFuer = (tag: heute, gelernt: gelernt);
+    neuPlanen();
   }
 }

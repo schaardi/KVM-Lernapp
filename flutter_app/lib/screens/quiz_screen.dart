@@ -3,7 +3,6 @@ import 'package:flutter/services.dart';
 import 'package:flutter/material.dart';
 import '../constants.dart';
 import '../features/melden.dart';
-import '../lernen/erinnerung_service.dart';
 import '../lernen/uebernahme.dart';
 import '../models.dart';
 import '../widgets/anlage_bild.dart';
@@ -99,12 +98,9 @@ class _QuizScreenState extends State<QuizScreen> {
     if (_voice) _speakFeedback(correct);
   }
 
-  /// Lernstand und Lerntag zählen; nach der ersten Antwort des Tages plant die
-  /// Lern-Erinnerung neu (heute keine mehr).
-  void _zaehlen(Question q, bool correct) {
-    ProgressService.instance.record(q.id, correct);
-    ErinnerungService.instance.pruefen();
-  }
+  /// Lernstand und Lerntag zählen. Die Lern-Erinnerung hört auf den
+  /// Lernstand (`initLernen`) und plant nach der ersten Antwort des Tages neu.
+  void _zaehlen(Question q, bool correct) => ProgressService.instance.record(q.id, correct);
 
   void _checkMc() {
     if (_answered || _selected == null) return;
@@ -172,37 +168,37 @@ class _QuizScreenState extends State<QuizScreen> {
 
   /// Ziel für Rechner und Formelbuch: das Ergebnisfeld der Rechenfrage oder
   /// die offene Antwort – `null`, solange kein Antwortfeld offen ist.
-  void Function(String text)? get _uebernahmeZiel {
+  /// Die Rückgabe nennt dem Formelbuch das Ziel; `null` heißt „passt nicht“,
+  /// dann legt das Formelbuch die Vorlage in die Zwischenablage.
+  String? Function(String text)? get _uebernahmeZiel {
     if (_q.type == 'calc' && !_answered) return _inErgebnisfeld;
     if (_q.type == 'open' && !_revealed) return _inAntwort;
     return null;
   }
 
-  void _inErgebnisfeld(String text) {
-    if (!mounted || _answered || _q.type != 'calc') return;
-    final wert = inErgebnisfeld(text);
-    if (wert == null) {
-      _inZwischenablage(text);
-      return;
-    }
-    setState(() => _calcCtrl.value = TextEditingValue(text: wert, selection: TextSelection.collapsed(offset: wert.length)));
+  /// Beschriftung im Rechner: „↩ Übernehmen ins Ergebnisfeld“ usw.
+  String? get _zielText {
+    if (_q.type == 'calc' && !_answered) return 'ins Ergebnisfeld';
+    if (_q.type == 'open' && !_revealed) return 'in deine Antwort';
+    return null;
   }
 
-  void _inAntwort(String text) {
-    if (!mounted || _revealed || _q.type != 'open') return;
+  String? _inErgebnisfeld(String text) {
+    if (!mounted || _answered || _q.type != 'calc') return null;
+    final wert = inErgebnisfeld(text);
+    if (wert == null) return null; // etwa eine Formelvorlage
+    setState(() => _calcCtrl.value = TextEditingValue(text: wert, selection: TextSelection.collapsed(offset: wert.length)));
+    return '';
+  }
+
+  String? _inAntwort(String text) {
+    if (!mounted || _revealed || _q.type != 'open') return null;
     final sel = _eigene.selection;
     final r = inAntwort(_eigene.text, text, start: sel.isValid ? sel.start : null, ende: sel.isValid ? sel.end : null);
     AnswerStore.instance.set(_q.id, r.text);
     setState(() => _eigene.value = TextEditingValue(text: r.text, selection: TextSelection.collapsed(offset: r.cursor)));
-  }
-
-  /// Eine Formelvorlage passt nicht ins Ergebnisfeld – sie geht wie im Web
-  /// ohne passendes Antwortfeld in die Zwischenablage.
-  Future<void> _inZwischenablage(String text) async {
-    await Clipboard.setData(ClipboardData(text: text));
-    if (!mounted) return;
-    ScaffoldMessenger.of(context)
-        .showSnackBar(const SnackBar(content: Text('Die Vorlage passt nicht ins Ergebnisfeld – sie liegt jetzt in der Zwischenablage.')));
+    // „Als Vorlage in die Antwort zu Aufgabe 2 b) übernommen“ bzw. „in deine Antwort“
+    return TaskParts.of(_q).nr;
   }
 
   // ---- Sprachbedienung ----
@@ -255,7 +251,14 @@ class _QuizScreenState extends State<QuizScreen> {
   @override
   Widget build(BuildContext context) {
     final last = _idx == widget.pool.length - 1;
-    final tastatur = MediaQuery.viewInsetsOf(context).bottom > 0;
+    // Beschriftung des Rechners erst nach dem Frame setzen – der Rechner hört
+    // darauf und darf nicht mitten im Bauen neu bauen.
+    final ziel = _zielText;
+    if (rechnerZiel.value != ziel) {
+      WidgetsBinding.instance.addPostFrameCallback((_) {
+        if (mounted && rechnerZiel.value != _zielText) rechnerZiel.value = _zielText;
+      });
+    }
     final fach = _istPruefung ? _q.sub.replaceFirst(RegExp(r'^IHK-Prüfung:\s*'), '') : '${_q.f}. ${kFachKurz[_q.f]}';
     return Scaffold(
       backgroundColor: kBg,
@@ -309,11 +312,10 @@ class _QuizScreenState extends State<QuizScreen> {
           ),
         ),
       ]),
-      // Das Dock reserviert seinen Platz und verdeckt nie „Weiter“; solange
-      // die Tastatur offen ist, tritt es zurück.
-      bottomNavigationBar: tastatur
-          ? null
-          : WerkzeugDock(onUebernehmen: _uebernahmeZiel, onSprache: _toggleVoice, spracheAktiv: _voice),
+      // Das Dock reserviert seinen Platz und verdeckt nie „Weiter“; auf dem
+      // Handy dockt der Rechner an seiner Stelle an. Eine offene Tastatur
+      // liegt darüber, der Rechner bleibt dabei erhalten.
+      bottomNavigationBar: WerkzeugDock(onUebernehmen: _uebernahmeZiel, onSprache: _toggleVoice, spracheAktiv: _voice),
     );
   }
 
@@ -447,7 +449,7 @@ class _QuizScreenState extends State<QuizScreen> {
     ]);
   }
 
-  Widget _melden() => MeldenKnopf(frageId: _q.id, bezug: _q.q, kontext: const {'modus': 'scrQuiz'}, kompakt: true);
+  Widget _melden() => MeldenKnopf(frageId: _q.id, bezug: _q.q, kontext: const {'modus': 'quiz'}, kompakt: true);
 
   /// Aufgabenkopf, Ausgangslage und Fragestellung getrennt darstellen – sonst
   /// verschwimmt bei den Original-Prüfungen alles zu einem fetten Textblock.

@@ -1,11 +1,12 @@
-import '../widgets/calc_kit.dart' show parseDe;
+import '../services/rechenkern.dart' show leseZahl;
 
 /// „Übernehmen“ aus dem Werkzeug-Dock ins aktive Antwortfeld des Quiz
 /// (FR-002 C, FR-005 D) – reine Logik, damit sie sich ohne Oberfläche prüfen
 /// lässt.
 
-/// Liest eine Zahl wie das Ergebnisfeld: „1.234,5“, „4.400“, „1.5“, „−3“.
-double? zahlLesen(String s) => parseDe(s.replaceAll('−', '-').replaceAll('–', '-'));
+/// Liest eine Zahl wie das Ergebnisfeld (Web `parseCalcNum`): „1.234,5“,
+/// „4.400“, „1.5“, „−3“.
+double? zahlLesen(String s) => leseZahl(s);
 
 /// Wert fürs Ergebnisfeld der Rechenfrage: ohne Tausenderpunkt („1234,5“),
 /// er ersetzt den Inhalt. Ist [text] keine einzelne Zahl (etwa eine

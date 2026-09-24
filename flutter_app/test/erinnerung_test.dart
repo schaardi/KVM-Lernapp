@@ -2,12 +2,14 @@ import 'dart:convert';
 import 'package:flutter/foundation.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:kvm_trainer/features/init_lernen.dart';
 import 'package:kvm_trainer/lernen/datum.dart';
 import 'package:kvm_trainer/lernen/erinnerung.dart';
 import 'package:kvm_trainer/lernen/erinnerung_service.dart';
 import 'package:kvm_trainer/lernen/lernplan.dart';
 import 'package:kvm_trainer/lernen/mitteilungen.dart';
 import 'package:kvm_trainer/services/lerntage_service.dart';
+import 'package:kvm_trainer/services/progress_service.dart';
 
 /// Lern-Erinnerung (FR-009): was wann geplant wird – ohne Plugin.
 class _Attrappe implements MitteilungsDienst {
@@ -34,6 +36,7 @@ class _Attrappe implements MitteilungsDienst {
 }
 
 void main() {
+  TestWidgetsFlutterBinding.ensureInitialized();
   final jetzt = DateTime(2026, 9, 24, 12, 0); // Donnerstag, Mittag
   final heute = tagVonLokal(jetzt);
 
@@ -169,6 +172,21 @@ void main() {
       er.pruefen();
       await er.neuPlanen(jetzt: morgens);
       expect((await dienst.geplant()).first, 7002);
+    });
+
+    test('Erste Antwort im Lernstand – aus jedem Modus – plant einmal neu', () async {
+      await starten({'kvm_erinnerung': '{"an":true,"zeit":"23:55"}'});
+      await ProgressService.instance.load();
+      await initLernen(); // hört auf den Lernstand
+      await er.neuPlanen();
+      final vorher = dienst.abgebrochen.length;
+      ProgressService.instance.record('B-VW-001', true);
+      await pumpEventQueue();
+      expect(dienst.abgebrochen.length, vorher + 1, reason: 'erste Antwort des Tages');
+      ProgressService.instance.record('B-VW-002', false);
+      er.pruefen();
+      await pumpEventQueue();
+      expect(dienst.abgebrochen.length, vorher + 1, reason: 'danach nicht mehr');
     });
 
     test('Neue Uhrzeit wird gespeichert und neu geplant', () async {
