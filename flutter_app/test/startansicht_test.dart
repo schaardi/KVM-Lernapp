@@ -26,8 +26,8 @@ Map<String, Object> _stand() {
   };
 }
 
-Future<void> _starten(WidgetTester tester) async {
-  tester.view.physicalSize = const Size(390 * 2, 844 * 2);
+Future<void> _starten(WidgetTester tester, {Size groesse = const Size(390, 844)}) async {
+  tester.view.physicalSize = groesse * 2;
   tester.view.devicePixelRatio = 2;
   addTearDown(tester.view.reset);
   SharedPreferences.setMockInitialValues(_stand());
@@ -65,13 +65,44 @@ void main() {
     await tester.pumpAndSettle();
     expect(find.text('PRÜFUNGSREIFE JE FACH'), findsOneWidget);
     expect(find.text('Lernstand zurücksetzen'), findsOneWidget);
-    // Tippen direkt nach dem Wischen zählt nicht; wischen nach oben schließt.
-    await tester.drag(find.text('gemeistert'), const Offset(0, -60));
+    // Schneller Wisch nach oben schließt, nach unten öffnet.
+    await tester.fling(find.text('gemeistert'), const Offset(0, -60), 1000);
     await tester.pumpAndSettle();
     expect(find.text('PRÜFUNGSREIFE JE FACH'), findsNothing);
-    await tester.drag(find.text('gemeistert'), const Offset(0, 60));
+    await tester.pump(const Duration(milliseconds: 600));
+    await tester.fling(find.text('gemeistert'), const Offset(0, 60), 1000);
     await tester.pumpAndSettle();
     expect(find.text('PRÜFUNGSREIFE JE FACH'), findsOneWidget);
+    // Tippen direkt nach dem Wischen zählt nicht.
+    await tester.tap(find.text('STATISTIK'));
+    await tester.pumpAndSettle();
+    expect(find.text('PRÜFUNGSREIFE JE FACH'), findsOneWidget);
+  });
+
+  testWidgets('Statistik folgt beim Ziehen dem Finger und rastet ein', (tester) async {
+    await _starten(tester);
+    double sichtbar() => tester.getSize(find.byType(SizeTransition)).height;
+    // Langsam ein Stück nach unten: Die Leiste folgt dem Finger …
+    final g = await tester.startGesture(tester.getCenter(find.text('gemeistert')));
+    for (var i = 0; i < 10; i++) {
+      await g.moveBy(const Offset(0, 10));
+      await tester.pump(const Duration(milliseconds: 50));
+    }
+    expect(find.text('PRÜFUNGSREIFE JE FACH'), findsOneWidget);
+    final h = sichtbar();
+    expect(h, greaterThan(60));
+    expect(h, lessThan(100));
+    // … und schnappt unter einem Drittel beim Loslassen zurück.
+    await tester.pump(const Duration(milliseconds: 300));
+    await g.up();
+    await tester.pumpAndSettle();
+    expect(find.text('PRÜFUNGSREIFE JE FACH'), findsNothing);
+    // Weit genug gezogen und langsam losgelassen: rastet offen ein.
+    await tester.pump(const Duration(milliseconds: 600));
+    await tester.timedDrag(find.text('gemeistert'), const Offset(0, 420), const Duration(milliseconds: 1600));
+    await tester.pumpAndSettle();
+    expect(find.text('PRÜFUNGSREIFE JE FACH'), findsOneWidget);
+    expect(tester.widget<SizeTransition>(find.byType(SizeTransition)).sizeFactor.value, 1);
   });
 
   testWidgets('Navigation: Seiten wechseln, ohne Rangliste vier Reiter, Zurück führt nach Start', (tester) async {
@@ -94,6 +125,45 @@ void main() {
     await tester.tap(find.text('Lernen').last);
     await tester.pumpAndSettle();
     expect(AppState.instance.seite, AppSeite.lernen);
+  });
+
+  testWidgets('Seitenwechsel gleitet und behält Zustand und Scrollposition', (tester) async {
+    await _starten(tester);
+    await tester.tap(find.widgetWithText(NavigationDestination, 'Lernen'));
+    await tester.pump(const Duration(milliseconds: 120));
+    // Mitten im Wechsel: die alte Seite blendet aus, die neue gleitet herein.
+    expect(find.text('MEISTER FÜR KRAFTVERKEHR'), findsOneWidget);
+    expect(find.text('DEIN LERNWEG'), findsOneWidget);
+    final x = tester.getTopLeft(find.text('DEIN LERNWEG')).dx;
+    await tester.pumpAndSettle();
+    expect(tester.getTopLeft(find.text('DEIN LERNWEG')).dx, lessThan(x));
+    expect(find.text('MEISTER FÜR KRAFTVERKEHR'), findsNothing);
+    // Scrollposition bleibt beim Hin und Her erhalten.
+    await tester.drag(find.text('DEIN LERNWEG'), const Offset(0, -300));
+    await tester.pumpAndSettle();
+    final y = tester.getTopLeft(find.text('DEIN LERNWEG')).dy;
+    await tester.tap(find.widgetWithText(NavigationDestination, 'Konto'));
+    await tester.pumpAndSettle();
+    await tester.tap(find.widgetWithText(NavigationDestination, 'Lernen'));
+    await tester.pumpAndSettle();
+    expect(tester.getTopLeft(find.text('DEIN LERNWEG')).dy, y);
+  });
+
+  testWidgets('Breit: Die Markierung der oberen Leiste gleitet zum neuen Reiter', (tester) async {
+    await _starten(tester, groesse: const Size(1280, 800));
+    Rect marke() => tester.getRect(find.byType(AnimatedPositioned));
+    Rect reiter(String t) => tester.getRect(find.ancestor(of: find.text(t), matching: find.byType(Material)).first);
+    expect(marke(), reiter('Start'));
+    await tester.tap(find.text('Prüfungen').first);
+    // Umbau, dann Vermessen – ab dem nächsten Bild gleitet die Markierung.
+    await tester.pump();
+    await tester.pump();
+    await tester.pump(const Duration(milliseconds: 100));
+    final mitte = marke();
+    expect(mitte.left, greaterThan(reiter('Start').left));
+    expect(mitte.left, lessThan(reiter('Prüfungen').left));
+    await tester.pumpAndSettle();
+    expect(marke(), reiter('Prüfungen'));
   });
 
   testWidgets('Darstellung: Dunkel wirkt sofort und wird gespeichert', (tester) async {
