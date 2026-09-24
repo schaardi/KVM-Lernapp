@@ -77,12 +77,12 @@ class CalcCard extends StatelessWidget {
           Expanded(
             child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
               Text(title,
-                  style: const TextStyle(
+                  style: TextStyle(
                       fontSize: 15.5, fontWeight: FontWeight.w800, color: kInk)),
               if (subtitle != null) ...[
                 const SizedBox(height: 2),
                 Text(subtitle!,
-                    style: const TextStyle(fontSize: 12, color: kMuted, height: 1.3)),
+                    style: TextStyle(fontSize: 12, color: kMuted, height: 1.3)),
               ],
             ]),
           ),
@@ -125,7 +125,7 @@ class NumField extends StatelessWidget {
         onChanged: (_) => onChanged(),
         textAlign: TextAlign.right,
         keyboardType: const TextInputType.numberWithOptions(decimal: true, signed: true),
-        style: const TextStyle(
+        style: TextStyle(
             fontSize: 14, fontWeight: FontWeight.w600, color: kInk),
         decoration: InputDecoration(
           isDense: true,
@@ -133,21 +133,21 @@ class NumField extends StatelessWidget {
           hintStyle: TextStyle(
               color: hintColor ?? kMuted, fontWeight: FontWeight.w400),
           suffixText: suffix,
-          suffixStyle: const TextStyle(fontSize: 12, color: kMuted),
+          suffixStyle: TextStyle(fontSize: 12, color: kMuted),
           contentPadding: const EdgeInsets.symmetric(horizontal: 8, vertical: 8),
           filled: true,
           fillColor: kBgTint.withValues(alpha: 0.55),
           border: OutlineInputBorder(
             borderRadius: BorderRadius.circular(8),
-            borderSide: const BorderSide(color: kLine),
+            borderSide: BorderSide(color: kLine),
           ),
           enabledBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(8),
-            borderSide: const BorderSide(color: kLine),
+            borderSide: BorderSide(color: kLine),
           ),
           focusedBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(8),
-            borderSide: const BorderSide(color: kPetrol, width: 1.6),
+            borderSide: BorderSide(color: kPetrol, width: 1.6),
           ),
         ),
       ),
@@ -194,7 +194,7 @@ class SchemeLine extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.symmetric(vertical: 5),
       decoration: strong
-          ? const BoxDecoration(
+          ? BoxDecoration(
               border: Border(top: BorderSide(color: kLine, width: 1.2)))
           : null,
       child: Row(
@@ -218,7 +218,7 @@ class SchemeLine extends StatelessWidget {
                       color: color)),
               if (note != null)
                 Text(note!,
-                    style: const TextStyle(fontSize: 11, color: kMuted, height: 1.3)),
+                    style: TextStyle(fontSize: 11, color: kMuted, height: 1.3)),
             ]),
           ),
           if (percent != null) ...[
@@ -250,13 +250,14 @@ class SchemeLine extends StatelessWidget {
 class ResultTile extends StatelessWidget {
   final String label;
   final String value;
-  final Color color;
+  final Color? color;
+  Color get _c => color ?? kPetrol;
   final String? hint;
   const ResultTile({
     super.key,
     required this.label,
     required this.value,
-    this.color = kPetrol,
+    this.color,
     this.hint,
   });
 
@@ -265,21 +266,21 @@ class ResultTile extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 11),
       decoration: BoxDecoration(
-        color: color.withValues(alpha: 0.09),
+        color: _c.withValues(alpha: 0.09),
         borderRadius: BorderRadius.circular(kRadiusSm),
-        border: Border.all(color: color.withValues(alpha: 0.28)),
+        border: Border.all(color: _c.withValues(alpha: 0.28)),
       ),
       child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
         Text(label,
-            style: const TextStyle(
+            style: TextStyle(
                 fontSize: 11.5, color: kMuted, fontWeight: FontWeight.w600)),
         const SizedBox(height: 3),
         Text(value,
             style: TextStyle(
-                fontSize: 18, fontWeight: FontWeight.w800, color: color, height: 1.05)),
+                fontSize: 18, fontWeight: FontWeight.w800, color: _c, height: 1.05)),
         if (hint != null) ...[
           const SizedBox(height: 2),
-          Text(hint!, style: const TextStyle(fontSize: 11, color: kMuted)),
+          Text(hint!, style: TextStyle(fontSize: 11, color: kMuted)),
         ],
       ]),
     );
@@ -290,13 +291,14 @@ class ResultTile extends StatelessWidget {
 class InfoBox extends StatelessWidget {
   final String text;
   final IconData icon;
-  final Color color;
+  final Color? color;
+  Color get _c => color ?? kPetrol;
   final String? title;
   const InfoBox({
     super.key,
     required this.text,
     this.icon = Icons.lightbulb_outline,
-    this.color = kPetrol,
+    this.color,
     this.title,
   });
 
@@ -306,23 +308,23 @@ class InfoBox extends StatelessWidget {
       margin: const EdgeInsets.only(bottom: 14),
       padding: const EdgeInsets.all(13),
       decoration: BoxDecoration(
-        color: color.withValues(alpha: 0.08),
+        color: _c.withValues(alpha: 0.08),
         borderRadius: BorderRadius.circular(kRadiusSm),
-        border: Border(left: BorderSide(color: color, width: 3)),
+        border: Border(left: BorderSide(color: _c, width: 3)),
       ),
       child: Row(crossAxisAlignment: CrossAxisAlignment.start, children: [
-        Icon(icon, size: 18, color: color),
+        Icon(icon, size: 18, color: _c),
         const SizedBox(width: 10),
         Expanded(
           child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
             if (title != null) ...[
               Text(title!,
                   style: TextStyle(
-                      fontWeight: FontWeight.w800, fontSize: 13, color: color)),
+                      fontWeight: FontWeight.w800, fontSize: 13, color: _c)),
               const SizedBox(height: 3),
             ],
             Text(text,
-                style: const TextStyle(fontSize: 13, height: 1.45, color: kInkSoft)),
+                style: TextStyle(fontSize: 13, height: 1.45, color: kInkSoft)),
           ]),
         ),
       ]),
@@ -403,19 +405,19 @@ class StepsPanel extends StatelessWidget {
         child: ExpansionTile(
           tilePadding: const EdgeInsets.symmetric(horizontal: 14),
           childrenPadding: const EdgeInsets.fromLTRB(14, 0, 14, 12),
-          leading: const Icon(Icons.functions, color: kPetrol, size: 20),
+          leading: Icon(Icons.functions, color: kPetrol, size: 20),
           title: Text(title,
-              style: const TextStyle(
+              style: TextStyle(
                   fontWeight: FontWeight.w700, fontSize: 14, color: kInk)),
           children: [
             for (final s in steps)
               Padding(
                 padding: const EdgeInsets.only(bottom: 6),
                 child: Row(crossAxisAlignment: CrossAxisAlignment.start, children: [
-                  const Text('· ', style: TextStyle(color: kMuted)),
+                  Text('· ', style: TextStyle(color: kMuted)),
                   Expanded(
                     child: Text(s,
-                        style: const TextStyle(
+                        style: TextStyle(
                             fontSize: 13, height: 1.45, color: kInkSoft)),
                   ),
                 ]),
@@ -470,15 +472,15 @@ class CalcScaffold extends StatelessWidget {
         backgroundColor: kPaper,
         title: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
           Text(title,
-              style: const TextStyle(
+              style: TextStyle(
                   fontSize: 16, fontWeight: FontWeight.w800, color: kInk)),
-          Text(subtitle, style: const TextStyle(fontSize: 11.5, color: kMuted)),
+          Text(subtitle, style: TextStyle(fontSize: 11.5, color: kMuted)),
         ]),
         actions: [
           IconButton(
             tooltip: 'Eingaben leeren',
             onPressed: onReset,
-            icon: const Icon(Icons.backspace_outlined, color: kMuted, size: 20),
+            icon: Icon(Icons.backspace_outlined, color: kMuted, size: 20),
           ),
         ],
       ),

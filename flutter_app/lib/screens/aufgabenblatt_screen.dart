@@ -3,6 +3,7 @@ import 'package:flutter/services.dart';
 
 import '../constants.dart';
 import '../models.dart';
+import '../services/letzte_pruefung.dart';
 import '../services/answer_store.dart';
 import '../services/progress_service.dart';
 import '../services/round_builder.dart';
@@ -60,6 +61,7 @@ class _AufgabenblattScreenState extends State<AufgabenblattScreen> {
         ? _pool[widget.startIndex]
         : null;
     _nr = start?.nr ?? (_nummern.isNotEmpty ? _nummern.first : 0);
+    LetztePruefung.instance.merken(widget.fall.id, _nr);
   }
 
   @override
@@ -132,6 +134,7 @@ class _AufgabenblattScreenState extends State<AufgabenblattScreen> {
 
   void _wechsle(int nr) {
     setState(() => _nr = nr);
+    LetztePruefung.instance.merken(widget.fall.id, nr);
     if (_scroll.hasClients) _scroll.jumpTo(0);
   }
 
@@ -192,12 +195,12 @@ class _AufgabenblattScreenState extends State<AufgabenblattScreen> {
           Text(widget.fall.sub.replaceFirst('IHK-Prüfung: ', ''),
               maxLines: 1,
               overflow: TextOverflow.ellipsis,
-              style: const TextStyle(
+              style: TextStyle(
                   fontSize: 13.5, fontWeight: FontWeight.w800, color: kInk)),
           Text(
             'Aufgabe $_nr von ${_nummern.length}'
             '${(auf?.pts ?? 0) > 0 ? ' · ${auf!.pts} Punkte' : ''}',
-            style: const TextStyle(fontSize: 11.5, color: kMuted),
+            style: TextStyle(fontSize: 11.5, color: kMuted),
           ),
         ]),
       ),
@@ -240,7 +243,7 @@ class _AufgabenblattScreenState extends State<AufgabenblattScreen> {
     return Container(
       width: double.infinity,
       padding: const EdgeInsets.fromLTRB(12, 8, 12, 10),
-      decoration: const BoxDecoration(
+      decoration: BoxDecoration(
         color: kPaper,
         border: Border(bottom: BorderSide(color: kLine)),
       ),
@@ -301,10 +304,10 @@ class _AufgabenblattScreenState extends State<AufgabenblattScreen> {
         decoration: BoxDecoration(
           color: kAmber.withValues(alpha: 0.10),
           borderRadius: BorderRadius.circular(kRadiusSm),
-          border: const Border(left: BorderSide(color: kAmber, width: 3)),
+          border: Border(left: BorderSide(color: kAmber, width: 3)),
         ),
         child: Text(widget.fall.hinweis,
-            style: const TextStyle(fontSize: 12.5, height: 1.5, color: kInkSoft)),
+            style: TextStyle(fontSize: 12.5, height: 1.5, color: kInkSoft)),
       );
 
   Widget _ausgangslage() => Theme(
@@ -322,15 +325,15 @@ class _AufgabenblattScreenState extends State<AufgabenblattScreen> {
             tilePadding: const EdgeInsets.symmetric(horizontal: 12),
             childrenPadding: const EdgeInsets.fromLTRB(12, 0, 12, 12),
             title: Text(widget.fall.title,
-                style: const TextStyle(
+                style: TextStyle(
                     fontSize: 13, fontWeight: FontWeight.w700, color: kInk)),
-            subtitle: const Text('Ausgangssituation zu allen Aufgaben',
+            subtitle: Text('Ausgangssituation zu allen Aufgaben',
                 style: TextStyle(fontSize: 11, color: kMuted)),
             children: [
               Align(
                 alignment: Alignment.centerLeft,
                 child: Text(widget.fall.context,
-                    style: const TextStyle(fontSize: 13.5, height: 1.6, color: kInk)),
+                    style: TextStyle(fontSize: 13.5, height: 1.6, color: kInk)),
               ),
             ],
           ),
@@ -341,7 +344,7 @@ class _AufgabenblattScreenState extends State<AufgabenblattScreen> {
     return Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
       Row(crossAxisAlignment: CrossAxisAlignment.center, children: [
         Text('Aufgabe $_nr',
-            style: const TextStyle(
+            style: TextStyle(
                 fontSize: 17, fontWeight: FontWeight.w800, color: kInk)),
         const SizedBox(width: 9),
         if ((auf?.pts ?? 0) > 0)
@@ -350,21 +353,21 @@ class _AufgabenblattScreenState extends State<AufgabenblattScreen> {
             decoration: BoxDecoration(
                 color: kPetrolSoft, borderRadius: BorderRadius.circular(6)),
             child: Text('${auf!.pts} Punkte',
-                style: const TextStyle(
+                style: TextStyle(
                     fontSize: 11, fontWeight: FontWeight.w800, color: kPetrolDeep)),
           ),
         const Spacer(),
         Text('$anzahlTeile Teilaufgabe${anzahlTeile == 1 ? '' : 'n'}',
-            style: const TextStyle(fontSize: 11.5, color: kMuted)),
+            style: TextStyle(fontSize: 11.5, color: kMuted)),
       ]),
       if ((auf?.sit ?? '').isNotEmpty) ...[
         const SizedBox(height: 9),
         Container(
           padding: const EdgeInsets.only(left: 11),
-          decoration: const BoxDecoration(
+          decoration: BoxDecoration(
               border: Border(left: BorderSide(color: kLine, width: 2))),
           child: Text(auf!.sit,
-              style: const TextStyle(fontSize: 14, height: 1.65, color: kInk)),
+              style: TextStyle(fontSize: 14, height: 1.65, color: kInk)),
         ),
       ],
       if (auf != null)
@@ -409,7 +412,7 @@ class _AufgabenblattScreenState extends State<AufgabenblattScreen> {
                 () => _aufgedeckt.addAll(teile.map((q) => q.id))),
             style: OutlinedButton.styleFrom(
                 foregroundColor: kPetrol,
-                side: const BorderSide(color: kLine),
+                side: BorderSide(color: kLine),
                 padding: const EdgeInsets.symmetric(vertical: 12)),
             child: const Text('Alle Lösungen dieser Aufgabe aufdecken',
                 style: TextStyle(fontWeight: FontWeight.w700, fontSize: 12.5)),
@@ -423,7 +426,7 @@ class _AufgabenblattScreenState extends State<AufgabenblattScreen> {
             icon: const Icon(Icons.content_copy, size: 15),
             style: OutlinedButton.styleFrom(
                 foregroundColor: kPetrol,
-                side: const BorderSide(color: kLine),
+                side: BorderSide(color: kLine),
                 padding: const EdgeInsets.symmetric(vertical: 12)),
             label: const Text('Diese Aufgabe von einer KI prüfen lassen',
                 style: TextStyle(fontWeight: FontWeight.w700, fontSize: 12.5)),
@@ -437,7 +440,7 @@ class _AufgabenblattScreenState extends State<AufgabenblattScreen> {
               onPressed: () => _wechsle(_nummern[_pos - 1]),
               style: OutlinedButton.styleFrom(
                   foregroundColor: kPetrol,
-                  side: const BorderSide(color: kLine),
+                  side: BorderSide(color: kLine),
                   padding: const EdgeInsets.symmetric(vertical: 13)),
               child: Text('← Aufgabe ${_nummern[_pos - 1]}',
                   style: const TextStyle(
@@ -615,7 +618,7 @@ class _TeilKarte extends StatelessWidget {
           ),
           const SizedBox(width: 9),
           Text('${q.pts} ${q.pts == 1 ? 'Punkt' : 'Punkte'}',
-              style: const TextStyle(fontSize: 11, color: kMuted)),
+              style: TextStyle(fontSize: 11, color: kMuted)),
           if (q.braucht.isNotEmpty) ...[
             const Spacer(),
             Container(
@@ -640,13 +643,13 @@ class _TeilKarte extends StatelessWidget {
             decoration: BoxDecoration(
                 color: kBgTint, borderRadius: BorderRadius.circular(8)),
             child: Text(vorher!,
-                style: const TextStyle(
+                style: TextStyle(
                     fontSize: 12.5, height: 1.5, color: kInkSoft)),
           ),
         ],
         const SizedBox(height: 9),
         Text(q.q,
-            style: const TextStyle(
+            style: TextStyle(
                 fontSize: 15, height: 1.55, fontWeight: FontWeight.w600, color: kInk)),
         for (var i = 0; i < q.tabs.length; i++)
           AnlageTabelle(q.tabs[i],
@@ -661,7 +664,7 @@ class _TeilKarte extends StatelessWidget {
   }
 
   List<Widget> _antwortfeld() => [
-        const Text('DEINE ANTWORT · WIE IN DER PRÜFUNG',
+        Text('DEINE ANTWORT · WIE IN DER PRÜFUNG',
             style: TextStyle(
                 fontSize: 10,
                 letterSpacing: .8,
@@ -682,13 +685,13 @@ class _TeilKarte extends StatelessWidget {
             contentPadding: const EdgeInsets.symmetric(horizontal: 12, vertical: 11),
             border: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(12),
-                borderSide: const BorderSide(color: kLine)),
+                borderSide: BorderSide(color: kLine)),
             enabledBorder: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(12),
-                borderSide: const BorderSide(color: kLine)),
+                borderSide: BorderSide(color: kLine)),
             focusedBorder: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(12),
-                borderSide: const BorderSide(color: kPetrol)),
+                borderSide: BorderSide(color: kPetrol)),
           ),
         ),
         const SizedBox(height: 9),
@@ -710,8 +713,8 @@ class _TeilKarte extends StatelessWidget {
     final eigene = AnswerStore.instance.get(q.id).trim();
     final max = q.maxPoints;
     return [
-      const Divider(color: kLine, height: 18),
-      const Text('DEINE ANTWORT',
+      Divider(color: kLine, height: 18),
+      Text('DEINE ANTWORT',
           style: TextStyle(
               fontSize: 10,
               letterSpacing: .8,
@@ -741,24 +744,24 @@ class _TeilKarte extends StatelessWidget {
           q.amtlich
               ? 'AMTLICHE LÖSUNGSHINWEISE · IHK'
               : 'MUSTERLÖSUNG · NICHT AMTLICH',
-          style: const TextStyle(
+          style: TextStyle(
               fontSize: 10,
               letterSpacing: .8,
               fontWeight: FontWeight.w700,
               color: kPetrolDeep)),
       const SizedBox(height: 5),
       Text(q.a ?? q.e,
-          style: const TextStyle(fontSize: 13.5, height: 1.6, color: kInk)),
+          style: TextStyle(fontSize: 13.5, height: 1.6, color: kInk)),
       if ((q.vo ?? '').isNotEmpty) ...[
         const SizedBox(height: 7),
         Text('VO-Bezug: ${q.vo}',
-            style: const TextStyle(fontSize: 11.5, color: kMuted)),
+            style: TextStyle(fontSize: 11.5, color: kMuted)),
       ],
       if (q.bildL != null) AnlageBild(q.bildL, fallbackTitel: 'Lösungsskizze der IHK'),
       if (q.bewertung.isNotEmpty) ...[
         const SizedBox(height: 7),
         Text('Punkteverteilung: ${q.bewertung.join(' + ')} Punkte',
-            style: const TextStyle(fontSize: 11.5, color: kMuted)),
+            style: TextStyle(fontSize: 11.5, color: kMuted)),
       ],
       const SizedBox(height: 12),
       if (max > 0) ..._punkteWahl(max) else ..._gewusstWahl(),
@@ -768,7 +771,7 @@ class _TeilKarte extends StatelessWidget {
   List<Widget> _punkteWahl(int max) {
     final cur = AnswerStore.instance.points(frage.id);
     return [
-      const Text('Wie viele Punkte hättest du bekommen?',
+      Text('Wie viele Punkte hättest du bekommen?',
           style: TextStyle(fontSize: 12, color: kMuted)),
       const SizedBox(height: 7),
       Wrap(spacing: 6, runSpacing: 6, children: [
@@ -781,12 +784,12 @@ class _TeilKarte extends StatelessWidget {
               ? 'Bewertet: $cur von $max Punkten'
               : 'Vergib dir 0–$max Punkte – so zählt die Aufgabe am Ende zum '
                   'Gesamtergebnis.',
-          style: const TextStyle(fontSize: 11.5, color: kMuted)),
+          style: TextStyle(fontSize: 11.5, color: kMuted)),
     ];
   }
 
   List<Widget> _gewusstWahl() => [
-        const Text('Konntest du die Aufgabe?',
+        Text('Konntest du die Aufgabe?',
             style: TextStyle(fontSize: 12, color: kMuted)),
         const SizedBox(height: 7),
         Row(children: [

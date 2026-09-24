@@ -3,7 +3,7 @@ import '../constants.dart';
 import '../models/kostenwesen.dart';
 
 /// Lerninhalte „Betriebliches Kostenwesen" – vom Nullpunkt bis Prüfungsniveau.
-const List<KwChapter> kwChapters = [
+final List<KwChapter> kwChapters = [
   // ─────────────────────────────────────────────────────────────── 1
   KwChapter(
     id: 'grundlagen',
@@ -12,7 +12,7 @@ const List<KwChapter> kwChapters = [
     icon: Icons.foundation,
     color: kPetrol,
     sections: [
-      KwSection(
+      const KwSection(
         title: 'Warum es die Kostenrechnung überhaupt gibt',
         body: 'Ein Betrieb führt zwei Rechnungen nebeneinander. Die '
             'Finanzbuchhaltung (FiBu) schaut nach außen: Sie ist gesetzlich '
@@ -35,7 +35,7 @@ const List<KwChapter> kwChapters = [
             'Kostenstellenrechnung – WO sind sie angefallen? '
             'Kostenträgerrechnung – WOFÜR sind sie angefallen?',
       ),
-      KwSection(
+      const KwSection(
         title: 'Aufwand und Kosten sauber trennen',
         body: 'Das ist das Fundament – und die häufigste Fehlerquelle. '
             'Aufwand ist jeder Werteverzehr, den die Buchhaltung erfasst. '
@@ -63,7 +63,7 @@ const List<KwChapter> kwChapters = [
             'bevor du rechnest. „Verkauf eines Firmenwagens über Buchwert" ist '
             'neutraler Ertrag, keine Leistung.',
       ),
-      KwSection(
+      const KwSection(
         title: 'Die Ergebnistabelle (Abgrenzungsrechnung)',
         body: 'In der Ergebnistabelle wird die Brücke zwischen FiBu und KLR '
             'geschlagen. Links stehen alle Aufwendungen und Erträge aus der '
@@ -97,7 +97,7 @@ const List<KwChapter> kwChapters = [
           result: 'Kalkulatorisches Betriebsergebnis = 30.000 €',
         ),
       ),
-      KwSection(
+      const KwSection(
         title: 'Die Kostenbegriffe, die du sicher können musst',
         body: 'Kosten werden nach zwei völlig verschiedenen Gesichtspunkten '
             'sortiert. Erstens: Kann ich sie einem einzelnen Produkt direkt '
@@ -135,7 +135,7 @@ const List<KwChapter> kwChapters = [
     icon: Icons.category_outlined,
     color: kAmber,
     sections: [
-      KwSection(
+      const KwSection(
         title: 'Aufgabe der Kostenartenrechnung',
         body: 'Die erste Stufe erfasst vollständig und überschneidungsfrei, '
             'welche Kosten in der Periode angefallen sind. Jede Kostenart wird '
@@ -147,7 +147,7 @@ const List<KwChapter> kwChapters = [
           'Grundsatz: eindeutig, vollständig, überschneidungsfrei.',
         ],
       ),
-      KwSection(
+      const KwSection(
         title: 'Materialverbrauch ermitteln',
         body: 'Bevor Material bewertet werden kann, muss die verbrauchte Menge '
             'bekannt sein. Dafür gibt es drei Verfahren – sie unterscheiden '
@@ -172,7 +172,7 @@ const List<KwChapter> kwChapters = [
           result: 'Fehlmenge (Schwund/Bruch/Diebstahl) = 50 Stück',
         ),
       ),
-      KwSection(
+      const KwSection(
         title: 'Kalkulatorische Abschreibung',
         body: 'Die bilanzielle Abschreibung folgt dem Steuerrecht: '
             'Anschaffungswert, vorgeschriebene Nutzungsdauer. Für die interne '
@@ -208,7 +208,7 @@ const List<KwChapter> kwChapters = [
             'Nutzungsdauer mehr betragen als der Anschaffungswert – das ist '
             'kein Fehler, sondern gewollt (Anderskosten).',
       ),
-      KwSection(
+      const KwSection(
         title: 'Kalkulatorische Zinsen',
         body: 'Im Betrieb steckt Kapital – in Maschinen, Vorräten, '
             'Forderungen. Dieses Geld könnte stattdessen am Kapitalmarkt Zinsen '
@@ -236,7 +236,7 @@ const List<KwChapter> kwChapters = [
             'Wertpapierdepot) gehören nicht ins betriebsnotwendige Vermögen – '
             'sie fliegen vorher raus.',
       ),
-      KwSection(
+      const KwSection(
         title: 'Wagnisse, Unternehmerlohn und Miete',
         body: 'Drei weitere kalkulatorische Kostenarten runden das Bild ab. '
             'Gemeinsam ist ihnen: Sie machen die Rechnung realistischer, als '
@@ -274,7 +274,7 @@ const List<KwChapter> kwChapters = [
     icon: Icons.grid_on,
     color: kOk,
     sections: [
-      KwSection(
+      const KwSection(
         title: 'Wozu Kostenstellen?',
         body: 'Einzelkosten wandern direkt ins Produkt. Bei den Gemeinkosten '
             'geht das nicht: Die Hallenmiete lässt sich keinem einzelnen Bauteil '
@@ -292,7 +292,7 @@ const List<KwChapter> kwChapters = [
             'Verteilungsschlüsseln auf die Stellen verteilen, 2. Spalten '
             'summieren, 3. Zuschlagssätze berechnen.',
       ),
-      KwSection(
+      const KwSection(
         title: 'Verteilungsschlüssel richtig wählen',
         body: 'Ein Verteilungsschlüssel muss die Kostenverursachung abbilden. '
             'Die Frage lautet immer: Wovon hängen diese Kosten ab?',
@@ -307,7 +307,7 @@ const List<KwChapter> kwChapters = [
             'Wenn die Prüfung „verursachungsgerecht" verlangt, ist der Schlüssel '
             'gesucht, der die Kostenentstehung erklärt – nicht der einfachste.',
       ),
-      KwSection(
+      const KwSection(
         title: 'Zuschlagssätze berechnen',
         body: 'Am Ende jeder Spalte steht die Summe der Gemeinkosten dieser '
             'Stelle. Diese Summe wird zu einer Bezugsgröße ins Verhältnis '
@@ -341,7 +341,7 @@ const List<KwChapter> kwChapters = [
             'normal – die Maschinen kosten heute mehr als die Menschen, die sie '
             'bedienen. Rechne nicht nach, weil dir die Zahl zu hoch vorkommt.',
       ),
-      KwSection(
+      const KwSection(
         title: 'Innerbetriebliche Leistungsverrechnung',
         body: 'Hilfskostenstellen arbeiten für andere Stellen – die '
             'Reparaturabteilung repariert Maschinen in der Fertigung. Diese '
@@ -353,7 +353,7 @@ const List<KwChapter> kwChapters = [
           'Gleichungsverfahren (mathematisches Verfahren): berücksichtigt den gegenseitigen Austausch vollständig – am genauesten.',
         ],
       ),
-      KwSection(
+      const KwSection(
         title: 'Normalkosten, Über- und Unterdeckung',
         body: 'Rechnet man mit Zuschlagssätzen aus dem Durchschnitt der '
             'Vergangenheit (Normalkosten), weichen die verrechneten '
@@ -371,7 +371,7 @@ const List<KwChapter> kwChapters = [
   ),
 
   // ─────────────────────────────────────────────────────────────── 4
-  KwChapter(
+  const KwChapter(
     id: 'kostentraeger',
     title: 'Kalkulationsverfahren',
     subtitle: 'Zuschlagskalkulation · Division · Äquivalenzziffern · Angebot',
@@ -540,7 +540,7 @@ const List<KwChapter> kwChapters = [
     icon: Icons.trending_up,
     color: kDue,
     sections: [
-      KwSection(
+      const KwSection(
         title: 'Warum Vollkosten in die Irre führen',
         body: 'Die Vollkostenrechnung verteilt alle Fixkosten auf die Produkte '
             '– so, als würden sie durch das einzelne Stück verursacht. Das ist '
@@ -553,7 +553,7 @@ const List<KwChapter> kwChapters = [
             'also mit den Kosten, die tatsächlich wegfallen, wenn du die '
             'Entscheidung anders triffst.',
       ),
-      KwSection(
+      const KwSection(
         title: 'Der Deckungsbeitrag',
         body: 'Der Deckungsbeitrag ist der Betrag, der nach Abzug der '
             'variablen Kosten übrig bleibt, um die Fixkosten zu decken – und '
@@ -576,7 +576,7 @@ const List<KwChapter> kwChapters = [
           result: 'Gewinn = 40.000 € · DB-Rate = 40 %',
         ),
       ),
-      KwSection(
+      const KwSection(
         title: 'Break-Even-Punkt (Gewinnschwelle)',
         body: 'Der Break-Even-Punkt ist die Menge, bei der die Fixkosten genau '
             'gedeckt sind: Der Betrieb macht weder Gewinn noch Verlust. Jede '
@@ -600,7 +600,7 @@ const List<KwChapter> kwChapters = [
           result: 'Gewinnschwelle bei 6.000 Stück · Sicherheitsstrecke 25 %',
         ),
       ),
-      KwSection(
+      const KwSection(
         title: 'Preisuntergrenzen',
         body: 'Wie weit darfst du mit dem Preis heruntergehen? Die Antwort '
             'hängt vom Zeithorizont ab – und diese Unterscheidung ist '
@@ -613,7 +613,7 @@ const List<KwChapter> kwChapters = [
         merke: 'Kurzfristig entscheidet der Deckungsbeitrag, langfristig die '
             'Vollkostendeckung.',
       ),
-      KwSection(
+      const KwSection(
         title: 'Zusatzauftrag, Eigenfertigung und Engpass',
         body: 'Mit dem Deckungsbeitrag löst du die drei klassischen '
             'Entscheidungsaufgaben.',
@@ -641,7 +641,7 @@ const List<KwChapter> kwChapters = [
             'dem höchsten Deckungsbeitrag. Das ist genau dann falsch, wenn die '
             'Produkte den Engpass unterschiedlich stark beanspruchen.',
       ),
-      KwSection(
+      const KwSection(
         title: 'Mehrstufige Deckungsbeitragsrechnung',
         body: 'Fixkosten sind nicht alle gleich: Manche gehören zu einem '
             'Produkt, manche zu einer Produktgruppe, manche zum ganzen '
@@ -671,7 +671,7 @@ const List<KwChapter> kwChapters = [
     icon: Icons.query_stats,
     color: kErr,
     sections: [
-      KwSection(
+      const KwSection(
         title: 'Ist, Normal, Plan',
         body: 'Nach welchen Werten wird gerechnet? Die Istkostenrechnung '
             'schaut zurück und nimmt die tatsächlichen Zahlen – gut für die '
@@ -684,7 +684,7 @@ const List<KwChapter> kwChapters = [
           'Flexible Plankostenrechnung: trennt fixe und variable Kosten und passt die Sollkosten an die Ist-Beschäftigung an.',
         ],
       ),
-      KwSection(
+      const KwSection(
         title: 'Abweichungsanalyse',
         body: 'Die entscheidende Größe ist die Sollkostenlinie: Was hätten die '
             'Kosten bei der tatsächlichen Beschäftigung kosten dürfen? Der '
@@ -704,7 +704,7 @@ const List<KwChapter> kwChapters = [
         merke: 'Verbrauchsabweichung = Wirtschaftlichkeit. '
             'Beschäftigungsabweichung = Auslastung.',
       ),
-      KwSection(
+      const KwSection(
         title: 'Nutz- und Leerkosten',
         body: 'Wird eine Anlage nicht voll genutzt, zerfallen die Fixkosten '
             'gedanklich in zwei Teile: Der genutzte Teil ist wertschöpfend '
@@ -727,7 +727,7 @@ const List<KwChapter> kwChapters = [
           result: '50.000 € Leerkosten – Kosten für nicht genutzte Bereitschaft.',
         ),
       ),
-      KwSection(
+      const KwSection(
         title: 'Kennzahlen für die Meisterpraxis',
         body: 'Zum Abschluss die Kennzahlen, mit denen du deinen Bereich '
             'steuerst und in der Prüfung argumentierst.',

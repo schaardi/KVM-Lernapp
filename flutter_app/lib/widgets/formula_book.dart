@@ -82,8 +82,8 @@ class _FormulaBookState extends State<FormulaBook> {
           searching: q.isNotEmpty));
     }
     if (tiles.isEmpty) {
-      tiles.add(const Padding(
-        padding: EdgeInsets.only(top: 24),
+      tiles.add(Padding(
+        padding: const EdgeInsets.only(top: 24),
         child: Text('Keine Formel gefunden.',
             textAlign: TextAlign.center,
             style: TextStyle(color: kMuted, fontSize: 14)),
@@ -133,7 +133,7 @@ class _FormulaBookState extends State<FormulaBook> {
           title: Row(children: [
             Expanded(
               child: Text(group.toUpperCase(),
-                  style: const TextStyle(
+                  style: TextStyle(
                       fontSize: 11.5,
                       letterSpacing: 0.8,
                       fontWeight: FontWeight.w800,
@@ -144,7 +144,7 @@ class _FormulaBookState extends State<FormulaBook> {
               decoration: BoxDecoration(
                   color: kPetrolSoft, borderRadius: BorderRadius.circular(10)),
               child: Text('${items.length + schemas.length}',
-                  style: const TextStyle(
+                  style: TextStyle(
                       fontSize: 11, fontWeight: FontWeight.w700, color: kPetrolDeep)),
             ),
           ]),
@@ -172,7 +172,7 @@ class _FormulaBookState extends State<FormulaBook> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(it.name,
-              style: const TextStyle(fontWeight: FontWeight.w700, color: kInk)),
+              style: TextStyle(fontWeight: FontWeight.w700, color: kInk)),
           const SizedBox(height: 5),
           Container(
             width: double.infinity,
@@ -180,14 +180,14 @@ class _FormulaBookState extends State<FormulaBook> {
             decoration: BoxDecoration(
                 color: kPetrolSoft, borderRadius: BorderRadius.circular(6)),
             child: Text(it.eq,
-                style: const TextStyle(
-                    fontFamily: 'monospace', color: kPetrolDeep)),
+                style: TextStyle(
+                    fontFamily: 'IBMPlexMono', color: kPetrolDeep)),
           ),
           if (it.computable) ..._rechner(group, it),
           if (it.note != null) ...[
             const SizedBox(height: 5),
             Text(it.note!,
-                style: const TextStyle(fontSize: 12, color: kMuted)),
+                style: TextStyle(fontSize: 12, color: kMuted)),
           ],
         ],
       ),
@@ -235,7 +235,7 @@ class _FormulaBookState extends State<FormulaBook> {
           child: Row(children: [
             Expanded(
               child: Text(vr.n,
-                  style: const TextStyle(fontSize: 12, color: kMuted)),
+                  style: TextStyle(fontSize: 12, color: kMuted)),
             ),
             const SizedBox(width: 8),
             NumField(
@@ -255,12 +255,12 @@ class _FormulaBookState extends State<FormulaBook> {
         child: Row(children: [
           Expanded(
             child: Text('= ${it.resultName}',
-                style: const TextStyle(
+                style: TextStyle(
                     fontSize: 12, fontWeight: FontWeight.w600, color: kPetrolDeep)),
           ),
           Text(ergebnis,
               style: TextStyle(
-                  fontFamily: 'monospace',
+                  fontFamily: 'IBMPlexMono',
                   fontSize: fehlt ? 12.5 : 16,
                   fontWeight: fehlt ? FontWeight.w600 : FontWeight.w800,
                   color: fehlt ? kMuted : kPetrolDeep)),
@@ -271,8 +271,8 @@ class _FormulaBookState extends State<FormulaBook> {
         SingleChildScrollView(
           scrollDirection: Axis.horizontal,
           child: Text(weg,
-              style: const TextStyle(
-                  fontFamily: 'monospace', fontSize: 11.5, color: kMuted)),
+              style: TextStyle(
+                  fontFamily: 'IBMPlexMono', fontSize: 11.5, color: kMuted)),
         ),
       ],
       const SizedBox(height: 8),
@@ -336,11 +336,11 @@ class _FormulaBookState extends State<FormulaBook> {
       ),
       child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
         Text(s.name,
-            style: const TextStyle(
+            style: TextStyle(
                 fontWeight: FontWeight.w800, fontSize: 14.5, color: kInk)),
         const SizedBox(height: 3),
         Text(s.note,
-            style: const TextStyle(fontSize: 12, height: 1.45, color: kMuted)),
+            style: TextStyle(fontSize: 12, height: 1.45, color: kMuted)),
         const SizedBox(height: 9),
         for (final r in s.rows) _schemaRow(s, r, out),
         const SizedBox(height: 9),
@@ -476,7 +476,7 @@ class _FormulaBookState extends State<FormulaBook> {
         onPressed: onTap,
         style: OutlinedButton.styleFrom(
           foregroundColor: kPetrol,
-          side: const BorderSide(color: kLine),
+          side: BorderSide(color: kLine),
           padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
           minimumSize: Size.zero,
           tapTargetSize: MaterialTapTargetSize.shrinkWrap,
