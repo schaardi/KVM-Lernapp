@@ -6,8 +6,9 @@
 -- Grundsätze
 -- * Nur mit Konto und nur nach ausdrücklichem Beitritt (Spitzname wählen).
 -- * Für andere sichtbar sind ausschließlich: Spitzname, Prüfungsreife in %,
---   Antworten dieser Woche und Lerntage in Folge. Keine E-Mail, kein Klarname,
---   keine user_id.
+--   Antworten dieser Woche, Lerntage in Folge und die Prüfungsergebnisse
+--   (gewertete und bestandene Original-Prüfungen, Ø-Punkte, Bestehenschance).
+--   Keine E-Mail, kein Klarname, keine user_id.
 -- * Die Tabelle ist für Clients gesperrt; gelesen und geschrieben wird nur über
 --   die Funktionen unten. Austreten löscht den Eintrag vollständig.
 -- * Ohne diese Datei zeigen Web-App und App den Vergleich einfach nicht an.
@@ -26,6 +27,16 @@ create table if not exists public.rangliste (
 
 -- Spitznamen sind eindeutig (ohne Rücksicht auf Groß-/Kleinschreibung).
 create unique index if not exists rangliste_name_idx on public.rangliste (lower(name));
+
+-- Prüfungsergebnisse (die App rechnet sie aus den gewerteten Durchgängen der
+-- Original-Prüfungen, je Prüfung zählt der erste): Zahl der Prüfungen, davon
+-- bestanden (≥ 50 %), Ø-Punkte in % und Bestehenschance in % – für beide
+-- Prüfungsteile, sonst für den Teil, in dem jeder Bereich gewertet ist; null,
+-- solange das für keinen Teil gilt.
+alter table public.rangliste add column if not exists pruef_n       smallint not null default 0 check (pruef_n between 0 and 1000);
+alter table public.rangliste add column if not exists pruef_ok      smallint not null default 0 check (pruef_ok between 0 and 1000);
+alter table public.rangliste add column if not exists pruef_schnitt smallint check (pruef_schnitt between 0 and 100);
+alter table public.rangliste add column if not exists chance        smallint check (chance between 0 and 100);
 
 -- Kein direkter Zugriff: RLS an, keine Policies, Rechte entzogen.
 alter table public.rangliste enable row level security;
@@ -119,6 +130,56 @@ as $$
   );
 $$;
 
+-- Prüfungsergebnisse melden. Nur wer der Rangliste beigetreten ist; sonst
+-- passiert nichts.
+create or replace function public.pruefungen_melden(
+  p_n integer, p_ok integer, p_schnitt integer, p_chance integer)
+returns void
+language sql
+security definer
+set search_path = ''
+as $$
+  update public.rangliste set
+    pruef_n       = least(greatest(coalesce(p_n, 0), 0), 1000),
+    pruef_ok      = least(greatest(coalesce(p_ok, 0), 0), least(greatest(coalesce(p_n, 0), 0), 1000)),
+    pruef_schnitt = case when coalesce(p_n, 0) > 0 and p_schnitt is not null
+                         then least(greatest(p_schnitt, 0), 100) end,
+    chance        = case when coalesce(p_n, 0) > 0 and p_chance is not null
+                         then least(greatest(p_chance, 0), 100) end,
+    updated_at    = now()
+  where user_id = auth.uid();
+$$;
+
+-- Prüfungsrangliste: die meisten bestandenen Prüfungen zuerst, bei Gleichstand
+-- der bessere Schnitt. Top 10 und der eigene Stand.
+create or replace function public.rangliste_pruefungen()
+returns jsonb
+language sql
+stable
+security definer
+set search_path = ''
+as $$
+  with l as (
+    select user_id, name, pruef_n, pruef_ok, pruef_schnitt, chance,
+           rank() over (order by pruef_ok desc, pruef_schnitt desc nulls last) as platz
+    from public.rangliste
+    where pruef_n > 0
+  )
+  select jsonb_build_object(
+    'teilnehmende', (select count(*) from l),
+    'ich', (select jsonb_build_object('platz', platz, 'n', pruef_n, 'ok', pruef_ok,
+                                      'schnitt', pruef_schnitt, 'chance', chance)
+            from l where user_id = auth.uid()),
+    'liste', coalesce((
+      select jsonb_agg(jsonb_build_object(
+               'platz', platz, 'name', name, 'n', pruef_n, 'ok', pruef_ok,
+               'schnitt', pruef_schnitt, 'chance', chance, 'ich', user_id = auth.uid())
+             order by platz, name)
+      from (select * from l order by platz, name limit 10) t
+    ), '[]'::jsonb)
+  );
+$$;
+
 -- Nur die Zahl der Teilnehmenden – für den Hinweis vor der Anmeldung.
 create or replace function public.rangliste_info()
 returns bigint
@@ -136,7 +197,11 @@ revoke all on function public.rangliste_melden(text, integer, integer, text, int
 revoke all on function public.rangliste_austreten()                                           from public, anon, authenticated;
 revoke all on function public.rangliste_stand(text)                                           from public, anon, authenticated;
 revoke all on function public.rangliste_info()                                                from public, anon, authenticated;
+revoke all on function public.pruefungen_melden(integer, integer, integer, integer)           from public, anon, authenticated;
+revoke all on function public.rangliste_pruefungen()                                          from public, anon, authenticated;
 grant execute on function public.rangliste_melden(text, integer, integer, text, integer, integer) to authenticated;
 grant execute on function public.rangliste_austreten()                                           to authenticated;
 grant execute on function public.rangliste_stand(text)                                           to authenticated;
 grant execute on function public.rangliste_info()                                                to anon, authenticated;
+grant execute on function public.pruefungen_melden(integer, integer, integer, integer)           to authenticated;
+grant execute on function public.rangliste_pruefungen()                                          to authenticated;

@@ -219,7 +219,7 @@ as $$
     select 1 from public.gruppen_mitglieder where gruppe = p_gruppe and user_id = auth.uid()
   ),
   liste as (
-    select r.name, r.reife, r.serie, r.user_id,
+    select r.name, r.reife, r.serie, r.user_id, r.pruef_n, r.pruef_ok, r.pruef_schnitt, r.chance,
            case when r.woche = p_woche then r.antworten else 0 end as antworten
     from public.gruppen_mitglieder m join public.rangliste r on r.user_id = m.user_id
     where m.gruppe = p_gruppe and exists (select 1 from dabei)
@@ -230,7 +230,8 @@ as $$
     'liste', coalesce((
       select jsonb_agg(jsonb_build_object(
                'platz', platz, 'name', name, 'antworten', antworten, 'reife', reife,
-               'serie', serie, 'ich', user_id = auth.uid())
+               'serie', serie, 'pruef_n', pruef_n, 'pruef_ok', pruef_ok,
+               'pruef_schnitt', pruef_schnitt, 'chance', chance, 'ich', user_id = auth.uid())
              order by platz, name)
       from (select l.*, rank() over (order by antworten desc) as platz from liste l) t
     ), '[]'::jsonb)) end

@@ -8,10 +8,10 @@
 -- Grundsätze
 -- * Ein Profil hat nur, wer der Rangliste beigetreten ist. Alle Teilnehmenden
 --   sehen wie in der Rangliste: Spitzname, Prüfungsreife, Antworten dieser
---   Woche, Lerntage in Folge.
+--   Woche, Lerntage in Folge und die Prüfungsergebnisse.
 -- * Den Lernstand im Detail (je Fach, Aktivität der letzten 14 Tage, Prüfungen
---   unter Echtbedingungen) sehen nur Freunde. Wer mag, stellt sein Profil
---   auf „alle“.
+--   unter Echtbedingungen, Ergebnisse je Prüfungsbereich) sehen nur Freunde.
+--   Wer mag, stellt sein Profil auf „alle“.
 -- * Freundschaft braucht Anfrage und Annahme. Abgelehnt wird still: Die
 --   anfragende Person sieht weiter „angefragt“ und kann nicht erneut drängeln.
 -- * Wer die Rangliste verlässt oder sein Konto löscht, verliert Profil und
@@ -141,6 +141,10 @@ $$;
 --   t14   Antworten je Tag, die letzten 14 Tage (ältester zuerst)
 --   tage  Lerntage in den letzten 120 Tagen
 --   echt  Prüfungen unter Echtbedingungen: n = Anzahl, best = bestes Ergebnis in %
+--   pr    je Prüfungsbereich RE, BW, MI, ZI, NT, FT, OK: n = gewertete Prüfungen,
+--         ok = bestanden, s = Ø-Punkte in %, c = Bestehenschance in %
+--   pc    Bestehenschance in %: bq = Basisqualifikationen, hq = handlungs-
+--         spezifischer Teil, g = beide Teile
 create or replace function public.profil_details_saeubern(p jsonb)
 returns jsonb
 language sql
@@ -162,7 +166,18 @@ as $$
     'tage', public.profil_zahl(p->'tage', 0, 3650),
     'echt', case when jsonb_typeof(p->'echt') = 'object' then jsonb_build_object(
               'n', public.profil_zahl(p->'echt'->'n', 0, 1000),
-              'best', public.profil_zahl(p->'echt'->'best', 0, 100)) end
+              'best', public.profil_zahl(p->'echt'->'best', 0, 100)) end,
+    'pr', (select jsonb_object_agg(k, jsonb_build_object(
+                   'n',  public.profil_zahl(p->'pr'->k->'n', 0, 1000),
+                   'ok', public.profil_zahl(p->'pr'->k->'ok', 0, 1000),
+                   's',  public.profil_zahl(p->'pr'->k->'s', 0, 100),
+                   'c',  public.profil_zahl(p->'pr'->k->'c', 0, 100)))
+           from unnest(array['RE', 'BW', 'MI', 'ZI', 'NT', 'FT', 'OK']) as k
+           where jsonb_typeof(p->'pr'->k) = 'object'),
+    'pc', case when jsonb_typeof(p->'pc') = 'object' then jsonb_build_object(
+              'bq', public.profil_zahl(p->'pc'->'bq', 0, 100),
+              'hq', public.profil_zahl(p->'pc'->'hq', 0, 100),
+              'g',  public.profil_zahl(p->'pc'->'g', 0, 100)) end
   ));
 $$;
 
@@ -237,6 +252,7 @@ as $$
   select jsonb_build_object(
     'pid', p.pid, 'name', r.name, 'reife', r.reife, 'serie', r.serie,
     'antworten', case when r.woche = p_woche then r.antworten else 0 end,
+    'pruef_n', r.pruef_n, 'pruef_ok', r.pruef_ok, 'pruef_schnitt', r.pruef_schnitt, 'chance', r.chance,
     'bez', case when p_user = p_ich then 'ich' else public.freund_bez(p_ich, p_user) end)
   from public.rangliste r join public.profile p on p.user_id = r.user_id
   where r.user_id = p_user;
@@ -371,6 +387,7 @@ begin
   return jsonb_build_object(
     'pid', v_p.pid, 'name', v_r.name, 'reife', v_r.reife, 'serie', v_r.serie,
     'antworten', case when v_r.woche = p_woche then v_r.antworten else 0 end,
+    'pruef_n', v_r.pruef_n, 'pruef_ok', v_r.pruef_ok, 'pruef_schnitt', v_r.pruef_schnitt, 'chance', v_r.chance,
     'bez', v_bez, 'sichtbarkeit', v_p.sichtbarkeit,
     'sichtbar', v_normal or v_admin,
     'admin_sicht', v_admin and not v_normal,
