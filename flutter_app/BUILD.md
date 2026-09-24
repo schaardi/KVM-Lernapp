@@ -51,6 +51,11 @@ flutter build apk --release   # build/app/outputs/flutter-apk/app-release.apk
   bei Google hinterlegt, deshalb klappt die Google-Anmeldung auch mit der weitergegebenen APK.
 - Die `version:` in `pubspec.yaml` hochzählen und `lib/version.dart` (`kAppVersion`) mitziehen.
   Die Build-Nummer muss steigen, sonst lässt sich die APK nicht über eine ältere installieren.
+- Zum Verschicken kleiner (Messenger-Grenzen): `flutter build apk --release --split-per-abi`.
+  - `app-arm64-v8a-release.apk` (≈ 29 MB) passt für fast alle Handys.
+  - `app-armeabi-v7a-release.apk` ist für sehr alte 32-Bit-Geräte.
+  - Die Build-Nummer bekommt dabei 1000 × ABI dazu (arm64: 2002). Eine spätere Universal-APK mit
+    kleinerer Nummer lässt sich erst nach dem Deinstallieren installieren.
 
 ## App-Icon
 Das Industriemeister-Logo (Buch + Zahnrad) ist als adaptives Icon in
