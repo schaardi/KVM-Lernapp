@@ -86,11 +86,13 @@ class LernenSeite extends StatelessWidget {
                   farbe: kViolet,
                   tag: 'Mündlich',
                   titel: 'Fachgespräch üben',
-                  text: '10 Fragen werden vorgelesen – du antwortest frei per Sprache, danach Musterlösung und Selbstcheck.',
+                  text: muendlichBeschreibung(),
+                  aktiv: muendlichMoeglich(),
                   onTap: () => starteMuendlich(context),
                 ),
                 const SizedBox(height: 6),
-                Text('Fachübergreifend', style: TextStyle(fontSize: 12.5, fontWeight: FontWeight.w700, color: kInkSoft)),
+                Text('Fachübergreifend',
+                    style: TextStyle(fontSize: 12.5, fontWeight: FontWeight.w700, color: kInkSoft)),
                 const SizedBox(height: 8),
                 _Modus(
                   icon: Icons.shuffle,
@@ -196,7 +198,9 @@ class _Lernweg extends StatelessWidget {
                             const SizedBox(width: 5),
                             Flexible(
                               child: Text(
-                                n > 0 ? '${kAmpelText[amp]} · ${fmtN(gemeistert)}/${fmtN(n)} gemeistert' : 'in Vorbereitung',
+                                n > 0
+                                    ? '${kAmpelText[amp]} · ${fmtN(gemeistert)}/${fmtN(n)} gemeistert'
+                                    : 'in Vorbereitung',
                                 maxLines: 1,
                                 overflow: TextOverflow.ellipsis,
                                 style: TextStyle(fontSize: 12, color: kMuted),
@@ -302,7 +306,8 @@ class _BereichChips extends StatelessWidget {
       onSelected: (_) => st.waehleBereich(wert),
       selectedColor: kPetrol,
       backgroundColor: kPaper,
-      labelStyle: TextStyle(fontFamily: 'Inter', fontWeight: FontWeight.w600, fontSize: 13, color: gewaehlt ? Colors.white : kInkSoft),
+      labelStyle: TextStyle(
+          fontFamily: 'Inter', fontWeight: FontWeight.w600, fontSize: 13, color: gewaehlt ? Colors.white : kInkSoft),
       side: BorderSide(color: gewaehlt ? kPetrol : kLine),
     );
   }
@@ -316,6 +321,9 @@ class _Modus extends StatelessWidget {
   final String text;
   final VoidCallback onTap;
   final bool letzte;
+
+  /// `false`: ausgegraut und nicht antippbar (Web `.mode[disabled]`).
+  final bool aktiv;
   const _Modus({
     required this.icon,
     required this.farbe,
@@ -324,55 +332,59 @@ class _Modus extends StatelessWidget {
     required this.text,
     required this.onTap,
     this.letzte = false,
+    this.aktiv = true,
   });
 
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: EdgeInsets.only(bottom: letzte ? 0 : 8),
-      child: Material(
-        color: kPaper,
-        borderRadius: BorderRadius.circular(14),
-        child: InkWell(
-          onTap: onTap,
+      child: Opacity(
+        opacity: aktiv ? 1 : 0.5,
+        child: Material(
+          color: kPaper,
           borderRadius: BorderRadius.circular(14),
-          child: Container(
-            padding: const EdgeInsets.all(12),
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(14),
-              border: Border.all(color: kLineStrong.withValues(alpha: 0.7)),
-            ),
-            child: Row(children: [
-              Container(
-                width: 40,
-                height: 40,
-                decoration: BoxDecoration(color: farbe, borderRadius: BorderRadius.circular(11)),
-                child: Icon(icon, color: Colors.white, size: 21),
+          child: InkWell(
+            onTap: aktiv ? onTap : null,
+            borderRadius: BorderRadius.circular(14),
+            child: Container(
+              padding: const EdgeInsets.all(12),
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(14),
+                border: Border.all(color: kLineStrong.withValues(alpha: 0.7)),
               ),
-              const SizedBox(width: 12),
-              Expanded(
-                child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-                  Row(children: [
-                    Container(
-                      padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
-                      decoration: BoxDecoration(color: kSurface2, borderRadius: BorderRadius.circular(5)),
-                      child: Text(tag.toUpperCase(), style: monoStyle(9, color: kInkSoft, spacing: 0.6)),
-                    ),
-                    const SizedBox(width: 7),
-                    Expanded(
-                      child: Text(titel,
-                          maxLines: 1,
-                          overflow: TextOverflow.ellipsis,
-                          style: TextStyle(fontSize: 15, fontWeight: FontWeight.w700, color: kInk)),
-                    ),
+              child: Row(children: [
+                Container(
+                  width: 40,
+                  height: 40,
+                  decoration: BoxDecoration(color: farbe, borderRadius: BorderRadius.circular(11)),
+                  child: Icon(icon, color: Colors.white, size: 21),
+                ),
+                const SizedBox(width: 12),
+                Expanded(
+                  child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+                    Row(children: [
+                      Container(
+                        padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
+                        decoration: BoxDecoration(color: kSurface2, borderRadius: BorderRadius.circular(5)),
+                        child: Text(tag.toUpperCase(), style: monoStyle(9, color: kInkSoft, spacing: 0.6)),
+                      ),
+                      const SizedBox(width: 7),
+                      Expanded(
+                        child: Text(titel,
+                            maxLines: 1,
+                            overflow: TextOverflow.ellipsis,
+                            style: TextStyle(fontSize: 15, fontWeight: FontWeight.w700, color: kInk)),
+                      ),
+                    ]),
+                    const SizedBox(height: 4),
+                    Text(text, style: TextStyle(fontSize: 12.5, height: 1.35, color: kMuted)),
                   ]),
-                  const SizedBox(height: 4),
-                  Text(text, style: TextStyle(fontSize: 12.5, height: 1.35, color: kMuted)),
-                ]),
-              ),
-              const SizedBox(width: 4),
-              Icon(Icons.chevron_right, color: kMuted),
-            ]),
+                ),
+                const SizedBox(width: 4),
+                Icon(Icons.chevron_right, color: kMuted),
+              ]),
+            ),
           ),
         ),
       ),

@@ -75,8 +75,9 @@ class ProgressService extends ChangeNotifier {
 
   Progress? get(String id) => _map[id];
 
-  int _todayIdx() =>
-      (DateTime.now().millisecondsSinceEpoch ~/ (1000 * 60 * 60 * 24));
+  /// Tagesindex in Ortszeit wie Web `todayIdx` – der Lernstand wird mit dem
+  /// Web abgeglichen, „fällig“ muss dort und hier am selben Tag kippen.
+  int _todayIdx() => LerntageService.heute();
 
   void record(String id, bool correct) {
     final p = _map[id] ?? Progress();

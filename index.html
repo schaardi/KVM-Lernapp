@@ -6012,7 +6012,7 @@ document.addEventListener("keydown",function(ev){
   var AD_AKTION={aus_rangliste:'Aus der Rangliste genommen',sperren:'Gesperrt',entsperren:'Entsperrt',konto_loeschen:'Konto gelöscht',
     gruppe_loeschen:'Gruppe gelöscht',meldung_erledigt:'Meldung erledigt',meldung_abgelehnt:'Meldung abgelehnt',meldung_neu:'Meldung wieder geöffnet'};
   var MD_ART={text:'Text/Tippfehler',loesung:'Lösung falsch',rechnung:'Rechnung/Zahl falsch',anlage:'Tabelle/Anlage fehlt',sonstiges:'Sonstiges'};
-  var MODUS={scrQuiz:'Quiz',scrBlatt:'Prüfung',scrOral:'Mündlich',scrResult:'Ergebnis',scrHome:'Startseite'};
+  var MODUS={scrQuiz:'Quiz',scrBlatt:'Prüfung',scrOral:'Mündlich',scrResult:'Ergebnis',scrHome:'Startseite',quiz:'Quiz',blatt:'Prüfung',oral:'Mündlich'};
   function adPruefen(){
     if(!user){ad.an=false;adKnopf();return;}
     sb.rpc("ist_admin").then(function(r){ad.an=!!(r&&!r.error&&r.data===true);adKnopf();},function(){ad.an=false;adKnopf();});
