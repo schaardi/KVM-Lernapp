@@ -2,15 +2,17 @@ import 'dart:async';
 import 'package:flutter/services.dart';
 import 'package:flutter/material.dart';
 import '../constants.dart';
+import '../features/melden.dart';
+import '../lernen/uebernahme.dart';
 import '../models.dart';
 import '../widgets/anlage_bild.dart';
+import '../widgets/ui.dart';
+import '../widgets/werkzeug_dock.dart';
 import '../services/progress_service.dart';
 import '../services/round_builder.dart';
 import '../services/voice_service.dart';
 import '../services/ad_service.dart';
 import '../services/answer_store.dart';
-import '../widgets/calculator.dart';
-import '../widgets/drawing_pad.dart';
 import 'result_screen.dart';
 
 class QuizScreen extends StatefulWidget {
@@ -40,6 +42,11 @@ class _QuizScreenState extends State<QuizScreen> {
   late final List<bool?> _results;
   final List<Question> _wrong = [];
   final _calcCtrl = TextEditingController();
+
+  // Ausgangssituation: bei Teil 1 offen, danach zu – außer der Nutzer hat sie
+  // selbst auf- oder zugeklappt (Web `ctxOpen`/`ctxTouched`).
+  bool _ctxOffen = true;
+  bool _ctxBeruehrt = false;
 
   Timer? _timer;
   int _timeLeft = 0;
@@ -86,10 +93,14 @@ class _QuizScreenState extends State<QuizScreen> {
       _results[_idx] = correct;
       if (!correct) _wrong.add(_q);
     });
-    ProgressService.instance.record(_q.id, correct);
+    _zaehlen(_q, correct);
     AdService.instance.onAnswered();
     if (_voice) _speakFeedback(correct);
   }
+
+  /// Lernstand und Lerntag zählen. Die Lern-Erinnerung hört auf den
+  /// Lernstand (`initLernen`) und plant nach der ersten Antwort des Tages neu.
+  void _zaehlen(Question q, bool correct) => ProgressService.instance.record(q.id, correct);
 
   void _checkMc() {
     if (_answered || _selected == null) return;
@@ -97,19 +108,9 @@ class _QuizScreenState extends State<QuizScreen> {
     _finalize(chosen.ok);
   }
 
-  double? _parseNum(String s) {
-    var t = s.trim().replaceAll(RegExp(r'[^0-9.,\-]'), '');
-    if (t.contains(',') && t.contains('.')) {
-      t = t.replaceAll('.', '').replaceAll(',', '.');
-    } else if (t.contains(',')) {
-      t = t.replaceAll(',', '.');
-    }
-    return double.tryParse(t);
-  }
-
   void _checkCalc() {
     if (_answered) return;
-    final v = _parseNum(_calcCtrl.text);
+    final v = zahlLesen(_calcCtrl.text);
     final ans = _q.ans ?? double.nan;
     final tol = (ans.abs() * 0.001).clamp(0.01, double.infinity);
     final correct = v != null && (v - ans).abs() <= tol;
@@ -135,6 +136,7 @@ class _QuizScreenState extends State<QuizScreen> {
         _revealed = false;
         _selected = null;
         _calcCtrl.clear();
+        if (!_ctxBeruehrt) _ctxOffen = false;
       });
       if (_voice) _speakQuestion();
     }
@@ -147,7 +149,7 @@ class _QuizScreenState extends State<QuizScreen> {
         if (_results[i] == null) {
           _results[i] = false;
           _wrong.add(widget.pool[i]);
-          ProgressService.instance.record(widget.pool[i].id, false);
+          _zaehlen(widget.pool[i], false);
         }
       }
     }
@@ -160,6 +162,43 @@ class _QuizScreenState extends State<QuizScreen> {
         timeUp: timeUp,
       ),
     ));
+  }
+
+  // ---- Werkzeug-Dock: „Übernehmen“ ins aktive Antwortfeld ----
+
+  /// Ziel für Rechner und Formelbuch: das Ergebnisfeld der Rechenfrage oder
+  /// die offene Antwort – `null`, solange kein Antwortfeld offen ist.
+  /// Die Rückgabe nennt dem Formelbuch das Ziel; `null` heißt „passt nicht“,
+  /// dann legt das Formelbuch die Vorlage in die Zwischenablage.
+  String? Function(String text)? get _uebernahmeZiel {
+    if (_q.type == 'calc' && !_answered) return _inErgebnisfeld;
+    if (_q.type == 'open' && !_revealed) return _inAntwort;
+    return null;
+  }
+
+  /// Beschriftung im Rechner: „↩ Übernehmen ins Ergebnisfeld“ usw.
+  String? get _zielText {
+    if (_q.type == 'calc' && !_answered) return 'ins Ergebnisfeld';
+    if (_q.type == 'open' && !_revealed) return 'in deine Antwort';
+    return null;
+  }
+
+  String? _inErgebnisfeld(String text) {
+    if (!mounted || _answered || _q.type != 'calc') return null;
+    final wert = inErgebnisfeld(text);
+    if (wert == null) return null; // etwa eine Formelvorlage
+    setState(() => _calcCtrl.value = TextEditingValue(text: wert, selection: TextSelection.collapsed(offset: wert.length)));
+    return '';
+  }
+
+  String? _inAntwort(String text) {
+    if (!mounted || _revealed || _q.type != 'open') return null;
+    final sel = _eigene.selection;
+    final r = inAntwort(_eigene.text, text, start: sel.isValid ? sel.start : null, ende: sel.isValid ? sel.end : null);
+    AnswerStore.instance.set(_q.id, r.text);
+    setState(() => _eigene.value = TextEditingValue(text: r.text, selection: TextSelection.collapsed(offset: r.cursor)));
+    // „Als Vorlage in die Antwort zu Aufgabe 2 b) übernommen“ bzw. „in deine Antwort“
+    return TaskParts.of(_q).nr;
   }
 
   // ---- Sprachbedienung ----
@@ -207,160 +246,237 @@ class _QuizScreenState extends State<QuizScreen> {
     await VoiceService.instance.speak(t);
   }
 
+  bool get _istPruefung => _q.caseCtx != null && _q.id.startsWith('P-');
+
   @override
   Widget build(BuildContext context) {
     final last = _idx == widget.pool.length - 1;
+    // Beschriftung des Rechners erst nach dem Frame setzen – der Rechner hört
+    // darauf und darf nicht mitten im Bauen neu bauen.
+    final ziel = _zielText;
+    if (rechnerZiel.value != ziel) {
+      WidgetsBinding.instance.addPostFrameCallback((_) {
+        if (mounted && rechnerZiel.value != _zielText) rechnerZiel.value = _zielText;
+      });
+    }
+    final fach = _istPruefung ? _q.sub.replaceFirst(RegExp(r'^IHK-Prüfung:\s*'), '') : '${_q.f}. ${kFachKurz[_q.f]}';
     return Scaffold(
+      backgroundColor: kBg,
       appBar: AppBar(
-        backgroundColor: kPaper,
-        leading: IconButton(
-          icon: const Icon(Icons.close),
-          onPressed: () {
+        backgroundColor: kSurface,
+        automaticallyImplyLeading: false,
+        titleSpacing: 12,
+        shape: Border(bottom: BorderSide(color: kLine)),
+        title: Row(children: [
+          _iconKnopf(Icons.close, 'Runde beenden', () {
             _timer?.cancel();
             Navigator.pop(context);
-          },
-        ),
-        title: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text('${_q.f}. ${kFachKurz[_q.f]}',
-                style: const TextStyle(fontSize: 12, color: kPetrol, fontWeight: FontWeight.w700)),
-            Text(
-              _q.caseCtx != null
-                  ? 'Teil ${_q.caseCtx!.step}/${_q.caseCtx!.total}'
-                  : 'Frage ${_idx + 1}/${widget.pool.length}',
-              style: const TextStyle(fontSize: 13, color: kInk),
-            ),
-          ],
-        ),
-        actions: [
-          if (widget.mode == RoundMode.sim)
-            Center(
-              child: Padding(
-                padding: const EdgeInsets.only(right: 8),
-                child: Text(
-                  '${(_timeLeft ~/ 60).toString().padLeft(2, '0')}:${(_timeLeft % 60).toString().padLeft(2, '0')}',
-                  style: TextStyle(
-                      fontWeight: FontWeight.w700,
-                      color: _timeLeft <= 120 ? kErr : kInk),
-                ),
+          }),
+          const SizedBox(width: 10),
+          Expanded(
+            child: Column(crossAxisAlignment: CrossAxisAlignment.start, mainAxisSize: MainAxisSize.min, children: [
+              Text(fach.toUpperCase(),
+                  maxLines: 1, overflow: TextOverflow.ellipsis, style: monoStyle(10, color: kPetrolInk, spacing: 1)),
+              const SizedBox(height: 2),
+              Text(
+                _q.caseCtx != null ? 'Teil ${_q.caseCtx!.step}/${_q.caseCtx!.total}' : 'Frage ${_idx + 1}/${widget.pool.length}',
+                style: monoStyle(12.5, color: kInk, weight: FontWeight.w600, spacing: 0),
               ),
-            ),
-          IconButton(
-            tooltip: 'Sprachbedienung',
-            icon: Icon(_voice ? Icons.mic : Icons.mic_none, color: _voice ? kDue : kMuted),
-            onPressed: _toggleVoice,
-          ),
-        ],
-      ),
-      body: ListView(
-        padding: const EdgeInsets.all(16),
-        children: [
-          _progressBar(),
-          const SizedBox(height: 14),
-          if (_q.caseCtx != null) _caseBanner(),
-          if (_q.type == 'open')
-            _openChat()
-          else ...[
-            Row(children: [
-              _typeTag(),
-              const SizedBox(width: 8),
-              Expanded(child: Text(_q.sub, style: const TextStyle(color: kMuted, fontSize: 12))),
             ]),
-            const SizedBox(height: 10),
-            ..._taskText(),
-            for (final t in _q.tabsEffektiv) _anlage(t),
-            const SizedBox(height: 16),
-            if (_q.type == 'mc') ..._mcOptions(),
-            if (_q.type == 'calc') _calcInput(),
-          ],
-          if (_answered) _feedback(),
-          const SizedBox(height: 16),
-          _actions(last),
-        ],
+          ),
+          if (widget.mode == RoundMode.sim) _uhr(),
+        ]),
+      ),
+      body: Column(children: [
+        _progressBar(),
+        Expanded(
+          child: ListView(
+            padding: const EdgeInsets.fromLTRB(16, 16, 16, 16),
+            children: [
+              if (_q.caseCtx != null) _caseBanner(),
+              if (_q.type == 'open')
+                _openChat()
+              else ...[
+                _metaZeile(),
+                const SizedBox(height: 10),
+                ..._taskText(),
+                for (final t in _q.tabsEffektiv) _anlage(t),
+                const SizedBox(height: 16),
+                if (_q.type == 'mc') ..._mcOptions(),
+                if (_q.type == 'calc') _calcInput(),
+              ],
+              if (_answered) _feedback(),
+              const SizedBox(height: 16),
+              _actions(last),
+            ],
+          ),
+        ),
+      ]),
+      // Das Dock reserviert seinen Platz und verdeckt nie „Weiter“; auf dem
+      // Handy dockt der Rechner an seiner Stelle an. Eine offene Tastatur
+      // liegt darüber, der Rechner bleibt dabei erhalten.
+      bottomNavigationBar: WerkzeugDock(onUebernehmen: _uebernahmeZiel, onSprache: _toggleVoice, spracheAktiv: _voice),
+    );
+  }
+
+  Widget _iconKnopf(IconData icon, String tip, VoidCallback onTap) => Tooltip(
+        message: tip,
+        child: Semantics(
+          button: true,
+          label: tip,
+          excludeSemantics: true,
+          child: Material(
+            color: kPaper,
+            shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10), side: BorderSide(color: kLineStrong)),
+            child: InkWell(
+              onTap: onTap,
+              borderRadius: BorderRadius.circular(10),
+              child: SizedBox(width: 40, height: 40, child: Icon(icon, size: 19, color: kMuted)),
+            ),
+          ),
+        ),
+      );
+
+  /// Restzeit der Prüfungssimulation (die letzten zwei Minuten rot).
+  Widget _uhr() {
+    final knapp = _timeLeft <= 120;
+    final m = (_timeLeft ~/ 60).toString().padLeft(2, '0');
+    final s = (_timeLeft % 60).toString().padLeft(2, '0');
+    return Container(
+      padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 6),
+      decoration: BoxDecoration(
+        color: knapp ? kErrSoft : kPetrolSoft,
+        border: Border.all(color: knapp ? kErrLine : kPetrolLine),
+        borderRadius: BorderRadius.circular(8),
+      ),
+      child: Text('$m:$s', style: monoStyle(14, color: knapp ? kErrInk : kPetrolInkDeep, spacing: 0)),
+    );
+  }
+
+  /// Fortschritt der Runde: aktuell petrol, richtig grün, falsch rot.
+  Widget _progressBar() {
+    return Container(
+      padding: const EdgeInsets.fromLTRB(14, 10, 14, 12),
+      decoration: BoxDecoration(color: kSurface, border: Border(bottom: BorderSide(color: kLine))),
+      child: Row(
+        children: List.generate(widget.pool.length, (i) {
+          var c = kTrack;
+          if (i == _idx) {
+            c = kPetrol;
+          } else if (_results[i] == true) {
+            c = kOk;
+          } else if (_results[i] == false) {
+            c = kErr;
+          }
+          return Expanded(
+            child: Container(
+              height: 6,
+              margin: EdgeInsets.only(right: i == widget.pool.length - 1 ? 0 : 3),
+              decoration: BoxDecoration(color: c, borderRadius: BorderRadius.circular(3)),
+            ),
+          );
+        }),
       ),
     );
   }
 
-  Widget _progressBar() {
-    return Row(
-      children: List.generate(widget.pool.length, (i) {
-        Color c = kLine;
-        if (i == _idx) {
-          c = kPetrol;
-        } else if (_results[i] == true) {
-          c = kOk;
-        } else if (_results[i] == false) {
-          c = kErr;
-        }
-        return Expanded(
-          child: Container(
-            height: 5,
-            margin: const EdgeInsets.symmetric(horizontal: 1),
-            decoration: BoxDecoration(color: c, borderRadius: BorderRadius.circular(3)),
-          ),
-        );
-      }),
-    );
-  }
-
+  /// Ausgangssituation der Fallaufgabe bzw. Prüfung – einklappbar.
   Widget _caseBanner() {
     final c = _q.caseCtx!;
     return Container(
       margin: const EdgeInsets.only(bottom: 14),
-      padding: const EdgeInsets.all(12),
       decoration: BoxDecoration(
-        color: const Color(0xFFFBF2F8),
-        border: Border.all(color: const Color(0xFFE6C9DE)),
-        borderRadius: BorderRadius.circular(kRadius),
-        boxShadow: kSoftShadow,
+        color: kPlumSoft,
+        border: Border.all(color: kPlumLine),
+        borderRadius: BorderRadius.circular(11),
       ),
-      child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-        Row(children: [
-          Container(
-            padding: const EdgeInsets.symmetric(horizontal: 7, vertical: 2),
-            decoration: BoxDecoration(color: kFachColor[5], borderRadius: BorderRadius.circular(4)),
-            child: const Text('FALLAUFGABE', style: TextStyle(color: Colors.white, fontSize: 10, fontWeight: FontWeight.w700)),
+      child: Column(crossAxisAlignment: CrossAxisAlignment.stretch, children: [
+        Semantics(
+          button: true,
+          expanded: _ctxOffen,
+          child: InkWell(
+            borderRadius: BorderRadius.circular(11),
+            onTap: () => setState(() {
+              _ctxOffen = !_ctxOffen;
+              _ctxBeruehrt = true;
+            }),
+            child: Padding(
+              padding: const EdgeInsets.fromLTRB(13, 11, 13, 11),
+              child: Wrap(spacing: 9, runSpacing: 6, crossAxisAlignment: WrapCrossAlignment.center, children: [
+                Container(
+                  padding: const EdgeInsets.symmetric(horizontal: 7, vertical: 2),
+                  decoration: BoxDecoration(color: kPlum, borderRadius: BorderRadius.circular(4)),
+                  child: Text(_istPruefung ? 'IHK-PRÜFUNG' : 'FALLAUFGABE',
+                      style: monoStyle(10, color: Colors.white, spacing: 0.8)),
+                ),
+                Text(c.title.toUpperCase(), style: dispStyle(15)),
+                Container(
+                  padding: const EdgeInsets.fromLTRB(10, 3, 6, 3),
+                  decoration: BoxDecoration(
+                    color: kPaper,
+                    border: Border.all(color: kPlumLine),
+                    borderRadius: BorderRadius.circular(20),
+                  ),
+                  child: Row(mainAxisSize: MainAxisSize.min, children: [
+                    Text('AUSGANGSSITUATION', style: monoStyle(10, color: kPlumInk, spacing: 0.6)),
+                    Icon(_ctxOffen ? Icons.arrow_drop_up : Icons.arrow_drop_down, size: 18, color: kPlumInk),
+                  ]),
+                ),
+              ]),
+            ),
           ),
-          const SizedBox(width: 8),
-          Expanded(child: Text(c.title, style: const TextStyle(fontWeight: FontWeight.w700, color: kInk))),
-        ]),
-        const SizedBox(height: 6),
-        Text(c.context, style: const TextStyle(fontSize: 14, height: 1.5, color: kInk)),
+        ),
+        if (_ctxOffen)
+          Container(
+            padding: const EdgeInsets.fromLTRB(13, 11, 13, 13),
+            decoration: BoxDecoration(border: Border(top: BorderSide(color: kPlumLine))),
+            child: Text(c.context, style: TextStyle(fontSize: 13.5, height: 1.55, color: kInk)),
+          ),
       ]),
     );
   }
+
+  /// Fragetyp, Themenbereich und rechts „Fehler melden“.
+  Widget _metaZeile() {
+    return Row(crossAxisAlignment: CrossAxisAlignment.center, children: [
+      _typeTag(),
+      const SizedBox(width: 8),
+      Expanded(
+        child: Text(_istPruefung ? '' : _q.sub,
+            maxLines: 1, overflow: TextOverflow.ellipsis, style: monoStyle(10, color: kMuted, spacing: 0.6)),
+      ),
+      _melden(),
+    ]);
+  }
+
+  Widget _melden() => MeldenKnopf(frageId: _q.id, bezug: _q.q, kontext: const {'modus': 'quiz'}, kompakt: true);
 
   /// Aufgabenkopf, Ausgangslage und Fragestellung getrennt darstellen – sonst
   /// verschwimmt bei den Original-Prüfungen alles zu einem fetten Textblock.
   List<Widget> _taskText() {
     final t = TaskParts.of(_q);
-    final frage = Text(t.frage,
-        style: const TextStyle(fontSize: 19, fontWeight: FontWeight.w600, height: 1.3, color: kInk));
+    final frage = Text(t.frage, style: TextStyle(fontSize: 16.5, fontWeight: FontWeight.w600, height: 1.45, color: kInk));
     if (t.nr.isEmpty) return [frage];
     return [
       Row(children: [
-        Expanded(
-          child: Text(t.nr,
-              style: const TextStyle(fontSize: 20, fontWeight: FontWeight.w800, color: kInk)),
-        ),
+        Expanded(child: Text(t.nr.toUpperCase(), style: dispStyle(20))),
         Container(
           padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 3),
           decoration: BoxDecoration(
-              color: kPetrolSoft, borderRadius: BorderRadius.circular(20)),
-          child: Text(t.pts,
-              style: const TextStyle(fontSize: 11, fontWeight: FontWeight.w700, color: kPetrolDeep)),
+            color: kPetrolSoft,
+            border: Border.all(color: kPetrolLine),
+            borderRadius: BorderRadius.circular(20),
+          ),
+          child: Text(t.pts, style: monoStyle(11, color: kPetrolInkDeep, weight: FontWeight.w600, spacing: 0.4)),
         ),
       ]),
-      const Divider(height: 18, color: kLine),
+      Divider(height: 18, color: kLine),
       if (t.sit.isNotEmpty)
         Container(
           margin: const EdgeInsets.only(bottom: 12),
           padding: const EdgeInsets.only(left: 12),
-          decoration: const BoxDecoration(
-              border: Border(left: BorderSide(color: kLine, width: 3))),
-          child: Text(t.sit,
-              style: const TextStyle(fontSize: 14, height: 1.6, color: kMuted)),
+          decoration: BoxDecoration(border: Border(left: BorderSide(color: kLineStrong, width: 3))),
+          child: Text(t.sit, style: TextStyle(fontSize: 14, height: 1.6, color: kMuted)),
         ),
       frage,
     ];
@@ -369,7 +485,7 @@ class _QuizScreenState extends State<QuizScreen> {
   /// Anlage (Tabelle) zur Aufgabe – waagerecht scrollbar.
   Widget _anlage(Anlage a) {
     TableRow zeile(List<String> zellen, {bool kopf = false}) => TableRow(
-          decoration: kopf ? const BoxDecoration(color: Color(0xFFEEF4F5)) : null,
+          decoration: kopf ? BoxDecoration(color: kSurface2) : null,
           children: [
             for (var i = 0; i < zellen.length; i++)
               Padding(
@@ -379,7 +495,7 @@ class _QuizScreenState extends State<QuizScreen> {
                     style: TextStyle(
                         fontSize: kopf ? 11.5 : 13,
                         fontWeight: (kopf || i == 0) ? FontWeight.w700 : FontWeight.w400,
-                        color: kopf ? kPetrolDeep : kInk)),
+                        color: kopf ? kPetrolInkDeep : kInk)),
               ),
           ],
         );
@@ -387,19 +503,17 @@ class _QuizScreenState extends State<QuizScreen> {
       margin: const EdgeInsets.only(top: 14),
       padding: const EdgeInsets.all(12),
       decoration: BoxDecoration(
-        color: const Color(0xFFFBFDFD),
+        color: kSurface,
         border: Border.all(color: kLine),
-        borderRadius: BorderRadius.circular(kRadius),
+        borderRadius: BorderRadius.circular(11),
       ),
       child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-        Text(a.titel.toUpperCase(),
-            style: const TextStyle(
-                fontSize: 10.5, fontWeight: FontWeight.w700, letterSpacing: .8, color: kPetrol)),
+        Text(a.titel.toUpperCase(), style: monoStyle(10.5, color: kPetrolInk, spacing: 0.8)),
         const SizedBox(height: 9),
         SingleChildScrollView(
           scrollDirection: Axis.horizontal,
           child: ConstrainedBox(
-            constraints: const BoxConstraints(minWidth: 420),
+            constraints: const BoxConstraints(minWidth: 380),
             child: Table(
               border: TableBorder.all(color: kLine),
               defaultColumnWidth: const IntrinsicColumnWidth(),
@@ -412,81 +526,118 @@ class _QuizScreenState extends State<QuizScreen> {
         ),
         if (a.hinweis.isNotEmpty) ...[
           const SizedBox(height: 9),
-          Text(a.hinweis, style: const TextStyle(fontSize: 11.5, height: 1.45, color: kMuted)),
+          Text(a.hinweis, style: TextStyle(fontSize: 11.5, height: 1.45, color: kMuted)),
         ],
       ]),
     );
   }
 
+  /// Typ-Tag: Auswahl petrol, Rechnen blau, offen amber.
   Widget _typeTag() {
-    final (label, color) = switch (_q.type) {
-      'mc' => ('Auswahlfrage', kPetrol),
-      'calc' => ('Rechenaufgabe', kAmber),
-      _ => ('Offene Frage', kMuted),
+    final (label, flaeche, text) = switch (_q.type) {
+      'mc' => ('Auswahlfrage', kPetrolSoft, kPetrolInkDeep),
+      'calc' => ('Rechenaufgabe', kBlueSoft, kBlueInk),
+      _ => ('Offene Frage', kAmberSoft, kAmberInk),
     };
     return Container(
-      padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 3),
-      decoration: BoxDecoration(color: color.withValues(alpha: 0.12), borderRadius: BorderRadius.circular(8)),
-      child: Text(label, style: TextStyle(color: color, fontSize: 12, fontWeight: FontWeight.w700)),
+      padding: const EdgeInsets.symmetric(horizontal: 9, vertical: 3),
+      decoration: BoxDecoration(color: flaeche, borderRadius: BorderRadius.circular(12)),
+      child: Text(label.toUpperCase(), style: monoStyle(10.5, color: text, spacing: 1)),
     );
   }
 
+  /// Antwortoptionen: Der Buchstabe färbt sich mit dem Zustand, die
+  /// Begründung steht bündig unter dem Optionstext (FR-002 D).
   List<Widget> _mcOptions() {
-    final letters = ['A', 'B', 'C', 'D', 'E'];
+    const letters = ['A', 'B', 'C', 'D', 'E', 'F'];
     final opts = _shuffled[_idx];
     return List.generate(opts.length, (i) {
       final o = opts[i];
-      Color border = kLine;
-      Color bg = kPaper;
+      final gewaehlt = _selected == i;
+      var rahmen = kLineStrong;
+      var flaeche = kPaper;
+      Color? badge; // gefüllter Buchstabe
+      var badgeRand = kLineStrong;
+      var badgeText = kMuted;
+      var blass = false;
       if (_answered) {
         if (o.ok) {
-          border = kOk;
-          bg = kOkSoft;
-        } else if (_selected == i) {
-          border = kErr;
-          bg = kErrSoft;
+          rahmen = kOk;
+          flaeche = kOkSoft;
+          badge = kOk;
+        } else if (gewaehlt) {
+          rahmen = kErr;
+          flaeche = kErrSoft;
+          badge = kErr;
         } else if (o.w != null) {
-          border = const Color(0xFFE3B4A8);
-          bg = const Color(0xFFFDF6F4);
+          rahmen = kErrLine;
+          flaeche = kErrFaint;
+          badgeRand = kErrLine;
+          badgeText = kErrInk;
+        } else {
+          blass = true;
         }
-      } else if (_selected == i) {
-        border = kPetrol;
-        bg = kPetrolSoft;
+      } else if (gewaehlt) {
+        rahmen = kPetrol;
+        flaeche = kPetrolSoft;
+        badge = kPetrol;
       }
+      final begruendung = _answered && !o.ok && o.w != null;
+      final zustand = !_answered
+          ? (gewaehlt ? ', gewählt' : '')
+          : (o.ok ? ', richtig' : (gewaehlt ? ', gewählt, falsch' : ''));
       return Padding(
         padding: const EdgeInsets.only(bottom: 9),
-        child: InkWell(
-          onTap: _answered ? null : () => setState(() => _selected = i),
-          borderRadius: BorderRadius.circular(kRadiusSm),
-          child: Container(
-            padding: const EdgeInsets.all(12),
-            decoration: BoxDecoration(
-              color: bg,
-              border: Border.all(color: border, width: 1.5),
-              borderRadius: BorderRadius.circular(kRadiusSm),
-            ),
-            child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-              Row(crossAxisAlignment: CrossAxisAlignment.start, children: [
-                Container(
-                  padding: const EdgeInsets.symmetric(horizontal: 7, vertical: 2),
-                  decoration: BoxDecoration(
-                      border: Border.all(color: kLine), borderRadius: BorderRadius.circular(6)),
-                  child: Text(letters[i], style: const TextStyle(fontFamily: 'monospace', fontWeight: FontWeight.w600, fontSize: 12, color: kMuted)),
-                ),
-                const SizedBox(width: 11),
-                Expanded(child: Text(o.t, style: const TextStyle(fontSize: 14.5, color: kInk))),
-              ]),
-              if (_answered && !o.ok && o.w != null)
-                Padding(
-                  padding: const EdgeInsets.only(top: 6, left: 6),
-                  child: Container(
-                    padding: const EdgeInsets.only(left: 10),
-                    decoration: const BoxDecoration(
-                        border: Border(left: BorderSide(color: kErr, width: 2))),
-                    child: Text(o.w!, style: const TextStyle(fontSize: 12, color: kMuted, height: 1.4)),
+        child: Opacity(
+          opacity: blass ? 0.5 : 1,
+          child: Semantics(
+            button: !_answered,
+            selected: gewaehlt,
+            label: 'Antwort ${letters[i]}$zustand',
+            child: Material(
+              color: flaeche,
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(10),
+                side: BorderSide(color: rahmen, width: 1.5),
+              ),
+              child: InkWell(
+                onTap: _answered ? null : () => setState(() => _selected = i),
+                borderRadius: BorderRadius.circular(10),
+                child: ConstrainedBox(
+                  constraints: const BoxConstraints(minHeight: 48),
+                  child: Padding(
+                    padding: const EdgeInsets.fromLTRB(13, 12, 13, 12),
+                    child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+                      Row(crossAxisAlignment: CrossAxisAlignment.start, children: [
+                        Container(
+                          width: 25,
+                          margin: const EdgeInsets.only(top: 1),
+                          padding: const EdgeInsets.symmetric(vertical: 2),
+                          alignment: Alignment.center,
+                          decoration: BoxDecoration(
+                            color: badge,
+                            border: Border.all(color: badge ?? badgeRand),
+                            borderRadius: BorderRadius.circular(6),
+                          ),
+                          child: Text(letters[i],
+                              style: monoStyle(12, color: badge != null ? Colors.white : badgeText, spacing: 0)),
+                        ),
+                        const SizedBox(width: 11),
+                        Expanded(child: Text(o.t, style: TextStyle(fontSize: 14.5, height: 1.4, color: kInk))),
+                      ]),
+                      if (begruendung)
+                        Container(
+                          margin: const EdgeInsets.only(top: 6, left: 36),
+                          padding: const EdgeInsets.only(left: 11),
+                          decoration: BoxDecoration(border: Border(left: BorderSide(color: kErr, width: 2))),
+                          child: Text(o.w!,
+                              style: TextStyle(fontSize: 12.5, height: 1.45, color: gewaehlt ? kInkSoft : kMuted)),
+                        ),
+                    ]),
                   ),
                 ),
-            ]),
+              ),
+            ),
           ),
         ),
       );
@@ -499,27 +650,36 @@ class _QuizScreenState extends State<QuizScreen> {
         child: TextField(
           controller: _calcCtrl,
           enabled: !_answered,
+          textAlign: TextAlign.right,
           keyboardType: const TextInputType.numberWithOptions(decimal: true, signed: true),
+          style: monoStyle(18, color: kInk, weight: FontWeight.w500, spacing: 0),
           decoration: InputDecoration(
             hintText: 'Ergebnis …',
-            border: OutlineInputBorder(borderRadius: BorderRadius.circular(kRadiusSm)),
-            isDense: true,
+            filled: true,
+            fillColor: kPaper,
+            contentPadding: const EdgeInsets.symmetric(horizontal: 14, vertical: 13),
+            enabledBorder: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(10), borderSide: BorderSide(color: kLineStrong, width: 1.5)),
+            disabledBorder: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(10), borderSide: BorderSide(color: kLine, width: 1.5)),
+            focusedBorder: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(10), borderSide: BorderSide(color: kPetrol, width: 1.5)),
           ),
           onChanged: (_) => setState(() {}),
+          onSubmitted: (_) {
+            if (_calcCtrl.text.trim().isNotEmpty) _checkCalc();
+          },
         ),
       ),
       if (_q.unit.isNotEmpty) ...[
-        const SizedBox(width: 8),
-        Text(_q.unit, style: const TextStyle(fontWeight: FontWeight.w700, color: kMuted)),
+        const SizedBox(width: 10),
+        Text(_q.unit, style: dispStyle(20, color: kMuted)),
       ],
     ]);
   }
 
-  static const _amberSoft = Color(0xFFFBEFD9);
-
-  Widget _msgRole(String label, Color c) => Text(label.toUpperCase(),
-      style: TextStyle(
-          fontSize: 9.5, fontWeight: FontWeight.w800, letterSpacing: 1.1, color: c));
+  Widget _msgRole(String label, Color c) =>
+      Text(label.toUpperCase(), style: monoStyle(9.5, color: c, weight: FontWeight.w700, spacing: 1.1));
 
   /// Offene Prüfungsaufgabe als Chat: Prüfer-Nachricht, dann – nach dem Abgeben –
   /// die eigene Antwort und die Musterlösung als Blasen.
@@ -528,7 +688,7 @@ class _QuizScreenState extends State<QuizScreen> {
     if (_eigene.text != gespeichert) _eigene.text = gespeichert;
     final t = TaskParts.of(_q);
     final ans = gespeichert.trim();
-    final w = MediaQuery.of(context).size.width;
+    final w = MediaQuery.sizeOf(context).width;
 
     return Column(crossAxisAlignment: CrossAxisAlignment.stretch, children: [
       // Prüfer-Blase (eingehend)
@@ -549,7 +709,15 @@ class _QuizScreenState extends State<QuizScreen> {
               boxShadow: kSoftShadow,
             ),
             child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-              _msgRole('Prüfer', kPetrol),
+              // Offene Fragen zeigen keinen Fragekopf – der Melde-Knopf steht
+              // deshalb in der Kopfzeile der Prüfer-Nachricht.
+              ConstrainedBox(
+                constraints: const BoxConstraints(minHeight: 24),
+                child: Row(children: [
+                  Expanded(child: _msgRole('Prüfer', kPetrolInk)),
+                  _melden(),
+                ]),
+              ),
               const SizedBox(height: 7),
               if (t.nr.isNotEmpty)
                 Padding(
@@ -559,27 +727,15 @@ class _QuizScreenState extends State<QuizScreen> {
                     runSpacing: 4,
                     crossAxisAlignment: WrapCrossAlignment.center,
                     children: [
-                      Text(t.nr,
-                          style: const TextStyle(
-                              fontSize: 17,
-                              fontWeight: FontWeight.w800,
-                              color: kInk)),
+                      Text(t.nr, style: TextStyle(fontSize: 17, fontWeight: FontWeight.w800, color: kInk)),
                       Container(
-                        padding: const EdgeInsets.symmetric(
-                            horizontal: 8, vertical: 2),
-                        decoration: BoxDecoration(
-                            color: kPetrolSoft,
-                            borderRadius: BorderRadius.circular(5)),
+                        padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 2),
+                        decoration: BoxDecoration(color: kPetrolSoft, borderRadius: BorderRadius.circular(5)),
                         child: Text(t.pts,
-                            style: const TextStyle(
-                                fontSize: 10.5,
-                                fontWeight: FontWeight.w700,
-                                color: kPetrolDeep)),
+                            style: TextStyle(fontSize: 10.5, fontWeight: FontWeight.w700, color: kPetrolInkDeep)),
                       ),
                       if (_q.caseCtx != null)
-                        Text('Teil ${_q.caseCtx!.step}/${_q.caseCtx!.total}',
-                            style:
-                                const TextStyle(fontSize: 10, color: kMuted)),
+                        Text('Teil ${_q.caseCtx!.step}/${_q.caseCtx!.total}', style: TextStyle(fontSize: 10, color: kMuted)),
                     ],
                   ),
                 ),
@@ -587,23 +743,11 @@ class _QuizScreenState extends State<QuizScreen> {
                 Container(
                   margin: const EdgeInsets.only(bottom: 9),
                   padding: const EdgeInsets.only(left: 10),
-                  decoration: const BoxDecoration(
-                      border: Border(
-                          left: BorderSide(color: Color(0xFFB7C3C7), width: 2))),
-                  child: Text(t.sit,
-                      style: const TextStyle(
-                          fontSize: 13, height: 1.55, color: kMuted)),
+                  decoration: BoxDecoration(border: Border(left: BorderSide(color: kLineStrong, width: 2))),
+                  child: Text(t.sit, style: TextStyle(fontSize: 13, height: 1.55, color: kMuted)),
                 ),
-              Text(t.frage,
-                  style: const TextStyle(
-                      fontSize: 15,
-                      fontWeight: FontWeight.w600,
-                      height: 1.5,
-                      color: kInk)),
-              for (final t in _q.tabsEffektiv)
-                Padding(
-                    padding: const EdgeInsets.only(top: 10),
-                    child: _anlage(t)),
+              Text(t.frage, style: TextStyle(fontSize: 15, fontWeight: FontWeight.w600, height: 1.5, color: kInk)),
+              for (final t in _q.tabsEffektiv) Padding(padding: const EdgeInsets.only(top: 10), child: _anlage(t)),
               _bild(_q.bildEffektiv),
             ]),
           ),
@@ -618,24 +762,23 @@ class _QuizScreenState extends State<QuizScreen> {
             constraints: BoxConstraints(maxWidth: w * 0.92),
             child: Container(
               padding: const EdgeInsets.all(13),
-              decoration: const BoxDecoration(
+              decoration: BoxDecoration(
                 color: kPetrol,
-                borderRadius: BorderRadius.only(
+                borderRadius: const BorderRadius.only(
                     topLeft: Radius.circular(16),
                     topRight: Radius.circular(16),
                     bottomLeft: Radius.circular(16),
                     bottomRight: Radius.circular(5)),
               ),
               child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-                _msgRole('Deine Antwort', const Color(0xFFBFE3E6)),
+                _msgRole('Deine Antwort', Colors.white.withValues(alpha: 0.78)),
                 const SizedBox(height: 6),
                 Text(ans.isEmpty ? '— leer abgegeben —' : ans,
                     style: TextStyle(
                         color: Colors.white,
                         height: 1.5,
                         fontSize: 14,
-                        fontStyle:
-                            ans.isEmpty ? FontStyle.italic : FontStyle.normal)),
+                        fontStyle: ans.isEmpty ? FontStyle.italic : FontStyle.normal)),
               ]),
             ),
           ),
@@ -649,39 +792,26 @@ class _QuizScreenState extends State<QuizScreen> {
             child: Container(
               padding: const EdgeInsets.all(13),
               decoration: BoxDecoration(
-                color: _amberSoft,
+                color: kAmberSoft,
                 border: Border.all(color: kAmber),
                 borderRadius: BorderRadius.circular(16),
               ),
               child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-                _msgRole(
-                    _q.amtlich
-                        ? 'Amtliche Lösungshinweise · IHK'
-                        : 'Musterlösung · nicht amtlich',
-                    const Color(0xFF7A4A00)),
+                _msgRole(_q.amtlich ? 'Amtliche Lösungshinweise · IHK' : 'Musterlösung · nicht amtlich', kAmberInk),
                 const SizedBox(height: 7),
-                Text(_q.a ?? _q.e,
-                    style: const TextStyle(
-                        height: 1.55, color: kInk, fontSize: 14)),
+                Text(_q.a ?? _q.e, style: TextStyle(height: 1.55, color: kInk, fontSize: 14)),
                 _bild(_q.bildL, fallbackTitel: 'Lösungsskizze der IHK'),
                 if (_q.vo != null && _q.vo!.isNotEmpty)
                   Padding(
                     padding: const EdgeInsets.only(top: 9),
                     child: Text('VO-Bezug: ${_q.vo}',
-                        style: const TextStyle(
-                            fontSize: 11.5,
-                            color: Color(0xFF7A4A00),
-                            fontWeight: FontWeight.w600)),
+                        style: TextStyle(fontSize: 11.5, color: kAmberInk, fontWeight: FontWeight.w600)),
                   ),
                 if (_q.bewertung.isNotEmpty)
                   Padding(
                     padding: const EdgeInsets.only(top: 3),
-                    child: Text(
-                        'Punkteverteilung: ${_q.bewertung.join(' + ')} Punkte',
-                        style: const TextStyle(
-                            fontSize: 11.5,
-                            color: Color(0xFF7A4A00),
-                            fontWeight: FontWeight.w600)),
+                    child: Text('Punkteverteilung: ${_q.bewertung.join(' + ')} Punkte',
+                        style: TextStyle(fontSize: 11.5, color: kAmberInk, fontWeight: FontWeight.w600)),
                   ),
               ]),
             ),
@@ -693,12 +823,12 @@ class _QuizScreenState extends State<QuizScreen> {
           child: OutlinedButton.icon(
             onPressed: _exportAufgabe,
             style: OutlinedButton.styleFrom(
-                foregroundColor: kPetrol,
-                side: const BorderSide(color: kLine),
+                foregroundColor: kPetrolInk,
+                side: BorderSide(color: kLine),
                 padding: const EdgeInsets.symmetric(vertical: 12)),
             icon: const Icon(Icons.content_copy, size: 16),
             label: const Text('Diese Aufgabe von Claude prüfen lassen',
-                style: TextStyle(fontWeight: FontWeight.w700, fontSize: 12.5)),
+                style: TextStyle(fontFamily: 'Inter', fontWeight: FontWeight.w700, fontSize: 12.5)),
           ),
         ),
         if (_q.maxPoints > 0) ...[
@@ -726,9 +856,8 @@ class _QuizScreenState extends State<QuizScreen> {
         borderRadius: BorderRadius.circular(14),
       ),
       child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-        const Text('Wie viele Punkte hättest du bekommen?',
-            style: TextStyle(
-                fontSize: 12.5, fontWeight: FontWeight.w700, color: kInk)),
+        Text('Wie viele Punkte hättest du bekommen?',
+            style: TextStyle(fontSize: 12.5, fontWeight: FontWeight.w700, color: kInk)),
         const SizedBox(height: 11),
         Wrap(spacing: 7, runSpacing: 7, children: [
           for (var p = 0; p <= max; p++) _scoreChip(p, cur == p),
@@ -739,7 +868,7 @@ class _QuizScreenState extends State<QuizScreen> {
               ? 'Bewertet: $cur von $max Punkten'
               : 'Vergib dir 0–$max Punkte – so zählt die Aufgabe am Ende '
                   'zum Gesamtergebnis.',
-          style: const TextStyle(fontSize: 12, color: kMuted, height: 1.4),
+          style: TextStyle(fontSize: 12, color: kMuted, height: 1.4),
         ),
       ]),
     );
@@ -750,19 +879,15 @@ class _QuizScreenState extends State<QuizScreen> {
       onTap: () => setState(() => AnswerStore.instance.setPoints(_q.id, p)),
       borderRadius: BorderRadius.circular(9),
       child: Container(
-        constraints: const BoxConstraints(minWidth: 40),
+        constraints: const BoxConstraints(minWidth: 40, minHeight: 40),
         alignment: Alignment.center,
         padding: const EdgeInsets.symmetric(horizontal: 11, vertical: 9),
         decoration: BoxDecoration(
-          color: sel ? kPetrol : Colors.white,
-          border: Border.all(color: sel ? kPetrol : kLine),
+          color: sel ? kPetrol : kPaper,
+          border: Border.all(color: sel ? kPetrol : kLineStrong),
           borderRadius: BorderRadius.circular(9),
         ),
-        child: Text('$p',
-            style: TextStyle(
-                fontWeight: FontWeight.w700,
-                fontSize: 14,
-                color: sel ? Colors.white : kInk)),
+        child: Text('$p', style: TextStyle(fontWeight: FontWeight.w700, fontSize: 14, color: sel ? Colors.white : kInk)),
       ),
     );
   }
@@ -774,9 +899,11 @@ class _QuizScreenState extends State<QuizScreen> {
   Widget _bild(String? ref, {String fallbackTitel = 'Anlage zur Aufgabe'}) =>
       AnlageBild(ref, fallbackTitel: fallbackTitel);
 
+  /// Eingabe der offenen Antwort. Rechner, Rechenblatt und Formelbuch liegen
+  /// im Werkzeug-Dock; „Übernehmen“ schreibt hierher.
   Widget _composer() {
-    return Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-      const Divider(height: 1, color: kLine),
+    return Column(crossAxisAlignment: CrossAxisAlignment.stretch, children: [
+      Divider(height: 1, color: kLine),
       const SizedBox(height: 12),
       _msgRole('Deine Antwort · wie in der Prüfung', kMuted),
       const SizedBox(height: 8),
@@ -785,115 +912,40 @@ class _QuizScreenState extends State<QuizScreen> {
         maxLines: null,
         minLines: 4,
         keyboardType: TextInputType.multiline,
-        style: const TextStyle(fontSize: 14, height: 1.6, color: kInk),
+        style: TextStyle(fontSize: 14, height: 1.6, color: kInk),
         onChanged: (v) => AnswerStore.instance.set(_q.id, v),
         decoration: InputDecoration(
           hintText: 'Antwort schreiben …',
-          hintStyle: const TextStyle(color: kMuted),
           filled: true,
           fillColor: kPaper,
           contentPadding: const EdgeInsets.all(12),
-          border: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(12),
-              borderSide: const BorderSide(color: kLine)),
-          enabledBorder: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(12),
-              borderSide: const BorderSide(color: kLine)),
-          focusedBorder: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(12),
-              borderSide: const BorderSide(color: kPetrol, width: 1.6)),
+          border: OutlineInputBorder(borderRadius: BorderRadius.circular(12), borderSide: BorderSide(color: kLine)),
+          enabledBorder: OutlineInputBorder(borderRadius: BorderRadius.circular(12), borderSide: BorderSide(color: kLine)),
+          focusedBorder:
+              OutlineInputBorder(borderRadius: BorderRadius.circular(12), borderSide: BorderSide(color: kPetrol, width: 1.6)),
         ),
       ),
       const SizedBox(height: 10),
-      Wrap(
-        spacing: 8,
-        runSpacing: 8,
-        crossAxisAlignment: WrapCrossAlignment.center,
-        alignment: WrapAlignment.spaceBetween,
-        children: [
-          Wrap(spacing: 8, runSpacing: 8, children: [
-            OutlinedButton.icon(
-              onPressed: _openRechner,
-              style: OutlinedButton.styleFrom(
-                  foregroundColor: kPetrol, side: const BorderSide(color: kLine)),
-              icon: const Icon(Icons.calculate_outlined, size: 17),
-              label: const Text('Rechner',
-                  style: TextStyle(fontWeight: FontWeight.w700, fontSize: 12.5)),
-            ),
-            OutlinedButton.icon(
-              onPressed: _openRechenblatt,
-              style: OutlinedButton.styleFrom(
-                  foregroundColor: kPetrol, side: const BorderSide(color: kLine)),
-              icon: const Icon(Icons.edit_outlined, size: 16),
-              label: const Text('Rechenblatt',
-                  style: TextStyle(fontWeight: FontWeight.w700, fontSize: 12.5)),
-            ),
-          ]),
-          FilledButton.icon(
-            onPressed: () {
-              AnswerStore.instance.set(_q.id, _eigene.text);
-              setState(() => _revealed = true);
-            },
-            style: FilledButton.styleFrom(
-                backgroundColor: kPetrol,
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 20, vertical: 12)),
-            icon: const Icon(Icons.send_rounded, size: 16),
-            label: const Text('Senden',
-                style: TextStyle(fontWeight: FontWeight.w700, fontSize: 13)),
-          ),
-        ],
+      Align(
+        alignment: Alignment.centerRight,
+        child: FilledButton.icon(
+          onPressed: () {
+            AnswerStore.instance.set(_q.id, _eigene.text);
+            FocusScope.of(context).unfocus();
+            setState(() => _revealed = true);
+          },
+          style: FilledButton.styleFrom(
+              backgroundColor: kPetrol,
+              foregroundColor: Colors.white,
+              minimumSize: const Size(0, 44),
+              padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 12),
+              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(11)),
+              textStyle: const TextStyle(fontFamily: 'Inter', fontWeight: FontWeight.w700, fontSize: 13.5)),
+          icon: const Icon(Icons.send_rounded, size: 16),
+          label: const Text('Senden'),
+        ),
       ),
     ]);
-  }
-
-  void _openRechenblatt() {
-    showModalBottomSheet(
-      context: context,
-      isScrollControlled: true,
-      backgroundColor: kPaper,
-      shape: const RoundedRectangleBorder(
-          borderRadius: BorderRadius.vertical(top: Radius.circular(20))),
-      builder: (_) => SafeArea(
-        child: Padding(
-          padding:
-              EdgeInsets.only(bottom: MediaQuery.of(context).viewInsets.bottom),
-          child: SizedBox(
-            height: MediaQuery.of(context).size.height * 0.7,
-            child: const Column(children: [
-              Padding(
-                padding: EdgeInsets.fromLTRB(16, 12, 16, 4),
-                child: Row(children: [
-                  Text('Rechenblatt',
-                      style: TextStyle(
-                          fontSize: 16,
-                          fontWeight: FontWeight.w800,
-                          color: kInk)),
-                ]),
-              ),
-              Expanded(child: DrawingPad()),
-            ]),
-          ),
-        ),
-      ),
-    );
-  }
-
-  void _openRechner() {
-    showModalBottomSheet(
-      context: context,
-      isScrollControlled: true,
-      backgroundColor: kPaper,
-      shape: const RoundedRectangleBorder(
-          borderRadius: BorderRadius.vertical(top: Radius.circular(20))),
-      builder: (_) => SafeArea(
-        child: Padding(
-          padding: EdgeInsets.only(
-              bottom: MediaQuery.of(context).viewInsets.bottom),
-          child: const SizedBox(height: 460, child: CalculatorSheet()),
-        ),
-      ),
-    );
   }
 
   Future<void> _exportAufgabe() async {
@@ -904,50 +956,86 @@ class _QuizScreenState extends State<QuizScreen> {
             'Claude-Chat einfügen.')));
   }
 
+  /// Rückmeldung nach der Antwort: Rahmen und Titel in den Ink-Tönen.
   Widget _feedback() {
     final ok = _results[_idx] == true;
-    return Container(
-      margin: const EdgeInsets.only(top: 16),
-      padding: const EdgeInsets.all(14),
-      decoration: BoxDecoration(
-        color: ok ? kOkSoft : kErrSoft,
-        borderRadius: BorderRadius.circular(kRadiusSm),
-      ),
-      child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-        Text(ok ? '✓ Richtig' : '✗ Leider falsch',
-            style: TextStyle(fontWeight: FontWeight.w800, color: ok ? kOk : kErr, fontSize: 16)),
-        const SizedBox(height: 6),
-        if (_q.type == 'calc')
-          Text('Lösung: ${_fmtNum(_q.ans ?? 0)} ${_q.unit}',
-              style: const TextStyle(fontWeight: FontWeight.w700, color: kInk)),
-        if (_q.e.isNotEmpty)
-          Padding(
-            padding: const EdgeInsets.only(top: 4),
-            child: Text(_q.e, style: const TextStyle(height: 1.45, color: kInk)),
+    final text = TextStyle(fontSize: 14, height: 1.45, color: kInk);
+    final erklaerung = _q.type == 'open' && ok ? 'Gut. ${_q.e}'.trim() : _q.e;
+    return Semantics(
+      liveRegion: true,
+      child: Container(
+        margin: const EdgeInsets.only(top: 14),
+        padding: const EdgeInsets.fromLTRB(14, 13, 14, 13),
+        decoration: BoxDecoration(
+          color: ok ? kOkSoft : kErrSoft,
+          border: Border.all(color: ok ? kOkLine : kErrLine),
+          borderRadius: BorderRadius.circular(10),
+        ),
+        child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+          Semantics(
+            label: ok ? 'Richtig' : 'Leider falsch',
+            excludeSemantics: true,
+            child: Row(children: [
+              Icon(ok ? Icons.check_rounded : Icons.close_rounded, size: 19, color: ok ? kOkInk : kErrInk),
+              const SizedBox(width: 6),
+              Text(ok ? 'RICHTIG' : 'LEIDER FALSCH', style: dispStyle(17, color: ok ? kOkInk : kErrInk)),
+            ]),
           ),
-      ]),
+          const SizedBox(height: 5),
+          if (_q.type == 'calc')
+            Text('Lösung: ${_fmtNum(_q.ans ?? 0)}${_q.unit.isNotEmpty ? ' ${_q.unit}' : ''}',
+                style: text.copyWith(fontWeight: FontWeight.w700)),
+          if (erklaerung.isNotEmpty)
+            Padding(
+              padding: EdgeInsets.only(top: _q.type == 'calc' ? 6 : 0),
+              child: Text(erklaerung, style: text),
+            ),
+        ]),
+      ),
     );
   }
 
+  ButtonStyle _primaer() => FilledButton.styleFrom(
+        backgroundColor: kPetrol,
+        foregroundColor: Colors.white,
+        minimumSize: const Size(0, 48),
+        padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 13),
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+        textStyle: const TextStyle(fontFamily: 'Inter', fontSize: 15, fontWeight: FontWeight.w600),
+      );
+
+  /// „Nicht gewusst“ rot, „Gewusst“ grün – beide als helle Fläche (Web `.btn-no`/`.btn-ok`).
+  ButtonStyle _getoent(Color rand, Color flaeche, Color text) => OutlinedButton.styleFrom(
+        foregroundColor: text,
+        backgroundColor: flaeche,
+        side: BorderSide(color: rand, width: 1.5),
+        minimumSize: const Size(0, 48),
+        padding: const EdgeInsets.all(12),
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+        textStyle: const TextStyle(fontFamily: 'Inter', fontSize: 14.5, fontWeight: FontWeight.w600),
+      );
+
+  /// Knopftext mit Pfeil wie „Jetzt lernen →“ (Pfeil als Symbol, damit er in
+  /// jeder Schrift gleich aussieht).
+  Widget _mitPfeil(String text) => Semantics(
+        label: '$text →',
+        excludeSemantics: true,
+        child: Row(mainAxisSize: MainAxisSize.min, children: [
+          Flexible(child: Text(text)),
+          const SizedBox(width: 8),
+          const Icon(Icons.arrow_forward, size: 18),
+        ]),
+      );
+
   Widget _actions(bool last) {
     if (_answered) {
-      return SizedBox(
-        width: double.infinity,
-        child: FilledButton(
-          style: FilledButton.styleFrom(backgroundColor: kPetrol, padding: const EdgeInsets.symmetric(vertical: 16)),
-          onPressed: _next,
-          child: Text(last ? 'Zum Ergebnis →' : 'Weiter →'),
-        ),
-      );
+      return FilledButton(style: _primaer(), onPressed: _next, child: _mitPfeil(last ? 'Zum Ergebnis' : 'Weiter'));
     }
     if (_q.type == 'mc') {
-      return SizedBox(
-        width: double.infinity,
-        child: FilledButton(
-          style: FilledButton.styleFrom(backgroundColor: kPetrol, padding: const EdgeInsets.symmetric(vertical: 16)),
-          onPressed: _selected == null ? null : _checkMc,
-          child: const Text('Antwort prüfen'),
-        ),
+      return FilledButton(
+        style: _primaer(),
+        onPressed: _selected == null ? null : _checkMc,
+        child: const Text('Antwort prüfen'),
       );
     }
     if (_q.type == 'calc') {
@@ -955,14 +1043,14 @@ class _QuizScreenState extends State<QuizScreen> {
         Expanded(
           child: OutlinedButton(
             onPressed: () => _finalize(false),
-            style: OutlinedButton.styleFrom(padding: const EdgeInsets.symmetric(vertical: 16)),
+            style: _getoent(kErr, kErrSoft, kErrInk),
             child: const Text('Lösung zeigen'),
           ),
         ),
         const SizedBox(width: 10),
         Expanded(
           child: FilledButton(
-            style: FilledButton.styleFrom(backgroundColor: kPetrol, padding: const EdgeInsets.symmetric(vertical: 16)),
+            style: _primaer(),
             onPressed: _calcCtrl.text.trim().isEmpty ? null : _checkCalc,
             child: const Text('Antwort prüfen'),
           ),
@@ -974,30 +1062,25 @@ class _QuizScreenState extends State<QuizScreen> {
     // Prüfungsaufgaben mit Punkteangabe: Selbstbewertung statt Gewusst/Nicht.
     if (_q.maxPoints > 0) {
       final scored = AnswerStore.instance.points(_q.id) != null;
-      return SizedBox(
-        width: double.infinity,
-        child: FilledButton(
-          style: FilledButton.styleFrom(
-              backgroundColor: kPetrol,
-              padding: const EdgeInsets.symmetric(vertical: 16)),
-          onPressed: scored ? _commitOpenScore : null,
-          child: Text(last ? 'Zum Ergebnis →' : 'Bewertung übernehmen →'),
-        ),
+      return FilledButton(
+        style: _primaer(),
+        onPressed: scored ? _commitOpenScore : null,
+        child: _mitPfeil(last ? 'Zum Ergebnis' : 'Bewertung übernehmen'),
       );
     }
     return Row(children: [
       Expanded(
         child: OutlinedButton(
           onPressed: () => _finalize(false),
-          style: OutlinedButton.styleFrom(padding: const EdgeInsets.symmetric(vertical: 16)),
+          style: _getoent(kErr, kErrSoft, kErrInk),
           child: const Text('Nicht gewusst'),
         ),
       ),
       const SizedBox(width: 10),
       Expanded(
-        child: FilledButton(
-          style: FilledButton.styleFrom(backgroundColor: kOk, padding: const EdgeInsets.symmetric(vertical: 16)),
+        child: OutlinedButton(
           onPressed: () => _finalize(true),
+          style: _getoent(kOk, kOkSoft, kOkInk),
           child: const Text('Gewusst'),
         ),
       ),
@@ -1016,7 +1099,7 @@ class _QuizScreenState extends State<QuizScreen> {
         _results[_idx] = correct;
         if (!correct) _wrong.add(_q);
       });
-      ProgressService.instance.record(_q.id, correct);
+      _zaehlen(_q, correct);
       AdService.instance.onAnswered();
     }
     _next();

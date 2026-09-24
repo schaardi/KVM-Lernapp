@@ -260,7 +260,7 @@ class _ZuschlagCalcState extends State<ZuschlagCalc> {
 
         StepsPanel(steps: _steps()),
 
-        const InfoBox(
+        InfoBox(
           color: kErr,
           icon: Icons.warning_amber_rounded,
           title: 'Prüfungsfalle',

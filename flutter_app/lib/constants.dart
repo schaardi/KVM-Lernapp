@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'theme/palette.dart';
+
+export 'theme/palette.dart' show KvmPalette;
 
 /// Fach-Namen (lang) und Kurzbezeichnungen – 1:1 aus der Web-App übernommen.
 const Map<int, String> kFach = {
@@ -65,77 +68,64 @@ const int kSimSeconds = 60 * 60;
 /// (entfällt für Premium-/Werbefrei-Nutzer).
 const int kAdEveryQuestions = 10;
 
-// Farbwelt – ruhige, konzentrationsfreundliche Palette (Teal/Petrol als Anker,
-// gedämpfte Neutraltöne, wenig Sättigung außerhalb von Signalfarben).
-const Color kPetrol = Color(0xFF0C6C78);
-const Color kPetrolDeep = Color(0xFF084F58);
-const Color kPetrolSoft = Color(0xFFE1EEEF);
-const Color kAmber = Color(0xFFC9780C);
-const Color kOk = Color(0xFF2C8A4E);
-const Color kOkSoft = Color(0xFFE4F2E9);
-const Color kErr = Color(0xFFC0472F);
-const Color kErrSoft = Color(0xFFF7E6E1);
-const Color kInk = Color(0xFF14262C);
-const Color kMuted = Color(0xFF5F6E75);
-const Color kLine = Color(0xFFDCE6E7);
-const Color kPaper = Color(0xFFFFFFFF);
-const Color kDue = Color(0xFF5E64D6);
-
-// Flächen & Tiefe – ruhiger Hintergrund, weiche Karten statt harter Rahmen.
-const Color kBg = Color(0xFFF2F5F6);
-const Color kBgTint = Color(0xFFE8EFF0); // leichter Teal-Schleier für den Kopfbereich
-const Color kInkSoft = Color(0xFF3A4A50);
+// Farbwelt – dieselben Tokens wie die Web-App (FR-002 A). Sie lesen aus der
+// aktuellen Palette (hell oder dunkel, siehe theme/palette.dart); wechselt die
+// Darstellung, baut die App alle Widgets neu. Daher sind sie keine `const`.
+KvmPalette get kPalette => KvmPalette.current;
+Color get kBg => KvmPalette.current.steel;
+Color get kBgTint => KvmPalette.current.bgTint;
+Color get kPaper => KvmPalette.current.paper;
+Color get kSurface => KvmPalette.current.surface;
+Color get kSurface2 => KvmPalette.current.surface2;
+Color get kTrack => KvmPalette.current.track;
+Color get kLine => KvmPalette.current.line;
+Color get kLineSoft => KvmPalette.current.lineSoft;
+Color get kLineStrong => KvmPalette.current.lineStrong;
+Color get kInk => KvmPalette.current.ink;
+Color get kInkSoft => KvmPalette.current.inkSoft;
+Color get kMuted => KvmPalette.current.muted;
+Color get kPlaceholder => KvmPalette.current.placeholder;
+Color get kPetrol => KvmPalette.current.petrol;
+Color get kPetrolDeep => KvmPalette.current.petrolDeep;
+Color get kPetrolSoft => KvmPalette.current.petrolSoft;
+Color get kPetrolLine => KvmPalette.current.petrolLine;
+Color get kPetrolInk => KvmPalette.current.petrolInk;
+Color get kPetrolInkDeep => KvmPalette.current.petrolInkDeep;
+Color get kAmber => KvmPalette.current.amber;
+Color get kAmberDeep => KvmPalette.current.amberDeep;
+Color get kAmberSoft => KvmPalette.current.amberSoft;
+Color get kAmberLine => KvmPalette.current.amberLine;
+Color get kAmberInk => KvmPalette.current.amberInk;
+Color get kOk => KvmPalette.current.ok;
+Color get kOkSoft => KvmPalette.current.okSoft;
+Color get kOkLine => KvmPalette.current.okLine;
+Color get kOkInk => KvmPalette.current.okInk;
+Color get kErr => KvmPalette.current.err;
+Color get kErrSoft => KvmPalette.current.errSoft;
+Color get kErrFaint => KvmPalette.current.errFaint;
+Color get kErrLine => KvmPalette.current.errLine;
+Color get kErrInk => KvmPalette.current.errInk;
+Color get kPlum => KvmPalette.current.plum;
+Color get kPlumSoft => KvmPalette.current.plumSoft;
+Color get kPlumLine => KvmPalette.current.plumLine;
+Color get kPlumInk => KvmPalette.current.plumInk;
+Color get kViolet => KvmPalette.current.violet;
+Color get kVioletSoft => KvmPalette.current.violetSoft;
+Color get kVioletInk => KvmPalette.current.violetInk;
+Color get kBlue => KvmPalette.current.blue;
+Color get kBlueSoft => KvmPalette.current.blueSoft;
+Color get kBlueInk => KvmPalette.current.blueInk;
+Color get kGoldSoft => KvmPalette.current.goldSoft;
+Color get kGoldLine => KvmPalette.current.goldLine;
+Color get kGoldInk => KvmPalette.current.goldInk;
+/// Sprache aktiv / „Heute fällig“ (Web `--violet`).
+Color get kDue => KvmPalette.current.violet;
 
 const double kRadius = 16;
 const double kRadiusSm = 12;
 
-/// Weiche, dezente Kartenschatten (moderne Tiefe ohne Kontrastlärm).
-const List<BoxShadow> kSoftShadow = [
-  BoxShadow(color: Color(0x0F0C3138), blurRadius: 18, offset: Offset(0, 8)),
-  BoxShadow(color: Color(0x0A0C3138), blurRadius: 3, offset: Offset(0, 1)),
-];
-
-/// Prüfungs-Kategorie (Qualifikation) – oberste Ebene über den Fachthemen.
-class AppCategory {
-  final String id;
-  final String name;      // z. B. 'Kraftverkehrsmeister'
-  final String short;     // z. B. 'KVM'
-  final String subtitle;  // Kurzbeschreibung/Status
-  final bool available;   // Inhalte vorhanden?
-  final Color color;
-  final IconData icon;
-  const AppCategory({
-    required this.id,
-    required this.name,
-    required this.short,
-    required this.subtitle,
-    required this.color,
-    required this.icon,
-    this.available = false,
-  });
-}
-
-/// Verfügbare Kategorien. KVM ist befüllt; weitere folgen (z. B. Industriemeister).
-const List<AppCategory> kCategories = [
-  AppCategory(
-    id: 'kvm',
-    name: 'Kraftverkehrsmeister',
-    short: 'KVM',
-    subtitle: 'IHK-Basisqualifikationen · 2200 Fragen',
-    available: true,
-    color: kPetrol,
-    icon: Icons.local_shipping_outlined,
-  ),
-  AppCategory(
-    id: 'im',
-    name: 'Industriemeister',
-    short: 'IM',
-    subtitle: 'IHK-Basisqualifikationen · bald verfügbar',
-    available: false,
-    color: Color(0xFF3F6FB5),
-    icon: Icons.engineering,
-  ),
-];
+/// Weiche, dezente Kartenschatten (im Dunkeln kräftiger, aber kaum sichtbar).
+List<BoxShadow> get kSoftShadow => KvmPalette.current.shadow;
 
 /// IHK-Notenschlüssel (100-Punkte-Schema; Prozent = Punkte).
 ({int note, String label}) ihkGrade(int p) {

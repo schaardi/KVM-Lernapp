@@ -1,20 +1,23 @@
 import 'dart:convert';
+import 'package:flutter/foundation.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import '../models.dart';
 import '../constants.dart';
 import 'data_service.dart';
+import 'lerntage_service.dart';
 
 /// Lernfortschritt: Leitner-Boxen + Spaced Repetition, persistent gespeichert.
-class ProgressService {
+///
+/// Nach jeder gespeicherten Antwort werden die Zuhörer benachrichtigt
+/// ([addListener]) – etwa der Cloud-Push (SyncService) und die Meldung an die
+/// Rangliste.
+class ProgressService extends ChangeNotifier {
   static final ProgressService instance = ProgressService._();
   ProgressService._();
 
   static const _key = 'kvm_progress_v1';
   final Map<String, Progress> _map = {};
   SharedPreferences? _prefs;
-
-  /// Wird nach jeder Änderung aufgerufen (z. B. Cloud-Push durch SyncService).
-  void Function()? onChanged;
 
   Future<void> load() async {
     _prefs = await SharedPreferences.getInstance();
@@ -33,7 +36,7 @@ class ProgressService {
     final obj = <String, dynamic>{};
     _map.forEach((k, v) => obj[k] = v.toJson());
     await _prefs?.setString(_key, json.encode(obj));
-    onChanged?.call();
+    notifyListeners();
   }
 
   /// Gesamter Fortschritt als JSON – für den Cloud-Upload.
@@ -60,7 +63,7 @@ class ProgressService {
     if (changed) {
       final obj = <String, dynamic>{};
       _map.forEach((k, val) => obj[k] = val.toJson());
-      _prefs?.setString(_key, json.encode(obj)); // ohne onChanged -> keine Push-Schleife
+      _prefs?.setString(_key, json.encode(obj)); // ohne Benachrichtigung -> keine Push-Schleife
     }
   }
 
@@ -89,7 +92,17 @@ class ProgressService {
     final bi = p.box < 0 ? 0 : (p.box > 5 ? 5 : p.box);
     p.due = _todayIdx() + kSrIntervals[bi];
     _map[id] = p;
+    LerntageService.instance.zaehlen();
     _save();
+  }
+
+  /// Alle gegebenen Antworten (Summe `seen` über alle Fragen) – für die Erfolge.
+  int antwortenGesamt() {
+    var n = 0;
+    for (final p in _map.values) {
+      n += p.seen;
+    }
+    return n;
   }
 
   bool isDue(String id) {

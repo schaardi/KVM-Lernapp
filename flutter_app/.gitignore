@@ -51,3 +51,7 @@ app.*.map.json
 /android/app/debug
 /android/app/profile
 /android/app/release
+
+# Screenshots aus tool/screenshots (lokal erzeugt, nicht einchecken)
+tool/screenshots/goldens/
+android/build/
