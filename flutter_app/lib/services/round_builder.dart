@@ -32,6 +32,12 @@ class RoundBuilder {
     return b;
   }
 
+  /// Gewichtete Auswahl wie im Training – auch für eigene Übungen (Mündlich).
+  static List<Question> gewichtet(List<Question> kandidaten, int n) => _weightedPick(kandidaten, n);
+
+  /// Zufällige Reihenfolge.
+  static List<T> gemischt<T>(List<T> a) => _shuffle(a);
+
   /// Baut den Fragen-Pool für einen Modus. Gibt leere Liste zurück, wenn nichts passt.
   static List<Question> build(RoundMode mode, int fach, String sub, List<Question> wrong) {
     final data = DataService.instance;
