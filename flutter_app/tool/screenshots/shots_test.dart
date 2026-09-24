@@ -9,6 +9,8 @@ import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:kvm_trainer/main.dart';
+import 'package:kvm_trainer/screens/kw/kw_hub.dart';
+import 'package:kvm_trainer/screens/login_screen.dart';
 import 'package:kvm_trainer/services/app_state.dart';
 import 'package:kvm_trainer/services/data_service.dart';
 import 'package:kvm_trainer/theme/theme_controller.dart';
@@ -128,6 +130,23 @@ void main() {
     await _foto(tester, 'dunkel_3_lernen');
     await _seite(tester, AppSeite.konto);
     await _foto(tester, 'dunkel_6_konto');
+    debugDisableShadows = true;
+  });
+
+  testWidgets('Kostenwesen und Login', (tester) async {
+    for (final dunkel in [false, true]) {
+      await _app(tester, handy, dunkel: dunkel);
+      final nav = tester.state<NavigatorState>(find.byType(Navigator).first);
+      nav.push(MaterialPageRoute(builder: (_) => const KostenwesenScreen()));
+      await tester.pump(const Duration(milliseconds: 600));
+      await _foto(tester, 'kw_hub_${dunkel ? 'dunkel' : 'hell'}');
+      nav.pop();
+      nav.push(MaterialPageRoute(builder: (_) => const LoginScreen()));
+      await tester.pump(const Duration(milliseconds: 600));
+      await _foto(tester, 'login_${dunkel ? 'dunkel' : 'hell'}');
+      nav.pop();
+      await tester.pump(const Duration(milliseconds: 400));
+    }
     debugDisableShadows = true;
   });
 
