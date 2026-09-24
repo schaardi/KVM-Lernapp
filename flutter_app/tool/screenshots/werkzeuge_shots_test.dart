@@ -8,7 +8,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'dart:math' as math;
 import 'package:kvm_trainer/constants.dart';
+import 'package:kvm_trainer/features/melden.dart';
+import 'package:kvm_trainer/screens/gefahrgut_screen.dart';
+import 'package:kvm_trainer/werkzeuge/melden_dienst.dart';
 import 'package:kvm_trainer/main.dart' show themaFuer;
 import 'package:kvm_trainer/services/data_service.dart';
 import 'package:kvm_trainer/werkzeuge/rechner_modell.dart';
@@ -99,6 +103,7 @@ Future<void> _app(WidgetTester tester, Size groesse, {bool dunkel = false, doubl
   RechnerModell.instance.zuruecksetzen();
   KvmPalette.current = dunkel ? KvmPalette.dark : KvmPalette.light;
   await tester.pumpWidget(MaterialApp(
+    key: UniqueKey(),
     debugShowCheckedModeBanner: false,
     theme: themaFuer(KvmPalette.current),
     home: home,
@@ -201,5 +206,110 @@ void main() {
     await tester.pump(const Duration(milliseconds: 600));
     await _foto(tester, 'wz_dunkel_3_formelbuch');
     _aufraeumen();
+  });
+
+  testWidgets('Gefahrgut – Handy hell', (tester) async {
+    await _app(tester, handy, home: const GefahrgutScreen());
+    await _foto(tester, 'wz_adr_1_uebersicht');
+    await tester.tap(find.text('Quiz'));
+    await tester.pumpAndSettle();
+    await tester.tap(find.textContaining(RegExp(r'^Klasse .+ – ')).at(1));
+    await _foto(tester, 'wz_adr_2_quiz');
+    await tester.tap(find.text('Warntafel'));
+    await tester.pumpAndSettle();
+    await _foto(tester, 'wz_adr_3_warntafel');
+    _aufraeumen();
+  });
+
+  testWidgets('Gefahrgut – dunkel und klein', (tester) async {
+    await _app(tester, handy, dunkel: true, home: GefahrgutScreen(zufall: math.Random(3)));
+    await _foto(tester, 'wz_adr_4_dunkel');
+    await tester.tap(find.text('Quiz'));
+    await tester.pumpAndSettle();
+    await _foto(tester, 'wz_adr_5_dunkel_quiz');
+    _aufraeumen();
+    await _app(tester, klein, home: const GefahrgutScreen(reiter: 2));
+    await _foto(tester, 'wz_adr_6_klein_warntafel');
+    _aufraeumen();
+  });
+
+  testWidgets('Fehler melden – Handy', (tester) async {
+    final frage = DataService.instance.questions.isEmpty ? null : DataService.instance.questions.first;
+    await _app(
+      tester,
+      handy,
+      home: Builder(builder: (c) {
+        final q = frage ?? DataService.instance.questions.firstWhere((q) => q.q.length > 170);
+        return Scaffold(
+          appBar: AppBar(title: const Text('Quiz')),
+          body: Padding(
+            padding: const EdgeInsets.all(16),
+            child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+              Row(children: [
+                Text('AUSWAHLFRAGE', style: TextStyle(fontSize: 11, color: kBlueInk)),
+                const Spacer(),
+                MeldenKnopf(frageId: q.id, bezug: q.q),
+              ]),
+              Row(children: [
+                Text('BEREITS GEMELDET', style: TextStyle(fontSize: 11, color: kMuted)),
+                const Spacer(),
+                const MeldenKnopf(frageId: 'B-VW-002', bezug: 'x'),
+                const MeldenKnopf(frageId: 'B-VW-003', bezug: 'x', kompakt: true),
+              ]),
+              Text(q.q, style: TextStyle(fontSize: 15, height: 1.5, color: kInk)),
+            ]),
+          ),
+        );
+      }),
+    );
+    MeldenDienst.instance.sender = (_) async {};
+    await MeldenDienst.instance.merken('B-VW-002');
+    MeldenDienst.instance.bereit.value = true;
+    await tester.pump();
+    await _foto(tester, 'wz_melden_1_knopf');
+    await tester.tap(find.text('Fehler?'));
+    await tester.pumpAndSettle();
+    await tester.tap(find.text('Rechnung oder Zahl falsch'));
+    await _foto(tester, 'wz_melden_2_dialog');
+    await tester.tap(find.text('Meldung senden'));
+    await tester.pump();
+    await _foto(tester, 'wz_melden_3_gesendet');
+    await tester.pump(const Duration(seconds: 2));
+    // ignore: invalid_use_of_visible_for_testing_member
+    MeldenDienst.instance.zuruecksetzen();
+    _aufraeumen();
+  });
+
+  testWidgets('Fehler melden – dunkel und breit', (tester) async {
+    for (final (groesse, dunkel, name) in [(handy, true, 'wz_melden_4_dunkel'), (breit, false, 'wz_melden_5_breit')]) {
+      await _app(
+        tester,
+        groesse,
+        dunkel: dunkel,
+        dpr: groesse == breit ? 1.25 : 2,
+        home: Builder(builder: (c) {
+          final fall = DataService.instance.cases.firstWhere((f) => f.id.startsWith('P-'));
+          return Scaffold(
+            body: Center(
+              child: FilledButton(
+                onPressed: () => oeffneMelden(c, frageId: fall.steps.first.id, bezug: 'Aufgabe 1 a)'),
+                child: const Text('Melden'),
+              ),
+            ),
+          );
+        }),
+      );
+      MeldenDienst.instance.sender = (_) async => throw Exception('offline');
+      await tester.tap(find.text('Melden'));
+      await tester.pumpAndSettle();
+      await tester.tap(find.text('Lösung falsch'));
+      await tester.pump();
+      await tester.tap(find.text('Meldung senden'));
+      await tester.pump();
+      await _foto(tester, name);
+      // ignore: invalid_use_of_visible_for_testing_member
+      MeldenDienst.instance.zuruecksetzen();
+      _aufraeumen();
+    }
   });
 }
