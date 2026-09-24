@@ -19,6 +19,12 @@ class VoiceService {
   // Laufendes Diktat (Mündlich üben)
   void Function()? _diktatEnde;
   Timer? _endeTimer;
+  // Hat die laufende Aufnahme „listening“ gemeldet? Vorher eintreffende
+  // Meldungen und Ergebnisse stammen noch von der vorigen Aufnahme.
+  bool _diktatHoert = false;
+  // Eine gerade beendete Aufnahme liefert ihre letzten Worte und „done“ noch
+  // nach; bis dahin wartet eine neue kurz, sonst mischen sie sich.
+  Completer<void>? _ausklang;
 
   Future<void> init() async {
     try {
@@ -93,14 +99,22 @@ class VoiceService {
   }) async {
     if (!_sttAvailable) return false;
     await diktatBeenden();
+    final ausklang = _ausklang;
+    if (ausklang != null && !ausklang.isCompleted) {
+      await ausklang.future.timeout(const Duration(milliseconds: 2500), onTimeout: () {});
+    }
+    _ausklang = null;
     try {
       if (_ttsReady) await _tts.stop();
     } catch (_) {}
     _diktatFehler = onFehler;
     _diktatEnde = onEnde;
+    _diktatHoert = false;
     try {
       await _stt.listen(
-        onResult: (r) => onText(r.recognizedWords, r.finalResult),
+        onResult: (r) {
+          if (_diktatHoert) onText(r.recognizedWords, r.finalResult);
+        },
         listenOptions: SpeechListenOptions(
           localeId: 'de_DE',
           listenMode: ListenMode.dictation,
@@ -125,14 +139,25 @@ class VoiceService {
     _diktatEnde = null;
     _diktatFehler = null;
     try {
-      if (_stt.isListening) await _stt.stop();
+      if (_stt.isListening) {
+        _ausklang = Completer<void>();
+        await _stt.stop();
+      }
     } catch (_) {}
   }
 
   void Function(String fehler)? _diktatFehler;
 
   void _status(String s) {
-    if (_diktatEnde == null) return;
+    if (s == SpeechToText.doneStatus) {
+      final a = _ausklang;
+      if (a != null && !a.isCompleted) a.complete();
+    }
+    if (s == SpeechToText.listeningStatus) {
+      if (_diktatEnde != null) _diktatHoert = true;
+      return;
+    }
+    if (_diktatEnde == null || !_diktatHoert) return;
     if (s == SpeechToText.doneStatus) {
       _diktatAbschliessen();
     } else if (s == SpeechToText.notListeningStatus) {
