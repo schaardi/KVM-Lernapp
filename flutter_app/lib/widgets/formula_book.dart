@@ -582,19 +582,23 @@ class _FormulaBookState extends State<FormulaBook> {
       return;
     }
     final ziel = widget.onVorlage;
-    if (ziel != null) {
-      String? name;
-      if (ziel is String? Function(String)) {
-        name = ziel(txt);
-      } else {
-        ziel(txt);
+    if (ziel is String? Function(String)) {
+      // Wie Web `KVM_blattAntwort`: Rückgabe = Ziel („Aufgabe 1 a)“), null =
+      // gerade keine Teilaufgabe offen → Zwischenablage.
+      final name = ziel(txt)?.trim();
+      if (name != null) {
+        setState(() => _meldung[karte] = (
+              name.isEmpty
+                  ? 'Als Vorlage in deine Antwort übernommen – dort ausfüllen.'
+                  : 'Als Vorlage in die Antwort zu $name übernommen – dort ausfüllen.',
+              _HinweisArt.ok
+            ));
+        return;
       }
-      setState(() => _meldung[karte] = (
-            name != null && name.trim().isNotEmpty
-                ? 'Als Vorlage in die Antwort zu ${name.trim()} übernommen – dort ausfüllen.'
-                : 'Als Vorlage in deine Antwort übernommen – dort ausfüllen.',
-            _HinweisArt.ok
-          ));
+    } else if (ziel != null) {
+      ziel(txt);
+      setState(() =>
+          _meldung[karte] = ('Als Vorlage in deine Antwort übernommen – dort ausfüllen.', _HinweisArt.ok));
       return;
     }
     Clipboard.setData(ClipboardData(text: txt));

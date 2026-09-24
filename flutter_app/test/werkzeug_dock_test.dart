@@ -332,4 +332,66 @@ void main() {
     await tester.pump();
     expect(DrawingPad.anzahlStriche, 0);
   });
+
+  testWidgets('Niedrige Fenster: angedockt (400 × 520) und Querformat (844 × 390) ohne Überlauf', (tester) async {
+    for (final g in const [Size(400, 520), Size(844, 390)]) {
+      await starten(tester, groesse: g);
+      RechnerModell.instance.tasten('1 0 zeit − 6 zeit 4 5 = 2 π = 5 +'.split(' '));
+      await tester.tap(find.text('Rechner'));
+      await tester.pumpAndSettle();
+      expect(find.text('TASCHENRECHNER'), findsOneWidget, reason: '$g');
+      expect(tester.takeException(), isNull, reason: '$g');
+      final rechner = tester.getRect(find.byType(CalculatorSheet));
+      expect(rechner.bottom, lessThanOrEqualTo(g.height + 0.5), reason: '$g');
+    }
+  });
+
+  testWidgets('Formelbuch: Ziel-Callback gibt null zurück → Zwischenablage wie im Web', (tester) async {
+    String? ablage;
+    tester.binding.defaultBinaryMessenger.setMockMethodCallHandler(SystemChannels.platform, (call) async {
+      if (call.method == 'Clipboard.setData') ablage = (call.arguments as Map)['text'] as String?;
+      return null;
+    });
+    addTearDown(() => tester.binding.defaultBinaryMessenger.setMockMethodCallHandler(SystemChannels.platform, null));
+    String? keinZiel(String text) => null;
+    late BuildContext c;
+    await starten(
+      tester,
+      home: Scaffold(body: Builder(builder: (b) {
+        c = b;
+        return const SizedBox.expand();
+      })),
+    );
+    oeffneFormelbuchBlatt(c, onUebernehmen: keinZiel);
+    await tester.pumpAndSettle();
+    await tester.ensureVisible(find.text('Vorlage ins Antwortfeld').first);
+    await tester.pumpAndSettle();
+    await tester.tap(find.text('Vorlage ins Antwortfeld').first);
+    await tester.pump();
+    expect(ablage, startsWith('Zuschlagskalkulation (Industrie)'));
+    expect(find.text('Keine Prüfung offen – die Vorlage liegt jetzt in der Zwischenablage.'), findsOneWidget);
+  });
+
+  testWidgets('Neue Frage, neuer Callback: Übernehmen geht an das aktuelle Antwortfeld', (tester) async {
+    final frage = ValueNotifier<int>(1);
+    final erhalten = <String>[];
+    await starten(
+      tester,
+      home: ValueListenableBuilder<int>(
+        valueListenable: frage,
+        builder: (context, nr, _) => Scaffold(
+          body: Text('Frage $nr'),
+          bottomNavigationBar: WerkzeugDock(onUebernehmen: (t) => erhalten.add('F$nr:$t')),
+        ),
+      ),
+    );
+    await tester.tap(find.text('Rechner'));
+    await tester.pumpAndSettle();
+    await tasten(tester, '7 × 6 =');
+    await tester.tap(find.textContaining('Übernehmen'));
+    frage.value = 2;
+    await tester.pump();
+    await tester.tap(find.textContaining('Übernehmen'));
+    expect(erhalten, ['F1:42', 'F2:42']);
+  });
 }
