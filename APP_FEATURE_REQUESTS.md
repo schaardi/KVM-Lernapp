@@ -131,7 +131,8 @@ statt „alle Fragen" verwenden:
 
 ## FR-002 · UI-Überarbeitung: „Heute“-Karte, Werkzeug-Dock, Dunkelmodus, Layout-Fixes
 
-**Status App-Session:** ⏳ offen
+**Status App-Session:** ✅ erledigt (`claude/ui-design-improvement-my0f66`, PR #52, App 1.1.0)  
+Abweichungen App: Auf dem Tablet steht das Werkzeug-Dock als Leiste unten rechts statt als Symbolspalte rechts, weil es den Platz der `bottomNavigationBar` nutzt. Weiche Trennstellen (U+00AD) trennen zwar, zeichnen aber keinen Bindestrich – das entspricht dem U+200B-Ausweg aus H.  
 **Web umgesetzt:** ✅ `claude/ui-design-improvement-my0f66` (Commit „UI überarbeitet …“)
 **Priorität:** hoch für A–E, mittel für F–H, eigenständiges Paket für I (Dunkelmodus) und J (Schriften)
 
@@ -641,7 +642,8 @@ kommen als `TextTheme`-Einträge bzw. Konstanten dazu.
 
 ## FR-003 · Prüfungen neu: strukturierte Texte, Rechenweg, Aufgabenblatt, Startseite mit Lernstand
 
-**Status App-Session:** ⏳ offen
+**Status App-Session:** ✅ erledigt (`claude/ui-design-improvement-my0f66`, PR #52, App 1.1.0)  
+Abweichungen App: Mit dem heutigen Datenstand öffnet die Web-Logik 439 Rechenteile statt 435, der Test erwartet 439. Die Test-ID aus A heißt heute `P-BW-20230504-s14` statt `-s0`.  
 **Web umgesetzt:** ✅ `claude/ui-design-improvement-my0f66` (Commit „Prüfungen überarbeitet …“)
 **Priorität:** sehr hoch für A (ohne A zeigt die App nach dem nächsten Sync „a | b“-Rohtext),
 hoch für B und C, mittel für D, mittel bis hoch für E.
@@ -1156,7 +1158,7 @@ Zeilennummern: Stand dieses Commits.
 
 ## FR-004 · Vergleich mit anderen: freiwillige Wochenrangliste
 
-**Status App-Session:** ⏳ offen
+**Status App-Session:** ✅ erledigt (`claude/ui-design-improvement-my0f66`, PR #52, App 1.1.0)
 **Web umgesetzt:** ✅ `claude/ui-design-improvement-my0f66` (Commit „Vergleich mit anderen …“)
 **Voraussetzungen:**
 - Supabase-Login (wie beim Sync)
@@ -1316,7 +1318,8 @@ Serverseitig abgesichert:
 
 ## FR-005 · Taschenrechner: rechnet wie ein Prüfungsrechner, mit Verlauf und „Übernehmen“
 
-**Status App-Session:** ⏳ offen
+**Status App-Session:** ✅ erledigt (`claude/ui-design-improvement-my0f66`, PR #52, App 1.1.0)  
+Abweichungen App: „Übernehmen ins Formelbuch“ fehlt, weil das Formelbuch als Blatt über dem Rechner liegt. Rechenweg und Rechner teilen sich den Kern `lib/services/rechenkern.dart`.  
 **Web umgesetzt:** ✅ `claude/ui-design-improvement-my0f66` (Commit „Taschenrechner …“)
 **Priorität:** hoch. Der Rechner hängt an 801 Rechenfragen und an jeder Prüfung.
 
@@ -1568,7 +1571,8 @@ Zeilennummern: Stand dieses Commits.
 
 ## FR-006 · Prüfungstermin und Lernplan
 
-**Status App-Session:** ⏳ offen
+**Status App-Session:** ✅ erledigt (`claude/ui-design-improvement-my0f66`, PR #52, App 1.1.0)  
+Abweichungen App: Der Termin wird in einem Blatt eingegeben, nicht in einem Formular in der Karte – so bleibt Start ohne Scrollen.  
 **Web umgesetzt:** ✅ `claude/ui-design-improvement-my0f66` (Commit „Prüfungstermin und Lernplan …“)
 **Priorität:** hoch. Das Tagesziel ist der tägliche Anlass zum Lernen.
 
@@ -1685,7 +1689,7 @@ Zeilennummern: Stand dieses Commits.
 
 ## FR-007 · Prüfung unter Echtbedingungen
 
-**Status App-Session:** ⏳ offen
+**Status App-Session:** ✅ erledigt (`claude/ui-design-improvement-my0f66`, PR #52, App 1.1.0)
 **Web umgesetzt:** ✅ `claude/ui-design-improvement-my0f66` (Commit „Prüfung unter Echtbedingungen …“)
 **Voraussetzung:** Aufgabenblatt aus FR-003.
 
@@ -1799,7 +1803,7 @@ Zeilennummern: Stand dieses Commits.
 
 ## FR-008 · Fehler melden
 
-**Status App-Session:** ⏳ offen
+**Status App-Session:** ✅ erledigt (`claude/ui-design-improvement-my0f66`, PR #52, App 1.1.0)
 **Web umgesetzt:** ✅ `claude/ui-design-improvement-my0f66` (Commit „Fehler melden …“)
 **Voraussetzung:** einmalig `docs/supabase-meldungen.sql` im Supabase-SQL-Editor
 (siehe `SUPABASE_SETUP.md`, Abschnitt 6). Fehlt das Skript, zeigen Web und App keinen Knopf.
@@ -1890,7 +1894,8 @@ Zeilennummern: Stand dieses Commits.
 
 ## FR-009 · Lern-Erinnerung
 
-**Status App-Session:** ⏳ offen
+**Status App-Session:** ✅ erledigt (`claude/ui-design-improvement-my0f66`, PR #52, App 1.1.0)  
+Abweichungen App: Ohne `flutter_timezone`: Die Zeitpunkte sind fest geplant, die Sommerzeit kommt aus der Gerätezeit. Nach dem Prüfungstag gibt es keine Erinnerungen mehr. Auf dem Gerät ist das noch nicht abgenommen.  
 **Web umgesetzt:** ✅ als Kalendereintrag (Commit „Lern-Erinnerung …“). Die Push-Mitteilung
 gibt es nur in der App.
 **Priorität:** mittel. Sie hält die Serie („Tage in Folge“) am Leben.
@@ -1975,7 +1980,7 @@ Zeilennummern: Stand dieses Commits.
 
 ## FR-010 · Lerngruppen mit Einladungscode
 
-**Status App-Session:** ⏳ offen
+**Status App-Session:** ✅ erledigt (`claude/ui-design-improvement-my0f66`, PR #52, App 1.1.0)
 **Web umgesetzt:** ✅ `claude/ui-design-improvement-my0f66` (Commit „Lerngruppen …“)
 **Voraussetzungen:**
 - FR-004 (Wochenrangliste) umgesetzt
@@ -2089,7 +2094,8 @@ Zeilennummern: Stand dieses Commits.
 
 ## FR-011 · Mündliche Prüfung üben (Fachgespräch)
 
-**Status App-Session:** ⏳ offen
+**Status App-Session:** ✅ erledigt (`claude/ui-design-improvement-my0f66`, PR #52, App 1.1.0)  
+Abweichungen App: „Neue Runde“ und „Nur Fehler wiederholen“ bleiben im mündlichen Modus. Im mündlichen Üben gibt es keine Werbung. Vorlesen und Diktat sind noch nicht auf dem Gerät abgenommen.  
 **Web umgesetzt:** ✅ `claude/ui-design-improvement-my0f66` (Commit „Mündlich üben …“)
 **Voraussetzung:** Sprachausgabe/-erkennung der Plattform. Die App hat schon
 `voice_service.dart` für A/B/C/D.
@@ -2203,7 +2209,8 @@ Zeilennummern: Stand dieses Commits.
 
 ## FR-012 · Profile, Freunde und Nutzerübersicht
 
-**Status App-Session:** ⏳ offen
+**Status App-Session:** ✅ erledigt (`claude/ui-design-improvement-my0f66`, PR #52, App 1.1.0)  
+Die Verwaltung für Admins bleibt wie vorgesehen nur im Web.  
 **Web umgesetzt:** ✅ `claude/ui-design-improvement-my0f66` (Commit „Profile, Freunde, Verwaltung …“)
 **Voraussetzungen:**
 - FR-004 (Wochenrangliste) umgesetzt
@@ -2368,7 +2375,7 @@ Zeilennummern: Stand dieses Commits.
 
 ## FR-013 · Zeichenaufgaben: Skizze je Teilaufgabe
 
-**Status App-Session:** ⏳ offen
+**Status App-Session:** ✅ erledigt (`claude/ui-design-improvement-my0f66`, PR #52, App 1.1.0)
 **Web umgesetzt:** ✅ `claude/ui-design-improvement-my0f66` (Commit „Skizze für Zeichenaufgaben …“)
 **Anlass:** zwei Meldungen über „Fehler?“ zur Methoden-Prüfung vom 06.11.2024:
 - Aufgabe 2 a): „Erstellen Sie … ein Flussdiagramm.“
@@ -2502,7 +2509,7 @@ Zeilennummern: Stand dieses Commits.
 
 ## FR-014 · Prüfungen: Neustart, Übersicht, Bestehenschance, Prüfungsrangliste
 
-**Status App-Session:** ⏳ offen
+**Status App-Session:** ✅ erledigt (`claude/ui-design-improvement-my0f66`, PR #52, App 1.1.0)
 **Web umgesetzt:** ✅ `claude/ui-design-improvement-my0f66`
 **SQL:** `docs/supabase-pruefungen.sql` (neu), `docs/supabase-rangliste.sql`, `docs/supabase-gruppen.sql`,
 `docs/supabase-profile.sql` (erweitert). Live eingespielt als Migration `pruefungsergebnisse`.
@@ -2702,7 +2709,8 @@ Zeilennummern: Stand dieses Commits.
 
 ## FR-015 · Mehrseitige Oberfläche: Start ohne Scrollen, Seitenleiste, Statistik zum Aufziehen
 
-**Status App-Session:** ⏳ offen
+**Status App-Session:** ✅ erledigt (`claude/ui-design-improvement-my0f66`, PR #52, App 1.1.0)  
+Mit Nachtrag 4 (Übergänge) in Web und App.  
 **Web umgesetzt:** ✅ `claude/ui-design-improvement-my0f66`
 **Priorität:** hoch (User-Wunsch: „Mach die Webseite gerne Mehrseitig, aber vielleicht mit einem
 Hauptscreen mit direkter Funktionsübersicht und Statistiken, die Prüfungen auch presenter
@@ -2839,12 +2847,46 @@ Reihenfolge von oben:
 - **Konto:** Anmelden/Abmelden, „Verwaltung“ (nur Admins), Darstellung (FR-002 I),
   Lern-Erinnerung (FR-009). Die Quellen-Fußnote steht nur hier.
 
+### 4. Übergänge (Nachtrag)
+User-Wunsch: „Ich hätte gerne einen fließenden Übergang, wenn ich die Seite wechsel so ein Swoosh
+oder so. Oben die Auswahlleiste verschiebt auch bei jedem Wechsel.“ und „Auch das Runterziehen der
+Statistik soll smoother werden.“
+
+1. **Seitenwechsel in Laufrichtung:**
+   - Ein Ziel weiter rechts in der Leiste kommt von rechts, eins weiter links von links.
+   - Die alte Seite blendet in etwa 0,2 s aus und gleitet dabei ein Stück zur Gegenseite.
+   - Die neue Seite gleitet in etwa 0,35 s herein (Versatz 44–56 dp, easeOutCubic) und blendet ein.
+   - Die Leiste bleibt dabei stehen.
+   - Gilt für Leiste, Kacheln und Zurück/Vor.
+   - Nicht beim Rückweg aus einer Runde und nicht bei „weniger Bewegung“ bzw. „Animationen
+     entfernen“; dann wird sofort gewechselt.
+   - Zustand und Scrollposition der Seiten bleiben erhalten.
+2. **Markierung gleitet:** Die Hinterlegung des aktiven Reiters gleitet zum neuen Reiter, statt zu
+   springen. Im Web auf dem Handy liegt sie hinter dem Symbol. In der App übernimmt die
+   `NavigationBar` das mit ihrem eigenen Indikator.
+3. **Leiste springt nicht (Web):**
+   - Ab 900 px bleibt der Platz für den Scrollbalken immer frei (`scrollbar-gutter: stable`).
+   - Vorher rückte die mittig stehende Leiste um die halbe Scrollbalken-Breite (7,5 px), sobald
+     eine Seite länger als der Bildschirm war.
+4. **Statistik zum Ziehen:**
+   - Antippen klappt gleitend auf und zu (≈ 0,34 s).
+   - Beim Ziehen am Kopf folgt die Höhe dem Finger, der Pfeil dreht sich mit.
+   - Beim Loslassen rastet sie ein: offen ab gut einem Drittel der vollen Höhe, oder bei einem
+     schnellen Wisch (> 450 px/s über mehr als 24 px) in dessen Richtung. Sonst schnappt sie zurück.
+   - Ein Klick direkt nach dem Ziehen (< 0,5 s) zählt nicht.
+
 ### Abnahme
 - Handy 390 × 760 und 375 × 667: Start ohne Scrollen, alle sechs Funktionen und die Prüfungskarte
   sichtbar, „Tage in Folge“ und „Kostenwesen“ nicht abgeschnitten (auch bei 320 und 360 dp Breite).
   Desktop 1280 × 800 ebenso.
-- Statistik: Antippen öffnet und schließt, Wischen nach unten öffnet, nach oben schließt.
-  Aufgeklappt sind Radar, Aktivität, Erfolge und „Lernstand zurücksetzen“ erreichbar.
+- Statistik: Antippen öffnet und schließt gleitend, ein schneller Wisch nach unten öffnet, nach
+  oben schließt. Langsam 100 dp ziehen: Die Leiste ist so weit offen, loslassen → zu. Über ein
+  Drittel ziehen und loslassen → offen. Aufgeklappt sind Radar, Aktivität, Erfolge und
+  „Lernstand zurücksetzen“ erreichbar.
+- Seitenwechsel: Start → Prüfungen gleitet von rechts, Prüfungen → Lernen von links. Die
+  Scrollposition von „Lernen“ bleibt beim Hin und Her erhalten.
+- Web, Desktop mit sichtbaren Scrollbalken: Start → Lernen → Prüfungen → Konto → Start, die
+  Leiste steht auf den Pixel still.
 - Leiste: jede Seite öffnet sich, das aktive Ziel ist markiert, die Seite beginnt oben.
 - Web: Adresse `#/lernen` direkt aufrufen → Lernen. Zurück/Vor im Browser wechselt die Seiten.
   `#/gibtsnicht` → Start mit Adresse `#/`.
@@ -2858,19 +2900,23 @@ Reihenfolge von oben:
 
 ### Referenz Web-Implementierung (`index.html` auf `claude/ui-design-improvement-my0f66`)
 - **CSS:**
-  - Block „Seiten und Navigation“, Z. 999
-  - Block „Start: ohne Scrollen“, Z. 1034
+  - Block „Seiten und Navigation“, Z. 999; Scrollbalken-Platz Z. 1024, Seitenwechsel Z. 1028
+  - Block „Start: ohne Scrollen“, Z. 1064
 - **HTML:**
-  - Leiste `#seitenNav`, Z. 1781
-  - Statistik `#statLeiste`, Z. 1801
-  - Funktionen `.start-fn`, Z. 1862
-  - Seite `#seiteLernen`, Z. 1874
+  - Leiste `#seitenNav` mit Markierung `#snZeiger`, Z. 1815
+  - Statistik `#statLeiste` mit `#statRahmen`, Z. 1836
+  - Funktionen `.start-fn`, Z. 1897
+  - Seite `#seiteLernen`, Z. 1909
 - **JS:**
-  - `seiteZeigen`, Z. 5078
-  - Zurück-Taste (`hashchange`), Z. 5105
-  - Statistik wischen, Z. 5115
-  - Hinweispunkt in `vgZeigen`, Z. 5612
-  - Einladungslink → Vergleich, Z. 5359
-  - Rückkehr vom Google-Login, Z. 6281
+  - `seiteZeigen` samt Übergang, Z. 5119
+  - Markierung `zeigerSetzen`, Z. 5160
+  - Zurück-Taste (`hashchange`), Z. 5187
+  - Statistik antippen und ziehen, Z. 5200
+  - Hinweispunkt in `vgZeigen`, Z. 5744
+  - Einladungslink → Vergleich, Z. 5492
+  - Rückkehr vom Google-Login, Z. 6415
+- **App:** `lib/widgets/seiten_stapel.dart` (Seitenwechsel), `_OberLeiste` in
+  `lib/screens/home_screen.dart` (Markierung ab 900 dp), `lib/widgets/start/stat_leiste.dart`
+  (Statistik zum Ziehen).
 
 Zeilennummern: Stand dieses Commits.

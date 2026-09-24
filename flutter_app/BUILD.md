@@ -1,17 +1,12 @@
-# Industriemeister Trainer – native Android-App (Flutter) für Google Play
+# Meister-Trainer – native Android-App (Flutter) für Google Play
 
 Ein nativer Port der KVM-Lernapp mit **Flutter** – eine echte native **Android**-App
-(keine WebView). Die 2200 Fragen, 10 Fallaufgaben und das Formelbuch sind als Assets
-gebündelt (offline).
+(keine WebView). 3.666 Fragen, 136 Fälle (davon 121 Original-IHK-Prüfungen), Anlagen und
+das Formelbuch sind als Assets gebündelt (offline).
 
 ## Was drin ist
-- Fächerauswahl, Themenbereiche, Lernfortschritt (Leitner-Boxen + Spaced Repetition, persistent)
-- Modi: Heute fällig, Training, Alle Themen, Schwächen, Prüfungssimulation (IHK-Notenschlüssel), Fallaufgaben
-- Fragetypen: Auswahlfragen (mit „Warum-falsch"-Begründung je Distraktor), Rechenaufgaben, offene Fragen
-- Prüfungsreife-Radar (CustomPainter)
-- Werkzeuge: Taschenrechner, Rechenblatt (Zeichnen), durchsuchbares Formelbuch
-- **Sprachbedienung nativ** – Frage vorlesen (TTS) + Antwort per A/B/C/D-Spracherkennung
-  (nativ, anders als im Web).
+Stand der Web-App (FR-001 bis FR-015 in `../APP_FEATURE_REQUESTS.md`) – Überblick in
+**[README.md](README.md)**.
 
 ## Voraussetzungen
 - Flutter SDK (stable) – https://docs.flutter.dev/get-started/install
@@ -44,32 +39,43 @@ flutter build appbundle --release      # erzeugt build/app/outputs/bundle/releas
 - App-Signatur einrichten (`android/key.properties` + Keystore), siehe
   https://docs.flutter.dev/deployment/android
 - Das `.aab` in der Google Play Console hochladen.
-- Mikrofon-Berechtigung ist bereits gesetzt (`RECORD_AUDIO`) – im Play-Datenschutzformular deklarieren.
+- Berechtigungen sind gesetzt und im Play-Datenschutzformular zu deklarieren:
+  - Mikrofon (`RECORD_AUDIO`) für Diktat und Sprachbedienung.
+  - Mitteilungen (`POST_NOTIFICATIONS`, `RECEIVE_BOOT_COMPLETED`) für die Lern-Erinnerung.
+
+## Test-APK lokal bauen (zum Weitergeben)
+```bash
+flutter build apk --release   # build/app/outputs/flutter-apk/app-release.apk
+```
+- Signiert mit dem festen Debug-Keystore `android/app/kvm-debug.keystore`. Dessen SHA-1 ist
+  bei Google hinterlegt, deshalb klappt die Google-Anmeldung auch mit der weitergegebenen APK.
+- Die `version:` in `pubspec.yaml` hochzählen und `lib/version.dart` (`kAppVersion`) mitziehen.
+  Die Build-Nummer muss steigen, sonst lässt sich die APK nicht über eine ältere installieren.
 
 ## App-Icon
-Aktuell ist das Standard-Flutter-Icon gesetzt. Für ein eigenes Icon empfiehlt sich das Paket
-`flutter_launcher_icons` (ein Quell-PNG, ein Befehl generiert alle Größen für Android).
+Das Industriemeister-Logo (Buch + Zahnrad) ist als adaptives Icon in
+`android/app/src/main/res/mipmap-*` hinterlegt.
 
 ## Struktur
 ```
 lib/
-  constants.dart              Fächer, Farben, Leitner/SR-Parameter, IHK-Notenschlüssel
-  models.dart                 Question / Opt / CaseStudy / Progress / Formula
-  services/
-    data_service.dart         lädt die gebündelten JSON-Assets
-    progress_service.dart     Fortschritt (SharedPreferences) + Leitner + Spaced Repetition
-    round_builder.dart        baut die Fragen-Pools je Modus
-    voice_service.dart        TTS (flutter_tts) + STT (speech_to_text)
-  widgets/
-    radar_chart.dart          Prüfungsreife-Radar (CustomPainter)
-    calculator.dart           Taschenrechner (eigener Parser)
-    drawing_pad.dart          Rechenblatt (CustomPaint + Gesten)
-    formula_book.dart         durchsuchbares Formelbuch
+  main.dart                   Start, Darstellung (hell/dunkel), Init der Pakete
+  config.dart                 Supabase, Google-Login, Web-Adresse, Werbung
+  constants.dart, theme/      Farbtokens (Palette hell/dunkel), Fächer, Leitner/SR
   screens/
-    home_screen.dart          Startseite
-    quiz_screen.dart          Frage-Ablauf
-    result_screen.dart        Ergebnis + IHK-Note
-assets/data/                  questions.json (2200), cases.json (10), formulas.json
+    home_screen.dart          Startansicht: fünf Seiten, Leiste, Zurück-Taste
+    pages/                    Start, Lernen, Prüfungen, Vergleich, Konto
+    quiz_screen.dart          Frage-Ablauf mit Werkzeug-Dock
+    aufgabenblatt_screen.dart Original-Prüfung als Aufgabenblatt
+    muendlich_screen.dart     Mündlich üben
+  pruefung/                   Rechenweg, Skizze, Ergebnisse, Bestehenschance, Prüfungstexte
+  werkzeuge/                  Rechner-Modell, Fehler melden, Gefahrgut-Daten
+  lernen/                     Lernplan, Lern-Erinnerung
+  cloud/                      Rangliste, Lerngruppen, Freunde, Profile (Supabase)
+  services/                   Daten, Lernstand, Lerntage, Rechenkern, Sync, Sprache
+  widgets/                    Seitenstapel, Startkarten, Rechner, Formelbuch, Radar …
+assets/data/                  questions.json, cases.json, anlagen.json, formulas.json
+assets/fonts/                 Inter, Barlow Condensed, IBM Plex Mono (OFL)
 ```
 
 ## Inhalte / Fragenkatalog
@@ -82,7 +88,10 @@ python tools/sync_content.py           # Katalog aus dem Content-Branch überneh
 ```
 
 ## Hinweise
-- Getestet mit `flutter analyze` (0 Fehler/Warnungen). Der Cloud-Build (GitHub Actions)
-  erzeugt die installierbare APK; die Store-Signierung erfolgt auf deiner Maschine.
-- Der Lernfortschritt liegt lokal (SharedPreferences). Ein geräteübergreifender Transfer
-  (wie der QR-/Code-Export der Web-App) ist als nächster Baustein vorgesehen.
+- Geprüft mit `flutter analyze` (ohne Befund) und `flutter test`.
+- `flutter test --update-goldens tool/screenshots/` rendert alle Bildschirme hell und dunkel mit
+  den echten Schriften nach `tool/screenshots/goldens/`; der Ordner ist nicht eingecheckt.
+- Der Cloud-Build (GitHub Actions) erzeugt die installierbare APK. Die Store-Signierung erfolgt
+  auf deiner Maschine.
+- Der Lernfortschritt liegt lokal (SharedPreferences) und wird nach der Google-Anmeldung über
+  Supabase mit der Web-App abgeglichen.
