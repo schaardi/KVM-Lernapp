@@ -96,7 +96,7 @@ class _KvmAppState extends State<KvmApp> with WidgetsBindingObserver {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Industriemeister Trainer',
+      title: 'Meister-Trainer',
       debugShowCheckedModeBanner: false,
       theme: themaFuer(KvmPalette.current),
       // Große Systemschrift ja, aber so begrenzt, dass die Startseite ohne
