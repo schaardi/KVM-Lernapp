@@ -120,11 +120,7 @@ class VergleichDienst extends ChangeNotifier {
       _prefs = await SharedPreferences.getInstance();
     } catch (_) {}
     // Nach jeder gespeicherten Antwort melden – dort, wo auch der Sync anstößt.
-    final vorher = ProgressService.instance.onChanged;
-    ProgressService.instance.onChanged = () {
-      vorher?.call();
-      meldenSpaeter();
-    };
+    ProgressService.instance.addListener(meldenSpaeter);
     pruefStand.addListener(_pruefGeaendert);
     AppState.instance.addListener(_appGeaendert);
     // Anmelden, Abmelden, Kontowechsel (läuft so lange wie die App).

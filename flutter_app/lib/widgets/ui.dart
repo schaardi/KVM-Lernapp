@@ -40,20 +40,25 @@ class Abschnitt extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final kopf = Text(titel.toUpperCase(), style: monoStyle(11, spacing: 1.3), maxLines: 1, overflow: TextOverflow.ellipsis);
     return Padding(
       padding: padding,
       child: Row(crossAxisAlignment: CrossAxisAlignment.center, children: [
-        Expanded(
-          child: Text(titel.toUpperCase(), style: monoStyle(11, spacing: 1.3), maxLines: 1, overflow: TextOverflow.ellipsis),
-        ),
-        if (zusatz != null)
-          Flexible(
+        // Mit Zusatz behält die Überschrift ihre Breite; der Zusatz steht
+        // rechtsbündig im Rest und kürzt notfalls mit „…“.
+        if (zusatz == null)
+          Expanded(child: kopf)
+        else ...[
+          ConstrainedBox(constraints: const BoxConstraints(maxWidth: 240), child: kopf),
+          const SizedBox(width: 12),
+          Expanded(
             child: Text(zusatz!,
                 textAlign: TextAlign.right,
                 maxLines: 1,
                 overflow: TextOverflow.ellipsis,
                 style: TextStyle(fontSize: 12, fontWeight: FontWeight.w600, color: kPetrolInk)),
           ),
+        ],
         if (rechts != null) rechts!,
       ]),
     );
