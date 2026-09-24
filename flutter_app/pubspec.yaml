@@ -23,6 +23,11 @@ dependencies:
   # nicht auf false steht. Ohne echte AdMob-/Play-IDs laufen Test-Anzeigen.
   google_mobile_ads: ^5.1.0
   in_app_purchase: ^3.1.0
+  # Lern-Erinnerung (FR-009): tägliche lokale Mitteilung zur gewählten Uhrzeit,
+  # ganz ohne Server. Geplant wird mit absoluten Zeitpunkten (timezone, UTC);
+  # die Ortszeit samt Sommerzeit rechnet Dart aus dem Gerät.
+  flutter_local_notifications: ^22.3.1
+  timezone: ^0.11.1
 
 dev_dependencies:
   flutter_lints: ^4.0.0
