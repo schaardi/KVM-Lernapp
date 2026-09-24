@@ -239,7 +239,7 @@ class _HandelCalcState extends State<HandelCalc> {
               '= ${_listenVk.isNaN ? '–' : fmtEur(_listenVk)}',
         ]),
 
-        const InfoBox(
+        InfoBox(
           color: kErr,
           icon: Icons.warning_amber_rounded,
           title: 'Merke die Richtung',

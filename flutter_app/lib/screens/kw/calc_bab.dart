@@ -156,7 +156,7 @@ class _BabCalcState extends State<BabCalc> {
               child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
                 // Kopfzeile
                 Row(children: [
-                  const SizedBox(width: 150, child: Text('Kostenart',
+                  SizedBox(width: 150, child: Text('Kostenart',
                       style: TextStyle(
                           fontSize: 12, fontWeight: FontWeight.w800, color: kMuted))),
                   for (final s in _stellen)
@@ -165,7 +165,7 @@ class _BabCalcState extends State<BabCalc> {
                       child: Padding(
                         padding: const EdgeInsets.only(left: 6),
                         child: Text(s,
-                            style: const TextStyle(
+                            style: TextStyle(
                                 fontSize: 12,
                                 fontWeight: FontWeight.w800,
                                 color: kPetrolDeep)),
@@ -174,7 +174,7 @@ class _BabCalcState extends State<BabCalc> {
                   const SizedBox(width: 34),
                 ]),
                 const SizedBox(height: 6),
-                const Divider(height: 1, color: kLine),
+                Divider(height: 1, color: kLine),
                 // Datenzeilen
                 for (var i = 0; i < _rows.length; i++)
                   Padding(
@@ -184,7 +184,7 @@ class _BabCalcState extends State<BabCalc> {
                         width: 150,
                         child: TextField(
                           controller: _rows[i].name,
-                          style: const TextStyle(fontSize: 13, color: kInk),
+                          style: TextStyle(fontSize: 13, color: kInk),
                           decoration: const InputDecoration(
                             isDense: true,
                             border: InputBorder.none,
@@ -205,16 +205,16 @@ class _BabCalcState extends State<BabCalc> {
                         child: IconButton(
                           tooltip: 'Zeile entfernen',
                           onPressed: _rows.length > 1 ? () => _removeRow(i) : null,
-                          icon: const Icon(Icons.remove_circle_outline,
+                          icon: Icon(Icons.remove_circle_outline,
                               size: 18, color: kMuted),
                         ),
                       ),
                     ]),
                   ),
-                const Divider(height: 12, color: kLine),
+                Divider(height: 12, color: kLine),
                 // Summenzeile
                 Row(children: [
-                  const SizedBox(
+                  SizedBox(
                     width: 150,
                     child: Text('Summe Gemeinkosten',
                         style: TextStyle(
@@ -232,7 +232,7 @@ class _BabCalcState extends State<BabCalc> {
                         padding: const EdgeInsets.only(left: 6),
                         child: Text(fmtNum(s),
                             textAlign: TextAlign.right,
-                            style: const TextStyle(
+                            style: TextStyle(
                                 fontSize: 13.5,
                                 fontWeight: FontWeight.w800,
                                 color: kPetrolDeep)),
@@ -355,7 +355,7 @@ class _BabCalcState extends State<BabCalc> {
               '= ${_satzVtgk.isNaN ? '–' : fmtPct(_satzVtgk)}',
         ]),
 
-        const InfoBox(
+        InfoBox(
           color: kAmber,
           icon: Icons.tips_and_updates_outlined,
           title: 'Typische Verteilungsschlüssel',

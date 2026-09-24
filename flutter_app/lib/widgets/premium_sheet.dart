@@ -92,7 +92,7 @@ class _PremiumSheetState extends State<_PremiumSheet> {
                   const SizedBox(width: 12),
                   Expanded(
                     child: Text(premium ? 'Werbefrei aktiv' : 'Werbefrei lernen',
-                        style: const TextStyle(
+                        style: TextStyle(
                             fontSize: 19, fontWeight: FontWeight.w800, color: kInk)),
                   ),
                 ]),
@@ -103,9 +103,9 @@ class _PremiumSheetState extends State<_PremiumSheet> {
                     padding: const EdgeInsets.all(14),
                     decoration: BoxDecoration(
                         color: kOkSoft, borderRadius: BorderRadius.circular(kRadiusSm)),
-                    child: const Row(children: [
+                    child: Row(children: [
                       Icon(Icons.check_circle, color: kOk),
-                      SizedBox(width: 12),
+                      const SizedBox(width: 12),
                       Expanded(
                         child: Text('Dein Abo ist aktiv – du lernst ohne Werbung. Danke!',
                             style: TextStyle(color: kInk, height: 1.35)),
@@ -113,7 +113,7 @@ class _PremiumSheetState extends State<_PremiumSheet> {
                     ]),
                   ),
                   const SizedBox(height: 8),
-                  const Text(
+                  Text(
                     'Verwalten oder kündigen kannst du das Abo jederzeit im Google '
                     'Play Store unter „Zahlungen und Abos".',
                     style: TextStyle(color: kMuted, fontSize: 12.5, height: 1.35),
@@ -152,7 +152,7 @@ class _PremiumSheetState extends State<_PremiumSheet> {
 
                 if (_msg != null) ...[
                   const SizedBox(height: 6),
-                  Text(_msg!, style: const TextStyle(color: kErr, fontSize: 13, height: 1.35)),
+                  Text(_msg!, style: TextStyle(color: kErr, fontSize: 13, height: 1.35)),
                 ],
               ],
             ),
@@ -169,7 +169,7 @@ class _PremiumSheetState extends State<_PremiumSheet> {
           const SizedBox(width: 12),
           Expanded(
               child: Text(text,
-                  style: const TextStyle(fontSize: 14, color: kInk, height: 1.3))),
+                  style: TextStyle(fontSize: 14, color: kInk, height: 1.3))),
         ]),
       );
 }

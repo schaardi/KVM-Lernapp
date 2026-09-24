@@ -3,6 +3,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 import '../models.dart';
 import '../constants.dart';
 import 'data_service.dart';
+import 'lerntage_service.dart';
 
 /// Lernfortschritt: Leitner-Boxen + Spaced Repetition, persistent gespeichert.
 class ProgressService {
@@ -89,7 +90,17 @@ class ProgressService {
     final bi = p.box < 0 ? 0 : (p.box > 5 ? 5 : p.box);
     p.due = _todayIdx() + kSrIntervals[bi];
     _map[id] = p;
+    LerntageService.instance.zaehlen();
     _save();
+  }
+
+  /// Alle gegebenen Antworten (Summe `seen` über alle Fragen) – für die Erfolge.
+  int antwortenGesamt() {
+    var n = 0;
+    for (final p in _map.values) {
+      n += p.seen;
+    }
+    return n;
   }
 
   bool isDue(String id) {
