@@ -1013,6 +1013,34 @@
 .sn[aria-current="page"]{color:var(--petrol-ink)}
 .sn[aria-current="page"] .ic-svg{background:var(--petrol-soft);border-radius:10px;padding:3px;width:36px;height:28px;margin:-3px 0}
 @media (hover:hover){.sn:hover{color:var(--ink)}}
+/* Die Markierung des aktiven Reiters gleitet zum neuen Reiter, statt zu
+   springen. Ohne Skript bleibt die Hinterlegung am Reiter selbst. */
+.sn{z-index:1}
+.sn-zeiger{position:absolute;left:0;top:0;width:36px;height:28px;border-radius:10px;background:var(--petrol-soft);pointer-events:none;z-index:0;opacity:0;
+  transition:transform .34s cubic-bezier(.2,.8,.2,1),width .34s cubic-bezier(.2,.8,.2,1),height .34s cubic-bezier(.2,.8,.2,1),opacity .2s}
+.sn-zeiger.sofort{transition:none}
+.seiten-nav.mit-zeiger .sn-zeiger{opacity:1}
+.seiten-nav.mit-zeiger .sn[aria-current="page"] .ic-svg{background:none}
+/* Kein Springen der Leiste oben: Platz für den Scrollbalken bleibt immer
+   frei – sonst rückt alles um dessen Breite, sobald eine Seite länger wird.
+   Nur breit; auf dem Handy liegt die Leiste unten und Scrollbalken schweben. */
+@media (min-width:900px){html{scrollbar-gutter:stable}}
+/* Seitenwechsel gleitend in Laufrichtung: die alte Seite gleitet hinaus, die
+   neue herein (View Transitions); ohne diese gleitet nur die neue herein. */
+:root.seitenwechsel .seite:not([hidden]){view-transition-name:seite}
+::view-transition-old(root){display:none}
+::view-transition-new(root){animation:none}
+::view-transition-group(seite){animation-duration:0s}
+::view-transition-old(seite){animation:seite-raus .2s cubic-bezier(.4,0,1,1) both}
+::view-transition-new(seite){animation:seite-rein .36s cubic-bezier(.2,.8,.2,1) both}
+:root[data-richtung="zurueck"]::view-transition-old(seite){animation-name:seite-raus-z}
+:root[data-richtung="zurueck"]::view-transition-new(seite){animation-name:seite-rein-z}
+@keyframes seite-raus{to{opacity:0;transform:translateX(-56px)}}
+@keyframes seite-rein{from{opacity:0;transform:translateX(56px)}}
+@keyframes seite-raus-z{to{opacity:0;transform:translateX(56px)}}
+@keyframes seite-rein-z{from{opacity:0;transform:translateX(-56px)}}
+.seite.rein-vor{animation:seite-rein .36s cubic-bezier(.2,.8,.2,1)}
+.seite.rein-zurueck{animation:seite-rein-z .36s cubic-bezier(.2,.8,.2,1)}
 body[data-screen="scrHome"]{padding-bottom:calc(72px + env(safe-area-inset-bottom))}
 @media (min-width:900px){
   body[data-screen="scrHome"]{padding-bottom:40px}
@@ -1023,6 +1051,8 @@ body[data-screen="scrHome"]{padding-bottom:calc(72px + env(safe-area-inset-botto
   .sn .ic-svg{width:19px;height:19px}
   .sn[aria-current="page"]{background:var(--petrol-soft);color:var(--petrol-ink-deep)}
   .sn[aria-current="page"] .ic-svg{background:none;padding:0;width:19px;height:19px;margin:0}
+  .seiten-nav.mit-zeiger .sn[aria-current="page"]{background:none}
+  .sn-zeiger{border-radius:12px}
   .sn.hinweis::after{top:6px;left:auto;right:7px}
 }
 .seite-titel{display:flex;align-items:baseline;justify-content:space-between;gap:10px;margin:4px 4px 14px;
@@ -1053,8 +1083,12 @@ body[data-screen="scrHome"]:not([data-seite="konto"]) footer{display:none}
 .stat-leiste .hs b{display:block;font:700 19px/1 var(--disp);color:var(--petrol-ink-deep)}
 .stat-leiste .hs span{display:block;font-size:10.5px;line-height:1.2;color:var(--muted);margin-top:3px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .stat-griff{grid-area:g;display:flex;flex-direction:column;align-items:center;gap:2px;font:600 8.5px/1 var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--petrol-ink)}
-.stat-griff .ic-svg{width:17px;height:17px;transition:transform .2s}
-.stat-leiste[open] .stat-griff .ic-svg{transform:rotate(180deg)}
+.stat-griff .ic-svg{width:17px;height:17px;transition:transform .34s cubic-bezier(.2,.8,.2,1);transform:rotate(calc(var(--stat-p,0) * 180deg))}
+.stat-leiste[open] .stat-griff .ic-svg{transform:rotate(calc(var(--stat-p,1) * 180deg))}
+.stat-leiste.zieht .stat-griff .ic-svg{transition:none}
+/* Auf- und Zuklappen gleitet; beim Ziehen folgt die Höhe dem Finger. */
+.stat-rahmen{overflow:hidden}
+.stat-rahmen.gleitet{transition:height .34s cubic-bezier(.2,.8,.2,1)}
 .stat-kopf .prog-bar{grid-area:b;display:block;height:4px;margin:0}
 .stat-kopf .prog-bar .fill{display:block}
 .stat-inhalt{padding:12px 14px 14px;border-top:1px solid var(--line-soft)}
@@ -1779,6 +1813,7 @@ body.sk-offen{overflow:hidden}
        Funktionen im Überblick. Die Adresse trägt die Seite (#/lernen …). -->
   <div class="home" id="scrHome">
     <nav class="seiten-nav" id="seitenNav" aria-label="Bereiche">
+      <span class="sn-zeiger" id="snZeiger" aria-hidden="true"></span>
       <span class="sn-marke" aria-hidden="true">Meister für Kraftverkehr</span>
       <button type="button" class="sn" data-seite="start" aria-current="page"><svg class="ic-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11 12 3l9 8"/><path d="M5 10v10h5v-6h4v6h5V10"/></svg><span>Start</span></button>
       <button type="button" class="sn" data-seite="lernen"><svg class="ic-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 4h6a4 4 0 0 1 4 4v13a3 3 0 0 0-3-3H2z"/><path d="M22 4h-6a4 4 0 0 0-4 4v13a3 3 0 0 1 3-3h7z"/></svg><span>Lernen</span></button>
@@ -1809,7 +1844,7 @@ body.sk-offen{overflow:hidden}
           <span class="stat-griff"><span class="stat-griff-t">Statistik</span><svg class="ic-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></span>
           <span class="prog-bar" aria-hidden="true"><span class="fill" id="pFill" style="width:0%"></span></span>
         </summary>
-        <div class="stat-inhalt">
+        <div class="stat-rahmen" id="statRahmen"><div class="stat-inhalt">
           <div id="readySection">
             <p class="h-sub">Prüfungsreife je Fach <span class="ready-overall" id="readyOverall">0 %</span></p>
             <div class="ready-wrap">
@@ -1824,7 +1859,7 @@ body.sk-offen{overflow:hidden}
           <p class="h-sub h-sub-gap">Erfolge <span class="h-scope" id="erfolgeN"></span></p>
           <div class="erfolge" id="erfolgeList"></div>
           <div class="stat-fuss"><button class="reset" id="btnReset">Lernstand zurücksetzen</button></div>
-        </div>
+        </div></div>
       </details>
 
       <div class="start-raster">
@@ -5075,56 +5110,153 @@ var SEITEN=['start','lernen','pruefungen','vergleich','konto'],seite='start';
 var SEITEN_TITEL={lernen:'Lernen',pruefungen:'Prüfungen',vergleich:'Vergleich',konto:'Konto'},TITEL=document.title;
 function seiteEl(s){return $("seite"+s.charAt(0).toUpperCase()+s.slice(1));}
 function seiteAusAdresse(){var m=/^#\/([a-z]*)$/.exec(location.hash||'');return m&&SEITEN.indexOf(m[1])>=0?m[1]:'start';}
+/* Selbst gesetzte Adresse: deren „hashchange“ ist kein Zurück im Browser. */
+var eigeneAdresse=null;
+function wenigBewegung(){return !!(window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches);}
+/* opt.animiert: vom Nutzer ausgelöster Wechsel innerhalb der Startansicht –
+   die Seite gleitet in Laufrichtung (weiter rechts in der Leiste = von
+   rechts). */
 function seiteZeigen(s,opt){
   opt=opt||{};
   if(SEITEN.indexOf(s)<0||(s==='vergleich'&&$("snVergleich").hidden))s='start';
+  var alt=seite,richtung=SEITEN.indexOf(s)<SEITEN.indexOf(alt)?'zurueck':'vor';
+  var gleiten=!!opt.animiert&&alt!==s&&!$("scrHome").hidden&&!wenigBewegung();
   seite=s;
-  SEITEN.forEach(function(x){seiteEl(x).hidden=x!==s;});
-  document.querySelectorAll('#seitenNav [data-seite]').forEach(function(b){
-    if(b.getAttribute('data-seite')===s)b.setAttribute('aria-current','page');else b.removeAttribute('aria-current');});
-  document.body.setAttribute('data-seite',s);
-  document.title=SEITEN_TITEL[s]?SEITEN_TITEL[s]+' · Meister-Trainer':TITEL;
+  function tauschen(){
+    SEITEN.forEach(function(x){seiteEl(x).hidden=x!==s;});
+    document.querySelectorAll('#seitenNav [data-seite]').forEach(function(b){
+      if(b.getAttribute('data-seite')===s)b.setAttribute('aria-current','page');else b.removeAttribute('aria-current');});
+    zeigerSetzen(!gleiten);
+    document.body.setAttribute('data-seite',s);
+    document.title=SEITEN_TITEL[s]?SEITEN_TITEL[s]+' · Meister-Trainer':TITEL;
+    if(s==='pruefungen'&&window.KVM_pruefListe)window.KVM_pruefListe();
+    if(s==='vergleich'&&window.KVM_vergleich)window.KVM_vergleich();
+    if(!opt.halten)window.scrollTo(0,0);
+  }
+  if(gleiten&&document.startViewTransition){
+    var wurzel=document.documentElement;
+    wurzel.setAttribute('data-richtung',richtung);wurzel.classList.add('seitenwechsel');
+    var vt=document.startViewTransition(tauschen);
+    vt.finished.finally(function(){wurzel.classList.remove('seitenwechsel');});
+  }else{
+    tauschen();
+    if(gleiten){
+      var el=seiteEl(s),kl='rein-'+richtung;
+      el.classList.remove('rein-vor','rein-zurueck');void el.offsetWidth;el.classList.add(kl);
+      setTimeout(function(){el.classList.remove(kl);},420);
+    }
+  }
   /* Adresse nachführen. Kam die Seite aus der Adresse und gibt es sie nicht
      (z. B. #/vergleich ohne Rangliste), die Adresse still berichtigen. */
   var soll='#/'+(s==='start'?'':s),ist=location.hash||'#/';
   if(ist!==soll){
     if(opt.ersetzen||opt.ausAdresse&&/^#\/[a-z]*$/.test(ist))history.replaceState(null,'',soll);
-    else if(!opt.ausAdresse)location.hash=soll;
+    else if(!opt.ausAdresse){eigeneAdresse=soll;location.hash=soll;}
   }
-  if(s==='pruefungen'&&window.KVM_pruefListe)window.KVM_pruefListe();
-  if(s==='vergleich'&&window.KVM_vergleich)window.KVM_vergleich();
-  if(!opt.halten)window.scrollTo(0,0);
 }
+/* Markierung des aktiven Reiters: gleitet zum neuen Reiter. Auf dem Handy
+   liegt sie hinter dem Symbol, auf breiten Bildschirmen hinter dem ganzen
+   Reiter. */
+function zeigerSetzen(sofort){
+  var nav=$("seitenNav"),z=$("snZeiger"),b=nav&&nav.querySelector('.sn[aria-current="page"]');
+  if(!z)return;
+  if(!b||b.hidden||!nav.offsetWidth){nav.classList.remove('mit-zeiger');return;}
+  var n=nav.getBoundingClientRect(),breit=window.matchMedia&&matchMedia('(min-width:900px)').matches;
+  var r=breit?b.getBoundingClientRect():b.querySelector('.ic-svg').getBoundingClientRect();
+  var w=breit?r.width:36,h=breit?r.height:28;
+  var x=r.left-n.left-nav.clientLeft+(r.width-w)/2,y=r.top-n.top-nav.clientTop+(r.height-h)/2;
+  if(sofort||!nav.classList.contains('mit-zeiger'))z.classList.add('sofort');
+  z.style.width=w+'px';z.style.height=h+'px';z.style.transform='translate('+x+'px,'+y+'px)';
+  nav.classList.add('mit-zeiger');
+  if(z.classList.contains('sofort')){void z.offsetWidth;z.classList.remove('sofort');}
+}
+(function(){
+  var nav=$("seitenNav"),neu=function(){zeigerSetzen(true);};
+  window.addEventListener('resize',neu);
+  if(window.ResizeObserver){var ro=new ResizeObserver(neu);ro.observe(nav);nav.querySelectorAll('.sn').forEach(function(b){ro.observe(b);});}
+  if(document.fonts&&document.fonts.ready)document.fonts.ready.then(neu);
+  setTimeout(neu,0);
+})();
 window.KVM_seite=function(s){if($("scrHome").hidden)show("scrHome");seiteZeigen(s);};
-$("seitenNav").addEventListener("click",function(e){var b=e.target.closest('[data-seite]');if(b)seiteZeigen(b.getAttribute('data-seite'));});
+$("seitenNav").addEventListener("click",function(e){var b=e.target.closest('[data-seite]');if(b)seiteZeigen(b.getAttribute('data-seite'),{animiert:true});});
 /* Funktionskacheln der Startseite: Seite öffnen oder den Knopf dort auslösen */
-document.querySelectorAll('#seiteStart [data-geh]').forEach(function(b){b.addEventListener("click",function(){seiteZeigen(b.getAttribute('data-geh'));});});
+document.querySelectorAll('#seiteStart [data-geh]').forEach(function(b){b.addEventListener("click",function(){seiteZeigen(b.getAttribute('data-geh'),{animiert:true});});});
 document.querySelectorAll('#seiteStart [data-klick]').forEach(function(b){b.addEventListener("click",function(){var z=$(b.getAttribute('data-klick'));if(z)z.click();});});
 /* „Zurück“ im Browser: fremde Anker (Login, Einladung) nicht anfassen. Mitten
    in einer Runde wie ✕ – unter Prüfungsbedingungen mit Nachfrage. */
 window.addEventListener("hashchange",function(){
+  var eigen=eigeneAdresse!==null&&(location.hash||'#/')===eigeneAdresse;eigeneAdresse=null;
+  if(eigen)return;
   if(location.hash&&!/^#\/[a-z]*$/.test(location.hash))return;
+  var warDa=!$("scrHome").hidden;
   if($("scrHome").hidden){
     if(!$("scrBlatt").hidden&&echtLaeuft()&&!confirm("Prüfung verlassen?\n\nDie Uhr läuft weiter – wie in der echten Prüfung. Über die Prüfungsliste geht es weiter.")){
       history.pushState(null,'','#/'+(seite==='start'?'':seite));return;}
     if(!$("scrOral").hidden)orStop();
     clearInterval(state.timerId);clearInterval(echtTimer);echtTimer=null;show("scrHome");
   }
-  seiteZeigen(seiteAusAdresse(),{ausAdresse:true});
+  seiteZeigen(seiteAusAdresse(),{ausAdresse:true,animiert:warDa});
 });
-/* Statistik zum Aufziehen: Antippen öffnet und schließt, auf dem Handy auch
-   nach unten bzw. oben wischen. */
+/* Statistik zum Aufziehen: Antippen öffnet und schließt gleitend. Auf dem
+   Handy folgt sie beim Ziehen dem Finger und rastet beim Loslassen ein –
+   offen ab gut einem Drittel oder bei einem schnellen Wisch. */
 (function(){
-  var leiste=$("statLeiste"),kopf=$("statKopf"),y0=null,gewischt=0;
-  kopf.addEventListener("touchstart",function(e){y0=e.touches[0].clientY;},{passive:true});
-  kopf.addEventListener("touchmove",function(e){
-    if(y0===null)return;var dy=e.touches[0].clientY-y0;
-    if(dy>36&&!leiste.open||dy<-36&&leiste.open){leiste.open=dy>0;y0=null;gewischt=Date.now();}
+  var leiste=$("statLeiste"),kopf=$("statKopf"),rahmen=$("statRahmen");
+  var auf=leiste.open,ende=null,y0=null,zieht=false,basis=0,voll=0,spur=[],gewischt=0;
+  function anteil(p){leiste.style.setProperty('--stat-p',String(Math.max(0,Math.min(1,p))));}
+  function jetzt(){return rahmen.getBoundingClientRect().height;}
+  /* Zum Ziel gleiten, von der aktuellen Höhe aus (auch mitten im Gleiten). */
+  function setzen(offen,von){
+    clearTimeout(ende);
+    var start=von!=null?von:(leiste.open?jetzt():0);
+    auf=offen;leiste.classList.toggle('auf',offen);
+    if(!leiste.open)leiste.open=true;
+    var ziel=offen?rahmen.scrollHeight:0;
+    anteil(offen?1:0);
+    if(wenigBewegung()){rahmen.classList.remove('gleitet');rahmen.style.height='';if(!offen)leiste.open=false;return;}
+    rahmen.classList.remove('gleitet');rahmen.style.height=start+'px';void rahmen.offsetHeight;
+    rahmen.classList.add('gleitet');rahmen.style.height=ziel+'px';
+    ende=setTimeout(function(){
+      rahmen.classList.remove('gleitet');rahmen.style.height='';
+      if(!auf)leiste.open=false;
+    },360);
+  }
+  function loslassen(){
+    if(!zieht){y0=null;return;}
+    zieht=false;y0=null;leiste.classList.remove('zieht');gewischt=Date.now();
+    var h=jetzt(),a=spur[0],b=spur[spur.length-1],dt=b.t-a.t,v=dt>0?(b.y-a.y)/dt:0,weg=b.y-spur.anfang;
+    var offen=Math.abs(v)>0.45&&Math.abs(weg)>24?v>0:h>voll*0.35;
+    setzen(offen,h);
+  }
+  kopf.addEventListener("touchstart",function(e){
+    y0=e.touches[0].clientY;zieht=false;spur=[{y:y0,t:e.timeStamp}];spur.anfang=y0;
   },{passive:true});
-  kopf.addEventListener("touchend",function(){y0=null;},{passive:true});
-  /* Manche Browser lösen nach dem Wischen noch einen Klick aus – der würde
-     gleich wieder umschalten. */
-  kopf.addEventListener("click",function(e){if(Date.now()-gewischt<500)e.preventDefault();});
+  kopf.addEventListener("touchmove",function(e){
+    if(y0===null)return;
+    var y=e.touches[0].clientY,dy=y-y0;
+    if(!zieht){
+      if(Math.abs(dy)<6)return;
+      /* Nur in die sinnvolle Richtung: zu → nach unten, offen → nach oben. */
+      if(dy>0===auf){y0=null;return;}
+      zieht=true;clearTimeout(ende);rahmen.classList.remove('gleitet');
+      basis=leiste.open?jetzt():0;
+      if(!leiste.open)leiste.open=true;
+      voll=rahmen.scrollHeight;leiste.classList.add('zieht');
+    }
+    var h=Math.max(0,Math.min(voll,basis+dy));
+    rahmen.style.height=h+'px';anteil(voll?h/voll:0);
+    spur.push({y:y,t:e.timeStamp});if(spur.length>5)spur.splice(0,spur.length-5);
+  },{passive:true});
+  kopf.addEventListener("touchend",loslassen,{passive:true});
+  kopf.addEventListener("touchcancel",loslassen,{passive:true});
+  /* Klick (Maus, Tastatur, Antippen) schaltet gleitend um. Manche Browser
+     lösen nach dem Wischen noch einen Klick aus – der würde gleich wieder
+     umschalten. */
+  kopf.addEventListener("click",function(e){
+    e.preventDefault();
+    if(Date.now()-gewischt<500)return;
+    setzen(!auf);
+  });
 })();
 
 /* ===== events ===== */
