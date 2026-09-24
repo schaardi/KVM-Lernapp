@@ -68,10 +68,14 @@ class _LoginScreenState extends State<LoginScreen> {
                 width: double.infinity,
                 child: FilledButton.icon(
                   onPressed: _busy ? null : _signIn,
+                  // Dunkle Fläche im hellen Modus, helle im dunklen – die Schrift
+                  // nimmt jeweils die Gegenfarbe (Seitenfarbe).
                   style: FilledButton.styleFrom(
-                      backgroundColor: kInk, padding: const EdgeInsets.symmetric(vertical: 16)),
+                      backgroundColor: kInk,
+                      foregroundColor: kBg,
+                      padding: const EdgeInsets.symmetric(vertical: 16)),
                   icon: _busy
-                      ? const SizedBox(width: 20, height: 20, child: CircularProgressIndicator(strokeWidth: 2, color: Colors.white))
+                      ? SizedBox(width: 20, height: 20, child: CircularProgressIndicator(strokeWidth: 2, color: kBg))
                       : const Icon(Icons.g_mobiledata, size: 28),
                   label: Text(_busy ? 'Anmelden …' : 'Mit Google anmelden',
                       style: const TextStyle(fontSize: 15, fontWeight: FontWeight.w700)),
