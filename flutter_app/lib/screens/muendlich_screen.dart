@@ -189,6 +189,7 @@ class _MuendlichScreenState extends State<MuendlichScreen> {
         LerntageService.instance.zaehlen();
       }
     }
+    // „Teilweise“ zählt nur den Lerntag – ohne Lernstand-Meldung, darum hier.
     ErinnerungService.instance.pruefen();
     if (_idx >= widget.pool.length - 1) {
       _voice.stop();
@@ -331,7 +332,7 @@ class _MuendlichScreenState extends State<MuendlichScreen> {
       Expanded(
         child: Text(q.sub, maxLines: 1, overflow: TextOverflow.ellipsis, style: monoStyle(10, color: kMuted, spacing: 0.6)),
       ),
-      MeldenKnopf(frageId: q.id, bezug: q.q, kontext: const {'modus': 'scrOral'}, kompakt: true),
+      MeldenKnopf(frageId: q.id, bezug: q.q, kontext: const {'modus': 'oral'}, kompakt: true),
     ]);
   }
 

@@ -2,6 +2,7 @@ import 'package:flutter/widgets.dart';
 import '../lernen/erinnerung_service.dart';
 import '../lernen/lernplan.dart';
 import '../services/app_state.dart';
+import '../services/progress_service.dart';
 
 /// Start des Pakets „Lernen“ – wird beim App-Start aus `main.dart` aufgerufen
 /// (nach Daten, Lernstand und Anmeldung). FR-006/009/011: Prüfungstermin laden,
@@ -27,8 +28,10 @@ void _einmalAnmelden() {
   if (_angemeldet) return;
   _angemeldet = true;
   WidgetsBinding.instance.addObserver(_Vordergrund());
-  // Nach einer Runde (auch im Aufgabenblatt) baut AppState die Seiten neu –
-  // war es die erste Antwort des Tages, wird die Erinnerung neu geplant.
+  // Nach jeder gespeicherten Antwort (Quiz, Aufgabenblatt, Mündlich) und nach
+  // einer Runde: War es die erste Antwort des Tages, wird die Erinnerung neu
+  // geplant – heute kommt dann keine mehr.
+  ProgressService.instance.addListener(ErinnerungService.instance.pruefen);
   AppState.instance.addListener(ErinnerungService.instance.pruefen);
   // Neuer oder entfernter Prüfungstermin: Erinnerungen enden am Tag davor.
   Lernplan.instance.addListener(() {

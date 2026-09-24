@@ -23,7 +23,7 @@ import 'package:kvm_trainer/services/data_service.dart';
 import 'package:kvm_trainer/services/lerntage_service.dart';
 import 'package:kvm_trainer/services/round_builder.dart';
 import 'package:kvm_trainer/theme/theme_controller.dart';
-import 'package:kvm_trainer/widgets/werkzeug_dock.dart';
+import 'package:kvm_trainer/widgets/calculator.dart';
 
 Future<void> _schriften() async {
   Future<void> lade(String family, List<String> files) async {
@@ -295,11 +295,19 @@ void main() {
       await _tippe(tester, 'Antwort prüfen');
       await _foto(tester, 'lernen_quiz_2_falsch_$m');
       await _tippe(tester, 'Weiter');
-      // Rechenaufgabe: Wert aus dem Dock übernehmen
-      final dock = tester.widget<WerkzeugDock>(find.byType(WerkzeugDock));
-      dock.onUebernehmen!('3.000');
+      // Rechenaufgabe: im angedockten Rechner rechnen und übernehmen
+      await tester.tap(find.text('Rechner'));
+      await tester.pumpAndSettle();
+      for (final k in '1 5 0 0 × 2 ='.split(' ')) {
+        await tester.tap(find.descendant(of: find.byType(CalculatorSheet), matching: find.text(k)).last);
+        await tester.pump();
+      }
+      await _foto(tester, 'lernen_quiz_3_rechner_$m');
+      await tester.tap(find.text('Übernehmen ins Ergebnisfeld'));
       await tester.pump();
       await _foto(tester, 'lernen_quiz_3_rechnen_$m');
+      await tester.tap(find.byTooltip('Schließen'));
+      await tester.pumpAndSettle();
       await _tippe(tester, 'Antwort prüfen');
       await _foto(tester, 'lernen_quiz_4_richtig_$m');
       await _tippe(tester, 'Weiter');

@@ -10,6 +10,8 @@ import 'package:kvm_trainer/services/data_service.dart';
 import 'package:kvm_trainer/services/lerntage_service.dart';
 import 'package:kvm_trainer/services/progress_service.dart';
 import 'package:kvm_trainer/services/round_builder.dart';
+import 'package:kvm_trainer/werkzeuge/rechner_modell.dart';
+import 'package:kvm_trainer/widgets/calculator.dart';
 import 'package:kvm_trainer/widgets/werkzeug_dock.dart';
 
 /// Quiz (FR-002 C/D): „Übernehmen“ aus dem Werkzeug-Dock ins aktive
@@ -59,7 +61,10 @@ void main() {
         await ProgressService.instance.load();
         await LerntageService.instance.load();
         await AnswerStore.instance.init();
+        await RechnerModell.instance.laden();
       });
+      RechnerModell.instance.zuruecksetzen();
+      rechnerZiel.value = null;
     }
 
     Question frage(String id) => DataService.instance.questions.firstWhere((q) => q.id == id);
@@ -71,13 +76,37 @@ void main() {
 
     WerkzeugDock dock(WidgetTester tester) => tester.widget<WerkzeugDock>(find.byType(WerkzeugDock));
 
+    /// Das Ziel mit Rückgabe, wie es das Formelbuch aufruft.
+    String? Function(String) ziel(WidgetTester tester) {
+      final z = dock(tester).onUebernehmen;
+      expect(z, isA<String? Function(String)>());
+      return z as String? Function(String);
+    }
+
+    Future<void> tasten(WidgetTester tester, String folge) async {
+      for (final k in folge.split(' ')) {
+        await tester.tap(find.descendant(of: find.byType(CalculatorSheet), matching: find.text(k)).last);
+        await tester.pump();
+      }
+    }
+
+    Future<void> vorlageAusDemFormelbuch(WidgetTester tester) async {
+      await tester.tap(find.text('Formeln'));
+      await tester.pumpAndSettle();
+      final knopf = find.text('Vorlage ins Antwortfeld').first;
+      await tester.ensureVisible(knopf);
+      await tester.pumpAndSettle();
+      await tester.tap(knopf);
+      await tester.pump();
+    }
+
     testWidgets('Rechenaufgabe: Rechnerwert landet im Ergebnisfeld, „Antwort prüfen“ wird aktiv', (tester) async {
       await laden(tester);
       await quiz(tester, [frage('B-KR-901')]);
       final pruefen = find.widgetWithText(FilledButton, 'Antwort prüfen');
       expect(tester.widget<FilledButton>(pruefen).onPressed, isNull);
       expect(dock(tester).onSprache, isNotNull, reason: 'Sprache sitzt im Dock');
-      dock(tester).onUebernehmen!('3.000');
+      expect(ziel(tester)('3.000'), '', reason: 'Ziel ohne eigenen Namen');
       await tester.pump();
       expect(find.widgetWithText(TextField, '3000'), findsOneWidget);
       expect(tester.widget<FilledButton>(pruefen).onPressed, isNotNull);
@@ -90,6 +119,30 @@ void main() {
       expect(dock(tester).onUebernehmen, isNull);
     });
 
+    testWidgets('Rechenaufgabe: Rechner im Dock, „Übernehmen ins Ergebnisfeld“', (tester) async {
+      await laden(tester);
+      await quiz(tester, [frage('B-KR-901')]);
+      await tester.pump();
+      expect(rechnerZiel.value, 'ins Ergebnisfeld');
+      await tester.tap(find.text('Rechner'));
+      await tester.pumpAndSettle();
+      expect(find.text('TASCHENRECHNER'), findsOneWidget);
+      await tasten(tester, '1 5 0 0 × 2 =');
+      await tester.tap(find.text('Übernehmen ins Ergebnisfeld'));
+      await tester.pump();
+      expect(find.widgetWithText(TextField, '3000'), findsOneWidget);
+      // Der Rechner bleibt angedockt, „Antwort prüfen“ bleibt erreichbar.
+      final pruefen = find.widgetWithText(FilledButton, 'Antwort prüfen');
+      await tester.ensureVisible(pruefen);
+      await tester.pumpAndSettle();
+      await tester.tap(pruefen);
+      await tester.pump();
+      expect(find.text('RICHTIG'), findsOneWidget);
+      await tester.pump();
+      expect(rechnerZiel.value, isNull, reason: 'kein Antwortfeld mehr offen');
+      expect(find.text('Übernehmen ins Antwortfeld'), findsNothing, reason: 'ohne Ziel kein Übernehmen');
+    });
+
     testWidgets('Rechenaufgabe: eine Formelvorlage geht in die Zwischenablage', (tester) async {
       await laden(tester);
       String? ablage;
@@ -99,22 +152,27 @@ void main() {
       });
       addTearDown(() => tester.binding.defaultBinaryMessenger.setMockMethodCallHandler(SystemChannels.platform, null));
       await quiz(tester, [frage('B-KR-901')]);
-      dock(tester).onUebernehmen!('Break-even-Menge = Fixkosten ÷ DB je Stück');
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 100));
-      expect(ablage, 'Break-even-Menge = Fixkosten ÷ DB je Stück');
-      expect(find.text('Die Vorlage passt nicht ins Ergebnisfeld – sie liegt jetzt in der Zwischenablage.'), findsOneWidget);
+      // Keine Zahl → null: Das Formelbuch legt die Vorlage in die Zwischenablage.
+      expect(ziel(tester)('Break-even-Menge = Fixkosten ÷ DB je Stück'), isNull);
+      expect(ziel(tester)('Zeile 1\nZeile 2'), isNull);
+      await vorlageAusDemFormelbuch(tester);
+      expect(ablage, startsWith('Zuschlagskalkulation (Industrie)'));
+      expect(find.text('Keine Prüfung offen – die Vorlage liegt jetzt in der Zwischenablage.'), findsOneWidget);
+      expect(find.widgetWithText(TextField, 'Zuschlagskalkulation (Industrie)'), findsNothing);
     });
 
     testWidgets('Offene Frage: Übernehmen schreibt in die Antwort und speichert sie', (tester) async {
       await laden(tester);
       final q = frage('B-VW-033');
       await quiz(tester, [q]);
+      await tester.pump();
+      expect(rechnerZiel.value, 'in deine Antwort');
       await tester.enterText(find.byType(TextField), 'Beim Minimalprinzip');
       dock(tester).onUebernehmen!('42');
       await tester.pump();
       expect(AnswerStore.instance.get(q.id), 'Beim Minimalprinzip 42');
-      dock(tester).onUebernehmen!('Ziel = Ertrag ÷ Aufwand\nWirtschaftlichkeit = …');
+      // ohne Aufgabenkopf nennt das Formelbuch „in deine Antwort“
+      expect(ziel(tester)('Ziel = Ertrag ÷ Aufwand\nWirtschaftlichkeit = …'), '');
       await tester.pump();
       expect(AnswerStore.instance.get(q.id), 'Beim Minimalprinzip 42\n\nZiel = Ertrag ÷ Aufwand\nWirtschaftlichkeit = …');
       expect(find.widgetWithText(TextField, 'Beim Minimalprinzip 42\n\nZiel = Ertrag ÷ Aufwand\nWirtschaftlichkeit = …'),
@@ -125,10 +183,31 @@ void main() {
       expect(dock(tester).onUebernehmen, isNull);
     });
 
+    testWidgets('Offene Frage: Formelbuch-Vorlage landet in der Antwort, mit Aufgabe als Ziel', (tester) async {
+      await laden(tester);
+      final q = frage('B-VW-033');
+      AnswerStore.instance.set(q.id, '');
+      await quiz(tester, [q]);
+      await vorlageAusDemFormelbuch(tester);
+      expect(AnswerStore.instance.get(q.id), startsWith('Zuschlagskalkulation (Industrie)\n'));
+      expect(find.text('Als Vorlage in deine Antwort übernommen – dort ausfüllen.'), findsOneWidget);
+
+      // Teilaufgabe einer IHK-Prüfung: das Formelbuch nennt sie beim Namen.
+      final teil = [
+        for (final c in DataService.instance.cases)
+          if (c.id.startsWith('P-')) ...c.asPool(),
+      ].firstWhere((x) => x.type == 'open' && x.nr > 0 && x.pts > 0);
+      await tester.pumpWidget(const SizedBox());
+      await quiz(tester, [teil]);
+      expect(ziel(tester)('Zeile 1\nZeile 2'), 'Aufgabe ${teil.nr} ${teil.teil})');
+    });
+
     testWidgets('Auswahlfrage: kein Antwortfeld zum Übernehmen, Begründung nach dem Prüfen', (tester) async {
       await laden(tester);
       await quiz(tester, [frage('B-VW-001')]);
       expect(dock(tester).onUebernehmen, isNull);
+      await tester.pump();
+      expect(rechnerZiel.value, isNull);
       await tester.tap(find.text('Rohstoffe, Arbeit und Kapital'));
       await tester.pump();
       await tester.tap(find.text('Antwort prüfen'));
