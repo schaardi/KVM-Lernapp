@@ -1,9 +1,15 @@
+import 'dart:convert';
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:kvm_trainer/models.dart';
 import 'package:kvm_trainer/pruefung/pruef_ui.dart';
+import 'package:kvm_trainer/pruefung/teil_karte.dart';
 
 /// Ziel für „Übernehmen“ aus dem Rechner (FR-005 D): Beschriftung,
-/// Einsetzen an der Schreibmarke, Zahlformat in Tabellen.
+/// Einsetzen an der Schreibmarke, Zahlformat in Tabellen – und wann der
+/// Rechenweg sofort offen ist (FR-003 B).
 void main() {
   AktivesFeld feld(String text, FeldArt art, {int? zeile, int? marke}) {
     final c = TextEditingController(text: text);
@@ -43,5 +49,16 @@ void main() {
     final t = feld('', FeldArt.tabelle);
     t.einsetzen('−1.250');
     expect(t.controller.text, '-1250');
+  });
+
+  // FR-003 B nennt 435 – Stand der Daten damals; blRechenteil im Web ergibt
+  // mit den heutigen Daten 439.
+  test('Rechenweg sofort offen wie blRechenteil: 439 von 2.030 Prüfungs-Teilaufgaben', () {
+    final faelle = (json.decode(File('assets/data/cases.json').readAsStringSync()) as List<dynamic>)
+        .map((e) => CaseStudy.fromJson(e as Map<String, dynamic>))
+        .where((c) => c.id.startsWith('P-'));
+    final teile = [for (final c in faelle) ...c.steps];
+    expect(teile.length, 2030);
+    expect(teile.where(istRechenteil).length, 439);
   });
 }
