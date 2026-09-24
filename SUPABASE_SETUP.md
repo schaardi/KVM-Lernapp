@@ -110,7 +110,7 @@ Fehlt das, landet man nach dem Login auf der voreingestellten Site URL (oft
 aus Abschnitt 2.
 
 Tabellen und Funktionen kommen **nicht** über Pages. Sie werden einmal per SQL-Skript
-im Supabase-SQL-Editor angelegt (Abschnitte 1 und 5 bis 8). Bis dahin blendet die Web-App
+im Supabase-SQL-Editor angelegt (Abschnitte 1 und 5 bis 9). Bis dahin blendet die Web-App
 die betroffene Funktion aus.
 
 ## So funktioniert der Sync
@@ -124,9 +124,12 @@ die betroffene Funktion aus.
 
 Web-App und App können angemeldeten Nutzerinnen und Nutzern eine **freiwillige
 Wochenrangliste** zeigen. Man tritt mit einem selbst gewählten Spitznamen bei und
-sieht zwei Dinge:
+sieht:
 - die Top 10 der Woche nach beantworteten Fragen, mit dem eigenen Platz
 - wie viele Teilnehmende bei der Prüfungsreife hinter einem liegen
+- umschaltbar die **Prüfungsrangliste:** die meisten bestandenen Original-Prüfungen
+  (je Prüfung zählt der erste vollständig bewertete Durchgang), bei Gleichstand der
+  bessere Schnitt, dazu die Bestehenschance
 
 Freigeschaltet wird das mit **einem** SQL-Skript im Supabase-SQL-Editor:
 [`docs/supabase-rangliste.sql`](docs/supabase-rangliste.sql). Es lässt sich
@@ -136,17 +139,26 @@ Vergleich einfach aus.
 Datenschutz, eingebaut:
 - **Opt-in:** Ohne ausdrücklichen Beitritt wird nichts geteilt.
 - **Nur Kennzahlen:** Andere sehen Spitzname, Prüfungsreife in %, Antworten dieser
-  Woche und Lerntage in Folge. Keine E-Mail, kein Klarname, keine Nutzer-ID.
+  Woche, Lerntage in Folge und die Prüfungsergebnisse (gewertete und bestandene
+  Prüfungen, Ø-Punkte, Bestehenschance). Keine E-Mail, kein Klarname, keine Nutzer-ID.
 - **Kein Direktzugriff:** Die Tabelle `rangliste` ist für Clients gesperrt.
-  Lesen und Schreiben laufen über vier Funktionen (`rangliste_melden`,
-  `rangliste_stand`, `rangliste_austreten`, `rangliste_info`).
+  Lesen und Schreiben laufen über sechs Funktionen (`rangliste_melden`,
+  `rangliste_stand`, `rangliste_austreten`, `rangliste_info`, `pruefungen_melden`,
+  `rangliste_pruefungen`).
 - **Plausibel begrenzt:** Die Funktionen deckeln die gemeldeten Werte.
 - **Austreten löscht den Eintrag.** Wer sein Konto löscht, verliert ihn ebenfalls
   (`on delete cascade`).
 
+**Bestehende Projekte nachziehen:** Wer die Rangliste schon eingerichtet hat, führt
+nacheinander erneut aus: `docs/supabase-rangliste.sql` (neue Spalten und Funktionen für
+die Prüfungswerte), dann – falls genutzt – `docs/supabase-gruppen.sql` und
+`docs/supabase-profile.sql` (Prüfungswerte in Gruppen, Freundeslisten und Profilen). Alle
+drei lassen sich gefahrlos erneut ausführen; die Reihenfolge ist wichtig, weil Gruppen und
+Profile die neuen Spalten lesen.
+
 Vor dem Freischalten in der **Datenschutzerklärung** und im
 **Play-Datenschutzformular** ergänzen:
-- was geteilt wird: Spitzname und Lernkennzahlen, nur nach Beitritt
+- was geteilt wird: Spitzname und Lernkennzahlen samt Prüfungsergebnissen, nur nach Beitritt
 - wofür: Vergleich mit anderen Lernenden
 
 ## 6. Fehler melden (optional)
@@ -229,6 +241,7 @@ dafür leer. Solange das Skript fehlt, sieht die Rangliste aus wie bisher.
   - Aktivität der letzten 14 Tage
   - Lerntage
   - Prüfungen unter Echtbedingungen
+  - Prüfungsergebnisse je Prüfungsbereich (gewertet, bestanden, Ø-Punkte, Chance)
 - **Freundschaft** braucht Anfrage und Annahme. Abgelehnt wird still; wer abgelehnt wurde,
   kann nicht erneut drängeln. Höchstens 30 offene Anfragen und 50 neue am Tag.
 - **Keine Konto-ID nach außen:** Profile haben eine eigene, zufällige Kennung.
@@ -268,6 +281,30 @@ In der **Datenschutzerklärung** ergänzen:
 - **Verwaltung:** Admins können zur Betreuung, Moderation und für Löschanfragen alle
   gespeicherten Angaben einsehen (Konto, Lernstand, Profil, Freunde, Gruppen, Meldungen).
   Sperren und Löschungen werden protokolliert.
+
+## 9. Prüfungsergebnisse auf allen Geräten (optional)
+
+Jede ausgewertete Original-Prüfung wird als **Durchgang** gespeichert: Punkte, wie viele
+Teilaufgaben bewertet sind, ob unter Prüfungsbedingungen, Bearbeitungszeit. Keine
+Antworten. Daraus rechnen Web-App und App die Übersicht (bestanden oder nicht je Prüfung
+und Bereich) und die Bestehenschance.
+
+Ohne Konto bleiben die Durchgänge auf dem Gerät. Mit [`docs/supabase-pruefungen.sql`](docs/supabase-pruefungen.sql)
+werden sie beim Anmelden und nach jeder Auswertung mit der Cloud abgeglichen, sodass
+Übersicht, Chance und Rangliste auf jedem Gerät gleich sind. Das Skript ist unabhängig von
+den Abschnitten 5 bis 8 und lässt sich gefahrlos erneut ausführen.
+
+- **Nur die eigene Person** liest und schreibt ihre Durchgänge, und zwar über
+  `pruefungen_abgleichen`. Die Tabelle `pruefung_ergebnisse` ist für Clients gesperrt.
+- **Abgleich:** Das Gerät sendet, was seit dem letzten Abgleich bewertet wurde. Zurück kommen
+  alle eigenen Durchgänge. Meldet ein zweites Gerät denselben Durchgang, gilt die zuletzt
+  bewertete Fassung (Feld `g`).
+- **Begrenzt:** höchstens 500 Durchgänge je Aufruf, je Konto die 1000 jüngsten. Ungültige
+  Werte werden übersprungen.
+- **Aufräumen:** Wer sein Konto löscht, verliert die Durchgänge (`on delete cascade`).
+
+In der **Datenschutzerklärung** ergänzen: Ergebnisse der Übungsprüfungen (Punkte, Datum,
+Bearbeitungszeit) werden zum geräteübergreifenden Abgleich gespeichert.
 
 ## Apple-Login später
 Die Auth-Architektur ist anbieter-offen (`AuthService`). „Sign in with Apple"

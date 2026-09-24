@@ -380,6 +380,11 @@
   .badge{display:inline-block;font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;font-weight:600;border-radius:14px;padding:4px 12px;margin-bottom:7px}
   .badge.pass{background:var(--ok-soft);color:var(--ok-ink);border:1px solid var(--ok-line)}
   .badge.fail{background:var(--err-soft);color:var(--err-ink);border:1px solid var(--err-line)}
+  .badge.offen{background:var(--amber-soft);color:var(--amber-ink);border:1px solid var(--amber-line)}
+  /* Prüfung: gewertet? Erstversuch? neue Bestehenschance */
+  .res-chance{margin:0;padding:12px 18px;border-bottom:1px solid var(--line);font-size:13px;line-height:1.5;color:var(--ink-soft);background:var(--petrol-soft)}
+  .res-chance b{color:var(--ink)}
+  .res-link{border:0;background:none;padding:0;font:inherit;font-weight:700;color:var(--petrol-ink);text-decoration:underline;text-underline-offset:2px;cursor:pointer}
   .res-txt p{margin:0;font-size:13px;color:var(--muted)} .res-txt p b{color:var(--ink);font-family:var(--mono)}
   .breakdown{padding:16px 18px;border-bottom:1px solid var(--line)}
   .b-row{margin-bottom:11px} .b-row:last-child{margin-bottom:0}
@@ -1082,6 +1087,17 @@ body[data-screen="scrOral"] .toolbar{display:none}
 .el-bar{height:5px;border-radius:3px;background:rgba(255,255,255,.14);overflow:hidden;margin-top:8px}
 .el-bar i{display:block;height:100%;border-radius:3px;background:linear-gradient(90deg,#FFD28F,var(--amber))}
 .el-go{flex:0 0 auto;border:0;border-radius:11px;background:#fff;color:#0A4B53;font:700 13px var(--body);padding:10px 15px;min-height:42px;cursor:pointer}
+/* Bestehenschance unter der Prüfungskarte */
+.exam-chance{position:relative;display:flex;flex-direction:column;gap:7px;width:100%;border:0;border-top:1px solid rgba(255,255,255,.12);
+  background:transparent;color:#fff;text-align:left;padding:12px 16px 14px;font:inherit;cursor:pointer}
+.exam-chance:focus-visible{outline:2px solid #fff;outline-offset:-4px}
+@media (hover:hover){.exam-chance:hover{background:rgba(255,255,255,.04)}}
+.ec-werte{display:flex;flex-wrap:wrap;gap:8px 22px}
+.ec-w{min-width:0}
+.ec-w b{display:block;font:700 26px/1 var(--disp);color:#fff}
+.ec-w small{display:block;font-size:11.5px;line-height:1.35;color:rgba(255,255,255,.72);margin-top:3px}
+.ec-w.offen b{color:rgba(255,255,255,.62)}
+.ec-sum{font-size:12.5px;color:rgba(255,255,255,.8)}
 .el-go:hover{background:#EEF7F8}
 .el-go:focus-visible{outline:2px solid #fff;outline-offset:2px}
 
@@ -1136,6 +1152,8 @@ body[data-screen="scrOral"] .toolbar{display:none}
 .vg-z[data-platz="3"] .vg-p{background:radial-gradient(circle at 35% 30%,#F3C9A0,#C98A52 60%,#9A5E2C);color:#fff}
 .vg-n{font-weight:600;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:var(--ink)}
 .vg-a{font:700 13px var(--mono);color:var(--ink);text-align:right}
+.vg-liste.pruef .vg-z{grid-template-columns:30px minmax(0,1fr) 78px 58px}
+.vg-modus{margin:0 0 12px}
 .vg-r{font:600 11.5px var(--mono);color:var(--muted);text-align:right}
 .vg-z.kopf .vg-a,.vg-z.kopf .vg-r{font:inherit;color:inherit}
 .vg-z.ich{background:var(--petrol-soft)}
@@ -1208,6 +1226,17 @@ body[data-screen="scrOral"] .toolbar{display:none}
 .lt-kpi span{display:block;margin-top:5px;font-size:11.5px;line-height:1.35;color:var(--muted)}
 @media (max-width:560px){.lt-kpis{grid-template-columns:repeat(2,minmax(0,1fr))}}
 .lt-faecher{display:grid;gap:10px;margin:0 0 18px}
+/* Profil: Prüfungen je Bereich */
+.lt-pruef{display:grid;gap:6px;margin:0 0 18px}
+.lt-pb{display:grid;grid-template-columns:minmax(96px,.9fr) minmax(0,2fr) 58px;align-items:center;gap:8px;
+  padding:8px 11px;border:1px solid var(--line-soft);border-radius:10px;background:var(--surface);font-size:13px}
+.lt-pn{font-weight:700;color:var(--ink);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.lt-pz{font-size:12px;color:var(--muted)}
+.lt-pc{font:700 12.5px var(--mono);color:var(--petrol-ink-deep);text-align:right}
+@media (max-width:560px){
+  .lt-pb{grid-template-columns:minmax(0,1fr) auto;grid-template-areas:"n c" "z z";gap:2px 8px}
+  .lt-pn{grid-area:n}.lt-pz{grid-area:z}.lt-pc{grid-area:c}
+}
 .lt-fach{display:grid;grid-template-columns:150px minmax(0,1fr) 46px;align-items:center;gap:3px 10px}
 .lt-fn{display:flex;align-items:center;gap:7px;min-width:0;font:600 13px var(--body);color:var(--ink)}
 .lt-fn i{flex:none;width:9px;height:9px;border-radius:50%}
@@ -1412,9 +1441,53 @@ body[data-screen="scrBlatt"] .app{max-width:920px}
 .bl-echt.fertig{border-color:var(--ok-line);background:var(--ok-soft)}
 .bl-echt svg{flex:none;margin-top:2px;color:var(--petrol-ink)}
 .bl-echt b{color:var(--petrol-ink-deep)}
-.pr-btn.echt{display:inline-flex;align-items:center;gap:6px}
-.pr-echt{margin:9px 0 0;font-size:12px;color:var(--muted)}
-.pr-echt b{color:var(--ink)}
+.pr-btn.echt,.pr-btn[data-neu]{display:inline-flex;align-items:center;gap:6px}
+/* Ergebnis je Prüfung: letzter Durchgang, bei Wiederholungen der Verlauf */
+.pr-erg{display:flex;flex-wrap:wrap;align-items:center;gap:4px 9px;margin:10px 0 0;font-size:12px;color:var(--muted)}
+.pr-erg b{color:var(--ink)}
+.pr-status{font:700 10.5px/1.2 var(--mono);letter-spacing:.06em;text-transform:uppercase;border-radius:20px;padding:4px 9px;border:1px solid}
+.pr-status.ok{background:var(--ok-soft);color:var(--ok-ink);border-color:var(--ok-line)}
+.pr-status.nok{background:var(--err-soft);color:var(--err-ink);border-color:var(--err-line)}
+.pr-status.offen{background:var(--amber-soft);color:var(--amber-ink);border-color:var(--amber-line)}
+.pr-verlauf{font-family:var(--mono);font-size:11px;color:var(--ink-soft)}
+/* Übersicht: bestanden je Bereich und Bestehenschance */
+.pu{border:1px solid var(--petrol-line);background:var(--petrol-soft);border-radius:14px;padding:12px 14px;margin:0 0 14px}
+.pu.leer{display:flex;flex-direction:column;gap:4px;font-size:12.5px;line-height:1.5;color:var(--ink-soft)}
+.pu.leer b{font:700 11px var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--petrol-ink-deep)}
+.pu-sum{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:4px 12px;cursor:pointer;list-style:none;min-height:28px}
+.pu-sum::-webkit-details-marker{display:none}
+.pu-titel{font:700 11px var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--petrol-ink-deep)}
+.pu-titel::after{content:" ▴";color:var(--muted)}
+.pu:not([open]) .pu-titel::after{content:" ▾"}
+.pu-zahl{font-size:12.5px;color:var(--ink-soft)}
+.pu-zahl b{font-family:var(--mono);color:var(--ink)}
+.pu-kopf{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:8px;margin:10px 0}
+.pu-teil{background:var(--paper);border:1px solid var(--line);border-radius:11px;padding:9px 12px;min-width:0}
+.pu-k{display:block;font:600 9.5px/1.3 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.pu-p{display:block;font:700 26px/1.1 var(--disp);color:var(--petrol-ink-deep);margin-top:3px}
+.pu-p.leer{color:var(--ph)}
+.pu-s{display:block;font-size:11.5px;line-height:1.35;color:var(--muted);margin-top:2px}
+.pu-liste{display:grid;gap:4px}
+.pu-b{display:grid;grid-template-columns:minmax(92px,1.1fr) minmax(0,2fr) 52px;grid-template-areas:"n e c" "b b b";align-items:center;gap:3px 10px;
+  width:100%;border:1px solid transparent;background:var(--paper);border-radius:10px;padding:7px 10px;min-height:44px;font:inherit;color:inherit;text-align:left;cursor:pointer}
+@media (hover:hover){.pu-b:hover{border-color:var(--petrol-line)}}
+.pu-b.an{border-color:var(--petrol)}
+.pu-name{grid-area:n;font-weight:700;font-size:13px;color:var(--ink);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.pu-erg{grid-area:e;display:flex;flex-wrap:wrap;gap:3px;min-width:0}
+.pu-erg i{font:700 10.5px/1 var(--mono);font-style:normal;border-radius:5px;padding:3px 5px;border:1px solid}
+.pu-erg i.ok{background:var(--ok-soft);color:var(--ok-ink);border-color:var(--ok-line)}
+.pu-erg i.nok{background:var(--err-soft);color:var(--err-ink);border-color:var(--err-line)}
+.pu-nix{font-size:11.5px;color:var(--muted)}
+.pu-ch{grid-area:c;justify-self:end;font:700 13px var(--mono);color:var(--muted)}
+.pu-ch.gut{color:var(--ok-ink)}.pu-ch.mittel{color:var(--amber-ink)}.pu-ch.knapp{color:var(--err-ink)}
+.pu-bar{grid-area:b;height:4px;border-radius:2px;background:var(--track);overflow:hidden}
+.pu-bar i{display:block;height:100%;border-radius:2px;background:var(--muted)}
+.pu-bar.gut i{background:var(--ok)}.pu-bar.mittel i{background:var(--amber)}.pu-bar.knapp i{background:var(--err)}
+.pu-hinweis{margin:10px 0 0;font-size:11.5px;line-height:1.5;color:var(--muted)}
+@media (max-width:560px){
+  .pu{padding:11px 11px}
+  .pu-b{grid-template-columns:minmax(0,1fr) auto;grid-template-areas:"n c" "e e" "b b";gap:5px 8px}
+}
 .bl-foot{display:flex;gap:9px;align-items:center;margin-top:18px;padding-top:15px;border-top:1px solid var(--line);flex-wrap:wrap}
 .bl-nav{border:1px solid var(--line-strong);background:var(--paper);border-radius:10px;padding:10px 15px;min-height:44px;font:700 13px var(--body);color:var(--petrol-ink);cursor:pointer}
 .bl-nav:hover{background:var(--petrol-soft)}
@@ -1629,6 +1702,7 @@ body.sk-offen{overflow:hidden}
         <span class="exam-go" aria-hidden="true"><svg class="ic-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></span>
       </button>
       <div class="exam-last" id="pruefLast" hidden></div>
+      <button type="button" class="exam-chance" id="pruefChance" hidden></button>
     </section>
 
     <h2 class="h-group">Erfolge <span class="h-scope" id="erfolgeN"></span></h2>
@@ -1812,11 +1886,13 @@ body.sk-offen{overflow:hidden}
         <p id="resLine">–</p>
       </div>
     </div>
+    <p class="res-chance" id="resChance" hidden></p>
     <div class="breakdown" id="breakdown"></div>
     <div class="tasklist" id="taskList"></div>
     <div class="res-actions">
       <button class="btn-amber" id="btnRetryWrong" hidden>Nur Fehler wiederholen (<span id="wrongCount">0</span>)</button>
       <button class="primary" id="btnAgain">Neue Runde starten</button>
+      <button class="ghost" id="btnResListe" hidden>Alle Prüfungen</button>
       <button class="ghost" id="btnHome">Zur Startseite</button>
     </div>
   </div>
@@ -2403,7 +2479,27 @@ function renderPruefLast(){
   box.hidden=false;
   $("btnPruefWeiter").onclick=function(){startRound('cases',c.id,idx);};
 }
-function renderHomeExtras(){renderHero();renderErfolge();renderAktiv();renderPruefLast();
+/* Startseite: Bestehenschance aus den gewerteten Prüfungen */
+function renderPruefChance(){
+  var box=$("pruefChance");if(!box)return;
+  var st=peStatistik();
+  if(!st.n){box.hidden=true;return;}
+  function wert(t,name){
+    if(!t)return '';
+    if(t.p==null)return '<span class="ec-w offen"><b>'+(t.n-t.fehlt.length)+'/'+t.n+'</b><small>'+name+': Bereiche geprüft · fehlt: '+
+      esc(t.fehlt.map(function(k){return st.B[k].kurz;}).join(', '))+'</small></span>';
+    return '<span class="ec-w"><b>'+peProzent(t.p)+'</b><small>'+name+'</small></span>';
+  }
+  var knapp=null;
+  PB.forEach(function(x){var b=st.B[x.k];if(b.chance!=null&&(b.teil!=='hq'||st.hq)&&(!knapp||b.chance<knapp.chance))knapp=b;});
+  box.innerHTML='<span class="el-k">Bestehenschance</span><span class="ec-werte">'+wert(st.bq,'Basisqualifikationen')+wert(st.hq,'Handlungsspezifisch')+'</span>'+
+    '<span class="ec-sum">'+st.ok+' von '+st.n+' '+(st.n===1?'Prüfung':'Prüfungen')+' bestanden'+
+    (knapp&&knapp.chance<0.7?' · am knappsten: '+esc(knapp.kurz)+' '+peProzent(knapp.chance):'')+' →</span>';
+  box.setAttribute('aria-label','Bestehenschance – Übersicht deiner Prüfungen öffnen');
+  box.hidden=false;
+}
+$("pruefChance").addEventListener("click",function(){var t=$("btnPruef");if(t)t.click();});
+function renderHomeExtras(){renderHero();renderErfolge();renderAktiv();renderPruefLast();renderPruefChance();
   if(window.KVM_vergleich)window.KVM_vergleich();}
 
 function renderSubChips(){
@@ -4315,11 +4411,11 @@ function echtLaeuft(){var e=echtAktiv();return !!(e&&!e.ende);}
 function uhrText(ms){var s=Math.max(0,Math.ceil(ms/1000)),h=Math.floor(s/3600),m=Math.floor(s%3600/60),x=s%60;
   return (h?h+':'+(m<10?'0':''):'')+m+':'+(x<10?'0':'')+x;}
 function dauerText(ms){var m=Math.max(0,Math.round(ms/60000)),h=Math.floor(m/60);m%=60;return h?(h+' h'+(m?' '+m+' min':'')):(m+' min');}
-function echtVerlauf(){try{var v=JSON.parse(localStorage.getItem(ECHT_VERLAUF)||'[]');return Array.isArray(v)?v:[];}catch(e){return [];}}
-function echtMerken(e,pkt,max,note){
-  var v=echtVerlauf();v.push({id:e.id,tag:todayIdx(),min:e.min,dauer:e.ende-e.start,pkt:pkt,max:max,note:note});
-  try{localStorage.setItem(ECHT_VERLAUF,JSON.stringify(v.slice(-40)));}catch(x){}
-}
+/* Durchgänge unter Prüfungsbedingungen – seit den Prüfungsergebnissen
+   (unten) ein Ausschnitt aus kvm_pruef_erg; kvm_echt_verlauf wird dorthin
+   übernommen. */
+function echtVerlauf(){return peAll().filter(function(e){return e.echt;}).map(function(e){
+  return {id:e.id,tag:Math.floor(e.t/864e5),min:e.min|0,dauer:e.dauer|0,pkt:e.pkt,max:e.max,note:ihkGrade(pePct(e)).note};});}
 /* Antworten, Rechenwege, Tabellen und Punkte einer Prüfung leeren – der
    Durchgang beginnt wie in der Prüfung mit leeren Blättern. */
 function echtHatAntworten(ids){var ot=otAll();return ids.some(function(i){
@@ -4377,16 +4473,212 @@ window.KVM_startEcht=function(id){
     echtLeeren(ids);
   }
   echtSet({id:id,start:Date.now(),min:echtMinuten(c)});
+  peLauf(id,true);
   window.KVM_startCase(id,0);
   return true;
 };
+/* Die Liste fragt je Prüfung – Ergebnisse liefert KVM_pruefErgAlle. */
 window.KVM_echtInfo=function(id){
-  var e=echtGet(),v=echtVerlauf().filter(function(x){return x.id===id;});
-  var c=CASES.filter(function(x){return x.id===id;})[0];
+  var e=echtGet(),c=CASES.filter(function(x){return x.id===id;})[0];
   return {min:c?echtMinuten(c):90,laeuft:!!(e&&e.id===id&&!e.ende),abgegeben:!!(e&&e.id===id&&e.ende),
-    rest:(e&&e.id===id&&!e.ende)?e.start+e.min*60000-Date.now():null,letzte:v.length?v[v.length-1]:null};
+    rest:(e&&e.id===id&&!e.ende)?e.start+e.min*60000-Date.now():null};
 };
 window.KVM_dauerText=dauerText;
+
+/* ===== Prüfungsergebnisse und Bestehenschance =====
+   Jeder ausgewertete Durchgang einer Original-Prüfung steht in kvm_pruef_erg:
+   {k, id, t, pkt, max, bew, teile, echt, dauer, min}. k kennzeichnet den
+   Durchgang; kvm_pruef_lauf merkt ihn je Prüfung, bis sie neu gestartet wird.
+   Wer „Zum Ergebnis“ mehrmals drückt, ändert also denselben Durchgang.
+   Gewertet wird ein Durchgang, wenn jede Teilaufgabe Punkte hat (auch 0) oder
+   er unter Prüfungsbedingungen lief – dort zählt Offenes wie in der Prüfung 0.
+   Für Statistik, Rangliste und Bestehenschance zählt je Prüfung nur der erste
+   gewertete Durchgang: Bei einer Wiederholung kennt man die Lösungen schon. */
+var PE_KEY='kvm_pruef_erg',PL_KEY='kvm_pruef_lauf';
+var PB=[
+  {k:'RE',kurz:'Recht',name:'Rechtsbewusstes Handeln',teil:'bq'},
+  {k:'BW',kurz:'BWL',name:'Betriebswirtschaftliches Handeln',teil:'bq'},
+  {k:'MI',kurz:'Methoden',name:'Methoden der Information, Kommunikation und Planung',teil:'bq'},
+  {k:'ZI',kurz:'Zusammenarbeit',name:'Zusammenarbeit im Betrieb',teil:'bq'},
+  {k:'NT',kurz:'Naturwiss. & Technik',name:'Naturwissenschaftliche und technische Gesetzmäßigkeiten',teil:'bq'},
+  {k:'FT',kurz:'Fuhrpark',name:'Fuhrparktechnik und Fuhrparkmanagement',teil:'hq'},
+  {k:'OK',kurz:'Organisation',name:'Organisation und Kommunikation',teil:'hq'}];
+var PE_BQ=['RE','BW','MI','ZI','NT'],PE_HQ=['FT','OK'];
+function peSpeichern(v){try{localStorage.setItem(PE_KEY,JSON.stringify(v.slice(-500)));}catch(e){}}
+function peAll(){
+  var roh=null;try{roh=localStorage.getItem(PE_KEY);}catch(e){}
+  if(roh!=null){try{var v=JSON.parse(roh);if(Array.isArray(v))return v;}catch(e){}return [];}
+  /* Einmalig: den alten Verlauf unter Prüfungsbedingungen übernehmen. */
+  var alt=[];try{alt=JSON.parse(localStorage.getItem(ECHT_VERLAUF)||'[]')||[];}catch(e){}
+  var neu=(Array.isArray(alt)?alt:[]).filter(function(x){return x&&x.id&&x.max>0;}).map(function(x){
+    var t=x.tag*864e5+432e5;
+    return {k:'e'+x.tag+'-'+x.id+'-'+(x.dauer|0),id:x.id,t:t,g:t,pkt:x.pkt|0,max:x.max|0,
+            bew:null,teile:null,echt:1,dauer:x.dauer|0,min:x.min|0};});
+  neu.sort(function(a,b){return a.t-b.t;});
+  peSpeichern(neu);return neu;
+}
+function peLauf(id,neu){
+  var l={};try{l=JSON.parse(localStorage.getItem(PL_KEY)||'{}')||{};}catch(e){}
+  if(neu||!l[id]){l[id]=Date.now().toString(36)+Math.random().toString(36).slice(2,7);
+    try{localStorage.setItem(PL_KEY,JSON.stringify(l));}catch(e){}}
+  return l[id];
+}
+/* Nach jeder Änderung – der Cloud-Block hängt hier den Abgleich an. */
+var peGeaendert=function(){};
+function peMerken(r){
+  var v=peAll(),alt=null;
+  v=v.filter(function(x){if(x.k===r.k){alt=x;return false;}return true;});
+  if(alt){r.t=alt.t;if(alt.echt&&!r.echt){r.echt=1;r.dauer=alt.dauer;r.min=alt.min;}}
+  r.g=Math.max(Date.now(),alt&&alt.g?alt.g+1:0);   /* zuletzt bewertet – gewinnt beim Abgleich */
+  v.push(r);v.sort(function(a,b){return a.t-b.t;});
+  peSpeichern(v);peGeaendert();
+}
+/* Stand aus der Cloud übernehmen: je Durchgang gilt der zuletzt bewertete.
+   Gibt true zurück, wenn sich etwas geändert hat. */
+function peZusammenfuehren(fremd){
+  var m={},neu=false;
+  peAll().forEach(function(e){m[e.k]=e;});
+  (fremd||[]).forEach(function(f){
+    if(!f||!f.k||!/^P-[A-Z]+-\d+$/.test(f.id||'')||!(f.max>0))return;
+    var e=m[f.k];
+    if(!e||(+f.g||0)>(+e.g||0)){
+      m[f.k]={k:f.k,id:f.id,t:+f.t||0,g:+f.g||0,pkt:f.pkt|0,max:f.max|0,bew:f.bew==null?null:f.bew|0,
+              teile:f.teile==null?null:f.teile|0,echt:f.echt?1:0,dauer:f.dauer|0,min:f.min|0};
+      neu=true;
+    }else if(f.echt&&!e.echt){e.echt=1;e.dauer=e.dauer||(f.dauer|0);e.min=e.min||(f.min|0);neu=true;}
+  });
+  if(!neu)return false;
+  var v=Object.keys(m).map(function(k){return m[k];});
+  v.sort(function(a,b){return a.t-b.t;});
+  peSpeichern(v);
+  return true;
+}
+function peBereich(id){var m=/^P-([A-Z]+)-/.exec(id||'');return m?m[1]:'';}
+function pePct(e){return e&&e.max>0?Math.round(e.pkt/e.max*100):0;}
+function peGewertet(e){return !!(e&&e.max>0&&(e.echt||(e.teile>0&&e.bew>=e.teile)));}
+/* Der Durchgang, wie er gerade auf dem Blatt steht: Punkte je Teilaufgabe. */
+function peDurchgang(c,echt){
+  var pkt=0,max=0,bew=0,teile=0;
+  (c.steps||[]).forEach(function(s){var m=taskMaxPoints(s);if(m>0){max+=m;teile++;var g=opGet(s.id);if(g!=null){pkt+=g;bew++;}}});
+  var r={k:peLauf(c.id),id:c.id,t:Date.now(),pkt:pkt,max:max,bew:bew,teile:teile,echt:echt?1:0};
+  if(echt){r.dauer=Math.max(0,echt.ende-echt.start);r.min=echt.min|0;}
+  return r;
+}
+/* Erster gewerteter Durchgang je Prüfung (Liste ist nach Zeit sortiert). */
+function peErstversuche(){
+  var seen={},out=[];
+  peAll().forEach(function(e){if(peGewertet(e)&&!seen[e.id]){seen[e.id]=1;out.push(e);}});
+  return out;
+}
+/* Standardnormalverteilung (Abramowitz/Stegun 7.1.26, Fehler < 2e-7) */
+function peCdf(z){
+  var t=1/(1+0.3275911*Math.abs(z)/Math.SQRT2);
+  var y=1-((((1.061405429*t-1.453152027)*t+1.421413741)*t-0.284496736)*t+0.254829592)*t*Math.exp(-z*z/2);
+  return z>=0?(1+y)/2:(1-y)/2;
+}
+/* Bestehenschance eines Prüfungsbereichs aus den Erstversuchen (ältester
+   zuerst): gewichteter Schnitt – jede ältere Prüfung zählt 0,8-mal so viel wie
+   die nächste, Prüfungsbedingungen 1,5-fach. Die Streuung zwischen zwei
+   Prüfungen setzt die App mit 12 Punkten an und lernt sie ab der zweiten
+   Prüfung aus den eigenen Ergebnissen dazu. Chance = P(nächste Prüfung ≥ 50
+   Punkte) unter einer Normalverteilung, die auch die Unsicherheit des
+   Schnitts enthält – mit einer Prüfung ist sie deshalb vorsichtig. */
+var PE_STREU=12,PE_GRENZE=49.5;
+function peChance(xs){
+  var n=xs.length;if(!n)return null;
+  var sw=0,sw2=0,mu=0,w=xs.map(function(x,i){var g=Math.pow(0.8,n-1-i)*(x.echt?1.5:1);sw+=g;sw2+=g*g;mu+=g*x.p;return g;});
+  mu/=sw;
+  var s2=0;xs.forEach(function(x,i){s2+=w[i]*(x.p-mu)*(x.p-mu);});
+  s2=n>1?s2/sw*n/(n-1):0;
+  var streu2=(3*PE_STREU*PE_STREU+(n-1)*s2)/(n+2),neff=sw*sw/sw2;
+  return {p:peCdf((mu-PE_GRENZE)/Math.sqrt(streu2*(1+1/neff))),mu:mu};
+}
+function peMitHQ(){return isFachActive(5)&&(fachCountsCache[5]||0)>0;}
+function peStatistik(){
+  var B={},n=0,ok=0,summe=0;
+  PB.forEach(function(b){B[b.k]={k:b.k,kurz:b.kurz,name:b.name,teil:b.teil,erst:[],n:0,ok:0,schnitt:null,chance:null};});
+  peErstversuche().forEach(function(e){var b=B[peBereich(e.id)];if(b)b.erst.push({id:e.id,p:pePct(e),echt:!!e.echt,t:e.t});});
+  PB.forEach(function(x){var b=B[x.k];
+    b.n=b.erst.length;b.ok=b.erst.filter(function(e){return e.p>=50;}).length;
+    var s=b.erst.reduce(function(a,e){return a+e.p;},0);
+    b.schnitt=b.n?Math.round(s/b.n):null;
+    var c=peChance(b.erst);b.chance=c?c.p:null;
+    n+=b.n;ok+=b.ok;summe+=s;});
+  function teil(ks){var fehlt=ks.filter(function(k){return B[k].chance==null;});
+    return {fehlt:fehlt,n:ks.length,p:fehlt.length?null:ks.reduce(function(a,k){return a*B[k].chance;},1)};}
+  var hq=peMitHQ(),bq=teil(PE_BQ),hqT=hq?teil(PE_HQ):null;
+  var gesamt=hq?((bq.p!=null&&hqT.p!=null)?bq.p*hqT.p:null):bq.p;
+  /* Eine Zahl für Rangliste und Profilkopf: beide Teile, sonst der Teil, in
+     dem jeder Bereich gewertet ist. */
+  var haupt=gesamt!=null?{p:gesamt,teil:hq?'g':'bq'}:(bq.p!=null?{p:bq.p,teil:'bq'}:(hqT&&hqT.p!=null?{p:hqT.p,teil:'hq'}:null));
+  return {B:B,bq:bq,hq:hqT,gesamt:gesamt,haupt:haupt,
+          n:n,ok:ok,schnitt:n?Math.round(summe/n):null,durchgaenge:peAll().length};
+}
+/* Chance als Text: 1 … 99 %, darüber und darunter mit Zeichen */
+function peProzent(p){if(p==null)return '–';var x=Math.round(p*100);return x>=99&&p>0.99?'> 99 %':(x<1?'< 1 %':x+' %');}
+window.KVM_pruefStat=peStatistik;
+window.KVM_pruefProzent=peProzent;
+/* Ergebnisse aller Prüfungen auf einmal: {Prüfung: [Durchgänge]} */
+window.KVM_pruefErgAlle=function(){
+  var m={};peAll().forEach(function(e){(m[e.id]=m[e.id]||[]).push(e);});
+  Object.keys(m).forEach(function(id){m[id]=m[id].map(function(e){
+    return {k:e.k,pkt:e.pkt,max:e.max,pct:pePct(e),t:e.t,echt:!!e.echt,dauer:e.dauer|0,bew:e.bew,teile:e.teile,
+            gewertet:peGewertet(e),note:ihkGrade(pePct(e)).note};});});
+  return m;
+};
+/* Welche Prüfungen haben Antworten, Rechenwege, Skizzen, Tabellen oder
+   Punkte? Ein Durchlauf über die Speicher statt je Teilaufgabe –
+   Teilaufgaben heißen „<Prüfung>-s<n>“. */
+window.KVM_pruefMitStand=function(){
+  var ids={};
+  function nimm(k){var m=/^(P-[A-Z]+-\d+)-s\d+/.exec(k);if(m)ids[m[1]]=true;}
+  var oa=oaAll(),rw=rwAll(),sk=skAll(),op=opAll(),ot=otAll();
+  Object.keys(oa).forEach(function(k){if(String(oa[k]||'').trim())nimm(k);});
+  Object.keys(rw).forEach(function(k){if((rw[k]||[]).some(function(r){return String((r&&r.f)||'').trim();}))nimm(k);});
+  Object.keys(sk).forEach(function(k){if(sk[k]&&sk[k].els&&sk[k].els.length)nimm(k);});
+  Object.keys(op).forEach(function(k){if(op[k]!=null)nimm(k);});
+  Object.keys(ot).forEach(function(k){nimm(k);});
+  return ids;
+};
+/* Neu starten: leere Blätter, neuer Durchgang. Ausgewertete Durchgänge
+   bleiben; ein vollständig bewerteter, der nie „Zum Ergebnis“ gesehen hat,
+   wird vorher gemerkt. Ein laufender Durchgang unter Prüfungsbedingungen
+   endet. */
+function peNeuStarten(id){
+  var c=CASES.filter(function(x){return x.id===id;})[0];if(!c)return false;
+  var e=echtGet();if(e&&e.id!==id)e=null;
+  if(!confirm('Prüfung neu starten?\n\n'+(e&&!e.ende?'Der laufende Durchgang unter Prüfungsbedingungen wird abgebrochen. ':'')+
+    'Deine Antworten, Rechenwege, Skizzen und Punkte dieser Prüfung werden gelöscht – ausgewertete Durchgänge bleiben in deiner Übersicht.'))return false;
+  var d=peDurchgang(c,e&&e.ende?e:null);
+  if(d.teile&&d.bew>=d.teile)peMerken(d);
+  if(e)echtSet(null);
+  echtLeeren((c.steps||[]).map(function(x){return x.id;}));
+  peLauf(id,true);
+  startRound('cases',id,0);
+  return true;
+}
+window.KVM_neuStarten=peNeuStarten;
+/* Ergebnis-Bildschirm einer Prüfung: gewertet? Erstversuch? neue Chance. */
+function peErgebnis(c,echt){
+  var vorher=peStatistik(),r=peDurchgang(c,echt);
+  peMerken(r);
+  var st=peStatistik(),b=st.B[peBereich(c.id)],g=peGewertet(r);
+  var erster=g&&peErstversuche().some(function(e){return e.k===r.k;});
+  var box=$("resChance"),h='';
+  if(!g){
+    h='<b>Noch nicht gewertet:</b> '+r.bew+' von '+r.teile+' Teilaufgaben haben Punkte. Vergib für jede Teilaufgabe Punkte (auch 0) und geh noch einmal auf „Zum Ergebnis“. Dann zählt die Prüfung für deine Übersicht und deine Bestehenschance.';
+  }else if(b){
+    var v=vorher.B[b.k].chance,jetzt=peProzent(b.chance);
+    h=erster?('<b>Bestehenschance '+esc(b.kurz)+': '+jetzt+'</b>'+(v!=null&&peProzent(v)!==jetzt?' (vorher '+peProzent(v)+')':'')+
+        ' · aus '+b.n+' '+(b.n===1?'Prüfung':'Prüfungen')+' in diesem Bereich.'):
+      ('<b>Wiederholung:</b> Sie steht in deiner Übersicht, zählt aber nicht für die Bestehenschance, denn die Lösungen kanntest du schon. '+
+        'Bestehenschance '+esc(b.kurz)+': <b>'+jetzt+'</b>.');
+  }
+  box.innerHTML=h+(h?' <button type="button" class="res-link" id="resZurListe">Zur Übersicht</button>':'');
+  box.hidden=!h;
+  var z=$("resZurListe");if(z)z.onclick=function(){var t=$("btnPruef");show("scrHome");if(t)t.click();};
+  return {gewertet:g,rec:r};
+}
 
 /* Aufdecken zählt als bearbeitet: ohne eigene Punkte gilt die Teilaufgabe
    am Ende als 0 von n – wie in der Prüfung eine leer abgegebene Aufgabe. */
@@ -4558,12 +4850,18 @@ function finishRound(timeUp){
       });
     }
   }
-  var echt=echtAktiv();
+  var echt=echtAktiv(),pruef=state.mode==='cases'&&!!state.fall&&/^P-/.test(state.fall.id||'')&&pointBased;
+  $("resChance").hidden=true;
+  /* Original-Prüfung: Durchgang merken – ohne Punkte für jede Teilaufgabe
+     zählt er noch nicht als bestanden oder nicht bestanden. */
+  if(pruef&&!peErgebnis(state.fall,echt&&echt.ende?echt:null).gewertet){
+    badge.className="badge offen";badge.textContent="Noch nicht vollständig bewertet";}
   if(echt&&echt.ende&&pointBased){
-    echtMerken(echt,achieved,possible,ihkGrade(pct).note);
     $("resLine").innerHTML+=" · Bearbeitungszeit "+dauerText(echt.ende-echt.start)+" von "+dauerText(echt.min*60000)+(echt.zeitUm?" (Zeit abgelaufen)":"");
     echtSet(null);
   }
+  $("btnAgain").textContent=pruef?"Prüfung neu starten":"Neue Runde starten";
+  $("btnResListe").hidden=!pruef;
   var wu=[];state.wrong.forEach(function(q){if(wu.indexOf(q)<0)wu.push(q);});state.wrong=wu;
   $("btnRetryWrong").hidden=state.wrong.length===0;$("wrongCount").textContent=state.wrong.length;
   show("scrResult");
@@ -4609,7 +4907,12 @@ $("lbIn").addEventListener("click",function(){lbSkala(lbScale*1.5);});
 $("lbOut").addEventListener("click",function(){lbSkala(lbScale/1.5);});
 $("lbInner").addEventListener("click",function(e){if(e.target===$("lbInner"))$("lightbox").close();});
 $("btnPrev").addEventListener("click",prev);
-$("btnAgain").addEventListener("click",function(){startRound(state.mode==='retry'?'train':state.mode);});
+$("btnAgain").addEventListener("click",function(){
+  /* Bei einer Original-Prüfung dieselbe Prüfung mit leeren Blättern – nicht
+     eine zufällige andere. */
+  if(state.mode==='cases'&&state.fall&&/^P-/.test(state.fall.id||'')){peNeuStarten(state.fall.id);return;}
+  startRound(state.mode==='retry'?'train':state.mode);});
+$("btnResListe").addEventListener("click",function(){show("scrHome");var t=$("btnPruef");if(t)t.click();});
 $("btnHome").addEventListener("click",function(){show("scrHome");});
 $("btnRetryWrong").addEventListener("click",function(){startRound('retry');});
 $("btnReset").addEventListener("click",function(){
@@ -4688,6 +4991,46 @@ document.addEventListener("keydown",function(ev){
   function schedulePush(){if(!user)return;clearTimeout(pushT);pushT=setTimeout(push,1500);}
   function pull(){if(!user)return Promise.resolve();return sb.from("progress").select("data").eq("user_id",user.id).maybeSingle().then(function(res){pulledOk=true;var d=res&&res.data&&res.data.data;if(d&&typeof d==="object"){mergeFromCode({d:d});for(var id in d){if(d[id]&&d[id].d!=null&&progress[id]&&progress[id].due==null)progress[id].due=d[id].d;}saveProgress();refresh();}},function(){});}
   var _save=saveProgress; saveProgress=function(){_save.apply(this,arguments);schedulePush();vgMeldenSpaeter();};
+  /* ===== Prüfungsergebnisse abgleichen =====
+     docs/supabase-pruefungen.sql: Ausgewertete Durchgänge wandern in die Cloud,
+     zurück kommen alle eigenen – so zeigen Übersicht, Bestehenschance und
+     Rangliste auf jedem Gerät dasselbe. Gesendet wird, was seit dem letzten
+     Abgleich bewertet wurde (Feld g). Fehlt das Skript, bleibt alles auf dem
+     Gerät; die Werte für die Rangliste gehen trotzdem raus. */
+  var peC={ok:null,laeuft:false,nochmal:false,t:null};
+  function peStandKey(){return 'kvm_pruef_sync_'+(user?user.id:'');}
+  function peAbgleichen(alles){
+    if(!user)return Promise.resolve();
+    if(peC.ok===false)return pruefWerteMelden();
+    if(peC.laeuft){peC.nochmal=true;return Promise.resolve();}
+    var stand=0;if(!alles){try{stand=+localStorage.getItem(peStandKey())||0;}catch(e){}}
+    var neu=peAll().filter(function(e){return (+e.g||0)>stand;}).slice(-500).map(function(e){
+      return {k:e.k,id:e.id,t:e.t,g:+e.g||0,pkt:e.pkt,max:e.max,bew:e.bew,teile:e.teile,echt:e.echt?1:0,dauer:e.dauer||null,min:e.min||null};});
+    peC.laeuft=true;
+    return sb.rpc("pruefungen_abgleichen",{p_neu:neu}).then(function(r){
+      peC.laeuft=false;
+      if(!r||r.error){if(!r||r.error.code==='PGRST202'||r.error.code==='42883')peC.ok=false;return pruefWerteMelden();}
+      peC.ok=true;
+      if(peZusammenfuehren(r.data||[]))try{renderPruefChance();}catch(e){}
+      var mx=0;peAll().forEach(function(e){mx=Math.max(mx,+e.g||0);});
+      try{localStorage.setItem(peStandKey(),String(mx));}catch(e){}
+      var weiter=peC.nochmal;peC.nochmal=false;
+      return pruefWerteMelden().then(function(){if(weiter)return peAbgleichen(false);});
+    },function(){peC.laeuft=false;});
+  }
+  var _peG=peGeaendert;
+  peGeaendert=function(){_peG();if(!user)return;clearTimeout(peC.t);peC.t=setTimeout(function(){peAbgleichen(false);},1500);};
+  /* Werte für die Rangliste: Prüfungen, bestanden, Ø-Punkte, Bestehenschance */
+  function pruefIch(){var st=peStatistik();
+    return {n:st.n,ok:st.ok,schnitt:st.schnitt,chance:st.haupt?Math.round(st.haupt.p*100):null};}
+  function pruefWerteMelden(){
+    if(!user||!vg.stand||!vg.stand.dabei||vg.pruefOk===false)return Promise.resolve();
+    var w=pruefIch();
+    return sb.rpc("pruefungen_melden",{p_n:w.n,p_ok:w.ok,p_schnitt:w.schnitt,p_chance:w.chance}).then(function(r){
+      if(r&&r.error){if(r.error.code==='PGRST202'||r.error.code==='42883')vg.pruefOk=false;return;}
+      profilMelden();
+    },function(){});
+  }
   function signIn(){sb.auth.signInWithOAuth({provider:"google",options:{redirectTo:location.href.split("#")[0]}}).then(function(){},function(){});}
   function signOut(){sb.auth.signOut().then(function(){},function(){});}
   var btn=$("btnCloud"); if(btn)btn.addEventListener("click",function(){if(user){if(confirm("Abmelden? Dein Fortschritt bleibt lokal auf diesem Gerät."))signOut();}else signIn();});
@@ -4753,7 +5096,8 @@ document.addEventListener("keydown",function(ev){
      verborgen und die Seite sieht aus wie vorher. */
   var vg={verfuegbar:null,stand:null,info:0,laedt:false,zuletzt:0,meldeT:null,bearbeiten:false,
           gruppenOk:null,gruppen:[],ansicht:null,gstand:null,gform:null,einladung:null,
-          leuteOk:null,fstand:null,profilGemeldet:false};
+          leuteOk:null,fstand:null,profilGemeldet:false,
+          modus:'woche',pstand:null,pruefOk:null,pruefGemeldet:false};
   /* Einladungslink „…#gruppe=K7M2QX“: Code merken (übersteht den Google-Login,
      der ohne #-Teil zurückkehrt) und aus der Adresse nehmen. */
   (function(){var m=/[#&]gruppe=([A-Za-z0-9]{6})\b/.exec(location.hash||'');
@@ -4797,10 +5141,21 @@ document.addEventListener("keydown",function(ev){
       vg.verfuegbar=true;
       if(user)vg.stand=res.data||null;else vg.info=+res.data||0;
       vgZeigen();
-      if(user)Promise.all([grLaden(),ltStandLaden()]).then(vgZeigen);
+      if(user)Promise.all([grLaden(),ltStandLaden(),pruefStandLaden()]).then(vgZeigen);
     },function(){vg.laedt=false;vg.verfuegbar=false;vgZeigen();});
   }
   window.KVM_vergleich=function(){vgLaden(false);};
+  /* Prüfungsrangliste (docs/supabase-rangliste.sql); beim ersten Laden je
+     Sitzung vorher den eigenen Stand melden. */
+  function pruefStandLaden(){
+    if(!user||!vg.stand||!vg.stand.dabei||vg.pruefOk===false)return Promise.resolve();
+    var vorher=vg.pruefGemeldet?Promise.resolve():pruefWerteMelden();
+    vg.pruefGemeldet=true;
+    return vorher.then(function(){return sb.rpc("rangliste_pruefungen");}).then(function(r){
+      if(!r||r.error){vg.pruefOk=false;vg.pstand=null;vg.modus='woche';return;}
+      vg.pruefOk=true;vg.pstand=r.data||null;
+    },function(){vg.pstand=vg.pstand||null;});
+  }
   /* ===== Lerngruppen: private Rangliste per Code =====
      Setzt docs/supabase-gruppen.sql voraus; fehlt es, bleibt alles wie in der
      reinen Wochenrangliste. Nur wer der Rangliste beigetreten ist, sieht
@@ -4854,10 +5209,15 @@ document.addEventListener("keydown",function(ev){
   function grAnsichtHTML(kw){
     var g=vg.gstand,info=vg.gruppen.filter(function(x){return x.id===vg.ansicht;})[0]||{};
     if(!g)return '<p class="vg-lead">Gruppe wird geladen …</p>';
-    var h='<p class="h-sub">'+esc(g.name)+' · '+fmtN(g.mitglieder|0)+' Mitglied'+((g.mitglieder|0)===1?'':'er')+' · KW '+kw+'</p>';
-    h+='<ol class="vg-liste"><li class="vg-z kopf" aria-hidden="true"><span>Pl.</span><span>Spitzname</span><span class="vg-a">Antw.</span><span class="vg-r">Reife</span></li>';
-    (g.liste||[]).forEach(function(e){h+=vgZeile(e,e.platz|0);});
-    h+='</ol>';
+    var pm=vg.modus==='pruef'&&vg.pruefOk;
+    var h='<p class="h-sub">'+esc(g.name)+' · '+fmtN(g.mitglieder|0)+' Mitglied'+((g.mitglieder|0)===1?'':'er')+' · '+(pm?'Prüfungen':'KW '+kw)+'</p>';
+    if(pm)h+=pruefListeHTML(pruefSortiert((g.liste||[]).map(function(e){
+      return {name:e.name,n:e.pruef_n|0,ok:e.pruef_ok|0,schnitt:e.pruef_schnitt,chance:e.chance,ich:e.ich};})));
+    else{
+      h+='<ol class="vg-liste"><li class="vg-z kopf" aria-hidden="true"><span>Pl.</span><span>Spitzname</span><span class="vg-a">Antw.</span><span class="vg-r">Reife</span></li>';
+      (g.liste||[]).forEach(function(e){h+=vgZeile(e,e.platz|0);});
+      h+='</ol>';
+    }
     if((g.mitglieder|0)<2)h+='<p class="vg-hinweis">Noch bist du allein in der Gruppe. Lade die anderen aus deinem Kurs mit dem Code ein.</p>';
     h+='<div class="vg-gfuss"><span>Code <b class="vg-code">'+esc(g.code||info.code||'')+'</b></span>'+
       '<button type="button" class="vg-btn" data-gr="einladen">Einladen</button>'+
@@ -4877,6 +5237,9 @@ document.addEventListener("keydown",function(ev){
     });
   }
   function grBinden(box){
+    box.querySelectorAll('[data-vg-modus]').forEach(function(b){b.onclick=function(){
+      vg.modus=b.getAttribute('data-vg-modus');vgZeigen();
+      if(vg.modus==='pruef'&&!vg.ansicht)pruefStandLaden().then(vgZeigen);};});
     box.querySelectorAll('[data-gr-tab]').forEach(function(b){b.onclick=function(){
       vg.gform=null;vg.ansicht=b.getAttribute('data-gr-tab')||null;vg.gstand=null;vgZeigen();
       if(vg.ansicht==='freunde')ltStandLaden().then(vgZeigen);
@@ -4927,6 +5290,63 @@ document.addEventListener("keydown",function(ev){
       '<span class="vg-a">'+fmtN(e.antworten|0)+'</span>'+
       '<span class="vg-r">'+(e.reife|0)+' %</span></li>';
   }
+  /* ===== Rangliste nach Prüfungen =====
+     Bestandene Original-Prüfungen (je Prüfung der erste gewertete Durchgang),
+     bei Gleichstand der bessere Schnitt; dazu die Bestehenschance. */
+  function vgChance(c){return c==null?'–':(c>=100?'> 99 %':(c<=0?'< 1 %':(c|0)+' %'));}
+  var VG_KOPF_P='<li class="vg-z kopf" aria-hidden="true"><span>Pl.</span><span>Spitzname</span><span class="vg-a">Bestanden</span><span class="vg-r">Chance</span></li>';
+  function vgZeileP(e,platz){
+    var klick=vg.leuteOk&&vg.stand&&vg.stand.dabei&&!e.ich&&e.name;
+    return '<li class="vg-z'+(e.ich?' ich':'')+'" data-platz="'+platz+'"><span class="vg-p">'+platz+'</span>'+
+      (klick?'<button type="button" class="vg-n vg-link" data-profil="'+esc(e.name)+'" title="Profil ansehen">'+esc(e.name)+'</button>':
+        '<span class="vg-n">'+esc(e.name)+'</span>')+
+      '<span class="vg-a" title="'+(e.ok|0)+' von '+(e.n|0)+' gewerteten Prüfungen bestanden'+(e.schnitt!=null?', Ø '+(e.schnitt|0)+' Punkte':'')+'">'+(e.ok|0)+'/'+(e.n|0)+'</span>'+
+      '<span class="vg-r">'+vgChance(e.chance)+'</span></li>';
+  }
+  /* Freunde und Gruppen liegen ganz vor – hier wird nur umsortiert. */
+  function pruefSortiert(L){
+    L.sort(function(a,b){return (b.ok|0)-(a.ok|0)||((b.schnitt==null?-1:b.schnitt)-(a.schnitt==null?-1:a.schnitt))||
+      (a.name.toLowerCase()<b.name.toLowerCase()?-1:1);});
+    var pl=0,vor=null;
+    L.forEach(function(e,i){var k=(e.ok|0)+'/'+(e.schnitt==null?-1:e.schnitt);if(k!==vor){pl=i+1;vor=k;}e.platz=pl;});
+    return L;
+  }
+  var VG_FUSS_P='<p class="vg-hinweis">Bestanden: je Prüfung der erste vollständig bewertete Durchgang. Chance: Bestehenschance für beide Teile, sonst für den Teil, in dem jeder Bereich gewertet ist.</p>';
+  function pruefListeHTML(L){
+    var h='<ol class="vg-liste pruef">'+VG_KOPF_P;L.forEach(function(e){h+=vgZeileP(e,e.platz|0);});return h+'</ol>'+VG_FUSS_P;
+  }
+  function vgModusHTML(){
+    if(!vg.pruefOk||vg.gform)return '';
+    var p=vg.modus==='pruef';
+    return '<div class="seg-ctl vg-modus" role="radiogroup" aria-label="Rangliste nach">'+
+      '<button type="button" role="radio" data-vg-modus="woche" aria-checked="'+!p+'">Diese Woche</button>'+
+      '<button type="button" role="radio" data-vg-modus="pruef" aria-checked="'+p+'">Prüfungen</button></div>';
+  }
+  function vgPruefTopHTML(){
+    var st=peStatistik(),ps=vg.pstand||{},ich=ps.ich,t1,t2,hp=st.haupt;
+    if(hp)t1='<b>'+vgChance(Math.round(hp.p*100))+'</b><span>Bestehenschance · '+({g:'beide Teile',bq:'Basisqualifikationen',hq:'handlungsspezifischer Teil'})[hp.teil]+
+      (hp.teil!=='g'&&st.hq?' – für beide Teile fehlt noch: '+esc((hp.teil==='bq'?st.hq:st.bq).fehlt.map(function(k){return st.B[k].kurz;}).join(', ')):'')+'</span>';
+    else if(st.n){
+      var fehlt=st.bq.fehlt.concat(st.hq?st.hq.fehlt:[]),alle=st.bq.n+(st.hq?st.hq.n:0);
+      t1='<b>'+(alle-fehlt.length)+'/'+alle+'</b><span>Prüfungsbereiche gewertet – für die Bestehenschance fehlt noch: '+
+        esc(fehlt.map(function(k){return st.B[k].kurz;}).join(', '))+'</span>';
+    }else t1='<b>–</b><span>Noch keine Prüfung gewertet. Löse eine Original-Prüfung und gib dir Punkte – dann rechnet die App deine Bestehenschance.</span>';
+    t2=ich&&ich.platz?'<b>'+ich.platz+'.</b><span>Platz von '+fmtN(ps.teilnehmende|0)+' · '+st.ok+' von '+st.n+' '+(st.n===1?'Prüfung':'Prüfungen')+' bestanden</span>':
+      '<b>–</b><span>'+(st.n?'Dein Stand wird gemeldet – gleich stehst du in der Liste.':'Ab der ersten gewerteten Prüfung stehst du in der Prüfungsrangliste.')+'</span>';
+    return '<div class="vg-top"><div class="vg-kpi">'+t1+'</div><div class="vg-kpi">'+t2+'</div></div>';
+  }
+  function vgPruefAlleHTML(){
+    var ps=vg.pstand,h='<p class="h-sub">Prüfungsrangliste · bestandene Original-Prüfungen</p>';
+    if(!ps)return h+'<p class="vg-lead">Wird geladen …</p>';
+    var L=ps.liste||[];
+    if(!L.length)return h+'<div class="vg-liste"><p class="vg-leer">Noch hat niemand eine Prüfung gewertet. Löse eine Original-Prüfung und bewerte dich – dann stehst du hier.</p></div>';
+    h+='<ol class="vg-liste pruef">'+VG_KOPF_P;
+    L.forEach(function(e){h+=vgZeileP(e,e.platz|0);});
+    if(ps.ich&&!L.some(function(e){return e.ich;}))
+      h+='<li class="vg-luecke" aria-hidden="true">⋯</li>'+
+        vgZeileP({name:vg.stand.name,n:ps.ich.n,ok:ps.ich.ok,schnitt:ps.ich.schnitt,chance:ps.ich.chance,ich:true},ps.ich.platz|0);
+    return h+'</ol>'+VG_FUSS_P;
+  }
   function vgZeigen(){
     var box=$("vgBox"),kopf=$("vgKopf");if(!box||!kopf)return;
     var an=vg.verfuegbar===true;
@@ -4946,20 +5366,22 @@ document.addEventListener("keydown",function(ev){
         h='<p class="vg-lead">Vergleiche dich mit anderen Lernenden – freiwillig und nur mit Spitznamen:</p>'+
           '<ul class="rt-list vg-lead"><li><b>Wochenrangliste</b> nach beantworteten Fragen, jeden Montag neu</li>'+
           '<li>wie viele bei der <b>Prüfungsreife</b> hinter dir liegen</li>'+
+          '<li><b>Prüfungsrangliste</b> nach bestandenen Original-Prüfungen – mit Bestehenschance</li>'+
           '<li>auf Wunsch <b>Lerngruppen</b> mit deinem Kurs – per Code</li>'+
           (vg.leuteOk?'<li><b>Freunde</b> finden und ihren Lernstand je Fach sehen – und sie deinen</li>':'')+'</ul>'+
           (vg.einladung?'<p class="vg-einladung klein">Du wurdest in eine <b>Lerngruppe</b> eingeladen. Nach dem Mitmachen kannst du beitreten.</p>':'');
         if(st.teilnehmende)scope=fmtN(st.teilnehmende)+" dabei";
       }else h='<p class="vg-lead">Neuer Spitzname für die Rangliste:</p>';
       h+=vgFormHTML(vg.bearbeiten?st.name:"")+
-        '<p class="vg-hinweis">Sichtbar für andere sind nur dein Spitzname, deine Prüfungsreife, deine Antworten dieser Woche '+
-        'und deine Lerntage in Folge.'+(vg.leuteOk?' Deinen Lernstand je Fach sehen nur deine Freunde – das kannst du im Profil ändern.':'')+
+        '<p class="vg-hinweis">Sichtbar für andere sind nur dein Spitzname, deine Prüfungsreife, deine Antworten dieser Woche, '+
+        'deine Lerntage in Folge und deine Prüfungsergebnisse (bestanden, Ø-Punkte, Bestehenschance).'+(vg.leuteOk?' Deinen Lernstand je Fach sehen nur deine Freunde – das kannst du im Profil ändern.':'')+
         ' Austreten geht jederzeit – dein Eintrag'+(vg.leuteOk?' samt Profil und Freundschaften':'')+' wird dann gelöscht.</p>';
     }else{
       var andere=Math.max(0,(st.teilnehmende|0)-1);
-      var vor=andere?Math.round((st.reife_vor|0)/andere*100):0;
+      var vor=andere?Math.round((st.reife_vor|0)/andere*100):0,pm=vg.modus==='pruef'&&vg.pruefOk;
       scope=fmtN(st.teilnehmende|0)+" dabei";
-      h='<div class="vg-top">'+
+      if(pm)h=vgPruefTopHTML();
+      else h='<div class="vg-top">'+
         '<div class="vg-kpi"><b>'+(andere?vor+" %":"–")+'</b><span>'+(!andere?'Noch bist du allein – lade andere ein, dann gibt es einen Vergleich.':
           (vor?'der anderen liegen bei der Prüfungsreife hinter dir':'Noch liegen alle vor dir – jede gemeisterte Frage bringt dich nach vorn.'))+'</span>'+
           (andere?'<div class="vg-bar" aria-hidden="true"><i style="width:'+vor+'%"></i></div>':'')+'</div>'+
@@ -4968,10 +5390,11 @@ document.addEventListener("keydown",function(ev){
           'Diese Woche noch ohne Antwort – ab der ersten bist du in der Wochenliste.')+'</span></div>'+
         '</div>';
       var kw=isoWoche().split("-W")[1];
-      h+=grEinladungHTML()+frAnfragenHTML()+grTabsHTML();
+      h+=grEinladungHTML()+frAnfragenHTML()+grTabsHTML()+vgModusHTML();
       if(vg.gform)h+=grFormHTML();
       else if(vg.ansicht==='freunde')h+=frAnsichtHTML(+kw);
       else if(vg.ansicht)h+=grAnsichtHTML(+kw);
+      else if(pm)h+=vgPruefAlleHTML();
       else{
       h+='<p class="h-sub">Wochenrangliste · KW '+(+kw)+'</p>';
       var L=st.liste||[];
@@ -5055,6 +5478,11 @@ document.addEventListener("keydown",function(ev){
     ev.forEach(function(e){if(e&&e.max>0)best=Math.max(best,Math.round((+e.pkt||0)/e.max*100));});
     var o={f:f,t14:t14,tage:tage};
     if(ev.length)o.echt={n:ev.length,best:best};
+    var st=peStatistik(),pz=function(p){return p==null?null:Math.round(p*100);};
+    if(st.n){
+      o.pr={};PB.forEach(function(x){var b=st.B[x.k];if(b.n)o.pr[x.k]={n:b.n,ok:b.ok,s:b.schnitt,c:pz(b.chance)};});
+      o.pc={bq:pz(st.bq.p),hq:st.hq?pz(st.hq.p):null,g:pz(st.gesamt)};
+    }
     return o;
   }
   function profilMelden(){
@@ -5072,6 +5500,12 @@ document.addEventListener("keydown",function(ev){
   function frAnsichtHTML(kw){
     var fs=vg.fstand,st=vg.stand;
     if(!fs)return '<p class="vg-lead">Freunde werden geladen …</p>';
+    if(vg.modus==='pruef'&&vg.pruefOk){
+      var P=(fs.freunde||[]).map(function(k){return {name:k.name,n:k.pruef_n|0,ok:k.pruef_ok|0,schnitt:k.pruef_schnitt,chance:k.chance};});
+      var me=pruefIch();P.push({name:st.name,n:me.n,ok:me.ok,schnitt:me.schnitt,chance:me.chance,ich:true});
+      return '<p class="h-sub">Du und deine Freunde · Prüfungen</p>'+pruefListeHTML(pruefSortiert(P))+
+        (P.length<2?'<p class="vg-hinweis">Noch keine Freunde. <button type="button" class="vg-btn leise" data-lt="alle">Lernende finden</button></p>':'');
+    }
     var L=(fs.freunde||[]).map(function(k){return {name:k.name,antworten:k.antworten|0,reife:k.reife|0};});
     L.push({name:st.name,antworten:Math.max(wocheAntworten(),st.meine_antworten|0),reife:Math.round(overallReife()*100),ich:true});
     L.sort(function(a,b){return b.antworten-a.antworten||(a.name.toLowerCase()<b.name.toLowerCase()?-1:1);});
@@ -5123,6 +5557,16 @@ document.addEventListener("keydown",function(ev){
       t.forEach(function(v,i){v=v|0;var j=n-1-i,dt=new Date(Date.now()-j*864e5);
         h+='<div class="ak'+(v?' voll':'')+(j===0?' heute':'')+'" title="'+(j===0?'Heute':dt.toLocaleDateString('de-DE',{weekday:'long',day:'numeric',month:'numeric'}))+': '+v+' Antwort'+(v===1?'':'en')+'">'+
           '<i style="height:'+(v?Math.max(6,Math.round(v/mx*62)):3)+'px"></i><span>'+WTAG[dt.getDay()]+'</span></div>';});
+      h+='</div>';
+    }
+    var pr=d.pr||{},pk=PB.filter(function(x){return pr[x.k]&&typeof pr[x.k]==='object';});
+    if(pk.length){
+      var pc=d.pc||{},kopf=pc.g!=null?'Bestehenschance '+vgChance(pc.g):(pc.bq!=null?'Basisqualifikationen '+vgChance(pc.bq):'');
+      h+='<p class="h-sub">Prüfungen je Bereich'+(kopf?' <span class="h-scope">'+kopf+'</span>':'')+'</p><div class="lt-pruef">';
+      pk.forEach(function(x){var e=pr[x.k];
+        h+='<div class="lt-pb"><span class="lt-pn">'+esc(x.kurz)+'</span>'+
+          '<span class="lt-pz">'+(e.ok|0)+' von '+(e.n|0)+' bestanden'+(e.s!=null?' · Ø '+(e.s|0)+' P':'')+'</span>'+
+          '<span class="lt-pc">'+vgChance(e.c)+'</span></div>';});
       h+='</div>';
     }
     var k=[];
@@ -5200,7 +5644,8 @@ document.addEventListener("keydown",function(ev){
     h+='<div class="lt-kopf">'+avatarHTML(p.name,true)+'<div class="lt-kopf-t"><h4>'+esc(p.name)+'</h4>'+(unter.length?'<p>'+esc(unter.join(' · '))+'</p>':'')+'</div>'+
       '<div class="lt-kopf-akt">'+ltAktionHTML(p,'lang')+'</div></div>';
     h+='<div class="lt-kpis">'+ltKpi((p.reife|0)+' %','prüfungsreif')+ltKpi(fmtN(p.antworten|0),'Antworten diese Woche')+ltKpi(fmtN(p.serie|0),'Tage in Folge')+
-      (p.sichtbar&&p.gemeistert!=null?ltKpi(fmtN(p.gemeistert|0),'Fragen gemeistert'):'')+'</div>';
+      (p.sichtbar&&p.gemeistert!=null?ltKpi(fmtN(p.gemeistert|0),'Fragen gemeistert'):'')+
+      ((p.pruef_n|0)?ltKpi((p.pruef_ok|0)+'/'+(p.pruef_n|0),'Prüfungen bestanden')+ltKpi(vgChance(p.chance),'Bestehenschance'):'')+'</div>';
     if(p.admin_sicht)h+='<p class="lt-hinweis-admin">Als Admin siehst du auch den Lernstand, den '+esc(p.name)+' nur Freunden zeigt.</p>';
     if(p.sichtbar)h+=lernstandHTML(p.details,p.name,p.details_am);
     else h+='<div class="lt-schloss">'+SCHLOSS_SVG+'<div><p>Den Lernstand je Fach zeigt '+esc(p.name)+' nur Freunden.</p>'+
@@ -5468,8 +5913,10 @@ document.addEventListener("keydown",function(ev){
       var r=n.rangliste,pr=n.profil||{},dt=pr.details||{};
       h+='<dl class="ad-dl">'+dlz('Spitzname',r.name)+dlz('Gemeldete Prüfungsreife',(r.reife|0)+' %')+
         dlz('Antworten',fmtN(r.antworten|0)+' in KW '+String(r.woche||'').replace(/^\d{4}-W/,''))+dlz('Tage in Folge',fmtN(r.serie|0))+
+        ((r.pruef_n|0)?dlz('Prüfungen bestanden',(r.pruef_ok|0)+' von '+(r.pruef_n|0)+(r.pruef_schnitt!=null?' · Ø '+(r.pruef_schnitt|0)+' P':''))+
+          dlz('Bestehenschance',vgChance(r.chance)):'')+
         dlz('Lernstand je Fach sichtbar für',pr.sichtbarkeit==='alle'?'alle Lernenden':'Freunde')+dlz('Dabei seit',pr.seit?datumKurz(pr.seit):'')+'</dl>';
-      if(dt.t14||dt.echt||dt.tage!=null)h+=lernstandHTML({t14:dt.t14,tage:dt.tage,echt:dt.echt},r.name,pr.details_am);
+      if(dt.t14||dt.echt||dt.pr||dt.tage!=null)h+=lernstandHTML({t14:dt.t14,tage:dt.tage,echt:dt.echt,pr:dt.pr,pc:dt.pc},r.name,pr.details_am);
     }else h+='<p class="vg-hinweis" style="margin:0 0 14px">Nicht in der Rangliste – kein Profil, keine Freunde, keine Gruppen.</p>';
     var F=n.freunde||[];
     if(F.length){h+='<p class="h-sub">Freunde</p><div class="ad-tags">';F.forEach(function(f){
@@ -5569,10 +6016,11 @@ document.addEventListener("keydown",function(ev){
 
   sb.auth.onAuthStateChange(function(_e,session){
     var vorher=user&&user.id;
-    user=session?session.user:null;if(user){acc(true,nameOf(user));if(syncedFor!==user.id){syncedFor=user.id;pull().then(push);}}else{acc(false,"");syncedFor=null;pulledOk=false;}
+    user=session?session.user:null;if(user){acc(true,nameOf(user));if(syncedFor!==user.id){syncedFor=user.id;pull().then(push);peAbgleichen(true);}}else{acc(false,"");syncedFor=null;pulledOk=false;}
     /* Anderes Konto (oder abgemeldet): Freunde, Profil und Verwaltung neu laden */
     if((user&&user.id)!==vorher){
       vg.fstand=null;vg.profilGemeldet=false;lt.liste=null;lt.profil=null;
+      vg.pstand=null;vg.pruefOk=null;vg.pruefGemeldet=false;vg.modus='woche';peC.ok=null;
       ad.an=false;ad.ue=null;ad.liste=null;ad.nutzer=null;ad.nutzerId=null;ad.ml=null;ad.gl=null;
       if(!$("mLeute").hidden)ltZu();
       adKnopf();adPruefen();
@@ -7633,6 +8081,58 @@ function kopieren(text,btn){
   }else fallback();
 }
 
+var NEU_SVG='<svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12a9 9 0 1 0 3-6.7L3 8"/><path d="M3 3v5h5"/></svg>';
+function tagKurz(t){return new Date(t).toLocaleDateString('de-DE',{day:'numeric',month:'short'});}
+/* Ergebniszeile einer Prüfung: der letzte Durchgang, bei Wiederholungen der
+   Verlauf. */
+function ergebnisHTML(v){
+  if(!v.length)return '';
+  var l=v[v.length-1],dauer=window.KVM_dauerText||function(ms){return Math.round(ms/60000)+' min';};
+  var h='<div class="pr-erg">';
+  if(l.gewertet)h+='<span class="pr-status '+(l.pct>=50?'ok':'nok')+'">'+(l.pct>=50?'Bestanden':'Nicht bestanden')+'</span>'+
+    '<span><b>'+l.pkt+' von '+l.max+' P</b> · Note '+l.note+' · '+esc(tagKurz(l.t))+
+    (l.echt?' · unter Prüfungsbedingungen'+(l.dauer?', '+esc(dauer(l.dauer)):''):'')+'</span>';
+  else h+='<span class="pr-status offen">Noch nicht gewertet</span><span>'+(l.teile?l.bew+' von '+l.teile+' Teilen bewertet · ':'')+esc(tagKurz(l.t))+'</span>';
+  var g=v.filter(function(e){return e.gewertet;});
+  if(g.length>1)h+='<span class="pr-verlauf" title="Gewertete Durchgänge, ältester zuerst. Für die Bestehenschance zählt der erste.">'+
+    g.length+' Durchgänge: '+g.map(function(e){return e.pkt;}).join(' → ')+' P</span>';
+  return h+'</div>';
+}
+/* Übersicht: bestanden oder nicht je Bereich und die Bestehenschance */
+function uebersichtHTML(){
+  var st=window.KVM_pruefStat?window.KVM_pruefStat():null;if(!st)return '';
+  var P=window.KVM_pruefProzent;
+  if(!st.n)return '<div class="pu leer"><b>Deine Ergebnisse</b><span>Löse eine Prüfung, gib dir für jede Teilaufgabe Punkte und tippe auf „Zum Ergebnis“. '+
+    'Dann siehst du hier, ob du bestanden hast, und deine Bestehenschance je Prüfungsbereich.</span></div>';
+  function teil(t,name){
+    if(!t)return '';
+    if(t.p==null)return '<div class="pu-teil"><span class="pu-k">'+name+'</span><b class="pu-p leer">'+(t.n-t.fehlt.length)+'/'+t.n+'</b>'+
+      '<span class="pu-s">Bereiche geprüft · für die Chance fehlt noch: '+esc(t.fehlt.map(function(k){return st.B[k].kurz;}).join(', '))+'</span></div>';
+    return '<div class="pu-teil"><span class="pu-k">'+name+'</span><b class="pu-p">'+P(t.p)+'</b><span class="pu-s">Bestehenschance</span></div>';
+  }
+  var h='<details class="pu" open><summary class="pu-sum"><span class="pu-titel">Deine Ergebnisse</span>'+
+    '<span class="pu-zahl"><b>'+st.ok+'</b> von <b>'+st.n+'</b> '+(st.n===1?'Prüfung':'Prüfungen')+' bestanden · Ø '+st.schnitt+' P</span></summary>';
+  h+='<div class="pu-kopf">'+teil(st.bq,'Basisqualifikationen')+teil(st.hq,'Handlungsspezifisch')+
+    (st.hq&&st.gesamt!=null?'<div class="pu-teil"><span class="pu-k">Beide Teile</span><b class="pu-p">'+P(st.gesamt)+'</b><span class="pu-s">alle 7 Bereiche</span></div>':'')+'</div>';
+  h+='<div class="pu-liste">';
+  Object.keys(st.B).forEach(function(k){
+    var b=st.B[k];if(b.teil==='hq'&&!st.hq)return;
+    var c=b.chance,stufe=c==null?'':(c>=0.7?'gut':(c>=0.4?'mittel':'knapp'));
+    var an=filterBereich===b.name;
+    h+='<button type="button" class="pu-b'+(an?' an':'')+'" data-pu="'+esc(b.name)+'" aria-pressed="'+an+'" title="Nur '+esc(b.kurz)+' zeigen">'+
+      '<span class="pu-name">'+esc(b.kurz)+'</span>'+
+      '<span class="pu-erg">'+(b.n?b.erst.slice(-6).map(function(e){return '<i class="'+(e.p>=50?'ok':'nok')+'" title="'+e.p+' Punkte">'+e.p+'</i>';}).join(''):
+        '<span class="pu-nix">noch keine Prüfung</span>')+'</span>'+
+      '<span class="pu-ch '+stufe+'">'+(c==null?'–':P(c))+'</span>'+
+      '<span class="pu-bar '+stufe+'" aria-hidden="true"><i style="width:'+(c==null?0:Math.round(c*100))+'%"></i></span></button>';
+  });
+  h+='</div><p class="pu-hinweis">Bestanden heißt: mindestens 50 von 100 Punkten in jedem Prüfungsbereich. Je Prüfung zählt der erste vollständig bewertete Durchgang. '+
+    'Die Chance ist eine Schätzung aus deinen Selbstbewertungen: Neuere Prüfungen und solche unter Prüfungsbedingungen zählen mehr, und mit wenigen Prüfungen je Bereich ist sie noch vorsichtig. '+
+    'Für einen Teil muss jeder Bereich sitzen – deshalb liegt die Chance für den Teil unter der einzelner Bereiche. '+
+    'Mündliche Ergänzungsprüfung und Fachgespräch sind nicht eingerechnet.</p></details>';
+  return h;
+}
+
 var filterBereich='';
 function render(){
   var list=$('pruefList');if(!list)return;
@@ -7662,6 +8162,7 @@ function render(){
   var h='<p class="pr-lead"><b>'+alle.length+' Original-Prüfungen</b> mit amtlichen Lösungshinweisen: '
       +'Aufgaben wie auf dem Prüfungsbogen lösen – mit Rechenweg und ausfüllbaren Anlagen –, '
       +'dann die Lösung aufdecken und dir selbst Punkte geben.</p>';
+  h+=uebersichtHTML();
   h+='<div class="pr-filter" role="group" aria-label="Nach Prüfungsbereich filtern">'+
      '<button class="pr-chip'+(filterBereich?'':' sel')+'" data-fach="" aria-pressed="'+(filterBereich?'false':'true')+'">Alle <span class="pr-n">'+info.length+'</span></button>';
   bereiche.forEach(function(b){
@@ -7674,11 +8175,13 @@ function render(){
 
   var termine=Object.keys(gruppen).sort(function(a,b){return gruppen[b].sort-gruppen[a].sort;});
   var offeneTermine=0;
+  var mitStand=window.KVM_pruefMitStand?window.KVM_pruefMitStand():{},ergAlle=window.KVM_pruefErgAlle?window.KVM_pruefErgAlle():{};
   termine.forEach(function(key){
     var items=gruppen[key].items.filter(function(x){return sichtbar.indexOf(x)>=0;});
     if(!items.length)return;
-    /* Die zwei jüngsten Termine offen, ältere eingeklappt. */
-    var offen=(offeneTermine<2)||!!filterBereich;offeneTermine++;
+    /* Die zwei jüngsten Termine offen, ältere eingeklappt – außer dort ist
+       eine Prüfung begonnen oder ausgewertet. */
+    var offen=(offeneTermine<2)||!!filterBereich||items.some(function(x){return mitStand[x.c.id]||ergAlle[x.c.id];});offeneTermine++;
     h+='<details class="pr-termin"'+(offen?' open':'')+'><summary class="pr-group">'+esc(key)+
        ' <span class="pr-anz">'+items.length+'</span></summary>';
     items.forEach(function(x){
@@ -7693,15 +8196,19 @@ function render(){
       var pct=steps.length?Math.round(bearbeitet/steps.length*100):0;
       var ei=window.KVM_echtInfo?window.KVM_echtInfo(x.c.id):null,dauer=window.KVM_dauerText||function(ms){return Math.round(ms/60000)+' min';};
       var uhr='<svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l2 2M9 2h6"/></svg>';
+      /* Neu starten, sobald es etwas zu leeren gibt – auch mitten in einem
+         Durchgang unter Prüfungsbedingungen. */
+      var stand=!!mitStand[x.c.id]||!!(ei&&(ei.laeuft||ei.abgegeben));
+      var neuBtn=stand&&window.KVM_neuStarten?'<button class="pr-btn" data-neu="'+esc(x.c.id)+'" title="Leere Blätter: Antworten und Punkte dieser Prüfung löschen">'+NEU_SVG+'Neu starten</button>':'';
       var start=ei&&ei.laeuft?'<button class="pr-btn solid echt" data-start="'+esc(x.c.id)+'">'+uhr+
-          (ei.rest>0?'Läuft · noch '+esc(dauer(ei.rest))+' – weiter':'Zeit abgelaufen – auswerten')+' →</button>':
-        ei&&ei.abgegeben?'<button class="pr-btn solid" data-start="'+esc(x.c.id)+'">Abgegeben – jetzt auswerten →</button>':
+          (ei.rest>0?'Läuft · noch '+esc(dauer(ei.rest))+' – weiter':'Zeit abgelaufen – auswerten')+' →</button>'+neuBtn:
+        ei&&ei.abgegeben?'<button class="pr-btn solid" data-start="'+esc(x.c.id)+'">Abgegeben – jetzt auswerten →</button>'+neuBtn:
         '<button class="pr-btn solid" data-start="'+esc(x.c.id)+'"'+(weiter>=0?' data-step="'+weiter+'"':'')+'>'
         +(weiter>=0?'Weiter bei Aufgabe '+esc(steps[weiter].nr)+' →':(bearbeitet?'Prüfung öffnen':'Prüfung starten'))+'</button>'
+        +neuBtn
         +'<button class="pr-btn echt" data-echt="'+esc(x.c.id)+'" title="Mit Uhr über die echte Bearbeitungszeit, Lösungen erst nach der Abgabe">'+uhr+
           'Unter Prüfungsbedingungen · '+(ei?ei.min:90)+' min</button>';
-      var letzte=ei&&ei.letzte?'<p class="pr-echt">Zuletzt unter Prüfungsbedingungen: <b>'+ei.letzte.pkt+' von '+ei.letzte.max+' P</b> · Note '+ei.letzte.note+
-        ' · '+esc(dauer(ei.letzte.dauer))+' · am '+esc(new Date(ei.letzte.tag*86400000).toLocaleDateString('de-DE',{day:'numeric',month:'short',timeZone:'UTC'}))+'</p>':'';
+      var letzte=ergebnisHTML(ergAlle[x.c.id]||[]);
       h+='<div class="pr-item">'
         +'<div class="pr-top"><span class="pr-ic pr-'+esc(kurz.toLowerCase())+'" aria-hidden="true">'+esc(kurz)+'</span>'
         +'<div class="pr-tt"><div class="pr-date">'+esc(x.bereich)+'</div>'
@@ -7756,6 +8263,20 @@ function render(){
   list.querySelectorAll('[data-echt]').forEach(function(b){
     b.addEventListener('click',function(){
       if(typeof window.KVM_startEcht==='function'&&window.KVM_startEcht(b.getAttribute('data-echt')))close();
+    });
+  });
+  list.querySelectorAll('[data-neu]').forEach(function(b){
+    b.addEventListener('click',function(){
+      if(typeof window.KVM_neuStarten==='function'&&window.KVM_neuStarten(b.getAttribute('data-neu')))close();
+    });
+  });
+  /* Bereich in der Übersicht antippen = nach diesem Bereich filtern */
+  list.querySelectorAll('[data-pu]').forEach(function(b){
+    b.addEventListener('click',function(){
+      var f=b.getAttribute('data-pu')||'';
+      filterBereich=filterBereich===f?'':f;
+      render();
+      var ziel=list.querySelector('.pr-filter');if(ziel)ziel.scrollIntoView({block:'start'});
     });
   });
   list.querySelectorAll('[data-copy]').forEach(function(b){
