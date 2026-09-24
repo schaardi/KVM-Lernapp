@@ -71,7 +71,9 @@ class _AnlageTabelleState extends State<AnlageTabelle> {
   FocusNode _knoten(String rc) => _fokus.putIfAbsent(rc, () {
         final n = FocusNode();
         n.addListener(() {
-          if (n.hasFocus) widget.onFokus?.call(AktivesFeld(_controller(rc), () => _speichern(rc)));
+          if (n.hasFocus) {
+            widget.onFokus?.call(AktivesFeld(_controller(rc), () => _speichern(rc), art: FeldArt.tabelle));
+          }
         });
         return n;
       });
@@ -91,7 +93,10 @@ class _AnlageTabelleState extends State<AnlageTabelle> {
         label: label,
         child: SizedBox(
           width: 92,
-          child: TextField(
+          child: Aufleuchten(
+            controller: _controller(rc),
+            radius: 6,
+            child: TextField(
             controller: _controller(rc),
             focusNode: _knoten(rc),
             textAlign: TextAlign.right,
@@ -111,6 +116,7 @@ class _AnlageTabelleState extends State<AnlageTabelle> {
               hintStyle: TextStyle(fontSize: 12.5, color: kMuted),
             ),
             onChanged: (_) => _speichern(rc),
+            ),
           ),
         ),
       );
