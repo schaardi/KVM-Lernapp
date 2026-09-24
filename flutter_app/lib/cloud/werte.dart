@@ -1,4 +1,5 @@
 import 'dart:convert';
+import '../config.dart';
 import '../constants.dart';
 import '../services/data_service.dart';
 import '../services/lerntage_service.dart';
@@ -380,14 +381,8 @@ const String kPruefFussnote =
 // ---------------------------------------------------------------------------
 // Einladen (in der App ohne Deep Link: Text mit Code und Web-Link)
 
-const String _webAdresse = String.fromEnvironment('WEB_ADRESSE');
-
-/// Adresse der Web-App für den Einladungslink (per `--dart-define=WEB_ADRESSE`
-/// überschreibbar; ein leerer Wert fällt auf die Vorgabe zurück).
-String get webAdresse => _webAdresse.isNotEmpty ? _webAdresse : 'https://schaardi.github.io/KVM-Lernapp/';
-
 /// Einladung in eine Lerngruppe: Text und Link wie im Web.
 ({String text, String link}) einladungFuer(GruppenStand g) => (
       text: 'Lerngruppe „${g.name}“ im Meister-Trainer – lern mit! Code: ${g.code}',
-      link: '$webAdresse#gruppe=${g.code}',
+      link: '${Config.webAdresse}#gruppe=${g.code}',
     );

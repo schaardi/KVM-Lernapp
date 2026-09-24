@@ -25,7 +25,9 @@ class SyncService {
 
   /// Verbindet den Fortschritt mit dem Cloud-Push (in main aufrufen).
   void attach() {
-    ProgressService.instance.onChanged = schedulePush;
+    ProgressService.instance
+      ..removeListener(schedulePush)
+      ..addListener(schedulePush);
   }
 
   /// Nach dem Login: Cloud laden, mergen, zurückschreiben.

@@ -25,6 +25,12 @@ class Config {
       ? _googleWebClientId
       : '342520200103-78s40rb7f7o5olhd1lsrdf2clrvh5dsu.apps.googleusercontent.com';
 
+  static const String _webAdresse = String.fromEnvironment('WEB_ADRESSE');
+
+  /// Adresse der Web-App (GitHub Pages) – für Einladungslinks zu Lerngruppen.
+  static String get webAdresse =>
+      _webAdresse.isNotEmpty ? _webAdresse : 'https://schaardi.github.io/KVM-Lernapp/';
+
   /// Login/Sync sind aktiv, sobald alle drei Werte vorliegen (per Default true).
   static bool get authEnabled =>
       supabaseUrl.isNotEmpty &&
