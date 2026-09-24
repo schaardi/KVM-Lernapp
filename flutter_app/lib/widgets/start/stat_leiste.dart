@@ -9,8 +9,12 @@ import '../radar_chart.dart';
 import '../ui.dart';
 
 /// Statistikleiste der Startseite (FR-015 2.2): vier Kennzahlen in einer Zeile,
-/// zum Aufziehen per Antippen oder Wischen. Aufgeklappt: Prüfungsreife je Fach,
+/// zum Aufziehen per Antippen oder Ziehen. Aufgeklappt: Prüfungsreife je Fach,
 /// Aktivität der letzten 14 Tage, Erfolge und „Lernstand zurücksetzen“.
+///
+/// Antippen klappt gleitend auf und zu. Beim Ziehen folgt die Leiste dem
+/// Finger und rastet beim Loslassen ein – offen ab gut einem Drittel oder bei
+/// einem schnellen Wisch in die jeweilige Richtung (wie im Web).
 class StatLeiste extends StatefulWidget {
   final VoidCallback onZuruecksetzen;
   const StatLeiste({super.key, required this.onZuruecksetzen});
@@ -19,28 +23,66 @@ class StatLeiste extends StatefulWidget {
   State<StatLeiste> createState() => _StatLeisteState();
 }
 
-class _StatLeisteState extends State<StatLeiste> {
+class _StatLeisteState extends State<StatLeiste> with SingleTickerProviderStateMixin {
+  /// 0 = zu, 1 = offen; beim Ziehen dazwischen.
+  late final AnimationController _c = AnimationController(vsync: this, duration: const Duration(milliseconds: 340))
+    ..addStatusListener((_) {
+      if (mounted) setState(() {});
+    });
+  final _inhaltKey = GlobalKey();
   bool _offen = false;
-  double _dy = 0;
+  bool _zieht = false;
+  double _weg = 0;
   DateTime _gewischt = DateTime(2000);
 
-  void _umschalten() {
-    // Ein Tippen direkt nach dem Wischen zählt nicht (sonst schlösse es gleich).
-    if (DateTime.now().difference(_gewischt).inMilliseconds < 500) return;
-    setState(() => _offen = !_offen);
+  @override
+  void dispose() {
+    _c.dispose();
+    super.dispose();
   }
 
-  void _wischen(DragUpdateDetails d) {
-    _dy += d.delta.dy;
-    if (_dy > 36 && !_offen) {
-      setState(() => _offen = true);
-      _dy = 0;
-      _gewischt = DateTime.now();
-    } else if (_dy < -36 && _offen) {
-      setState(() => _offen = false);
-      _dy = 0;
-      _gewischt = DateTime.now();
+  void _gleiten(bool offen) {
+    setState(() => _offen = offen);
+    if (MediaQuery.disableAnimationsOf(context)) {
+      _c.value = offen ? 1 : 0;
+    } else if (offen) {
+      _c.animateTo(1, curve: Curves.easeOutCubic);
+    } else {
+      // animateBack endet „dismissed“ – dann wird der Inhalt abgebaut.
+      _c.animateBack(0, curve: Curves.easeOutCubic);
     }
+  }
+
+  void _umschalten() {
+    // Ein Tippen direkt nach dem Ziehen zählt nicht (sonst schlösse es gleich).
+    if (DateTime.now().difference(_gewischt).inMilliseconds < 500) return;
+    _gleiten(!_offen);
+  }
+
+  /// Volle Höhe des Inhalts – geschätzt, bis er einmal gebaut ist.
+  double get _voll {
+    final h = _inhaltKey.currentContext?.size?.height ?? 0;
+    return h > 0 ? h : 480;
+  }
+
+  void _ziehStart(DragStartDetails _) {
+    _c.stop();
+    _weg = 0;
+    setState(() => _zieht = true);
+  }
+
+  void _ziehen(DragUpdateDetails d) {
+    final dy = d.primaryDelta ?? 0;
+    _weg += dy;
+    _c.value = (_c.value + dy / _voll).clamp(0.0, 1.0);
+  }
+
+  void _ziehEnde(DragEndDetails d) {
+    _gewischt = DateTime.now();
+    final v = d.primaryVelocity ?? 0;
+    final offen = v.abs() > 450 && _weg.abs() > 24 ? v > 0 : _c.value > 0.35;
+    _zieht = false;
+    _gleiten(offen);
   }
 
   @override
@@ -59,8 +101,12 @@ class _StatLeisteState extends State<StatLeiste> {
       child: GestureDetector(
         behavior: HitTestBehavior.opaque,
         onTap: _umschalten,
-        onVerticalDragStart: (_) => _dy = 0,
-        onVerticalDragUpdate: _wischen,
+        onVerticalDragStart: _ziehStart,
+        onVerticalDragUpdate: _ziehen,
+        onVerticalDragEnd: _ziehEnde,
+        onVerticalDragCancel: () {
+          if (_zieht) _ziehEnde(DragEndDetails(primaryVelocity: 0));
+        },
         child: Padding(
           padding: const EdgeInsets.fromLTRB(12, 9, 10, 9),
           child: Column(children: [
@@ -87,9 +133,8 @@ class _StatLeisteState extends State<StatLeiste> {
               const SizedBox(width: 10),
               Column(mainAxisSize: MainAxisSize.min, children: [
                 if (!klein) Text('STATISTIK', style: monoStyle(8.5, color: kPetrolInk, spacing: 0.5)),
-                AnimatedRotation(
-                  turns: _offen ? 0.5 : 0,
-                  duration: const Duration(milliseconds: 200),
+                RotationTransition(
+                  turns: Tween(begin: 0.0, end: 0.5).animate(_c),
                   child: Icon(Icons.keyboard_arrow_down, size: 20, color: kPetrolInk),
                 ),
               ]),
@@ -110,20 +155,21 @@ class _StatLeisteState extends State<StatLeiste> {
         border: Border.all(color: kLine),
         boxShadow: kSoftShadow,
       ),
-      child: AnimatedSize(
-        duration: const Duration(milliseconds: 220),
-        curve: Curves.easeOut,
-        alignment: Alignment.topCenter,
-        child: Column(children: [
-          kopf,
-          if (_offen)
-            Container(
+      child: Column(children: [
+        kopf,
+        // Der Inhalt ist gebaut, sobald er (teilweise) sichtbar ist.
+        if (!_c.isDismissed || _zieht)
+          SizeTransition(
+            sizeFactor: _c,
+            alignment: Alignment.topCenter,
+            child: Container(
+              key: _inhaltKey,
               decoration: BoxDecoration(border: Border(top: BorderSide(color: kLineSoft))),
               padding: const EdgeInsets.fromLTRB(14, 12, 14, 14),
               child: _inhalt(),
             ),
-        ]),
-      ),
+          ),
+      ]),
     );
   }
 

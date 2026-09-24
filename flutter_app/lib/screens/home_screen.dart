@@ -7,6 +7,7 @@ import '../constants.dart';
 import '../services/app_state.dart';
 import '../services/auth_service.dart';
 import '../services/data_service.dart';
+import '../widgets/seiten_stapel.dart';
 import '../widgets/ui.dart';
 import 'pages/konto_seite.dart';
 import 'pages/lernen_seite.dart';
@@ -116,8 +117,9 @@ class _HomeScreenState extends State<HomeScreen> {
     final ziele = _sichtbar;
     final aktiv = ziele.indexWhere((z) => z.seite == _st.seite);
     final index = aktiv < 0 ? 0 : aktiv;
-    // Alle Seiten bleiben erhalten (Zustand, Scrollposition); sichtbar ist eine.
-    final stapel = IndexedStack(
+    // Alle Seiten bleiben erhalten (Zustand, Scrollposition); sichtbar ist
+    // eine, beim Wechsel gleitet sie in Laufrichtung herein.
+    final stapel = SeitenStapel(
       index: AppSeite.values.indexOf(ziele[index].seite),
       children: [for (final s in AppSeite.values) _seite(s)],
     );
@@ -133,7 +135,12 @@ class _HomeScreenState extends State<HomeScreen> {
           bottom: false,
           child: breit
               ? Column(children: [
-                  _obenLeiste(ziele, index),
+                  _OberLeiste(
+                    anzahl: ziele.length,
+                    index: index,
+                    reiter: (i, aktiv) => _reiter(ziele[i], aktiv),
+                    onTap: (i) => _st.geheZu(ziele[i].seite),
+                  ),
                   Expanded(child: stapel),
                 ])
               : stapel,
@@ -164,8 +171,58 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 
-  /// Ab 900 dp: schwebende Pillenleiste oben mit dem Namen links.
-  Widget _obenLeiste(List<_Ziel> ziele, int index) {
+  /// Inhalt eines Reiters der Pillenleiste (ab 900 dp).
+  Widget _reiter(_Ziel z, bool aktiv) {
+    final farbe = aktiv ? kPetrolInkDeep : kMuted;
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 9),
+      child: Row(mainAxisSize: MainAxisSize.min, children: [
+        IconTheme(data: IconThemeData(size: 19, color: farbe), child: _symbol(z, aktiv)),
+        const SizedBox(width: 8),
+        Text(z.label, style: TextStyle(fontSize: 13.5, fontWeight: FontWeight.w600, color: farbe)),
+      ]),
+    );
+  }
+}
+
+/// Ab 900 dp: schwebende Pillenleiste oben mit dem Namen links. Die
+/// Hinterlegung des aktiven Reiters gleitet zum neuen Reiter (wie im Web).
+class _OberLeiste extends StatefulWidget {
+  final int anzahl;
+  final int index;
+  final Widget Function(int i, bool aktiv) reiter;
+  final ValueChanged<int> onTap;
+  const _OberLeiste({required this.anzahl, required this.index, required this.reiter, required this.onTap});
+
+  @override
+  State<_OberLeiste> createState() => _OberLeisteState();
+}
+
+class _OberLeisteState extends State<_OberLeiste> {
+  final _stapel = GlobalKey();
+  final List<GlobalKey> _keys = [];
+
+  /// Lage des aktiven Reiters im Stapel; `null`, solange nicht gemessen –
+  /// dann trägt der Reiter die Hinterlegung selbst.
+  Rect? _marke;
+
+  void _messen() {
+    if (!mounted) return;
+    final box = _stapel.currentContext?.findRenderObject() as RenderBox?;
+    final ziel = widget.index < _keys.length ? _keys[widget.index].currentContext?.findRenderObject() as RenderBox? : null;
+    if (box == null || ziel == null || !box.hasSize || !ziel.hasSize) return;
+    final r = ziel.localToGlobal(Offset.zero, ancestor: box) & ziel.size;
+    if (r != _marke) setState(() => _marke = r);
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    while (_keys.length < widget.anzahl) {
+      _keys.add(GlobalKey());
+    }
+    WidgetsBinding.instance.addPostFrameCallback((_) => _messen());
+    final ruhig = MediaQuery.disableAnimationsOf(context);
+    final m = _marke;
     return Padding(
       padding: const EdgeInsets.fromLTRB(16, 10, 16, 16),
       child: Center(
@@ -177,38 +234,38 @@ class _HomeScreenState extends State<HomeScreen> {
             border: Border.all(color: kLine),
             boxShadow: kSoftShadow,
           ),
-          child: Row(mainAxisSize: MainAxisSize.min, children: [
-            Padding(
-              padding: const EdgeInsets.fromLTRB(10, 0, 14, 0),
-              child: Text('MEISTER FÜR KRAFTVERKEHR', style: dispStyle(16)),
-            ),
-            for (var i = 0; i < ziele.length; i++)
+          child: Stack(key: _stapel, children: [
+            if (m != null)
+              AnimatedPositioned(
+                duration: ruhig ? Duration.zero : const Duration(milliseconds: 340),
+                curve: Curves.easeOutCubic,
+                left: m.left,
+                top: m.top,
+                width: m.width,
+                height: m.height,
+                child: DecoratedBox(
+                    decoration: BoxDecoration(color: kPetrolSoft, borderRadius: BorderRadius.circular(11))),
+              ),
+            Row(mainAxisSize: MainAxisSize.min, children: [
               Padding(
-                padding: const EdgeInsets.only(left: 4),
-                child: Material(
-                  color: i == index ? kPetrolSoft : Colors.transparent,
-                  borderRadius: BorderRadius.circular(11),
-                  child: InkWell(
+                padding: const EdgeInsets.fromLTRB(10, 0, 14, 0),
+                child: Text('MEISTER FÜR KRAFTVERKEHR', style: dispStyle(16)),
+              ),
+              for (var i = 0; i < widget.anzahl; i++)
+                Padding(
+                  padding: const EdgeInsets.only(left: 4),
+                  child: Material(
+                    key: _keys[i],
+                    color: i == widget.index && m == null ? kPetrolSoft : Colors.transparent,
                     borderRadius: BorderRadius.circular(11),
-                    onTap: () => _st.geheZu(ziele[i].seite),
-                    child: Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 9),
-                      child: Row(mainAxisSize: MainAxisSize.min, children: [
-                        IconTheme(
-                          data: IconThemeData(size: 19, color: i == index ? kPetrolInkDeep : kMuted),
-                          child: _symbol(ziele[i], i == index),
-                        ),
-                        const SizedBox(width: 8),
-                        Text(ziele[i].label,
-                            style: TextStyle(
-                                fontSize: 13.5,
-                                fontWeight: FontWeight.w600,
-                                color: i == index ? kPetrolInkDeep : kMuted)),
-                      ]),
+                    child: InkWell(
+                      borderRadius: BorderRadius.circular(11),
+                      onTap: () => widget.onTap(i),
+                      child: widget.reiter(i, i == widget.index),
                     ),
                   ),
                 ),
-              ),
+            ]),
           ]),
         ),
       ),
