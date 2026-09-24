@@ -1,5 +1,15 @@
 # Content-Sync – Austausch zwischen Content- und App-Session
 
+> **Stand September 2026 – Quelle der Wahrheit ist der Katalog auf `main`.**
+> - Fragen und Prüfungen liegen in `data/questions.js` und `data/cases.js` und werden über
+>   `tools/webdaten.py` gepflegt.
+> - Der Sync (`python tools/sync_content.py`, täglich per Workflow) übernimmt diesen Katalog in die
+>   App-Assets.
+> - Der frühere Content-Branch `claude/focused-meitner-ilnlqj` (Stand Juli 2026) ist eingefroren.
+>   Übernommen wird er nur noch ausdrücklich (`--ref` bzw. `content_ref`); das überschreibt
+>   Korrekturen am Katalog.
+> - Die folgenden Abschnitte beschreiben den früheren Austausch. Der Datenvertrag gilt unverändert.
+
 Dieses Dokument ist die **Schnittstelle zwischen zwei Sessions/Branches** in
 diesem Repo. Es beschreibt, wie der Fragenkatalog aus der Web-App in die native
 App fließt – der Datenvertrag und der Ablauf.
@@ -134,7 +144,7 @@ wird bei jedem Lauf gegen das Original geprüft.
 ## Selbstprüfung (jederzeit)
 
 ```bash
-# Ist die App auf dem Content-Stand?  (Exit 2 = Sync nötig)
+# Ist die App auf dem Stand des Katalogs (data/*.js)?  (Exit 2 = Sync nötig)
 python tools/sync_content.py --check
 
 # Erfüllen die gebündelten Assets den Datenvertrag?
