@@ -1116,39 +1116,39 @@ Großbuchstaben, Buchstabenabstand 1,3, `kMuted`; rechts optional ein Zusatz in 
 ### Referenz Web-Implementierung (`index.html` auf `claude/ui-design-improvement-my0f66`)
 
 **CSS**
-- Startseite: Kommentar „Startseite“ Z. 915
-- Texte: „Aufgabentexte: Tabellen …“ Z. 1264
-- Aufgabenblatt Z. 1296
-- Rechenweg Z. 1425
+- Startseite: Kommentar „Startseite“ Z. 920
+- Texte: „Aufgabentexte: Tabellen …“ Z. 1293
+- Aufgabenblatt Z. 1325
+- Rechenweg Z. 1498
 
 **JS**
 - Renderer:
-  - `rtIstRechnung` Z. 2850
-  - `rtKopf` Z. 2870
-  - `rtTabelle` Z. 2885
-  - `rtHTML` Z. 2908
+  - `rtIstRechnung` Z. 2946
+  - `rtKopf` Z. 2966
+  - `rtTabelle` Z. 2981
+  - `rtHTML` Z. 3004
 - Rechenweg:
-  - `rwTokens` Z. 2974
-  - `rwRechne` Z. 3055
-  - `rwZeileText` Z. 3093
-  - `rwHTML` Z. 3126
-  - `rwBinden` Z. 3139
-- Bewertung: `scoreHTML` Z. 3226
+  - `rwTokens` Z. 3070
+  - `rwRechne` Z. 3151
+  - `rwZeileText` Z. 3189
+  - `rwHTML` Z. 3222
+  - `rwBinden` Z. 3235
+- Bewertung: `scoreHTML` Z. 3322
 - Aufgabenblatt:
-  - `blStepperHTML` Z. 3515
-  - `blFortschrittHTML` Z. 3533
-  - `blLoesungHTML` Z. 3602
-  - `blRechenteil` Z. 3934
-  - `blTeilHTML` Z. 3941
-  - `renderBlatt` Z. 3981
+  - `blStepperHTML` Z. 3611
+  - `blFortschrittHTML` Z. 3629
+  - `blLoesungHTML` Z. 3698
+  - `blRechenteil` Z. 4030
+  - `blTeilHTML` Z. 4037
+  - `renderBlatt` Z. 4077
 - Startseite:
-  - `tagZaehlen` Z. 2017
-  - `renderFachGroup` Z. 2185
-  - `renderHero` Z. 2213
-  - `erfolgeListe` Z. 2333
-  - `renderAktiv` Z. 2374
-  - `renderPruefLast` Z. 2391
-- Prüfungsliste: `items.forEach` in `render()` Z. 7684
+  - `tagZaehlen` Z. 2093
+  - `renderFachGroup` Z. 2261
+  - `renderHero` Z. 2289
+  - `erfolgeListe` Z. 2409
+  - `renderAktiv` Z. 2450
+  - `renderPruefLast` Z. 2467
+- Prüfungsliste: `items.forEach` in `render()` Z. 8187
 
 Zeilennummern: Stand dieses Commits.
 
@@ -1296,18 +1296,18 @@ Serverseitig abgesichert:
 - Austreten führt zurück zum Beitrittsformular. Der Eintrag ist serverseitig gelöscht.
 
 ### Referenz Web-Implementierung (`index.html` auf `claude/ui-design-improvement-my0f66`)
-- **HTML:** `#vgKopf` / `#vgBox`, Z. 1640
-- **CSS:** Kommentar „Vergleich: freiwillige Wochenrangliste“, Z. 1107
+- **HTML:** `#vgKopf` / `#vgBox`, Z. 1714
+- **CSS:** Kommentar „Vergleich: freiwillige Wochenrangliste“, Z. 1123
 - **JS** im Cloud-Block:
 
   | Funktion | Zeile |
   |---|---|
-  | `isoWoche` | 4765 |
-  | `wocheAntworten` | 4772 |
-  | `vgWerte` | 4777 |
-  | `vgMeldenSpaeter` | 4782 |
-  | `vgLaden` | 4789 |
-  | `vgZeigen` | 4930 |
+  | `isoWoche` | 5109 |
+  | `wocheAntworten` | 5116 |
+  | `vgWerte` | 5121 |
+  | `vgMeldenSpaeter` | 5126 |
+  | `vgLaden` | 5133 |
+  | `vgZeigen` | 5350 |
 
 - **SQL:** `docs/supabase-rangliste.sql`. Lokal geprüft mit PGlite: Rechte,
   Rangfolge, Wochenwechsel, zwei Geräte, Namensregeln, Austritt, Kontolöschung.
@@ -1540,27 +1540,27 @@ Der Rechner bearbeitet keinen Text, sondern eine Liste von Zeichen:
 - „4.400“ im Ergebnisfeld zählt als 4400.
 
 ### Referenz Web-Implementierung (`index.html` auf `claude/ui-design-improvement-my0f66`)
-- **HTML:** `#mCalc`, Z. 1835
-- **CSS:** Kommentar „Taschenrechner: Anzeige mit Verlauf …“, Z. 570
+- **HTML:** `#mCalc`, Z. 1911
+- **CSS:** Kommentar „Taschenrechner: Anzeige mit Verlauf …“, Z. 575
 - **JS:**
 
   | Funktion | Zeile |
   |---|---|
-  | `rwTokens` (Kern: Zeichen) | 2974 |
-  | `rwFunktion` (Winkel, Wurzel) | 3012 |
-  | `rwAuswerten` (Kern: Rechnen) | 3030 |
-  | `parseCalcNum` | 3344 |
-  | `calcDock` (Andocken, Ausweichen) | 5611 |
-  | `rkKern` (Zeichenliste → Kern) | 5675 |
-  | `rkAusdruck` (Anzeige, Text) | 5708 |
-  | `rkFunktion` | 5759 |
-  | `rkVorzeichen` | 5769 |
-  | `rkZeit` | 5787 |
-  | `rkGleich` | 5801 |
-  | `rkTaste` | 5815 |
-  | `rkZielVon` / `rkUebernehmen` | 5836 / 5859 |
-  | `FN_TASTEN` / `TASTEN` | 5880 |
-  | `rkZeigen` | 5890 |
+  | `rwTokens` (Kern: Zeichen) | 3070 |
+  | `rwFunktion` (Winkel, Wurzel) | 3108 |
+  | `rwAuswerten` (Kern: Rechnen) | 3126 |
+  | `parseCalcNum` | 3440 |
+  | `calcDock` (Andocken, Ausweichen) | 6059 |
+  | `rkKern` (Zeichenliste → Kern) | 6123 |
+  | `rkAusdruck` (Anzeige, Text) | 6156 |
+  | `rkFunktion` | 6207 |
+  | `rkVorzeichen` | 6217 |
+  | `rkZeit` | 6235 |
+  | `rkGleich` | 6249 |
+  | `rkTaste` | 6263 |
+  | `rkZielVon` / `rkUebernehmen` | 6284 / 6307 |
+  | `FN_TASTEN` / `TASTEN` | 6328 |
+  | `rkZeigen` | 6338 |
 
 Zeilennummern: Stand dieses Commits.
 
@@ -1672,12 +1672,12 @@ Fehler im Formular: „Bitte ein Datum wählen.“ / „Der Termin muss in der Z
 - „Entfernen“ führt zurück zu „Wann ist deine Prüfung?“.
 
 ### Referenz Web-Implementierung (`index.html` auf `claude/ui-design-improvement-my0f66`)
-- **HTML:** `#planBox` in `.hero-main`, Z. 1561
-- **CSS:** Kommentar „Prüfungstermin und Lernplan: eigener Block …“, Z. 967
+- **HTML:** `#planBox` in `.hero-main`, Z. 1634
+- **CSS:** Kommentar „Prüfungstermin und Lernplan: eigener Block …“, Z. 972
 - **JS:**
-  - Block-Kommentar „Prüfungstermin und Lernplan“, Z. 2228
-  - `planRechnen`, Z. 2243
-  - `renderPlan`, Z. 2259 (aufgerufen am Ende von `renderHero`)
+  - Block-Kommentar „Prüfungstermin und Lernplan“, Z. 2304
+  - `planRechnen`, Z. 2319
+  - `renderPlan`, Z. 2335 (aufgerufen am Ende von `renderHero`)
 
 Zeilennummern: Stand dieses Commits.
 
@@ -1710,6 +1710,8 @@ aus Situationsaufgaben.
     oder die App neu startet, wie in der echten Prüfung.
 - **`kvm_echt_verlauf`**: Liste (höchstens 40) von
   `{"id", "tag", "min", "dauer": <ms>, "pkt", "max", "note"}`. `tag` wie in `kvm_tage`.
+  **Seit FR-014** stehen die Durchgänge in `kvm_pruef_erg` (mit `echt: 1`); der alte Verlauf
+  wird einmalig übernommen und nicht mehr geschrieben.
 
 ### Start (Prüfungsliste)
 - Neuer Knopf je Prüfung: Uhr-Symbol + „Unter Prüfungsbedingungen · 90 min“.
@@ -1779,17 +1781,17 @@ Unter den Knöpfen steht der letzte Durchgang: „Zuletzt unter Prüfungsbedingu
 
 ### Referenz Web-Implementierung (`index.html` auf `claude/ui-design-improvement-my0f66`)
 - **HTML:**
-  - Uhr und „Abgeben“ in `.bl-bar`, Z. 1764
-  - Band `#blEcht`, Z. 1776
-- **CSS:** Kommentar „Prüfung unter Echtbedingungen: Uhr und Abgabe …“, Z. 1407
+  - Uhr und „Abgeben“ in `.bl-bar`, Z. 1838
+  - Band `#blEcht`, Z. 1850
+- **CSS:** Kommentar „Prüfung unter Echtbedingungen: Uhr und Abgabe …“, Z. 1436
 - **JS:**
-  - Block-Kommentar „Prüfung unter Echtbedingungen“, Z. 4302
-  - `echtUhr`, Z. 4334
-  - `echtAbgeben`, Z. 4355
-  - `KVM_startEcht`, Z. 4369
-  - `KVM_echtInfo`, Z. 4383
-  - Ergebnis in `finishRound`, Z. 4563
-  - Prüfungsliste, Z. 7694
+  - Block-Kommentar „Prüfung unter Echtbedingungen“, Z. 4398
+  - `echtUhr`, Z. 4430
+  - `echtAbgeben`, Z. 4451
+  - `KVM_startEcht`, Z. 4465
+  - `KVM_echtInfo`, Z. 4481
+  - Ergebnis in `finishRound`, Z. 4859
+  - Prüfungsliste, Z. 8197
 
 Zeilennummern: Stand dieses Commits.
 
@@ -1871,15 +1873,15 @@ geht auch ohne Konto.
 
 ### Referenz Web-Implementierung (`index.html` auf `claude/ui-design-improvement-my0f66`)
 - **HTML:**
-  - Knopf `#qMelden`, Z. 1719
-  - Dialog `#mMelden`, Z. 1852
-- **CSS:** Kommentar „Fehler melden: unauffälliger Knopf …“, Z. 541
+  - Knopf `#qMelden`, Z. 1793
+  - Dialog `#mMelden`, Z. 1928
+- **CSS:** Kommentar „Fehler melden: unauffälliger Knopf …“, Z. 546
 - **JS:**
-  - `meldenKnopfHTML` (Aufgabenblatt), Z. 4296
-  - Block „Fehler melden“ im Cloud-Teil, Z. 4695
-  - `mdOeffnen`, Z. 4706
-  - Senden, Z. 4732
-  - Bereitschaft, Z. 4746
+  - `meldenKnopfHTML` (Aufgabenblatt), Z. 4392
+  - Block „Fehler melden“ im Cloud-Teil, Z. 5038
+  - `mdOeffnen`, Z. 5049
+  - Senden, Z. 5075
+  - Bereitschaft, Z. 5089
 - **SQL:** `docs/supabase-meldungen.sql`
 
 Zeilennummern: Stand dieses Commits.
@@ -1961,11 +1963,11 @@ stattdessen **„In den Kalender“**:
 - Neustart des Geräts: Die geplanten Erinnerungen bleiben.
 
 ### Referenz Web-Implementierung (`index.html` auf `claude/ui-design-improvement-my0f66`)
-- **HTML:** Zeile „Lern-Erinnerung“ (`#erinnZeit`, `#erinnIcs`), Z. 1697
-- **CSS:** Kommentar „Lern-Erinnerung: Uhrzeit + Kalendereintrag“, Z. 435
+- **HTML:** Zeile „Lern-Erinnerung“ (`#erinnZeit`, `#erinnIcs`), Z. 1771
+- **CSS:** Kommentar „Lern-Erinnerung: Uhrzeit + Kalendereintrag“, Z. 440
 - **JS:**
-  - Block-Kommentar „Lern-Erinnerung (Web)“, Z. 4245
-  - `erIcs`, Z. 4258
+  - Block-Kommentar „Lern-Erinnerung (Web)“, Z. 4341
+  - `erIcs`, Z. 4354
 
 Zeilennummern: Stand dieses Commits.
 
@@ -2070,15 +2072,15 @@ Deutschland. Dafür gibt es eine private Rangliste je Gruppe.
 - Verlassen → zurück zu „Alle“, der Reiter ist weg.
 
 ### Referenz Web-Implementierung (`index.html` auf `claude/ui-design-improvement-my0f66`)
-- **Zustand und Einladungslink** im Vergleichsblock, Z. 4755
-- **CSS:** Kommentar „Lerngruppen: Reiter über der Liste …“, Z. 1147
+- **Zustand und Einladungslink** im Vergleichsblock, Z. 5098
+- **CSS:** Kommentar „Lerngruppen: Reiter über der Liste …“, Z. 1165
 - **JS:**
-  - Block-Kommentar „Lerngruppen: private Rangliste per Code“, Z. 4804
-  - `grLaden`, Z. 4808
-  - `grTabsHTML`, Z. 4833
-  - `grFormHTML`, Z. 4842
-  - `grAnsichtHTML`, Z. 4854
-  - `grBinden`, Z. 4879
+  - Block-Kommentar „Lerngruppen: private Rangliste per Code“, Z. 5159
+  - `grLaden`, Z. 5163
+  - `grTabsHTML`, Z. 5188
+  - `grFormHTML`, Z. 5197
+  - `grAnsichtHTML`, Z. 5209
+  - `grBinden`, Z. 5239
 - **SQL:** `docs/supabase-gruppen.sql`
 
 Zeilennummern: Stand dieses Commits.
@@ -2184,16 +2186,16 @@ Ergänzungsprüfung. Geübt wird hier das freie Antworten in ganzen Sätzen:
 
 ### Referenz Web-Implementierung (`index.html` auf `claude/ui-design-improvement-my0f66`)
 - **HTML:**
-  - Karte `#btnOral`, Z. 1603
-  - Bildschirm `#scrOral`, Z. 1784
-- **CSS:** Kommentar „Mündlich üben: Frage vorlesen …“, Z. 1036
+  - Karte `#btnOral`, Z. 1676
+  - Bildschirm `#scrOral`, Z. 1858
+- **CSS:** Kommentar „Mündlich üben: Frage vorlesen …“, Z. 1041
 - **JS:**
-  - Block-Kommentar „Mündlich üben (Fachgespräch)“, Z. 4118
-  - `orGeeignet`, Z. 4129
-  - `orBegriffe`, Z. 4140
-  - `orHoeren`, Z. 4156
-  - `startOral`, Z. 4171
-  - `orZeigen`, Z. 4192
+  - Block-Kommentar „Mündlich üben (Fachgespräch)“, Z. 4214
+  - `orGeeignet`, Z. 4225
+  - `orBegriffe`, Z. 4236
+  - `orHoeren`, Z. 4252
+  - `startOral`, Z. 4267
+  - `orZeigen`, Z. 4288
 
 Zeilennummern: Stand dieses Commits.
 
@@ -2340,24 +2342,24 @@ Fehlt das Skript, sieht die Rangliste aus wie bisher.
 
 ### Referenz Web-Implementierung (`index.html` auf `claude/ui-design-improvement-my0f66`)
 - **HTML:**
-  - Kachel `#btnAdmin` (nur Web), Z. 1682
-  - Dialog `#mLeute`, Z. 1877
-  - Dialog `#mAdmin` (nur Web), Z. 1886
+  - Kachel `#btnAdmin` (nur Web), Z. 1756
+  - Dialog `#mLeute`, Z. 1953
+  - Dialog `#mAdmin` (nur Web), Z. 1962
 - **CSS:**
-  - Kommentar „Namen in Rangliste, Gruppe und Freundesliste öffnen das Profil“, Z. 1166
-  - Kommentar „Lernende: Nutzerübersicht, Freunde und Profile …“, Z. 1172
+  - Kommentar „Namen in Rangliste, Gruppe und Freundesliste öffnen das Profil“, Z. 1184
+  - Kommentar „Lernende: Nutzerübersicht, Freunde und Profile …“, Z. 1190
 - **JS:**
-  - Block-Kommentar „Lernende: Nutzerübersicht, Freunde und Profile“, Z. 5025
-  - `ltStandLaden`, Z. 5033
-  - `profilDetails`, Z. 5045
-  - `frAnsichtHTML`, Z. 5072
-  - `avatarHTML`, Z. 5097
-  - `lernstandHTML`, Z. 5106
-  - `ltProfilHTML`, Z. 5192
-  - `ltZeigen`, Z. 5210
-  - `frAktion`, Z. 5257
-  - `ltOeffnen`, Z. 5285
-  - Block-Kommentar „Verwaltung (nur Admins)“ (nur Web), Z. 5300
+  - Block-Kommentar „Lernende: Nutzerübersicht, Freunde und Profile“, Z. 5448
+  - `ltStandLaden`, Z. 5456
+  - `profilDetails`, Z. 5468
+  - `frAnsichtHTML`, Z. 5500
+  - `avatarHTML`, Z. 5531
+  - `lernstandHTML`, Z. 5540
+  - `ltProfilHTML`, Z. 5636
+  - `ltZeigen`, Z. 5655
+  - `frAktion`, Z. 5702
+  - `ltOeffnen`, Z. 5730
+  - Block-Kommentar „Verwaltung (nur Admins)“ (nur Web), Z. 5745
 - **SQL:** `docs/supabase-profile.sql`
 
 Zeilennummern: Stand dieses Commits.
@@ -2481,17 +2483,217 @@ Bitte in der App ebenso: Jede Frage muss sich melden lassen, auch offene.
   ihrer Nummer.
 
 ### Referenz Web-Implementierung (`index.html` auf `claude/ui-design-improvement-my0f66`)
-- **CSS:** Kommentar „Skizze: Zeichenfläche für Zeichenaufgaben …“, Z. 1457
+- **CSS:** Kommentar „Skizze: Zeichenfläche für Zeichenaufgaben …“, Z. 1530
 - **JS:**
-  - Block-Kommentar „Skizze: Zeichenfläche für Zeichenaufgaben“, Z. 3639
-  - `skZeichenteil`, Z. 3674
-  - `skElement`, Z. 3698
-  - `skMalen`, Z. 3724
-  - `skTreffer`, Z. 3742
-  - `skHTML`, Z. 3763
-  - `skStart`, Z. 3801
-  - `skZeigenBinden`, Z. 3916
-  - Einbau in `blTeilHTML`, Z. 3961
-  - Melde-Knopf in `buildOpenChat`, Z. 2792
+  - Block-Kommentar „Skizze: Zeichenfläche für Zeichenaufgaben“, Z. 3735
+  - `skZeichenteil`, Z. 3770
+  - `skElement`, Z. 3794
+  - `skMalen`, Z. 3820
+  - `skTreffer`, Z. 3838
+  - `skHTML`, Z. 3859
+  - `skStart`, Z. 3897
+  - `skZeigenBinden`, Z. 4012
+  - Einbau in `blTeilHTML`, Z. 4057
+  - Melde-Knopf in `buildOpenChat`, Z. 2888
+
+Zeilennummern: Stand dieses Commits.
+
+---
+
+## FR-014 · Prüfungen: Neustart, Übersicht, Bestehenschance, Prüfungsrangliste
+
+**Status App-Session:** ⏳ offen
+**Web umgesetzt:** ✅ `claude/ui-design-improvement-my0f66`
+**SQL:** `docs/supabase-pruefungen.sql` (neu), `docs/supabase-rangliste.sql`, `docs/supabase-gruppen.sql`,
+`docs/supabase-profile.sql` (erweitert). Live eingespielt als Migration `pruefungsergebnisse`.
+
+### Anlass
+Rückmeldung aus der Nutzung:
+- Eine Original-Prüfung ließ sich nicht neu starten. Die Liste bot nur „Prüfung öffnen“ mit den
+  alten Antworten. „Neue Runde starten“ im Ergebnis startete eine zufällige andere Prüfung.
+- Gewünscht: eine Übersicht, welche Prüfungen bestanden sind, die Übernahme in die Rangliste
+  und daraus die Wahrscheinlichkeit, die echte Prüfung zu bestehen.
+
+### 1. Neu starten
+- **Wo:**
+  - In der Prüfungsliste steht „Neu starten“ neben „Weiter …“ bzw. „Prüfung öffnen“, sobald
+    die Prüfung Antworten, Rechenwege, Skizzen, Tabellen oder Punkte hat.
+  - Auch neben „Läuft …“ und „Abgegeben …“, wenn ein Durchgang unter Prüfungsbedingungen läuft.
+  - Auf dem Ergebnis-Bildschirm einer Original-Prüfung heißt der Hauptknopf
+    „Prüfung neu starten“. Daneben steht „Alle Prüfungen“, das die Liste öffnet.
+  - Für Fallaufgaben bleibt „Neue Runde starten“ wie bisher.
+- **Nachfrage:**
+  - „Prüfung neu starten? Deine Antworten, Rechenwege, Skizzen und Punkte dieser Prüfung werden
+    gelöscht – ausgewertete Durchgänge bleiben in deiner Übersicht.“
+  - Bei laufenden Prüfungsbedingungen steht davor: „Der laufende Durchgang unter
+    Prüfungsbedingungen wird abgebrochen.“
+- **Danach:**
+  - Ist jede Teilaufgabe bewertet, der Durchgang aber nie über „Zum Ergebnis“ gemerkt, wird er
+    vorher gemerkt, damit nichts verloren geht.
+  - Ein laufender Durchgang unter Prüfungsbedingungen endet.
+  - Alle Antworten dieser Prüfung werden geleert (wie beim Start unter Prüfungsbedingungen).
+  - Die Prüfung bekommt eine neue Durchgangskennung und öffnet bei Aufgabe 1.
+
+### 2. Durchgänge speichern (wie Web)
+- **`kvm_pruef_erg`:** Liste, nach `t` sortiert, höchstens 500 Einträge.
+  `{k, id, t, g, pkt, max, bew, teile, echt, dauer, min}`:
+
+  | Feld | Bedeutung |
+  |---|---|
+  | `k` | Durchgangskennung, z. B. `mfd3k2a9x1b` (Zeit base36 + Zufall) |
+  | `id` | Prüfung, z. B. `P-RE-20241106` |
+  | `t` | ausgewertet am (ms), bleibt bei späteren Änderungen erhalten |
+  | `g` | zuletzt bewertet (ms), gewinnt beim Abgleich; bei jeder Änderung `max(jetzt, altes g + 1)` |
+  | `pkt` / `max` | eigene Punkte / Höchstpunkte (Teilaufgaben ohne Punkte zählen 0) |
+  | `bew` / `teile` | Teilaufgaben mit Punkten / mit Punktangabe |
+  | `echt` | 1 = unter Prüfungsbedingungen; bleibt 1, auch wenn später nachbewertet |
+  | `dauer` / `min` | Bearbeitungszeit (ms) / vorgesehene Zeit (min), nur bei `echt` |
+
+- **`kvm_pruef_lauf`:** `{Prüfung: Kennung}`, die aktuelle Durchgangskennung je Prüfung.
+  - Neu beim Start unter Prüfungsbedingungen und bei „Neu starten“.
+  - Sonst bleibt sie. Wer „Zum Ergebnis“ mehrmals drückt, ändert also denselben Durchgang.
+- **Merken:** bei „Zum Ergebnis“ einer Original-Prüfung, bei Prüfungsbedingungen mit Dauer.
+- **Übernahme:** Einmalig werden Einträge aus `kvm_echt_verlauf` (FR-007) übernommen:
+  - Kennung `e<tag>-<id>-<dauer>`
+  - `t = g = tag·86400000 + 12 h`
+  - `echt: 1`, `bew`/`teile` leer
+  - `kvm_echt_verlauf` wird danach nicht mehr geschrieben. „Zuletzt unter
+    Prüfungsbedingungen“ liest aus `kvm_pruef_erg`.
+
+### 3. Wertung
+- **Gewertet** ist ein Durchgang, wenn jede Teilaufgabe Punkte hat (auch 0) oder er unter
+  Prüfungsbedingungen lief. Dort zählt Offenes wie in der Prüfung 0.
+- **Bestanden:** mindestens 50 % der Punkte (IHK: 50 von 100). Note nach IHK-Schlüssel.
+- **Erstversuch:** Für Statistik, Rangliste und Bestehenschance zählt je Prüfung nur der erste
+  gewertete Durchgang. Bei einer Wiederholung kennt man die Lösungen schon.
+- **Status je Prüfung** in der Liste: der letzte Durchgang, bei mehreren gewerteten der Verlauf
+  „3 Durchgänge: 42 → 55 → 68 P“.
+
+### 4. Bestehenschance (genau so rechnen)
+Je Prüfungsbereich aus den Erstversuchen `x₁ … xₙ` in % (ältester zuerst):
+- **Gewichte:** `wᵢ = 0,8^(n−i)` (der jüngste 1), unter Prüfungsbedingungen ×1,5.
+  - Schnitt `μ = Σwᵢxᵢ / Σwᵢ`
+  - wirksame Anzahl `n_eff = (Σwᵢ)² / Σwᵢ²`
+- **Streuung zwischen zwei Prüfungen:**
+  - `s² = Σwᵢ(xᵢ−μ)²/Σwᵢ · n/(n−1)` (0 bei n = 1)
+  - `σ² = (3·12² + (n−1)·s²) / (n+2)`, also auf 12 Punkte gestützt und ab der zweiten Prüfung
+    dazugelernt
+- **Chance:** `P = Φ((μ − 49,5) / √(σ²·(1 + 1/n_eff)))`, Φ = Standardnormalverteilung.
+  - Die Web-App nutzt die Näherung nach Abramowitz/Stegun 7.1.26.
+- **Prüfwerte:** eine Prüfung mit 70 % → 88,6 %; mit 62 % → 76,9 %; mit 45 % → 39,5 %.
+- **Teile:**
+  - Basisqualifikationen = RE, BW, MI, ZI, NT
+  - handlungsspezifischer Teil = FT, OK, nur wenn die Fachrichtung Kraftverkehr aktiv ist
+  - Chance eines Teils = Produkt der Bereichschancen, nur wenn jeder Bereich gewertet ist, sonst
+    „x/5 Bereiche geprüft · fehlt: …“
+  - Beide Teile = Produkt beider
+- **Hauptwert** für Rangliste und Profilkopf: beide Teile, sonst der vollständig geprüfte Teil
+  (erst Basisqualifikationen, dann handlungsspezifisch), sonst keiner.
+- **Anzeige:**
+  - ganze Prozent
+  - unter 1 % als „< 1 %“, über 99 % als „> 99 %“
+  - Stufen: ab 70 % grün, ab 40 % gelb, darunter rot
+- **Hinweistext** (sinngemäß):
+  - Die Chance ist eine Schätzung aus Selbstbewertungen.
+  - Neuere Prüfungen und solche unter Prüfungsbedingungen zählen mehr; mit wenigen Prüfungen
+    ist sie vorsichtig.
+  - Für einen Teil muss jeder Bereich sitzen.
+  - Mündliche Ergänzungsprüfung und Fachgespräch sind nicht eingerechnet.
+
+### 5. Oberfläche
+- **Startseite:** In der dunklen Prüfungskarte steht unter „Zuletzt geöffnet“ ein Streifen
+  „Bestehenschance“, sobald es eine gewertete Prüfung gibt.
+  - Je Teil der Wert bzw. „4/5 · Bereiche geprüft · fehlt: …“.
+  - Darunter „x von y Prüfungen bestanden · am knappsten: Methoden 37 %“, wenn ein Bereich
+    unter 70 % liegt.
+  - Antippen öffnet die Liste.
+- **Prüfungsliste**, oben aufklappbar „Deine Ergebnisse“:
+  - Kopf: „x von y Prüfungen bestanden · Ø z P“
+  - Kacheln: Basisqualifikationen, Handlungsspezifisch, bei beiden „Beide Teile“
+  - je Bereich eine Zeile: Name, die letzten 6 Erstversuche als Chips (grün ≥ 50, rot darunter),
+    Chance und Balken. Antippen filtert die Liste auf den Bereich, erneut antippen hebt den
+    Filter auf.
+  - ohne gewertete Prüfung ein kurzer Hinweis, wie man eine wertet
+- **Je Prüfung:**
+  - Die Ergebniszeile zeigt „Bestanden“ bzw. „Nicht bestanden“ bzw. „Noch nicht gewertet“,
+    dazu Punkte, Note, Datum und ggf. „unter Prüfungsbedingungen, 1 h 23 min“ und den Verlauf.
+  - Termine mit begonnener oder ausgewerteter Prüfung sind aufgeklappt.
+- **Ergebnis-Bildschirm** (Original-Prüfung), Hinweis unter dem Kopf:
+  - Erstversuch: „Bestehenschance Recht: 71 % (vorher 64 %) · aus 3 Prüfungen in diesem Bereich.“
+  - Wiederholung: „steht in deiner Übersicht, zählt aber nicht für die Bestehenschance …“
+  - Nicht gewertet: „8 von 13 Teilaufgaben haben Punkte …“. Das Abzeichen lautet dann „Noch
+    nicht vollständig bewertet“ statt bestanden/nicht bestanden.
+  - Link „Zur Übersicht“
+
+### 6. Cloud
+Alles ist optional: Fehlt eine Funktion (PGRST202), bleibt die App wie ohne.
+- **`pruefungen_abgleichen(p_neu jsonb)`:**
+  - beim Anmelden mit allen Durchgängen, danach entprellt (1,5 s) nach jeder Änderung mit
+    denen, deren `g` größer ist als der gemerkte Stand
+  - Stand gemerkt in `kvm_pruef_sync_<Konto-ID>` = größtes `g`
+  - Felder wie oben, `echt` als 0/1
+  - Antwort: alle eigenen Durchgänge. Zusammenführen je `k`: das größere `g` gewinnt, `echt`
+    bleibt 1.
+- **`pruefungen_melden(p_n, p_ok, p_schnitt, p_chance)`:** ganze Zahlen, `p_chance` = Hauptwert
+  in % oder null.
+  - nach jedem Abgleich und einmal je Sitzung vor dem Laden der Prüfungsrangliste
+  - nur wenn man der Rangliste beigetreten ist
+- **`rangliste_pruefungen()`:** `{teilnehmende, ich:{platz,n,ok,schnitt,chance}, liste:[{platz,name,n,ok,schnitt,chance,ich}]}`,
+  Top 10 nach bestanden, dann Schnitt.
+- **Neue Felder:**
+  - `gruppe_stand` (je Mitglied), `profil_karte` (Freunde, Anfragen, Suche) und `profil_ansehen`
+    liefern zusätzlich `pruef_n`, `pruef_ok`, `pruef_schnitt`, `chance`.
+- **Profil-Details** (`profil_melden`, sehen nur Freunde):
+  - `pr: {RE: {n, ok, s, c}, …}` je Bereich mit gewerteter Prüfung
+  - `pc: {bq, hq, g}` in %
+
+### 7. Rangliste
+- Umschalter „Diese Woche / Prüfungen“ unter den Reitern (Alle, Freunde, Gruppen). Er erscheint
+  nur, wenn `rangliste_pruefungen` antwortet.
+- **Prüfungen:**
+  - Spalten Pl. · Spitzname · Bestanden (`ok/n`) · Chance
+  - Alle: Top 10 vom Server, der eigene Eintrag nach „⋯“, falls außerhalb
+  - Freunde und Gruppe: lokal sortiert (bestanden, dann Schnitt, ohne Schnitt hinten)
+  - Fußnote zur Wertung
+- **Kennzahlen oben im Prüfungsmodus:**
+  - eigener Hauptwert samt Teil, sonst „x/7 Prüfungsbereiche gewertet …“
+  - eigener Platz „3. · Platz von 5 · 6 von 6 Prüfungen bestanden“
+- **Profil:**
+  - Kopf: „x/y Prüfungen bestanden“ und „Bestehenschance“
+  - bei Freunden: „Prüfungen je Bereich“ (Name, „2 von 3 bestanden · Ø 61 P“, Chance)
+- **Verwaltung:** Konto-Detail mit „Prüfungen bestanden“ und „Bestehenschance“
+
+### Abnahme
+- Prüfung vollständig bewerten → „Zum Ergebnis“:
+  - „Bestanden · Note 3“
+  - Hinweis mit Bestehenschance
+  - Knopf „Prüfung neu starten“
+- Noch einmal „Zum Ergebnis“ → kein zweiter Durchgang.
+- „Prüfung neu starten“ → Nachfrage, danach:
+  - leere Blätter bei Aufgabe 1
+  - Durchgang bleibt in der Übersicht
+- Wiederholen und werten:
+  - Hinweis „Wiederholung“
+  - Chance unverändert
+  - in der Liste „2 Durchgänge: 70 → 90 P“
+- Nur 2 Teilaufgaben bewerten → „Noch nicht vollständig bewertet“, zählt nicht.
+- Unter Prüfungsbedingungen abgeben, 3 Teile bewerten, „Zum Ergebnis“ → gewertet (Rest 0).
+- Laufende Prüfungsbedingungen über „Neu starten“ abbrechen → Uhr weg.
+- Zwei Geräte, gleiches Konto: Auf Gerät A werten, auf Gerät B anmelden → B zeigt denselben Stand.
+- Rangliste → „Prüfungen“: Reihenfolge nach bestanden, dann Schnitt. Gruppe und Freunde ebenso.
+
+### Referenz Web-Implementierung (`index.html` auf `claude/ui-design-improvement-my0f66`)
+- **Speicher, Wertung, Chance:**
+  - Block „Prüfungsergebnisse und Bestehenschance“, Z. 4488
+  - `peChance`, Z. 4587
+  - `peStatistik`, Z. 4597
+  - `peNeuStarten`, Z. 4647
+  - `peErgebnis`, Z. 4662
+- **Startseite:** `renderPruefChance`, Z. 2483
+- **Liste:** `ergebnisHTML`, Z. 8088 · `uebersichtHTML`, Z. 8102
+- **Cloud:**
+  - Block „Prüfungsergebnisse abgleichen“, Z. 4994
+  - `pruefStandLaden`, Z. 5150
+  - Block „Rangliste nach Prüfungen“, Z. 5293
 
 Zeilennummern: Stand dieses Commits.
