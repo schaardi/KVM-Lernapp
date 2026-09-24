@@ -138,6 +138,42 @@ void main() {
     expect(find.text('Ab der ersten gewerteten Prüfung stehst du in der Prüfungsrangliste.'), findsOneWidget);
   });
 
+  testWidgets('Prüfungsmodus in Gruppe und bei Freunden: bestanden, dann Schnitt', (tester) async {
+    pruefStatistik = () => const PruefStatistik(n: 4, ok: 2, schnitt: 70);
+    final s = _server();
+    final p = {for (final x in s.andere) x.name: x};
+    p['Bert']!
+      ..pruefN = 4
+      ..pruefOk = 3
+      ..pruefSchnitt = 55;
+    p['Anna']!
+      ..pruefN = 2
+      ..pruefOk = 2
+      ..pruefSchnitt = 80;
+    s.freunde.addAll(['pid-bert', 'pid-anna']);
+    s.gruppen.add(TestGruppe('g1', 'K7M2QX', 'Kurs', [s.ich!, p['Cora']!, p['Bert']!, p['Anna']!]));
+    await _seite(tester, s);
+    await tester.tap(find.text('Prüfungen'));
+    await tester.pumpAndSettle();
+
+    double y(String t) => tester.getTopLeft(find.text(t)).dy;
+    await tester.tap(find.text('Kurs'));
+    await tester.pumpAndSettle();
+    expect(find.text('KURS · 4 MITGLIEDER · PRÜFUNGEN'), findsOneWidget);
+    // Bert 3 bestanden; Cora, Anna und ich je 2 – dann Schnitt 80 (Anna), 70 (ich), 61 (Cora)
+    expect(y('Bert'), lessThan(y('Anna')));
+    expect(y('Anna'), lessThan(y('Lkw_Profi · du')));
+    expect(y('Lkw_Profi · du'), lessThan(y('Cora')));
+
+    await tester.tap(find.text('Freunde'));
+    await tester.pumpAndSettle();
+    expect(find.text('DU UND DEINE FREUNDE · PRÜFUNGEN'), findsOneWidget);
+    expect(y('Bert'), lessThan(y('Anna')));
+    expect(y('Anna'), lessThan(y('Lkw_Profi · du')));
+    expect(find.text('Cora'), findsNothing); // keine Freundin
+    expect(find.text('2/4'), findsOneWidget); // eigener Stand aus der lokalen Statistik
+  });
+
   testWidgets('Freunde-Reiter: ohne Freunde „Lernende finden“, mit Freund sortiert', (tester) async {
     final s = _server();
     await _seite(tester, s);
