@@ -996,11 +996,179 @@
 .plan-form{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-top:9px}
 .plan-form input{min-height:38px;border-radius:10px;border:1px solid rgba(255,255,255,.4);background:#fff;color:#12262c;font:600 14px var(--body);padding:0 10px;color-scheme:light}
 .plan-fehler{flex-basis:100%;margin:2px 0 0;font-size:12px;color:#FFD2C7}
-.hero-stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;margin-top:18px;padding-top:13px;border-top:1px solid rgba(255,255,255,.18)}
-.hs b{display:block;font:700 23px/1 var(--disp);color:#fff}
-.hs span{display:block;font-size:11px;line-height:1.25;color:rgba(255,255,255,.76);margin-top:4px}
-.hero .prog-bar{height:6px;margin-top:13px;background:rgba(255,255,255,.18)}
-.hero .prog-bar .fill{background:linear-gradient(90deg,#FFD28F,var(--amber))}
+/* ===== Seiten und Navigation =====
+   Start, Lernen, Prüfungen, Vergleich, Konto. Auf dem Handy steht die
+   Navigation unten (Daumen), auf breiten Bildschirmen oben. */
+.seiten-nav{position:fixed;left:0;right:0;bottom:0;z-index:40;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:2px;
+  padding:5px 6px calc(5px + env(safe-area-inset-bottom));background:var(--paper);border-top:1px solid var(--line);
+  box-shadow:0 -6px 20px -14px rgba(16,42,50,.45)}
+.seiten-nav:has(.sn[hidden]){grid-template-columns:repeat(4,minmax(0,1fr))}
+.sn{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;min-height:52px;border:0;border-radius:12px;
+  background:none;color:var(--muted);font:600 11px/1.1 var(--body);padding:5px 2px;cursor:pointer}
+.sn .ic-svg{width:22px;height:22px}
+/* Punkt am Reiter: dort wartet etwas (Einladung, Freundschaftsanfrage) */
+.sn{position:relative}
+.sn.hinweis::after{content:"";position:absolute;top:5px;left:calc(50% + 8px);width:9px;height:9px;border-radius:50%;
+  background:var(--amber);box-shadow:0 0 0 2px var(--paper)}
+.sn[aria-current="page"]{color:var(--petrol-ink)}
+.sn[aria-current="page"] .ic-svg{background:var(--petrol-soft);border-radius:10px;padding:3px;width:36px;height:28px;margin:-3px 0}
+@media (hover:hover){.sn:hover{color:var(--ink)}}
+body[data-screen="scrHome"]{padding-bottom:calc(72px + env(safe-area-inset-bottom))}
+@media (min-width:900px){
+  body[data-screen="scrHome"]{padding-bottom:40px}
+  body[data-screen="scrHome"] .app{max-width:1120px}
+  .seiten-nav{position:sticky;top:10px;bottom:auto;display:flex;justify-content:center;gap:4px;margin:0 auto 18px;width:max-content;max-width:100%;
+    padding:5px;border:1px solid var(--line);border-radius:15px;box-shadow:var(--shadow)}
+  .sn{flex-direction:row;gap:8px;min-height:40px;padding:8px 16px;font-size:13.5px}
+  .sn .ic-svg{width:19px;height:19px}
+  .sn[aria-current="page"]{background:var(--petrol-soft);color:var(--petrol-ink-deep)}
+  .sn[aria-current="page"] .ic-svg{background:none;padding:0;width:19px;height:19px;margin:0}
+  .sn.hinweis::after{top:6px;left:auto;right:7px}
+}
+.seite-titel{display:flex;align-items:baseline;justify-content:space-between;gap:10px;margin:4px 4px 14px;
+  font:700 clamp(24px,6.4vw,32px)/1 var(--disp);text-transform:uppercase;letter-spacing:.01em;color:var(--ink)}
+.seite-titel .h-scope{font:600 12px/1.3 var(--body);letter-spacing:0;text-transform:none;color:var(--petrol-ink)}
+.seite>.seite-titel+.h-group{margin-top:0}
+body[data-screen="scrHome"]:not([data-seite="konto"]) footer{display:none}
+
+/* ===== Start: ohne Scrollen =====
+   Kopf, Statistikleiste zum Aufziehen, Heute-Karte, Prüfungen und die
+   Funktionen. Auf dem Handy untereinander und knapp, ab 900 px zweispaltig. */
+.seite-start{display:flex;flex-direction:column;gap:10px}
+.seite-start>.start-mast{background:none;padding:0 4px}
+.home .start-mast h1{font-size:clamp(18px,4.9vw,34px);line-height:1.2;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.start-mast .sub{margin-top:5px}
+.sn-marke{display:none}
+/* Prüfungstermin noch offen: eine Zeile statt Absatz */
+.plan.leer{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:6px 12px}
+.plan.leer .plan-t{font-size:13.5px}
+.plan.leer .plan-txt{display:none}
+.plan.leer .plan-btn{min-height:34px;padding:0 12px;font-size:12.5px}
+.stat-leiste{background:var(--paper);border:1px solid var(--line);border-radius:16px;box-shadow:var(--shadow)}
+.stat-kopf{display:grid;grid-template-columns:minmax(0,1fr) auto;grid-template-areas:"k g" "b b";align-items:center;gap:7px 10px;
+  padding:9px 10px 9px 12px;cursor:pointer;list-style:none;touch-action:pan-x}
+.stat-kopf::-webkit-details-marker{display:none}
+.stat-kpis{grid-area:k;display:grid;grid-template-columns:repeat(4,minmax(0,auto));justify-content:space-between;gap:6px}
+.stat-leiste .hs{min-width:0}
+.stat-leiste .hs b{display:block;font:700 19px/1 var(--disp);color:var(--petrol-ink-deep)}
+.stat-leiste .hs span{display:block;font-size:10.5px;line-height:1.2;color:var(--muted);margin-top:3px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.stat-griff{grid-area:g;display:flex;flex-direction:column;align-items:center;gap:2px;font:600 8.5px/1 var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--petrol-ink)}
+.stat-griff .ic-svg{width:17px;height:17px;transition:transform .2s}
+.stat-leiste[open] .stat-griff .ic-svg{transform:rotate(180deg)}
+.stat-kopf .prog-bar{grid-area:b;display:block;height:4px;margin:0}
+.stat-kopf .prog-bar .fill{display:block}
+.stat-inhalt{padding:12px 14px 14px;border-top:1px solid var(--line-soft)}
+.stat-inhalt #readySection>.h-sub:first-child{margin-top:0}
+.stat-fuss{display:flex;justify-content:flex-end;margin-top:14px}
+.stat-fuss .reset{font:600 11.5px var(--body);color:var(--muted);border:1px solid var(--line-strong);background:var(--paper);border-radius:8px;padding:6px 11px;cursor:pointer}
+.stat-fuss .reset:hover{border-color:var(--err);color:var(--err-ink)}
+.start-raster{display:flex;flex-direction:column;gap:10px}
+.start-fn{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+.fn{display:flex;flex-direction:column;align-items:flex-start;gap:2px;min-width:0;min-height:72px;border:1px solid var(--line);background:var(--paper);
+  border-radius:14px;padding:10px 10px 9px;text-align:left;color:var(--ink);box-shadow:var(--shadow);cursor:pointer;transition:border-color .15s}
+@media (hover:hover){.fn:hover{border-color:var(--petrol)}}
+.fn-ic{width:32px;height:32px;flex:none;border-radius:10px;display:grid;place-items:center;color:#fff;margin-bottom:4px}
+.fn-ic .ic-svg{width:18px;height:18px}
+.ti-violet{background:var(--violet)}
+.fn-t{font-weight:700;font-size:13.5px;line-height:1.2;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:100%}
+.fn-d{font-size:11.5px;line-height:1.3;color:var(--muted)}
+@media (max-width:560px){
+  body[data-screen="scrHome"]{padding-top:12px}
+  .start-mast .sub,.start-mast .eyebrow,.seite-start .exam-d,.ec-fehlt{display:none}
+  .seite-start .el-txt{flex:1 1 0;min-width:0}
+  .seite-start .el-t{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-size:12.5px}
+  .seite-start .el-bar{margin-top:6px;height:4px}
+  .seite-start .ec-w small{margin-top:2px}
+  .stat-leiste .hs b{font-size:17px}
+  .stat-leiste .hs span{font-size:10px}
+  .start-fn{gap:7px}
+  .fn-d{display:none}
+  .fn{min-height:58px;padding:8px 9px 7px}
+  .seite-start .hero{padding:13px 13px 12px}
+  .seite-start .hero-main{grid-template-columns:78px minmax(0,1fr);grid-template-areas:"ring head" "ring body" "plan plan";column-gap:13px}
+  .seite-start .hero-kicker span:last-child{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0}
+  .seite-start .exam-last .el-k{display:none}
+  .seite-start .fn-t{font-size:12.5px}
+  /* Noch kein Prüfungstermin: nur ein schlanker Link unter „Jetzt lernen“ */
+  .seite-start .plan.leer{background:none;border:0;padding:0;margin-top:8px}
+  .seite-start .plan.leer .plan-t{display:none}
+  .seite-start .plan.leer .plan-btn{background:none;border:0;min-height:30px;padding:0;font-size:12.5px;font-weight:600;
+    color:rgba(255,255,255,.9);text-decoration:underline;text-underline-offset:3px}
+  .seite-start .ec-werte{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:4px 16px}
+  .seite-start .ec-sum{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .seite-start .hero-ring{width:78px;height:78px}
+  .seite-start .hero-pct b{font-size:20px}
+  .seite-start .hero-pct span{font-size:7.5px;margin-top:3px}
+  .seite-start .hero-kicker{margin-bottom:4px;font-size:9.5px}
+  .seite-start .hero-title{font-size:21px}
+  .seite-start .hero-desc{display:none}
+  .seite-start .hero-cta{width:auto;min-height:38px;margin-top:8px;padding:0 15px;font-size:14px}
+  .seite-start .plan{margin-top:10px;padding:9px 11px 10px}
+  .seite-start .plan-tage{font-size:18px}
+  .seite-start .plan-txt{margin:3px 0 7px}
+  .seite-start .exam-main{padding:12px 13px}
+  .seite-start .exam-ic{flex-basis:42px;height:42px}
+  .seite-start .exam-t{font-size:18px}
+  .seite-start .exam-d{font-size:11.5px}
+  .seite-start .exam-last{padding:9px 13px 11px;gap:8px}
+  .seite-start .el-go{min-height:36px;padding:7px 12px}
+  .seite-start .exam-chance{padding:9px 13px 11px;gap:5px}
+  .seite-start .ec-w b{font-size:21px}
+}
+/* Schmale Handys: Kacheltitel und Kennzahlen passen ganz („Kostenwesen“) */
+@media (max-width:380px){
+  .seite-start .fn{padding-left:7px;padding-right:7px}
+  .seite-start .fn-t{font-size:11.5px}
+}
+@media (max-width:340px){
+  .start-fn{gap:5px}
+  .seite-start .fn{padding-left:5px;padding-right:5px}
+  .seite-start .fn-t{font-size:10.5px}
+  .stat-griff-t{display:none}
+  .stat-leiste .hs b{font-size:15px}
+}
+/* Sehr niedrige Fenster: Titel weg, Ring und Kacheln kleiner */
+@media (max-width:560px) and (max-height:700px){
+  .seite-start>.start-mast{display:none}
+  .seite-start,.start-raster{gap:6px}
+  .fn{min-height:52px;padding:7px 8px 6px}
+  .fn-ic{width:26px;height:26px;margin-bottom:2px}
+  .fn-ic .ic-svg{width:15px;height:15px}
+  .seite-start .exam-main{padding:9px 12px}
+  .seite-start .exam-ic{flex-basis:36px;height:36px}
+  .seite-start .exam-last,.seite-start .exam-chance{padding-top:7px;padding-bottom:8px}
+  .seite-start .hero{padding:10px 12px 10px}
+  .seite-start .hero-main{grid-template-columns:64px minmax(0,1fr)}
+  .seite-start .hero-ring{width:64px;height:64px}
+  .seite-start .hero-pct b{font-size:17px}
+  .seite-start .hero-pct span{display:none}
+}
+@media (min-width:900px){
+  .sn-marke{display:block;align-self:center;margin:0 14px 0 8px;font:700 15px/1 var(--disp);text-transform:uppercase;letter-spacing:.02em;color:var(--ink);white-space:nowrap}
+  .seite-start>.start-mast{display:none}
+  .seite-start .el-t{display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+  .start-raster{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);grid-template-areas:"hero exam" "fn exam";gap:14px;align-items:start}
+  .start-raster>.hero{grid-area:hero}
+  .start-raster>.exam-card{grid-area:exam}
+  .start-raster>.start-fn{grid-area:fn}
+  .start-raster .hero-main{grid-template-columns:110px minmax(0,1fr);grid-template-areas:"ring head" "ring body" "plan plan"}
+  .start-raster .hero-ring{width:110px;height:110px}
+  .start-raster .hero .plan{margin-top:14px}
+  .stat-kpis{max-width:640px}
+}
+/* Mittlere Breiten (Tablet hoch, Foldables): Dachzeile weg wie auf dem Handy */
+@media (min-width:561px) and (max-width:899px){.start-mast .eyebrow{display:none}}
+/* Funktionskacheln: zwischen 900 und 1199 px ist die linke Spalte schmal –
+   dort wie auf dem Handy (Symbol über dem Titel, ohne Beschreibung), erst
+   ab 1200 px Symbol links mit Kurzbeschreibung. */
+@media (min-width:900px) and (max-width:1199px){.fn-d{display:none}}
+@media (min-width:1200px){
+  .fn{display:grid;grid-template-columns:36px minmax(0,1fr);grid-template-areas:"i t" "i d";column-gap:11px;row-gap:1px;align-items:center;
+    min-height:62px;padding:10px 12px}
+  .fn-ic{width:36px;height:36px;margin:0}
+  .fn>.fn-ic{grid-area:i}.fn>.fn-t{grid-area:t;align-self:end}
+  .fn>.fn-d{grid-area:d;align-self:start;overflow:hidden;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;hyphens:auto}
+}
 @media (max-width:520px){
   .hero{padding:18px 16px 15px}
   .hero-main{grid-template-columns:96px minmax(0,1fr);grid-template-areas:"ring head" "body body" "plan plan";column-gap:16px}
@@ -1009,7 +1177,6 @@
   .hero-pct span{font-size:8px}
   .hero-body{margin-top:4px}
   .hero-cta{width:100%}
-  .hs b{font-size:20px}
 }
 
 /* Lernweg: die Fächer als Stationen an einer Linie */
@@ -1606,18 +1773,63 @@ body.sk-offen{overflow:hidden}
 <body>
 <div class="app">
 
-  <!-- HOME: eigene Karten auf ruhigem Grund – oben der Lernstand mit der
-       Aufgabe des Tages, darunter Lernweg, Üben, Prüfen, Erfolge. -->
+  <!-- HOME: mehrere Seiten unter einer Navigation (unten auf dem Handy, oben
+       auf breiten Bildschirmen). „Start“ passt ohne Scrollen auf den
+       Bildschirm: Statistik zum Aufziehen, Heute-Karte, die Prüfungen und die
+       Funktionen im Überblick. Die Adresse trägt die Seite (#/lernen …). -->
   <div class="home" id="scrHome">
-    <header class="mast">
-      <p class="eyebrow">Meister-Trainer · IHK-Prüfungsvorbereitung</p>
-      <h1>Meister für Kraftverkehr</h1>
-      <p class="sub" id="homeSub"></p>
-    </header>
+    <nav class="seiten-nav" id="seitenNav" aria-label="Bereiche">
+      <span class="sn-marke" aria-hidden="true">Meister für Kraftverkehr</span>
+      <button type="button" class="sn" data-seite="start" aria-current="page"><svg class="ic-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11 12 3l9 8"/><path d="M5 10v10h5v-6h4v6h5V10"/></svg><span>Start</span></button>
+      <button type="button" class="sn" data-seite="lernen"><svg class="ic-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 4h6a4 4 0 0 1 4 4v13a3 3 0 0 0-3-3H2z"/><path d="M22 4h-6a4 4 0 0 0-4 4v13a3 3 0 0 1 3-3h7z"/></svg><span>Lernen</span></button>
+      <button type="button" class="sn" data-seite="pruefungen"><svg class="ic-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="m9 15 2 2 4-4"/></svg><span>Prüfungen</span></button>
+      <button type="button" class="sn" data-seite="vergleich" id="snVergleich"><svg class="ic-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 21h8M12 17v4M7 4h10v5a5 5 0 0 1-10 0z"/><path d="M17 5h3v2a3 3 0 0 1-3 3M7 5H4v2a3 3 0 0 0 3 3"/></svg><span>Vergleich</span></button>
+      <button type="button" class="sn" data-seite="konto"><svg class="ic-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg><span>Konto</span></button>
+    </nav>
 
-    <!-- Lernstand: Prüfungsreife als Ring mit Ampel, daneben die eine Aktion
-         des Tages (Leitner-Wiederholung). -->
-    <section class="hero" aria-labelledby="todayTitle">
+    <!-- START -->
+    <div class="seite seite-start" id="seiteStart" data-seite="start">
+      <header class="mast start-mast">
+        <p class="eyebrow">Meister-Trainer · IHK-Prüfungsvorbereitung</p>
+        <h1>Meister für Kraftverkehr</h1>
+        <p class="sub" id="homeSub"></p>
+      </header>
+
+      <!-- Statistik: oben als Leiste mit den Kennzahlen, zum Aufziehen
+           (Antippen oder nach unten wischen) mit Reife je Fach, Aktivität
+           und Erfolgen. -->
+      <details class="stat-leiste" id="statLeiste">
+        <summary class="stat-kopf" id="statKopf">
+          <span class="stat-kpis" role="group" aria-label="Dein Stand">
+            <span class="hs"><b id="pMastered">0</b><span>gemeistert</span></span>
+            <span class="hs"><b id="pSeen">0</b><span>gesehen</span></span>
+            <span class="hs"><b id="pOpen">0</b><span>offen</span></span>
+            <span class="hs"><b id="pStreak">0</b><span>Tage in Folge</span></span>
+          </span>
+          <span class="stat-griff"><span class="stat-griff-t">Statistik</span><svg class="ic-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></span>
+          <span class="prog-bar" aria-hidden="true"><span class="fill" id="pFill" style="width:0%"></span></span>
+        </summary>
+        <div class="stat-inhalt">
+          <div id="readySection">
+            <p class="h-sub">Prüfungsreife je Fach <span class="ready-overall" id="readyOverall">0 %</span></p>
+            <div class="ready-wrap">
+              <div class="ready-chart" id="readyChart" aria-hidden="true"></div>
+              <div class="ready-legend" id="readyLegend"></div>
+            </div>
+            <p class="prog-note" id="readyNote"></p>
+          </div>
+          <p class="h-sub h-sub-gap">Aktivität · 14 Tage <span class="h-scope" id="aktivSumme"></span></p>
+          <div class="aktiv" id="aktivChart"></div>
+          <p class="prog-note" id="pNote"></p>
+          <p class="h-sub h-sub-gap">Erfolge <span class="h-scope" id="erfolgeN"></span></p>
+          <div class="erfolge" id="erfolgeList"></div>
+          <div class="stat-fuss"><button class="reset" id="btnReset">Lernstand zurücksetzen</button></div>
+        </div>
+      </details>
+
+      <div class="start-raster">
+        <!-- Lernstand und die Aufgabe des Tages -->
+        <section class="hero" aria-labelledby="todayTitle">
       <div class="hero-main">
         <div class="hero-ring" aria-hidden="true">
           <svg viewBox="0 0 120 120"><circle class="hr-bg" cx="60" cy="60" r="51"/><circle class="hr-fg" id="heroRing" cx="60" cy="60" r="51" stroke-dasharray="320.4" stroke-dashoffset="320.4"/></svg>
@@ -1633,147 +1845,132 @@ body.sk-offen{overflow:hidden}
         </div>
         <div class="plan" id="planBox" aria-live="polite"></div>
       </div>
-      <div class="hero-stats" role="group" aria-label="Dein Stand">
-        <div class="hs"><b id="pMastered">0</b><span>gemeistert</span></div>
-        <div class="hs"><b id="pSeen">0</b><span>gesehen</span></div>
-        <div class="hs"><b id="pOpen">0</b><span>offen</span></div>
-        <div class="hs"><b id="pStreak">0</b><span>Tage in Folge</span></div>
+        </section>
+
+        <!-- Prüfen: die Original-Prüfungen mit Bestehenschance -->
+        <section class="exam-card">
+          <button class="exam-main" id="btnPruef">
+            <span class="exam-ic" aria-hidden="true"><svg class="ic-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M9 13h6M9 17h4"/></svg></span>
+            <span class="exam-txt"><span class="exam-t">Original-IHK-Prüfungen</span><span class="exam-d" id="pruefTileDesc">Echte IHK-Prüfungen mit amtlichen Lösungshinweisen</span></span>
+            <span class="exam-go" aria-hidden="true"><svg class="ic-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></span>
+          </button>
+          <div class="exam-last" id="pruefLast" hidden></div>
+          <button type="button" class="exam-chance" id="pruefChance" hidden></button>
+        </section>
+
+        <!-- Funktionen im Überblick -->
+        <section class="start-fn" aria-label="Funktionen">
+          <button type="button" class="fn" data-geh="lernen"><span class="fn-ic ti-petrol"><svg class="ic-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 4h6a4 4 0 0 1 4 4v13a3 3 0 0 0-3-3H2z"/><path d="M22 4h-6a4 4 0 0 0-4 4v13a3 3 0 0 1 3-3h7z"/></svg></span><span class="fn-t">Lernen</span><span class="fn-d">Fächer, Training, Simulation</span></button>
+          <button type="button" class="fn" data-klick="btnOral"><span class="fn-ic ti-violet"><svg class="ic-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2a3 3 0 0 0-3 3v6a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3z"/><path d="M19 10v1a7 7 0 0 1-14 0v-1M12 18v4"/></svg></span><span class="fn-t">Mündlich</span><span class="fn-d">Fachgespräch üben</span></button>
+          <button type="button" class="fn" data-klick="btnCases"><span class="fn-ic ti-plum"><svg class="ic-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2M3 13h18"/></svg></span><span class="fn-t">Fallaufgaben</span><span class="fn-d">Praxisfälle mit Teilaufgaben</span></button>
+          <button type="button" class="fn" id="btnFormelHome"><span class="fn-ic ti-ok"><svg class="ic-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/><path d="M9 7h7"/></svg></span><span class="fn-t">Formelbuch</span><span class="fn-d">Formeln und Schemata</span></button>
+          <button type="button" class="fn" id="btnKW"><span class="fn-ic ti-petrol"><svg class="ic-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M8 7h8M8 12h.01M12 12h.01M16 12h.01M8 16h.01M12 16h.01M16 16h.01"/></svg></span><span class="fn-t">Kostenwesen</span><span class="fn-d">Lehrgang und Rechner</span></button>
+          <button type="button" class="fn" id="btnADR"><span class="fn-ic ti-amber"><svg class="ic-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 22 12 12 22 2 12z"/><path d="M12 8v5M12 16h.01"/></svg></span><span class="fn-t">Gefahrgut</span><span class="fn-d">ADR-Klassen und Quiz</span></button>
+        </section>
       </div>
-      <div class="prog-bar" aria-hidden="true"><div class="fill" id="pFill" style="width:0%"></div></div>
-    </section>
+    </div>
 
-    <h2 class="h-group">Dein Lernweg <span class="fixtag">4 fix + 1 wählbar</span></h2>
-    <section class="hcard">
-      <div class="weg">
-        <div id="fachGridBase"></div>
-        <div id="fachGridZusatz"></div>
-      </div>
-      <p class="prog-note" id="zusatzNote">Die vier Basisqualifikationen sind immer dabei. Die Fachrichtung Kraftverkehr schaltest du mit dem Schalter zu oder ab – sie zählt dann bei „Alle Themen“, Fortschritt und Prüfungsreife mit.</p>
-    </section>
-
-    <h2 class="h-group">Üben <span class="h-scope" id="scopeHint">Im gewählten Fach</span></h2>
-    <section class="hcard">
-      <div id="subSection">
-        <p class="h-sub">Themenbereich</p>
-        <div class="chips" id="subChips"></div>
-      </div>
-      <div class="modes">
-        <button class="mode" id="btnTraining">
-          <span class="m-ic m-ic-petrol" aria-hidden="true"><svg class="ic-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg></span>
-          <span class="m-body"><span class="m-title"><span class="tag">Training</span><span id="trainScope">Alle Bereiche</span></span>
-          <span class="m-desc" id="trainDesc">20 Fragen mit sofortiger Auswertung und Erklärung. Neue Fragen werden bevorzugt.</span></span>
-        </button>
-        <button class="mode weak" id="btnWeak">
-          <span class="m-ic m-ic-amber" aria-hidden="true"><svg class="ic-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.5"/></svg></span>
-          <span class="m-body"><span class="m-title"><span class="tag">Fokus</span>Schwächen üben</span>
-          <span class="m-desc" id="weakDesc">Gezielt die Fragen, die du noch nicht kannst oder zuletzt falsch hattest.</span></span>
-        </button>
-        <button class="mode sim" id="btnSim">
-          <span class="m-ic m-ic-ink" aria-hidden="true"><svg class="ic-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l2.5 2.5M9.5 2h5"/></svg></span>
-          <span class="m-body"><span class="m-title"><span class="tag">Klausur</span>Prüfungssimulation</span>
-          <span class="m-desc" id="simDesc">30 Fragen aus dem ganzen Fach · 60 Minuten · bestanden ab 50 %.</span></span>
-        </button>
-        <button class="mode oral" id="btnOral">
-          <span class="m-ic m-ic-violet" aria-hidden="true"><svg class="ic-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a3 3 0 0 0-3 3v6a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3z"/><path d="M19 10v1a7 7 0 0 1-14 0v-1"/><path d="M12 18v4"/></svg></span>
-          <span class="m-body"><span class="m-title"><span class="tag">Mündlich</span>Fachgespräch üben</span>
-          <span class="m-desc" id="oralDesc">10 Fragen werden vorgelesen – du antwortest frei per Sprache, danach Musterlösung und Selbstcheck.</span></span>
-        </button>
-      </div>
-      <p class="h-sub h-sub-gap">Fachübergreifend</p>
-      <div class="modes">
-        <button class="mode mixed" id="btnMixed">
-          <span class="m-ic m-ic-deep" aria-hidden="true"><svg class="ic-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M16 3h5v5M4 20 21 3M21 16v5h-5M15 15l6 6M4 4l5 5"/></svg></span>
-          <span class="m-body"><span class="m-title"><span class="tag">Alle Fächer</span>Alle Themen üben</span>
-          <span class="m-desc" id="mixedDesc">20 gemischte Fragen quer durch alle Fächer und Themenbereiche.</span></span>
-        </button>
-        <button class="mode cases" id="btnCases">
-          <span class="m-ic m-ic-plum" aria-hidden="true"><svg class="ic-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2M3 13h18"/></svg></span>
-          <span class="m-body"><span class="m-title"><span class="tag">Fall</span>Fallaufgaben</span>
-          <span class="m-desc" id="casesDesc">Handlungssituation mit mehreren verketteten Teilaufgaben – wie im echten IHK-Prüfungsformat.</span></span>
-        </button>
-      </div>
-    </section>
-
-    <h2 class="h-group">Prüfen</h2>
-    <section class="exam-card">
-      <button class="exam-main" id="btnPruef">
-        <span class="exam-ic" aria-hidden="true"><svg class="ic-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M9 13h6M9 17h4"/></svg></span>
-        <span class="exam-txt"><span class="exam-t">Original-IHK-Prüfungen</span><span class="exam-d" id="pruefTileDesc">Echte IHK-Prüfungen mit amtlichen Lösungshinweisen</span></span>
-        <span class="exam-go" aria-hidden="true"><svg class="ic-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></span>
-      </button>
-      <div class="exam-last" id="pruefLast" hidden></div>
-      <button type="button" class="exam-chance" id="pruefChance" hidden></button>
-    </section>
-
-    <h2 class="h-group">Erfolge <span class="h-scope" id="erfolgeN"></span></h2>
-    <section class="hcard"><div class="erfolge" id="erfolgeList"></div></section>
-
-    <!-- Vergleich mit anderen: freiwillige Wochenrangliste (nur mit Konto).
-         Erscheint erst, wenn die Datenbank dafür eingerichtet ist. -->
-    <h2 class="h-group" id="vgKopf" hidden>Vergleich <span class="h-scope" id="vgScope"></span></h2>
-    <section class="hcard" id="vgBox" hidden></section>
-
-    <h2 class="h-group">Nachschlagen</h2>
-    <section class="hcard">
-      <div class="tiles">
-        <button class="tile" id="btnFormelHome">
-          <span class="ti-ic ti-ok"><svg class="ic-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/><path d="M9 7h7"/></svg></span>
-          <span class="ti-txt"><span class="ti-t">Formelbuch</span><span class="ti-d">Formeln und Kalkulationsschemata zum Ausrechnen</span></span>
-        </button>
-        <button class="tile" id="btnKW">
-          <span class="ti-ic ti-petrol"><svg class="ic-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M8 7h8M8 12h.01M12 12h.01M16 12h.01M8 16h.01M12 16h.01M16 16h.01"/></svg></span>
-          <span class="ti-txt"><span class="ti-t">Betriebliches Kostenwesen</span><span class="ti-d">Lehrgang und Rechner im Prüfungsschema</span></span>
-        </button>
-        <button class="tile" id="btnADR">
-          <span class="ti-ic ti-amber"><svg class="ic-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 22 12 12 22 2 12z"/><path d="M12 8v5M12 16h.01"/></svg></span>
-          <span class="ti-txt"><span class="ti-t">Gefahrgut-Symbole (ADR)</span><span class="ti-d">15 Klassen, Quiz und Warntafel-Decoder</span></span>
-        </button>
-      </div>
-    </section>
-
-    <h2 class="h-group">Statistik <button class="reset" id="btnReset">Zurücksetzen</button></h2>
-    <section class="hcard">
-      <div id="readySection">
-        <p class="h-sub">Prüfungsreife je Fach <span class="ready-overall" id="readyOverall">0 %</span></p>
-        <div class="ready-wrap">
-          <div class="ready-chart" id="readyChart" aria-hidden="true"></div>
-          <div class="ready-legend" id="readyLegend"></div>
+    <!-- LERNEN: Fächer und Übungsarten -->
+    <div class="seite" id="seiteLernen" data-seite="lernen" hidden>
+      <h2 class="seite-titel">Lernen</h2>
+      <h2 class="h-group">Dein Lernweg <span class="fixtag">4 fix + 1 wählbar</span></h2>
+      <section class="hcard">
+        <div class="weg">
+          <div id="fachGridBase"></div>
+          <div id="fachGridZusatz"></div>
         </div>
-        <p class="prog-note" id="readyNote"></p>
-      </div>
-      <p class="h-sub h-sub-gap">Aktivität · 14 Tage <span class="h-scope" id="aktivSumme"></span></p>
-      <div class="aktiv" id="aktivChart"></div>
-      <p class="prog-note" id="pNote"></p>
-    </section>
+        <p class="prog-note" id="zusatzNote">Die vier Basisqualifikationen sind immer dabei. Die Fachrichtung Kraftverkehr schaltest du mit dem Schalter zu oder ab – sie zählt dann bei „Alle Themen“, Fortschritt und Prüfungsreife mit.</p>
+      </section>
 
-    <h2 class="h-group">Konto &amp; Einstellungen</h2>
-    <section class="hcard">
-      <button class="tile tile-cloud" id="btnCloud">
-        <span class="ti-ic ti-blue"><svg class="ic-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 17.6A4 4 0 0 0 18 10h-1.3A7 7 0 1 0 5 16.7"/><path d="M12 12v9M8.5 15.5 12 12l3.5 3.5"/></svg></span>
-        <span class="ti-txt"><span class="ti-t" id="cloudBtnLabel">Mit Google anmelden &amp; sichern</span><span class="ti-d" id="cloudHint">Ohne Anmeldung bleibt dein Fortschritt nur auf diesem Gerät.</span></span>
-      </button>
-      <!-- Nur für Admins sichtbar (docs/supabase-profile.sql, Tabelle admins) -->
-      <button class="tile tile-cloud" id="btnAdmin" hidden>
-        <span class="ti-ic ti-plum"><svg class="ic-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 4 6v6c0 4.4 3.4 8.3 8 9 4.6-.7 8-4.6 8-9V6z"/><path d="m9 12 2 2 4-4"/></svg></span>
-        <span class="ti-txt"><span class="ti-t">Verwaltung</span><span class="ti-d">Konten, Lernstände, Meldungen und Gruppen – nur für Admins</span></span>
-      </button>
-      <div class="theme-row">
-        <span class="theme-lbl" id="themeLbl">Darstellung</span>
-        <div class="seg-ctl" id="themeCtl" role="radiogroup" aria-labelledby="themeLbl">
-          <button type="button" role="radio" data-theme-set="auto" aria-checked="true">Automatisch</button>
-          <button type="button" role="radio" data-theme-set="light" aria-checked="false">Hell</button>
-          <button type="button" role="radio" data-theme-set="dark" aria-checked="false">Dunkel</button>
+      <h2 class="h-group">Üben <span class="h-scope" id="scopeHint">Im gewählten Fach</span></h2>
+      <section class="hcard">
+        <div id="subSection">
+          <p class="h-sub">Themenbereich</p>
+          <div class="chips" id="subChips"></div>
         </div>
-      </div>
-      <div class="theme-row erinn-row">
-        <span class="theme-lbl" id="erinnLbl">Lern-Erinnerung</span>
-        <div class="erinn-ctl">
-          <input type="time" id="erinnZeit" value="19:00" step="300" aria-label="Uhrzeit der täglichen Lern-Erinnerung">
-          <button type="button" class="erinn-btn" id="erinnIcs">In den Kalender</button>
+        <div class="modes">
+          <button class="mode" id="btnTraining">
+            <span class="m-ic m-ic-petrol" aria-hidden="true"><svg class="ic-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg></span>
+            <span class="m-body"><span class="m-title"><span class="tag">Training</span><span id="trainScope">Alle Bereiche</span></span>
+            <span class="m-desc" id="trainDesc">20 Fragen mit sofortiger Auswertung und Erklärung. Neue Fragen werden bevorzugt.</span></span>
+          </button>
+          <button class="mode weak" id="btnWeak">
+            <span class="m-ic m-ic-amber" aria-hidden="true"><svg class="ic-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.5"/></svg></span>
+            <span class="m-body"><span class="m-title"><span class="tag">Fokus</span>Schwächen üben</span>
+            <span class="m-desc" id="weakDesc">Gezielt die Fragen, die du noch nicht kannst oder zuletzt falsch hattest.</span></span>
+          </button>
+          <button class="mode sim" id="btnSim">
+            <span class="m-ic m-ic-ink" aria-hidden="true"><svg class="ic-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l2.5 2.5M9.5 2h5"/></svg></span>
+            <span class="m-body"><span class="m-title"><span class="tag">Klausur</span>Prüfungssimulation</span>
+            <span class="m-desc" id="simDesc">30 Fragen aus dem ganzen Fach · 60 Minuten · bestanden ab 50 %.</span></span>
+          </button>
+          <button class="mode oral" id="btnOral">
+            <span class="m-ic m-ic-violet" aria-hidden="true"><svg class="ic-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a3 3 0 0 0-3 3v6a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3z"/><path d="M19 10v1a7 7 0 0 1-14 0v-1"/><path d="M12 18v4"/></svg></span>
+            <span class="m-body"><span class="m-title"><span class="tag">Mündlich</span>Fachgespräch üben</span>
+            <span class="m-desc" id="oralDesc">10 Fragen werden vorgelesen – du antwortest frei per Sprache, danach Musterlösung und Selbstcheck.</span></span>
+          </button>
         </div>
-        <p class="erinn-hint" id="erinnHint">Täglich zur gewählten Uhrzeit als Kalendereintrag mit Erinnerung – bis zum Tag vor deiner Prüfung, wenn du einen Termin eingetragen hast.</p>
-      </div>
-    </section>
+        <p class="h-sub h-sub-gap">Fachübergreifend</p>
+        <div class="modes">
+          <button class="mode mixed" id="btnMixed">
+            <span class="m-ic m-ic-deep" aria-hidden="true"><svg class="ic-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M16 3h5v5M4 20 21 3M21 16v5h-5M15 15l6 6M4 4l5 5"/></svg></span>
+            <span class="m-body"><span class="m-title"><span class="tag">Alle Fächer</span>Alle Themen üben</span>
+            <span class="m-desc" id="mixedDesc">20 gemischte Fragen quer durch alle Fächer und Themenbereiche.</span></span>
+          </button>
+          <button class="mode cases" id="btnCases">
+            <span class="m-ic m-ic-plum" aria-hidden="true"><svg class="ic-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2M3 13h18"/></svg></span>
+            <span class="m-body"><span class="m-title"><span class="tag">Fall</span>Fallaufgaben</span>
+            <span class="m-desc" id="casesDesc">Handlungssituation mit mehreren verketteten Teilaufgaben – wie im echten IHK-Prüfungsformat.</span></span>
+          </button>
+        </div>
+      </section>
+    </div>
+
+    <!-- PRÜFUNGEN: Übersicht mit Bestehenschance und alle Original-Prüfungen -->
+    <div class="seite" id="seitePruefungen" data-seite="pruefungen" hidden>
+      <h2 class="seite-titel">Original-IHK-Prüfungen</h2>
+      <section class="hcard"><div id="pruefList"></div></section>
+    </div>
+
+    <!-- VERGLEICH: freiwillige Rangliste (nur mit Konto). Erscheint erst,
+         wenn die Datenbank dafür eingerichtet ist. -->
+    <div class="seite" id="seiteVergleich" data-seite="vergleich" hidden>
+      <h2 class="seite-titel" id="vgKopf" hidden>Vergleich <span class="h-scope" id="vgScope"></span></h2>
+      <p class="vg-lead" id="vgLaedt">Rangliste wird geladen …</p>
+      <section class="hcard" id="vgBox" hidden></section>
+    </div>
+
+    <!-- KONTO -->
+    <div class="seite" id="seiteKonto" data-seite="konto" hidden>
+      <h2 class="seite-titel">Konto &amp; Einstellungen</h2>
+      <section class="hcard">
+        <button class="tile tile-cloud" id="btnCloud">
+          <span class="ti-ic ti-blue"><svg class="ic-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 17.6A4 4 0 0 0 18 10h-1.3A7 7 0 1 0 5 16.7"/><path d="M12 12v9M8.5 15.5 12 12l3.5 3.5"/></svg></span>
+          <span class="ti-txt"><span class="ti-t" id="cloudBtnLabel">Mit Google anmelden &amp; sichern</span><span class="ti-d" id="cloudHint">Ohne Anmeldung bleibt dein Fortschritt nur auf diesem Gerät.</span></span>
+        </button>
+        <!-- Nur für Admins sichtbar (docs/supabase-profile.sql, Tabelle admins) -->
+        <button class="tile tile-cloud" id="btnAdmin" hidden>
+          <span class="ti-ic ti-plum"><svg class="ic-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 4 6v6c0 4.4 3.4 8.3 8 9 4.6-.7 8-4.6 8-9V6z"/><path d="m9 12 2 2 4-4"/></svg></span>
+          <span class="ti-txt"><span class="ti-t">Verwaltung</span><span class="ti-d">Konten, Lernstände, Meldungen und Gruppen – nur für Admins</span></span>
+        </button>
+        <div class="theme-row">
+          <span class="theme-lbl" id="themeLbl">Darstellung</span>
+          <div class="seg-ctl" id="themeCtl" role="radiogroup" aria-labelledby="themeLbl">
+            <button type="button" role="radio" data-theme-set="auto" aria-checked="true">Automatisch</button>
+            <button type="button" role="radio" data-theme-set="light" aria-checked="false">Hell</button>
+            <button type="button" role="radio" data-theme-set="dark" aria-checked="false">Dunkel</button>
+          </div>
+        </div>
+        <div class="theme-row erinn-row">
+          <span class="theme-lbl" id="erinnLbl">Lern-Erinnerung</span>
+          <div class="erinn-ctl">
+            <input type="time" id="erinnZeit" value="19:00" step="300" aria-label="Uhrzeit der täglichen Lern-Erinnerung">
+            <button type="button" class="erinn-btn" id="erinnIcs">In den Kalender</button>
+          </div>
+          <p class="erinn-hint" id="erinnHint">Täglich zur gewählten Uhrzeit als Kalendereintrag mit Erinnerung – bis zum Tag vor deiner Prüfung, wenn du einen Termin eingetragen hast.</p>
+        </div>
+      </section>
+    </div>
   </div>
 
   <!-- QUIZ -->
@@ -2016,14 +2213,6 @@ body.sk-offen{overflow:hidden}
   <div class="lb-inner" id="lbInner"><img id="lbImg" alt=""></div>
   <p class="lb-cap" id="lbCap"></p>
 </dialog>
-
-<div class="modal" id="mPruef" hidden>
-  <div class="backdrop" data-close></div>
-  <div class="sheet wide" role="dialog" aria-modal="true" aria-label="Original-IHK-Prüfungen">
-    <div class="sheet-head"><h3>Original-IHK-Prüfungen</h3><button class="x" data-close aria-label="Schließen">✕</button></div>
-    <div class="sheet-body"><div id="pruefList"></div></div>
-  </div>
-</div>
 
 <!-- Betriebliches Kostenwesen -->
 <div class="modal" id="mKW" hidden>
@@ -2346,7 +2535,7 @@ function renderPlan(){
   }else if(!t){
     h='<p class="plan-t">Wann ist deine Prüfung?</p>'+
       '<p class="plan-txt">Trag den Termin ein – die App rechnet dir ein Tagesziel bis zur Prüfungsreife aus.</p>'+
-      '<button type="button" class="plan-btn" data-plan="bearbeiten">Termin eintragen</button>';
+      '<button type="button" class="plan-btn" data-plan="bearbeiten">Prüfungstermin eintragen</button>';
   }else{
     var p=planRechnen(),am=datumVon(p.pruefung,true);
     if(p.tage<0){
@@ -2377,6 +2566,7 @@ function renderPlan(){
     }
   }
   box.innerHTML=h;
+  box.classList.toggle('leer',!planOffen&&!t);
 }
 $("planBox").addEventListener("click",function(e){
   var b=e.target.closest("[data-plan]");if(!b)return;var a=b.getAttribute("data-plan");
@@ -2486,8 +2676,8 @@ function renderPruefChance(){
   if(!st.n){box.hidden=true;return;}
   function wert(t,name){
     if(!t)return '';
-    if(t.p==null)return '<span class="ec-w offen"><b>'+(t.n-t.fehlt.length)+'/'+t.n+'</b><small>'+name+': Bereiche geprüft · fehlt: '+
-      esc(t.fehlt.map(function(k){return st.B[k].kurz;}).join(', '))+'</small></span>';
+    if(t.p==null)return '<span class="ec-w offen"><b>'+(t.n-t.fehlt.length)+'/'+t.n+'</b><small>'+name+'<span class="ec-fehlt">: Bereiche geprüft · fehlt: '+
+      esc(t.fehlt.map(function(k){return st.B[k].kurz;}).join(', '))+'</span></small></span>';
     return '<span class="ec-w"><b>'+peProzent(t.p)+'</b><small>'+name+'</small></span>';
   }
   var knapp=null;
@@ -2498,7 +2688,7 @@ function renderPruefChance(){
   box.setAttribute('aria-label','Bestehenschance – Übersicht deiner Prüfungen öffnen');
   box.hidden=false;
 }
-$("pruefChance").addEventListener("click",function(){var t=$("btnPruef");if(t)t.click();});
+$("pruefChance").addEventListener("click",function(){window.KVM_seite('pruefungen');});
 function renderHomeExtras(){renderHero();renderErfolge();renderAktiv();renderPruefLast();renderPruefChance();
   if(window.KVM_vergleich)window.KVM_vergleich();}
 
@@ -4676,7 +4866,7 @@ function peErgebnis(c,echt){
   }
   box.innerHTML=h+(h?' <button type="button" class="res-link" id="resZurListe">Zur Übersicht</button>':'');
   box.hidden=!h;
-  var z=$("resZurListe");if(z)z.onclick=function(){var t=$("btnPruef");show("scrHome");if(t)t.click();};
+  var z=$("resZurListe");if(z)z.onclick=function(){window.KVM_seite('pruefungen');};
   return {gewertet:g,rec:r};
 }
 
@@ -4876,6 +5066,67 @@ function show(id){["scrHome","scrQuiz","scrBlatt","scrOral","scrResult"].forEach
   if(id==="scrHome"){renderProgress();renderFachGrid();renderSubChips();updateModeCards();}
   window.scrollTo(0,0);}
 
+/* ===== Seiten: Start, Lernen, Prüfungen, Vergleich, Konto =====
+   Der Startbildschirm besteht aus mehreren Seiten unter einer Navigation.
+   Die Adresse trägt die Seite (#/lernen …, Start = #/ oder leer), sodass
+   „Zurück“ im Browser zwischen den Seiten wechselt. Quiz, Aufgabenblatt und
+   Ergebnis bleiben eigene Bildschirme darüber; „Zurück“ verlässt sie wie ✕. */
+var SEITEN=['start','lernen','pruefungen','vergleich','konto'],seite='start';
+var SEITEN_TITEL={lernen:'Lernen',pruefungen:'Prüfungen',vergleich:'Vergleich',konto:'Konto'},TITEL=document.title;
+function seiteEl(s){return $("seite"+s.charAt(0).toUpperCase()+s.slice(1));}
+function seiteAusAdresse(){var m=/^#\/([a-z]*)$/.exec(location.hash||'');return m&&SEITEN.indexOf(m[1])>=0?m[1]:'start';}
+function seiteZeigen(s,opt){
+  opt=opt||{};
+  if(SEITEN.indexOf(s)<0||(s==='vergleich'&&$("snVergleich").hidden))s='start';
+  seite=s;
+  SEITEN.forEach(function(x){seiteEl(x).hidden=x!==s;});
+  document.querySelectorAll('#seitenNav [data-seite]').forEach(function(b){
+    if(b.getAttribute('data-seite')===s)b.setAttribute('aria-current','page');else b.removeAttribute('aria-current');});
+  document.body.setAttribute('data-seite',s);
+  document.title=SEITEN_TITEL[s]?SEITEN_TITEL[s]+' · Meister-Trainer':TITEL;
+  /* Adresse nachführen. Kam die Seite aus der Adresse und gibt es sie nicht
+     (z. B. #/vergleich ohne Rangliste), die Adresse still berichtigen. */
+  var soll='#/'+(s==='start'?'':s),ist=location.hash||'#/';
+  if(ist!==soll){
+    if(opt.ersetzen||opt.ausAdresse&&/^#\/[a-z]*$/.test(ist))history.replaceState(null,'',soll);
+    else if(!opt.ausAdresse)location.hash=soll;
+  }
+  if(s==='pruefungen'&&window.KVM_pruefListe)window.KVM_pruefListe();
+  if(s==='vergleich'&&window.KVM_vergleich)window.KVM_vergleich();
+  if(!opt.halten)window.scrollTo(0,0);
+}
+window.KVM_seite=function(s){if($("scrHome").hidden)show("scrHome");seiteZeigen(s);};
+$("seitenNav").addEventListener("click",function(e){var b=e.target.closest('[data-seite]');if(b)seiteZeigen(b.getAttribute('data-seite'));});
+/* Funktionskacheln der Startseite: Seite öffnen oder den Knopf dort auslösen */
+document.querySelectorAll('#seiteStart [data-geh]').forEach(function(b){b.addEventListener("click",function(){seiteZeigen(b.getAttribute('data-geh'));});});
+document.querySelectorAll('#seiteStart [data-klick]').forEach(function(b){b.addEventListener("click",function(){var z=$(b.getAttribute('data-klick'));if(z)z.click();});});
+/* „Zurück“ im Browser: fremde Anker (Login, Einladung) nicht anfassen. Mitten
+   in einer Runde wie ✕ – unter Prüfungsbedingungen mit Nachfrage. */
+window.addEventListener("hashchange",function(){
+  if(location.hash&&!/^#\/[a-z]*$/.test(location.hash))return;
+  if($("scrHome").hidden){
+    if(!$("scrBlatt").hidden&&echtLaeuft()&&!confirm("Prüfung verlassen?\n\nDie Uhr läuft weiter – wie in der echten Prüfung. Über die Prüfungsliste geht es weiter.")){
+      history.pushState(null,'','#/'+(seite==='start'?'':seite));return;}
+    if(!$("scrOral").hidden)orStop();
+    clearInterval(state.timerId);clearInterval(echtTimer);echtTimer=null;show("scrHome");
+  }
+  seiteZeigen(seiteAusAdresse(),{ausAdresse:true});
+});
+/* Statistik zum Aufziehen: Antippen öffnet und schließt, auf dem Handy auch
+   nach unten bzw. oben wischen. */
+(function(){
+  var leiste=$("statLeiste"),kopf=$("statKopf"),y0=null,gewischt=0;
+  kopf.addEventListener("touchstart",function(e){y0=e.touches[0].clientY;},{passive:true});
+  kopf.addEventListener("touchmove",function(e){
+    if(y0===null)return;var dy=e.touches[0].clientY-y0;
+    if(dy>36&&!leiste.open||dy<-36&&leiste.open){leiste.open=dy>0;y0=null;gewischt=Date.now();}
+  },{passive:true});
+  kopf.addEventListener("touchend",function(){y0=null;},{passive:true});
+  /* Manche Browser lösen nach dem Wischen noch einen Klick aus – der würde
+     gleich wieder umschalten. */
+  kopf.addEventListener("click",function(e){if(Date.now()-gewischt<500)e.preventDefault();});
+})();
+
 /* ===== events ===== */
 $("btnDue").addEventListener("click",function(){startRound('due');});
 $("btnCases").addEventListener("click",function(){startRound('cases');});
@@ -4912,8 +5163,8 @@ $("btnAgain").addEventListener("click",function(){
      eine zufällige andere. */
   if(state.mode==='cases'&&state.fall&&/^P-/.test(state.fall.id||'')){peNeuStarten(state.fall.id);return;}
   startRound(state.mode==='retry'?'train':state.mode);});
-$("btnResListe").addEventListener("click",function(){show("scrHome");var t=$("btnPruef");if(t)t.click();});
-$("btnHome").addEventListener("click",function(){show("scrHome");});
+$("btnResListe").addEventListener("click",function(){window.KVM_seite('pruefungen');});
+$("btnHome").addEventListener("click",function(){show("scrHome");seiteZeigen('start');});
 $("btnRetryWrong").addEventListener("click",function(){startRound('retry');});
 $("btnReset").addEventListener("click",function(){
   if(confirm("Deinen gesamten Lernfortschritt auf diesem Gerät wirklich zurücksetzen?")){progress={};saveProgress();renderProgress();renderFachGrid();renderSubChips();updateModeCards();}
@@ -4970,6 +5221,7 @@ document.addEventListener("keydown",function(ev){
   // Standard-Fach: erste aktive Basisqualifikation
   state.fach=1;
   show("scrHome");
+  seiteZeigen(seiteAusAdresse(),{ausAdresse:true,halten:true});
 })();
 
 
@@ -4981,7 +5233,8 @@ document.addEventListener("keydown",function(ev){
   function acc(signedIn,name){var h=$("cloudHint"),b=$("cloudBtnLabel")||$("btnCloud");
     if(h)h.innerHTML=signedIn?("Angemeldet als <b>"+esc(name)+"</b> – Fortschritt wird geräteübergreifend gesichert."):("Ohne Anmeldung bleibt dein Fortschritt nur auf diesem Gerät.");
     if(b)b.textContent=signedIn?"Abmelden":"Mit Google anmelden & sichern";}
-  if(!(window.supabase&&window.supabase.createClient)){acc(false,"");return;}
+  if(!(window.supabase&&window.supabase.createClient)){acc(false,"");
+    var sn=$("snVergleich");if(sn)sn.hidden=true;if(seite==='vergleich')seiteZeigen('start',{ersetzen:true});return;}
   var sb=window.supabase.createClient(SB_URL,SB_ANON);
   var user=null,pushT=null,syncedFor=null,pulledOk=false;
   function nameOf(u){return (u.user_metadata&&(u.user_metadata.full_name||u.user_metadata.name))||u.email||"angemeldet";}
@@ -5031,7 +5284,8 @@ document.addEventListener("keydown",function(ev){
       profilMelden();
     },function(){});
   }
-  function signIn(){sb.auth.signInWithOAuth({provider:"google",options:{redirectTo:location.href.split("#")[0]}}).then(function(){},function(){});}
+  function signIn(){try{sessionStorage.setItem('kvm_seite_login',seite);}catch(e){}
+    sb.auth.signInWithOAuth({provider:"google",options:{redirectTo:location.href.split("#")[0]}}).then(function(){},function(){});}
   function signOut(){sb.auth.signOut().then(function(){},function(){});}
   var btn=$("btnCloud"); if(btn)btn.addEventListener("click",function(){if(user){if(confirm("Abmelden? Dein Fortschritt bleibt lokal auf diesem Gerät."))signOut();}else signIn();});
   acc(false,"");
@@ -5102,7 +5356,8 @@ document.addEventListener("keydown",function(ev){
      der ohne #-Teil zurückkehrt) und aus der Adresse nehmen. */
   (function(){var m=/[#&]gruppe=([A-Za-z0-9]{6})\b/.exec(location.hash||'');
     if(m){try{localStorage.setItem('kvm_einladung',m[1].toUpperCase());}catch(e){}
-      try{history.replaceState(null,'',location.pathname+location.search);}catch(e){}}
+      try{history.replaceState(null,'',location.pathname+location.search+'#/vergleich');}catch(e){}
+      seiteZeigen('vergleich',{ausAdresse:true,halten:true});}
     try{vg.einladung=localStorage.getItem('kvm_einladung')||null;}catch(e){}})();
   var VG_NAME=/^[A-Za-zÄÖÜäöüß0-9 _.-]{3,20}$/;
   /* ISO-Kalenderwoche („2026-W39“): die Rangliste beginnt jeden Montag neu. */
@@ -5351,6 +5606,13 @@ document.addEventListener("keydown",function(ev){
     var box=$("vgBox"),kopf=$("vgKopf");if(!box||!kopf)return;
     var an=vg.verfuegbar===true;
     box.hidden=kopf.hidden=!an;
+    /* Seite „Vergleich“ nur, wenn die Rangliste eingerichtet ist */
+    var sn=$("snVergleich");if(sn){sn.hidden=vg.verfuegbar===false;
+      var wartet=an&&(!!vg.einladung||!!(user&&vg.leuteOk&&vg.fstand&&vg.fstand.anfragen&&vg.fstand.anfragen.length));
+      sn.classList.toggle('hinweis',wartet);
+      sn.setAttribute('aria-label',wartet?'Vergleich – eine Einladung oder Anfrage wartet':'Vergleich');}
+    var ld=$("vgLaedt");if(ld)ld.hidden=vg.verfuegbar!==null;
+    if(vg.verfuegbar===false&&seite==='vergleich')seiteZeigen('start',{ersetzen:true});
     if(!an)return;
     var h="",scope="",st=vg.stand;
     if(!user){
@@ -6016,6 +6278,9 @@ document.addEventListener("keydown",function(ev){
 
   sb.auth.onAuthStateChange(function(_e,session){
     var vorher=user&&user.id;
+    /* Rückkehr vom Google-Login: wieder auf die Seite von vorher */
+    if(_e==='SIGNED_IN'){var zurueck=null;try{zurueck=sessionStorage.getItem('kvm_seite_login');sessionStorage.removeItem('kvm_seite_login');}catch(e){}
+      if(zurueck&&zurueck!=='start'&&!$("scrHome").hidden&&seite==='start')setTimeout(function(){seiteZeigen(zurueck);},0);}
     user=session?session.user:null;if(user){acc(true,nameOf(user));if(syncedFor!==user.id){syncedFor=user.id;pull().then(push);peAbgleichen(true);}}else{acc(false,"");syncedFor=null;pulledOk=false;}
     /* Anderes Konto (oder abgemeldet): Freunde, Profil und Verwaltung neu laden */
     if((user&&user.id)!==vorher){
@@ -8248,26 +8513,25 @@ function render(){
     b.addEventListener('click',function(){
       filterBereich=b.getAttribute('data-fach')||'';
       render();
-      var m=$('mPruef');if(m)m.scrollTop=0;
+      var f=list.querySelector('.pr-filter');if(f)f.scrollIntoView({block:'start'});
     });
   });
   list.querySelectorAll('[data-start]').forEach(function(b){
     b.addEventListener('click',function(){
       var id=b.getAttribute('data-start');
       var step=parseInt(b.getAttribute('data-step'),10);
-      close();
       if(typeof window.KVM_startCase==='function')
         window.KVM_startCase(id,isFinite(step)?step:0);
     });
   });
   list.querySelectorAll('[data-echt]').forEach(function(b){
     b.addEventListener('click',function(){
-      if(typeof window.KVM_startEcht==='function'&&window.KVM_startEcht(b.getAttribute('data-echt')))close();
+      if(typeof window.KVM_startEcht==='function')window.KVM_startEcht(b.getAttribute('data-echt'));
     });
   });
   list.querySelectorAll('[data-neu]').forEach(function(b){
     b.addEventListener('click',function(){
-      if(typeof window.KVM_neuStarten==='function'&&window.KVM_neuStarten(b.getAttribute('data-neu')))close();
+      if(typeof window.KVM_neuStarten==='function')window.KVM_neuStarten(b.getAttribute('data-neu'));
     });
   });
   /* Bereich in der Übersicht antippen = nach diesem Bereich filtern */
@@ -8288,16 +8552,14 @@ function render(){
   });
 }
 
-function open_(){var m=$('mPruef');if(!m)return;render();m.hidden=false;document.body.style.overflow='hidden';}
-function close(){var m=$('mPruef');if(!m)return;m.hidden=true;document.body.style.overflow='';}
+/* Die Prüfungen sind eine eigene Seite (#/pruefungen); wer eine Prüfung
+   startet, landet im Aufgabenblatt. */
+function open_(){if(window.KVM_seite)window.KVM_seite('pruefungen');else render();}
+window.KVM_pruefListe=render;
 
 function init(){
   var b=$('btnPruef');if(b)b.addEventListener('click',open_);
-  var m=$('mPruef');if(!m)return;
-  m.addEventListener('click',function(e){
-    if(e.target.hasAttribute&&e.target.hasAttribute('data-close'))close();});
-  document.addEventListener('keydown',function(e){
-    if(e.key==='Escape'&&!$('mPruef').hidden)close();});
+  var sp=$('seitePruefungen');if(sp&&!sp.hidden)render();
 }
 if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init);else init();
 })();

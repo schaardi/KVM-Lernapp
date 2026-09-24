@@ -1117,38 +1117,38 @@ Großbuchstaben, Buchstabenabstand 1,3, `kMuted`; rechts optional ein Zusatz in 
 
 **CSS**
 - Startseite: Kommentar „Startseite“ Z. 920
-- Texte: „Aufgabentexte: Tabellen …“ Z. 1293
-- Aufgabenblatt Z. 1325
-- Rechenweg Z. 1498
+- Texte: „Aufgabentexte: Tabellen …“ Z. 1460
+- Aufgabenblatt Z. 1492
+- Rechenweg Z. 1665
 
 **JS**
 - Renderer:
-  - `rtIstRechnung` Z. 2946
-  - `rtKopf` Z. 2966
-  - `rtTabelle` Z. 2981
-  - `rtHTML` Z. 3004
+  - `rtIstRechnung` Z. 3136
+  - `rtKopf` Z. 3156
+  - `rtTabelle` Z. 3171
+  - `rtHTML` Z. 3194
 - Rechenweg:
-  - `rwTokens` Z. 3070
-  - `rwRechne` Z. 3151
-  - `rwZeileText` Z. 3189
-  - `rwHTML` Z. 3222
-  - `rwBinden` Z. 3235
-- Bewertung: `scoreHTML` Z. 3322
+  - `rwTokens` Z. 3260
+  - `rwRechne` Z. 3341
+  - `rwZeileText` Z. 3379
+  - `rwHTML` Z. 3412
+  - `rwBinden` Z. 3425
+- Bewertung: `scoreHTML` Z. 3512
 - Aufgabenblatt:
-  - `blStepperHTML` Z. 3611
-  - `blFortschrittHTML` Z. 3629
-  - `blLoesungHTML` Z. 3698
-  - `blRechenteil` Z. 4030
-  - `blTeilHTML` Z. 4037
-  - `renderBlatt` Z. 4077
+  - `blStepperHTML` Z. 3801
+  - `blFortschrittHTML` Z. 3819
+  - `blLoesungHTML` Z. 3888
+  - `blRechenteil` Z. 4220
+  - `blTeilHTML` Z. 4227
+  - `renderBlatt` Z. 4267
 - Startseite:
-  - `tagZaehlen` Z. 2093
-  - `renderFachGroup` Z. 2261
-  - `renderHero` Z. 2289
-  - `erfolgeListe` Z. 2409
-  - `renderAktiv` Z. 2450
-  - `renderPruefLast` Z. 2467
-- Prüfungsliste: `items.forEach` in `render()` Z. 8187
+  - `tagZaehlen` Z. 2282
+  - `renderFachGroup` Z. 2450
+  - `renderHero` Z. 2478
+  - `erfolgeListe` Z. 2599
+  - `renderAktiv` Z. 2640
+  - `renderPruefLast` Z. 2657
+- Prüfungsliste: `items.forEach` in `render()` Z. 8452
 
 Zeilennummern: Stand dieses Commits.
 
@@ -1296,18 +1296,18 @@ Serverseitig abgesichert:
 - Austreten führt zurück zum Beitrittsformular. Der Eintrag ist serverseitig gelöscht.
 
 ### Referenz Web-Implementierung (`index.html` auf `claude/ui-design-improvement-my0f66`)
-- **HTML:** `#vgKopf` / `#vgBox`, Z. 1714
-- **CSS:** Kommentar „Vergleich: freiwillige Wochenrangliste“, Z. 1123
+- **HTML:** `#vgKopf` / `#vgBox`, Z. 1940
+- **CSS:** Kommentar „Vergleich: freiwillige Wochenrangliste“, Z. 1290
 - **JS** im Cloud-Block:
 
   | Funktion | Zeile |
   |---|---|
-  | `isoWoche` | 5109 |
-  | `wocheAntworten` | 5116 |
-  | `vgWerte` | 5121 |
-  | `vgMeldenSpaeter` | 5126 |
-  | `vgLaden` | 5133 |
-  | `vgZeigen` | 5350 |
+  | `isoWoche` | 5364 |
+  | `wocheAntworten` | 5371 |
+  | `vgWerte` | 5376 |
+  | `vgMeldenSpaeter` | 5381 |
+  | `vgLaden` | 5388 |
+  | `vgZeigen` | 5605 |
 
 - **SQL:** `docs/supabase-rangliste.sql`. Lokal geprüft mit PGlite: Rechte,
   Rangfolge, Wochenwechsel, zwei Geräte, Namensregeln, Austritt, Kontolöschung.
@@ -1540,27 +1540,27 @@ Der Rechner bearbeitet keinen Text, sondern eine Liste von Zeichen:
 - „4.400“ im Ergebnisfeld zählt als 4400.
 
 ### Referenz Web-Implementierung (`index.html` auf `claude/ui-design-improvement-my0f66`)
-- **HTML:** `#mCalc`, Z. 1911
+- **HTML:** `#mCalc`, Z. 2108
 - **CSS:** Kommentar „Taschenrechner: Anzeige mit Verlauf …“, Z. 575
 - **JS:**
 
   | Funktion | Zeile |
   |---|---|
-  | `rwTokens` (Kern: Zeichen) | 3070 |
-  | `rwFunktion` (Winkel, Wurzel) | 3108 |
-  | `rwAuswerten` (Kern: Rechnen) | 3126 |
-  | `parseCalcNum` | 3440 |
-  | `calcDock` (Andocken, Ausweichen) | 6059 |
-  | `rkKern` (Zeichenliste → Kern) | 6123 |
-  | `rkAusdruck` (Anzeige, Text) | 6156 |
-  | `rkFunktion` | 6207 |
-  | `rkVorzeichen` | 6217 |
-  | `rkZeit` | 6235 |
-  | `rkGleich` | 6249 |
-  | `rkTaste` | 6263 |
-  | `rkZielVon` / `rkUebernehmen` | 6284 / 6307 |
-  | `FN_TASTEN` / `TASTEN` | 6328 |
-  | `rkZeigen` | 6338 |
+  | `rwTokens` (Kern: Zeichen) | 3260 |
+  | `rwFunktion` (Winkel, Wurzel) | 3298 |
+  | `rwAuswerten` (Kern: Rechnen) | 3316 |
+  | `parseCalcNum` | 3630 |
+  | `calcDock` (Andocken, Ausweichen) | 6324 |
+  | `rkKern` (Zeichenliste → Kern) | 6388 |
+  | `rkAusdruck` (Anzeige, Text) | 6421 |
+  | `rkFunktion` | 6472 |
+  | `rkVorzeichen` | 6482 |
+  | `rkZeit` | 6500 |
+  | `rkGleich` | 6514 |
+  | `rkTaste` | 6528 |
+  | `rkZielVon` / `rkUebernehmen` | 6549 / 6572 |
+  | `FN_TASTEN` / `TASTEN` | 6593 |
+  | `rkZeigen` | 6603 |
 
 Zeilennummern: Stand dieses Commits.
 
@@ -1672,12 +1672,12 @@ Fehler im Formular: „Bitte ein Datum wählen.“ / „Der Termin muss in der Z
 - „Entfernen“ führt zurück zu „Wann ist deine Prüfung?“.
 
 ### Referenz Web-Implementierung (`index.html` auf `claude/ui-design-improvement-my0f66`)
-- **HTML:** `#planBox` in `.hero-main`, Z. 1634
+- **HTML:** `#planBox` in `.hero-main`, Z. 1846
 - **CSS:** Kommentar „Prüfungstermin und Lernplan: eigener Block …“, Z. 972
 - **JS:**
-  - Block-Kommentar „Prüfungstermin und Lernplan“, Z. 2304
-  - `planRechnen`, Z. 2319
-  - `renderPlan`, Z. 2335 (aufgerufen am Ende von `renderHero`)
+  - Block-Kommentar „Prüfungstermin und Lernplan“, Z. 2493
+  - `planRechnen`, Z. 2508
+  - `renderPlan`, Z. 2524 (aufgerufen am Ende von `renderHero`)
 
 Zeilennummern: Stand dieses Commits.
 
@@ -1781,17 +1781,17 @@ Unter den Knöpfen steht der letzte Durchgang: „Zuletzt unter Prüfungsbedingu
 
 ### Referenz Web-Implementierung (`index.html` auf `claude/ui-design-improvement-my0f66`)
 - **HTML:**
-  - Uhr und „Abgeben“ in `.bl-bar`, Z. 1838
-  - Band `#blEcht`, Z. 1850
-- **CSS:** Kommentar „Prüfung unter Echtbedingungen: Uhr und Abgabe …“, Z. 1436
+  - Uhr und „Abgeben“ in `.bl-bar`, Z. 2035
+  - Band `#blEcht`, Z. 2047
+- **CSS:** Kommentar „Prüfung unter Echtbedingungen: Uhr und Abgabe …“, Z. 1603
 - **JS:**
-  - Block-Kommentar „Prüfung unter Echtbedingungen“, Z. 4398
-  - `echtUhr`, Z. 4430
-  - `echtAbgeben`, Z. 4451
-  - `KVM_startEcht`, Z. 4465
-  - `KVM_echtInfo`, Z. 4481
-  - Ergebnis in `finishRound`, Z. 4859
-  - Prüfungsliste, Z. 8197
+  - Block-Kommentar „Prüfung unter Echtbedingungen“, Z. 4588
+  - `echtUhr`, Z. 4620
+  - `echtAbgeben`, Z. 4641
+  - `KVM_startEcht`, Z. 4655
+  - `KVM_echtInfo`, Z. 4671
+  - Ergebnis in `finishRound`, Z. 5049
+  - Prüfungsliste, Z. 8462
 
 Zeilennummern: Stand dieses Commits.
 
@@ -1873,15 +1873,15 @@ geht auch ohne Konto.
 
 ### Referenz Web-Implementierung (`index.html` auf `claude/ui-design-improvement-my0f66`)
 - **HTML:**
-  - Knopf `#qMelden`, Z. 1793
-  - Dialog `#mMelden`, Z. 1928
+  - Knopf `#qMelden`, Z. 1990
+  - Dialog `#mMelden`, Z. 2125
 - **CSS:** Kommentar „Fehler melden: unauffälliger Knopf …“, Z. 546
 - **JS:**
-  - `meldenKnopfHTML` (Aufgabenblatt), Z. 4392
-  - Block „Fehler melden“ im Cloud-Teil, Z. 5038
-  - `mdOeffnen`, Z. 5049
-  - Senden, Z. 5075
-  - Bereitschaft, Z. 5089
+  - `meldenKnopfHTML` (Aufgabenblatt), Z. 4582
+  - Block „Fehler melden“ im Cloud-Teil, Z. 5292
+  - `mdOeffnen`, Z. 5303
+  - Senden, Z. 5329
+  - Bereitschaft, Z. 5343
 - **SQL:** `docs/supabase-meldungen.sql`
 
 Zeilennummern: Stand dieses Commits.
@@ -1963,11 +1963,11 @@ stattdessen **„In den Kalender“**:
 - Neustart des Geräts: Die geplanten Erinnerungen bleiben.
 
 ### Referenz Web-Implementierung (`index.html` auf `claude/ui-design-improvement-my0f66`)
-- **HTML:** Zeile „Lern-Erinnerung“ (`#erinnZeit`, `#erinnIcs`), Z. 1771
+- **HTML:** Zeile „Lern-Erinnerung“ (`#erinnZeit`, `#erinnIcs`), Z. 1967
 - **CSS:** Kommentar „Lern-Erinnerung: Uhrzeit + Kalendereintrag“, Z. 440
 - **JS:**
-  - Block-Kommentar „Lern-Erinnerung (Web)“, Z. 4341
-  - `erIcs`, Z. 4354
+  - Block-Kommentar „Lern-Erinnerung (Web)“, Z. 4531
+  - `erIcs`, Z. 4544
 
 Zeilennummern: Stand dieses Commits.
 
@@ -2072,15 +2072,15 @@ Deutschland. Dafür gibt es eine private Rangliste je Gruppe.
 - Verlassen → zurück zu „Alle“, der Reiter ist weg.
 
 ### Referenz Web-Implementierung (`index.html` auf `claude/ui-design-improvement-my0f66`)
-- **Zustand und Einladungslink** im Vergleichsblock, Z. 5098
-- **CSS:** Kommentar „Lerngruppen: Reiter über der Liste …“, Z. 1165
+- **Zustand und Einladungslink** im Vergleichsblock, Z. 5352
+- **CSS:** Kommentar „Lerngruppen: Reiter über der Liste …“, Z. 1332
 - **JS:**
-  - Block-Kommentar „Lerngruppen: private Rangliste per Code“, Z. 5159
-  - `grLaden`, Z. 5163
-  - `grTabsHTML`, Z. 5188
-  - `grFormHTML`, Z. 5197
-  - `grAnsichtHTML`, Z. 5209
-  - `grBinden`, Z. 5239
+  - Block-Kommentar „Lerngruppen: private Rangliste per Code“, Z. 5414
+  - `grLaden`, Z. 5418
+  - `grTabsHTML`, Z. 5443
+  - `grFormHTML`, Z. 5452
+  - `grAnsichtHTML`, Z. 5464
+  - `grBinden`, Z. 5494
 - **SQL:** `docs/supabase-gruppen.sql`
 
 Zeilennummern: Stand dieses Commits.
@@ -2186,16 +2186,16 @@ Ergänzungsprüfung. Geübt wird hier das freie Antworten in ganzen Sätzen:
 
 ### Referenz Web-Implementierung (`index.html` auf `claude/ui-design-improvement-my0f66`)
 - **HTML:**
-  - Karte `#btnOral`, Z. 1676
-  - Bildschirm `#scrOral`, Z. 1858
-- **CSS:** Kommentar „Mündlich üben: Frage vorlesen …“, Z. 1041
+  - Karte `#btnOral`, Z. 1907
+  - Bildschirm `#scrOral`, Z. 2055
+- **CSS:** Kommentar „Mündlich üben: Frage vorlesen …“, Z. 1208
 - **JS:**
-  - Block-Kommentar „Mündlich üben (Fachgespräch)“, Z. 4214
-  - `orGeeignet`, Z. 4225
-  - `orBegriffe`, Z. 4236
-  - `orHoeren`, Z. 4252
-  - `startOral`, Z. 4267
-  - `orZeigen`, Z. 4288
+  - Block-Kommentar „Mündlich üben (Fachgespräch)“, Z. 4404
+  - `orGeeignet`, Z. 4415
+  - `orBegriffe`, Z. 4426
+  - `orHoeren`, Z. 4442
+  - `startOral`, Z. 4457
+  - `orZeigen`, Z. 4478
 
 Zeilennummern: Stand dieses Commits.
 
@@ -2342,24 +2342,24 @@ Fehlt das Skript, sieht die Rangliste aus wie bisher.
 
 ### Referenz Web-Implementierung (`index.html` auf `claude/ui-design-improvement-my0f66`)
 - **HTML:**
-  - Kachel `#btnAdmin` (nur Web), Z. 1756
-  - Dialog `#mLeute`, Z. 1953
-  - Dialog `#mAdmin` (nur Web), Z. 1962
+  - Kachel `#btnAdmin` (nur Web), Z. 1952
+  - Dialog `#mLeute`, Z. 2150
+  - Dialog `#mAdmin` (nur Web), Z. 2159
 - **CSS:**
-  - Kommentar „Namen in Rangliste, Gruppe und Freundesliste öffnen das Profil“, Z. 1184
-  - Kommentar „Lernende: Nutzerübersicht, Freunde und Profile …“, Z. 1190
+  - Kommentar „Namen in Rangliste, Gruppe und Freundesliste öffnen das Profil“, Z. 1351
+  - Kommentar „Lernende: Nutzerübersicht, Freunde und Profile …“, Z. 1357
 - **JS:**
-  - Block-Kommentar „Lernende: Nutzerübersicht, Freunde und Profile“, Z. 5448
-  - `ltStandLaden`, Z. 5456
-  - `profilDetails`, Z. 5468
-  - `frAnsichtHTML`, Z. 5500
-  - `avatarHTML`, Z. 5531
-  - `lernstandHTML`, Z. 5540
-  - `ltProfilHTML`, Z. 5636
-  - `ltZeigen`, Z. 5655
-  - `frAktion`, Z. 5702
-  - `ltOeffnen`, Z. 5730
-  - Block-Kommentar „Verwaltung (nur Admins)“ (nur Web), Z. 5745
+  - Block-Kommentar „Lernende: Nutzerübersicht, Freunde und Profile“, Z. 5710
+  - `ltStandLaden`, Z. 5718
+  - `profilDetails`, Z. 5730
+  - `frAnsichtHTML`, Z. 5762
+  - `avatarHTML`, Z. 5793
+  - `lernstandHTML`, Z. 5802
+  - `ltProfilHTML`, Z. 5898
+  - `ltZeigen`, Z. 5917
+  - `frAktion`, Z. 5964
+  - `ltOeffnen`, Z. 5992
+  - Block-Kommentar „Verwaltung (nur Admins)“ (nur Web), Z. 6007
 - **SQL:** `docs/supabase-profile.sql`
 
 Zeilennummern: Stand dieses Commits.
@@ -2483,18 +2483,18 @@ Bitte in der App ebenso: Jede Frage muss sich melden lassen, auch offene.
   ihrer Nummer.
 
 ### Referenz Web-Implementierung (`index.html` auf `claude/ui-design-improvement-my0f66`)
-- **CSS:** Kommentar „Skizze: Zeichenfläche für Zeichenaufgaben …“, Z. 1530
+- **CSS:** Kommentar „Skizze: Zeichenfläche für Zeichenaufgaben …“, Z. 1697
 - **JS:**
-  - Block-Kommentar „Skizze: Zeichenfläche für Zeichenaufgaben“, Z. 3735
-  - `skZeichenteil`, Z. 3770
-  - `skElement`, Z. 3794
-  - `skMalen`, Z. 3820
-  - `skTreffer`, Z. 3838
-  - `skHTML`, Z. 3859
-  - `skStart`, Z. 3897
-  - `skZeigenBinden`, Z. 4012
-  - Einbau in `blTeilHTML`, Z. 4057
-  - Melde-Knopf in `buildOpenChat`, Z. 2888
+  - Block-Kommentar „Skizze: Zeichenfläche für Zeichenaufgaben“, Z. 3925
+  - `skZeichenteil`, Z. 3960
+  - `skElement`, Z. 3984
+  - `skMalen`, Z. 4010
+  - `skTreffer`, Z. 4028
+  - `skHTML`, Z. 4049
+  - `skStart`, Z. 4087
+  - `skZeigenBinden`, Z. 4202
+  - Einbau in `blTeilHTML`, Z. 4247
+  - Melde-Knopf in `buildOpenChat`, Z. 3078
 
 Zeilennummern: Stand dieses Commits.
 
@@ -2684,16 +2684,193 @@ Alles ist optional: Fehlt eine Funktion (PGRST202), bleibt die App wie ohne.
 
 ### Referenz Web-Implementierung (`index.html` auf `claude/ui-design-improvement-my0f66`)
 - **Speicher, Wertung, Chance:**
-  - Block „Prüfungsergebnisse und Bestehenschance“, Z. 4488
-  - `peChance`, Z. 4587
-  - `peStatistik`, Z. 4597
-  - `peNeuStarten`, Z. 4647
-  - `peErgebnis`, Z. 4662
-- **Startseite:** `renderPruefChance`, Z. 2483
-- **Liste:** `ergebnisHTML`, Z. 8088 · `uebersichtHTML`, Z. 8102
+  - Block „Prüfungsergebnisse und Bestehenschance“, Z. 4678
+  - `peChance`, Z. 4777
+  - `peStatistik`, Z. 4787
+  - `peNeuStarten`, Z. 4837
+  - `peErgebnis`, Z. 4852
+- **Startseite:** `renderPruefChance`, Z. 2673
+- **Liste:** `ergebnisHTML`, Z. 8353 · `uebersichtHTML`, Z. 8367
 - **Cloud:**
-  - Block „Prüfungsergebnisse abgleichen“, Z. 4994
-  - `pruefStandLaden`, Z. 5150
-  - Block „Rangliste nach Prüfungen“, Z. 5293
+  - Block „Prüfungsergebnisse abgleichen“, Z. 5247
+  - `pruefStandLaden`, Z. 5405
+  - Block „Rangliste nach Prüfungen“, Z. 5548
+
+Zeilennummern: Stand dieses Commits.
+
+---
+
+## FR-015 · Mehrseitige Oberfläche: Start ohne Scrollen, Seitenleiste, Statistik zum Aufziehen
+
+**Status App-Session:** ⏳ offen
+**Web umgesetzt:** ✅ `claude/ui-design-improvement-my0f66`
+**Priorität:** hoch (User-Wunsch: „Mach die Webseite gerne Mehrseitig, aber vielleicht mit einem
+Hauptscreen mit direkter Funktionsübersicht und Statistiken, die Prüfungen auch presenter
+(Homescreen ohne Scrollen, Statistiken vielleicht zum Runterziehen?)“)
+
+### Anlass
+- Die Startseite war eine lange Liste: Kopf, Lernstand, Lernweg, Üben, Prüfen, Erfolge, Nachschlagen,
+  Vergleich, Statistik, Konto. Vieles lag weit unten, die Prüfungen irgendwo in der Mitte.
+- Gewünscht: mehrere Seiten, ein Hauptbildschirm ohne Scrollen mit allen Funktionen auf einen Blick,
+  die Prüfungen prominent, die Statistik zum Herunterziehen.
+
+### Was sich gegenüber früheren FRs ändert
+- Die Inhalte bleiben, sie verteilen sich nur auf Seiten. Wo FR-003 E, FR-004, FR-009 bis FR-012
+  und FR-014 „Startseite“ sagen, gilt die Zuordnung unten.
+- Die Prüfungsliste ist kein Dialog mehr, sondern die Seite „Prüfungen“ (ersetzt den Dialog aus
+  FR-003 und FR-014 5). „Alle Prüfungen“, „Zur Übersicht“ und der Streifen „Bestehenschance“ öffnen
+  diese Seite.
+
+### 1. Seiten und Navigation
+- **Fünf Seiten:** Start · Lernen · Prüfungen · Vergleich · Konto.
+- **Leiste:**
+  - Handy: fest unten (Material 3 `NavigationBar`), Symbol über Beschriftung (w600 11).
+    Symbole: Haus, aufgeschlagenes Buch, Dokument mit Haken, Pokal, Person.
+  - Aktives Ziel: Symbol auf einer Pille `kPetrolSoft` (36 × 28, Radius 10), Text `kPetrolInk`.
+    Andere Ziele `kMuted`.
+  - Leiste: `kPaper`, oben Linie `kLine`, Schatten nach oben, Abstand für die Gestenleiste
+    (`SafeArea`).
+  - Ab 900 dp Breite oben mittig als schwebende Pillenleiste (Radius 15, Rahmen `kLine`,
+    Schatten wie Karten), links „MEISTER FÜR KRAFTVERKEHR“ (Display 15). Aktives Ziel als gefüllte
+    Pille `kPetrolSoft`, Text `kPetrolInkDeep`. Alternativ `NavigationRail` – Hauptsache, die fünf
+    Ziele sind ohne Scrollen erreichbar.
+  - Die Leiste gibt es nur in der Startansicht. Quiz, Aufgabenblatt, Mündlich und Ergebnis bleiben
+    ohne Leiste (dort ✕ bzw. „Zur Startseite“ wie bisher).
+- **„Vergleich“** erscheint nur, wenn die Rangliste eingerichtet ist (`rangliste_info` bzw.
+  `rangliste_stand` antwortet). Sonst hat die Leiste vier Ziele. Wer auf „Vergleich“ steht, wenn es
+  wegfällt (Abmelden, Fehler), landet auf Start. Solange unklar ist, ob es die Rangliste gibt,
+  zeigt die Seite „Rangliste wird geladen …“.
+- **Hinweispunkt:** Amber-Punkt 9 dp (`kAmber`, Ring 2 dp in `kPaper`) oben rechts am Symbol von
+  „Vergleich“, solange eine Gruppeneinladung (`kvm_einladung`, FR-010) oder Freundschaftsanfragen
+  (FR-012) warten. Semantik-Label: „Vergleich – eine Einladung oder Anfrage wartet“.
+- **Seitenwechsel** springt nach oben. Die Seiten behalten ihren Zustand (in Flutter `IndexedStack`),
+  „Prüfungen“ und „Vergleich“ laden beim Öffnen neu (wie Web `KVM_pruefListe`, `KVM_vergleich`).
+- **Seitentitel** (Display 24–32, Großbuchstaben): „Lernen“, „Original-IHK-Prüfungen“, „Vergleich“
+  (rechts „x dabei“), „Konto & Einstellungen“. Start hat den bisherigen Kopf.
+- **Zurück:**
+  - Web: Adresse `#/lernen`, `#/pruefungen`, `#/vergleich`, `#/konto`, Start `#/`. Browser-Zurück
+    und -Vor wechseln die Seite; eine unbekannte Seite zeigt Start und berichtigt die Adresse.
+    Fremde Anker (Login-Rückkehr, `#gruppe=…`) bleiben unangetastet. Der Tab-Titel lautet
+    „Lernen · Meister-Trainer“ usw.
+  - App: Android-Zurück auf einer Unterseite → Start; auf Start wie bisher (App verlassen).
+    Mitten in einer Runde wirkt Zurück wie ✕, unter Prüfungsbedingungen mit derselben Nachfrage
+    („Prüfung verlassen? Die Uhr läuft weiter …“). Beim mündlichen Üben stoppen Mikrofon und
+    Vorlesen wie bei ✕. In Flutter über `PopScope`.
+- **Rückkehr:**
+  - ✕ in Quiz, Aufgabenblatt oder Mündlich führt auf die Seite, von der aus gestartet wurde
+    (z. B. Lernen oder Prüfungen). „Zur Startseite“ im Ergebnis → Start. „Alle Prüfungen“ → Prüfungen.
+  - Ein Einladungslink (`…#gruppe=CODE`) öffnet gleich „Vergleich“.
+  - Nach dem Google-Login zurück auf die Seite, auf der man „Anmelden“ getippt hat (Web:
+    `sessionStorage['kvm_seite_login']`, eingelöst beim Ereignis `SIGNED_IN`). In der App nur nötig,
+    wenn der Login die Ansicht neu aufbaut.
+
+### 2. Start – alles auf einen Bildschirm
+Ziel: kein Scrollen auf 390 × 760 dp (Handy abzüglich Systemleisten) und 1280 × 800 (Desktop).
+Web gemessen: passt ohne Scrollen bei 360 × 740, 375 × 667, 390 × 760, 412 × 915, 673 × 841
+(Foldable), 768 × 1024, 1024 × 768, 1280 × 800 und 1366 × 768. Ist das Fenster doch zu klein (etwa
+Handy quer), darf die Seite scrollen (in Flutter `SingleChildScrollView` als Rückfall), aber nichts
+wird abgeschnitten.
+Unten bleibt Platz für die Leiste (Web: 72 px, Leiste 63 px).
+
+Reihenfolge von oben:
+1. **Kopf:** „MEISTER FÜR KRAFTVERKEHR“ einzeilig (Display 18–34, notfalls „…“). Auf dem Handy
+   ohne Eyebrow und Untertitel, bis 899 dp ohne Eyebrow, unter 700 dp Höhe ganz ohne Kopf. Ab
+   900 dp steht der Name in der Leiste und der Kopf entfällt.
+2. **Statistikleiste** (Karte `kPaper`, Rahmen `kLine`, Radius 16):
+   - Eine Zeile mit vier Kennzahlen: gemeistert · gesehen · offen · Tage in Folge. Zahl Display
+     17 (Handy) bzw. 19, Beschriftung 10–10,5 `kMuted`, einzeilig. Spalten so breit wie ihr Inhalt,
+     gleichmäßig verteilt (Web `justify-content: space-between`), damit „Tage in Folge“ ganz
+     sichtbar bleibt.
+   - Rechts der Griff: „STATISTIK“ (Mono 8,5, `kPetrolInk`) über einem Chevron 17 dp, der sich
+     aufgeklappt um 180° dreht. Darunter über die ganze Breite der Fortschrittsbalken (4 dp).
+   - **Aufziehen:** Antippen öffnet und schließt. Auf dem Handy öffnet Wischen nach unten
+     (≥ 36 dp), Wischen nach oben schließt; kürzere Bewegungen ändern nichts. Ein Tippen bis
+     500 ms nach dem Wischen zählt nicht (sonst schlösse es gleich wieder). In Flutter
+     `GestureDetector.onVerticalDragUpdate` + `AnimatedSize`.
+   - Aufgeklappt: „Prüfungsreife je Fach“ (Radar + Legende, FR-003 E.8), „Aktivität · 14 Tage“,
+     „Erfolge“ (FR-003 E.6) und unten rechts klein „Lernstand zurücksetzen“ (umrandet, beim
+     Überfahren `kErr`).
+3. **Heute-Karte** (FR-003 E.2) kompakter:
+   - Ring 78 dp (Handy) bzw. 110 dp (ab 900 dp), Prozent Display 20, „PRÜFUNGSREIF“ Mono 7,5.
+   - Kicker einzeilig mit „…“, Titel Display 21, die Beschreibung entfällt auf dem Handy.
+   - „Jetzt lernen →“ nicht mehr volle Breite (Höhe 38).
+   - Ohne Prüfungstermin statt des Absatzes nur ein unterstrichener Link „Prüfungstermin eintragen“
+     (FR-006); mit Termin der Plan wie bisher, etwas enger.
+4. **Prüfungskarte** (dunkel, FR-003 E.5) mit „Zuletzt geöffnet“ und dem Streifen
+   „Bestehenschance“ (FR-014 5). Die ganze Kopfzeile öffnet „Prüfungen“. Auf dem Handy:
+   - Symbolkachel 42 dp, Titel Display 18, ohne die Beschreibungszeile.
+   - „Zuletzt geöffnet“ ohne die Beschriftung, Titel einzeilig mit „…“, Balken 4 dp,
+     „Weiter bei Aufgabe N →“ Höhe 36.
+   - Bestehenschance: die Werte zweispaltig (Display 21), ohne „fehlt: …“, Summenzeile einzeilig.
+5. **Funktionen:** 3 Spalten × 2 Reihen (Abstand 7–8), Kachel `kPaper`, Rahmen `kLine`, Radius 14,
+   Symbolkachel 32 dp (Radius 10, weißes Symbol 18):
+
+   | Kachel | Farbe | Symbol | Aktion |
+   |---|---|---|---|
+   | Lernen | `kPetrol` | Buch | Seite Lernen |
+   | Mündlich | `kViolet` #6D5AE6 | Mikrofon | Mündlich üben im gewählten Fach (FR-011) |
+   | Fallaufgaben | `kPlum` | Koffer | Fallaufgaben starten |
+   | Formelbuch | `kOk` | Buch mit Lesezeichen | Formelbuch |
+   | Kostenwesen | `kPetrol` | Rechner | Kostenwesen |
+   | Gefahrgut | `kAmber` | Raute mit ! | ADR |
+
+   Handy und bis 1199 dp: Symbol über dem Titel, nur der Titel (w700 12,5–13,5); zwischen 561 und
+   899 dp mit Kurzbeschreibung darunter. Ab 1200 dp Symbol links, rechts Titel und Kurzbeschreibung
+   („Fächer, Training, Simulation“, „Fachgespräch üben“, „Praxisfälle mit Teilaufgaben“,
+   „Formeln und Schemata“, „Lehrgang und Rechner“, „ADR-Klassen und Quiz“), höchstens zwei Zeilen.
+- **Ab 900 dp** zweispaltig (links 1,1 : rechts 1): links die Heute-Karte, darunter die
+  Funktionen; rechts die Prüfungskarte. Die Statistikleiste darüber, Kennzahlen höchstens 640 dp
+  breit. Inhalt höchstens 1120 dp breit.
+- **Kleine Bildschirme:**
+  - Höhe unter 700 dp: ohne Kopf, Abstände 6, Ring 64 (ohne „PRÜFUNGSREIF“), Kacheln 52 hoch mit
+    Symbolkachel 26, Prüfungskarte oben und unten je 7–8 dp Innenabstand.
+  - Breite unter 380 dp: Kacheln seitlich 7 dp Innenabstand, Titel 11,5.
+  - Breite unter 340 dp: Kachelabstand 5, seitlich 5 dp, Titel 10,5, Kennzahlen Display 15, am
+    Griff nur der Chevron (ohne „STATISTIK“).
+  - Prüfen: Von 320 bis 412 dp Breite ist kein Kacheltitel und keine Kennzahl-Beschriftung
+    abgeschnitten.
+
+### 3. Die anderen Seiten
+- **Lernen:** „DEIN LERNWEG“ (FR-003 E.3, FR-001) und „ÜBEN“ (FR-003 E.4 samt Mündlich,
+  „Fachübergreifend“: Alle Themen, Fallaufgaben). Unverändert, nur auf eigener Seite.
+- **Prüfungen:** die bisherige Prüfungsliste mit „Deine Ergebnisse“ (FR-003, FR-014 5) als Seite,
+  in einer Karte. Beim Öffnen neu aufbauen (Stand, Ergebnisse, laufende Prüfungsbedingungen).
+- **Vergleich:** der Vergleichsabschnitt (FR-004, FR-010, FR-012, FR-014 7) als Seite.
+- **Konto:** Anmelden/Abmelden, „Verwaltung“ (nur Admins), Darstellung (FR-002 I),
+  Lern-Erinnerung (FR-009). Die Quellen-Fußnote steht nur hier.
+
+### Abnahme
+- Handy 390 × 760 und 375 × 667: Start ohne Scrollen, alle sechs Funktionen und die Prüfungskarte
+  sichtbar, „Tage in Folge“ und „Kostenwesen“ nicht abgeschnitten (auch bei 320 und 360 dp Breite).
+  Desktop 1280 × 800 ebenso.
+- Statistik: Antippen öffnet und schließt, Wischen nach unten öffnet, nach oben schließt.
+  Aufgeklappt sind Radar, Aktivität, Erfolge und „Lernstand zurücksetzen“ erreichbar.
+- Leiste: jede Seite öffnet sich, das aktive Ziel ist markiert, die Seite beginnt oben.
+- Web: Adresse `#/lernen` direkt aufrufen → Lernen. Zurück/Vor im Browser wechselt die Seiten.
+  `#/gibtsnicht` → Start mit Adresse `#/`.
+- Kachel „Lernen“ → Seite Lernen. „Mündlich“ und „Fallaufgaben“ starten direkt, ✕ führt zurück
+  auf Start. Training von „Lernen“ aus starten, ✕ → wieder Lernen.
+- Zurück mitten in einer Runde beendet sie. Unter Prüfungsbedingungen erst nach der Nachfrage,
+  die Uhr läuft weiter.
+- Ohne Rangliste: vier Ziele, `#/vergleich` → Start.
+- Freundschaftsanfrage oder Einladung offen → Punkt an „Vergleich“; angenommen → Punkt weg.
+- Einladungslink → Seite Vergleich mit der Einladung.
+
+### Referenz Web-Implementierung (`index.html` auf `claude/ui-design-improvement-my0f66`)
+- **CSS:**
+  - Block „Seiten und Navigation“, Z. 999
+  - Block „Start: ohne Scrollen“, Z. 1034
+- **HTML:**
+  - Leiste `#seitenNav`, Z. 1781
+  - Statistik `#statLeiste`, Z. 1801
+  - Funktionen `.start-fn`, Z. 1862
+  - Seite `#seiteLernen`, Z. 1874
+- **JS:**
+  - `seiteZeigen`, Z. 5078
+  - Zurück-Taste (`hashchange`), Z. 5105
+  - Statistik wischen, Z. 5115
+  - Hinweispunkt in `vgZeigen`, Z. 5612
+  - Einladungslink → Vergleich, Z. 5359
+  - Rückkehr vom Google-Login, Z. 6281
 
 Zeilennummern: Stand dieses Commits.
