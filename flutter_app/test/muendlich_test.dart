@@ -128,7 +128,7 @@ void main() {
       final pool = [
         data.questions.firstWhere((q) => q.id == 'B-VW-001'),
         data.questions.firstWhere((q) => q.id == 'B-VW-033'),
-        data.questions.firstWhere((q) => q.id == 'B-VW-101'),
+        data.questions.firstWhere((q) => q.id == 'B-VW-002'),
       ];
       final sprache = _Sprache();
       await tester.pumpWidget(MaterialApp(home: MuendlichScreen(pool: pool, fach: 2, sub: 'Volkswirtschaft', sprache: sprache)));
