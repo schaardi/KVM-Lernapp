@@ -13,7 +13,7 @@
     </queries>
     <application
         android:label="Meister-Trainer"
-        android:name="${applicationName}"
+        android:name=".KvmApplication"
         android:icon="@mipmap/ic_launcher">
         <activity
             android:name=".MainActivity"

@@ -56,6 +56,30 @@ flutter build apk --release   # build/app/outputs/flutter-apk/app-release.apk
   - `app-armeabi-v7a-release.apk` ist für sehr alte 32-Bit-Geräte.
   - Die Build-Nummer bekommt dabei 1000 × ABI dazu (arm64: 2002). Eine spätere Universal-APK mit
     kleinerer Nummer lässt sich erst nach dem Deinstallieren installieren.
+- Klein **ohne** diesen Aufschlag: `flutter build apk --release --target-platform android-arm64`
+  (≈ 29 MB, nur 64-Bit-ARM, Build-Nummer bleibt wie in `pubspec.yaml`).
+
+## Absturzbericht und sicherer Modus
+Stürzt die App ab, zeigt sie beim nächsten Start einen Bericht zum Kopieren oder Teilen
+(`android/…/Startschutz.kt`, `Spuren.kt`, `lib/services/startschutz.dart`). Auf der Konto-Seite
+lässt er sich später wieder öffnen.
+
+Erfasst werden:
+- **Java-/Kotlin-Abstürze:** eigener `UncaughtExceptionHandler` (`KvmApplication`).
+- **Vom System gemeldete Programmenden (ab Android 11):** native Abstürze samt Tombstone, ANR,
+  Speicher-Kills. Das System behält sie über Updates hinweg, deshalb stehen im ersten Bericht
+  auch die Abstürze der Vorversion.
+- **Letzter Startschritt:** Dart schreibt ihn synchron nach `files/startschutz/schritt.txt`.
+- **Eigene Protokollzeilen:** Warnungen und Fehler aus logcat.
+
+Nach einem Absturz beim Start läuft die App im **sicheren Modus**: ohne Anmeldung und Cloud,
+Vorlesen, Erinnerungen und Werbung. Der Lernstand lädt immer. Nach einem nativen Absturz zeichnet
+sie außerdem mit Skia statt Impeller. Beides gilt bis zum nächsten Update oder bis „Nächstes Mal
+normal starten“ auf der Konto-Seite.
+
+Tests:
+- `flutter test test/startschutz_test.dart`
+- Tombstone-Leser: `cd android && ./gradlew :app:testDebugUnitTest`
 
 ## App-Icon
 Das Industriemeister-Logo (Buch + Zahnrad) ist als adaptives Icon in
@@ -77,7 +101,7 @@ lib/
   werkzeuge/                  Rechner-Modell, Fehler melden, Gefahrgut-Daten
   lernen/                     Lernplan, Lern-Erinnerung
   cloud/                      Rangliste, Lerngruppen, Freunde, Profile (Supabase)
-  services/                   Daten, Lernstand, Lerntage, Rechenkern, Sync, Sprache
+  services/                   Daten, Lernstand, Lerntage, Rechenkern, Sync, Sprache, Startschutz
   widgets/                    Seitenstapel, Startkarten, Rechner, Formelbuch, Radar …
 assets/data/                  questions.json, cases.json, anlagen.json, formulas.json
 assets/fonts/                 Inter, Barlow Condensed, IBM Plex Mono (OFL)
