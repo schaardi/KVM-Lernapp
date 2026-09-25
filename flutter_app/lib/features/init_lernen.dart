@@ -6,15 +6,19 @@ import '../services/progress_service.dart';
 
 /// Start des Pakets „Lernen“ – wird beim App-Start aus `main.dart` aufgerufen
 /// (nach Daten, Lernstand und Anmeldung). FR-006/009/011: Prüfungstermin laden,
-/// Lern-Erinnerung (Mitteilungen) starten und neu planen.
-Future<void> initLernen() async {
+/// Lern-Erinnerung (Mitteilungen) starten und neu planen. Im sicheren Modus
+/// ([mitMitteilungen] aus) bleibt das Mitteilungs-Plugin unberührt – ohne
+/// `starten` sind Planen und Abbrechen wirkungslos.
+Future<void> initLernen({bool mitMitteilungen = true}) async {
   await Lernplan.instance.load();
   final er = ErinnerungService.instance;
   await er.load();
-  try {
-    // Antippen einer Erinnerung öffnet die Startseite.
-    await er.starten(onTippen: () => AppState.instance.geheZu(AppSeite.start));
-  } catch (_) {}
+  if (mitMitteilungen) {
+    try {
+      // Antippen einer Erinnerung öffnet die Startseite.
+      await er.starten(onTippen: () => AppState.instance.geheZu(AppSeite.start));
+    } catch (_) {}
+  }
   _einmalAnmelden();
   // Nicht auf das Planen warten – der Start soll nicht hängen.
   er.neuPlanen();

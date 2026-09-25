@@ -7,10 +7,12 @@ import '../../theme/theme_controller.dart';
 import '../../version.dart';
 import '../../widgets/konto/erinnerung_block.dart';
 import '../../widgets/premium_sheet.dart';
+import '../../widgets/startschutz_bericht.dart';
 import '../../widgets/ui.dart';
 
 /// Konto & Einstellungen (FR-015 3): Anmeldung, Darstellung, Lern-Erinnerung
-/// und die Quellen-Fußnote (nur hier).
+/// und die Quellen-Fußnote (nur hier); nach einem Absturz obenauf der
+/// Hinweis auf den sicheren Modus samt Bericht.
 class KontoSeite extends StatelessWidget {
   const KontoSeite({super.key});
 
@@ -23,6 +25,7 @@ class KontoSeite extends StatelessWidget {
           constraints: const BoxConstraints(maxWidth: 640),
           child: Column(crossAxisAlignment: CrossAxisAlignment.stretch, children: [
             const SeitenTitel('Konto & Einstellungen'),
+            const StartschutzKarte(),
             Karte(
               child: Column(crossAxisAlignment: CrossAxisAlignment.stretch, children: [
                 if (Config.authEnabled && AuthService.instance.ready) const _KontoZeile(),
@@ -42,7 +45,7 @@ class KontoSeite extends StatelessWidget {
               child: Text(
                 'Übungsfragen eigenständig formuliert, orientiert am DIHK-Rahmenplan und an '
                 'Krause/Krause (Kiehl). Rechtsstände und veränderliche Werte (z. B. Beiträge) '
-                'Stand 2025, ohne Gewähr.',
+                'Stand 2026, ohne Gewähr.',
                 textAlign: TextAlign.center,
                 style: TextStyle(fontSize: 12, height: 1.5, color: kMuted),
               ),
