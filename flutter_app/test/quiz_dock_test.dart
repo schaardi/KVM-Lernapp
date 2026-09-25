@@ -204,18 +204,21 @@ void main() {
 
     testWidgets('Auswahlfrage: kein Antwortfeld zum Übernehmen, Begründung nach dem Prüfen', (tester) async {
       await laden(tester);
-      await quiz(tester, [frage('B-VW-001')]);
+      final q = frage('B-VW-001');
+      await quiz(tester, [q]);
       expect(dock(tester).onUebernehmen, isNull);
       await tester.pump();
       expect(rechnerZiel.value, isNull);
-      await tester.tap(find.text('Rohstoffe, Arbeit und Kapital'));
+      final falsch = q.o.where((o) => !o.ok).toList();
+      await tester.tap(find.text(falsch.first.t));
       await tester.pump();
       await tester.tap(find.text('Antwort prüfen'));
       await tester.pump();
       expect(find.text('LEIDER FALSCH'), findsOneWidget);
       // Begründungen der falschen Optionen erscheinen, die richtige hat keine
-      expect(find.textContaining('Rohstoffe sind kein originärer Produktionsfaktor'), findsOneWidget);
-      expect(find.textContaining('Unternehmerisches Wissen zählt nicht'), findsOneWidget);
+      for (final o in falsch) {
+        expect(find.textContaining(o.w!), findsOneWidget);
+      }
     });
 
     testWidgets('Ausgangssituation: bei Teil 1 offen, ab Teil 2 zu – außer selbst geöffnet', (tester) async {

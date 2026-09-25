@@ -119,8 +119,8 @@ void main() {
       final d = profilDetails(st: PruefStatistik.leer, echt: echtAusErgebnissen(_ergebnisse), mitHQ: true);
       final f = d['f'] as Map<String, dynamic>;
       expect(f.keys, ['1', '2', '3', '4', '5']);
-      expect(f['1'], {'r': (ProgressService.instance.fachReife(1) * 100).round(), 'm': 10, 'g': 10, 'n': 662});
-      expect(f['2'], {'r': (ProgressService.instance.fachReife(2) * 100).round(), 'm': 0, 'g': 5, 'n': 838});
+      expect(f['1'], {'r': (ProgressService.instance.fachReife(1) * 100).round(), 'm': 10, 'g': 10, 'n': 559});
+      expect(f['2'], {'r': (ProgressService.instance.fachReife(2) * 100).round(), 'm': 0, 'g': 5, 'n': 695});
       final t14 = d['t14'] as List;
       expect(t14.length, 14);
       expect([t14[13], t14[12], t14[11], t14[10]], [5, 7, 0, 2]);

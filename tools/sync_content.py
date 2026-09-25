@@ -1,22 +1,26 @@
 #!/usr/bin/env python3
-"""Sync den Fragenkatalog der App aus dem Content-Repo/-Branch.
+"""Sync den Fragenkatalog in die App (und die Web-Daten).
 
-Quelle der Wahrheit ist die Web-App ``index.html``. Dort liegen die Inhalte als
-JSON-fähige Globals im ``<script>``-Block:
+Quelle der Wahrheit ist der Katalog in diesem Repository: ``data/questions.js``
+und ``data/cases.js`` neben der Web-App ``index.html`` (gelesen und geschrieben
+über ``tools/webdaten.py``). Ältere Stände tragen die Inhalte stattdessen als
+JSON-fähige Globals direkt in der ``index.html``:
 
     window.KVM_QUESTIONS = [ ... ];   # Fragen
     window.KVM_CASES     = [ ... ];   # Fallaufgaben
 
-Dieses Skript liest diese beiden Blöcke, prüft sie und schreibt sie kompakt nach
+Dieses Skript liest den Katalog, prüft ihn und schreibt ihn kompakt nach
 ``flutter_app/assets/data/questions.json`` bzw. ``cases.json`` – also genau in das
 Format, das die Flutter-App bündelt und offline lädt.
 
 Beispiele:
-    # aus dem Content-Branch (Standard) syncen und schreiben:
+    # eigenen Katalog (data/*.js) in die App übernehmen (Standard):
     python tools/sync_content.py
 
-    # aus einer lokalen index.html syncen:
-    python tools/sync_content.py --source index.html
+    # Katalog aus der index.html eines anderen Branches übernehmen – Achtung,
+    # überschreibt Korrekturen am eigenen Katalog (außer PX-Fragen und Prüfungen,
+    # die dort fehlen: sie werden aus den App-Assets bewahrt):
+    python tools/sync_content.py --ref origin/claude/focused-meitner-ilnlqj
 
     # nur prüfen, ob die App aktuell ist (CI/Drift-Check, schreibt nichts):
     python tools/sync_content.py --check
@@ -35,7 +39,8 @@ import subprocess
 import sys
 from pathlib import Path
 
-# Standard-Content-Quelle: Branch der Content-Session (Web-App / index.html).
+# Früherer Content-Branch (Stand Juli 2026). Seit der Katalog in data/*.js
+# gepflegt wird, ist er nur noch auf ausdrücklichen Wunsch (--ref) eine Quelle.
 DEFAULT_REF = "origin/claude/focused-meitner-ilnlqj"
 DEFAULT_SOURCE_IN_REF = "index.html"
 
@@ -123,7 +128,10 @@ def _extract_global(html: str, name: str) -> list:
 
 
 def read_source(source: str | None, ref: str | None) -> str:
-    """Liest die index.html – entweder aus einer Datei oder aus einem Git-Ref."""
+    """Liest die index.html – aus einer Datei, aus einem Git-Ref oder (Standard)
+    die eigene; deren Inhalte liegen in data/*.js daneben."""
+    if not source and not ref:
+        source = str(REPO_ROOT / "index.html")
     if source:
         p = Path(source)
         if not p.is_absolute():
@@ -132,7 +140,7 @@ def read_source(source: str | None, ref: str | None) -> str:
             raise FileNotFoundError(f"Quelldatei nicht gefunden: {p}")
         return p.read_text(encoding="utf-8")
 
-    gitref = ref or DEFAULT_REF
+    gitref = ref
     try:
         out = subprocess.run(
             ["git", "show", f"{gitref}:{DEFAULT_SOURCE_IN_REF}"],
@@ -257,7 +265,9 @@ def _validate_aufgaben(case: dict, steps: list) -> list[str]:
 # sondern in diesem Repo aus den Original-PDFs (scripts/pruefungen/). Ein reiner
 # Overwrite-Sync aus dem Content würde sie jedes Mal löschen – genau das ist
 # schon passiert. Sie werden deshalb aus den vorhandenen App-Assets übernommen,
-# sofern der Content sie nicht selbst mitbringt.
+# sofern der Content sie nicht selbst mitbringt – aber nur bei fremder Quelle
+# (--ref/--source). Der eigene Katalog enthält beides; was dort fehlt, ist
+# bewusst gelöscht und darf nicht aus den Assets zurückkommen.
 EIGEN_PRAEFIX = "P-"
 
 
@@ -357,8 +367,8 @@ def _validate_assets_only() -> int:
 def main(argv: list[str] | None = None) -> int:
     ap = argparse.ArgumentParser(description="Fragenkatalog aus dem Content (index.html) in die App syncen.")
     src = ap.add_mutually_exclusive_group()
-    src.add_argument("--source", help="Pfad zu einer index.html (statt Git-Ref).")
-    src.add_argument("--ref", help=f"Git-Ref des Content-Branches (Standard: {DEFAULT_REF}).")
+    src.add_argument("--source", help="Pfad zu einer index.html (Standard: die eigene, Inhalte aus data/*.js).")
+    src.add_argument("--ref", help=f"Git-Ref eines Branches, dessen index.html den Katalog trägt (z. B. {DEFAULT_REF}).")
     ap.add_argument("--check", action="store_true",
                     help="Nur prüfen, ob die App aktuell ist; nichts schreiben. Exit 2 bei Abweichung.")
     ap.add_argument("--validate-assets", action="store_true",
@@ -381,12 +391,15 @@ def main(argv: list[str] | None = None) -> int:
     # und Ausgangslage im Fragetext). Hier werden sie in das Aufgabenblatt-
     # Format überführt, sonst schreibt der nächtliche Sync den Umbau zurück.
     cases = [_aufgabenblatt(c) for c in cases]
-    cases, bewahrt = preserve_local_cases(cases, _current(CASES_OUT))
-    if bewahrt:
-        print(f"Bewahrt (Fälle, nicht im Content): {', '.join(bewahrt)}")
-    questions, bewahrt_q = preserve_local_questions(questions, _current(QUESTIONS_OUT))
-    if bewahrt_q:
-        print(f"Bewahrt (Übungsfragen aus Prüfungen, {len(bewahrt_q)} Stück, Präfix PX-)")
+    # Bewahren nur bei fremder Quelle (--ref/--source): Der eigene Katalog enthält
+    # Prüfungen und PX-Fragen selbst – was dort fehlt, ist bewusst gelöscht.
+    if args.ref or args.source:
+        cases, bewahrt = preserve_local_cases(cases, _current(CASES_OUT))
+        if bewahrt:
+            print(f"Bewahrt (Fälle, nicht im Content): {', '.join(bewahrt)}")
+        questions, bewahrt_q = preserve_local_questions(questions, _current(QUESTIONS_OUT))
+        if bewahrt_q:
+            print(f"Bewahrt (Übungsfragen aus Prüfungen, {len(bewahrt_q)} Stück, Präfix PX-)")
 
     errors = validate_questions(questions) + validate_cases(cases)
     if errors:

@@ -133,19 +133,19 @@ void main() {
     expect(find.text('Prüfungstermin eintragen'), findsOneWidget);
   });
 
-  testWidgets('Termin in 42 Tagen ohne Fortschritt: „Heute 0 / 245“, drei Antworten später „3 / 245“', (tester) async {
+  testWidgets('Termin in 42 Tagen ohne Fortschritt: „Heute 0 / 207“, drei Antworten später „3 / 207“', (tester) async {
     await _starten(tester, {'kvm_pruefung': json.encode({'datum': isoVon(heute + 42)})});
-    expect(DataService.instance.activeQuestions().length, 3666);
+    expect(DataService.instance.activeQuestions().length, 3101);
     expect(find.text('NOCH 42 TAGE'), findsOneWidget);
     expect(find.text('bis zur Prüfung am ${datumLang(heute + 42)}'), findsOneWidget);
-    expect(find.text('0 / 245'), findsOneWidget);
-    expect(find.textContaining('Sehr knapp: Mit 245 Fragen am Tag'), findsOneWidget);
+    expect(find.text('0 / 207'), findsOneWidget);
+    expect(find.textContaining('Sehr knapp: Mit 207 Fragen am Tag'), findsOneWidget);
     for (final q in DataService.instance.questions.take(3)) {
       ProgressService.instance.record(q.id, true);
     }
     AppState.instance.refresh();
     await tester.pump();
-    expect(find.text('3 / 245'), findsOneWidget);
+    expect(find.text('3 / 207'), findsOneWidget);
   });
 
   testWidgets('Termin heute und vorbei', (tester) async {

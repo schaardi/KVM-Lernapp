@@ -13,6 +13,7 @@ import 'services/sync_service.dart';
 import 'services/premium_service.dart';
 import 'services/lerntage_service.dart';
 import 'services/letzte_pruefung.dart';
+import 'services/startschutz.dart';
 import 'theme/theme_controller.dart';
 import 'features/init_cloud.dart';
 import 'features/init_lernen.dart';
@@ -20,10 +21,15 @@ import 'features/init_pruefungen.dart';
 import 'features/init_werkzeuge.dart';
 import 'screens/home_screen.dart';
 import 'screens/login_screen.dart';
+import 'widgets/startschutz_bericht.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  if (Config.authEnabled) {
+  // Absturz beim letzten Start? Dann sicher starten (siehe Startschutz).
+  final schutz = Startschutz.instance;
+  await schutz.laden();
+  schutz.schritt('anmeldung');
+  if (Config.authEnabled && !schutz.sicher) {
     try {
       await Supabase.initialize(
         url: Config.supabaseUrl,
@@ -36,7 +42,9 @@ Future<void> main() async {
       AuthService.instance.ready = false; // ohne gültige Config: Offline-App
     }
   }
+  schutz.schritt('darstellung');
   await ThemeController.instance.load();
+  schutz.schritt('oberflaeche');
   runApp(const KvmApp());
 }
 
@@ -229,19 +237,61 @@ class _BootState extends State<_Boot> {
   @override
   void initState() {
     super.initState();
-    _init = _load();
+    final schutz = Startschutz.instance;
+    // Nach einem Absturz erst den Bericht zeigen, dann laden – so lässt er
+    // sich kopieren, selbst wenn ein späterer Schritt wieder abstürzt.
+    if (schutz.aktiv && schutz.neuerBericht) {
+      schutz.neuerBericht = false;
+      _init = _berichtZuerst().then((_) => _load());
+    } else {
+      _init = _load();
+    }
+    // Steht die Startseite ein paar Sekunden, ist der Start geglückt.
+    _init.whenComplete(() {
+      if (!mounted || !schutz.aktiv) return;
+      WidgetsBinding.instance.addPostFrameCallback((_) {
+        Timer(const Duration(seconds: 3), schutz.fertig);
+      });
+    }).ignore();
+  }
+
+  Future<void> _berichtZuerst() {
+    final gezeigt = Completer<void>();
+    WidgetsBinding.instance.addPostFrameCallback((_) async {
+      try {
+        if (mounted) await absturzberichtZeigen(context);
+      } finally {
+        gezeigt.complete();
+      }
+    });
+    return gezeigt.future;
   }
 
   Future<void> _load() async {
+    // Jeder Schritt wird vorher vermerkt: Stürzt die App dabei ab, weiß der
+    // nächste Start, wo – und lässt im sicheren Modus Sprache, Cloud,
+    // Erinnerungen und Werbung weg (der Lernstand lädt immer).
+    final schutz = Startschutz.instance;
+    final sicher = schutz.sicher;
+    schutz.schritt('daten');
     await DataService.instance.load();
+    schutz.schritt('auswahl');
     await SelectionService.instance.load();
+    schutz.schritt('fortschritt');
     await ProgressService.instance.load();
-    await VoiceService.instance.init();
+    if (!sicher) {
+      schutz.schritt('sprache');
+      await VoiceService.instance.init();
+    }
+    schutz.schritt('antworten');
     await AnswerStore.instance.init();
+    schutz.schritt('lerntage');
     await LerntageService.instance.load();
+    schutz.schritt('letzte_pruefung');
     await LetztePruefung.instance.load();
     // Cloud-Sync anbinden; bei bestehender Sitzung Stand zusammenführen.
     if (Config.authEnabled && AuthService.instance.ready) {
+      schutz.schritt('sync');
       SyncService.instance.attach();
       if (AuthService.instance.isSignedIn) {
         await SyncService.instance.pullMergePush();
@@ -249,15 +299,23 @@ class _BootState extends State<_Boot> {
     }
     // Die Pakete starten ihre Dienste (Prüfungsergebnisse, Cloud, Lernplan,
     // Werkzeuge). Ein Fehler in einem Paket darf den Start nicht verhindern.
-    for (final init in [initPruefungen, initLernen, initWerkzeuge, initCloud]) {
+    final pakete = <(String, Future<void> Function())>[
+      ('pruefungen', initPruefungen),
+      ('lernen', () => initLernen(mitMitteilungen: !sicher)),
+      ('werkzeuge', initWerkzeuge),
+      if (!sicher) ('cloud', initCloud),
+    ];
+    for (final (name, init) in pakete) {
+      schutz.schritt(name);
       try {
         await init();
       } catch (_) {}
     }
+    schutz.schritt('startseite');
     // Werbe-/Billing-SDK NICHT blockierend initialisieren: ein langsames oder
     // fehlendes SDK (z. B. ohne Google-Play-Dienste) darf den App-Start niemals
     // aufhalten. Premium-Status und Werbung aktualisieren sich reaktiv.
-    unawaited(_initMonetization());
+    if (!sicher) unawaited(_initMonetization());
   }
 
   Future<void> _initMonetization() async {

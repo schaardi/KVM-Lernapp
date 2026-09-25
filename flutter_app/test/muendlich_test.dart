@@ -95,10 +95,10 @@ void main() {
       expect(muendlichGeeignet(const Question(id: 'c', f: 1, sub: 's', type: 'calc', q: 'Wie viel?')), isFalse);
     });
 
-    test('Im Fragenbestand: 2.353 Auswahl- und 88 offene Fragen (wie im Web)', () {
+    test('Im Fragenbestand: 1.637 Auswahl- und 380 offene Fragen (wie im Web)', () {
       final geeignet = _alleFragen().where(muendlichGeeignet).toList();
-      expect(geeignet.where((q) => q.type == 'mc').length, 2353);
-      expect(geeignet.where((q) => q.type == 'open').length, 88);
+      expect(geeignet.where((q) => q.type == 'mc').length, 1637);
+      expect(geeignet.where((q) => q.type == 'open').length, 380);
     });
   });
 
@@ -128,7 +128,7 @@ void main() {
       final pool = [
         data.questions.firstWhere((q) => q.id == 'B-VW-001'),
         data.questions.firstWhere((q) => q.id == 'B-VW-033'),
-        data.questions.firstWhere((q) => q.id == 'B-VW-101'),
+        data.questions.firstWhere((q) => q.id == 'B-VW-002'),
       ];
       final sprache = _Sprache();
       await tester.pumpWidget(MaterialApp(home: MuendlichScreen(pool: pool, fach: 2, sub: 'Volkswirtschaft', sprache: sprache)));
