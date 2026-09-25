@@ -18,7 +18,8 @@ Beispiele:
     python tools/sync_content.py
 
     # Katalog aus der index.html eines anderen Branches übernehmen – Achtung,
-    # überschreibt Korrekturen am eigenen Katalog (außer PX-Fragen und Prüfungen):
+    # überschreibt Korrekturen am eigenen Katalog (außer PX-Fragen und Prüfungen,
+    # die dort fehlen: sie werden aus den App-Assets bewahrt):
     python tools/sync_content.py --ref origin/claude/focused-meitner-ilnlqj
 
     # nur prüfen, ob die App aktuell ist (CI/Drift-Check, schreibt nichts):
@@ -264,7 +265,9 @@ def _validate_aufgaben(case: dict, steps: list) -> list[str]:
 # sondern in diesem Repo aus den Original-PDFs (scripts/pruefungen/). Ein reiner
 # Overwrite-Sync aus dem Content würde sie jedes Mal löschen – genau das ist
 # schon passiert. Sie werden deshalb aus den vorhandenen App-Assets übernommen,
-# sofern der Content sie nicht selbst mitbringt.
+# sofern der Content sie nicht selbst mitbringt – aber nur bei fremder Quelle
+# (--ref/--source). Der eigene Katalog enthält beides; was dort fehlt, ist
+# bewusst gelöscht und darf nicht aus den Assets zurückkommen.
 EIGEN_PRAEFIX = "P-"
 
 
@@ -388,12 +391,15 @@ def main(argv: list[str] | None = None) -> int:
     # und Ausgangslage im Fragetext). Hier werden sie in das Aufgabenblatt-
     # Format überführt, sonst schreibt der nächtliche Sync den Umbau zurück.
     cases = [_aufgabenblatt(c) for c in cases]
-    cases, bewahrt = preserve_local_cases(cases, _current(CASES_OUT))
-    if bewahrt:
-        print(f"Bewahrt (Fälle, nicht im Content): {', '.join(bewahrt)}")
-    questions, bewahrt_q = preserve_local_questions(questions, _current(QUESTIONS_OUT))
-    if bewahrt_q:
-        print(f"Bewahrt (Übungsfragen aus Prüfungen, {len(bewahrt_q)} Stück, Präfix PX-)")
+    # Bewahren nur bei fremder Quelle (--ref/--source): Der eigene Katalog enthält
+    # Prüfungen und PX-Fragen selbst – was dort fehlt, ist bewusst gelöscht.
+    if args.ref or args.source:
+        cases, bewahrt = preserve_local_cases(cases, _current(CASES_OUT))
+        if bewahrt:
+            print(f"Bewahrt (Fälle, nicht im Content): {', '.join(bewahrt)}")
+        questions, bewahrt_q = preserve_local_questions(questions, _current(QUESTIONS_OUT))
+        if bewahrt_q:
+            print(f"Bewahrt (Übungsfragen aus Prüfungen, {len(bewahrt_q)} Stück, Präfix PX-)")
 
     errors = validate_questions(questions) + validate_cases(cases)
     if errors:
