@@ -129,13 +129,23 @@ void main() {
 
   testWidgets('Seitenwechsel gleitet und behält Zustand und Scrollposition', (tester) async {
     await _starten(tester);
+    // Deckkraft der Seiten im Stapel (0 = Start, 1 = Lernen).
+    double deckung(int i) => tester.widget<Opacity>(find.byKey(ValueKey('seite-$i'))).opacity;
     await tester.tap(find.widgetWithText(NavigationDestination, 'Lernen'));
-    await tester.pump(const Duration(milliseconds: 120));
-    // Mitten im Wechsel: die alte Seite blendet aus, die neue gleitet herein.
+    await tester.pump();
+    // Nacheinander, nicht übereinander: Erst huscht die alte Seite hinaus …
+    await tester.pump(const Duration(milliseconds: 60));
+    expect(deckung(0), inExclusiveRange(0.0, 1.0));
+    expect(deckung(1), 0.0);
+    // … dann gleitet die neue herein, die alte ist schon weg.
+    await tester.pump(const Duration(milliseconds: 90));
+    expect(deckung(0), 0.0);
+    expect(deckung(1), greaterThan(0.0));
     expect(find.text('MEISTER FÜR KRAFTVERKEHR'), findsOneWidget);
     expect(find.text('DEIN LERNWEG'), findsOneWidget);
     final x = tester.getTopLeft(find.text('DEIN LERNWEG')).dx;
     await tester.pumpAndSettle();
+    expect(deckung(1), 1.0);
     expect(tester.getTopLeft(find.text('DEIN LERNWEG')).dx, lessThan(x));
     expect(find.text('MEISTER FÜR KRAFTVERKEHR'), findsNothing);
     // Scrollposition bleibt beim Hin und Her erhalten.
