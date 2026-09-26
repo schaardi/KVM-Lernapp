@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 
 /// Die Seiten der Startansicht übereinander (FR-015): Alle bleiben erhalten
-/// (Zustand, Scrollposition), sichtbar ist eine. Beim Wechsel gleitet die neue
-/// Seite in Laufrichtung herein und die alte blendet hinaus – wie im Web
-/// (weiter rechts in der Leiste = von rechts). Ohne Animationen (Einstellung
+/// (Zustand, Scrollposition), sichtbar ist eine. Beim Wechsel huscht die alte
+/// Seite ein Stück hinaus und blendet aus, erst danach gleitet die neue in
+/// Laufrichtung herein – wie im Web (weiter rechts in der Leiste = von rechts).
+/// Nacheinander, nicht übereinander: Gleichzeitig überblendet lagen beide
+/// Seiten sichtbar übereinander (Geisterbild). Ohne Animationen (Einstellung
 /// „Animationen entfernen“) wird sofort gewechselt.
 class SeitenStapel extends StatefulWidget {
   final int index;
@@ -15,11 +17,17 @@ class SeitenStapel extends StatefulWidget {
 }
 
 class _SeitenStapelState extends State<SeitenStapel> with SingleTickerProviderStateMixin {
-  /// So weit (dp) kommt die neue Seite von der Seite herein.
-  static const double _weg = 44;
+  /// So weit (dp) kommt die neue Seite von der Seite herein bzw. huscht die
+  /// alte hinaus.
+  static const double _weg = 36;
+
+  /// Ablauf in Teilen des Ganzen (320 ms): die alte Seite bis 0,12 s, die
+  /// neue erst ab dann – nie sind beide zugleich zu sehen.
+  static const double _rausBis = 120 / 320;
+  static const double _reinAb = 120 / 320;
 
   late final AnimationController _c =
-      AnimationController(vsync: this, duration: const Duration(milliseconds: 340), value: 1);
+      AnimationController(vsync: this, duration: const Duration(milliseconds: 320), value: 1);
 
   /// Die Seite, die gerade hinausgleitet.
   int? _alt;
@@ -74,14 +82,19 @@ class _SeitenStapelState extends State<SeitenStapel> with SingleTickerProviderSt
               final r = _vor ? 1.0 : -1.0;
               var deckung = 1.0, x = 0.0;
               if (aktiv && _alt != null) {
-                deckung = Curves.easeOut.transform((t / 0.75).clamp(0.0, 1.0));
-                x = r * _weg * (1 - Curves.easeOutCubic.transform(t));
+                final b = ((t - _reinAb) / (1 - _reinAb)).clamp(0.0, 1.0);
+                deckung = Curves.easeOut.transform(b);
+                x = r * _weg * (1 - Curves.easeOutCubic.transform(b));
               } else if (raus) {
-                final a = Curves.easeIn.transform((t / 0.55).clamp(0.0, 1.0));
+                final a = Curves.easeIn.transform((t / _rausBis).clamp(0.0, 1.0));
                 deckung = 1 - a;
-                x = -r * _weg * 0.7 * a;
+                x = -r * _weg * a;
               }
-              return Opacity(opacity: deckung, child: Transform.translate(offset: Offset(x, 0), child: kind));
+              return Opacity(
+                key: ValueKey('seite-$i'),
+                opacity: deckung,
+                child: Transform.translate(offset: Offset(x, 0), child: kind),
+              );
             },
           ),
         ),

@@ -2854,8 +2854,11 @@ Statistik soll smoother werden.“
 
 1. **Seitenwechsel in Laufrichtung:**
    - Ein Ziel weiter rechts in der Leiste kommt von rechts, eins weiter links von links.
-   - Die alte Seite blendet in etwa 0,2 s aus und gleitet dabei ein Stück zur Gegenseite.
-   - Die neue Seite gleitet in etwa 0,35 s herein (Versatz 44–56 dp, easeOutCubic) und blendet ein.
+   - **Nacheinander, nicht übereinander:** Die alte Seite blendet in etwa 0,12 s aus und huscht
+     dabei 36 dp zur Gegenseite. Erst danach (ab 0,12 s) gleitet die neue Seite in etwa 0,2 s
+     herein (Versatz 36 dp, easeOutCubic) und blendet ein.
+   - Nie liegen zwei Seiten sichtbar übereinander. Nachtrag: Gleichzeitig überblendet war das auf
+     dem iPhone (Web-App) ein Geisterbild mit ineinandergeschobenen Titeln („LERORIGINAL-IHK-…“).
    - Die Leiste bleibt dabei stehen.
    - Gilt für Leiste, Kacheln und Zurück/Vor.
    - Nicht beim Rückweg aus einer Runde und nicht bei „weniger Bewegung“ bzw. „Animationen
@@ -2885,6 +2888,9 @@ Statistik soll smoother werden.“
   „Lernstand zurücksetzen“ erreichbar.
 - Seitenwechsel: Start → Prüfungen gleitet von rechts, Prüfungen → Lernen von links. Die
   Scrollposition von „Lernen“ bleibt beim Hin und Her erhalten.
+- Seitenwechsel Bild für Bild (Bildschirmaufnahme, iPhone-Web-App und App): Kein Bild zeigt alte
+  und neue Seite zugleich deutlich – auch nicht bei unterschiedlich langen Seiten (Prüfungen →
+  Vergleich).
 - Web, Desktop mit sichtbaren Scrollbalken: Start → Lernen → Prüfungen → Konto → Start, die
   Leiste steht auf den Pixel still.
 - Leiste: jede Seite öffnet sich, das aktive Ziel ist markiert, die Seite beginnt oben.
@@ -2900,21 +2906,21 @@ Statistik soll smoother werden.“
 
 ### Referenz Web-Implementierung (`index.html` auf `claude/ui-design-improvement-my0f66`)
 - **CSS:**
-  - Block „Seiten und Navigation“, Z. 999; Scrollbalken-Platz Z. 1024, Seitenwechsel Z. 1028
-  - Block „Start: ohne Scrollen“, Z. 1064
+  - Block „Seiten und Navigation“, Z. 999; Scrollbalken-Platz Z. 1027, Seitenwechsel Z. 1028
+  - Block „Start: ohne Scrollen“, Z. 1068
 - **HTML:**
-  - Leiste `#seitenNav` mit Markierung `#snZeiger`, Z. 1815
-  - Statistik `#statLeiste` mit `#statRahmen`, Z. 1836
-  - Funktionen `.start-fn`, Z. 1897
-  - Seite `#seiteLernen`, Z. 1909
+  - Leiste `#seitenNav` mit Markierung `#snZeiger`, Z. 1819
+  - Statistik `#statLeiste` mit `#statRahmen`, Z. 1840
+  - Funktionen `.start-fn`, Z. 1901
+  - Seite `#seiteLernen`, Z. 1913
 - **JS:**
-  - `seiteZeigen` samt Übergang, Z. 5119
-  - Markierung `zeigerSetzen`, Z. 5160
-  - Zurück-Taste (`hashchange`), Z. 5187
-  - Statistik antippen und ziehen, Z. 5200
-  - Hinweispunkt in `vgZeigen`, Z. 5744
-  - Einladungslink → Vergleich, Z. 5492
-  - Rückkehr vom Google-Login, Z. 6415
+  - `seiteZeigen` samt Übergang, Z. 5123
+  - Markierung `zeigerSetzen`, Z. 5164
+  - Zurück-Taste (`hashchange`), Z. 5191
+  - Statistik antippen und ziehen, Z. 5204
+  - Hinweispunkt in `vgZeigen`, Z. 5741
+  - Einladungslink → Vergleich, Z. 5491
+  - Rückkehr vom Google-Login, Z. 6417
 - **App:** `lib/widgets/seiten_stapel.dart` (Seitenwechsel), `_OberLeiste` in
   `lib/screens/home_screen.dart` (Markierung ab 900 dp), `lib/widgets/start/stat_leiste.dart`
   (Statistik zum Ziehen).
