@@ -22,9 +22,7 @@ import java.util.Locale
  * - Java-/Kotlin-Abstürze schreibt [absturzFangen] nach
  *   `startschutz/absturz.txt`; danach übernimmt Android wie gewohnt.
  * - Native Abstürze, ANR und Kills meldet Android ab Version 11 über
- *   ApplicationExitInfo, bei nativen Abstürzen samt Tombstone. Die Einträge
- *   bleiben über ein Update erhalten – so taucht auch der Absturz der
- *   Vorgängerversion im ersten Bericht auf.
+ *   ApplicationExitInfo, bei nativen Abstürzen samt Tombstone.
  * - Den laufenden Startschritt schreibt Dart nach `startschutz/schritt.txt`.
  *   Steht dort beim nächsten Start nicht „fertig“, ist der Start abgebrochen.
  *
@@ -32,11 +30,14 @@ import java.util.Locale
  * Anmeldung und Cloud, Vorlesen, Erinnerungen und Werbung); nach einem
  * nativen Absturz zeichnet sie mit Skia statt Impeller. Beides gilt bis zum
  * nächsten Update oder bis „Normal starten“ auf der Konto-Seite.
+ *
+ * Es zählen nur Abstürze der installierten Version: Ein Update kann die
+ * Ursache behoben haben. Frühere Abstürze gehen trotzdem mit der
+ * automatischen Meldung raus ([Absturzmeldung]).
  */
 object Startschutz {
     private const val ORDNER = "startschutz"
     private const val PREFS = "kvm_startschutz"
-    private const val TAG = 86_400_000L
 
     class Stand(
         val sicher: Boolean,
@@ -103,27 +104,25 @@ object Startschutz {
         var skia = !versionNeu && prefs.getBoolean("skia", false)
         var abbrueche = if (versionNeu) 0 else prefs.getInt("abbrueche", 0)
 
+        // Es zählen nur Abstürze dieser Version (seit Installation bzw.
+        // Update); auch der Startschritt der Vorgängerversion zählt nicht.
+        val seit = installiert(context)
         val schritt = lesen(File(dir, "schritt.txt"))
-        val abgebrochen = schritt != null && schritt != "fertig"
+        val abgebrochen = !versionNeu && schritt != null && schritt != "fertig"
         if (abgebrochen) abbrueche++
         val javaDatei = File(dir, "absturz.txt")
-        val java = lesen(javaDatei)
+        val java = lesen(javaDatei)?.takeIf { javaDatei.lastModified() >= seit }
 
-        val jetzt = System.currentTimeMillis()
         val gesehenBis = prefs.getLong("exit_gesehen_bis", 0L)
-        val ersterLauf = gesehenBis == 0L
-        val ausgaenge = if (Build.VERSION.SDK_INT >= 30) ausgaenge(context, gesehenBis) else emptyList()
-        // Beim ersten Lauf zählen für die Entscheidung nur frische Abstürze
-        // (etwa die der gerade ersetzten Version), keine uralten.
-        val abstuerze = ausgaenge.filter { it.absturz && (!ersterLauf || jetzt - it.zeit < 2 * TAG) }
+        val ausgaenge = if (Build.VERSION.SDK_INT >= 30) ausgaenge(context, maxOf(gesehenBis, seit)) else emptyList()
+        val abstuerze = ausgaenge.filter { it.absturz }
         val nativ = abstuerze.any { it.nativ } || (Build.VERSION.SDK_INT < 30 && java == null)
 
         // Abbruch beim Start: belegt durch einen Absturz – oder zweimal in
         // Folge (etwa ein Hänger, den jemand weggewischt hat).
         val startAbsturz = abgebrochen &&
             (java != null || abstuerze.isNotEmpty() || Build.VERSION.SDK_INT < 30 || abbrueche >= 2)
-        val altAbsturz = ersterLauf && abstuerze.isNotEmpty()
-        if (startAbsturz || altAbsturz) {
+        if (startAbsturz) {
             sicher = true
             if (nativ || (abbrueche >= 2 && java == null)) skia = true
         }
@@ -132,7 +131,7 @@ object Startschutz {
         if (neuerBericht) {
             val text = berichtKern(
                 context, version, abgebrochen, schritt, java, ausgaenge,
-                sicher, skia, ersterLauf,
+                sicher, skia,
             )
             File(dir, "bericht.txt").writeText(text)
             protokollAnhaengen(File(dir, "bericht.txt"))
@@ -205,7 +204,6 @@ object Startschutz {
         ausgaenge: List<Ausgang>,
         sicher: Boolean,
         skia: Boolean,
-        ersterLauf: Boolean,
     ): String = buildString {
         appendLine("Meister-Trainer – Absturzbericht")
         appendLine("App ${versionName(context)} ($version) · Android ${Build.VERSION.RELEASE} (API ${Build.VERSION.SDK_INT})")
@@ -214,7 +212,7 @@ object Startschutz {
         appendLine("Erstellt: ${zeit(System.currentTimeMillis())}")
         appendLine(
             if (abgebrochen) "Letzter Start abgebrochen bei Schritt: $schritt"
-            else "Letzter Start: vollständig (oder erster Lauf mit Startschutz)",
+            else "Letzter Start: vollständig (oder erster Lauf dieser Version)",
         )
         appendLine("Jetzt: ${if (sicher) "sicherer Modus" else "normaler Start"} · Grafik ${if (skia) "Skia (Impeller aus)" else "Impeller"}")
         if (java != null) {
@@ -224,10 +222,7 @@ object Startschutz {
         }
         if (ausgaenge.isNotEmpty()) {
             appendLine()
-            appendLine(
-                "== Vom System gemeldete Programmenden (neueste zuerst" +
-                    (if (ersterLauf) ", auch aus früheren Versionen" else "") + ") ==",
-            )
+            appendLine("== Vom System gemeldete Programmenden (neueste zuerst) ==")
             for (a in ausgaenge) appendLine(a.text.trimEnd())
         } else if (Build.VERSION.SDK_INT < 30) {
             appendLine()
@@ -409,6 +404,13 @@ object Startschutz {
         if (Build.VERSION.SDK_INT >= 28) info.longVersionCode else info.versionCode.toLong()
     } catch (_: Throwable) {
         -2L
+    }
+
+    /** Wann diese Version installiert bzw. zuletzt aktualisiert wurde. */
+    internal fun installiert(context: Context): Long = try {
+        context.packageManager.getPackageInfo(context.packageName, 0).lastUpdateTime
+    } catch (_: Throwable) {
+        0L
     }
 
     internal fun versionName(context: Context): String = try {
