@@ -72,6 +72,14 @@ Erfasst werden:
 - **Letzter Startschritt:** Dart schreibt ihn synchron nach `files/startschutz/schritt.txt`.
 - **Eigene Protokollzeilen:** Warnungen und Fehler aus logcat.
 
+Die Berichte gehen außerdem automatisch an Supabase (`Absturzmeldung.kt` → `absturz_melden()`,
+Tabelle `absturzberichte`, siehe `docs/supabase-absturzberichte.sql`). Das passiert ohne Flutter
+und ohne Anmeldung, also auch, wenn die App jedes Mal sofort wieder abstürzt:
+- beim nächsten Prozessstart vor allem anderen: alles Neue seit dem letzten Senden
+- bei Java-Abstürzen schon im Absturz selbst
+
+Lesen lassen sich die Berichte nur im Dashboard.
+
 Nach einem Absturz beim Start läuft die App im **sicheren Modus**: ohne Anmeldung und Cloud,
 Vorlesen, Erinnerungen und Werbung. Der Lernstand lädt immer. Nach einem nativen Absturz zeichnet
 sie außerdem mit Skia statt Impeller. Beides gilt bis zum nächsten Update oder bis „Nächstes Mal

@@ -65,7 +65,10 @@ object Startschutz {
                     appendLine("Startschritt: ${lesen(File(dir, "schritt.txt")) ?: "-"}")
                     append(stapel(fehler))
                 }
-                File(dir, "absturz.txt").writeText(text.take(60_000))
+                val datei = File(dir, "absturz.txt")
+                datei.writeText(text.take(60_000))
+                // Gleich an Supabase – der Prozess endet ohnehin.
+                Absturzmeldung.ausAbsturz(context, datei)
             } catch (_: Throwable) {
             }
             if (vorher != null) {
@@ -174,11 +177,24 @@ object Startschutz {
         return if (text.contains(PROTOKOLL_KOPF)) text else "$text\n\n$PROTOKOLL_KOPF\n${logcat()}"
     }
 
-    private fun prefs(context: Context): SharedPreferences =
+    internal fun prefs(context: Context): SharedPreferences =
         context.getSharedPreferences(PREFS, Context.MODE_PRIVATE)
 
     // ------------------------------------------------------------------
     // Bericht
+
+    /** Kopfzeilen jedes Berichts: App, Gerät, Android, Zeit, Startschutz. */
+    internal fun kopf(context: Context): String = buildString {
+        appendLine("App ${versionName(context)} (${versionCode(context)}) · Android ${Build.VERSION.RELEASE} (API ${Build.VERSION.SDK_INT})")
+        appendLine("Gerät: ${Build.MANUFACTURER} ${Build.MODEL} (${Build.DEVICE}) · ${Build.SUPPORTED_ABIS.joinToString()}")
+        appendLine("Build: ${Build.FINGERPRINT}")
+        appendLine("Erstellt: ${zeit(System.currentTimeMillis())}")
+        val p = prefs(context)
+        appendLine(
+            "Startschutz: Schritt ${lesen(File(ordner(context), "schritt.txt")) ?: "-"} · sicher=${p.getBoolean("sicher", false)}" +
+                " · skia=${p.getBoolean("skia", false)} · Abbrüche=${p.getInt("abbrueche", 0)}",
+        )
+    }
 
     private fun berichtKern(
         context: Context,
@@ -194,6 +210,7 @@ object Startschutz {
         appendLine("Meister-Trainer – Absturzbericht")
         appendLine("App ${versionName(context)} ($version) · Android ${Build.VERSION.RELEASE} (API ${Build.VERSION.SDK_INT})")
         appendLine("Gerät: ${Build.MANUFACTURER} ${Build.MODEL} (${Build.DEVICE}) · ${Build.SUPPORTED_ABIS.joinToString()}")
+        appendLine("Build: ${Build.FINGERPRINT}")
         appendLine("Erstellt: ${zeit(System.currentTimeMillis())}")
         appendLine(
             if (abgebrochen) "Letzter Start abgebrochen bei Schritt: $schritt"
@@ -236,12 +253,20 @@ object Startschutz {
         }
     }
 
-    /** Eigene Protokollzeilen (Android zeigt Apps nur ihre eigenen). */
-    private fun logcat(): String = try {
-        val p = ProcessBuilder(
-            "logcat", "-d", "-v", "threadtime", "-b", "main", "-b", "system", "-b", "crash",
-            "-t", "700", "flutter:I", "*:W",
-        ).redirectErrorStream(true).start()
+    /**
+     * Eigene Protokollzeilen (Android zeigt Apps nur ihre eigenen) – auch die
+     * früherer Prozesse, solange sie noch im Puffer stehen.
+     */
+    internal fun logcat(
+        puffer: List<String> = listOf("main", "system", "crash"),
+        zeilen: Int = 700,
+        filter: List<String> = listOf("flutter:I", "*:W"),
+    ): String = try {
+        val befehl = mutableListOf("logcat", "-d", "-v", "threadtime")
+        puffer.forEach { befehl += listOf("-b", it) }
+        befehl += listOf("-t", zeilen.toString())
+        befehl += filter
+        val p = ProcessBuilder(befehl).redirectErrorStream(true).start()
         val text = p.inputStream.bufferedReader().use { it.readText() }
         p.waitFor()
         if (text.isBlank()) "(leer)\n" else text.takeLast(60_000)
@@ -252,10 +277,10 @@ object Startschutz {
     // ------------------------------------------------------------------
     // ApplicationExitInfo (Android 11+)
 
-    private class Ausgang(val zeit: Long, val absturz: Boolean, val nativ: Boolean, val text: String)
+    internal class Ausgang(val zeit: Long, val absturz: Boolean, val nativ: Boolean, val text: String)
 
     @TargetApi(30)
-    private fun ausgaenge(context: Context, seit: Long): List<Ausgang> {
+    internal fun ausgaenge(context: Context, seit: Long): List<Ausgang> {
         val am = context.getSystemService(ActivityManager::class.java) ?: return emptyList()
         val liste = try {
             am.getHistoricalProcessExitReasons(context.packageName, 0, 12)
@@ -346,7 +371,7 @@ object Startschutz {
     // ------------------------------------------------------------------
     // Hilfen
 
-    private fun lesen(f: File): String? = try {
+    internal fun lesen(f: File): String? = try {
         if (f.exists()) f.readText().trim().ifEmpty { null } else null
     } catch (_: Throwable) {
         null
@@ -376,17 +401,17 @@ object Startschutz {
         return w.toString()
     }
 
-    private fun zeit(ms: Long): String = SimpleDateFormat("dd.MM.yyyy HH:mm:ss", Locale.GERMANY).format(Date(ms))
+    internal fun zeit(ms: Long): String = SimpleDateFormat("dd.MM.yyyy HH:mm:ss", Locale.GERMANY).format(Date(ms))
 
     @Suppress("DEPRECATION")
-    private fun versionCode(context: Context): Long = try {
+    internal fun versionCode(context: Context): Long = try {
         val info = context.packageManager.getPackageInfo(context.packageName, 0)
         if (Build.VERSION.SDK_INT >= 28) info.longVersionCode else info.versionCode.toLong()
     } catch (_: Throwable) {
         -2L
     }
 
-    private fun versionName(context: Context): String = try {
+    internal fun versionName(context: Context): String = try {
         context.packageManager.getPackageInfo(context.packageName, 0).versionName ?: "?"
     } catch (_: Throwable) {
         "?"
