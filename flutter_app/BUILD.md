@@ -59,6 +59,47 @@ flutter build apk --release   # build/app/outputs/flutter-apk/app-release.apk
 - Klein **ohne** diesen Aufschlag: `flutter build apk --release --target-platform android-arm64`
   (≈ 29 MB, nur 64-Bit-ARM, Build-Nummer bleibt wie in `pubspec.yaml`).
 
+## Release-Build: R8-Regeln
+Der Release-Build läuft durch R8 im Vollmodus (Standard seit AGP 8). Dort hält `-keep class X` den
+parameterlosen Konstruktor nicht mehr mit, und ältere Bibliotheken rufen ihn per Reflexion auf.
+Die fehlenden Regeln stehen in `android/app/proguard-rules.pro`. Flutter bindet die Datei
+automatisch ein.
+- **WorkManager** kommt mit AdMob und startet über `androidx.startup` bei jedem Prozessstart. Fehlt
+  der Konstruktor von `WorkDatabase_Impl`, stürzt jede Release-APK sofort ab, noch vor Flutter.
+  Das war der Startabsturz bis 1.1.2:
+  `Unable to get provider androidx.startup.InitializationProvider … Failed to create an instance of androidx.work.impl.WorkDatabase`.
+  R8 benennt die Exception dabei nach `com.google.android.gms.internal.ads.…` um. Das sieht nach
+  AdMob aus, liegt aber an WorkManager.
+- **flutter_local_notifications** speichert geplante Erinnerungen per Gson. Es braucht die Namen
+  der Modellklassen und die generischen Signaturen. Ohne sie scheitert das Einplanen.
+- Debug-Builds und `flutter test` laufen ohne R8 und zeigen solche Fehler nicht.
+
+Kontrolle nach dem Bauen: Der Konstruktor muss im Dex stehen. Die Ausgabe muss `ok` lauten.
+```bash
+unzip -o -q build/app/outputs/flutter-apk/app-release.apk 'classes*.dex' -d /tmp/dex
+$ANDROID_HOME/build-tools/36.0.0/dexdump /tmp/dex/classes*.dex | awk "/Class descriptor.*WorkDatabase_Impl;'/{f=1; next} f&&/Class descriptor/{exit} f&&/name +: '<init>'/{print \"ok\"; exit}"
+```
+
+## Vor dem Verschicken: Release-APK im Emulator starten
+Eine Release-APK wird erst verschickt, wenn sie einmal im Emulator gestartet ist. Das geht auch
+ohne KVM, nur langsam (Booten ≈ 8 min):
+```bash
+sdkmanager "emulator" "system-images;android-30;google_apis;x86_64"
+echo no | avdmanager create avd -n t30 -k "system-images;android-30;google_apis;x86_64" -d pixel_5
+emulator -avd t30 -no-window -no-audio -no-boot-anim -accel off -gpu swiftshader_indirect -no-snapshot -memory 3072 -cores 4 &
+adb wait-for-device; adb root; adb shell setprop pm.dexopt.install verify   # schnelleres Installieren
+adb shell settings put global hide_error_dialogs 1                           # „reagiert nicht“-Dialoge aus
+flutter build apk --release --target-platform android-arm64,android-x64
+adb push build/app/outputs/flutter-apk/app-release.apk /data/local/tmp/a.apk && adb shell pm install -r /data/local/tmp/a.apk
+adb logcat -b crash -c; adb shell am start -n com.kvmtrainer.kvm_trainer/.MainActivity
+adb logcat -b crash -d        # muss leer bleiben
+```
+- Ohne KVM emuliert der Emulator den Prozessor in Software. Zwei Effekte davon betreffen echte
+  Handys nicht:
+  - Flutter kann dort keine PNGs dekodieren („Could not decompress image“). Das Logo fehlt also.
+  - arm64-Bibliotheken scheitern an der ARM-Übersetzung mit SIGILL. Deshalb die x86_64-Variante
+    mitbauen.
+
 ## Absturzbericht und sicherer Modus
 Stürzt die App ab, zeigt sie beim nächsten Start einen Bericht zum Kopieren oder Teilen
 (`android/…/Startschutz.kt`, `Spuren.kt`, `lib/services/startschutz.dart`). Auf der Konto-Seite
@@ -67,8 +108,8 @@ lässt er sich später wieder öffnen.
 Erfasst werden:
 - **Java-/Kotlin-Abstürze:** eigener `UncaughtExceptionHandler` (`KvmApplication`).
 - **Vom System gemeldete Programmenden (ab Android 11):** native Abstürze samt Tombstone, ANR,
-  Speicher-Kills. Das System behält sie über Updates hinweg, deshalb stehen im ersten Bericht
-  auch die Abstürze der Vorversion.
+  Speicher-Kills. Das System behält sie über Updates hinweg. Die Abstürze der Vorversion gehen
+  deshalb auch nach einem Update noch an Supabase.
 - **Letzter Startschritt:** Dart schreibt ihn synchron nach `files/startschutz/schritt.txt`.
 - **Eigene Protokollzeilen:** Warnungen und Fehler aus logcat.
 
@@ -84,6 +125,10 @@ Nach einem Absturz beim Start läuft die App im **sicheren Modus**: ohne Anmeldu
 Vorlesen, Erinnerungen und Werbung. Der Lernstand lädt immer. Nach einem nativen Absturz zeichnet
 sie außerdem mit Skia statt Impeller. Beides gilt bis zum nächsten Update oder bis „Nächstes Mal
 normal starten“ auf der Konto-Seite.
+
+Dafür zählen nur Abstürze der installierten Version, also alles seit Installation bzw. Update.
+Ein Update kann die Ursache behoben haben. Deshalb startet eine neue Version erst einmal normal
+und zeigt keinen Bericht zu Abstürzen der Vorversion. Gemeldet werden diese trotzdem.
 
 Tests:
 - `flutter test test/startschutz_test.dart`
