@@ -1025,22 +1025,26 @@
    frei – sonst rückt alles um dessen Breite, sobald eine Seite länger wird.
    Nur breit; auf dem Handy liegt die Leiste unten und Scrollbalken schweben. */
 @media (min-width:900px){html{scrollbar-gutter:stable}}
-/* Seitenwechsel gleitend in Laufrichtung: die alte Seite gleitet hinaus, die
-   neue herein (View Transitions); ohne diese gleitet nur die neue herein. */
+/* Seitenwechsel gleitend in Laufrichtung – nacheinander, nicht übereinander:
+   Die alte Seite huscht ein Stück hinaus und ist nach 0,12 s weg, erst dann
+   gleitet die neue herein (View Transitions). Gleichzeitig überblendet
+   lagen beide Seiten sichtbar übereinander – auf dem iPhone ein Geisterbild
+   mit ineinandergeschobenen Titeln. Ohne View Transitions gleitet nur die
+   neue Seite herein. */
 :root.seitenwechsel .seite:not([hidden]){view-transition-name:seite}
 ::view-transition-old(root){display:none}
 ::view-transition-new(root){animation:none}
 ::view-transition-group(seite){animation-duration:0s}
-::view-transition-old(seite){animation:seite-raus .2s cubic-bezier(.4,0,1,1) both}
-::view-transition-new(seite){animation:seite-rein .36s cubic-bezier(.2,.8,.2,1) both}
+::view-transition-old(seite){animation:seite-raus .12s cubic-bezier(.4,0,1,1) both}
+::view-transition-new(seite){animation:seite-rein .2s cubic-bezier(.2,.8,.2,1) .12s both}
 :root[data-richtung="zurueck"]::view-transition-old(seite){animation-name:seite-raus-z}
 :root[data-richtung="zurueck"]::view-transition-new(seite){animation-name:seite-rein-z}
-@keyframes seite-raus{to{opacity:0;transform:translateX(-56px)}}
-@keyframes seite-rein{from{opacity:0;transform:translateX(56px)}}
-@keyframes seite-raus-z{to{opacity:0;transform:translateX(56px)}}
-@keyframes seite-rein-z{from{opacity:0;transform:translateX(-56px)}}
-.seite.rein-vor{animation:seite-rein .36s cubic-bezier(.2,.8,.2,1)}
-.seite.rein-zurueck{animation:seite-rein-z .36s cubic-bezier(.2,.8,.2,1)}
+@keyframes seite-raus{to{opacity:0;transform:translateX(-36px)}}
+@keyframes seite-rein{from{opacity:0;transform:translateX(36px)}}
+@keyframes seite-raus-z{to{opacity:0;transform:translateX(36px)}}
+@keyframes seite-rein-z{from{opacity:0;transform:translateX(-36px)}}
+.seite.rein-vor{animation:seite-rein .24s cubic-bezier(.2,.8,.2,1)}
+.seite.rein-zurueck{animation:seite-rein-z .24s cubic-bezier(.2,.8,.2,1)}
 body[data-screen="scrHome"]{padding-bottom:calc(72px + env(safe-area-inset-bottom))}
 @media (min-width:900px){
   body[data-screen="scrHome"]{padding-bottom:40px}
