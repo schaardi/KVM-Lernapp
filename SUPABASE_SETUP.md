@@ -306,6 +306,36 @@ den Abschnitten 5 bis 8 und lässt sich gefahrlos erneut ausführen.
 In der **Datenschutzerklärung** ergänzen: Ergebnisse der Übungsprüfungen (Punkte, Datum,
 Bearbeitungszeit) werden zum geräteübergreifenden Abgleich gespeichert.
 
+## 10. Gemeinsam lernen (optional)
+
+Zwei bis sechs Personen lösen dieselbe Original-Prüfung, jede für sich, Aufgabe für
+Aufgabe. Unter jeder Teilaufgabe sieht man als Sterne, wie die anderen gerade schreiben –
+ohne Inhalt. Ist man mit einer Aufgabe fertig, wird sie festgeschrieben und verglichen:
+eigene Antwort, die der anderen (sobald sie auch fertig sind) und die Lösung, dazu ein
+Prüfauftrag für Claude mit allen Antworten.
+
+Freigeschaltet wird das mit [`docs/supabase-gemeinsam.sql`](docs/supabase-gemeinsam.sql).
+Das Skript ist unabhängig von den Abschnitten 5 bis 9 und lässt sich gefahrlos erneut
+ausführen. Solange es fehlt, blendet die Web-App „Gemeinsam lösen“ aus, sobald jemand
+angemeldet ist.
+
+- **Runden mit Code:** Wer startet, bekommt einen 6-stelligen Code (ohne 0/O/1/I); die
+  anderen treten mit dem Code oder dem Link `…#gemeinsam=CODE` bei. Höchstens 6 Personen je
+  Runde und 10 Runden je Person.
+- **Nur über Funktionen:** Die Tabellen `gemeinsam_runden`, `gemeinsam_teilnehmer` und
+  `gemeinsam_seiten` sind für Clients gesperrt. Antworten anderer zu einer Aufgabe gibt
+  `gemeinsam_stand` erst heraus, wenn man selbst mit dieser Aufgabe fertig ist. Die
+  Konto-ID der anderen sieht niemand, nur eine Kennung je Runde.
+- **Sterne:** Was gerade geschrieben wird, geht nicht über die Datenbank, sondern über
+  Supabase Realtime (öffentlicher Kanal `gemeinsam:<Runden-ID>`, Broadcast und Presence) –
+  und nur als Sterne. Realtime muss im Projekt aktiv sein (Standard).
+- **Aufräumen:** Wer eine Runde verlässt oder das Konto löscht, nimmt die eigenen Antworten
+  mit; die letzte Person nimmt die Runde mit. Runden ohne Aktivität seit 30 Tagen löscht der
+  nächste Start einer Runde.
+
+In der **Datenschutzerklärung** ergänzen: Für gemeinsame Runden werden Anzeigename und die
+Antworten fertiger Aufgaben gespeichert und den anderen Mitgliedern der Runde gezeigt.
+
 ## Apple-Login später
 Die Auth-Architektur ist anbieter-offen (`AuthService`). „Sign in with Apple"
 lässt sich analog ergänzen (Supabase-Provider Apple + `sign_in_with_apple`),
