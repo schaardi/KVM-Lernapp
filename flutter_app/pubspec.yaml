@@ -41,7 +41,6 @@ flutter:
     - assets/data/cases.json
     - assets/data/formulas.json
     - assets/data/anlagen.json
-    - assets/anlagen/
     - assets/branding/app_logo.png
   # Schriften wie im Web (FR-002 J), offline gebündelt – Lizenz: SIL OFL 1.1,
   # siehe assets/fonts/OFL-*.txt.

@@ -17,8 +17,11 @@ import 'package:kvm_trainer/widgets/anlage_tabelle.dart';
 import 'package:kvm_trainer/widgets/werkzeug_dock.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
+import 'pruefdaten.dart';
+
 /// Abläufe im Aufgabenblatt und im Ergebnis nach den Abnahmekriterien von
-/// FR-003 B, FR-007, FR-013 und FR-014.
+/// FR-003 B, FR-007, FR-013 und FR-014 – mit den erfundenen Beispielprüfungen
+/// (gleicher Aufbau wie die Originale, siehe pruefdaten.dart).
 CaseStudy _fall(String id) => DataService.instance.cases.firstWhere((c) => c.id == id);
 
 Future<void> _laden(WidgetTester tester, [Map<String, Object> werte = const {}]) async {
@@ -28,6 +31,7 @@ Future<void> _laden(WidgetTester tester, [Map<String, Object> werte = const {}])
   SharedPreferences.setMockInitialValues(werte);
   await tester.runAsync(() async {
     await DataService.instance.load();
+    beispielEinsetzen();
     await SelectionService.instance.load();
     await ProgressService.instance.load();
     await LerntageService.instance.load();

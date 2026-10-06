@@ -1086,7 +1086,7 @@ body[data-screen="scrHome"]:not([data-seite="konto"]) footer{display:none}
 .stat-kopf{display:grid;grid-template-columns:minmax(0,1fr) auto;grid-template-areas:"k g" "b b";align-items:center;gap:7px 10px;
   padding:9px 10px 9px 12px;cursor:pointer;list-style:none;touch-action:pan-x}
 .stat-kopf::-webkit-details-marker{display:none}
-.stat-kpis{grid-area:k;display:grid;grid-template-columns:repeat(4,minmax(0,auto));justify-content:space-between;gap:6px}
+.stat-kpis{grid-area:k;display:grid;grid-template-columns:repeat(5,minmax(0,auto));justify-content:space-between;gap:6px}
 .stat-leiste .hs{min-width:0}
 .stat-leiste .hs b{display:block;font:700 19px/1 var(--disp);color:var(--petrol-ink-deep)}
 .stat-leiste .hs span{display:block;font-size:10.5px;line-height:1.2;color:var(--muted);margin-top:3px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
@@ -1157,8 +1157,11 @@ body[data-screen="scrHome"]:not([data-seite="konto"]) footer{display:none}
   .seite-start .exam-chance{padding:9px 13px 11px;gap:5px}
   .seite-start .ec-w b{font-size:21px}
 }
-/* Schmale Handys: Kacheltitel und Kennzahlen passen ganz („Kostenwesen“) */
+/* Schmale Handys: Kacheltitel und Kennzahlen passen ganz („Kostenwesen“).
+   Die Lernzeit braucht Platz – „offen“ (= alle minus gesehen) tritt zurück. */
 @media (max-width:380px){
+  .stat-leiste .hs-offen{display:none}
+  .stat-kpis{grid-template-columns:repeat(4,minmax(0,auto))}
   .seite-start .fn{padding-left:7px;padding-right:7px}
   .seite-start .fn-t{font-size:11.5px}
 }
@@ -1476,6 +1479,11 @@ body[data-screen="scrOral"] .toolbar{display:none}
 .ad-dl dd{margin:0;color:var(--ink);overflow-wrap:anywhere}
 .ad-id{font:500 11.5px var(--mono)}
 .ad-akt{display:flex;gap:8px;flex-wrap:wrap;margin:4px 0 8px}
+/* Verwaltung › Prüfungen: Nachricht zur Anfrage, Dateiauswahl */
+.ad-pf-n{flex:1 1 100%;margin:0 0 6px 50px;font-size:12.5px;line-height:1.45;color:var(--ink-soft);font-style:italic;overflow-wrap:anywhere}
+.ad-pf-wahl{position:relative;overflow:hidden;display:inline-flex;align-items:center}
+.ad-pf-wahl input{position:absolute;inset:0;opacity:0;cursor:pointer}
+.ad-pf-wahlt{margin:6px 0 8px;font:600 13px var(--body);color:var(--ink)}
 .ad-tags{display:flex;gap:6px;flex-wrap:wrap;margin:0 0 18px}
 .ad-tag{border:1px solid var(--line);border-radius:999px;padding:4px 10px;font-size:12.5px;color:var(--ink);background:var(--paper)}
 .ad-tag span{color:var(--muted)}
@@ -1498,6 +1506,16 @@ body[data-screen="scrOral"] .toolbar{display:none}
 .ak.voll i{background:linear-gradient(180deg,var(--petrol),var(--petrol-deep))}
 .ak.heute span{color:var(--petrol-ink);font-weight:700}
 .ak span{font:600 9.5px/1 var(--mono);color:var(--muted)}
+/* Lernzeit: Minuten je Tag; geschätzte Tage (vor der Messung) heller und gestreift */
+.lz-chart .ak.voll i{background:linear-gradient(180deg,var(--amber),var(--amber-deep))}
+.lz-chart .ak.schaetz i{background:repeating-linear-gradient(135deg,var(--amber-line) 0 4px,var(--amber-soft) 4px 8px)}
+.lz-info{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin-top:10px}
+.lz-k{border:1px solid var(--line);border-radius:11px;padding:8px 10px;min-width:0}
+.lz-k b{display:block;font:700 17px/1.1 var(--disp);color:var(--ink)}
+.lz-k span{display:block;font-size:11px;line-height:1.3;color:var(--muted);margin-top:2px}
+.lz-arten{grid-column:1/-1;display:flex;flex-wrap:wrap;gap:4px 12px;font-size:11.5px;color:var(--muted)}
+.lz-arten b{color:var(--ink);font-weight:600}
+.lz-hinweis{grid-column:1/-1;margin:0;font-size:11.5px;line-height:1.45;color:var(--muted)}
 
 /* ===== Aufgabentexte: Tabellen, Listen, Rechenzeilen =====
    Die Prüfungstexte liegen als Klartext vor – Tabellenzeilen als „a | b“,
@@ -1644,7 +1662,11 @@ body[data-screen="scrBlatt"] .app{max-width:920px}
 .oas-hint{margin-top:8px;font-size:11.5px;color:var(--muted);line-height:1.45}
 
 /* Prüfung unter Echtbedingungen: Uhr und Abgabe in der Leiste, Hinweisband */
-.bl-uhr{flex:none;font-size:13px;padding:6px 9px}
+.bl-uhr{flex:none;font-size:13px;padding:6px 9px;cursor:pointer;display:inline-flex;align-items:center;gap:5px;min-height:34px}
+.bl-uhr svg{flex:none}
+/* Uhr ohne Zeitlimit: nach der vorgesehenen Zeit läuft sie als Überzeit weiter */
+.timer.ueber{color:var(--amber-ink);background:var(--amber-soft);border-color:var(--amber-line)}
+.timer.aus{color:var(--muted);background:var(--paper);border-color:var(--line)}
 .bl-abgabe{flex:none;border:0;border-radius:9px;background:var(--petrol);color:#fff;font:700 13px var(--body);min-height:36px;padding:0 13px;cursor:pointer}
 .bl-abgabe:hover{background:var(--petrol-deep)}
 .bl-echt{display:flex;gap:10px;align-items:flex-start;margin:0 0 14px;padding:10px 13px;border:1px solid var(--petrol-line);background:var(--petrol-soft);border-radius:11px;font-size:13px;line-height:1.5;color:var(--ink)}
@@ -1884,6 +1906,23 @@ mark.hl.hl-ziel{animation:hl-ziel .8s ease-in-out 3}
 /* Seite Prüfungen: Knopf je Prüfung und Kasten mit eigenen Runden */
 .pr-btn.gm-btn{display:inline-flex;align-items:center;gap:6px;color:var(--violet-ink);border-color:var(--violet-line)}
 .pr-btn.gm-btn:hover{background:var(--violet-soft)}
+/* Original-Prüfungen nur mit Freigabe: Karte statt Liste */
+.pf-karte{border:1px solid var(--petrol-line);background:var(--paper);border-radius:14px;padding:15px 15px 14px;box-shadow:var(--shadow)}
+.pf-kopf{display:flex;align-items:center;gap:10px;margin-bottom:8px}
+.pf-ic{flex:none;width:40px;height:40px;border-radius:12px;display:grid;place-items:center;background:var(--petrol-soft);color:var(--petrol-ink)}
+.pf-kopf h3{margin:0;font:700 18px/1.15 var(--disp);text-transform:uppercase;letter-spacing:.02em;color:var(--ink)}
+.pf-text{margin:0 0 12px;font-size:14px;line-height:1.55;color:var(--ink-soft)}
+.pf-lbl{display:block;margin:0 0 5px;font:700 12.5px var(--body);color:var(--ink)}
+.pf-lbl span{font-weight:500;color:var(--muted)}
+#pfNachricht{display:block;width:100%;box-sizing:border-box;border:1px solid var(--line-strong);border-radius:10px;padding:9px 11px;font:400 14px/1.45 var(--body);background:var(--paper);color:var(--ink);resize:vertical;margin:0 0 10px}
+#pfNachricht:focus{outline:0;border-color:var(--petrol);box-shadow:0 0 0 3px var(--petrol-soft)}
+.pf-akt{display:flex;gap:8px;flex-wrap:wrap}
+.pf-meld{margin:10px 0 0;font-size:13px;color:var(--err-ink)}
+.pf-ds{margin:12px 0 0;font-size:12px;line-height:1.45;color:var(--muted)}
+.pf-ds a{color:var(--petrol-ink)}
+.pf-admin{display:flex;flex-wrap:wrap;align-items:center;gap:8px 12px;padding:10px 12px;margin:0 0 14px;border-radius:12px;border:1px solid var(--petrol-line);background:var(--petrol-soft);font-size:13px;line-height:1.4;color:var(--ink)}
+.pf-admin span{flex:1 1 220px;display:flex;align-items:center;gap:8px}
+.pf-admin svg{flex:none;width:18px;height:18px;color:var(--petrol-ink)}
 .gm-box{border:1px solid var(--violet-line);background:var(--paper);border-radius:14px;padding:13px 14px 14px;margin:0 0 14px;box-shadow:var(--shadow)}
 .gm-box-kopf{display:flex;align-items:center;gap:8px;margin-bottom:6px;color:var(--violet-ink)}
 .gm-box-kopf h3{margin:0;font:700 17px var(--disp);text-transform:uppercase;letter-spacing:.02em;color:var(--ink)}
@@ -2079,8 +2118,9 @@ body.sk-offen{overflow:hidden}
           <span class="stat-kpis" role="group" aria-label="Dein Stand">
             <span class="hs"><b id="pMastered">0</b><span>gemeistert</span></span>
             <span class="hs"><b id="pSeen">0</b><span>gesehen</span></span>
-            <span class="hs"><b id="pOpen">0</b><span>offen</span></span>
+            <span class="hs hs-offen"><b id="pOpen">0</b><span>offen</span></span>
             <span class="hs"><b id="pStreak">0</b><span>Tage in Folge</span></span>
+            <span class="hs"><b id="pZeit">0</b><span id="pZeitL">Std. gelernt</span></span>
           </span>
           <span class="stat-griff"><span class="stat-griff-t">Statistik</span><svg class="ic-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></span>
           <span class="prog-bar" aria-hidden="true"><span class="fill" id="pFill" style="width:0%"></span></span>
@@ -2096,6 +2136,9 @@ body.sk-offen{overflow:hidden}
           </div>
           <p class="h-sub h-sub-gap">Aktivität · 14 Tage <span class="h-scope" id="aktivSumme"></span></p>
           <div class="aktiv" id="aktivChart"></div>
+          <p class="h-sub h-sub-gap">Lernzeit · 14 Tage <span class="h-scope" id="lzSumme"></span></p>
+          <div class="aktiv lz-chart" id="lzChart"></div>
+          <div class="lz-info" id="lzInfo"></div>
           <p class="prog-note" id="pNote"></p>
           <p class="h-sub h-sub-gap">Erfolge <span class="h-scope" id="erfolgeN"></span></p>
           <div class="erfolge" id="erfolgeList"></div>
@@ -2326,7 +2369,7 @@ body.sk-offen{overflow:hidden}
       <div class="bl-bar">
         <button class="iconbtn" id="blQuit" title="Prüfung verlassen" aria-label="Prüfung verlassen">✕</button>
         <div class="bl-stepper" id="blStepper" role="tablist" aria-label="Aufgaben dieser Prüfung"></div>
-        <span class="timer bl-uhr" id="blUhr" role="timer" aria-label="Verbleibende Zeit" hidden></span>
+        <button type="button" class="timer bl-uhr" id="blUhr" aria-label="Verbleibende Zeit" hidden></button>
         <button type="button" class="bl-abgabe" id="blAbgabe" hidden>Abgeben</button>
       </div>
       <div class="bl-prog-zeile">
@@ -2560,7 +2603,6 @@ body.sk-offen{overflow:hidden}
 </div>
 
 <script src="data/questions.js"></script>
-<script src="data/anlagen.js"></script>
 <script src="data/cases.js"></script>
 <script>
 (function(){
@@ -2915,7 +2957,8 @@ var ERF_IC={
   kalender:'<rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4M9 15l2 2 4-4"/>',
   ziel:'<circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.5"/>',
   papier:'<path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M9 14l2 2 4-4"/>',
-  pokal:'<path d="M8 21h8M12 17v4M7 4h10v5a5 5 0 0 1-10 0zM17 5h3v2a3 3 0 0 1-3 3M7 5H4v2a3 3 0 0 0 3 3"/>'
+  pokal:'<path d="M8 21h8M12 17v4M7 4h10v5a5 5 0 0 1-10 0zM17 5h3v2a3 3 0 0 1-3 3M7 5H4v2a3 3 0 0 0 3 3"/>',
+  uhr:'<circle cx="12" cy="13" r="8"/><path d="M12 9v4l2 2M9 2h6"/>'
 };
 function erfolgeListe(){
   var seen=0,mastered=0;
@@ -2930,7 +2973,7 @@ function erfolgeListe(){
     c.steps.forEach(function(st){if(st.id in pts){bewertet++;sum+=pts[st.id]|0;}});
     if(sum>besteP)besteP=sum;
   });
-  var s=serie();
+  var s=serie(),stunden=Math.floor(lzStand().gesamt/360)/10;
   return [
     {ic:'schritt',t:'Erste Schritte',d:'10 Fragen beantwortet',v:beantwortet,z:10},
     {ic:'blitz',t:'Am Ball',d:'250 Antworten gegeben',v:beantwortet,z:250},
@@ -2941,7 +2984,10 @@ function erfolgeListe(){
     {ic:'kalender',t:'Wochenserie',d:'7 Lerntage in Folge',v:s,z:7},
     {ic:'ziel',t:'Fachprofi',d:'ein Fach auf Grün',v:Math.round(best*100),z:70},
     {ic:'papier',t:'Prüfungsluft',d:'erste Prüfungsaufgabe bewertet',v:bewertet,z:1},
-    {ic:'pokal',t:'Bestanden',d:'50 Punkte in einer Original-Prüfung',v:besteP,z:50}
+    {ic:'pokal',t:'Bestanden',d:'50 Punkte in einer Original-Prüfung',v:besteP,z:50},
+    {ic:'uhr',t:'Erste Stunde',d:'1 Stunde gelernt',v:stunden,z:1},
+    {ic:'uhr',t:'Zehn Stunden',d:'10 Stunden gelernt',v:stunden,z:10},
+    {ic:'uhr',t:'Hundert Stunden',d:'100 Stunden gelernt',v:stunden,z:100}
   ];
 }
 function renderErfolge(){
@@ -3010,7 +3056,7 @@ function renderPruefChance(){
   box.hidden=false;
 }
 $("pruefChance").addEventListener("click",function(){window.KVM_seite('pruefungen');});
-function renderHomeExtras(){renderHero();renderErfolge();renderAktiv();renderPruefLast();renderPruefChance();
+function renderHomeExtras(){renderHero();renderErfolge();renderAktiv();renderLernzeit();renderPruefLast();renderPruefChance();
   if(window.KVM_vergleich)window.KVM_vergleich();}
 
 function renderSubChips(){
@@ -3377,18 +3423,20 @@ function tabHTML(tab,opt){
     'sie werden gespeichert und beim Aufdecken mit der amtlichen Lösung verglichen.</p>';
   return h;
 }
-/* Bildanlagen liegen einmal zentral in window.KVM_ANLAGEN (data/anlagen.js);
-   die Teilaufgabe verweist über den Schlüssel darauf. Das Verzeichnis kennt
-   nur den Dateinamen – die Bilder liegen als Dateien in anlagen/. Ältere
-   Einträge tragen eine Data-URI direkt; beides wird hier aufgelöst. */
-var ANLAGEN_DIR='anlagen/';
+/* Bildanlagen liegen einmal zentral in window.KVM_ANLAGEN; die Teilaufgabe
+   verweist über den Schlüssel darauf. Die Bilder der Original-Prüfungen kommen
+   mit der Freigabe aus dem privaten Bucket – u ist der signierte Link und
+   fehlt, bis er da ist (siehe pfLinks). Ältere Einträge tragen eine Data-URI
+   direkt; beides wird hier aufgelöst. */
 function anlageBild(ref){
   if(!ref)return null;
   if(ref.indexOf('data:')===0)return {u:ref,t:'',w:0,h:0};
   var a=(window.KVM_ANLAGEN||{})[ref];
   if(!a)return null;
-  return {u:a.u||(ANLAGEN_DIR+a.f),t:a.t||'',w:a.w||0,h:a.h||0};
+  return {u:a.u||'',t:a.t||'',w:a.w||0,h:a.h||0};
 }
+/* src des Bildes – oder nur der Schlüssel, solange der Link fehlt */
+function bildQuelle(a,ref){return (a.u?' src="'+esc(a.u)+'"':'')+' data-anlage="'+esc(ref)+'"';}
 /* Für den KI-Export in anderen Modulen. */
 window.KVM_anlageTitel=function(ref){var a=anlageBild(ref);return a?(a.t||'Anlage zur Aufgabe'):'';};
 function bildHTML(ref,fallbackTitel){
@@ -3396,7 +3444,7 @@ function bildHTML(ref,fallbackTitel){
   var titel=a.t||fallbackTitel||'Anlage zur Aufgabe';
   /* Breite/Höhe halten den Platz frei, solange das Bild lädt. */
   var masse=(a.w&&a.h)?(' width="'+a.w+'" height="'+a.h+'"'):'';
-  return '<figure class="msg-img"><img src="'+a.u+'"'+masse+' alt="'+esc(titel)+'" loading="lazy">'+
+  return '<figure class="msg-img"><img'+bildQuelle(a,ref)+masse+' alt="'+esc(titel)+'" loading="lazy">'+
          '<figcaption>'+esc(titel)+'</figcaption></figure>';
 }
 
@@ -4214,7 +4262,7 @@ function blAnlagenHTML(auf){
   if(auf.bild){
     var a=anlageBild(auf.bild);
     if(a)h+='<div class="bl-anlagen"><figure class="bl-thumb" data-bild="'+esc(auf.bild)+'">'+
-      '<img src="'+a.u+'"'+((a.w&&a.h)?(' width="'+a.w+'" height="'+a.h+'"'):'')+
+      '<img'+bildQuelle(a,auf.bild)+((a.w&&a.h)?(' width="'+a.w+'" height="'+a.h+'"'):'')+
       ' alt="'+esc(a.t||'Anlage zur Aufgabe')+'" loading="lazy">'+
       '<figcaption>'+esc(a.t||'Anlage zur Aufgabe')+' · antippen zum Vergrößern</figcaption></figure></div>';
   }
@@ -4455,10 +4503,14 @@ function skStart(el,nachher){
   }
   function laden(){
     if(d.bg!=='anlage'||!ref||bild){groesse();return;}
+    var u=anlageBild(ref).u;
+    /* Link aus dem Bucket noch nicht da: ohne Hintergrund zeichnen, dann nachladen */
+    if(!u){pf.bildWarte.push(laden);groesse();return;}
     var img=new Image();
+    img.crossOrigin='anonymous';   /* sonst ließe sich die Fläche nicht als Bild speichern */
     img.onload=function(){bild=img;groesse();};
     img.onerror=function(){d.bg='karo';groesse();};
-    img.src=anlageBild(ref).u;
+    img.src=u;
     groesse();
   }
   function speichern(){skSet(id,d);if(nachher)nachher(id);}
@@ -4568,7 +4620,7 @@ function skAufCanvas(cv,id,d,titel){
     cv.width=w;cv.height=Math.max(1,Math.round(w*H/SK_B));
     skMalen(cv,d.els,H,bild);
   }
-  if(bg==='anlage'){var img=new Image();img.onload=function(){bild=img;malen();};img.src=anlageBild(skAnlageRef(q)).u;}
+  if(bg==='anlage'){var u=anlageBild(skAnlageRef(q)).u;if(u){var img=new Image();img.crossOrigin='anonymous';img.onload=function(){bild=img;malen();};img.src=u;}}
   malen();
   cv.onclick=function(){lbOeffnen(cv.toDataURL('image/png'),titel);};
 }
@@ -4731,7 +4783,7 @@ function blBinden(){
   box.querySelectorAll('.bl-thumb, .msg-img').forEach(function(f){
     var img=f.querySelector('img');if(!img)return;
     f.style.cursor='zoom-in';
-    f.onclick=function(){lbOeffnen(img.getAttribute('src'),
+    f.onclick=function(){if(!img.getAttribute('src'))return;lbOeffnen(img.getAttribute('src'),
       (f.querySelector('figcaption')||{textContent:''}).textContent.replace(' · antippen zum Vergrößern',''));};
   });
   box.querySelectorAll('[data-gewusst]').forEach(function(sc){
@@ -4988,8 +5040,12 @@ function echtLeeren(ids){
 }
 function echtUhr(){
   var el=$("blUhr"),ab=$("blAbgabe"),e=echtAktiv();
-  if(!e||$("scrBlatt").hidden){el.hidden=true;ab.hidden=true;if(!e){clearInterval(echtTimer);echtTimer=null;}return;}
-  el.hidden=false;
+  if(!e||$("scrBlatt").hidden){
+    ab.hidden=true;if(!e){clearInterval(echtTimer);echtTimer=null;}
+    /* Ohne Prüfungsbedingungen: die Uhr ohne Zeitlimit (Lernzeit und Prüfungsuhr) */
+    if($("scrBlatt").hidden)el.hidden=true;else{el._h=null;uhrZeigen();}
+    return;}
+  el.hidden=false;el._h=null;el.className='timer bl-uhr';el.title='';
   if(e.ende){el.textContent=dauerText(e.ende-e.start);el.classList.remove('low');el.setAttribute('aria-label','Bearbeitungszeit');ab.hidden=true;
     clearInterval(echtTimer);echtTimer=null;return;}
   var rest=e.start+e.min*60000-Date.now();
@@ -5122,6 +5178,7 @@ function peDurchgang(c,echt){
   /* Gemeinsam gelöst: eigener Durchgang je Runde, der allein gelöste bleibt. */
   var r={k:gm.runde?('g-'+gm.runde.id):peLauf(c.id),id:c.id,t:Date.now(),pkt:pkt,max:max,bew:bew,teile:teile,echt:echt?1:0};
   if(echt){r.dauer=Math.max(0,echt.ende-echt.start);r.min=echt.min|0;}
+  else{var u=uhrMs(gm.runde?'g-'+gm.runde.id:c.id);if(u>=1000)r.dauer=Math.min(Math.round(u),86400000);}
   return r;
 }
 /* Erster gewerteter Durchgang je Prüfung (Liste ist nach Zeit sortiert). */
@@ -5214,6 +5271,7 @@ function peNeuStarten(id){
   if(e)echtSet(null);
   echtLeeren((c.steps||[]).map(function(x){return x.id;}));
   peLauf(id,true);
+  uhrZuruecksetzen(id);
   startRound('cases',id,0);
   return true;
 }
@@ -5320,6 +5378,212 @@ function blExport(nr){
   return L.join('\n');
 }
 
+/* ===== Lernzeit und Prüfungsuhr =====
+   Lernzeit läuft, solange ein Lernbildschirm offen ist – Fragen samt Ergebnis
+   (f), Aufgabenblatt von Prüfungen und Fallaufgaben (p), Mündlich (m),
+   Lehrgang Kostenwesen, Gefahrgut und Formelbuch (l) –, die Seite zu sehen ist
+   und in den letzten 10 Minuten getippt, geklickt oder gescrollt wurde. Länger
+   ohne Eingabe ist Pause. Gespeichert wird je Tag und Art in Sekunden:
+   kvm_lernzeit {Tag: {p, f, m, l}}, Tag wie bei den Lerntagen. Die Zeit vor der
+   ersten Messung schätzt lzVorher() einmal aus dem, was schon gespeichert ist.
+   Prüfungsuhr: Im Aufgabenblatt zählt dieselbe Zeit je Prüfung bzw.
+   Fallaufgabe mit, in einer gemeinsamen Runde je Runde (kvm_uhr {Schlüssel: ms}).
+   Ohne Prüfungsbedingungen zählt sie gegen die vorgesehene Zeit herunter und
+   läuft danach als Überzeit weiter – die Prüfung endet nicht. Ein Tipp wechselt
+   zwischen Restzeit, Bearbeitungszeit und aus. „Neu starten“ setzt sie zurück,
+   „Zum Ergebnis“ übernimmt sie als Bearbeitungszeit in den Durchgang. */
+var LZ_KEY='kvm_lernzeit',LZ_VOR_KEY='kvm_lernzeit_vorher',UHR_KEY='kvm_uhr',UHR_MODUS_KEY='kvm_uhr_modus';
+var LZ_PAUSE=10*60000,LZ_ANTWORT_S=45;
+var LZ_ARTEN=[['p','Prüfungen und Fallaufgaben'],['f','Fragen'],['m','Mündlich'],['l','Lehrgänge und Formelbuch']];
+var lz={aktiv:Date.now(),letzt:Date.now(),puffer:{},uhrP:{},gesichert:Date.now(),ueber:{},gmLaeuft:false};
+var UHR_IC='<svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l2 2M9 2h6"/></svg>';
+function lzLesen(k){try{var d=JSON.parse(localStorage.getItem(k)||'{}');return (d&&typeof d==='object'&&!Array.isArray(d))?d:{};}catch(e){return {};}}
+function lzTagVon(ms){return Math.floor((ms-new Date(ms).getTimezoneOffset()*60000)/864e5);}
+/* Gepuffertes speichern – höchstens alle 15 s und beim Verlassen der Seite.
+   Bruchteile einer Sekunde bleiben im Puffer. */
+function lzSichern(){
+  var p=lz.puffer,u=lz.uhrP,rest={};lz.puffer={};lz.uhrP={};lz.gesichert=Date.now();
+  if(Object.keys(p).length){
+    var d=lzLesen(LZ_KEY);
+    Object.keys(p).forEach(function(tag){Object.keys(p[tag]).forEach(function(a){
+      var ms=p[tag][a],s=Math.floor(ms/1000);
+      if(s>0){var z=d[tag]||(d[tag]={});z[a]=(+z[a]||0)+s;}
+      if(ms-s*1000>0)(rest[tag]=rest[tag]||{})[a]=ms-s*1000;});});
+    try{localStorage.setItem(LZ_KEY,JSON.stringify(d));}catch(e){}
+    lz.puffer=rest;
+  }
+  if(Object.keys(u).length){
+    var x=lzLesen(UHR_KEY);Object.keys(u).forEach(function(k){x[k]=(+x[k]||0)+u[k];});
+    try{localStorage.setItem(UHR_KEY,JSON.stringify(x));}catch(e){}
+  }
+}
+/* Gemessene Sekunden je Tag und je Art, mit dem noch Gepufferten */
+function lzGemessen(){
+  var d=lzLesen(LZ_KEY),tage={},arten={};
+  function dazu(t,a,s){if(!(s>0))return;tage[t]=(tage[t]||0)+s;arten[a]=(arten[a]||0)+s;}
+  Object.keys(d).forEach(function(t){var z=d[t]||{};LZ_ARTEN.forEach(function(x){dazu(t,x[0],+z[x[0]]||0);});});
+  Object.keys(lz.puffer).forEach(function(t){var z=lz.puffer[t];Object.keys(z).forEach(function(a){dazu(t,a,z[a]/1000);});});
+  return {tage:tage,arten:arten};
+}
+/* Was vor der ersten Messung lag, lässt sich nur schätzen. Beim ersten Start
+   dieser Version wird festgehalten (kvm_lernzeit_vorher):
+   a – beantwortete Fragen je Tag (Lerntage, die letzten 120 Tage) × 45 s,
+   e – Prüfungen unter Prüfungsbedingungen: deren Bearbeitungszeit ist genau,
+   g – gemeinsame Runden, nachgereicht sobald sie geladen sind: aus den
+       Zeitpunkten, zu denen die eigenen Aufgaben fertig waren (Abstände bis
+       60 min zählen, die erste Aufgabe einer Sitzung mit dem Mittel der übrigen).
+   Je Tag gilt der größere Wert aus a und e + g, denn bewertete Aufgaben im
+   Aufgabenblatt zählen auch als Antworten. */
+function lzVorher(){
+  var v=null;try{v=JSON.parse(localStorage.getItem(LZ_VOR_KEY)||'null');}catch(e){}
+  if(v&&v.seit&&v.a&&v.e&&v.g)return v;
+  var jetzt=Date.now(),t=tageAll(),a={},e={},n=0;
+  Object.keys(t).forEach(function(k){var x=+t[k]||0;if(x>0){a[k]=x*LZ_ANTWORT_S;n+=x;}});
+  peAll().forEach(function(x){if(x&&x.echt&&x.dauer>0&&x.t){var d=lzTagVon(x.t);e[d]=(e[d]||0)+Math.round(x.dauer/1000);}});
+  v={seit:jetzt,n:n,a:a,e:e,g:{}};
+  try{localStorage.setItem(LZ_VOR_KEY,JSON.stringify(v));}catch(err){}
+  return v;
+}
+function lzVorherTage(){
+  var v=lzVorher(),out={};
+  var tage={};[v.a,v.e].forEach(function(m){Object.keys(m).forEach(function(k){tage[k]=1;});});
+  Object.keys(v.g).forEach(function(r){Object.keys(v.g[r]||{}).forEach(function(k){tage[k]=1;});});
+  Object.keys(tage).forEach(function(k){
+    var gs=0;Object.keys(v.g).forEach(function(r){gs+=+((v.g[r]||{})[k])||0;});
+    var s=Math.max(+v.a[k]||0,(+v.e[k]||0)+gs);if(s>0)out[k]=s;
+  });
+  return out;
+}
+/* Gemeinsame Runden: Zeit aus den Fertig-Zeitpunkten der eigenen Aufgaben */
+function lzGemeinsamNachtragen(){
+  if(lz.gmLaeuft||!gm.meine||!gm.meine.length)return;
+  var v=lzVorher(),offen=gm.meine.filter(function(r){return r&&r.id&&!(r.id in v.g);});
+  if(!offen.length)return;
+  lz.gmLaeuft=true;
+  var kette=Promise.resolve();
+  offen.forEach(function(r){kette=kette.then(function(){
+    return gmRpc('gemeinsam_stand',{p_runde:r.id}).then(function(d){
+      var w=lzVorher(),g={};
+      var ts=((d&&d.seiten)||[]).filter(function(s){return s.tid===d.ich;}).map(function(s){return Date.parse(s.fertig_am);})
+        .filter(function(x){return isFinite(x)&&x<w.seit;}).sort(function(x,y){return x-y;});
+      var luecken=[];for(var i=1;i<ts.length;i++){var l=ts[i]-ts[i-1];if(l<=3600000)luecken.push(l);}
+      var mittel=luecken.length?Math.min(1800000,luecken.reduce(function(s,x){return s+x;},0)/luecken.length):900000;
+      ts.forEach(function(x,i){var l=i?x-ts[i-1]:Infinity,dauer=l<=3600000?l:mittel,tag=lzTagVon(x);g[tag]=(g[tag]||0)+Math.round(dauer/1000);});
+      w.g[r.id]=g;try{localStorage.setItem(LZ_VOR_KEY,JSON.stringify(w));}catch(e){}
+    },function(){});
+  });});
+  kette.then(function(){lz.gmLaeuft=false;renderLernzeit();});
+}
+/* Gerade ein Lernbildschirm offen? Liefert die Art oder null. */
+function lzArt(){
+  if(document.hidden)return null;
+  var s=document.body.getAttribute('data-screen');
+  if(s==='scrBlatt')return 'p';
+  if(s==='scrQuiz'||s==='scrResult')return state.mode==='cases'?'p':'f';
+  if(s==='scrOral')return 'm';
+  if(!$("mKW").hidden||!$("mADR").hidden||!$("mFormula").hidden)return 'l';
+  return null;
+}
+function uhrSchluessel(){return gm.runde?'g-'+gm.runde.id:((state.fall&&state.fall.id)||'');}
+function uhrMs(k){return k?(+lzLesen(UHR_KEY)[k]||0)+(lz.uhrP[k]||0):0;}
+function uhrZuruecksetzen(k){
+  delete lz.uhrP[k];delete lz.ueber[k];
+  var x=lzLesen(UHR_KEY);if(k in x){delete x[k];try{localStorage.setItem(UHR_KEY,JSON.stringify(x));}catch(e){}}
+}
+/* Vorgesehene Zeit: nur Original-Prüfungen haben eine */
+function uhrSoll(){var f=state.fall;return f&&/^P-/.test(f.id||'')?echtMinuten(f)*60000:0;}
+function uhrModus(){var m='';try{m=localStorage.getItem(UHR_MODUS_KEY)||'';}catch(e){}if(!/^(rest|zeit|aus)$/.test(m))m='rest';return (m==='rest'&&!uhrSoll())?'zeit':m;}
+function uhrZeigen(){
+  var el=$("blUhr");if(!el||$("scrBlatt").hidden||!state.fall||echtAktiv())return;
+  var k=uhrSchluessel(),ms=uhrMs(k),soll=uhrSoll(),m=uhrModus(),ueber=!!soll&&ms>=soll,h,lbl;
+  if(m==='aus'){h=UHR_IC;lbl='Uhr ausgeblendet – sie zählt weiter. Tippen zum Einblenden';}
+  else if(m==='rest'){h=UHR_IC+'<span>'+(ueber?'+'+uhrText(ms-soll):uhrText(soll-ms))+'</span>';
+    lbl=(ueber?'Vorgesehene Zeit von '+dauerText(soll)+' um, '+dauerText(ms-soll)+' darüber':'Noch '+dauerText(soll-ms)+' von '+dauerText(soll))+
+      ' – die Prüfung endet nicht. Tippen: Bearbeitungszeit';}
+  else{h=UHR_IC+'<span>'+uhrText(ms)+'</span>';lbl='Bearbeitungszeit '+dauerText(ms)+(soll?' von '+dauerText(soll):'')+'. Tippen: Uhr ausblenden';}
+  var kl='timer bl-uhr'+(m==='aus'?' aus':(ueber?' ueber':''));
+  if(el._h!==h){el.innerHTML=h;el._h=h;}
+  if(el.className!==kl)el.className=kl;
+  if(el.getAttribute('aria-label')!==lbl){el.setAttribute('aria-label',lbl);el.title=lbl;}
+  el.hidden=false;
+  /* Einmal Bescheid geben, wenn die vorgesehene Zeit gerade um ist */
+  if(ueber&&!lz.ueber[k]){lz.ueber[k]=1;
+    if(ms-soll<5000)gmMeldung('Die vorgesehenen '+dauerText(soll)+' sind um. Die Uhr läuft als Überzeit weiter – mach in Ruhe fertig.');}
+}
+$("blUhr").addEventListener('click',function(){
+  var e=echtAktiv();
+  if(e){gmMeldung(e.ende?'Bearbeitungszeit dieses Durchgangs unter Prüfungsbedingungen.':'Unter Prüfungsbedingungen läuft die Uhr bis zur Abgabe.');return;}
+  var soll=uhrSoll(),m=uhrModus(),n=soll?{rest:'zeit',zeit:'aus',aus:'rest'}[m]:{zeit:'aus',aus:'zeit'}[m];
+  try{localStorage.setItem(UHR_MODUS_KEY,n);}catch(err){}
+  uhrZeigen();
+  gmMeldung(n==='aus'?'Uhr ausgeblendet – sie zählt weiter.':(n==='zeit'?'Bearbeitungszeit: '+dauerText(uhrMs(uhrSchluessel())):
+    'Restzeit bis zum Ende der vorgesehenen '+dauerText(soll)+'.'));
+});
+function lzTakt(){
+  var jetzt=Date.now(),dt=jetzt-lz.letzt;lz.letzt=jetzt;
+  var art=(dt>0&&dt<5000&&jetzt-lz.aktiv<LZ_PAUSE)?lzArt():null;
+  if(art){
+    var tag=todayIdx(),z=lz.puffer[tag]||(lz.puffer[tag]={});z[art]=(z[art]||0)+dt;
+    if(art==='p'&&state.fall&&!$("scrBlatt").hidden&&!echtAktiv()){var k=uhrSchluessel();if(k)lz.uhrP[k]=(lz.uhrP[k]||0)+dt;}
+  }
+  if(jetzt-lz.gesichert>15000)lzSichern();
+  if(!$("scrBlatt").hidden)uhrZeigen();
+}
+['pointerdown','keydown','wheel','touchstart','input','scroll'].forEach(function(ev){
+  document.addEventListener(ev,function(){lz.aktiv=Date.now();},{passive:true,capture:true});});
+document.addEventListener('visibilitychange',function(){
+  if(document.hidden)lzSichern();else{lz.letzt=lz.aktiv=Date.now();}});
+window.addEventListener('pagehide',lzSichern);
+setInterval(lzTakt,1000);
+
+/* Anzeige: Kennzahl in der Statistikleiste, 14 Tage und Summen */
+function lzStunden(s){var h=s/3600;return h<9.95?(Math.round(h*10)/10).toLocaleString('de-DE'):fmtN(Math.round(h));}
+function lzDauer(s){var m=Math.round(s/60),h=Math.floor(m/60);m%=60;return h?(fmtN(h)+' h'+(m?' '+m+' min':'')):(m+' min');}
+function lzStand(){
+  var g=lzGemessen(),v=lzVorherTage(),gesamt=0,vorher=0,tage={};
+  Object.keys(g.tage).forEach(function(k){tage[k]=(tage[k]||0)+g.tage[k];gesamt+=g.tage[k];});
+  Object.keys(v).forEach(function(k){tage[k]=(tage[k]||0)+v[k];gesamt+=v[k];vorher+=v[k];});
+  return {tage:tage,gemessen:g,vorher:vorher,vorherTage:v,gesamt:gesamt};
+}
+function renderLernzeit(){
+  var st=lzStand(),z=$("pZeit");
+  if(z){z.textContent=lzStunden(st.gesamt);
+    var kpi=z.parentNode;kpi.title='Lernzeit gesamt: '+lzDauer(st.gesamt)+(st.vorher>=60?' – davon ≈ '+lzDauer(st.vorher)+' geschätzt (vor der Messung)':'');}
+  var box=$("lzChart");if(!box)return;
+  var heute=todayIdx(),max=60,sum=0,h='',v=st.vorherTage;
+  for(var i=13;i>=0;i--){var x=st.tage[heute-i]||0;if(x>max)max=x;sum+=x;}
+  for(var j=13;j>=0;j--){
+    var d=heute-j,s=st.tage[d]||0,dt=new Date(Date.now()-j*86400000),schaetz=(v[d]||0)>s/2;
+    h+='<div class="ak'+(s?' voll':'')+(schaetz?' schaetz':'')+(j===0?' heute':'')+'" title="'+(j===0?'Heute':dt.toLocaleDateString('de-DE',{weekday:'long',day:'numeric',month:'numeric'}))+': '+
+       (s?(schaetz?'≈ ':'')+lzDauer(s)+(schaetz?' (geschätzt)':''):'keine Lernzeit')+'">'+
+       '<i style="height:'+(s?Math.max(6,Math.round(s/max*78)):3)+'px"></i><span>'+WTAG[dt.getDay()]+'</span></div>';
+  }
+  box.innerHTML=h;box.setAttribute('role','img');
+  box.setAttribute('aria-label','Lernzeit der letzten 14 Tage: '+lzDauer(sum));
+  var su=$("lzSumme");if(su)su.textContent=sum>=60?lzDauer(sum)+' in 14 Tagen':'';
+  /* Woche ab Montag */
+  var wt=(new Date().getDay()+6)%7,woche=0;for(var k=0;k<=wt;k++)woche+=st.tage[heute-k]||0;
+  var A=st.gemessen.arten,arten=LZ_ARTEN.filter(function(x){return (A[x[0]]||0)>=60;});
+  var vor=lzVorher(),seit=new Date(vor.seit).toLocaleDateString('de-DE',{day:'numeric',month:'long',year:'numeric'});
+  var info=$("lzInfo");
+  if(info)info.innerHTML='<div class="lz-k"><b>'+lzDauer(st.tage[heute]||0)+'</b><span>heute</span></div>'+
+    '<div class="lz-k"><b>'+lzDauer(woche)+'</b><span>diese Woche</span></div>'+
+    '<div class="lz-k"><b>'+lzDauer(st.gesamt)+'</b><span>gesamt'+(st.vorher>=60?', davon ≈ '+lzDauer(st.vorher)+' geschätzt':'')+'</span></div>'+
+    (arten.length?'<p class="lz-arten">'+arten.map(function(x){return x[1]+' <b>'+lzDauer(A[x[0]])+'</b>';}).join('<span aria-hidden="true">·</span>')+'</p>':'')+
+    '<p class="lz-hinweis">Gemessen seit '+esc(seit)+': die Zeit mit offenen Fragen, Prüfungen, Mündlich oder Lehrgang – ohne Pausen ab 10 Minuten ohne Eingabe. '+
+    (st.vorher>=60?'Davor geschätzt aus '+lzQuellen(vor)+'. ':'')+
+    'Die Lernzeit bleibt auf diesem Gerät.</p>';
+}
+/* Woraus die Zeit vor der Messung geschätzt ist – für den Hinweis */
+function lzQuellen(v){
+  var q=[];
+  if(v.n)q.push(fmtN(v.n)+' Antworten (je '+LZ_ANTWORT_S+' s)');
+  if(Object.keys(v.e).length)q.push('den Prüfungen unter Prüfungsbedingungen');
+  if(Object.keys(v.g).some(function(r){return Object.keys(v.g[r]||{}).length;}))q.push('den gemeinsamen Runden');
+  return q.length>1?q.slice(0,-1).join(', ')+' und '+q[q.length-1]:(q[0]||'den bisherigen Daten');
+}
+window.KVM_uhrMs=function(id){return uhrMs(id);};
+
 /* ===== Lightbox ===== */
 var lbNat=0,lbScale=1;
 function lbOeffnen(src,titel){
@@ -5421,6 +5685,9 @@ function finishRound(timeUp){
   if(echt&&echt.ende&&pointBased){
     $("resLine").innerHTML+=" · Bearbeitungszeit "+dauerText(echt.ende-echt.start)+" von "+dauerText(echt.min*60000)+(echt.zeitUm?" (Zeit abgelaufen)":"");
     echtSet(null);
+  }else if(state.mode==='cases'&&state.fall&&pointBased){
+    var uz=uhrMs(uhrSchluessel()),us=uhrSoll();
+    if(uz>=60000)$("resLine").innerHTML+=" · Bearbeitungszeit "+dauerText(uz)+(us?" (vorgesehen "+dauerText(us)+")":"");
   }
   $("btnAgain").textContent=pruef?"Prüfung neu starten":"Neue Runde starten";
   $("btnResListe").hidden=!pruef;
@@ -5478,7 +5745,7 @@ function seiteZeigen(s,opt){
     if(s==='pruefungen'&&window.KVM_pruefListe)window.KVM_pruefListe();
     if(s==='vergleich'&&window.KVM_vergleich)window.KVM_vergleich();
     if(s==='markierungen')mkZeigen();
-    if(s==='pruefungen')mkVerweis();
+    if(s==='pruefungen'){mkVerweis();pfNachsehen();}
     if(!opt.halten)window.scrollTo(0,0);
   }
   if(gleiten&&document.startViewTransition){
@@ -5787,10 +6054,12 @@ function mkVerweis(){
   if(z.pruef)b.innerHTML='<span class="mk-link-ic">'+MK_IC_HL+'</span><span>Meine Markierungen</span><span class="mk-link-n">'+mkStellen(z.pruef)+' aus Prüfungen</span>';
 }
 function mkSammeln(){
-  var d=hlDaten(),faelle={},faecher={},ohne=[],zahl={g:0,n:0,r:0},n=0;
+  var d=hlDaten(),faelle={},faecher={},ohne=[],gesperrt=[],zahl={g:0,n:0,r:0},n=0;
   function dazu(e){
     var o=e.o;
-    if(!o)ohne.push(e);
+    /* Original-Prüfungen ohne Freigabe: die Stellen bleiben, nur ohne Sprung */
+    if(!o&&!pf.geladen&&/^(ctx|sit|qs|q|l|e):P-/.test(e.key))gesperrt.push(e);
+    else if(!o)ohne.push(e);
     else if(o.fall)(faelle[o.fall.id]=faelle[o.fall.id]||{c:o.fall,l:[],n:0}).l.push(e);
     else (faecher[o.frage.f]=faecher[o.frage.f]||{f:o.frage.f,l:[],n:0}).l.push(e);
   }
@@ -5816,7 +6085,7 @@ function mkSammeln(){
   var fa=Object.keys(faecher).map(function(k){return faecher[k];}).sort(function(a,b){return a.f-b.f;});
   fa.forEach(function(g){g.l.sort(function(a,b){
     return (mkSubIdx(a.o.frage.sub)-mkSubIdx(b.o.frage.sub))||reihe(a)-reihe(b)||a.h.s-b.h.s;});});
-  return {faelle:fl,faecher:fa,ohne:ohne,zahl:zahl,n:n};
+  return {faelle:fl,faecher:fa,ohne:ohne,gesperrt:gesperrt,zahl:zahl,n:n};
 }
 function mkEintragHTML(e){
   var i=mkListe.push(e)-1;
@@ -5829,7 +6098,7 @@ function mkEintragHTML(e){
   else if(o&&o.schritt&&o.art!=='q')zu=splitTask(o.schritt).frage;
   return '<li class="mk-e"><button type="button" class="mk-go" data-mk="'+i+'"'+(o?'':' disabled')+'>'+
     '<span class="mk-t"><span class="mk-hl hl-'+mkFarbeVon(e.h)+'">'+esc(mkKurz(e.h.t,280))+'</span></span>'+
-    '<span class="mk-wo">'+esc(o?o.ort:'Nicht mehr im Fragenkatalog')+'</span>'+
+    '<span class="mk-wo">'+esc(o?o.ort:(e.gesperrt?'Original-Prüfung – nach der Freigabe springst du wieder hin':'Nicht mehr im Fragenkatalog'))+'</span>'+
     (zu?'<span class="mk-zu">zu „'+esc(mkKurz(zu,110))+'“</span>':'')+'</button>'+
     '<button type="button" class="mk-x" data-mk-weg="'+i+'" aria-label="Markierung entfernen" title="Entfernen">'+MK_IC_WEG+'</button></li>';
 }
@@ -5881,6 +6150,11 @@ function mkRender(){
         '<span class="mk-gt"><b>'+esc(FACH[g.f]||('Fach '+g.f))+'</b></span>',g.l);
     });
     h+='</section>';
+  }
+  if(S.gesperrt.length){
+    S.gesperrt.forEach(function(e){e.gesperrt=true;});
+    h+='<h3 class="h-group">Original-IHK-Prüfungen <span class="h-scope">nur mit Freigabe</span></h3><section class="hcard mk-karte"><ul class="mk-liste" style="margin-top:8px">'+
+      S.gesperrt.map(mkEintragHTML).join('')+'</ul></section>';
   }
   if(S.ohne.length){
     h+='<h3 class="h-group">Nicht mehr zuzuordnen</h3><section class="hcard mk-karte"><ul class="mk-liste" style="margin-top:8px">'+
@@ -5996,14 +6270,281 @@ function nachlesenZeigen(q){
   mkKachel();
 })();
 
+/* ===== Original-Prüfungen nur mit Freigabe =====
+   Die Original-IHK-Prüfungen stehen nicht im Repository. Sie liegen im
+   privaten Storage-Bucket „pruefungen“ des Supabase-Projekts
+   (docs/supabase-pruefungen-freigabe.sql): pruefungen.json mit den Prüfungen
+   und dem Anlagen-Verzeichnis, die Bilder unter anlagen/. Lesen darf, wer
+   freigegeben oder Admin ist; die Freigabe fragt man auf „Prüfungen“ an.
+   Ablauf: pruefungen_status sagt, ob freigegeben und welcher Stand im Bucket
+   liegt. Liegt auf dem Gerät eine Kopie mit diesem Stand (IndexedDB, je
+   Konto), gilt sie, sonst wird pruefungen.json geladen. Die Prüfungen kommen
+   hinten an CASES und window.KVM_CASES, die Bilder über signierte Links
+   (12 Stunden). Ohne Freigabe, nach dem Abmelden oder wenn die Freigabe endet,
+   verschwinden Prüfungen und Kopie. Ohne Verbindung bleibt eine Kopie nutzbar.
+   window.KVM_PRUEFUNGEN (nur für Entwicklung und Tests: {pruefungen, anlagen,
+   bilder}) liefert die Prüfungen direkt – wer die Daten schon hat, braucht
+   keine Freigabe. */
+var PF_BUCKET='pruefungen',PF_DATEI='pruefungen.json',PF_LINK_S=12*3600,PF_IDB='kvm_pruefungen';
+var pf={zustand:'start',info:null,stand:null,konto:null,geladen:false,lokal:false,prueft:null,zuletzt:0,links:0,
+        warte:[],bildWarte:[],meld:'',sendet:false,entwurf:'',pollT:null,vorab:null};
+var pfCloud=null;
+var PF_KACHEL={start:'Wird geprüft …',pruefen:'Wird geprüft …',laedt:'Prüfungen werden geladen …',
+  ohne:'Nur mit Freigabe – dafür braucht die App eine Verbindung',abgemeldet:'Nur mit Freigabe – anmelden und anfragen',
+  keine:'Nur mit Freigabe – jetzt anfragen',angefragt:'Freigabe angefragt – wartet auf Bestätigung',
+  abgelehnt:'Keine Freigabe',leer:'Freigegeben – noch keine Prüfungen hochgeladen',
+  fehlt:'Freigabe noch nicht eingerichtet',fehler:'Laden hat nicht geklappt – tippen und erneut versuchen'};
+function pfIstP(id){return /^P-/.test(id||'');}
+function pfFertig(){return ['start','pruefen','laedt'].indexOf(pf.zustand)<0;}
+/* Wartet, bis klar ist, ob es Prüfungen gibt; liefert true, wenn sie geladen sind. */
+function pfBereit(){return pfFertig()?Promise.resolve(pf.geladen):new Promise(function(ok){pf.warte.push(ok);});}
+/* --- Kopie auf dem Gerät (IndexedDB) --- */
+function pfIdb(modus,fn){
+  return new Promise(function(ok){
+    var r;try{r=indexedDB.open(PF_IDB,1);}catch(e){ok(null);return;}
+    r.onupgradeneeded=function(){r.result.createObjectStore('daten');};
+    r.onerror=r.onblocked=function(){ok(null);};
+    r.onsuccess=function(){
+      var db=r.result,erg=null,tx;
+      try{tx=db.transaction('daten',modus);}catch(e){db.close();ok(null);return;}
+      var q=fn(tx.objectStore('daten'));
+      if(q)q.onsuccess=function(){erg=q.result;};
+      tx.oncomplete=function(){db.close();ok(erg===undefined?null:erg);};
+      tx.onerror=tx.onabort=function(){db.close();ok(null);};
+    };
+  });
+}
+function pfKopieLesen(){return pfIdb('readonly',function(s){return s.get('p');});}
+function pfKopieSchreiben(v){return pfIdb('readwrite',function(s){return s.put(v,'p');});}
+function pfKopieLoeschen(){return pfIdb('readwrite',function(s){return s.delete('p');});}
+/* Konto der gespeicherten Anmeldung – ohne auf Supabase zu warten. Nur ein
+   Hinweis für den schnellen Start; entschieden wird in pfAuth. */
+function pfSitzung(){
+  try{for(var i=0;i<localStorage.length;i++){var k=localStorage.key(i);
+    if(/^sb-.+-auth-token$/.test(k||'')){var s=JSON.parse(localStorage.getItem(k)||'null'),u=s&&(s.user||(s.currentSession&&s.currentSession.user));if(u&&u.id)return u.id;}}}catch(e){}
+  return null;
+}
+/* --- Prüfungen einsetzen und entfernen --- */
+function pfRaus(){
+  function weg(l){for(var i=l.length-1;i>=0;i--)if(l[i]&&pfIstP(l[i].id))l.splice(i,1);}
+  weg(CASES);if(window.KVM_CASES&&window.KVM_CASES!==CASES)weg(window.KVM_CASES);
+  var A=window.KVM_ANLAGEN||{};Object.keys(A).forEach(function(k){if(A[k]&&A[k].pf)delete A[k];});
+  pf.geladen=false;mkIx=null;
+}
+function pfEinsetzen(d,bilder){
+  var L=d&&Array.isArray(d.pruefungen)?d.pruefungen.filter(function(c){return c&&pfIstP(c.id)&&Array.isArray(c.steps)&&c.steps.length;}):null;
+  if(!L||!L.length)return false;
+  pfRaus();
+  var K=window.KVM_CASES||(window.KVM_CASES=[]);
+  L.forEach(function(c){CASES.push(c);if(K!==CASES)K.push(c);});
+  var A=window.KVM_ANLAGEN||(window.KVM_ANLAGEN={}),an=(d.anlagen&&typeof d.anlagen==='object')?d.anlagen:{};
+  Object.keys(an).forEach(function(k){var a=an[k];
+    if(a&&a.f)A[k]={f:String(a.f),w:+a.w||0,h:+a.h||0,t:String(a.t||''),pf:1,u:bilder?bilder+a.f:''};});
+  pf.geladen=true;mkIx=null;pf.links=0;
+  return true;
+}
+function pfEntladen(){
+  if(!pf.geladen)return;
+  var offen=state.fall&&pfIstP(state.fall.id)&&(!$("scrBlatt").hidden||!$("scrQuiz").hidden||!$("scrResult").hidden);
+  pfRaus();
+  if(offen){show("scrHome");seiteZeigen('pruefungen');}
+}
+function pfLoeschen(){pfEntladen();pf.stand=null;pfKopieLoeschen();}
+/* --- Bilder: signierte Links aus dem Bucket --- */
+function pfLinks(neu){
+  if(!pfCloud||!pf.geladen||pf.lokal||!pfCloud.sb.storage)return;
+  if(!neu&&pf.links&&Date.now()-pf.links<8*3600000)return;
+  var A=window.KVM_ANLAGEN||{},keys=Object.keys(A).filter(function(k){return A[k]&&A[k].pf;});
+  if(!keys.length)return;
+  var pfade=keys.map(function(k){return 'anlagen/'+A[k].f;});
+  pf.links=Date.now();
+  pfCloud.sb.storage.from(PF_BUCKET).createSignedUrls(pfade,PF_LINK_S).then(function(r){
+    if(!r||r.error||!Array.isArray(r.data)){pf.links=0;return;}
+    var nach={};r.data.forEach(function(x){if(x&&x.path&&x.signedUrl)nach[x.path]=x.signedUrl;});
+    keys.forEach(function(k,i){var x=r.data[i],u=nach[pfade[i]]||(x&&!x.error&&x.signedUrl);if(u&&A[k])A[k].u=u;});
+    pfBilderEinsetzen();
+  },function(){pf.links=0;});
+}
+function pfBilderEinsetzen(){
+  [].forEach.call(document.querySelectorAll('img[data-anlage]'),function(img){
+    if(img.getAttribute('src'))return;
+    var a=anlageBild(img.getAttribute('data-anlage'));if(a&&a.u)img.src=a.u;
+  });
+  var w=pf.bildWarte.splice(0);w.forEach(function(f){try{f();}catch(e){}});
+}
+/* --- Zustand und Anzeige --- */
+function pfSetzen(z){
+  var vorher=pf.zustand;pf.zustand=z;
+  if(pfFertig()){var w=pf.warte.splice(0);w.forEach(function(f){try{f(pf.geladen);}catch(e){}});}
+  clearInterval(pf.pollT);pf.pollT=null;
+  /* Angefragt: alle 45 s nachsehen, solange „Prüfungen“ offen ist */
+  if(z==='angefragt')pf.pollT=setInterval(function(){if(!document.hidden&&seite==='pruefungen'&&!$("scrHome").hidden)pfPruefen();},45000);
+  pfNeu();
+  /* Eben freigegeben und geladen: Einladung oder Wiedereinstieg in eine Runde */
+  if(pf.geladen&&vorher!=='frei'&&z==='frei'&&typeof gmAuth==='function')gmAuth();
+}
+function pfHomeSub(){
+  var zusatzN=ZUSATZ_FACHER.filter(function(f){return (fachCountsCache[f]||0)>0;}).length;
+  var pruefN=CASES.filter(function(c){return pfIstP(c.id);}).length;
+  $("homeSub").innerHTML="<b>"+fmtN(ALL.length)+" Wissensfragen</b> · 4 Basisqualifikationen + "+zusatzN+" Fachrichtung"+(zusatzN===1?"":"en")+
+    (pruefN?" · <b>"+fmtN(pruefN)+"</b> Original-IHK-Prüfungen":"");
+  var d=$("pruefTileDesc");
+  if(d)d.textContent=pruefN?fmtN(pruefN)+" Prüfungen mit amtlichen Lösungshinweisen · Rechenweg und ausfüllbare Anlagen":(PF_KACHEL[pf.zustand]||PF_KACHEL.start);
+}
+function pfNeu(){
+  try{pfHomeSub();updateModeCards();renderPruefLast();}catch(e){}
+  mkIx=null;
+  try{mkKachel();mkVerweis();if(seite==='markierungen'&&!$("scrHome").hidden)mkRender();}catch(e){}
+  var sp=$("seitePruefungen"),t=$("pfNachricht");
+  if(sp&&!sp.hidden&&window.KVM_pruefListe&&!(t&&document.activeElement===t))window.KVM_pruefListe();
+}
+/* --- Mit dem Server --- */
+function pfFehlt(e){var c=e&&e.code;return c==='PGRST202'||c==='42883'||c==='PGRST205';}
+function pfAuswerten(d,konto){
+  pf.info=d||{};
+  if(pf.info.status!=='frei'){pfLoeschen();pfSetzen(/^(angefragt|abgelehnt)$/.test(pf.info.status)?pf.info.status:'keine');return;}
+  if(!pf.info.stand){pfLoeschen();pfSetzen('leer');return;}
+  if(pf.geladen&&pf.stand===pf.info.stand){pfSetzen('frei');pfLinks();return;}
+  return pfLaden(pf.info.stand,konto);
+}
+function pfHolen(){
+  return pfCloud.sb.auth.getSession().then(function(r){
+    var s=r&&r.data&&r.data.session;if(!s||!s.access_token)throw {code:'42501'};
+    return fetch(pfCloud.url+'/storage/v1/object/authenticated/'+PF_BUCKET+'/'+PF_DATEI,
+      {headers:{Authorization:'Bearer '+s.access_token,apikey:pfCloud.anon},cache:'no-store'});
+  }).then(function(res){
+    if(res.status===400||res.status===404)return null;   /* keine Datei im Bucket */
+    if(!res.ok)throw {code:'http'+res.status};
+    return res.json();
+  });
+}
+function pfLaden(stand,konto){
+  if(!pf.geladen)pfSetzen('laedt');
+  return pfHolen().then(function(d){
+    if(!pfCloud.user()||pfCloud.user().id!==konto)return;
+    if(d==null){pfLoeschen();pfSetzen('leer');return;}
+    if(!pfEinsetzen(d)){pfSetzen(pf.geladen?'frei':'fehler');return;}
+    pf.stand=stand;
+    pfKopieSchreiben({konto:konto,stand:stand,daten:d});
+    pfSetzen('frei');
+    pfLinks(true);
+  },function(){pfSetzen(pf.geladen?'frei':'fehler');});
+}
+function pfPruefen(){
+  if(pf.lokal||!pfCloud||!pfCloud.user())return Promise.resolve();
+  if(pf.prueft)return pf.prueft;
+  var konto=pfCloud.user().id;pf.zuletzt=Date.now();
+  if(!pf.geladen&&/^(start|abgemeldet|ohne|fehler)$/.test(pf.zustand))pfSetzen('pruefen');
+  pf.prueft=pfCloud.sb.rpc('pruefungen_status').then(function(r){
+    pf.prueft=null;
+    if(!pfCloud.user()||pfCloud.user().id!==konto)return;
+    if(!r||r.error){
+      if(r&&pfFehlt(r.error)){pfLoeschen();pfSetzen('fehlt');return;}
+      pfSetzen(pf.geladen?'frei':'fehler');return;   /* offline: mit der Kopie weiter */
+    }
+    return pfAuswerten(r.data,konto);
+  },function(){pf.prueft=null;pfSetzen(pf.geladen?'frei':'fehler');});
+  return pf.prueft;
+}
+function pfAnfragen(text){
+  if(!pfCloud||!pfCloud.user()||pf.sendet)return;
+  var konto=pfCloud.user().id;
+  pf.sendet=true;pf.meld='';pfNeu();
+  pfCloud.sb.rpc('pruefungen_anfragen',{p_nachricht:String(text||'').slice(0,300)}).then(function(r){
+    pf.sendet=false;
+    if(!r||r.error){pf.meld=(r&&pfFehlt(r.error))?'Die Freigabe ist auf dem Server noch nicht eingerichtet.':'Das hat nicht geklappt. Bist du online?';pfNeu();return;}
+    pf.entwurf='';pfAuswerten(r.data,konto);
+  },function(){pf.sendet=false;pf.meld='Das hat nicht geklappt. Bist du online?';pfNeu();});
+}
+/* Anmeldung geändert (ruft der Cloud-Block) */
+function pfAuth(){
+  pf.vorab.then(function(){
+    if(pf.lokal)return;
+    if(!pfCloud){pfSetzen(pf.geladen?'frei':'ohne');return;}
+    var u=pfCloud.user(),id=u?u.id:null;
+    if(!id){pfLoeschen();pf.info=null;pf.konto=null;pfSetzen('abgemeldet');return;}
+    if(pf.konto&&pf.konto!==id){pfLoeschen();pf.info=null;}
+    if(pf.konto===id&&pfFertig()&&Date.now()-pf.zuletzt<60000)return;   /* etwa Token erneuert */
+    pf.konto=id;
+    pfPruefen();
+  });
+}
+/* Beim Öffnen von „Prüfungen“ und wenn die Seite wieder sichtbar wird: nachsehen */
+function pfNachsehen(){
+  if(pf.lokal||!pfCloud||!pfCloud.user()||!pfFertig())return;
+  if(Date.now()-pf.zuletzt>(pf.zustand==='frei'?600000:30000))pfPruefen();
+  else pfLinks();
+}
+document.addEventListener('visibilitychange',function(){if(!document.hidden)pfNachsehen();});
+/* Schneller Start: Kopie des angemeldeten Kontos sofort einsetzen */
+pf.vorab=(function(){
+  var L=window.KVM_PRUEFUNGEN;
+  if(L&&typeof L==='object'){pf.lokal=true;if(pfEinsetzen(L,L.bilder||''))pf.zustand='lokal';return Promise.resolve();}
+  var k=pfSitzung();
+  if(!k)return pfKopieLoeschen().then(function(){});
+  return pfKopieLesen().then(function(c){
+    if(c&&c.konto===k&&c.daten&&!pf.geladen&&pfEinsetzen(c.daten)){pf.konto=k;pf.stand=c.stand;pfNeu();}
+  });
+})();
+/* --- Karte auf „Prüfungen“ --- */
+var PF_IC='<svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/><path d="M12 14.5v2.5"/></svg>';
+function pfDatum(iso){var d=iso?new Date(iso):null;return d&&!isNaN(d)?d.toLocaleDateString('de-DE',{day:'numeric',month:'long'}):'';}
+function pfKarteHTML(){
+  var z=pf.zustand,i=pf.info||{},text='',akt='',form=false;
+  function knopf(a,t,solid){return '<button type="button" class="pr-btn'+(solid?' solid':'')+'" data-pf="'+a+'">'+t+'</button>';}
+  switch(z){
+    case 'laedt':text='Die Prüfungen werden geladen …';break;
+    case 'ohne':text='Die Prüfungen kommen vom Server. Ohne Verbindung geht das gerade nicht – bist du online?';akt=knopf('neu','Neu laden',true);break;
+    case 'abgemeldet':text='Die Original-IHK-Prüfungen mit amtlichen Lösungshinweisen gibt es nur mit Freigabe. Melde dich an und frag sie an – ein Admin schaltet dich frei.';
+      akt=knopf('anmelden','Mit Google anmelden',true);break;
+    case 'keine':text='Frag die Freigabe an. Ein Admin schaltet dich frei, danach stehen die Prüfungen hier – auf jedem Gerät, auf dem du angemeldet bist.';form=true;break;
+    case 'angefragt':text='Deine Anfrage ist gestellt'+(i.angefragt?' (am '+esc(pfDatum(i.angefragt))+')':'')+
+      '. Sobald ein Admin sie bestätigt, erscheinen die Prüfungen hier von selbst.';akt=knopf('pruefen','Jetzt nachsehen');break;
+    case 'abgelehnt':text='Keine Freigabe: Ein Admin hat deine Anfrage abgelehnt oder die Freigabe zurückgenommen. Du kannst erneut anfragen.';form=true;break;
+    case 'leer':text='Du bist freigegeben – es sind aber noch keine Prüfungen hochgeladen.'+(i.admin?' Lade sie in der Verwaltung unter „Prüfungen“ hoch.':'');
+      akt=i.admin?knopf('verwaltung','Verwaltung öffnen',true):knopf('pruefen','Erneut nachsehen');break;
+    case 'fehlt':text='Die Freigabe für die Prüfungen ist auf dem Server noch nicht eingerichtet'+
+      (i.admin===false?'.':' (docs/supabase-pruefungen-freigabe.sql im Supabase-SQL-Editor ausführen).');break;
+    case 'fehler':text='Laden hat nicht geklappt. Bist du online?';akt=knopf('pruefen','Erneut versuchen',true);break;
+    default:text='Freigabe wird geprüft …';
+  }
+  var h='<section class="pf-karte" aria-labelledby="pfT"><div class="pf-kopf"><span class="pf-ic">'+PF_IC+'</span>'+
+    '<h3 id="pfT">Original-IHK-Prüfungen nur mit Freigabe</h3></div><p class="pf-text" role="status">'+text+'</p>';
+  if(form)h+='<label class="pf-lbl" for="pfNachricht">Nachricht an die Admins <span>(freiwillig)</span></label>'+
+    '<textarea id="pfNachricht" maxlength="300" rows="2" placeholder="z. B. wer du bist und woher du die App kennst">'+esc(pf.entwurf||'')+'</textarea>';
+  if(form)akt=knopf('anfragen',pf.sendet?'Wird gesendet …':(z==='abgelehnt'?'Erneut anfragen':'Freigabe anfragen'),true);
+  if(akt)h+='<div class="pf-akt">'+akt+'</div>';
+  if(pf.meld)h+='<p class="pf-meld" role="alert">'+esc(pf.meld)+'</p>';
+  if(form||z==='angefragt')h+='<p class="pf-ds">Gespeichert werden deine Anfrage, die Nachricht und die Entscheidung. Die Admins sehen dazu Name und E-Mail-Adresse deines Kontos. '+
+    '<a href="datenschutz.html#pruefungen" target="_blank" rel="noopener">Datenschutzerklärung</a></p>';
+  if(gm.einladung&&z!=='frei')h+='<p class="pf-ds">Du wurdest zu einer gemeinsamen Runde eingeladen – nach der Freigabe kannst du beitreten.</p>';
+  return h+'</section>';
+}
+/* Hinweis für Admins über der Liste: offene Anfragen */
+function pfHinweisHTML(){
+  var n=(pf.info&&pf.info.admin&&pf.info.offen)|0;
+  if(!n)return '';
+  return '<div class="pf-admin" role="status"><span>'+PF_IC+'<b>'+n+' offene '+(n===1?'Anfrage':'Anfragen')+'</b> zur Freigabe der Prüfungen</span>'+
+    '<button type="button" class="pr-btn solid" data-pf="verwaltung">Ansehen</button></div>';
+}
+function pfBinden(el){
+  [].forEach.call(el.querySelectorAll('[data-pf]'),function(b){b.onclick=function(){
+    var a=b.getAttribute('data-pf');
+    if(a==='anmelden'&&pfCloud)pfCloud.anmelden();
+    else if(a==='anfragen'){var t=$("pfNachricht");pfAnfragen(t?t.value:'');}
+    else if(a==='pruefen'){pf.meld='';pfPruefen();}
+    else if(a==='neu')location.reload();
+    else if(a==='verwaltung'&&window.KVM_adminPruefungen)window.KVM_adminPruefungen();
+  };});
+  var t=el.querySelector('#pfNachricht');if(t)t.oninput=function(){pf.entwurf=t.value;};
+}
+window.KVM_pf={geladen:function(){return pf.geladen;},html:pfKarteHTML,hinweisHTML:pfHinweisHTML,binden:pfBinden,
+  zustand:function(){return pf.zustand;},nachsehen:pfNachsehen};
+
 /* ===== init ===== */
 (function init(){
-  var total=ALL.length;
-  var zusatzN=ZUSATZ_FACHER.filter(function(f){return (fachCountsCache[f]||0)>0;}).length;
-  var pruefN=CASES.filter(function(c){return /^P-/.test(c.id);}).length;
-  $("homeSub").innerHTML="<b>"+fmtN(total)+" Wissensfragen</b> · 4 Basisqualifikationen + "+zusatzN+" Fachrichtung"+(zusatzN===1?"":"en")+
-    (pruefN?" · <b>"+fmtN(pruefN)+"</b> Original-IHK-Prüfungen":"");
-  if(pruefN&&$("pruefTileDesc"))$("pruefTileDesc").textContent=fmtN(pruefN)+" Prüfungen mit amtlichen Lösungshinweisen · Rechenweg und ausfüllbare Anlagen";
+  /* Zahlen auf der Startseite; die Prüfungen kommen erst mit der Freigabe dazu */
+  pfHomeSub();
   $("footerNote").innerHTML="Übungsfragen eigenständig formuliert, orientiert am DIHK-Rahmenplan und an Krause/Krause (Kiehl). Rechtsstände und veränderliche Werte (z. B. Beiträge) Stand 2026, ohne Gewähr."+
     '<span class="fuss-recht"><a href="impressum.html">Impressum</a><a href="datenschutz.html">Datenschutzerklärung</a></span>';
   // Standard-Fach: erste aktive Basisqualifikation
@@ -6283,6 +6824,12 @@ function gmFreiBis(nrs){
 /* --- Runde öffnen und schließen --- */
 function gmOeffnen(r){
   var c=CASES.filter(function(x){return x.id===r.pruefung;})[0];
+  /* Die Prüfungen kommen erst mit der Freigabe – bis dahin warten */
+  if(!c&&!pfFertig())return pfBereit().then(function(){return gmOeffnen(r);});
+  if(!c&&!pf.geladen){
+    gmMeldung('Für gemeinsame Runden brauchst du die Freigabe für die Original-Prüfungen – frag sie hier an.');
+    window.KVM_seite('pruefungen');return Promise.resolve(false);
+  }
   if(!c||!(c.aufgaben||[]).length){alert('Diese Prüfung kennt diese Version noch nicht – lade die Seite neu.');return Promise.resolve(false);}
   if(gm.runde)gmSchliessen();
   gm.runde={id:r.id,code:r.code,pruefung:r.pruefung};
@@ -6913,7 +7460,7 @@ function gmNameVorschlag(){
 function gmListeNeu(){var sp=$("seitePruefungen");if(sp&&!sp.hidden&&window.KVM_pruefListe)window.KVM_pruefListe();}
 function gmMeineLaden(){
   if(!gmCloud||!gmCloud.user()){gm.meine=null;gmListeNeu();return Promise.resolve();}
-  return gmRpc('gemeinsam_meine').then(function(l){gm.meine=Array.isArray(l)?l:[];gmAufraeumen();gmListeNeu();},
+  return gmRpc('gemeinsam_meine').then(function(l){gm.meine=Array.isArray(l)?l:[];gmAufraeumen();gmListeNeu();lzGemeinsamNachtragen();},
     function(){gmListeNeu();});
 }
 /* Lokale Daten von Runden, die es nicht mehr gibt, wegräumen. */
@@ -6924,6 +7471,8 @@ function gmAufraeumen(){
     var k=localStorage.key(i),m=/^kvm_gm_([0-9a-f-]{36})_/.exec(k||'');
     if(m&&!ids[m[1]]&&!(gm.runde&&gm.runde.id===m[1]))localStorage.removeItem(k);
   }}catch(e){}
+  var u=lzLesen(UHR_KEY),weg=Object.keys(u).filter(function(k){var m=/^g-(.+)$/.exec(k);return m&&!ids[m[1]]&&!(gm.runde&&gm.runde.id===m[1]);});
+  if(weg.length){weg.forEach(function(k){delete u[k];});try{localStorage.setItem(UHR_KEY,JSON.stringify(u));}catch(e){}}
 }
 function gmEinladen(btn,r){
   r=r||gm.runde;if(!r)return;
@@ -7093,7 +7642,9 @@ function gmAuth(){
     if(gm.einladung&&!gm.einladungOffen){gm.einladungOffen=true;gmDialog('anmelden');}
     return;
   }
-  gmMeineLaden().then(function(){
+  /* Runden brauchen die Prüfungen: erst nach der Freigabe einsteigen oder beitreten */
+  Promise.all([gmMeineLaden(),pfBereit()]).then(function(){
+    if(!pf.geladen){gmListeNeu();return;}
     gmWiedereinstieg();
     if(!gm.einladung||gm.ok===false||gm.einladungOffen)return;
     gm.einladungOffen=true;
@@ -7145,11 +7696,13 @@ function gmAuth(){
     if(h)h.innerHTML=signedIn?("Angemeldet als <b>"+esc(name)+"</b> – Fortschritt wird geräteübergreifend gesichert."):("Ohne Anmeldung bleibt dein Fortschritt nur auf diesem Gerät.");
     if(b)b.textContent=signedIn?"Abmelden":"Mit Google anmelden & sichern";}
   if(!(window.supabase&&window.supabase.createClient)){acc(false,"");
-    var sn=$("snVergleich");if(sn)sn.hidden=true;if(seite==='vergleich')seiteZeigen('start',{ersetzen:true});return;}
+    var sn=$("snVergleich");if(sn)sn.hidden=true;if(seite==='vergleich')seiteZeigen('start',{ersetzen:true});pfAuth();return;}
   var sb=window.supabase.createClient(SB_URL,SB_ANON);
   var user=null,pushT=null,syncedFor=null,pulledOk=false;
   /* Für „Gemeinsam lernen“: Client, Konto, Anmelden und ein Namensvorschlag
      (Spitzname aus der Rangliste, sonst der Vorname des Kontos). */
+  /* Freigabe der Original-Prüfungen: Client, Konto, Anmelden */
+  pfCloud={sb:sb,url:SB_URL,anon:SB_ANON,user:function(){return user;},anmelden:function(){signIn();}};
   gmCloud={sb:sb,user:function(){return user;},anmelden:function(){signIn();},
     vorschlag:function(){
       var n=(typeof vg!=='undefined'&&vg&&vg.stand&&vg.stand.name)||'';
@@ -7930,7 +8483,9 @@ function gmAuth(){
   var ad={an:false,tab:'uebersicht',ue:null,suche:'',seite:0,liste:null,gesamt:0,laedt:false,sucheT:null,
           nutzer:null,nutzerId:null,nutzerLaedt:false,mstatus:'neu',mseite:0,ml:null,gseite:0,gl:null,meld:'',meldOk:false};
   var AD_AKTION={aus_rangliste:'Aus der Rangliste genommen',sperren:'Gesperrt',entsperren:'Entsperrt',konto_loeschen:'Konto gelöscht',
-    gruppe_loeschen:'Gruppe gelöscht',meldung_erledigt:'Meldung erledigt',meldung_abgelehnt:'Meldung abgelehnt',meldung_neu:'Meldung wieder geöffnet'};
+    gruppe_loeschen:'Gruppe gelöscht',meldung_erledigt:'Meldung erledigt',meldung_abgelehnt:'Meldung abgelehnt',meldung_neu:'Meldung wieder geöffnet',
+    pruefungen_frei:'Für Prüfungen freigegeben',pruefungen_abgelehnt:'Prüfungs-Anfrage abgelehnt',pruefungen_entzogen:'Prüfungs-Freigabe zurückgenommen',
+    pruefungen_geloescht:'Prüfungs-Anfrage entfernt'};
   var MD_ART={text:'Text/Tippfehler',loesung:'Lösung falsch',rechnung:'Rechnung/Zahl falsch',anlage:'Tabelle/Anlage fehlt',sonstiges:'Sonstiges'};
   var MODUS={scrQuiz:'Quiz',scrBlatt:'Prüfung',scrOral:'Mündlich',scrResult:'Ergebnis',scrHome:'Startseite',quiz:'Quiz',blatt:'Prüfung',oral:'Mündlich'};
   function adPruefen(){
@@ -7943,6 +8498,7 @@ function gmAuth(){
     ad.meld='';ad.nutzer=null;ad.nutzerLaedt=false;
     $("mAdmin").hidden=false;document.body.style.overflow='hidden';
     adZeigen();adLaden();
+    if(ad.tab!=='pruefungen')adPfLaden();   /* Zahl der offenen Anfragen am Reiter */
     var f=$("adBody").querySelector('button');if(f)try{f.focus();}catch(e){}
   }
   function adZu(){$("mAdmin").hidden=true;document.body.style.overflow='';}
@@ -7951,6 +8507,7 @@ function gmAuth(){
   function adLaden(mehr){
     var t=ad.tab;
     if(t==='nutzer')return adNutzerSuchen(mehr);
+    if(t==='pruefungen')return adPfLaden();
     if(t==='meldungen'){var s=mehr?ad.mseite+1:0,st=ad.mstatus;ad.laedt=true;
       return adRpc("admin_meldungen",{p_status:st,p_seite:s}).then(function(d){
         if(st!==ad.mstatus)return;ad.laedt=false;ad.mseite=s;
@@ -8071,6 +8628,129 @@ function gmAuth(){
     if(L.length<(d.gesamt|0))h+='<button type="button" class="vg-btn lt-mehr" data-ad-mehr'+(ad.laedt?' disabled':'')+'>Mehr anzeigen</button>';
     return h;
   }
+  /* --- Prüfungen: Freigaben und Prüfungsdaten (docs/supabase-pruefungen-freigabe.sql) --- */
+  function adPfLaden(){
+    if(ad.pfLaedt)return Promise.resolve();
+    ad.pfLaedt=true;
+    return adRpc("admin_pruefungen").then(function(d){ad.pfLaedt=false;ad.pf=d||{liste:[]};adZeigen();},
+      function(e){ad.pfLaedt=false;
+        /* Immer einen Stand setzen – sonst lädt die Konto-Ansicht in einer Schleife neu */
+        if(e&&(e.code==='PGRST202'||e.code==='42883'))ad.pf={fehlt:true};else{ad.pf={fehler:true};adFehler(e);}
+        adZeigen();});
+  }
+  function adPfKnopf(a,t,x,titel,solid){
+    return '<button type="button" class="vg-btn'+(solid?' solid':'')+'" data-ad-pf="'+a+'" data-id="'+esc(x)+'" data-name="'+esc(titel)+'">'+t+'</button>';
+  }
+  function adPfZeile(x){
+    var titel=x.name||x.email||'(ohne Namen)',st=x.status;
+    var wann=st==='angefragt'?'fragt an seit '+datumZeit(x.angefragt):(st==='frei'?'freigegeben am '+datumZeit(x.entschieden):'abgelehnt am '+datumZeit(x.entschieden));
+    var akt=st==='angefragt'?adPfKnopf('frei','Freigeben',x.id,titel,true)+adPfKnopf('abgelehnt','Ablehnen',x.id,titel):
+      (st==='frei'?adPfKnopf('zurueck','Zurücknehmen',x.id,titel):adPfKnopf('frei','Freigeben',x.id,titel)+adPfKnopf('weg','Entfernen',x.id,titel));
+    return '<li class="lt-z ad-pf-z"><button type="button" class="lt-person" data-ad-user="'+esc(x.id)+'">'+avatarHTML(titel)+
+      '<span class="lt-pt"><b>'+esc(titel)+'</b><span>'+esc([x.name?x.email:'',wann].filter(Boolean).join(' · '))+'</span></span></button>'+
+      '<span class="lt-akt">'+akt+'</span>'+(x.nachricht?'<p class="ad-pf-n">„'+esc(x.nachricht)+'“</p>':'')+'</li>';
+  }
+  function adPfHTML(){
+    var d=ad.pf;if(!d)return '<p class="vg-lead">Wird geladen …</p>';
+    if(d.fehlt)return '<div class="lt-leer"><p>Die Freigabe ist nicht eingerichtet: docs/supabase-pruefungen-freigabe.sql im Supabase-SQL-Editor ausführen.</p></div>';
+    if(d.fehler)return '<div class="lt-leer"><p>Freigaben und Prüfungsdaten ließen sich nicht laden. Bist du online? Zum erneuten Versuch den Reiter noch einmal antippen.</p></div>';
+    var L=d.liste||[],h='';
+    [['angefragt','Anfragen'],['frei','Freigegeben'],['abgelehnt','Abgelehnt']].forEach(function(g){
+      var l=L.filter(function(x){return x.status===g[0];});
+      if(!l.length&&g[0]!=='angefragt')return;
+      h+='<p class="h-sub">'+g[1]+' <span class="h-scope">'+l.length+'</span></p>';
+      h+=l.length?'<ul class="lt-liste">'+l.map(adPfZeile).join('')+'</ul>':'<p class="vg-hinweis" style="margin:0 0 14px">Keine offenen Anfragen.</p>';
+    });
+    h+='<p class="vg-hinweis">Freigeben geht auch ohne Anfrage: unter „Nutzer“ das Konto öffnen. Admins brauchen keine Freigabe. Jede Entscheidung steht im Protokoll.</p>';
+    return h+adPfDatenHTML();
+  }
+  function adPfGroesse(b){b=+b||0;return b>=1048576?(Math.round(b/104857.6)/10).toLocaleString('de-DE')+' MB':Math.round(b/1024)+' KB';}
+  function adPfDatenHTML(){
+    var d=ad.pf||{},f=d.datei,u=ad.pfUp,h='<p class="h-sub h-sub-gap">Prüfungsdaten im Bucket „pruefungen“</p>';
+    h+='<dl class="ad-dl">'+dlz('pruefungen.json',f?datumZeit(f.stand)+(f.groesse?' · '+adPfGroesse(f.groesse):''):'noch nicht hochgeladen')+
+      dlz('Bilder in anlagen/',fmtN(d.bilder|0))+'</dl>';
+    h+='<p class="vg-hinweis" style="margin:0 0 8px">Den Ordner <b>hochladen</b> aus dem privaten Paket wählen – oder <b>pruefungen.json</b> und die Bilder als Dateien. Vorhandene Dateien werden ersetzt; die freigegebenen Personen bekommen den neuen Stand beim nächsten Öffnen.</p>'+
+      '<div class="ad-akt"><label class="vg-btn ad-pf-wahl">Ordner wählen<input type="file" id="adPfOrdner" webkitdirectory directory multiple></label>'+
+      '<label class="vg-btn ad-pf-wahl">Dateien wählen<input type="file" id="adPfDateien" multiple accept=".json,application/json,image/*"></label></div>';
+    if(u){
+      if(u.fehler)h+='<p class="lt-meld" role="alert">'+esc(u.fehler)+'</p>';
+      else if(!u.daten)h+='<p class="vg-hinweis">pruefungen.json wird gelesen …</p>';
+      else{
+        h+='<p class="ad-pf-wahlt">'+fmtN(u.daten.n)+' Prüfungen, '+fmtN(u.daten.a)+' Anlagen im Verzeichnis · '+fmtN(u.bilder.length)+' Bilder ausgewählt</p>';
+        if(u.fehlen.length)h+='<p class="vg-hinweis" style="margin:0 0 8px">Nicht in der Auswahl ('+u.fehlen.length+'): '+esc(u.fehlen.slice(0,6).join(', '))+(u.fehlen.length>6?' …':'')+
+          ' – liegen sie schon im Bucket, ist das in Ordnung.</p>';
+        h+='<div class="ad-akt"><button type="button" class="vg-btn solid" data-ad-pf-hoch'+(u.laeuft?' disabled':'')+'>'+(u.laeuft?'Wird hochgeladen …':'Hochladen')+'</button></div>'+
+          '<p class="vg-hinweis" id="adPfStand" role="status">'+esc(adPfStandText())+'</p>';
+        if(u.meld)h+='<p class="lt-meld" role="alert">'+esc(u.meld)+'</p>';
+      }
+    }
+    return h;
+  }
+  function adPfStandText(){var u=ad.pfUp;return u&&u.laeuft?(u.n<u.bilder.length?'Bilder: '+u.n+' von '+u.bilder.length+' …':'pruefungen.json …'):'';}
+  function adPfWahl(files){
+    var L=[].slice.call(files||[]),json=null,bilder=[];
+    L.forEach(function(f){if(/\.json$/i.test(f.name)){if(!json||f.name==='pruefungen.json')json=f;}else if(/\.(jpe?g|png|webp|gif)$/i.test(f.name))bilder.push(f);});
+    var u=ad.pfUp={json:json,bilder:bilder,daten:null,fehler:'',fehlen:[],laeuft:false,n:0,meld:''};
+    if(!json){u.fehler='In der Auswahl fehlt pruefungen.json.';adZeigen();return;}
+    json.text().then(function(t){
+      if(ad.pfUp!==u)return;
+      var d=JSON.parse(t),P=d&&Array.isArray(d.pruefungen)?d.pruefungen:null;
+      if(!P||!P.length||P.some(function(c){return !/^P-[A-Z]{2}-\d{8}$/.test((c&&c.id)||'')||!Array.isArray(c.steps);}))
+        throw new Error('kein Prüfungspaket – erwartet {"pruefungen": […], "anlagen": {…}} mit IDs „P-XX-JJJJMMTT“');
+      var A=(d.anlagen&&typeof d.anlagen==='object')?d.anlagen:{},da={};
+      bilder.forEach(function(b){da[b.name]=1;});
+      u.daten={n:P.length,a:Object.keys(A).length};
+      u.fehlen=Object.keys(A).map(function(k){return A[k]&&A[k].f;}).filter(function(f){return f&&!da[f];});
+      adZeigen();
+    }).catch(function(e){if(ad.pfUp!==u)return;u.fehler='pruefungen.json lässt sich nicht lesen: '+((e&&e.message)||e);adZeigen();});
+  }
+  /* Erst die Bilder, dann pruefungen.json – wer den neuen Stand sieht, findet die Bilder schon. */
+  function adPfHochladen(){
+    var u=ad.pfUp;if(!u||!u.json||!u.daten||u.laeuft)return;
+    u.laeuft=true;u.n=0;u.meld='';var fehl=[],i=0,st=sb.storage.from('pruefungen');adZeigen();
+    function weiter(){
+      if(i>=u.bilder.length)return Promise.resolve();
+      var f=u.bilder[i++];
+      return st.upload('anlagen/'+f.name,f,{upsert:true,cacheControl:'86400',contentType:f.type||undefined}).then(function(r){
+        if(!r||r.error)fehl.push(f.name);u.n++;var el=$("adPfStand");if(el)el.textContent=adPfStandText();
+      },function(){fehl.push(f.name);u.n++;}).then(weiter);
+    }
+    Promise.all([weiter(),weiter(),weiter(),weiter()]).then(function(){
+      if(fehl.length)throw new Error(fehl.length+' Bild'+(fehl.length===1?'':'er')+' nicht hochgeladen ('+fehl.slice(0,3).join(', ')+(fehl.length>3?' …':'')+')');
+      var el=$("adPfStand");if(el)el.textContent=adPfStandText();
+      return st.upload('pruefungen.json',u.json,{upsert:true,cacheControl:'0',contentType:'application/json'});
+    }).then(function(r){
+      if(!r||r.error)throw new Error('pruefungen.json nicht hochgeladen'+(r&&r.error&&r.error.message?': '+r.error.message:''));
+      ad.meldOk=true;ad.meld='Hochgeladen: '+fmtN(u.daten.n)+' Prüfungen und '+fmtN(u.bilder.length)+' Bilder.';
+      ad.pfUp=null;adPfLaden();pfPruefen();
+    }).catch(function(e){u.laeuft=false;u.meld='Hochladen abgebrochen: '+((e&&e.message)||e);adZeigen();});
+  }
+  function adPfEntscheiden(b){
+    var a=b.getAttribute('data-ad-pf'),id=b.getAttribute('data-id'),name=b.getAttribute('data-name')||'diese Person';
+    if(a==='zurueck'&&!confirm('Freigabe von '+name+' zurücknehmen?\n\nDie Prüfungen verschwinden dann auch auf den Geräten dieser Person.'))return;
+    if(a==='weg'&&!confirm('Eintrag von '+name+' entfernen? Die Person kann danach neu anfragen.'))return;
+    b.disabled=true;
+    adRpc("admin_pruefungen_freigabe",{p_user:id,p_status:a==='frei'?'frei':(a==='weg'?null:'abgelehnt')}).then(function(){
+      ad.meldOk=true;ad.meld={frei:name+' ist für die Prüfungen freigegeben.',abgelehnt:'Anfrage von '+name+' abgelehnt.',
+        zurueck:'Freigabe von '+name+' zurückgenommen.',weg:'Eintrag von '+name+' entfernt.'}[a];
+      ad.ue=null;ad.pf=null;
+      return adPfLaden();
+    }).catch(function(e){b.disabled=false;adFehler(e);adZeigen();});
+  }
+  /* In den Konto-Details: Stand der Freigabe und die Knöpfe dazu */
+  function adPfNutzerHTML(n){
+    if(n.admin)return '<p class="vg-hinweis" style="margin:0 0 14px">Admin – Zugang ohne Freigabe.</p>';
+    if(!ad.pf){adPfLaden();return '<p class="vg-hinweis" style="margin:0 0 14px">Wird geladen …</p>';}
+    if(ad.pf.fehlt)return '<p class="vg-hinweis" style="margin:0 0 14px">Die Freigabe ist nicht eingerichtet (docs/supabase-pruefungen-freigabe.sql).</p>';
+    if(ad.pf.fehler)return '<p class="vg-hinweis" style="margin:0 0 14px">Der Stand der Freigabe ließ sich nicht laden.</p>';
+    var x=(ad.pf.liste||[]).filter(function(y){return y.id===n.id;})[0],st=x?x.status:'keine',titel=n.name||n.email||'diese Person';
+    var text={keine:'Keine Freigabe und keine Anfrage.',angefragt:'Fragt an seit '+datumZeit(x&&x.angefragt)+'.',
+      frei:'Freigegeben am '+datumZeit(x&&x.entschieden)+'.',abgelehnt:'Abgelehnt am '+datumZeit(x&&x.entschieden)+'.'}[st];
+    var akt=st==='frei'?adPfKnopf('zurueck','Freigabe zurücknehmen',n.id,titel):
+      adPfKnopf('frei','Prüfungen freigeben',n.id,titel,true)+(st==='angefragt'?adPfKnopf('abgelehnt','Ablehnen',n.id,titel):'');
+    return '<p class="vg-hinweis" style="margin:0 0 8px">'+esc(text)+(x&&x.nachricht?' Nachricht: „'+esc(x.nachricht)+'“':'')+'</p><div class="ad-akt">'+akt+'</div>';
+  }
+  window.KVM_adminPruefungen=function(){if(!ad.an)return;ad.tab='pruefungen';ad.nutzer=null;ad.nutzerId=null;adOeffnen();};
   function adNutzerHTML(){
     var h='<button type="button" class="lt-zurueck" data-ad-zurueck>‹ Zurück</button>'+adMeldHTML();
     if(ad.nutzerLaedt&&!ad.nutzer)return h+'<p class="vg-lead">Wird geladen …</p>';
@@ -8110,6 +8790,7 @@ function gmAuth(){
     h+='<p class="h-sub">Meldungen <span class="h-scope">'+M.length+'</span></p>';
     if(M.length)M.forEach(function(m){h+=adMeldungHTML(m,true);});
     else h+='<p class="vg-hinweis" style="margin:0 0 14px">Keine Meldungen von diesem Konto.</p>';
+    h+='<p class="h-sub">Original-Prüfungen</p>'+adPfNutzerHTML(n);
     h+='<p class="h-sub">Verwalten</p><div class="ad-akt">'+(n.rangliste?'<button type="button" class="vg-btn" data-ad-akt="raus">Aus der Rangliste nehmen</button>':'')+
       (n.admin?'':(n.gesperrt?'<button type="button" class="vg-btn" data-ad-akt="entsperren">Entsperren</button>':'<button type="button" class="vg-btn" data-ad-akt="sperren">Sperren …</button>')+
         '<button type="button" class="vg-btn gefahr" data-ad-akt="loeschen">Konto löschen …</button>')+'</div>'+
@@ -8124,9 +8805,12 @@ function gmAuth(){
     if(ad.nutzer||ad.nutzerLaedt)h=adNutzerHTML();
     else{
       var mn=(ad.ml&&ad.ml.zaehler)?(ad.ml.zaehler.neu|0):(ad.ue?(ad.ue.meldungen_neu|0):0);
+      var pn=(ad.pf&&ad.pf.zaehler)?(ad.pf.zaehler.angefragt|0):0;
       h='<div class="vg-tabs" role="tablist" aria-label="Bereich wählen">'+adTab('uebersicht','Übersicht')+adTab('nutzer','Nutzer')+
-        adTab('meldungen','Meldungen'+(mn?'<span class="lt-badge">'+mn+'</span>':''))+adTab('gruppen','Gruppen')+'</div>'+adMeldHTML();
-      h+=ad.tab==='nutzer'?adNutzerTabHTML():(ad.tab==='meldungen'?adMeldungenHTML():(ad.tab==='gruppen'?adGruppenHTML():adUebersichtHTML()));
+        adTab('meldungen','Meldungen'+(mn?'<span class="lt-badge">'+mn+'</span>':''))+adTab('gruppen','Gruppen')+
+        adTab('pruefungen','Prüfungen'+(pn?'<span class="lt-badge">'+pn+'</span>':''))+'</div>'+adMeldHTML();
+      h+=ad.tab==='nutzer'?adNutzerTabHTML():(ad.tab==='meldungen'?adMeldungenHTML():(ad.tab==='gruppen'?adGruppenHTML():
+        (ad.tab==='pruefungen'?adPfHTML():adUebersichtHTML())));
     }
     var fokus=document.activeElement&&document.activeElement.id==='adSuche';
     b.innerHTML=h;adBinden(b);
@@ -8140,6 +8824,9 @@ function gmAuth(){
     b.querySelectorAll('[data-ad-m]').forEach(function(x){x.onclick=function(){adMeldungStatus(x);};});
     b.querySelectorAll('[data-ad-status]').forEach(function(x){x.onclick=function(){ad.mstatus=x.getAttribute('data-ad-status');ad.ml=null;ad.meld='';adZeigen();adLaden();};});
     b.querySelectorAll('[data-ad-gruppe]').forEach(function(x){x.onclick=function(){adGruppeLoeschen(x);};});
+    b.querySelectorAll('[data-ad-pf]').forEach(function(x){x.onclick=function(){adPfEntscheiden(x);};});
+    b.querySelectorAll('[data-ad-pf-hoch]').forEach(function(x){x.onclick=adPfHochladen;});
+    ['adPfOrdner','adPfDateien'].forEach(function(id){var e=$(id);if(e)e.onchange=function(){adPfWahl(e.files);};});
     var m=b.querySelector('[data-ad-mehr]');if(m)m.onclick=function(){m.disabled=true;adLaden(true);};
     var i=$("adSuche"),f=$("adSucheForm");
     if(f)f.onsubmit=function(e){e.preventDefault();clearTimeout(ad.sucheT);ad.suche=i.value.trim();adNutzerSuchen();};
@@ -8206,12 +8893,12 @@ function gmAuth(){
     if((user&&user.id)!==vorher){
       vg.fstand=null;vg.profilGemeldet=false;lt.liste=null;lt.profil=null;
       vg.pstand=null;vg.pruefOk=null;vg.pruefGemeldet=false;vg.modus='woche';peC.ok=null;
-      ad.an=false;ad.ue=null;ad.liste=null;ad.nutzer=null;ad.nutzerId=null;ad.ml=null;ad.gl=null;
+      ad.an=false;ad.ue=null;ad.liste=null;ad.nutzer=null;ad.nutzerId=null;ad.ml=null;ad.gl=null;ad.pf=null;ad.pfUp=null;
       if(!$("mLeute").hidden)ltZu();
       adKnopf();adPruefen();
     }
     vg.stand=null;vg.bearbeiten=false;vgLaden(true);
-    gmAuth();});
+    pfAuth();gmAuth();});
 })();
 })();
 </script>
@@ -10277,8 +10964,9 @@ function ergebnisHTML(v){
   var h='<div class="pr-erg">';
   if(l.gewertet)h+='<span class="pr-status '+(l.pct>=50?'ok':'nok')+'">'+(l.pct>=50?'Bestanden':'Nicht bestanden')+'</span>'+
     '<span><b>'+l.pkt+' von '+l.max+' P</b> · Note '+l.note+' · '+esc(tagKurz(l.t))+
-    (l.echt?' · unter Prüfungsbedingungen'+(l.dauer?', '+esc(dauer(l.dauer)):''):'')+'</span>';
-  else h+='<span class="pr-status offen">Noch nicht gewertet</span><span>'+(l.teile?l.bew+' von '+l.teile+' Teilen bewertet · ':'')+esc(tagKurz(l.t))+'</span>';
+    (l.echt?' · unter Prüfungsbedingungen'+(l.dauer?', '+esc(dauer(l.dauer)):''):(l.dauer>=60000?' · in '+esc(dauer(l.dauer)):''))+'</span>';
+  else h+='<span class="pr-status offen">Noch nicht gewertet</span><span>'+(l.teile?l.bew+' von '+l.teile+' Teilen bewertet · ':'')+esc(tagKurz(l.t))+
+    (l.dauer>=60000?' · in '+esc(dauer(l.dauer)):'')+'</span>';
   var g=v.filter(function(e){return e.gewertet;});
   if(g.length>1)h+='<span class="pr-verlauf" title="Gewertete Durchgänge, ältester zuerst. Für die Bestehenschance zählt der erste.">'+
     g.length+' Durchgänge: '+g.map(function(e){return e.pkt;}).join(' → ')+' P</span>';
@@ -10322,9 +11010,11 @@ function uebersichtHTML(){
 var filterBereich='';
 function render(){
   var list=$('pruefList');if(!list)return;
-  var alle=pruefungen();
+  var alle=pruefungen(),PF=window.KVM_pf;
+  /* Ohne Freigabe: statt der Liste die Karte zum Anfragen */
   if(!alle.length){
-    list.innerHTML='<p class="pr-lead">Es sind noch keine Original-Prüfungen hinterlegt.</p>';
+    list.innerHTML=PF?PF.html():'<p class="pr-lead">Es sind noch keine Original-Prüfungen hinterlegt.</p>';
+    if(PF)PF.binden(list);
     return;
   }
   var info=alle.map(function(c){var t=teile(c);t.c=c;return t;});
@@ -10348,6 +11038,7 @@ function render(){
   var h='<p class="pr-lead"><b>'+alle.length+' Original-Prüfungen</b> mit amtlichen Lösungshinweisen: '
       +'Aufgaben wie auf dem Prüfungsbogen lösen – mit Rechenweg und ausfüllbaren Anlagen –, '
       +'dann die Lösung aufdecken und dir selbst Punkte geben.</p>';
+  if(PF)h+=PF.hinweisHTML();
   h+=uebersichtHTML();
   /* Gemeinsam lernen: eigene Runden, Einladung, Beitritt per Code */
   var gmAn=!!(window.KVM_gm&&window.KVM_gm.aktiv());
@@ -10383,11 +11074,13 @@ function render(){
       if(bearbeitet&&bearbeitet<steps.length)for(var i=0;i<steps.length;i++)if(!fertig(steps[i])){weiter=i;break;}
       var kurz=(/^P-([A-Z]+)-/.exec(x.c.id)||[])[1]||'';
       var pct=steps.length?Math.round(bearbeitet/steps.length*100):0;
+      /* Bisherige Bearbeitungszeit (Prüfungsuhr) */
+      var uz=window.KVM_uhrMs?window.KVM_uhrMs(x.c.id):0;
       var ei=window.KVM_echtInfo?window.KVM_echtInfo(x.c.id):null,dauer=window.KVM_dauerText||function(ms){return Math.round(ms/60000)+' min';};
       var uhr='<svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l2 2M9 2h6"/></svg>';
       /* Neu starten, sobald es etwas zu leeren gibt – auch mitten in einem
          Durchgang unter Prüfungsbedingungen. */
-      var stand=!!mitStand[x.c.id]||!!(ei&&(ei.laeuft||ei.abgegeben));
+      var stand=!!mitStand[x.c.id]||!!(ei&&(ei.laeuft||ei.abgegeben))||uz>=60000;
       var neuBtn=stand&&window.KVM_neuStarten?'<button class="pr-btn" data-neu="'+esc(x.c.id)+'" title="Leere Blätter: Antworten und Punkte dieser Prüfung löschen">'+NEU_SVG+'Neu starten</button>':'';
       var start=ei&&ei.laeuft?'<button class="pr-btn solid echt" data-start="'+esc(x.c.id)+'">'+uhr+
           (ei.rest>0?'Läuft · noch '+esc(dauer(ei.rest))+' – weiter':'Zeit abgelaufen – auswerten')+' →</button>'+neuBtn:
@@ -10403,8 +11096,8 @@ function render(){
         +'<div class="pr-tt"><div class="pr-date">'+esc(x.bereich)+'</div>'
         +'<div class="pr-meta">'+esc(x.datum)+' · '+aufgaben.length+' Aufgaben · '+steps.length+' Teile</div></div>'
         +'<span class="pr-badge">'+(x.punkte?esc(x.punkte)+' P':'Prüfung')+'</span></div>'
-        +(bearbeitet||bew?'<div class="pr-prog"><span class="pr-bar" aria-hidden="true"><i style="width:'+pct+'%"></i></span>'
-          +'<span class="pr-pt"><b>'+bearbeitet+'</b>/'+steps.length+' Teile'+(bew?' · <b>'+pkt+'</b> P':'')+'</span></div>':'')
+        +(bearbeitet||bew||uz>=60000?'<div class="pr-prog"><span class="pr-bar" aria-hidden="true"><i style="width:'+pct+'%"></i></span>'
+          +'<span class="pr-pt"><b>'+bearbeitet+'</b>/'+steps.length+' Teile'+(bew?' · <b>'+pkt+'</b> P':'')+(uz>=60000?' · '+esc(dauer(uz)):'')+'</span></div>':'')
         +'<div class="pr-actions">'+start
         +(gmAn?'<button class="pr-btn gm-btn" data-gm-neu="'+esc(x.c.id)+'" title="Zu mehreren lösen und nach jeder Aufgabe vergleichen">'+
           window.KVM_gm.icon+'Gemeinsam lösen</button>':'')
@@ -10434,6 +11127,7 @@ function render(){
     +'„Für KI kopieren“ liefert die ganze Prüfung als Text, etwa um eigene Antworten '
     +'von einer KI bewerten zu lassen.</div>';
   list.innerHTML=h;
+  if(PF)PF.binden(list);
   if(gmAn){
     window.KVM_gm.binden(list);
     list.querySelectorAll('[data-gm-neu]').forEach(function(b){

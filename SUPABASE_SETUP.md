@@ -357,6 +357,64 @@ Antworten fertiger Aufgaben gespeichert und den anderen Mitgliedern der Runde ge
 nur für Mitglieder mit eingeschaltetem Schalter und nicht gespeichert (eingearbeitet in
 `datenschutz.html`).
 
+## 11. Original-IHK-Prüfungen nur mit Freigabe (nötig für die Prüfungen)
+
+Die Original-Prüfungen – Aufgaben, amtliche Lösungshinweise und Bildanlagen – stehen nicht
+mehr im Repository. Wer es klont, bekommt nur die eigenen Fragen und Fallaufgaben. Die
+Prüfungen liegen im privaten Storage-Bucket `pruefungen`. Die Web-App lädt sie erst, wenn
+ein Admin die angemeldete Person freigegeben hat.
+
+**Einrichten (einmal):**
+1. **SQL:** Im SQL-Editor [`docs/supabase-pruefungen-freigabe.sql`](docs/supabase-pruefungen-freigabe.sql)
+   ausführen, nach [`docs/supabase-profile.sql`](docs/supabase-profile.sql) (Abschnitt 8,
+   wegen Admins und Protokoll).
+   - Legt die Tabelle `pruefungen_freigaben`, die Funktionen, den privaten Bucket
+     `pruefungen` (höchstens 20 MB je Datei) und dessen Policies an.
+   - Lässt sich gefahrlos erneut ausführen.
+2. **Hochladen:** Das private Paket (`privat/hochladen/`, nicht im Repository) hochladen.
+   - **In der Web-App** als Admin: Verwaltung › Prüfungen › „Ordner wählen“ → den Ordner
+     `hochladen` wählen → hochladen. Erst die Bilder, dann `pruefungen.json`.
+   - **Oder im Dashboard:** Storage › `pruefungen` → `pruefungen.json` ins Hauptverzeichnis,
+     die Bilder in den Ordner `anlagen/`.
+3. **Freigeben:** Wer die Prüfungen nutzen will, fragt sie in der Web-App unter „Prüfungen“ an.
+   - Admins entscheiden in der Verwaltung unter „Prüfungen“ oder in den Details einer Person:
+     freigeben, ablehnen, zurücknehmen, Anfrage löschen.
+   - Vorab freigeben, ohne Anfrage: SQL-Schnipsel im Kopf der SQL-Datei.
+   - Admins haben immer Zugriff.
+
+**So funktioniert es:**
+- **Nur über Funktionen:** Die Tabelle ist für Clients gesperrt.
+  - `pruefungen_status()` liefert den eigenen Stand. Ist die Person frei, kommt der Zeitpunkt
+    der hochgeladenen `pruefungen.json` mit.
+  - `pruefungen_anfragen(p_nachricht)` stellt die Anfrage; die Nachricht ist freiwillig
+    (höchstens 300 Zeichen).
+  - `admin_pruefungen()` und `admin_pruefungen_freigabe(p_user, p_status)` gibt es nur für Admins.
+    Jede Entscheidung steht im Protokoll der Verwaltung.
+- **Bucket:** Lesen dürfen nur freigegebene Personen und Admins (`pruefungen_zugang()`).
+  Hochladen, Ersetzen und Löschen dürfen nur Admins.
+- **Laden:** Die Web-App holt `pruefungen.json` mit dem Anmelde-Token. Die Bilder kommen über
+  signierte Links, die 12 h gelten.
+- **Kopie im Browser:** Eine Kopie für das angemeldete Konto liegt in IndexedDB
+  (`kvm_pruefungen`). So startet die Seite schnell und geht auch offline.
+  - Neu geladen wird nur, wenn auf dem Server ein neuerer Stand liegt.
+  - Abmelden, Kontowechsel oder eine zurückgenommene Freigabe löschen die Kopie.
+- **Neuer Stand:** Einfach eine neue `pruefungen.json` hochladen. Freigegebene Geräte holen sie
+  beim nächsten Öffnen.
+- **Ohne das SQL** zeigt die Web-App „Freigabe noch nicht eingerichtet“ und keine Prüfungen.
+- **Native App:** Sie bündelt keine Prüfungen mehr. Die Freigabe dort beschreibt FR-020 in
+  `APP_FEATURE_REQUESTS.md`; bis dahin verweist die App auf die Web-App.
+- **Pflege der Prüfungen:** `tools/webdaten.py` trennt beim Schreiben automatisch. Prüfungen gehen
+  ins private Paket, eigene Fälle nach `data/cases.js`. Werkzeuge dazu liegen in `privat/pipeline/`.
+- **Aufräumen:** Wer sein Konto löscht, verliert die Freigabe (`on delete cascade`).
+
+**Ältere Stände:** Die Git-Historie und ältere APK-Releases enthalten die Prüfungen noch. Ganz aus
+dem Repository verschwinden sie erst, wenn die Historie umgeschrieben wird – oder wenn das
+Repository privat ist bzw. neu angelegt wird.
+
+In der **Datenschutzerklärung** ist das eingearbeitet (`datenschutz.html#pruefungen`): Anfrage,
+Nachricht und Entscheidung werden gespeichert, die Admins sehen dazu Name und E-Mail-Adresse.
+Die Kopie der Prüfungen bleibt im Browser.
+
 ## Apple-Login später
 Die Auth-Architektur ist anbieter-offen (`AuthService`). „Sign in with Apple"
 lässt sich analog ergänzen (Supabase-Provider Apple + `sign_in_with_apple`),

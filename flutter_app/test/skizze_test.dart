@@ -1,11 +1,12 @@
 import 'dart:convert';
-import 'dart:io';
 
 import 'package:flutter_test/flutter_test.dart';
 import 'package:kvm_trainer/pruefung/skizze.dart';
 import 'package:kvm_trainer/pruefung/skizze_daten.dart';
 import 'package:kvm_trainer/services/answer_store.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+
+import 'pruefdaten.dart';
 
 /// Skizze je Teilaufgabe (FR-013): Erkennung, Voreinstellungen, Zeichnen,
 /// Radierer und Zurück, Speicherformat wie im Web.
@@ -29,18 +30,16 @@ void main() {
     });
 
     test('rund 60 der gut 2000 Prüfungs-Teilaufgaben', () {
-      final faelle = json.decode(File('assets/data/cases.json').readAsStringSync()) as List<dynamic>;
       var n = 0, alle = 0;
-      for (final c in faelle.cast<Map<String, dynamic>>()) {
-        if (!(c['id'] as String).startsWith('P-')) continue;
-        for (final s in (c['steps'] as List).cast<Map<String, dynamic>>()) {
+      for (final c in originalPruefungen()) {
+        for (final s in c.steps) {
           alle++;
-          if (skZeichenteil((s['q'] ?? '') as String)) n++;
+          if (skZeichenteil(s.q)) n++;
         }
       }
       expect(alle, greaterThan(2000));
       expect(n, 60);
-    });
+    }, skip: nurMitPrivat);
   });
 
   group('Voreinstellungen', () {

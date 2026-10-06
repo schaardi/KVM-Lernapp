@@ -1,11 +1,9 @@
-import 'dart:convert';
-import 'dart:io';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:kvm_trainer/models.dart';
 import 'package:kvm_trainer/pruefung/pruef_ui.dart';
 import 'package:kvm_trainer/pruefung/teil_karte.dart';
+
+import 'pruefdaten.dart';
 
 /// Ziel für „Übernehmen“ aus dem Rechner (FR-005 D): Beschriftung,
 /// Einsetzen an der Schreibmarke, Zahlformat in Tabellen – und wann der
@@ -54,11 +52,15 @@ void main() {
   // FR-003 B nennt 435 – Stand der Daten damals; blRechenteil im Web ergibt
   // mit den heutigen Daten 439.
   test('Rechenweg sofort offen wie blRechenteil: 439 von 2.030 Prüfungs-Teilaufgaben', () {
-    final faelle = (json.decode(File('assets/data/cases.json').readAsStringSync()) as List<dynamic>)
-        .map((e) => CaseStudy.fromJson(e as Map<String, dynamic>))
-        .where((c) => c.id.startsWith('P-'));
-    final teile = [for (final c in faelle) ...c.steps];
+    final teile = [for (final c in originalPruefungen()) ...c.steps];
     expect(teile.length, 2030);
     expect(teile.where(istRechenteil).length, 439);
+  }, skip: nurMitPrivat);
+
+  test('Beispielprüfungen: Rechenteile wie in den Originalen', () {
+    final teile = {for (final c in beispielPruefungen()) for (final s in c.steps) s.id: s};
+    expect(istRechenteil(teile['P-OK-20221115-s6']!), isTrue);
+    expect(istRechenteil(teile['P-BW-20251106-s3']!), isTrue);
+    expect(istRechenteil(teile['P-OK-20221115-s3']!), isFalse);
   });
 }

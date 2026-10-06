@@ -14,6 +14,8 @@ import 'package:kvm_trainer/werkzeuge/rechner_modell.dart';
 import 'package:kvm_trainer/widgets/calculator.dart';
 import 'package:kvm_trainer/widgets/werkzeug_dock.dart';
 
+import 'pruefdaten.dart';
+
 /// Quiz (FR-002 C/D): „Übernehmen“ aus dem Werkzeug-Dock ins aktive
 /// Antwortfeld und die einklappbare Ausgangssituation.
 void main() {
@@ -58,6 +60,7 @@ void main() {
       SharedPreferences.setMockInitialValues({});
       await tester.runAsync(() async {
         await DataService.instance.load();
+        beispielEinsetzen();
         await ProgressService.instance.load();
         await LerntageService.instance.load();
         await AnswerStore.instance.init();
