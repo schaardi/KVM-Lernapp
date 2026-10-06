@@ -5,6 +5,10 @@ wird in Supabase gespeichert und auf jedem Gerät zusammengeführt. Ohne die unt
 genannten Werte läuft die App als **Offline-App** (kein Login-Knopf) – der Build
 bleibt in jedem Fall grün.
 
+> **Datenschutzerklärung:** [`datenschutz.html`](datenschutz.html) (Web und Android, verlinkt in der
+> App unter Konto). Die Hinweise „In der Datenschutzerklärung ergänzen“ in den Abschnitten unten sind
+> dort eingearbeitet (Stand Oktober 2026). Neue Cloud-Funktionen dort nachtragen, bevor sie live gehen.
+
 Die App braucht drei Werte, injiziert per `--dart-define` (in den Build-Workflows
 aus GitHub-Secrets):
 

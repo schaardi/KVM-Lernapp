@@ -514,8 +514,10 @@ class _AufgabenblattScreenState extends State<AufgabenblattScreen> {
     String stand = 'noch offen';
     Color? punkt;
     var grund = kPaper, rand = kLineStrong, schrift = kInkSoft, klein = kMuted;
+    // Bearbeitet heißt: etwas geschrieben, gerechnet oder gezeichnet – eine
+    // leer aufgedeckte Teilaufgabe zählt nicht mit (wie in der Web-App).
     if (offen == teile.length && teile.isNotEmpty) {
-      stand = 'Lösungen aufgedeckt';
+      stand = 'Lösungen aufgedeckt, $beantwortet von ${teile.length} Teilen bearbeitet';
       punkt = kPetrol;
       grund = kPetrolSoft;
       rand = kPetrolLine;
@@ -524,7 +526,7 @@ class _AufgabenblattScreenState extends State<AufgabenblattScreen> {
       stand = 'alle Teile bearbeitet';
       punkt = kOk;
     } else if (beantwortet > 0 || offen > 0) {
-      stand = '${beantwortet > offen ? beantwortet : offen} von ${teile.length} Teilen bearbeitet';
+      stand = '$beantwortet von ${teile.length} Teilen bearbeitet';
       punkt = kAmber;
     }
     if (cur) {
@@ -597,7 +599,9 @@ class _AufgabenblattScreenState extends State<AufgabenblattScreen> {
     final eyebrow = _pruef ? '$fach${datum.isNotEmpty ? ' · $datum' : ''}' : 'Fallaufgabe · $fach';
     final titel = (_pruef || _nummern.length > 1) ? 'Aufgabe $_nr' : (f.title.isEmpty ? 'Fallaufgabe' : f.title);
     final n = teile.length;
-    final bea = teile.where((q) => _bearbeitet.contains(q.id) || _aufgedeckt.contains(q.id)).length;
+    // Nur Teilaufgaben mit eigener Antwort – auch nach dem Aufdecken bleibt eine
+    // leer abgegebene Teilaufgabe offen.
+    final bea = teile.where((q) => _bearbeitet.contains(q.id)).length;
     final bewertet = teile.where((q) => AnswerStore.instance.points(q.id) != null).toList();
     final w = MediaQuery.sizeOf(context).width;
 
