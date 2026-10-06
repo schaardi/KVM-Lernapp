@@ -2926,3 +2926,91 @@ Statistik soll smoother werden.“
   (Statistik zum Ziehen).
 
 Zeilennummern: Stand dieses Commits.
+
+---
+
+## FR-016 · Textmarker: wichtige Passagen markieren
+
+**Status App-Session:** offen
+**Web umgesetzt:** ✅ `claude/ui-design-improvement-my0f66` (Commit „Textmarker …“)
+**Anlass:** User-Wunsch „Baue ein, dass man wichtige Passagen markieren kann.“
+
+### Ziel / Framing
+In der schriftlichen IHK-Prüfung arbeitet man mit dem Textmarker: Zahlen, Bedingungen und
+Schlüsselbegriffe in der Ausgangssituation und der Aufgabenstellung werden angestrichen.
+Die App bietet dasselbe. Markierungen bleiben gespeichert und erscheinen überall wieder, wo
+derselbe Text steht – im Aufgabenblatt wie im Lernmodus.
+
+### Was markierbar ist (Schlüssel je Text)
+| Schlüssel | Text |
+|---|---|
+| `ctx:<Fall-ID>` | Ausgangssituation der Prüfung bzw. des Falls (Aufgabenblatt und Lernmodus) |
+| `sit:<Fall-ID>:<Aufgabe>` | Ausgangslage einer Aufgabe im Aufgabenblatt |
+| `q:<Schritt-/Frage-ID>` | Aufgabenstellung bzw. Fragetext (Aufgabenblatt und Lernfrage – derselbe Text) |
+| `l:<Schritt-ID>` | Lösungshinweis bzw. Musterlösung nach dem Aufdecken |
+| `qs:<Schritt-ID>` | Ausgangslage einer Fallaufgabe im Lernmodus |
+| `e:<Frage-ID>` | Erklärung nach dem Prüfen im Lernmodus |
+
+Nicht markierbar: Eingabefelder, Knöpfe, Tabellen-Eingaben, Skizzen.
+
+### Bedienung
+- **Neu markieren:** Text auswählen (lange drücken, Griffe ziehen). Unter der Auswahl
+  erscheint eine Leiste „Markieren“ mit drei Farben: **Gelb, Grün, Rosa**. Antippen markiert
+  und hebt die Auswahl auf.
+  - Leerraum am Anfang und Ende fällt weg.
+  - Mindestens 2 Zeichen.
+  - Die Auswahl muss in einem Text liegen; über zwei Texte hinweg erscheint keine Leiste.
+- **Vorhandene Markierung antippen:** dieselbe Leiste ohne „Markieren“, dazu ein Papierkorb.
+  Farbe antippen ändert die Farbe, Papierkorb entfernt die Markierung.
+- **Überlappung:** Eine neue Markierung, die eine vorhandene berührt, verschmilzt mit ihr
+  zu einer. Es gilt die neue Farbe.
+- **Leiste schließen:** Antippen daneben, Scrollen (bei vorhandener Markierung) oder Esc.
+- **Hinweis beim ersten Aufgabenblatt**, einmalig, als Zeile oben im Blatt (gelb getönt, verdeckt
+  nichts): „Neu: Textmarker. Wichtiges markieren – Text gedrückt halten, auswählen und eine Farbe
+  tippen.“ mit „OK“. Er verschwindet mit OK oder mit der ersten Markierung (Flag `kvm_hl_tipp`).
+
+### Speicherung (wie Web `localStorage['kvm_markierungen']`)
+```json
+{ "<Schlüssel>": [ { "s": 12, "e": 26, "t": "Ausgangsstoffe", "f": "g", "z": 1759750000000 } ] }
+```
+- `s`, `e`: Zeichenbereich im reinen Text des gerenderten Textes (ohne Markup).
+- `t`: der markierte Wortlaut.
+- `f`: Farbe – `g` Gelb, `n` Grün, `r` Rosa.
+- `z`: Zeitpunkt (ms).
+- Liste je Schlüssel nach `s` sortiert, ohne Überlappungen.
+
+**Wiederfinden:** Steht `t` nicht mehr an `s…e` (geänderter Text, andere Darstellung),
+wird `t` im Text gesucht. Die App nimmt das Vorkommen, das `s` am nächsten liegt. Wird `t`
+nicht gefunden, bleibt die Markierung gespeichert, wird aber nicht gezeigt.
+
+Damit ist das Format zwischen Web und App austauschbar, auch wenn sich die Zeichenpositionen
+durch eine andere Darstellung unterscheiden. Markierungen bleiben wie Antworten auf dem Gerät.
+
+### Darstellung
+- **Hell:** Gelb `#FFE873`, Grün `#BFEFAE`, Rosa `#FFCBE0`.
+- **Dunkel:** halbtransparent – Gelb `rgba(250,204,21,.40)`, Grün `rgba(74,222,128,.32)`,
+  Rosa `rgba(244,114,182,.36)`.
+- Die Schrift bleibt in der normalen Textfarbe. Leichte Rundung; bei Zeilenumbruch läuft die
+  Markierung je Zeile.
+- Leiste: dunkle Pille (im Dunkelmodus hell), Farbkreise 24 dp, Trefferfläche 40 dp.
+
+### Umsetzungshinweis Flutter
+Die Texte in einer `SelectionArea` bzw. als `SelectableText.rich` darstellen:
+- „Markieren“ mit den drei Farben über `contextMenuBuilder` anbieten.
+- Markierungen als `TextSpan` mit `backgroundColor` über den reinen Text legen.
+- Der reine Text ist derselbe, aus dem die Spans gebaut werden.
+
+### Referenz Web-Implementierung (`index.html` auf `claude/ui-design-improvement-my0f66`)
+- **CSS:** Block „Textmarker“, Z. 1704
+- **JS:** Modul `textmarker`, Z. 5574
+  - Auswahl → Leiste: `selectionchange`
+  - Markierung antippen: `click` auf `mark.hl`
+  - Neu aufgebaute Texte bekommen ihre Markierungen per `MutationObserver` zurück
+- **Schlüssel gesetzt in:**
+  - `renderBlatt`, Z. 4527 und 4537
+  - `blTeilHTML`, Z. 4470
+  - `blLoesungHTML`, Z. 4123
+  - `renderQuestion`, Z. 3770, 3801 und 3804
+  - `finalize`, Z. 3917
+
+Zeilennummern: Stand dieses Commits.

@@ -1701,6 +1701,32 @@ body[data-screen="scrBlatt"] .app{max-width:920px}
 .bl-nav.primary:hover{background:var(--petrol-deep)}
 .bl-nav:disabled{opacity:.4;cursor:default}
 
+/* ===== Textmarker ===== */
+:root{--hl-g:#FFE873;--hl-n:#BFEFAE;--hl-r:#FFCBE0}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--hl-g:rgba(250,204,21,.40);--hl-n:rgba(74,222,128,.32);--hl-r:rgba(244,114,182,.36)}}
+:root[data-theme="dark"]{--hl-g:rgba(250,204,21,.40);--hl-n:rgba(74,222,128,.32);--hl-r:rgba(244,114,182,.36)}
+mark.hl{color:inherit;border-radius:3px;padding:.06em .1em;margin:0 -.1em;-webkit-box-decoration-break:clone;box-decoration-break:clone;cursor:pointer}
+mark.hl-g{background:var(--hl-g)}
+mark.hl-n{background:var(--hl-n)}
+mark.hl-r{background:var(--hl-r)}
+.hlp{position:fixed;z-index:95;display:flex;align-items:center;gap:2px;padding:4px 5px 4px 13px;border-radius:999px;background:var(--ink);color:var(--paper);box-shadow:var(--shadow-lg);-webkit-user-select:none;user-select:none;-webkit-touch-callout:none;touch-action:manipulation}
+.hlp[hidden]{display:none}
+.hlp-t{font:700 12.5px var(--body);margin-right:5px;white-space:nowrap}
+.hlp button{width:40px;height:40px;border:0;border-radius:50%;background:transparent;display:grid;place-items:center;cursor:pointer;color:inherit;padding:0}
+.hlp button:hover{background:rgba(127,127,127,.22)}
+.hlp-f i{display:block;width:24px;height:24px;border-radius:50%;box-shadow:0 0 0 2px var(--paper),0 0 0 3px rgba(127,127,127,.55)}
+.hlp-f i.hl-g{background:#FFDD3C}
+.hlp-f i.hl-n{background:#7EE07A}
+.hlp-f i.hl-r{background:#FF8FC0}
+.hlp-x svg{width:19px;height:19px}
+.hlp-x{margin-left:3px}
+.hl-tipp{align-items:center;border-color:#E9D27A;background:#FFF8D6}
+.hl-tipp-ic{flex:0 0 auto;width:14px;height:14px;border-radius:4px;background:var(--hl-g);box-shadow:0 0 0 1px rgba(0,0,0,.12);margin-top:1px}
+.hl-tipp>span:nth-child(2){flex:1 1 auto}
+.hl-tipp-ok{flex:0 0 auto;border:1px solid var(--line-strong);border-radius:9px;background:var(--paper);color:var(--ink);font:700 12.5px var(--body);padding:6px 12px;min-height:34px;cursor:pointer}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .hl-tipp{border-color:#6A5A17;background:#2A2410}}
+:root[data-theme="dark"] .hl-tipp{border-color:#6A5A17;background:#2A2410}
+
 /* ===== Gemeinsam lernen ===== */
 /* Farbe je Person (Platz in der Runde) – Kreis, Schrift und Fläche */
 .gm-f0{--gm:var(--petrol);--gm-ink:var(--petrol-ink);--gm-soft:var(--petrol-soft);--gm-line:var(--petrol-line)}
@@ -2219,6 +2245,7 @@ body.sk-offen{overflow:hidden}
       <p class="bl-hinweis" id="blHinweis" hidden></p>
       <div class="bl-echt" id="blEcht" hidden></div>
       <div class="bl-echt gm-hinweis" id="gmHinweis" role="status" hidden></div>
+      <div class="bl-echt hl-tipp" id="hlTipp" hidden><span class="hl-tipp-ic" aria-hidden="true"></span><span><b>Neu: Textmarker.</b> Wichtiges markieren – Text gedrückt halten, auswählen und eine Farbe tippen.</span><button type="button" class="hl-tipp-ok">OK</button></div>
       <details class="casectx" id="blCase" hidden></details>
       <div id="blAufgabe"></div>
       <div class="bl-foot" id="blFoot"></div>
@@ -2975,7 +3002,7 @@ function startRound(mode,caseId,startIdx){
     state.aufgedeckt={};
     state.pool=pick.steps.map(function(st,i){
       var c={};for(var k in st)c[k]=st[k];
-      c._case={title:pick.title,context:pick.context,i:i+1,total:pick.steps.length};
+      c._case={id:pick.id,title:pick.title,context:pick.context,i:i+1,total:pick.steps.length};
       c._auf=aufgabeVon(pick,st.nr);   /* Ausgangslage und Anlagen der Aufgabe */
       return c;});
     /* Gemeinsam: Aufgaben, mit denen man schon fertig ist, stehen im Vergleich. */
@@ -3744,7 +3771,7 @@ function renderQuestion(){
     caseEl.hidden=false;
     caseEl.open=state.ctxOpen;
     caseEl.innerHTML='<summary class="cc-head"><span class="cc-tag">'+(isPruef?"IHK-Prüfung":"Fallaufgabe")+
-      '</span><span class="cc-title"></span><span class="cc-more">Ausgangssituation</span></summary><div class="cc-ctx rt"></div>';
+      '</span><span class="cc-title"></span><span class="cc-more">Ausgangssituation</span></summary><div class="cc-ctx rt" data-hl-key="ctx:'+esc(q._case.id||'')+'"></div>';
     caseEl.querySelector(".cc-title").textContent=q._case.title;
     caseEl.querySelector(".cc-ctx").innerHTML=rtHTML(q._case.context);
     /* Programmatisches Auf-/Zuklappen löst ebenfalls ein toggle-Ereignis aus –
@@ -3775,10 +3802,10 @@ function renderQuestion(){
      rtHTML; Wissensfragen bleiben reiner Text. */
   var reich=!!q._case;
   function setzeText(el,t){el.classList.toggle("rt",reich);if(reich)el.innerHTML=rtHTML(t);else el.textContent=t;}
-  $("qSit").hidden=!T.sit;setzeText($("qSit"),T.sit);
+  $("qSit").setAttribute('data-hl-key','qs:'+q.id);$("qSit").hidden=!T.sit;setzeText($("qSit"),T.sit);
   /* hidden zurücksetzen: der Chat-Modus offener Aufgaben blendet den Fragetext
      aus – sonst bliebe er bei der nächsten Auswahlfrage unsichtbar. */
-  $("qText").hidden=false;setzeText($("qText"),T.frage);
+  $("qText").setAttribute('data-hl-key','q:'+q.id);$("qText").hidden=false;setzeText($("qText"),T.frage);
   renderTab(stepTab(q));
   state.pool.forEach(function(_,i){var s=$("seg"+i);s.className="seg"+(i===state.idx?" cur":(state.results[i]===true?" ok":(state.results[i]===false?" err":"")));});
 
@@ -3891,7 +3918,7 @@ function finalize(correct,q){
   if(q.t==='mc'){body="<p>"+q.e+"</p>";}
   else if(q.t==='calc'){body="<p><b>Lösung: "+fmtCalc(q.ans)+(q.unit?" "+q.unit:"")+"</b></p>"+(q.e?"<p>"+q.e+"</p>":"");}
   else{body="<p>"+(correct?"Gut. ":"")+ (q.e?q.e:"")+"</p>";}
-  $("fbBody").innerHTML=body;fb.hidden=false;
+  $("fbBody").setAttribute('data-hl-key','e:'+q.id);$("fbBody").innerHTML=body;fb.hidden=false;
   var last=state.idx===state.pool.length-1;
   setActions('<button class="primary" id="btnNext">'+(last?"Zum Ergebnis →":"Weiter →")+'</button>');
   $("btnNext").addEventListener("click",next);$("btnNext").focus();
@@ -4097,7 +4124,7 @@ function blLoesungHTML(q){
   if(gm.runde)h+=gmFremdeHTML(q);
   h+='<section class="bl-lblock sol"><p class="bl-lhead">'+
      (q.amtlich?'Amtliche Lösungshinweise · IHK':'Musterlösung · nicht amtlich')+'</p>';
-  h+='<div class="bl-ltext rt">'+rtHTML(q.a||q.e||'');
+  h+='<div class="bl-ltext rt" data-hl-key="l:'+esc(q.id)+'">'+rtHTML(q.a||q.e||'');
   h+=bildHTML(q.bildL,'Lösungsskizze der IHK');
   /* Die ausgefüllte Anlage steht nur dann hier, wenn sie nicht schon oben in
      der Anlage selbst gezeigt wird (dort mit den eigenen Eingaben daneben). */
@@ -4444,7 +4471,7 @@ function blTeilHTML(q){
        esc(q.braucht.join('), '))+') auf</button>';
   h+=meldenKnopfHTML(q.id)+'</header>';
   h+=blVorherHTML(q);
-  h+='<div class="bl-frage rt">'+rtHTML(T.frage)+'</div>';
+  h+='<div class="bl-frage rt" data-hl-key="q:'+id+'">'+rtHTML(T.frage)+'</div>';
   tabListe(q.tab).forEach(function(t,i){
     h+='<div class="msg-tab">'+tabHTML(t,{key:q.id+'#s'+i,
         sol:(q.tabL&&offen&&tabPasst(t,q.tabL))?q.tabL:null})+'</div>';
@@ -4501,7 +4528,7 @@ function renderBlatt(){
   if(!ctx.hidden){
     ctx.open=state.ctxOpen;
     ctx.innerHTML='<summary class="cc-head"><span class="cc-tag">'+(pruef?'Ausgangssituation':'Fall')+'</span>'+
-      '<span class="cc-title"></span><span class="cc-more">'+(pruef?'Lesen':'Ausgangslage')+'</span></summary><div class="cc-ctx rt"></div>';
+      '<span class="cc-title"></span><span class="cc-more">'+(pruef?'Lesen':'Ausgangslage')+'</span></summary><div class="cc-ctx rt" data-hl-key="ctx:'+esc(fall.id||'')+'"></div>';
     ctx.querySelector(".cc-title").textContent=pruef?'Gilt für alle Aufgaben dieser Prüfung':(fall.title||'');
     ctx.querySelector(".cc-ctx").innerHTML=rtHTML(fall.context);
     ctx.ontoggle=function(){
@@ -4511,7 +4538,7 @@ function renderBlatt(){
   }
 
   var h='';
-  if(auf.sit)h+='<div class="bl-sit rt"><p class="bl-slbl">Ausgangslage</p>'+rtHTML(auf.sit)+'</div>';
+  if(auf.sit)h+='<div class="bl-sit rt" data-hl-key="sit:'+esc(fall.id||'')+':'+esc(nr)+'"><p class="bl-slbl">Ausgangslage</p>'+rtHTML(auf.sit)+'</div>';
   h+='<div class="bl-akopf">'+blAnlagenHTML(auf)+'</div>';
   teile.forEach(function(q){h+=blTeilHTML(q);});
   $("blAufgabe").innerHTML=h;
@@ -5547,6 +5574,185 @@ document.addEventListener("keydown",function(ev){
   seiteZeigen(seiteAusAdresse(),{ausAdresse:true,halten:true});
 })();
 
+
+/* ===== Textmarker: wichtige Passagen markieren =====
+   Text auswählen (am Handy gedrückt halten und die Griffe ziehen), dann eine
+   Farbe antippen. Eine Markierung antippen: Farbe ändern oder entfernen.
+   Markierbar ist jeder Text mit data-hl-key – Ausgangssituation, Ausgangslage,
+   Aufgabenstellung, Lösung, Lernfrage und Erklärung. Gespeichert wird je Text
+   der Zeichenbereich samt Wortlaut (kvm_markierungen); so findet sich die
+   Stelle nach jedem neuen Aufbau wieder, auch wenn sich der Text verschiebt. */
+(function textmarker(){
+  var KEY='kvm_markierungen',FARBEN={g:'Gelb',n:'Grün',r:'Rosa'};
+  var NICHT='button,input,textarea,select,canvas,svg';
+  var daten={};
+  try{daten=JSON.parse(localStorage.getItem(KEY)||'{}')||{};}catch(e){daten={};}
+  if(!daten||typeof daten!=='object')daten={};
+  function sichern(){try{localStorage.setItem(KEY,JSON.stringify(daten));}catch(e){}}
+  function element(n){return n&&(n.nodeType===1?n:n.parentNode);}
+  function kasten(n){var el=element(n);return el&&el.closest?el.closest('[data-hl-key]'):null;}
+  function gesperrt(n){var el=element(n);return !!(el&&el.closest&&el.closest(NICHT));}
+  /* Zeichenposition einer Stelle im Text des Kastens */
+  function stelle(box,node,off){var r=document.createRange();r.setStart(box,0);try{r.setEnd(node,off);}catch(e){return -1;}return r.toString().length;}
+
+  /* Markierungen in einen Text legen – vorhandene vorher auflösen */
+  function aufloesen(box){
+    var m=box.querySelectorAll('mark.hl');if(!m.length)return;
+    m.forEach(function(x){var p=x.parentNode;while(x.firstChild)p.insertBefore(x.firstChild,x);p.removeChild(x);});
+    box.normalize();
+  }
+  function anwenden(box){
+    var key=box.getAttribute('data-hl-key');
+    aufloesen(box);
+    var text=box.textContent,liste=daten[key]||[],geaendert=false;
+    var teile=[],knoten=[],w=document.createTreeWalker(box,NodeFilter.SHOW_TEXT,null),n,pos=0;
+    while((n=w.nextNode())){knoten.push({n:n,a:pos,b:pos+n.data.length});pos+=n.data.length;}
+    liste.forEach(function(h,i){
+      /* Steht der Wortlaut nicht mehr an der Stelle, ihn im Text suchen */
+      if(text.slice(h.s,h.e)!==h.t){var j=text.indexOf(h.t);if(j<0)return;h.s=j;h.e=j+h.t.length;geaendert=true;}
+      knoten.forEach(function(k,ki){
+        var a=Math.max(h.s,k.a),b=Math.min(h.e,k.b);
+        if(a<b&&!gesperrt(k.n)&&/\S/.test(k.n.data.slice(a-k.a,b-k.a)))teile.push({k:ki,n:k.n,a:a-k.a,b:b-k.a,f:h.f,i:i});
+      });
+    });
+    /* Von hinten nach vorn einwickeln, damit die vorderen Stellen gültig bleiben */
+    teile.sort(function(x,y){return y.k-x.k||y.a-x.a;});
+    teile.forEach(function(t){
+      var n=t.n;
+      if(t.b<n.data.length)n.splitText(t.b);
+      var ziel=t.a>0?n.splitText(t.a):n,m=document.createElement('mark');
+      m.className='hl hl-'+(FARBEN[t.f]?t.f:'g');m.setAttribute('data-hl',t.i);
+      ziel.parentNode.replaceChild(m,ziel);m.appendChild(ziel);
+    });
+    if(geaendert)sichern();
+    box._hlSig=key+'|'+box.textContent;
+  }
+  function pruefen(box){if(box._hlSig!==box.getAttribute('data-hl-key')+'|'+box.textContent)anwenden(box);}
+
+  /* Leiste: drei Farben, bei einer vorhandenen Markierung auch „Entfernen“ */
+  var leiste=null,modus=null,wahl=null,druck=false,versteckT=null;
+  function leisteBauen(){
+    leiste=document.createElement('div');
+    leiste.className='hlp';leiste.setAttribute('role','toolbar');leiste.setAttribute('aria-label','Textmarker');leiste.hidden=true;
+    leiste.innerHTML='<span class="hlp-t">Markieren</span>'+Object.keys(FARBEN).map(function(f){
+      return '<button type="button" class="hlp-f" data-hlf="'+f+'" aria-label="'+FARBEN[f]+' markieren" title="'+FARBEN[f]+'"><i class="hl-'+f+'"></i></button>';}).join('')+
+      '<button type="button" class="hlp-x" data-hlx aria-label="Markierung entfernen" title="Entfernen"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 6h18"/><path d="M8 6V4h8v2"/><path d="M6 6l1 14h10l1-14"/></svg></button>';
+    document.body.appendChild(leiste);
+    /* Beim Antippen der Leiste die Auswahl nicht verlieren */
+    leiste.addEventListener('pointerdown',function(e){druck=true;e.preventDefault();});
+    leiste.addEventListener('touchstart',function(){druck=true;},{passive:true});
+    leiste.addEventListener('click',function(e){
+      var b=e.target.closest('button');druck=false;if(!b)return;
+      if(b.hasAttribute('data-hlx'))entfernen();else farbe(b.getAttribute('data-hlf'));
+    });
+  }
+  function zeigen(rect,art){
+    if(!leiste)leisteBauen();
+    modus=art;clearTimeout(versteckT);
+    leiste.querySelector('[data-hlx]').hidden=art!=='alt';
+    leiste.querySelector('.hlp-t').hidden=art==='alt';
+    leiste.hidden=false;
+    var w=leiste.offsetWidth,h=leiste.offsetHeight;
+    var x=Math.max(8,Math.min(innerWidth-w-8,rect.left+rect.width/2-w/2)),y=rect.bottom+12;
+    if(y+h>innerHeight-88)y=Math.max(8,rect.top-h-12);
+    leiste.style.left=Math.round(x)+'px';leiste.style.top=Math.round(y)+'px';
+  }
+  function verstecken(){clearTimeout(versteckT);if(leiste)leiste.hidden=true;modus=null;druck=false;}
+  function farbe(f){
+    if(!wahl||!FARBEN[f])return;
+    var box=wahl.box,key=box.getAttribute('data-hl-key'),liste=daten[key]||[];
+    if(modus==='alt'){if(liste[wahl.i])liste[wahl.i].f=f;}
+    else{
+      /* Überlappende Markierungen gehen in der neuen auf */
+      var text=box.textContent,a=wahl.s,b=wahl.e,rest=[];
+      liste.forEach(function(h){if(h.e<=a||h.s>=b)rest.push(h);else{a=Math.min(a,h.s);b=Math.max(b,h.e);}});
+      rest.push({s:a,e:b,t:text.slice(a,b),f:f,z:Date.now()});
+      rest.sort(function(x,y){return x.s-y.s;});
+      daten[key]=rest;
+      try{getSelection().removeAllRanges();}catch(e){}
+      try{localStorage.setItem('kvm_hl_tipp','1');}catch(e){}
+      tippWeg();
+    }
+    sichern();anwenden(box);verstecken();
+  }
+  function entfernen(){
+    if(!wahl||modus!=='alt')return;
+    var key=wahl.box.getAttribute('data-hl-key'),liste=daten[key]||[];
+    liste.splice(wahl.i,1);if(!liste.length)delete daten[key];
+    sichern();anwenden(wahl.box);verstecken();
+  }
+  /* Auswahl im Text: Leiste darunter zeigen */
+  function auswahl(){
+    var sel=window.getSelection?getSelection():null;
+    if(!sel||!sel.rangeCount||sel.isCollapsed)return null;
+    var r=sel.getRangeAt(0),box=kasten(r.startContainer);
+    if(!box||box!==kasten(r.endContainer)||gesperrt(r.startContainer)||gesperrt(r.endContainer))return null;
+    var text=box.textContent,s=stelle(box,r.startContainer,r.startOffset),e=stelle(box,r.endContainer,r.endOffset);
+    while(s<e&&/\s/.test(text.charAt(s)))s++;
+    while(e>s&&/\s/.test(text.charAt(e-1)))e--;
+    if(s<0||e-s<2)return null;
+    return {box:box,s:s,e:e,rect:r.getBoundingClientRect()};
+  }
+  document.addEventListener('selectionchange',function(){
+    var a=auswahl();
+    if(!a){
+      /* Das Antippen der Leiste darf sie nicht schließen, auch wenn die Auswahl dabei verschwindet */
+      if(modus==='neu'&&!druck){clearTimeout(versteckT);versteckT=setTimeout(function(){if(!druck&&modus==='neu'&&!auswahl())verstecken();},300);}
+      return;
+    }
+    wahl={box:a.box,s:a.s,e:a.e};
+    zeigen(a.rect,'neu');
+  });
+  /* Vorhandene Markierung antippen */
+  document.addEventListener('click',function(e){
+    if(leiste&&leiste.contains(e.target))return;
+    var m=e.target.closest&&e.target.closest('mark.hl'),sel=window.getSelection?getSelection():null;
+    if(m&&(!sel||sel.isCollapsed)){
+      var box=kasten(m);if(!box)return;
+      var i=+m.getAttribute('data-hl');
+      wahl={box:box,i:i};
+      /* Leiste unter der ganzen Markierung (kann über mehrere Zeilen gehen) */
+      var teile=box.querySelectorAll('mark.hl[data-hl="'+i+'"]'),r1=teile[0].getBoundingClientRect(),r2=teile[teile.length-1].getBoundingClientRect();
+      zeigen({left:Math.min(r1.left,r2.left),width:Math.max(r1.right,r2.right)-Math.min(r1.left,r2.left),top:r1.top,bottom:r2.bottom},'alt');
+      return;
+    }
+    if(modus==='alt')verstecken();
+  });
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'&&modus)verstecken();});
+  window.addEventListener('scroll',function(){
+    if(modus==='alt')verstecken();
+    else if(modus==='neu'){var a=auswahl();if(a)zeigen(a.rect,'neu');}
+  },{passive:true});
+
+  /* Einmaliger Hinweis, wie es geht – als Zeile oben im Aufgabenblatt */
+  function tippZeigen(){
+    var t=document.getElementById('hlTipp');if(!t||!t.hidden)return;
+    try{if(localStorage.getItem('kvm_hl_tipp'))return;}catch(e){return;}
+    if(Object.keys(daten).length)return;
+    t.hidden=false;
+    t.querySelector('.hl-tipp-ok').onclick=function(){try{localStorage.setItem('kvm_hl_tipp','1');}catch(e){}tippWeg();};
+  }
+  function tippWeg(){var t=document.getElementById('hlTipp');if(t)t.hidden=true;}
+
+  /* Neu aufgebaute Texte bekommen ihre Markierungen zurück */
+  var mo=new MutationObserver(function(ms){
+    var boxen=[];
+    function dazu(b){if(b&&boxen.indexOf(b)<0)boxen.push(b);}
+    ms.forEach(function(m){
+      dazu(kasten(m.target));
+      m.addedNodes.forEach(function(n){
+        if(n.nodeType!==1)return;
+        if(n.hasAttribute('data-hl-key'))dazu(n);
+        n.querySelectorAll('[data-hl-key]').forEach(dazu);
+      });
+    });
+    boxen.forEach(function(b){if(document.contains(b))pruefen(b);});
+    if(boxen.length)tippZeigen();
+    if(modus==='alt'&&wahl&&!document.contains(wahl.box))verstecken();
+  });
+  mo.observe(document.body,{childList:true,subtree:true,attributes:true,attributeFilter:['data-hl-key']});
+  document.querySelectorAll('[data-hl-key]').forEach(pruefen);
+})();
 
 /* ===== Gemeinsam lernen: dieselbe Prüfung zu mehreren =====
    Jede Person löst die ganze Original-Prüfung selbst, Aufgabe für Aufgabe.
