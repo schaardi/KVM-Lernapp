@@ -4029,9 +4029,11 @@ function blStepperHTML(){
     var teile=blTeile(nr),auf=aufgabeVon(state.fall,nr)||{};
     var beantwortet=teile.filter(blBeantwortet).length,offen=teile.filter(blAufgedeckt).length;
     var cls='bl-pill',stand='noch offen',cur=nr===state.blattNr,zu=i>frei;
-    if(offen===teile.length&&teile.length){cls+=' auf';stand=gm.runde?'verglichen':'Lösungen aufgedeckt';}
+    /* Bearbeitet heißt: etwas geschrieben, gerechnet oder gezeichnet –
+       eine leer aufgedeckte Teilaufgabe zählt nicht mit. */
+    if(offen===teile.length&&teile.length){cls+=' auf';stand=(gm.runde?'verglichen':'Lösungen aufgedeckt')+', '+beantwortet+' von '+teile.length+' Teilen bearbeitet';}
     else if(beantwortet===teile.length&&teile.length){cls+=' voll';stand='alle Teile bearbeitet';}
-    else if(beantwortet||offen){cls+=' teil';stand=Math.max(beantwortet,offen)+' von '+teile.length+' Teilen bearbeitet';}
+    else if(beantwortet||offen){cls+=' teil';stand=beantwortet+' von '+teile.length+' Teilen bearbeitet';}
     if(cur)cls+=' cur';
     /* Gemeinsam: spätere Aufgaben erst nach dem Vergleich der aktuellen */
     if(zu){cls+=' zu';stand='erst nach dem Vergleich von Aufgabe '+blNummern()[frei];}
@@ -4056,7 +4058,9 @@ function blFortschrittHTML(){
 }
 function blChipsHTML(nr){
   var auf=aufgabeVon(state.fall,nr)||{},teile=blTeile(nr),n=teile.length;
-  var bea=teile.filter(function(q){return blBeantwortet(q)||blAufgedeckt(q);}).length;
+  /* Nur Teilaufgaben mit eigener Antwort – auch nach dem Aufdecken oder
+     „Fertig – vergleichen“ bleibt eine leer abgegebene Teilaufgabe offen. */
+  var bea=teile.filter(blBeantwortet).length;
   var h='';
   if(auf.pts)h+='<span class="bl-chip pts">'+auf.pts+' Punkte</span>';
   h+='<span class="bl-chip">'+n+' Teilaufgabe'+(n===1?'':'n')+'</span>';
