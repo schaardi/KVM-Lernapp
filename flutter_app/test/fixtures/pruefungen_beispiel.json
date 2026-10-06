@@ -1,0 +1,2041 @@
+{
+ "hinweis": "Erfundene Beispielprüfungen für die Tests der App: Aufbau, IDs und Punkte wie bei sechs Original-Prüfungen, jeder Text erfunden. Die Original-Prüfungen liegen nicht im Repository.",
+ "version": 1,
+ "pruefungen": [
+  {
+   "id": "P-NT-20150429",
+   "f": 5,
+   "sub": "IHK-Prüfung: Naturwissenschaftliche und technische Gesetzmäßigkeiten",
+   "title": "IHK-Prüfung Naturwissenschaftliche und technische Gesetzmäßigkeiten – 29. April 2015",
+   "termin": "Frühjahr 2015",
+   "amtlich": true,
+   "context": "In dieser Prüfung hat jede Aufgabe ihre eigene Ausgangssituation; sie steht jeweils über der Aufgabe.\n\nErfundene Beispielprüfung für die Tests der App – kein Prüfungstext.",
+   "aufgaben": [
+    {
+     "nr": 1,
+     "pts": 10,
+     "sit": "Ausgangslage zu Aufgabe 1: Ein erfundener Beispielbetrieb plant eine Änderung."
+    },
+    {
+     "nr": 2,
+     "pts": 15,
+     "sit": "Ausgangslage zu Aufgabe 2: Ein erfundener Beispielbetrieb plant eine Änderung."
+    },
+    {
+     "nr": 3,
+     "pts": 15,
+     "sit": "Ausgangslage zu Aufgabe 3: Ein erfundener Beispielbetrieb plant eine Änderung."
+    },
+    {
+     "nr": 4,
+     "pts": 18,
+     "sit": "Ausgangslage zu Aufgabe 4: Ein erfundener Beispielbetrieb plant eine Änderung."
+    },
+    {
+     "nr": 5,
+     "pts": 15,
+     "sit": "Ausgangslage zu Aufgabe 5: Ein erfundener Beispielbetrieb plant eine Änderung."
+    },
+    {
+     "nr": 6,
+     "pts": 10,
+     "sit": "Ausgangslage zu Aufgabe 6: Ein erfundener Beispielbetrieb plant eine Änderung."
+    },
+    {
+     "nr": 7,
+     "pts": 17,
+     "sit": "Ausgangslage zu Aufgabe 7: Ein erfundener Beispielbetrieb plant eine Änderung.",
+     "tab": {
+      "titel": "Beispielanlage (erfunden)",
+      "kopf": [
+       "Spalte 1",
+       "Spalte 2",
+       "Spalte 3",
+       "Spalte 4",
+       "Spalte 5",
+       "Spalte 6",
+       "Spalte 7",
+       "Spalte 8",
+       "Spalte 9"
+      ],
+      "zeilen": [
+       [
+        "Wert 1.1",
+        "Wert 1.2",
+        "Wert 1.3",
+        "Wert 1.4",
+        "Wert 1.5",
+        "Wert 1.6",
+        "Wert 1.7",
+        "Wert 1.8",
+        "Wert 1.9"
+       ]
+      ]
+     }
+    }
+   ],
+   "steps": [
+    {
+     "id": "P-NT-20150429-s0",
+     "f": 5,
+     "sub": "IHK-Prüfung: Naturwissenschaftliche und technische Gesetzmäßigkeiten",
+     "t": "open",
+     "nr": 1,
+     "teil": "a",
+     "pts": 1,
+     "amtlich": true,
+     "vo": "§ 4 Absatz 6 Nr. 1",
+     "q": "Beschreiben Sie zwei Beispielmaßnahmen zu 1 a).",
+     "a": "Beispiellösung zu 1 a): zwei passende Maßnahmen mit kurzer Begründung."
+    },
+    {
+     "id": "P-NT-20150429-s1",
+     "f": 5,
+     "sub": "IHK-Prüfung: Naturwissenschaftliche und technische Gesetzmäßigkeiten",
+     "t": "open",
+     "nr": 1,
+     "teil": "b",
+     "pts": 3,
+     "amtlich": true,
+     "vo": "§ 4 Absatz 6 Nr. 1",
+     "q": "Beschreiben Sie zwei Beispielmaßnahmen zu 1 b).",
+     "a": "Beispiellösung zu 1 b): zwei passende Maßnahmen mit kurzer Begründung."
+    },
+    {
+     "id": "P-NT-20150429-s2",
+     "f": 5,
+     "sub": "IHK-Prüfung: Naturwissenschaftliche und technische Gesetzmäßigkeiten",
+     "t": "open",
+     "nr": 1,
+     "teil": "c",
+     "pts": 4,
+     "amtlich": true,
+     "vo": "§ 4 Absatz 6 Nr. 1",
+     "q": "Beschreiben Sie zwei Beispielmaßnahmen zu 1 c).",
+     "a": "Beispiellösung zu 1 c): zwei passende Maßnahmen mit kurzer Begründung."
+    },
+    {
+     "id": "P-NT-20150429-s3",
+     "f": 5,
+     "sub": "IHK-Prüfung: Naturwissenschaftliche und technische Gesetzmäßigkeiten",
+     "t": "open",
+     "nr": 1,
+     "teil": "d",
+     "pts": 2,
+     "amtlich": true,
+     "vo": "§ 4 Absatz 6 Nr. 1",
+     "q": "Beschreiben Sie zwei Beispielmaßnahmen zu 1 d).",
+     "a": "Beispiellösung zu 1 d): zwei passende Maßnahmen mit kurzer Begründung."
+    },
+    {
+     "id": "P-NT-20150429-s4",
+     "f": 5,
+     "sub": "IHK-Prüfung: Naturwissenschaftliche und technische Gesetzmäßigkeiten",
+     "t": "open",
+     "nr": 2,
+     "teil": "a",
+     "pts": 8,
+     "amtlich": true,
+     "vo": "§ 4 Absatz 6 Nr. 1-3",
+     "q": "Beschreiben Sie zwei Beispielmaßnahmen zu 2 a).",
+     "a": "Beispiellösung zu 2 a): zwei passende Maßnahmen mit kurzer Begründung."
+    },
+    {
+     "id": "P-NT-20150429-s5",
+     "f": 5,
+     "sub": "IHK-Prüfung: Naturwissenschaftliche und technische Gesetzmäßigkeiten",
+     "t": "open",
+     "nr": 2,
+     "teil": "b",
+     "pts": 7,
+     "amtlich": true,
+     "vo": "§ 4 Absatz 6 Nr. 1-3",
+     "q": "Berechnen Sie den Beispielwert zu 2 b).",
+     "a": "Beispielwert = 120 € · 2 = 240 €\n(Rechnung zu 2 b))"
+    },
+    {
+     "id": "P-NT-20150429-s6",
+     "f": 5,
+     "sub": "IHK-Prüfung: Naturwissenschaftliche und technische Gesetzmäßigkeiten",
+     "t": "open",
+     "nr": 3,
+     "teil": "a",
+     "pts": 5,
+     "amtlich": true,
+     "vo": "§ 4 Absatz 6 Nr. 1-3",
+     "q": "Berechnen Sie den Beispielwert zu 3 a).",
+     "a": "Beispielwert = 120 € · 2 = 240 €\n(Rechnung zu 3 a))"
+    },
+    {
+     "id": "P-NT-20150429-s7",
+     "f": 5,
+     "sub": "IHK-Prüfung: Naturwissenschaftliche und technische Gesetzmäßigkeiten",
+     "t": "open",
+     "nr": 3,
+     "teil": "b",
+     "pts": 5,
+     "amtlich": true,
+     "vo": "§ 4 Absatz 6 Nr. 1-3",
+     "q": "Berechnen Sie den Beispielwert zu 3 b).",
+     "a": "Beispielwert = 120 € · 2 = 240 €\n(Rechnung zu 3 b))"
+    },
+    {
+     "id": "P-NT-20150429-s8",
+     "f": 5,
+     "sub": "IHK-Prüfung: Naturwissenschaftliche und technische Gesetzmäßigkeiten",
+     "t": "open",
+     "nr": 3,
+     "teil": "c",
+     "pts": 5,
+     "amtlich": true,
+     "vo": "§ 4 Absatz 6 Nr. 1-3",
+     "q": "Berechnen Sie den Beispielwert zu 3 c).",
+     "a": "Beispielwert = 120 € · 2 = 240 €\n(Rechnung zu 3 c))"
+    },
+    {
+     "id": "P-NT-20150429-s9",
+     "f": 5,
+     "sub": "IHK-Prüfung: Naturwissenschaftliche und technische Gesetzmäßigkeiten",
+     "t": "open",
+     "nr": 4,
+     "teil": "a",
+     "pts": 8,
+     "amtlich": true,
+     "vo": "§ 4 Absatz 6 Nr. 3",
+     "q": "Berechnen Sie den Beispielwert zu 4 a).",
+     "a": "Beispielwert = 120 € · 2 = 240 €\n(Rechnung zu 4 a))"
+    },
+    {
+     "id": "P-NT-20150429-s10",
+     "f": 5,
+     "sub": "IHK-Prüfung: Naturwissenschaftliche und technische Gesetzmäßigkeiten",
+     "t": "open",
+     "nr": 4,
+     "teil": "b",
+     "pts": 10,
+     "amtlich": true,
+     "vo": "§ 4 Absatz 6 Nr. 3",
+     "q": "Berechnen Sie den Beispielwert zu 4 b).",
+     "a": "Beispielwert = 120 € · 2 = 240 €\n(Rechnung zu 4 b))"
+    },
+    {
+     "id": "P-NT-20150429-s11",
+     "f": 5,
+     "sub": "IHK-Prüfung: Naturwissenschaftliche und technische Gesetzmäßigkeiten",
+     "t": "open",
+     "nr": 5,
+     "teil": "a",
+     "pts": 15,
+     "amtlich": true,
+     "vo": "§ 4 Absatz 6 Nr. 3",
+     "q": "Berechnen Sie den Beispielwert zu 5 a).",
+     "a": "Beispielwert = 120 € · 2 = 240 €\n(Rechnung zu 5 a))"
+    },
+    {
+     "id": "P-NT-20150429-s12",
+     "f": 5,
+     "sub": "IHK-Prüfung: Naturwissenschaftliche und technische Gesetzmäßigkeiten",
+     "t": "open",
+     "nr": 6,
+     "teil": "a",
+     "pts": 10,
+     "amtlich": true,
+     "vo": "§ 4 Absatz 6 Nr. 3",
+     "q": "Berechnen Sie den Beispielwert zu 6 a).",
+     "a": "Beispielwert = 120 € · 2 = 240 €\n(Rechnung zu 6 a))"
+    },
+    {
+     "id": "P-NT-20150429-s13",
+     "f": 5,
+     "sub": "IHK-Prüfung: Naturwissenschaftliche und technische Gesetzmäßigkeiten",
+     "t": "open",
+     "nr": 7,
+     "teil": "a",
+     "pts": 2,
+     "amtlich": true,
+     "vo": "§ 4 Absatz 6 Nr. 4",
+     "q": "Beschreiben Sie zwei Beispielmaßnahmen zu 7 a).",
+     "a": "Beispiellösung zu 7 a): zwei passende Maßnahmen mit kurzer Begründung."
+    },
+    {
+     "id": "P-NT-20150429-s14",
+     "f": 5,
+     "sub": "IHK-Prüfung: Naturwissenschaftliche und technische Gesetzmäßigkeiten",
+     "t": "open",
+     "nr": 7,
+     "teil": "b",
+     "pts": 2,
+     "amtlich": true,
+     "vo": "§ 4 Absatz 6 Nr. 4",
+     "q": "Beschreiben Sie zwei Beispielmaßnahmen zu 7 b).",
+     "a": "Beispiellösung zu 7 b): zwei passende Maßnahmen mit kurzer Begründung."
+    },
+    {
+     "id": "P-NT-20150429-s15",
+     "f": 5,
+     "sub": "IHK-Prüfung: Naturwissenschaftliche und technische Gesetzmäßigkeiten",
+     "t": "open",
+     "nr": 7,
+     "teil": "c",
+     "pts": 2,
+     "amtlich": true,
+     "vo": "§ 4 Absatz 6 Nr. 4",
+     "q": "Beschreiben Sie zwei Beispielmaßnahmen zu 7 c).",
+     "a": "Beispiellösung zu 7 c): zwei passende Maßnahmen mit kurzer Begründung."
+    },
+    {
+     "id": "P-NT-20150429-s16",
+     "f": 5,
+     "sub": "IHK-Prüfung: Naturwissenschaftliche und technische Gesetzmäßigkeiten",
+     "t": "open",
+     "nr": 7,
+     "teil": "d",
+     "pts": 2,
+     "amtlich": true,
+     "vo": "§ 4 Absatz 6 Nr. 4",
+     "q": "Beschreiben Sie zwei Beispielmaßnahmen zu 7 d).",
+     "a": "Beispiellösung zu 7 d): zwei passende Maßnahmen mit kurzer Begründung."
+    },
+    {
+     "id": "P-NT-20150429-s17",
+     "f": 5,
+     "sub": "IHK-Prüfung: Naturwissenschaftliche und technische Gesetzmäßigkeiten",
+     "t": "open",
+     "nr": 7,
+     "teil": "e",
+     "pts": 4,
+     "amtlich": true,
+     "vo": "§ 4 Absatz 6 Nr. 4",
+     "q": "Beschreiben Sie zwei Beispielmaßnahmen zu 7 e).",
+     "a": "Beispiellösung zu 7 e): zwei passende Maßnahmen mit kurzer Begründung."
+    },
+    {
+     "id": "P-NT-20150429-s18",
+     "f": 5,
+     "sub": "IHK-Prüfung: Naturwissenschaftliche und technische Gesetzmäßigkeiten",
+     "t": "open",
+     "nr": 7,
+     "teil": "f",
+     "pts": 5,
+     "amtlich": true,
+     "vo": "§ 4 Absatz 6 Nr. 4",
+     "q": "Zeichnen Sie eine Skizze zum Beispiel 7 f).",
+     "a": "Beispiellösung zu 7 f): eine passende Skizze."
+    }
+   ]
+  },
+  {
+   "id": "P-OK-20221115",
+   "f": 4,
+   "sub": "IHK-Prüfung: Organisation und Kommunikation",
+   "title": "IHK-Prüfung Organisation und Kommunikation – 15. November 2022",
+   "termin": "Herbst 2022",
+   "amtlich": true,
+   "context": "Erfundene Beispielprüfung für die Tests der App – kein Prüfungstext.\nSie sind Fuhrparkleiter in einem Beispielbetrieb.\nBearbeitungszeit 180 Minuten.",
+   "aufgaben": [
+    {
+     "nr": 1,
+     "pts": 24,
+     "sit": "Ausgangslage zu Aufgabe 1: Ein erfundener Beispielbetrieb plant eine Änderung."
+    },
+    {
+     "nr": 2,
+     "pts": 25,
+     "sit": "Ausgangslage zu Aufgabe 2: Ein erfundener Beispielbetrieb plant eine Änderung."
+    },
+    {
+     "nr": 3,
+     "pts": 20,
+     "sit": "Ausgangslage zu Aufgabe 3: Ein erfundener Beispielbetrieb plant eine Änderung."
+    },
+    {
+     "nr": 4,
+     "pts": 16,
+     "sit": "Ausgangslage zu Aufgabe 4: Ein erfundener Beispielbetrieb plant eine Änderung."
+    },
+    {
+     "nr": 5,
+     "pts": 15,
+     "sit": "Ausgangslage zu Aufgabe 5: Ein erfundener Beispielbetrieb plant eine Änderung."
+    }
+   ],
+   "steps": [
+    {
+     "id": "P-OK-20221115-s0",
+     "f": 4,
+     "sub": "IHK-Prüfung: Organisation und Kommunikation",
+     "t": "open",
+     "nr": 1,
+     "teil": "a",
+     "pts": 10,
+     "amtlich": true,
+     "vo": "§ 5 Absatz 9",
+     "q": "Beschreiben Sie zwei Beispielmaßnahmen zu 1 a).",
+     "a": "Beispiellösung zu 1 a): zwei passende Maßnahmen mit kurzer Begründung."
+    },
+    {
+     "id": "P-OK-20221115-s1",
+     "f": 4,
+     "sub": "IHK-Prüfung: Organisation und Kommunikation",
+     "t": "open",
+     "nr": 1,
+     "teil": "b",
+     "pts": 8,
+     "amtlich": true,
+     "vo": "§ 5 Absatz 9",
+     "q": "Beschreiben Sie zwei Beispielmaßnahmen zu 1 b).",
+     "a": "Beispiellösung zu 1 b): zwei passende Maßnahmen mit kurzer Begründung."
+    },
+    {
+     "id": "P-OK-20221115-s2",
+     "f": 4,
+     "sub": "IHK-Prüfung: Organisation und Kommunikation",
+     "t": "open",
+     "nr": 1,
+     "teil": "c",
+     "pts": 6,
+     "amtlich": true,
+     "vo": "§ 5 Absatz 9",
+     "q": "Beschreiben Sie zwei Beispielmaßnahmen zu 1 c).",
+     "a": "Beispiellösung zu 1 c): zwei passende Maßnahmen mit kurzer Begründung."
+    },
+    {
+     "id": "P-OK-20221115-s3",
+     "f": 4,
+     "sub": "IHK-Prüfung: Organisation und Kommunikation",
+     "t": "open",
+     "nr": 2,
+     "teil": "a",
+     "pts": 9,
+     "amtlich": true,
+     "vo": "§ 5 Absatz 12 Nr. 2",
+     "q": "Beschreiben Sie zwei Beispielmaßnahmen zu 2 a).",
+     "a": "Beispiellösung zu 2 a): zwei passende Maßnahmen mit kurzer Begründung.",
+     "tab": {
+      "titel": "Beispielanlage (erfunden)",
+      "kopf": [
+       "",
+       "Spalte 2",
+       "Spalte 3",
+       "Spalte 4"
+      ],
+      "zeilen": [
+       [
+        "Wert 1.1",
+        "",
+        "",
+        ""
+       ],
+       [
+        "Wert 2.1",
+        "",
+        "",
+        ""
+       ],
+       [
+        "Wert 3.1",
+        "",
+        "",
+        ""
+       ]
+      ]
+     },
+     "tabL": {
+      "titel": "Beispielanlage (erfunden)",
+      "kopf": [
+       "",
+       "Spalte 2",
+       "Spalte 3",
+       "Spalte 4"
+      ],
+      "zeilen": [
+       [
+        "Wert 1.1",
+        "11",
+        "12",
+        "13"
+       ],
+       [
+        "Wert 2.1",
+        "21",
+        "22",
+        "23"
+       ],
+       [
+        "Wert 3.1",
+        "31",
+        "32",
+        "33"
+       ]
+      ]
+     }
+    },
+    {
+     "id": "P-OK-20221115-s4",
+     "f": 4,
+     "sub": "IHK-Prüfung: Organisation und Kommunikation",
+     "t": "open",
+     "nr": 2,
+     "teil": "b",
+     "pts": 8,
+     "amtlich": true,
+     "vo": "§ 5 Absatz 12 Nr. 2",
+     "q": "Beschreiben Sie zwei Beispielmaßnahmen zu 2 b).",
+     "a": "Beispiellösung zu 2 b): zwei passende Maßnahmen mit kurzer Begründung."
+    },
+    {
+     "id": "P-OK-20221115-s5",
+     "f": 4,
+     "sub": "IHK-Prüfung: Organisation und Kommunikation",
+     "t": "open",
+     "nr": 2,
+     "teil": "c",
+     "pts": 8,
+     "amtlich": true,
+     "vo": "§ 5 Absatz 12 Nr. 2",
+     "q": "Beschreiben Sie zwei Beispielmaßnahmen zu 2 c).",
+     "a": "Beispiellösung zu 2 c): zwei passende Maßnahmen mit kurzer Begründung."
+    },
+    {
+     "id": "P-OK-20221115-s6",
+     "f": 4,
+     "sub": "IHK-Prüfung: Organisation und Kommunikation",
+     "t": "open",
+     "nr": 3,
+     "teil": "a",
+     "pts": 10,
+     "amtlich": true,
+     "vo": "§ 5 Absatz 6 Nr. 1",
+     "q": "Berechnen Sie den Beispielwert zu 3 a).",
+     "a": "Beispielwert = 120 € · 2 = 240 €\n(Rechnung zu 3 a))"
+    },
+    {
+     "id": "P-OK-20221115-s7",
+     "f": 4,
+     "sub": "IHK-Prüfung: Organisation und Kommunikation",
+     "t": "open",
+     "nr": 3,
+     "teil": "b",
+     "pts": 8,
+     "amtlich": true,
+     "vo": "§ 5 Absatz 6 Nr. 1",
+     "q": "Berechnen Sie den Beispielwert zu 3 b).",
+     "a": "Beispielwert = 120 € · 2 = 240 €\n(Rechnung zu 3 b))"
+    },
+    {
+     "id": "P-OK-20221115-s8",
+     "f": 4,
+     "sub": "IHK-Prüfung: Organisation und Kommunikation",
+     "t": "open",
+     "nr": 3,
+     "teil": "c",
+     "pts": 2,
+     "amtlich": true,
+     "vo": "§ 5 Absatz 6 Nr. 1",
+     "q": "Berechnen Sie den Beispielwert zu 3 c).",
+     "a": "Beispielwert = 120 € · 2 = 240 €\n(Rechnung zu 3 c))"
+    },
+    {
+     "id": "P-OK-20221115-s9",
+     "f": 4,
+     "sub": "IHK-Prüfung: Organisation und Kommunikation",
+     "t": "open",
+     "nr": 4,
+     "teil": "a",
+     "pts": 6,
+     "amtlich": true,
+     "vo": "§ 5 Absatz 4",
+     "q": "Beschreiben Sie zwei Beispielmaßnahmen zu 4 a).",
+     "a": "Beispiellösung zu 4 a): zwei passende Maßnahmen mit kurzer Begründung."
+    },
+    {
+     "id": "P-OK-20221115-s10",
+     "f": 4,
+     "sub": "IHK-Prüfung: Organisation und Kommunikation",
+     "t": "open",
+     "nr": 4,
+     "teil": "b",
+     "pts": 10,
+     "amtlich": true,
+     "vo": "§ 5 Absatz 4",
+     "q": "Beschreiben Sie zwei Beispielmaßnahmen zu 4 b).",
+     "a": "Beispiellösung zu 4 b): zwei passende Maßnahmen mit kurzer Begründung."
+    },
+    {
+     "id": "P-OK-20221115-s11",
+     "f": 4,
+     "sub": "IHK-Prüfung: Organisation und Kommunikation",
+     "t": "open",
+     "nr": 5,
+     "teil": "a",
+     "pts": 15,
+     "amtlich": true,
+     "vo": "§ 5 Absatz 3 Nr. 4",
+     "q": "Beschreiben Sie zwei Beispielmaßnahmen zu 5 a).",
+     "a": "Beispiellösung zu 5 a): zwei passende Maßnahmen mit kurzer Begründung."
+    }
+   ]
+  },
+  {
+   "id": "P-MI-20241106",
+   "f": 3,
+   "sub": "IHK-Prüfung: Methoden der Information, Kommunikation und Planung",
+   "title": "IHK-Prüfung Methoden der Information, Kommunikation und Planung – 6. November 2024",
+   "termin": "Herbst 2024",
+   "amtlich": true,
+   "context": "In dieser Prüfung hat jede Aufgabe ihre eigene Ausgangssituation; sie steht jeweils über der Aufgabe.\n\nErfundene Beispielprüfung für die Tests der App – kein Prüfungstext.",
+   "aufgaben": [
+    {
+     "nr": 1,
+     "pts": 20,
+     "sit": "Ausgangslage zu Aufgabe 1: Ein erfundener Beispielbetrieb plant eine Änderung."
+    },
+    {
+     "nr": 2,
+     "pts": 20,
+     "sit": "Ausgangslage zu Aufgabe 2: Ein erfundener Beispielbetrieb plant eine Änderung."
+    },
+    {
+     "nr": 3,
+     "pts": 10,
+     "sit": "Ausgangslage zu Aufgabe 3: Ein erfundener Beispielbetrieb plant eine Änderung."
+    },
+    {
+     "nr": 4,
+     "pts": 15,
+     "sit": "Ausgangslage zu Aufgabe 4: Ein erfundener Beispielbetrieb plant eine Änderung."
+    },
+    {
+     "nr": 5,
+     "pts": 20,
+     "sit": "Ausgangslage zu Aufgabe 5: Ein erfundener Beispielbetrieb plant eine Änderung."
+    },
+    {
+     "nr": 6,
+     "pts": 15,
+     "sit": "Ausgangslage zu Aufgabe 6: Ein erfundener Beispielbetrieb plant eine Änderung."
+    }
+   ],
+   "steps": [
+    {
+     "id": "P-MI-20241106-s0",
+     "f": 3,
+     "sub": "IHK-Prüfung: Methoden der Information, Kommunikation und Planung",
+     "t": "open",
+     "nr": 1,
+     "teil": "a",
+     "pts": 6,
+     "amtlich": true,
+     "vo": "§ 4 Absatz 4 Nr. 1",
+     "q": "Beschreiben Sie zwei Beispielmaßnahmen zu 1 a).",
+     "a": "Beispiellösung zu 1 a): zwei passende Maßnahmen mit kurzer Begründung."
+    },
+    {
+     "id": "P-MI-20241106-s1",
+     "f": 3,
+     "sub": "IHK-Prüfung: Methoden der Information, Kommunikation und Planung",
+     "t": "open",
+     "nr": 1,
+     "teil": "b",
+     "pts": 4,
+     "amtlich": true,
+     "vo": "§ 4 Absatz 4 Nr. 1",
+     "q": "Beschreiben Sie zwei Beispielmaßnahmen zu 1 b).",
+     "a": "Beispiellösung zu 1 b): zwei passende Maßnahmen mit kurzer Begründung."
+    },
+    {
+     "id": "P-MI-20241106-s2",
+     "f": 3,
+     "sub": "IHK-Prüfung: Methoden der Information, Kommunikation und Planung",
+     "t": "open",
+     "nr": 1,
+     "teil": "c",
+     "pts": 4,
+     "amtlich": true,
+     "vo": "§ 4 Absatz 4 Nr. 1",
+     "q": "Beschreiben Sie zwei Beispielmaßnahmen zu 1 c).",
+     "a": "Beispiellösung zu 1 c): zwei passende Maßnahmen mit kurzer Begründung."
+    },
+    {
+     "id": "P-MI-20241106-s3",
+     "f": 3,
+     "sub": "IHK-Prüfung: Methoden der Information, Kommunikation und Planung",
+     "t": "open",
+     "nr": 1,
+     "teil": "d",
+     "pts": 6,
+     "amtlich": true,
+     "vo": "§ 4 Absatz 4 Nr. 1",
+     "q": "Beschreiben Sie zwei Beispielmaßnahmen zu 1 d).",
+     "a": "Beispiellösung zu 1 d): zwei passende Maßnahmen mit kurzer Begründung."
+    },
+    {
+     "id": "P-MI-20241106-s4",
+     "f": 3,
+     "sub": "IHK-Prüfung: Methoden der Information, Kommunikation und Planung",
+     "t": "open",
+     "nr": 2,
+     "teil": "a",
+     "pts": 10,
+     "amtlich": true,
+     "vo": "§ 4 Absatz 4 Nr. 2",
+     "q": "Erstellen Sie ein Flussdiagramm für den Beispielablauf zu 2 a).",
+     "a": "Beispiellösung zu 2 a): eine passende Skizze."
+    },
+    {
+     "id": "P-MI-20241106-s5",
+     "f": 3,
+     "sub": "IHK-Prüfung: Methoden der Information, Kommunikation und Planung",
+     "t": "open",
+     "nr": 2,
+     "teil": "b",
+     "pts": 4,
+     "amtlich": true,
+     "vo": "§ 4 Absatz 4 Nr. 2",
+     "q": "Beschreiben Sie zwei Beispielmaßnahmen zu 2 b).",
+     "a": "Beispiellösung zu 2 b): zwei passende Maßnahmen mit kurzer Begründung."
+    },
+    {
+     "id": "P-MI-20241106-s6",
+     "f": 3,
+     "sub": "IHK-Prüfung: Methoden der Information, Kommunikation und Planung",
+     "t": "open",
+     "nr": 2,
+     "teil": "c",
+     "pts": 6,
+     "amtlich": true,
+     "vo": "§ 4 Absatz 4 Nr. 2",
+     "q": "Beschreiben Sie zwei Beispielmaßnahmen zu 2 c).",
+     "a": "Beispiellösung zu 2 c): zwei passende Maßnahmen mit kurzer Begründung."
+    },
+    {
+     "id": "P-MI-20241106-s7",
+     "f": 3,
+     "sub": "IHK-Prüfung: Methoden der Information, Kommunikation und Planung",
+     "t": "open",
+     "nr": 3,
+     "teil": "a",
+     "pts": 4,
+     "amtlich": true,
+     "vo": "§ 4 Absatz 4 Nr. 3",
+     "q": "Beschreiben Sie zwei Beispielmaßnahmen zu 3 a).",
+     "a": "Beispiellösung zu 3 a): zwei passende Maßnahmen mit kurzer Begründung."
+    },
+    {
+     "id": "P-MI-20241106-s8",
+     "f": 3,
+     "sub": "IHK-Prüfung: Methoden der Information, Kommunikation und Planung",
+     "t": "open",
+     "nr": 3,
+     "teil": "b",
+     "pts": 6,
+     "amtlich": true,
+     "vo": "§ 4 Absatz 4 Nr. 3",
+     "q": "Beschreiben Sie zwei Beispielmaßnahmen zu 3 b).",
+     "a": "Beispiellösung zu 3 b): zwei passende Maßnahmen mit kurzer Begründung."
+    },
+    {
+     "id": "P-MI-20241106-s9",
+     "f": 3,
+     "sub": "IHK-Prüfung: Methoden der Information, Kommunikation und Planung",
+     "t": "open",
+     "nr": 4,
+     "teil": "a",
+     "pts": 4,
+     "amtlich": true,
+     "vo": "§ 4 Absatz 4 Nr. 4",
+     "q": "Berechnen Sie den Beispielwert zu 4 a).",
+     "a": "Beispielwert = 120 € · 2 = 240 €\n(Rechnung zu 4 a))"
+    },
+    {
+     "id": "P-MI-20241106-s10",
+     "f": 3,
+     "sub": "IHK-Prüfung: Methoden der Information, Kommunikation und Planung",
+     "t": "open",
+     "nr": 4,
+     "teil": "b",
+     "pts": 7,
+     "amtlich": true,
+     "vo": "§ 4 Absatz 4 Nr. 4",
+     "q": "Zeichnen Sie eine Skizze zum Beispiel 4 b).",
+     "a": "Beispiellösung zu 4 b): eine passende Skizze."
+    },
+    {
+     "id": "P-MI-20241106-s11",
+     "f": 3,
+     "sub": "IHK-Prüfung: Methoden der Information, Kommunikation und Planung",
+     "t": "open",
+     "nr": 4,
+     "teil": "c",
+     "pts": 4,
+     "amtlich": true,
+     "vo": "§ 4 Absatz 4 Nr. 4",
+     "q": "Beschreiben Sie zwei Beispielmaßnahmen zu 4 c).",
+     "a": "Beispiellösung zu 4 c): zwei passende Maßnahmen mit kurzer Begründung."
+    },
+    {
+     "id": "P-MI-20241106-s12",
+     "f": 3,
+     "sub": "IHK-Prüfung: Methoden der Information, Kommunikation und Planung",
+     "t": "open",
+     "nr": 5,
+     "teil": "a",
+     "pts": 8,
+     "amtlich": true,
+     "vo": "§ 4 Absatz 4 Nr. 5",
+     "q": "Beschreiben Sie zwei Beispielmaßnahmen zu 5 a).",
+     "a": "Beispiellösung zu 5 a): zwei passende Maßnahmen mit kurzer Begründung."
+    },
+    {
+     "id": "P-MI-20241106-s13",
+     "f": 3,
+     "sub": "IHK-Prüfung: Methoden der Information, Kommunikation und Planung",
+     "t": "open",
+     "nr": 5,
+     "teil": "b",
+     "pts": 12,
+     "amtlich": true,
+     "vo": "§ 4 Absatz 4 Nr. 5",
+     "q": "Beschreiben Sie zwei Beispielmaßnahmen zu 5 b).",
+     "a": "Beispiellösung zu 5 b): zwei passende Maßnahmen mit kurzer Begründung."
+    },
+    {
+     "id": "P-MI-20241106-s14",
+     "f": 3,
+     "sub": "IHK-Prüfung: Methoden der Information, Kommunikation und Planung",
+     "t": "open",
+     "nr": 6,
+     "teil": "a",
+     "pts": 15,
+     "amtlich": true,
+     "vo": "§ 4 Absatz 4 Nr. 6",
+     "q": "Beschreiben Sie zwei Beispielmaßnahmen zu 6 a).",
+     "a": "Beispiellösung zu 6 a): zwei passende Maßnahmen mit kurzer Begründung."
+    }
+   ]
+  },
+  {
+   "id": "P-MI-20200505",
+   "f": 3,
+   "sub": "IHK-Prüfung: Methoden der Information, Kommunikation und Planung",
+   "title": "IHK-Prüfung Methoden der Information, Kommunikation und Planung – 5. Mai 2020",
+   "termin": "Frühjahr 2020",
+   "amtlich": true,
+   "context": "In dieser Prüfung hat jede Aufgabe ihre eigene Ausgangssituation; sie steht jeweils über der Aufgabe.\n\nErfundene Beispielprüfung für die Tests der App – kein Prüfungstext.",
+   "aufgaben": [
+    {
+     "nr": 1,
+     "pts": 20,
+     "sit": "Ausgangslage zu Aufgabe 1: Ein erfundener Beispielbetrieb plant eine Änderung."
+    },
+    {
+     "nr": 2,
+     "pts": 20,
+     "sit": "Ausgangslage zu Aufgabe 2: Ein erfundener Beispielbetrieb plant eine Änderung."
+    },
+    {
+     "nr": 3,
+     "pts": 10,
+     "sit": "Ausgangslage zu Aufgabe 3: Ein erfundener Beispielbetrieb plant eine Änderung."
+    },
+    {
+     "nr": 4,
+     "pts": 15,
+     "sit": "Ausgangslage zu Aufgabe 4: Ein erfundener Beispielbetrieb plant eine Änderung.",
+     "tab": [
+      {
+       "titel": "Beispielanlage (erfunden)",
+       "kopf": [
+        "Spalte 1",
+        "Spalte 2",
+        "Spalte 3",
+        "Spalte 4",
+        "Spalte 5",
+        "Spalte 6"
+       ],
+       "zeilen": [
+        [
+         "Wert 1.1",
+         "Wert 1.2",
+         "Wert 1.3",
+         "Wert 1.4",
+         "Wert 1.5",
+         "Wert 1.6"
+        ]
+       ]
+      },
+      {
+       "titel": "Beispielanlage (erfunden)",
+       "kopf": [
+        "Spalte 1",
+        "Spalte 2",
+        "Spalte 3",
+        "Spalte 4",
+        "Spalte 5",
+        "Spalte 6"
+       ],
+       "zeilen": [
+        [
+         "Wert 1.1",
+         "Wert 1.2",
+         "Wert 1.3",
+         "Wert 1.4",
+         "Wert 1.5",
+         "Wert 1.6"
+        ]
+       ]
+      },
+      {
+       "titel": "Beispielanlage (erfunden)",
+       "kopf": [
+        "Spalte 1",
+        "Spalte 2",
+        "Spalte 3",
+        "Spalte 4",
+        "Spalte 5",
+        "Spalte 6"
+       ],
+       "zeilen": [
+        [
+         "Wert 1.1",
+         "Wert 1.2",
+         "Wert 1.3",
+         "Wert 1.4",
+         "Wert 1.5",
+         "Wert 1.6"
+        ]
+       ]
+      }
+     ]
+    },
+    {
+     "nr": 5,
+     "pts": 20,
+     "sit": "Ausgangslage zu Aufgabe 5: Ein erfundener Beispielbetrieb plant eine Änderung."
+    },
+    {
+     "nr": 6,
+     "pts": 15,
+     "sit": "Ausgangslage zu Aufgabe 6: Ein erfundener Beispielbetrieb plant eine Änderung."
+    }
+   ],
+   "steps": [
+    {
+     "id": "P-MI-20200505-s0",
+     "f": 3,
+     "sub": "IHK-Prüfung: Methoden der Information, Kommunikation und Planung",
+     "t": "open",
+     "nr": 1,
+     "teil": "a",
+     "pts": 6,
+     "amtlich": true,
+     "vo": "§ 4 Absatz 4 Nr. 1",
+     "q": "Beschreiben Sie zwei Beispielmaßnahmen zu 1 a).",
+     "a": "Beispiellösung zu 1 a): zwei passende Maßnahmen mit kurzer Begründung."
+    },
+    {
+     "id": "P-MI-20200505-s1",
+     "f": 3,
+     "sub": "IHK-Prüfung: Methoden der Information, Kommunikation und Planung",
+     "t": "open",
+     "nr": 1,
+     "teil": "b",
+     "pts": 6,
+     "amtlich": true,
+     "vo": "§ 4 Absatz 4 Nr. 1",
+     "q": "Beschreiben Sie zwei Beispielmaßnahmen zu 1 b).",
+     "a": "Beispiellösung zu 1 b): zwei passende Maßnahmen mit kurzer Begründung."
+    },
+    {
+     "id": "P-MI-20200505-s2",
+     "f": 3,
+     "sub": "IHK-Prüfung: Methoden der Information, Kommunikation und Planung",
+     "t": "open",
+     "nr": 1,
+     "teil": "c",
+     "pts": 4,
+     "amtlich": true,
+     "vo": "§ 4 Absatz 4 Nr. 1",
+     "q": "Beschreiben Sie zwei Beispielmaßnahmen zu 1 c).",
+     "a": "Beispiellösung zu 1 c): zwei passende Maßnahmen mit kurzer Begründung."
+    },
+    {
+     "id": "P-MI-20200505-s3",
+     "f": 3,
+     "sub": "IHK-Prüfung: Methoden der Information, Kommunikation und Planung",
+     "t": "open",
+     "nr": 1,
+     "teil": "d",
+     "pts": 4,
+     "amtlich": true,
+     "vo": "§ 4 Absatz 4 Nr. 1",
+     "q": "Beschreiben Sie zwei Beispielmaßnahmen zu 1 d).",
+     "a": "Beispiellösung zu 1 d): zwei passende Maßnahmen mit kurzer Begründung."
+    },
+    {
+     "id": "P-MI-20200505-s4",
+     "f": 3,
+     "sub": "IHK-Prüfung: Methoden der Information, Kommunikation und Planung",
+     "t": "open",
+     "nr": 2,
+     "teil": "a",
+     "pts": 10,
+     "amtlich": true,
+     "vo": "§ 4 Absatz 4 Nr. 2",
+     "q": "Zeichnen Sie eine Skizze zum Beispiel 2 a).",
+     "a": "Beispiellösung zu 2 a): eine passende Skizze.",
+     "tab": {
+      "titel": "Beispielanlage (erfunden)",
+      "kopf": [
+       "Spalte 1",
+       "Spalte 2",
+       "Spalte 3",
+       "Spalte 4",
+       "Spalte 5",
+       "Spalte 6",
+       "Spalte 7",
+       "Spalte 8"
+      ],
+      "zeilen": [
+       [
+        "Wert 1.1",
+        "Wert 1.2",
+        "Wert 1.3",
+        "",
+        "",
+        "",
+        "",
+        ""
+       ],
+       [
+        "Wert 2.1",
+        "Wert 2.2",
+        "Wert 2.3",
+        "",
+        "",
+        "",
+        "",
+        ""
+       ],
+       [
+        "Wert 3.1",
+        "Wert 3.2",
+        "Wert 3.3",
+        "",
+        "",
+        "",
+        "",
+        ""
+       ],
+       [
+        "Wert 4.1",
+        "Wert 4.2",
+        "Wert 4.3",
+        "",
+        "",
+        "",
+        "",
+        ""
+       ],
+       [
+        "Wert 5.1",
+        "Wert 5.2",
+        "Wert 5.3",
+        "",
+        "",
+        "",
+        "",
+        ""
+       ],
+       [
+        "Wert 6.1",
+        "Wert 6.2",
+        "Wert 6.3",
+        "",
+        "",
+        "",
+        "",
+        ""
+       ],
+       [
+        "Wert 7.1",
+        "Wert 7.2",
+        "Wert 7.3",
+        "",
+        "",
+        "",
+        "",
+        ""
+       ],
+       [
+        "Wert 8.1",
+        "Wert 8.2",
+        "Wert 8.3",
+        "",
+        "",
+        "",
+        "",
+        ""
+       ],
+       [
+        "Wert 9.1",
+        "Wert 9.2",
+        "Wert 9.3",
+        "",
+        "",
+        "",
+        "",
+        ""
+       ]
+      ],
+      "hinweis": "Hinweis zur Beispielanlage."
+     },
+     "tabL": {
+      "titel": "Beispielanlage (erfunden)",
+      "kopf": [
+       "Spalte 1",
+       "Spalte 2",
+       "Spalte 3",
+       "Spalte 4",
+       "Spalte 5",
+       "Spalte 6",
+       "Spalte 7",
+       "Spalte 8"
+      ],
+      "zeilen": [
+       [
+        "Wert 1.1",
+        "Wert 1.2",
+        "Wert 1.3",
+        "13",
+        "14",
+        "15",
+        "16",
+        "17"
+       ],
+       [
+        "Wert 2.1",
+        "Wert 2.2",
+        "Wert 2.3",
+        "23",
+        "24",
+        "25",
+        "26",
+        "27"
+       ],
+       [
+        "Wert 3.1",
+        "Wert 3.2",
+        "Wert 3.3",
+        "33",
+        "34",
+        "35",
+        "36",
+        "37"
+       ],
+       [
+        "Wert 4.1",
+        "Wert 4.2",
+        "Wert 4.3",
+        "43",
+        "44",
+        "45",
+        "46",
+        "47"
+       ],
+       [
+        "Wert 5.1",
+        "Wert 5.2",
+        "Wert 5.3",
+        "53",
+        "54",
+        "55",
+        "56",
+        "57"
+       ],
+       [
+        "Wert 6.1",
+        "Wert 6.2",
+        "Wert 6.3",
+        "63",
+        "64",
+        "65",
+        "66",
+        "67"
+       ],
+       [
+        "Wert 7.1",
+        "Wert 7.2",
+        "Wert 7.3",
+        "73",
+        "74",
+        "75",
+        "76",
+        "77"
+       ],
+       [
+        "Wert 8.1",
+        "Wert 8.2",
+        "Wert 8.3",
+        "83",
+        "84",
+        "85",
+        "86",
+        "87"
+       ],
+       [
+        "Wert 9.1",
+        "Wert 9.2",
+        "Wert 9.3",
+        "93",
+        "94",
+        "95",
+        "96",
+        "97"
+       ]
+      ]
+     }
+    },
+    {
+     "id": "P-MI-20200505-s5",
+     "f": 3,
+     "sub": "IHK-Prüfung: Methoden der Information, Kommunikation und Planung",
+     "t": "open",
+     "nr": 2,
+     "teil": "b",
+     "pts": 6,
+     "amtlich": true,
+     "vo": "§ 4 Absatz 4 Nr. 2",
+     "q": "Zeichnen Sie eine Skizze zum Beispiel 2 b).",
+     "a": "Beispiellösung zu 2 b): eine passende Skizze."
+    },
+    {
+     "id": "P-MI-20200505-s6",
+     "f": 3,
+     "sub": "IHK-Prüfung: Methoden der Information, Kommunikation und Planung",
+     "t": "open",
+     "nr": 2,
+     "teil": "c",
+     "pts": 4,
+     "amtlich": true,
+     "vo": "§ 4 Absatz 4 Nr. 2",
+     "q": "Beschreiben Sie zwei Beispielmaßnahmen zu 2 c).",
+     "a": "Beispiellösung zu 2 c): zwei passende Maßnahmen mit kurzer Begründung."
+    },
+    {
+     "id": "P-MI-20200505-s7",
+     "f": 3,
+     "sub": "IHK-Prüfung: Methoden der Information, Kommunikation und Planung",
+     "t": "open",
+     "nr": 3,
+     "teil": "a",
+     "pts": 6,
+     "amtlich": true,
+     "vo": "§ 4 Absatz 4 Nr. 3",
+     "q": "Beschreiben Sie zwei Beispielmaßnahmen zu 3 a).",
+     "a": "Beispiellösung zu 3 a): zwei passende Maßnahmen mit kurzer Begründung."
+    },
+    {
+     "id": "P-MI-20200505-s8",
+     "f": 3,
+     "sub": "IHK-Prüfung: Methoden der Information, Kommunikation und Planung",
+     "t": "open",
+     "nr": 3,
+     "teil": "b",
+     "pts": 4,
+     "amtlich": true,
+     "vo": "§ 4 Absatz 4 Nr. 3",
+     "q": "Beschreiben Sie zwei Beispielmaßnahmen zu 3 b).",
+     "a": "Beispiellösung zu 3 b): zwei passende Maßnahmen mit kurzer Begründung."
+    },
+    {
+     "id": "P-MI-20200505-s9",
+     "f": 3,
+     "sub": "IHK-Prüfung: Methoden der Information, Kommunikation und Planung",
+     "t": "open",
+     "nr": 4,
+     "teil": "a",
+     "pts": 5,
+     "amtlich": true,
+     "vo": "§ 4 Absatz 4 Nr. 4",
+     "q": "Beschreiben Sie zwei Beispielmaßnahmen zu 4 a).",
+     "a": "Beispiellösung zu 4 a): zwei passende Maßnahmen mit kurzer Begründung."
+    },
+    {
+     "id": "P-MI-20200505-s10",
+     "f": 3,
+     "sub": "IHK-Prüfung: Methoden der Information, Kommunikation und Planung",
+     "t": "open",
+     "nr": 4,
+     "teil": "b",
+     "pts": 7,
+     "amtlich": true,
+     "vo": "§ 4 Absatz 4 Nr. 4",
+     "q": "Zeichnen Sie eine Skizze zum Beispiel 4 b).",
+     "a": "Beispiellösung zu 4 b): eine passende Skizze."
+    },
+    {
+     "id": "P-MI-20200505-s11",
+     "f": 3,
+     "sub": "IHK-Prüfung: Methoden der Information, Kommunikation und Planung",
+     "t": "open",
+     "nr": 4,
+     "teil": "c",
+     "pts": 3,
+     "amtlich": true,
+     "vo": "§ 4 Absatz 4 Nr. 4",
+     "q": "Beschreiben Sie zwei Beispielmaßnahmen zu 4 c).",
+     "a": "Beispiellösung zu 4 c): zwei passende Maßnahmen mit kurzer Begründung."
+    },
+    {
+     "id": "P-MI-20200505-s12",
+     "f": 3,
+     "sub": "IHK-Prüfung: Methoden der Information, Kommunikation und Planung",
+     "t": "open",
+     "nr": 5,
+     "teil": "a",
+     "pts": 4,
+     "amtlich": true,
+     "vo": "§ 4 Absatz 4 Nr. 5",
+     "q": "Beschreiben Sie zwei Beispielmaßnahmen zu 5 a).",
+     "a": "Beispiellösung zu 5 a): zwei passende Maßnahmen mit kurzer Begründung."
+    },
+    {
+     "id": "P-MI-20200505-s13",
+     "f": 3,
+     "sub": "IHK-Prüfung: Methoden der Information, Kommunikation und Planung",
+     "t": "open",
+     "nr": 5,
+     "teil": "b",
+     "pts": 16,
+     "amtlich": true,
+     "vo": "§ 4 Absatz 4 Nr. 5",
+     "q": "Beschreiben Sie zwei Beispielmaßnahmen zu 5 b).",
+     "a": "Beispiellösung zu 5 b): zwei passende Maßnahmen mit kurzer Begründung."
+    },
+    {
+     "id": "P-MI-20200505-s14",
+     "f": 3,
+     "sub": "IHK-Prüfung: Methoden der Information, Kommunikation und Planung",
+     "t": "open",
+     "nr": 6,
+     "teil": "a",
+     "pts": 6,
+     "amtlich": true,
+     "vo": "§ 4 Absatz 4 Nr. 6",
+     "q": "Beschreiben Sie zwei Beispielmaßnahmen zu 6 a).",
+     "a": "Beispiellösung zu 6 a): zwei passende Maßnahmen mit kurzer Begründung."
+    },
+    {
+     "id": "P-MI-20200505-s15",
+     "f": 3,
+     "sub": "IHK-Prüfung: Methoden der Information, Kommunikation und Planung",
+     "t": "open",
+     "nr": 6,
+     "teil": "b",
+     "pts": 6,
+     "amtlich": true,
+     "vo": "§ 4 Absatz 4 Nr. 6",
+     "q": "Beschreiben Sie zwei Beispielmaßnahmen zu 6 b).",
+     "a": "Beispiellösung zu 6 b): zwei passende Maßnahmen mit kurzer Begründung."
+    },
+    {
+     "id": "P-MI-20200505-s16",
+     "f": 3,
+     "sub": "IHK-Prüfung: Methoden der Information, Kommunikation und Planung",
+     "t": "open",
+     "nr": 6,
+     "teil": "c",
+     "pts": 3,
+     "amtlich": true,
+     "vo": "§ 4 Absatz 4 Nr. 6",
+     "q": "Beschreiben Sie zwei Beispielmaßnahmen zu 6 c).",
+     "a": "Beispiellösung zu 6 c): zwei passende Maßnahmen mit kurzer Begründung."
+    }
+   ]
+  },
+  {
+   "id": "P-BW-20251106",
+   "f": 2,
+   "sub": "IHK-Prüfung: Betriebswirtschaftliches Handeln",
+   "title": "IHK-Prüfung Betriebswirtschaftliches Handeln – 6. November 2025",
+   "termin": "Herbst 2025",
+   "amtlich": true,
+   "context": "In dieser Prüfung hat jede Aufgabe ihre eigene Ausgangssituation; sie steht jeweils über der Aufgabe.\n\nErfundene Beispielprüfung für die Tests der App – kein Prüfungstext.",
+   "aufgaben": [
+    {
+     "nr": 1,
+     "pts": 12,
+     "sit": "Ausgangslage zu Aufgabe 1: Ein erfundener Beispielbetrieb plant eine Änderung."
+    },
+    {
+     "nr": 2,
+     "pts": 17,
+     "sit": "Ein Beispielbetrieb verarbeitet Kunststoffgranulat.\n– Jahresbedarf: 1.200 t\n– Bestellkosten je Bestellung: 80 €\n– Lagerhaltungskostensatz: 10 %"
+    },
+    {
+     "nr": 3,
+     "pts": 13,
+     "sit": "Ausgangslage zu Aufgabe 3: Ein erfundener Beispielbetrieb plant eine Änderung."
+    },
+    {
+     "nr": 4,
+     "pts": 15,
+     "sit": "Ausgangslage zu Aufgabe 4: Ein erfundener Beispielbetrieb plant eine Änderung."
+    },
+    {
+     "nr": 5,
+     "pts": 10,
+     "sit": "Ausgangslage zu Aufgabe 5: Ein erfundener Beispielbetrieb plant eine Änderung.",
+     "tab": {
+      "titel": "Beispielanlage (erfunden)",
+      "kopf": [
+       "Spalte 1",
+       "Spalte 2",
+       "Spalte 3",
+       "Spalte 4",
+       "Spalte 5"
+      ],
+      "zeilen": [
+       [
+        "Wert 1.1",
+        "Wert 1.2",
+        "",
+        "",
+        ""
+       ],
+       [
+        "Wert 2.1",
+        "Wert 2.2",
+        "",
+        "",
+        ""
+       ],
+       [
+        "Wert 3.1",
+        "Wert 3.2",
+        "",
+        "",
+        ""
+       ],
+       [
+        "Wert 4.1",
+        "Wert 4.2",
+        "",
+        "",
+        ""
+       ],
+       [
+        "Wert 5.1",
+        "Wert 5.2",
+        "",
+        "",
+        ""
+       ],
+       [
+        "Wert 6.1",
+        "Wert 6.2",
+        "",
+        "",
+        ""
+       ],
+       [
+        "Wert 7.1",
+        "Wert 7.2",
+        "",
+        "",
+        ""
+       ],
+       [
+        "Wert 8.1",
+        "Wert 8.2",
+        "",
+        "",
+        ""
+       ],
+       [
+        "Wert 9.1",
+        "Wert 9.2",
+        "",
+        "",
+        ""
+       ],
+       [
+        "Wert 10.1",
+        "Wert 10.2",
+        "",
+        "",
+        ""
+       ]
+      ],
+      "hinweis": "Hinweis zur Beispielanlage."
+     }
+    },
+    {
+     "nr": 6,
+     "pts": 18,
+     "sit": "Ausgangslage zu Aufgabe 6: Ein erfundener Beispielbetrieb plant eine Änderung.",
+     "tab": {
+      "titel": "Beispielanlage (erfunden)",
+      "kopf": [
+       "Spalte 1",
+       "Spalte 2",
+       "Spalte 3",
+       "Spalte 4"
+      ],
+      "zeilen": [
+       [
+        "Wert 1.1",
+        "Wert 1.2",
+        "Wert 1.3",
+        "Wert 1.4"
+       ],
+       [
+        "Wert 2.1",
+        "Wert 2.2",
+        "Wert 2.3",
+        "Wert 2.4"
+       ]
+      ]
+     }
+    },
+    {
+     "nr": 7,
+     "pts": 15,
+     "sit": "Ausgangslage zu Aufgabe 7: Ein erfundener Beispielbetrieb plant eine Änderung."
+    }
+   ],
+   "steps": [
+    {
+     "id": "P-BW-20251106-s0",
+     "f": 2,
+     "sub": "IHK-Prüfung: Betriebswirtschaftliches Handeln",
+     "t": "open",
+     "nr": 1,
+     "teil": "a",
+     "pts": 12,
+     "amtlich": true,
+     "vo": "§ 4 Absatz 3 Nr. 1",
+     "q": "Beschreiben Sie zwei Beispielmaßnahmen zu 1 a).",
+     "a": "Beispiellösung zu 1 a): zwei passende Maßnahmen mit kurzer Begründung."
+    },
+    {
+     "id": "P-BW-20251106-s1",
+     "f": 2,
+     "sub": "IHK-Prüfung: Betriebswirtschaftliches Handeln",
+     "t": "open",
+     "nr": 2,
+     "teil": "a",
+     "pts": 2,
+     "amtlich": true,
+     "vo": "§ 4 Absatz 3 Nr. 2",
+     "q": "Berechnen Sie den Beispielwert zu 2 a).",
+     "a": "Beispielwert = 120 € · 2 = 240 €\n(Rechnung zu 2 a))"
+    },
+    {
+     "id": "P-BW-20251106-s2",
+     "f": 2,
+     "sub": "IHK-Prüfung: Betriebswirtschaftliches Handeln",
+     "t": "open",
+     "nr": 2,
+     "teil": "b",
+     "pts": 3,
+     "amtlich": true,
+     "vo": "§ 4 Absatz 3 Nr. 2",
+     "q": "Beschreiben Sie zwei Beispielmaßnahmen zu 2 b).",
+     "a": "Beispiellösung zu 2 b): zwei passende Maßnahmen mit kurzer Begründung."
+    },
+    {
+     "id": "P-BW-20251106-s3",
+     "f": 2,
+     "sub": "IHK-Prüfung: Betriebswirtschaftliches Handeln",
+     "t": "open",
+     "nr": 2,
+     "teil": "c",
+     "pts": 3,
+     "amtlich": true,
+     "vo": "§ 4 Absatz 3 Nr. 2",
+     "q": "Ermitteln Sie die optimale Bestellmenge für den Beispielbetrieb.",
+     "a": "Beispielwert = 120 € · 2 = 240 €\n(Rechnung zu 2 c))"
+    },
+    {
+     "id": "P-BW-20251106-s4",
+     "f": 2,
+     "sub": "IHK-Prüfung: Betriebswirtschaftliches Handeln",
+     "t": "open",
+     "nr": 2,
+     "teil": "d",
+     "pts": 9,
+     "amtlich": true,
+     "vo": "§ 4 Absatz 3 Nr. 2",
+     "q": "Berechnen Sie den Beispielwert zu 2 d).",
+     "a": "Beispielwert = 120 € · 2 = 240 €\n(Rechnung zu 2 d))"
+    },
+    {
+     "id": "P-BW-20251106-s5",
+     "f": 2,
+     "sub": "IHK-Prüfung: Betriebswirtschaftliches Handeln",
+     "t": "open",
+     "nr": 3,
+     "teil": "a",
+     "pts": 5,
+     "amtlich": true,
+     "vo": "§ 4 Absatz 3 Nr. 3",
+     "q": "Beschreiben Sie zwei Beispielmaßnahmen zu 3 a).",
+     "a": "Beispiellösung zu 3 a): zwei passende Maßnahmen mit kurzer Begründung."
+    },
+    {
+     "id": "P-BW-20251106-s6",
+     "f": 2,
+     "sub": "IHK-Prüfung: Betriebswirtschaftliches Handeln",
+     "t": "open",
+     "nr": 3,
+     "teil": "b",
+     "pts": 6,
+     "amtlich": true,
+     "vo": "§ 4 Absatz 3 Nr. 3",
+     "q": "Beschreiben Sie zwei Beispielmaßnahmen zu 3 b).",
+     "a": "Beispiellösung zu 3 b): zwei passende Maßnahmen mit kurzer Begründung."
+    },
+    {
+     "id": "P-BW-20251106-s7",
+     "f": 2,
+     "sub": "IHK-Prüfung: Betriebswirtschaftliches Handeln",
+     "t": "open",
+     "nr": 3,
+     "teil": "c",
+     "pts": 2,
+     "amtlich": true,
+     "vo": "§ 4 Absatz 3 Nr. 3",
+     "q": "Beschreiben Sie zwei Beispielmaßnahmen zu 3 c).",
+     "a": "Beispiellösung zu 3 c): zwei passende Maßnahmen mit kurzer Begründung."
+    },
+    {
+     "id": "P-BW-20251106-s8",
+     "f": 2,
+     "sub": "IHK-Prüfung: Betriebswirtschaftliches Handeln",
+     "t": "open",
+     "nr": 4,
+     "teil": "a",
+     "pts": 3,
+     "amtlich": true,
+     "vo": "§ 4 Absatz 3 Nr. 4",
+     "q": "Berechnen Sie den Beispielwert zu 4 a).",
+     "a": "Beispielwert = 120 € · 2 = 240 €\n(Rechnung zu 4 a))"
+    },
+    {
+     "id": "P-BW-20251106-s9",
+     "f": 2,
+     "sub": "IHK-Prüfung: Betriebswirtschaftliches Handeln",
+     "t": "open",
+     "nr": 4,
+     "teil": "b",
+     "pts": 3,
+     "amtlich": true,
+     "vo": "§ 4 Absatz 3 Nr. 4",
+     "q": "Zeichnen Sie eine Skizze zum Beispiel 4 b).",
+     "a": "Beispiellösung zu 4 b): eine passende Skizze."
+    },
+    {
+     "id": "P-BW-20251106-s10",
+     "f": 2,
+     "sub": "IHK-Prüfung: Betriebswirtschaftliches Handeln",
+     "t": "open",
+     "nr": 4,
+     "teil": "c",
+     "pts": 3,
+     "amtlich": true,
+     "vo": "§ 4 Absatz 3 Nr. 4",
+     "q": "Beschreiben Sie zwei Beispielmaßnahmen zu 4 c).",
+     "a": "Beispiellösung zu 4 c): zwei passende Maßnahmen mit kurzer Begründung."
+    },
+    {
+     "id": "P-BW-20251106-s11",
+     "f": 2,
+     "sub": "IHK-Prüfung: Betriebswirtschaftliches Handeln",
+     "t": "open",
+     "nr": 4,
+     "teil": "d",
+     "pts": 6,
+     "amtlich": true,
+     "vo": "§ 4 Absatz 3 Nr. 4",
+     "q": "Beschreiben Sie zwei Beispielmaßnahmen zu 4 d).",
+     "a": "Beispiellösung zu 4 d): zwei passende Maßnahmen mit kurzer Begründung."
+    },
+    {
+     "id": "P-BW-20251106-s12",
+     "f": 2,
+     "sub": "IHK-Prüfung: Betriebswirtschaftliches Handeln",
+     "t": "open",
+     "nr": 5,
+     "teil": "a",
+     "pts": 10,
+     "amtlich": true,
+     "vo": "§ 4 Absatz 3 Nr. 5",
+     "q": "Beschreiben Sie zwei Beispielmaßnahmen zu 5 a).",
+     "a": "Beispiellösung zu 5 a): zwei passende Maßnahmen mit kurzer Begründung."
+    },
+    {
+     "id": "P-BW-20251106-s13",
+     "f": 2,
+     "sub": "IHK-Prüfung: Betriebswirtschaftliches Handeln",
+     "t": "open",
+     "nr": 6,
+     "teil": "a",
+     "pts": 12,
+     "amtlich": true,
+     "vo": "§ 4 Absatz 3 Nr. 5",
+     "q": "Berechnen Sie den Beispielwert zu 6 a).",
+     "a": "Beispielwert = 120 € · 2 = 240 €\n(Rechnung zu 6 a))"
+    },
+    {
+     "id": "P-BW-20251106-s14",
+     "f": 2,
+     "sub": "IHK-Prüfung: Betriebswirtschaftliches Handeln",
+     "t": "open",
+     "nr": 6,
+     "teil": "b",
+     "pts": 3,
+     "amtlich": true,
+     "vo": "§ 4 Absatz 3 Nr. 5",
+     "q": "Berechnen Sie den Beispielwert zu 6 b).",
+     "a": "Beispielwert = 120 € · 2 = 240 €\n(Rechnung zu 6 b))"
+    },
+    {
+     "id": "P-BW-20251106-s15",
+     "f": 2,
+     "sub": "IHK-Prüfung: Betriebswirtschaftliches Handeln",
+     "t": "open",
+     "nr": 6,
+     "teil": "c",
+     "pts": 3,
+     "amtlich": true,
+     "vo": "§ 4 Absatz 3 Nr. 5",
+     "q": "Berechnen Sie den Beispielwert zu 6 c).",
+     "a": "Beispielwert = 120 € · 2 = 240 €\n(Rechnung zu 6 c))"
+    },
+    {
+     "id": "P-BW-20251106-s16",
+     "f": 2,
+     "sub": "IHK-Prüfung: Betriebswirtschaftliches Handeln",
+     "t": "open",
+     "nr": 7,
+     "teil": "a",
+     "pts": 15,
+     "amtlich": true,
+     "vo": "§ 4 Absatz 3 Nr. 5",
+     "q": "Berechnen Sie den Beispielwert zu 7 a).",
+     "a": "Beispielwert = 120 € · 2 = 240 €\n(Rechnung zu 7 a))"
+    }
+   ]
+  },
+  {
+   "id": "P-NT-20251105",
+   "f": 5,
+   "sub": "IHK-Prüfung: Naturwissenschaftliche und technische Gesetzmäßigkeiten",
+   "title": "IHK-Prüfung Naturwissenschaftliche und technische Gesetzmäßigkeiten – 5. November 2025",
+   "termin": "Herbst 2025",
+   "amtlich": true,
+   "context": "In dieser Prüfung hat jede Aufgabe ihre eigene Ausgangssituation; sie steht jeweils über der Aufgabe.\n\nErfundene Beispielprüfung für die Tests der App – kein Prüfungstext.",
+   "aufgaben": [
+    {
+     "nr": 1,
+     "pts": 13,
+     "sit": "Ausgangslage zu Aufgabe 1: Ein erfundener Beispielbetrieb plant eine Änderung."
+    },
+    {
+     "nr": 2,
+     "pts": 10,
+     "sit": "Ausgangslage zu Aufgabe 2: Ein erfundener Beispielbetrieb plant eine Änderung."
+    },
+    {
+     "nr": 3,
+     "pts": 18,
+     "sit": "Ausgangslage zu Aufgabe 3: Ein erfundener Beispielbetrieb plant eine Änderung.",
+     "bild": "nt25-rampe"
+    },
+    {
+     "nr": 4,
+     "pts": 17,
+     "sit": "Ausgangslage zu Aufgabe 4: Ein erfundener Beispielbetrieb plant eine Änderung."
+    },
+    {
+     "nr": 5,
+     "pts": 14,
+     "sit": "Ausgangslage zu Aufgabe 5: Ein erfundener Beispielbetrieb plant eine Änderung."
+    },
+    {
+     "nr": 6,
+     "pts": 16,
+     "sit": "Ausgangslage zu Aufgabe 6: Ein erfundener Beispielbetrieb plant eine Änderung."
+    },
+    {
+     "nr": 7,
+     "pts": 12,
+     "sit": "Ausgangslage zu Aufgabe 7: Ein erfundener Beispielbetrieb plant eine Änderung."
+    }
+   ],
+   "steps": [
+    {
+     "id": "P-NT-20251105-s0",
+     "f": 5,
+     "sub": "IHK-Prüfung: Naturwissenschaftliche und technische Gesetzmäßigkeiten",
+     "t": "open",
+     "nr": 1,
+     "teil": "a",
+     "pts": 4,
+     "amtlich": true,
+     "vo": "§ 5 Absatz 6 Nr. 1",
+     "q": "Beschreiben Sie zwei Beispielmaßnahmen zu 1 a).",
+     "a": "Beispiellösung zu 1 a): zwei passende Maßnahmen mit kurzer Begründung."
+    },
+    {
+     "id": "P-NT-20251105-s1",
+     "f": 5,
+     "sub": "IHK-Prüfung: Naturwissenschaftliche und technische Gesetzmäßigkeiten",
+     "t": "open",
+     "nr": 1,
+     "teil": "b",
+     "pts": 4,
+     "amtlich": true,
+     "vo": "§ 5 Absatz 6 Nr. 1",
+     "q": "Beschreiben Sie zwei Beispielmaßnahmen zu 1 b).",
+     "a": "Beispiellösung zu 1 b): zwei passende Maßnahmen mit kurzer Begründung."
+    },
+    {
+     "id": "P-NT-20251105-s2",
+     "f": 5,
+     "sub": "IHK-Prüfung: Naturwissenschaftliche und technische Gesetzmäßigkeiten",
+     "t": "open",
+     "nr": 1,
+     "teil": "c",
+     "pts": 2,
+     "amtlich": true,
+     "vo": "§ 5 Absatz 6 Nr. 1",
+     "q": "Beschreiben Sie zwei Beispielmaßnahmen zu 1 c).",
+     "a": "Beispiellösung zu 1 c): zwei passende Maßnahmen mit kurzer Begründung."
+    },
+    {
+     "id": "P-NT-20251105-s3",
+     "f": 5,
+     "sub": "IHK-Prüfung: Naturwissenschaftliche und technische Gesetzmäßigkeiten",
+     "t": "open",
+     "nr": 1,
+     "teil": "d",
+     "pts": 3,
+     "amtlich": true,
+     "vo": "§ 5 Absatz 6 Nr. 1",
+     "q": "Beschreiben Sie zwei Beispielmaßnahmen zu 1 d).",
+     "a": "Beispiellösung zu 1 d): zwei passende Maßnahmen mit kurzer Begründung."
+    },
+    {
+     "id": "P-NT-20251105-s4",
+     "f": 5,
+     "sub": "IHK-Prüfung: Naturwissenschaftliche und technische Gesetzmäßigkeiten",
+     "t": "open",
+     "nr": 2,
+     "teil": "a",
+     "pts": 10,
+     "amtlich": true,
+     "vo": "§ 5 Absatz 6 Nr. 3",
+     "q": "Berechnen Sie den Beispielwert zu 2 a).",
+     "a": "Beispielwert = 120 € · 2 = 240 €\n(Rechnung zu 2 a))"
+    },
+    {
+     "id": "P-NT-20251105-s5",
+     "f": 5,
+     "sub": "IHK-Prüfung: Naturwissenschaftliche und technische Gesetzmäßigkeiten",
+     "t": "open",
+     "nr": 3,
+     "teil": "a",
+     "pts": 4,
+     "amtlich": true,
+     "vo": "§ 5 Absatz 6 Nr. 1",
+     "q": "Berechnen Sie den Beispielwert zu 3 a).",
+     "a": "Beispielwert = 120 € · 2 = 240 €\n(Rechnung zu 3 a))"
+    },
+    {
+     "id": "P-NT-20251105-s6",
+     "f": 5,
+     "sub": "IHK-Prüfung: Naturwissenschaftliche und technische Gesetzmäßigkeiten",
+     "t": "open",
+     "nr": 3,
+     "teil": "b",
+     "pts": 10,
+     "amtlich": true,
+     "vo": "§ 5 Absatz 6 Nr. 1",
+     "q": "Berechnen Sie den Beispielwert zu 3 b).",
+     "a": "Beispielwert = 120 € · 2 = 240 €\n(Rechnung zu 3 b))"
+    },
+    {
+     "id": "P-NT-20251105-s7",
+     "f": 5,
+     "sub": "IHK-Prüfung: Naturwissenschaftliche und technische Gesetzmäßigkeiten",
+     "t": "open",
+     "nr": 3,
+     "teil": "c",
+     "pts": 4,
+     "braucht": [
+      "a",
+      "b"
+     ],
+     "amtlich": true,
+     "vo": "§ 5 Absatz 6 Nr. 1",
+     "q": "Beschreiben Sie zwei Beispielmaßnahmen zu 3 c).",
+     "a": "Beispiellösung zu 3 c): zwei passende Maßnahmen mit kurzer Begründung."
+    },
+    {
+     "id": "P-NT-20251105-s8",
+     "f": 5,
+     "sub": "IHK-Prüfung: Naturwissenschaftliche und technische Gesetzmäßigkeiten",
+     "t": "open",
+     "nr": 4,
+     "teil": "a",
+     "pts": 5,
+     "amtlich": true,
+     "vo": "§ 5 Absatz 6 Nr. 2",
+     "q": "Berechnen Sie den Beispielwert zu 4 a).",
+     "a": "Beispielwert = 120 € · 2 = 240 €\n(Rechnung zu 4 a))"
+    },
+    {
+     "id": "P-NT-20251105-s9",
+     "f": 5,
+     "sub": "IHK-Prüfung: Naturwissenschaftliche und technische Gesetzmäßigkeiten",
+     "t": "open",
+     "nr": 4,
+     "teil": "b",
+     "pts": 2,
+     "amtlich": true,
+     "vo": "§ 5 Absatz 6 Nr. 2",
+     "q": "Berechnen Sie den Beispielwert zu 4 b).",
+     "a": "Beispielwert = 120 € · 2 = 240 €\n(Rechnung zu 4 b))"
+    },
+    {
+     "id": "P-NT-20251105-s10",
+     "f": 5,
+     "sub": "IHK-Prüfung: Naturwissenschaftliche und technische Gesetzmäßigkeiten",
+     "t": "open",
+     "nr": 4,
+     "teil": "c",
+     "pts": 10,
+     "amtlich": true,
+     "vo": "§ 5 Absatz 6 Nr. 2",
+     "q": "Berechnen Sie den Beispielwert zu 4 c).",
+     "a": "Beispielwert = 120 € · 2 = 240 €\n(Rechnung zu 4 c))"
+    },
+    {
+     "id": "P-NT-20251105-s11",
+     "f": 5,
+     "sub": "IHK-Prüfung: Naturwissenschaftliche und technische Gesetzmäßigkeiten",
+     "t": "open",
+     "nr": 5,
+     "teil": "a",
+     "pts": 3,
+     "amtlich": true,
+     "vo": "§ 5 Absatz 6 Nr. 3",
+     "q": "Beschreiben Sie zwei Beispielmaßnahmen zu 5 a).",
+     "a": "Beispiellösung zu 5 a): zwei passende Maßnahmen mit kurzer Begründung."
+    },
+    {
+     "id": "P-NT-20251105-s12",
+     "f": 5,
+     "sub": "IHK-Prüfung: Naturwissenschaftliche und technische Gesetzmäßigkeiten",
+     "t": "open",
+     "nr": 5,
+     "teil": "b",
+     "pts": 3,
+     "amtlich": true,
+     "vo": "§ 5 Absatz 6 Nr. 3",
+     "q": "Beschreiben Sie zwei Beispielmaßnahmen zu 5 b).",
+     "a": "Beispiellösung zu 5 b): zwei passende Maßnahmen mit kurzer Begründung."
+    },
+    {
+     "id": "P-NT-20251105-s13",
+     "f": 5,
+     "sub": "IHK-Prüfung: Naturwissenschaftliche und technische Gesetzmäßigkeiten",
+     "t": "open",
+     "nr": 5,
+     "teil": "c",
+     "pts": 5,
+     "amtlich": true,
+     "vo": "§ 5 Absatz 6 Nr. 3",
+     "q": "Beschreiben Sie zwei Beispielmaßnahmen zu 5 c).",
+     "a": "Beispiellösung zu 5 c): zwei passende Maßnahmen mit kurzer Begründung."
+    },
+    {
+     "id": "P-NT-20251105-s14",
+     "f": 5,
+     "sub": "IHK-Prüfung: Naturwissenschaftliche und technische Gesetzmäßigkeiten",
+     "t": "open",
+     "nr": 5,
+     "teil": "d",
+     "pts": 3,
+     "amtlich": true,
+     "vo": "§ 5 Absatz 6 Nr. 3",
+     "q": "Beschreiben Sie zwei Beispielmaßnahmen zu 5 d).",
+     "a": "Beispiellösung zu 5 d): zwei passende Maßnahmen mit kurzer Begründung."
+    },
+    {
+     "id": "P-NT-20251105-s15",
+     "f": 5,
+     "sub": "IHK-Prüfung: Naturwissenschaftliche und technische Gesetzmäßigkeiten",
+     "t": "open",
+     "nr": 6,
+     "teil": "a",
+     "pts": 16,
+     "amtlich": true,
+     "vo": "§ 5 Absatz 6 Nr. 1-2",
+     "q": "Berechnen Sie den Beispielwert zu 6 a).",
+     "a": "Beispielwert = 120 € · 2 = 240 €\n(Rechnung zu 6 a))"
+    },
+    {
+     "id": "P-NT-20251105-s16",
+     "f": 5,
+     "sub": "IHK-Prüfung: Naturwissenschaftliche und technische Gesetzmäßigkeiten",
+     "t": "open",
+     "nr": 7,
+     "teil": "a",
+     "pts": 6,
+     "amtlich": true,
+     "vo": "§ 5 Absatz 6 Nr. 4",
+     "q": "Berechnen Sie den Beispielwert zu 7 a).",
+     "a": "Beispielwert = 120 € · 2 = 240 €\n(Rechnung zu 7 a))"
+    },
+    {
+     "id": "P-NT-20251105-s17",
+     "f": 5,
+     "sub": "IHK-Prüfung: Naturwissenschaftliche und technische Gesetzmäßigkeiten",
+     "t": "open",
+     "nr": 7,
+     "teil": "b",
+     "pts": 2,
+     "amtlich": true,
+     "vo": "§ 5 Absatz 6 Nr. 4",
+     "q": "Berechnen Sie den Beispielwert zu 7 b).",
+     "a": "Beispielwert = 120 € · 2 = 240 €\n(Rechnung zu 7 b))"
+    },
+    {
+     "id": "P-NT-20251105-s18",
+     "f": 5,
+     "sub": "IHK-Prüfung: Naturwissenschaftliche und technische Gesetzmäßigkeiten",
+     "t": "open",
+     "nr": 7,
+     "teil": "c",
+     "pts": 4,
+     "amtlich": true,
+     "vo": "§ 5 Absatz 6 Nr. 4",
+     "q": "Berechnen Sie den Beispielwert zu 7 c).",
+     "a": "Beispielwert = 120 € · 2 = 240 €\n(Rechnung zu 7 c))"
+    }
+   ]
+  }
+ ],
+ "anlagen": {
+  "nt25-rampe": {
+   "f": "nt25-rampe.jpg",
+   "w": 780,
+   "h": 566,
+   "t": "Beispielabbildung (erfunden)"
+  }
+ }
+}

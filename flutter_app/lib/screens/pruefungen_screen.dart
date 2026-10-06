@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import '../config.dart';
 import '../constants.dart';
 import '../models.dart';
 import '../pruefung/bereiche.dart';
@@ -165,7 +166,12 @@ class _PruefungenListeState extends State<PruefungenListe> {
     final inhalt = alle.isEmpty
         ? Padding(
             padding: const EdgeInsets.all(12),
-            child: Text('Es sind noch keine Original-Prüfungen hinterlegt.',
+            // Die Original-Prüfungen stehen nicht mehr in der App, sondern kommen
+            // nach einer Freigabe aus Supabase – in der Web-App schon, hier mit FR-020.
+            child: Text(
+                'Die Original-IHK-Prüfungen gibt es nur mit Freigabe. Anfragen und lösen kannst du sie '
+                'in der Web-App: ${Config.webAdresse.replaceFirst(RegExp(r'^https?://'), '').replaceFirst(RegExp(r'/$'), '')} › Prüfungen. '
+                'In diese App kommen sie mit einem der nächsten Updates.',
                 style: TextStyle(fontSize: 13, height: 1.55, color: kMuted)),
           )
         : _liste(alle);

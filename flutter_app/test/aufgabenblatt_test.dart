@@ -1,18 +1,16 @@
-import 'dart:convert';
-import 'dart:io';
-
 import 'package:flutter_test/flutter_test.dart';
 import 'package:kvm_trainer/models.dart';
 
-/// Prüft das Aufgabenblatt-Format der gebündelten Prüfungen: Jede Teilaufgabe
-/// gehört zu einer Aufgabe, die Punkte gehen auf, und der zusammengesetzte
-/// Aufgabentext lässt sich aus den Feldern wieder herstellen (davon hängen die
-/// KI-Exporte ab).
+import 'pruefdaten.dart';
+
+/// Prüft das Aufgabenblatt-Format der gebündelten Fälle und der Prüfungen
+/// (Beispielprüfungen, mit dem privaten Paket auch alle Originale): Jede
+/// Teilaufgabe gehört zu einer Aufgabe, die Punkte gehen auf, und der
+/// zusammengesetzte Aufgabentext lässt sich aus den Feldern wieder herstellen
+/// (davon hängen die KI-Exporte ab).
 void main() {
-  final datei = File('assets/data/cases.json');
-  final faelle = (json.decode(datei.readAsStringSync()) as List<dynamic>)
-      .map((e) => CaseStudy.fromJson(e as Map<String, dynamic>))
-      .toList();
+  final faelle = [...gebuendelteFaelle(), ...beispielPruefungen()];
+  final alle = <CaseStudy>[...faelle, if (mitPrivat) ...originalPruefungen()];
 
   test('Fälle laden', () {
     expect(faelle, isNotEmpty);
@@ -20,7 +18,7 @@ void main() {
   });
 
   test('jede Teilaufgabe gehört zu einer Aufgabe', () {
-    for (final c in faelle) {
+    for (final c in alle) {
       expect(c.aufgaben, isNotEmpty, reason: '${c.id} ohne Aufgaben');
       for (final s in c.steps) {
         expect(c.aufgabeVon(s.nr), isNotNull,
@@ -30,7 +28,7 @@ void main() {
   });
 
   test('Punkte je Aufgabe sind die Summe ihrer Teile, Prüfungen haben 100', () {
-    for (final c in faelle) {
+    for (final c in alle) {
       var gesamt = 0;
       for (final a in c.aufgaben) {
         final summe = c.steps
@@ -46,7 +44,7 @@ void main() {
   });
 
   test('Verweise mit "braucht" zeigen auf vorhandene Teile derselben Aufgabe', () {
-    for (final c in faelle) {
+    for (final c in alle) {
       for (final s in c.steps) {
         final labels =
             c.steps.where((t) => t.nr == s.nr).map((t) => t.teil).toSet();
@@ -66,7 +64,7 @@ void main() {
     expect(t.nr, 'Aufgabe 2 c)');
     expect(t.pts, '3 Punkte');
     expect(t.sit, contains('Kunststoffgranulat'));
-    expect(t.frage, 'Ermitteln Sie die optimale Bestellmenge.');
+    expect(t.frage, 'Ermitteln Sie die optimale Bestellmenge für den Beispielbetrieb.');
     expect(t.volltext, 'Aufgabe 2 c) · 3 Punkte\n\n${t.sit}\n\n${t.frage}');
     expect(teil.maxPoints, 3);
   });

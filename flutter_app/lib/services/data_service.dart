@@ -37,6 +37,38 @@ class DataService {
     _loaded = true;
   }
 
+  /// Original-IHK-Prüfungen nachträglich einsetzen. Sie stehen nicht in den
+  /// Assets (das Repository ist öffentlich), sondern kommen wie in der Web-App
+  /// nach einer Freigabe aus Supabase (FR-020). [paket] hat das Format von
+  /// pruefungen.json: {"pruefungen": [Fälle mit IDs „P-…“], "anlagen": {…}}.
+  /// Ersetzt zuvor eingesetzte Prüfungen.
+  void pruefungenEinsetzen(Map<String, dynamic> paket) {
+    pruefungenEntfernen();
+    final neu = (paket['pruefungen'] as List<dynamic>? ?? const [])
+        .map((e) => CaseStudy.fromJson(e as Map<String, dynamic>))
+        .where((c) => c.id.startsWith('P-'))
+        .toList();
+    cases = [...cases, ...neu];
+    final a = paket['anlagen'];
+    if (a is Map<String, dynamic>) {
+      a.forEach((k, v) {
+        anlagen[k] = Anlagenbild.fromJson(v as Map<String, dynamic>);
+        _pruefAnlagen.add(k);
+      });
+    }
+  }
+
+  /// Eingesetzte Prüfungen und ihre Anlagen wieder entfernen (etwa nach dem Abmelden).
+  void pruefungenEntfernen() {
+    cases = cases.where((c) => !c.id.startsWith('P-')).toList();
+    for (final k in _pruefAnlagen) {
+      anlagen.remove(k);
+    }
+    _pruefAnlagen.clear();
+  }
+
+  final Set<String> _pruefAnlagen = {};
+
   /// Bildanlage auflösen: Schlüssel aus anlagen.json oder direkte Data-URI.
   Anlagenbild? anlage(String? ref) {
     if (ref == null || ref.isEmpty) return null;
