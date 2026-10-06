@@ -14,9 +14,9 @@
    Laden kurz die helle Fassung auf. Ohne Wahl folgt die Seite dem System. */
 (function(){try{var t=localStorage.getItem('kvm_theme');if(t==='light'||t==='dark')document.documentElement.setAttribute('data-theme',t);}catch(e){}})();
 </script>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<!-- Schriften liegen im Repo (fonts/) – keine Anfrage an Google beim Laden -->
+<link rel="preload" href="fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="fonts/fonts.css">
 <!-- Cloud-Login/Sync: Supabase-Client (teilt Konto + Fortschritt mit der nativen App) -->
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <style>
@@ -1064,6 +1064,10 @@ body[data-screen="scrHome"]{padding-bottom:calc(72px + env(safe-area-inset-botto
 .seite-titel .h-scope{font:600 12px/1.3 var(--body);letter-spacing:0;text-transform:none;color:var(--petrol-ink)}
 .seite>.seite-titel+.h-group{margin-top:0}
 body[data-screen="scrHome"]:not([data-seite="konto"]) footer{display:none}
+.fuss-recht{display:flex;justify-content:center;flex-wrap:wrap;gap:4px 18px;margin-top:8px;font-size:12.5px;font-weight:600}
+.fuss-recht a,.konto-ds a{color:var(--petrol-ink)}
+.fuss-recht a{display:inline-block;padding:6px 2px}
+.konto-ds{margin:2px 4px 12px;font-size:12.5px;line-height:1.5;color:var(--muted)}
 
 /* ===== Start: ohne Scrollen =====
    Kopf, Statistikleiste zum Aufziehen, Heute-Karte, Prüfungen und die
@@ -2142,6 +2146,7 @@ body.sk-offen{overflow:hidden}
           <span class="ti-ic ti-blue"><svg class="ic-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 17.6A4 4 0 0 0 18 10h-1.3A7 7 0 1 0 5 16.7"/><path d="M12 12v9M8.5 15.5 12 12l3.5 3.5"/></svg></span>
           <span class="ti-txt"><span class="ti-t" id="cloudBtnLabel">Mit Google anmelden &amp; sichern</span><span class="ti-d" id="cloudHint">Ohne Anmeldung bleibt dein Fortschritt nur auf diesem Gerät.</span></span>
         </button>
+        <p class="konto-ds">Was mit Konto gespeichert wird und wer was sieht: <a href="datenschutz.html#anmeldung">Datenschutzerklärung</a></p>
         <!-- Nur für Admins sichtbar (docs/supabase-profile.sql, Tabelle admins) -->
         <button class="tile tile-cloud" id="btnAdmin" hidden>
           <span class="ti-ic ti-plum"><svg class="ic-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 4 6v6c0 4.4 3.4 8.3 8 9 4.6-.7 8-4.6 8-9V6z"/><path d="m9 12 2 2 4-4"/></svg></span>
@@ -5571,7 +5576,8 @@ document.addEventListener("keydown",function(ev){
   $("homeSub").innerHTML="<b>"+fmtN(total)+" Wissensfragen</b> · 4 Basisqualifikationen + "+zusatzN+" Fachrichtung"+(zusatzN===1?"":"en")+
     (pruefN?" · <b>"+fmtN(pruefN)+"</b> Original-IHK-Prüfungen":"");
   if(pruefN&&$("pruefTileDesc"))$("pruefTileDesc").textContent=fmtN(pruefN)+" Prüfungen mit amtlichen Lösungshinweisen · Rechenweg und ausfüllbare Anlagen";
-  $("footerNote").innerHTML="Übungsfragen eigenständig formuliert, orientiert am DIHK-Rahmenplan und an Krause/Krause (Kiehl). Rechtsstände und veränderliche Werte (z. B. Beiträge) Stand 2026, ohne Gewähr.";
+  $("footerNote").innerHTML="Übungsfragen eigenständig formuliert, orientiert am DIHK-Rahmenplan und an Krause/Krause (Kiehl). Rechtsstände und veränderliche Werte (z. B. Beiträge) Stand 2026, ohne Gewähr."+
+    '<span class="fuss-recht"><a href="impressum.html">Impressum</a><a href="datenschutz.html">Datenschutzerklärung</a></span>';
   // Standard-Fach: erste aktive Basisqualifikation
   state.fach=1;
   show("scrHome");
@@ -6411,7 +6417,8 @@ function gmDialog(art,d){
   var body=$("gmDlg"),h='',titel='Gemeinsam lösen';
   var regeln='<ul class="gm-regeln"><li>Jede Person löst die ganze Prüfung selbst.</li>'+
     '<li>Unter jeder Teilaufgabe siehst du als Sterne, wie die anderen gerade schreiben – ohne Inhalt.</li>'+
-    '<li>Nach jeder Aufgabe vergleicht ihr eure Antworten mit der Lösung und könnt alle zusammen von Claude prüfen lassen.</li></ul>';
+    '<li>Nach jeder Aufgabe vergleicht ihr eure Antworten mit der Lösung und könnt alle zusammen von Claude prüfen lassen.</li>'+
+    '<li>Gespeichert werden dein Name in der Runde und deine Antworten fertiger Aufgaben – sichtbar nur für die Runde. <a href="datenschutz.html#freiwillig" target="_blank" rel="noopener">Datenschutz</a></li></ul>';
   var name='<label class="md-lbl" for="gmName">Dein Name in der Runde</label>'+
     '<input id="gmName" class="gm-input" type="text" maxlength="24" autocomplete="nickname" value="'+esc(gmNameVorschlag())+'" placeholder="z. B. Kevin">';
   if(art==='anmelden'){
@@ -6981,7 +6988,8 @@ function gmAuth(){
       h+=vgFormHTML(vg.bearbeiten?st.name:"")+
         '<p class="vg-hinweis">Sichtbar für andere sind nur dein Spitzname, deine Prüfungsreife, deine Antworten dieser Woche, '+
         'deine Lerntage in Folge und deine Prüfungsergebnisse (bestanden, Ø-Punkte, Bestehenschance).'+(vg.leuteOk?' Deinen Lernstand je Fach sehen nur deine Freunde – das kannst du im Profil ändern.':'')+
-        ' Austreten geht jederzeit – dein Eintrag'+(vg.leuteOk?' samt Profil und Freundschaften':'')+' wird dann gelöscht.</p>';
+        ' Austreten geht jederzeit – dein Eintrag'+(vg.leuteOk?' samt Profil und Freundschaften':'')+' wird dann gelöscht. '+
+        '<a href="datenschutz.html#freiwillig" target="_blank" rel="noopener">Mehr in der Datenschutzerklärung</a></p>';
     }else{
       var andere=Math.max(0,(st.teilnehmende|0)-1);
       var vor=andere?Math.round((st.reife_vor|0)/andere*100):0,pm=vg.modus==='pruef'&&vg.pruefOk;

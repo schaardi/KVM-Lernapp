@@ -3014,3 +3014,56 @@ Die Texte in einer `SelectionArea` bzw. als `SelectableText.rich` darstellen:
   - `finalize`, Z. 3917
 
 Zeilennummern: Stand dieses Commits.
+
+---
+
+## FR-018 · Impressum und Datenschutzerklärung
+
+**Status App-Session:** offen
+**Web umgesetzt:** ✅ `impressum.html` und `datenschutz.html` im Hauptverzeichnis (GitHub Pages)
+**Anlass:** „Datenschutzerklärung und Impressum fehlen in der Web-App. Seit andere sich per Google
+anmelden und Namen, Antworten und Ranglisten gespeichert werden, sollte das rein (ohne
+Rechtsberatung).“
+
+### Web (umgesetzt)
+- Beide Seiten liegen neben `index.html` und gelten für Web und Android.
+  - Sie nutzen dieselben Farben und Schriften wie die App, hell und dunkel; die in der App gewählte
+    Darstellung gilt mit.
+  - Oben „‹ Zur App“ (`./#/konto`).
+- **Verlinkt:**
+  - Fußzeile der Konto-Seite: „Impressum“, „Datenschutzerklärung“
+  - unter „Mit Google anmelden“: „Was mit Konto gespeichert wird und wer was sieht“
+  - im Beitrittshinweis der Rangliste und in den Regeln von „Gemeinsam lösen“ (neuer Tab)
+- **Schriften lokal:** `fonts/` mit `fonts.css` (Latein und Latein-Erweitert, OFL-Lizenzen dabei).
+  Beim Laden geht keine Anfrage mehr an Google Fonts.
+- **Offen:** Die E-Mail-Adresse im Impressum und in Abschnitt 1 der Datenschutzerklärung ist noch ein
+  Platzhalter (`[E-Mail-Adresse folgt]`).
+
+### App
+- **Konto-Seite, unten:** „Impressum“ und „Datenschutzerklärung“; öffnen im Browser (`url_launcher`,
+  extern):
+  - https://schaardi.github.io/KVM-Lernapp/impressum.html
+  - https://schaardi.github.io/KVM-Lernapp/datenschutz.html
+- **Unter „Mit Google anmelden“** dieselbe Zeile wie im Web, Link auf `datenschutz.html#anmeldung`.
+- **Rangliste beitreten** und **Gemeinsam lösen:** Link „Mehr in der Datenschutzerklärung“
+  (`#freiwillig`).
+
+### Play Console
+- **Datenschutzerklärungs-URL:** https://schaardi.github.io/KVM-Lernapp/datenschutz.html
+- **Datensicherheit** passend zur Erklärung:
+  - mit Login: Name, E-Mail-Adresse, Nutzerkennung
+  - Lernaktivität (Lernstand, Prüfungsergebnisse)
+  - Absturzprotokolle
+  - verschlüsselt übertragen
+  - Löschung auf Anfrage
+- **Konto löschen:** Google Play verlangt für Apps mit Konten eine Löschmöglichkeit in der App und einen
+  Weblink für Löschanfragen.
+  - Weblink: `datenschutz.html#dauer`
+  - In der App fehlt noch „Konto löschen“. Dafür braucht es eine Datenbankfunktion, die das eigene
+    Konto löscht (`auth.users`, alles Weitere per `on delete cascade`), als eigenes SQL-Skript. Erst
+    nach Freigabe einspielen.
+
+### Bevor Werbung oder Abo eingeschaltet werden (`MONETIZATION_ENABLED=true`)
+- Einwilligung über Googles UMP-SDK einholen, bevor AdMob startet.
+- Datenschutzerklärung ergänzen: AdMob (Google Ireland), Werbe-ID, Abrechnung über Google Play.
+- Das Datensicherheitsformular entsprechend anpassen.
