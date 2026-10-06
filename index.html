@@ -1833,6 +1833,16 @@ mark.hl.hl-ziel{animation:hl-ziel .8s ease-in-out 3}
 .gm-einl{flex:0 0 auto;border:1px solid var(--violet-line);background:var(--paper);color:var(--violet-ink);border-radius:999px;padding:5px 12px;min-height:32px;font:700 12px var(--body);cursor:pointer;white-space:nowrap}
 .gm-einl:hover{background:var(--violet-soft)}
 .gm-hinweis{border-color:var(--violet-line);background:var(--violet-soft)}
+/* Schalter „Geschriebenes zeigen“: gegenseitig Klartext statt Sterne */
+.gm-schalter{display:flex;align-items:center;flex-wrap:wrap;gap:4px 12px;margin:-4px 0 14px;padding:6px 12px;border:1px solid var(--violet-line);border-radius:11px;background:var(--paper)}
+.gm-schalter[hidden]{display:none}
+.gm-sw{display:inline-flex;align-items:center;gap:9px;border:0;background:none;padding:4px 2px;min-height:40px;font:700 13px var(--body);color:var(--ink);cursor:pointer;border-radius:8px}
+.gm-sw:focus-visible{outline:2px solid var(--petrol-ink);outline-offset:2px}
+.gm-sw-k{position:relative;flex:0 0 auto;width:38px;height:22px;border-radius:12px;background:var(--toggle-off);transition:background .15s}
+.gm-sw-k::after{content:"";position:absolute;top:2px;left:2px;width:18px;height:18px;border-radius:50%;background:#fff;box-shadow:0 1px 2px rgba(0,0,0,.25);transition:left .15s}
+.gm-sw[aria-checked="true"] .gm-sw-k{background:var(--violet)}
+.gm-sw[aria-checked="true"] .gm-sw-k::after{left:18px}
+.gm-sw-s{flex:1 1 220px;font:500 12px/1.45 var(--body);color:var(--muted)}
 .gm-hinweis>svg{color:var(--violet-ink)}
 .gm-hinweis b{color:var(--ink)}
 /* Unter jeder Teilaufgabe: was die anderen gerade schreiben – als Sterne */
@@ -1848,6 +1858,9 @@ mark.hl.hl-ziel{animation:hl-ziel .8s ease-in-out 3}
 .gm-sterne .gm-rw{display:block;margin-bottom:3px}
 .gm-sterne .gm-x{display:inline-block;margin:2px 10px 0 0;font:600 11.5px var(--body);letter-spacing:0}
 .gm-sterne .gm-leer{font:500 12px var(--body);letter-spacing:0;color:var(--muted);font-style:italic}
+/* Klartext (beide zeigen): normale Schrift statt Sternen */
+.gm-sterne.klar{font:500 14px/1.55 var(--body);letter-spacing:0;color:var(--ink)}
+.gm-sterne.klar .gm-rw{font:600 12.5px/1.5 var(--mono);color:var(--gm-ink)}
 .gm-zl{display:flex;align-items:center;gap:9px;min-height:24px;font:500 12px/1.35 var(--body);color:var(--muted)}
 .gm-zl .gm-avs{display:flex;flex:0 0 auto}
 .gm-zl .gm-av{width:22px;height:22px;font-size:10.5px;margin-left:-6px;box-shadow:0 0 0 2px var(--paper)}
@@ -1914,6 +1927,13 @@ mark.hl.hl-ziel{animation:hl-ziel .8s ease-in-out 3}
 .gm-res-f{grid-area:f;font-size:11.5px;color:var(--muted)}
 .gm-res-h{margin:11px 0 8px;font-size:12px;color:var(--muted);line-height:1.45}
 .gm-res-x{margin-top:4px;padding:9px 14px;font-size:13.5px;line-height:1.35}
+.neu-version{position:fixed;left:50%;top:calc(10px + env(safe-area-inset-top,0px));transform:translateX(-50%);z-index:85;display:flex;align-items:center;gap:6px 10px;flex-wrap:wrap;
+  width:max-content;max-width:calc(100vw - 24px);box-sizing:border-box;padding:8px 8px 8px 14px;border-radius:12px;background:var(--ink);color:var(--paper);box-shadow:var(--shadow-lg);font:500 13px/1.4 var(--body)}
+.neu-version[hidden]{display:none}
+.neu-version b{color:inherit}
+.neu-version span{flex:1 1 180px}
+.nv-laden{border:0;border-radius:9px;background:var(--petrol);color:#fff;font:700 13px var(--body);padding:8px 14px;min-height:38px;cursor:pointer}
+.nv-zu{border:0;background:none;color:inherit;opacity:.75;font-size:15px;width:36px;height:36px;border-radius:8px;cursor:pointer}
 .gm-toast{position:fixed;left:50%;bottom:calc(22px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);z-index:80;max-width:calc(100vw - 32px);background:var(--ink);color:var(--paper);padding:10px 16px;border-radius:10px;font:600 13px/1.4 var(--body);box-shadow:var(--shadow-lg)}
 @media (prefers-reduced-motion:reduce){.gm-sp.tippt .gm-av,.gm-caret{animation:none}}
 
@@ -2325,6 +2345,8 @@ body.sk-offen{overflow:hidden}
       <p class="bl-hinweis" id="blHinweis" hidden></p>
       <div class="bl-echt" id="blEcht" hidden></div>
       <div class="bl-echt gm-hinweis" id="gmHinweis" role="status" hidden></div>
+      <!-- Gemeinsam lernen: Geschriebenes gegenseitig zeigen (Klartext statt Sterne) -->
+      <div class="gm-schalter" id="gmSchalter" hidden></div>
       <div class="bl-echt hl-tipp" id="hlTipp" hidden><span class="hl-tipp-ic" aria-hidden="true"></span><span><b>Neu: Textmarker.</b> Wichtiges markieren – Text gedrückt halten, auswählen und eine Farbe tippen. Gesammelt unter Lernen › Meine Markierungen.</span><button type="button" class="hl-tipp-ok">OK</button></div>
       <details class="casectx" id="blCase" hidden></details>
       <div id="blAufgabe"></div>
@@ -2437,6 +2459,8 @@ body.sk-offen{overflow:hidden}
   </div>
 </div>
 <div class="gm-toast" id="gmToast" role="status" aria-live="polite" hidden></div>
+<!-- Neue Version auf dem Server: „Neu laden“ anbieten (der Stand bleibt erhalten) -->
+<div class="neu-version" id="neuVersion" role="status" hidden></div>
 
 <!-- Lernende: Nutzerübersicht, Freunde und Profile (nur mit docs/supabase-profile.sql) -->
 <div class="modal" id="mLeute" hidden>
@@ -2690,7 +2714,8 @@ var state={fach:1,sub:'*',mode:null,pool:[],shuffledOpts:[],idx:0,results:[],wro
 /* Gemeinsam lernen (Abschnitt „Gemeinsam lernen“ weiter unten): offene Runde,
    ihr Stand vom Server und was live über Realtime hereinkommt. */
 var gm={runde:null,stand:null,ich:null,idx:{},kanal:null,online:{},masken:{},mitH:{},frei:0,weiter:{},
-        ok:null,meine:null,einladung:null,oeffnet:false,sig:'',pollT:null,tickT:null,standT:null,nochmalT:null,maskT:{},punkteT:{}};
+        ok:null,meine:null,einladung:null,oeffnet:false,sig:'',pollT:null,tickT:null,standT:null,nochmalT:null,maskT:{},punkteT:{},
+        offen:false,klar:{},offenVorher:{},wiederVersucht:false};
 
 /* ===== HOME rendering ===== */
 /* Zahlen mit Tausenderpunkt: „3.666“ liest sich schneller als „3666“. */
@@ -6181,12 +6206,16 @@ function nachlesenZeigen(q){
 
 /* ===== Gemeinsam lernen: dieselbe Prüfung zu mehreren =====
    Jede Person löst die ganze Original-Prüfung selbst, Aufgabe für Aufgabe.
-   Unter jeder Teilaufgabe steht, was die anderen gerade schreiben – nur als
+   Unter jeder Teilaufgabe steht, was die anderen gerade schreiben – als
    Sterne, ohne Inhalt (Supabase Realtime, Kanal „gemeinsam:<id>“; auch beim
-   Empfang wird alles zu Sternen). Ist man mit einer Aufgabe fertig, wird sie
-   festgeschrieben und verglichen: die eigene Antwort, die der anderen (sobald
-   sie auch fertig sind) und die Lösung – dazu ein Prüfauftrag für Claude mit
-   allen Antworten. Zur nächsten Aufgabe geht es, wenn alle verglichen haben,
+   Empfang wird alles zu Sternen). Mit dem Schalter „Geschriebenes zeigen“
+   geht zusätzlich der Klartext über den Kanal (Ereignis „klartext“); sichtbar
+   ist er nur bei Personen, die den Schalter ebenfalls eingeschaltet haben.
+   Ältere Versionen kennen das Ereignis nicht und zeigen weiter Sterne – so
+   lässt sich das mitten in einer laufenden Runde einspielen.
+   Ist man mit einer Aufgabe fertig, wird sie festgeschrieben und verglichen:
+   die eigene Antwort, die der anderen (sobald sie auch fertig sind) und die
+   Lösung – dazu ein Prüfauftrag für Claude mit allen Antworten. Zur nächsten Aufgabe geht es, wenn alle verglichen haben,
    oder ohne zu warten. Die Antworten einer Runde liegen lokal getrennt von der
    eigenen Prüfung (kvm_gm_<Runde>_*); festgeschrieben wird über
    docs/supabase-gemeinsam.sql. Fehlt das Skript, bleibt alles verborgen. */
@@ -6260,7 +6289,8 @@ function gmOeffnen(r){
   gmSpeicher(r.id);
   var g={};try{g=JSON.parse(localStorage.getItem(gmFreiKey())||'{}')||{};}catch(e){}
   gm.frei=g.frei|0;gm.weiter=(g.weiter&&typeof g.weiter==='object')?g.weiter:{};
-  gm.masken={};gm.online={};gm.sig='';
+  gm.masken={};gm.online={};gm.sig='';gm.klar={};gm.offenVorher={};
+  try{gm.offen=localStorage.getItem(gmOffenKey())==='1';}catch(e){gm.offen=false;}
   return gmStandLaden().then(function(){
     if(!gm.runde||gm.runde.id!==r.id)return false;
     if(!gm.stand){gmSchliessen();alert('Diese Runde gibt es nicht mehr.');gmMeineLaden();return false;}
@@ -6270,6 +6300,8 @@ function gmOeffnen(r){
     gm.oeffnet=true;
     try{startRound('cases',r.pruefung,idx);}finally{gm.oeffnet=false;}
     gmKanal();
+    /* Nach einem Neuladen (z. B. für eine neue Version) geht es hier weiter */
+    try{sessionStorage.setItem('kvm_gm_weiter',r.id);}catch(e){}
     clearInterval(gm.pollT);gm.pollT=setInterval(function(){if(!document.hidden)gmStandLaden().then(gmNachStand,function(){});},20000);
     clearInterval(gm.tickT);gm.tickT=setInterval(gmLiveNeu,2000);
     return true;
@@ -6284,10 +6316,13 @@ function gmSchliessen(){
   clearInterval(gm.pollT);clearInterval(gm.tickT);clearTimeout(gm.standT);clearTimeout(gm.nochmalT);
   gm.kanal=null;gm.maskT={};gm.punkteT={};
   gm.runde=null;gm.stand=null;gm.ich=null;gm.idx={};gm.online={};gm.masken={};gm.sig='';
+  gm.offen=false;gm.klar={};gm.offenVorher={};
+  try{sessionStorage.removeItem('kvm_gm_weiter');}catch(e){}
   gmSpeicher(null);
   gmPopZu();
   var b=$("gmBand");if(b){b.hidden=true;b.innerHTML='';b._h='';}
   var hn=$("gmHinweis");if(hn)hn.hidden=true;
+  var sw=$("gmSchalter");if(sw){sw.hidden=true;sw.innerHTML='';sw._h='';}
   gm.mitH={};
   gmMeineLaden();   /* Stand in der Liste („2 von 6 verglichen“) auffrischen */
 }
@@ -6342,7 +6377,7 @@ function gmNachStand(){
   var nr=state.blattNr,sig=gmSig(nr);
   if(sig===gm.sig){gmBandNeu();return;}
   if(gmIchFertig(nr)){var y=window.scrollY;renderBlatt();window.scrollTo(0,y);return;}
-  gmBandNeu();
+  gmBandNeu();gmSchalterNeu();
   var hn=$("gmHinweis");if(hn)hn.innerHTML=gmHinweisHTML();
   blTeile(nr).forEach(gmMitBlockNeu);
   blKopfNeu();
@@ -6356,12 +6391,13 @@ function gmKanal(){
   try{ch=gmCloud.sb.channel('gemeinsam:'+gm.runde.id,{config:{broadcast:{self:false},presence:{key:gm.ich}}});}catch(e){return;}
   gm.kanal=ch;
   ch.on('broadcast',{event:'maske'},function(m){gmMaskeEmpfangen((m&&m.payload)||{});})
+    .on('broadcast',{event:'klartext'},function(m){gmKlartextEmpfangen((m&&m.payload)||{});})
     .on('broadcast',{event:'stand'},function(){gmStandSpaeter();})
-    .on('presence',{event:'sync'},function(){try{gm.online=ch.presenceState()||{};}catch(e){gm.online={};}gmLiveNeu();})
+    .on('presence',{event:'sync'},function(){try{gm.online=ch.presenceState()||{};}catch(e){gm.online={};}gmOffenPruefen();gmLiveNeu();})
     .on('presence',{event:'join'},function(e){if(e&&e.key&&e.key!==gm.ich){gmMaskenNochmal();gmStandSpaeter();}})
     .subscribe(function(st){if(st==='SUBSCRIBED'&&gm.kanal===ch){gmDa();gmMaskenNochmal();}});
 }
-function gmDa(){if(gm.kanal&&gm.runde&&state.fall)try{var p=gm.kanal.track({nr:state.blattNr});if(p&&p.catch)p.catch(function(){});}catch(e){}}
+function gmDa(){if(gm.kanal&&gm.runde&&state.fall)try{var p=gm.kanal.track({nr:state.blattNr,offen:gm.offen?1:0,v:2});if(p&&p.catch)p.catch(function(){});}catch(e){}}
 function gmSenden(ev,p){
   if(!gm.kanal)return;
   p=p||{};p.tid=gm.ich;
@@ -6385,6 +6421,8 @@ function gmMaskeSenden(id){
   var q=state.pool.filter(function(x){return x.id===id;})[0];
   if(!q||!gm.runde||gmIchFertig(q.nr))return;
   gmSenden('maske',gmMaske(q));
+  /* Klartext nur, wenn ich zeige und jemand anderes auch – sonst sieht ihn niemand */
+  if(gm.offen&&gmAndere().some(function(t){return gmZeigt(t.tid);}))gmSenden('klartext',gmKlartext(q));
 }
 /* Wer neu dazukommt, sieht sofort, wie weit die anderen sind. */
 function gmMaskenNochmal(){
@@ -6395,6 +6433,67 @@ function gmMaskenNochmal(){
     if(nr==null||gmIchFertig(nr))return;
     blTeile(nr).forEach(function(q){if(blBeantwortet(q))gmMaskeSenden(q.id);});
   },400);
+}
+/* --- Geschriebenes zeigen: Klartext statt Sterne, gegenseitig ---
+   Gesendet wird nur mit eingeschaltetem Schalter; angezeigt nur, wenn beide
+   Seiten ihn eingeschaltet haben. Wer ausschaltet, nimmt seinen Text bei den
+   anderen sofort wieder weg. */
+function gmOffenKey(){return 'kvm_gm_'+gm.runde.id+'_offen';}
+function gmMeta(tid){var l=(gm.online&&gm.online[tid])||[];return l[l.length-1]||null;}
+function gmZeigt(tid){if(tid===gm.ich)return gm.offen;var m=gmMeta(tid);return !!(m&&m.offen);}
+/* Kennt die Person den Schalter schon? Ältere Versionen melden kein v. */
+function gmAlteVersion(tid){var m=gmMeta(tid);return !!m&&!(m.v>=2);}
+function gmKlartext(q){
+  return {id:q.id,nr:q.nr,t:String(oaGet(q.id)||'').slice(0,4000),
+    r:rwGet(q.id).map(rwZeileText).filter(function(z){return z;}).slice(0,12).map(function(z){return z.slice(0,160);})};
+}
+function gmKlartextEmpfangen(p){
+  if(!gm.runde||!p.tid||p.tid===gm.ich||!gmPerson(p.tid))return;
+  if(p.aus){if(gm.klar[p.tid]){delete gm.klar[p.tid];gmLiveNeu();}return;}
+  /* Nur wer selbst zeigt, bekommt den Text der anderen zu sehen */
+  if(!gm.offen||!p.id)return;
+  var k=gm.klar[p.tid]=gm.klar[p.tid]||{};
+  k[p.id]={t:String(p.t||'').slice(0,4000),r:(Array.isArray(p.r)?p.r:[]).slice(0,12).map(function(z){return String(z).slice(0,160);})};
+  gmMitNeu(p.id,p.tid);
+}
+/* Schalter der anderen (Anwesenheit): Wer neu zeigt, bekommt den eigenen Stand
+   gleich im Klartext; wer nicht mehr zeigt, dessen Text verschwindet. */
+function gmOffenPruefen(){
+  var jetzt={},neu=false;
+  gmAndere().forEach(function(t){
+    var z=gmZeigt(t.tid);jetzt[t.tid]=z;
+    if(z&&!gm.offenVorher[t.tid])neu=true;
+    if(!z&&gm.klar[t.tid])delete gm.klar[t.tid];
+  });
+  gm.offenVorher=jetzt;
+  if(neu&&gm.offen)gmMaskenNochmal();
+}
+function gmOffenUmschalten(){
+  if(!gm.runde)return;
+  gm.offen=!gm.offen;
+  try{if(gm.offen)localStorage.setItem(gmOffenKey(),'1');else localStorage.removeItem(gmOffenKey());}catch(e){}
+  if(!gm.offen){gm.klar={};gmSenden('klartext',{aus:1});}
+  gmDa();
+  if(gm.offen)gmMaskenNochmal();
+  gmLiveNeu();
+  var b=$("gmOffen");if(b)b.focus();
+}
+function gmSchalterNeu(){
+  var el=$("gmSchalter");if(!el)return;
+  var a=gmAndere();
+  if(!gm.runde||!gm.stand||!a.length||$("scrBlatt").hidden){if(!el.hidden){el.hidden=true;el.innerHTML='';el._h='';}return;}
+  var zeigen=a.filter(function(t){return gmZeigt(t.tid);}),
+      alt=a.filter(function(t){return gmOnline(t.tid)&&gmAlteVersion(t.tid);}),st;
+  if(!gm.offen)st=zeigen.length?gmNamen(zeigen)+(zeigen.length===1?' zeigt':' zeigen')+' den eigenen Text – schalte ein, um ihn zu sehen.':
+    'Aus: Alle sehen nur Sterne. Eingeschaltet sehen die anderen deinen Text.';
+  else st='Die anderen sehen deinen Text.'+(zeigen.length?' Du siehst den Text von '+gmNamen(zeigen)+'.':' Ihren siehst du, sobald sie das auch einschalten.');
+  if(alt.length)st+=' '+gmNamen(alt)+(alt.length===1?' hat':' haben')+' noch die alte Version – nach dem Neuladen geht es dort auch.';
+  var h='<button type="button" class="gm-sw" id="gmOffen" role="switch" aria-checked="'+gm.offen+'">'+
+    '<span class="gm-sw-k" aria-hidden="true"></span><span class="gm-sw-l">Geschriebenes zeigen</span></button>'+
+    '<span class="gm-sw-s">'+esc(st)+'</span>';
+  if(el._h!==h){var fokus=document.activeElement&&document.activeElement.id==='gmOffen';
+    el._h=h;el.innerHTML=h;el.querySelector('#gmOffen').onclick=gmOffenUmschalten;if(fokus)el.querySelector('#gmOffen').focus();}
+  el.hidden=false;
 }
 function gmMaskeEmpfangen(p){
   if(!gm.runde||!p.tid||p.tid===gm.ich||!p.id||!gmPerson(p.tid))return;
@@ -6436,7 +6535,7 @@ function gmStatus(t){
 /* Kreise neben dem Fortschritt – ohne eigene Zeile, damit das Blatt nicht kleiner wird */
 function gmBandNeu(){
   var b=$("gmBand");if(!b)return;
-  if(!gm.runde||!gm.stand||$("scrBlatt").hidden){b.hidden=true;b._h='';gmPopZu();return;}
+  if(!gm.runde||!gm.stand||$("scrBlatt").hidden){b.hidden=true;b._h='';gmPopZu();gmSchalterNeu();return;}
   b.hidden=false;
   var h=gmBandHTML();
   if(b._h!==h){b._h=h;b.innerHTML=h;}
@@ -6461,7 +6560,7 @@ function gmPopHTML(){
   gmTn().forEach(function(t){
     var st=gmStatus(t),n=nrs.filter(function(nr){return gmFertig(nr,t.tid);}).length;
     h+='<li class="gm-pz '+gmFarbKlasse(t.tid)+(st.on?'':' weg')+(st.tippt?' tippt':'')+(st.f?' fertig':'')+'" data-tid="'+esc(t.tid)+'">'+gmAvatarHTML(t.tid)+
-       '<div class="gm-pz-t"><div class="gm-pz-n">'+esc(t.tid===gm.ich?t.name+' (du)':t.name)+'</div><div class="gm-pz-s">'+esc(st.text)+'</div></div>'+
+       '<div class="gm-pz-t"><div class="gm-pz-n">'+esc(t.tid===gm.ich?t.name+' (du)':t.name)+'</div><div class="gm-pz-s">'+esc(st.text+(gmZeigt(t.tid)?' · zeigt Text':''))+'</div></div>'+
        '<span class="gm-pz-r">'+n+' / '+nrs.length+' fertig</span></li>';
   });
   return h+'</ul>';
@@ -6497,8 +6596,8 @@ function gmHinweisHTML(){
   var nr=state.blattNr,a=gmAndere(),ic=GM_IC;
   if(!a.length)return ic+'<span><b>Gemeinsam lernen:</b> Noch bist du allein. Lade die anderen mit dem Code <b class="gm-code">'+
     esc(gm.runde.code)+'</b> ein – oder fang schon an.</span>';
-  if(!gmIchFertig(nr))return ic+'<span><b>Jede Person löst selbst.</b> Unter jeder Teilaufgabe siehst du als Sterne, wie die anderen gerade schreiben. '+
-    'Bist du fertig, tippe unten auf „Fertig – vergleichen“.</span>';
+  if(!gmIchFertig(nr))return ic+'<span><b>Jede Person löst selbst.</b> Unter jeder Teilaufgabe siehst du, wie die anderen gerade schreiben – '+
+    'als Sterne oder, mit „Geschriebenes zeigen“, im Klartext. Bist du fertig, tippe unten auf „Fertig – vergleichen“.</span>';
   var w=a.filter(function(t){return !gmFertig(nr,t.tid);});
   return ic+'<span><b>Vergleich:</b> Unter jeder Teilaufgabe stehen deine Antwort, die der anderen und die Lösung. Gib dir Punkte – '+
     'oder lass alle Antworten von Claude prüfen.'+(w.length?' '+esc(gmNamen(w))+' '+(w.length===1?'ist':'sind')+' noch nicht fertig.':'')+'</span>';
@@ -6524,9 +6623,16 @@ function gmMitHTML(q){
 function gmMitZeileHTML(q,t){
   var f=gmFertig(q.nr,t.tid),mk=(gm.masken[t.tid]||{})[q.id],tippt=!f&&!!mk&&Date.now()-mk.z<4000,on=gmOnline(t.tid),inhalt='';
   var st=f?'fertig ✓':(tippt?'schreibt …':(on?'':'nicht da'));
-  if(mk&&!f){
+  /* Klartext nur, wenn beide „Geschriebenes zeigen“ eingeschaltet haben */
+  var kt=!f&&gm.offen&&gmZeigt(t.tid)?(gm.klar[t.tid]||{})[q.id]:null;
+  if(mk&&!f&&kt){
+    if(kt.r.length)inhalt+='<span class="gm-rw">'+kt.r.map(esc).join('\n')+'</span>';
+    if(kt.t.trim())inhalt+='<span class="gm-kt">'+esc(kt.t)+'</span>';
+  }else if(mk&&!f){
     if(mk.r.length)inhalt+='<span class="gm-rw">'+mk.r.map(function(z,i){return 'Z'+(i+1)+' '+esc(z);}).join('\n')+'</span>';
     if(mk.m){var ms=mk.m.length>280?'…'+mk.m.slice(-280):mk.m;inhalt+='<span class="gm-st">'+esc(ms)+'</span>';}
+  }
+  if(mk&&!f){
     if(mk.s)inhalt+='<span class="gm-x">Skizze · '+mk.s+' Element'+(mk.s===1?'':'e')+'</span>';
     if(mk.t)inhalt+='<span class="gm-x">'+mk.t+' Feld'+(mk.t===1?'':'er')+' in der Anlage</span>';
   }
@@ -6534,7 +6640,8 @@ function gmMitZeileHTML(q,t){
   var n=mk?String(mk.m||'').replace(/\s/g,'').length:0;
   return '<div class="gm-mz '+gmFarbKlasse(t.tid)+(tippt?' tippt':'')+(f?' fertig':'')+(on?'':' weg')+'" data-gm-id="'+esc(q.id)+'" data-tid="'+esc(t.tid)+'">'+
     gmAvatarHTML(t.tid)+'<div class="gm-mb"><p class="gm-mn">'+esc(t.name)+(st?' <span class="gm-mst">'+esc(st)+'</span>':'')+'</p>'+
-    '<div class="gm-sterne" role="img" aria-label="'+esc(t.name)+': '+(f?'fertig':(n?n+' Zeichen geschrieben':'noch nichts geschrieben'))+'">'+inhalt+
+    (kt&&mk?'<div class="gm-sterne klar">':
+    '<div class="gm-sterne" role="img" aria-label="'+esc(t.name)+': '+(f?'fertig':(n?n+' Zeichen geschrieben':'noch nichts geschrieben'))+'">')+inhalt+
     (tippt?'<i class="gm-caret" aria-hidden="true"></i>':'')+'</div></div></div>';
 }
 /* Block unter einer Teilaufgabe neu aufbauen (nie das Feld, in dem man tippt). */
@@ -6558,7 +6665,7 @@ function gmMitNeu(id,tid){
 /* Alle 2 Sekunden: „schreibt …“ läuft aus, Anwesenheit aktuell halten. */
 function gmLiveNeu(){
   if(!gm.runde||$("scrBlatt").hidden||!state.fall)return;
-  gmBandNeu();
+  gmBandNeu();gmSchalterNeu();
   blTeile(state.blattNr).forEach(function(q){gmMitNeu(q.id,null);});
 }
 /* Antwort einer anderen Person zu einer Teilaufgabe (nach ihrem „fertig“). */
@@ -6617,6 +6724,7 @@ function gmBlattNeu(){
   if(!gm.runde){if(hn)hn.hidden=true;if(b)b.hidden=true;gmPopZu();return;}
   gmBandNeu();
   if(hn){hn.hidden=false;hn.innerHTML=gmHinweisHTML();}
+  gmSchalterNeu();
   $("blAufgabe").querySelectorAll('canvas[data-gm-sk]').forEach(function(cv){
     var tid=cv.dataset.gmSk,id=cv.dataset.gmId,e=gmEintrag(+cv.dataset.gmNr,tid),t=gmPerson(tid),
         d=e&&e.antworten&&e.antworten.teile&&e.antworten.teile[id]&&e.antworten.teile[id].sk;
@@ -6831,9 +6939,9 @@ function gmDialog(art,d){
   gmDlg.art=art;gmDlg.daten=d||{};
   var body=$("gmDlg"),h='',titel='Gemeinsam lösen';
   var regeln='<ul class="gm-regeln"><li>Jede Person löst die ganze Prüfung selbst.</li>'+
-    '<li>Unter jeder Teilaufgabe siehst du als Sterne, wie die anderen gerade schreiben – ohne Inhalt.</li>'+
+    '<li>Unter jeder Teilaufgabe siehst du als Sterne, wie die anderen gerade schreiben – ohne Inhalt. Mit „Geschriebenes zeigen“ seht ihr euch gegenseitig im Klartext.</li>'+
     '<li>Nach jeder Aufgabe vergleicht ihr eure Antworten mit der Lösung und könnt alle zusammen von Claude prüfen lassen.</li>'+
-    '<li>Gespeichert werden dein Name in der Runde und deine Antworten fertiger Aufgaben – sichtbar nur für die Runde. <a href="datenschutz.html#freiwillig" target="_blank" rel="noopener">Datenschutz</a></li></ul>';
+    '<li>Gespeichert werden dein Name in der Runde und deine Antworten fertiger Aufgaben – sichtbar nur für die Runde. Was du gerade schreibst, wird nicht gespeichert. <a href="datenschutz.html#freiwillig" target="_blank" rel="noopener">Datenschutz</a></li></ul>';
   var name='<label class="md-lbl" for="gmName">Dein Name in der Runde</label>'+
     '<input id="gmName" class="gm-input" type="text" maxlength="24" autocomplete="nickname" value="'+esc(gmNameVorschlag())+'" placeholder="z. B. Kevin">';
   if(art==='anmelden'){
@@ -6897,7 +7005,7 @@ document.addEventListener('keydown',function(e){if(e.key==='Escape'&&$("mGemeins
 function gmBoxHTML(){
   if(!gmCloud||gm.ok===false)return '';
   var u=gmCloud.user(),h='<section class="gm-box" aria-labelledby="gmBoxT"><div class="gm-box-kopf">'+GM_IC+'<h3 id="gmBoxT">Gemeinsam lernen</h3></div>';
-  var text='Löst dieselbe Prüfung zu zweit oder zu mehreren: Jede Person schreibt selbst, die anderen sehen nur Sterne. '+
+  var text='Löst dieselbe Prüfung zu zweit oder zu mehreren: Jede Person schreibt selbst, die anderen sehen Sterne – oder auf Wunsch den Text. '+
     'Nach jeder Aufgabe vergleicht ihr – und könnt alle Antworten zusammen von Claude prüfen lassen.';
   if(!u)return h+'<p class="gm-box-t">'+text+' Dafür brauchst du ein Konto.</p>'+
     '<div class="gm-box-akt"><button type="button" class="pr-btn solid" data-gm="anmelden">Mit Google anmelden</button></div></section>';
@@ -6964,6 +7072,17 @@ function gmEinladungAusAdresse(){
 try{gm.einladung=localStorage.getItem('kvm_gm_einladung')||null;}catch(e){}
 gmEinladungAusAdresse();
 window.addEventListener('hashchange',function(){if(gmEinladungAusAdresse())gmAuth();});
+/* Nach dem Neuladen – etwa für eine neue Version – zurück in die Runde, die in
+   dieser Registerkarte offen war (sessionStorage; ✕ beendet das). */
+function gmWiedereinstieg(){
+  if(gm.wiederVersucht||gm.runde||gm.ok===false||!gm.meine)return;
+  gm.wiederVersucht=true;
+  var id=null;try{id=sessionStorage.getItem('kvm_gm_weiter');}catch(e){}
+  if(!id||gm.einladung||!$("scrBlatt").hidden||!$("scrQuiz").hidden||!$("mGemeinsam").hidden)return;
+  var r=gm.meine.filter(function(x){return x.id===id;})[0];
+  if(!r){try{sessionStorage.removeItem('kvm_gm_weiter');}catch(e){}return;}
+  gmOeffnen(r);
+}
 /* Anmeldung geändert (ruft der Cloud-Block): Runden laden, Einladung anbieten. */
 function gmAuth(){
   if(!gmCloud)return;
@@ -6975,6 +7094,7 @@ function gmAuth(){
     return;
   }
   gmMeineLaden().then(function(){
+    gmWiedereinstieg();
     if(!gm.einladung||gm.ok===false||gm.einladungOffen)return;
     gm.einladungOffen=true;
     var r=(gm.meine||[]).filter(function(x){return x.code===gm.einladung;})[0];
@@ -6982,6 +7102,39 @@ function gmAuth(){
     gmDialog('beitreten',{code:gm.einladung});
   });
 }
+
+/* ===== Neue Version erkennen =====
+   Die App liegt statisch bei GitHub Pages; eine offene Seite läuft mit dem
+   Stand weiter, mit dem sie geladen wurde. Ändert sich index.html auf dem
+   Server (ETag bzw. Last-Modified), bietet ein Hinweis „Neu laden“ an. Der
+   Lernstand liegt im Gerät bzw. in der Cloud, eine offene gemeinsame Runde
+   öffnet sich danach von selbst wieder (gmWiedereinstieg). */
+(function version(){
+  var basis=null,zuletzt=0,gezeigt=false;
+  function kennung(r){return r&&r.ok?(r.headers.get('etag')||r.headers.get('last-modified')||''):'';}
+  function pruefen(){
+    if(!window.fetch||location.protocol==='file:')return Promise.resolve(false);
+    zuletzt=Date.now();
+    return fetch(location.pathname,{method:'HEAD',cache:'no-store'}).then(kennung,function(){return '';}).then(function(k){
+      if(!k)return false;
+      if(basis===null){basis=k;return false;}
+      if(k===basis||gezeigt)return false;
+      gezeigt=true;zeigen();return true;
+    });
+  }
+  function zeigen(){
+    var el=$("neuVersion");if(!el)return;
+    el.innerHTML='<span><b>Neue Version verfügbar.</b> '+(gm.runde?'Nach dem Laden bist du wieder in der Runde.':'Dein Lernstand bleibt erhalten.')+'</span>'+
+      '<button type="button" class="nv-laden">Neu laden</button><button type="button" class="nv-zu" aria-label="Später">✕</button>';
+    el.querySelector('.nv-laden').onclick=function(){location.reload();};
+    el.querySelector('.nv-zu').onclick=function(){el.hidden=true;};
+    el.hidden=false;
+  }
+  window.KVM_versionPruefen=pruefen;
+  pruefen();
+  setInterval(function(){if(!document.hidden)pruefen();},5*60000);
+  document.addEventListener('visibilitychange',function(){if(!document.hidden&&Date.now()-zuletzt>60000)pruefen();});
+})();
 
 /* ===== Cloud-Login + Sync (Supabase) – teilt Konto & Fortschritt mit der nativen App ===== */
 (function cloud(){
