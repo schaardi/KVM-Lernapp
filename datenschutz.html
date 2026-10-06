@@ -27,6 +27,7 @@
       <li><b>Keine Werbung, kein Tracking, keine Analyse-Tools</b> und keine Cookies zu Werbe- oder Statistikzwecken.</li>
       <li><b>Mit der freiwilligen Google-Anmeldung</b> wird dein Lernstand in einer Datenbank in der EU (Irland) gespeichert, damit er auf allen Geräten gleich ist.</li>
       <li><b>Rangliste, Lerngruppen, Profile, Gemeinsam lernen und „Fehler melden“</b> teilen nur, was bei der jeweiligen Funktion steht – und nur, wenn du sie nutzt.</li>
+      <li><b>Die KI-Auswertung der Original-Prüfungen</b> schickt deine Antworten zu einer Prüfung nur dann an Claude (Anthropic, USA), wenn du „Mit KI auswerten“ tippst – ohne Name und E-Mail-Adresse.</li>
     </ul>
   </section>
 
@@ -93,7 +94,7 @@
       <li><b>Lernstand:</b> je Frage, wie oft gesehen, richtig und falsch, Wiederholungsstufe und nächste Wiederholung</li>
       <li><b>Prüfungsdurchgänge:</b> Punkte, wie viele Teilaufgaben bewertet sind, ob unter Prüfungsbedingungen, Datum und Bearbeitungszeit – ohne deine Antworten</li>
     </ul>
-    <p>Deine Antworten, Rechenwege, Skizzen und Markierungen werden nicht hochgeladen. Ausnahme: Antworten in einer Runde „Gemeinsam lernen“ (Abschnitt 5).</p>
+    <p>Deine Antworten, Rechenwege, Skizzen und Markierungen werden nicht hochgeladen. Ausnahmen: Antworten in einer Runde „Gemeinsam lernen“ (Abschnitt 5) und die KI-Auswertung einer Prüfung, die du selbst startest (Abschnitt 6).</p>
   </section>
 
   <section id="freiwillig">
@@ -114,6 +115,10 @@
     <p>Die Original-Prüfungen gibt es nur mit Konto und nach einer Freigabe durch einen Admin. Fragst du die Freigabe an, werden gespeichert: dass und wann du angefragt hast, deine freiwillige Nachricht an die Admins (höchstens 300 Zeichen) und die Entscheidung mit Zeitpunkt und wer sie getroffen hat. Die Admins sehen zu deiner Anfrage den Namen und die E-Mail-Adresse deines Kontos, damit sie wissen, wer anfragt. Rechtsgrundlage ist Art. 6 Abs. 1 lit. b DSGVO: Die Freigabe ist nötig, um dir die Prüfungen bereitzustellen.</p>
     <p>Nach der Freigabe lädt die App die Prüfungen aus einem geschützten Speicher bei Supabase (Abschnitt 4); die Abbildungen kommen über Links, die 12 Stunden gelten. Damit die Prüfungen schnell starten und auch ohne Verbindung gehen, legt die Web-App eine Kopie für dein Konto im Speicher deines Browsers ab (IndexedDB). Die Kopie enthält nur die Prüfungen, keine Angaben über dich. Sie wird gelöscht, wenn du dich abmeldest, das Konto wechselst oder die Freigabe zurückgenommen wird.</p>
     <p>Anfrage und Entscheidung bleiben gespeichert, bis das Konto gelöscht wird oder ein Admin die Anfrage löscht.</p>
+    <h3 id="ki">KI-Auswertung mit Claude</h3>
+    <p>Wie in der Prüfung gibt es Lösungen und Auswertung erst nach der Abgabe. Danach bewertest du dich selbst – oder lässt die Prüfung von der KI auswerten. Erst wenn du „Mit KI auswerten“ tippst, sendet die App deine Antworten zu dieser Prüfung an eine Funktion bei Supabase (Abschnitt 4): Text, Rechenwege, Eintragungen in Anlagen und Skizzen als Bild, Aufgabe für Aufgabe. Die Funktion gibt sie zusammen mit den Aufgaben und Lösungshinweisen an das KI-Modell Claude Sonnet 5.5 der Anthropic PBC (USA) weiter und schickt dir Punkte und eine kurze Begründung je Teilaufgabe zurück. Dein Name, deine E-Mail-Adresse und deine Konto-Kennung gehen nicht an Anthropic. Leere Aufgaben werden gar nicht gesendet.</p>
+    <p>Anthropic verarbeitet die Daten in unserem Auftrag nach Art. 28 DSGVO; der Vertrag dazu ist Teil der kommerziellen Bedingungen von Anthropic. Anthropic nutzt die Daten nicht zum Training seiner Modelle und speichert sie nur für begrenzte Zeit. Die Übermittlung in die USA sichern Standardvertragsklauseln der EU-Kommission ab. Siehe die <a href="https://www.anthropic.com/legal/privacy" rel="noopener">Datenschutzerklärung von Anthropic</a>.</p>
+    <p>Punkte und Begründungen speichert nur dein Gerät, bei deinen Antworten. In der Datenbank steht je Auswertung: dein Konto, die Prüfung, wann sie lief, die Punkte je Aufgabe, die Zahl der verarbeiteten Tokens und gegebenenfalls eine Fehlermeldung – nicht deine Antworten. Damit gilt das Tageslimit von fünf Auswertungen, und die Admins behalten Nutzung und Kosten im Blick. Rechtsgrundlage ist Art. 6 Abs. 1 lit. b DSGVO, weil du die Auswertung selbst anforderst; für Limit und Kostenübersicht Art. 6 Abs. 1 lit. f DSGVO. Die Einträge werden mit dem Konto gelöscht.</p>
   </section>
 
   <section id="meldungen">
@@ -123,7 +128,7 @@
 
   <section id="verwaltung">
     <h2>8. Verwaltung</h2>
-    <p>Zur Betreuung, Moderation und Bearbeitung von Löschanfragen können Admins alle gespeicherten Angaben einsehen: Konto, Lernstand, Profil, Freunde, Gruppen, Meldungen und Anfragen zur Freigabe der Prüfungen. Sie können Konten aus der Rangliste nehmen, sperren oder löschen und die Prüfungen freigeben oder die Freigabe zurücknehmen. Jede dieser Aktionen wird mit Zeitpunkt protokolliert. Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO.</p>
+    <p>Zur Betreuung, Moderation und Bearbeitung von Löschanfragen können Admins alle gespeicherten Angaben einsehen: Konto, Lernstand, Profil, Freunde, Gruppen, Meldungen, Anfragen zur Freigabe der Prüfungen und die Nutzung der KI-Auswertung (ohne deine Antworten). Sie können Konten aus der Rangliste nehmen, sperren oder löschen und die Prüfungen freigeben oder die Freigabe zurücknehmen. Jede dieser Aktionen wird mit Zeitpunkt protokolliert. Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO.</p>
   </section>
 
   <section id="android">
@@ -148,7 +153,7 @@
     <h2>11. Speicherdauer und Konto löschen</h2>
     <ul>
       <li>Daten auf deinem Gerät bleiben, bis du sie löschst.</li>
-      <li>Konto, Lernstand und Prüfungsdurchgänge bleiben, bis das Konto gelöscht wird. Mit dem Konto werden auch Ranglisten-Eintrag, Profil, Freundschaften, Gruppen-Mitgliedschaften, Antworten aus „Gemeinsam lernen“ und die Freigabe der Prüfungen gelöscht.</li>
+      <li>Konto, Lernstand und Prüfungsdurchgänge bleiben, bis das Konto gelöscht wird. Mit dem Konto werden auch Ranglisten-Eintrag, Profil, Freundschaften, Gruppen-Mitgliedschaften, Antworten aus „Gemeinsam lernen“, die Freigabe der Prüfungen und die Einträge zur KI-Auswertung gelöscht.</li>
       <li>Den Ranglisten-Eintrag löscht du jederzeit selbst durch Austreten.</li>
       <li>Fehlermeldungen und Absturzberichte werden gelöscht, wenn sie für die Fehlerbehebung nicht mehr gebraucht werden.</li>
     </ul>

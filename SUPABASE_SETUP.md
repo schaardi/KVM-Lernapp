@@ -407,13 +407,81 @@ ein Admin die angemeldete Person freigegeben hat.
   ins private Paket, eigene Fälle nach `data/cases.js`. Werkzeuge dazu liegen in `privat/pipeline/`.
 - **Aufräumen:** Wer sein Konto löscht, verliert die Freigabe (`on delete cascade`).
 
-**Ältere Stände:** Die Git-Historie und ältere APK-Releases enthalten die Prüfungen noch. Ganz aus
-dem Repository verschwinden sie erst, wenn die Historie umgeschrieben wird – oder wenn das
-Repository privat ist bzw. neu angelegt wird.
+**Ältere Stände:** Die Git-Historie ist seit dem 6. Oktober 2026 umgeschrieben und enthält die
+Prüfungen nicht mehr. Ältere Commits bleiben bei GitHub noch über alte Pull-Request-Ansichten
+erreichbar, bis der GitHub-Support sie entfernt.
 
 In der **Datenschutzerklärung** ist das eingearbeitet (`datenschutz.html#pruefungen`): Anfrage,
 Nachricht und Entscheidung werden gespeichert, die Admins sehen dazu Name und E-Mail-Adresse.
 Die Kopie der Prüfungen bleibt im Browser.
+
+## 12. KI-Auswertung der Original-Prüfungen (optional)
+
+Original-Prüfungen zeigen Lösungen und Auswertung erst nach der Abgabe, wie in der Prüfung. Danach
+bewertet man sich selbst oder tippt „Mit KI auswerten“: Claude Sonnet 5.5 vergibt je Teilaufgabe
+Punkte nach dem Lösungshinweis und begründet sie kurz. Der API-Key liegt nur bei Supabase.
+
+**Einrichten (einmal):**
+1. **SQL:** Im SQL-Editor [`docs/supabase-ki-auswertung.sql`](docs/supabase-ki-auswertung.sql) ausführen,
+   nach Abschnitt 8 (Admins) und 11 (Freigabe).
+   - Legt die Tabelle `ki_auswertungen` und die Funktionen an.
+   - Lässt sich gefahrlos erneut ausführen.
+2. **API-Key:** In der [Anthropic Console](https://console.anthropic.com) einen API-Key anlegen, am
+   besten mit einem monatlichen Ausgabenlimit.
+   - Im Supabase-Dashboard unter **Edge Functions › Secrets** als `ANTHROPIC_API_KEY` speichern.
+   - Nirgendwo sonst: nicht ins Repository, nicht in die App, nicht in einen Chat.
+3. **Funktion bereitstellen:** `supabase/functions/pruefung-auswerten` mit `index.ts` und `kern.ts`.
+   - Mit der Supabase-CLI: `supabase functions deploy pruefung-auswerten --project-ref iarekdxkutwfidzgvyuy`
+   - Oder im Dashboard: **Edge Functions › Deploy a new function › Via Editor**, Name
+     `pruefung-auswerten`, beide Dateien anlegen.
+   - „Verify JWT“ eingeschaltet lassen: Nur angemeldete Personen dürfen die Funktion aufrufen.
+4. **Prüfen:** Eine Prüfung abgeben und „Mit KI auswerten“ tippen. In der Verwaltung unter
+   „Prüfungen“ steht die Nutzung.
+
+**So funktioniert es:**
+- **Ablauf:** Die App ruft die Funktion zuerst mit `beginnen` auf. Das prüft Freigabe und Tageslimit
+  und legt die Auswertung an. Danach schickt die App je Aufgabe einen Aufruf mit den Antworten:
+  Text, Rechenweg, Eintragungen in Anlagen, Skizzen als JPEG.
+  - Je Aufruf bewertet Claude eine Aufgabe. So bleibt jede Anfrage unter der Zeitgrenze der Edge
+    Functions (150 s), und die App zeigt den Fortschritt. Zwei Aufgaben laufen gleichzeitig.
+  - Die Funktion holt Aufgaben, Lösungshinweise und Abbildungen selbst aus dem Bucket `pruefungen`.
+    Die App schickt nur die Antworten.
+  - Leere Aufgaben bekommen 0 Punkte, ohne dass Claude gefragt wird.
+- **Modell:** fest `claude-sonnet-5-5`, kein Ausweichen auf ein anderes Modell.
+  - `effort: high`, höchstens 8000 Tokens je Aufgabe.
+  - Die Antwort kommt als JSON nach festem Schema. Punkte werden auf 0 bis zur Höchstpunktzahl
+    begrenzt; unbekannte Teilaufgaben werden ignoriert.
+- **Tageslimit:** 5 Auswertungen je Person und Kalendertag (Europe/Berlin), Admins ohne Limit.
+  - Eine Auswertung ist eine Prüfung und zählt einmal, egal wie viele Aufgaben sie hat.
+  - Erneutes Starten innerhalb von 30 Minuten setzt die laufende Auswertung fort und zählt nicht
+    noch einmal, etwa für fehlende Aufgaben.
+  - Eine Auswertung ohne eine einzige bewertete Aufgabe zählt nach 30 Minuten nicht mehr.
+  - Je Aufgabe höchstens drei Aufrufe, Wiederholungen nach Fehlern eingerechnet.
+  - Ändern: `ki_tageslimit()` mit anderem Wert neu anlegen.
+- **Gespeichert:** in `ki_auswertungen` nur Konto, Prüfung, Zeit, Punkte je Aufgabe, Tokens und der
+  letzte Fehler, keine Antworten. Die Begründungen bleiben im Browser (`kvm_ki`).
+  - Die Tabelle ist für Clients gesperrt. `ki_status()` gibt der App den eigenen Stand,
+    `admin_ki_auswertungen()` den Admins die Übersicht.
+  - Beginnen und Eintragen darf nur die Funktion (`service_role`).
+  - Wer sein Konto löscht, verliert die Einträge (`on delete cascade`).
+- **Kosten:** Die Verwaltung zeigt unter „Prüfungen“ die Tokens der letzten 30 Tage und schätzt die
+  Kosten. Grundlage: 2 US-$ je Million Eingabe- und 10 US-$ je Million Ausgabe-Tokens.
+  - Eine ganze Prüfung kostet grob 0,10 bis 0,30 US-$; den größten Teil macht das Nachdenken von
+    Claude aus.
+- **Fehler:**
+  - Ohne Secret antwortet die Funktion „nicht eingerichtet“; die App blendet die KI dann aus.
+  - Bei Überlastung (429/529) wartet die App die angegebene Zeit und versucht es erneut, dann nur
+    noch eine Aufgabe zur Zeit.
+  - Was danach noch fehlt, holt „Fehlende auswerten“ nach. Selbst bewerten geht immer.
+- **Ohne das SQL** zeigt die Web-App nach der Abgabe nur die Selbstbewertung.
+- **Tests:** `deno test --allow-read supabase/functions/pruefung-auswerten/kern_test.ts` prüft die Funktion
+  mit den erfundenen Beispielprüfungen und einem simulierten Claude – ohne Datenbank und ohne API-Key.
+- **Native App:** FR-021 in `APP_FEATURE_REQUESTS.md`.
+
+In der **Datenschutzerklärung** steht das unter `datenschutz.html#ki`: Was an Anthropic geht (nur
+nach dem Tippen, ohne Name und E-Mail-Adresse) und was in der Datenbank bleibt. Der Vertrag zur
+Auftragsverarbeitung mit Anthropic ist Teil der kommerziellen Bedingungen von Anthropic. Bitte vor
+dem Einschalten selbst prüfen, ob er für das eigene Konto gilt.
 
 ## Apple-Login später
 Die Auth-Architektur ist anbieter-offen (`AuthService`). „Sign in with Apple"
