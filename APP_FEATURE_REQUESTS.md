@@ -3168,3 +3168,78 @@ Rechtsberatung).“
 - Einwilligung über Googles UMP-SDK einholen, bevor AdMob startet.
 - Datenschutzerklärung ergänzen: AdMob (Google Ireland), Werbe-ID, Abrechnung über Google Play.
 - Das Datensicherheitsformular entsprechend anpassen.
+
+---
+
+## FR-019 · Lernzeit („gelernte Stunden“) und Prüfungsuhr ohne Zeitlimit
+
+**Status App-Session:** offen
+**Web umgesetzt:** ✅ `claude/ui-design-improvement-my0f66` (Commit „Lernzeit und Prüfungsuhr …“)
+**Anlass:** User-Wunsch „Baue die gelernten Stunden mit ein. Falls du noch nachverfolgen kannst,
+dann bau das jetzt ein. Mache auch bei nicht zeitlich begrenzten Prüfungen einen Timer, der die
+Prüfung aber nicht stoppt (auch bei Zusammen …)“ – gemeint ist auch das gemeinsame Lernen.
+
+### Lernzeit messen
+- **Es zählt**, solange ein Lernbildschirm offen ist:
+  - Fragen samt Ergebnis (`f`)
+  - Aufgabenblatt von Prüfungen und Fallaufgaben, auch gemeinsam (`p`)
+  - Mündlich (`m`)
+  - Lehrgang Kostenwesen, Gefahrgut, Formelbuch (`l`)
+- **Pause:** 10 Minuten ohne Eingabe (Tippen, Klicken, Scrollen, Tastatur) oder App im Hintergrund.
+- **Speicher wie im Web:** `kvm_lernzeit` = `{Tag: {p, f, m, l}}` in Sekunden.
+  - Tag = lokaler Tagesindex wie bei den Lerntagen.
+  - Gepuffert; gespeichert alle 15 s und beim Verlassen.
+
+### Die Zeit davor: einmal schätzen
+Beim ersten Start der neuen Version (`kvm_lernzeit_vorher` = `{seit, n, a, e, g}`):
+- **a:** beantwortete Fragen je Tag (Lerntage, 120 Tage) × 45 s.
+- **e:** Prüfungen unter Prüfungsbedingungen – deren Bearbeitungszeit ist genau.
+- **g:** gemeinsame Runden, nachgereicht, sobald `gemeinsam_meine` geladen ist.
+  - Je Runde einmal `gemeinsam_stand`: Fertig-Zeitpunkte der eigenen Aufgaben vor `seit`.
+  - Abstände bis 60 min zählen. Die erste Aufgabe einer Sitzung zählt mit dem Mittel der übrigen
+    (höchstens 30 min, ohne Abstände 15 min).
+- **Je Tag** gilt der größere Wert aus a und e + g, denn bewertete Aufgaben zählen auch als Antworten.
+- Im Hinweis klar als geschätzt kennzeichnen, mit den Quellen.
+
+### Anzeige
+- **Statistikleiste:** fünfte Kennzahl „Std. gelernt“, gemessen plus geschätzt.
+  - Unter 10 h mit einer Nachkommastelle („2,1“).
+  - Auf schmalen Handys (≤ 380 px) entfällt „offen“, damit alle Beschriftungen ganz passen.
+- **Statistik:**
+  - „Lernzeit · 14 Tage“: Balken in Minuten; geschätzte Tage gestreift
+  - Kacheln „heute“, „diese Woche“ (ab Montag) und „gesamt, davon ≈ … geschätzt“
+  - eine Zeile je Art
+  - Hinweis: was gemessen wird, woraus geschätzt ist, „Die Lernzeit bleibt auf diesem Gerät“
+- **Erfolge:** „Erste Stunde“, „Zehn Stunden“, „Hundert Stunden“.
+
+### Prüfungsuhr ohne Zeitlimit
+- **Platz:** im Aufgabenblatt rechts in der Leiste, wo unter Prüfungsbedingungen die Uhr steht.
+- **Zählt** dieselbe aktive Zeit wie die Lernzeit, und zwar je Prüfung bzw. Fallaufgabe. In einer
+  gemeinsamen Runde zählt sie je Runde (Schlüssel `g-<Runde>`). Speicher: `kvm_uhr` = `{Schlüssel: ms}`.
+- **Original-Prüfungen:** Restzeit gegen die vorgesehene Zeit (wie bei den Prüfungsbedingungen:
+  „Bearbeitungszeit N Minuten“ aus der Ausgangssituation, sonst 90 min, NT 60 min).
+  - Danach „+m:ss“ in Amber, die Uhr läuft weiter. **Die Prüfung endet nicht.**
+  - Einmal der Hinweis „Die vorgesehenen 1 h 30 min sind um. Die Uhr läuft als Überzeit weiter – mach
+    in Ruhe fertig.“
+- **Fallaufgaben:** Bearbeitungszeit, hochzählend.
+- **Tippen** wechselt Restzeit → Bearbeitungszeit → aus (nur Symbol) → Restzeit. Gemerkt in
+  `kvm_uhr_modus`, jeweils mit kurzer Meldung.
+- **Unter Prüfungsbedingungen** bleibt alles wie bisher; die Prüfungsuhr zählt dann nicht mit.
+- **„Neu starten“** setzt die Uhr zurück. Uhren verlassener Runden werden aufgeräumt.
+- **„Zum Ergebnis“:**
+  - Die Uhr geht als Bearbeitungszeit in den Durchgang (`dauer` in ms, höchstens 24 h; läuft über
+    `pruefungen_abgleichen` mit).
+  - Ergebniszeile: „Bearbeitungszeit 1 h 32 min (vorgesehen 1 h 30 min)“.
+- **Prüfungsliste:** „· 1 h 32 min“ im Fortschritt, „· in 1 h 32 min“ beim Ergebnis. „Neu starten“
+  erscheint auch, wenn nur die Uhr läuft.
+
+### Noch nicht dabei
+- **Lernzeit auf allen Geräten:** Dafür braucht es eine eigene Tabelle mit Funktion. Ins
+  `progress`-JSON gehört sie nicht – dort liest die App Fragen-IDs.
+
+### Akzeptanz
+- 5 min Prüfung → Uhr 1:25:00; 15 min ohne Eingabe → nur bis zur Pause gezählt; im Hintergrund zählt nichts.
+- Nach 90 min „+0:xx“ in Amber, Eingaben weiter möglich, kein Ergebnis-Bildschirm.
+- Neustart der App: Uhr und Modus bleiben.
+- Gemeinsame Runde: eigene Uhr je Runde, die Prüfungsuhr allein bleibt unberührt.
+- Nachtrag aus einer Runde mit Aufgaben um 10:00, 10:20, 10:45 und 11:30 ergibt 2 h an diesem Tag.

@@ -1086,7 +1086,7 @@ body[data-screen="scrHome"]:not([data-seite="konto"]) footer{display:none}
 .stat-kopf{display:grid;grid-template-columns:minmax(0,1fr) auto;grid-template-areas:"k g" "b b";align-items:center;gap:7px 10px;
   padding:9px 10px 9px 12px;cursor:pointer;list-style:none;touch-action:pan-x}
 .stat-kopf::-webkit-details-marker{display:none}
-.stat-kpis{grid-area:k;display:grid;grid-template-columns:repeat(4,minmax(0,auto));justify-content:space-between;gap:6px}
+.stat-kpis{grid-area:k;display:grid;grid-template-columns:repeat(5,minmax(0,auto));justify-content:space-between;gap:6px}
 .stat-leiste .hs{min-width:0}
 .stat-leiste .hs b{display:block;font:700 19px/1 var(--disp);color:var(--petrol-ink-deep)}
 .stat-leiste .hs span{display:block;font-size:10.5px;line-height:1.2;color:var(--muted);margin-top:3px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
@@ -1157,8 +1157,11 @@ body[data-screen="scrHome"]:not([data-seite="konto"]) footer{display:none}
   .seite-start .exam-chance{padding:9px 13px 11px;gap:5px}
   .seite-start .ec-w b{font-size:21px}
 }
-/* Schmale Handys: Kacheltitel und Kennzahlen passen ganz („Kostenwesen“) */
+/* Schmale Handys: Kacheltitel und Kennzahlen passen ganz („Kostenwesen“).
+   Die Lernzeit braucht Platz – „offen“ (= alle minus gesehen) tritt zurück. */
 @media (max-width:380px){
+  .stat-leiste .hs-offen{display:none}
+  .stat-kpis{grid-template-columns:repeat(4,minmax(0,auto))}
   .seite-start .fn{padding-left:7px;padding-right:7px}
   .seite-start .fn-t{font-size:11.5px}
 }
@@ -1498,6 +1501,16 @@ body[data-screen="scrOral"] .toolbar{display:none}
 .ak.voll i{background:linear-gradient(180deg,var(--petrol),var(--petrol-deep))}
 .ak.heute span{color:var(--petrol-ink);font-weight:700}
 .ak span{font:600 9.5px/1 var(--mono);color:var(--muted)}
+/* Lernzeit: Minuten je Tag; geschätzte Tage (vor der Messung) heller und gestreift */
+.lz-chart .ak.voll i{background:linear-gradient(180deg,var(--amber),var(--amber-deep))}
+.lz-chart .ak.schaetz i{background:repeating-linear-gradient(135deg,var(--amber-line) 0 4px,var(--amber-soft) 4px 8px)}
+.lz-info{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin-top:10px}
+.lz-k{border:1px solid var(--line);border-radius:11px;padding:8px 10px;min-width:0}
+.lz-k b{display:block;font:700 17px/1.1 var(--disp);color:var(--ink)}
+.lz-k span{display:block;font-size:11px;line-height:1.3;color:var(--muted);margin-top:2px}
+.lz-arten{grid-column:1/-1;display:flex;flex-wrap:wrap;gap:4px 12px;font-size:11.5px;color:var(--muted)}
+.lz-arten b{color:var(--ink);font-weight:600}
+.lz-hinweis{grid-column:1/-1;margin:0;font-size:11.5px;line-height:1.45;color:var(--muted)}
 
 /* ===== Aufgabentexte: Tabellen, Listen, Rechenzeilen =====
    Die Prüfungstexte liegen als Klartext vor – Tabellenzeilen als „a | b“,
@@ -1644,7 +1657,11 @@ body[data-screen="scrBlatt"] .app{max-width:920px}
 .oas-hint{margin-top:8px;font-size:11.5px;color:var(--muted);line-height:1.45}
 
 /* Prüfung unter Echtbedingungen: Uhr und Abgabe in der Leiste, Hinweisband */
-.bl-uhr{flex:none;font-size:13px;padding:6px 9px}
+.bl-uhr{flex:none;font-size:13px;padding:6px 9px;cursor:pointer;display:inline-flex;align-items:center;gap:5px;min-height:34px}
+.bl-uhr svg{flex:none}
+/* Uhr ohne Zeitlimit: nach der vorgesehenen Zeit läuft sie als Überzeit weiter */
+.timer.ueber{color:var(--amber-ink);background:var(--amber-soft);border-color:var(--amber-line)}
+.timer.aus{color:var(--muted);background:var(--paper);border-color:var(--line)}
 .bl-abgabe{flex:none;border:0;border-radius:9px;background:var(--petrol);color:#fff;font:700 13px var(--body);min-height:36px;padding:0 13px;cursor:pointer}
 .bl-abgabe:hover{background:var(--petrol-deep)}
 .bl-echt{display:flex;gap:10px;align-items:flex-start;margin:0 0 14px;padding:10px 13px;border:1px solid var(--petrol-line);background:var(--petrol-soft);border-radius:11px;font-size:13px;line-height:1.5;color:var(--ink)}
@@ -2079,8 +2096,9 @@ body.sk-offen{overflow:hidden}
           <span class="stat-kpis" role="group" aria-label="Dein Stand">
             <span class="hs"><b id="pMastered">0</b><span>gemeistert</span></span>
             <span class="hs"><b id="pSeen">0</b><span>gesehen</span></span>
-            <span class="hs"><b id="pOpen">0</b><span>offen</span></span>
+            <span class="hs hs-offen"><b id="pOpen">0</b><span>offen</span></span>
             <span class="hs"><b id="pStreak">0</b><span>Tage in Folge</span></span>
+            <span class="hs"><b id="pZeit">0</b><span id="pZeitL">Std. gelernt</span></span>
           </span>
           <span class="stat-griff"><span class="stat-griff-t">Statistik</span><svg class="ic-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></span>
           <span class="prog-bar" aria-hidden="true"><span class="fill" id="pFill" style="width:0%"></span></span>
@@ -2096,6 +2114,9 @@ body.sk-offen{overflow:hidden}
           </div>
           <p class="h-sub h-sub-gap">Aktivität · 14 Tage <span class="h-scope" id="aktivSumme"></span></p>
           <div class="aktiv" id="aktivChart"></div>
+          <p class="h-sub h-sub-gap">Lernzeit · 14 Tage <span class="h-scope" id="lzSumme"></span></p>
+          <div class="aktiv lz-chart" id="lzChart"></div>
+          <div class="lz-info" id="lzInfo"></div>
           <p class="prog-note" id="pNote"></p>
           <p class="h-sub h-sub-gap">Erfolge <span class="h-scope" id="erfolgeN"></span></p>
           <div class="erfolge" id="erfolgeList"></div>
@@ -2326,7 +2347,7 @@ body.sk-offen{overflow:hidden}
       <div class="bl-bar">
         <button class="iconbtn" id="blQuit" title="Prüfung verlassen" aria-label="Prüfung verlassen">✕</button>
         <div class="bl-stepper" id="blStepper" role="tablist" aria-label="Aufgaben dieser Prüfung"></div>
-        <span class="timer bl-uhr" id="blUhr" role="timer" aria-label="Verbleibende Zeit" hidden></span>
+        <button type="button" class="timer bl-uhr" id="blUhr" aria-label="Verbleibende Zeit" hidden></button>
         <button type="button" class="bl-abgabe" id="blAbgabe" hidden>Abgeben</button>
       </div>
       <div class="bl-prog-zeile">
@@ -2915,7 +2936,8 @@ var ERF_IC={
   kalender:'<rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4M9 15l2 2 4-4"/>',
   ziel:'<circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.5"/>',
   papier:'<path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M9 14l2 2 4-4"/>',
-  pokal:'<path d="M8 21h8M12 17v4M7 4h10v5a5 5 0 0 1-10 0zM17 5h3v2a3 3 0 0 1-3 3M7 5H4v2a3 3 0 0 0 3 3"/>'
+  pokal:'<path d="M8 21h8M12 17v4M7 4h10v5a5 5 0 0 1-10 0zM17 5h3v2a3 3 0 0 1-3 3M7 5H4v2a3 3 0 0 0 3 3"/>',
+  uhr:'<circle cx="12" cy="13" r="8"/><path d="M12 9v4l2 2M9 2h6"/>'
 };
 function erfolgeListe(){
   var seen=0,mastered=0;
@@ -2930,7 +2952,7 @@ function erfolgeListe(){
     c.steps.forEach(function(st){if(st.id in pts){bewertet++;sum+=pts[st.id]|0;}});
     if(sum>besteP)besteP=sum;
   });
-  var s=serie();
+  var s=serie(),stunden=Math.floor(lzStand().gesamt/360)/10;
   return [
     {ic:'schritt',t:'Erste Schritte',d:'10 Fragen beantwortet',v:beantwortet,z:10},
     {ic:'blitz',t:'Am Ball',d:'250 Antworten gegeben',v:beantwortet,z:250},
@@ -2941,7 +2963,10 @@ function erfolgeListe(){
     {ic:'kalender',t:'Wochenserie',d:'7 Lerntage in Folge',v:s,z:7},
     {ic:'ziel',t:'Fachprofi',d:'ein Fach auf Grün',v:Math.round(best*100),z:70},
     {ic:'papier',t:'Prüfungsluft',d:'erste Prüfungsaufgabe bewertet',v:bewertet,z:1},
-    {ic:'pokal',t:'Bestanden',d:'50 Punkte in einer Original-Prüfung',v:besteP,z:50}
+    {ic:'pokal',t:'Bestanden',d:'50 Punkte in einer Original-Prüfung',v:besteP,z:50},
+    {ic:'uhr',t:'Erste Stunde',d:'1 Stunde gelernt',v:stunden,z:1},
+    {ic:'uhr',t:'Zehn Stunden',d:'10 Stunden gelernt',v:stunden,z:10},
+    {ic:'uhr',t:'Hundert Stunden',d:'100 Stunden gelernt',v:stunden,z:100}
   ];
 }
 function renderErfolge(){
@@ -3010,7 +3035,7 @@ function renderPruefChance(){
   box.hidden=false;
 }
 $("pruefChance").addEventListener("click",function(){window.KVM_seite('pruefungen');});
-function renderHomeExtras(){renderHero();renderErfolge();renderAktiv();renderPruefLast();renderPruefChance();
+function renderHomeExtras(){renderHero();renderErfolge();renderAktiv();renderLernzeit();renderPruefLast();renderPruefChance();
   if(window.KVM_vergleich)window.KVM_vergleich();}
 
 function renderSubChips(){
@@ -4988,8 +5013,12 @@ function echtLeeren(ids){
 }
 function echtUhr(){
   var el=$("blUhr"),ab=$("blAbgabe"),e=echtAktiv();
-  if(!e||$("scrBlatt").hidden){el.hidden=true;ab.hidden=true;if(!e){clearInterval(echtTimer);echtTimer=null;}return;}
-  el.hidden=false;
+  if(!e||$("scrBlatt").hidden){
+    ab.hidden=true;if(!e){clearInterval(echtTimer);echtTimer=null;}
+    /* Ohne Prüfungsbedingungen: die Uhr ohne Zeitlimit (Lernzeit und Prüfungsuhr) */
+    if($("scrBlatt").hidden)el.hidden=true;else{el._h=null;uhrZeigen();}
+    return;}
+  el.hidden=false;el._h=null;el.className='timer bl-uhr';el.title='';
   if(e.ende){el.textContent=dauerText(e.ende-e.start);el.classList.remove('low');el.setAttribute('aria-label','Bearbeitungszeit');ab.hidden=true;
     clearInterval(echtTimer);echtTimer=null;return;}
   var rest=e.start+e.min*60000-Date.now();
@@ -5122,6 +5151,7 @@ function peDurchgang(c,echt){
   /* Gemeinsam gelöst: eigener Durchgang je Runde, der allein gelöste bleibt. */
   var r={k:gm.runde?('g-'+gm.runde.id):peLauf(c.id),id:c.id,t:Date.now(),pkt:pkt,max:max,bew:bew,teile:teile,echt:echt?1:0};
   if(echt){r.dauer=Math.max(0,echt.ende-echt.start);r.min=echt.min|0;}
+  else{var u=uhrMs(gm.runde?'g-'+gm.runde.id:c.id);if(u>=1000)r.dauer=Math.min(Math.round(u),86400000);}
   return r;
 }
 /* Erster gewerteter Durchgang je Prüfung (Liste ist nach Zeit sortiert). */
@@ -5214,6 +5244,7 @@ function peNeuStarten(id){
   if(e)echtSet(null);
   echtLeeren((c.steps||[]).map(function(x){return x.id;}));
   peLauf(id,true);
+  uhrZuruecksetzen(id);
   startRound('cases',id,0);
   return true;
 }
@@ -5320,6 +5351,212 @@ function blExport(nr){
   return L.join('\n');
 }
 
+/* ===== Lernzeit und Prüfungsuhr =====
+   Lernzeit läuft, solange ein Lernbildschirm offen ist – Fragen samt Ergebnis
+   (f), Aufgabenblatt von Prüfungen und Fallaufgaben (p), Mündlich (m),
+   Lehrgang Kostenwesen, Gefahrgut und Formelbuch (l) –, die Seite zu sehen ist
+   und in den letzten 10 Minuten getippt, geklickt oder gescrollt wurde. Länger
+   ohne Eingabe ist Pause. Gespeichert wird je Tag und Art in Sekunden:
+   kvm_lernzeit {Tag: {p, f, m, l}}, Tag wie bei den Lerntagen. Die Zeit vor der
+   ersten Messung schätzt lzVorher() einmal aus dem, was schon gespeichert ist.
+   Prüfungsuhr: Im Aufgabenblatt zählt dieselbe Zeit je Prüfung bzw.
+   Fallaufgabe mit, in einer gemeinsamen Runde je Runde (kvm_uhr {Schlüssel: ms}).
+   Ohne Prüfungsbedingungen zählt sie gegen die vorgesehene Zeit herunter und
+   läuft danach als Überzeit weiter – die Prüfung endet nicht. Ein Tipp wechselt
+   zwischen Restzeit, Bearbeitungszeit und aus. „Neu starten“ setzt sie zurück,
+   „Zum Ergebnis“ übernimmt sie als Bearbeitungszeit in den Durchgang. */
+var LZ_KEY='kvm_lernzeit',LZ_VOR_KEY='kvm_lernzeit_vorher',UHR_KEY='kvm_uhr',UHR_MODUS_KEY='kvm_uhr_modus';
+var LZ_PAUSE=10*60000,LZ_ANTWORT_S=45;
+var LZ_ARTEN=[['p','Prüfungen und Fallaufgaben'],['f','Fragen'],['m','Mündlich'],['l','Lehrgänge und Formelbuch']];
+var lz={aktiv:Date.now(),letzt:Date.now(),puffer:{},uhrP:{},gesichert:Date.now(),ueber:{},gmLaeuft:false};
+var UHR_IC='<svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l2 2M9 2h6"/></svg>';
+function lzLesen(k){try{var d=JSON.parse(localStorage.getItem(k)||'{}');return (d&&typeof d==='object'&&!Array.isArray(d))?d:{};}catch(e){return {};}}
+function lzTagVon(ms){return Math.floor((ms-new Date(ms).getTimezoneOffset()*60000)/864e5);}
+/* Gepuffertes speichern – höchstens alle 15 s und beim Verlassen der Seite.
+   Bruchteile einer Sekunde bleiben im Puffer. */
+function lzSichern(){
+  var p=lz.puffer,u=lz.uhrP,rest={};lz.puffer={};lz.uhrP={};lz.gesichert=Date.now();
+  if(Object.keys(p).length){
+    var d=lzLesen(LZ_KEY);
+    Object.keys(p).forEach(function(tag){Object.keys(p[tag]).forEach(function(a){
+      var ms=p[tag][a],s=Math.floor(ms/1000);
+      if(s>0){var z=d[tag]||(d[tag]={});z[a]=(+z[a]||0)+s;}
+      if(ms-s*1000>0)(rest[tag]=rest[tag]||{})[a]=ms-s*1000;});});
+    try{localStorage.setItem(LZ_KEY,JSON.stringify(d));}catch(e){}
+    lz.puffer=rest;
+  }
+  if(Object.keys(u).length){
+    var x=lzLesen(UHR_KEY);Object.keys(u).forEach(function(k){x[k]=(+x[k]||0)+u[k];});
+    try{localStorage.setItem(UHR_KEY,JSON.stringify(x));}catch(e){}
+  }
+}
+/* Gemessene Sekunden je Tag und je Art, mit dem noch Gepufferten */
+function lzGemessen(){
+  var d=lzLesen(LZ_KEY),tage={},arten={};
+  function dazu(t,a,s){if(!(s>0))return;tage[t]=(tage[t]||0)+s;arten[a]=(arten[a]||0)+s;}
+  Object.keys(d).forEach(function(t){var z=d[t]||{};LZ_ARTEN.forEach(function(x){dazu(t,x[0],+z[x[0]]||0);});});
+  Object.keys(lz.puffer).forEach(function(t){var z=lz.puffer[t];Object.keys(z).forEach(function(a){dazu(t,a,z[a]/1000);});});
+  return {tage:tage,arten:arten};
+}
+/* Was vor der ersten Messung lag, lässt sich nur schätzen. Beim ersten Start
+   dieser Version wird festgehalten (kvm_lernzeit_vorher):
+   a – beantwortete Fragen je Tag (Lerntage, die letzten 120 Tage) × 45 s,
+   e – Prüfungen unter Prüfungsbedingungen: deren Bearbeitungszeit ist genau,
+   g – gemeinsame Runden, nachgereicht sobald sie geladen sind: aus den
+       Zeitpunkten, zu denen die eigenen Aufgaben fertig waren (Abstände bis
+       60 min zählen, die erste Aufgabe einer Sitzung mit dem Mittel der übrigen).
+   Je Tag gilt der größere Wert aus a und e + g, denn bewertete Aufgaben im
+   Aufgabenblatt zählen auch als Antworten. */
+function lzVorher(){
+  var v=null;try{v=JSON.parse(localStorage.getItem(LZ_VOR_KEY)||'null');}catch(e){}
+  if(v&&v.seit&&v.a&&v.e&&v.g)return v;
+  var jetzt=Date.now(),t=tageAll(),a={},e={},n=0;
+  Object.keys(t).forEach(function(k){var x=+t[k]||0;if(x>0){a[k]=x*LZ_ANTWORT_S;n+=x;}});
+  peAll().forEach(function(x){if(x&&x.echt&&x.dauer>0&&x.t){var d=lzTagVon(x.t);e[d]=(e[d]||0)+Math.round(x.dauer/1000);}});
+  v={seit:jetzt,n:n,a:a,e:e,g:{}};
+  try{localStorage.setItem(LZ_VOR_KEY,JSON.stringify(v));}catch(err){}
+  return v;
+}
+function lzVorherTage(){
+  var v=lzVorher(),out={};
+  var tage={};[v.a,v.e].forEach(function(m){Object.keys(m).forEach(function(k){tage[k]=1;});});
+  Object.keys(v.g).forEach(function(r){Object.keys(v.g[r]||{}).forEach(function(k){tage[k]=1;});});
+  Object.keys(tage).forEach(function(k){
+    var gs=0;Object.keys(v.g).forEach(function(r){gs+=+((v.g[r]||{})[k])||0;});
+    var s=Math.max(+v.a[k]||0,(+v.e[k]||0)+gs);if(s>0)out[k]=s;
+  });
+  return out;
+}
+/* Gemeinsame Runden: Zeit aus den Fertig-Zeitpunkten der eigenen Aufgaben */
+function lzGemeinsamNachtragen(){
+  if(lz.gmLaeuft||!gm.meine||!gm.meine.length)return;
+  var v=lzVorher(),offen=gm.meine.filter(function(r){return r&&r.id&&!(r.id in v.g);});
+  if(!offen.length)return;
+  lz.gmLaeuft=true;
+  var kette=Promise.resolve();
+  offen.forEach(function(r){kette=kette.then(function(){
+    return gmRpc('gemeinsam_stand',{p_runde:r.id}).then(function(d){
+      var w=lzVorher(),g={};
+      var ts=((d&&d.seiten)||[]).filter(function(s){return s.tid===d.ich;}).map(function(s){return Date.parse(s.fertig_am);})
+        .filter(function(x){return isFinite(x)&&x<w.seit;}).sort(function(x,y){return x-y;});
+      var luecken=[];for(var i=1;i<ts.length;i++){var l=ts[i]-ts[i-1];if(l<=3600000)luecken.push(l);}
+      var mittel=luecken.length?Math.min(1800000,luecken.reduce(function(s,x){return s+x;},0)/luecken.length):900000;
+      ts.forEach(function(x,i){var l=i?x-ts[i-1]:Infinity,dauer=l<=3600000?l:mittel,tag=lzTagVon(x);g[tag]=(g[tag]||0)+Math.round(dauer/1000);});
+      w.g[r.id]=g;try{localStorage.setItem(LZ_VOR_KEY,JSON.stringify(w));}catch(e){}
+    },function(){});
+  });});
+  kette.then(function(){lz.gmLaeuft=false;renderLernzeit();});
+}
+/* Gerade ein Lernbildschirm offen? Liefert die Art oder null. */
+function lzArt(){
+  if(document.hidden)return null;
+  var s=document.body.getAttribute('data-screen');
+  if(s==='scrBlatt')return 'p';
+  if(s==='scrQuiz'||s==='scrResult')return state.mode==='cases'?'p':'f';
+  if(s==='scrOral')return 'm';
+  if(!$("mKW").hidden||!$("mADR").hidden||!$("mFormula").hidden)return 'l';
+  return null;
+}
+function uhrSchluessel(){return gm.runde?'g-'+gm.runde.id:((state.fall&&state.fall.id)||'');}
+function uhrMs(k){return k?(+lzLesen(UHR_KEY)[k]||0)+(lz.uhrP[k]||0):0;}
+function uhrZuruecksetzen(k){
+  delete lz.uhrP[k];delete lz.ueber[k];
+  var x=lzLesen(UHR_KEY);if(k in x){delete x[k];try{localStorage.setItem(UHR_KEY,JSON.stringify(x));}catch(e){}}
+}
+/* Vorgesehene Zeit: nur Original-Prüfungen haben eine */
+function uhrSoll(){var f=state.fall;return f&&/^P-/.test(f.id||'')?echtMinuten(f)*60000:0;}
+function uhrModus(){var m='';try{m=localStorage.getItem(UHR_MODUS_KEY)||'';}catch(e){}if(!/^(rest|zeit|aus)$/.test(m))m='rest';return (m==='rest'&&!uhrSoll())?'zeit':m;}
+function uhrZeigen(){
+  var el=$("blUhr");if(!el||$("scrBlatt").hidden||!state.fall||echtAktiv())return;
+  var k=uhrSchluessel(),ms=uhrMs(k),soll=uhrSoll(),m=uhrModus(),ueber=!!soll&&ms>=soll,h,lbl;
+  if(m==='aus'){h=UHR_IC;lbl='Uhr ausgeblendet – sie zählt weiter. Tippen zum Einblenden';}
+  else if(m==='rest'){h=UHR_IC+'<span>'+(ueber?'+'+uhrText(ms-soll):uhrText(soll-ms))+'</span>';
+    lbl=(ueber?'Vorgesehene Zeit von '+dauerText(soll)+' um, '+dauerText(ms-soll)+' darüber':'Noch '+dauerText(soll-ms)+' von '+dauerText(soll))+
+      ' – die Prüfung endet nicht. Tippen: Bearbeitungszeit';}
+  else{h=UHR_IC+'<span>'+uhrText(ms)+'</span>';lbl='Bearbeitungszeit '+dauerText(ms)+(soll?' von '+dauerText(soll):'')+'. Tippen: Uhr ausblenden';}
+  var kl='timer bl-uhr'+(m==='aus'?' aus':(ueber?' ueber':''));
+  if(el._h!==h){el.innerHTML=h;el._h=h;}
+  if(el.className!==kl)el.className=kl;
+  if(el.getAttribute('aria-label')!==lbl){el.setAttribute('aria-label',lbl);el.title=lbl;}
+  el.hidden=false;
+  /* Einmal Bescheid geben, wenn die vorgesehene Zeit gerade um ist */
+  if(ueber&&!lz.ueber[k]){lz.ueber[k]=1;
+    if(ms-soll<5000)gmMeldung('Die vorgesehenen '+dauerText(soll)+' sind um. Die Uhr läuft als Überzeit weiter – mach in Ruhe fertig.');}
+}
+$("blUhr").addEventListener('click',function(){
+  var e=echtAktiv();
+  if(e){gmMeldung(e.ende?'Bearbeitungszeit dieses Durchgangs unter Prüfungsbedingungen.':'Unter Prüfungsbedingungen läuft die Uhr bis zur Abgabe.');return;}
+  var soll=uhrSoll(),m=uhrModus(),n=soll?{rest:'zeit',zeit:'aus',aus:'rest'}[m]:{zeit:'aus',aus:'zeit'}[m];
+  try{localStorage.setItem(UHR_MODUS_KEY,n);}catch(err){}
+  uhrZeigen();
+  gmMeldung(n==='aus'?'Uhr ausgeblendet – sie zählt weiter.':(n==='zeit'?'Bearbeitungszeit: '+dauerText(uhrMs(uhrSchluessel())):
+    'Restzeit bis zum Ende der vorgesehenen '+dauerText(soll)+'.'));
+});
+function lzTakt(){
+  var jetzt=Date.now(),dt=jetzt-lz.letzt;lz.letzt=jetzt;
+  var art=(dt>0&&dt<5000&&jetzt-lz.aktiv<LZ_PAUSE)?lzArt():null;
+  if(art){
+    var tag=todayIdx(),z=lz.puffer[tag]||(lz.puffer[tag]={});z[art]=(z[art]||0)+dt;
+    if(art==='p'&&state.fall&&!$("scrBlatt").hidden&&!echtAktiv()){var k=uhrSchluessel();if(k)lz.uhrP[k]=(lz.uhrP[k]||0)+dt;}
+  }
+  if(jetzt-lz.gesichert>15000)lzSichern();
+  if(!$("scrBlatt").hidden)uhrZeigen();
+}
+['pointerdown','keydown','wheel','touchstart','input','scroll'].forEach(function(ev){
+  document.addEventListener(ev,function(){lz.aktiv=Date.now();},{passive:true,capture:true});});
+document.addEventListener('visibilitychange',function(){
+  if(document.hidden)lzSichern();else{lz.letzt=lz.aktiv=Date.now();}});
+window.addEventListener('pagehide',lzSichern);
+setInterval(lzTakt,1000);
+
+/* Anzeige: Kennzahl in der Statistikleiste, 14 Tage und Summen */
+function lzStunden(s){var h=s/3600;return h<9.95?(Math.round(h*10)/10).toLocaleString('de-DE'):fmtN(Math.round(h));}
+function lzDauer(s){var m=Math.round(s/60),h=Math.floor(m/60);m%=60;return h?(fmtN(h)+' h'+(m?' '+m+' min':'')):(m+' min');}
+function lzStand(){
+  var g=lzGemessen(),v=lzVorherTage(),gesamt=0,vorher=0,tage={};
+  Object.keys(g.tage).forEach(function(k){tage[k]=(tage[k]||0)+g.tage[k];gesamt+=g.tage[k];});
+  Object.keys(v).forEach(function(k){tage[k]=(tage[k]||0)+v[k];gesamt+=v[k];vorher+=v[k];});
+  return {tage:tage,gemessen:g,vorher:vorher,vorherTage:v,gesamt:gesamt};
+}
+function renderLernzeit(){
+  var st=lzStand(),z=$("pZeit");
+  if(z){z.textContent=lzStunden(st.gesamt);
+    var kpi=z.parentNode;kpi.title='Lernzeit gesamt: '+lzDauer(st.gesamt)+(st.vorher>=60?' – davon ≈ '+lzDauer(st.vorher)+' geschätzt (vor der Messung)':'');}
+  var box=$("lzChart");if(!box)return;
+  var heute=todayIdx(),max=60,sum=0,h='',v=st.vorherTage;
+  for(var i=13;i>=0;i--){var x=st.tage[heute-i]||0;if(x>max)max=x;sum+=x;}
+  for(var j=13;j>=0;j--){
+    var d=heute-j,s=st.tage[d]||0,dt=new Date(Date.now()-j*86400000),schaetz=(v[d]||0)>s/2;
+    h+='<div class="ak'+(s?' voll':'')+(schaetz?' schaetz':'')+(j===0?' heute':'')+'" title="'+(j===0?'Heute':dt.toLocaleDateString('de-DE',{weekday:'long',day:'numeric',month:'numeric'}))+': '+
+       (s?(schaetz?'≈ ':'')+lzDauer(s)+(schaetz?' (geschätzt)':''):'keine Lernzeit')+'">'+
+       '<i style="height:'+(s?Math.max(6,Math.round(s/max*78)):3)+'px"></i><span>'+WTAG[dt.getDay()]+'</span></div>';
+  }
+  box.innerHTML=h;box.setAttribute('role','img');
+  box.setAttribute('aria-label','Lernzeit der letzten 14 Tage: '+lzDauer(sum));
+  var su=$("lzSumme");if(su)su.textContent=sum>=60?lzDauer(sum)+' in 14 Tagen':'';
+  /* Woche ab Montag */
+  var wt=(new Date().getDay()+6)%7,woche=0;for(var k=0;k<=wt;k++)woche+=st.tage[heute-k]||0;
+  var A=st.gemessen.arten,arten=LZ_ARTEN.filter(function(x){return (A[x[0]]||0)>=60;});
+  var vor=lzVorher(),seit=new Date(vor.seit).toLocaleDateString('de-DE',{day:'numeric',month:'long',year:'numeric'});
+  var info=$("lzInfo");
+  if(info)info.innerHTML='<div class="lz-k"><b>'+lzDauer(st.tage[heute]||0)+'</b><span>heute</span></div>'+
+    '<div class="lz-k"><b>'+lzDauer(woche)+'</b><span>diese Woche</span></div>'+
+    '<div class="lz-k"><b>'+lzDauer(st.gesamt)+'</b><span>gesamt'+(st.vorher>=60?', davon ≈ '+lzDauer(st.vorher)+' geschätzt':'')+'</span></div>'+
+    (arten.length?'<p class="lz-arten">'+arten.map(function(x){return x[1]+' <b>'+lzDauer(A[x[0]])+'</b>';}).join('<span aria-hidden="true">·</span>')+'</p>':'')+
+    '<p class="lz-hinweis">Gemessen seit '+esc(seit)+': die Zeit mit offenen Fragen, Prüfungen, Mündlich oder Lehrgang – ohne Pausen ab 10 Minuten ohne Eingabe. '+
+    (st.vorher>=60?'Davor geschätzt aus '+lzQuellen(vor)+'. ':'')+
+    'Die Lernzeit bleibt auf diesem Gerät.</p>';
+}
+/* Woraus die Zeit vor der Messung geschätzt ist – für den Hinweis */
+function lzQuellen(v){
+  var q=[];
+  if(v.n)q.push(fmtN(v.n)+' Antworten (je '+LZ_ANTWORT_S+' s)');
+  if(Object.keys(v.e).length)q.push('den Prüfungen unter Prüfungsbedingungen');
+  if(Object.keys(v.g).some(function(r){return Object.keys(v.g[r]||{}).length;}))q.push('den gemeinsamen Runden');
+  return q.length>1?q.slice(0,-1).join(', ')+' und '+q[q.length-1]:(q[0]||'den bisherigen Daten');
+}
+window.KVM_uhrMs=function(id){return uhrMs(id);};
+
 /* ===== Lightbox ===== */
 var lbNat=0,lbScale=1;
 function lbOeffnen(src,titel){
@@ -5421,6 +5658,9 @@ function finishRound(timeUp){
   if(echt&&echt.ende&&pointBased){
     $("resLine").innerHTML+=" · Bearbeitungszeit "+dauerText(echt.ende-echt.start)+" von "+dauerText(echt.min*60000)+(echt.zeitUm?" (Zeit abgelaufen)":"");
     echtSet(null);
+  }else if(state.mode==='cases'&&state.fall&&pointBased){
+    var uz=uhrMs(uhrSchluessel()),us=uhrSoll();
+    if(uz>=60000)$("resLine").innerHTML+=" · Bearbeitungszeit "+dauerText(uz)+(us?" (vorgesehen "+dauerText(us)+")":"");
   }
   $("btnAgain").textContent=pruef?"Prüfung neu starten":"Neue Runde starten";
   $("btnResListe").hidden=!pruef;
@@ -6913,7 +7153,7 @@ function gmNameVorschlag(){
 function gmListeNeu(){var sp=$("seitePruefungen");if(sp&&!sp.hidden&&window.KVM_pruefListe)window.KVM_pruefListe();}
 function gmMeineLaden(){
   if(!gmCloud||!gmCloud.user()){gm.meine=null;gmListeNeu();return Promise.resolve();}
-  return gmRpc('gemeinsam_meine').then(function(l){gm.meine=Array.isArray(l)?l:[];gmAufraeumen();gmListeNeu();},
+  return gmRpc('gemeinsam_meine').then(function(l){gm.meine=Array.isArray(l)?l:[];gmAufraeumen();gmListeNeu();lzGemeinsamNachtragen();},
     function(){gmListeNeu();});
 }
 /* Lokale Daten von Runden, die es nicht mehr gibt, wegräumen. */
@@ -6924,6 +7164,8 @@ function gmAufraeumen(){
     var k=localStorage.key(i),m=/^kvm_gm_([0-9a-f-]{36})_/.exec(k||'');
     if(m&&!ids[m[1]]&&!(gm.runde&&gm.runde.id===m[1]))localStorage.removeItem(k);
   }}catch(e){}
+  var u=lzLesen(UHR_KEY),weg=Object.keys(u).filter(function(k){var m=/^g-(.+)$/.exec(k);return m&&!ids[m[1]]&&!(gm.runde&&gm.runde.id===m[1]);});
+  if(weg.length){weg.forEach(function(k){delete u[k];});try{localStorage.setItem(UHR_KEY,JSON.stringify(u));}catch(e){}}
 }
 function gmEinladen(btn,r){
   r=r||gm.runde;if(!r)return;
@@ -10277,8 +10519,9 @@ function ergebnisHTML(v){
   var h='<div class="pr-erg">';
   if(l.gewertet)h+='<span class="pr-status '+(l.pct>=50?'ok':'nok')+'">'+(l.pct>=50?'Bestanden':'Nicht bestanden')+'</span>'+
     '<span><b>'+l.pkt+' von '+l.max+' P</b> · Note '+l.note+' · '+esc(tagKurz(l.t))+
-    (l.echt?' · unter Prüfungsbedingungen'+(l.dauer?', '+esc(dauer(l.dauer)):''):'')+'</span>';
-  else h+='<span class="pr-status offen">Noch nicht gewertet</span><span>'+(l.teile?l.bew+' von '+l.teile+' Teilen bewertet · ':'')+esc(tagKurz(l.t))+'</span>';
+    (l.echt?' · unter Prüfungsbedingungen'+(l.dauer?', '+esc(dauer(l.dauer)):''):(l.dauer>=60000?' · in '+esc(dauer(l.dauer)):''))+'</span>';
+  else h+='<span class="pr-status offen">Noch nicht gewertet</span><span>'+(l.teile?l.bew+' von '+l.teile+' Teilen bewertet · ':'')+esc(tagKurz(l.t))+
+    (l.dauer>=60000?' · in '+esc(dauer(l.dauer)):'')+'</span>';
   var g=v.filter(function(e){return e.gewertet;});
   if(g.length>1)h+='<span class="pr-verlauf" title="Gewertete Durchgänge, ältester zuerst. Für die Bestehenschance zählt der erste.">'+
     g.length+' Durchgänge: '+g.map(function(e){return e.pkt;}).join(' → ')+' P</span>';
@@ -10383,11 +10626,13 @@ function render(){
       if(bearbeitet&&bearbeitet<steps.length)for(var i=0;i<steps.length;i++)if(!fertig(steps[i])){weiter=i;break;}
       var kurz=(/^P-([A-Z]+)-/.exec(x.c.id)||[])[1]||'';
       var pct=steps.length?Math.round(bearbeitet/steps.length*100):0;
+      /* Bisherige Bearbeitungszeit (Prüfungsuhr) */
+      var uz=window.KVM_uhrMs?window.KVM_uhrMs(x.c.id):0;
       var ei=window.KVM_echtInfo?window.KVM_echtInfo(x.c.id):null,dauer=window.KVM_dauerText||function(ms){return Math.round(ms/60000)+' min';};
       var uhr='<svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l2 2M9 2h6"/></svg>';
       /* Neu starten, sobald es etwas zu leeren gibt – auch mitten in einem
          Durchgang unter Prüfungsbedingungen. */
-      var stand=!!mitStand[x.c.id]||!!(ei&&(ei.laeuft||ei.abgegeben));
+      var stand=!!mitStand[x.c.id]||!!(ei&&(ei.laeuft||ei.abgegeben))||uz>=60000;
       var neuBtn=stand&&window.KVM_neuStarten?'<button class="pr-btn" data-neu="'+esc(x.c.id)+'" title="Leere Blätter: Antworten und Punkte dieser Prüfung löschen">'+NEU_SVG+'Neu starten</button>':'';
       var start=ei&&ei.laeuft?'<button class="pr-btn solid echt" data-start="'+esc(x.c.id)+'">'+uhr+
           (ei.rest>0?'Läuft · noch '+esc(dauer(ei.rest))+' – weiter':'Zeit abgelaufen – auswerten')+' →</button>'+neuBtn:
@@ -10403,8 +10648,8 @@ function render(){
         +'<div class="pr-tt"><div class="pr-date">'+esc(x.bereich)+'</div>'
         +'<div class="pr-meta">'+esc(x.datum)+' · '+aufgaben.length+' Aufgaben · '+steps.length+' Teile</div></div>'
         +'<span class="pr-badge">'+(x.punkte?esc(x.punkte)+' P':'Prüfung')+'</span></div>'
-        +(bearbeitet||bew?'<div class="pr-prog"><span class="pr-bar" aria-hidden="true"><i style="width:'+pct+'%"></i></span>'
-          +'<span class="pr-pt"><b>'+bearbeitet+'</b>/'+steps.length+' Teile'+(bew?' · <b>'+pkt+'</b> P':'')+'</span></div>':'')
+        +(bearbeitet||bew||uz>=60000?'<div class="pr-prog"><span class="pr-bar" aria-hidden="true"><i style="width:'+pct+'%"></i></span>'
+          +'<span class="pr-pt"><b>'+bearbeitet+'</b>/'+steps.length+' Teile'+(bew?' · <b>'+pkt+'</b> P':'')+(uz>=60000?' · '+esc(dauer(uz)):'')+'</span></div>':'')
         +'<div class="pr-actions">'+start
         +(gmAn?'<button class="pr-btn gm-btn" data-gm-neu="'+esc(x.c.id)+'" title="Zu mehreren lösen und nach jeder Aufgabe vergleichen">'+
           window.KVM_gm.icon+'Gemeinsam lösen</button>':'')
