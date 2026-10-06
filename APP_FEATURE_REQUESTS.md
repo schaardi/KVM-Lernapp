@@ -3243,3 +3243,108 @@ Beim ersten Start der neuen Version (`kvm_lernzeit_vorher` = `{seit, n, a, e, g}
 - Neustart der App: Uhr und Modus bleiben.
 - Gemeinsame Runde: eigene Uhr je Runde, die Prüfungsuhr allein bleibt unberührt.
 - Nachtrag aus einer Runde mit Aufgaben um 10:00, 10:20, 10:45 und 11:30 ergibt 2 h an diesem Tag.
+
+---
+
+## FR-020 · Original-IHK-Prüfungen nur mit Freigabe (Supabase)
+
+**Status App-Session:** offen. Vorbereitet: Tests ohne Prüfungsdaten, `DataService.pruefungenEinsetzen` /
+`pruefungenEntfernen`, Hinweis in der leeren Prüfungsliste.
+**Web umgesetzt:** ✅ `claude/ui-design-improvement-my0f66` (Commit „Original-Prüfungen nur mit Freigabe …“)
+**Anlass:** User-Wunsch „Baue so um, dass die Prüfungssektion eine Freigabe bedarf, sonst kommt dort keiner
+ran. Baue so, dass man dafür unser Supabase braucht. Wenn ich das Repo klone, bekomme ich auch nicht die
+Prüfungen.“
+
+### Was sich geändert hat
+- **Repository:** Die Original-Prüfungen (Fall-IDs `P-…`) und ihre Abbildungen sind nicht mehr im Repository.
+  - Die App-Assets enthalten nur noch die eigenen Fallaufgaben; `assets/data/anlagen.json` ist `{}`.
+  - `assets/anlagen/` gibt es nicht mehr.
+  - Der Sync übernimmt keine Prüfungen mehr (`tools/sync_content.py --validate-assets` schlägt sonst fehl).
+- **Supabase:** Die Prüfungen liegen im privaten Storage-Bucket `pruefungen`.
+  - `pruefungen.json` = `{version, pruefungen: [Fälle wie in cases.json], anlagen: {Schlüssel: {f, w, h, t}}}`
+  - Bilder unter `anlagen/<f>`
+  - Lesen darf nur, wer freigegeben ist (`pruefungen_zugang()`); schreiben dürfen nur Admins.
+  - SQL: `docs/supabase-pruefungen-freigabe.sql`, Einrichtung: `SUPABASE_SETUP.md` Abschnitt 11.
+- **Funktionen (RPC):**
+  - `pruefungen_status()` → `{status, admin, nachricht, angefragt, entschieden, stand, offen}`
+    - `status`: `keine` | `angefragt` | `frei` | `abgelehnt`; Admins sind immer `frei`.
+    - `stand` (nur bei `frei`): Zeitpunkt der hochgeladenen `pruefungen.json`, `null` = noch nichts hochgeladen.
+    - `offen`: nur für Admins, Zahl der offenen Anfragen.
+  - `pruefungen_anfragen(p_nachricht)`: Anfrage stellen, Nachricht freiwillig (≤ 300 Zeichen).
+  - Freigeben, ablehnen und hochladen geschieht in der Verwaltung der Web-App. Die App braucht das nicht.
+
+### Ablauf in der App (wie im Web)
+1. **Ohne Anmeldung:** keine Prüfungen. Die Prüfungsliste erklärt die Freigabe und bietet „Mit Google anmelden“.
+2. **Angemeldet:** `pruefungen_status()` aufrufen.
+   - Bei Kontowechsel neu prüfen, beim Zurückkehren in die App und beim Öffnen der Prüfungsliste höchstens
+     alle 60 s.
+   - Solange `angefragt`, alle 45 s nachsehen, während die Prüfungsliste offen ist.
+3. **`keine` / `abgelehnt`:** Karte mit Text, optionalem Nachrichtenfeld und „Freigabe anfragen“ →
+   `pruefungen_anfragen`.
+   - Datenschutzhinweis darunter: gespeichert werden Anfrage, Nachricht und Entscheidung; die Admins sehen
+     Name und E-Mail-Adresse des Kontos. Link: `datenschutz.html#pruefungen`.
+4. **`angefragt`:** „Deine Anfrage ist gestellt … Sobald ein Admin sie bestätigt, erscheinen die Prüfungen hier
+   von selbst.“
+5. **`frei`:** `pruefungen.json` aus dem Bucket laden.
+   - Laden: `Supabase.instance.client.storage.from('pruefungen').download('pruefungen.json')`, danach
+     `DataService.instance.pruefungenEinsetzen(paket)` und die Prüfungsliste neu aufbauen.
+   - **Kopie auf dem Gerät:** `{konto, stand, daten}` in einer Datei, z. B. über `path_provider`; die Datei hat
+     rund 2 MB, SharedPreferences sind dafür zu klein.
+     - Beim Start sofort einsetzen, wenn `konto` zum angemeldeten Konto passt.
+     - Neu laden nur, wenn `stand` vom Server abweicht.
+   - `stand == null`: „Du bist freigegeben – es sind aber noch keine Prüfungen hochgeladen.“
+6. **Abmelden, Kontowechsel oder Freigabe entzogen:** `pruefungenEntfernen()`, die Kopie löschen, Bilder aus
+   dem Zwischenspeicher löschen.
+7. **Ohne Verbindung und ohne Kopie:** „Die Prüfungen kommen vom Server. Ohne Verbindung geht das gerade
+   nicht – bist du online?“ Mit Kopie geht es offline weiter.
+8. **RPC fehlt (Code `PGRST202`):** „Die Freigabe für die Prüfungen ist auf dem Server noch nicht
+   eingerichtet.“
+
+### Bilder der Anlagen
+- `Anlagenbild` bekommt eine Quelle außerhalb der Assets: `uri` (signierte URL) oder eine Datei im
+  Zwischenspeicher.
+- **Signierte URLs:** `createSignedUrls(['anlagen/<f>', …], 43200)`, also 12 h gültig; nach 8 h neu holen.
+  Alternativ einmal laden und im Zwischenspeicher ablegen.
+- **Betroffen:**
+  - `widgets/anlage_bild.dart:68` und `pruefung/skizze.dart:467` – beide nutzen heute `Image.asset(a.asset)`.
+  - Die Skizze auf der Anlage braucht das Bild als Hintergrund.
+  - Fehlt ein Bild, zeigt die App einen Platzhalter mit dem Titel, keinen Fehler.
+
+### Abhängige Stellen
+- **Prüfungsliste, Startseite, Statistik:** Ohne Freigabe gibt es keine Prüfungen.
+  - Kachel-Texte wie im Web (`PF_KACHEL`): „Nur mit Freigabe – jetzt anfragen“, „Freigabe angefragt – wartet
+    auf Bestätigung“, „Keine Freigabe“ …
+  - Bestehenschance und Rangliste zeigen weiter die gespeicherten Ergebnisse.
+- **„Weiter mit der letzten Prüfung“ (`kvm_letzte_pruefung`):** Fehlt die Prüfung, führt der Knopf zur
+  Prüfungsliste.
+- **Antworten, Punkte, Skizzen, Markierungen:** Sie bleiben unter den Schritt-IDs gespeichert. Ohne Freigabe
+  werden sie nicht gelöscht und tauchen nach der Freigabe wieder auf.
+  - Bei „Meine Markierungen“ (FR-017) stehen sie in einer Gruppe „Original-IHK-Prüfungen nur mit Freigabe“.
+- **Gemeinsam lernen** (im Web, in der App noch nicht): Einer Runde beitreten geht nur mit Freigabe, denn die
+  Runde zeigt eine Prüfung. Sonst: Hinweis und Sprung zur Prüfungsliste.
+
+### Tests
+- **Beispielprüfungen:** `test/fixtures/pruefungen_beispiel.json` enthält sechs erfundene Prüfungen.
+  - Aufbau wie die Originale: gleiche IDs, Aufgaben, Teile, Punkte und Tabellenformen.
+  - Jeder Text ist erfunden; Rechen- und Zeichenteile sind dieselben wie im Original.
+  - Erzeugt mit `privat/pipeline/beispielpruefungen.py`.
+- **Hilfsdatei:** `test/pruefdaten.dart`.
+  - `beispielEinsetzen()` nach `DataService.load()`.
+  - `originalPruefungen()` plus `skip: nurMitPrivat` für Prüfungen über alle Originale. Sie laufen nur, wenn
+    das private Paket unter `privat/hochladen/` liegt.
+- **Schon da:** `test/pruefungen_freigabe_test.dart` – keine Prüfungen gebündelt, Hinweis ohne Freigabe,
+  einsetzen/entfernen.
+- **Neu dazu:**
+  - Freigabe-Zustände mit einer Attrappe des Supabase-Clients
+  - Kopie passt nicht zum Konto → nicht einsetzen
+  - Abmelden entfernt Prüfungen und Kopie
+
+### Akzeptanz
+- Frisch installiert, nicht angemeldet: Die Prüfungsliste zeigt nur die Freigabe-Karte.
+- In der APK stehen keine Prüfungen: `cases.json` enthält keine ID `P-…`, und `unzip -l app.apk | grep
+  'assets/anlagen/'` findet nichts.
+- Anfrage gestellt → im Web freigegeben → die App zeigt die Prüfungen ohne Neustart (spätestens nach 45 s).
+- Flugmodus nach dem ersten Laden: Die Prüfungen bleiben da, Bilder aus dem Zwischenspeicher.
+- Abmelden: Die Prüfungen verschwinden; nach erneuter Anmeldung mit demselben Konto sind Antworten und Punkte
+  wieder da.
+- Freigabe im Web zurückgenommen: Beim nächsten Nachsehen verschwinden die Prüfungen.

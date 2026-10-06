@@ -581,7 +581,7 @@ weiter passen.
   "context": "Ausgangssituation zu allen Aufgaben …",
   "aufgaben": [
     { "nr": 2, "pts": 17,
-      "sit": "Für die Beschaffung eines Kunststoffgranulats …\n– Jahresbedarf …",
+      "sit": "Ein Betrieb beschafft ein Granulat …\n– Jahresbedarf …",
       "tab": { … },               // optional, gilt für alle Teile
       "bild": ["nt25-schaltung"]  // optional, gilt für alle Teile
     } ],

@@ -12,6 +12,8 @@ import 'package:kvm_trainer/services/data_service.dart';
 import 'package:kvm_trainer/werkzeuge/melden_dialog.dart';
 import 'package:kvm_trainer/werkzeuge/melden_dienst.dart';
 
+import 'pruefdaten.dart';
+
 /// Fehler melden (FR-008, Nachtrag FR-013): Knopf nur mit Bereitschaft,
 /// Dialog, Senden über eine austauschbare Funktion (ohne Netz), Kontext.
 void main() {
@@ -27,6 +29,7 @@ void main() {
     SharedPreferences.setMockInitialValues({});
     await tester.runAsync(() async {
       await DataService.instance.load();
+      beispielEinsetzen();
       await dienst.laden();
     });
     dienst.zuruecksetzen();

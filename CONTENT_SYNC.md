@@ -1,8 +1,10 @@
 # Content-Sync – Austausch zwischen Content- und App-Session
 
-> **Stand September 2026 – Quelle der Wahrheit ist der Katalog auf `main`.**
-> - Fragen und Prüfungen liegen in `data/questions.js` und `data/cases.js` und werden über
+> **Stand Oktober 2026 – Quelle der Wahrheit ist der Katalog auf `main`.**
+> - Fragen und Fallaufgaben liegen in `data/questions.js` und `data/cases.js` und werden über
 >   `tools/webdaten.py` gepflegt.
+> - Die Original-IHK-Prüfungen sind nicht mehr im Repository: Sie liegen im privaten Paket
+>   (`privat/`, nicht eingecheckt) und im privaten Supabase-Bucket, siehe unten.
 > - Der Sync (`python tools/sync_content.py`, täglich per Workflow) übernimmt diesen Katalog in die
 >   App-Assets.
 > - Der frühere Content-Branch `claude/focused-meitner-ilnlqj` (Stand Juli 2026) ist eingefroren.
@@ -96,11 +98,17 @@ Datei sonst mit den Altklausuren auf mehrere Megabyte anwächst:
 | Datei | Inhalt |
 |---|---|
 | `data/questions.js` | `window.KVM_QUESTIONS=[…];` |
-| `data/cases.js` | `window.KVM_CASES=[…];` |
-| `data/anlagen.js` | `window.KVM_ANLAGEN={…};` – Verzeichnis der Abbildungen |
-| `anlagen/<schlüssel>.jpg\|png` | die Abbildungen selbst |
+| `data/cases.js` | `window.KVM_CASES=[…];` – nur die eigenen Fallaufgaben |
 
-`index.html` lädt die drei Dateien über `<script src="…">`; klassische Skripte
+**Original-IHK-Prüfungen** (Fall-IDs `P-…`) und ihre Abbildungen stehen nicht im
+Repository. Sie liegen im privaten Paket `privat/hochladen/` (in `.gitignore`)
+und von dort im privaten Supabase-Bucket „pruefungen“. Die Web-App lädt sie erst
+nach einer Freigabe (`docs/supabase-pruefungen-freigabe.sql`,
+`SUPABASE_SETUP.md` Abschnitt 11). `tools/webdaten.py` trennt beim Schreiben
+automatisch, und der Sync übernimmt keine Prüfungen in `data/*.js` oder die
+App-Assets.
+
+`index.html` lädt die beiden Dateien über `<script src="…">`; klassische Skripte
 laufen in Dokumentreihenfolge, die Globals stehen also fest, bevor der App-Code
 startet. Gelesen und geschrieben werden sie ausschließlich über
 `tools/webdaten.py`. **Achtung:** Die Seite braucht dadurch einen Webserver
@@ -110,7 +118,7 @@ reicht nicht mehr.
 ### Prüfungen sind Aufgabenblätter
 
 Der Sync bringt die Fälle zusätzlich in das Aufgabenblatt-Format
-(`scripts/pruefungen/aufgaben_modell.py`): Der Fall trägt eine Liste
+(`tools/aufgaben_modell.py`): Der Fall trägt eine Liste
 `aufgaben` (`nr`, `pts`, `sit`, optional `tab`/`bild`), jeder Schritt nur noch
 seine Fragestellung plus `nr`, `teil`, `pts` und optional `braucht`. Die
 Ausgangslage einer Aufgabe steht damit einmal statt in jedem Teil. Die

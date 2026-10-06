@@ -1,9 +1,8 @@
-import 'dart:convert';
-import 'dart:io';
-
 import 'package:flutter_test/flutter_test.dart';
 import 'package:kvm_trainer/models.dart';
 import 'package:kvm_trainer/widgets/anlage_tabelle.dart';
+
+import 'pruefdaten.dart';
 
 /// Tabellenanlagen zum Ausfüllen: Zahlen aus dem Antwortfeld müssen so gelesen
 /// werden, wie man sie in der Prüfung schreibt, und jede Lösungstabelle muss
@@ -35,11 +34,13 @@ void main() {
     });
   });
 
-  group('Anlagen der gebündelten Prüfungen', () {
-    final faelle = (json.decode(File('assets/data/cases.json').readAsStringSync())
-            as List<dynamic>)
-        .map((e) => CaseStudy.fromJson(e as Map<String, dynamic>))
-        .toList();
+  // Beispielprüfungen, mit dem privaten Paket auch alle Originale.
+  group('Anlagen der Prüfungen', () {
+    final faelle = <CaseStudy>[
+      ...gebuendelteFaelle(),
+      ...beispielPruefungen(),
+      if (mitPrivat) ...originalPruefungen(),
+    ];
 
     test('jede Lösungstabelle passt zu einer Anlage ihrer Aufgabe', () {
       var geprueft = 0;

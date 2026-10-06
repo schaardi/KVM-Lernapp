@@ -37,6 +37,7 @@
       <li><a href="#geraet">Speicherung auf deinem Gerät</a></li>
       <li><a href="#anmeldung">Anmeldung mit Google und Abgleich</a></li>
       <li><a href="#freiwillig">Freiwillige Funktionen zum Teilen</a></li>
+      <li><a href="#pruefungen">Original-IHK-Prüfungen</a></li>
       <li><a href="#meldungen">Fehler melden</a></li>
       <li><a href="#verwaltung">Verwaltung</a></li>
       <li><a href="#android">Android-App</a></li>
@@ -73,6 +74,7 @@
       <li>deine Lernzeit je Tag – wie lange Fragen, Prüfungen, Mündlich oder Lehrgänge offen waren – und die Zeit je Prüfung für die Prüfungsuhr</li>
       <li>Einstellungen wie Darstellung und Uhrzeit der Lern-Erinnerung sowie den Verlauf des Taschenrechners</li>
       <li>nach einer Anmeldung das Anmelde-Token, damit du angemeldet bleibst</li>
+      <li>nach einer Freigabe eine Kopie der Original-Prüfungen (Abschnitt 6)</li>
     </ul>
     <p>Diese Daten verlassen dein Gerät nicht, außer für die unten beschriebenen Funktionen, die du selbst nutzt. Löschen kannst du sie jederzeit: über „Lernstand zurücksetzen“, indem du die Website-Daten im Browser löschst oder die App-Daten in den Android-Einstellungen.</p>
     <p>Rechtsgrundlage: § 25 Abs. 2 Nr. 2 TDDDG (die Speicherung ist für die von dir genutzten Funktionen unbedingt erforderlich) und Art. 6 Abs. 1 lit. b DSGVO.</p>
@@ -107,18 +109,25 @@
     <p>In einer Runde lösen zwei bis sechs Personen dieselbe Prüfung. Gespeichert werden dein Anzeigename in der Runde und deine Antworten zu Aufgaben, mit denen du fertig bist. Die anderen Mitglieder der Runde sehen sie, sobald sie selbst mit dieser Aufgabe fertig sind. Während du schreibst, sehen die anderen nur Sterne. Schaltest du „Geschriebenes zeigen“ ein, geht dein Text im Klartext an die Runde; sehen können ihn nur Mitglieder, die den Schalter ebenfalls eingeschaltet haben, und du siehst umgekehrt ihren. Ausschalten nimmt deinen Text bei den anderen sofort wieder weg. Sterne und Klartext laufen live über Supabase Realtime und werden nicht gespeichert. Wer eine Runde verlässt, nimmt die eigenen Antworten mit. Runden, in denen seit 30 Tagen nichts passiert ist, werden gelöscht, sobald jemand eine neue Runde startet.</p>
   </section>
 
+  <section id="pruefungen">
+    <h2>6. Original-IHK-Prüfungen</h2>
+    <p>Die Original-Prüfungen gibt es nur mit Konto und nach einer Freigabe durch einen Admin. Fragst du die Freigabe an, werden gespeichert: dass und wann du angefragt hast, deine freiwillige Nachricht an die Admins (höchstens 300 Zeichen) und die Entscheidung mit Zeitpunkt und wer sie getroffen hat. Die Admins sehen zu deiner Anfrage den Namen und die E-Mail-Adresse deines Kontos, damit sie wissen, wer anfragt. Rechtsgrundlage ist Art. 6 Abs. 1 lit. b DSGVO: Die Freigabe ist nötig, um dir die Prüfungen bereitzustellen.</p>
+    <p>Nach der Freigabe lädt die App die Prüfungen aus einem geschützten Speicher bei Supabase (Abschnitt 4); die Abbildungen kommen über Links, die 12 Stunden gelten. Damit die Prüfungen schnell starten und auch ohne Verbindung gehen, legt die Web-App eine Kopie für dein Konto im Speicher deines Browsers ab (IndexedDB). Die Kopie enthält nur die Prüfungen, keine Angaben über dich. Sie wird gelöscht, wenn du dich abmeldest, das Konto wechselst oder die Freigabe zurückgenommen wird.</p>
+    <p>Anfrage und Entscheidung bleiben gespeichert, bis das Konto gelöscht wird oder ein Admin die Anfrage löscht.</p>
+  </section>
+
   <section id="meldungen">
-    <h2>6. Fehler melden</h2>
+    <h2>7. Fehler melden</h2>
     <p>Über „Fehler?“ kannst du Fehler in Fragen melden, auch ohne Konto. Gespeichert werden die Nummer der Frage, die Art des Fehlers, dein Text und ein kurzer Kontext (Lernmodus, Fach, die ersten 160 Zeichen der Frage). Bist du angemeldet, wird die Meldung deinem Konto zugeordnet. Eine IP-Adresse wird zur Meldung nicht gespeichert. Zweck ist, Fehler in den Lerninhalten zu beheben; Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO.</p>
   </section>
 
   <section id="verwaltung">
-    <h2>7. Verwaltung</h2>
-    <p>Zur Betreuung, Moderation und Bearbeitung von Löschanfragen können Admins alle gespeicherten Angaben einsehen: Konto, Lernstand, Profil, Freunde, Gruppen und Meldungen. Sie können Konten aus der Rangliste nehmen, sperren oder löschen. Jede dieser Aktionen wird mit Zeitpunkt protokolliert. Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO.</p>
+    <h2>8. Verwaltung</h2>
+    <p>Zur Betreuung, Moderation und Bearbeitung von Löschanfragen können Admins alle gespeicherten Angaben einsehen: Konto, Lernstand, Profil, Freunde, Gruppen, Meldungen und Anfragen zur Freigabe der Prüfungen. Sie können Konten aus der Rangliste nehmen, sperren oder löschen und die Prüfungen freigeben oder die Freigabe zurücknehmen. Jede dieser Aktionen wird mit Zeitpunkt protokolliert. Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO.</p>
   </section>
 
   <section id="android">
-    <h2>8. Android-App</h2>
+    <h2>9. Android-App</h2>
     <p>Für die Android-App gilt alles oben Gesagte. Dazu kommt:</p>
     <ul>
       <li><b>Berechtigungen:</b> Mikrofon nur für die Spracheingabe, wenn du sie nutzt; Benachrichtigungen und Start nach einem Neustart des Geräts für die Lern-Erinnerung. Die Erinnerung wird nur auf dem Gerät geplant.</li>
@@ -129,17 +138,17 @@
   </section>
 
   <section id="sprache">
-    <h2>9. Sprache, Vorlesen und Claude-Prüfauftrag</h2>
+    <h2>10. Sprache, Vorlesen und Claude-Prüfauftrag</h2>
     <p><b>Spracheingabe:</b> Die App nutzt die Spracherkennung deines Browsers bzw. deines Geräts. Je nach Browser oder Gerät wird die Aufnahme dafür an dessen Anbieter übertragen – in Chrome und auf vielen Android-Geräten an Google. Die App selbst speichert keine Aufnahmen; sie bekommt nur den erkannten Text.</p>
     <p><b>Vorlesen</b> nutzt die Sprachausgabe deines Geräts.</p>
     <p><b>„Von Claude prüfen lassen“</b> kopiert einen Prüfauftrag mit deinen Antworten in die Zwischenablage. Die App sendet dabei nichts. Fügst du den Text selbst bei Claude oder einem anderen Dienst ein, gilt dessen Datenschutzerklärung.</p>
   </section>
 
   <section id="dauer">
-    <h2>10. Speicherdauer und Konto löschen</h2>
+    <h2>11. Speicherdauer und Konto löschen</h2>
     <ul>
       <li>Daten auf deinem Gerät bleiben, bis du sie löschst.</li>
-      <li>Konto, Lernstand und Prüfungsdurchgänge bleiben, bis das Konto gelöscht wird. Mit dem Konto werden auch Ranglisten-Eintrag, Profil, Freundschaften, Gruppen-Mitgliedschaften und Antworten aus „Gemeinsam lernen“ gelöscht.</li>
+      <li>Konto, Lernstand und Prüfungsdurchgänge bleiben, bis das Konto gelöscht wird. Mit dem Konto werden auch Ranglisten-Eintrag, Profil, Freundschaften, Gruppen-Mitgliedschaften, Antworten aus „Gemeinsam lernen“ und die Freigabe der Prüfungen gelöscht.</li>
       <li>Den Ranglisten-Eintrag löscht du jederzeit selbst durch Austreten.</li>
       <li>Fehlermeldungen und Absturzberichte werden gelöscht, wenn sie für die Fehlerbehebung nicht mehr gebraucht werden.</li>
     </ul>
@@ -147,7 +156,7 @@
   </section>
 
   <section id="rechte">
-    <h2>11. Deine Rechte</h2>
+    <h2>12. Deine Rechte</h2>
     <p>Du hast das Recht auf Auskunft (Art. 15 DSGVO), Berichtigung (Art. 16), Löschung (Art. 17), Einschränkung der Verarbeitung (Art. 18) und Datenübertragbarkeit (Art. 20). Einer Verarbeitung auf Grundlage von Art. 6 Abs. 1 lit. f kannst du widersprechen (Art. 21). Eine Einwilligung kannst du jederzeit mit Wirkung für die Zukunft widerrufen (Art. 7 Abs. 3).</p>
     <p>Du kannst dich bei einer Datenschutz-Aufsichtsbehörde beschweren, zum Beispiel bei der zuständigen Behörde in Niedersachsen: Landesbeauftragte für den Datenschutz Niedersachsen, Prinzenstraße 5, 30159 Hannover, <a href="https://www.lfd.niedersachsen.de" rel="noopener">lfd.niedersachsen.de</a>.</p>
     <p>Es findet keine automatisierte Entscheidungsfindung im Sinne von Art. 22 DSGVO statt. Du bist nicht verpflichtet, Daten anzugeben; ohne Konto stehen die Cloud-Funktionen nicht zur Verfügung.</p>

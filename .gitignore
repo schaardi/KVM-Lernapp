@@ -1,3 +1,7 @@
 # Python
 __pycache__/
 *.pyc
+
+# Original-IHK-Prüfungen: nur im privaten Paket, nie im Repository
+# (siehe tools/webdaten.py und docs/supabase-pruefungen-freigabe.sql)
+/privat/

@@ -66,11 +66,7 @@ VALID_TYPES = {"mc", "calc", "open"}
 # --------------------------------------------------------------------------- #
 def _aufgabenblatt(case: dict) -> dict:
     """Fall in das Aufgabenblatt-Format bringen (idempotent)."""
-    sys.path.insert(0, str(REPO_ROOT / "scripts" / "pruefungen"))
-    try:
-        import aufgaben_modell  # noqa: PLC0415 – nur hier gebraucht
-    except ImportError:
-        return case
+    import aufgaben_modell  # noqa: PLC0415 – liegt in tools/, nur hier gebraucht
     return aufgaben_modell.zerlegen(case)
 
 
@@ -261,37 +257,23 @@ def _validate_aufgaben(case: dict, steps: list) -> list[str]:
 # --------------------------------------------------------------------------- #
 # Eigenständige Inhalte der App bewahren                                       #
 # --------------------------------------------------------------------------- #
-# Die IHK-Prüfungen (Fall-IDs mit Präfix "P-") entstehen nicht im Content-Branch,
-# sondern in diesem Repo aus den Original-PDFs (scripts/pruefungen/). Ein reiner
-# Overwrite-Sync aus dem Content würde sie jedes Mal löschen – genau das ist
-# schon passiert. Sie werden deshalb aus den vorhandenen App-Assets übernommen,
-# sofern der Content sie nicht selbst mitbringt – aber nur bei fremder Quelle
-# (--ref/--source). Der eigene Katalog enthält beides; was dort fehlt, ist
-# bewusst gelöscht und darf nicht aus den Assets zurückkommen.
-EIGEN_PRAEFIX = "P-"
+# Die Original-IHK-Prüfungen (Fall-IDs mit Präfix "P-") sind nicht öffentlich:
+# Sie liegen im privaten Paket (privat/, siehe tools/webdaten.py) und im
+# privaten Supabase-Bucket, nie in data/*.js oder den App-Assets. Kommen sie aus
+# einer Quelle mit, etwa einer alten index.html, bleiben sie draußen.
+PRUEFUNG_PRAEFIX = "P-"
 
 
-def preserve_local_cases(cases: list, current) -> tuple[list, list]:
-    """Hängt lokale Prüfungsfälle an, die der Content nicht kennt.
-
-    Gibt die ergänzte Liste und die Liste der bewahrten IDs zurück.
-    """
-    if not isinstance(current, list):
-        return cases, []
-    vorhanden = _ids(cases)
-    bewahrt = [
-        c for c in current
-        if isinstance(c, dict)
-        and str(c.get("id", "")).startswith(EIGEN_PRAEFIX)
-        and c.get("id") not in vorhanden
-    ]
-    return cases + bewahrt, [c["id"] for c in bewahrt]
+def ohne_pruefungen(cases: list) -> tuple[list, int]:
+    """Fälle ohne Original-Prüfungen und die Zahl der weggelassenen."""
+    rest = [c for c in cases if not str(c.get("id", "")).startswith(PRUEFUNG_PRAEFIX)]
+    return rest, len(cases) - len(rest)
 
 
 # Aus den Original-Prüfungen abgeleitete Übungsfragen tragen das Präfix "PX-".
-# Sie entstehen in diesem Repo (scripts/pruefungen/build_exam_questions.py),
+# Sie entstehen in der privaten Pipeline (privat/pipeline/build_exam_questions.py),
 # nicht im Content-Branch, und würden von einem reinen Overwrite-Sync sonst
-# verlorengehen – daher werden sie wie die Prüfungsfälle bewahrt.
+# verlorengehen – daher werden sie bewahrt.
 EIGEN_FRAGEN_PRAEFIX = "PX-"
 
 
@@ -353,6 +335,11 @@ def _validate_assets_only() -> int:
         print(f"FEHLER: {CASES_OUT} fehlt oder ist kein gültiges JSON.", file=sys.stderr)
         return 1
     errors = validate_questions(q) + validate_cases(c)
+    errors += [f"Fall {x.get('id')}: Original-Prüfung in den App-Assets – die gehört ins private Paket"
+               for x in c if str(x.get("id", "")).startswith(PRUEFUNG_PRAEFIX)]
+    anlagen = _current(ASSET_DIR / "anlagen.json")
+    if anlagen:
+        errors.append("anlagen.json: Bildanlagen der Original-Prüfungen gehören nicht in die App-Assets")
     if errors:
         print(f"FEHLER: {len(errors)} Validierungsprobleme in den App-Assets:", file=sys.stderr)
         for e in errors[:40]:
@@ -391,12 +378,12 @@ def main(argv: list[str] | None = None) -> int:
     # und Ausgangslage im Fragetext). Hier werden sie in das Aufgabenblatt-
     # Format überführt, sonst schreibt der nächtliche Sync den Umbau zurück.
     cases = [_aufgabenblatt(c) for c in cases]
+    cases, weg = ohne_pruefungen(cases)
+    if weg:
+        print(f"Original-Prüfungen bleiben privat: {weg} nicht übernommen")
     # Bewahren nur bei fremder Quelle (--ref/--source): Der eigene Katalog enthält
-    # Prüfungen und PX-Fragen selbst – was dort fehlt, ist bewusst gelöscht.
+    # die PX-Fragen selbst – was dort fehlt, ist bewusst gelöscht.
     if args.ref or args.source:
-        cases, bewahrt = preserve_local_cases(cases, _current(CASES_OUT))
-        if bewahrt:
-            print(f"Bewahrt (Fälle, nicht im Content): {', '.join(bewahrt)}")
         questions, bewahrt_q = preserve_local_questions(questions, _current(QUESTIONS_OUT))
         if bewahrt_q:
             print(f"Bewahrt (Übungsfragen aus Prüfungen, {len(bewahrt_q)} Stück, Präfix PX-)")
