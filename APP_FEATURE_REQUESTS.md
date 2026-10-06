@@ -3348,3 +3348,112 @@ Prüfungen.“
 - Abmelden: Die Prüfungen verschwinden; nach erneuter Anmeldung mit demselben Konto sind Antworten und Punkte
   wieder da.
 - Freigabe im Web zurückgenommen: Beim nächsten Nachsehen verschwinden die Prüfungen.
+
+---
+
+## FR-021 · Original-Prüfungen: erst abgeben, dann auswerten – mit der KI (Claude Sonnet 5.5) oder selbst
+
+**Status App-Session:** offen.
+**Web umgesetzt:** ✅ `claude/ui-design-improvement-my0f66` (Commit „KI-Auswertung der Original-Prüfungen …“)
+**Anlass:** User-Wunsch „ich möchte in der App mit dem Evaluierungszugriff das automatische Beantworten der
+Prüfung mit einem API-Key benutzen. Dafür müssen wir so umbauen, dass man nurnoch am Ende auswerten kann und
+es darf nur Sonnet 5.5 genutzt werden.“ Dazu: Auswerten dürfen alle mit Freigabe, höchstens 5-mal am Tag;
+Admins ohne Limit.
+
+### Was sich geändert hat (Web)
+- **Abgabe:** Original-Prüfungen (`P-…`) zeigen Lösungen erst nach der Abgabe, auch ohne
+  Prüfungsbedingungen. Gemeinsam lösen bleibt, wie es ist: Dort wird nach jeder Aufgabe verglichen.
+  - **Vor der Abgabe** gibt es kein „Lösung aufdecken“, kein „Alle Lösungen aufdecken“ und keinen
+    Claude-Export.
+    - Band „Wie in der Prüfung: Lösungen und Auswertung gibt es nach der Abgabe …“
+    - „Abgeben“ steht oben in der Leiste und auf der letzten Aufgabe statt „Zum Ergebnis“.
+    - Rückfrage mit der Zahl der leeren Teilaufgaben.
+  - **Nach der Abgabe:**
+    - Alle Teilaufgaben sind aufgedeckt, die Antworten stehen fest.
+    - Die Prüfungsuhr steht und zeigt die Bearbeitungszeit bis zur Abgabe; die Lernzeit zählt weiter.
+  - **Speicher:** `kvm_abgabe` = `{Prüfung: Zeitpunkt}`.
+    - „Neu starten“ und ein neuer Durchgang unter Prüfungsbedingungen löschen den Eintrag.
+    - Unter Prüfungsbedingungen setzen ihn die Abgabe und das Ende der Zeit.
+  - **Prüfungsliste:** „Abgegeben – jetzt auswerten →“ bzw. „Ausgewertet – ansehen →“, daneben
+    „Neu starten“ und „Unter Prüfungsbedingungen“.
+- **KI-Auswertung:** über die Edge Function `pruefung-auswerten` bei Supabase.
+  - Das Modell ist fest `claude-sonnet-5-5`; der API-Key liegt nur dort, als Secret.
+  - SQL: `docs/supabase-ki-auswertung.sql`. Einrichtung: `SUPABASE_SETUP.md`, Abschnitt 12.
+  - Die App braucht keinen API-Key und kennt kein Modell, sie ruft nur die Funktion auf.
+
+### Schnittstelle
+- **Stand:** `rpc('ki_status')` → `{erlaubt, admin, heute, limit}`.
+  - Für Admins ist `limit` gleich `null`.
+  - Fehler `PGRST202` heißt, die KI ist nicht eingerichtet; dann den KI-Teil ausblenden.
+- **Beginnen:** `functions.invoke('pruefung-auswerten', body: {aktion: 'beginnen', pruefung})`
+  - 200 `{ok, auswertung, neu, modell, heute, limit, aufgaben: [Nr.], erledigt: [Nr.]}`
+  - Läuft für dieselbe Prüfung schon eine Auswertung (jünger als 30 min), kommt sie zurück
+    (`neu: false`) und zählt nicht noch einmal.
+  - 429 `{grund: 'limit', heute, limit}` · 403 `{grund: 'keine_freigabe'}` ·
+    503 `{grund: 'nicht_eingerichtet'}` · 404 `{grund: 'unbekannt'}`
+- **Je Aufgabe:** `{aktion: 'aufgabe', pruefung, auswertung, aufgabe: Nr., teile: [{id, antwort, skizze?}], anlagen?}`
+  - 200 `{ok, aufgabe, teile: [{id, punkte (oder null), max, begruendung}], punkte, max, bewertet, fertig, gesamt}`
+  - `antwort` ist wie im Web `antwortText(id)`: Beschriftungen der Skizze, Rechenweg und Text.
+    Dazu kommen die Eintragungen in Tabellen der Teilaufgabe: „Eigene Eintragungen in „Titel“:“ und je
+    Zeile „– Zeile / Spalte: Wert“.
+  - `anlagen` enthält die Eintragungen in Tabellen der Aufgabe, im gleichen Format.
+  - `skizze` ist eine Data-URI (`image/jpeg`), 1000 px breit gerendert, höchstens rund 650 KB.
+  - Leere Aufgaben bewertet die Funktion ohne Claude mit 0 Punkten.
+- **Fehler bei einer Aufgabe:**
+  - 503 `{grund: 'ueberlastet', warten}` → `warten` Sekunden warten und erneut versuchen, bis zu
+    viermal; danach nur noch eine Aufgabe gleichzeitig.
+  - 504 `zeit`, 502 `ki` bzw. `unvollstaendig`, 500 → einmal nach 3 s wiederholen.
+  - 422 `abgelehnt` → Die Aufgabe fehlt; „Fehlende auswerten“ holt sie nach.
+  - 409 `abgelaufen` / `unbekannt` / `zu_viele`, 403 `keine_freigabe`, 401 → die Auswertung abbrechen.
+- **Gleichzeitig** laufen zwei Aufgaben.
+
+### Ablauf in der App (wie im Web)
+1. **Abgabe** wie oben.
+2. **Band nach der Abgabe:** „Abgegeben. Jetzt auswerten – mit der KI oder selbst: Unter jeder
+   Teilaufgabe stehen Lösungshinweis und Punkte.“
+   - Knopf „Mit KI auswerten“, darunter „Claude Sonnet 5.5 · noch N von 5 heute · deine Antworten
+     gehen an Anthropic“. Der Link führt zu `datenschutz.html#ki`; Admins sehen „ohne Tageslimit“.
+   - Nicht angemeldet: „Anmelden und mit KI auswerten“.
+   - Limit erreicht: „Heute sind alle 5 KI-Auswertungen verbraucht – morgen wieder.“
+3. **Hat die Person schon selbst Punkte vergeben:** vorher fragen, ob die KI sie ersetzen darf.
+4. **Während der Auswertung:** „Die KI wertet aus … X von Y Aufgaben fertig“ mit Balken und
+   „Abbrechen“. Die Punkte erscheinen nach und nach.
+   - Bei Überlastung: „Claude ist gerade ausgelastet – neuer Versuch in N s“.
+5. **Ergebnis je Aufgabe:**
+   - Die Punkte setzen wie selbst vergebene (`kvm_open_points`). Der Lernstand zählt wie bei der
+     Selbstbewertung: ab 50 % gewusst.
+   - Begründungen speichern in `kvm_ki` = `{Prüfung: {a: Auswertung, t, m, auf: {Nr.: {p, m}}, teile: {ID: {p, b}}}}`.
+6. **Unter jeder Lösung:** Block „KI-Bewertung · Claude Sonnet 5.5“ mit „X von Y Punkten.“ und der
+   Begründung.
+   - Darunter die Punkte-Leiste, änderbar.
+   - Weicht die eigene Wahl ab: „Von dir geändert auf N Punkte.“
+7. **Fertig:** Das Band zeigt „KI-Auswertung: X von Y Punkten …“, die Ergebniszeile „… · mit KI
+   ausgewertet“.
+8. **Fehlen Aufgaben:** Meldung mit Grund, dazu „Fehlende auswerten · Aufgaben …“. Das setzt die
+   laufende Auswertung fort.
+9. **„Neu starten“** löscht Abgabe und KI-Stand der Prüfung. Eine noch laufende Auswertung wird
+   verworfen.
+
+### Verwaltung
+`rpc('admin_ki_auswertungen')` liefert `{summen: {heute, tage7, tage30, fehler30, eingabe30, ausgabe30}, limit, letzte: […]}`.
+Das Web zeigt es unter Verwaltung › Prüfungen, samt geschätzter Kosten. In der App ist das nicht nötig.
+
+### Tests
+- **Abgabe:**
+  - Vor der Abgabe gibt es keine Lösung und keine Punkte-Leiste.
+  - Nach der Abgabe ist alles aufgedeckt und die Antworten stehen fest.
+  - „Neu starten“ löscht `kvm_abgabe` und `kvm_ki`.
+- **KI mit einer Attrappe von `functions.invoke`:**
+  - Erfolg: Punkte und Begründungen übernommen.
+  - Überlastung mit `warten`: neuer Versuch.
+  - `abgelehnt`: „Fehlende auswerten“.
+  - `limit` und `nicht_eingerichtet`: kein Knopf.
+- **Gemeinsam lösen:** unverändert, mit Vergleich nach jeder Aufgabe.
+
+### Akzeptanz
+- Original-Prüfung ohne Uhr: Vor der Abgabe ist keine Lösung zu sehen. „Abgeben“ zeigt die Lösungen
+  und den KI-Knopf.
+- KI-Auswertung einer Prüfung mit 5 Aufgaben: Der Fortschritt läuft von 0 bis 5. Danach haben alle
+  Teilaufgaben Punkte und eine Begründung.
+- Web und App zählen dieselben 5 Auswertungen am Tag.
+- Flugmodus während der Auswertung: Eine Meldung erscheint, „Fehlende auswerten“ setzt danach fort.

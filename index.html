@@ -1673,6 +1673,29 @@ body[data-screen="scrBlatt"] .app{max-width:920px}
 .bl-echt.fertig{border-color:var(--ok-line);background:var(--ok-soft)}
 .bl-echt svg{flex:none;margin-top:2px;color:var(--petrol-ink)}
 .bl-echt b{color:var(--petrol-ink-deep)}
+/* Auswertung nach der Abgabe: mit der KI oder selbst */
+.bl-ki-band{flex-wrap:wrap}
+.bl-ki-band.laeuft{border-color:var(--violet-line);background:var(--violet-soft)}
+.bl-ki-band.laeuft svg{color:var(--violet-ink);animation:kiPuls 1.4s ease-in-out infinite}
+@keyframes kiPuls{50%{opacity:.35}}
+@media (prefers-reduced-motion:reduce){.bl-ki-band.laeuft svg{animation:none}}
+.bl-ki-txt{flex:1 1 220px;min-width:0}
+.bl-ki-akt{display:flex;flex-wrap:wrap;align-items:center;gap:6px 10px;margin-top:9px}
+.bl-ki-akt small{font-size:12px;color:var(--muted)}
+.bl-ki-akt small a{color:inherit;text-decoration:underline;text-underline-offset:2px}
+.bl-ki-btn{border:0;border-radius:9px;background:var(--violet);color:#fff;font:700 13px var(--body);min-height:38px;padding:0 14px;cursor:pointer;display:inline-flex;align-items:center;gap:7px}
+.bl-ki-btn:hover{background:var(--violet-deep)}
+.bl-ki-btn[disabled]{opacity:.55;cursor:default}
+.bl-ki-btn svg{margin:0;color:inherit}
+.bl-ki-btn.leise{flex:none;align-self:center;background:var(--paper);color:var(--violet-ink);border:1px solid var(--violet-line)}
+.bl-ki-meld{display:block;margin-top:6px;font-weight:600;color:var(--amber-ink)}
+.bl-ki-prog{display:block;height:6px;border-radius:3px;background:var(--violet-line);margin-top:8px;overflow:hidden}
+.bl-ki-prog i{display:block;height:100%;background:var(--violet);transition:width .4s}
+.bl-lblock.bl-ki{border-color:var(--violet-line)}
+.bl-lblock.bl-ki .bl-lhead{color:var(--violet-ink);background:var(--violet-soft);border-bottom-color:var(--violet-line)}
+.bl-ki-t{padding:11px 13px 13px;font-size:13.5px;line-height:1.55;color:var(--ink)}
+.bl-ki-t b{color:var(--violet-ink)}
+.bl-ki-du{padding:0 13px 11px;font-size:11.5px;color:var(--muted)}
 .pr-btn.echt,.pr-btn[data-neu]{display:inline-flex;align-items:center;gap:6px}
 /* Ergebnis je Prüfung: letzter Durchgang, bei Wiederholungen der Verlauf */
 .pr-erg{display:flex;flex-wrap:wrap;align-items:center;gap:4px 9px;margin:10px 0 0;font-size:12px;color:var(--muted)}
@@ -4309,6 +4332,7 @@ function blLoesungHTML(q){
   if(q.bewertung&&q.bewertung.length)fuss.push('Punkteverteilung: '+q.bewertung.join(' + ')+' Punkte');
   if(fuss.length)h+='<div class="bl-lfoot">'+esc(fuss.join(' · '))+'</div>';
   h+='</section>';
+  if(!gm.runde)h+=kiTeilHTML(q);
   if(taskMaxPoints(q)>0)h+=scoreHTML(q);
   else{
     /* Fallaufgaben ohne IHK-Punkte: die Selbsteinschätzung zählt fürs Ergebnis
@@ -4659,7 +4683,7 @@ function blTeilHTML(q){
        '<label class="aw-lbl" for="bla-'+id+'">'+((rw||sk)?'Erläuterung · optional':'Deine Antwort · wie in der Prüfung')+'</label>'+
        '<textarea class="cc-input'+((rw||sk)?' klein':'')+'" id="bla-'+id+'" rows="3" data-antwort="'+id+'" '+
        'placeholder="'+(sk&&!rw?'Erläuterung zur Skizze, z. B. gewählte Diagrammart …':(rw?'Begründung, Beurteilung oder Antwortsatz …':'Antwort schreiben …'))+'">'+esc(oaGet(q.id))+'</textarea>'+
-       '<div class="bl-abar">'+((echtLaeuft()||gm.runde)?'':'<button type="button" class="bl-reveal" data-auf="'+id+'">'+IC_AUGE+
+       '<div class="bl-abar">'+((echtLaeuft()||gm.runde||abOffen())?'':'<button type="button" class="bl-reveal" data-auf="'+id+'">'+IC_AUGE+
        'Lösung'+(teil?' zu '+teil+')':'')+' aufdecken</button>')+
        (rw?'':'<button type="button" class="aw-tool" data-rwauf="'+id+'">'+IC_RECHNEN+'Rechenweg</button>')+
        (sk?'':'<button type="button" class="aw-tool" data-skauf="'+id+'">'+IC_SKIZZE+'Skizze</button>')+
@@ -4679,7 +4703,7 @@ function blHatAusgangslage(fall){
 function renderBlatt(){
   var fall=state.fall,nrs=blNummern(),nr=state.blattNr;
   var echt=echtAktiv();
-  if(echt&&echt.ende)state.pool.forEach(function(q){state.aufgedeckt[q.id]=true;});
+  if((echt&&echt.ende)||(abPflicht()&&abIstAbgegeben(fall.id)))state.pool.forEach(function(q){state.aufgedeckt[q.id]=true;});
   echtBand(echt);
   var auf=aufgabeVon(fall,nr)||{},teile=blTeile(nr),pos=nrs.indexOf(nr);
   var pruef=/^P-/.test(fall.id||'');
@@ -4717,12 +4741,12 @@ function renderBlatt(){
   teile.forEach(function(q){h+=blTeilHTML(q);});
   $("blAufgabe").innerHTML=h;
 
-  var offen=teile.filter(blAufgedeckt).length,laeuft=echtLaeuft();
+  var offen=teile.filter(blAufgedeckt).length,laeuft=echtLaeuft()||abOffen();
   var f='';
   if(gm.runde)f=gmFussHTML(pos,nrs);
   else{
     if(pos>0)f+='<button type="button" class="bl-nav" id="blPrev">← Aufgabe '+nrs[pos-1]+'</button>';
-    /* Unter Prüfungsbedingungen gibt es vor der Abgabe nichts aufzudecken. */
+    /* Original-Prüfungen: vor der Abgabe gibt es nichts aufzudecken. */
     if(!laeuft)f+=offen<teile.length?'<button type="button" class="bl-nav" id="blAlle">Alle Lösungen aufdecken</button>':
       '<button type="button" class="bl-nav" id="blExport">Von Claude prüfen lassen</button>';
     f+='<button type="button" class="bl-nav primary" id="blNext">'+
@@ -4803,12 +4827,12 @@ function blBinden(){
       };
     });
   });
-  scoreBinden(box,function(q,pt,mx){blFortschritt(q,pt,mx);blKopfNeu();if(gm.runde)gmPunkteSpaeter(q.nr);});
+  scoreBinden(box,function(q,pt,mx){blFortschritt(q,pt,mx);blKopfNeu();if(gm.runde)gmPunkteSpaeter(q.nr);else if(kiTeil(q.id))kiTeilNeu(q);});
   var pv=$("blPrev"),nx=$("blNext"),al=$("blAlle"),ex=$("blExport");
   var nrs=blNummern(),pos=nrs.indexOf(state.blattNr);
   if(pv)pv.onclick=function(){if(pos>0)blOeffnen(nrs[pos-1]);};
   if(nx)nx.onclick=function(){
-    if(pos>=nrs.length-1){if(echtLaeuft())echtAbgebenFragen();else finishRound(false);}else{blOeffnen(nrs[pos+1]);}
+    if(pos>=nrs.length-1){if(echtLaeuft())echtAbgebenFragen();else if(abOffen())abAbgebenFragen();else finishRound(false);}else{blOeffnen(nrs[pos+1]);}
   };
   if(al)al.onclick=function(){
     blTeile(state.blattNr).forEach(function(q){state.aufgedeckt[q.id]=true;});
@@ -5041,7 +5065,8 @@ function echtLeeren(ids){
 function echtUhr(){
   var el=$("blUhr"),ab=$("blAbgabe"),e=echtAktiv();
   if(!e||$("scrBlatt").hidden){
-    ab.hidden=true;if(!e){clearInterval(echtTimer);echtTimer=null;}
+    /* Original-Prüfung ohne Uhr: „Abgeben“ steht bis zur Abgabe in der Leiste */
+    ab.hidden=$("scrBlatt").hidden||!abOffen();if(!e){clearInterval(echtTimer);echtTimer=null;}
     /* Ohne Prüfungsbedingungen: die Uhr ohne Zeitlimit (Lernzeit und Prüfungsuhr) */
     if($("scrBlatt").hidden)el.hidden=true;else{el._h=null;uhrZeigen();}
     return;}
@@ -5054,6 +5079,9 @@ function echtUhr(){
 }
 function echtBand(e){
   var b=$("blEcht");if(!b)return;
+  /* Original-Prüfung ohne laufende Uhr: Hinweis auf die Abgabe, danach die Auswertung */
+  if(abPflicht()&&!(e&&!e.ende)){kiBand(b,e);return;}
+  b.className='bl-echt';
   if(!e){b.hidden=true;return;}
   var ic='<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l2 2M9 2h6"/></svg>';
   b.hidden=false;b.classList.toggle('fertig',!!e.ende);
@@ -5066,16 +5094,17 @@ function echtBand(e){
 function echtAbgeben(zeitUm){
   var e=echtAktiv();if(!e||e.ende)return;
   e.ende=Math.min(Date.now(),e.start+e.min*60000);e.zeitUm=!!zeitUm;echtSet(e);
+  abSetzen(e.id,true);
   clearInterval(echtTimer);echtTimer=null;
   blOeffnen(blNummern()[0]);
 }
 function echtAbgebenFragen(){
   var leer=state.pool.filter(function(q){return !blBeantwortet(q);}).length;
   if(!confirm('Jetzt abgeben?'+(leer?'\n\n'+leer+' Teilaufgabe'+(leer===1?' ist':'n sind')+' noch leer.':'')+
-    '\n\nDanach siehst du die Lösungen und bewertest dich selbst.'))return;
+    '\n\nDanach siehst du die Lösungen und wertest aus – mit der KI oder selbst.'))return;
   echtAbgeben(false);
 }
-$("blAbgabe").addEventListener("click",echtAbgebenFragen);
+$("blAbgabe").addEventListener("click",function(){if(echtLaeuft())echtAbgebenFragen();else abAbgebenFragen();});
 /* Schnittstelle für die Prüfungsliste */
 window.KVM_startEcht=function(id){
   var c=CASES.filter(function(x){return x.id===id;})[0];if(!c)return false;
@@ -5087,6 +5116,7 @@ window.KVM_startEcht=function(id){
     if(!confirm('Für diese Prüfung sind schon Antworten gespeichert.\n\nUnter Prüfungsbedingungen startest du mit leeren Blättern – die bisherigen Antworten und Punkte dieser Prüfung werden gelöscht.'))return false;
     echtLeeren(ids);
   }
+  abLoeschen(id);
   echtSet({id:id,start:Date.now(),min:echtMinuten(c)});
   peLauf(id,true);
   window.KVM_startCase(id,0);
@@ -5095,10 +5125,309 @@ window.KVM_startEcht=function(id){
 /* Die Liste fragt je Prüfung – Ergebnisse liefert KVM_pruefErgAlle. */
 window.KVM_echtInfo=function(id){
   var e=echtGet(),c=CASES.filter(function(x){return x.id===id;})[0];
-  return {min:c?echtMinuten(c):90,laeuft:!!(e&&e.id===id&&!e.ende),abgegeben:!!(e&&e.id===id&&e.ende),
+  return {min:c?echtMinuten(c):90,laeuft:!!(e&&e.id===id&&!e.ende),abgegeben:!!(e&&e.id===id&&e.ende)||!!abAll()[id],
     rest:(e&&e.id===id&&!e.ende)?e.start+e.min*60000-Date.now():null};
 };
 window.KVM_dauerText=dauerText;
+
+/* ===== Abgabe und KI-Auswertung der Original-Prüfungen =====
+   Wie in der Prüfung gibt es Lösungen und Auswertung erst nach der Abgabe –
+   auch ohne Prüfungsbedingungen. Ausgenommen ist das gemeinsame Lösen: dort
+   wird nach jeder Aufgabe verglichen. kvm_abgabe {Prüfung: Zeitpunkt} merkt
+   die Abgabe bis „Neu starten“; danach stehen die Antworten fest.
+   Ausgewertet wird selbst (je Teilaufgabe Punkte nach dem Lösungshinweis) oder
+   mit der KI: Die Edge Function „pruefung-auswerten“ lässt Claude Sonnet 5.5
+   die Prüfung Aufgabe für Aufgabe bewerten (supabase/functions,
+   docs/supabase-ki-auswertung.sql) – je Person höchstens 5 Auswertungen am
+   Tag, Admins ohne Limit. Die Punkte stehen dann wie selbst vergebene bei der
+   Teilaufgabe und lassen sich ändern. Begründungen und Stand: kvm_ki
+   {Prüfung: {a: Auswertung, t, m: Modell, auf: {Nr.: {p, m}}, teile: {ID: {p, b}}}}. */
+var AB_KEY='kvm_abgabe',KI_KEY='kvm_ki',KI_FN='pruefung-auswerten',KI_NAME='Claude Sonnet 5.5',KI_FRIST=30*60000;
+var ki={lauf:null,status:null,statusT:0,statusLaedt:false,aus:'',ausId:'',nichtEingerichtet:false};
+var IC_KI='<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l1.8 4.7 4.7 1.8-4.7 1.8L12 16l-1.8-4.7-4.7-1.8 4.7-1.8z"/><path d="M19 15l.8 2.2 2.2.8-2.2.8L19 21l-.8-2.2-2.2-.8 2.2-.8z"/></svg>';
+function abAll(){try{var d=JSON.parse(localStorage.getItem(AB_KEY)||'{}');return (d&&typeof d==='object'&&!Array.isArray(d))?d:{};}catch(e){return {};}}
+function abSetzen(id,an){var a=abAll();if(an)a[id]=Date.now();else delete a[id];try{localStorage.setItem(AB_KEY,JSON.stringify(a));}catch(e){}}
+/* Original-Prüfung allein im Aufgabenblatt: Lösungen erst nach der Abgabe */
+function abPflicht(){return state.mode==='cases'&&!!state.fall&&/^P-/.test(state.fall.id||'')&&!gm.runde;}
+function abIstAbgegeben(id){var e=echtGet();return !!abAll()[id]||!!(e&&e.id===id&&e.ende);}
+function abOffen(){return abPflicht()&&!abIstAbgegeben(state.fall.id);}
+function abAbgebenFragen(){
+  if(!abOffen())return;
+  var leer=state.pool.filter(function(q){return !blBeantwortet(q);}).length;
+  if(!confirm('Prüfung abgeben?'+(leer?'\n\n'+leer+' Teilaufgabe'+(leer===1?' ist':'n sind')+' noch leer.':'')+
+    '\n\nDanach siehst du die Lösungen und wertest aus – mit der KI oder selbst. Ändern kannst du deine Antworten dann nicht mehr.'))return;
+  abSetzen(state.fall.id,true);
+  blOeffnen(blNummern()[0]);
+}
+function abLoeschen(id){abSetzen(id,false);kiLoeschen(id);}
+
+/* --- KI-Auswertung: Stand je Prüfung --- */
+function kiAll(){try{var d=JSON.parse(localStorage.getItem(KI_KEY)||'{}');return (d&&typeof d==='object'&&!Array.isArray(d))?d:{};}catch(e){return {};}}
+function kiDaten(id){var d=kiAll()[id];return (d&&typeof d==='object'&&d.a)?d:null;}
+function kiSpeichern(id,d){var a=kiAll();if(d)a[id]=d;else delete a[id];try{localStorage.setItem(KI_KEY,JSON.stringify(a));}catch(e){}}
+function kiLoeschen(id){
+  if(ki.lauf&&ki.lauf.id===id){ki.lauf.stop=true;ki.lauf.abbruch='neu';ki.lauf=null;}
+  if(ki.ausId===id)ki.aus='';
+  kiSpeichern(id,null);
+}
+function kiTeil(id){var m=/^(P-[A-Z]+-\d+)-s\d+/.exec(id||''),d=m&&kiDaten(m[1]);return (d&&d.teile&&d.teile[id])||null;}
+function kiFall(id){return CASES.filter(function(c){return c.id===id;})[0]||null;}
+/* Aufgaben mit Punkten, in der Reihenfolge der Prüfung */
+function kiNummern(c){var n=[];(c.steps||[]).forEach(function(s){if(taskMaxPoints(s)>0&&n.indexOf(s.nr)<0)n.push(s.nr);});return n;}
+function kiFehlend(c,d){return kiNummern(c).filter(function(nr){return !(d&&d.auf&&d.auf[nr]);});}
+function kiSumme(d){var p=0,m=0;Object.keys((d&&d.auf)||{}).forEach(function(k){p+=d.auf[k].p|0;m+=d.auf[k].m|0;});return {p:p,m:m};}
+function kiWarte(ms){return new Promise(function(ok){setTimeout(ok,ms);});}
+
+/* Unter der Lösung: Punkte und Begründung der KI */
+function kiTeilHTML(q){
+  var t=kiTeil(q.id);if(!t)return '';
+  var mx=taskMaxPoints(q),eig=opGet(q.id);
+  return '<section class="bl-lblock bl-ki"><p class="bl-lhead">KI-Bewertung · '+esc(KI_NAME)+'</p>'+
+    '<div class="bl-ki-t">'+(t.p==null?'Nicht bewertet – bitte selbst bewerten.':
+      '<b>'+t.p+' von '+mx+' '+(mx===1?'Punkt':'Punkten')+'.</b> '+esc(t.b||''))+'</div>'+
+    ((t.p!=null&&eig!=null&&eig!==t.p)?'<div class="bl-ki-du">Von dir geändert auf '+eig+' '+(eig===1?'Punkt':'Punkte')+'.</div>':'')+
+    '</section>';
+}
+function kiTeilNeu(q){
+  var alt=document.querySelector('.bl-teil[data-id="'+q.id+'"] .bl-ki');
+  if(alt)alt.outerHTML=kiTeilHTML(q);
+}
+
+/* Darf ich mit der KI auswerten, wie viele heute noch? (ki_status, eine Minute gemerkt) */
+function kiStatus(neu){
+  var u=pfCloud&&pfCloud.user&&pfCloud.user();
+  if(!u){ki.status=null;return;}
+  if(ki.statusLaedt||(!neu&&ki.status&&ki.status.uid===u.id&&Date.now()-ki.statusT<60000))return;
+  ki.statusLaedt=true;
+  function fertig(st){ki.statusLaedt=false;ki.statusT=Date.now();ki.status=st;kiZeigen();}
+  pfCloud.sb.rpc('ki_status').then(function(r){
+    if(r&&r.error){var e=r.error;
+      fertig({uid:u.id,fehler:true,fehlt:e.code==='PGRST202'||e.code==='42883'||/Could not find/i.test(e.message||'')});return;}
+    var x=(r&&r.data)||{};
+    fertig({uid:u.id,erlaubt:!!x.erlaubt,heute:x.heute|0,limit:x.limit==null?null:x.limit|0});
+  },function(){fertig({uid:u.id,fehler:true});});
+}
+function kiZeigen(){if(!$("scrBlatt").hidden&&abPflicht())echtBand(echtAktiv());}
+
+/* Band über der Aufgabe: vor der Abgabe der Hinweis, danach die Auswertung */
+function kiBand(b,e){
+  var c=state.fall,id=c.id;
+  b.hidden=false;
+  if(!abIstAbgegeben(id)){
+    b.className='bl-echt';
+    b.innerHTML=IC_KI+'<span><b>Wie in der Prüfung:</b> Lösungen und Auswertung gibt es nach der Abgabe – dann wertest du mit der KI oder selbst aus. „Abgeben“ steht oben in der Leiste und auf der letzten Aufgabe.</span>';
+    return;
+  }
+  kiStatus(false);
+  var d=kiDaten(id),L=(ki.lauf&&ki.lauf.id===id)?ki.lauf:null,h,cls='bl-echt fertig bl-ki-band';
+  var kopf=(e&&e.ende)?(e.zeitUm?'<b>Zeit abgelaufen</b> – deine Antworten sind abgegeben.':'<b>Abgegeben</b> nach '+esc(dauerText(e.ende-e.start))+'.'):'<b>Abgegeben.</b>';
+  if(L){
+    var pr=L.gesamt?Math.round(L.fertig/L.gesamt*100):0;
+    cls+=' laeuft';
+    h=IC_KI+'<span class="bl-ki-txt" role="status"><b>Die KI wertet aus …</b> '+(L.gesamt?L.fertig+' von '+L.gesamt+' Aufgaben fertig':'wird gestartet')+
+      (L.meld?' · '+esc(L.meld):' – die Punkte erscheinen nach und nach bei den Teilaufgaben.')+
+      '<span class="bl-ki-prog" aria-hidden="true"><i style="width:'+pr+'%"></i></span></span>'+
+      '<button type="button" class="bl-ki-btn leise" data-ki="stop">Abbrechen</button>';
+  }else if(d&&!kiFehlend(c,d).length){
+    var s=kiSumme(d);
+    h=IC_KI+'<span class="bl-ki-txt"><b>KI-Auswertung: '+s.p+' von '+s.m+' Punkten.</b> Bei jeder Teilaufgabe steht die Begründung – die Punkte kannst du ändern. Dann „Zum Ergebnis“.</span>';
+  }else{
+    h=IC_KI+'<span class="bl-ki-txt">'+kopf+' Jetzt auswerten – mit der KI oder selbst: Unter jeder Teilaufgabe stehen Lösungshinweis und Punkte.'+kiAktionHTML(c,d)+'</span>';
+  }
+  b.className=cls;b.innerHTML=h;
+  b.querySelectorAll('[data-ki]').forEach(function(x){x.onclick=function(){
+    var a=x.getAttribute('data-ki');
+    if(a==='start')kiStarten();else if(a==='stop')kiAbbrechen();else if(a==='anmelden'&&pfCloud)pfCloud.anmelden();
+  };});
+}
+function kiAktionHTML(c,d){
+  var u=pfCloud&&pfCloud.user&&pfCloud.user(),st=ki.status;
+  var h=(ki.aus&&ki.ausId===c.id)?'<span class="bl-ki-meld">'+esc(ki.aus)+'</span>':'';
+  if(!pfCloud||ki.nichtEingerichtet)return h;
+  if(!u)return h+'<span class="bl-ki-akt"><button type="button" class="bl-ki-btn" data-ki="anmelden">'+IC_KI+'Anmelden und mit KI auswerten</button></span>';
+  if(!st||st.uid!==u.id)return h+'<span class="bl-ki-akt"><button type="button" class="bl-ki-btn" disabled>'+IC_KI+'Mit KI auswerten</button><small>wird geprüft …</small></span>';
+  if(st.fehlt||(!st.fehler&&!st.erlaubt))return h;
+  if(st.fehler)return h+'<span class="bl-ki-akt"><small>Die KI-Auswertung ist gerade nicht erreichbar.</small></span>';
+  var rest=st.limit==null?null:Math.max(0,st.limit-st.heute),weiter=!!(d&&Date.now()-(d.t||0)<KI_FRIST);
+  if(rest===0&&!weiter)return h+'<span class="bl-ki-akt"><small>Heute sind alle '+st.limit+' KI-Auswertungen verbraucht – morgen wieder.</small></span>';
+  var fehlt=d?kiFehlend(c,d):[];
+  var text=d?('Fehlende auswerten · '+(fehlt.length===1?'Aufgabe ':'Aufgaben ')+fehlt.join(', ')):'Mit KI auswerten';
+  var info=esc(KI_NAME)+(weiter?' · zählt nicht noch einmal':(rest==null?' · ohne Tageslimit':' · noch '+rest+' von '+st.limit+' heute'))+
+    ' · <a href="datenschutz.html#ki" target="_blank" rel="noopener">deine Antworten gehen an Anthropic</a>';
+  return h+'<span class="bl-ki-akt"><button type="button" class="bl-ki-btn" data-ki="start">'+IC_KI+esc(text)+'</button><small>'+info+'</small></span>';
+}
+
+/* Aufruf der Edge Function: {status, j} – 0 heißt keine Verbindung */
+function kiRufen(body){
+  var netz={status:0,j:{grund:'netz'}};
+  if(!pfCloud||!pfCloud.sb||!pfCloud.sb.functions)return Promise.resolve(netz);
+  return pfCloud.sb.functions.invoke(KI_FN,{body:body}).then(function(r){
+    if(!r.error)return {status:200,j:r.data||{}};
+    var x=r.error.context;
+    if(x&&typeof x.json==='function'&&x.status)
+      return x.json().then(function(j){return {status:x.status,j:j||{}};},function(){return {status:x.status,j:{}};});
+    return netz;
+  },function(){return netz;});
+}
+
+/* Was zu einer Aufgabe abgegeben ist: Antworten (Text, Rechenweg, Beschriftung
+   der Skizze), Eintragungen in Anlagen und die Skizzen als Bild. */
+function kiEintragungen(t,key){
+  var w=otGet(key),ks=Object.keys(w);if(!ks.length)return '';
+  var L=['Eigene Eintragungen in „'+(t.titel||'Anlage')+'“:'];
+  ks.sort().forEach(function(rc){
+    var p=rc.split('-'),z=((t.zeilen||[])[+p[0]]||[])[0]||('Zeile '+(+p[0]+1));
+    L.push('– '+z+' / '+((t.kopf||[])[+p[1]]||('Spalte '+(+p[1]+1)))+': '+w[rc]);
+  });
+  return L.join('\n');
+}
+function kiSkizze(c,s){
+  var d=skGet(s.id);if(!d)return Promise.resolve(null);
+  var q={};for(var k in s)q[k]=s[k];q._auf=aufgabeVon(c,s.nr);
+  var ref=skAnlageRef(q),bg=(d.bg==='anlage'&&ref)?'anlage':'karo',H=skHoehe(q,bg,d.fmt);
+  function malen(bild){
+    var cv=document.createElement('canvas');cv.width=SK_B;cv.height=H;
+    skMalen(cv,d.els,H,bild);
+    try{return cv.toDataURL('image/jpeg',0.85);}catch(e){return null;}
+  }
+  var a=bg==='anlage'?anlageBild(ref):null;
+  if(!a||!a.u)return Promise.resolve(malen(null));
+  return new Promise(function(ok){
+    var img=new Image(),zu=false;
+    function fertig(b){if(zu)return;zu=true;ok((b&&malen(b))||malen(null));}
+    img.crossOrigin='anonymous';img.onload=function(){fertig(img);};img.onerror=function(){fertig(null);};
+    setTimeout(function(){fertig(null);},8000);
+    img.src=a.u;
+  });
+}
+function kiTeileDaten(c,nr){
+  var alle=(c.steps||[]).filter(function(s){return s.nr===nr;}),auf=aufgabeVon(c,nr)||{};
+  var anlagen=tabListe(auf.tab).map(function(t,i){return kiEintragungen(t,(alle[0]?alle[0].id:('nr'+nr))+'#t'+i);}).filter(Boolean).join('\n\n');
+  return Promise.all(alle.filter(function(s){return taskMaxPoints(s)>0;}).map(function(s){
+    var teil={id:s.id,antwort:[antwortText(s.id)].concat(tabListe(s.tab).map(function(t,i){return kiEintragungen(t,s.id+'#s'+i);})).filter(Boolean).join('\n\n')};
+    if(!skHat(s.id))return teil;
+    return kiSkizze(c,s).then(function(u){if(u)teil.skizze=u;return teil;});
+  })).then(function(teile){return {teile:teile,anlagen:anlagen};});
+}
+
+/* Ergebnis einer Aufgabe: Punkte wie selbst vergebene, dazu die Begründung */
+function kiUebernehmen(id,j){
+  var d=kiDaten(id);if(!d||d.a!==j.auswertung)return;   /* neu gestartet oder neuere Auswertung */
+  d.auf=d.auf||{};d.teile=d.teile||{};
+  d.auf[j.aufgabe]={p:j.punkte|0,m:j.max|0};
+  if(j.modell)d.m=j.modell;
+  var hier=state.mode==='cases'&&state.fall&&state.fall.id===id;
+  (j.teile||[]).forEach(function(t){
+    if(!t||typeof t.id!=='string')return;
+    var p=t.punkte==null?null:Math.max(0,t.punkte|0);
+    d.teile[t.id]={p:p,b:String(t.begruendung||'').slice(0,1500)};
+    if(p==null)return;
+    opSet(t.id,p);
+    var q=hier?state.pool.filter(function(x){return x.id===t.id;})[0]:null;
+    if(q)blFortschritt(q,p,t.max|0);else recordResult(t.id,p*2>=(t.max|0));
+  });
+  kiSpeichern(id,d);
+  if(hier&&!$("scrBlatt").hidden&&abPflicht()){if(state.blattNr===j.aufgabe)renderBlatt();else{blKopfNeu();kiZeigen();}}
+}
+
+/* Eine Aufgabe bewerten lassen – bei Überlastung warten und neu versuchen */
+function kiAufgabe(L,aid,nr,versuch){
+  var c=kiFall(L.id);if(!c)return Promise.resolve();
+  return kiTeileDaten(c,nr).then(function(x){
+    return kiRufen({aktion:'aufgabe',pruefung:L.id,auswertung:aid,aufgabe:nr,teile:x.teile,anlagen:x.anlagen});
+  }).then(function(r){
+    var g=(r.j&&r.j.grund)||'';
+    if(r.status===200&&r.j&&r.j.ok){
+      kiUebernehmen(L.id,r.j);delete L.fehler[nr];
+      if(!L.stop){L.fertig++;L.meld='';kiZeigen();}
+      return;
+    }
+    L.fehler[nr]=g||(r.status?'http'+r.status:'netz');
+    if(L.stop)return;
+    if(g==='ueberlastet'&&versuch<4){
+      L.parallel=1;
+      var s=Math.min(120,Math.max(5,(r.j.warten|0)||20));
+      L.meld='Claude ist gerade ausgelastet – neuer Versuch in '+s+' s';kiZeigen();
+      return kiWarte(s*1000).then(function(){
+        if(L.stop)return;
+        L.meld='';kiZeigen();
+        return kiAufgabe(L,aid,nr,versuch+1);
+      });
+    }
+    if(versuch<1&&(g==='zeit'||g==='ki'||g==='unvollstaendig'||g==='fehler'||g==='netz'||!r.status||r.status>=500))
+      return kiWarte(3000).then(function(){return L.stop?null:kiAufgabe(L,aid,nr,versuch+1);});
+    if(['abgelaufen','unbekannt','keine_freigabe','nicht_angemeldet','zu_viele','nicht_eingerichtet'].indexOf(g)>=0||r.status===401||r.status===404){
+      L.abbruch=g||('http'+r.status);L.stop=true;
+    }
+  },function(){L.fehler[nr]='fehler';});
+}
+/* Zwei Aufgaben gleichzeitig; ist Claude ausgelastet, nur noch eine. */
+function kiAbarbeiten(L,aid,nrs){
+  var i=0;
+  function arbeiter(k){
+    if(L.stop||i>=nrs.length||k>=L.parallel)return Promise.resolve();
+    var nr=nrs[i++];
+    return kiAufgabe(L,aid,nr,0).then(function(){return arbeiter(k);});
+  }
+  return Promise.all([arbeiter(0),kiWarte(1500).then(function(){return arbeiter(1);})]);
+}
+function kiStarten(){
+  var c=state.fall;if(!c||!abPflicht()||abOffen()||ki.lauf)return;
+  var u=pfCloud&&pfCloud.user&&pfCloud.user();if(!u)return;
+  var id=c.id,d=kiDaten(id);
+  if(!d&&state.pool.some(function(q){return opGet(q.id)!=null;})&&
+     !confirm('Die KI bewertet jede Teilaufgabe – Punkte, die du dir schon gegeben hast, werden dabei ersetzt.'))return;
+  var L=ki.lauf={id:id,stop:false,fertig:0,gesamt:0,parallel:2,meld:'',fehler:{},abbruch:''};
+  ki.aus='';ki.ausId=id;kiZeigen();
+  kiRufen({aktion:'beginnen',pruefung:id}).then(function(r){
+    if(L.stop)return;
+    var j=r.j||{};
+    if(r.status!==200||!j.ok){
+      L.abbruch=j.grund||(r.status?'http'+r.status:'netz');
+      if(j.grund==='limit'&&ki.status)ki.status.heute=j.heute|0;
+      return;
+    }
+    if(ki.status&&ki.status.uid===u.id){ki.status.heute=j.heute|0;ki.status.limit=j.limit==null?null:j.limit|0;}
+    var alt=kiDaten(id),dn={a:j.auswertung,t:Date.now(),m:j.modell||'',auf:{},teile:{}};
+    if(alt&&alt.a===j.auswertung)dn=alt;
+    else if(alt){dn.auf=alt.auf||{};dn.teile=alt.teile||{};}   /* neue Auswertung: Bewertetes bleibt */
+    kiSpeichern(id,dn);
+    var nrs=(j.aufgaben||[]).filter(function(nr){return !(dn.auf&&dn.auf[nr]);});
+    L.gesamt=(j.aufgaben||[]).length;L.fertig=L.gesamt-nrs.length;kiZeigen();
+    return kiAbarbeiten(L,dn.a,nrs);
+  }).then(function(){kiEnde(L);},function(){if(!L.abbruch)L.abbruch='fehler';kiEnde(L);});
+}
+function kiAbbrechen(){
+  var L=ki.lauf;if(!L)return;
+  L.stop=true;L.abbruch='stop';ki.lauf=null;
+  ki.aus='Abgebrochen – schon bewertete Aufgaben bleiben.';ki.ausId=L.id;
+  kiZeigen();
+}
+function kiEnde(L){
+  if(ki.lauf===L)ki.lauf=null;
+  if(L.abbruch==='neu')return;
+  if(L.abbruch!=='stop'){ki.aus=kiMeldung(L);ki.ausId=L.id;}
+  kiStatus(true);
+  kiZeigen();
+}
+function kiMeldung(L){
+  var g=L.abbruch,c=kiFall(L.id),d=kiDaten(L.id);
+  if(g==='limit')return 'Heute sind alle KI-Auswertungen verbraucht – morgen wieder. Bis dahin bewertest du dich selbst.';
+  if(g==='keine_freigabe')return 'Ohne Freigabe für die Prüfungen gibt es keine KI-Auswertung.';
+  if(g==='nicht_angemeldet'||g==='http401')return 'Bitte melde dich neu an.';
+  if(g==='nicht_eingerichtet'||g==='http404'){ki.nichtEingerichtet=true;return 'Die KI-Auswertung ist noch nicht eingerichtet.';}
+  if(g==='abgelaufen')return 'Die Auswertung ist abgelaufen – starte sie noch einmal.';
+  if(g==='zu_viele')return 'Zu viele Versuche für diese Auswertung.';
+  if(g==='unbekannt')return 'Diese Prüfung kennt die KI-Auswertung nicht.';
+  if(g==='netz'&&!L.gesamt)return 'Keine Verbindung – versuche es gleich noch einmal.';
+  if(g&&!L.gesamt)return 'Die KI-Auswertung ließ sich nicht starten – versuche es später noch einmal.';
+  var fehlt=c&&d?kiFehlend(c,d):[];
+  if(!fehlt.length)return '';
+  var gr=Object.keys(L.fehler).map(function(k){return L.fehler[k];});
+  var warum=gr.indexOf('ueberlastet')>=0?'Claude war ausgelastet':(gr.indexOf('abgelehnt')>=0?'Claude hat die Bewertung abgelehnt':
+    (gr.indexOf('netz')>=0?'die Verbindung brach ab':'es gab einen Fehler'));
+  return (fehlt.length===1?'Aufgabe ':'Aufgaben ')+fehlt.join(', ')+' '+(fehlt.length===1?'fehlt':'fehlen')+' noch – '+warum+'.';
+}
 
 /* ===== Prüfungsergebnisse und Bestehenschance =====
    Jeder ausgewertete Durchgang einer Original-Prüfung steht in kvm_pruef_erg:
@@ -5270,6 +5599,7 @@ function peNeuStarten(id){
   if(d.teile&&d.bew>=d.teile)peMerken(d);
   if(e)echtSet(null);
   echtLeeren((c.steps||[]).map(function(x){return x.id;}));
+  abLoeschen(id);
   peLauf(id,true);
   uhrZuruecksetzen(id);
   startRound('cases',id,0);
@@ -5496,6 +5826,15 @@ function uhrModus(){var m='';try{m=localStorage.getItem(UHR_MODUS_KEY)||'';}catc
 function uhrZeigen(){
   var el=$("blUhr");if(!el||$("scrBlatt").hidden||!state.fall||echtAktiv())return;
   var k=uhrSchluessel(),ms=uhrMs(k),soll=uhrSoll(),m=uhrModus(),ueber=!!soll&&ms>=soll,h,lbl;
+  /* Nach der Abgabe steht die Uhr: Bearbeitungszeit bis zur Abgabe */
+  if(abPflicht()&&abIstAbgegeben(state.fall.id)){
+    h=dauerText(ms);lbl='Bearbeitungszeit bis zur Abgabe: '+h;
+    if(el._h!==h){el.textContent=h;el._h=h;}
+    if(el.className!=='timer bl-uhr')el.className='timer bl-uhr';
+    if(el.getAttribute('aria-label')!==lbl){el.setAttribute('aria-label',lbl);el.title=lbl;}
+    el.hidden=ms<60000;
+    return;
+  }
   if(m==='aus'){h=UHR_IC;lbl='Uhr ausgeblendet – sie zählt weiter. Tippen zum Einblenden';}
   else if(m==='rest'){h=UHR_IC+'<span>'+(ueber?'+'+uhrText(ms-soll):uhrText(soll-ms))+'</span>';
     lbl=(ueber?'Vorgesehene Zeit von '+dauerText(soll)+' um, '+dauerText(ms-soll)+' darüber':'Noch '+dauerText(soll-ms)+' von '+dauerText(soll))+
@@ -5513,6 +5852,7 @@ function uhrZeigen(){
 $("blUhr").addEventListener('click',function(){
   var e=echtAktiv();
   if(e){gmMeldung(e.ende?'Bearbeitungszeit dieses Durchgangs unter Prüfungsbedingungen.':'Unter Prüfungsbedingungen läuft die Uhr bis zur Abgabe.');return;}
+  if(abPflicht()&&abIstAbgegeben(state.fall.id)){gmMeldung('Bearbeitungszeit bis zur Abgabe: '+dauerText(uhrMs(uhrSchluessel()))+'.');return;}
   var soll=uhrSoll(),m=uhrModus(),n=soll?{rest:'zeit',zeit:'aus',aus:'rest'}[m]:{zeit:'aus',aus:'zeit'}[m];
   try{localStorage.setItem(UHR_MODUS_KEY,n);}catch(err){}
   uhrZeigen();
@@ -5524,7 +5864,7 @@ function lzTakt(){
   var art=(dt>0&&dt<5000&&jetzt-lz.aktiv<LZ_PAUSE)?lzArt():null;
   if(art){
     var tag=todayIdx(),z=lz.puffer[tag]||(lz.puffer[tag]={});z[art]=(z[art]||0)+dt;
-    if(art==='p'&&state.fall&&!$("scrBlatt").hidden&&!echtAktiv()){var k=uhrSchluessel();if(k)lz.uhrP[k]=(lz.uhrP[k]||0)+dt;}
+    if(art==='p'&&state.fall&&!$("scrBlatt").hidden&&!echtAktiv()&&!(abPflicht()&&abIstAbgegeben(state.fall.id))){var k=uhrSchluessel();if(k)lz.uhrP[k]=(lz.uhrP[k]||0)+dt;}
   }
   if(jetzt-lz.gesichert>15000)lzSichern();
   if(!$("scrBlatt").hidden)uhrZeigen();
@@ -5682,6 +6022,7 @@ function finishRound(timeUp){
      zählt er noch nicht als bestanden oder nicht bestanden. */
   if(pruef&&!peErgebnis(state.fall,echt&&echt.ende?echt:null).gewertet){
     badge.className="badge offen";badge.textContent="Noch nicht vollständig bewertet";}
+  if(pruef){var kd=kiDaten(state.fall.id);if(kd&&!kiFehlend(state.fall,kd).length)$("resLine").innerHTML+=" · mit KI ausgewertet";}
   if(echt&&echt.ende&&pointBased){
     $("resLine").innerHTML+=" · Bearbeitungszeit "+dauerText(echt.ende-echt.start)+" von "+dauerText(echt.min*60000)+(echt.zeitUm?" (Zeit abgelaufen)":"");
     echtSet(null);
@@ -6174,7 +6515,7 @@ function mkOeffnen(e){
     startRound('cases',o.fall.id,o.i);
     if($("scrBlatt").hidden)return;
     /* Eine markierte Lösung steht erst nach dem Aufdecken da */
-    if(o.art==='l'&&o.id&&!echtLaeuft()&&!state.aufgedeckt[o.id]){state.aufgedeckt[o.id]=true;renderBlatt();}
+    if(o.art==='l'&&o.id&&!echtLaeuft()&&!abOffen()&&!state.aufgedeckt[o.id]){state.aufgedeckt[o.id]=true;renderBlatt();}
   }else{
     var l=mkFragen(),i=l.indexOf(o.frage);
     if(i<0){mkFarbe='';l=mkFragen();i=Math.max(0,l.indexOf(o.frage));}
@@ -8662,7 +9003,38 @@ function gmAuth(){
       h+=l.length?'<ul class="lt-liste">'+l.map(adPfZeile).join('')+'</ul>':'<p class="vg-hinweis" style="margin:0 0 14px">Keine offenen Anfragen.</p>';
     });
     h+='<p class="vg-hinweis">Freigeben geht auch ohne Anfrage: unter „Nutzer“ das Konto öffnen. Admins brauchen keine Freigabe. Jede Entscheidung steht im Protokoll.</p>';
-    return h+adPfDatenHTML();
+    return h+adPfDatenHTML()+adKiHTML();
+  }
+  /* --- KI-Auswertung: Nutzung und geschätzte Kosten (docs/supabase-ki-auswertung.sql) --- */
+  function adKiLaden(){
+    if(ad.kiLaedt)return;
+    ad.kiLaedt=true;
+    adRpc("admin_ki_auswertungen").then(function(d){ad.kiLaedt=false;ad.ki=d||{};adZeigen();},
+      function(e){ad.kiLaedt=false;ad.ki=(e&&(e.code==='PGRST202'||e.code==='42883'))?{fehlt:true}:{fehler:true};adZeigen();});
+  }
+  function adKiHTML(){
+    var h='<p class="h-sub h-sub-gap">KI-Auswertung · '+esc(KI_NAME)+'</p>',d=ad.ki;
+    if(!d){adKiLaden();return h+'<p class="vg-hinweis">Wird geladen …</p>';}
+    if(d.fehlt)return h+'<p class="vg-hinweis">Noch nicht eingerichtet: docs/supabase-ki-auswertung.sql ausführen, die Edge Function „pruefung-auswerten“ bereitstellen und das Secret ANTHROPIC_API_KEY setzen (SUPABASE_SETUP.md, Abschnitt 12).</p>';
+    if(d.fehler)return h+'<p class="vg-hinweis">Die Nutzung ließ sich nicht laden.</p>';
+    var s=d.summen||{},kosten=((s.eingabe30|0)*2+(s.ausgabe30|0)*10)/1e6;
+    h+='<dl class="ad-dl">'+dlz('Heute',fmtN(s.heute|0))+dlz('7 Tage',fmtN(s.tage7|0))+
+      dlz('30 Tage',fmtN(s.tage30|0)+(s.fehler30?' · '+fmtN(s.fehler30)+' ohne Ergebnis':''))+
+      dlz('Tokens, 30 Tage',fmtN(s.eingabe30|0)+' Eingabe · '+fmtN(s.ausgabe30|0)+' Ausgabe')+
+      dlz('Kosten, 30 Tage','≈ '+kosten.toLocaleString('de-DE',{minimumFractionDigits:2,maximumFractionDigits:2})+' US-$')+'</dl>';
+    h+='<p class="vg-hinweis" style="margin:0 0 10px">Geschätzt mit 2 US-$ je Million Eingabe- und 10 US-$ je Million Ausgabe-Tokens. '+
+      'Je Person höchstens '+(d.limit|0)+' Auswertungen am Tag, Admins ohne Limit (ki_tageslimit() in docs/supabase-ki-auswertung.sql).</p>';
+    var L=d.letzte||[];
+    if(L.length)h+='<ul class="lt-liste">'+L.slice(0,20).map(adKiZeile).join('')+'</ul>';
+    return h;
+  }
+  function adKiZeile(x){
+    var titel=x.name||x.email||'(ohne Namen)',c=kiFall(x.pruefung);
+    var st={ok:'fertig',teilweise:'teilweise',laeuft:'läuft',fehler:'ohne Ergebnis'}[x.status]||x.status;
+    var info=[(c&&c.title)||x.pruefung,st+(x.max?' · '+(x.punkte|0)+'/'+x.max+' P':'')+(x.anzahl&&x.status!=='ok'?' · '+(x.bewertet|0)+' von '+x.anzahl+' Aufgaben':''),
+      fmtN((x.eingabe|0)+(x.ausgabe|0))+' Tokens',datumZeit(x.erstellt)];
+    return '<li class="lt-z"><span class="lt-person">'+avatarHTML(titel)+'<span class="lt-pt"><b>'+esc(titel)+'</b><span>'+esc(info.join(' · '))+'</span>'+
+      (x.fehler&&x.status!=='ok'?'<span>'+esc(x.fehler)+'</span>':'')+'</span></span></li>';
   }
   function adPfGroesse(b){b=+b||0;return b>=1048576?(Math.round(b/104857.6)/10).toLocaleString('de-DE')+' MB':Math.round(b/1024)+' KB';}
   function adPfDatenHTML(){
@@ -8817,7 +9189,7 @@ function gmAuth(){
     var i=$("adSuche");if(fokus&&i){i.focus();try{i.setSelectionRange(i.value.length,i.value.length);}catch(e){}}
   }
   function adBinden(b){
-    b.querySelectorAll('[data-ad-tab]').forEach(function(x){x.onclick=function(){ad.tab=x.getAttribute('data-ad-tab');ad.meld='';adZeigen();adLaden();};});
+    b.querySelectorAll('[data-ad-tab]').forEach(function(x){x.onclick=function(){ad.tab=x.getAttribute('data-ad-tab');ad.meld='';ad.ki=null;adZeigen();adLaden();};});
     b.querySelectorAll('[data-ad-user]').forEach(function(x){x.onclick=function(){adNutzerLaden(x.getAttribute('data-ad-user'));};});
     b.querySelectorAll('[data-ad-zurueck]').forEach(function(x){x.onclick=function(){ad.nutzer=null;ad.nutzerLaedt=false;ad.nutzerId=null;ad.meld='';adZeigen();adLaden();};});
     b.querySelectorAll('[data-ad-akt]').forEach(function(x){x.onclick=function(){adAktion(x);};});
@@ -8893,7 +9265,8 @@ function gmAuth(){
     if((user&&user.id)!==vorher){
       vg.fstand=null;vg.profilGemeldet=false;lt.liste=null;lt.profil=null;
       vg.pstand=null;vg.pruefOk=null;vg.pruefGemeldet=false;vg.modus='woche';peC.ok=null;
-      ad.an=false;ad.ue=null;ad.liste=null;ad.nutzer=null;ad.nutzerId=null;ad.ml=null;ad.gl=null;ad.pf=null;ad.pfUp=null;
+      ad.an=false;ad.ue=null;ad.liste=null;ad.nutzer=null;ad.nutzerId=null;ad.ml=null;ad.gl=null;ad.pf=null;ad.pfUp=null;ad.ki=null;
+      ki.status=null;ki.nichtEingerichtet=false;kiZeigen();
       if(!$("mLeute").hidden)ltZu();
       adKnopf();adPruefen();
     }
@@ -11082,14 +11455,16 @@ function render(){
          Durchgang unter Prüfungsbedingungen. */
       var stand=!!mitStand[x.c.id]||!!(ei&&(ei.laeuft||ei.abgegeben))||uz>=60000;
       var neuBtn=stand&&window.KVM_neuStarten?'<button class="pr-btn" data-neu="'+esc(x.c.id)+'" title="Leere Blätter: Antworten und Punkte dieser Prüfung löschen">'+NEU_SVG+'Neu starten</button>':'';
+      var echtBtn='<button class="pr-btn echt" data-echt="'+esc(x.c.id)+'" title="Mit Uhr über die echte Bearbeitungszeit, Lösungen erst nach der Abgabe">'+uhr+
+          'Unter Prüfungsbedingungen · '+(ei?ei.min:90)+' min</button>';
+      /* Abgegeben: auswerten – mit der KI oder selbst – bis „Neu starten“ */
       var start=ei&&ei.laeuft?'<button class="pr-btn solid echt" data-start="'+esc(x.c.id)+'">'+uhr+
           (ei.rest>0?'Läuft · noch '+esc(dauer(ei.rest))+' – weiter':'Zeit abgelaufen – auswerten')+' →</button>'+neuBtn:
-        ei&&ei.abgegeben?'<button class="pr-btn solid" data-start="'+esc(x.c.id)+'">Abgegeben – jetzt auswerten →</button>'+neuBtn:
+        ei&&ei.abgegeben?'<button class="pr-btn solid" data-start="'+esc(x.c.id)+'">'+
+          (steps.length&&bew>=steps.length?'Ausgewertet – ansehen →':'Abgegeben – jetzt auswerten →')+'</button>'+neuBtn+echtBtn:
         '<button class="pr-btn solid" data-start="'+esc(x.c.id)+'"'+(weiter>=0?' data-step="'+weiter+'"':'')+'>'
         +(weiter>=0?'Weiter bei Aufgabe '+esc(steps[weiter].nr)+' →':(bearbeitet?'Prüfung öffnen':'Prüfung starten'))+'</button>'
-        +neuBtn
-        +'<button class="pr-btn echt" data-echt="'+esc(x.c.id)+'" title="Mit Uhr über die echte Bearbeitungszeit, Lösungen erst nach der Abgabe">'+uhr+
-          'Unter Prüfungsbedingungen · '+(ei?ei.min:90)+' min</button>';
+        +neuBtn+echtBtn;
       var letzte=ergebnisHTML(ergAlle[x.c.id]||[]);
       h+='<div class="pr-item">'
         +'<div class="pr-top"><span class="pr-ic pr-'+esc(kurz.toLowerCase())+'" aria-hidden="true">'+esc(kurz)+'</span>'
