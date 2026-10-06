@@ -332,13 +332,30 @@ angemeldet ist.
   Konto-ID der anderen sieht niemand, nur eine Kennung je Runde.
 - **Sterne:** Was gerade geschrieben wird, geht nicht über die Datenbank, sondern über
   Supabase Realtime (öffentlicher Kanal `gemeinsam:<Runden-ID>`, Broadcast und Presence) –
-  und nur als Sterne. Realtime muss im Projekt aktiv sein (Standard).
+  als Sterne (Ereignis `maske`). Realtime muss im Projekt aktiv sein (Standard).
+- **Geschriebenes zeigen (Klartext):** Ein Schalter im Aufgabenblatt, je Person und Runde
+  gemerkt (`kvm_gm_<Runde>_offen`).
+  - Eingeschaltet geht zusätzlich der Text über den Kanal (Ereignis `klartext`:
+    `{id, nr, t, r}`; `{aus:1}` beim Ausschalten).
+  - Die Anwesenheit meldet den Schalter mit (`{nr, offen, v:2}`).
+  - Angezeigt wird Klartext nur, wenn beide Seiten eingeschaltet haben.
+  - Ohne Datenbank-Änderung: Ältere Versionen kennen `klartext` nicht und zeigen weiter
+    Sterne. Das Update lässt sich deshalb mitten in einer laufenden Runde einspielen.
+  - Wer die alte Version hat (kein `v`), bekommt in der neuen einen Hinweis.
+- **Neue Version im Betrieb:**
+  - Die Web-App erkennt eine neue `index.html` auf dem Server (ETag) und bietet „Neu laden“
+    an.
+  - Eine offene Runde öffnet sich nach dem Neuladen in derselben Registerkarte von selbst
+    wieder (`sessionStorage`). ✕ beendet das.
 - **Aufräumen:** Wer eine Runde verlässt oder das Konto löscht, nimmt die eigenen Antworten
   mit; die letzte Person nimmt die Runde mit. Runden ohne Aktivität seit 30 Tagen löscht der
   nächste Start einer Runde.
 
 In der **Datenschutzerklärung** ergänzen: Für gemeinsame Runden werden Anzeigename und die
-Antworten fertiger Aufgaben gespeichert und den anderen Mitgliedern der Runde gezeigt.
+Antworten fertiger Aufgaben gespeichert und den anderen Mitgliedern der Runde gezeigt. Mit
+„Geschriebenes zeigen“ geht der Text auch während des Schreibens live an die Runde, sichtbar
+nur für Mitglieder mit eingeschaltetem Schalter und nicht gespeichert (eingearbeitet in
+`datenschutz.html`).
 
 ## Apple-Login später
 Die Auth-Architektur ist anbieter-offen (`AuthService`). „Sign in with Apple"
