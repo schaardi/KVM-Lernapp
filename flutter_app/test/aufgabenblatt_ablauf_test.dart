@@ -277,4 +277,18 @@ void main() {
     await _tippen(tester, find.text('Alle Lösungen aufdecken'));
     expect(await uebernehmen(tester, 'Vorlage:\nx'), isNull);
   });
+
+  testWidgets('Aufgabenkopf: leer aufgedeckte Teilaufgaben zählen nicht als bearbeitet', (tester) async {
+    await _laden(tester);
+    final nt = _fall('P-NT-20150429');
+    final n = nt.steps.where((s) => s.nr == nt.steps.first.nr).length;
+    AnswerStore.instance.set('P-NT-20150429-s0', 'Schwefelsäure');
+
+    await _zeigen(tester, AufgabenblattScreen(fall: nt, startIndex: 0));
+    expect(find.text('1 von $n bearbeitet'), findsOneWidget);
+    await _tippen(tester, find.text('Alle Lösungen aufdecken'));
+    expect(find.text('1 von $n bearbeitet'), findsOneWidget);
+    expect(find.text('✓ $n von $n bearbeitet'), findsNothing);
+    expect(find.bySemanticsLabel(RegExp('Lösungen aufgedeckt, 1 von $n Teilen bearbeitet')), findsOneWidget);
+  });
 }
