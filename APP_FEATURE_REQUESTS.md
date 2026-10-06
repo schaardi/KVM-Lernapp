@@ -2947,8 +2947,8 @@ derselbe Text steht – im Aufgabenblatt wie im Lernmodus.
 | `ctx:<Fall-ID>` | Ausgangssituation der Prüfung bzw. des Falls (Aufgabenblatt und Lernmodus) |
 | `sit:<Fall-ID>:<Aufgabe>` | Ausgangslage einer Aufgabe im Aufgabenblatt |
 | `q:<Schritt-/Frage-ID>` | Aufgabenstellung bzw. Fragetext (Aufgabenblatt und Lernfrage – derselbe Text) |
-| `l:<Schritt-ID>` | Lösungshinweis bzw. Musterlösung nach dem Aufdecken |
-| `qs:<Schritt-ID>` | Ausgangslage einer Fallaufgabe im Lernmodus |
+| `l:<Schritt-/Frage-ID>` | Lösungshinweis bzw. Musterlösung nach dem Aufdecken (auch offene Lernfragen im Chat) |
+| `qs:<Schritt-/Frage-ID>` | Ausgangslage einer Fallaufgabe bzw. Situation einer offenen Lernfrage im Lernmodus |
 | `e:<Frage-ID>` | Erklärung nach dem Prüfen im Lernmodus |
 
 Nicht markierbar: Eingabefelder, Knöpfe, Tabellen-Eingaben, Skizzen.
@@ -2967,7 +2967,7 @@ Nicht markierbar: Eingabefelder, Knöpfe, Tabellen-Eingaben, Skizzen.
 - **Leiste schließen:** Antippen daneben, Scrollen (bei vorhandener Markierung) oder Esc.
 - **Hinweis beim ersten Aufgabenblatt**, einmalig, als Zeile oben im Blatt (gelb getönt, verdeckt
   nichts): „Neu: Textmarker. Wichtiges markieren – Text gedrückt halten, auswählen und eine Farbe
-  tippen.“ mit „OK“. Er verschwindet mit OK oder mit der ersten Markierung (Flag `kvm_hl_tipp`).
+  tippen. Gesammelt unter Lernen › Meine Markierungen.“ mit „OK“. Er verschwindet mit OK oder mit der ersten Markierung (Flag `kvm_hl_tipp`).
 
 ### Speicherung (wie Web `localStorage['kvm_markierungen']`)
 ```json
@@ -3012,6 +3012,107 @@ Die Texte in einer `SelectionArea` bzw. als `SelectableText.rich` darstellen:
   - `blLoesungHTML`, Z. 4123
   - `renderQuestion`, Z. 3770, 3801 und 3804
   - `finalize`, Z. 3917
+
+Zeilennummern: Stand dieses Commits.
+
+---
+
+## FR-017 · Meine Markierungen: alle markierten Stellen nach Prüfung und Fach
+
+**Status App-Session:** offen
+**Web umgesetzt:** ✅ `claude/ui-design-improvement-my0f66` (Commit „Meine Markierungen …“)
+**Anlass:** User-Wunsch „„Meine Markierungen“: alle markierten Stellen gesammelt nach Prüfung und
+Fach. Antippen springt zur Stelle, ideal zum Wiederholen kurz vor der Prüfung.“
+**Baut auf:** FR-016 (Textmarker, Speicherformat `kvm_markierungen`)
+
+### Ziel
+Kurz vor der Prüfung alles Markierte auf einen Blick wiederholen – und mit einem Tipp dort
+weiterlesen, wo es steht.
+
+### Einstieg
+- **Lernen**, neuer Abschnitt „Wiederholen“: Kachel „Meine Markierungen“ (Textmarker-Symbol auf
+  Gelb, Schild „Textmarker“). Die Beschreibung zählt mit: „N Stellen markiert – nach Prüfung und Fach
+  gesammelt. Antippen springt zur Stelle.“ Ohne Markierungen steht dort eine kurze Anleitung.
+- **Prüfungen:** über der Liste ein Verweis „Meine Markierungen · N Stellen aus Prüfungen“ – nur,
+  wenn es Markierungen aus Prüfungen gibt.
+- Die Seite ist eine Unterseite von „Lernen“ ohne eigenen Reiter (Web: `#/markierungen`). In der
+  Leiste bleibt „Lernen“ markiert; oben steht „‹ Lernen“.
+
+### Aufbau
+- Titel „Meine Markierungen“ mit Anzahl („9 Stellen“).
+- **Farbfilter**, nur bei mindestens zwei Farben: „Alle n · Gelb n · Grün n · Rosa n“.
+- **„Markierte Lernfragen üben (n)“**, sobald Lernfragen markiert sind: eine normale, gewertete Runde
+  mit genau diesen Fragen in zufälliger Reihenfolge. Ergebnis-Titel „Markierte Fragen“. Der
+  Farbfilter gilt mit.
+- **Abschnitt „Prüfungen und Fallaufgaben“:** je Prüfung bzw. Fall eine aufklappbare Gruppe.
+  - Kopf: Kürzel-Symbol wie in der Prüfungsliste, Prüfungsbereich, Datum, Anzahl.
+  - Bei Fallaufgaben: Titel und „Fallaufgabe · Fach“.
+  - Reihenfolge: Original-Prüfungen nach Fach, Bereich und Datum (neueste zuerst), danach Fallaufgaben.
+- **Abschnitt „Lernfragen nach Fach“:** je Fach eine Gruppe; darin nach Themenbereich (Reihenfolge wie
+  `SUB_ORDER`) und Frage.
+- **Abschnitt „Nicht mehr zuzuordnen“:** Markierungen, deren Frage es nicht mehr gibt – nur lesen und
+  entfernen.
+- Zugeklappte Gruppen bleiben zu, bis die App neu startet.
+
+### Eintrag
+- Der markierte Wortlaut (bis ca. 280 Zeichen) in seiner Markerfarbe.
+- Darunter, wo er steht: „Aufgabe 2 b) · Lösung“, „Aufgabe 1 · Ausgangslage“, „Ausgangssituation“,
+  bei Lernfragen „Arbeitsrecht · Erklärung“.
+- Bei Lösung, Erklärung und Ausgangslage eine Zeile, wozu: „zu „<Anfang der Frage>““ (gekürzt).
+- Rechts ein Papierkorb. Er entfernt sofort; an der Stelle steht dann „Markierung entfernt“ mit
+  „Rückgängig“, bis die Seite verlassen wird.
+- Reihenfolge in einer Prüfung wie im Blatt: Ausgangssituation, dann je Aufgabe Ausgangslage,
+  Aufgabenstellung und Lösung der Teilaufgaben a, b, c …; in einem Text nach Position.
+
+| Schlüssel (FR-016) | Gruppe | Ort |
+|---|---|---|
+| `ctx:<Fall>` | Prüfung/Fall | Ausgangssituation |
+| `sit:<Fall>:<Nr>` | Prüfung/Fall | Aufgabe <Nr> · Ausgangslage |
+| `q:` `l:` `qs:` `e:` mit Schritt-ID | Prüfung/Fall des Schritts | Aufgabe <Nr> <Teil>) · Aufgabenstellung / Lösung / Ausgangslage / Erklärung |
+| `q:` `l:` `qs:` `e:` mit Frage-ID | Fach der Frage | <Themenbereich> · Frage / Musterlösung / Situation / Erklärung |
+
+### Antippen: zur Stelle
+- **Prüfung oder Fall:** Aufgabenblatt bei der Aufgabe öffnen.
+  - Markierung in einer Lösung: diese Teilaufgabe aufdecken – nicht unter laufenden
+    Prüfungsbedingungen.
+  - Zugeklappte Ausgangssituation aufklappen.
+  - Zur Markierung scrollen (Mitte) und sie kurz aufleuchten lassen: pulsierender Rand, dreimal,
+    ca. 2,5 s. Bei „Bewegung reduzieren“ ein ruhiger Rand.
+- **Lernfrage – „Nachlesen“:** alle markierten Lernfragen in der Reihenfolge der Übersicht, beginnend
+  bei der angetippten. Jede Frage steht gleich mit Lösung und Erklärung da:
+  - Auswahlfrage: richtige Antwort markiert, Begründungen der falschen, Erklärung.
+  - Rechenaufgabe: „Lösung: …“ und Erklärung.
+  - Offene Frage: Frage und Musterlösung, ohne eigene Antwort und Bewertung, dazu die Erklärung.
+  - Nichts wird gewertet oder im Lernstand gezählt.
+  - Unten „← Vorherige“ und „Nächste →“, auf der letzten Frage „Fertig“.
+- Steht der Wortlaut nicht mehr im Text: bei Prüfungen zur Teilaufgabe scrollen, sonst Hinweis „Die
+  markierte Stelle steht so nicht mehr im Text.“
+- ✕ und „Fertig“ führen zurück in die Übersicht, an dieselbe Scrollposition.
+
+### Ergänzung zu FR-016
+Offene Lernfragen im Chat sind jetzt markierbar: Situation `qs:<Frage-ID>`, Frage `q:<Frage-ID>`,
+Musterlösung `l:<Frage-ID>`. Wird ein Text mit gleichem Wortlaut neu geschrieben (dieselbe
+Erklärung ein zweites Mal), müssen die Markierungen trotzdem wieder erscheinen.
+
+### Abnahme
+- Ohne Markierungen zeigt die Seite die Anleitung.
+- Zahlen in Titel, Gruppen, Filter, Kachel und Prüfungs-Verweis stimmen, auch nach Entfernen und
+  Rückgängig.
+- Ein Sprung in eine Lösung deckt nur diese Teilaufgabe auf.
+- Nachlesen verändert den Lernstand nicht.
+- Ein Neustart der App direkt auf der Seite verliert keine Markierungen.
+
+### Referenz Web-Implementierung (`index.html` auf `claude/ui-design-improvement-my0f66`)
+- **Markup:** Kachel `#btnMarks` Z. 2184, Seite `#seiteMarkierungen` Z. 2195, Verweis `#pruefMarks` Z. 2204
+- **CSS:** Block „Meine Markierungen“, Z. 1738
+- **Router:** `SEITEN`/`SEITEN_REITER` Z. 5430
+- **Speicher:** `hlDaten`, `hlEntfernen`, `hlZurueckholen` ab Z. 5670 (vor dem App-Start, damit
+  nichts überschrieben wird)
+- **JS:** Block „Meine Markierungen“ ab Z. 5691
+  - Zuordnung `mkOrt` Z. 5718, Lernfragen `mkFragen` Z. 5735, Seite `mkRender` Z. 5816
+  - Sprung `mkOeffnen` Z. 5871 und `mkZiel` Z. 5888, Nachlesen `nachlesenZeigen` Z. 5913
+- **Runden:** `startRound` Modi `markiert` und `nachlesen` Z. 3077
+- **Chat markierbar:** `buildOpenChat` Z. 3380
 
 Zeilennummern: Stand dieses Commits.
 
