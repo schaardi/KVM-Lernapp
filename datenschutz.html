@@ -18,7 +18,7 @@
   <a class="zurueck" href="./#/konto">‹ Zur App</a>
   <p class="eyebrow">Meister-Trainer · Kraftverkehr</p>
   <h1>Datenschutz&shy;erklärung</h1>
-  <p class="stand">Stand: 6. Oktober 2026 · gilt für die Web-App und die Android-App</p>
+  <p class="stand">Stand: 7. Oktober 2026 · gilt für die Web-App und die Android-App</p>
 
   <section class="kurz" aria-labelledby="kurzT">
     <h2 id="kurzT">Auf einen Blick</h2>
@@ -27,7 +27,9 @@
       <li><b>Keine Werbung, kein Tracking, keine Analyse-Tools</b> und keine Cookies zu Werbe- oder Statistikzwecken.</li>
       <li><b>Mit der freiwilligen Google-Anmeldung</b> wird dein Lernstand in einer Datenbank in der EU (Irland) gespeichert, damit er auf allen Geräten gleich ist.</li>
       <li><b>Rangliste, Lerngruppen, Profile, Gemeinsam lernen und „Fehler melden“</b> teilen nur, was bei der jeweiligen Funktion steht – und nur, wenn du sie nutzt.</li>
-      <li><b>Die KI-Auswertung der Original-Prüfungen</b> schickt deine Antworten zu einer Prüfung nur dann an Claude (Anthropic, USA), wenn du „Mit KI auswerten“ tippst – ohne Name und E-Mail-Adresse.</li>
+      <li><b>Fotos deiner Rechnungen</b> bleiben auf deinem Gerät – außer du gibst sie beim gemeinsamen Lernen an die Runde oder nutzt die KI-Auswertung.</li>
+      <li><b>Der ZIP-Export für Claude</b> entsteht auf deinem Gerät; die App sendet dabei nichts.</li>
+      <li><b>Die KI-Auswertung der Original-Prüfungen</b> schickt deine Antworten und Fotos zu einer Prüfung nur dann an Claude (Anthropic, USA), wenn du „Automatisch auswerten“ tippst – ohne Name und E-Mail-Adresse.</li>
     </ul>
   </section>
 
@@ -71,6 +73,7 @@
     <ul>
       <li>deinen Lernstand je Frage: wie oft gesehen, richtig oder falsch, Wiederholungsstufe, nächste Wiederholung</li>
       <li>deine Antworten, Rechenwege, Skizzen, selbst vergebenen Punkte und Markierungen</li>
+      <li>Fotos deiner handschriftlichen Rechnungen – eines je Aufgabe, verkleinert, im Browser-Speicher IndexedDB; „Neu starten“ und ein neuer Durchgang unter Prüfungsbedingungen löschen sie</li>
       <li>Prüfungsdurchgänge mit Bearbeitungszeit, Prüfungstermin und Lernplan</li>
       <li>deine Lernzeit je Tag – wie lange Fragen, Prüfungen, Mündlich oder Lehrgänge offen waren – und die Zeit je Prüfung für die Prüfungsuhr</li>
       <li>Einstellungen wie Darstellung und Uhrzeit der Lern-Erinnerung sowie den Verlauf des Taschenrechners</li>
@@ -107,7 +110,7 @@
     <h3>Profile und Freunde</h3>
     <p>Mit dem Beitritt zur Rangliste hast du ein Profil. Für alle Teilnehmenden sichtbar ist nur, was auch die Rangliste zeigt. Nur für Freunde sichtbar – auf Wunsch auch für alle – sind: Prüfungsreife und gemeisterte Fragen je Fach, Aktivität der letzten 14 Tage, Lerntage, Prüfungen unter Echtbedingungen und Prüfungsergebnisse je Prüfungsbereich. Freundschaften entstehen nur durch Anfrage und Annahme.</p>
     <h3>Gemeinsam lernen</h3>
-    <p>In einer Runde lösen zwei bis sechs Personen dieselbe Prüfung. Gespeichert werden dein Anzeigename in der Runde und deine Antworten zu Aufgaben, mit denen du fertig bist. Die anderen Mitglieder der Runde sehen sie, sobald sie selbst mit dieser Aufgabe fertig sind. Während du schreibst, sehen die anderen nur Sterne. Schaltest du „Geschriebenes zeigen“ ein, geht dein Text im Klartext an die Runde; sehen können ihn nur Mitglieder, die den Schalter ebenfalls eingeschaltet haben, und du siehst umgekehrt ihren. Ausschalten nimmt deinen Text bei den anderen sofort wieder weg. Sterne und Klartext laufen live über Supabase Realtime und werden nicht gespeichert. Wer eine Runde verlässt, nimmt die eigenen Antworten mit. Runden, in denen seit 30 Tagen nichts passiert ist, werden gelöscht, sobald jemand eine neue Runde startet.</p>
+    <p>In einer Runde lösen zwei bis sechs Personen dieselbe Prüfung. Gespeichert werden dein Anzeigename in der Runde und deine Antworten zu Aufgaben, mit denen du fertig bist. Die anderen Mitglieder der Runde sehen sie, sobald sie selbst mit dieser Aufgabe fertig sind. Während du schreibst, sehen die anderen nur Sterne. Schaltest du „Geschriebenes zeigen“ ein, geht dein Text im Klartext an die Runde; sehen können ihn nur Mitglieder, die den Schalter ebenfalls eingeschaltet haben, und du siehst umgekehrt ihren. Ausschalten nimmt deinen Text bei den anderen sofort wieder weg. Sterne und Klartext laufen live über Supabase Realtime und werden nicht gespeichert. Hast du zu einer Aufgabe ein Foto deiner Rechnung angehängt, geht es mit „Fertig – vergleichen“ verkleinert an die Runde und wird wie deine Antworten gespeichert; die anderen sehen es ebenfalls erst, wenn sie mit dieser Aufgabe fertig sind. Wer eine Runde verlässt, nimmt die eigenen Antworten und Fotos mit. Runden, in denen seit 30 Tagen nichts passiert ist, werden gelöscht, sobald jemand eine neue Runde startet.</p>
   </section>
 
   <section id="pruefungen">
@@ -116,7 +119,7 @@
     <p>Nach der Freigabe lädt die App die Prüfungen aus einem geschützten Speicher bei Supabase (Abschnitt 4); die Abbildungen kommen über Links, die 12 Stunden gelten. Damit die Prüfungen schnell starten und auch ohne Verbindung gehen, legt die Web-App eine Kopie für dein Konto im Speicher deines Browsers ab (IndexedDB). Die Kopie enthält nur die Prüfungen, keine Angaben über dich. Sie wird gelöscht, wenn du dich abmeldest, das Konto wechselst oder die Freigabe zurückgenommen wird.</p>
     <p>Anfrage und Entscheidung bleiben gespeichert, bis das Konto gelöscht wird oder ein Admin die Anfrage löscht.</p>
     <h3 id="ki">KI-Auswertung mit Claude</h3>
-    <p>Wie in der Prüfung gibt es Lösungen und Auswertung erst nach der Abgabe. Danach bewertest du dich selbst – oder lässt die Prüfung von der KI auswerten. Erst wenn du „Mit KI auswerten“ tippst, sendet die App deine Antworten zu dieser Prüfung an eine Funktion bei Supabase (Abschnitt 4): Text, Rechenwege, Eintragungen in Anlagen und Skizzen als Bild, Aufgabe für Aufgabe. Die Funktion gibt sie zusammen mit den Aufgaben und Lösungshinweisen an das KI-Modell Claude Sonnet 5.5 der Anthropic PBC (USA) weiter und schickt dir Punkte und eine kurze Begründung je Teilaufgabe zurück. Dein Name, deine E-Mail-Adresse und deine Konto-Kennung gehen nicht an Anthropic. Leere Aufgaben werden gar nicht gesendet.</p>
+    <p>Wie in der Prüfung gibt es Lösungen und Auswertung erst nach der Abgabe – beim gemeinsamen Lernen nach „Fertig – vergleichen“. Danach bewertest du dich selbst, lädst den ZIP-Prüfauftrag bei Claude hoch (Abschnitt 10) – oder lässt die Prüfung direkt in der App von der KI auswerten. Erst wenn du „Automatisch auswerten“ tippst, sendet die App deine Antworten zu dieser Prüfung an eine Funktion bei Supabase (Abschnitt 4): Text, Rechenwege, Eintragungen in Anlagen, Skizzen und Fotos deiner Rechnungen als Bild, Aufgabe für Aufgabe. Die Funktion gibt sie zusammen mit den Aufgaben und Lösungshinweisen an das KI-Modell Claude Sonnet 5.5 der Anthropic PBC (USA) weiter und schickt dir Punkte und eine kurze Begründung je Teilaufgabe zurück. Dein Name, deine E-Mail-Adresse und deine Konto-Kennung gehen nicht an Anthropic. Leere Aufgaben werden gar nicht gesendet.</p>
     <p>Anthropic verarbeitet die Daten in unserem Auftrag nach Art. 28 DSGVO; der Vertrag dazu ist Teil der kommerziellen Bedingungen von Anthropic. Anthropic nutzt die Daten nicht zum Training seiner Modelle und speichert sie nur für begrenzte Zeit. Die Übermittlung in die USA sichern Standardvertragsklauseln der EU-Kommission ab. Siehe die <a href="https://www.anthropic.com/legal/privacy" rel="noopener">Datenschutzerklärung von Anthropic</a>.</p>
     <p>Punkte und Begründungen speichert nur dein Gerät, bei deinen Antworten. In der Datenbank steht je Auswertung: dein Konto, die Prüfung, wann sie lief, die Punkte je Aufgabe, die Zahl der verarbeiteten Tokens und gegebenenfalls eine Fehlermeldung – nicht deine Antworten. Damit gilt das Tageslimit von fünf Auswertungen, und die Admins behalten Nutzung und Kosten im Blick. Rechtsgrundlage ist Art. 6 Abs. 1 lit. b DSGVO, weil du die Auswertung selbst anforderst; für Limit und Kostenübersicht Art. 6 Abs. 1 lit. f DSGVO. Die Einträge werden mit dem Konto gelöscht.</p>
   </section>
@@ -146,7 +149,7 @@
     <h2>10. Sprache, Vorlesen und Claude-Prüfauftrag</h2>
     <p><b>Spracheingabe:</b> Die App nutzt die Spracherkennung deines Browsers bzw. deines Geräts. Je nach Browser oder Gerät wird die Aufnahme dafür an dessen Anbieter übertragen – in Chrome und auf vielen Android-Geräten an Google. Die App selbst speichert keine Aufnahmen; sie bekommt nur den erkannten Text.</p>
     <p><b>Vorlesen</b> nutzt die Sprachausgabe deines Geräts.</p>
-    <p><b>„Von Claude prüfen lassen“</b> kopiert einen Prüfauftrag mit deinen Antworten in die Zwischenablage. Die App sendet dabei nichts. Fügst du den Text selbst bei Claude oder einem anderen Dienst ein, gilt dessen Datenschutzerklärung.</p>
+    <p><b>„ZIP für Claude“</b> speichert einen Prüfauftrag als ZIP-Datei auf deinem Gerät: Aufgaben, Lösungshinweise, deine Antworten, Skizzen, Fotos deiner Rechnungen und die Abbildungen der Prüfung – beim gemeinsamen Lernen mit den Antworten und Fotos der anderen, die mit der Aufgabe fertig sind. Die App sendet dabei nichts. Lädst du die Datei selbst bei Claude oder einem anderen Dienst hoch, gilt dessen Datenschutzerklärung. Teile eine ZIP-Datei mit Antworten anderer nur innerhalb eurer Runde.</p>
   </section>
 
   <section id="dauer">

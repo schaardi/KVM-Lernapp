@@ -316,7 +316,7 @@ Zwei bis sechs Personen lösen dieselbe Original-Prüfung, jede für sich, Aufga
 Aufgabe. Unter jeder Teilaufgabe sieht man als Sterne, wie die anderen gerade schreiben –
 ohne Inhalt. Ist man mit einer Aufgabe fertig, wird sie festgeschrieben und verglichen:
 eigene Antwort, die der anderen (sobald sie auch fertig sind) und die Lösung, dazu ein
-Prüfauftrag für Claude mit allen Antworten.
+Prüfauftrag für Claude mit allen Antworten als ZIP.
 
 Freigeschaltet wird das mit [`docs/supabase-gemeinsam.sql`](docs/supabase-gemeinsam.sql).
 Das Skript ist unabhängig von den Abschnitten 5 bis 9 und lässt sich gefahrlos erneut
@@ -347,8 +347,20 @@ angemeldet ist.
     an.
   - Eine offene Runde öffnet sich nach dem Neuladen in derselben Registerkarte von selbst
     wieder (`sessionStorage`). ✕ beendet das.
-- **Aufräumen:** Wer eine Runde verlässt oder das Konto löscht, nimmt die eigenen Antworten
-  mit; die letzte Person nimmt die Runde mit. Runden ohne Aktivität seit 30 Tagen löscht der
+- **Fotos der Rechnungen (seit FR-022):** Je Person und Aufgabe ein Foto, verkleinert auf
+  höchstens 500 kB, in `gemeinsam_seiten.foto`. Es kommt nach „Fertig – vergleichen“ dazu
+  (`gemeinsam_foto_setzen`) und ist danach fest. `gemeinsam_stand` sagt je Seite nur, ob es eines
+  gibt (`foto`); das Bild holt `gemeinsam_foto` bei Bedarf – der Stand, den die App alle 20 Sekunden
+  lädt, bleibt so klein. Sehen darf es, wer mit derselben Aufgabe fertig ist, wie die Antworten.
+  - **Bestehende Datenbank:** das Skript einfach erneut ausführen; es ergänzt Spalte, Prüfung und
+    die beiden Funktionen und lässt Runden und Antworten unberührt.
+  - **Ohne das Update** laufen Runden normal, die Fotos bleiben dann auf dem jeweiligen Gerät.
+- **ZIP und KI:** „ZIP für Claude“ steht bei jeder verglichenen Aufgabe (Antworten und Fotos aller,
+  die fertig sind) und auf dem Ergebnis (ganze Runde). Die KI-Auswertung (Abschnitt 12) bewertet
+  in einer Runde die eigenen Antworten der verglichenen Aufgaben; die Punkte gehen wie selbst
+  vergebene an die anderen.
+- **Aufräumen:** Wer eine Runde verlässt oder das Konto löscht, nimmt die eigenen Antworten und
+  Fotos mit; die letzte Person nimmt die Runde mit. Runden ohne Aktivität seit 30 Tagen löscht der
   nächste Start einer Runde.
 
 In der **Datenschutzerklärung** ergänzen: Für gemeinsame Runden werden Anzeigename und die
@@ -418,8 +430,9 @@ Die Kopie der Prüfungen bleibt im Browser.
 ## 12. KI-Auswertung der Original-Prüfungen (optional)
 
 Original-Prüfungen zeigen Lösungen und Auswertung erst nach der Abgabe, wie in der Prüfung. Danach
-bewertet man sich selbst oder tippt „Mit KI auswerten“: Claude Sonnet 5.5 vergibt je Teilaufgabe
-Punkte nach dem Lösungshinweis und begründet sie kurz. Der API-Key liegt nur bei Supabase.
+lädt man den Prüfauftrag als ZIP bei Claude hoch (der Hauptweg, ohne Supabase), bewertet sich selbst –
+oder tippt im eigenen Kasten „Automatisch auswerten“: Claude Sonnet 5.5 vergibt je Teilaufgabe Punkte
+nach dem Lösungshinweis und begründet sie kurz. Der API-Key liegt nur bei Supabase.
 
 **Einrichten (einmal):**
 1. **SQL:** Im SQL-Editor [`docs/supabase-ki-auswertung.sql`](docs/supabase-ki-auswertung.sql) ausführen,
@@ -435,20 +448,24 @@ Punkte nach dem Lösungshinweis und begründet sie kurz. Der API-Key liegt nur b
    - Oder im Dashboard: **Edge Functions › Deploy a new function › Via Editor**, Name
      `pruefung-auswerten`, beide Dateien anlegen.
    - „Verify JWT“ eingeschaltet lassen: Nur angemeldete Personen dürfen die Funktion aufrufen.
-4. **Prüfen:** Eine Prüfung abgeben und „Mit KI auswerten“ tippen. In der Verwaltung unter
+4. **Prüfen:** Eine Prüfung abgeben und „Automatisch auswerten“ tippen. In der Verwaltung unter
    „Prüfungen“ steht die Nutzung.
+5. **Nach Änderungen an `kern.ts` oder `index.ts`** die Funktion erneut bereitstellen (wie in 3).
+   Seit FR-022 nimmt sie das Foto der Rechnung je Aufgabe an (`foto`, meldet `foto: true` bei
+   `beginnen`) und schickt bei Fehlern eine Ursache mit (`detail`), die die App unter der Meldung
+   zeigt. Eine ältere Fassung bekommt das Foto ersatzweise als Skizze der ersten Teilaufgabe.
 
 **So funktioniert es:**
 - **Ablauf:** Die App ruft die Funktion zuerst mit `beginnen` auf. Das prüft Freigabe und Tageslimit
   und legt die Auswertung an. Danach schickt die App je Aufgabe einen Aufruf mit den Antworten:
-  Text, Rechenweg, Eintragungen in Anlagen, Skizzen als JPEG.
+  Text, Rechenweg, Eintragungen in Anlagen, Skizzen und das Foto der Rechnung als JPEG.
   - Je Aufruf bewertet Claude eine Aufgabe. So bleibt jede Anfrage unter der Zeitgrenze der Edge
     Functions (150 s), und die App zeigt den Fortschritt. Zwei Aufgaben laufen gleichzeitig.
   - Die Funktion holt Aufgaben, Lösungshinweise und Abbildungen selbst aus dem Bucket `pruefungen`.
     Die App schickt nur die Antworten.
   - Leere Aufgaben bekommen 0 Punkte, ohne dass Claude gefragt wird.
 - **Modell:** fest `claude-sonnet-5-5`, kein Ausweichen auf ein anderes Modell.
-  - `effort: high`, höchstens 8000 Tokens je Aufgabe.
+  - `effort: high`, höchstens 12 000 Tokens je Aufgabe (Nachdenken und Antwort).
   - Die Antwort kommt als JSON nach festem Schema. Punkte werden auf 0 bis zur Höchstpunktzahl
     begrenzt; unbekannte Teilaufgaben werden ignoriert.
 - **Tageslimit:** 5 Auswertungen je Person und Kalendertag (Europe/Berlin), Admins ohne Limit.
@@ -469,7 +486,15 @@ Punkte nach dem Lösungshinweis und begründet sie kurz. Der API-Key liegt nur b
   - Eine ganze Prüfung kostet grob 0,10 bis 0,30 US-$; den größten Teil macht das Nachdenken von
     Claude aus.
 - **Fehler:**
+  - Jede Fehlerantwort trägt `detail` mit der Ursache in einer Zeile (etwa die Meldung der Claude
+    API). Die App zeigt sie als „Fehler: HTTP … · …“ unter der Meldung; dieselbe Meldung steht in der
+    Verwaltung bei der Auswertung.
   - Ohne Secret antwortet die Funktion „nicht eingerichtet“; die App blendet die KI dann aus.
+  - Lehnt die Claude API den Key ab (401/403, etwa „invalid x-api-key“), antwortet die Funktion mit
+    `schluessel`. Die App bricht dann sofort ab und sagt, dass `ANTHROPIC_API_KEY` erneuert werden muss.
+    Abhilfe: in der Anthropic Console einen neuen Key anlegen (beginnt mit `sk-ant-api03-`) und ihn ohne
+    Anführungszeichen unter **Edge Functions › Secrets** speichern. Leerzeichen und Anführungszeichen am
+    Rand entfernt die Funktion selbst.
   - Bei Überlastung (429/529) wartet die App die angegebene Zeit und versucht es erneut, dann nur
     noch eine Aufgabe zur Zeit.
   - Was danach noch fehlt, holt „Fehlende auswerten“ nach. Selbst bewerten geht immer.

@@ -1696,6 +1696,49 @@ body[data-screen="scrBlatt"] .app{max-width:920px}
 .bl-ki-t{padding:11px 13px 13px;font-size:13.5px;line-height:1.55;color:var(--ink)}
 .bl-ki-t b{color:var(--violet-ink)}
 .bl-ki-du{padding:0 13px 11px;font-size:11.5px;color:var(--muted)}
+/* Auswerten nach der Abgabe: ZIP für Claude vorn, die KI-Auswertung als eigener Kasten */
+.bl-aus{flex:1 1 100%;display:grid;gap:10px;margin-top:2px;min-width:0}
+.bl-aus-zip{display:flex;flex-wrap:wrap;align-items:center;gap:6px 12px}
+.bl-aus-zip small{flex:1 1 240px;font-size:12px;line-height:1.45;color:var(--ink-soft)}
+.bl-zip-btn{border:0;border-radius:9px;background:var(--petrol);color:#fff;font:700 13px var(--body);min-height:40px;padding:0 15px;cursor:pointer;display:inline-flex;align-items:center;gap:7px;box-shadow:0 2px 0 rgba(8,79,88,.35)}
+.bl-zip-btn:hover{background:var(--petrol-deep)}
+.bl-zip-btn[disabled]{opacity:.65;cursor:default}
+.bl-echt .bl-zip-btn svg,.bl-nav.bl-zip svg{margin:0;color:inherit}
+.bl-nav.bl-zip{display:inline-flex;align-items:center;gap:7px}
+.bl-aus-ki{border:1px solid var(--violet-line);background:var(--paper);border-radius:10px;padding:9px 12px 10px;min-width:0}
+.bl-aus-ki.laeuft{background:var(--violet-soft)}
+.bl-aus-ki.laeuft .bl-aus-kt svg{animation:kiPuls 1.4s ease-in-out infinite}
+@media (prefers-reduced-motion:reduce){.bl-aus-ki.laeuft .bl-aus-kt svg{animation:none}}
+.bl-aus-kt{display:flex;gap:8px;align-items:flex-start;margin:0;font-size:12.5px;line-height:1.45;color:var(--ink-soft)}
+.bl-echt .bl-aus-kt svg{color:var(--violet-ink);margin-top:1px}
+.bl-aus-kt b{color:var(--violet-ink)}
+.bl-aus-ki .bl-ki-akt{margin-top:8px}
+.bl-ki-st{font-size:12.5px}
+.bl-ki-erg{margin:7px 0 0;font-size:12.5px;line-height:1.5}
+.bl-ki-erg b{color:var(--violet-ink)}
+.bl-ki-meld .bl-ki-det{display:block;margin-top:3px;font:500 11px/1.4 var(--mono);color:var(--muted);word-break:break-word}
+p.bl-ki-meld{margin:8px 0 0;font-size:12.5px;line-height:1.45}
+/* Foto der handschriftlichen Rechnung – eines je Aufgabe */
+.bl-foto{border:1px dashed var(--line-strong);border-radius:14px;background:var(--surface);padding:13px 15px 14px;margin:0 0 14px}
+.bl-foto.hat{border-style:solid;background:var(--paper)}
+.bl-foto-k{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin:0 0 10px;font:700 10.5px/1.3 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--petrol-ink-deep)}
+.bl-foto-k span{text-transform:none;letter-spacing:0;font:600 11.5px var(--body);color:var(--muted)}
+.bl-foto-reihe{display:flex;gap:10px;flex-wrap:wrap;align-items:flex-start}
+.bl-foto-bild{margin:0;border:1px solid var(--line);border-radius:10px;background:var(--paper);padding:5px;cursor:zoom-in;width:210px;max-width:calc(50% - 5px);display:flex;flex-direction:column;gap:4px}
+.bl-foto-bild:hover{border-color:var(--petrol)}
+.bl-foto-bild img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:6px;display:block;background:var(--surface-2)}
+.bl-foto-bild figcaption{font-size:11px;line-height:1.35;color:var(--muted);text-align:center}
+.bl-foto-bild.fehlt{opacity:.55;cursor:default}
+.bl-foto-bild.gm-foto{border-color:var(--gm-line,var(--line))}
+.bl-foto-bild.gm-foto figcaption{color:var(--gm-ink,var(--muted));font-weight:600}
+.bl-foto-akt{display:flex;gap:9px;flex-wrap:wrap;align-items:center;margin-top:10px}
+.bl-foto-reihe+.bl-foto-akt{margin-top:12px}
+.bl-foto-wahl{position:relative}
+.bl-foto-wahl input{position:absolute;width:1px;height:1px;padding:0;margin:-1px;opacity:0;overflow:hidden;clip:rect(0 0 0 0);border:0}
+.bl-foto-wahl:focus-within{outline:2px solid var(--petrol);outline-offset:2px}
+.bl-foto-h{margin:8px 0 0;font-size:12px;line-height:1.5;color:var(--muted)}
+.bl-foto-meld{margin:8px 0 0;font-size:12px;font-weight:600;color:var(--amber-ink)}
+.bl-foto-meld.ok{color:var(--ok-ink)}
 .pr-btn.echt,.pr-btn[data-neu]{display:inline-flex;align-items:center;gap:6px}
 /* Ergebnis je Prüfung: letzter Durchgang, bei Wiederholungen der Verlauf */
 .pr-erg{display:flex;flex-wrap:wrap;align-items:center;gap:4px 9px;margin:10px 0 0;font-size:12px;color:var(--muted)}
@@ -2409,8 +2452,8 @@ body.sk-offen{overflow:hidden}
         <div class="bl-chips" id="blChips"></div>
       </header>
       <p class="bl-hinweis" id="blHinweis" hidden></p>
-      <div class="bl-echt" id="blEcht" hidden></div>
       <div class="bl-echt gm-hinweis" id="gmHinweis" role="status" hidden></div>
+      <div class="bl-echt" id="blEcht" hidden></div>
       <!-- Gemeinsam lernen: Geschriebenes gegenseitig zeigen (Klartext statt Sterne) -->
       <div class="gm-schalter" id="gmSchalter" hidden></div>
       <div class="bl-echt hl-tipp" id="hlTipp" hidden><span class="hl-tipp-ic" aria-hidden="true"></span><span><b>Neu: Textmarker.</b> Wichtiges markieren – Text gedrückt halten, auswählen und eine Farbe tippen. Gesammelt unter Lernen › Meine Markierungen.</span><button type="button" class="hl-tipp-ok">OK</button></div>
@@ -2780,7 +2823,7 @@ var state={fach:1,sub:'*',mode:null,pool:[],shuffledOpts:[],idx:0,results:[],wro
    ihr Stand vom Server und was live über Realtime hereinkommt. */
 var gm={runde:null,stand:null,ich:null,idx:{},kanal:null,online:{},masken:{},mitH:{},frei:0,weiter:{},
         ok:null,meine:null,einladung:null,oeffnet:false,sig:'',pollT:null,tickT:null,standT:null,nochmalT:null,maskT:{},punkteT:{},
-        offen:false,klar:{},offenVorher:{},wiederVersucht:false};
+        offen:false,klar:{},offenVorher:{},wiederVersucht:false,fotos:{},fotoVersucht:{},fotoFehlt:false};
 
 /* ===== HOME rendering ===== */
 /* Zahlen mit Tausenderpunkt: „3.666“ liest sich schneller als „3666“. */
@@ -4162,7 +4205,7 @@ function blBeantwortet(q){
   if((oaGet(q.id)||'').trim()||rwHat(q.id)||skHat(q.id))return true;
   if(tabListe(q.tab).some(function(t,i){return otAnzahl(q.id+'#s'+i)>0;}))return true;
   var teile=blTeile(q.nr);
-  return !!(teile.length&&teile[0].id===q.id&&blTabGefuellt(q.nr));
+  return !!(teile.length&&teile[0].id===q.id&&(blTabGefuellt(q.nr)||foHat(q.id+'#foto')));
 }
 function blIdx(q){return state.pool.indexOf(q);}
 function blAufgedeckt(q){return !!state.aufgedeckt[q.id];}
@@ -4332,7 +4375,7 @@ function blLoesungHTML(q){
   if(q.bewertung&&q.bewertung.length)fuss.push('Punkteverteilung: '+q.bewertung.join(' + ')+' Punkte');
   if(fuss.length)h+='<div class="bl-lfoot">'+esc(fuss.join(' · '))+'</div>';
   h+='</section>';
-  if(!gm.runde)h+=kiTeilHTML(q);
+  h+=kiTeilHTML(q);
   if(taskMaxPoints(q)>0)h+=scoreHTML(q);
   else{
     /* Fallaufgaben ohne IHK-Punkte: die Selbsteinschätzung zählt fürs Ergebnis
@@ -4649,6 +4692,214 @@ function skAufCanvas(cv,id,d,titel){
   cv.onclick=function(){lbOeffnen(cv.toDataURL('image/png'),titel);};
 }
 
+/* ===== Foto je Aufgabe =====
+   Wer auf Papier rechnet, hängt je Aufgabe ein Foto an. Das Bild bleibt auf
+   dem Gerät: verkleinert auf höchstens 2000 px als JPEG in IndexedDB
+   (kvm_fotos); kvm_open_foto merkt, zu welchen Aufgaben es eines gibt. Der
+   Schlüssel hängt wie bei den Anlagen an der ersten Teilaufgabe: „<ID>#foto“.
+   Das Foto zählt als Antwort dieser Teilaufgabe, geht in den ZIP-Export und
+   in die KI-Auswertung und beim gemeinsamen Lösen mit „Fertig – vergleichen“
+   an die Runde. Ersetzen und entfernen lässt es sich, bis die Lösungen der
+   Aufgabe offen sind. Beim gemeinsamen Lösen liegt es wie die Antworten
+   getrennt je Runde (kvm_gm_<Runde>_fo, siehe gmSpeicher). */
+var FO_KEY='kvm_open_foto',FO_IDB='kvm_fotos',FO_MAX=2000;
+var foUrls={};   /* angezeigte Fotos: Objekt-URL je Speicherschlüssel */
+var IC_FOTO='<svg class="ic-svg ic-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 8h3l2-3h6l2 3h3a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1z"/><circle cx="12" cy="13.5" r="3.5"/></svg>';
+function foAll(){try{var d=JSON.parse(localStorage.getItem(FO_KEY)||'{}');return (d&&typeof d==='object'&&!Array.isArray(d))?d:{};}catch(e){return {};}}
+function foHat(key){return !!key&&!!foAll()[key];}
+function foKeyVon(c,nr){var s=((c&&c.steps)||[]).filter(function(x){return x.nr===nr;})[0];return s?s.id+'#foto':'';}
+function foKey(nr){var t=blTeile(nr)[0];return t?t.id+'#foto':'';}
+function foIdbKey(key){return FO_KEY+'|'+key;}
+function foIdb(modus,fn){
+  return new Promise(function(ok){
+    var r;try{r=indexedDB.open(FO_IDB,1);}catch(e){ok(null);return;}
+    r.onupgradeneeded=function(){r.result.createObjectStore('fotos');};
+    r.onerror=r.onblocked=function(){ok(null);};
+    r.onsuccess=function(){
+      var db=r.result,erg=null,tx;
+      try{tx=db.transaction('fotos',modus);}catch(e){db.close();ok(null);return;}
+      var q=fn(tx.objectStore('fotos'));
+      if(q)q.onsuccess=function(){erg=q.result;};
+      tx.oncomplete=function(){db.close();ok(erg===undefined?null:erg);};
+      tx.onerror=tx.onabort=function(){db.close();ok(null);};
+    };
+  });
+}
+function foIndexSetzen(key,meta){
+  var a=foAll();if(meta)a[key]=meta;else delete a[key];
+  try{localStorage.setItem(FO_KEY,JSON.stringify(a));return true;}catch(e){return false;}
+}
+function foUrlWeg(key){var k=foIdbKey(key);if(foUrls[k]){try{URL.revokeObjectURL(foUrls[k]);}catch(e){}delete foUrls[k];}}
+/* bild: {blob, w, h} – gespeichert als ArrayBuffer (geht in jedem Browser) */
+function foSpeichern(key,bild){
+  return bild.blob.arrayBuffer().then(function(b){
+    return foIdb('readwrite',function(s){return s.put({b:b,typ:bild.blob.type||'image/jpeg',w:bild.w|0,h:bild.h|0,t:Date.now()},foIdbKey(key));});
+  }).then(function(r){
+    if(r==null)return false;
+    foUrlWeg(key);
+    return foIndexSetzen(key,{t:Date.now(),w:bild.w|0,h:bild.h|0,kb:Math.round(bild.blob.size/1024)});
+  },function(){return false;});
+}
+function foLesen(key){
+  if(!key)return Promise.resolve(null);
+  return foIdb('readonly',function(s){return s.get(foIdbKey(key));}).then(function(v){
+    return (v&&v.b)?{blob:new Blob([v.b],{type:v.typ||'image/jpeg'}),w:v.w|0,h:v.h|0}:null;
+  });
+}
+function foLoeschen(key){foIndexSetzen(key,null);foUrlWeg(key);return foIdb('readwrite',function(s){return s.delete(foIdbKey(key));});}
+/* Fotos zu diesen Teilaufgaben löschen (Neu starten, Prüfungsbedingungen) */
+function foLoeschenFuer(ids){var a=foAll();ids.forEach(function(i){if(a[i+'#foto'])foLoeschen(i+'#foto');});}
+/* Alle Fotos unter einem Speicher (eine Runde verlassen) */
+function foLoeschenSpeicher(fk){
+  var p=fk+'|';
+  return foIdb('readwrite',function(s){
+    var r=s.openCursor(IDBKeyRange.bound(p,p+'￿'));
+    r.onsuccess=function(){var c=r.result;if(c){c.delete();c.continue();}};
+    return null;
+  });
+}
+function foUrl(key){
+  var k=foIdbKey(key);
+  if(foUrls[k])return Promise.resolve(foUrls[k]);
+  return foLesen(key).then(function(f){
+    if(!f)return '';
+    if(!foUrls[k])foUrls[k]=URL.createObjectURL(f.blob);
+    return foUrls[k];
+  });
+}
+/* Bild öffnen – mit der Drehung, die die Kamera vermerkt hat */
+function foImg(blob){
+  return new Promise(function(ok,nein){
+    var u=URL.createObjectURL(blob),img=new Image();
+    img.onload=function(){ok(img);setTimeout(function(){URL.revokeObjectURL(u);},0);};
+    img.onerror=function(){URL.revokeObjectURL(u);nein(new Error('bild'));};
+    img.src=u;
+  });
+}
+function foBildLaden(blob){
+  if(window.createImageBitmap)
+    return createImageBitmap(blob,{imageOrientation:'from-image'}).catch(function(){return foImg(blob);});
+  return foImg(blob);
+}
+function foDataBlob(uri){
+  var m=/^data:([^;,]+);base64,(.*)$/.exec(uri||'');if(!m)return null;
+  var s=atob(m[2]),b=new Uint8Array(s.length);for(var i=0;i<s.length;i++)b[i]=s.charCodeAt(i);
+  return new Blob([b],{type:m[1]});
+}
+/* Auf höchstens max px (lange Seite) als JPEG */
+function foJpeg(bild,max,q){
+  var w=bild.naturalWidth||bild.width,h=bild.naturalHeight||bild.height;
+  if(!w||!h)return Promise.reject(new Error('bild'));
+  var f=Math.min(1,max/Math.max(w,h)),W=Math.max(1,Math.round(w*f)),H=Math.max(1,Math.round(h*f));
+  var cv=document.createElement('canvas');cv.width=W;cv.height=H;
+  var ctx=cv.getContext('2d');ctx.fillStyle='#ffffff';ctx.fillRect(0,0,W,H);ctx.drawImage(bild,0,0,W,H);
+  return new Promise(function(ok,nein){
+    function fertig(b){if(b)ok({blob:b,w:W,h:H});else nein(new Error('bild'));}
+    if(cv.toBlob)cv.toBlob(fertig,'image/jpeg',q);
+    else{try{fertig(foDataBlob(cv.toDataURL('image/jpeg',q)));}catch(e){nein(e);}}
+  });
+}
+function foDataUri(blob){
+  return new Promise(function(ok,nein){
+    var r=new FileReader();r.onload=function(){ok(String(r.result||''));};r.onerror=function(){nein(r.error);};r.readAsDataURL(blob);
+  });
+}
+/* Kleinere Fassung zum Senden (KI, Runde): Data-URI unter ``grenze`` Zeichen,
+   sonst ''. Erst die Qualität, dann die Größe herunter. */
+function foFassung(key,max,grenze){
+  return foLesen(key).then(function(f){
+    if(!f)return '';
+    return foBildLaden(f.blob).then(function(b){
+      var stufen=[[max,0.8],[max,0.66],[Math.round(max*0.8),0.62],[Math.round(max*0.64),0.58]],i=0;
+      function weiter(){
+        if(i>=stufen.length){if(b.close)b.close();return '';}
+        var s=stufen[i++];
+        return foJpeg(b,s[0],s[1]).then(function(x){return foDataUri(x.blob);}).then(function(u){
+          if(u.length<=grenze){if(b.close)b.close();return u;}
+          return weiter();
+        });
+      }
+      return weiter();
+    });
+  }).catch(function(){return '';});
+}
+
+/* Darf das Foto noch geändert werden? Bis die Lösungen der Aufgabe offen sind –
+   nach der Abgabe, dem Aufdecken oder „Fertig – vergleichen“. */
+function foOffen(nr){var t=blTeile(nr);return t.length>0&&!t.every(blAufgedeckt);}
+/* Am Ende der Aufgabe: das eigene Foto, beim gemeinsamen Lösen nach dem
+   Vergleich auch die der anderen. */
+function foKarteHTML(nr){
+  var key=foKey(nr);if(!key)return '';
+  var hat=foHat(key),offen=foOffen(nr),fremde=gm.runde?gmFotoFremde(nr):[];
+  if(!offen&&!hat&&!fremde.length)return '';
+  var titel=(!offen&&fremde.length)?'Fotos der Rechnungen':'Foto deiner Rechnung';
+  var h='<section class="bl-foto'+(hat||fremde.length?' hat':'')+'" data-foto-nr="'+nr+'">';
+  h+='<p class="bl-foto-k">'+IC_FOTO+esc(titel)+'<span>ein Bild für die ganze Aufgabe '+nr+'</span></p>';
+  if(hat||fremde.length){
+    h+='<div class="bl-foto-reihe">';
+    if(hat)h+='<figure class="bl-foto-bild" data-foto-zeige="'+esc(key)+'"><img alt="Dein Foto zu Aufgabe '+nr+'"><figcaption>'+
+      (fremde.length?'Dein Foto':'Antippen zum Vergrößern')+'</figcaption></figure>';
+    fremde.forEach(function(t){
+      h+='<figure class="bl-foto-bild gm-foto '+gmFarbKlasse(t.tid)+'" data-gm-foto="'+esc(t.tid)+'" data-nr="'+nr+'">'+
+        '<img alt="Foto von '+esc(t.name)+' zu Aufgabe '+nr+'"><figcaption>Foto von '+esc(t.name)+'</figcaption></figure>';
+    });
+    h+='</div>';
+  }
+  if(offen){
+    h+='<div class="bl-foto-akt"><label class="aw-tool bl-foto-wahl">'+IC_FOTO+(hat?'Foto ersetzen':'Foto aufnehmen oder wählen')+
+       '<input type="file" accept="image/*" data-foto-datei="'+esc(key)+'"></label>'+
+       (hat?'<button type="button" class="aw-tool" data-foto-weg="'+esc(key)+'">Entfernen</button>':'')+'</div>';
+    if(!hat)h+='<p class="bl-foto-h">Auf Papier gerechnet? Fotografiere deine Rechnung. Das Foto bleibt auf diesem Gerät'+
+      (gm.runde?', geht mit „Fertig – vergleichen“ an die Runde':'')+' und kommt mit in den ZIP-Export und die KI-Auswertung.</p>';
+  }
+  h+='<p class="bl-foto-meld" role="status" hidden></p></section>';
+  return h;
+}
+function foBinden(box){
+  box.querySelectorAll('[data-foto-zeige]').forEach(function(f){
+    var key=f.dataset.fotoZeige,img=f.querySelector('img');
+    foUrl(key).then(function(u){if(u)img.src=u;});
+    f.onclick=function(){if(img.getAttribute('src'))lbOeffnen(img.getAttribute('src'),img.alt);};
+  });
+  box.querySelectorAll('[data-foto-datei]').forEach(function(inp){
+    inp.onchange=function(){
+      var f=inp.files&&inp.files[0];
+      if(f)foAufnehmen(inp.dataset.fotoDatei,f,inp.closest('.bl-foto'));
+      inp.value='';
+    };
+  });
+  box.querySelectorAll('[data-foto-weg]').forEach(function(b){
+    b.onclick=function(){
+      if(!confirm('Foto zu dieser Aufgabe entfernen?'))return;
+      var key=b.dataset.fotoWeg;
+      foLoeschen(key).then(function(){foGeaendert(key);});
+    };
+  });
+  if(gm.runde)gmFotosBinden(box);
+}
+function foAufnehmen(key,datei,karte){
+  var m=karte&&karte.querySelector('.bl-foto-meld');
+  function meld(t,gut){if(!m)return;m.hidden=!t;m.textContent=t||'';m.classList.toggle('ok',!!gut);}
+  if(datei.type&&!/^image\//.test(datei.type)){meld('Das ist kein Bild – bitte ein Foto wählen.');return;}
+  meld('Foto wird gespeichert …',true);
+  foBildLaden(datei).then(function(b){
+    return foJpeg(b,FO_MAX,0.85).then(function(x){if(b.close)b.close();return x;});
+  },function(){throw new Error('bild');}).then(function(x){
+    return foSpeichern(key,x).then(function(ok){if(!ok)throw new Error('speicher');});
+  }).then(function(){foGeaendert(key);},function(e){
+    meld(e&&e.message==='speicher'?'Das Foto ließ sich auf diesem Gerät nicht speichern – ist der Speicher voll oder ist das ein privates Fenster?':
+      'Dieses Bild kann der Browser nicht öffnen – bitte ein Foto als JPG oder PNG wählen.');
+  });
+}
+/* Nach Aufnehmen oder Entfernen: Aufgabe, Leiste und Stand auffrischen */
+function foGeaendert(key){
+  var q=state.pool.filter(function(x){return x.id+'#foto'===key;})[0];
+  if(!q||$("scrBlatt").hidden)return;
+  if(q.nr===state.blattNr){var y=window.scrollY;renderBlatt();window.scrollTo(0,y);}
+  blNachEingabe(q.id);
+}
+
 /* Rechenaufgabe: verlangt eine Berechnung, und der Lösungshinweis rechnet.
    Dort steht der Rechenweg gleich offen; sonst ist er einen Tipp entfernt. */
 function blRechenteil(q){
@@ -4739,6 +4990,7 @@ function renderBlatt(){
   if(auf.sit)h+='<div class="bl-sit rt" data-hl-key="sit:'+esc(fall.id||'')+':'+esc(nr)+'"><p class="bl-slbl">Ausgangslage</p>'+rtHTML(auf.sit)+'</div>';
   h+='<div class="bl-akopf">'+blAnlagenHTML(auf)+'</div>';
   teile.forEach(function(q){h+=blTeilHTML(q);});
+  h+=foKarteHTML(nr);
   $("blAufgabe").innerHTML=h;
 
   var offen=teile.filter(blAufgedeckt).length,laeuft=echtLaeuft()||abOffen();
@@ -4748,7 +5000,7 @@ function renderBlatt(){
     if(pos>0)f+='<button type="button" class="bl-nav" id="blPrev">← Aufgabe '+nrs[pos-1]+'</button>';
     /* Original-Prüfungen: vor der Abgabe gibt es nichts aufzudecken. */
     if(!laeuft)f+=offen<teile.length?'<button type="button" class="bl-nav" id="blAlle">Alle Lösungen aufdecken</button>':
-      '<button type="button" class="bl-nav" id="blExport">Von Claude prüfen lassen</button>';
+      '<button type="button" class="bl-nav bl-zip" id="blExport" title="Prüfauftrag mit deinen Antworten, Fotos, Skizzen und Abbildungen – zum Hochladen bei Claude">'+IC_ZIP+'ZIP für Claude</button>';
     f+='<button type="button" class="bl-nav primary" id="blNext">'+
        (pos>=nrs.length-1?(laeuft?'Abgeben':'Zum Ergebnis →'):('Aufgabe '+nrs[pos+1]+' →'))+'</button>';
   }
@@ -4772,6 +5024,7 @@ function blBinden(){
   rwBinden(box,function(id){state.blattZiel=id;blNachEingabe(id);});
   skBinden(box,function(id){state.blattZiel=id;blNachEingabe(id);});
   skZeigenBinden(box);
+  foBinden(box);
   box.querySelectorAll('[data-rwauf]').forEach(function(b){
     b.onclick=function(){
       var karte=b.closest('.bl-teil'),rw=karte&&karte.querySelector('.rw');
@@ -4827,7 +5080,7 @@ function blBinden(){
       };
     });
   });
-  scoreBinden(box,function(q,pt,mx){blFortschritt(q,pt,mx);blKopfNeu();if(gm.runde)gmPunkteSpaeter(q.nr);else if(kiTeil(q.id))kiTeilNeu(q);});
+  scoreBinden(box,function(q,pt,mx){blFortschritt(q,pt,mx);blKopfNeu();if(gm.runde)gmPunkteSpaeter(q.nr);if(kiTeil(q.id))kiTeilNeu(q);});
   var pv=$("blPrev"),nx=$("blNext"),al=$("blAlle"),ex=$("blExport");
   var nrs=blNummern(),pos=nrs.indexOf(state.blattNr);
   if(pv)pv.onclick=function(){if(pos>0)blOeffnen(nrs[pos-1]);};
@@ -4838,7 +5091,7 @@ function blBinden(){
     blTeile(state.blattNr).forEach(function(q){state.aufgedeckt[q.id]=true;});
     renderBlatt();
   };
-  if(ex)ex.onclick=function(){oaCopy(blExport(state.blattNr),ex);};
+  if(ex)ex.onclick=function(){paKnopf(ex,gm.runde?[state.blattNr]:paNummern());};
 }
 function blBindenStepper(){
   $("blStepper").querySelectorAll('.bl-pill').forEach(function(b){
@@ -5041,7 +5294,7 @@ var ECHT_KEY='kvm_echt',ECHT_VERLAUF='kvm_echt_verlauf',echtTimer=null;
 function echtGet(){try{var d=JSON.parse(localStorage.getItem(ECHT_KEY)||'null');return (d&&d.id&&d.start&&d.min)?d:null;}catch(e){return null;}}
 function echtSet(d){try{if(d)localStorage.setItem(ECHT_KEY,JSON.stringify(d));else localStorage.removeItem(ECHT_KEY);}catch(e){}}
 function echtMinuten(fall){var m=/Bearbeitungszeit\s+(\d+)\s*Minuten/.exec(fall.context||'');return m?+m[1]:(/^P-NT-/.test(fall.id)?60:90);}
-function echtAktiv(){var e=echtGet();return (e&&state.mode==='cases'&&state.fall&&state.fall.id===e.id)?e:null;}
+function echtAktiv(){var e=echtGet();return (e&&!gm.runde&&state.mode==='cases'&&state.fall&&state.fall.id===e.id)?e:null;}
 function echtLaeuft(){var e=echtAktiv();return !!(e&&!e.ende);}
 function uhrText(ms){var s=Math.max(0,Math.ceil(ms/1000)),h=Math.floor(s/3600),m=Math.floor(s%3600/60),x=s%60;
   return (h?h+':'+(m<10?'0':''):'')+m+':'+(x<10?'0':'')+x;}
@@ -5054,13 +5307,14 @@ function echtVerlauf(){return peAll().filter(function(e){return e.echt;}).map(fu
 /* Antworten, Rechenwege, Tabellen und Punkte einer Prüfung leeren – der
    Durchgang beginnt wie in der Prüfung mit leeren Blättern. */
 function echtHatAntworten(ids){var ot=otAll();return ids.some(function(i){
-  return oaGet(i)||rwHat(i)||skHat(i)||opGet(i)!=null||Object.keys(ot).some(function(k){return k.indexOf(i+'#')===0;});});}
+  return oaGet(i)||rwHat(i)||skHat(i)||foHat(i+'#foto')||opGet(i)!=null||Object.keys(ot).some(function(k){return k.indexOf(i+'#')===0;});});}
 function echtLeeren(ids){
   var oa=oaAll(),op=opAll(),ot=otAll(),rw=rwAll(),sk=skAll();
   ids.forEach(function(i){delete oa[i];delete op[i];delete rw[i];delete sk[i];Object.keys(ot).forEach(function(k){if(k.indexOf(i+'#')===0)delete ot[k];});});
   try{localStorage.setItem(OA_KEY,JSON.stringify(oa));localStorage.setItem(OP_KEY,JSON.stringify(op));
       localStorage.setItem(OT_KEY,JSON.stringify(ot));localStorage.setItem(RW_KEY,JSON.stringify(rw));
       localStorage.setItem(SK_KEY,JSON.stringify(sk));}catch(e){}
+  foLoeschenFuer(ids);
 }
 function echtUhr(){
   var el=$("blUhr"),ab=$("blAbgabe"),e=echtAktiv();
@@ -5079,6 +5333,8 @@ function echtUhr(){
 }
 function echtBand(e){
   var b=$("blEcht");if(!b)return;
+  /* Gemeinsam: Auswerten, sobald die Aufgabe verglichen ist */
+  if(gm.runde){kiBand(b,null);return;}
   /* Original-Prüfung ohne laufende Uhr: Hinweis auf die Abgabe, danach die Auswertung */
   if(abPflicht()&&!(e&&!e.ende)){kiBand(b,e);return;}
   b.className='bl-echt';
@@ -5141,9 +5397,13 @@ window.KVM_dauerText=dauerText;
    docs/supabase-ki-auswertung.sql) – je Person höchstens 5 Auswertungen am
    Tag, Admins ohne Limit. Die Punkte stehen dann wie selbst vergebene bei der
    Teilaufgabe und lassen sich ändern. Begründungen und Stand: kvm_ki
-   {Prüfung: {a: Auswertung, t, m: Modell, auf: {Nr.: {p, m}}, teile: {ID: {p, b}}}}. */
+   {Prüfung: {a: Auswertung, t, m: Modell, auf: {Nr.: {p, m}}, teile: {ID: {p, b}}}}.
+   Der Hauptweg ist der ZIP-Export für Claude (paZip); die KI-Auswertung steht
+   getrennt daneben. Beim gemeinsamen Lösen bewertet sie die eigenen Antworten
+   der schon verglichenen Aufgaben (kvm_ki liegt dann je Runde, gmSpeicher). */
 var AB_KEY='kvm_abgabe',KI_KEY='kvm_ki',KI_FN='pruefung-auswerten',KI_NAME='Claude Sonnet 5.5',KI_FRIST=30*60000;
-var ki={lauf:null,status:null,statusT:0,statusLaedt:false,aus:'',ausId:'',nichtEingerichtet:false};
+var ki={lauf:null,status:null,statusT:0,statusLaedt:false,aus:'',ausDetail:'',ausId:'',nichtEingerichtet:false};
+var IC_AUS='<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>';
 var IC_KI='<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l1.8 4.7 4.7 1.8-4.7 1.8L12 16l-1.8-4.7-4.7-1.8 4.7-1.8z"/><path d="M19 15l.8 2.2 2.2.8-2.2.8L19 21l-.8-2.2-2.2-.8 2.2-.8z"/></svg>';
 function abAll(){try{var d=JSON.parse(localStorage.getItem(AB_KEY)||'{}');return (d&&typeof d==='object'&&!Array.isArray(d))?d:{};}catch(e){return {};}}
 function abSetzen(id,an){var a=abAll();if(an)a[id]=Date.now();else delete a[id];try{localStorage.setItem(AB_KEY,JSON.stringify(a));}catch(e){}}
@@ -5166,16 +5426,27 @@ function kiAll(){try{var d=JSON.parse(localStorage.getItem(KI_KEY)||'{}');return
 function kiDaten(id){var d=kiAll()[id];return (d&&typeof d==='object'&&d.a)?d:null;}
 function kiSpeichern(id,d){var a=kiAll();if(d)a[id]=d;else delete a[id];try{localStorage.setItem(KI_KEY,JSON.stringify(a));}catch(e){}}
 function kiLoeschen(id){
-  if(ki.lauf&&ki.lauf.id===id){ki.lauf.stop=true;ki.lauf.abbruch='neu';ki.lauf=null;}
-  if(ki.ausId===id)ki.aus='';
+  if(ki.lauf&&ki.lauf.id===id&&!ki.lauf.runde){ki.lauf.stop=true;ki.lauf.abbruch='neu';ki.lauf=null;}
+  if(ki.ausId===id){ki.aus='';ki.ausDetail='';}
   kiSpeichern(id,null);
 }
 function kiTeil(id){var m=/^(P-[A-Z]+-\d+)-s\d+/.exec(id||''),d=m&&kiDaten(m[1]);return (d&&d.teile&&d.teile[id])||null;}
 function kiFall(id){return CASES.filter(function(c){return c.id===id;})[0]||null;}
 /* Aufgaben mit Punkten, in der Reihenfolge der Prüfung */
 function kiNummern(c){var n=[];(c.steps||[]).forEach(function(s){if(taskMaxPoints(s)>0&&n.indexOf(s.nr)<0)n.push(s.nr);});return n;}
-function kiFehlend(c,d){return kiNummern(c).filter(function(nr){return !(d&&d.auf&&d.auf[nr]);});}
-function kiSumme(d){var p=0,m=0;Object.keys((d&&d.auf)||{}).forEach(function(k){p+=d.auf[k].p|0;m+=d.auf[k].m|0;});return {p:p,m:m};}
+/* Was die KI bewerten soll: allein nach der Abgabe alle Aufgaben mit Punkten,
+   gemeinsam die schon verglichenen. */
+function kiZiel(c){var n=kiNummern(c);return gm.runde?n.filter(function(nr){return gmIchFertig(nr);}):n;}
+function kiOffen(c,d){return kiZiel(c).filter(function(nr){return !(d&&d.auf&&d.auf[nr]);});}
+function kiSumme(d,nrs){var p=0,m=0;Object.keys((d&&d.auf)||{}).forEach(function(k){
+  if(nrs&&nrs.indexOf(+k)<0)return;p+=d.auf[k].p|0;m+=d.auf[k].m|0;});return {p:p,m:m};}
+/* Kann ausgewertet werden? Allein nach der Abgabe, gemeinsam nach dem Vergleich. */
+function kiMoeglich(){
+  var c=state.fall;if(!c||state.mode!=='cases'||!/^P-/.test(c.id||''))return false;
+  return gm.runde?kiZiel(c).length>0:(abPflicht()&&!abOffen());
+}
+/* Läuft die Auswertung noch in derselben Runde (oder allein)? */
+function kiGleicheRunde(L){return (gm.runde?gm.runde.id:'')===(L.runde||'');}
 function kiWarte(ms){return new Promise(function(ok){setTimeout(ok,ms);});}
 
 /* Unter der Lösung: Punkte und Begründung der KI */
@@ -5207,54 +5478,77 @@ function kiStatus(neu){
     fertig({uid:u.id,erlaubt:!!x.erlaubt,heute:x.heute|0,limit:x.limit==null?null:x.limit|0});
   },function(){fertig({uid:u.id,fehler:true});});
 }
-function kiZeigen(){if(!$("scrBlatt").hidden&&abPflicht())echtBand(echtAktiv());}
+function kiZeigen(){
+  if($("scrBlatt").hidden||!state.fall||!(abPflicht()||gm.runde))return;
+  var p=document.querySelector('#blEcht .bl-aus-ki-platz');
+  if(p){p.innerHTML=kiKastenHTML(state.fall);kiKastenBinden(p);}
+  else echtBand(echtAktiv());
+}
 
-/* Band über der Aufgabe: vor der Abgabe der Hinweis, danach die Auswertung */
+/* Band über der Aufgabe. Allein: vor der Abgabe der Hinweis, danach das
+   Auswerten; gemeinsam: das Auswerten, sobald die Aufgabe verglichen ist.
+   Auswerten heißt: ZIP für Claude (der Hauptweg) oder selbst – und getrennt
+   davon automatisch mit der KI. */
 function kiBand(b,e){
-  var c=state.fall,id=c.id;
-  b.hidden=false;
-  if(!abIstAbgegeben(id)){
-    b.className='bl-echt';
-    b.innerHTML=IC_KI+'<span><b>Wie in der Prüfung:</b> Lösungen und Auswertung gibt es nach der Abgabe – dann wertest du mit der KI oder selbst aus. „Abgeben“ steht oben in der Leiste und auf der letzten Aufgabe.</span>';
+  var c=state.fall,id=c.id,nr=state.blattNr;
+  if(gm.runde){if(!gmIchFertig(nr)){b.hidden=true;b.innerHTML='';return;}}
+  else if(!abIstAbgegeben(id)){
+    b.hidden=false;b.className='bl-echt';
+    b.innerHTML=IC_KI+'<span><b>Wie in der Prüfung:</b> Lösungen und Auswertung gibt es nach der Abgabe – dann wertest du mit Claude oder selbst aus. „Abgeben“ steht oben in der Leiste und auf der letzten Aufgabe.</span>';
     return;
   }
   kiStatus(false);
-  var d=kiDaten(id),L=(ki.lauf&&ki.lauf.id===id)?ki.lauf:null,h,cls='bl-echt fertig bl-ki-band';
-  var kopf=(e&&e.ende)?(e.zeitUm?'<b>Zeit abgelaufen</b> – deine Antworten sind abgegeben.':'<b>Abgegeben</b> nach '+esc(dauerText(e.ende-e.start))+'.'):'<b>Abgegeben.</b>';
-  if(L){
-    var pr=L.gesamt?Math.round(L.fertig/L.gesamt*100):0;
-    cls+=' laeuft';
-    h=IC_KI+'<span class="bl-ki-txt" role="status"><b>Die KI wertet aus …</b> '+(L.gesamt?L.fertig+' von '+L.gesamt+' Aufgaben fertig':'wird gestartet')+
-      (L.meld?' · '+esc(L.meld):' – die Punkte erscheinen nach und nach bei den Teilaufgaben.')+
-      '<span class="bl-ki-prog" aria-hidden="true"><i style="width:'+pr+'%"></i></span></span>'+
-      '<button type="button" class="bl-ki-btn leise" data-ki="stop">Abbrechen</button>';
-  }else if(d&&!kiFehlend(c,d).length){
-    var s=kiSumme(d);
-    h=IC_KI+'<span class="bl-ki-txt"><b>KI-Auswertung: '+s.p+' von '+s.m+' Punkten.</b> Bei jeder Teilaufgabe steht die Begründung – die Punkte kannst du ändern. Dann „Zum Ergebnis“.</span>';
-  }else{
-    h=IC_KI+'<span class="bl-ki-txt">'+kopf+' Jetzt auswerten – mit der KI oder selbst: Unter jeder Teilaufgabe stehen Lösungshinweis und Punkte.'+kiAktionHTML(c,d)+'</span>';
-  }
-  b.className=cls;b.innerHTML=h;
-  b.querySelectorAll('[data-ki]').forEach(function(x){x.onclick=function(){
+  var kopf=gm.runde?'<b>Auswerten:</b>':((e&&e.ende)?(e.zeitUm?'<b>Zeit abgelaufen</b> – deine Antworten sind abgegeben.':
+    '<b>Abgegeben</b> nach '+esc(dauerText(e.ende-e.start))+'.'):'<b>Abgegeben.</b>');
+  b.hidden=false;b.className='bl-echt fertig bl-ki-band';
+  b.innerHTML=IC_AUS+'<span class="bl-ki-txt">'+kopf+(gm.runde?' mit Claude oder selbst – deine Punkte sehen die anderen, sobald sie mit der Aufgabe fertig sind.':
+      ' Jetzt auswerten – mit Claude oder selbst: Unter jeder Teilaufgabe stehen Lösungshinweis und Punkte.')+'</span>'+
+    '<div class="bl-aus"><div class="bl-aus-zip"><button type="button" class="bl-zip-btn" data-zip>'+IC_ZIP+'ZIP für Claude</button>'+
+    '<small>'+(gm.runde?'Aufgabe '+nr+' mit den Antworten aller, die fertig sind,':'Deine ganze Prüfung')+' als Prüfauftrag – samt Fotos, Skizzen und Abbildungen. '+
+    'Bei Claude hochladen (claude.ai oder App), abschicken und die Punkte danach hier bei den Teilaufgaben eintragen.</small></div>'+
+    '<div class="bl-aus-ki-platz">'+kiKastenHTML(c)+'</div></div>';
+  var z=b.querySelector('[data-zip]');
+  if(z)z.onclick=function(){paKnopf(z,gm.runde?[nr]:paNummern());};
+  kiKastenBinden(b);
+}
+function kiKastenBinden(el){
+  el.querySelectorAll('[data-ki]').forEach(function(x){x.onclick=function(){
     var a=x.getAttribute('data-ki');
     if(a==='start')kiStarten();else if(a==='stop')kiAbbrechen();else if(a==='anmelden'&&pfCloud)pfCloud.anmelden();
   };});
 }
-function kiAktionHTML(c,d){
-  var u=pfCloud&&pfCloud.user&&pfCloud.user(),st=ki.status;
-  var h=(ki.aus&&ki.ausId===c.id)?'<span class="bl-ki-meld">'+esc(ki.aus)+'</span>':'';
-  if(!pfCloud||ki.nichtEingerichtet)return h;
-  if(!u)return h+'<span class="bl-ki-akt"><button type="button" class="bl-ki-btn" data-ki="anmelden">'+IC_KI+'Anmelden und mit KI auswerten</button></span>';
-  if(!st||st.uid!==u.id)return h+'<span class="bl-ki-akt"><button type="button" class="bl-ki-btn" disabled>'+IC_KI+'Mit KI auswerten</button><small>wird geprüft …</small></span>';
-  if(st.fehlt||(!st.fehler&&!st.erlaubt))return h;
-  if(st.fehler)return h+'<span class="bl-ki-akt"><small>Die KI-Auswertung ist gerade nicht erreichbar.</small></span>';
+/* Die KI-Auswertung als eigener Kasten: Knopf, Fortschritt, Ergebnis, Meldung */
+function kiKastenHTML(c){
+  var u=pfCloud&&pfCloud.user&&pfCloud.user(),st=ki.status,d=kiDaten(c.id),L=(ki.lauf&&ki.lauf.id===c.id&&kiGleicheRunde(ki.lauf))?ki.lauf:null;
+  var meld=(ki.aus&&ki.ausId===c.id)?'<p class="bl-ki-meld">'+esc(ki.aus)+(ki.ausDetail?'<span class="bl-ki-det">Fehler: '+esc(ki.ausDetail)+'</span>':'')+'</p>':'';
+  var kopf='<p class="bl-aus-kt">'+IC_KI+'<span><b>Automatisch auswerten</b> – '+esc(KI_NAME)+' bewertet '+
+    (gm.runde?'deine Antworten der verglichenen Aufgaben':'deine Antworten')+' direkt hier und trägt die Punkte ein.</span></p>';
+  function kasten(inhalt,cls){return '<div class="bl-aus-ki'+(cls?' '+cls:'')+'">'+kopf+inhalt+meld+'</div>';}
+  if(L){
+    var pr=L.gesamt?Math.round(L.fertig/L.gesamt*100):0;
+    return kasten('<div class="bl-ki-akt"><span class="bl-ki-st" role="status"><b>Die KI wertet aus …</b> '+
+      (L.gesamt?L.fertig+' von '+L.gesamt+' Aufgaben fertig':'wird gestartet')+(L.meld?' · '+esc(L.meld):'')+'</span>'+
+      '<button type="button" class="bl-ki-btn leise" data-ki="stop">Abbrechen</button></div>'+
+      '<span class="bl-ki-prog" aria-hidden="true"><i style="width:'+pr+'%"></i></span>','laeuft');
+  }
+  var ziel=kiZiel(c),offen=kiOffen(c,d);
+  if(d&&ziel.length&&!offen.length){
+    var s=kiSumme(d,ziel);
+    return kasten('<p class="bl-ki-erg"><b>KI-Auswertung: '+s.p+' von '+s.m+' Punkten'+
+      (gm.runde?' in '+(ziel.length===1?'Aufgabe ':'den Aufgaben ')+paListe(ziel.map(String)):'')+'.</b> '+
+      'Die Begründungen stehen bei den Teilaufgaben, die Punkte kannst du ändern.'+(gm.runde?'':' Dann „Zum Ergebnis“.')+'</p>','fertig');
+  }
+  if(!pfCloud||ki.nichtEingerichtet)return meld?kasten('',''):'';
+  if(!u)return kasten('<div class="bl-ki-akt"><button type="button" class="bl-ki-btn" data-ki="anmelden">'+IC_KI+'Anmelden und automatisch auswerten</button></div>');
+  if(!st||st.uid!==u.id)return kasten('<div class="bl-ki-akt"><button type="button" class="bl-ki-btn" disabled>'+IC_KI+'Automatisch auswerten</button><small>wird geprüft …</small></div>');
+  if(st.fehlt||(!st.fehler&&!st.erlaubt))return '';
+  if(st.fehler)return kasten('<div class="bl-ki-akt"><small>Die automatische Auswertung ist gerade nicht erreichbar.</small></div>');
   var rest=st.limit==null?null:Math.max(0,st.limit-st.heute),weiter=!!(d&&Date.now()-(d.t||0)<KI_FRIST);
-  if(rest===0&&!weiter)return h+'<span class="bl-ki-akt"><small>Heute sind alle '+st.limit+' KI-Auswertungen verbraucht – morgen wieder.</small></span>';
-  var fehlt=d?kiFehlend(c,d):[];
-  var text=d?('Fehlende auswerten · '+(fehlt.length===1?'Aufgabe ':'Aufgaben ')+fehlt.join(', ')):'Mit KI auswerten';
-  var info=esc(KI_NAME)+(weiter?' · zählt nicht noch einmal':(rest==null?' · ohne Tageslimit':' · noch '+rest+' von '+st.limit+' heute'))+
-    ' · <a href="datenschutz.html#ki" target="_blank" rel="noopener">deine Antworten gehen an Anthropic</a>';
-  return h+'<span class="bl-ki-akt"><button type="button" class="bl-ki-btn" data-ki="start">'+IC_KI+esc(text)+'</button><small>'+info+'</small></span>';
+  if(rest===0&&!weiter)return kasten('<div class="bl-ki-akt"><small>Heute sind alle '+st.limit+' KI-Auswertungen verbraucht – morgen wieder.</small></div>');
+  var text=(d&&offen.length<ziel.length)?'Fehlende auswerten · '+(offen.length===1?'Aufgabe ':'Aufgaben ')+offen.join(', '):'Automatisch auswerten';
+  var info=(weiter?'zählt nicht noch einmal':(rest==null?'ohne Tageslimit':'noch '+rest+' von '+st.limit+' heute'))+
+    ' · <a href="datenschutz.html#ki" target="_blank" rel="noopener">deine Antworten und Fotos gehen an Anthropic</a>';
+  return kasten('<div class="bl-ki-akt"><button type="button" class="bl-ki-btn" data-ki="start">'+IC_KI+esc(text)+'</button><small>'+info+'</small></div>');
 }
 
 /* Aufruf der Edge Function: {status, j} – 0 heißt keine Verbindung */
@@ -5264,10 +5558,18 @@ function kiRufen(body){
   return pfCloud.sb.functions.invoke(KI_FN,{body:body}).then(function(r){
     if(!r.error)return {status:200,j:r.data||{}};
     var x=r.error.context;
-    if(x&&typeof x.json==='function'&&x.status)
-      return x.json().then(function(j){return {status:x.status,j:j||{}};},function(){return {status:x.status,j:{}};});
-    return netz;
-  },function(){return netz;});
+    if(x&&typeof x.text==='function'&&x.status)
+      return x.text().then(function(t){
+        var j;try{j=JSON.parse(t);}catch(e){j=null;}
+        return {status:x.status,j:(j&&typeof j==='object')?j:{detail:String(t||'').slice(0,240)}};
+      },function(){return {status:x.status,j:{}};});
+    return {status:0,j:{grund:'netz',detail:String(r.error.message||'')}};
+  },function(e){return {status:0,j:{grund:'netz',detail:String((e&&e.message)||'')}};});
+}
+/* Fehler in einer Zeile: Status, Grund und Meldung der Funktion oder des Gateways */
+function kiDetail(r){
+  var j=(r&&r.j)||{},d=String(j.detail||j.message||j.msg||j.error_description||j.error||'').replace(/\s+/g,' ').trim().slice(0,240);
+  return [r&&r.status?'HTTP '+r.status:'',j.grund&&j.grund!=='netz'?j.grund:'',d].filter(function(x){return x;}).join(' · ');
 }
 
 /* Was zu einer Aufgabe abgegeben ist: Antworten (Text, Rechenweg, Beschriftung
@@ -5283,12 +5585,19 @@ function kiEintragungen(t,key){
 }
 function kiSkizze(c,s){
   var d=skGet(s.id);if(!d)return Promise.resolve(null);
-  var q={};for(var k in s)q[k]=s[k];q._auf=aufgabeVon(c,s.nr);
+  return skLeinwand(skMitAufgabe(c,s),d).then(function(cv){try{return cv.toDataURL('image/jpeg',0.85);}catch(e){return null;}});
+}
+/* Teilaufgabe samt ihrer Aufgabe (für die Anlage als Hintergrund) */
+function skMitAufgabe(c,s){var q={};for(var k in s)q[k]=s[k];q._auf=aufgabeVon(c,s.nr);return q;}
+/* Skizze als Bild in voller Breite – auf Karo oder auf der Anlage. Lässt sich
+   die Anlage nicht laden oder nicht auslesen, wird auf Karo gemalt. */
+function skLeinwand(q,d){
   var ref=skAnlageRef(q),bg=(d.bg==='anlage'&&ref)?'anlage':'karo',H=skHoehe(q,bg,d.fmt);
   function malen(bild){
     var cv=document.createElement('canvas');cv.width=SK_B;cv.height=H;
     skMalen(cv,d.els,H,bild);
-    try{return cv.toDataURL('image/jpeg',0.85);}catch(e){return null;}
+    if(bild){try{cv.getContext('2d').getImageData(0,0,1,1);}catch(e){return null;}}
+    return cv;
   }
   var a=bg==='anlage'?anlageBild(ref):null;
   if(!a||!a.u)return Promise.resolve(malen(null));
@@ -5307,12 +5616,17 @@ function kiTeileDaten(c,nr){
     var teil={id:s.id,antwort:[antwortText(s.id)].concat(tabListe(s.tab).map(function(t,i){return kiEintragungen(t,s.id+'#s'+i);})).filter(Boolean).join('\n\n')};
     if(!skHat(s.id))return teil;
     return kiSkizze(c,s).then(function(u){if(u)teil.skizze=u;return teil;});
-  })).then(function(teile){return {teile:teile,anlagen:anlagen};});
+  })).then(function(teile){
+    var fk=foKeyVon(c,nr);
+    return (foHat(fk)?foFassung(fk,1568,880000):Promise.resolve('')).then(function(foto){return {teile:teile,anlagen:anlagen,foto:foto};});
+  });
 }
 
-/* Ergebnis einer Aufgabe: Punkte wie selbst vergebene, dazu die Begründung */
-function kiUebernehmen(id,j){
-  var d=kiDaten(id);if(!d||d.a!==j.auswertung)return;   /* neu gestartet oder neuere Auswertung */
+/* Ergebnis einer Aufgabe: Punkte wie selbst vergebene, dazu die Begründung.
+   Beim gemeinsamen Lösen gehen die Punkte wie selbst vergebene an die Runde. */
+function kiUebernehmen(L,j){
+  if(!kiGleicheRunde(L)){L.stop=true;return;}   /* Runde verlassen oder gewechselt */
+  var id=L.id,d=kiDaten(id);if(!d||d.a!==j.auswertung)return;   /* neu gestartet oder neuere Auswertung */
   d.auf=d.auf||{};d.teile=d.teile||{};
   d.auf[j.aufgabe]={p:j.punkte|0,m:j.max|0};
   if(j.modell)d.m=j.modell;
@@ -5327,22 +5641,35 @@ function kiUebernehmen(id,j){
     if(q)blFortschritt(q,p,t.max|0);else recordResult(t.id,p*2>=(t.max|0));
   });
   kiSpeichern(id,d);
-  if(hier&&!$("scrBlatt").hidden&&abPflicht()){if(state.blattNr===j.aufgabe)renderBlatt();else{blKopfNeu();kiZeigen();}}
+  if(gm.runde&&hier)gmPunkteSpaeter(j.aufgabe);
+  if(hier&&!$("scrBlatt").hidden&&(abPflicht()||gm.runde)){
+    if(state.blattNr===j.aufgabe){var y=window.scrollY;renderBlatt();window.scrollTo(0,y);}else{blKopfNeu();kiZeigen();}
+  }
 }
 
 /* Eine Aufgabe bewerten lassen – bei Überlastung warten und neu versuchen */
 function kiAufgabe(L,aid,nr,versuch){
   var c=kiFall(L.id);if(!c)return Promise.resolve();
   return kiTeileDaten(c,nr).then(function(x){
-    return kiRufen({aktion:'aufgabe',pruefung:L.id,auswertung:aid,aufgabe:nr,teile:x.teile,anlagen:x.anlagen});
+    var body={aktion:'aufgabe',pruefung:L.id,auswertung:aid,aufgabe:nr,teile:x.teile,anlagen:x.anlagen};
+    if(x.foto){
+      if(L.foto)body.foto=x.foto;
+      else{
+        /* Ältere Fassung der Funktion ohne Fotos: als Skizze der ersten Teilaufgabe ohne Skizze */
+        var t=x.teile.filter(function(z){return !z.skizze;})[0];
+        if(t&&x.foto.length<=900000){t.skizze=x.foto;t.antwort=(t.antwort?t.antwort+'\n\n':'')+'[Foto der handschriftlichen Rechnung zur ganzen Aufgabe – siehe Bild]';}
+      }
+    }
+    return kiRufen(body);
   }).then(function(r){
     var g=(r.j&&r.j.grund)||'';
     if(r.status===200&&r.j&&r.j.ok){
-      kiUebernehmen(L.id,r.j);delete L.fehler[nr];
+      kiUebernehmen(L,r.j);delete L.fehler[nr];
       if(!L.stop){L.fertig++;L.meld='';kiZeigen();}
       return;
     }
     L.fehler[nr]=g||(r.status?'http'+r.status:'netz');
+    L.detail=kiDetail(r);
     if(L.stop)return;
     if(g==='ueberlastet'&&versuch<4){
       L.parallel=1;
@@ -5354,12 +5681,13 @@ function kiAufgabe(L,aid,nr,versuch){
         return kiAufgabe(L,aid,nr,versuch+1);
       });
     }
+    /* Was bei jeder weiteren Aufgabe genauso scheitert: sofort abbrechen */
+    if(['abgelaufen','unbekannt','keine_freigabe','nicht_angemeldet','zu_viele','nicht_eingerichtet','schluessel'].indexOf(g)>=0||r.status===401||r.status===404){
+      L.abbruch=g||('http'+r.status);L.stop=true;return;
+    }
     if(versuch<1&&(g==='zeit'||g==='ki'||g==='unvollstaendig'||g==='fehler'||g==='netz'||!r.status||r.status>=500))
       return kiWarte(3000).then(function(){return L.stop?null:kiAufgabe(L,aid,nr,versuch+1);});
-    if(['abgelaufen','unbekannt','keine_freigabe','nicht_angemeldet','zu_viele','nicht_eingerichtet'].indexOf(g)>=0||r.status===401||r.status===404){
-      L.abbruch=g||('http'+r.status);L.stop=true;
-    }
-  },function(){L.fehler[nr]='fehler';});
+  },function(e){L.fehler[nr]='fehler';L.detail=String((e&&e.message)||e||'');});
 }
 /* Zwei Aufgaben gleichzeitig; ist Claude ausgelastet, nur noch eine. */
 function kiAbarbeiten(L,aid,nrs){
@@ -5372,60 +5700,63 @@ function kiAbarbeiten(L,aid,nrs){
   return Promise.all([arbeiter(0),kiWarte(1500).then(function(){return arbeiter(1);})]);
 }
 function kiStarten(){
-  var c=state.fall;if(!c||!abPflicht()||abOffen()||ki.lauf)return;
+  var c=state.fall;if(!c||!kiMoeglich()||ki.lauf)return;
   var u=pfCloud&&pfCloud.user&&pfCloud.user();if(!u)return;
-  var id=c.id,d=kiDaten(id);
-  if(!d&&state.pool.some(function(q){return opGet(q.id)!=null;})&&
+  var id=c.id,d=kiDaten(id),ziel=kiZiel(c);
+  if(!d&&state.pool.some(function(q){return ziel.indexOf(q.nr)>=0&&opGet(q.id)!=null;})&&
      !confirm('Die KI bewertet jede Teilaufgabe – Punkte, die du dir schon gegeben hast, werden dabei ersetzt.'))return;
-  var L=ki.lauf={id:id,stop:false,fertig:0,gesamt:0,parallel:2,meld:'',fehler:{},abbruch:''};
-  ki.aus='';ki.ausId=id;kiZeigen();
+  var L=ki.lauf={id:id,runde:gm.runde?gm.runde.id:'',stop:false,fertig:0,gesamt:0,parallel:2,meld:'',fehler:{},abbruch:'',detail:'',foto:false};
+  ki.aus='';ki.ausDetail='';ki.ausId=id;kiZeigen();
   kiRufen({aktion:'beginnen',pruefung:id}).then(function(r){
     if(L.stop)return;
+    if(!kiGleicheRunde(L)){L.stop=true;L.abbruch='neu';return;}
     var j=r.j||{};
     if(r.status!==200||!j.ok){
-      L.abbruch=j.grund||(r.status?'http'+r.status:'netz');
+      L.abbruch=j.grund||(r.status?'http'+r.status:'netz');L.detail=kiDetail(r);
       if(j.grund==='limit'&&ki.status)ki.status.heute=j.heute|0;
       return;
     }
+    L.foto=!!j.foto;
     if(ki.status&&ki.status.uid===u.id){ki.status.heute=j.heute|0;ki.status.limit=j.limit==null?null:j.limit|0;}
     var alt=kiDaten(id),dn={a:j.auswertung,t:Date.now(),m:j.modell||'',auf:{},teile:{}};
     if(alt&&alt.a===j.auswertung)dn=alt;
     else if(alt){dn.auf=alt.auf||{};dn.teile=alt.teile||{};}   /* neue Auswertung: Bewertetes bleibt */
     kiSpeichern(id,dn);
-    var nrs=(j.aufgaben||[]).filter(function(nr){return !(dn.auf&&dn.auf[nr]);});
-    L.gesamt=(j.aufgaben||[]).length;L.fertig=L.gesamt-nrs.length;kiZeigen();
+    var nrs=(j.aufgaben||[]).filter(function(nr){return ziel.indexOf(nr)>=0&&!(dn.auf&&dn.auf[nr]);});
+    L.gesamt=ziel.length;L.fertig=Math.max(0,L.gesamt-nrs.length);kiZeigen();
     return kiAbarbeiten(L,dn.a,nrs);
-  }).then(function(){kiEnde(L);},function(){if(!L.abbruch)L.abbruch='fehler';kiEnde(L);});
+  }).then(function(){kiEnde(L);},function(e){if(!L.abbruch){L.abbruch='fehler';L.detail=String((e&&e.message)||e||'');}kiEnde(L);});
 }
 function kiAbbrechen(){
   var L=ki.lauf;if(!L)return;
   L.stop=true;L.abbruch='stop';ki.lauf=null;
-  ki.aus='Abgebrochen – schon bewertete Aufgaben bleiben.';ki.ausId=L.id;
+  ki.aus='Abgebrochen – schon bewertete Aufgaben bleiben.';ki.ausDetail='';ki.ausId=L.id;
   kiZeigen();
 }
 function kiEnde(L){
   if(ki.lauf===L)ki.lauf=null;
   if(L.abbruch==='neu')return;
-  if(L.abbruch!=='stop'){ki.aus=kiMeldung(L);ki.ausId=L.id;}
+  if(L.abbruch!=='stop'){ki.aus=kiMeldung(L);ki.ausDetail=ki.aus?L.detail:'';ki.ausId=L.id;}
   kiStatus(true);
   kiZeigen();
 }
 function kiMeldung(L){
   var g=L.abbruch,c=kiFall(L.id),d=kiDaten(L.id);
-  if(g==='limit')return 'Heute sind alle KI-Auswertungen verbraucht – morgen wieder. Bis dahin bewertest du dich selbst.';
+  if(g==='limit')return 'Heute sind alle KI-Auswertungen verbraucht – morgen wieder. Bis dahin: ZIP für Claude oder selbst bewerten.';
   if(g==='keine_freigabe')return 'Ohne Freigabe für die Prüfungen gibt es keine KI-Auswertung.';
-  if(g==='nicht_angemeldet'||g==='http401')return 'Bitte melde dich neu an.';
+  if(g==='nicht_angemeldet'||g==='http401')return 'Die Anmeldung wurde nicht angenommen – bitte melde dich ab und neu an.';
   if(g==='nicht_eingerichtet'||g==='http404'){ki.nichtEingerichtet=true;return 'Die KI-Auswertung ist noch nicht eingerichtet.';}
+  if(g==='schluessel')return 'Claude nimmt den API-Key nicht an. Der Schlüssel ANTHROPIC_API_KEY in Supabase (Edge Functions › Secrets) muss erneuert werden – bis dahin: ZIP für Claude oder selbst bewerten.';
   if(g==='abgelaufen')return 'Die Auswertung ist abgelaufen – starte sie noch einmal.';
   if(g==='zu_viele')return 'Zu viele Versuche für diese Auswertung.';
   if(g==='unbekannt')return 'Diese Prüfung kennt die KI-Auswertung nicht.';
-  if(g==='netz'&&!L.gesamt)return 'Keine Verbindung – versuche es gleich noch einmal.';
+  if(g==='netz'&&!L.gesamt)return 'Die KI-Auswertung war nicht erreichbar – versuche es gleich noch einmal.';
   if(g&&!L.gesamt)return 'Die KI-Auswertung ließ sich nicht starten – versuche es später noch einmal.';
-  var fehlt=c&&d?kiFehlend(c,d):[];
+  var fehlt=c&&d?kiOffen(c,d):[];
   if(!fehlt.length)return '';
   var gr=Object.keys(L.fehler).map(function(k){return L.fehler[k];});
   var warum=gr.indexOf('ueberlastet')>=0?'Claude war ausgelastet':(gr.indexOf('abgelehnt')>=0?'Claude hat die Bewertung abgelehnt':
-    (gr.indexOf('netz')>=0?'die Verbindung brach ab':'es gab einen Fehler'));
+    (gr.indexOf('zeit')>=0?'Claude hat zu lange gebraucht':(gr.indexOf('netz')>=0?'die Verbindung brach ab':'es gab einen Fehler')));
   return (fehlt.length===1?'Aufgabe ':'Aufgaben ')+fehlt.join(', ')+' '+(fehlt.length===1?'fehlt':'fehlen')+' noch – '+warum+'.';
 }
 
@@ -5578,7 +5909,8 @@ window.KVM_pruefErgAlle=function(){
 window.KVM_pruefMitStand=function(){
   var ids={};
   function nimm(k){var m=/^(P-[A-Z]+-\d+)-s\d+/.exec(k);if(m)ids[m[1]]=true;}
-  var oa=oaAll(),rw=rwAll(),sk=skAll(),op=opAll(),ot=otAll();
+  var oa=oaAll(),rw=rwAll(),sk=skAll(),op=opAll(),ot=otAll(),fo=foAll();
+  Object.keys(fo).forEach(nimm);
   Object.keys(oa).forEach(function(k){if(String(oa[k]||'').trim())nimm(k);});
   Object.keys(rw).forEach(function(k){if((rw[k]||[]).some(function(r){return String((r&&r.f)||'').trim();}))nimm(k);});
   Object.keys(sk).forEach(function(k){if(sk[k]&&sk[k].els&&sk[k].els.length)nimm(k);});
@@ -5594,7 +5926,7 @@ function peNeuStarten(id){
   var c=CASES.filter(function(x){return x.id===id;})[0];if(!c)return false;
   var e=echtGet();if(e&&e.id!==id)e=null;
   if(!confirm('Prüfung neu starten?\n\n'+(e&&!e.ende?'Der laufende Durchgang unter Prüfungsbedingungen wird abgebrochen. ':'')+
-    'Deine Antworten, Rechenwege, Skizzen und Punkte dieser Prüfung werden gelöscht – ausgewertete Durchgänge bleiben in deiner Übersicht.'))return false;
+    'Deine Antworten, Rechenwege, Skizzen, Fotos und Punkte dieser Prüfung werden gelöscht – ausgewertete Durchgänge bleiben in deiner Übersicht.'))return false;
   var d=peDurchgang(c,e&&e.ende?e:null);
   if(d.teile&&d.bew>=d.teile)peMerken(d);
   if(e)echtSet(null);
@@ -5645,68 +5977,250 @@ function blFortschritt(q,pt,mx){
   recordResult(q.id,korrekt);
 }
 
-/* Die ganze Aufgabe als Prüfauftrag – mit allen Teilen, damit die KI den
-   Zusammenhang sieht, auf den die Teilaufgaben aufbauen. */
-function blExport(nr){
-  if(gm.runde)return gmExport([nr]);
-  var fall=state.fall,auf=aufgabeVon(fall,nr)||{},teile=blTeile(nr),L=[];
-  var amtlich=teile.some(function(q){return q.amtlich;});
-  L.push('PRÜFAUFTRAG – Aufgabe '+nr+' einer Original-IHK-Prüfung');
-  L.push('');
-  L.push('Unten stehen eine vollständige Prüfungsaufgabe mit allen Teilaufgaben, '+
-         'MEINE eigenen Antworten und '+(amtlich?'die AMTLICHEN Lösungshinweise der IHK.':
-         'Musterlösungen, die NICHT von der IHK stammen.'));
-  L.push('');
-  L.push('Bewerte je Teilaufgabe MEINE Antwort:');
-  L.push('1. Wie viele der jeweils möglichen Punkte würdest du vergeben? Begründe kurz.');
-  L.push('2. Was fehlt zur vollen Punktzahl? Nenne die fehlenden Elemente konkret.');
-  L.push('3. Welche fachlichen Fehler enthält meine Antwort (falsche Aussage, falsche '+
-         'Rechnung, veraltete Rechtsgrundlage)?');
-  L.push('Bei Rechenaufgaben: rechne eigenständig nach und zeige deinen Rechenweg.');
-  L.push('');
-  L.push('==============================');
-  L.push(fall.title||'');
-  L.push('==============================');
-  L.push('');
-  if(fall.context){L.push('AUSGANGSSITUATION');L.push(fall.context);L.push('');}
-  L.push('AUFGABE '+nr+(auf.pts?(' · '+auf.pts+' Punkte'):''));
-  if(auf.sit){L.push('');L.push(auf.sit);}
-  if(auf.tab){L.push('');L.push(tabText(auf.tab));}
-  tabListe(auf.tab).forEach(function(t,i){
-    var w=otGet(blTabKey(auf.nr,i)),ks=Object.keys(w);
-    if(!ks.length)return;
-    L.push('');L.push('Eigene Eintragungen in „'+(t.titel||'Anlage')+'“:');
-    ks.sort().forEach(function(rc){
-      var p=rc.split('-'),z=((t.zeilen||[])[+p[0]]||[])[0]||('Zeile '+(+p[0]+1));
-      L.push('– '+z+' / '+((t.kopf||[])[+p[1]]||('Spalte '+(+p[1]+1)))+': '+w[rc]);
+/* ===== Prüfauftrag als ZIP für Claude =====
+   Statt Text in der Zwischenablage eine ZIP-Datei zum Hochladen bei Claude:
+   pruefauftrag.md mit Bewertungsauftrag, Aufgaben, Antworten und
+   Lösungshinweisen, dazu bilder/ – Fotos der Rechnungen, Skizzen (PNG) und die
+   Abbildungen der Prüfung, im Text bei ihrer Aufgabe genannt. Die Datei
+   entsteht im Browser, ohne Kompression (Fotos sind schon komprimiert). Beim
+   gemeinsamen Lösen stehen die Antworten aller darin, die mit der Aufgabe
+   fertig sind. */
+var ZIP_CRC=null,PA_EXT={'image/jpeg':'jpg','image/png':'png','image/webp':'webp','image/gif':'gif','image/svg+xml':'svg'};
+var IC_ZIP='<svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12M7 10l5 5 5-5"/><path d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></svg>';
+function zipCrc(d){
+  if(!ZIP_CRC){ZIP_CRC=new Uint32Array(256);
+    for(var n=0;n<256;n++){var c=n;for(var k=0;k<8;k++)c=c&1?0xEDB88320^(c>>>1):c>>>1;ZIP_CRC[n]=c>>>0;}}
+  var crc=0xFFFFFFFF;
+  for(var i=0;i<d.length;i++)crc=ZIP_CRC[(crc^d[i])&255]^(crc>>>8);
+  return (crc^0xFFFFFFFF)>>>0;
+}
+/* dateien: [{name, daten: Uint8Array}] → ZIP (gespeichert, Namen in UTF-8) */
+function zipBauen(dateien){
+  var enc=new TextEncoder(),teile=[],zentral=[],pos=0,groesse=0,j=new Date();
+  var zeit=(j.getHours()<<11)|(j.getMinutes()<<5)|(j.getSeconds()>>1);
+  var datum=((Math.max(1980,j.getFullYear())-1980)<<9)|((j.getMonth()+1)<<5)|j.getDate();
+  dateien.forEach(function(f){
+    var name=enc.encode(f.name),d=f.daten,crc=zipCrc(d);
+    var h=new DataView(new ArrayBuffer(30));
+    h.setUint32(0,0x04034b50,true);h.setUint16(4,20,true);h.setUint16(6,0x0800,true);h.setUint16(8,0,true);
+    h.setUint16(10,zeit,true);h.setUint16(12,datum,true);h.setUint32(14,crc,true);
+    h.setUint32(18,d.length,true);h.setUint32(22,d.length,true);h.setUint16(26,name.length,true);h.setUint16(28,0,true);
+    teile.push(h.buffer,name,d);
+    var z=new DataView(new ArrayBuffer(46));
+    z.setUint32(0,0x02014b50,true);z.setUint16(4,20,true);z.setUint16(6,20,true);z.setUint16(8,0x0800,true);z.setUint16(10,0,true);
+    z.setUint16(12,zeit,true);z.setUint16(14,datum,true);z.setUint32(16,crc,true);
+    z.setUint32(20,d.length,true);z.setUint32(24,d.length,true);z.setUint16(28,name.length,true);
+    z.setUint16(30,0,true);z.setUint16(32,0,true);z.setUint16(34,0,true);z.setUint16(36,0,true);
+    z.setUint32(38,0,true);z.setUint32(42,pos,true);
+    zentral.push(z.buffer,name);
+    groesse+=46+name.length;
+    pos+=30+name.length+d.length;
+  });
+  var e=new DataView(new ArrayBuffer(22));
+  e.setUint32(0,0x06054b50,true);e.setUint16(4,0,true);e.setUint16(6,0,true);
+  e.setUint16(8,dateien.length,true);e.setUint16(10,dateien.length,true);
+  e.setUint32(12,groesse,true);e.setUint32(16,pos,true);e.setUint16(20,0,true);
+  return new Blob(teile.concat(zentral,[e.buffer]),{type:'application/zip'});
+}
+/* Dateiname ohne Umlaute und Sonderzeichen */
+function zipName(s){
+  return String(s||'').replace(/ä/g,'ae').replace(/ö/g,'oe').replace(/ü/g,'ue').replace(/Ä/g,'Ae').replace(/Ö/g,'Oe')
+    .replace(/Ü/g,'Ue').replace(/ß/g,'ss').replace(/[^A-Za-z0-9-]+/g,'_').replace(/^_+|_+$/g,'').slice(0,40);
+}
+function zipLaden(blob,name){
+  var u=URL.createObjectURL(blob),a=document.createElement('a');
+  a.href=u;a.download=name;a.hidden=true;document.body.appendChild(a);a.click();
+  setTimeout(function(){a.remove();URL.revokeObjectURL(u);},60000);
+}
+function paRefs(r){return (Array.isArray(r)?r:(r?[r]:[])).filter(function(x){return typeof x==='string'&&x;});}
+function paListe(l){return l.length<2?(l[0]||''):l.slice(0,-1).join(', ')+' und '+l[l.length-1];}
+function paBlobDaten(b){
+  if(!b||!b.blob)return Promise.resolve(null);
+  return b.blob.arrayBuffer().then(function(x){return {daten:new Uint8Array(x),typ:b.blob.type};});
+}
+function paAnlageDaten(ref){
+  var a=anlageBild(ref);if(!a||!a.u)return Promise.resolve(null);
+  return fetch(a.u).then(function(r){if(!r.ok)throw new Error('http');return r.blob();})
+    .then(function(b){return paBlobDaten({blob:b});}).catch(function(){return null;});
+}
+function paPng(cv){
+  return new Promise(function(ok){
+    if(!cv){ok(null);return;}
+    try{cv.toBlob(function(b){ok(b?{blob:b}:null);},'image/png');}catch(e){ok(null);}
+  }).then(paBlobDaten);
+}
+/* Höchstens n Aufträge gleichzeitig */
+function paNacheinander(jobs,n){
+  var i=0;
+  function weiter(){if(i>=jobs.length)return Promise.resolve();var j=jobs[i++];return j().then(weiter,weiter);}
+  var w=[];for(var k=0;k<Math.min(n,jobs.length);k++)w.push(weiter());
+  return Promise.all(w);
+}
+/* Personen beim gemeinsamen Lösen: ich zuerst, dann wer mit einer der
+   Aufgaben fertig ist. Allein: nur ich. */
+function paLeute(nrs){
+  if(!gm.runde)return [{tid:'',name:'',ich:true}];
+  var ich=gmPerson(gm.ich),L=[{tid:gm.ich,name:(ich&&ich.name)||'ich',ich:true}];
+  gmAndere().forEach(function(t){if(nrs.some(function(nr){return gmFertig(nr,t.tid);}))L.push({tid:t.tid,name:t.name,ich:false});});
+  return L;
+}
+function paFremd(nr,tid){var e=gmEintrag(nr,tid);return (e&&e.antworten)||{};}
+function paSkizze(q,p){
+  var d=p.ich?skGet(q.id):((paFremd(q.nr,p.tid).teile||{})[q.id]||{}).sk;
+  return (d&&Array.isArray(d.els)&&d.els.length)?d:null;
+}
+/* Eintragungen in eine Anlage: der Aufgabe (q leer) oder der Teilaufgabe */
+function paTabWerte(p,nr,q,i){
+  if(p.ich)return otGet(q?q.id+'#s'+i:blTabKey(nr,i));
+  var a=paFremd(nr,p.tid);
+  return q?(((((a.teile||{})[q.id]||{}).tab)||{})[i]):((a.anlagen||{})[i]);
+}
+function paAntwort(q,p){return p.ich?antwortText(q.id):gmAntwortText(q,p.tid);}
+
+/* Der ganze Prüfauftrag: {blob, name}. nrs: Aufgaben in dieser Reihenfolge. */
+function paZip(nrs){
+  var c=state.fall,leute=paLeute(nrs),gemeinsam=!!gm.runde,dateien=[],jobs=[],bild={},n=0;
+  function job(schl,stamm,laden){
+    if(schl in bild)return;
+    bild[schl]=null;
+    var nr_=n++;
+    jobs.push(function(){
+      return laden().then(function(x){
+        if(!x||!x.daten||!x.daten.length)return;
+        var datei='bilder/'+stamm+'.'+(PA_EXT[x.typ]||'jpg');
+        dateien.push({name:datei,daten:x.daten,n:nr_});bild[schl]=datei;
+      }).catch(function(){});
+    });
+  }
+  function wer(p){return gemeinsam?'_'+(zipName(p.name)||p.tid):'';}
+  nrs.forEach(function(nr){
+    var auf=aufgabeVon(c,nr)||{};
+    paRefs(auf.bild).forEach(function(r,i){job('a:'+r,'A'+nr+'_anlage'+(i?'_'+(i+1):''),function(){return paAnlageDaten(r);});});
+    leute.forEach(function(p){
+      if(p.ich){var k=foKey(nr);if(foHat(k))job('f:'+nr+':'+p.tid,'A'+nr+'_foto'+wer(p),function(){return foLesen(k).then(paBlobDaten);});}
+      else if(gmFotoDa(nr,p.tid))job('f:'+nr+':'+p.tid,'A'+nr+'_foto'+wer(p),function(){
+        return gmFotoLaden(nr,p.tid).then(function(u){var b=u&&foDataBlob(u);return paBlobDaten(b?{blob:b}:null);});});
+    });
+    blTeile(nr).forEach(function(q){
+      var t=zipName(q.teil||'');
+      paRefs(q.bild).forEach(function(r,i){job('a:'+r,'A'+nr+t+'_anlage'+(i?'_'+(i+1):''),function(){return paAnlageDaten(r);});});
+      paRefs(q.bildL).forEach(function(r,i){job('a:'+r,'A'+nr+t+'_loesungsskizze'+(i?'_'+(i+1):''),function(){return paAnlageDaten(r);});});
+      leute.forEach(function(p){
+        var d=paSkizze(q,p);
+        if(d)job('s:'+q.id+':'+p.tid,'A'+nr+t+'_skizze'+wer(p),function(){return skLeinwand(skMitAufgabe(c,q),d).then(paPng);});
+      });
     });
   });
-  if(auf.bild){var ab=anlageBild(auf.bild);
-    if(ab)L.push('','[Zur Aufgabe gehört eine Abbildung: '+(ab.t||'Anlage zur Aufgabe')+']');}
-  L.push('');
-  teile.forEach(function(q){
-    L.push('------------------------------');
-    L.push(q.teil+') · '+q.pts+' '+(q.pts===1?'Punkt':'Punkte'));
-    L.push('');
-    L.push(q.q||'');
-    if(q.tab){L.push('');L.push(tabText(q.tab));}
-    if(q.bild){var b=anlageBild(q.bild);
-      if(b)L.push('','[Zur Teilaufgabe gehört eine Abbildung: '+(b.t||'Anlage')+']');}
-    L.push('');
-    L.push('MEINE ANTWORT:');
-    L.push(antwortText(q.id)||'— leer abgegeben —');
-    L.push('');
-    L.push(q.amtlich?'AMTLICHER LÖSUNGSHINWEIS (IHK):':'MUSTERLÖSUNG (zu prüfen):');
-    L.push(q.a||q.e||'');
-    if(q.vo)L.push('VO-Bezug: '+q.vo);
-    if(q.bewertung&&q.bewertung.length)
-      L.push('Punkteverteilung: '+q.bewertung.join(' + ')+' Punkte');
-    L.push('');
+  return paNacheinander(jobs,4).then(function(){
+    dateien.sort(function(a,b){return a.n-b.n;});
+    dateien.unshift({name:'pruefauftrag.md',daten:new TextEncoder().encode(paText(c,nrs,leute,bild))});
+    var name='KVM-Pruefauftrag_'+zipName(c.id)+(gemeinsam&&nrs.length===1?'_Aufgabe-'+nrs[0]:'')+'.zip';
+    return {blob:zipBauen(dateien),name:name,bilder:dateien.length-1};
   });
-  L.push('==============================');
-  L.push('Nenne abschließend die Gesamtpunktzahl, die du für Aufgabe '+nr+' vergeben würdest.');
+}
+
+function paText(c,nrs,leute,bild){
+  var L=[],gemeinsam=!!gm.runde,teileAlle=state.pool.filter(function(q){return nrs.indexOf(q.nr)>=0;});
+  var amtlich=teileAlle.some(function(q){return q.amtlich;});
+  function art(p){return Object.keys(bild).some(function(k){return k.indexOf(p)===0&&bild[k];});}
+  var mitFoto=art('f:'),mitSkizze=art('s:'),mitAbb=art('a:');
+  function zitat(t){return String(t).split('\n').map(function(z){return '> '+z;}).join('\n');}
+  function datei(schl){return bild[schl]?'`'+bild[schl]+'`':'';}
+  function name(p,ich){return p.ich?(gemeinsam?p.name+' (ich)':ich):p.name;}
+  var umfang=nrs.length===1?'Aufgabe '+nrs[0]:(nrs.length===blNummern().length?'die ganze Prüfung':'die Aufgaben '+paListe(nrs.map(String)));
+  var was=[];
+  if(mitFoto)was.push(gemeinsam?'Fotos unserer handschriftlichen Rechnungen':'Fotos meiner handschriftlichen Rechnungen');
+  if(mitSkizze)was.push(gemeinsam?'unsere Skizzen':'meine Skizzen');
+  if(mitAbb)was.push('die Abbildungen der Prüfung');
+  L.push('# Prüfauftrag: '+(c.title||c.id));
+  L.push('');
+  L.push('**An Claude:** Bitte bewerte '+(gemeinsam?'unsere':'meine')+' Antworten wie eine erfahrene, faire Prüferin oder ein erfahrener, fairer Prüfer der IHK. '+
+    'Diese Datei enthält '+umfang+' mit allen Teilaufgaben, '+(gemeinsam?'den Antworten aller':'meinen Antworten')+' und '+
+    (amtlich?'den amtlichen Lösungshinweisen der IHK.':'Musterlösungen, die nicht von der IHK stammen.')+
+    (was.length?' Im Ordner `bilder/` liegen '+paListe(was)+'. Bei jeder Aufgabe steht, welches Bild dazugehört – sieh es dir an, bevor du bewertest.':''));
+  if(gemeinsam)L.push('','Wir haben '+(nrs.length===1?'die Aufgabe':'die Prüfung')+' zu '+leute.length+' gelöst, jede Person für sich: '+
+    paListe(leute.map(function(p){return name(p,'ich');}))+'.');
+  L.push('','## So bewertest du');
+  L.push('- Jede Teilaufgabe einzeln nach dem Lösungshinweis: ganze Punkte von 0 bis zur Höchstpunktzahl.');
+  L.push('- Lösungshinweise sind Beispiele. Fachlich richtige Antworten, die anders formuliert sind oder andere passende Beispiele nennen, zählen gleichwertig. Ist eine Punkteverteilung angegeben, halte dich daran.');
+  L.push('- Verlangt die Frage eine bestimmte Anzahl („Nennen Sie drei …“), zählen nur so viele Nennungen, in der Reihenfolge der Antwort.');
+  L.push('- Rechnungen'+(mitFoto?' – auch die auf den Fotos –':'')+' selbst nachrechnen. Folgefehler aus einer früheren Teilaufgabe nicht doppelt abziehen, kleine Rundungsunterschiede kosten keine Punkte.');
+  L.push('- Skizzen und ausgefüllte Anlagen nach dem Inhalt bewerten (Aufbau, Beschriftung, fachliche Richtigkeit), nicht nach der Schönheit.');
+  if(mitFoto)L.push('- Ein Foto gilt für die ganze Aufgabe: Was darauf zu einer Teilaufgabe steht, gehört zu deren Antwort – auch wenn das Textfeld leer ist.');
+  if(gemeinsam)L.push('- Bewerte die Antwort jeder Person getrennt. Vergleiche danach: Wer hat was besser gelöst, und was können wir voneinander übernehmen?');
+  L.push('','## So antwortest du');
+  L.push('Je Aufgabe eine Tabelle'+(gemeinsam?' je Person':'')+' mit Teilaufgabe, Punkten, Höchstpunktzahl und Begründung: was richtig ist, was zur vollen Punktzahl fehlt und welche fachlichen Fehler drin sind.');
+  L.push('Zum Schluss '+(gemeinsam?'je Person ':'')+'die Gesamtpunktzahl, die Note nach dem IHK-Schlüssel (ab 92 % sehr gut, ab 81 % gut, ab 67 % befriedigend, ab 50 % ausreichend, ab 30 % mangelhaft, darunter ungenügend) '+
+    'und eine Zeile zum Übertragen in die App, etwa: `Aufgabe 1: a) 4, b) 2 · Aufgabe 2: a) 6`.');
+  L.push('','---');
+  if(c.context&&blHatAusgangslage(c))L.push('','## Ausgangssituation','',c.context);
+  nrs.forEach(function(nr){
+    var auf=aufgabeVon(c,nr)||{},teile=blTeile(nr);
+    var pts=auf.pts||teile.reduce(function(s,q){return s+taskMaxPoints(q);},0);
+    L.push('','## Aufgabe '+nr+(pts?' · '+pts+' Punkte':''));
+    if(auf.sit)L.push('','**Ausgangslage:**',auf.sit);
+    tabListe(auf.tab).forEach(function(t,i){
+      L.push('','**Anlage zur Aufgabe:**','```',tabText(t),'```');
+      leute.forEach(function(p){
+        var E=gmTabEintraege(t,paTabWerte(p,nr,null,i));
+        if(E.length)L.push('','**'+(p.ich&&!gemeinsam?'Meine Eintragungen':'Eintragungen von '+name(p,''))+' in „'+(t.titel||'Anlage')+'“:**',E.join('\n'));
+      });
+    });
+    paRefs(auf.bild).forEach(function(r){
+      var a=anlageBild(r);
+      L.push('','**Abbildung zur Aufgabe:** '+(datei('a:'+r)||'(ließ sich nicht laden)')+(a&&a.t?' – '+a.t:''));
+    });
+    leute.forEach(function(p){
+      var f=datei('f:'+nr+':'+p.tid);
+      if(f)L.push('','**'+(p.ich&&!gemeinsam?'Foto meiner handschriftlichen Rechnung':'Foto der Rechnung von '+name(p,''))+':** '+f+' – gilt für die ganze Aufgabe '+nr+'.');
+    });
+    teile.forEach(function(q){
+      L.push('','### Teilaufgabe '+nr+(q.teil?' '+q.teil+')':'')+(q.pts?' · '+q.pts+' '+(q.pts===1?'Punkt':'Punkte'):''));
+      L.push('','**Frage:**',q.q||'');
+      tabListe(q.tab).forEach(function(t){L.push('','**Anlage:**','```',tabText(t),'```');});
+      paRefs(q.bild).forEach(function(r){
+        var a=anlageBild(r);
+        L.push('','**Abbildung:** '+(datei('a:'+r)||'(ließ sich nicht laden)')+(a&&a.t?' – '+a.t:''));
+      });
+      leute.forEach(function(p){
+        L.push('','**'+(p.ich&&!gemeinsam?'Meine Antwort':'Antwort von '+name(p,''))+':**');
+        if(!p.ich&&!gmFertig(nr,p.tid)){L.push('— noch nicht abgegeben —');return;}
+        var t=paAntwort(q,p);
+        L.push(t?zitat(t):(datei('f:'+nr+':'+p.tid)?'— kein Text, siehe Foto der Rechnung —':'— leer abgegeben —'));
+        tabListe(q.tab).forEach(function(tb,i){
+          var E=gmTabEintraege(tb,paTabWerte(p,nr,q,i));
+          if(E.length)L.push('','Eintragungen in „'+(tb.titel||'Anlage')+'“:',E.join('\n'));
+        });
+        var s=datei('s:'+q.id+':'+p.tid);if(s)L.push('','Skizze: '+s);
+      });
+      L.push('','**'+(q.amtlich?'Amtlicher Lösungshinweis der IHK':'Musterlösung (nicht von der IHK)')+':**',q.a||q.e||'');
+      tabListe(q.tabL).forEach(function(t){L.push('','```',tabText(t),'```');});
+      paRefs(q.bildL).forEach(function(r){var f=datei('a:'+r);if(f)L.push('','Lösungsskizze: '+f);});
+      if(q.vo)L.push('','VO-Bezug: '+q.vo);
+      if(q.bewertung&&q.bewertung.length)L.push('','Punkteverteilung: '+q.bewertung.join(' + ')+' Punkte');
+    });
+  });
+  L.push('','---','','Erstellt mit dem Meister-Trainer am '+new Date().toLocaleDateString('de-DE')+'.');
   return L.join('\n');
 }
+/* Welche Aufgaben in den Prüfauftrag kommen: deren Lösungen offen sind – nach
+   der Abgabe alle, beim gemeinsamen Lösen die verglichenen. */
+function paNummern(){return blNummern().filter(function(nr){var t=blTeile(nr);return t.length&&t.every(blAufgedeckt);});}
+/* Knopf: ZIP bauen und speichern */
+function paKnopf(btn,nrs){
+  if(btn.disabled||!nrs.length)return;
+  var alt=btn.innerHTML;
+  btn.disabled=true;btn.textContent='ZIP wird erstellt …';
+  paZip(nrs).then(function(z){
+    zipLaden(z.blob,z.name);
+    btn.textContent='✓ ZIP gespeichert';
+    setTimeout(function(){btn.innerHTML=alt;btn.disabled=false;},2500);
+  },function(){
+    btn.textContent='Das ging nicht – noch einmal versuchen';btn.disabled=false;
+    setTimeout(function(){btn.innerHTML=alt;},3500);
+  });
+}
+window.KVM_paZip=function(nrs){return paZip(nrs||paNummern());};
 
 /* ===== Lernzeit und Prüfungsuhr =====
    Lernzeit läuft, solange ein Lernbildschirm offen ist – Fragen samt Ergebnis
@@ -6022,7 +6536,7 @@ function finishRound(timeUp){
      zählt er noch nicht als bestanden oder nicht bestanden. */
   if(pruef&&!peErgebnis(state.fall,echt&&echt.ende?echt:null).gewertet){
     badge.className="badge offen";badge.textContent="Noch nicht vollständig bewertet";}
-  if(pruef){var kd=kiDaten(state.fall.id);if(kd&&!kiFehlend(state.fall,kd).length)$("resLine").innerHTML+=" · mit KI ausgewertet";}
+  if(pruef){var kd=kiDaten(state.fall.id);if(kd&&!kiOffen(state.fall,kd).length)$("resLine").innerHTML+=" · mit KI ausgewertet";}
   if(echt&&echt.ende&&pointBased){
     $("resLine").innerHTML+=" · Bearbeitungszeit "+dauerText(echt.ende-echt.start)+" von "+dauerText(echt.min*60000)+(echt.zeitUm?" (Zeit abgelaufen)":"");
     echtSet(null);
@@ -6223,7 +6737,7 @@ $("btnCases").addEventListener("click",function(){startRound('cases');});
    die außerhalb dieser Kapselung liegt). */
 window.KVM_startCase=function(id,startIdx){startRound('cases',id,startIdx);};
 /* Welche Teilaufgaben hat der Nutzer schon selbst beantwortet? */
-window.KVM_hasAnswer=function(id){return !!(oaGet(id)||rwHat(id));};
+window.KVM_hasAnswer=function(id){return !!(oaGet(id)||rwHat(id)||foHat(id+'#foto'));};
 /* Selbst vergebene Punkte einer Teilaufgabe (null = noch nicht bewertet). */
 window.KVM_punkte=function(id){return opGet(id);};
 /* Brücke zum Formelbuch (eigener Skriptblock): einen Rechenweg an die Antwort
@@ -7106,10 +7620,11 @@ var GM_SOLO=null;
 var GM_IC='<svg class="ic-svg" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="8" r="3.2"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6"/><circle cx="17" cy="9" r="2.6"/><path d="M15.5 14.2c3 .2 5.5 2.6 5.5 5.8"/></svg>';
 /* Lokale Speicher auf die Runde umstellen (null = wieder die eigenen). */
 function gmSpeicher(id){
-  if(!GM_SOLO)GM_SOLO={oa:OA_KEY,ot:OT_KEY,op:OP_KEY,rw:RW_KEY,sk:SK_KEY};
+  if(!GM_SOLO)GM_SOLO={oa:OA_KEY,ot:OT_KEY,op:OP_KEY,rw:RW_KEY,sk:SK_KEY,fo:FO_KEY,ki:KI_KEY};
   var p=id?'kvm_gm_'+id+'_':'';
   OA_KEY=p?p+'oa':GM_SOLO.oa;OT_KEY=p?p+'ot':GM_SOLO.ot;OP_KEY=p?p+'op':GM_SOLO.op;
   RW_KEY=p?p+'rw':GM_SOLO.rw;SK_KEY=p?p+'sk':GM_SOLO.sk;
+  FO_KEY=p?p+'fo':GM_SOLO.fo;KI_KEY=p?p+'ki':GM_SOLO.ki;
 }
 function gmRpc(name,p){
   if(!gmCloud||!gmCloud.user())return Promise.reject({code:'abgemeldet'});
@@ -7177,7 +7692,7 @@ function gmOeffnen(r){
   gmSpeicher(r.id);
   var g={};try{g=JSON.parse(localStorage.getItem(gmFreiKey())||'{}')||{};}catch(e){}
   gm.frei=g.frei|0;gm.weiter=(g.weiter&&typeof g.weiter==='object')?g.weiter:{};
-  gm.masken={};gm.online={};gm.sig='';gm.klar={};gm.offenVorher={};
+  gm.masken={};gm.online={};gm.sig='';gm.klar={};gm.offenVorher={};gm.fotos={};gm.fotoVersucht={};gm.fotoFehlt=false;
   try{gm.offen=localStorage.getItem(gmOffenKey())==='1';}catch(e){gm.offen=false;}
   return gmStandLaden().then(function(){
     if(!gm.runde||gm.runde.id!==r.id)return false;
@@ -7197,6 +7712,7 @@ function gmOeffnen(r){
 }
 function gmSchliessen(){
   if(!gm.runde)return;
+  if(ki.lauf&&ki.lauf.runde){ki.lauf.stop=true;ki.lauf.abbruch='neu';ki.lauf=null;}
   /* Noch nicht gesendete Punkte nicht verlieren */
   Object.keys(gm.punkteT).forEach(function(k){clearTimeout(gm.punkteT[k]);gmPunkteSenden(+k);});
   Object.keys(gm.maskT).forEach(function(k){clearTimeout(gm.maskT[k]);});
@@ -7230,6 +7746,7 @@ function gmEigeneWiederherstellen(c){
     });
     var erste=(c.steps||[]).filter(function(x){return x.nr===s.nr;})[0];
     if(a.anlagen&&erste)Object.keys(a.anlagen).forEach(function(i){if(!otAnzahl(erste.id+'#t'+i))gmOtSetzen(erste.id+'#t'+i,a.anlagen[i]);});
+    if(s.foto===true)gmFotoZurueck(c,s.nr);
     if(s.punkte)Object.keys(s.punkte).forEach(function(id){if(opGet(id)==null&&typeof s.punkte[id]==='number')opSet(id,s.punkte[id]);});
   });
 }
@@ -7256,11 +7773,12 @@ function gmStandSpaeter(){
 function gmSig(nr){
   var e=gm.idx[nr]||{};
   return JSON.stringify([gmTn().map(function(t){return t.tid+'|'+t.name+'|'+t.farbe;}),
-    Object.keys(e).sort().map(function(k){return [k,!!e[k].antworten,e[k].punkte];}),gm.frei]);
+    Object.keys(e).sort().map(function(k){return [k,!!e[k].antworten,e[k].punkte,e[k].foto];}),gm.frei]);
 }
 function gmNachStand(){
   if(!gm.runde||$("scrBlatt").hidden||!state.fall)return;
   if(!gm.stand){gmSchliessen();show("scrHome");seiteZeigen('pruefungen');gmMeineLaden();alert('Diese Runde gibt es nicht mehr.');return;}
+  gmFotosNachholen();
   gmFreiBis();
   var nr=state.blattNr,sig=gmSig(nr);
   if(sig===gm.sig){gmBandNeu();return;}
@@ -7299,7 +7817,8 @@ function gmMaske(q){
   var sk=skGet(q.id),t=0,teile=blTeile(q.nr);
   tabListe(q.tab).forEach(function(x,i){t+=otAnzahl(q.id+'#s'+i);});
   if(teile.length&&teile[0].id===q.id)tabListe((aufgabeVon(state.fall,q.nr)||{}).tab).forEach(function(x,i){t+=otAnzahl(blTabKey(q.nr,i));});
-  return {id:q.id,nr:q.nr,m:gmStern(oaGet(q.id),1200),r:r,s:sk?sk.els.length:0,t:t};
+  var f=teile.length&&teile[0].id===q.id&&foHat(q.id+'#foto')?1:0;
+  return {id:q.id,nr:q.nr,m:gmStern(oaGet(q.id),1200),r:r,s:sk?sk.els.length:0,t:t,f:f};
 }
 function gmMaskeSpaeter(id){
   if(!gm.runde||!gm.kanal||gm.maskT[id])return;
@@ -7388,7 +7907,7 @@ function gmMaskeEmpfangen(p){
   var m=gm.masken[p.tid]=gm.masken[p.tid]||{};
   /* Auch beim Empfang nur Sterne – Inhalt kommt hier nie an. */
   m[p.id]={m:gmStern(p.m,1300),r:(Array.isArray(p.r)?p.r:[]).slice(0,12).map(function(z){return gmStern(z,70);}),
-           s:Math.max(0,p.s|0),t:Math.max(0,p.t|0),z:Date.now()};
+           s:Math.max(0,p.s|0),t:Math.max(0,p.t|0),f:p.f?1:0,z:Date.now()};
   gmMitNeu(p.id,p.tid);gmBandNeu();
 }
 
@@ -7487,8 +8006,8 @@ function gmHinweisHTML(){
   if(!gmIchFertig(nr))return ic+'<span><b>Jede Person löst selbst.</b> Unter jeder Teilaufgabe siehst du, wie die anderen gerade schreiben – '+
     'als Sterne oder, mit „Geschriebenes zeigen“, im Klartext. Bist du fertig, tippe unten auf „Fertig – vergleichen“.</span>';
   var w=a.filter(function(t){return !gmFertig(nr,t.tid);});
-  return ic+'<span><b>Vergleich:</b> Unter jeder Teilaufgabe stehen deine Antwort, die der anderen und die Lösung. Gib dir Punkte – '+
-    'oder lass alle Antworten von Claude prüfen.'+(w.length?' '+esc(gmNamen(w))+' '+(w.length===1?'ist':'sind')+' noch nicht fertig.':'')+'</span>';
+  return ic+'<span><b>Vergleich:</b> Unter jeder Teilaufgabe stehen deine Antwort, die der anderen und die Lösung.'+
+    (w.length?' '+esc(gmNamen(w))+' '+(w.length===1?'ist':'sind')+' noch nicht fertig.':'')+'</span>';
 }
 /* Unter jeder Teilaufgabe: wer hier schreibt, als Sterne – wer fertig ist oder
    noch nichts hat, gesammelt in je einer Zeile. */
@@ -7523,6 +8042,7 @@ function gmMitZeileHTML(q,t){
   if(mk&&!f){
     if(mk.s)inhalt+='<span class="gm-x">Skizze · '+mk.s+' Element'+(mk.s===1?'':'e')+'</span>';
     if(mk.t)inhalt+='<span class="gm-x">'+mk.t+' Feld'+(mk.t===1?'':'er')+' in der Anlage</span>';
+    if(mk.f)inhalt+='<span class="gm-x">Foto der Rechnung</span>';
   }
   if(!inhalt)inhalt='<span class="gm-leer">'+(f?'mit dieser Aufgabe fertig':'noch nichts geschrieben')+'</span>';
   var n=mk?String(mk.m||'').replace(/\s/g,'').length:0;
@@ -7598,7 +8118,7 @@ function gmFussHTML(pos,nrs){
   var nr=state.blattNr,f='';
   if(pos>0)f+='<button type="button" class="bl-nav" id="blPrev">← Aufgabe '+nrs[pos-1]+'</button>';
   if(!gmIchFertig(nr))return f+'<button type="button" class="bl-nav primary" id="gmFertig">Fertig – vergleichen</button>';
-  f+='<button type="button" class="bl-nav" id="blExport">Alle Antworten von Claude prüfen lassen</button>';
+  f+='<button type="button" class="bl-nav bl-zip" id="blExport" title="Aufgabe '+nr+' mit den Antworten aller, Fotos, Skizzen und Abbildungen – zum Hochladen bei Claude">'+IC_ZIP+'ZIP für Claude</button>';
   var w=gmAndere().filter(function(t){return !gmFertig(nr,t.tid);});
   if(pos>=nrs.length-1)return f+'<button type="button" class="bl-nav primary" id="blNext">Zum Ergebnis →</button>';
   if(!w.length||gm.weiter[nr]||gmFreiBis()>pos)return f+'<button type="button" class="bl-nav primary" id="blNext">Aufgabe '+nrs[pos+1]+' →</button>';
@@ -7651,6 +8171,9 @@ function gmFertigKlick(btn){
   var id=gm.runde.id;
   teile.forEach(function(q){clearTimeout(gm.maskT[q.id]);delete gm.maskT[q.id];});
   gmRpc('gemeinsam_fertig',{p_runde:id,p_nr:nr,p_antworten:gmSeitenDaten(nr)}).then(function(){
+    if(foHat(foKey(nr)))btn.textContent='Foto wird gesendet …';
+    return gmFotoSenden(nr);
+  }).then(function(){
     gmSenden('stand',{art:'fertig',nr:nr});
     return gmStandLaden();
   }).then(function(){
@@ -7677,7 +8200,7 @@ function gmPunkteSenden(nr){
   },function(){});
 }
 
-/* --- Prüfauftrag für Claude: alle Antworten, je Person getrennt bewertet --- */
+/* --- Prüfauftrag für Claude (paZip): Antwort einer Person als Text --- */
 function gmAntwortText(q,tid){
   if(tid===gm.ich)return antwortText(q.id);
   var e=gmEintrag(q.nr,tid),d=e&&e.antworten&&e.antworten.teile&&e.antworten.teile[q.id];
@@ -7686,70 +8209,72 @@ function gmAntwortText(q,tid){
           (Array.isArray(d.rw)?d.rw:[]).map(rwZeileText).filter(function(x){return x;}).join('\n'),
           String(d.t||'').trim()].filter(function(x){return x;}).join('\n\n');
 }
-function gmExport(nrs){
-  var fall=state.fall,L=[],alle=nrs.length>1;
-  var leute=gmTn().filter(function(t){return t.tid===gm.ich||nrs.some(function(nr){return gmFertig(nr,t.tid);});});
-  var amtlich=state.pool.some(function(q){return nrs.indexOf(q.nr)>=0&&q.amtlich;});
-  L.push('PRÜFAUFTRAG – '+(alle?'eine Original-IHK-Prüfung':'Aufgabe '+nrs[0]+' einer Original-IHK-Prüfung')+', gemeinsam gelernt');
-  L.push('');
-  L.push('Wir haben '+(alle?'diese Prüfung':'diese Aufgabe')+' zu '+leute.length+' gelöst, jede Person für sich: '+
-    leute.map(gmWer).join(', ')+'. Unten stehen die vollständigen Aufgaben, die Antworten aller und '+
-    (amtlich?'die AMTLICHEN Lösungshinweise der IHK.':'Musterlösungen, die NICHT von der IHK stammen.'));
-  L.push('');
-  L.push('Bewerte je Teilaufgabe die Antwort JEDER Person getrennt:');
-  L.push('1. Wie viele der möglichen Punkte würdest du ihr geben? Begründe kurz.');
-  L.push('2. Was fehlt ihr zur vollen Punktzahl? Nenne die fehlenden Elemente konkret.');
-  L.push('3. Welche fachlichen Fehler enthält die Antwort (falsche Aussage, falsche Rechnung, veraltete Rechtsgrundlage)?');
-  L.push('Vergleiche danach die Antworten: Wer hat was besser gelöst, und was können wir voneinander übernehmen?');
-  L.push('Bei Rechenaufgaben: rechne eigenständig nach und zeige deinen Rechenweg.');
-  L.push('');
-  L.push('==============================');
-  L.push(fall.title||'');
-  L.push('==============================');
-  if(fall.context){L.push('');L.push('AUSGANGSSITUATION');L.push(fall.context);}
-  nrs.forEach(function(nr){
-    var auf=aufgabeVon(fall,nr)||{},teile=blTeile(nr);
-    L.push('');L.push('AUFGABE '+nr+(auf.pts?(' · '+auf.pts+' Punkte'):''));
-    if(auf.sit){L.push('');L.push(auf.sit);}
-    if(auf.tab){L.push('');L.push(tabText(auf.tab));}
-    if(auf.bild){var ab=anlageBild(auf.bild);if(ab)L.push('','[Zur Aufgabe gehört eine Abbildung: '+(ab.t||'Anlage zur Aufgabe')+']');}
-    tabListe(auf.tab).forEach(function(tb,i){
-      leute.forEach(function(p){
-        var w=p.tid===gm.ich?otGet(blTabKey(nr,i)):((((gmEintrag(nr,p.tid)||{}).antworten||{}).anlagen||{})[i]);
-        var E=gmTabEintraege(tb,w);
-        if(E.length){L.push('');L.push('Eintragungen von '+gmWer(p)+' in „'+(tb.titel||'Anlage')+'“:');L.push.apply(L,E);}
-      });
+/* --- Fotos der Rechnungen: eines je Person und Aufgabe ---
+   Mit „Fertig – vergleichen“ geht das eigene Foto verkleinert (höchstens etwa
+   500 kB) an die Runde (gemeinsam_foto_setzen). gemeinsam_stand sagt je Seite
+   nur, ob es eines gibt; das Bild holt gemeinsam_foto erst, wenn es gebraucht
+   wird – der Stand kommt alle 20 Sekunden und bleibt so klein. Fehlen die
+   beiden Funktionen in der Datenbank, bleibt das Foto auf dem Gerät. */
+function gmFotoDa(nr,tid){var e=gmEintrag(nr,tid);return !!(e&&e.foto===true);}
+function gmFotoFremde(nr){return gmIchFertig(nr)?gmAndere().filter(function(t){return gmFotoDa(nr,t.tid);}):[];}
+function gmFotoRpc(name,p){
+  if(!gmCloud||!gmCloud.user())return Promise.reject({code:'abgemeldet'});
+  return gmCloud.sb.rpc(name,p).then(function(r){
+    var e=r&&r.error;
+    if(!r||e){if(e&&(e.code==='PGRST202'||e.code==='42883'))gm.fotoFehlt=true;throw e||{};}
+    return r.data;
+  });
+}
+function gmFotoLaden(nr,tid){
+  if(!gm.runde)return Promise.resolve('');
+  var k=gm.runde.id+'|'+nr+'|'+tid;
+  if(!gm.fotos[k])gm.fotos[k]=gmFotoRpc('gemeinsam_foto',{p_runde:gm.runde.id,p_nr:nr,p_tid:tid}).then(function(u){
+    if(typeof u==='string'&&/^data:image\//.test(u))return u;
+    delete gm.fotos[k];return '';
+  },function(){delete gm.fotos[k];return '';});
+  return gm.fotos[k];
+}
+function gmFotosBinden(box){
+  box.querySelectorAll('[data-gm-foto]').forEach(function(f){
+    var img=f.querySelector('img');
+    gmFotoLaden(+f.dataset.nr,f.dataset.gmFoto).then(function(u){if(u)img.src=u;else f.classList.add('fehlt');});
+    f.onclick=function(){if(img.getAttribute('src'))lbOeffnen(img.getAttribute('src'),img.alt);};
+  });
+}
+/* Eigenes Foto an die Runde – nach „Fertig“; ging das nicht, beim nächsten
+   Stand noch einmal (einmal je Sitzung und Aufgabe). */
+function gmFotoSenden(nr){
+  if(!gm.runde||gm.fotoFehlt)return Promise.resolve(false);
+  var key=foKey(nr),id=gm.runde.id;
+  if(!foHat(key))return Promise.resolve(false);
+  return foFassung(key,1600,500000).then(function(u){
+    if(!u||!gm.runde||gm.runde.id!==id)return false;
+    return gmFotoRpc('gemeinsam_foto_setzen',{p_runde:id,p_nr:nr,p_foto:u}).then(function(){
+      var e=gmEintrag(nr,gm.ich);if(e)e.foto=true;
+      return true;
     });
-    L.push('');
-    teile.forEach(function(q){
-      L.push('------------------------------');
-      L.push(q.teil+') · '+q.pts+' '+(q.pts===1?'Punkt':'Punkte'));
-      L.push('');L.push(q.q||'');
-      if(q.tab){L.push('');L.push(tabText(q.tab));}
-      if(q.bild){var b=anlageBild(q.bild);if(b)L.push('','[Zur Teilaufgabe gehört eine Abbildung: '+(b.t||'Anlage')+']');}
-      leute.forEach(function(p){
-        L.push('');
-        L.push('ANTWORT VON '+gmWer(p).toUpperCase()+':');
-        if(p.tid!==gm.ich&&!gmFertig(nr,p.tid)){L.push('— noch nicht abgegeben —');return;}
-        L.push(gmAntwortText(q,p.tid)||'— leer abgegeben —');
-        tabListe(q.tab).forEach(function(tb,i){
-          var w=p.tid===gm.ich?otGet(q.id+'#s'+i):
-            ((((((gmEintrag(nr,p.tid)||{}).antworten||{}).teile||{})[q.id]||{}).tab||{})[i]);
-          var E=gmTabEintraege(tb,w);
-          if(E.length){L.push('Eintragungen in „'+(tb.titel||'Anlage')+'“:');L.push.apply(L,E);}
-        });
-      });
-      L.push('');
-      L.push(q.amtlich?'AMTLICHER LÖSUNGSHINWEIS (IHK):':'MUSTERLÖSUNG (zu prüfen):');
-      L.push(q.a||q.e||'');
-      if(q.vo)L.push('VO-Bezug: '+q.vo);
-      if(q.bewertung&&q.bewertung.length)L.push('Punkteverteilung: '+q.bewertung.join(' + ')+' Punkte');
-      L.push('');
+  }).catch(function(){return false;});
+}
+function gmFotosNachholen(){
+  if(!gm.runde||gm.fotoFehlt)return;
+  blNummern().forEach(function(nr){
+    var e=gmEintrag(nr,gm.ich),k=gm.runde.id+'|'+nr;
+    if(!e||e.foto!==false||gm.fotoVersucht[k]||!foHat(foKey(nr)))return;
+    gm.fotoVersucht[k]=1;
+    gmFotoSenden(nr).then(function(ok){if(ok)gmSenden('stand',{art:'foto',nr:nr});});
+  });
+}
+/* Auf einem anderen Gerät: das eigene Foto einer fertigen Aufgabe zurückholen */
+function gmFotoZurueck(c,nr){
+  var k=foKeyVon(c,nr),id=gm.runde&&gm.runde.id;
+  if(!k||!id||foHat(k))return;
+  gmFotoLaden(nr,gm.ich).then(function(u){
+    var b=u&&foDataBlob(u);
+    if(!b||!gm.runde||gm.runde.id!==id||foHat(k))return;
+    return foSpeichern(k,{blob:b,w:0,h:0}).then(function(ok){
+      if(ok&&!$("scrBlatt").hidden&&state.blattNr===nr){var y=window.scrollY;renderBlatt();window.scrollTo(0,y);}
     });
   });
-  L.push('==============================');
-  L.push('Nenne abschließend für jede Person die Gesamtpunktzahl'+(alle?' der Prüfung.':' für Aufgabe '+nrs[0]+'.'));
-  return L.join('\n');
 }
 
 /* --- Ergebnis: eure Runde --- */
@@ -7781,10 +8306,10 @@ function gmErgebnis(){
   });
   h+='</ol><p class="gm-res-h">Punkte gibt sich jede Person selbst – die anderen sehen sie, sobald sie mit derselben Aufgabe fertig sind. '+
      'Für deine Übersicht zählt die Prüfung wie allein gelöst.</p>'+
-     '<button type="button" class="gm-zweit gm-res-x" id="gmResExport">Ganze Prüfung mit allen Antworten von Claude prüfen lassen</button>';
+     '<button type="button" class="gm-zweit gm-res-x" id="gmResExport">'+IC_ZIP+'Ganze Prüfung mit allen Antworten als ZIP für Claude</button>';
   box.innerHTML=h;box.hidden=false;
   var b=$("gmResExport");
-  b.onclick=function(){oaCopy(gmExport(nrs.filter(function(nr){return gmIchFertig(nr);})),b);};
+  b.onclick=function(){paKnopf(b,nrs.filter(function(nr){return gmIchFertig(nr);}));};
 }
 
 /* --- Runden: starten, beitreten, einladen, verlassen --- */
@@ -7935,6 +8460,7 @@ function gmBoxBinden(el){
     b.disabled=true;
     gmRpc('gemeinsam_verlassen',{p_runde:id}).then(function(){
       try{for(var i=localStorage.length-1;i>=0;i--){var k=localStorage.key(i);if(k&&k.indexOf('kvm_gm_'+id+'_')===0)localStorage.removeItem(k);}}catch(e){}
+      foLoeschenSpeicher('kvm_gm_'+id+'_fo');
       return gmMeineLaden();
     },function(e){b.disabled=false;gmMeldung(gmFehlerText(e));});
   };});
