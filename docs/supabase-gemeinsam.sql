@@ -29,6 +29,11 @@
 --                                       "tab": {"0": {"Zeile-Spalte": "Wert"}}}},
 --    "anlagen": {"0": {"Zeile-Spalte": "Wert"}}}
 -- Punkte einer Aufgabe: {"<Teilaufgaben-ID>": 4, …}
+-- Foto der handschriftlichen Rechnung (eines je Person und Aufgabe, als
+-- Data-URI eines Bildes, höchstens 600 kB): kommt nach „fertig“ dazu
+-- (gemeinsam_foto_setzen) und lässt sich danach nicht mehr ändern.
+-- gemeinsam_stand sagt je Seite nur, ob es eines gibt („foto“: true/false);
+-- das Bild selbst holt gemeinsam_foto – so bleibt der Stand klein.
 --
 -- Grenzen: Name 2–24 Zeichen, höchstens 6 Personen je Runde und 10 Runden je
 -- Person, Antworten je Aufgabe höchstens 400 kB. Runden ohne Aktivität seit
@@ -71,6 +76,12 @@ create table if not exists public.gemeinsam_seiten (
   primary key (runde, user_id, nr),
   foreign key (runde, user_id) references public.gemeinsam_teilnehmer (runde, user_id) on delete cascade
 );
+-- Seit dem Foto je Aufgabe (für bestehende Datenbanken nachgetragen)
+alter table public.gemeinsam_seiten add column if not exists foto text;
+alter table public.gemeinsam_seiten drop constraint if exists gemeinsam_seiten_foto_check;
+alter table public.gemeinsam_seiten add constraint gemeinsam_seiten_foto_check
+  check (foto is null or (octet_length(foto) <= 600000
+                          and foto ~ '^data:image/(jpeg|png|webp);base64,[A-Za-z0-9+/=]+$'));
 
 alter table public.gemeinsam_runden     enable row level security;
 alter table public.gemeinsam_teilnehmer enable row level security;
@@ -246,7 +257,8 @@ begin
       select jsonb_agg(jsonb_build_object(
                'nr', s.nr, 'tid', t.tid, 'fertig_am', s.fertig_am,
                'punkte',    case when sichtbar then s.punkte end,
-               'antworten', case when sichtbar then s.antworten end)
+               'antworten', case when sichtbar then s.antworten end,
+               'foto',      case when sichtbar then s.foto is not null end)
              order by s.nr, t.seit, t.tid)
         from public.gemeinsam_seiten s
         join public.gemeinsam_teilnehmer t on t.runde = s.runde and t.user_id = s.user_id
@@ -306,6 +318,58 @@ begin
 end;
 $$;
 
+-- Foto der Rechnung zu einer fertigen Aufgabe – einmal, wie die Antworten.
+create or replace function public.gemeinsam_foto_setzen(p_runde uuid, p_nr integer, p_foto text)
+returns void
+language plpgsql
+security definer
+set search_path = ''
+as $$
+begin
+  perform public.gemeinsam_angemeldet();
+  if p_foto is null or octet_length(p_foto) > 600000
+     or p_foto !~ '^data:image/(jpeg|png|webp);base64,[A-Za-z0-9+/=]+$' then
+    raise exception 'ungültiges Foto' using errcode = '22023';
+  end if;
+  update public.gemeinsam_seiten set foto = p_foto
+   where runde = p_runde and user_id = auth.uid() and nr = p_nr and foto is null;
+  if not found and not exists (select 1 from public.gemeinsam_seiten
+                                where runde = p_runde and user_id = auth.uid() and nr = p_nr) then
+    raise exception 'Aufgabe noch nicht fertig' using errcode = 'P0002';
+  end if;
+  update public.gemeinsam_runden set aktiv_am = now() where id = p_runde;
+end;
+$$;
+
+-- Foto einer Person zu einer Aufgabe – nur für die eigene Seite oder wer mit
+-- dieser Aufgabe selbst fertig ist (wie die Antworten in gemeinsam_stand).
+create or replace function public.gemeinsam_foto(p_runde uuid, p_nr integer, p_tid text)
+returns text
+language plpgsql
+stable
+security definer
+set search_path = ''
+as $$
+declare
+  v_foto text;
+  v_user uuid;
+begin
+  perform public.gemeinsam_angemeldet();
+  select s.foto, s.user_id into v_foto, v_user
+    from public.gemeinsam_seiten s
+    join public.gemeinsam_teilnehmer t on t.runde = s.runde and t.user_id = s.user_id
+   where s.runde = p_runde and s.nr = p_nr and t.tid = p_tid;
+  if v_user is null then
+    return null;
+  end if;
+  if v_user = auth.uid() or exists (select 1 from public.gemeinsam_seiten m
+                                     where m.runde = p_runde and m.user_id = auth.uid() and m.nr = p_nr) then
+    return v_foto;
+  end if;
+  return null;
+end;
+$$;
+
 -- Eigene Runden, zuletzt aktive zuerst.
 create or replace function public.gemeinsam_meine()
 returns jsonb
@@ -348,6 +412,8 @@ revoke all on function public.gemeinsam_beitreten(text, text)           from pub
 revoke all on function public.gemeinsam_stand(uuid)                     from public, anon, authenticated;
 revoke all on function public.gemeinsam_fertig(uuid, integer, jsonb)    from public, anon, authenticated;
 revoke all on function public.gemeinsam_punkte(uuid, integer, jsonb)    from public, anon, authenticated;
+revoke all on function public.gemeinsam_foto_setzen(uuid, integer, text) from public, anon, authenticated;
+revoke all on function public.gemeinsam_foto(uuid, integer, text)       from public, anon, authenticated;
 revoke all on function public.gemeinsam_meine()                         from public, anon, authenticated;
 revoke all on function public.gemeinsam_verlassen(uuid)                 from public, anon, authenticated;
 grant execute on function public.gemeinsam_starten(text, text)          to authenticated;
@@ -355,5 +421,7 @@ grant execute on function public.gemeinsam_beitreten(text, text)        to authe
 grant execute on function public.gemeinsam_stand(uuid)                  to authenticated;
 grant execute on function public.gemeinsam_fertig(uuid, integer, jsonb) to authenticated;
 grant execute on function public.gemeinsam_punkte(uuid, integer, jsonb) to authenticated;
+grant execute on function public.gemeinsam_foto_setzen(uuid, integer, text) to authenticated;
+grant execute on function public.gemeinsam_foto(uuid, integer, text)    to authenticated;
 grant execute on function public.gemeinsam_meine()                      to authenticated;
 grant execute on function public.gemeinsam_verlassen(uuid)              to authenticated;

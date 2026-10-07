@@ -13,7 +13,8 @@ import { base64, type Bild, handler, MODELL, type Pruefung } from "./kern.ts";
 const sb = createClient(Deno.env.get("SUPABASE_URL")!, Deno.env.get("SUPABASE_SERVICE_ROLE_KEY")!, {
   auth: { persistSession: false, autoRefreshToken: false },
 });
-const KEY = Deno.env.get("ANTHROPIC_API_KEY") || "";
+// Leerzeichen, Zeilenumbrüche und Anführungszeichen vom Einfügen im Dashboard entfernen.
+const KEY = (Deno.env.get("ANTHROPIC_API_KEY") || "").trim().replace(/^["']+|["']+$/g, "");
 // Ein Versuch, höchstens 115 s: Die App wiederholt selbst, und die Anfrage
 // bleibt unter der Zeitgrenze der Edge Functions (150 s).
 const claude = KEY ? new Anthropic({ apiKey: KEY, timeout: 115_000, maxRetries: 0 }) : null;

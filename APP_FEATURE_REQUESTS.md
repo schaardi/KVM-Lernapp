@@ -3457,3 +3457,102 @@ Das Web zeigt es unter Verwaltung › Prüfungen, samt geschätzter Kosten. In d
   Teilaufgaben Punkte und eine Begründung.
 - Web und App zählen dieselben 5 Auswertungen am Tag.
 - Flugmodus während der Auswertung: Eine Meldung erscheint, „Fehlende auswerten“ setzt danach fort.
+
+---
+
+## FR-022 · Foto der Rechnung je Aufgabe, ZIP-Export für Claude, KI-Auswertung getrennt – auch gemeinsam
+
+**Status App-Session:** offen.
+**Web umgesetzt:** ✅ `claude/ui-design-improvement-my0f66` (Commit „Foto je Aufgabe, ZIP für Claude …“)
+**Anlass:** User-Wunsch „Baue um auf ZIP-Export (an KI hat nicht funktioniert, prüfe ich nochmal, lass das
+aber drin, nur separat), baue eine Integration ein, dass man ein Bild pro Aufgabe für schriftliche Rechnungen
+hinzufügen kann. Der ZIP-Export kann das z.B. auch das Bild tragen.“ Dazu: „Die Funktionen müssen bei
+Zusammenarbeit auch verfügbar sein.“
+
+### Foto der Rechnung (eines je Aufgabe)
+- **Wo:** Karte am Ende jeder Aufgabe, nach der letzten Teilaufgabe: „Foto deiner Rechnung · ein Bild für die
+  ganze Aufgabe N“.
+  - Ohne Foto: „Foto aufnehmen oder wählen“ (Kamera oder Galerie) und ein kurzer Hinweis.
+  - Mit Foto: Vorschau (antippen = groß), „Foto ersetzen“, „Entfernen“ (mit Rückfrage).
+  - Sind die Lösungen der Aufgabe offen (Abgabe, alles aufgedeckt, „Fertig – vergleichen“), nur noch die
+    Vorschau. Ohne Foto verschwindet die Karte dann.
+- **Speichern:** auf höchstens 2000 px (lange Seite) verkleinert, JPEG 85 %, Drehung der Kamera beachten.
+  - Web: Bild in IndexedDB `kvm_fotos` (Store `fotos`, Schlüssel `<Speicher>|<ID der ersten Teilaufgabe>#foto`),
+    Verzeichnis in `kvm_open_foto` = `{"<ID>#foto": {t, w, h, kb}}`. In der App: eigene Datei je Foto.
+  - Beim gemeinsamen Lösen getrennt je Runde (`kvm_gm_<Runde>_fo`).
+- **Zählt als Antwort** der ersten Teilaufgabe (wie eine ausgefüllte Anlage der Aufgabe): Stepper, „bearbeitet“,
+  Liste „Weiter bei …“, „Neu starten“ sichtbar.
+- **Löschen:** „Neu starten“ und ein neuer Durchgang unter Prüfungsbedingungen löschen die Fotos der Prüfung
+  (die Rückfrage nennt „Fotos“); eine Runde verlassen löscht die Fotos der Runde.
+
+### ZIP für Claude (Hauptweg zum Auswerten)
+- **Ersetzt** „Von Claude prüfen lassen“ (Zwischenablage). Knöpfe:
+  - nach der Abgabe oben im Band (petrol, vorn) und im Fuß jeder Aufgabe: „ZIP für Claude“ – die ganze
+    Prüfung bzw. alle Aufgaben, deren Lösungen offen sind (Fallaufgaben: die aufgedeckten);
+  - gemeinsam: im Band und im Fuß einer verglichenen Aufgabe (diese Aufgabe, Antworten aller, die fertig
+    sind) und auf dem Ergebnis („Ganze Prüfung mit allen Antworten als ZIP für Claude“).
+  - Text unter dem Knopf: „… als Prüfauftrag – samt Fotos, Skizzen und Abbildungen. Bei Claude hochladen
+    (claude.ai oder App), abschicken und die Punkte danach hier bei den Teilaufgaben eintragen.“
+- **Inhalt:** `KVM-Pruefauftrag_<Prüfung>.zip` (gemeinsam je Aufgabe `…_Aufgabe-N.zip`), ohne Kompression:
+  - `pruefauftrag.md`: Auftrag an Claude (wie eine faire IHK-Prüferin bewerten, ganze Punkte, Lösungshinweise
+    als Beispiele, Anzahl-Regel, Rechnungen auch auf Fotos nachrechnen, Foto gilt für die ganze Aufgabe,
+    gemeinsam: jede Person getrennt und vergleichen), Antwortform (Tabelle je Aufgabe, Gesamtpunkte, Note nach
+    IHK-Schlüssel, eine Zeile zum Übertragen in die App), dann Ausgangssituation und je Aufgabe Ausgangslage,
+    Anlagen (als Text), eigene Eintragungen, Abbildungen und Fotos (mit Dateinamen), je Teilaufgabe Frage,
+    Antwort(en), Skizze, Lösungshinweis (amtlich/Musterlösung), VO-Bezug, Punkteverteilung.
+  - `bilder/`: `A<Nr>_foto[_Name].jpg`, `A<Nr><Teil>_skizze[_Name].png` (Skizze in voller Breite, auf Karo oder
+    der Anlage), `A<Nr>_anlage….jpg`, `A<Nr><Teil>_anlage….jpg`, `A<Nr><Teil>_loesungsskizze….jpg`.
+    Dateinamen ohne Umlaute; Bilder, die nicht laden, fehlen und heißen im Text „(ließ sich nicht laden)“.
+- **App:** ZIP bauen (z. B. `archive`) und über das Teilen-Menü anbieten – dann landet sie direkt in der
+  Claude-App.
+
+### KI-Auswertung getrennt (eigener Kasten)
+- **Band nach der Abgabe:** „Abgegeben … Jetzt auswerten – mit Claude oder selbst …“, darunter der ZIP-Block
+  und **getrennt** davon ein violetter Kasten „Automatisch auswerten – Claude Sonnet 5.5 bewertet deine
+  Antworten direkt hier und trägt die Punkte ein.“ mit dem Knopf „Automatisch auswerten“, Fortschritt,
+  Ergebnis und Meldungen. Sonst wie FR-021.
+- **Fehler mit Ursache:** unter der Meldung „Fehler: HTTP <Status> · <grund> · <detail>“ – auch die Meldung
+  des Gateways (z. B. `message`) und der Claude API.
+  - 503 `schluessel` (die Claude API lehnt den API-Key ab): sofort abbrechen, ohne Wiederholung, Meldung
+    „Claude nimmt den API-Key nicht an. Der Schlüssel ANTHROPIC_API_KEY in Supabase … muss erneuert werden –
+    bis dahin: ZIP für Claude oder selbst bewerten.“ Dauerhafte Fehler werden vor Wiederholungen geprüft.
+- **Foto:** je Aufgabe als `foto` (JPEG-Data-URI, höchstens 1568 px, unter rund 880 000 Zeichen).
+  - Die Funktion meldet bei `beginnen` `foto: true`. Fehlt das (ältere Fassung), geht das Foto als `skizze`
+    der ersten Teilaufgabe ohne Skizze mit, dazu in deren `antwort`: „[Foto der handschriftlichen Rechnung zur
+    ganzen Aufgabe – siehe Bild]“.
+- **Gemeinsam:** Der Kasten erscheint bei verglichenen Aufgaben und bewertet die eigenen Antworten aller schon
+  verglichenen Aufgaben, die noch keine KI-Punkte haben („deine Antworten der verglichenen Aufgaben“).
+  - KI-Stand je Runde (`kvm_gm_<Runde>_ki`), Punkte wie selbst vergebene in der Runde – sie gehen mit
+    `gemeinsam_punkte` an die anderen.
+  - Runde verlassen oder wechseln bricht eine laufende Auswertung ab.
+
+### Gemeinsam: Fotos teilen (SQL in `docs/supabase-gemeinsam.sql`)
+- **Hochladen:** Nach `gemeinsam_fertig` das eigene Foto der Aufgabe mit
+  `rpc('gemeinsam_foto_setzen', {p_runde, p_nr, p_foto})` – JPEG-Data-URI, verkleinert auf höchstens 1600 px
+  und unter 500 000 Zeichen. Einmal je Aufgabe; danach nicht mehr änderbar.
+  Ging es nicht, beim nächsten Stand einmal nachholen (Seite mit `foto: false`, Foto lokal da).
+- **Stand:** `gemeinsam_stand` liefert je Seite `foto` (true/false; `null`, solange die Seite verborgen ist).
+- **Anzeigen:** `rpc('gemeinsam_foto', {p_runde, p_nr, p_tid})` → Data-URI oder `null`; nur für die eigene
+  Seite oder wer mit der Aufgabe selbst fertig ist. Im Vergleich: „Fotos der Rechnungen“ mit „Dein Foto“ und
+  „Foto von <Name>“ (Rahmen in der Farbe der Person), antippen = groß. Je Sitzung zwischenspeichern.
+- **Sterne:** Die Maske der ersten Teilaufgabe trägt `f: 1`, wenn ein Foto da ist → bei den anderen
+  „Foto der Rechnung“ in der Live-Zeile.
+- **Anderes Gerät:** Fehlt das eigene Foto einer fertigen Aufgabe lokal, mit `gemeinsam_foto` (eigene tid)
+  zurückholen.
+- **Ohne die beiden Funktionen** (`PGRST202`/`42883`): Fotos bleiben auf dem Gerät, die Runde läuft normal
+  weiter.
+
+### Tests
+- Foto: aufnehmen, verkleinert gespeichert, Vorschau und groß, ersetzen, entfernen, nach der Abgabe nur
+  ansehen, zählt als Antwort, „Neu starten“ löscht es.
+- ZIP: gültig (CRC), `pruefauftrag.md` zuerst, Fotos/Skizzen/Abbildungen mit den Namen oben, Text nennt sie.
+- KI: Foto als letztes Bild der Aufgabe im Prüfauftrag; Fehlerdetail sichtbar; Fallback ohne `foto: true`.
+- Gemeinsam: Foto nach „Fertig“ bei den anderen erst nach deren „Fertig“; ZIP mit den Fotos beider; KI nur
+  für verglichene Aufgaben, Punkte bei den anderen; anderes Gerät holt das Foto zurück; ohne SQL-Funktionen
+  läuft alles ohne Fotoaustausch.
+
+### Akzeptanz
+- Schriftliche Rechnung auf Papier → Foto an Aufgabe 2 → abgeben → „ZIP für Claude“ → in der Claude-App
+  hochladen: Claude sieht Foto, Antworten und Lösungshinweise und bewertet Aufgabe 2 samt Rechnung.
+- Gemeinsam: Anna und Bert hängen je ein Foto an Aufgabe 1 an; nach „Fertig – vergleichen“ sehen beide
+  beide Fotos, und das ZIP der Aufgabe enthält beide.

@@ -123,6 +123,7 @@ Deno.test("beginnen: Aufgaben der Prüfung, Anzahl an die Datenbank", async () =
   assertEquals(r.status, 200);
   assertEquals(r.j.aufgaben, [...AUF.keys()]);
   assertEquals(r.j.modell, MODELL);
+  assertEquals(r.j.foto, true);
   assertEquals(db[0], { name: "beginnen", args: ["u1", P.id, AUF.size] });
 });
 
@@ -151,6 +152,22 @@ Deno.test("Abbildung der Aufgabe und Skizze als Bild", async () => {
   await rufe(h, aufgabe(nr, (id) => ({ id, antwort: "x", skizze: PNG })));
   const bilder = aufrufe[0].messages[0].content.filter((b) => b.type === "image");
   assertEquals(bilder.length, 1 + AUF.get(nr)!.length);
+});
+
+Deno.test("Foto der Rechnung: als Bild am Ende der Aufgabe, zählt als Antwort", async () => {
+  const { h, aufrufe } = aufbau();
+  const r = await rufe(h, { ...aufgabe(2, (id) => ({ id, antwort: "" })), foto: PNG });
+  assertEquals(r.status, 200);
+  assertEquals(aufrufe.length, 1);
+  const inhalt = aufrufe[0].messages[0].content;
+  const letztesBild = inhalt.map((b) => b.type).lastIndexOf("image");
+  const davor = inhalt[letztesBild - 1] as { type: string; text: string };
+  assertMatch(davor.text, /Foto der handschriftlichen Rechnung der Person zur ganzen Aufgabe 2/);
+  assertMatch(davor.text, /kein Text, Rechnung ggf\. auf dem Foto unten/);
+  // zu groß oder kein Bild: ignoriert – dann ist die Aufgabe leer
+  const { h: h2, aufrufe: a2 } = aufbau();
+  await rufe(h2, { ...aufgabe(2, (id) => ({ id, antwort: "" })), foto: "data:text/plain;base64,QUJD" });
+  assertEquals(a2.length, 0);
 });
 
 Deno.test("leere Aufgabe: 0 Punkte ohne Claude", async () => {
@@ -200,6 +217,27 @@ Deno.test("Fehler: Überlastung, Zeit, Ablehnung, abgeschnitten", async () => {
     "ueberlastet",
   );
   assertEquals(r.j.warten, 30);
+  const k = await fall(
+    () => {
+      throw Object.assign(new Error("Your credit balance is too low\n to access the API."), { status: 400 });
+    },
+    502,
+    "ki",
+  );
+  assertMatch(k.j.detail, /400 Your credit balance is too low to access the API\./);
+  const s = await fall(
+    () => {
+      throw Object.assign(
+        new Error('401 {"type":"error","error":{"type":"authentication_error","message":"invalid x-api-key"}}'),
+        {
+          status: 401,
+        },
+      );
+    },
+    503,
+    "schluessel",
+  );
+  assertMatch(s.j.detail, /invalid x-api-key/);
   await fall(
     () => {
       throw new Error("Request timed out.");
@@ -207,8 +245,18 @@ Deno.test("Fehler: Überlastung, Zeit, Ablehnung, abgeschnitten", async () => {
     504,
     "zeit",
   );
-  await fall(() => ({ stop_reason: "refusal", content: [] }), 422, "abgelehnt");
-  await fall(() => ({ stop_reason: "max_tokens", content: [{ type: "text", text: "{" }] }), 502, "unvollstaendig");
+  const ab = await fall(
+    () => ({ stop_reason: "refusal", stop_details: { category: "general_harms" }, content: [] }),
+    422,
+    "abgelehnt",
+  );
+  assertEquals(ab.j.detail, "abgelehnt (refusal: general_harms)");
+  const mt = await fall(
+    () => ({ stop_reason: "max_tokens", content: [{ type: "text", text: "{" }], usage: { output_tokens: 12000 } }),
+    502,
+    "unvollstaendig",
+  );
+  assertMatch(mt.j.detail, /max_tokens, 12000 Tokens/);
 });
 
 Deno.test("Antworten können den Prüfauftrag nicht schließen", async () => {
