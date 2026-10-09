@@ -1,10 +1,12 @@
 name: App bauen (iOS, ohne Signatur)
 
 # Baut die iOS-App auf einem Mac von GitHub Actions (Image macos-26, Xcode 26.x)
-# und prüft, dass sie im iOS-Simulator startet. Ohne Apple-Konto: Der Gerätebuild
-# ist unsigniert (nur Kompilierprüfung, nicht installierbar), der Simulator-Build
-# läuft im Simulator. Ergebnis als Artefakt „ios-build“: Bildschirmfoto aus dem
-# Simulator, Protokoll, beide Builds als ZIP. Signieren/TestFlight: siehe BUILD.md.
+# und prüft, dass sie im iOS-Simulator startet. Ohne Apple-Konto:
+# - Gerätebuild als unsignierte .ipa. AltStore/SideStore signieren sie beim
+#   Installieren mit der eigenen Apple-ID (siehe BUILD.md).
+# - Simulator-Build, im Simulator gestartet, mit Bildschirmfoto.
+# Ergebnis als Artefakt „ios-build“; nach Push auf main bzw. manuellem Start
+# zusätzlich als Direkt-Download unter Releases → ios-latest.
 
 on:
   push:
@@ -101,15 +103,20 @@ jobs:
             exit 1
           fi
 
-      - name: Builds packen
+      - name: Builds packen (unsignierte .ipa + Simulator-App)
         if: always()
         run: |
+          set -euo pipefail
           mkdir -p ../ios-ergebnis
-          if [ -d build/ios/iphonesimulator/Runner.app ]; then
-            ditto -c -k --keepParent build/ios/iphonesimulator/Runner.app ../ios-ergebnis/Meister-Trainer-Simulator.zip
-          fi
+          VER=$(grep -E '^version:' pubspec.yaml | head -n1 | awk '{print $2}' | cut -d+ -f1)
           if [ -d build/ios/iphoneos/Runner.app ]; then
-            ditto -c -k --keepParent build/ios/iphoneos/Runner.app ../ios-ergebnis/Meister-Trainer-ohne-Signatur.zip
+            # Eine .ipa ist ein ZIP mit Payload/Runner.app.
+            rm -rf "$RUNNER_TEMP/ipa" && mkdir -p "$RUNNER_TEMP/ipa/Payload"
+            cp -R build/ios/iphoneos/Runner.app "$RUNNER_TEMP/ipa/Payload/"
+            (cd "$RUNNER_TEMP/ipa" && zip -qry "$GITHUB_WORKSPACE/ios-ergebnis/Meister-Trainer-${VER}-unsigniert.ipa" Payload)
+          fi
+          if [ -d build/ios/iphonesimulator/Runner.app ]; then
+            ditto -c -k --keepParent build/ios/iphonesimulator/Runner.app ../ios-ergebnis/Meister-Trainer-${VER}-Simulator.zip
           fi
           ls -la ../ios-ergebnis
 
@@ -128,7 +135,39 @@ jobs:
             echo "## Meister-Trainer – iOS-Build (ohne Signatur)"
             echo ""
             echo "- $(xcodebuild -version | head -1), $(flutter --version | head -1)"
-            echo "- Gerätebuild: $([ -d build/ios/iphoneos/Runner.app ] && echo 'gebaut' || echo 'fehlt')"
+            echo "- Gerätebuild (unsignierte .ipa für AltStore/SideStore): $([ -d build/ios/iphoneos/Runner.app ] && echo 'gebaut' || echo 'fehlt')"
             echo "- Simulator-Build: $([ -d build/ios/iphonesimulator/Runner.app ] && echo 'gebaut' || echo 'fehlt')"
             echo "- Bildschirmfoto aus dem Simulator: $([ -f ../ios-ergebnis/simulator.png ] && echo 'im Artefakt ios-build' || echo 'fehlt')"
           } >> "$GITHUB_STEP_SUMMARY"
+
+  # Nur nach Push auf main bzw. manuellem Start und nur, wenn der Build samt
+  # Simulator-Start grün war: rollendes Release „ios-latest“ mit der .ipa.
+  release-ios:
+    needs: build-ios
+    if: github.event_name == 'push' || github.event_name == 'workflow_dispatch'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Ergebnis holen
+        uses: actions/download-artifact@v4
+        with:
+          name: ios-build
+          path: ios-ergebnis
+
+      - name: .ipa als Release veröffentlichen (Direkt-Download)
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          IPAS=(ios-ergebnis/*.ipa)
+          IPA="${IPAS[0]}"
+          test -f "$IPA"
+          TAG=ios-latest
+          gh release delete "$TAG" --yes --cleanup-tag --repo "$GITHUB_REPOSITORY" || true
+          gh release create "$TAG" "$IPA" \
+            --repo "$GITHUB_REPOSITORY" \
+            --target "$GITHUB_SHA" \
+            --title "Meister-Trainer – iOS (neuester Build, ohne Signatur)" \
+            --notes "Automatisch gebaute iOS-App als unsignierte .ipa (Commit ${GITHUB_SHA}). Installieren mit AltStore oder SideStore: Die .ipa auf dem iPhone in „Dateien“ sichern und in AltStore/SideStore über „+“ öffnen. Signiert wird dabei mit deiner eigenen Apple-ID; mit einem kostenlosen Konto gilt die App 7 Tage und muss dann aufgefrischt werden. Details: flutter_app/BUILD.md." \
+            --prerelease
