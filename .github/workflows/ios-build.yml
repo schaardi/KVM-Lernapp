@@ -1,0 +1,173 @@
+name: App bauen (iOS, ohne Signatur)
+
+# Baut die iOS-App auf einem Mac von GitHub Actions (Image macos-26, Xcode 26.x)
+# und prüft, dass sie im iOS-Simulator startet. Ohne Apple-Konto:
+# - Gerätebuild als unsignierte .ipa. AltStore/SideStore signieren sie beim
+#   Installieren mit der eigenen Apple-ID (siehe BUILD.md).
+# - Simulator-Build, im Simulator gestartet, mit Bildschirmfoto.
+# Ergebnis als Artefakt „ios-build“; nach Push auf main bzw. manuellem Start
+# zusätzlich als Direkt-Download unter Releases → ios-latest.
+
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - 'flutter_app/**'
+      - '!flutter_app/android/**'
+      - '.github/workflows/ios-build.yml'
+  pull_request:
+    paths:
+      - 'flutter_app/**'
+      - '!flutter_app/android/**'
+      - '.github/workflows/ios-build.yml'
+  workflow_dispatch: {}
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ios-build-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  BUNDLE_ID: com.kvmtrainer.kvmTrainer
+
+jobs:
+  build-ios:
+    runs-on: macos-26
+    timeout-minutes: 60
+    defaults:
+      run:
+        working-directory: flutter_app
+    steps:
+      - name: Repository auschecken
+        uses: actions/checkout@v4
+
+      - name: Xcode-Version
+        run: xcodebuild -version
+
+      - name: Flutter (stable) einrichten
+        uses: subosito/flutter-action@v2
+        with:
+          channel: stable
+          cache: true
+
+      - name: Flutter-Version
+        run: flutter --version
+
+      - name: Abhängigkeiten holen
+        run: flutter pub get
+
+      - name: Gerätebuild ohne Signatur (Kompilierprüfung)
+        run: flutter build ios --release --no-codesign
+
+      - name: Simulator-Build
+        run: flutter build ios --simulator --debug
+
+      - name: Im Simulator starten und Bildschirmfoto machen
+        run: |
+          set -euo pipefail
+          mkdir -p ../ios-ergebnis
+          # Neuestes iPhone mit der neuesten installierten iOS-Laufzeit wählen.
+          UDID=$(xcrun simctl list devices available --json | python3 -c '
+          import json, re, sys
+          geraete = []
+          for laufzeit, liste in json.load(sys.stdin)["devices"].items():
+              m = re.search(r"iOS-(\d+)-(\d+)", laufzeit)
+              if not m:
+                  continue
+              for g in liste:
+                  if g["name"].startswith("iPhone"):
+                      geraete.append(((int(m.group(1)), int(m.group(2))), g["name"], g["udid"]))
+          geraete.sort()
+          print(geraete[-1][2])
+          ')
+          xcrun simctl list devices | grep "$UDID"
+          xcrun simctl bootstatus "$UDID" -b
+          xcrun simctl install "$UDID" build/ios/iphonesimulator/Runner.app
+          # Mikrofon vorab erlauben, damit möglichst wenig Systemdialoge die App verdecken.
+          xcrun simctl privacy "$UDID" grant microphone "$BUNDLE_ID" || true
+          xcrun simctl launch "$UDID" "$BUNDLE_ID"
+          sleep 45
+          xcrun simctl io "$UDID" screenshot ../ios-ergebnis/simulator.png
+          xcrun simctl spawn "$UDID" log show --last 5m --style compact \
+            --predicate 'process == "Runner"' > ../ios-ergebnis/simulator-log.txt || true
+          cp ~/Library/Logs/DiagnosticReports/Runner* ../ios-ergebnis/ 2>/dev/null || true
+          # Erst in eine Datei schreiben: grep -q in einer Pipe kann unter
+          # pipefail per SIGPIPE einen Fehlalarm auslösen.
+          xcrun simctl spawn "$UDID" launchctl list > "$RUNNER_TEMP/launchctl.txt"
+          if grep -q "UIKitApplication:$BUNDLE_ID" "$RUNNER_TEMP/launchctl.txt"; then
+            echo "Die App läuft nach 45 s noch im Simulator."
+          else
+            echo "::error::Die App läuft nach dem Start nicht mehr (Absturz?). Siehe simulator-log.txt im Artefakt."
+            exit 1
+          fi
+
+      - name: Builds packen (unsignierte .ipa + Simulator-App)
+        if: always()
+        run: |
+          set -euo pipefail
+          mkdir -p ../ios-ergebnis
+          VER=$(grep -E '^version:' pubspec.yaml | head -n1 | awk '{print $2}' | cut -d+ -f1)
+          if [ -d build/ios/iphoneos/Runner.app ]; then
+            # Eine .ipa ist ein ZIP mit Payload/Runner.app.
+            rm -rf "$RUNNER_TEMP/ipa" && mkdir -p "$RUNNER_TEMP/ipa/Payload"
+            cp -R build/ios/iphoneos/Runner.app "$RUNNER_TEMP/ipa/Payload/"
+            (cd "$RUNNER_TEMP/ipa" && zip -qry "$GITHUB_WORKSPACE/ios-ergebnis/Meister-Trainer-${VER}-unsigniert.ipa" Payload)
+          fi
+          if [ -d build/ios/iphonesimulator/Runner.app ]; then
+            ditto -c -k --keepParent build/ios/iphonesimulator/Runner.app ../ios-ergebnis/Meister-Trainer-${VER}-Simulator.zip
+          fi
+          ls -la ../ios-ergebnis
+
+      - name: Ergebnis hochladen
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: ios-build
+          path: ios-ergebnis/
+          if-no-files-found: warn
+
+      - name: Build-Zusammenfassung
+        if: always()
+        run: |
+          {
+            echo "## Meister-Trainer – iOS-Build (ohne Signatur)"
+            echo ""
+            echo "- $(xcodebuild -version | head -1), $(flutter --version | head -1)"
+            echo "- Gerätebuild (unsignierte .ipa für AltStore/SideStore): $([ -d build/ios/iphoneos/Runner.app ] && echo 'gebaut' || echo 'fehlt')"
+            echo "- Simulator-Build: $([ -d build/ios/iphonesimulator/Runner.app ] && echo 'gebaut' || echo 'fehlt')"
+            echo "- Bildschirmfoto aus dem Simulator: $([ -f ../ios-ergebnis/simulator.png ] && echo 'im Artefakt ios-build' || echo 'fehlt')"
+          } >> "$GITHUB_STEP_SUMMARY"
+
+  # Nur nach Push auf main bzw. manuellem Start und nur, wenn der Build samt
+  # Simulator-Start grün war: rollendes Release „ios-latest“ mit der .ipa.
+  release-ios:
+    needs: build-ios
+    if: github.event_name == 'push' || github.event_name == 'workflow_dispatch'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Ergebnis holen
+        uses: actions/download-artifact@v4
+        with:
+          name: ios-build
+          path: ios-ergebnis
+
+      - name: .ipa als Release veröffentlichen (Direkt-Download)
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          IPAS=(ios-ergebnis/*.ipa)
+          IPA="${IPAS[0]}"
+          test -f "$IPA"
+          TAG=ios-latest
+          gh release delete "$TAG" --yes --cleanup-tag --repo "$GITHUB_REPOSITORY" || true
+          gh release create "$TAG" "$IPA" \
+            --repo "$GITHUB_REPOSITORY" \
+            --target "$GITHUB_SHA" \
+            --title "Meister-Trainer – iOS (neuester Build, ohne Signatur)" \
+            --notes "Automatisch gebaute iOS-App als unsignierte .ipa (Commit ${GITHUB_SHA}). Installieren mit AltStore oder SideStore: Die .ipa auf dem iPhone in „Dateien“ sichern und in AltStore/SideStore über „+“ öffnen. Signiert wird dabei mit deiner eigenen Apple-ID; mit einem kostenlosen Konto gilt die App 7 Tage und muss dann aufgefrischt werden. Details: flutter_app/BUILD.md." \
+            --prerelease

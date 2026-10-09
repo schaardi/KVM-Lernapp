@@ -13,6 +13,7 @@ on:
     branches: [ main ]
     paths:
       - 'flutter_app/**'
+      - '!flutter_app/ios/**'   # reine iOS-Änderungen bauen/veröffentlichen kein Android
       - '.github/workflows/play-release.yml'
   workflow_dispatch:
     inputs:

@@ -12,6 +12,7 @@ on:
       - main
     paths:
       - 'flutter_app/**'
+      - '!flutter_app/ios/**'   # reine iOS-Änderungen bauen/veröffentlichen kein Android
       - '.github/workflows/android-build.yml'
   workflow_dispatch: {}   # erlaubt manuelles Auslösen über die GitHub-Oberfläche
 
