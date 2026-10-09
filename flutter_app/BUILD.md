@@ -134,9 +134,45 @@ Tests:
 - `flutter test test/startschutz_test.dart`
 - Tombstone-Leser: `cd android && ./gradlew :app:testDebugUnitTest`
 
+## iOS: Cloud-Build ohne Signatur
+Ohne eigenen Mac baut GitHub Actions die iOS-App auf einem Mac in der Cloud: Workflow
+„App bauen (iOS, ohne Signatur)“, Image `macos-26` mit Xcode 26. Er läuft bei Pull Requests
+und Pushes auf `main`, die `flutter_app/` ändern (außer `android/`), und lässt sich von Hand
+starten.
+- **Gerätebuild ohne Signatur:** prüft, dass alles für echte iPhones kompiliert. Installieren
+  lässt er sich nicht.
+- **Simulator-Build:** startet im iOS-Simulator. Nach 45 s muss die App noch laufen.
+- **Artefakt `ios-build`:** Bildschirmfoto aus dem Simulator, Protokoll, beide Builds als ZIP.
+
+Der Ordner `ios/` stammt aus
+`flutter create --platforms=ios --org com.kvmtrainer --project-name kvm_trainer .` (Flutter 3.47.5).
+Angepasst sind:
+- Name „Meister-Trainer“, Bundle-ID `com.kvmtrainer.kvmTrainer` (iOS erlaubt keinen Unterstrich).
+- App-Icon: `assets/branding/app_icon_1024.png` auf Markenblau `#0D2B57`, ohne Alphakanal, wie es
+  der App Store verlangt. Es gibt nur diese eine Größe, den Rest erzeugt Xcode.
+- `Info.plist`: Texte für Mikrofon und Spracherkennung, AdMob-**Test**-App-ID,
+  `ITSAppUsesNonExemptEncryption = false`.
+
+Reine iOS-Änderungen (`flutter_app/ios/**`) lösen weder den Android-Build noch das Play-Release
+aus. Mit eigenem Mac: `flutter build ios` oder `ios/Runner.xcworkspace` in Xcode öffnen.
+
+Was für iPhone und TestFlight noch fehlt:
+- **Apple Developer Program** (ca. 99 € im Jahr) und die App in App Store Connect.
+- **Signatur im Workflow:** Zertifikat, Provisioning-Profil und App-Store-Connect-API-Key als
+  GitHub-Secrets, danach Upload zu TestFlight.
+- **Google-Login:** eine eigene iOS-Client-ID in der Google Cloud anlegen. Sie kommt als
+  `GIDClientID` samt URL-Schema in die `Info.plist` und in Supabase zum Google-Anbieter. Bis dahin
+  ist die Anmeldung auf iOS nicht nutzbar.
+- **AdMob:** die echte iOS-App-ID statt der Test-ID (`GADApplicationIdentifier`).
+- **Werbefrei-Abo:** das Produkt in App Store Connect anlegen.
+- **Nur Android bisher:** Lern-Erinnerung (Mitteilungen) sowie Absturzbericht und sicherer Modus.
+- **Berechtigungen:** Der Sprachdienst startet mit der App und fragt deshalb gleich beim ersten
+  Start nach Mikrofon und Spracherkennung. Auf iOS wäre erst beim ersten Diktat besser.
+
 ## App-Icon
 Das Industriemeister-Logo (Buch + Zahnrad) ist als adaptives Icon in
-`android/app/src/main/res/mipmap-*` hinterlegt.
+`android/app/src/main/res/mipmap-*` hinterlegt. Für iOS liegt es in
+`ios/Runner/Assets.xcassets/AppIcon.appiconset`.
 
 ## Struktur
 ```

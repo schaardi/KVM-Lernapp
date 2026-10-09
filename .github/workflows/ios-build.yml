@@ -1,0 +1,134 @@
+name: App bauen (iOS, ohne Signatur)
+
+# Baut die iOS-App auf einem Mac von GitHub Actions (Image macos-26, Xcode 26.x)
+# und prüft, dass sie im iOS-Simulator startet. Ohne Apple-Konto: Der Gerätebuild
+# ist unsigniert (nur Kompilierprüfung, nicht installierbar), der Simulator-Build
+# läuft im Simulator. Ergebnis als Artefakt „ios-build“: Bildschirmfoto aus dem
+# Simulator, Protokoll, beide Builds als ZIP. Signieren/TestFlight: siehe BUILD.md.
+
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - 'flutter_app/**'
+      - '!flutter_app/android/**'
+      - '.github/workflows/ios-build.yml'
+  pull_request:
+    paths:
+      - 'flutter_app/**'
+      - '!flutter_app/android/**'
+      - '.github/workflows/ios-build.yml'
+  workflow_dispatch: {}
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ios-build-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  BUNDLE_ID: com.kvmtrainer.kvmTrainer
+
+jobs:
+  build-ios:
+    runs-on: macos-26
+    timeout-minutes: 60
+    defaults:
+      run:
+        working-directory: flutter_app
+    steps:
+      - name: Repository auschecken
+        uses: actions/checkout@v4
+
+      - name: Xcode-Version
+        run: xcodebuild -version
+
+      - name: Flutter (stable) einrichten
+        uses: subosito/flutter-action@v2
+        with:
+          channel: stable
+          cache: true
+
+      - name: Flutter-Version
+        run: flutter --version
+
+      - name: Abhängigkeiten holen
+        run: flutter pub get
+
+      - name: Gerätebuild ohne Signatur (Kompilierprüfung)
+        run: flutter build ios --release --no-codesign
+
+      - name: Simulator-Build
+        run: flutter build ios --simulator --debug
+
+      - name: Im Simulator starten und Bildschirmfoto machen
+        run: |
+          set -euo pipefail
+          mkdir -p ../ios-ergebnis
+          # Neuestes iPhone mit der neuesten installierten iOS-Laufzeit wählen.
+          UDID=$(xcrun simctl list devices available --json | python3 -c '
+          import json, re, sys
+          geraete = []
+          for laufzeit, liste in json.load(sys.stdin)["devices"].items():
+              m = re.search(r"iOS-(\d+)-(\d+)", laufzeit)
+              if not m:
+                  continue
+              for g in liste:
+                  if g["name"].startswith("iPhone"):
+                      geraete.append(((int(m.group(1)), int(m.group(2))), g["name"], g["udid"]))
+          geraete.sort()
+          print(geraete[-1][2])
+          ')
+          xcrun simctl list devices | grep "$UDID"
+          xcrun simctl bootstatus "$UDID" -b
+          xcrun simctl install "$UDID" build/ios/iphonesimulator/Runner.app
+          # Mikrofon vorab erlauben, damit möglichst wenig Systemdialoge die App verdecken.
+          xcrun simctl privacy "$UDID" grant microphone "$BUNDLE_ID" || true
+          xcrun simctl launch "$UDID" "$BUNDLE_ID"
+          sleep 45
+          xcrun simctl io "$UDID" screenshot ../ios-ergebnis/simulator.png
+          xcrun simctl spawn "$UDID" log show --last 5m --style compact \
+            --predicate 'process == "Runner"' > ../ios-ergebnis/simulator-log.txt || true
+          cp ~/Library/Logs/DiagnosticReports/Runner* ../ios-ergebnis/ 2>/dev/null || true
+          # Erst in eine Datei schreiben: grep -q in einer Pipe kann unter
+          # pipefail per SIGPIPE einen Fehlalarm auslösen.
+          xcrun simctl spawn "$UDID" launchctl list > "$RUNNER_TEMP/launchctl.txt"
+          if grep -q "UIKitApplication:$BUNDLE_ID" "$RUNNER_TEMP/launchctl.txt"; then
+            echo "Die App läuft nach 45 s noch im Simulator."
+          else
+            echo "::error::Die App läuft nach dem Start nicht mehr (Absturz?). Siehe simulator-log.txt im Artefakt."
+            exit 1
+          fi
+
+      - name: Builds packen
+        if: always()
+        run: |
+          mkdir -p ../ios-ergebnis
+          if [ -d build/ios/iphonesimulator/Runner.app ]; then
+            ditto -c -k --keepParent build/ios/iphonesimulator/Runner.app ../ios-ergebnis/Meister-Trainer-Simulator.zip
+          fi
+          if [ -d build/ios/iphoneos/Runner.app ]; then
+            ditto -c -k --keepParent build/ios/iphoneos/Runner.app ../ios-ergebnis/Meister-Trainer-ohne-Signatur.zip
+          fi
+          ls -la ../ios-ergebnis
+
+      - name: Ergebnis hochladen
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: ios-build
+          path: ios-ergebnis/
+          if-no-files-found: warn
+
+      - name: Build-Zusammenfassung
+        if: always()
+        run: |
+          {
+            echo "## Meister-Trainer – iOS-Build (ohne Signatur)"
+            echo ""
+            echo "- $(xcodebuild -version | head -1), $(flutter --version | head -1)"
+            echo "- Gerätebuild: $([ -d build/ios/iphoneos/Runner.app ] && echo 'gebaut' || echo 'fehlt')"
+            echo "- Simulator-Build: $([ -d build/ios/iphonesimulator/Runner.app ] && echo 'gebaut' || echo 'fehlt')"
+            echo "- Bildschirmfoto aus dem Simulator: $([ -f ../ios-ergebnis/simulator.png ] && echo 'im Artefakt ios-build' || echo 'fehlt')"
+          } >> "$GITHUB_STEP_SUMMARY"
